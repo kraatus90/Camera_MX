@@ -3,75 +3,29 @@
 .source "PG"
 
 
-# instance fields
-.field public a:Z
-
-.field public b:I
-
-.field public c:Ljava/lang/String;
-
-
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lgdl;->a:Z
-
-    const v0, 0x3fffffff    # 1.9999999f
-
-    iput v0, p0, Lgdl;->b:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Lgdk;
+.method public static a(Lgay;ILjava/nio/ByteBuffer;)I
     .locals 3
 
-    iget-object v0, p0, Lgdl;->c:Ljava/lang/String;
+    iget-object v0, p0, Lgay;->b:Link;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
 
-    new-instance v0, Lgdk;
+    move-result-object v1
 
-    iget-object v1, p0, Lgdl;->c:Ljava/lang/String;
+    iget-object v2, p0, Lgay;->f:Landroid/graphics/Rect;
 
-    invoke-direct {v0, v1}, Lgdk;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v1, p1, v2}, Lcom/google/android/libraries/camera/jpegutil/JpegUtilNative;->a(Link;Ljava/nio/ByteBuffer;ILandroid/graphics/Rect;)I
 
-    iget-boolean v1, p0, Lgdl;->a:Z
+    move-result v0
 
-    iget v2, p0, Lgdl;->b:I
-
-    iput-boolean v1, v0, Lgdk;->a:Z
-
-    iput v2, v0, Lgdk;->b:I
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lgdk;->d:Landroid/view/View$OnClickListener;
-
-    return-object v0
-.end method
-
-.method public final synthetic a(Ljava/lang/String;)Lgdl;
-    .locals 0
-
-    iput-object p1, p0, Lgdl;->c:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final synthetic a(Z)Lgdl;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lgdl;->a:Z
-
-    return-object p0
+    return v0
 .end method

@@ -3,154 +3,94 @@
 .source "PG"
 
 # interfaces
-.implements Leai;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Liau;
+.field private final a:Lkgv;
 
-.field private b:Licu;
+.field private final b:Lkgv;
 
-.field private c:Liau;
+.field private final c:Lkgv;
 
-.field private d:Liau;
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Licv;Liau;)V
-    .locals 2
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lecl;->a:Liau;
+    iput-object p1, p0, Lecl;->a:Lkgv;
 
-    const-string v0, "ImgCptrSwitch"
+    iput-object p2, p0, Lecl;->b:Lkgv;
 
-    invoke-interface {p1, v0}, Licv;->a(Ljava/lang/String;)Licu;
+    iput-object p3, p0, Lecl;->c:Lkgv;
 
-    move-result-object v0
+    iput-object p4, p0, Lecl;->d:Lkgv;
 
-    iput-object v0, p0, Lecl;->b:Licu;
+    iput-object p5, p0, Lecl;->e:Lkgv;
 
-    iget-object v0, p0, Lecl;->a:Liau;
-
-    new-instance v1, Lecm;
-
-    invoke-direct {v1}, Lecm;-><init>()V
-
-    invoke-static {v0, v1}, Liav;->a(Liau;Ljhj;)Liau;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liav;->a(Liau;)Liau;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lecl;->c:Liau;
-
-    iget-object v0, p0, Lecl;->a:Liau;
-
-    new-instance v1, Lecn;
-
-    invoke-direct {v1}, Lecn;-><init>()V
-
-    invoke-static {v0, v1}, Liav;->a(Liau;Ljhj;)Liau;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liav;->a(Liau;)Liau;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lecl;->d:Liau;
+    iput-object p6, p0, Lecl;->f:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Liau;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    iget-object v0, p0, Lecl;->c:Liau;
+    new-instance v0, Leck;
 
-    return-object v0
-.end method
+    iget-object v1, p0, Lecl;->a:Lkgv;
 
-.method public final a(Leaj;Leaq;)V
-    .locals 5
-
-    iget-object v0, p0, Lecl;->a:Liau;
-
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Leai;
-
-    iget-object v2, p0, Lecl;->b:Licu;
-
-    const-string v3, "Running command: "
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v1, Leaf;
 
-    move-result-object v1
+    iget-object v2, p0, Lecl;->b:Lkgv;
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    iget-object v3, p0, Lecl;->c:Lkgv;
 
-    move-result v4
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v4, :cond_0
+    move-result-object v3
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    check-cast v3, Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    move-result-object v1
+    iget-object v4, p0, Lecl;->d:Lkgv;
 
-    :goto_0
-    invoke-interface {v2, v1}, Licu;->b(Ljava/lang/String;)V
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2}, Leai;->a(Leaj;Leaq;)V
+    move-result-object v4
 
-    return-void
+    check-cast v4, Lhgv;
 
-    :cond_0
-    new-instance v1, Ljava/lang/String;
+    iget-object v5, p0, Lecl;->e:Lkgv;
 
-    invoke-direct {v1, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    goto :goto_0
-.end method
+    move-result-object v5
 
-.method public final b()Liau;
-    .locals 1
+    check-cast v5, Lfwg;
 
-    iget-object v0, p0, Lecl;->d:Liau;
+    iget-object v6, p0, Lecl;->f:Lkgv;
 
-    return-object v0
-.end method
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    move-result-object v6
 
-    invoke-static {p0}, Liui;->a(Ljava/lang/Object;)Ljhq;
+    check-cast v6, Layc;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lecl;->a:Liau;
-
-    invoke-virtual {v0}, Ljhq;->a()Ljhr;
-
-    move-result-object v2
-
-    iput-object v1, v2, Ljhr;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct/range {v0 .. v6}, Leck;-><init>(Leaf;Lkgv;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lhgv;Lfwg;Layc;)V
 
     return-object v0
 .end method

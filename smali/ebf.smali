@@ -1,102 +1,89 @@
-.class public final Lebf;
-.super Ljava/lang/Object;
+.class public Lebf;
+.super Lglb;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public b:Landroid/view/Window;
 
-.field private b:Ljxn;
+.field public c:Lhfx;
 
-.field private c:Ljxn;
+.field public d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field private d:Ljxn;
+.field public e:I
+
+.field public f:Lcnr;
+
+.field public g:Lgvc;
+
+.field private h:Lbch;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "CameraUiStatechart"
 
-    iput-object p1, p0, Lebf;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lebf;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Lebf;->c:Ljxn;
+    sput-object v0, Lebf;->a:Ljava/lang/String;
 
-    iput-object p4, p0, Lebf;->d:Ljxn;
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>([I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public a()V
+    .locals 1
 
-    iget-object v0, p0, Lebf;->a:Ljxn;
+    invoke-super {p0}, Lglb;->a()V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lebf;->h:Lbch;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lbch;->a()V
 
-    check-cast v0, Leca;
+    return-void
+.end method
 
-    iget-object v1, p0, Lebf;->b:Ljxn;
+.method public a(Landroid/view/Window;Lbch;Lkgv;Lhfx;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lcnr;Lgvc;)V
+    .locals 1
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iput-object p1, p0, Lebf;->b:Landroid/view/Window;
 
-    move-result-object v1
+    iput-object p2, p0, Lebf;->h:Lbch;
 
-    check-cast v1, Ledh;
+    iput-object p4, p0, Lebf;->c:Lhfx;
 
-    iget-object v2, p0, Lebf;->c:Ljxn;
+    iput-object p5, p0, Lebf;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ledf;
-
-    iget-object v3, p0, Lebf;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ledd;
-
-    invoke-virtual {v1}, Ledh;->a()Leai;
-
-    move-result-object v1
-
-    invoke-virtual {v3}, Ledd;->a()Leai;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ledf;->a(Leai;)Leai;
-
-    move-result-object v2
-
-    new-instance v3, Ledp;
-
-    invoke-virtual {v0, v1, v2}, Leca;->a(Leai;Leai;)Leai;
+    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
-    invoke-direct {v3, v0}, Ledp;-><init>(Leai;)V
+    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    iput v0, p0, Lebf;->e:I
 
-    invoke-static {v3, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-object p6, p0, Lebf;->f:Lcnr;
 
-    move-result-object v0
+    iput-object p7, p0, Lebf;->g:Lgvc;
 
-    check-cast v0, Ledp;
-
-    return-object v0
+    return-void
 .end method

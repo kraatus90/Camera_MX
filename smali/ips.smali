@@ -1,41 +1,32 @@
-.class public Lips;
+.class public final Lips;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lipn;
+
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:Lipt;
-
-.field public final e:Ljava/util/List;
-
-.field public final f:Ljava/util/List;
+.field private final synthetic a:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(IIILipt;Ljava/util/List;Ljava/util/List;)V
+.method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
+
+    iput-object p1, p0, Lips;->a:Ljava/lang/Throwable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p6}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput p1, p0, Lips;->a:I
-
-    iput p2, p0, Lips;->b:I
-
-    iput p3, p0, Lips;->c:I
-
-    iput-object p4, p0, Lips;->d:Lipt;
-
-    iput-object p5, p0, Lips;->e:Ljava/util/List;
-
-    iput-object p6, p0, Lips;->f:Ljava/util/List;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lips;->a:Ljava/lang/Throwable;
+
+    throw v0
 .end method

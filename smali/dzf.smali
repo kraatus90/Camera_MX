@@ -1,13 +1,14 @@
-.class final Ldzf;
+.class public final Ldzf;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljhj;
+
+# static fields
+.field public static a:Lejz;
 
 
 # direct methods
-.method constructor <init>(Ldzd;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -15,112 +16,255 @@
     return-void
 .end method
 
+.method public static a(Landroid/content/Context;I)Ljava/lang/String;
+    .locals 2
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    sparse-switch p1, :sswitch_data_0
 
-    check-cast p1, Ljava/util/List;
+    const/16 v0, 0x16
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const-string v0, "Unknown key"
 
-    move-result-object v2
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    return-object v0
+
+    :sswitch_0
+    const v0, 0x7f1101fe
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_1
+    const v0, 0x7f11007e
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_2
+    const v0, 0x7f1101f6
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_3
+    const v0, 0x7f1100eb
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_4
+    const v0, 0x7f110122
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_5
+    const v0, 0x7f11022c
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_6
+    const v0, 0x7f1100db
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_7
+    const v0, 0x7f110115
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_8
+    const v0, 0x7f11008d
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_9
+    const v0, 0x7f1100fc
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_a
+    const v0, 0x7f1100ac
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_b
+    const v0, 0x7f1100ee
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_c
+    const v0, 0x7f110110
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_d
+    const v0, 0x7f1100b1
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_e
+    const v0, 0x7f11002f
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_f
+    const v0, 0x7f1100b9
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :sswitch_10
+    const v0, 0x7f110224
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto/16 :goto_0
+
+    :sswitch_11
+    const v0, 0x7f1100a0
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto/16 :goto_0
+
+    :sswitch_12
+    const v0, 0x7f1100e6
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto/16 :goto_0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x2 -> :sswitch_1
+        0x3 -> :sswitch_2
+        0x4 -> :sswitch_3
+        0x5 -> :sswitch_5
+        0x6 -> :sswitch_6
+        0x7 -> :sswitch_7
+        0x8 -> :sswitch_8
+        0x9 -> :sswitch_9
+        0xa -> :sswitch_a
+        0x64 -> :sswitch_b
+        0x65 -> :sswitch_c
+        0x66 -> :sswitch_d
+        0x67 -> :sswitch_f
+        0x68 -> :sswitch_10
+        0x69 -> :sswitch_e
+        0x6b -> :sswitch_11
+        0x6c -> :sswitch_12
+        0xc8 -> :sswitch_4
+    .end sparse-switch
+.end method
+
+.method public static a(Liay;Lemf;Lemz;)V
+    .locals 1
+
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {}, Liay;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Lemf;->a(Lemz;)Lemz;
 
-    move-result-object v0
-
-    check-cast v0, Liic;
-
-    const-string v3, "Metadata"
-
-    invoke-static {v3}, Liui;->c(Ljava/lang/String;)Ljhq;
-
-    move-result-object v3
-
-    const-string v4, "timestamp"
-
-    sget-object v5, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v0, v5}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
-
-    move-result-object v3
-
-    const-string v4, "NR"
-
-    sget-object v5, Landroid/hardware/camera2/CaptureResult;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v0, v5}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
-
-    move-result-object v3
-
-    const-string v4, "EDGE"
-
-    sget-object v5, Landroid/hardware/camera2/CaptureResult;->EDGE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v0, v5}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
-
-    move-result-object v3
-
-    const-string v4, "REEF"
-
-    sget-object v5, Landroid/hardware/camera2/CaptureResult;->REPROCESS_EFFECTIVE_EXPOSURE_FACTOR:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v0, v5}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v4, v5}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
-
-    move-result-object v3
-
-    const-string v4, "Jpeg Qual"
-
-    sget-object v5, Landroid/hardware/camera2/CaptureResult;->JPEG_QUALITY:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v0, v5}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v4, v0}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
+    :goto_0
+    return-void
 
     :cond_0
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    new-instance v0, Lend;
 
-    move-result-object v0
+    invoke-direct {v0, p1, p2}, Lend;-><init>(Lemf;Lemz;)V
 
-    return-object v0
+    invoke-virtual {p0, v0}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
 .end method

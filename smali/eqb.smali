@@ -1,58 +1,77 @@
-.class public final Leqb;
+.class final Leqb;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# instance fields
+.field public final a:[B
 
-# static fields
-.field public static final a:Leqb;
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>([BIII)V
+    .locals 4
 
-    new-instance v0, Leqb;
+    const/4 v1, 0x1
 
-    invoke-direct {v0}, Leqb;-><init>()V
-
-    sput-object v0, Leqb;->a:Leqb;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    if-ltz p3, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    const-string v3, "offset must be >= 0"
+
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
+
+    if-lez p4, :cond_1
+
+    move v0, v1
+
+    :goto_1
+    const-string v3, "length must be > 0"
+
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
+
+    array-length v0, p1
+
+    if-gt p4, v0, :cond_2
+
+    :goto_2
+    const-string v0, "length exceeds data length"
+
+    invoke-static {v1, v0}, Ljii;->a(ZLjava/lang/Object;)V
+
+    iput-object p1, p0, Leqb;->a:[B
+
+    iput p2, p0, Leqb;->d:I
+
+    iput p3, p0, Leqb;->b:I
+
+    iput p4, p0, Leqb;->c:I
+
     return-void
-.end method
 
+    :cond_0
+    move v0, v2
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    goto :goto_0
 
-    new-instance v0, Liag;
+    :cond_1
+    move v0, v2
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    goto :goto_1
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    :cond_2
+    move v1, v2
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liau;
-
-    return-object v0
+    goto :goto_2
 .end method

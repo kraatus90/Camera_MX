@@ -1,36 +1,54 @@
-.class final Lajo;
+.class public final Lajo;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lajp;
+.implements Laki;
+
+
+# instance fields
+.field private final a:Lajs;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Lajs;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lajo;->a:Lajs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lakj;
+    .locals 4
 
-    const-class v0, Ljava/nio/ByteBuffer;
+    check-cast p1, Ljava/io/File;
+
+    new-instance v0, Lakj;
+
+    new-instance v1, Larm;
+
+    invoke-direct {v1, p1}, Larm;-><init>(Ljava/lang/Object;)V
+
+    new-instance v2, Lajr;
+
+    iget-object v3, p0, Lajo;->a:Lajs;
+
+    invoke-direct {v2, p1, v3}, Lajr;-><init>(Ljava/io/File;Lajs;)V
+
+    invoke-direct {v0, v1, v2}, Lakj;-><init>(Ladu;Laef;)V
 
     return-object v0
 .end method
 
-.method public final synthetic a([B)Ljava/lang/Object;
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
     .locals 1
 
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+    const/4 v0, 0x1
 
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method

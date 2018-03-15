@@ -1,20 +1,14 @@
-.class final Litb;
+.class public abstract Litb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
-
-
-# instance fields
-.field private synthetic a:Litj;
+.implements Lisq;
 
 
 # direct methods
-.method constructor <init>(Litj;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Litb;->a:Litj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,40 +17,28 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 2
+.method public final b()I
+    .locals 1
 
-    iget-object v0, p0, Litb;->a:Litj;
+    sget v0, Lfxq;->h:I
 
-    invoke-virtual {v0}, Litj;->a()Z
+    return v0
+.end method
 
-    move-result v0
+.method public final d()Z
+    .locals 1
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x0
 
-    const-class v0, Liza;
+    return v0
+.end method
 
-    const-string v1, "med-res-acquisition-pipeline"
+.method public toString()Ljava/lang/String;
+    .locals 1
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0}, Litb;->a()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Liyz;
-
-    :goto_0
     return-object v0
-
-    :cond_0
-    const-class v0, Liyz;
-
-    const-string v1, "empty-acquisition-pipeline"
-
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liyz;
-
-    goto :goto_0
 .end method

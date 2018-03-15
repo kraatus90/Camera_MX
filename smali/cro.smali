@@ -1,64 +1,103 @@
-.class public final Lcro;
-.super Ljava/lang/Object;
+.class final Lcro;
+.super Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lcrm;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lcrm;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcro;->a:Lcrm;
 
-    iput-object p1, p0, Lcro;->a:Ljxn;
-
-    iput-object p2, p0, Lcro;->b:Ljxn;
+    invoke-direct {p0}, Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final Allocate(III)Lcom/google/googlex/gcam/InterleavedU16Allocation;
+    .locals 4
 
-    iget-object v0, p0, Lcro;->a:Ljxn;
+    const/4 v0, 0x2
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-ne p3, v0, :cond_0
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    check-cast v0, Leqe;
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    iget-object v1, p0, Lcro;->b:Ljxn;
+    new-instance v0, Lcom/google/googlex/gcam/InterleavedU16Allocation;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v0}, Lcom/google/googlex/gcam/InterleavedU16Allocation;-><init>()V
 
-    move-result-object v1
+    iget-object v1, p0, Lcro;->a:Lcrm;
 
-    check-cast v1, Lcqp;
+    new-instance v2, Lcom/google/googlex/gcam/InterleavedImageU16;
 
-    iget-object v1, v1, Lcqp;->b:Ljava/lang/String;
+    invoke-direct {v2, p1, p2, p3}, Lcom/google/googlex/gcam/InterleavedImageU16;-><init>(III)V
 
-    invoke-virtual {v0, v1}, Leqe;->a(Ljava/lang/String;)Leqd;
+    iput-object v2, v1, Lcrm;->r:Lcom/google/googlex/gcam/InterleavedImageU16;
 
-    move-result-object v0
+    const-wide/16 v2, 0x1
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-virtual {v0, v2, v3}, Lcom/google/googlex/gcam/InterleavedU16Allocation;->setImage_id(J)V
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v1, p0, Lcro;->a:Lcrm;
 
-    move-result-object v0
+    iget-object v1, v1, Lcrm;->r:Lcom/google/googlex/gcam/InterleavedImageU16;
 
-    check-cast v0, Leqd;
+    invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/InterleavedU16Allocation;->setView(Lcom/google/googlex/gcam/InterleavedWriteViewU16;)V
 
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final Release(J)V
+    .locals 7
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const-wide/16 v4, 0x1
+
+    cmp-long v0, p1, v4
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iget-object v0, p0, Lcro;->a:Lcrm;
+
+    iget-object v0, v0, Lcrm;->r:Lcom/google/googlex/gcam/InterleavedImageU16;
+
+    if-eqz v0, :cond_1
+
+    :goto_1
+    invoke-static {v1}, Ljii;->b(Z)V
+
+    return-void
+
+    :cond_0
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v1, v2
+
+    goto :goto_1
 .end method

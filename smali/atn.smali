@@ -3,24 +3,20 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Latn;->a:Ljxn;
-
-    iput-object p2, p0, Latn;->b:Ljxn;
+    iput-object p1, p0, Latn;->a:Lkgv;
 
     return-void
 .end method
@@ -28,15 +24,13 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
-    new-instance v0, Latd;
+    new-instance v0, Latm;
 
-    iget-object v1, p0, Latn;->a:Ljxn;
+    iget-object v1, p0, Latn;->a:Lkgv;
 
-    iget-object v2, p0, Latn;->b:Ljxn;
-
-    invoke-direct {v0, v1, v2}, Latd;-><init>(Ljxn;Ljxn;)V
+    invoke-direct {v0, v1}, Latm;-><init>(Lkgv;)V
 
     return-object v0
 .end method

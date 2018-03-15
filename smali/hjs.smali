@@ -1,188 +1,214 @@
 .class public final Lhjs;
 .super Ljava/lang/Object;
+.source "PG"
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# static fields
+.field public static final a:[I
+
+.field private static final b:Landroid/util/SparseArray;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/util/SparseArray;
+
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+
+    sput-object v0, Lhjs;->b:Landroid/util/SparseArray;
+
+    const/4 v1, 0x0
+
+    const-string v2, "com.google.android.camera.experimental2015.ExperimentalKeys"
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+
+    sget-object v0, Lhjs;->b:Landroid/util/SparseArray;
+
+    const/4 v1, 0x1
+
+    const-string v2, "com.google.android.camera.experimental2016.ExperimentalKeys"
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+
+    sget-object v0, Lhjs;->b:Landroid/util/SparseArray;
+
+    const/4 v1, 0x2
+
+    const-string v2, "com.google.android.camera.experimental2017.ExperimentalKeys"
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+
+    invoke-static {}, Lhjs;->a()[I
+
+    move-result-object v0
+
+    sput-object v0, Lhjs;->a:[I
 
     return-void
 .end method
 
+.method public static a(Landroid/util/Size;Ljava/lang/Class;)Landroid/hardware/camera2/params/OutputConfiguration;
+    .locals 1
 
-# virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 12
+    new-instance v0, Landroid/hardware/camera2/params/OutputConfiguration;
 
-    const/4 v7, 0x0
+    invoke-direct {v0, p0, p1}, Landroid/hardware/camera2/params/OutputConfiguration;-><init>(Landroid/util/Size;Ljava/lang/Class;)V
 
-    const/4 v9, 0x0
+    return-object v0
+.end method
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+.method public static a(Landroid/hardware/camera2/CameraCaptureSession;Ljava/util/List;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/hardware/camera2/CameraCaptureSession;->finalizeOutputConfigurations(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/hardware/camera2/params/OutputConfiguration;Landroid/view/Surface;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/hardware/camera2/params/OutputConfiguration;->addSurface(Landroid/view/Surface;)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/media/MediaRecorder;II)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Landroid/media/MediaRecorder;->setVideoEncodingProfileLevel(II)V
+
+    return-void
+.end method
+
+.method public static a([II)Z
+    .locals 1
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->binarySearch([II)I
 
     move-result v0
 
-    const/4 v6, 0x1
+    if-ltz v0, :cond_0
 
-    move v8, v9
-
-    move-object v5, v7
-
-    move-object v4, v7
-
-    move v3, v9
-
-    move v2, v9
-
-    move-object v1, v7
+    const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    return v0
 
-    move-result v10
-
-    if-ge v10, v0, :cond_0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v10
-
-    const v11, 0xffff
-
-    and-int/2addr v11, v10
-
-    packed-switch v11, :pswitch_data_0
-
-    invoke-static {p1, v10}, Lhjg;->b(Landroid/os/Parcel;I)V
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    :pswitch_0
-    invoke-static {p1, v10}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+.method private static a()[I
+    .locals 7
 
-    move-result-object v1
+    const/4 v3, 0x0
 
-    goto :goto_0
+    new-instance v1, Ljava/util/ArrayList;
 
-    :pswitch_1
-    invoke-static {p1, v10}, Lhjg;->e(Landroid/os/Parcel;I)I
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    move-result v2
+    move v2, v3
 
-    goto :goto_0
+    :goto_0
+    sget-object v0, Lhjs;->b:Landroid/util/SparseArray;
 
-    :pswitch_2
-    invoke-static {p1, v10}, Lhjg;->e(Landroid/os/Parcel;I)I
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
-    move-result v3
+    move-result v0
 
-    goto :goto_0
+    if-ge v2, v0, :cond_0
 
-    :pswitch_3
-    invoke-static {p1, v10}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+    :try_start_0
+    sget-object v0, Lhjs;->b:Landroid/util/SparseArray;
 
-    move-result-object v4
+    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object v0
 
-    :pswitch_4
-    invoke-static {p1, v10}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    move-result-object v5
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    goto :goto_0
+    sget-object v0, Lhjs;->b:Landroid/util/SparseArray;
 
-    :pswitch_5
-    invoke-static {p1, v10}, Lhjg;->c(Landroid/os/Parcel;I)Z
+    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->keyAt(I)I
 
-    move-result v6
+    move-result v0
 
-    goto :goto_0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :pswitch_6
-    invoke-static {p1, v10}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v7
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_1
 
-    goto :goto_0
+    :goto_1
+    add-int/lit8 v0, v2, 0x1
 
-    :pswitch_7
-    invoke-static {p1, v10}, Lhjg;->c(Landroid/os/Parcel;I)Z
-
-    move-result v8
-
-    goto :goto_0
-
-    :pswitch_8
-    invoke-static {p1, v10}, Lhjg;->e(Landroid/os/Parcel;I)I
-
-    move-result v9
+    move v2, v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v10
+    move-result v0
 
-    if-eq v10, v0, :cond_1
+    new-array v4, v0, [I
 
-    new-instance v1, Ladf;
+    move-object v0, v1
 
-    const/16 v2, 0x25
+    check-cast v0, Ljava/util/ArrayList;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    move-result v5
 
-    const-string v2, "Overread allowed size end="
+    move v2, v3
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_2
+    if-ge v3, v5, :cond_1
 
-    move-result-object v2
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v0
+    add-int/lit8 v3, v3, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v1, Ljava/lang/Integer;
 
-    move-result-object v0
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-direct {v1, v0, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    move-result v6
 
-    throw v1
+    add-int/lit8 v1, v2, 0x1
+
+    aput v6, v4, v2
+
+    move v2, v1
+
+    goto :goto_2
 
     :cond_1
-    new-instance v0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;
+    invoke-static {v4}, Ljava/util/Arrays;->sort([I)V
 
-    invoke-direct/range {v0 .. v9}, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;-><init>(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;ZLjava/lang/String;ZI)V
+    return-object v4
 
-    return-object v0
+    :catch_0
+    move-exception v0
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
-    .end packed-switch
-.end method
+    goto :goto_1
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+    :catch_1
+    move-exception v0
 
-    new-array v0, p1, [Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;
-
-    return-object v0
+    goto :goto_1
 .end method

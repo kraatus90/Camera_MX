@@ -216,10 +216,58 @@
     throw v0
 .end method
 
+.method public dest_folder()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ImageSaver;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ImageSaver_dest_folder(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public filename_prefix()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ImageSaver;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ImageSaver_filename_prefix(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public filename_suffix()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ImageSaver;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ImageSaver_filename_suffix(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method protected finalize()V
     .locals 0
 
     invoke-virtual {p0}, Lcom/google/googlex/gcam/ImageSaver;->delete()V
 
     return-void
+.end method
+
+.method public gcam_version()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ImageSaver;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ImageSaver_gcam_version(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

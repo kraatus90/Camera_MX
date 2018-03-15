@@ -1,46 +1,73 @@
 .class public final Lafg;
-.super Ljava/lang/Object;
+.super Ljava/lang/ref/WeakReference;
 .source "PG"
-
-# interfaces
-.implements Laew;
 
 
 # instance fields
-.field private a:Lahn;
+.field public final a:Ladu;
+
+.field public final b:Z
+
+.field public c:Lagw;
 
 
 # direct methods
-.method public constructor <init>(Lahn;)V
-    .locals 0
+.method constructor <init>(Ladu;Lagn;Ljava/lang/ref/ReferenceQueue;Z)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
 
-    iput-object p1, p0, Lafg;->a:Lahn;
+    const-string v0, "Argument must not be null"
+
+    invoke-static {p1, v0}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ladu;
+
+    iput-object v0, p0, Lafg;->a:Ladu;
+
+    iget-boolean v0, p2, Lagn;->a:Z
+
+    if-eqz v0, :cond_0
+
+    if-eqz p4, :cond_0
+
+    iget-object v0, p2, Lagn;->b:Lagw;
+
+    const-string v1, "Argument must not be null"
+
+    invoke-static {v0, v1}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lagw;
+
+    :goto_0
+    iput-object v0, p0, Lafg;->c:Lagw;
+
+    iget-boolean v0, p2, Lagn;->a:Z
+
+    iput-boolean v0, p0, Lafg;->b:Z
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Laev;
-    .locals 2
-
-    check-cast p1, Ljava/io/InputStream;
-
-    new-instance v0, Laff;
-
-    iget-object v1, p0, Lafg;->a:Lahn;
-
-    invoke-direct {v0, p1, v1}, Laff;-><init>(Ljava/io/InputStream;Lahn;)V
-
-    return-object v0
-.end method
-
-.method public final a()Ljava/lang/Class;
+.method final a()V
     .locals 1
 
-    const-class v0, Ljava/io/InputStream;
+    const/4 v0, 0x0
 
-    return-object v0
+    iput-object v0, p0, Lafg;->c:Lagw;
+
+    invoke-virtual {p0}, Lafg;->clear()V
+
+    return-void
 .end method

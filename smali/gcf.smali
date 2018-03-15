@@ -1,151 +1,226 @@
 .class public final Lgcf;
-.super Ljava/lang/Object;
+.super Lgbw;
 .source "PG"
-
-# interfaces
-.implements Lich;
 
 
 # instance fields
-.field public final a:Lfyo;
+.field private final a:Lgbc;
+
+.field private final b:Ligs;
+
+.field private final i:Lgbf;
+
+.field private final j:Lenz;
+
+.field private final k:Lihs;
 
 
 # direct methods
-.method public constructor <init>(Lfyo;)V
-    .locals 0
+.method public constructor <init>(Lgay;Ljava/util/concurrent/Executor;Lgax;Lgbc;Lfzv;Ligs;Lgbf;Lenz;Lihs;)V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v4, Lep;->aU:I
 
-    iput-object p1, p0, Lgcf;->a:Lfyo;
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v5, p5
+
+    invoke-direct/range {v0 .. v5}, Lgbw;-><init>(Lgay;Ljava/util/concurrent/Executor;Lgax;ILfzv;)V
+
+    iput-object p4, p0, Lgcf;->a:Lgbc;
+
+    iput-object p6, p0, Lgcf;->b:Ligs;
+
+    iput-object p7, p0, Lgcf;->i:Lgbf;
+
+    iput-object p8, p0, Lgcf;->j:Lenz;
+
+    iput-object p9, p0, Lgcf;->k:Lihs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final run()V
+    .locals 7
 
-    iget-object v0, p0, Lgcf;->a:Lfyo;
+    const/4 v6, 0x0
 
-    iget-object v0, v0, Lfyo;->d:Ljvi;
+    iget-object v0, p0, Lgcf;->k:Lihs;
 
-    invoke-virtual {v0}, Ljsw;->isDone()Z
+    const-string v1, "LuckyShot"
 
-    move-result v0
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lgcf;->b:Ligs;
 
-    iget-object v0, p0, Lgcf;->a:Lfyo;
+    invoke-interface {v0, p0}, Ligs;->a(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Lfyo;->e:Ljvi;
+    new-instance v1, Ljzz;
 
-    invoke-virtual {v0}, Ljsw;->isDone()Z
+    invoke-direct {v1}, Ljzz;-><init>()V
 
-    move-result v0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    if-eqz v0, :cond_0
+    move-result-wide v2
 
-    iget-object v0, p0, Lgcf;->a:Lfyo;
+    iput-wide v2, v1, Ljzz;->a:J
 
-    iget-boolean v0, v0, Lfyo;->g:Z
+    iget-object v2, p0, Lgcf;->i:Lgbf;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lgcf;->g:Lgay;
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_0
-    const/4 v0, 0x0
+    check-cast v0, Lgay;
 
-    goto :goto_0
-.end method
+    invoke-interface {v2, v0}, Lgbf;->a(Lgay;)Lgbg;
 
-.method public final a(Lgcf;)Z
-    .locals 6
+    move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    iget-object v0, p1, Lgcf;->a:Lfyo;
+    move-result-wide v2
 
-    iget-wide v2, v0, Lfyo;->c:J
+    iput-wide v2, v1, Ljzz;->b:J
 
-    iget-object v0, p0, Lgcf;->a:Lfyo;
+    iget-object v2, p0, Lgcf;->j:Lenz;
 
-    iget-wide v4, v0, Lfyo;->c:J
+    iget-object v3, v2, Lenz;->a:Ljava/lang/Object;
 
-    cmp-long v0, v2, v4
+    monitor-enter v3
 
-    if-lez v0, :cond_1
+    :try_start_0
+    iget-object v4, v2, Lenz;->f:Ljava/util/List;
 
-    iget-object v0, p1, Lgcf;->a:Lfyo;
+    if-nez v4, :cond_0
 
-    check-cast v0, Lfyo;
+    new-instance v4, Ljava/util/ArrayList;
 
-    iget-object v0, v0, Lfyo;->d:Ljvi;
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {v0}, Ljsw;->isDone()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lgcf;->a:Lfyo;
-
-    iget-object v0, v0, Lfyo;->d:Ljvi;
-
-    invoke-virtual {v0}, Ljsw;->isDone()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
+    iput-object v4, v2, Lenz;->f:Ljava/util/List;
 
     :cond_0
-    move v0, v1
+    iget-object v2, v2, Lenz;->f:Ljava/util/List;
 
-    goto :goto_0
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v1, p0, Lgcf;->a:Lgbc;
+
+    iget-object v2, p0, Lgcf;->g:Lgay;
+
+    iget-wide v4, v0, Lgbg;->a:D
+
+    invoke-virtual {v1, v2, v4, v5}, Lgbc;->a(Lgay;D)Lgay;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lgbg;->b:Ljrf;
+
+    invoke-virtual {v2}, Ljrf;->a()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lgcf;->j:Lenz;
+
+    iget-object v0, v0, Lgbg;->b:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Leny;
+
+    new-instance v3, Ljzx;
+
+    invoke-direct {v3}, Ljzx;-><init>()V
+
+    const/4 v4, -0x1
+
+    iput v4, v3, Ljzx;->a:I
+
+    iget v4, v0, Leny;->b:F
+
+    iput v4, v3, Ljzx;->b:F
+
+    iput v6, v3, Ljzx;->c:F
+
+    iput v6, v3, Ljzx;->d:F
+
+    iget-wide v4, v0, Leny;->c:J
+
+    iput-wide v4, v3, Ljzx;->e:J
+
+    iget-object v0, v0, Leny;->a:Leoa;
+
+    iget-object v4, v2, Lenz;->a:Ljava/lang/Object;
+
+    monitor-enter v4
+
+    :try_start_1
+    iget-object v5, v2, Lenz;->b:Ljava/util/List;
+
+    invoke-interface {v5, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v2, v2, Lenz;->c:Ljava/util/List;
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :cond_1
-    move v0, v1
+    if-eqz v1, :cond_2
 
-    goto :goto_0
-.end method
+    iget-object v0, p0, Lgcf;->c:Lgax;
 
-.method public final b()V
-    .locals 2
+    iget-object v1, v1, Lgay;->b:Link;
 
-    const/4 v1, 0x0
+    iget-object v2, p0, Lgcf;->d:Ljava/util/concurrent/Executor;
 
-    iget-object v0, p0, Lgcf;->a:Lfyo;
+    invoke-interface {v0, v1, v2}, Lgax;->a(Link;Ljava/util/concurrent/Executor;)V
 
-    iget-object v0, v0, Lfyo;->d:Ljvi;
+    :cond_2
+    iget-object v0, p0, Lgcf;->k:Lihs;
 
-    invoke-virtual {v0, v1}, Ljsw;->cancel(Z)Z
-
-    iget-object v0, p0, Lgcf;->a:Lfyo;
-
-    iget-object v0, v0, Lfyo;->f:Ljvi;
-
-    invoke-virtual {v0, v1}, Ljsw;->cancel(Z)Z
-
-    iget-object v0, p0, Lgcf;->a:Lfyo;
-
-    iget-object v0, v0, Lfyo;->e:Ljvi;
-
-    invoke-virtual {v0, v1}, Ljsw;->cancel(Z)Z
+    invoke-interface {v0}, Lihs;->a()V
 
     return-void
-.end method
 
-.method public final close()V
-    .locals 0
+    :catchall_0
+    move-exception v0
 
-    return-void
+    :try_start_2
+    monitor-exit v3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_3
+    monitor-exit v4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v0
 .end method

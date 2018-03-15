@@ -1,35 +1,64 @@
-.class final Lcde;
-.super Likn;
+.class public final Lcde;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Lcdd;
+
+# static fields
+.field public static final a:Lcde;
 
 
 # direct methods
-.method constructor <init>(Lcdd;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcde;
+
+    invoke-direct {v0}, Lcde;-><init>()V
+
+    sput-object v0, Lcde;->a:Lcde;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lcde;->a:Lcdd;
-
-    invoke-direct {p0}, Likn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Ljht;
+    new-instance v0, Lfhh;
 
-    iget-object v0, p0, Lcde;->a:Lcdd;
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->REPROCESS_EFFECTIVE_EXPOSURE_FACTOR:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iget-object v0, v0, Lcdd;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    return-void
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Lfhh;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    return-object v0
 .end method

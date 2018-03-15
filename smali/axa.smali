@@ -1,56 +1,87 @@
-.class public final Laxa;
+.class final synthetic Laxa;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
-# static fields
-.field public static final a:Laxa;
+# instance fields
+.field private final a:Laww;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Laxa;
-
-    invoke-direct {v0}, Laxa;-><init>()V
-
-    sput-object v0, Laxa;->a:Laxa;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Laww;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Laxa;->a:Laww;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 5
 
-    const-string v0, "IOExecutor"
+    iget-object v1, p0, Laxa;->a:Laww;
 
-    const/4 v1, 0x1
+    new-instance v2, Landroid/content/Intent;
 
-    invoke-static {v0, v1}, Lapb;->b(Ljava/lang/String;I)Ljava/util/concurrent/ExecutorService;
+    const-string v0, "android.settings.APPLICATION_DETAILS_SETTINGS"
+
+    invoke-direct {v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "android.intent.category.DEFAULT"
+
+    invoke-virtual {v2, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v3, "package:"
+
+    iget-object v0, v1, Laww;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    return-object v0
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v3, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    iget-object v0, v1, Laww;->d:Lawr;
+
+    invoke-virtual {v0, v2}, Lawr;->a(Landroid/content/Intent;)V
+
+    iget-object v0, v1, Laww;->b:Lawi;
+
+    const-string v1, "Closing until required permissions are granted."
+
+    invoke-virtual {v0, v1}, Lawi;->a(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

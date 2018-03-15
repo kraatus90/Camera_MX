@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Ukubhamuka (%1$d Izithombe)</item>
+        <item quantity="one">Ukubhamuka (%1$d Izithombe)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d izithombe zilondoloziwe</item>
         <item quantity="one">%1$d izithombe zilondoloziwe</item>

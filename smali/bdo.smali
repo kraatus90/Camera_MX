@@ -1,75 +1,71 @@
 .class public final Lbdo;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
-# static fields
-.field public static final a:Lbku;
-
-.field public static final b:Lbku;
-
-.field public static final c:Lbkx;
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    .locals 0
 
-    new-instance v0, Lbku;
+    iput-object p1, p0, Lbdo;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    const-string v1, "camcorder.h265"
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
+
+    iget-object v0, p0, Lbdo;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
+
+    const/16 v1, 0xff
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 3
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
+    iget-object v0, p0, Lbdo;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    sput-object v0, Lbdo;->a:Lbku;
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/burstchip/BurstChip;->setVisibility(I)V
 
-    new-instance v0, Lbku;
+    iget-object v0, p0, Lbdo;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    const-string v1, "camcorder.fastswitch"
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/burstchip/BurstChip;->setAlpha(F)V
 
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
+    iget-object v0, p0, Lbdo;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    sput-object v0, Lbdo;->b:Lbku;
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    new-instance v0, Lbkx;
+    invoke-virtual {v0, v2}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setAlpha(I)V
 
-    const-string v1, "camcorder.capture_rate"
+    iget-object v0, p0, Lbdo;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    const/16 v2, 0x1e
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, v2, v2}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setVisible(ZZ)Z
 
-    move-result-object v2
+    iget-object v0, p0, Lbdo;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    const/16 v3, 0x3c
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    const/16 v4, 0x78
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    const/16 v5, 0xf0
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-static {v2, v3, v4, v5}, Ljle;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljle;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lbkx;-><init>(Ljava/lang/String;Ljle;)V
-
-    sput-object v0, Lbdo;->c:Lbkx;
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     return-void
 .end method

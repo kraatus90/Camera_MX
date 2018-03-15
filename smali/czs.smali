@@ -1,102 +1,70 @@
-.class public final Lczs;
+.class final Lczs;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lcxp;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private final synthetic a:Lczn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lczn;)V
     .locals 0
 
+    iput-object p1, p0, Lczs;->a:Lczn;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lczs;->a:Ljxn;
-
-    iput-object p2, p0, Lczs;->b:Ljxn;
-
-    iput-object p3, p0, Lczs;->c:Ljxn;
-
-    iput-object p4, p0, Lczs;->d:Ljxn;
-
-    iput-object p5, p0, Lczs;->e:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 3
 
-    iget-object v0, p0, Lczs;->a:Ljxn;
+    iget-object v0, p0, Lczs;->a:Lczn;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lczn;->d:Ljrf;
 
-    move-result-object v3
+    invoke-virtual {v0}, Ljrf;->a()Z
 
-    check-cast v3, Lczt;
+    move-result v0
 
-    iget-object v0, p0, Lczs;->b:Ljxn;
+    if-nez v0, :cond_0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lczs;->a:Lczn;
 
-    move-result-object v1
+    const/4 v1, 0x1
 
-    check-cast v1, Lbsa;
+    iput-boolean v1, v0, Lczn;->f:Z
 
-    iget-object v0, p0, Lczs;->c:Ljxn;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lbvl;
-
-    iget-object v0, p0, Lczs;->d:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v0, p0, Lczs;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lguc;
-
-    new-instance v0, Lcqi;
-
-    invoke-direct/range {v0 .. v5}, Lcqi;-><init>(Lbsa;Lbvl;Lgcp;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;)V
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuw;
-
+    :goto_0
     return-object v0
+
+    :cond_0
+    new-instance v1, Ldaa;
+
+    iget-object v2, p0, Lczs;->a:Lczn;
+
+    iget-object v0, p0, Lczs;->a:Lczn;
+
+    iget-object v0, v0, Lczn;->d:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [B
+
+    invoke-direct {v1, v2, v0}, Ldaa;-><init>(Lcxq;[B)V
+
+    move-object v0, v1
+
+    goto :goto_0
 .end method

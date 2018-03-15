@@ -2,63 +2,70 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# static fields
+.field public static final a:Lgsp;
 
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field public static final b:Lgsp;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    iput-object p1, p0, Lgsq;->a:Ljxn;
+    const v3, 0x3ecccccd    # 0.4f
 
-    iput-object p2, p0, Lgsq;->b:Ljxn;
+    const v2, 0x3e4ccccd    # 0.2f
+
+    const/4 v1, 0x0
+
+    new-instance v0, Lgsp;
+
+    invoke-direct {v0, v3, v2}, Lgsp;-><init>(FF)V
+
+    sput-object v0, Lgsq;->a:Lgsp;
+
+    new-instance v0, Lgsp;
+
+    invoke-direct {v0, v1, v2}, Lgsp;-><init>(FF)V
+
+    new-instance v0, Lgsp;
+
+    invoke-direct {v0, v3, v4}, Lgsp;-><init>(FF)V
+
+    sput-object v0, Lgsq;->b:Lgsp;
+
+    new-instance v0, Lgsp;
+
+    invoke-direct {v0, v1, v4}, Lgsp;-><init>(FF)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lgsq;
-
-    invoke-direct {v0, p0, p1}, Lgsq;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public static a(Lgsp;Lgsp;F)F
     .locals 3
 
-    new-instance v2, Lgsp;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    iget-object v0, p0, Lgsq;->a:Ljxn;
+    invoke-virtual {p0, p2}, Lgsp;->a(F)F
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    sub-float/2addr v0, v1
 
-    check-cast v0, Landroid/content/SharedPreferences;
+    iget-object v1, p1, Lgsp;->a:Lgso;
 
-    iget-object v1, p0, Lgsq;->b:Ljxn;
+    iget-object v2, p1, Lgsp;->b:Lgso;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0, v2}, Lgsp;->a(FLgso;)F
 
-    move-result-object v1
+    move-result v0
 
-    check-cast v1, Lhax;
+    invoke-virtual {v1, v0}, Lgso;->a(F)F
 
-    invoke-direct {v2, v0, v1}, Lgsp;-><init>(Landroid/content/SharedPreferences;Lhax;)V
+    move-result v0
 
-    return-object v2
+    return v0
 .end method

@@ -1,79 +1,52 @@
-.class final Lekj;
+.class public final Lekj;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:I
+
+.field private final synthetic b:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;I)V
+    .locals 0
 
-    const-string v0, "LSScorer"
+    iput-object p1, p0, Lekj;->b:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput p2, p0, Lekj;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Lgpa;)D
-    .locals 9
 
-    iget-object v1, p0, Lgpa;->b:Liil;
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    invoke-interface {v1}, Liil;->d()Ljava/util/List;
+    iget-object v0, p0, Lekj;->b:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
-    move-result-object v0
+    const v1, 0x7f0e0160
 
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    move-object v4, v0
+    check-cast v0, Landroid/widget/TextView;
 
-    check-cast v4, Liim;
+    iget v1, p0, Lekj;->a:I
 
-    invoke-interface {v1}, Liil;->f()I
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    move-result v0
+    const/4 v1, 0x0
 
-    invoke-interface {v1}, Liil;->c()I
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    move-result v1
-
-    invoke-interface {v4}, Liim;->c()Ljava/nio/ByteBuffer;
-
-    move-result-object v2
-
-    invoke-interface {v4}, Liim;->b()I
-
-    move-result v3
-
-    invoke-interface {v4}, Liim;->a()I
-
-    move-result v4
-
-    iget-object v5, p0, Lgpa;->f:Landroid/graphics/Rect;
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    iget-object v6, p0, Lgpa;->f:Landroid/graphics/Rect;
-
-    iget v6, v6, Landroid/graphics/Rect;->top:I
-
-    iget-object v7, p0, Lgpa;->f:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->right:I
-
-    iget-object v8, p0, Lgpa;->f:Landroid/graphics/Rect;
-
-    iget v8, v8, Landroid/graphics/Rect;->bottom:I
-
-    invoke-static/range {v0 .. v8}, Lcom/android/camera/util/ImgUtilNative;->a(IILjava/nio/ByteBuffer;IIIIII)F
-
-    move-result v0
-
-    float-to-double v0, v0
-
-    return-wide v0
+    return-void
 .end method

@@ -1,67 +1,78 @@
-.class public final Leio;
+.class final Leio;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Leij;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
+.implements Lekq;
 
 
 # instance fields
-.field private a:Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;
+.field private final synthetic a:Lein;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;)V
+.method constructor <init>(Lein;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leio;->a:Lein;
 
-    iput-object p1, p0, Leio;->a:Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liic;DD)V
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 4
 
-    iget-object v0, p0, Leio;->a:Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;
+    check-cast p1, Ljava/lang/Float;
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->a:Ljava/lang/Object;
+    iget-object v0, p0, Leio;->a:Lein;
+
+    iget-object v0, v0, Lein;->H:Lejb;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v1
+
+    iput v1, v0, Lejb;->a:F
+
+    invoke-virtual {v0}, Lejb;->a()V
+
+    iget-object v0, p0, Leio;->a:Lein;
+
+    iget-object v0, v0, Lein;->v:Lbts;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Leio;->a:Lein;
+
+    iget-object v0, v0, Lein;->v:Lbts;
+
+    iget-object v1, v0, Lbts;->k:Ljava/lang/Object;
 
     monitor-enter v1
 
     :try_start_0
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->b:Ljava/util/List;
+    iget-boolean v2, v0, Lbts;->h:Z
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    if-nez v2, :cond_0
 
-    move-result v2
+    iget-object v2, v0, Lbts;->i:Landroid/os/Handler;
 
-    const/16 v3, 0x1e
+    iget-object v3, v0, Lbts;->l:Ljava/lang/Runnable;
 
-    if-ge v2, v3, :cond_0
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-static {p1, p2, p3, p4, p5}, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->a(Liic;DD)Ljqj;
+    const/4 v2, 0x1
 
-    move-result-object v2
-
-    iget-object v3, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->b:Ljava/util/List;
-
-    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->a(Ljqj;)V
+    iput-boolean v2, v0, Lbts;->h:Z
 
     :cond_0
     monitor-exit v1
 
+    :cond_1
     return-void
 
     :catchall_0

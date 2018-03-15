@@ -1,28 +1,23 @@
-.class final Lahf;
+.class public interface abstract Lahf;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Larw;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public abstract a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.end method
 
-    new-instance v0, Lahe;
+.method public abstract a()V
+.end method
 
-    invoke-direct {v0}, Lahe;-><init>()V
+.method public abstract a(F)V
+.end method
 
-    return-object v0
+.method public abstract a(I)V
+.end method
+
+.method public abstract a(Landroid/graphics/Bitmap;)V
+.end method
+
+.method public abstract b(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 .end method

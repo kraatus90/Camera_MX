@@ -1,17 +1,41 @@
-.class public interface abstract Lipc;
+.class final synthetic Lipc;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field private final a:Ljava/io/File;
+
+
+# direct methods
+.method constructor <init>(Ljava/io/File;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lipc;->a:Ljava/io/File;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final call()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract a(Ljgl;)V
-.end method
+    iget-object v0, p0, Lipc;->a:Ljava/io/File;
 
-.method public abstract b()V
-.end method
+    invoke-virtual {v0}, Ljava/io/File;->length()J
 
-.method public abstract c()V
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,54 +1,174 @@
 .class final Lhgh;
-.super Lerb;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:[B
+
+.field private final synthetic b:Laqw;
+
+.field private final synthetic c:Lhgc;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>(Lhgc;[BLaqw;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lhgh;->c:Lhgc;
 
-    invoke-direct {p0, p1, v0}, Lerb;-><init>(Ljava/lang/String;I)V
+    iput-object p2, p0, Lhgh;->a:[B
+
+    iput-object p3, p0, Lhgh;->b:Laqw;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgsm;Lgds;I)V
-    .locals 3
+.method public final run()V
+    .locals 5
 
-    if-gtz p3, :cond_0
+    iget-object v0, p0, Lhgh;->c:Lhgc;
 
-    invoke-virtual {p1}, Lgsm;->a()Landroid/content/SharedPreferences;
+    iget-object v0, v0, Lhgc;->b:Landroid/content/Context;
 
-    move-result-object v0
-
-    const-string v1, "refocus_show_tutorial"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Lgsm;->a()Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lacj;->b(Landroid/content/Context;)Lact;
 
     move-result-object v0
 
-    const-string v1, "refocus_show_tutorial"
+    const-class v1, [B
 
-    invoke-static {v0, v1}, Lhgh;->a(Landroid/content/SharedPreferences;Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lact;->a(Ljava/lang/Class;)Lacq;
 
-    move-result v0
+    move-result-object v1
 
-    const-string v1, "default_scope"
+    sget-object v0, Laqm;->b:Laqm;
 
-    const-string v2, "refocus_show_tutorial"
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1, v1, v2, v0}, Lgsm;->b(Ljava/lang/String;Ljava/lang/String;Z)V
+    new-instance v0, Laqm;
+
+    invoke-direct {v0}, Laqm;-><init>()V
+
+    invoke-virtual {v0}, Laqm;->c()Laqm;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Laqm;->g()Laqm;
+
+    move-result-object v0
+
+    sput-object v0, Laqm;->b:Laqm;
 
     :cond_0
+    sget-object v2, Laqm;->b:Laqm;
+
+    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    sget-object v3, Lamd;->b:Ladv;
+
+    const-string v4, "Argument must not be null"
+
+    invoke-static {v0, v4}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap$CompressFormat;
+
+    invoke-virtual {v2, v3, v0}, Laqm;->a(Ladv;Ljava/lang/Object;)Laqm;
+
+    move-result-object v0
+
+    sget-object v2, Lamd;->a:Ladv;
+
+    const/16 v3, 0x1e
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Laqm;->a(Ladv;Ljava/lang/Object;)Laqm;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lacq;->a(Laqm;)Lacq;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lhgh;->a:[B
+
+    invoke-virtual {v0, v1}, Lacq;->a(Ljava/lang/Object;)Lacq;
+
+    move-result-object v0
+
+    iget-object v1, v0, Lacq;->a:Laqm;
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v1, v2}, Laqm;->b(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    sget-object v1, Lafv;->a:Lafv;
+
+    invoke-static {v1}, Laqm;->a(Lafv;)Laqm;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lacq;->a(Laqm;)Lacq;
+
+    move-result-object v0
+
+    :cond_1
+    iget-object v1, v0, Lacq;->a:Laqm;
+
+    const/16 v2, 0x100
+
+    invoke-virtual {v1, v2}, Laqm;->b(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    sget-object v1, Laqm;->a:Laqm;
+
+    if-nez v1, :cond_2
+
+    new-instance v1, Laqm;
+
+    invoke-direct {v1}, Laqm;-><init>()V
+
+    invoke-virtual {v1}, Laqm;->a()Laqm;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Laqm;->g()Laqm;
+
+    move-result-object v1
+
+    sput-object v1, Laqm;->a:Laqm;
+
+    :cond_2
+    sget-object v1, Laqm;->a:Laqm;
+
+    invoke-virtual {v0, v1}, Lacq;->a(Laqm;)Lacq;
+
+    move-result-object v0
+
+    :cond_3
+    iget-object v1, p0, Lhgh;->b:Laqw;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lacq;->a(Laqy;Laql;)Laqy;
+
     return-void
 .end method

@@ -171,9 +171,9 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->photoButtonFadeAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Ljy;
+    new-instance v1, Ljs;
 
-    invoke-direct {v1}, Ljy;-><init>()V
+    invoke-direct {v1}, Ljs;-><init>()V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
@@ -354,24 +354,24 @@
     return-void
 .end method
 
-.method public getBackgroundColorProperty()Lgyz;
+.method public getBackgroundColorProperty()Lhai;
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getBackgroundColorProperty()Lgyz;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getBackgroundColorProperty()Lhai;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getCameraSwitchColorProperty()Lgyz;
+.method public getCameraSwitchColorProperty()Lhai;
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->getCameraSwitchColorProperty()Lgyz;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->getCameraSwitchColorProperty()Lhai;
 
     move-result-object v0
 
@@ -611,30 +611,6 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    const-string v0, "CHRIS"
-
-    const/16 v1, 0x15
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "switch to photo "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
     if-eqz p2, :cond_1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->photoSwitchButton:Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;
@@ -799,6 +775,26 @@
     return-void
 .end method
 
+.method public startImaxCapture()V
+    .locals 4
+
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0, v3, v3, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
+
+    return-void
+.end method
+
 .method public startLensBlurCapture()V
     .locals 3
 
@@ -939,6 +935,26 @@
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
     iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->hfrButton:Lcom/google/android/apps/camera/bottombar/HfrButton;
+
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
+
+    return-void
+.end method
+
+.method public stopImaxCapture()V
+    .locals 4
+
+    const/4 v3, 0x1
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0, v3, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    const/4 v1, 0x0
 
     iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
@@ -1248,7 +1264,7 @@
 .method public wireListeners()V
     .locals 2
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
@@ -1295,6 +1311,14 @@
     invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$Lambda$2;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/SnapshotButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getSnapshotButton()Lcom/google/android/apps/camera/bottombar/SnapshotButton;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/SnapshotButton;->wirePressedStateAnimationListener()V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 

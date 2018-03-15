@@ -1,63 +1,84 @@
-.class final synthetic Linj;
+.class public Linj;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Linp;
 
 
 # instance fields
-.field private a:Lini;
-
-.field private b:Landroid/media/MediaFormat;
-
-.field private c:Ljvi;
+.field private final a:Linp;
 
 
 # direct methods
-.method constructor <init>(Lini;Landroid/media/MediaFormat;Ljvi;)V
-    .locals 0
+.method public constructor <init>(Linp;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Linj;->a:Lini;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p2, p0, Linj;->b:Landroid/media/MediaFormat;
+    move-result-object v0
 
-    iput-object p3, p0, Linj;->c:Ljvi;
+    check-cast v0, Linp;
+
+    iput-object v0, p0, Linj;->a:Linp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final a()I
+    .locals 1
 
-    iget-object v0, p0, Linj;->a:Lini;
+    iget-object v0, p0, Linj;->a:Linp;
 
-    iget-object v1, p0, Linj;->b:Landroid/media/MediaFormat;
+    invoke-interface {v0}, Linp;->a()I
 
-    iget-object v2, p0, Linj;->c:Ljvi;
+    move-result v0
 
-    check-cast p1, Ling;
+    return v0
+.end method
 
-    iget-object v0, v0, Lini;->a:Ljava/util/List;
+.method public a(J)Link;
+    .locals 1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iget-object v0, p0, Linj;->a:Linp;
 
-    iget-object v0, p1, Ling;->b:Ljuw;
-
-    new-instance v3, Link;
-
-    invoke-direct {v3, v1}, Link;-><init>(Landroid/media/MediaFormat;)V
-
-    sget-object v1, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v3, v1}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
+    invoke-interface {v0, p1, p2}, Linp;->a(J)Link;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljvi;->a(Ljuw;)Z
+    return-object v0
+.end method
 
-    return-object p1
+.method public a(Link;)V
+    .locals 1
+
+    iget-object v0, p0, Linj;->a:Linp;
+
+    invoke-interface {v0, p1}, Linp;->a(Link;)V
+
+    return-void
+.end method
+
+.method public a(Linr;Landroid/os/Handler;)V
+    .locals 1
+
+    iget-object v0, p0, Linj;->a:Linp;
+
+    invoke-interface {v0, p1, p2}, Linp;->a(Linr;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public close()V
+    .locals 1
+
+    iget-object v0, p0, Linj;->a:Linp;
+
+    invoke-interface {v0}, Linp;->close()V
+
+    return-void
 .end method

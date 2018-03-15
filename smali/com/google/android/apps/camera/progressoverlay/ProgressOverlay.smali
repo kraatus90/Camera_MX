@@ -37,7 +37,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040069
+    const v1, 0x7f040060
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02012d
+    const v1, 0x7f020130
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

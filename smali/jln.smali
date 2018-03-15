@@ -1,43 +1,179 @@
 .class public final Ljln;
-.super Ljoe;
+.super Ljks;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Ljava/util/Iterator;
+.field private final a:Ljkq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Iterator;)V
+.method public constructor <init>(Ljkq;)V
     .locals 0
 
-    iput-object p1, p0, Ljln;->a:Ljava/util/Iterator;
+    invoke-direct {p0}, Ljks;-><init>()V
 
-    invoke-direct {p0}, Ljoe;-><init>()V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljln;->a:Ljkq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 1
+.method public final a(Ljkl;)Ljava/util/List;
+    .locals 8
 
-    iget-object v0, p0, Ljln;->a:Ljava/util/Iterator;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p1}, Ljkl;->d()Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    move-object v0, v1
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Ljln;->a:Ljkq;
+
+    invoke-virtual {v0, p1}, Ljkq;->a(Ljkl;)Ljkl;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p1}, Ljkl;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_1
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    iget-object v0, v2, Ljkl;->a:Ljava/util/List;
+
+    invoke-static {v0}, Ljuh;->a(Ljava/util/Collection;)Ljuh;
+
+    move-result-object v0
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Ljkl;
+
+    iget-object v5, p1, Ljkl;->b:Ljava/util/Set;
+
+    invoke-direct {v0, v3, v5}, Ljkl;-><init>(Ljava/util/Collection;Ljava/util/Set;)V
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {v3}, Ljava/util/List;->clear()V
+
+    :cond_1
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_2
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    new-instance v0, Ljkl;
+
+    iget-object v2, p1, Ljkl;->b:Ljava/util/Set;
+
+    invoke-direct {v0, v3, v2}, Ljkl;-><init>(Ljava/util/Collection;Ljava/util/Set;)V
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_3
+    move-object v0, v1
+
+    goto :goto_0
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    iget-object v0, p0, Ljln;->a:Ljava/util/Iterator;
+    iget-object v0, p0, Ljln;->a:Ljkq;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1b
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "FilteredSegmenter [filter="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

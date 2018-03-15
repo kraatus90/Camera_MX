@@ -3,20 +3,20 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldak;->a:Ljxn;
+    iput-object p1, p0, Ldak;->a:Lkgv;
 
     return-void
 .end method
@@ -24,63 +24,27 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Ldak;->a:Ljxn;
+    iget-object v0, p0, Ldak;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbli;
-
-    sget-object v1, Lbbw;->c:Lbbw;
-
-    sget-object v2, Lbdo;->c:Lbkx;
-
-    invoke-virtual {v0, v2}, Lbli;->a(Lbkx;)Ljht;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    check-cast v0, Ldux;
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    const/16 v2, 0xf0
-
-    if-ne v0, v2, :cond_0
-
-    sget-object v0, Lbbw;->d:Lbbw;
-
-    :goto_0
-    new-instance v1, Liag;
-
-    invoke-direct {v1, v0}, Liag;-><init>(Lbbw;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liag;
+    check-cast v0, Lkeh;
 
     return-object v0
-
-    :cond_0
-    move-object v0, v1
-
-    goto :goto_0
 .end method

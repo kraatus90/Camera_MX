@@ -17,7 +17,7 @@
 
     const-string v0, "FsTransThumbnail"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method

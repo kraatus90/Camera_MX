@@ -1,69 +1,70 @@
-.class final Lfbv;
-.super Lfdu;
+.class public final Lfbv;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfbr;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfbr;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfbv;->a:Lfbr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfdu;-><init>(Lfdq;)V
+    iput-object p1, p0, Lfbv;->a:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;)Lfbv;
+    .locals 1
+
+    new-instance v0, Lfbv;
+
+    invoke-direct {v0, p0}, Lfbv;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final H()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfbv;->a:Lfbr;
+    iget-object v0, p0, Lfbv;->a:Lkgv;
 
-    iget-object v0, v0, Lfbr;->a:Lgvj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lfdu;->H()V
+    check-cast v0, Lfci;
 
-    iget-object v0, p0, Lfbv;->a:Lfbr;
+    iget-object v0, v0, Lfci;->e:Lfhq;
 
-    iget-object v0, v0, Lfbr;->a:Lgvj;
+    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuh;
 
-    iget-object v1, p0, Lfbv;->a:Lfbr;
+    move-result-object v0
 
-    iget-object v1, v1, Lfbr;->d:Lgvl;
+    invoke-static {v0}, Lffm;->a(Ljava/util/Collection;)Lfhm;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    move-result-object v0
 
-    return-void
-.end method
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
 
-.method public final I()V
-    .locals 2
+    move-result-object v0
 
-    iget-object v0, p0, Lfbv;->a:Lfbr;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, v0, Lfbr;->a:Lgvj;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lfdu;->I()V
+    check-cast v0, Ljava/util/Set;
 
-    iget-object v0, p0, Lfbv;->a:Lfbr;
-
-    iget-object v0, v0, Lfbr;->a:Lgvj;
-
-    iget-object v1, p0, Lfbv;->a:Lfbr;
-
-    iget-object v1, v1, Lfbr;->b:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

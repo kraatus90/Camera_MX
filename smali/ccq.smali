@@ -1,36 +1,68 @@
-.class final Lccq;
+.class public final Lccq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>()V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lccq;->a:Lkgv;
+
+    iput-object p2, p0, Lccq;->b:Lkgv;
+
+    iput-object p3, p0, Lccq;->c:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;)Lccq;
+    .locals 1
+
+    new-instance v0, Lccq;
+
+    invoke-direct {v0, p0, p1, p2}, Lccq;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    check-cast p1, Lcdo;
+    iget-object v0, p0, Lccq;->a:Lkgv;
 
-    check-cast p2, Lcdo;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget v0, p2, Lcdo;->b:F
+    iget-object v0, p0, Lccq;->b:Lkgv;
 
-    iget v1, p1, Lcdo;->b:F
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
+    move-result-object v0
 
-    move-result v0
+    check-cast v0, Lffz;
 
-    return v0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lffz;
+
+    return-object v0
 .end method

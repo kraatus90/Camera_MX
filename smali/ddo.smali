@@ -1,150 +1,170 @@
-.class public final Lddo;
-.super Ljava/lang/Object;
+.class final Lddo;
+.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
+.field private final synthetic b:Lddn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lddn;Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lddo;->b:Lddn;
 
-    iput-object p1, p0, Lddo;->a:Ljxn;
+    iput-object p2, p0, Lddo;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iput-object p2, p0, Lddo;->b:Ljxn;
-
-    iput-object p3, p0, Lddo;->c:Ljxn;
-
-    iput-object p4, p0, Lddo;->d:Ljxn;
-
-    iput-object p5, p0, Lddo;->e:Ljxn;
-
-    iput-object p6, p0, Lddo;->f:Ljxn;
-
-    iput-object p7, p0, Lddo;->g:Ljxn;
-
-    iput-object p8, p0, Lddo;->h:Ljxn;
-
-    iput-object p9, p0, Lddo;->i:Ljxn;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 10
+.method public final onFpsSwitch(I)V
+    .locals 5
 
-    iget-object v0, p0, Lddo;->a:Ljxn;
+    iget-object v0, p0, Lddo;->b:Lddn;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, v0, Lddn;->k:Ljava/lang/Object;
 
-    move-result-object v0
+    monitor-enter v1
 
-    move-object v2, v0
+    :try_start_0
+    iget-object v0, p0, Lddo;->b:Lddn;
 
-    check-cast v2, Lfic;
+    iget-object v0, v0, Lddn;->n:Ldeg;
 
-    iget-object v0, p0, Lddo;->b:Ljxn;
+    sget-object v2, Ldeg;->d:Ldeg;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-eq v0, v2, :cond_0
 
-    move-result-object v1
+    sget-object v0, Lddn;->c:Ljava/lang/String;
 
-    check-cast v1, Lews;
+    iget-object v2, p0, Lddo;->b:Lddn;
 
-    iget-object v0, p0, Lddo;->c:Ljxn;
+    iget-object v2, v2, Lddn;->n:Ldeg;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    check-cast v4, Landroid/view/LayoutInflater;
-
-    iget-object v0, p0, Lddo;->d:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    check-cast v3, Landroid/content/res/Resources;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    iget-object v0, p0, Lddo;->e:Ljxn;
+    move-result v3
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    add-int/lit8 v3, v3, 0x1f
 
-    move-result-object v5
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    check-cast v5, Lest;
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, p0, Lddo;->f:Ljxn;
+    const-string v3, "Do nothing onFpsSwitch. mState="
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v3
 
-    check-cast v6, Lfeq;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lddo;->g:Ljxn;
+    move-result-object v2
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v2
 
-    check-cast v7, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    invoke-static {v0, v2}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lddo;->h:Ljxn;
+    monitor-exit v1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    :goto_0
+    return-void
 
-    move-result-object v8
+    :cond_0
+    iget-object v0, p0, Lddo;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    check-cast v8, Lbjc;
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lddo;->i:Ljxn;
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Lidx;->c:Lidx;
 
-    move-result-object v9
+    if-nez p1, :cond_2
 
-    check-cast v9, Lhem;
+    sget-object v0, Lidx;->c:Lidx;
 
-    new-instance v0, Lhbo;
+    :cond_1
+    :goto_1
+    iget-object v2, p0, Lddo;->b:Lddn;
 
-    iget-object v2, v2, Lfic;->a:Landroid/widget/FrameLayout;
+    invoke-virtual {v2, v0}, Lddn;->a(Lidx;)V
 
-    invoke-direct/range {v0 .. v9}, Lhbo;-><init>(Lews;Landroid/view/View;Landroid/content/res/Resources;Landroid/view/LayoutInflater;Lest;Lfeo;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lbjc;Lhem;)V
+    monitor-exit v1
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    goto :goto_0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v0, Lhbo;
+    throw v0
 
-    return-object v0
+    :cond_2
+    const/4 v2, 0x1
+
+    if-ne p1, v2, :cond_1
+
+    :try_start_1
+    sget-object v0, Lidx;->d:Lidx;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
+.end method
+
+.method public final onThumbnailButtonClicked()V
+    .locals 2
+
+    iget-object v0, p0, Lddo;->b:Lddn;
+
+    iget-object v1, v0, Lddn;->k:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lddo;->b:Lddn;
+
+    iget-object v0, v0, Lddn;->o:Ldej;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lddo;->b:Lddn;
+
+    iget-object v0, v0, Lddn;->o:Ldej;
+
+    invoke-interface {v0}, Ldej;->e()V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

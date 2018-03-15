@@ -1,79 +1,118 @@
 .class public final Lhoq;
-.super Lhlx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lhls;Lhkn;Lhko;)V
-    .locals 7
+.method public constructor <init>()V
+    .locals 0
 
-    const/16 v3, 0x3f
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lhlx;-><init>(Landroid/content/Context;Landroid/os/Looper;ILhls;Lhkn;Lhko;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a(Landroid/os/IBinder;)Landroid/os/IInterface;
-    .locals 2
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 5
 
-    if-nez p1, :cond_0
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
+
+    move-result v2
+
+    const/4 v1, 0x0
 
     const/4 v0, 0x0
 
     :goto_0
-    return-object v0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v3
+
+    if-ge v3, v2, :cond_0
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    const v4, 0xffff
+
+    and-int/2addr v4, v3
+
+    packed-switch v4, :pswitch_data_0
+
+    invoke-static {p1, v3}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v3}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :pswitch_1
+    invoke-static {p1, v3}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v0
+
+    goto :goto_0
 
     :cond_0
-    const-string v0, "com.google.android.gms.googlehelp.internal.common.IGoogleHelpService"
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    move-result v3
 
-    move-result-object v0
+    if-eq v3, v2, :cond_1
 
-    if-eqz v0, :cond_1
+    new-instance v0, Lacp;
 
-    instance-of v1, v0, Lhor;
+    const/16 v1, 0x25
 
-    if-eqz v1, :cond_1
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    check-cast v0, Lhor;
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    goto :goto_0
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
 
     :cond_1
-    new-instance v0, Lhor;
+    new-instance v2, Lcom/google/android/gms/feedback/LogOptions;
 
-    invoke-direct {v0, p1}, Lhor;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/feedback/LogOptions;-><init>(Ljava/lang/String;Z)V
 
-    goto :goto_0
+    return-object v2
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method
 
-.method protected final a()Ljava/lang/String;
+.method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "com.google.android.gms.googlehelp.service.GoogleHelpService.START"
-
-    return-object v0
-.end method
-
-.method protected final b()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.googlehelp.internal.common.IGoogleHelpService"
+    new-array v0, p1, [Lcom/google/android/gms/feedback/LogOptions;
 
     return-object v0
 .end method

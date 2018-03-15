@@ -1,73 +1,109 @@
-.class final Ljje;
-.super Ljiz;
+.class public final Ljje;
+.super Liqd;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/Set;
 
 
 # instance fields
-.field private synthetic e:Ljio;
+.field private final synthetic a:Ljja;
 
 
 # direct methods
-.method constructor <init>(Ljio;Ljava/lang/Object;Ljava/util/Set;)V
-    .locals 1
+.method public constructor <init>(Ljja;)V
+    .locals 0
 
-    iput-object p1, p0, Ljje;->e:Ljio;
+    iput-object p1, p0, Ljje;->a:Ljja;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, p3, v0}, Ljiz;-><init>(Ljio;Ljava/lang/Object;Ljava/util/Collection;Ljiz;)V
+    invoke-direct {p0}, Liqd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 4
+.method public final synthetic a_(Ljava/lang/Object;)V
+    .locals 7
 
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+    check-cast p1, Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :cond_0
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_1
-    invoke-virtual {p0}, Ljje;->size()I
+    check-cast v0, Ljjb;
+
+    iget-wide v4, v0, Ljjb;->a:J
+
+    iget-object v1, v0, Ljjb;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    iget-object v0, p0, Ljje;->b:Ljava/util/Collection;
+    if-eqz v1, :cond_0
 
-    check-cast v0, Ljava/util/Set;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-static {v0, p1}, Liui;->a(Ljava/util/Set;Ljava/util/Collection;)Z
+    move-result-object v1
 
-    move-result v0
+    check-cast v1, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    if-eqz v0, :cond_0
+    iget-object v6, p0, Ljje;->a:Ljja;
 
-    iget-object v2, p0, Ljje;->b:Ljava/util/Collection;
+    iget-object v6, v6, Ljja;->g:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    invoke-interface {v2}, Ljava/util/Collection;->size()I
+    invoke-interface {v6, v4, v5, v1}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->setFeatureValue(JLcom/google/android/libraries/smartburst/utils/Feature;)Z
 
-    move-result v2
+    goto :goto_1
 
-    iget-object v3, p0, Ljje;->e:Ljio;
+    :cond_0
+    iget-object v1, p0, Ljje;->a:Ljja;
 
-    sub-int v1, v2, v1
+    iget-object v1, v1, Ljja;->e:Ljnq;
 
-    invoke-static {v3, v1}, Ljio;->a(Ljio;I)I
+    invoke-virtual {v1, v4, v5}, Ljnq;->a(J)Ljne;
 
-    invoke-virtual {p0}, Ljje;->b()V
+    move-result-object v3
+
+    iget-object v1, p0, Ljje;->a:Ljja;
+
+    iget-object v6, v1, Ljja;->b:Ljid;
+
+    iget-object v1, v0, Ljjb;->b:Ljgv;
+
+    invoke-interface {v1}, Ljgv;->e()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/graphics/Bitmap;
+
+    invoke-interface {v6, v4, v5, v1}, Ljid;->a(JLandroid/graphics/Bitmap;)Ljne;
+
+    move-result-object v1
+
+    invoke-virtual {v3, v1}, Ljne;->a(Ljne;)V
+
+    iget-object v0, v0, Ljjb;->b:Ljgv;
+
+    invoke-interface {v0}, Ljgv;->close()V
 
     goto :goto_0
+
+    :cond_1
+    return-void
 .end method

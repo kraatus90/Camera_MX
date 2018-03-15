@@ -1,45 +1,61 @@
-.class public Lak;
-.super Landroid/widget/ImageButton;
+.class public final Lak;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lak;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lak;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    invoke-virtual {p0}, Lak;->getVisibility()I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setVisibility(I)V
-    .locals 0
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 3
 
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setVisibility(I)V
+    check-cast p1, Landroid/view/View;
 
-    return-void
+    check-cast p2, Landroid/view/View;
+
+    sget-object v0, Lhz;->a:Lii;
+
+    invoke-virtual {v0, p1}, Lii;->z(Landroid/view/View;)F
+
+    move-result v0
+
+    sget-object v1, Lhz;->a:Lii;
+
+    invoke-virtual {v1, p2}, Lii;->z(Landroid/view/View;)F
+
+    move-result v1
+
+    cmpl-float v2, v0, v1
+
+    if-lez v2, :cond_0
+
+    const/4 v0, -0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    cmpg-float v0, v0, v1
+
+    if-gez v0, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

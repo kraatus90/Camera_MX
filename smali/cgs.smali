@@ -1,54 +1,36 @@
-.class public final Lcgs;
+.class final Lcgs;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lcgr;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lcgr;)V
     .locals 0
 
+    iput-object p1, p0, Lcgs;->a:Lcgr;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcgs;->a:Ljxn;
-
-    iput-object p2, p0, Lcgs;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
 
-    new-instance v2, Lcgr;
+    iget-object v0, p0, Lcgs;->a:Lcgr;
 
-    iget-object v0, p0, Lcgs;->a:Ljxn;
+    iget-object v0, v0, Lcgr;->a:Lcgh;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcgh;->a()V
 
-    move-result-object v0
-
-    check-cast v0, Lgvz;
-
-    iget-object v1, p0, Lcgs;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/content/ContentResolver;
-
-    invoke-direct {v2, v0, v1}, Lcgr;-><init>(Lgvz;Landroid/content/ContentResolver;)V
-
-    return-object v2
+    return-void
 .end method

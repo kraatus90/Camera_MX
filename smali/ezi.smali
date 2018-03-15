@@ -1,89 +1,76 @@
-.class Lezi;
-.super Lezg;
+.class public final Lezi;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lezh;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lezh;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lezi;->a:Lezh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lezg;-><init>()V
+    iput-object p1, p0, Lezi;->a:Lkgv;
+
+    iput-object p2, p0, Lezi;->b:Lkgv;
+
+    iput-object p3, p0, Lezi;->c:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;)Lezi;
+    .locals 1
+
+    new-instance v0, Lezi;
+
+    invoke-direct {v0, p0, p1, p2}, Lezi;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 4
 
-    const/4 v3, 0x0
+    new-instance v3, Lezf;
 
-    sget-object v0, Lezh;->a:Ljava/lang/String;
+    iget-object v0, p0, Lezi;->a:Lkgv;
 
-    const-string v1, "enter Lens Blur state"
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lezi;->a:Lezh;
-
-    iget-object v0, v0, Lezh;->f:Lcom/google/android/apps/camera/gridlines/view/GridLinesUi;
-
-    invoke-virtual {v0, v3}, Lcom/google/android/apps/camera/gridlines/view/GridLinesUi;->setVisibility(I)V
-
-    iget-object v0, p0, Lezi;->a:Lezh;
-
-    iget-object v0, v0, Lezh;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToLensBlur()V
-
-    iget-object v0, p0, Lezi;->a:Lezh;
-
-    iget-object v0, v0, Lezh;->i:Lguc;
-
-    iget-object v1, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    sget-object v2, Lgua;->a:Lgua;
-
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setMode(Lgua;)V
-
-    iget-object v0, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0, v3}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setVisibility(I)V
-
-    iget-object v0, p0, Lezi;->a:Lezh;
-
-    invoke-static {v0}, Lezh;->a(Lezh;)Liau;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v1, Lgys;->g:Lgys;
+    check-cast v0, Landroid/media/MediaFormat;
 
-    invoke-interface {v0, v1}, Liau;->a(Ljava/lang/Object;)V
+    iget-object v1, p0, Lezi;->b:Lkgv;
 
-    return-void
-.end method
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-.method public final b()V
-    .locals 2
+    move-result-object v1
 
-    sget-object v0, Lezh;->a:Ljava/lang/String;
+    check-cast v1, Ljrm;
 
-    const-string v1, "exit Lens Blur state"
+    iget-object v2, p0, Lezi;->c:Lkgv;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v2
 
-.method public u()V
-    .locals 0
+    check-cast v2, Lihn;
 
-    return-void
+    invoke-direct {v3, v0, v1, v2}, Lezf;-><init>(Landroid/media/MediaFormat;Ljrm;Lihn;)V
+
+    return-object v3
 .end method

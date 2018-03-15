@@ -6,425 +6,365 @@
 .implements Leoo;
 
 
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x9
-.end annotation
-
-
 # static fields
-.field private static a:Ljava/lang/String;
+.field private static final e:Ljava/lang/String;
 
 
 # instance fields
-.field private b:Ljht;
+.field public final a:Landroid/net/Uri;
 
-.field private c:Ljht;
+.field public final b:Landroid/content/ContentResolver;
 
-.field private d:Lgvs;
+.field public final c:Leoy;
+
+.field public final d:Lkej;
+
+.field private final f:Lgnv;
+
+.field private final g:Lepc;
+
+.field private final h:Lkgv;
+
+.field private final i:Lihs;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "SesnStorageMgrImpl"
+    const-string v0, "MediaStoreManager"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    sput-object v0, Leop;->a:Ljava/lang/String;
+    sput-object v0, Leop;->e:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/io/File;Ljava/io/File;Lgvs;)V
-    .locals 1
+.method constructor <init>(Landroid/net/Uri;Landroid/content/ContentResolver;Lgnv;Leoy;Lepc;Lkgv;Lihs;Lkej;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Leop;->a:Landroid/net/Uri;
 
-    invoke-static {p1}, Ljht;->c(Ljava/lang/Object;)Ljht;
+    iput-object p2, p0, Leop;->b:Landroid/content/ContentResolver;
 
-    move-result-object v0
+    iput-object p3, p0, Leop;->f:Lgnv;
 
-    iput-object v0, p0, Leop;->b:Ljht;
+    iput-object p4, p0, Leop;->c:Leoy;
 
-    invoke-static {p2}, Ljht;->c(Ljava/lang/Object;)Ljht;
+    iput-object p5, p0, Leop;->g:Lepc;
 
-    move-result-object v0
+    iput-object p6, p0, Leop;->h:Lkgv;
 
-    iput-object v0, p0, Leop;->c:Ljht;
+    iput-object p7, p0, Leop;->i:Lihs;
 
-    iput-object p3, p0, Leop;->d:Lgvs;
+    iput-object p8, p0, Leop;->d:Lkej;
 
     return-void
-.end method
-
-.method public static a(Landroid/content/Context;Lgvs;)Leoo;
-    .locals 3
-
-    const/4 v2, 0x0
-
-    invoke-static {}, Landroid/os/Environment;->isExternalStorageEmulated()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v0
-
-    :goto_0
-    new-instance v1, Leop;
-
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v2
-
-    invoke-direct {v1, v0, v2, p1}, Leop;-><init>(Ljava/io/File;Ljava/io/File;Lgvs;)V
-
-    return-object v1
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/content/Context;->getNoBackupFilesDir()Ljava/io/File;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method private final a(Ljava/io/File;)V
-    .locals 12
-
-    new-instance v0, Leoq;
-
-    invoke-direct {v0}, Leoq;-><init>()V
-
-    invoke-virtual {p1, v0}, Ljava/io/File;->listFiles(Ljava/io/FileFilter;)[Ljava/io/File;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
-
-    :cond_0
-    return-void
-
-    :cond_1
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    array-length v3, v2
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    if-ge v1, v3, :cond_0
-
-    aget-object v6, v2, v1
-
-    sget-object v7, Leop;->a:Ljava/lang/String;
-
-    const-string v8, "Check for potential clean-up: "
-
-    invoke-virtual {v6}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v9
-
-    if-eqz v9, :cond_3
-
-    invoke-virtual {v8, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-static {v7, v0}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v6}, Ljava/io/File;->lastModified()J
-
-    move-result-wide v8
-
-    const-wide/32 v10, 0x5265c00
-
-    sub-long v10, v4, v10
-
-    cmp-long v0, v8, v10
-
-    if-gez v0, :cond_2
-
-    :try_start_0
-    iget-object v0, p0, Leop;->d:Lgvs;
-
-    invoke-interface {v0, v6}, Lgvs;->b(Ljava/io/File;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_2
-    :goto_2
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v8}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    sget-object v7, Leop;->a:Ljava/lang/String;
-
-    const-string v8, "Could not clean up "
-
-    invoke-virtual {v6}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    invoke-virtual {v8, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_3
-    invoke-static {v7, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_4
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v8}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_3
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Ljava/io/File;
-    .locals 4
+.method public final a(Landroid/net/Uri;JLjava/lang/String;Lghj;Lkeh;)Leox;
+    .locals 6
 
-    iget-object v0, p0, Leop;->b:Ljht;
+    iget-object v0, p0, Leop;->i:Lihs;
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    const-string v1, "updateProcessingImage"
+
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    const-string v0, "content"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    new-instance v0, Ljava/io/IOException;
+    iget-object v0, p0, Leop;->c:Leoy;
 
-    const-string v1, "Could retrieve baseDirectory."
+    move-object v1, p1
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    move-wide v2, p2
 
-    throw v0
+    move-object v4, p4
 
-    :cond_0
-    new-instance v1, Ljava/io/File;
+    move-object v5, p5
 
-    iget-object v0, p0, Leop;->b:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual/range {v0 .. v5}, Leoy;->a(Landroid/net/Uri;JLjava/lang/String;Lghj;)Leox;
 
     move-result-object v0
 
-    check-cast v0, Ljava/io/File;
+    sget-object v1, Lken;->a:Lken;
 
-    invoke-direct {v1, v0, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {p6, v0, v1}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
 
-    iget-object v0, p0, Leop;->d:Lgvs;
+    iget-object v1, p0, Leop;->i:Lihs;
 
-    invoke-interface {v0, v1}, Lgvs;->e(Ljava/io/File;)Z
+    invoke-interface {v1}, Lihs;->a()V
 
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Ljava/io/IOException;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x24
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Could not create session directory: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Ljava/io/IOException;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x26
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Session directory is not a directory: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    invoke-direct {p0, v1}, Leop;->a(Ljava/io/File;)V
-
-    new-instance v2, Ljava/io/File;
-
-    iget-object v0, p0, Leop;->c:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/File;
-
-    invoke-direct {v2, v0, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-direct {p0, v2}, Leop;->a(Ljava/io/File;)V
-
-    return-object v1
+    return-object v0
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-    .locals 4
+.method public final a(JLjava/lang/String;Lghj;Lkeh;Lioj;)Lkeh;
+    .locals 9
 
-    new-instance v0, Ljava/io/File;
+    iget-object v0, p0, Leop;->i:Lihs;
 
-    new-instance v1, Ljava/io/File;
+    const-string v1, "insertProcessingImage"
 
-    invoke-virtual {p0, p1}, Leop;->a(Ljava/lang/String;)Ljava/io/File;
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Leop;->f:Lgnv;
+
+    invoke-virtual {v0, p3, p6}, Lgnv;->a(Ljava/lang/String;Lioj;)Ljava/io/File;
+
+    move-result-object v1
+
+    iget-object v0, p0, Leop;->h:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lexh;
+
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v1, v2, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    iput-object v2, v0, Lexh;->a:Ljava/lang/String;
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, p1, p2}, Lexh;->a(J)Lexh;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, ".jpg"
+    invoke-virtual {v0}, Lexh;->b()Leoj;
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v2
+    sget-object v2, Leop;->e:Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v0}, Ljpf;->c(Ljava/io/File;)V
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/io/File;->createNewFile()Z
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v1
+    move-result-object v3
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
+    move-result v3
 
-    move-result v1
+    add-int/lit8 v3, v3, 0x3d
 
-    if-eqz v1, :cond_1
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    :cond_0
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "insertProcessingImg: filePath="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, " takenTime="
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Leop;->d:Lkej;
+
+    new-instance v2, Leoq;
+
+    invoke-direct {v2, p0, v0}, Leoq;-><init>(Leop;Leoj;)V
+
+    invoke-interface {v1, v2}, Lkej;->a(Ljava/util/concurrent/Callable;)Lkeh;
+
+    move-result-object v7
+
+    new-instance v0, Lexw;
+
+    move-object v1, p0
+
+    move-wide v2, p1
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    invoke-direct/range {v0 .. v6}, Lexw;-><init>(Leop;JLjava/lang/String;Lghj;Lkeh;)V
+
+    iget-object v1, p0, Leop;->d:Lkej;
+
+    invoke-static {v7, v0, v1}, Lkcv;->a(Lkeh;Ljqv;Ljava/util/concurrent/Executor;)Lkeh;
+
+    move-result-object v0
+
+    iget-object v1, p0, Leop;->i:Lihs;
+
+    invoke-interface {v1}, Lihs;->a()V
+
     return-object v0
+.end method
 
-    :cond_1
-    invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
+.method public final synthetic b(JLjava/lang/String;Lghj;Lkeh;Lioj;)Leov;
+    .locals 13
 
-    move-result v1
+    iget-object v2, p0, Leop;->i:Lihs;
 
-    if-nez v1, :cond_0
+    const-string v3, "insertProcessingVideo"
 
-    new-instance v0, Ljava/io/IOException;
+    invoke-interface {v2, v3}, Lihs;->a(Ljava/lang/String;)V
 
-    const-string v1, "Temporary output file is not writeable."
+    iget-object v2, p0, Leop;->f:Lgnv;
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    move-object/from16 v0, p3
 
-    throw v0
+    move-object/from16 v1, p6
+
+    invoke-virtual {v2, v0, v1}, Lgnv;->a(Ljava/lang/String;Lioj;)Ljava/io/File;
+
+    move-result-object v3
+
+    iget-object v2, p0, Leop;->h:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lexh;
+
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lexh;->a:Ljava/lang/String;
+
+    invoke-virtual {v2, p1, p2}, Lexh;->a(J)Lexh;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lexh;->b()Leoj;
+
+    move-result-object v2
+
+    iget-object v3, p0, Leop;->b:Landroid/content/ContentResolver;
+
+    iget-object v4, p0, Leop;->a:Landroid/net/Uri;
+
+    iget-object v2, v2, Leoj;->a:Landroid/content/ContentValues;
+
+    invoke-virtual {v3, v4, v2}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+
+    move-result-object v7
+
+    iget-object v6, p0, Leop;->g:Lepc;
+
+    new-instance v3, Lepb;
+
+    iget-object v2, v6, Lepc;->a:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/content/ContentResolver;
+
+    const/4 v4, 0x1
+
+    invoke-static {v2, v4}, Lepc;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/content/ContentResolver;
+
+    iget-object v2, v6, Lepc;->b:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/net/Uri;
+
+    const/4 v5, 0x2
+
+    invoke-static {v2, v5}, Lepc;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/net/Uri;
+
+    iget-object v6, v6, Lepc;->c:Lkgv;
+
+    const/4 v2, 0x4
+
+    invoke-static {v7, v2}, Lepc;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/net/Uri;
+
+    const/4 v2, 0x6
+
+    move-object/from16 v0, p3
+
+    invoke-static {v0, v2}, Lepc;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/lang/String;
+
+    const/4 v2, 0x7
+
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v2}, Lepc;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lghj;
+
+    move-wide v8, p1
+
+    invoke-direct/range {v3 .. v11}, Lepb;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;Lkgv;Landroid/net/Uri;JLjava/lang/String;Lghj;)V
+
+    sget-object v2, Lken;->a:Lken;
+
+    move-object/from16 v0, p5
+
+    invoke-static {v0, v3, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    iget-object v2, p0, Leop;->i:Lihs;
+
+    invoke-interface {v2}, Lihs;->a()V
+
+    return-object v3
 .end method

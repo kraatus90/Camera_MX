@@ -1,67 +1,124 @@
-.class final Lhoz;
+.class public final Lhoz;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lhpg;
 
 
 # instance fields
-.field private synthetic a:Landroid/os/Bundle;
+.field public final a:Landroid/app/Activity;
 
-.field private synthetic b:J
+.field public final b:Lhlm;
 
-.field private synthetic c:Lhoy;
+.field public final c:Ljava/io/File;
 
 
 # direct methods
-.method constructor <init>(Lhoy;Landroid/os/Bundle;J)V
+.method public constructor <init>(Landroid/app/Activity;)V
+    .locals 2
+
+    new-instance v0, Lhrk;
+
+    invoke-direct {v0, p1}, Lhrk;-><init>(Landroid/content/Context;)V
+
+    sget-object v1, Lhqa;->a:Lhlf;
+
+    invoke-virtual {v0, v1}, Lhrk;->a(Lhlf;)Lhrk;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lhrk;->b()Lhlm;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lhoz;-><init>(Landroid/app/Activity;Lhlm;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/app/Activity;Lhlm;)V
     .locals 1
 
-    iput-object p1, p0, Lhoz;->c:Lhoy;
-
-    iput-object p2, p0, Lhoz;->a:Landroid/os/Bundle;
-
-    iput-wide p3, p0, Lhoz;->b:J
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getCacheDir()Ljava/io/File;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhoz;->c:Ljava/io/File;
+
+    iput-object p1, p0, Lhoz;->a:Landroid/app/Activity;
+
+    iput-object p2, p0, Lhoz;->b:Lhlm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhkp;
-    .locals 6
+.method public final a(ILandroid/content/Intent;)V
+    .locals 4
 
-    sget-object v0, Lhpc;->b:Lhpa;
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lhoz;->c:Lhoy;
+    const-string v0, "EXTRA_GOOGLE_HELP"
 
-    iget-object v1, v1, Lhoy;->a:Lhkl;
-
-    iget-object v2, p0, Lhoz;->c:Lhoy;
-
-    iget-object v2, v2, Lhoy;->b:Lcom/google/android/gms/googlehelp/GoogleHelp;
-
-    iget-object v3, p0, Lhoz;->a:Landroid/os/Bundle;
-
-    iget-wide v4, p0, Lhoz;->b:J
-
-    invoke-interface/range {v0 .. v5}, Lhpa;->a(Lhkl;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhkp;
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Lcom/google/android/gms/googlehelp/GoogleHelp;
 
-.method public final b()V
-    .locals 2
+    new-instance v2, Landroid/content/Intent;
 
-    const-string v0, "gH_GetAsyncHelpPsd"
+    const-string v3, "android.intent.action.VIEW"
 
-    const-string v1, "Failed to send async help psd to Help."
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v0, v0, Lcom/google/android/gms/googlehelp/GoogleHelp;->b:Landroid/net/Uri;
 
+    invoke-virtual {v2, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    const/4 v0, 0x7
+
+    if-eq p1, v0, :cond_1
+
+    iget-object v0, p0, Lhoz;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lhoz;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0, v2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    :goto_1
     return-void
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lhoz;->a:Landroid/app/Activity;
+
+    invoke-static {p1, v0}, Lhlb;->b(ILandroid/app/Activity;)Z
+
+    goto :goto_1
 .end method

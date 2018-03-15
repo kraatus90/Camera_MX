@@ -1,42 +1,37 @@
-.class public final Ldcp;
+.class final synthetic Ldcp;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lihb;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Ldcm;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Ldcm;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldcp;->a:Ljxn;
+    iput-object p1, p0, Ldcp;->a:Ldcm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final close()V
     .locals 2
 
-    new-instance v1, Ldco;
+    iget-object v0, p0, Ldcp;->a:Ldcm;
 
-    iget-object v0, p0, Ldcp;->a:Ljxn;
+    iget-object v1, v0, Ldcm;->D:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldcm;->I:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->removeListener(Lcom/google/android/apps/camera/bottombar/BottomBarListener;)V
 
-    check-cast v0, Landroid/content/ContentResolver;
-
-    invoke-direct {v1, v0}, Ldco;-><init>(Landroid/content/ContentResolver;)V
-
-    return-object v1
+    return-void
 .end method

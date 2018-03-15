@@ -1,37 +1,34 @@
-.class final synthetic Lcsq;
+.class final Lcsq;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lihg;
 
 
 # instance fields
-.field private a:Lcsk;
+.field private final synthetic a:Lcsl;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
+.method constructor <init>(Lcsl;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcsq;->a:Lcsl;
 
-    iput-object p1, p0, Lcsq;->a:Lcsk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lcsq;->a:Lcsk;
+    iget-object v0, p0, Lcsq;->a:Lcsl;
 
-    sget-object v1, Lbwt;->e:Lbwt;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcsk;->a(Lbwt;Z)Ljuw;
+    invoke-virtual {v0}, Lcsl;->b()V
 
     return-void
 .end method

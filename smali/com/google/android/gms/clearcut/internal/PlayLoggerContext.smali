@@ -11,28 +11,28 @@
 
 .field public final b:Ljava/lang/String;
 
-.field private c:Ljava/lang/String;
+.field private final c:Ljava/lang/String;
 
-.field private d:I
+.field private final d:I
 
-.field private e:Ljava/lang/String;
+.field private final e:Ljava/lang/String;
 
-.field private f:Ljava/lang/String;
+.field private final f:Ljava/lang/String;
 
-.field private g:Z
+.field private final g:Z
 
-.field private h:Z
+.field private final h:Z
 
-.field private i:I
+.field private final i:I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhjs;
+    new-instance v0, Lhkv;
 
-    invoke-direct {v0}, Lhjs;-><init>()V
+    invoke-direct {v0}, Lhkv;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -44,7 +44,7 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/zza;-><init>()V
 
-    invoke-static {p1}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -155,7 +155,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->b:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -165,7 +165,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->e:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -175,7 +175,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->f:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -449,7 +449,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -457,57 +457,57 @@
 
     iget-object v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->c:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x3
 
     iget v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->d:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x4
 
     iget v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->a:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x5
 
     iget-object v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->e:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x6
 
     iget-object v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->f:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x7
 
     iget-boolean v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->g:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     const/16 v1, 0x8
 
     iget-object v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->b:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/16 v1, 0x9
 
     iget-boolean v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->h:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     const/16 v1, 0xa
 
     iget v2, p0, Lcom/google/android/gms/clearcut/internal/PlayLoggerContext;->i:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

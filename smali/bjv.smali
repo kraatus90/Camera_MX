@@ -1,117 +1,36 @@
-.class final Lbjv;
-.super Lbjm;
+.class public final Lbjv;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbjs;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbjs;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbjv;->a:Lbjs;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lbjm;-><init>(Lbjj;)V
+    iput-object p1, p0, Lbjv;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbjv;->a:Lbjs;
+    new-instance v0, Lbjs;
 
-    iget-object v0, v0, Lbjs;->f:Lgvj;
+    iget-object v1, p0, Lbjv;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-direct {v0, v1}, Lbjs;-><init>(Lkgv;)V
 
-    invoke-super {p0}, Lbjm;->c()V
-
-    iget-object v0, p0, Lbjv;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    iget-object v1, p0, Lbjv;->a:Lbjs;
-
-    iget-object v1, v1, Lbjs;->i:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lbjv;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lbjm;->d()V
-
-    iget-object v0, p0, Lbjv;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    iget-object v1, p0, Lbjv;->a:Lbjs;
-
-    iget-object v1, v1, Lbjs;->g:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 2
-
-    iget-object v0, p0, Lbjv;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lbjm;->e()V
-
-    iget-object v0, p0, Lbjv;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    iget-object v1, p0, Lbjv;->a:Lbjs;
-
-    iget-object v1, v1, Lbjs;->h:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 2
-
-    iget-object v0, p0, Lbjv;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lbjm;->f()V
-
-    iget-object v0, p0, Lbjv;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    iget-object v1, p0, Lbjv;->a:Lbjs;
-
-    iget-object v1, v1, Lbjs;->h:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

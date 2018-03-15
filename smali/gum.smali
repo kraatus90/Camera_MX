@@ -1,26 +1,35 @@
-.class public interface abstract Lgum;
+.class public final synthetic Lgum;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+
+# instance fields
+.field private final a:Lgug;
+
+
+# direct methods
+.method public constructor <init>(Lgug;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgum;->a:Lgug;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 1
 
-.method public abstract a(I)V
-.end method
+    iget-object v0, p0, Lgum;->a:Lgug;
 
-.method public abstract b()V
-.end method
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-.method public abstract c()V
-.end method
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->invalidate()V
 
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
+    return-void
 .end method

@@ -1,90 +1,162 @@
-.class final Lbum;
+.class public final Lbum;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private synthetic a:Landroid/graphics/Bitmap;
+.field private final b:Ljava/lang/Object;
 
-.field private synthetic b:I
-
-.field private synthetic c:Lbua;
+.field private final c:Ljava/util/List;
 
 
 # direct methods
-.method constructor <init>(Lbua;Landroid/graphics/Bitmap;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbum;->c:Lbua;
+    const-string v0, "HdrPCpuPriority"
 
-    iput-object p2, p0, Lbum;->a:Landroid/graphics/Bitmap;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput p3, p0, Lbum;->b:I
+    move-result-object v0
+
+    sput-object v0, Lbum;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lbum;->b:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbum;->c:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final a()V
+    .locals 2
 
-    iget-object v0, p0, Lbum;->c:Lbua;
+    sget-object v0, Lbum;->a:Ljava/lang/String;
 
-    iget-object v0, v0, Lbua;->x:Lews;
+    const-string v1, "Setting HDR+ low processing priority"
 
-    iget-object v1, p0, Lbum;->c:Lbua;
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, v1, Lbua;->F:Lcqm;
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    invoke-interface {v1}, Lcqm;->k()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lbum;->a(F)V
 
-    move-result-object v1
+    return-void
+.end method
 
-    invoke-interface {v0, v1}, Lews;->a(Ljava/lang/String;)V
+.method public final a(F)V
+    .locals 7
 
-    iget-object v0, p0, Lbum;->c:Lbua;
+    iget-object v1, p0, Lbum;->b:Ljava/lang/Object;
 
-    iget-object v0, v0, Lbua;->x:Lews;
+    monitor-enter v1
 
-    iget-object v1, p0, Lbum;->a:Landroid/graphics/Bitmap;
+    :try_start_0
+    iget-object v0, p0, Lbum;->c:Ljava/util/List;
 
-    iget v2, p0, Lbum;->b:I
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v0, v1, v2}, Lews;->a(Landroid/graphics/Bitmap;I)V
+    move-result-object v2
 
-    iget-object v0, p0, Lbum;->c:Lbua;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v0, v0, Lbua;->s:Leth;
+    move-result v0
 
-    new-instance v1, Letg;
+    if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lbum;->a:Landroid/graphics/Bitmap;
-
-    iget v3, p0, Lbum;->b:I
-
-    invoke-static {v3}, Licf;->a(I)Licf;
-
-    move-result-object v3
-
-    invoke-direct {v1, v2, v3}, Letg;-><init>(Landroid/graphics/Bitmap;Licf;)V
-
-    invoke-virtual {v0, v1}, Leth;->a(Ljava/lang/Object;)Ljuw;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Lbun;
+    check-cast v0, Lcom/google/googlex/gcam/IShot;
 
-    invoke-direct {v1}, Lbun;-><init>()V
+    sget-object v3, Lbum;->a:Ljava/lang/String;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x2e
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "Setting HDR+ CPU usage to "
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, " for "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Lcom/google/googlex/gcam/IShot;->LimitCpuUsage(F)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     return-void
 .end method

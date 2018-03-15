@@ -1,21 +1,13 @@
-.class public interface abstract annotation Liv;
+.class public final Liv;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
 
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Inherited;
-.end annotation
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
-
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+    return-void
+.end method

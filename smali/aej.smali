@@ -1,183 +1,156 @@
-.class public final enum Laej;
-.super Ljava/lang/Enum;
+.class public final Laej;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # static fields
-.field public static final enum a:Laej;
-
-.field public static final enum b:Laej;
-
-.field public static final enum c:Laej;
-
-.field public static final enum d:Laej;
-
-.field public static final enum e:Laej;
-
-.field public static final enum f:Laej;
-
-.field public static final enum g:Laej;
-
-.field private static enum i:Laej;
-
-.field private static synthetic j:[Laej;
+.field private static final b:Laei;
 
 
 # instance fields
-.field public final h:Z
+.field private final a:Ljava/util/Map;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
-
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    new-instance v0, Laej;
-
-    const-string v1, "GIF"
-
-    invoke-direct {v0, v1, v3, v4}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->a:Laej;
-
-    new-instance v0, Laej;
-
-    const-string v1, "JPEG"
-
-    invoke-direct {v0, v1, v4, v3}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->b:Laej;
-
-    new-instance v0, Laej;
-
-    const-string v1, "RAW"
-
-    invoke-direct {v0, v1, v5, v3}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->i:Laej;
-
-    new-instance v0, Laej;
-
-    const-string v1, "PNG_A"
-
-    invoke-direct {v0, v1, v6, v4}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->c:Laej;
-
-    new-instance v0, Laej;
-
-    const-string v1, "PNG"
-
-    invoke-direct {v0, v1, v7, v3}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->d:Laej;
-
-    new-instance v0, Laej;
-
-    const-string v1, "WEBP_A"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2, v4}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->e:Laej;
-
-    new-instance v0, Laej;
-
-    const-string v1, "WEBP"
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2, v3}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->f:Laej;
-
-    new-instance v0, Laej;
-
-    const-string v1, "UNKNOWN"
-
-    const/4 v2, 0x7
-
-    invoke-direct {v0, v1, v2, v3}, Laej;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Laej;->g:Laej;
-
-    const/16 v0, 0x8
-
-    new-array v0, v0, [Laej;
-
-    sget-object v1, Laej;->a:Laej;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Laej;->b:Laej;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Laej;->i:Laej;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Laej;->c:Laej;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Laej;->d:Laej;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Laej;->e:Laej;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Laej;->f:Laej;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Laej;->g:Laej;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Laej;->j:[Laej;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;IZ)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-boolean p3, p0, Laej;->h:Z
-
-    return-void
-.end method
-
-.method public static values()[Laej;
     .locals 1
 
-    sget-object v0, Laej;->j:[Laej;
+    new-instance v0, Laek;
 
-    invoke-virtual {v0}, [Laej;->clone()Ljava/lang/Object;
+    invoke-direct {v0}, Laek;-><init>()V
+
+    sput-object v0, Laej;->b:Laei;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Laej;->a:Ljava/util/Map;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final declared-synchronized a(Ljava/lang/Object;)Laeh;
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    const-string v0, "Argument must not be null"
+
+    invoke-static {p1, v0}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    iget-object v0, p0, Laej;->a:Ljava/util/Map;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Laej;
+    check-cast v0, Laei;
+
+    if-nez v0, :cond_1
+
+    iget-object v1, p0, Laej;->a:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Laei;
+
+    invoke-interface {v1}, Laei;->a()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    move-object v0, v1
+
+    :cond_1
+    if-nez v0, :cond_2
+
+    sget-object v0, Laej;->b:Laei;
+
+    :cond_2
+    invoke-interface {v0, p1}, Laei;->a(Ljava/lang/Object;)Laeh;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v0
+
+    monitor-exit p0
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized a(Laei;)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Laej;->a:Ljava/util/Map;
+
+    invoke-interface {p1}, Laei;->a()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

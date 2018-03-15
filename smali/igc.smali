@@ -1,205 +1,64 @@
-.class public final Ligc;
+.class public final synthetic Ligc;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final a:Ljava/lang/Integer;
-
-.field public final b:Ljava/lang/String;
+.field private final a:Lifm;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/lang/Integer;)V
+.method public constructor <init>(Lifm;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ligc;->b:Ljava/lang/String;
-
-    iput-object p2, p0, Ligc;->a:Ljava/lang/Integer;
+    iput-object p1, p0, Ligc;->a:Lifm;
 
     return-void
 .end method
 
-.method public static a(I)Ligc;
-    .locals 3
-
-    new-instance v0, Ligc;
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ligc;-><init>(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    return-object v0
-.end method
-
-.method static a(Ljava/lang/String;)Ljava/lang/Integer;
-    .locals 1
-
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public final a()I
-    .locals 4
+.method public final call()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Ligc;->a:Ljava/lang/Integer;
+    iget-object v0, p0, Ligc;->a:Lifm;
 
-    if-nez v0, :cond_1
+    iget-object v1, v0, Lifm;->f:Lifl;
 
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    if-eqz v1, :cond_0
 
-    const-string v2, "Attempted to access a camera id that is not supported on legacy camera API\'s: "
+    iget-object v0, v0, Lifm;->f:Lifl;
 
-    iget-object v0, p0, Ligc;->b:Ljava/lang/String;
+    iget-object v1, v0, Lifl;->a:Ljava/lang/Object;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    monitor-enter v1
 
-    move-result-object v0
+    :try_start_0
+    iget-object v2, v0, Lifl;->j:Ligb;
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    sget-object v3, Ligb;->a:Ligb;
 
-    move-result v3
+    if-eq v2, v3, :cond_1
 
-    if-eqz v3, :cond_0
+    iget-object v2, v0, Lifl;->j:Ligb;
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    sget-object v3, Ligb;->e:Ligb;
 
-    move-result-object v0
+    if-eq v2, v3, :cond_1
 
-    :goto_0
-    invoke-direct {v1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    const-string v2, "VideoEncoder"
 
-    throw v1
-
-    :cond_0
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Ligc;->a:Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    if-ne p0, p1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_2
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_2
-    check-cast p1, Ligc;
-
-    iget-object v0, p0, Ligc;->b:Ljava/lang/String;
-
-    iget-object v1, p1, Ligc;->b:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Ligc;->b:Ljava/lang/String;
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Ligc;->b:Ljava/lang/String;
-
-    iget-object v1, p0, Ligc;->a:Ljava/lang/Integer;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
+    iget-object v0, v0, Lifl;->j:Ligb;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x17
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -207,35 +66,19 @@
 
     move-result v3
 
-    add-int/2addr v2, v3
+    add-int/lit8 v3, v3, 0x11
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v2, "CameraId{Api2=\'"
+    const-string v3, "illegal state as "
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "\',Api1:"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -243,5 +86,47 @@
 
     move-result-object v0
 
+    invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v1
+
+    :cond_0
+    :goto_0
+    const/4 v0, 0x0
+
     return-object v0
+
+    :cond_1
+    new-instance v2, Liga;
+
+    const-string v3, "VideoEncoder"
+
+    invoke-direct {v2, v0, v3}, Liga;-><init>(Lifl;Ljava/lang/String;)V
+
+    iput-object v2, v0, Lifl;->e:Ljava/lang/Thread;
+
+    iget-object v2, v0, Lifl;->b:Landroid/media/MediaCodec;
+
+    invoke-virtual {v2}, Landroid/media/MediaCodec;->start()V
+
+    iget-object v2, v0, Lifl;->e:Ljava/lang/Thread;
+
+    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
+
+    sget-object v2, Ligb;->b:Ligb;
+
+    iput-object v2, v0, Lifl;->j:Ligb;
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

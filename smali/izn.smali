@@ -1,56 +1,36 @@
-.class public final Lizn;
+.class final Lizn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lizl;
+.implements Lipn;
 
 
 # instance fields
-.field private a:Lizl;
+.field private final a:Ljgs;
 
 
 # direct methods
-.method public constructor <init>(Lizl;Ljava/lang/String;Ljava/io/Writer;)V
+.method public constructor <init>(Ljgs;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lizn;->a:Lizl;
+    iput-object p1, p0, Lizn;->a:Ljgs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const-string v0, "%s[metric=%s]"
+    check-cast p1, Ljgw;
 
-    const/4 v1, 0x2
+    iget-object v0, p0, Lizn;->a:Ljgs;
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    const-string v3, "LoggingFrameSegmentDistanceMetric"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    iget-object v3, p0, Lizn;->a:Lizl;
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {p1, v0}, Ljgw;->a(Ljgs;)Ljgv;
 
     move-result-object v0
 

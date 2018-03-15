@@ -2,51 +2,54 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # static fields
-.field public static final a:Lhaj;
+.field public static final a:Ljava/lang/String;
+
+
+# instance fields
+.field public final b:Lfxx;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhaj;
+    const-string v0, "focusPtNormalizer"
 
-    invoke-direct {v0}, Lhaj;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    sput-object v0, Lhaj;->a:Lhaj;
+    move-result-object v0
+
+    sput-object v0, Lhaj;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public constructor <init>(Lfxx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lhaj;->b:Lfxx;
+
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public static a(F)F
     .locals 2
 
-    invoke-static {}, Lgzz;->a()Lgzz;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-static {v1, p0}, Ljava/lang/Math;->min(FF)F
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
 
-    check-cast v0, Lgzz;
+    move-result v0
 
-    return-object v0
+    return v0
 .end method

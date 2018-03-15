@@ -1,21 +1,25 @@
 .class public final Lbpz;
-.super Ljava/lang/Object;
+.super Lbpm;
 .source "PG"
 
 
-# instance fields
-.field public final a:Landroid/app/Activity;
-
-
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0, p1, v0}, Lbpm;-><init>(Ljava/lang/String;Z)V
 
-    iput-object p1, p0, Lbpz;->a:Landroid/app/Activity;
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;B)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lbpm;-><init>(Ljava/lang/String;Z)V
 
     return-void
 .end method

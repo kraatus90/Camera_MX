@@ -1,20 +1,30 @@
-.class interface abstract Lamw;
+.class final Lamw;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lamx;
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()I
+.method public final a()V
+    .locals 0
+
+    return-void
 .end method
 
-.method public abstract a([BI)I
-.end method
+.method public final a(Lahf;Landroid/graphics/Bitmap;)V
+    .locals 0
 
-.method public abstract a(J)J
-.end method
-
-.method public abstract b()S
-.end method
-
-.method public abstract c()I
+    return-void
 .end method

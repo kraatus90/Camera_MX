@@ -1,62 +1,94 @@
-.class public final Leqa;
+.class final Leqa;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Leqc;
 
 
-# static fields
-.field public static final a:Leqa;
+# instance fields
+.field private final a:Ljava/io/InputStream;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Leqa;
-
-    invoke-direct {v0}, Leqa;-><init>()V
-
-    sput-object v0, Leqa;->a:Leqa;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Ljava/io/InputStream;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leqa;->a:Ljava/io/InputStream;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a()I
+    .locals 1
 
-    new-instance v0, Leri;
+    iget-object v0, p0, Leqa;->a:Ljava/io/InputStream;
 
-    new-instance v1, Liag;
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
-    const/4 v2, 0x1
+    move-result v0
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return v0
+.end method
 
-    move-result-object v2
+.method public final a(I)Leqb;
+    .locals 1
 
-    invoke-direct {v1, v2}, Liag;-><init>(Ljava/lang/Object;)V
+    iget-object v0, p0, Leqa;->a:Ljava/io/InputStream;
 
-    invoke-direct {v0, v1}, Leri;-><init>(Liau;)V
+    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    move-result v0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0, p1}, Leqa;->a(II)Leqb;
 
     move-result-object v0
 
-    check-cast v0, Leri;
-
     return-object v0
+.end method
+
+.method public final a(II)Leqb;
+    .locals 4
+
+    new-array v0, p1, [B
+
+    iget-object v1, p0, Leqa;->a:Ljava/io/InputStream;
+
+    invoke-virtual {v1, v0}, Ljava/io/InputStream;->read([B)I
+
+    move-result v1
+
+    new-instance v2, Leqb;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, p2, v3, v1}, Leqb;-><init>([BIII)V
+
+    return-object v2
+.end method
+
+.method public final b(I)V
+    .locals 4
+
+    iget-object v0, p0, Leqa;->a:Ljava/io/InputStream;
+
+    int-to-long v2, p1
+
+    invoke-virtual {v0, v2, v3}, Ljava/io/InputStream;->skip(J)J
+
+    return-void
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Leqa;->a:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    return-void
 .end method

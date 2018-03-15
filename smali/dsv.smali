@@ -1,21 +1,20 @@
-.class public final Ldsv;
+.class final Ldsv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfft;
-.implements Ljhj;
+.implements Lihb;
 
 
 # instance fields
-.field private synthetic a:Ldba;
+.field private final synthetic a:Lkeh;
 
 
 # direct methods
-.method public constructor <init>(Ldba;)V
+.method constructor <init>(Lkeh;)V
     .locals 0
 
-    iput-object p1, p0, Ldsv;->a:Ldba;
+    iput-object p1, p0, Ldsv;->a:Lkeh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,75 +23,14 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    iget-object v0, p0, Ldsv;->a:Lkeh;
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    const/4 v1, 0x1
 
-    throw v0
-.end method
+    invoke-interface {v0, v1}, Lkeh;->cancel(Z)Z
 
-.method public final a(Z)V
-    .locals 1
-
-    if-nez p1, :cond_0
-
-    iget-object v0, p0, Ldsv;->a:Ldba;
-
-    iget-object v0, v0, Ldba;->m:Lhbo;
-
-    invoke-static {}, Leug;->h()Z
-
-    iget-object v0, p0, Ldsv;->a:Ldba;
-
-    iget-object v0, v0, Ldba;->i:Lgug;
-
-    invoke-interface {v0}, Lgug;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b(Z)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Ldsv;->a:Ldba;
-
-    iget-object v0, v0, Ldba;->m:Lhbo;
-
-    invoke-static {}, Leug;->h()Z
-
-    iget-object v0, p0, Ldsv;->a:Ldba;
-
-    iget-object v0, v0, Ldba;->j:Lhem;
-
-    invoke-interface {v0}, Lhem;->k()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c(Z)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Ldsv;->a:Ldba;
-
-    iget-object v0, v0, Ldba;->m:Lhbo;
-
-    invoke-static {}, Leug;->h()Z
-
-    iget-object v0, p0, Ldsv;->a:Ldba;
-
-    iget-object v0, v0, Ldba;->j:Lhem;
-
-    invoke-interface {v0}, Lhem;->j()V
-
-    :cond_0
     return-void
 .end method

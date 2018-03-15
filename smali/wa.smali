@@ -1,34 +1,20 @@
-.class final Lwa;
+.class public interface abstract Lwa;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field private synthetic a:Landroid/support/v7/widget/Toolbar;
-
-
-# direct methods
-.method constructor <init>(Landroid/support/v7/widget/Toolbar;)V
-    .locals 0
-
-    iput-object p1, p0, Lwa;->a:Landroid/support/v7/widget/Toolbar;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+.method public abstract a()I
+.end method
 
-    iget-object v0, p0, Lwa;->a:Landroid/support/v7/widget/Toolbar;
+.method public abstract a(Landroid/view/View;)I
+.end method
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/Toolbar;->c()V
+.method public abstract a(I)Landroid/view/View;
+.end method
 
-    return-void
+.method public abstract b()I
+.end method
+
+.method public abstract b(Landroid/view/View;)I
 .end method

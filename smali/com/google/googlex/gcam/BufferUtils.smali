@@ -40,14 +40,14 @@
     :goto_0
     const-string v3, "ptr must not be 0."
 
-    invoke-static {v0, v3}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
 
     if-lez p2, :cond_1
 
     :goto_1
     const-string v0, "capacity must be positive, got: %s"
 
-    invoke-static {v1, v0, p2}, Liya;->a(ZLjava/lang/String;I)V
+    invoke-static {v1, v0, p2}, Ljii;->a(ZLjava/lang/String;I)V
 
     invoke-static {p0, p1, p2}, Lcom/google/googlex/gcam/BufferUtils;->byteBufferViewOfNativePointerImpl(JI)Ljava/nio/ByteBuffer;
 
@@ -77,7 +77,7 @@
 .method public static byteBufferViewOfNativePointer(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;I)Ljava/nio/ByteBuffer;
     .locals 2
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p0}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)J
 
@@ -96,7 +96,7 @@
 .method public static deleteNativeImage(Lcom/google/googlex/gcam/InterleavedImageU16;)V
     .locals 1
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -110,7 +110,7 @@
 .method public static deleteNativeImage(Lcom/google/googlex/gcam/InterleavedImageU8;)V
     .locals 1
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -124,7 +124,7 @@
 .method public static deleteNativeImage(Lcom/google/googlex/gcam/YuvImage;)V
     .locals 1
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x1
 
@@ -138,7 +138,7 @@
 .method public static getDirectBufferAddress(Ljava/nio/Buffer;)J
     .locals 2
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p0}, Lcom/google/googlex/gcam/BufferUtils;->getDirectBufferAddressImpl(Ljava/nio/Buffer;)J
 
@@ -153,7 +153,7 @@
 .method public static getDirectBufferCapacity(Ljava/nio/Buffer;)J
     .locals 2
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p0}, Lcom/google/googlex/gcam/BufferUtils;->getDirectBufferCapacityImpl(Ljava/nio/Buffer;)J
 

@@ -3,81 +3,66 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field private synthetic a:Landroid/net/Uri;
-
-.field private synthetic b:Lcbn;
+.field private final a:Lihc;
 
 
 # direct methods
-.method constructor <init>(Lcbn;Landroid/net/Uri;)V
+.method public constructor <init>(Lihc;)V
     .locals 0
 
-    iput-object p1, p0, Lcbt;->b:Lcbn;
-
-    iput-object p2, p0, Lcbt;->a:Landroid/net/Uri;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcbt;->a:Lihc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 4
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 6
 
-    iget-object v0, p0, Lcbt;->b:Lcbn;
+    check-cast p1, Lihc;
 
-    iget-object v0, v0, Lcbn;->a:Lcbw;
+    check-cast p2, Lihc;
 
-    iget-object v1, p0, Lcbt;->a:Landroid/net/Uri;
+    invoke-virtual {p1}, Lihc;->b()J
 
-    const-string v2, "android.intent.action.SEND"
+    move-result-wide v0
 
-    invoke-static {v2}, Lcaq;->a(Ljava/lang/String;)Landroid/content/Intent;
+    iget-object v2, p0, Lcbt;->a:Lihc;
 
-    move-result-object v2
+    invoke-virtual {v2}, Lihc;->b()J
 
-    const-string v3, "android.intent.extra.STREAM"
+    move-result-wide v2
 
-    invoke-virtual {v2, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    sub-long/2addr v0, v2
 
-    :try_start_0
-    iget-object v1, v0, Lcbw;->a:Lcaq;
+    invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J
 
-    invoke-virtual {v1, v2}, Lcaq;->startActivity(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-wide v0
 
-    :goto_0
-    return-void
+    invoke-virtual {p2}, Lihc;->b()J
 
-    :catch_0
-    move-exception v1
+    move-result-wide v2
 
-    iget-object v1, v0, Lcbw;->a:Lcaq;
+    iget-object v4, p0, Lcbt;->a:Lihc;
 
-    iget-object v0, v0, Lcbw;->a:Lcaq;
+    invoke-virtual {v4}, Lihc;->b()J
 
-    invoke-virtual {v0}, Lcaq;->getResources()Landroid/content/res/Resources;
+    move-result-wide v4
 
-    move-result-object v0
+    sub-long/2addr v2, v4
 
-    const v3, 0x7f1102fb
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
 
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    move-result-wide v2
 
-    move-result-object v0
+    cmp-long v0, v0, v2
 
-    invoke-static {v2, v0}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lcaq;->startActivity(Landroid/content/Intent;)V
-
-    goto :goto_0
+    return v0
 .end method

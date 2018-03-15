@@ -1,120 +1,80 @@
-.class public final Ljfr;
+.class final Ljfr;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljdt;
+
 
 # instance fields
-.field public final a:Ljfv;
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:Z
-
-.field public final e:[[F
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(IIZ)V
-    .locals 2
+.method constructor <init>()V
+    .locals 1
+
+    const/16 v0, 0x8
+
+    iput v0, p0, Ljfr;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Ljfr;->b:I
-
-    iput p2, p0, Ljfr;->c:I
-
-    iput-boolean p3, p0, Ljfr;->d:Z
-
-    iget v0, p0, Ljfr;->b:I
-
-    iget v1, p0, Ljfr;->c:I
-
-    mul-int/2addr v0, v1
-
-    add-int/lit8 v0, v0, 0x2
-
-    filled-new-array {v0, v0}, [I
-
-    move-result-object v0
-
-    sget-object v1, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [[F
-
-    iput-object v0, p0, Ljfr;->e:[[F
-
-    new-instance v0, Ljfv;
-
-    iget-object v1, p0, Ljfr;->e:[[F
-
-    array-length v1, v1
-
-    invoke-direct {v0, v1}, Ljfv;-><init>(I)V
-
-    iput-object v0, p0, Ljfr;->a:Ljfv;
 
     return-void
 .end method
 
-.method public static a(IIZ)Ljava/util/ArrayList;
-    .locals 3
 
-    new-instance v1, Ljava/util/ArrayList;
+# virtual methods
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    new-instance v1, Ljla;
 
-    add-int/lit8 v0, p0, -0x1
+    const-class v0, Ljme;
 
-    :goto_0
-    add-int/lit8 v2, p0, 0x1
+    const-string v2, "default"
 
-    if-gt v0, v2, :cond_1
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-static {v0, p1, p2}, Ljfr;->b(IIZ)I
+    move-result-object v0
 
-    move-result v2
+    check-cast v0, Ljme;
 
-    if-ltz v2, :cond_0
+    iget v2, p0, Ljfr;->a:I
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-direct {v1, v0, v2}, Ljla;-><init>(Ljme;I)V
 
-    move-result-object v2
+    const-class v0, Ljjz;
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const-string v2, "panning_content_value"
 
-    :cond_0
-    add-int/lit8 v0, v0, 0x2
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_1
-    return-object v1
-.end method
+    check-cast v0, Ljjz;
 
-.method public static b(IIZ)I
-    .locals 0
+    const/4 v2, 0x2
 
-    if-eqz p2, :cond_1
+    new-array v2, v2, [Ljkq;
 
-    rem-int/2addr p0, p1
+    const/4 v3, 0x0
 
-    :cond_0
-    :goto_0
-    return p0
+    aput-object v1, v2, v3
 
-    :cond_1
-    if-ltz p0, :cond_2
+    const/4 v1, 0x1
 
-    if-lt p0, p1, :cond_0
+    new-instance v3, Ljiu;
 
-    :cond_2
-    const/4 p0, -0x1
+    const/4 v4, 0x5
 
-    goto :goto_0
+    invoke-direct {v3, v0, v4}, Ljiu;-><init>(Ljjz;I)V
+
+    aput-object v3, v2, v1
+
+    invoke-static {v2}, Ljkw;->a([Ljkq;)Ljkw;
+
+    move-result-object v0
+
+    return-object v0
 .end method

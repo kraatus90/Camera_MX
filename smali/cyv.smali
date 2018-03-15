@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Lghb;
 
 
 # instance fields
-.field public final synthetic a:Lcyt;
+.field public final synthetic a:Lcyk;
 
 
 # direct methods
-.method constructor <init>(Lcyt;)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
-    iput-object p1, p0, Lcyv;->a:Lcyt;
+    iput-object p1, p0, Lcyv;->a:Lcyk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,34 +23,100 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 3
+.method public final a(Landroid/graphics/Bitmap;)V
+    .locals 2
 
-    iget-object v0, p0, Lcyv;->a:Lcyt;
+    iget-object v0, p0, Lcyv;->a:Lcyk;
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    check-cast v0, Lcxo;
 
-    iget-object v0, v0, Lcwg;->c:Lhzt;
+    iget-object v0, v0, Lcxo;->c:Liay;
 
     new-instance v1, Lcyw;
 
-    invoke-direct {v1, p0}, Lcyw;-><init>(Lcyv;)V
+    invoke-direct {v1, p0, p1}, Lcyw;-><init>(Lcyv;Landroid/graphics/Bitmap;)V
 
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
 
-    new-instance v0, Lcxc;
+    return-void
+.end method
 
-    iget-object v1, p0, Lcyv;->a:Lcyt;
+.method public final a(Landroid/graphics/Bitmap;I)V
+    .locals 0
 
-    iget-object v2, p0, Lcyv;->a:Lcyt;
+    return-void
+.end method
 
-    iget-object v2, v2, Lcyt;->d:Laxp;
+.method public final a(Landroid/net/Uri;)V
+    .locals 0
 
-    invoke-direct {v0, v1, v2}, Lcxc;-><init>(Lcwi;Laxp;)V
+    return-void
+.end method
 
-    return-object v0
+.method public final a(Landroid/net/Uri;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lghj;Leov;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lgwx;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lgwx;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Ljava/util/List;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a([BI)V
+    .locals 2
+
+    iget-object v0, p0, Lcyv;->a:Lcyk;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->c:Liay;
+
+    new-instance v1, Lcyx;
+
+    invoke-direct {v1, p0, p1, p2}, Lcyx;-><init>(Lcyv;[BI)V
+
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final b(Landroid/net/Uri;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c(Landroid/net/Uri;)V
+    .locals 0
+
+    return-void
 .end method

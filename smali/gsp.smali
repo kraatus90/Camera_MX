@@ -4,169 +4,211 @@
 
 
 # instance fields
-.field private a:Landroid/content/SharedPreferences;
+.field public final a:Lgso;
+
+.field public final b:Lgso;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/SharedPreferences;Lhax;)V
-    .locals 0
+.method public constructor <init>(FF)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgsp;->a:Landroid/content/SharedPreferences;
+    new-instance v0, Lgso;
+
+    invoke-direct {v0, p1, p2}, Lgso;-><init>(FF)V
+
+    iput-object v0, p0, Lgsp;->a:Lgso;
+
+    new-instance v0, Lgso;
+
+    const/4 v1, 0x0
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-direct {v0, v1, v2}, Lgso;-><init>(FF)V
+
+    iput-object v0, p0, Lgsp;->b:Lgso;
 
     return-void
 .end method
 
-.method private static c(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+.method static a(FLgso;)F
+    .locals 10
 
-    const-string v0, "tooltip_impression_count_for_"
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const v8, 0x358637bd    # 1.0E-6f
 
-    move-result-object v1
+    const/4 v0, 0x0
 
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    move v3, v1
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    move v1, p0
 
     :goto_0
-    return-object v0
+    const/16 v4, 0x8
+
+    if-ge v3, v4, :cond_2
+
+    invoke-virtual {p1, v1}, Lgso;->a(F)F
+
+    move-result v4
+
+    sub-float/2addr v4, p0
+
+    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
+
+    move-result v5
+
+    cmpg-float v5, v5, v8
+
+    if-gez v5, :cond_1
 
     :cond_0
-    new-instance v0, Ljava/lang/String;
+    :goto_1
+    return v1
 
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :cond_1
+    const/high16 v5, 0x40400000    # 3.0f
+
+    iget v6, p1, Lgso;->b:F
+
+    mul-float/2addr v5, v6
+
+    mul-float/2addr v5, v1
+
+    const/high16 v6, 0x40000000    # 2.0f
+
+    iget v7, p1, Lgso;->c:F
+
+    mul-float/2addr v6, v7
+
+    add-float/2addr v5, v6
+
+    mul-float/2addr v5, v1
+
+    iget v6, p1, Lgso;->a:F
+
+    add-float/2addr v5, v6
+
+    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
+
+    move-result v6
+
+    cmpg-float v6, v6, v8
+
+    if-ltz v6, :cond_2
+
+    div-float/2addr v4, v5
+
+    sub-float v4, v1, v4
+
+    add-int/lit8 v1, v3, 0x1
+
+    move v3, v1
+
+    move v1, v4
 
     goto :goto_0
+
+    :cond_2
+    cmpg-float v1, p0, v0
+
+    if-gez v1, :cond_3
+
+    move v1, v0
+
+    goto :goto_1
+
+    :cond_3
+    cmpl-float v1, p0, v2
+
+    if-lez v1, :cond_6
+
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_4
+    cmpl-float v3, p0, v3
+
+    if-lez v3, :cond_5
+
+    :goto_2
+    sub-float v2, v0, v1
+
+    const/high16 v3, 0x3f000000    # 0.5f
+
+    mul-float/2addr v2, v3
+
+    add-float/2addr v2, v1
+
+    move v9, v1
+
+    move v1, v2
+
+    move v2, v9
+
+    :goto_3
+    cmpg-float v3, v2, v0
+
+    if-gez v3, :cond_0
+
+    invoke-virtual {p1, v1}, Lgso;->a(F)F
+
+    move-result v3
+
+    sub-float v4, v3, p0
+
+    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
+
+    move-result v4
+
+    cmpg-float v4, v4, v8
+
+    if-gez v4, :cond_4
+
+    goto :goto_1
+
+    :cond_5
+    move v0, v1
+
+    move v1, v2
+
+    goto :goto_2
+
+    :cond_6
+    move v1, p0
+
+    move v9, v0
+
+    move v0, v2
+
+    move v2, v9
+
+    goto :goto_3
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Ljava/lang/String;)I
-    .locals 3
+.method public final a(F)F
+    .locals 2
 
-    monitor-enter p0
+    iget-object v0, p0, Lgsp;->b:Lgso;
 
-    :try_start_0
-    iget-object v0, p0, Lgsp;->a:Landroid/content/SharedPreferences;
+    iget-object v1, p0, Lgsp;->a:Lgso;
 
-    invoke-static {p1}, Lgsp;->c(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lgsp;->a(FLgso;)F
 
-    move-result-object v1
+    move-result v1
 
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, v1}, Lgso;->a(F)F
 
     move-result v0
-
-    monitor-exit p0
 
     return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized b(Ljava/lang/String;)I
-    .locals 6
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-static {p1}, Lgsp;->c(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v0, p0, Lgsp;->a:Landroid/content/SharedPreferences;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    add-int/lit8 v2, v0, 0x1
-
-    const-string v0, "tooltip_latest_impression_timestamp_for_"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    iget-object v3, p0, Lgsp;->a:Landroid/content/SharedPreferences;
-
-    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v3
-
-    invoke-interface {v3, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    invoke-interface {v1, v0, v4, v5}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v2
-
-    :cond_0
-    :try_start_1
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

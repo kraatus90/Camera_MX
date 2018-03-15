@@ -36,7 +36,7 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     const/16 v0, 0x9
 
@@ -132,7 +132,7 @@
     :goto_0
     const-string v2, "Transform length must be of length 9"
 
-    invoke-static {v0, v2}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v2}, Ljii;->a(ZLjava/lang/Object;)V
 
     iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;->mTransform:[F
 
@@ -505,7 +505,7 @@
     :goto_0
     const-string v1, "Exceeds transform dimensions."
 
-    invoke-static {v0, v1}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Ljii;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;->mTransform:[F
 
@@ -535,14 +535,14 @@
     :goto_0
     const-string v3, "Exceeds row limit."
 
-    invoke-static {v0, v3}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
 
     if-ge p2, v4, :cond_1
 
     :goto_1
     const-string v0, "Exceeds column limit."
 
-    invoke-static {v1, v0}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Ljii;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;->mTransform:[F
 
@@ -1113,7 +1113,7 @@
     :goto_0
     const-string v1, "Exceeds transform dimensions."
 
-    invoke-static {v0, v1}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Ljii;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;->mTransform:[F
 
@@ -1143,14 +1143,14 @@
     :goto_0
     const-string v3, "Exceeds row limit."
 
-    invoke-static {v0, v3}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
 
     if-ge p2, v4, :cond_1
 
     :goto_1
     const-string v0, "Exceeds column limit."
 
-    invoke-static {v1, v0}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Ljii;->a(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;->mTransform:[F
 

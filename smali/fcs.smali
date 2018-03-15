@@ -1,45 +1,52 @@
-.class final Lfcs;
-.super Lfej;
+.class public final Lfcs;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfcr;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfcr;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfcs;->a:Lfcr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfej;-><init>(Lfei;)V
+    iput-object p1, p0, Lfcs;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfcs;
+    .locals 1
+
+    new-instance v0, Lfcs;
+
+    invoke-direct {v0, p0}, Lfcs;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final r_()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfcs;->a:Lfcr;
+    new-instance v1, Lfcr;
 
-    iget-object v0, v0, Lfcr;->a:Lgvj;
+    iget-object v0, p0, Lfcs;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lfej;->r_()V
+    move-result-object v0
 
-    iget-object v0, p0, Lfcs;->a:Lfcr;
+    check-cast v0, Lfct;
 
-    iget-object v0, v0, Lfcr;->a:Lgvj;
+    invoke-direct {v1, v0}, Lfcr;-><init>(Lfct;)V
 
-    iget-object v1, p0, Lfcs;->a:Lfcr;
-
-    iget-object v1, v1, Lfcr;->c:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v1
 .end method

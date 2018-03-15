@@ -3,76 +3,128 @@
 .source "PG"
 
 # interfaces
-.implements Ldsr;
+.implements Lihb;
 
 
 # instance fields
-.field private a:Liio;
+.field public final a:Lcom/google/googlex/gcam/AeResults;
+
+.field public final b:Lind;
+
+.field private c:Z
+
+.field private final synthetic d:Ldst;
 
 
 # direct methods
-.method constructor <init>(Liio;)V
-    .locals 0
+.method public constructor <init>(Ldst;Lcom/google/googlex/gcam/AeResults;Lind;)V
+    .locals 1
+
+    iput-object p1, p0, Ldss;->d:Ldst;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldss;->a:Liio;
+    iput-object p2, p0, Ldss;->a:Lcom/google/googlex/gcam/AeResults;
+
+    iput-object p3, p0, Ldss;->b:Lind;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ldss;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhzr;Lici;II)Ldsl;
-    .locals 3
+.method public final close()V
+    .locals 4
 
-    iget-object v0, p0, Ldss;->a:Liio;
+    const/4 v0, 0x0
 
-    iget v1, p2, Lici;->a:I
+    iget-object v1, p0, Ldss;->d:Ldst;
 
-    iget v2, p2, Lici;->b:I
+    iget-object v1, v1, Ldst;->a:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, v2, p3, p4}, Liio;->a(IIII)Liin;
+    monitor-enter v1
 
-    move-result-object v0
+    :try_start_0
+    iget-boolean v2, p0, Ldss;->c:Z
 
-    invoke-virtual {p1, v0}, Lhzr;->a(Lich;)Lich;
+    if-eqz v2, :cond_1
 
-    new-instance v1, Ldsj;
+    monitor-exit v1
 
-    invoke-direct {v1}, Ldsj;-><init>()V
+    :cond_0
+    :goto_0
+    return-void
 
-    new-instance v2, Ldse;
+    :cond_1
+    const/4 v2, 0x1
 
-    invoke-direct {v2, v0}, Ldse;-><init>(Liin;)V
+    iput-boolean v2, p0, Ldss;->c:Z
 
-    invoke-virtual {v1, v2}, Ldsj;->a(Ldse;)Ldsj;
+    iget-object v2, p0, Ldss;->d:Ldst;
 
-    move-result-object v0
+    iget v3, v2, Ldst;->b:I
 
-    new-instance v1, Ldsm;
+    add-int/lit8 v3, v3, -0x1
 
-    new-instance v2, Lgjn;
+    iput v3, v2, Ldst;->b:I
 
-    invoke-direct {v2}, Lgjn;-><init>()V
+    iget-object v2, p0, Ldss;->d:Ldst;
 
-    invoke-direct {v1, p1, v2}, Ldsm;-><init>(Lhzr;Lgkl;)V
+    iget v2, v2, Ldst;->b:I
 
-    invoke-virtual {v0, v1}, Ldsj;->a(Ldsm;)Ldsj;
+    if-nez v2, :cond_2
 
-    move-result-object v0
+    iget-object v0, p0, Ldss;->d:Ldst;
 
-    new-instance v1, Ldro;
+    iget-object v2, p0, Ldss;->d:Ldst;
 
-    invoke-direct {v1}, Ldro;-><init>()V
+    invoke-static {v2}, Ldst;->a(Ldst;)I
 
-    invoke-virtual {v0, v1}, Ldsj;->a(Ldro;)Ldsj;
+    move-result v2
 
-    move-result-object v0
+    invoke-static {v0, v2}, Ldst;->a(Ldst;I)I
 
-    invoke-virtual {v0}, Ldsj;->a()Ldsl;
+    iget-object v0, p0, Ldss;->d:Ldst;
 
-    move-result-object v0
+    invoke-static {v0}, Ldst;->b(Ldst;)I
 
-    return-object v0
+    move-result v0
+
+    :cond_2
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    sget v1, Lep;->Z:I
+
+    if-ne v0, v1, :cond_3
+
+    iget-object v0, p0, Ldss;->d:Ldst;
+
+    invoke-virtual {v0}, Ldst;->e()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    :cond_3
+    iget-object v0, p0, Ldss;->d:Ldst;
+
+    invoke-virtual {v0}, Ldst;->d()V
+
+    goto :goto_0
 .end method

@@ -1,69 +1,35 @@
-.class final Lhee;
-.super Lhfc;
+.class public final Lhee;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lhec;
+.field private final synthetic a:Lhdy;
 
 
 # direct methods
-.method constructor <init>(Lhec;)V
+.method public constructor <init>(Lhdy;)V
     .locals 0
 
-    iput-object p1, p0, Lhee;->a:Lhec;
+    iput-object p1, p0, Lhee;->a:Lhdy;
 
-    invoke-direct {p0, p1}, Lhfc;-><init>(Lhev;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final ag()V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-object v0, p0, Lhee;->a:Lhec;
+    iget-object v0, p0, Lhee;->a:Lhdy;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    iget-object v0, v0, Lhdy;->n:Landroid/view/View;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    const/16 v1, 0x8
 
-    invoke-super {p0}, Lhfc;->ag()V
-
-    iget-object v0, p0, Lhee;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lhee;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->e:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 2
-
-    iget-object v0, p0, Lhee;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhfc;->e()V
-
-    iget-object v0, p0, Lhee;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lhee;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->d:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method

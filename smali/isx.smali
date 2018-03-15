@@ -1,28 +1,33 @@
-.class final Lisx;
-.super Ljava/lang/Object;
+.class public final Lisx;
+.super Lisw;
 .source "PG"
-
-# interfaces
-.implements Liuh;
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lisw;-><init>(B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
+.method public final a()Ljava/lang/String;
     .locals 1
 
-    new-instance v0, Liyb;
-
-    invoke-direct {v0}, Liyb;-><init>()V
+    const-string v0, "Int16"
 
     return-object v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    const/16 v0, 0x10
+
+    return v0
 .end method

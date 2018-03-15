@@ -1,50 +1,66 @@
-.class final Lbwh;
+.class public final Lbwh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbwg;
+.field private final a:Lbvr;
 
 
 # direct methods
-.method constructor <init>(Lbwg;)V
+.method public constructor <init>(Lbvr;)V
     .locals 0
-
-    iput-object p1, p0, Lbwh;->a:Lbwg;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lbwh;->a:Lbvr;
+
     return-void
+.end method
+
+.method public static a(Ljrf;)Lbpz;
+    .locals 1
+
+    invoke-virtual {p0}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbpz;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lbwg;->a:Lbpz;
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p1, Ljava/io/File;
-
-    iget-object v0, p0, Lbwh;->a:Lbwg;
-
-    iget-object v0, v0, Lbwg;->c:Lesg;
-
-    iput-object p1, v0, Lesg;->b:Ljava/io/File;
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    sget-object v0, Lbwg;->a:Ljava/lang/String;
+    iget-object v0, p0, Lbwh;->a:Lbvr;
 
-    const-string v1, "Session storage directory creation failed."
+    iget-object v0, v0, Lbvr;->a:Landroid/app/Activity;
 
-    invoke-static {v0, v1, p1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    return-object v0
 .end method

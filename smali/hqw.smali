@@ -1,264 +1,193 @@
 .class public final Lhqw;
-.super Lhrd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # instance fields
-.field public a:[Lhqx;
+.field private a:Landroid/os/IBinder;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Landroid/os/IBinder;)V
+    .locals 0
 
-    invoke-direct {p0}, Lhrd;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lhqx;->b()[Lhqx;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lhqw;->a:[Lhqx;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lhqw;->o:Lhrf;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lhqw;->p:I
+    iput-object p1, p0, Lhqw;->a:Landroid/os/IBinder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()I
-    .locals 4
-
-    invoke-super {p0}, Lhrd;->a()I
-
-    move-result v1
-
-    iget-object v0, p0, Lhqw;->a:[Lhqx;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lhqw;->a:[Lhqx;
-
-    array-length v0, v0
-
-    if-lez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v2, p0, Lhqw;->a:[Lhqx;
-
-    array-length v2, v2
-
-    if-ge v0, v2, :cond_1
-
-    iget-object v2, p0, Lhqw;->a:[Lhqx;
-
-    aget-object v2, v2, v0
-
-    if-eqz v2, :cond_0
-
-    const/4 v3, 0x1
-
-    invoke-static {v3, v2}, Lhrc;->b(ILhri;)I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return v1
-.end method
-
-.method public final a(Lhrc;)V
-    .locals 3
-
-    iget-object v0, p0, Lhqw;->a:[Lhqx;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lhqw;->a:[Lhqx;
-
-    array-length v0, v0
-
-    if-lez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v1, p0, Lhqw;->a:[Lhqx;
-
-    array-length v1, v1
-
-    if-ge v0, v1, :cond_1
-
-    iget-object v1, p0, Lhqw;->a:[Lhqx;
-
-    aget-object v1, v1, v0
-
-    if-eqz v1, :cond_0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p1, v2, v1}, Lhrc;->a(ILhri;)V
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-super {p0, p1}, Lhrd;->a(Lhrc;)V
-
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Lcom/google/android/gms/feedback/ErrorReport;)Z
+    .locals 7
 
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    if-ne p1, p0, :cond_1
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    :cond_0
+    move-result-object v2
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v3
+
+    :try_start_0
+    const-string v4, "com.google.android.gms.feedback.internal.IFeedbackService"
+
+    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    if-eqz p1, :cond_0
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v4, 0x0
+
+    invoke-virtual {p1, v2, v4}, Lcom/google/android/gms/feedback/ErrorReport;->writeToParcel(Landroid/os/Parcel;I)V
+
     :goto_0
+    iget-object v4, p0, Lhqw;->a:Landroid/os/IBinder;
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
+    invoke-interface {v4, v5, v2, v3, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v3}, Landroid/os/Parcel;->readException()V
+
+    invoke-virtual {v3}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    :goto_1
+    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
     return v0
 
+    :cond_0
+    const/4 v4, 0x0
+
+    :try_start_1
+    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
+
     :cond_1
-    instance-of v2, p1, Lhqw;
-
-    if-nez v2, :cond_2
-
     move v0, v1
 
-    goto :goto_0
-
-    :cond_2
-    check-cast p1, Lhqw;
-
-    iget-object v2, p0, Lhqw;->a:[Lhqx;
-
-    iget-object v3, p1, Lhqw;->a:[Lhqx;
-
-    invoke-static {v2, v3}, Lhrh;->a([Ljava/lang/Object;[Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v2, p0, Lhqw;->o:Lhrf;
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lhqw;->o:Lhrf;
-
-    invoke-virtual {v2}, Lhrf;->a()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    :cond_4
-    iget-object v2, p1, Lhqw;->o:Lhrf;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p1, Lhqw;->o:Lhrf;
-
-    invoke-virtual {v2}, Lhrf;->a()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_5
-    iget-object v0, p0, Lhqw;->o:Lhrf;
-
-    iget-object v1, p1, Lhqw;->o:Lhrf;
-
-    invoke-virtual {v0, v1}, Lhrf;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_0
+    goto :goto_1
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public final asBinder()Landroid/os/IBinder;
+    .locals 1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lhqw;->a:Landroid/os/IBinder;
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+.method public final b(Lcom/google/android/gms/feedback/ErrorReport;)Z
+    .locals 7
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    const/4 v1, 0x0
 
-    move-result v0
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    add-int/lit16 v0, v0, 0x20f
+    move-result-object v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    iget-object v1, p0, Lhqw;->a:[Lhqx;
+    move-result-object v3
 
-    invoke-static {v1}, Lhrh;->a([Ljava/lang/Object;)I
+    :try_start_0
+    const-string v4, "com.google.android.gms.feedback.internal.IFeedbackService"
 
-    move-result v1
+    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    add-int/2addr v0, v1
+    if-eqz p1, :cond_0
 
-    mul-int/lit8 v1, v0, 0x1f
+    const/4 v4, 0x1
 
-    iget-object v0, p0, Lhqw;->o:Lhrf;
+    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-eqz v0, :cond_0
+    const/4 v4, 0x0
 
-    iget-object v0, p0, Lhqw;->o:Lhrf;
-
-    invoke-virtual {v0}, Lhrf;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p1, v2, v4}, Lcom/google/android/gms/feedback/ErrorReport;->writeToParcel(Landroid/os/Parcel;I)V
 
     :goto_0
-    add-int/2addr v0, v1
+    iget-object v4, p0, Lhqw;->a:Landroid/os/IBinder;
+
+    const/4 v5, 0x3
+
+    const/4 v6, 0x0
+
+    invoke-interface {v4, v5, v2, v3, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v3}, Landroid/os/Parcel;->readException()V
+
+    invoke-virtual {v3}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    :goto_1
+    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
     return v0
 
-    :cond_1
-    iget-object v0, p0, Lhqw;->o:Lhrf;
+    :cond_0
+    const/4 v4, 0x0
 
-    invoke-virtual {v0}, Lhrf;->hashCode()I
-
-    move-result v0
+    :try_start_1
+    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
 .end method

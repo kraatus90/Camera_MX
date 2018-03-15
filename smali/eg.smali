@@ -1,78 +1,108 @@
-.class final Leg;
-.super Landroid/os/Handler;
+.class public final Leg;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# static fields
+.field private static final e:Ljava/lang/Object;
+
+.field private static f:Leg;
+
+
+# instance fields
+.field public final a:Landroid/content/Context;
+
+.field public final b:Ljava/util/HashMap;
+
+.field public final c:Ljava/util/HashMap;
+
+.field public final d:Ljava/util/ArrayList;
+
+
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    new-instance v0, Ljava/lang/Object;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    sput-object v0, Leg;->e:Ljava/lang/Object;
 
     return-void
 .end method
 
+.method private constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
-# virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Leg;->b:Ljava/util/HashMap;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Leg;->c:Ljava/util/HashMap;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Leg;->d:Ljava/util/ArrayList;
+
+    iput-object p1, p0, Leg;->a:Landroid/content/Context;
+
+    new-instance v0, Leh;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Leh;-><init>(Leg;Landroid/os/Looper;)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;)Leg;
     .locals 3
 
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    sget-object v1, Leg;->e:Ljava/lang/Object;
 
-    check-cast v0, Lef;
+    monitor-enter v1
 
-    iget v1, p1, Landroid/os/Message;->what:I
+    :try_start_0
+    sget-object v0, Leg;->f:Leg;
 
-    packed-switch v1, :pswitch_data_0
+    if-nez v0, :cond_0
 
-    :goto_0
-    return-void
+    new-instance v0, Leg;
 
-    :pswitch_0
-    iget-object v1, v0, Lef;->a:Lec;
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    iget-object v0, v0, Lef;->b:[Ljava/lang/Object;
+    move-result-object v2
 
-    const/4 v2, 0x0
+    invoke-direct {v0, v2}, Leg;-><init>(Landroid/content/Context;)V
 
-    aget-object v0, v0, v2
-
-    iget-object v2, v1, Lec;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v1}, Lec;->a()V
-
-    :goto_1
-    sget v0, Leh;->c:I
-
-    iput v0, v1, Lec;->e:I
-
-    goto :goto_0
+    sput-object v0, Leg;->f:Leg;
 
     :cond_0
-    invoke-virtual {v1, v0}, Lec;->a(Ljava/lang/Object;)V
+    sget-object v0, Leg;->f:Leg;
 
-    goto :goto_1
+    monitor-exit v1
 
-    :pswitch_1
-    invoke-static {}, Lec;->c()V
+    return-object v0
 
-    goto :goto_0
+    :catchall_0
+    move-exception v0
 
-    nop
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    throw v0
 .end method

@@ -1,44 +1,65 @@
-.class public final Lfpz;
+.class final Lfpz;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+.field public final a:Ljava/lang/String;
+
+.field public b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;)V
+.method constructor <init>(Ljava/lang/String;Ljava/util/List;)V
     .locals 0
 
-    iput-object p1, p0, Lfpz;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfpz;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lfpz;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    iget-object v0, p0, Lfpz;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+    const-string v0, "ValidationResult"
 
-    const v1, 0x7f0e0198
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->findViewById(I)Landroid/view/View;
+    invoke-static {v0}, Ljhn;->b(Ljava/lang/String;)Ljrc;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
+    const-string v1, "strategy"
 
-    const/4 v1, 0x4
+    iget-object v2, p0, Lfpz;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
 
-    return-void
+    move-result-object v0
+
+    const-string v1, "valid"
+
+    const-string v2, "false"
+
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
+
+    move-result-object v0
+
+    const-string v1, "failed constraints"
+
+    iget-object v2, p0, Lfpz;->b:Ljava/util/List;
+
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljrc;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

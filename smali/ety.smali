@@ -2,38 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljrm;
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final a:J
 
 
 # direct methods
-.method constructor <init>(Ljava/util/concurrent/atomic/AtomicReference;)V
-    .locals 0
+.method constructor <init>(J)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lety;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-wide p1, p0, Lety;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lety;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-wide v0, p0, Lety;->a:J
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    const/16 v2, 0x36
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "copying video frame to encoder: <"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Leou;
+    const-string v1, ">"
 
-    invoke-interface {v0}, Leou;->i()V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

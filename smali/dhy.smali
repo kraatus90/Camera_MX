@@ -1,90 +1,53 @@
 .class public final Ldhy;
-.super Ljava/lang/Object;
+.super Ldjz;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "VidIntStForeground"
 
-    iput-object p1, p0, Ldhy;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Ldhy;->b:Ljxn;
+    return-void
+.end method
 
-    iput-object p3, p0, Ldhy;->c:Ljxn;
+.method public constructor <init>(Ldjz;)V
+    .locals 2
 
-    iput-object p4, p0, Ldhy;->d:Ljxn;
+    invoke-direct {p0, p1}, Ldjz;-><init>(Lbrv;)V
 
-    iput-object p5, p0, Ldhy;->e:Ljxn;
+    new-instance v0, Ldhz;
+
+    invoke-direct {v0, p0}, Ldhz;-><init>(Ldhy;)V
+
+    const-class v1, Lcwy;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final synthetic b()Lbrv;
+    .locals 1
 
-    new-instance v0, Ldhw;
+    invoke-virtual {p0}, Ldhy;->e()Ldjz;
 
-    iget-object v1, p0, Ldhy;->a:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v1
+.method public final e()Ldjz;
+    .locals 1
 
-    check-cast v1, Lihi;
+    new-instance v0, Ldia;
 
-    iget-object v2, p0, Ldhy;->b:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldii;
-
-    iget-object v3, p0, Ldhy;->c:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lgds;
-
-    iget-object v4, p0, Ldhy;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lidd;
-
-    iget-object v5, p0, Ldhy;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Licz;
-
-    invoke-direct/range {v0 .. v5}, Ldhw;-><init>(Lihi;Ldii;Lgds;Lidd;Licz;)V
+    invoke-direct {v0, p0}, Ldia;-><init>(Ldjz;)V
 
     return-object v0
 .end method

@@ -3,34 +3,58 @@
 .source "PG"
 
 # interfaces
-.implements Lakx;
+.implements Ladz;
+
+
+# instance fields
+.field private final a:Lamv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lamv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lamg;->a:Lamv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lald;)Lakv;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lagw;
+    .locals 6
 
-    new-instance v0, Lamf;
+    check-cast p1, Ljava/nio/ByteBuffer;
 
-    const-class v1, Lakh;
-
-    const-class v2, Ljava/io/InputStream;
-
-    invoke-virtual {p1, v1, v2}, Lald;->a(Ljava/lang/Class;Ljava/lang/Class;)Lakv;
+    invoke-static {p1}, Larn;->b(Ljava/nio/ByteBuffer;)Ljava/io/InputStream;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lamf;-><init>(Lakv;)V
+    iget-object v0, p0, Lamg;->a:Lamv;
+
+    sget-object v5, Lamv;->d:Lamx;
+
+    move v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    invoke-virtual/range {v0 .. v5}, Lamv;->a(Ljava/io/InputStream;IILady;Lamx;)Lagw;
+
+    move-result-object v0
 
     return-object v0
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;Lady;)Z
+    .locals 1
+
+    invoke-static {}, Lamv;->b()Z
+
+    move-result v0
+
+    return v0
 .end method

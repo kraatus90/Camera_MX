@@ -3,62 +3,48 @@
 .source "PG"
 
 # interfaces
-.implements Laor;
+.implements Ladz;
 
 
 # instance fields
-.field private a:Landroid/content/res/Resources;
-
-.field private b:Lahs;
+.field private final a:Lahf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Lahs;)V
-    .locals 1
+.method public constructor <init>(Lahf;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "Argument must not be null"
-
-    invoke-static {p1, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/res/Resources;
-
-    iput-object v0, p0, Laop;->a:Landroid/content/res/Resources;
-
-    const-string v0, "Argument must not be null"
-
-    invoke-static {p2, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lahs;
-
-    iput-object v0, p0, Laop;->b:Lahs;
+    iput-object p1, p0, Laop;->a:Lahf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lahg;)Lahg;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lagw;
+    .locals 2
 
-    iget-object v1, p0, Laop;->a:Landroid/content/res/Resources;
+    check-cast p1, Ladg;
 
-    iget-object v2, p0, Laop;->b:Lahs;
-
-    invoke-interface {p1}, Lahg;->b()Ljava/lang/Object;
+    invoke-interface {p1}, Ladg;->g()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    check-cast v0, Landroid/graphics/Bitmap;
+    iget-object v1, p0, Laop;->a:Lahf;
 
-    invoke-static {v1, v2, v0}, Lank;->a(Landroid/content/res/Resources;Lahs;Landroid/graphics/Bitmap;)Lank;
+    invoke-static {v0, v1}, Lame;->a(Landroid/graphics/Bitmap;Lahf;)Lame;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;Lady;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

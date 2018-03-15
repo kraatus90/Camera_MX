@@ -72,12 +72,12 @@
 
 
 # virtual methods
-.method public OnPhoto(Ljava/math/BigInteger;F)Z
+.method public AddRawScore(F)Z
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/DirtyLensHistory;->swigCPtr:J
 
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_OnPhoto(JLcom/google/googlex/gcam/DirtyLensHistory;Ljava/math/BigInteger;F)Z
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_AddRawScore(JLcom/google/googlex/gcam/DirtyLensHistory;F)Z
 
     move-result v0
 
@@ -184,36 +184,12 @@
     return v0
 .end method
 
-.method public getMin_photo_count_()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/DirtyLensHistory;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_min_photo_count__get(JLcom/google/googlex/gcam/DirtyLensHistory;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getMin_seconds_between_photos_()F
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/DirtyLensHistory;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_min_seconds_between_photos__get(JLcom/google/googlex/gcam/DirtyLensHistory;)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getScore_history_()Lcom/google/googlex/gcam/FloatDeque;
+.method public getRaw_score_history_()Lcom/google/googlex/gcam/FloatDeque;
     .locals 4
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/DirtyLensHistory;->swigCPtr:J
 
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_score_history__get(JLcom/google/googlex/gcam/DirtyLensHistory;)J
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_raw_score_history__get(JLcom/google/googlex/gcam/DirtyLensHistory;)J
 
     move-result-wide v2
 
@@ -280,27 +256,7 @@
     return-void
 .end method
 
-.method public setMin_photo_count_(I)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/DirtyLensHistory;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_min_photo_count__set(JLcom/google/googlex/gcam/DirtyLensHistory;I)V
-
-    return-void
-.end method
-
-.method public setMin_seconds_between_photos_(F)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/DirtyLensHistory;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_min_seconds_between_photos__set(JLcom/google/googlex/gcam/DirtyLensHistory;F)V
-
-    return-void
-.end method
-
-.method public setScore_history_(Lcom/google/googlex/gcam/FloatDeque;)V
+.method public setRaw_score_history_(Lcom/google/googlex/gcam/FloatDeque;)V
     .locals 6
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/DirtyLensHistory;->swigCPtr:J
@@ -313,7 +269,7 @@
 
     move-object v5, p1
 
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_score_history__set(JLcom/google/googlex/gcam/DirtyLensHistory;JLcom/google/googlex/gcam/FloatDeque;)V
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->DirtyLensHistory_raw_score_history__set(JLcom/google/googlex/gcam/DirtyLensHistory;JLcom/google/googlex/gcam/FloatDeque;)V
 
     return-void
 .end method

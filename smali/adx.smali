@@ -4,26 +4,5 @@
 
 
 # virtual methods
-.method public abstract a()Ljava/nio/ByteBuffer;
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract c()I
-.end method
-
-.method public abstract d()I
-.end method
-
-.method public abstract e()I
-.end method
-
-.method public abstract f()I
-.end method
-
-.method public abstract g()Landroid/graphics/Bitmap;
-.end method
-
-.method public abstract h()V
+.method public abstract a([BLjava/lang/Object;Ljava/security/MessageDigest;)V
 .end method

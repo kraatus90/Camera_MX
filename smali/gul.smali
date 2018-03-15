@@ -1,54 +1,47 @@
-.class public final Lgul;
+.class public final synthetic Lgul;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lgug;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method public constructor <init>(Lgug;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgul;->a:Ljxn;
-
-    iput-object p2, p0, Lgul;->b:Ljxn;
+    iput-object p1, p0, Lgul;->a:Lgug;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
 
-    new-instance v2, Lguk;
+    iget-object v0, p0, Lgul;->a:Lgug;
 
-    iget-object v0, p0, Lgul;->a:Ljxn;
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Lgvj;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgum;
+    check-cast v0, Ljava/lang/Integer;
 
-    iget-object v1, p0, Lgul;->b:Ljxn;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    invoke-virtual {v1, v0}, Lgvj;->m(I)Lgvj;
 
-    check-cast v1, Licz;
-
-    invoke-direct {v2, v0, v1}, Lguk;-><init>(Lgum;Licz;)V
-
-    return-object v2
+    return-void
 .end method

@@ -1,57 +1,42 @@
-.class final synthetic Lfxw;
+.class final Lfxw;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljig;
+.implements Lihb;
 
 
 # instance fields
-.field private a:J
+.field private final synthetic a:Lfxj;
+
+.field private final synthetic b:Lfxr;
 
 
 # direct methods
-.method constructor <init>(J)V
-    .locals 1
+.method constructor <init>(Lfxr;Lfxj;)V
+    .locals 0
+
+    iput-object p1, p0, Lfxw;->b:Lfxr;
+
+    iput-object p2, p0, Lfxw;->a:Lfxj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lfxw;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 4
+.method public final close()V
+    .locals 2
 
-    iget-wide v0, p0, Lfxw;->a:J
+    iget-object v0, p0, Lfxw;->b:Lfxr;
 
-    const/16 v2, 0x3b
+    iget-object v0, v0, Lfxr;->a:Lfxi;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lfxw;->a:Lfxj;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-virtual {v0, v1}, Lfxi;->b(Lfxj;)V
 
-    const-string v2, "fetching video from videoFrameStore: <"
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ">"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

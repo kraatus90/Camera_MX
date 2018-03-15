@@ -1,52 +1,38 @@
-.class public final Ljdo;
+.class final Ljdo;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljdh;
-
-
-# instance fields
-.field private a:Ljfs;
-
-.field private b:Ljdg;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljfs;Ljdg;)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljdo;->a:Ljfs;
-
-    iput-object p2, p0, Ljdo;->b:Ljdg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lirs;Lirs;)F
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Ljdo;->b:Ljdg;
+    new-instance v1, Ljjk;
 
-    iget-object v1, p0, Ljdo;->a:Ljfs;
+    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    invoke-virtual {p1, v1}, Lirs;->a(Ljfs;)Lcom/google/android/libraries/smartburst/utils/Feature;
+    const-string v2, "default"
 
-    move-result-object v1
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v2, p0, Ljdo;->a:Ljfs;
+    move-result-object v0
 
-    invoke-virtual {p2, v2}, Lirs;->a(Ljfs;)Lcom/google/android/libraries/smartburst/utils/Feature;
+    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    move-result-object v2
+    invoke-direct {v1, v0}, Ljjk;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
 
-    invoke-interface {v0, v1, v2}, Ljdg;->a(Lcom/google/android/libraries/smartburst/utils/Feature;Lcom/google/android/libraries/smartburst/utils/Feature;)F
-
-    move-result v0
-
-    return v0
+    return-object v1
 .end method

@@ -1,309 +1,262 @@
 .class public final Ljkt;
-.super Ljle;
+.super Ljkp;
 .source "PG"
 
 
 # instance fields
-.field private transient a:Ljava/util/EnumSet;
+.field private final a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-.field private transient b:I
+.field private b:F
 
 
 # direct methods
-.method constructor <init>(Ljava/util/EnumSet;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljle;-><init>()V
+    invoke-direct {p0}, Ljkp;-><init>()V
 
-    iput-object p1, p0, Ljkt;->a:Ljava/util/EnumSet;
+    const/high16 v0, -0x40800000    # -1.0f
+
+    iput v0, p0, Ljkt;->b:F
+
+    iput-object p1, p0, Ljkt;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
     return-void
 .end method
 
-.method public static a(Ljava/util/EnumSet;)Ljle;
-    .locals 5
 
-    invoke-virtual {p0}, Ljava/util/EnumSet;->size()I
+# virtual methods
+.method public final a(Ljkl;)Ljava/util/Set;
+    .locals 9
 
-    move-result v0
+    const/4 v1, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    const v8, 0x3ca3d70a    # 0.02f
 
-    new-instance v0, Ljkt;
+    iget v0, p0, Ljkt;->b:F
 
-    invoke-direct {v0, p0}, Ljkt;-><init>(Ljava/util/EnumSet;)V
+    cmpg-float v0, v0, v1
 
-    :goto_0
-    return-object v0
+    if-gez v0, :cond_1
 
-    :pswitch_0
-    sget-object v0, Ljmx;->a:Ljmx;
+    iget-object v0, p0, Ljkt;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    goto :goto_0
+    iget-object v2, p0, Ljkt;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    :pswitch_1
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getEarliestTimestamp()J
 
-    move-result-object v1
+    move-result-wide v2
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-static {v0}, Ljle;->a(Ljava/lang/Object;)Ljle;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "expected one element but was: <"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {v0, v2, v3}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowIterator(J)Ljaz;
 
     move-result-object v2
 
-    const/4 v0, 0x0
-
-    :goto_1
-    const/4 v3, 0x4
-
-    if-ge v0, v3, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    const-string v3, ", "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const-string v0, ", ..."
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    const/16 v0, 0x3e
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
-
-
-# virtual methods
-.method public final a()Ljoe;
-    .locals 1
-
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-virtual {v0}, Ljava/util/EnumSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liui;->a(Ljava/util/Iterator;)Ljoe;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method final c()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final containsAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    instance-of v0, p1, Ljkt;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Ljkt;
-
-    iget-object p1, p1, Ljkt;->a:Ljava/util/EnumSet;
-
     :cond_0
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->containsAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method final d()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    if-ne p1, p0, :cond_0
-
-    const/4 v0, 0x1
-
     :goto_0
-    return v0
+    invoke-virtual {v2}, Ljaz;->a()Z
 
-    :cond_0
-    instance-of v0, p1, Ljkt;
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    check-cast p1, Ljkt;
-
-    iget-object p1, p1, Ljkt;->a:Ljava/util/EnumSet;
-
-    :cond_1
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget v0, p0, Ljkt;->b:I
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-virtual {v0}, Ljava/util/EnumSet;->hashCode()I
-
-    move-result v0
-
-    iput v0, p0, Ljkt;->b:I
-
-    :cond_0
-    return v0
-.end method
-
-.method public final isEmpty()Z
-    .locals 1
-
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-virtual {v0}, Ljava/util/EnumSet;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    invoke-virtual {p0}, Ljkt;->a()Ljoe;
+    invoke-virtual {v2}, Ljaz;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljay;
 
-.method public final size()I
-    .locals 1
+    sget-object v3, Ljpe;->d:Ljpe;
 
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
+    invoke-virtual {v0, v3}, Ljay;->a(Ljpe;)Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    invoke-virtual {v0}, Ljava/util/EnumSet;->size()I
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValue()F
 
     move-result v0
 
-    return v0
+    iget v3, p0, Ljkt;->b:F
+
+    cmpl-float v3, v0, v3
+
+    if-lez v3, :cond_0
+
+    iput v0, p0, Ljkt;->b:F
+
+    goto :goto_0
+
+    :cond_1
+    iget-wide v2, p1, Ljkl;->c:J
+
+    iget-wide v4, p1, Ljkl;->d:J
+
+    iget-object v0, p0, Ljkt;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    invoke-interface {v0, v2, v3}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowIterator(J)Ljaz;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/google/android/libraries/smartburst/utils/FloatArray;
+
+    invoke-direct {v3}, Lcom/google/android/libraries/smartburst/utils/FloatArray;-><init>()V
+
+    :goto_1
+    invoke-virtual {v2}, Ljaz;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v2}, Ljaz;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljay;
+
+    invoke-virtual {v0}, Ljay;->b()J
+
+    move-result-wide v6
+
+    cmp-long v6, v6, v4
+
+    if-gtz v6, :cond_3
+
+    sget-object v6, Ljpe;->d:Ljpe;
+
+    invoke-virtual {v0, v6}, Ljay;->a(Ljpe;)Lcom/google/android/libraries/smartburst/utils/Feature;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValue()F
+
+    move-result v0
+
+    cmpl-float v6, v0, v8
+
+    if-lez v6, :cond_2
+
+    iget v6, p0, Ljkt;->b:F
+
+    cmpl-float v6, v6, v8
+
+    if-eqz v6, :cond_2
+
+    sub-float/2addr v0, v8
+
+    const v6, 0x3f7ae148    # 0.98f
+
+    mul-float/2addr v0, v6
+
+    iget v6, p0, Ljkt;->b:F
+
+    sub-float/2addr v6, v8
+
+    div-float/2addr v0, v6
+
+    add-float/2addr v0, v8
+
+    :cond_2
+    invoke-virtual {v3, v0}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->add(F)V
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v3}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->sortInPlace()V
+
+    const v0, 0x3f333333    # 0.7f
+
+    invoke-virtual {v3}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->size()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v0, v2
+
+    float-to-int v0, v0
+
+    invoke-virtual {v3}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->size()I
+
+    move-result v2
+
+    invoke-virtual {v3, v0, v2}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->subArray(II)Lcom/google/android/libraries/smartburst/utils/FloatArray;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    invoke-virtual {v2}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_2
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    add-float/2addr v0, v1
+
+    move v1, v0
+
+    goto :goto_2
+
+    :cond_4
+    invoke-virtual {v2}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->size()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    div-float/2addr v1, v0
+
+    :cond_5
+    const v0, 0x3e4ccccd    # 0.2f
+
+    cmpl-float v0, v1, v0
+
+    if-lez v0, :cond_6
+
+    sget-object v0, Ljkm;->b:Ljkm;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljkm;
+
+    invoke-static {v0, v1}, Ljwo;->a(Ljava/lang/Enum;[Ljava/lang/Enum;)Ljuo;
+
+    move-result-object v0
+
+    :goto_3
+    return-object v0
+
+    :cond_6
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    goto :goto_3
 .end method
 
 .method public final toString()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-virtual {v0}, Ljava/util/EnumSet;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method final writeReplace()Ljava/lang/Object;
-    .locals 2
-
-    new-instance v0, Ljku;
-
-    iget-object v1, p0, Ljkt;->a:Ljava/util/EnumSet;
-
-    invoke-direct {v0, v1}, Ljku;-><init>(Ljava/util/EnumSet;)V
+    const-string v0, "[ActionSegmentClassifier cutoff: 0.02 threshold: 0.2 top percent to keep: 0.3]"
 
     return-object v0
 .end method

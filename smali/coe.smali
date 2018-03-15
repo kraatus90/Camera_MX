@@ -1,50 +1,45 @@
-.class public final Lcoe;
-.super Ljava/lang/Object;
+.class final Lcoe;
+.super Lcnw;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
-
-# static fields
-.field public static final a:Lcoe;
+# instance fields
+.field private final synthetic a:Lcod;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcoe;
-
-    invoke-direct {v0}, Lcoe;-><init>()V
-
-    sput-object v0, Lcoe;->a:Lcoe;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lcod;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcoe;->a:Lcod;
+
+    invoke-direct {p0, p1}, Lcnw;-><init>(Lcnv;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final l()V
     .locals 2
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    iget-object v0, p0, Lcoe;->a:Lcod;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, v0, Lcod;->g:Lgld;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result-object v0
+    invoke-super {p0}, Lcnw;->l()V
 
-    check-cast v0, Ljht;
+    iget-object v0, p0, Lcoe;->a:Lcod;
 
-    return-object v0
+    iget-object v0, v0, Lcod;->g:Lgld;
+
+    iget-object v1, p0, Lcoe;->a:Lcod;
+
+    iget-object v1, v1, Lcod;->i:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

@@ -3,28 +3,22 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lekl;
+# instance fields
+.field private final synthetic a:Landroid/widget/TextView;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lekl;
-
-    invoke-direct {v0}, Lekl;-><init>()V
-
-    sput-object v0, Lekl;->a:Lekl;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/widget/TextView;I)V
     .locals 0
+
+    iput-object p1, p0, Lekl;->a:Landroid/widget/TextView;
+
+    iput p2, p0, Lekl;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,12 +27,20 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    new-instance v0, Lekk;
+    iget-object v0, p0, Lekl;->a:Landroid/widget/TextView;
 
-    invoke-direct {v0}, Lekk;-><init>()V
+    iget v1, p0, Lekl;->b:I
 
-    return-object v0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+    iget-object v0, p0, Lekl;->a:Landroid/widget/TextView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    return-void
 .end method

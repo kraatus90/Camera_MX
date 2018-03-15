@@ -1,35 +1,53 @@
-.class final synthetic Lgly;
+.class public interface abstract Lgly;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Licn;
-
-
-# instance fields
-.field private a:Lglx;
-
-
-# direct methods
-.method constructor <init>(Lglx;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgly;->a:Lglx;
-
-    return-void
-.end method
+.source "PG"
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 1
+.method public abstract a()V
+.end method
 
-    iget-object v0, p0, Lgly;->a:Lglx;
+.method public abstract a(J)V
+.end method
 
-    check-cast p1, Lgys;
+.method public abstract a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
+.end method
 
-    invoke-virtual {v0, p1}, Lglx;->a(Lgys;)V
+.method public abstract a(Lenz;)V
+.end method
 
-    return-void
+.method public abstract a(Leof;)V
+.end method
+
+.method public abstract a(Leoi;Ljava/lang/Long;Ljava/lang/Integer;)V
+.end method
+
+.method public abstract a(Lgmb;)V
+.end method
+
+.method public abstract a(Lind;)V
+.end method
+
+.method public abstract a(Ljzp;)V
+.end method
+
+.method public abstract a(Lkae;)V
+.end method
+
+.method public abstract a(Lkal;)V
+.end method
+
+.method public abstract a(Z)V
+.end method
+
+.method public abstract b()V
+.end method
+
+.method public abstract b(J)V
+.end method
+
+.method public abstract c()V
+.end method
+
+.method public abstract d()Lgmb;
 .end method

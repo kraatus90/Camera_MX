@@ -1,99 +1,70 @@
 .class public final Lfpp;
-.super Lfoe;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lfox;
 
 
 # instance fields
-.field private e:I
-
-.field private f:Ljava/lang/String;
+.field private final synthetic a:Lfpi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lfpi;)V
+    .locals 0
 
-    invoke-direct {p0}, Lfoe;-><init>()V
+    iput-object p1, p0, Lfpp;->a:Lfpi;
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lfpp;->e:I
-
-    const-string v0, "precision mediump float;                            \nuniform float uAlphaFactor;                         \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  gl_FragColor = texture2D( sTexture, vTexCoord);   \n  gl_FragColor.a = gl_FragColor.a * uAlphaFactor;   \n}                                                   \n"
-
-    iput-object v0, p0, Lfpp;->f:Ljava/lang/String;
-
-    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
-
-    iget-object v1, p0, Lfpp;->f:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lfpp;->a(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpp;->d:I
-
-    iget v0, p0, Lfpp;->d:I
-
-    const-string v1, "aPosition"
-
-    invoke-static {v0, v1}, Lfpp;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpp;->a:I
-
-    iget v0, p0, Lfpp;->d:I
-
-    const-string v1, "aTextureCoord"
-
-    invoke-static {v0, v1}, Lfpp;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpp;->b:I
-
-    iget v0, p0, Lfpp;->d:I
-
-    const-string v1, "uMvpMatrix"
-
-    invoke-static {v0, v1}, Lfpp;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpp;->c:I
-
-    iget v0, p0, Lfpp;->d:I
-
-    const-string v1, "uAlphaFactor"
-
-    invoke-static {v0, v1}, Lfpp;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpp;->e:I
-
-    iget v0, p0, Lfoe;->d:I
-
-    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
-
-    iget v0, p0, Lfpp;->e:I
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)V
-    .locals 1
+.method public final a(Lfoy;)Lfpz;
+    .locals 6
 
-    iget v0, p0, Lfpp;->e:I
+    iget-object v0, p0, Lfpp;->a:Lfpi;
 
-    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+    invoke-virtual {v0, p1}, Lfpi;->a(Lfoy;)Lfpj;
 
-    return-void
+    move-result-object v0
+
+    new-instance v1, Lfqa;
+
+    const-string v2, "legacy"
+
+    invoke-direct {v1, v2}, Lfqa;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "legacy"
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Integer;
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x2
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v0, v3}, Lfpj;->a([Ljava/lang/Integer;)Z
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lfqa;->a()Lfpz;
+
+    move-result-object v0
+
+    return-object v0
 .end method

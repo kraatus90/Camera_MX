@@ -1,81 +1,58 @@
-.class Lhbu;
-.super Lgvh;
+.class public final Lhbu;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Lhbs;
+
+# static fields
+.field public static final a:Lhbu;
 
 
 # direct methods
-.method constructor <init>(Lhbs;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iput-object p1, p0, Lhbu;->a:Lhbs;
+    new-instance v0, Lhbu;
 
-    const/4 v0, 0x0
+    invoke-direct {v0}, Lhbu;-><init>()V
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[Z)V
+    sput-object v0, Lhbu;->a:Lhbu;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public S()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    const/4 v1, 0x1
 
-.method public T()V
-    .locals 0
+    invoke-static {}, Ljava/text/NumberFormat;->getInstance()Ljava/text/NumberFormat;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final a()V
-    .locals 4
+    invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->setMinimumFractionDigits(I)V
 
-    iget-object v0, p0, Lhbu;->a:Lhbs;
+    invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
 
-    iget-object v0, v0, Lhbs;->a:Lhcs;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v1, v0, Lhcs;->n:Landroid/view/View;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Ljava/text/NumberFormat;
 
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget v2, v0, Lhcs;->f:I
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    new-instance v2, Lhcz;
-
-    invoke-direct {v2, v0}, Lhcz;-><init>(Lhcs;)V
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    iget-object v0, v0, Lhcs;->e:Landroid/view/View;
-
-    const/16 v1, 0x700
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    return-void
+    return-object v0
 .end method

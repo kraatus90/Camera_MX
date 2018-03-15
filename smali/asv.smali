@@ -1,57 +1,78 @@
-.class final synthetic Lasv;
+.class public final Lasv;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lasu;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lasu;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lasv;->a:Lasu;
+    iput-object p1, p0, Lasv;->a:Lkgv;
+
+    iput-object p2, p0, Lasv;->b:Lkgv;
+
+    iput-object p3, p0, Lasv;->c:Lkgv;
+
+    iput-object p4, p0, Lasv;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lasv;->a:Lasu;
+    new-instance v4, Lasr;
 
-    iget-object v1, v0, Lasu;->d:Ljvi;
+    iget-object v0, p0, Lasv;->a:Lkgv;
 
-    const/4 v2, 0x1
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v0
+
+    check-cast v0, Liay;
+
+    iget-object v1, p0, Lasv;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Late;
+
+    iget-object v2, p0, Lasv;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljsw;->a(Ljava/lang/Object;)Z
+    check-cast v2, Lfam;
 
-    iget-object v1, v0, Lasu;->a:Lbjf;
+    iget-object v3, p0, Lasv;->d:Lkgv;
 
-    iget-object v1, v1, Lbjf;->a:Lbjj;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lgvh;->e()V
+    move-result-object v3
 
-    iget-object v1, v0, Lasu;->b:Lgdm;
+    check-cast v3, Lbkx;
 
-    invoke-interface {v1}, Lgdm;->b()V
+    invoke-direct {v4, v0, v1, v2, v3}, Lasr;-><init>(Liay;Late;Lfam;Lbkx;)V
 
-    iget-object v0, v0, Lasu;->a:Lbjf;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lbjf;->a(Landroid/view/View$OnClickListener;)V
-
-    return-void
+    return-object v4
 .end method

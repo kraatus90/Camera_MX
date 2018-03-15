@@ -1,36 +1,35 @@
-.class final Lcay;
-.super Likd;
+.class public final Lcay;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# instance fields
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:Z
+
+
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(IIIZI)V
     .locals 0
 
-    invoke-direct {p0}, Likd;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lcay;->a:I
+
+    iput p2, p0, Lcay;->b:I
+
+    iput p3, p0, Lcay;->c:I
+
+    iput-boolean p4, p0, Lcay;->e:Z
+
+    iput p5, p0, Lcay;->d:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    check-cast p1, Leou;
-
-    check-cast p2, Lcgh;
-
-    invoke-interface {p2}, Lcgh;->c()Lfvf;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Leou;->i()V
-
-    :cond_0
-    sget-object v0, Like;->a:Like;
-
-    return-object v0
 .end method

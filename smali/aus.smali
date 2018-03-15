@@ -1,23 +1,52 @@
-.class final Laus;
+.class public final Laus;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lhfp;
+
+
+# instance fields
+.field private final b:Lfam;
+
 
 # direct methods
-.method constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lfam;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/32 v0, 0x1e8480
+    iput-object p1, p0, Laus;->b:Lfam;
 
-    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    return-void
+.end method
 
-    move-result-object v0
 
-    sget-object v1, Ljava/math/BigInteger;->TEN:Ljava/math/BigInteger;
+# virtual methods
+.method public final a()V
+    .locals 1
 
-    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    iget-object v0, p0, Laus;->b:Lfam;
+
+    invoke-interface {v0}, Lfam;->e()V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 0
 
     return-void
 .end method

@@ -1,126 +1,56 @@
 .class public final Lbuw;
-.super Lbvt;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static d:Ljava/lang/String;
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private e:Ljxn;
-
-.field private f:Licz;
-
-.field private g:Lfrm;
-
-.field private h:Z
+.field private final a:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lkgv;)V
+    .locals 0
 
-    const-string v0, "CamActvtyCtrInit"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lbuw;->d:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljxn;Lhzt;Lfrm;Licz;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0, p2}, Lbvt;-><init>(Lflj;Ljava/util/concurrent/Executor;)V
-
-    iput-object p1, p0, Lbuw;->e:Ljxn;
-
-    iput-object p4, p0, Lbuw;->f:Licz;
-
-    iput-object p3, p0, Lbuw;->g:Lfrm;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lbuw;->h:Z
+    iput-object p1, p0, Lbuw;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final b()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    invoke-virtual {p0}, Lbuw;->c()Z
+    iget-object v0, p0, Lbuw;->a:Lkgv;
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lbuw;->d:Ljava/lang/String;
-
-    const-string v1, "Postponing controller initialization to onStart"
-
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lbuw;->g:Lfrm;
-
-    new-instance v1, Lbux;
-
-    invoke-direct {v1, p0}, Lbux;-><init>(Lbuw;)V
-
-    invoke-virtual {v0, v1}, Lfrm;->a(Lfsf;)Lfsf;
-
-    :cond_0
-    invoke-virtual {p0}, Lbuw;->e()V
-
-    return-void
-.end method
-
-.method final c()Z
-    .locals 2
-
-    iget-boolean v0, p0, Lbuw;->h:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    iget-object v0, p0, Lbuw;->f:Licz;
-
-    const-string v1, "CameraActivityControllerInitializer#initialize"
-
-    invoke-interface {v0, v1}, Licz;->a(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lbuw;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbtx;
+    check-cast v0, Landroid/view/WindowManager;
 
-    invoke-interface {v0}, Lbtx;->D()Z
+    new-instance v1, Landroid/util/DisplayMetrics;
 
-    move-result v0
+    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
 
-    iput-boolean v0, p0, Lbuw;->h:Z
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    iget-object v0, p0, Lbuw;->f:Licz;
+    move-result-object v0
 
-    invoke-interface {v0}, Licz;->a()V
+    invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    iget-boolean v0, p0, Lbuw;->h:Z
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    goto :goto_0
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/DisplayMetrics;
+
+    return-object v0
 .end method

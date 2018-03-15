@@ -3,236 +3,335 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lasx;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;
+.field private final a:Lkgv;
 
-.field private synthetic b:Landroid/content/Intent;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;Landroid/content/Intent;)V
-    .locals 0
-
-    iput-object p1, p0, Lavh;->a:Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;
-
-    iput-object p2, p0, Lavh;->b:Landroid/content/Intent;
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x1
+
+    invoke-static {p1, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->a:Lkgv;
+
+    const/4 v0, 0x2
+
+    invoke-static {p2, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->b:Lkgv;
+
+    const/4 v0, 0x3
+
+    invoke-static {p3, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->c:Lkgv;
+
+    const/4 v0, 0x4
+
+    invoke-static {p4, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->d:Lkgv;
+
+    const/4 v0, 0x5
+
+    invoke-static {p5, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->e:Lkgv;
+
+    const/4 v0, 0x6
+
+    invoke-static {p6, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->f:Lkgv;
+
+    const/4 v0, 0x7
+
+    invoke-static {p7, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->g:Lkgv;
+
+    const/16 v0, 0x8
+
+    invoke-static {p8, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lavh;->h:Lkgv;
+
+    const/16 v0, 0x9
+
+    invoke-static {p9, v0}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
     return-void
+.end method
+
+.method private static a(Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 3
+
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const/16 v1, 0x5d
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 4
+.method public final synthetic a(Lasq;Lfdv;Lick;Ljrf;Lick;)Lasw;
+    .locals 14
 
-    check-cast p1, Lhae;
+    new-instance v1, Lavf;
 
-    sget-object v0, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a:Ljava/lang/String;
+    iget-object v2, p0, Lavh;->a:Lkgv;
 
-    const-string v1, "GoogleAPIClient connected."
-
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    :try_start_0
-    iget-object v0, p0, Lavh;->b:Landroid/content/Intent;
-
-    sget-object v1, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a:Ljava/lang/String;
-
-    const-string v2, "Building crash options."
-
-    invoke-static {v1, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v1, Lhno;
-
-    invoke-direct {v1}, Lhno;-><init>()V
-
-    if-eqz v0, :cond_6
-
-    const-string v2, " "
-
-    iput-object v2, v1, Lhnn;->a:Ljava/lang/String;
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, v1, Lhnn;->c:Z
-
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.exceptionClass"
-
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.exceptionClass"
-
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lhno;->a(Ljava/lang/String;)Lhno;
+    check-cast v2, Laso;
 
-    :cond_0
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.stackTrace"
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.stackTrace"
-
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lhno;->e(Ljava/lang/String;)Lhno;
+    check-cast v2, Laso;
 
-    :cond_1
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingClass"
+    iget-object v3, p0, Lavh;->b:Lkgv;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v3
 
-    if-eqz v2, :cond_2
+    check-cast v3, Lasr;
 
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingClass"
+    const/4 v4, 0x2
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Lhno;->c(Ljava/lang/String;)Lhno;
+    check-cast v3, Lasr;
 
-    :cond_2
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingFile"
+    iget-object v4, p0, Lavh;->c:Lkgv;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v4
 
-    if-eqz v2, :cond_3
+    check-cast v4, Latb;
 
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingFile"
+    const/4 v5, 0x3
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v5}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v1, v2}, Lhno;->b(Ljava/lang/String;)Lhno;
+    check-cast v4, Latb;
 
-    :cond_3
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingLine"
+    iget-object v5, p0, Lavh;->d:Lkgv;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v5
 
-    if-eqz v2, :cond_4
+    check-cast v5, Late;
 
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingLine"
+    const/4 v6, 0x4
 
-    const/4 v3, -0x1
+    invoke-static {v5, v6}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    move-result-object v5
 
-    move-result v2
+    check-cast v5, Late;
 
-    invoke-virtual {v1, v2}, Lhno;->a(I)Lhno;
+    iget-object v6, p0, Lavh;->e:Lkgv;
 
-    :cond_4
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingMethod"
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    move-result-object v6
 
-    move-result v2
+    check-cast v6, Latq;
 
-    if-eqz v2, :cond_5
+    const/4 v7, 0x5
 
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.throwingMethod"
+    invoke-static {v6, v7}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v2
+    check-cast v6, Latq;
 
-    invoke-virtual {v1, v2}, Lhno;->d(Ljava/lang/String;)Lhno;
+    iget-object v7, p0, Lavh;->f:Lkgv;
 
-    :cond_5
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.categoryTag"
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    move-result-object v7
 
-    move-result v2
+    check-cast v7, Lhfh;
 
-    if-eqz v2, :cond_6
+    const/4 v8, 0x6
 
-    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SilentFeedbackService.categoryTag"
+    invoke-static {v7, v8}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v0
+    check-cast v7, Lhfh;
 
-    iput-object v0, v1, Lhnn;->b:Ljava/lang/String;
+    iget-object v8, p0, Lavh;->g:Lkgv;
 
-    :cond_6
-    invoke-virtual {v1}, Lhno;->a()Lcom/google/android/gms/feedback/FeedbackOptions;
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v8
 
-    iget-object v1, p1, Lhae;->a:Lhac;
+    check-cast v8, Lhff;
 
-    iget-object v1, v1, Lhac;->a:Lhkl;
+    const/4 v9, 0x7
 
-    invoke-static {v1, v0}, Lhni;->b(Lhkl;Lcom/google/android/gms/feedback/FeedbackOptions;)Lhkp;
+    invoke-static {v8, v9}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v8
 
-    new-instance v1, Lavi;
+    check-cast v8, Lhff;
 
-    invoke-direct {v1, p0, p1}, Lavi;-><init>(Lavh;Lhae;)V
+    iget-object v9, p0, Lavh;->h:Lkgv;
 
-    invoke-virtual {v0, v1}, Lhkp;->a(Lhkt;)V
-    :try_end_0
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
 
-    :goto_0
-    return-void
+    move-result-object v9
 
-    :catch_0
-    move-exception v0
+    check-cast v9, Liay;
 
-    sget-object v0, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a:Ljava/lang/String;
+    const/16 v10, 0x8
 
-    const-string v1, "Could not clean PII, no feedback sent."
+    invoke-static {v9, v10}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v9
 
-    iget-object v0, p0, Lavh;->a:Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;
+    check-cast v9, Liay;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a()V
+    const/16 v10, 0xa
 
-    goto :goto_0
-.end method
+    invoke-static {p1, v10}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    move-result-object v10
 
-    sget-object v0, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a:Ljava/lang/String;
+    check-cast v10, Lasq;
 
-    const-string v1, "GoogleApiClient silent feedback connection failed with result"
+    const/16 v11, 0xb
 
-    invoke-static {v0, v1, p1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-object/from16 v0, p2
 
-    iget-object v0, p0, Lavh;->a:Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;
+    invoke-static {v0, v11}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a()V
+    move-result-object v11
 
-    return-void
+    check-cast v11, Lfdv;
+
+    const/16 v12, 0xc
+
+    move-object/from16 v0, p3
+
+    invoke-static {v0, v12}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Lick;
+
+    const/16 v13, 0xd
+
+    move-object/from16 v0, p4
+
+    invoke-static {v0, v13}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    const/16 v13, 0xe
+
+    move-object/from16 v0, p5
+
+    invoke-static {v0, v13}, Lavh;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lick;
+
+    invoke-direct/range {v1 .. v13}, Lavf;-><init>(Laso;Lasr;Latb;Late;Latq;Lhfh;Lhff;Liay;Lasq;Lfdv;Lick;Lick;)V
+
+    return-object v1
 .end method

@@ -1,56 +1,55 @@
-.class final Lcaw;
+.class public final Lcaw;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/util/concurrent/Callable;
-
 
 # instance fields
-.field private synthetic a:Ljava/util/List;
+.field public final a:Lffz;
+
+.field public final b:Lick;
+
+.field public final c:Lfia;
+
+.field public final d:Lkeh;
+
+.field public final e:Landroid/view/Surface;
+
+.field public final f:Ljava/lang/Runnable;
+
+.field public final g:I
+
+.field public final h:I
+
+.field public final i:Lihs;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/List;)V
-    .locals 0
-
-    iput-object p1, p0, Lcaw;->a:Ljava/util/List;
+.method public constructor <init>(Lffz;Lkeh;Lick;Lfia;Landroid/view/Surface;Ljava/lang/Runnable;Lihs;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lcaw;->a:Lffz;
+
+    iput-object p2, p0, Lcaw;->d:Lkeh;
+
+    iput-object p3, p0, Lcaw;->b:Lick;
+
+    iput-object p4, p0, Lcaw;->c:Lfia;
+
+    iput-object p5, p0, Lcaw;->e:Landroid/view/Surface;
+
+    iput-object p6, p0, Lcaw;->f:Ljava/lang/Runnable;
+
+    const/16 v0, 0x8
+
+    iput v0, p0, Lcaw;->g:I
+
+    const/16 v0, 0xe
+
+    iput v0, p0, Lcaw;->h:I
+
+    iput-object p7, p0, Lcaw;->i:Lihs;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lcaw;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcdw;
-
-    invoke-virtual {v0}, Lcdw;->b()Z
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, Like;->a:Like;
-
-    return-object v0
 .end method

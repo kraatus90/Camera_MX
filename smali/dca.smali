@@ -1,33 +1,56 @@
-.class final synthetic Ldca;
+.class public final Ldca;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ldby;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldby;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldca;->a:Ldby;
+    iput-object p1, p0, Ldca;->a:Lkgv;
+
+    iput-object p2, p0, Ldca;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Ldca;->a:Ldby;
+    iget-object v0, p0, Ldca;->a:Lkgv;
 
-    invoke-virtual {v0}, Ldby;->f()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Lcsc;
+
+    iget-object v1, p0, Ldca;->b:Lkgv;
+
+    new-instance v2, Lcsi;
+
+    invoke-direct {v2, v0, v1}, Lcsi;-><init>(Lcsc;Lkgv;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcsb;
+
+    return-object v0
 .end method

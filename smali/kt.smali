@@ -1,47 +1,31 @@
-.class public final Lkt;
-.super Ljava/lang/Object;
+.class final Lkt;
+.super Lks;
 .source "PG"
 
 
-# static fields
-.field private static a:Lkv;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>()V
+    .locals 0
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-direct {p0}, Lks;-><init>()V
 
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
-
-    new-instance v0, Lku;
-
-    invoke-direct {v0}, Lku;-><init>()V
-
-    sput-object v0, Lkt;->a:Lkv;
-
-    :goto_0
     return-void
-
-    :cond_0
-    new-instance v0, Lkv;
-
-    invoke-direct {v0}, Lkv;-><init>()V
-
-    sput-object v0, Lkt;->a:Lkv;
-
-    goto :goto_0
 .end method
 
-.method public static a(Landroid/widget/EdgeEffect;FF)V
-    .locals 1
 
-    sget-object v0, Lkt;->a:Lkv;
+# virtual methods
+.method public final a(Landroid/widget/ImageView;Landroid/content/res/ColorStateList;)V
+    .locals 0
 
-    invoke-virtual {v0, p0, p1, p2}, Lkv;->a(Landroid/widget/EdgeEffect;FF)V
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    return-void
+.end method
+
+.method public final a(Landroid/widget/ImageView;Landroid/graphics/PorterDuff$Mode;)V
+    .locals 0
+
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
     return-void
 .end method

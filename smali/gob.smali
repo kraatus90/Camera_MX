@@ -1,34 +1,23 @@
-.class final Lgob;
+.class public interface abstract Lgob;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field private synthetic a:Lgoa;
-
-
-# direct methods
-.method constructor <init>(Lgoa;)V
-    .locals 0
-
-    iput-object p1, p0, Lgob;->a:Lgoa;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+.method public abstract a(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+.end method
 
-    iget-object v0, p0, Lgob;->a:Lgoa;
+.method public abstract b(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+.end method
 
-    invoke-virtual {v0}, Lgoa;->c()V
+.method public abstract c(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+.end method
 
-    return-void
+.method public abstract d(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+.end method
+
+.method public abstract e(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+.end method
+
+.method public abstract f(Landroid/content/DialogInterface$OnClickListener;)Lkeh;
 .end method

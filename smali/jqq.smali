@@ -1,280 +1,183 @@
-.class public final Ljqq;
-.super Ljwj;
+.class final Ljqq;
+.super Lea;
 .source "PG"
 
 
-# static fields
-.field private static volatile c:[Ljqq;
-
-
 # instance fields
-.field public a:J
+.field private k:Ljava/util/List;
 
-.field public b:J
+.field private l:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    const-wide/16 v0, 0x0
+    const-class v0, Ljqq;
 
-    invoke-direct {p0}, Ljwj;-><init>()V
-
-    iput-wide v0, p0, Ljqq;->a:J
-
-    iput-wide v0, p0, Ljqq;->b:J
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljqq;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljqq;->cachedSize:I
+    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a()[Ljqq;
-    .locals 2
+.method constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    sget-object v0, Ljqq;->c:[Ljqq;
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    if-nez v0, :cond_1
+    move-result-object v0
 
-    sget-object v1, Ljwn;->b:Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lea;-><init>(Landroid/content/Context;)V
 
-    monitor-enter v1
+    return-void
+.end method
 
-    :try_start_0
-    sget-object v0, Ljqq;->c:[Ljqq;
+.method constructor <init>(Landroid/content/Context;Ljava/util/List;)V
+    .locals 0
 
-    if-nez v0, :cond_0
+    invoke-direct {p0, p1}, Ljqq;-><init>(Landroid/content/Context;)V
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Ljqq;->l:Ljava/util/List;
 
-    new-array v0, v0, [Ljqq;
+    return-void
+.end method
 
-    sput-object v0, Ljqq;->c:[Ljqq;
+.method private final a(Ljava/util/List;)V
+    .locals 0
 
-    :cond_0
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-object p1, p0, Ljqq;->k:Ljava/util/List;
 
-    :cond_1
-    sget-object v0, Ljqq;->c:[Ljqq;
+    invoke-super {p0, p1}, Lea;->a(Ljava/lang/Object;)V
 
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-void
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 6
+.method public final bridge synthetic a(Ljava/lang/Object;)V
+    .locals 0
 
-    const-wide/16 v4, 0x0
+    check-cast p1, Ljava/util/List;
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-direct {p0, p1}, Ljqq;->a(Ljava/util/List;)V
 
-    move-result v0
-
-    iget-wide v2, p0, Ljqq;->a:J
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget-wide v2, p0, Ljqq;->a:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget-wide v2, p0, Ljqq;->b:J
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-wide v2, p0, Ljqq;->b:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    return v0
+    return-void
 .end method
 
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 11
+.method public final synthetic d()Ljava/lang/Object;
+    .locals 8
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v6, 0x0
 
-    const/16 v10, 0x40
+    const/4 v4, -0x1
 
-    const/4 v5, 0x0
+    new-instance v1, Ljava/util/TreeSet;
 
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-direct {v1}, Ljava/util/TreeSet;-><init>()V
 
-    move-result v0
+    iget-object v0, p0, Led;->f:Landroid/content/Context;
 
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    move-wide v0, v2
-
-    move v4, v5
-
-    :goto_1
-    if-ge v4, v10, :cond_2
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v6
-
-    and-int/lit8 v7, v6, 0x7f
-
-    int-to-long v8, v7
-
-    shl-long/2addr v8, v4
-
-    or-long/2addr v0, v8
-
-    and-int/lit16 v6, v6, 0x80
-
-    if-nez v6, :cond_1
-
-    iput-wide v0, p0, Ljqq;->a:J
-
-    goto :goto_0
-
-    :cond_1
-    add-int/lit8 v4, v4, 0x7
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    throw v0
+    const-string v2, "third_party_license_metadata"
 
-    :sswitch_2
-    move-wide v0, v2
-
-    move v4, v5
-
-    :goto_2
-    if-ge v4, v10, :cond_4
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v6
-
-    and-int/lit8 v7, v6, 0x7f
-
-    int-to-long v8, v7
-
-    shl-long/2addr v8, v4
-
-    or-long/2addr v0, v8
-
-    and-int/lit16 v6, v6, 0x80
-
-    if-nez v6, :cond_3
-
-    iput-wide v0, p0, Ljqq;->b:J
-
-    goto :goto_0
-
-    :cond_3
-    add-int/lit8 v4, v4, 0x7
-
-    goto :goto_2
-
-    :cond_4
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {v0, v2, v6, v7, v4}, Ljhn;->a(Landroid/content/Context;Ljava/lang/String;JI)Ljava/lang/String;
 
     move-result-object v0
 
-    throw v0
+    const-string v2, ""
 
-    nop
+    invoke-static {v0, v2}, Ljhn;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/ArrayList;
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-    .end sparse-switch
-.end method
+    move-result-object v0
 
-.method public final writeTo(Ljwi;)V
-    .locals 6
+    invoke-virtual {v1, v0}, Ljava/util/TreeSet;->addAll(Ljava/util/Collection;)Z
 
-    const-wide/16 v4, 0x0
-
-    iget-wide v0, p0, Ljqq;->a:J
-
-    cmp-long v0, v0, v4
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iget-wide v2, p0, Ljqq;->a:J
-
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
-
-    :cond_0
-    iget-wide v0, p0, Ljqq;->b:J
-
-    cmp-long v0, v0, v4
+    iget-object v0, p0, Ljqq;->l:Ljava/util/List;
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x2
+    iget-object v0, p0, Ljqq;->l:Ljava/util/List;
 
-    iget-wide v2, p0, Ljqq;->b:J
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    const-string v3, "res/raw/third_party_license_metadata"
+
+    invoke-static {v3, v0, v6, v7, v4}, Ljhn;->a(Ljava/lang/String;Ljava/lang/String;JI)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    invoke-static {v3, v0}, Ljhn;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    :goto_1
+    invoke-virtual {v1, v0}, Ljava/util/TreeSet;->addAll(Ljava/util/Collection;)Z
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    goto :goto_1
 
     :cond_1
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected final e()V
+    .locals 1
+
+    iget-object v0, p0, Ljqq;->k:Ljava/util/List;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljqq;->k:Ljava/util/List;
+
+    invoke-direct {p0, v0}, Ljqq;->a(Ljava/util/List;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Led;->a()V
+
+    goto :goto_0
+.end method
+
+.method protected final f()V
+    .locals 0
+
+    invoke-virtual {p0}, Led;->b()Z
 
     return-void
 .end method

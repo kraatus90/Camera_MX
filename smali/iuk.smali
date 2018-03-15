@@ -1,46 +1,103 @@
-.class final Liuk;
-.super Ljava/lang/Object;
+.class public final Liuk;
+.super Liua;
 .source "PG"
-
-# interfaces
-.implements Liuh;
-
-
-# instance fields
-.field private synthetic a:Landroid/content/Context;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Litv;Liqz;)V
     .locals 0
 
-    iput-object p1, p0, Liuk;->a:Landroid/content/Context;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Liua;-><init>(Litv;Liqz;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-array v0, v0, [Liyq;
+    move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    new-instance v2, Liyi;
+    move-result-object v1
 
-    iget-object v3, p0, Liuk;->a:Landroid/content/Context;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-direct {v2, v3}, Liyi;-><init>(Landroid/content/Context;)V
+    move-result v2
 
-    aput-object v2, v0, v1
+    invoke-virtual {p0}, Liuk;->c()Liuy;
 
-    invoke-static {v0}, Liyg;->a([Liyq;)Liyg;
+    move-result-object v0
+
+    check-cast v0, Liva;
+
+    invoke-interface {v0}, Liva;->d()Litl;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x15
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, "@"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "[layout="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

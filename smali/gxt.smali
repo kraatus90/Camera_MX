@@ -1,51 +1,42 @@
-.class final synthetic Lgxt;
+.class public final Lgxt;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lgxr;
-
-.field private b:Lgxp;
-
-.field private c:Lgyc;
+.field private final a:Lgxq;
 
 
 # direct methods
-.method constructor <init>(Lgxr;Lgxp;Lgyc;)V
+.method public constructor <init>(Lgxq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxt;->a:Lgxr;
-
-    iput-object p2, p0, Lgxt;->b:Lgxp;
-
-    iput-object p3, p0, Lgxt;->c:Lgyc;
+    iput-object p1, p0, Lgxt;->a:Lgxq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lgxt;->a:Lgxr;
+    iget-object v0, p0, Lgxt;->a:Lgxq;
 
-    iget-object v1, p0, Lgxt;->b:Lgxp;
+    iget-object v0, v0, Lgxq;->c:Landroid/view/LayoutInflater;
 
-    iget-object v2, p0, Lgxt;->c:Lgyc;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v3, v0, Lgxr;->d:Landroid/os/Handler;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v4, Lgxx;
+    move-result-object v0
 
-    invoke-direct {v4, v0, v1, v2}, Lgxx;-><init>(Lgxr;Lgxp;Lgyc;)V
+    check-cast v0, Landroid/view/LayoutInflater;
 
-    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+    return-object v0
 .end method

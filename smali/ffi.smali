@@ -1,63 +1,76 @@
-.class final Lffi;
-.super Landroid/os/Handler;
+.class public final Lffi;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljava/lang/ref/WeakReference;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lffe;Landroid/os/Looper;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    iput-object p1, p0, Lffi;->a:Lkgv;
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    iput-object p2, p0, Lffi;->b:Lkgv;
 
-    iput-object v0, p0, Lffi;->a:Ljava/lang/ref/WeakReference;
+    iput-object p3, p0, Lffi;->c:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;Lkgv;)Lffi;
+    .locals 1
+
+    new-instance v0, Lffi;
+
+    invoke-direct {v0, p0, p1, p2}, Lffi;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lffi;->a:Ljava/lang/ref/WeakReference;
+    new-instance v3, Lffh;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    iget-object v0, p0, Lffi;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lffe;
+    check-cast v0, Lick;
 
-    if-nez v0, :cond_0
+    iget-object v1, p0, Lffi;->b:Lkgv;
 
-    :goto_0
-    return-void
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    :cond_0
-    iget v1, p1, Landroid/os/Message;->what:I
+    move-result-object v1
 
-    packed-switch v1, :pswitch_data_0
+    check-cast v1, Lick;
 
-    goto :goto_0
+    iget-object v2, p0, Lffi;->c:Lkgv;
 
-    :pswitch_0
-    invoke-virtual {v0}, Lffe;->b()V
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lffe;->o:Lffh;
+    move-result-object v2
 
-    goto :goto_0
+    check-cast v2, Lfdv;
 
-    nop
+    invoke-direct {v3, v0, v1, v2}, Lffh;-><init>(Lick;Lick;Lfdv;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v3
 .end method

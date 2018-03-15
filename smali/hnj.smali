@@ -1,34 +1,181 @@
-.class final Lhnj;
-.super Lhkf;
+.class public final Lhnj;
+.super Landroid/os/Binder;
+
+# interfaces
+.implements Lhni;
+
+
+# instance fields
+.field private a:Lhmf;
+
+.field private final b:I
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
+
+    invoke-virtual {p0, p0, v0}, Lhnj;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lhmf;I)V
     .locals 0
 
-    invoke-direct {p0}, Lhkf;-><init>()V
+    invoke-direct {p0}, Lhnj;-><init>()V
+
+    iput-object p1, p0, Lhnj;->a:Lhmf;
+
+    iput p2, p0, Lhnj;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Landroid/content/Context;Landroid/os/Looper;Lhls;Ljava/lang/Object;Lhkn;Lhko;)Lhkj;
-    .locals 6
+.method public final a()V
+    .locals 3
 
-    new-instance v0, Lhpw;
+    const-string v0, "GmsClient"
 
-    move-object v1, p1
+    const-string v1, "received deprecated onAccountValidationComplete callback, ignoring"
 
-    move-object v2, p2
+    new-instance v2, Ljava/lang/Exception;
 
-    move-object v3, p5
+    invoke-direct {v2}, Ljava/lang/Exception;-><init>()V
 
-    move-object v4, p6
+    invoke-static {v0, v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-object v5, p3
+    return-void
+.end method
 
-    invoke-direct/range {v0 .. v5}, Lhpw;-><init>(Landroid/content/Context;Landroid/os/Looper;Lhkn;Lhko;Lhls;)V
+.method public final a(ILandroid/os/IBinder;Landroid/os/Bundle;)V
+    .locals 2
 
-    return-object v0
+    iget-object v0, p0, Lhnj;->a:Lhmf;
+
+    const-string v1, "onPostInitComplete can be called only once per call to getRemoteService"
+
+    invoke-static {v0, v1}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lhnj;->a:Lhmf;
+
+    iget v1, p0, Lhnj;->b:I
+
+    invoke-virtual {v0, p1, p2, p3, v1}, Lhmf;->a(ILandroid/os/IBinder;Landroid/os/Bundle;I)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lhnj;->a:Lhmf;
+
+    return-void
+.end method
+
+.method public final asBinder()Landroid/os/IBinder;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    sparse-switch p1, :sswitch_data_0
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :sswitch_0
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_1
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Bundle;
+
+    :goto_1
+    invoke-virtual {p0, v2, v3, v0}, Lhnj;->a(ILandroid/os/IBinder;Landroid/os/Bundle;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    :cond_1
+    invoke-virtual {p0}, Lhnj;->a()V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

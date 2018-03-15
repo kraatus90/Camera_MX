@@ -1,81 +1,31 @@
-.class public final Lhpc;
+.class public interface abstract Lhpc;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lhkc;
-
-.field public static final b:Lhpa;
-
-.field private static c:Lhkh;
-
-.field private static d:Lhkf;
-
-.field private static e:Ljava/util/concurrent/Executor;
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    new-instance v0, Lhkh;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lhkh;-><init>(B)V
-
-    sput-object v0, Lhpc;->c:Lhkh;
-
-    new-instance v0, Lhpd;
-
-    invoke-direct {v0}, Lhpd;-><init>()V
-
-    sput-object v0, Lhpc;->d:Lhkf;
-
-    new-instance v0, Lhkc;
-
-    const-string v1, "Help.API"
-
-    sget-object v2, Lhpc;->d:Lhkf;
-
-    sget-object v3, Lhpc;->c:Lhkh;
-
-    invoke-direct {v0, v1, v2, v3}, Lhkc;-><init>(Ljava/lang/String;Lhkf;Lhkh;)V
-
-    sput-object v0, Lhpc;->a:Lhkc;
-
-    new-instance v0, Lhog;
-
-    invoke-direct {v0}, Lhog;-><init>()V
-
-    sput-object v0, Lhpc;->b:Lhpa;
-
-    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    sput-object v0, Lhpc;->e:Ljava/util/concurrent/Executor;
-
-    return-void
+# virtual methods
+.method public abstract a()V
 .end method
 
-.method public static a(Lhkl;Lhpg;)V
-    .locals 3
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xb
-    .end annotation
+.method public abstract a(Lcom/google/android/gms/googlehelp/GoogleHelp;)V
+.end method
 
-    new-instance v0, Lhpe;
+.method public abstract b()V
+.end method
 
-    invoke-direct {v0, p0, p1}, Lhpe;-><init>(Lhkl;Lhpg;)V
+.method public abstract c()V
+.end method
 
-    sget-object v1, Lhpc;->e:Ljava/util/concurrent/Executor;
+.method public abstract d()V
+.end method
 
-    const/4 v2, 0x0
+.method public abstract e()V
+.end method
 
-    new-array v2, v2, [Ljava/lang/Void;
+.method public abstract f()V
+.end method
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    return-void
+.method public abstract g()V
 .end method

@@ -1,93 +1,58 @@
-.class final Lcsz;
+.class public final Lcsz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcsy;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcsy;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcsz;->a:Lcsy;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcsz;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lcsz;->a:Lkgv;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/res/Resources;
+
+    const v1, 0x7f0f000a
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "PhotoModule"
 
-    iget-object v0, p0, Lcsz;->a:Lcsy;
+    new-instance v2, Lcsc;
 
-    iget-object v0, v0, Lcsy;->b:Lcsk;
+    invoke-direct {v2, v0, v1}, Lcsc;-><init>(ILjava/lang/String;)V
 
-    iget-object v0, v0, Lcsk;->x:Lgum;
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-interface {v0}, Lgum;->b()V
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lcsz;->a:Lcsy;
+    move-result-object v0
 
-    iget-object v0, v0, Lcsy;->a:Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;
+    check-cast v0, Lcsc;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;->e()V
-
-    iget-object v0, p0, Lcsz;->a:Lcsy;
-
-    iget-object v0, v0, Lcsy;->b:Lcsk;
-
-    iget-object v0, v0, Lcsk;->E:Lcid;
-
-    iget-object v1, p0, Lcsz;->a:Lcsy;
-
-    iget-object v1, v1, Lcsy;->b:Lcsk;
-
-    iget-object v1, v1, Lcsk;->s:Lbip;
-
-    invoke-virtual {v1}, Lbip;->b()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcid;->b(Z)V
-
-    iget-object v0, p0, Lcsz;->a:Lcsy;
-
-    iget-object v0, v0, Lcsy;->b:Lcsk;
-
-    iget-object v0, v0, Lcsk;->ag:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
-
-    sget-object v0, Lcsk;->c:Ljava/lang/String;
-
-    const-string v1, "error when starting burst (after stop)"
-
-    invoke-static {v0, v1, p1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+    return-object v0
 .end method

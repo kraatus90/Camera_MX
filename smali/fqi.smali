@@ -3,12 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/io/FilenameFilter;
+.implements Lkds;
+
+
+# instance fields
+.field private final synthetic a:Lfqh;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lfqh;)V
     .locals 0
+
+    iput-object p1, p0, Lfqi;->a:Lfqh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,18 +23,26 @@
 
 
 # virtual methods
-.method public final accept(Ljava/io/File;Ljava/lang/String;)Z
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
 
-    invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    iget-object v0, p0, Lfqi;->a:Lfqh;
 
-    move-result-object v0
+    iget-object v0, v0, Lfqh;->a:Lfqp;
 
-    const-string v1, ".jpg"
+    invoke-virtual {v0}, Lfqp;->close()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    return-void
+.end method
 
-    move-result v0
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 1
 
-    return v0
+    iget-object v0, p0, Lfqi;->a:Lfqh;
+
+    iget-object v0, v0, Lfqh;->a:Lfqp;
+
+    invoke-virtual {v0}, Lfqp;->close()V
+
+    return-void
 .end method

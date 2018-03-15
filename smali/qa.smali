@@ -3,92 +3,68 @@
 .source "PG"
 
 # interfaces
-.implements Ljm;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Z
-
-.field private b:I
-
-.field private synthetic c:Lpz;
+.field private final synthetic a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
 
 # direct methods
-.method protected constructor <init>(Lpz;)V
-    .locals 1
+.method public constructor <init>(Landroid/support/v7/widget/ActionBarOverlayLayout;)V
+    .locals 0
 
-    iput-object p1, p0, Lqa;->c:Lpz;
+    iput-object p1, p0, Lqa;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lqa;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lji;I)Lqa;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lqa;->c:Lpz;
+    iget-object v0, p0, Lqa;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    iput-object p1, v0, Lpz;->e:Lji;
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->b()V
 
-    iput p2, p0, Lqa;->b:I
+    iget-object v0, p0, Lqa;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    return-object p0
-.end method
+    iget-object v1, p0, Lqa;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-.method public final a(Landroid/view/View;)V
-    .locals 1
+    iget-object v1, v1, Landroid/support/v7/widget/ActionBarOverlayLayout;->b:Landroid/support/v7/widget/ActionBarContainer;
 
-    iget-object v0, p0, Lqa;->c:Lpz;
+    invoke-virtual {v1}, Landroid/support/v7/widget/ActionBarContainer;->animate()Landroid/view/ViewPropertyAnimator;
 
-    invoke-static {v0}, Lpz;->a(Lpz;)V
+    move-result-object v1
 
-    const/4 v0, 0x0
+    iget-object v2, p0, Lqa;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    iput-boolean v0, p0, Lqa;->a:Z
+    iget-object v2, v2, Landroid/support/v7/widget/ActionBarOverlayLayout;->b:Landroid/support/v7/widget/ActionBarContainer;
 
-    return-void
-.end method
+    invoke-virtual {v2}, Landroid/support/v7/widget/ActionBarContainer;->getHeight()I
 
-.method public final b(Landroid/view/View;)V
-    .locals 2
+    move-result v2
 
-    iget-boolean v0, p0, Lqa;->a:Z
+    neg-int v2, v2
 
-    if-eqz v0, :cond_0
+    int-to-float v2, v2
 
-    :goto_0
-    return-void
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
-    :cond_0
-    iget-object v0, p0, Lqa;->c:Lpz;
+    move-result-object v1
 
-    const/4 v1, 0x0
+    iget-object v2, p0, Lqa;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    iput-object v1, v0, Lpz;->e:Lji;
+    iget-object v2, v2, Landroid/support/v7/widget/ActionBarOverlayLayout;->i:Landroid/animation/AnimatorListenerAdapter;
 
-    iget-object v0, p0, Lqa;->c:Lpz;
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    iget v1, p0, Lqa;->b:I
+    move-result-object v1
 
-    invoke-static {v0, v1}, Lpz;->a(Lpz;I)V
-
-    goto :goto_0
-.end method
-
-.method public final c(Landroid/view/View;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lqa;->a:Z
+    iput-object v1, v0, Landroid/support/v7/widget/ActionBarOverlayLayout;->h:Landroid/view/ViewPropertyAnimator;
 
     return-void
 .end method

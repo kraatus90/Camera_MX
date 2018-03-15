@@ -1,24 +1,33 @@
 .class final Ljuv;
-.super Ljava/lang/Object;
+.super Ljwz;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# instance fields
+.field private final synthetic a:Ljqv;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/util/Iterator;Ljqv;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Ljuv;->a:Ljqv;
+
+    invoke-direct {p0, p1}, Ljwz;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 0
+.method final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    iget-object v0, p0, Ljuv;->a:Ljqv;
+
+    invoke-interface {v0, p1}, Ljqv;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method

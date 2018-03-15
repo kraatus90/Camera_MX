@@ -1,53 +1,49 @@
-.class public final Lawf;
-.super Laxf;
-.source "PG"
+.class final synthetic Lawf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lihg;
 
 
 # instance fields
-.field private synthetic a:Ljava/util/List;
+.field private final a:Late;
 
 
 # direct methods
-.method public constructor <init>(Lawd;Ljava/util/List;)V
+.method constructor <init>(Late;)V
     .locals 0
 
-    iput-object p2, p0, Lawf;->a:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Laxf;-><init>(Lawd;)V
+    iput-object p1, p0, Lawf;->a:Late;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final a(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p0, Lawf;->a:Ljava/util/List;
+    iget-object v1, p0, Lawf;->a:Late;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object v0
-
-    check-cast v0, Lawd;
-
-    invoke-interface {v0}, Lawd;->close()V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-super {p0}, Laxf;->close()V
+    :goto_0
+    invoke-interface {v1, v0}, Late;->a(Z)V
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

@@ -1,150 +1,182 @@
-.class public final Ldap;
+.class final Ldap;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/hardware/display/DisplayManager$DisplayListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
+.field private final synthetic a:Ldal;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
+    iput-object p1, p0, Ldap;->a:Ldal;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldap;->a:Ljxn;
-
-    iput-object p2, p0, Ldap;->b:Ljxn;
-
-    iput-object p3, p0, Ldap;->c:Ljxn;
-
-    iput-object p4, p0, Ldap;->d:Ljxn;
-
-    iput-object p5, p0, Ldap;->e:Ljxn;
-
-    iput-object p6, p0, Ldap;->f:Ljxn;
-
-    iput-object p7, p0, Ldap;->g:Ljxn;
-
-    iput-object p8, p0, Ldap;->h:Ljxn;
-
-    iput-object p9, p0, Ldap;->i:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 10
+.method public final onDisplayAdded(I)V
+    .locals 0
 
-    iget-object v0, p0, Ldap;->a:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+.method public final onDisplayChanged(I)V
+    .locals 6
+
+    const/16 v5, 0xb4
+
+    iget-object v0, p0, Ldap;->a:Ldal;
+
+    invoke-static {v0}, Ldal;->c(Ldal;)Lbvw;
 
     move-result-object v0
 
-    move-object v2, v0
+    invoke-virtual {v0}, Lbvw;->b()Landroid/view/WindowManager;
 
-    check-cast v2, Lfic;
+    move-result-object v0
 
-    iget-object v0, p0, Ldap;->b:Ljxn;
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
 
-    check-cast v1, Lews;
+    move-result v0
 
-    iget-object v0, p0, Ldap;->c:Ljxn;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Ligz;->a:Ligz;
 
-    move-result-object v4
+    :goto_0
+    invoke-virtual {v0}, Ligz;->a()I
 
-    check-cast v4, Landroid/view/LayoutInflater;
+    move-result v0
 
-    iget-object v0, p0, Ldap;->d:Ljxn;
+    sget-object v1, Ldal;->c:Ljava/lang/String;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Ldap;->a:Ldal;
+
+    iget v2, v2, Ldal;->C:I
+
+    const/16 v3, 0x32
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "onDisplayChange (old:new): "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    check-cast v3, Landroid/content/res/Resources;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Ldap;->e:Ljxn;
+    move-result-object v2
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v3, ":"
 
-    move-result-object v5
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v5, Lest;
+    move-result-object v2
 
-    iget-object v0, p0, Ldap;->f:Ljxn;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v6
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    check-cast v6, Lfdg;
+    move-result-object v2
 
-    iget-object v0, p0, Ldap;->g:Ljxn;
+    invoke-static {v1, v2}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Ldap;->a:Ldal;
 
-    move-result-object v7
+    iget v1, v1, Ldal;->C:I
 
-    check-cast v7, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    sub-int v1, v0, v1
 
-    iget-object v0, p0, Ldap;->h:Ljxn;
+    add-int/lit16 v1, v1, 0x168
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    rem-int/lit16 v1, v1, 0x168
 
-    move-result-object v8
+    if-ne v1, v5, :cond_0
 
-    check-cast v8, Lbjc;
+    iget-object v1, p0, Ldap;->a:Ldal;
 
-    iget-object v0, p0, Ldap;->i:Ljxn;
+    iget-object v2, v1, Ldal;->J:Landroid/os/Handler;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v2, :cond_0
 
-    move-result-object v9
+    iget-object v1, v1, Ldal;->J:Landroid/os/Handler;
 
-    check-cast v9, Lhem;
+    const/4 v2, 0x3
 
-    new-instance v0, Ldcr;
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    iget-object v2, v2, Lfic;->a:Landroid/widget/FrameLayout;
+    :cond_0
+    iget-object v1, p0, Ldap;->a:Ldal;
 
-    invoke-direct/range {v0 .. v9}, Ldcr;-><init>(Lews;Landroid/view/View;Landroid/content/res/Resources;Landroid/view/LayoutInflater;Lest;Lfeo;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lbjc;Lhem;)V
+    iput v0, v1, Ldal;->C:I
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    return-void
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :pswitch_0
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ligz;->b(I)Ligz;
 
     move-result-object v0
 
-    check-cast v0, Lhbo;
+    goto :goto_0
 
-    return-object v0
+    :pswitch_1
+    const/16 v0, 0x5a
+
+    invoke-static {v0}, Ligz;->b(I)Ligz;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-static {v5}, Ligz;->b(I)Ligz;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_3
+    const/16 v0, 0x10e
+
+    invoke-static {v0}, Ligz;->b(I)Ligz;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
+.end method
+
+.method public final onDisplayRemoved(I)V
+    .locals 0
+
+    return-void
 .end method

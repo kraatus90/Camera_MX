@@ -1,100 +1,69 @@
-.class final synthetic Leof;
+.class public abstract Leof;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private a:Leoc;
-
-.field private b:Lgvw;
-
-.field private c:Ljava/io/InputStream;
-
-.field private d:Ljht;
-
-.field private e:Lgrz;
+.source "PG"
 
 
 # direct methods
-.method constructor <init>(Leoc;Lgvw;Ljava/io/InputStream;Ljht;Lgrz;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leof;->a:Leoc;
-
-    iput-object p2, p0, Leof;->b:Lgvw;
-
-    iput-object p3, p0, Leof;->c:Ljava/io/InputStream;
-
-    iput-object p4, p0, Leof;->d:Ljht;
-
-    iput-object p5, p0, Leof;->e:Lgrz;
-
     return-void
+.end method
+
+.method public static o()Leog;
+    .locals 2
+
+    new-instance v0, Leog;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Leog;-><init>(B)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public abstract a()I
+.end method
 
-    iget-object v1, p0, Leof;->a:Leoc;
+.method public abstract b()Ljava/lang/String;
+.end method
 
-    iget-object v0, p0, Leof;->b:Lgvw;
+.method public abstract c()Z
+.end method
 
-    iget-object v2, p0, Leof;->c:Ljava/io/InputStream;
+.method public abstract d()Z
+.end method
 
-    iget-object v3, p0, Leof;->d:Ljht;
+.method public abstract e()F
+.end method
 
-    iget-object v4, p0, Leof;->e:Lgrz;
+.method public abstract f()Ljava/lang/String;
+.end method
 
-    iget-object v5, v1, Leoc;->d:Lgwb;
+.method public abstract g()Ljava/lang/String;
+.end method
 
-    iget-object v6, v1, Leoc;->i:Ljava/lang/String;
+.method public abstract h()Z
+.end method
 
-    invoke-virtual {v5, v6, v0}, Lgwb;->a(Ljava/lang/String;Lgvw;)Ljava/io/File;
+.method public abstract i()F
+.end method
 
-    move-result-object v5
+.method public abstract j()Ljrf;
+.end method
 
-    :try_start_0
-    iget-object v6, v1, Leoc;->c:Lgvp;
+.method public abstract k()Ljava/lang/Boolean;
+.end method
 
-    invoke-interface {v6, v5, v2, v3}, Lgvp;->a(Ljava/io/File;Ljava/io/InputStream;Ljht;)J
+.method public abstract l()Landroid/graphics/Rect;
+.end method
 
-    move-result-wide v2
+.method public abstract m()Ljrf;
+.end method
 
-    iget-object v6, v1, Leoc;->o:Lavl;
-
-    invoke-interface {v6, v2, v3}, Lavl;->b(J)V
-
-    iget-object v2, v1, Leoc;->l:Ljvi;
-
-    new-instance v3, Leoi;
-
-    invoke-direct {v3, v1, v5, v0, v4}, Leoi;-><init>(Leoc;Ljava/io/File;Lgvw;Lgrz;)V
-
-    invoke-virtual {v2, v3}, Ljsw;->a(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    sget-object v2, Leoc;->a:Ljava/lang/String;
-
-    const-string v3, "CameraFileUtil.writeFile() throws : "
-
-    invoke-static {v2, v3, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object v1, v1, Leoc;->l:Ljvi;
-
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_0
+.method public abstract n()Ljava/lang/Boolean;
 .end method

@@ -1,90 +1,42 @@
-.class public final Ldjs;
+.class final Ldjs;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ldjy;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Ldjq;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Ldjq;)V
     .locals 0
 
+    iput-object p1, p0, Ldjs;->a:Ldjq;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldjs;->a:Ljxn;
-
-    iput-object p2, p0, Ldjs;->b:Ljxn;
-
-    iput-object p3, p0, Ldjs;->c:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldjs;
-
-    invoke-direct {v0, p0, p1, p2}, Ldjs;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 2
 
-    iget-object v0, p0, Ldjs;->a:Ljxn;
+    iget-object v0, p0, Ldjs;->a:Ldjq;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldjq;->f:Lbey;
 
-    move-result-object v0
+    invoke-interface {v0}, Lbey;->close()V
 
-    check-cast v0, Lgdq;
+    new-instance v0, Ldhu;
 
-    iget-object v1, p0, Ldjs;->b:Ljxn;
+    iget-object v1, p0, Ldjs;->a:Ldjq;
 
-    iget-object v2, p0, Ldjs;->c:Ljxn;
-
-    invoke-interface {v0}, Lgdq;->p()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lggu;
-
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lggu;
+    invoke-direct {v0, v1}, Ldhu;-><init>(Ldjz;)V
 
     return-object v0
-
-    :cond_0
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lggu;
-
-    goto :goto_0
 .end method

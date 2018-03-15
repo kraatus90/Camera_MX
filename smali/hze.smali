@@ -1,42 +1,117 @@
-.class public final Lhze;
-.super Ljava/lang/Object;
-.source "PG"
-
-# interfaces
-.implements Licn;
+.class final Lhze;
+.super Lhzc;
 
 
 # instance fields
-.field public final a:Licn;
-
-.field private b:Ljava/util/concurrent/Executor;
+.field private final a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Licn;Ljava/util/concurrent/Executor;)V
+.method constructor <init>(Lhsz;Ljava/util/List;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lhzc;-><init>(Lhsz;)V
 
-    iput-object p1, p0, Lhze;->a:Licn;
-
-    iput-object p2, p0, Lhze;->b:Ljava/util/concurrent/Executor;
+    iput-object p2, p0, Lhze;->a:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+.method public final a(Lcom/google/android/gms/wearable/internal/zzch;)V
+    .locals 4
 
-    iget-object v0, p0, Lhze;->b:Ljava/util/concurrent/Executor;
+    new-instance v1, Lhwz;
 
-    new-instance v1, Lhzf;
+    iget v2, p1, Lcom/google/android/gms/wearable/internal/zzch;->a:I
 
-    invoke-direct {v1, p0, p1}, Lhzf;-><init>(Lhze;Ljava/lang/Object;)V
+    new-instance v3, Lcom/google/android/gms/common/api/Status;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    packed-switch v2, :pswitch_data_0
 
+    invoke-static {v2}, Lhmr;->a(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-direct {v3, v2, v0}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+
+    iget-object v0, p1, Lcom/google/android/gms/wearable/internal/zzch;->b:Lcom/google/android/gms/wearable/internal/zzao;
+
+    invoke-direct {v1, v3}, Lhwz;-><init>(Lcom/google/android/gms/common/api/Status;)V
+
+    invoke-virtual {p0, v1}, Lhze;->a(Ljava/lang/Object;)V
+
+    iget v0, p1, Lcom/google/android/gms/wearable/internal/zzch;->a:I
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lhze;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/FutureTask;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
+
+    goto :goto_1
+
+    :pswitch_0
+    const-string v0, "TARGET_NODE_NOT_CONNECTED"
+
+    goto :goto_0
+
+    :pswitch_1
+    const-string v0, "DUPLICATE_LISTENER"
+
+    goto :goto_0
+
+    :pswitch_2
+    const-string v0, "UNKNOWN_LISTENER"
+
+    goto :goto_0
+
+    :pswitch_3
+    const-string v0, "DATA_ITEM_TOO_LARGE"
+
+    goto :goto_0
+
+    :pswitch_4
+    const-string v0, "INVALID_TARGET_NODE"
+
+    goto :goto_0
+
+    :pswitch_5
+    const-string v0, "ASSET_UNAVAILABLE"
+
+    goto :goto_0
+
+    :cond_0
     return-void
+
+    :pswitch_data_0
+    .packed-switch 0xfa0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+    .end packed-switch
 .end method

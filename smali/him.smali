@@ -1,80 +1,71 @@
-.class public final Lhim;
+.class final Lhim;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
+.field private a:Z
+
+.field private final synthetic b:Landroid/animation/AnimatorSet;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;)V
-    .locals 0
+.method constructor <init>(Landroid/animation/AnimatorSet;)V
+    .locals 1
 
-    iput-object p1, p0, Lhim;->a:Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
+    iput-object p1, p0, Lhim;->b:Landroid/animation/AnimatorSet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lhim;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .locals 3
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    if-eqz p3, :cond_1
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lhim;->a:Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
+    iput-boolean v0, p0, Lhim;->a:Z
 
-    int-to-float v1, p2
+    return-void
+.end method
 
-    const/high16 v2, 0x42c80000    # 100.0f
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    div-float/2addr v1, v2
+    iget-boolean v0, p0, Lhim;->a:Z
 
-    iput v1, v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a:F
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lhim;->a:Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
+    iget-object v0, p0, Lhim;->b:Landroid/animation/AnimatorSet;
 
-    iget-object v0, v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhsn;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lhim;->a:Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
-
-    iget-object v0, v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhsn;
-
-    iget-object v1, p0, Lhim;->a:Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
-
-    iget v1, v1, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a:F
-
-    iget-object v0, v0, Lhsn;->b:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->a(ZF)V
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     :cond_0
-    iget-object v0, p0, Lhim;->a:Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a()V
-
-    :cond_1
     return-void
 .end method
 
-.method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .locals 0
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lhim;->a:Z
 
     return-void
 .end method

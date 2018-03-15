@@ -1,200 +1,108 @@
-.class public final Lnj;
-.super Ljava/lang/Object;
+.class final Lnj;
+.super Ljh;
 .source "PG"
-
-# interfaces
-.implements Lpa;
 
 
 # instance fields
-.field public final a:Lha;
-
-.field public final b:Lhd;
-
-.field private c:Ljava/util/ArrayList;
-
-.field private d:Ljava/util/HashSet;
+.field private final synthetic a:Lni;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Lni;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnj;->a:Lni;
 
-    new-instance v0, Lhb;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lhb;-><init>(I)V
-
-    iput-object v0, p0, Lnj;->a:Lha;
-
-    new-instance v0, Lhd;
-
-    invoke-direct {v0}, Lhd;-><init>()V
-
-    iput-object v0, p0, Lnj;->b:Lhd;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lnj;->c:Ljava/util/ArrayList;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lnj;->d:Ljava/util/HashSet;
+    invoke-direct {p0}, Ljh;-><init>()V
 
     return-void
-.end method
-
-.method private final a(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
-    .locals 4
-
-    invoke-virtual {p2, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-virtual {p3, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "This graph contains cyclic dependencies"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    invoke-virtual {p3, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lnj;->b:Lhd;
-
-    invoke-virtual {v0, p1}, Lhd;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    :goto_1
-    if-ge v1, v2, :cond_2
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-direct {p0, v3, p2, p3}, Lnj;->a(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p3, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
-
-    invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/ArrayList;
-    .locals 5
-
-    iget-object v0, p0, Lnj;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    iget-object v0, p0, Lnj;->d:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lnj;->b:Lhd;
-
-    invoke-virtual {v1}, Lhd;->size()I
-
-    move-result v1
-
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    iget-object v2, p0, Lnj;->b:Lhd;
-
-    invoke-virtual {v2, v0}, Lhd;->b(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lnj;->c:Ljava/util/ArrayList;
-
-    iget-object v4, p0, Lnj;->d:Ljava/util/HashSet;
-
-    invoke-direct {p0, v2, v3, v4}, Lnj;->a(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lnj;->c:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
-
-    iget-object v0, p0, Lnj;->b:Lhd;
-
-    invoke-virtual {v0, p1}, Lhd;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lnj;->b:Lhd;
+.method public final b()V
+    .locals 4
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, v1}, Lhd;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v3, 0x0
+
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iget-boolean v0, v0, Lni;->j:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iget-object v0, v0, Lni;->f:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iget-object v0, v0, Lni;->f:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
+
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iget-object v0, v0, Lni;->c:Landroid/support/v7/widget/ActionBarContainer;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContainer;->setTranslationY(F)V
 
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Lnj;->a:Lni;
 
-.method public final a(Loz;Landroid/view/MenuItem;)Z
-    .locals 1
+    iget-object v0, v0, Lni;->c:Landroid/support/v7/widget/ActionBarContainer;
 
-    const/4 v0, 0x0
+    const/16 v1, 0x8
 
-    return v0
-.end method
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContainer;->setVisibility(I)V
 
-.method public final n()V
-    .locals 0
+    iget-object v0, p0, Lnj;->a:Lni;
 
+    iget-object v0, v0, Lni;->c:Landroid/support/v7/widget/ActionBarContainer;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContainer;->a(Z)V
+
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iput-object v3, v0, Lni;->m:Lob;
+
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iget-object v1, v0, Lni;->i:Lns;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, v0, Lni;->i:Lns;
+
+    iget-object v2, v0, Lni;->h:Lnr;
+
+    invoke-interface {v1, v2}, Lns;->a(Lnr;)V
+
+    iput-object v3, v0, Lni;->h:Lnr;
+
+    iput-object v3, v0, Lni;->i:Lns;
+
+    :cond_1
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iget-object v0, v0, Lni;->b:Landroid/support/v7/widget/ActionBarOverlayLayout;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lnj;->a:Lni;
+
+    iget-object v0, v0, Lni;->b:Landroid/support/v7/widget/ActionBarOverlayLayout;
+
+    sget-object v1, Lhz;->a:Lii;
+
+    invoke-virtual {v1, v0}, Lii;->h(Landroid/view/View;)V
+
+    :cond_2
     return-void
 .end method

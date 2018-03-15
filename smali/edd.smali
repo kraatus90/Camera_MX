@@ -2,218 +2,161 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field private a:Lecg;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lecg;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ledd;->a:Lecg;
+    iput-object p1, p0, Ledd;->a:Lkgv;
+
+    iput-object p2, p0, Ledd;->b:Lkgv;
+
+    iput-object p3, p0, Ledd;->c:Lkgv;
+
+    iput-object p4, p0, Ledd;->d:Lkgv;
+
+    iput-object p5, p0, Ledd;->e:Lkgv;
+
+    iput-object p6, p0, Ledd;->f:Lkgv;
+
+    iput-object p7, p0, Ledd;->g:Lkgv;
+
+    iput-object p8, p0, Ledd;->h:Lkgv;
+
+    iput-object p9, p0, Ledd;->i:Lkgv;
+
+    iput-object p10, p0, Ledd;->j:Lkgv;
+
+    iput-object p11, p0, Ledd;->k:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Leai;
-    .locals 14
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 12
 
-    const/4 v0, 0x2
+    new-instance v0, Ledc;
 
-    new-array v0, v0, [Lggq;
+    iget-object v1, p0, Ledd;->a:Lkgv;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x5
-
-    invoke-static {v2}, Lfsp;->a(I)Lggq;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [Lggl;
-
-    const/4 v3, 0x0
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v6, 0x3
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v6, 0x4
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x2
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->FLASH_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v6, 0x0
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x3
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v6, 0x1
-
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x4
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v6, 0x1
-
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x5
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_CAPTURE_INTENT:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v6, 0x1
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lfsp;->a(Ljava/util/List;)Lggq;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Lfsp;->a([Lggq;)Lggq;
-
-    move-result-object v0
-
-    invoke-static {}, Ldjo;->a()Ldjo;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    sget-object v2, Ldjp;->b:Ldjp;
+    check-cast v1, Lebo;
 
-    invoke-virtual {v1, v2}, Ldjo;->a(Ldjp;)Ldjo;
+    iget-object v2, p0, Ledd;->b:Lkgv;
 
-    move-result-object v1
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    sget-object v2, Ldjp;->b:Ldjp;
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Ldjo;->c(Ldjp;)Ldjo;
+    check-cast v2, Lick;
 
-    move-result-object v8
+    iget-object v3, p0, Ledd;->c:Lkgv;
 
-    iget-object v11, p0, Ledd;->a:Lecg;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v11, Lecg;->e:Ljuw;
+    move-result-object v3
 
-    new-instance v2, Lech;
+    check-cast v3, Lbns;
 
-    invoke-direct {v2, v0}, Lech;-><init>(Lggq;)V
+    iget-object v4, p0, Ledd;->d:Lkgv;
 
-    sget-object v0, Ljvc;->a:Ljvc;
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-static {v1, v2, v0}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
+    move-result-object v4
+
+    check-cast v4, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iget-object v5, p0, Ledd;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lgvc;
+
+    iget-object v6, p0, Ledd;->f:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lgqc;
+
+    iget-object v7, p0, Ledd;->g:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v7
 
-    new-instance v13, Ledq;
+    check-cast v7, Lgrz;
 
-    new-instance v0, Leco;
+    iget-object v8, p0, Ledd;->h:Lkgv;
 
-    iget-object v1, v11, Lecg;->a:Licz;
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v2, v11, Lecg;->b:Licv;
+    move-result-object v8
 
-    iget-object v3, v11, Lecg;->h:Leam;
+    check-cast v8, Lfwg;
 
-    iget-object v4, v11, Lecg;->c:Lghe;
+    iget-object v9, p0, Ledd;->i:Lkgv;
 
-    iget-object v5, v11, Lecg;->d:Ldol;
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v6, v11, Lecg;->e:Ljuw;
+    move-result-object v9
 
-    iget-object v9, v11, Lecg;->f:Ldjm;
+    check-cast v9, Lgwk;
 
-    iget-object v10, v11, Lecg;->g:Ldvc;
+    iget-object v10, p0, Ledd;->j:Lkgv;
 
-    iget-object v11, v11, Lecg;->i:Lgez;
+    invoke-interface {v10}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v12, 0x3
+    move-result-object v10
 
-    invoke-direct/range {v0 .. v12}, Leco;-><init>(Licz;Licv;Leam;Lghe;Ldol;Ljuw;Ljuw;Ldjo;Ldjm;Ldvc;Lgfp;I)V
+    check-cast v10, Lick;
 
-    const/4 v1, 0x2
+    iget-object v11, p0, Ledd;->k:Lkgv;
 
-    const/4 v2, 0x0
+    invoke-interface {v11}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v13, v0, v1, v2}, Ledq;-><init>(Leai;IZ)V
+    move-result-object v11
 
-    return-object v13
+    check-cast v11, Landroid/content/Context;
+
+    invoke-direct/range {v0 .. v11}, Ledc;-><init>(Lebo;Lick;Lbns;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lgrz;Lfwg;Lgwk;Lick;Landroid/content/Context;)V
+
+    return-object v0
 .end method

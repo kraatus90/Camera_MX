@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private synthetic a:Lcyl;
+.field private final synthetic a:Lcyl;
 
 
 # direct methods
@@ -28,17 +28,31 @@
 
     iget-object v0, p0, Lcym;->a:Lcyl;
 
-    iget-object v0, v0, Lcyl;->a:Lcyf;
+    iget-object v0, v0, Lcyl;->a:Lcyk;
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    check-cast v0, Lcxo;
 
-    iget-object v0, v0, Lcwg;->x:Lfdj;
+    iget-object v0, v0, Lcxo;->b:Lcwf;
 
-    invoke-virtual {v0}, Lgvh;->E()V
+    invoke-virtual {v0}, Lcwf;->a()V
+
+    iget-object v0, p0, Lcym;->a:Lcyl;
+
+    iget-object v0, v0, Lcyl;->a:Lcyk;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->B:Lebo;
+
+    invoke-virtual {v0}, Lglb;->u()V
 
     return-void
 .end method

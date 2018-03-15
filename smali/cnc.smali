@@ -3,124 +3,218 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lcna;
 
 
 # instance fields
-.field private synthetic a:Landroid/graphics/Bitmap;
+.field public a:Lcnb;
 
-.field private synthetic b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+.field private final b:Landroid/view/GestureDetector;
+
+.field private final c:Landroid/view/ScaleGestureDetector;
+
+.field private final d:Landroid/view/GestureDetector$SimpleOnGestureListener;
+
+.field private final e:Landroid/view/GestureDetector$OnDoubleTapListener;
+
+.field private final f:Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;Landroid/graphics/Bitmap;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcnc;->b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+    const-string v0, "FilmstripGesture"
 
-    iput-object p2, p0, Lcnc;->a:Landroid/graphics/Bitmap;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lcnd;
+
+    invoke-direct {v0, p0}, Lcnd;-><init>(Lcnc;)V
+
+    iput-object v0, p0, Lcnc;->d:Landroid/view/GestureDetector$SimpleOnGestureListener;
+
+    new-instance v0, Lcne;
+
+    invoke-direct {v0, p0}, Lcne;-><init>(Lcnc;)V
+
+    iput-object v0, p0, Lcnc;->e:Landroid/view/GestureDetector$OnDoubleTapListener;
+
+    new-instance v0, Lcnf;
+
+    invoke-direct {v0, p0}, Lcnf;-><init>(Lcnc;)V
+
+    iput-object v0, p0, Lcnc;->f:Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v0, Landroid/view/GestureDetector;
+
+    iget-object v1, p0, Lcnc;->d:Landroid/view/GestureDetector$SimpleOnGestureListener;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, p1, v1, v2, v3}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;Z)V
+
+    iput-object v0, p0, Lcnc;->b:Landroid/view/GestureDetector;
+
+    iget-object v0, p0, Lcnc;->b:Landroid/view/GestureDetector;
+
+    iget-object v1, p0, Lcnc;->e:Landroid/view/GestureDetector$OnDoubleTapListener;
+
+    invoke-virtual {v0, v1}, Landroid/view/GestureDetector;->setOnDoubleTapListener(Landroid/view/GestureDetector$OnDoubleTapListener;)V
+
+    new-instance v0, Landroid/view/ScaleGestureDetector;
+
+    iget-object v1, p0, Lcnc;->f:Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;
+
+    invoke-direct {v0, p1, v1}, Landroid/view/ScaleGestureDetector;-><init>(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;)V
+
+    iput-object v0, p0, Lcnc;->c:Landroid/view/ScaleGestureDetector;
+
+    iget-object v0, p0, Lcnc;->c:Landroid/view/ScaleGestureDetector;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ScaleGestureDetector;->setQuickScaleEnabled(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 5
+.method public final a(Lcnb;)V
+    .locals 0
 
-    const/4 v4, 0x0
+    iput-object p1, p0, Lcnc;->a:Lcnb;
 
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
+    return-void
+.end method
 
-    const-string v1, "Filmstrip is ready to show."
+.method public final a(Landroid/view/MotionEvent;)Z
+    .locals 8
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lcnc;->b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+    iget-object v0, p0, Lcnc;->b:Landroid/view/GestureDetector;
 
-    iget-object v1, p0, Lcnc;->a:Landroid/graphics/Bitmap;
+    invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->l:Lckd;
+    move-result v6
 
-    invoke-interface {v2}, Lckd;->c()Z
+    iget-object v0, p0, Lcnc;->c:Landroid/view/ScaleGestureDetector;
+
+    invoke-virtual {v0, p1}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v7
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    iget-object v0, p0, Lcnc;->a:Lcnb;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcnc;->a:Lcnb;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
-    if-eqz v2, :cond_0
-
-    sget-object v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
-
-    const-string v2, "Activity paused/finishing. Aborting filmstrip show animation."
-
-    invoke-static {v1, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->m:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    :goto_0
-    return-void
+    invoke-interface {v0, v1, v2}, Lcnb;->b(FF)Z
 
     :cond_0
-    sget-object v2, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
+    :goto_0
+    or-int v0, v6, v7
 
-    const-string v3, "Running filmstrip show animation."
+    return v0
 
-    invoke-static {v2, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->j:Leyu;
+    move-result v0
 
-    invoke-virtual {v2}, Lgvh;->y()V
+    const/4 v1, 0x5
 
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
+    if-ne v0, v1, :cond_2
 
-    invoke-virtual {v2, v4}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->setVisibility(I)V
+    iget-object v0, p0, Lcnc;->a:Lcnb;
 
-    invoke-virtual {v0, v4}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->setVisibility(I)V
+    if-eqz v0, :cond_0
 
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->c:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcnc;->a:Lcnb;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->getMeasuredWidth()I
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v3
 
-    int-to-float v3, v3
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
 
-    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setTranslationX(F)V
+    move-result-wide v4
 
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->d:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
-
-    iget-object v2, v2, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
-
-    invoke-interface {v2}, Lckk;->e()V
-
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
-
-    iget-object v3, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->g:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-virtual {v2, v3}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)V
-
-    iget-object v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
-
-    new-instance v3, Lcnd;
-
-    invoke-direct {v3, v0}, Lcnd;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;)V
-
-    invoke-virtual {v2, v1, v3}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a(Landroid/graphics/Bitmap;Lcli;)V
+    invoke-interface/range {v0 .. v5}, Lcnb;->a(FFIJ)Z
 
     goto :goto_0
-.end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    :cond_2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
+    move-result v0
 
-    const-string v1, "Exception waiting to show filmstrip"
+    const/4 v1, 0x6
 
-    invoke-static {v0, v1, p1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    if-ne v0, v1, :cond_0
 
-    return-void
+    iget-object v0, p0, Lcnc;->a:Lcnb;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcnc;->a:Lcnb;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    move-result v3
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
+
+    move-result-wide v4
+
+    invoke-interface/range {v0 .. v5}, Lcnb;->b(FFIJ)Z
+
+    goto :goto_0
 .end method

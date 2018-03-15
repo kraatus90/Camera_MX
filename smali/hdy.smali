@@ -1,145 +1,107 @@
-.class final Lhdy;
+.class public final Lhdy;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field private synthetic a:[B
+.field public final a:Lhdr;
 
-.field private synthetic b:Laqq;
+.field public final b:Lhcy;
 
-.field private synthetic c:Lhdt;
+.field public final c:Lhdm;
+
+.field public final d:Landroid/view/View;
+
+.field public final e:Landroid/view/View;
+
+.field public final f:I
+
+.field public g:Landroid/widget/VideoView;
+
+.field public h:Landroid/view/View;
+
+.field public i:Landroid/widget/ImageButton;
+
+.field public j:Landroid/widget/ImageButton;
+
+.field public k:Landroid/widget/TextView;
+
+.field public l:Landroid/widget/TextView;
+
+.field public m:Landroid/widget/SeekBar;
+
+.field public n:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lhdt;[BLaqq;)V
-    .locals 0
-
-    iput-object p1, p0, Lhdy;->c:Lhdt;
-
-    iput-object p2, p0, Lhdy;->a:[B
-
-    iput-object p3, p0, Lhdy;->b:Laqq;
+.method public constructor <init>(Lhdr;Lhcy;Lhdm;Landroid/view/View;Landroid/view/View;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhdy;->a:Lhdr;
+
+    iput-object p2, p0, Lhdy;->b:Lhcy;
+
+    iput-object p3, p0, Lhdy;->c:Lhdm;
+
+    iput-object p4, p0, Lhdy;->d:Landroid/view/View;
+
+    iput-object p5, p0, Lhdy;->e:Landroid/view/View;
+
+    invoke-virtual {p4}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const/high16 v1, 0x10e0000
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    iput v0, p0, Lhdy;->f:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final a(I)V
+    .locals 4
 
-    iget-object v0, p0, Lhdy;->c:Lhdt;
+    iget-object v0, p0, Lhdy;->k:Landroid/widget/TextView;
 
-    iget-object v0, v0, Lhdt;->b:Landroid/content/Context;
+    int-to-long v2, p1
 
-    invoke-static {v0}, Lacz;->b(Landroid/content/Context;)Ladj;
-
-    move-result-object v0
-
-    const-class v1, [B
-
-    invoke-virtual {v0, v1}, Ladj;->a(Ljava/lang/Class;)Ladg;
+    invoke-static {v2, v3}, Lhbc;->a(J)Ljava/lang/String;
 
     move-result-object v1
 
-    sget-object v0, Laqg;->a:Laqg;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    if-nez v0, :cond_0
+    iget-object v0, p0, Lhdy;->m:Landroid/widget/SeekBar;
 
-    new-instance v0, Laqg;
+    invoke-virtual {v0, p1}, Landroid/widget/SeekBar;->setMax(I)V
 
-    invoke-direct {v0}, Laqg;-><init>()V
+    return-void
+.end method
 
-    invoke-virtual {v0}, Laqg;->c()Laqg;
+.method public final b(I)V
+    .locals 4
 
-    move-result-object v0
+    iget-object v0, p0, Lhdy;->l:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Laqg;->g()Laqg;
+    int-to-long v2, p1
 
-    move-result-object v0
-
-    sput-object v0, Laqg;->a:Laqg;
-
-    :cond_0
-    sget-object v2, Laqg;->a:Laqg;
-
-    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
-
-    sget-object v3, Lamn;->b:Lael;
-
-    const-string v4, "Argument must not be null"
-
-    invoke-static {v0, v4}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap$CompressFormat;
-
-    invoke-virtual {v2, v3, v0}, Laqg;->a(Lael;Ljava/lang/Object;)Laqg;
-
-    move-result-object v0
-
-    sget-object v2, Lamn;->a:Lael;
-
-    const/16 v3, 0x1e
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Laqg;->a(Lael;Ljava/lang/Object;)Laqg;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ladg;->a(Laqg;)Ladg;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhdy;->a:[B
-
-    invoke-virtual {v0, v1}, Ladg;->a(Ljava/lang/Object;)Ladg;
-
-    move-result-object v0
-
-    new-instance v1, Larg;
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Larg;-><init>(Ljava/lang/Object;)V
-
-    invoke-static {v1}, Laqg;->a(Laek;)Laqg;
+    invoke-static {v2, v3}, Lhbc;->a(J)Ljava/lang/String;
 
     move-result-object v1
 
-    sget-object v2, Lage;->a:Lage;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v1, v2}, Laqg;->b(Lage;)Laqg;
+    iget-object v0, p0, Lhdy;->m:Landroid/widget/SeekBar;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Laqg;->a()Laqg;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ladg;->a(Laqg;)Ladg;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhdy;->b:Laqq;
-
-    invoke-virtual {v0, v1}, Ladg;->a(Laqs;)Laqs;
+    invoke-virtual {v0, p1}, Landroid/widget/SeekBar;->setProgress(I)V
 
     return-void
 .end method

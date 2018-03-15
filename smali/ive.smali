@@ -1,48 +1,37 @@
-.class final Live;
-.super Ljava/lang/Object;
+.class public final Live;
+.super Liua;
 .source "PG"
 
-# interfaces
-.implements Liuh;
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x13
+.end annotation
 
 
 # direct methods
-.method constructor <init>()V
+.method private constructor <init>(Litv;Liqz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Liua;-><init>(Litv;Liqz;)V
 
     return-void
 .end method
 
+.method public static a(Litv;ILjava/lang/String;)Live;
+    .locals 2
 
-# virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+    new-instance v0, Live;
 
-    new-instance v2, Lipo;
+    new-instance v1, Livf;
 
-    const-class v0, Ljbc;
+    invoke-direct {v1, p1, p2}, Livf;-><init>(ILjava/lang/String;)V
 
-    const-string v1, "GIF_Action"
-
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljbc;
-
-    const-class v1, Lipn;
-
-    const-string v3, "action_gif_artifact_renderer"
-
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p0, v1}, Liua;->a(Litv;Ljava/util/concurrent/Callable;)Liqz;
 
     move-result-object v1
 
-    check-cast v1, Lipn;
+    invoke-direct {v0, p0, v1}, Live;-><init>(Litv;Liqz;)V
 
-    invoke-direct {v2, v0, v1}, Lipo;-><init>(Ljbc;Lipn;)V
-
-    return-object v2
+    return-object v0
 .end method

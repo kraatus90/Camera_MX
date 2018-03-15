@@ -1,100 +1,260 @@
-.class final enum Ljsn;
-.super Ljsk;
+.class abstract Ljsn;
+.super Ljsj;
 .source "PG"
+
+# interfaces
+.implements Ljwk;
+
+
+# instance fields
+.field private final a:Ljava/util/Comparator;
+
+.field private transient b:Ljwk;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x2
+    sget-object v0, Ljvq;->a:Ljvq;
 
-    invoke-direct {p0, p1, v0}, Ljsk;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0, v0}, Ljsn;-><init>(Ljava/util/Comparator;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/util/Comparator;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljsj;-><init>()V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Comparator;
+
+    iput-object v0, p0, Ljsn;->a:Ljava/util/Comparator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+.method public synthetic F_()Ljava/util/Set;
     .locals 1
 
-    sget-object v0, Ljsn;->a:Ljsk;
-
-    invoke-virtual {v0, p1}, Ljsk;->a(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    invoke-virtual {p0}, Ljsn;->a()Ljava/util/NavigableSet;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method final b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+.method public a()Ljava/util/NavigableSet;
     .locals 1
 
-    sget-object v0, Ljsn;->a:Ljsk;
+    invoke-super {p0}, Ljsj;->F_()Ljava/util/Set;
 
-    invoke-virtual {v0, p1}, Ljsk;->b(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    move-result-object v0
+
+    check-cast v0, Ljava/util/NavigableSet;
+
+    return-object v0
+.end method
+
+.method public a(Ljava/lang/Object;Ljss;Ljava/lang/Object;Ljss;)Ljwk;
+    .locals 1
+
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p4}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0, p1, p2}, Ljsn;->b(Ljava/lang/Object;Ljss;)Ljwk;
+
+    move-result-object v0
+
+    invoke-interface {v0, p3, p4}, Ljwk;->a(Ljava/lang/Object;Ljss;)Ljwk;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method final c(Ljava/lang/reflect/Type;)Ljava/lang/String;
-    .locals 3
+.method final synthetic c()Ljava/util/Set;
+    .locals 1
 
-    :try_start_0
-    const-class v0, Ljava/lang/reflect/Type;
+    new-instance v0, Ljwn;
 
-    const-string v1, "getTypeName"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    invoke-direct {v0, p0}, Ljwn;-><init>(Ljwk;)V
 
     return-object v0
+.end method
 
-    :catch_0
-    move-exception v0
+.method public h()Ljava/util/Comparator;
+    .locals 1
 
-    new-instance v0, Ljava/lang/AssertionError;
+    iget-object v0, p0, Ljsn;->a:Ljava/util/Comparator;
 
-    const-string v1, "Type.getTypeName should be available in Java 8"
+    return-object v0
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+.method public i()Ljvi;
+    .locals 2
 
-    throw v0
+    invoke-virtual {p0}, Ljsn;->f()Ljava/util/Iterator;
 
-    :catch_1
-    move-exception v0
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljvi;
 
     :goto_0
-    new-instance v1, Ljava/lang/RuntimeException;
+    return-object v0
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :catch_2
-    move-exception v0
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public j()Ljvi;
+    .locals 2
+
+    invoke-virtual {p0}, Ljsn;->m()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljvi;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public k()Ljvi;
+    .locals 3
+
+    invoke-virtual {p0}, Ljsn;->f()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljvi;
+
+    invoke-interface {v0}, Ljvi;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljvi;->b()I
+
+    move-result v0
+
+    invoke-static {v2, v0}, Ljwo;->b(Ljava/lang/Object;I)Ljvi;
+
+    move-result-object v0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public l()Ljvi;
+    .locals 3
+
+    invoke-virtual {p0}, Ljsn;->m()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljvi;
+
+    invoke-interface {v0}, Ljvi;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljvi;->b()I
+
+    move-result v0
+
+    invoke-static {v2, v0}, Ljwo;->b(Ljava/lang/Object;I)Ljvi;
+
+    move-result-object v0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method abstract m()Ljava/util/Iterator;
+.end method
+
+.method public n()Ljwk;
+    .locals 1
+
+    iget-object v0, p0, Ljsn;->b:Ljwk;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljso;
+
+    invoke-direct {v0, p0}, Ljso;-><init>(Ljsn;)V
+
+    iput-object v0, p0, Ljsn;->b:Ljwk;
+
+    :cond_0
+    return-object v0
 .end method

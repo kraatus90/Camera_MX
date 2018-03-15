@@ -1,42 +1,33 @@
-.class final Lita;
-.super Ljava/lang/Object;
+.class public final Lita;
+.super Lisw;
 .source "PG"
-
-# interfaces
-.implements Liuh;
-
-
-# instance fields
-.field private synthetic a:Ljuw;
 
 
 # direct methods
-.method constructor <init>(Ljuw;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lita;->a:Ljuw;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lisw;-><init>(B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
+.method public final a()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lita;->a:Ljuw;
-
-    invoke-static {v0}, Licy;->a(Ljuw;)Lilf;
-
-    move-result-object v0
-
-    invoke-static {v0}, Licy;->a(Lilf;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/File;
+    const-string v0, "Int8"
 
     return-object v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    const/16 v0, 0x8
+
+    return v0
 .end method

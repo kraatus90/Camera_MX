@@ -1,36 +1,43 @@
-.class final Ldey;
+.class public final synthetic Ldey;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Ldex;
+.field private final a:Ldev;
 
 
 # direct methods
-.method constructor <init>(Ldex;)V
+.method public constructor <init>(Ldev;)V
     .locals 0
 
-    iput-object p1, p0, Ldey;->a:Ldex;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldey;->a:Ldev;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    new-instance v0, Ldfd;
+    iget-object v0, p0, Ldey;->a:Ldev;
 
-    iget-object v1, p0, Ldey;->a:Ldex;
+    invoke-virtual {v0}, Ldev;->e()Lkeh;
 
-    invoke-direct {v0, v1}, Ldfd;-><init>(Ldhe;)V
+    move-result-object v1
 
-    return-object v0
+    new-instance v2, Ldfa;
+
+    invoke-direct {v2, v0}, Ldfa;-><init>(Ldev;)V
+
+    iget-object v0, v0, Ldev;->d:Liay;
+
+    invoke-static {v1, v2, v0}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    return-void
 .end method

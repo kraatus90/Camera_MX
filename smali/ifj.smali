@@ -1,33 +1,20 @@
-.class final synthetic Lifj;
+.class public interface abstract Lifj;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/media/ImageReader$OnImageAvailableListener;
-
-
-# instance fields
-.field private a:Liip;
-
-
-# direct methods
-.method constructor <init>(Liip;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lifj;->a:Liip;
-
-    return-void
-.end method
+.source "PG"
 
 
 # virtual methods
-.method public final onImageAvailable(Landroid/media/ImageReader;)V
-    .locals 1
+.method public abstract a(JJ)V
+.end method
 
-    iget-object v0, p0, Lifj;->a:Liip;
+.method public abstract c()V
+.end method
 
-    invoke-interface {v0}, Liip;->a()V
+.method public abstract d()V
+.end method
 
-    return-void
+.method public abstract e()V
+.end method
+
+.method public abstract f()V
 .end method

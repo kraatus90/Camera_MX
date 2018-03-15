@@ -501,9 +501,9 @@
 .end method
 
 .method static getActionFromBundle(Landroid/os/Bundle;)Landroid/support/v4/app/NotificationCompat$Action;
-    .locals 8
+    .locals 10
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     const-string v0, "extras"
 
@@ -515,11 +515,11 @@
 
     const-string v1, "android.support.allowGeneratedReplies"
 
-    invoke-virtual {v0, v1, v7}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v8}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v7
 
-    :cond_0
+    :goto_0
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action;
 
     const-string v1, "icon"
@@ -568,9 +568,16 @@
 
     move-result-object v6
 
-    invoke-direct/range {v0 .. v7}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;[Landroid/support/v4/app/RemoteInput;Z)V
+    const/4 v9, 0x1
+
+    invoke-direct/range {v0 .. v9}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;[Landroid/support/v4/app/RemoteInput;ZIZ)V
 
     return-object v0
+
+    :cond_0
+    move v7, v8
+
+    goto :goto_0
 .end method
 
 .method private static getActionObjectsLocked(Landroid/app/Notification;)[Ljava/lang/Object;
@@ -917,11 +924,11 @@
 .end method
 
 .method public static readAction(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;)Landroid/support/v4/app/NotificationCompat$Action;
-    .locals 8
+    .locals 10
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     if-eqz p3, :cond_0
 
@@ -954,6 +961,8 @@
     :goto_0
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action;
 
+    const/4 v9, 0x1
+
     move v1, p0
 
     move-object v2, p1
@@ -962,11 +971,13 @@
 
     move-object v4, p3
 
-    invoke-direct/range {v0 .. v7}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;[Landroid/support/v4/app/RemoteInput;Z)V
+    invoke-direct/range {v0 .. v9}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;[Landroid/support/v4/app/RemoteInput;ZIZ)V
 
     return-object v0
 
     :cond_0
+    move v7, v8
+
     move-object v5, v6
 
     goto :goto_0

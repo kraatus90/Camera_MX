@@ -3,39 +3,75 @@
 .source "PG"
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
-
-
 # instance fields
-.field public b:Lhhv;
+.field public a:D
 
-.field public c:Landroid/graphics/Bitmap;
+.field public b:D
 
-.field public d:Landroid/support/v8/renderscript/RenderScript;
+.field public c:D
+
+.field public d:D
+
+.field public e:D
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
-    const-string v0, "RenderScriptTask"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    const-wide/high16 v0, 0x4028000000000000L    # 12.0
 
-    move-result-object v0
+    iput-wide v0, p0, Lhhz;->a:D
 
-    sput-object v0, Lhhz;->a:Ljava/lang/String;
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+
+    iput-wide v0, p0, Lhhz;->b:D
+
+    const-wide/high16 v0, 0x4010000000000000L    # 4.0
+
+    iput-wide v0, p0, Lhhz;->c:D
+
+    const-wide/high16 v0, 0x4018000000000000L    # 6.0
+
+    iput-wide v0, p0, Lhhz;->d:D
+
+    const-wide/high16 v0, 0x4094000000000000L    # 1280.0
+
+    iput-wide v0, p0, Lhhz;->e:D
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/support/v8/renderscript/RenderScript;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhhz;->d:Landroid/support/v8/renderscript/RenderScript;
+    const-wide/high16 v0, 0x4028000000000000L    # 12.0
+
+    iput-wide v0, p0, Lhhz;->a:D
+
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+
+    iput-wide v0, p0, Lhhz;->b:D
+
+    const-wide/high16 v0, 0x4010000000000000L    # 4.0
+
+    iput-wide v0, p0, Lhhz;->c:D
+
+    const-wide/high16 v0, 0x4018000000000000L    # 6.0
+
+    iput-wide v0, p0, Lhhz;->d:D
+
+    const-wide/high16 v0, 0x4094000000000000L    # 1280.0
+
+    iput-wide v0, p0, Lhhz;->e:D
+
+    int-to-double v0, p1
+
+    iput-wide v0, p0, Lhhz;->a:D
 
     return-void
 .end method

@@ -1,46 +1,74 @@
-.class public final Ldid;
+.class final Ldid;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ligm;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldic;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Ldic;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldid;->a:Ldic;
 
-    iput-object p1, p0, Ldid;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Ldid;->a:Ljxn;
+    iget-object v0, p0, Ldid;->a:Ldic;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lbrv;->a:Lbrw;
+
+    new-instance v1, Ldhk;
+
+    invoke-direct {v1}, Ldhk;-><init>()V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final a(Z)V
+    .locals 1
+
+    iget-object v0, p0, Ldid;->a:Ldic;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Ldhw;
+    check-cast v0, Ldjx;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, v0, Ldjx;->u:Lieb;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lieb;->a(Z)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Ldhu;
+.method public final b()V
+    .locals 2
 
-    return-object v0
+    iget-object v0, p0, Ldid;->a:Ldic;
+
+    iget-object v0, v0, Lbrv;->a:Lbrw;
+
+    new-instance v1, Ldhk;
+
+    invoke-direct {v1}, Ldhk;-><init>()V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    return-void
 .end method

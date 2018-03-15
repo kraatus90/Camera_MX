@@ -1,80 +1,42 @@
-.class public final Lfsq;
+.class final Lfsq;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static h:Lfsq;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:J
+.field private final synthetic a:Landroid/graphics/Bitmap;
 
-.field public b:J
-
-.field public c:J
-
-.field public d:J
-
-.field public e:J
-
-.field public f:J
-
-.field public final g:Lfsu;
+.field private final synthetic b:Lfsp;
 
 
 # direct methods
-.method private constructor <init>(Lijl;)V
-    .locals 2
+.method constructor <init>(Lfsp;Landroid/graphics/Bitmap;)V
+    .locals 0
 
-    const-wide/16 v0, 0x0
+    iput-object p1, p0, Lfsq;->b:Lfsp;
+
+    iput-object p2, p0, Lfsq;->a:Landroid/graphics/Bitmap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide v0, p0, Lfsq;->a:J
-
-    iput-wide v0, p0, Lfsq;->b:J
-
-    iput-wide v0, p0, Lfsq;->c:J
-
-    iput-wide v0, p0, Lfsq;->d:J
-
-    iput-wide v0, p0, Lfsq;->e:J
-
-    iput-wide v0, p0, Lfsq;->f:J
-
-    new-instance v0, Lfsu;
-
-    new-instance v1, Lfsr;
-
-    invoke-direct {v1, p0}, Lfsr;-><init>(Lfsq;)V
-
-    invoke-direct {v0, v1}, Lfsu;-><init>(Ljava/lang/Runnable;)V
-
-    iput-object v0, p0, Lfsq;->g:Lfsu;
 
     return-void
 .end method
 
-.method public static a()Lfsq;
+
+# virtual methods
+.method public final run()V
     .locals 2
 
-    sget-object v0, Lfsq;->h:Lfsq;
+    iget-object v0, p0, Lfsq;->b:Lfsp;
 
-    if-nez v0, :cond_0
+    iget-object v0, v0, Lfsp;->b:Lgfr;
 
-    new-instance v0, Lfsq;
+    iget-object v1, p0, Lfsq;->a:Landroid/graphics/Bitmap;
 
-    new-instance v1, Lijl;
+    invoke-interface {v0, v1}, Lgfr;->a(Landroid/graphics/Bitmap;)V
 
-    invoke-direct {v1}, Lijl;-><init>()V
-
-    invoke-direct {v0, v1}, Lfsq;-><init>(Lijl;)V
-
-    sput-object v0, Lfsq;->h:Lfsq;
-
-    :cond_0
-    sget-object v0, Lfsq;->h:Lfsq;
-
-    return-object v0
+    return-void
 .end method

@@ -1,57 +1,40 @@
-.class Lhcn;
-.super Lgvh;
+.class final Lhcn;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljqv;
 
 
 # instance fields
-.field private synthetic a:Lhcl;
+.field private final synthetic a:Lhcj;
 
 
 # direct methods
-.method constructor <init>(Lhcl;)V
-    .locals 1
+.method constructor <init>(Lhcj;)V
+    .locals 0
 
-    iput-object p1, p0, Lhcn;->a:Lhcl;
+    iput-object p1, p0, Lhcn;->a:Lhcj;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[[B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Y()V
-    .locals 0
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    check-cast p1, Ljava/util/List;
 
-.method public final a()V
-    .locals 3
+    new-instance v0, Lhct;
 
-    iget-object v0, p0, Lhcn;->a:Lhcl;
+    iget-object v1, p0, Lhcn;->a:Lhcj;
 
-    iget-object v0, v0, Lhcl;->e:Lhcs;
+    iget-object v1, v1, Lhcj;->g:Ljava/util/List;
 
-    iget-object v1, v0, Lhcs;->j:Landroid/widget/ImageButton;
+    invoke-direct {v0, p1, v1}, Lhct;-><init>(Ljava/util/List;Ljava/util/List;)V
 
-    const/16 v2, 0x8
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageButton;->setVisibility(I)V
-
-    iget-object v0, v0, Lhcs;->i:Landroid/widget/ImageButton;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public ab()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

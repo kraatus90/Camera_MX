@@ -1,67 +1,51 @@
-.class public final Lje;
-.super Ljava/lang/Object;
+.class final Lje;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
-# interfaces
-.implements Ljava/util/Comparator;
+
+# instance fields
+.field private final synthetic a:Ljg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljg;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lje;->a:Ljg;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 4
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    check-cast p1, Landroid/view/View;
+    iget-object v0, p0, Lje;->a:Ljg;
 
-    check-cast p2, Landroid/view/View;
+    invoke-interface {v0}, Ljg;->c()V
 
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    check-cast v0, Lix;
+    iget-object v0, p0, Lje;->a:Ljg;
 
-    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-interface {v0}, Ljg;->b()V
 
-    move-result-object v1
+    return-void
+.end method
 
-    check-cast v1, Lix;
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
 
-    iget-boolean v2, v0, Lix;->a:Z
+    iget-object v0, p0, Lje;->a:Ljg;
 
-    iget-boolean v3, v1, Lix;->a:Z
+    invoke-interface {v0}, Ljg;->a()V
 
-    if-eq v2, v3, :cond_1
-
-    iget-boolean v0, v0, Lix;->a:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    iget v0, v0, Lix;->e:I
-
-    iget v1, v1, Lix;->e:I
-
-    sub-int/2addr v0, v1
-
-    goto :goto_0
+    return-void
 .end method

@@ -39,52 +39,45 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 5
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v2, Lpw;
 
-    const/16 v3, 0x15
+    invoke-direct {v2, p0}, Lpw;-><init>(Landroid/support/v7/widget/ActionBarContainer;)V
 
-    if-lt v0, v3, :cond_1
+    invoke-static {p0, v2}, Lhz;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
-    new-instance v0, Lqc;
+    sget-object v2, Lnm;->a:[I
 
-    invoke-direct {v0, p0}, Lqc;-><init>(Landroid/support/v7/widget/ActionBarContainer;)V
+    invoke-virtual {p1, p2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    :goto_0
-    invoke-static {p0, v0}, Lid;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    move-result-object v2
 
-    sget-object v0, Lnr;->a:[I
+    sget v3, Lnm;->d:I
 
-    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v0
-
-    sget v3, Lnr;->d:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     iput-object v3, p0, Landroid/support/v7/widget/ActionBarContainer;->b:Landroid/graphics/drawable/Drawable;
 
-    sget v3, Lnr;->f:I
+    sget v3, Lnm;->f:I
 
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     iput-object v3, p0, Landroid/support/v7/widget/ActionBarContainer;->c:Landroid/graphics/drawable/Drawable;
 
-    sget v3, Lnr;->l:I
+    sget v3, Lnm;->l:I
 
     const/4 v4, -0x1
 
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v2, v3, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v3
 
@@ -94,67 +87,55 @@
 
     move-result v3
 
-    const v4, 0x7f0e0017
+    const v4, 0x7f0e0019
 
     if-ne v3, v4, :cond_0
 
-    iput-boolean v1, p0, Landroid/support/v7/widget/ActionBarContainer;->e:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/ActionBarContainer;->e:Z
 
-    sget v3, Lnr;->e:I
+    sget v3, Lnm;->e:I
 
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     iput-object v3, p0, Landroid/support/v7/widget/ActionBarContainer;->d:Landroid/graphics/drawable/Drawable;
 
     :cond_0
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
-    iget-boolean v0, p0, Landroid/support/v7/widget/ActionBarContainer;->e:Z
+    iget-boolean v2, p0, Landroid/support/v7/widget/ActionBarContainer;->e:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v2, :cond_3
 
-    iget-object v0, p0, Landroid/support/v7/widget/ActionBarContainer;->d:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/v7/widget/ActionBarContainer;->d:Landroid/graphics/drawable/Drawable;
 
-    if-nez v0, :cond_2
+    if-nez v2, :cond_2
 
-    move v0, v1
-
-    :goto_1
+    :cond_1
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarContainer;->setWillNotDraw(Z)V
 
     return-void
 
-    :cond_1
-    new-instance v0, Lqb;
-
-    invoke-direct {v0, p0}, Lqb;-><init>(Landroid/support/v7/widget/ActionBarContainer;)V
+    :cond_2
+    move v0, v1
 
     goto :goto_0
 
-    :cond_2
-    move v0, v2
-
-    goto :goto_1
-
     :cond_3
-    iget-object v0, p0, Landroid/support/v7/widget/ActionBarContainer;->b:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/v7/widget/ActionBarContainer;->b:Landroid/graphics/drawable/Drawable;
 
-    if-nez v0, :cond_4
+    if-nez v2, :cond_4
 
-    iget-object v0, p0, Landroid/support/v7/widget/ActionBarContainer;->c:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/v7/widget/ActionBarContainer;->c:Landroid/graphics/drawable/Drawable;
 
-    if-nez v0, :cond_4
-
-    move v0, v1
-
-    goto :goto_1
+    if-eqz v2, :cond_1
 
     :cond_4
-    move v0, v2
+    move v0, v1
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 
@@ -290,7 +271,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0e0098
+    const v0, 0x7f0e00a9
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarContainer;->findViewById(I)Landroid/view/View;
 
@@ -298,7 +279,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/ActionBarContainer;->h:Landroid/view/View;
 
-    const v0, 0x7f0e0099
+    const v0, 0x7f0e00aa
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarContainer;->findViewById(I)Landroid/view/View;
 

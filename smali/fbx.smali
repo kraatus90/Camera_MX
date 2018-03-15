@@ -3,76 +3,78 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfbx;->a:Ljxn;
+    iput-object p1, p0, Lfbx;->a:Lkgv;
 
-    iput-object p2, p0, Lfbx;->b:Ljxn;
-
-    iput-object p3, p0, Lfbx;->c:Ljxn;
-
-    iput-object p4, p0, Lfbx;->d:Ljxn;
+    iput-object p2, p0, Lfbx;->b:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;)Lfbx;
+    .locals 1
+
+    new-instance v0, Lfbx;
+
+    invoke-direct {v0, p0, p1}, Lfbx;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+    .locals 6
 
-    new-instance v4, Lfbw;
+    iget-object v0, p0, Lfbx;->a:Lkgv;
 
-    iget-object v0, p0, Lfbx;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfdq;
+    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
 
-    iget-object v1, p0, Lfbx;->b:Ljxn;
+    iget-object v1, p0, Lfbx;->b:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    check-cast v1, Ljava/lang/Integer;
 
-    iget-object v2, p0, Lfbx;->c:Ljxn;
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v2
+    new-instance v2, Libk;
 
-    check-cast v2, Lguc;
+    int-to-long v4, v1
 
-    iget-object v3, p0, Lfbx;->d:Ljxn;
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v2, v0, v4, v5, v1}, Libk;-><init>(Ljava/util/concurrent/ScheduledExecutorService;JLjava/util/concurrent/TimeUnit;)V
 
-    move-result-object v3
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    check-cast v3, Ljht;
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lfbw;-><init>(Lfdq;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Ljht;)V
+    move-result-object v0
 
-    return-object v4
+    check-cast v0, Libk;
+
+    return-object v0
 .end method

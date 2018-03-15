@@ -3,12 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lgou;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/widget/TextView;)V
     .locals 0
+
+    iput-object p1, p0, Lekm;->a:Landroid/widget/TextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,36 +23,14 @@
 
 
 # virtual methods
-.method public final a(Ljava/io/InputStream;Lgrz;)Ljuw;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-object v0, p0, Lekm;->a:Landroid/widget/TextView;
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    const/4 v1, 0x4
 
-    throw v0
-.end method
-
-.method public final a(Lgox;)V
-    .locals 0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     return-void
-.end method
-
-.method public final a(Lgyr;ZLjava/lang/String;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final n()Lavl;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
 .end method

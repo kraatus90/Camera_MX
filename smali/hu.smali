@@ -1,51 +1,23 @@
-.class Lhu;
+.class public interface abstract Lhu;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Lht;
 
 
 # virtual methods
-.method public a(Landroid/view/MenuItem;CI)V
-    .locals 0
-
-    return-void
+.method public abstract a(Landroid/view/View;I)V
 .end method
 
-.method public a(Landroid/view/MenuItem;Landroid/content/res/ColorStateList;)V
-    .locals 0
-
-    return-void
+.method public abstract a(Landroid/view/View;II[II)V
 .end method
 
-.method public a(Landroid/view/MenuItem;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
-
-    return-void
+.method public abstract a(II)Z
 .end method
 
-.method public a(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
+.method public abstract b(II)V
 .end method
 
-.method public b(Landroid/view/MenuItem;CI)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public b(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
+.method public abstract b(Landroid/view/View;I)V
 .end method

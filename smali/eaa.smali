@@ -1,56 +1,41 @@
-.class final Leaa;
-.super Ljava/lang/Object;
+.class public Leaa;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljug;
 
 
 # instance fields
-.field private synthetic a:Ldzz;
+.field public a:Liay;
+
+.field public b:Lfdv;
+
+.field public c:Lfax;
+
+.field public d:Lbns;
 
 
 # direct methods
-.method constructor <init>(Ldzz;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Leaa;->a:Ldzz;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lglb;-><init>([C)V
+
+    iput-object v0, p0, Leaa;->b:Lfdv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public a(Liay;Lfax;Lbns;)V
+    .locals 0
 
-    check-cast p1, Lihy;
+    iput-object p1, p0, Leaa;->a:Liay;
 
-    invoke-interface {p1}, Lihy;->close()V
+    iput-object p2, p0, Leaa;->c:Lfax;
 
-    iget-object v0, p0, Leaa;->a:Ldzz;
-
-    iget-object v0, v0, Ldzz;->a:Licu;
-
-    const-string v1, "CameraDevice closed."
-
-    invoke-interface {v0, v1}, Licu;->f(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
-
-    iget-object v0, p0, Leaa;->a:Ldzz;
-
-    iget-object v0, v0, Ldzz;->a:Licu;
-
-    const-string v1, "Failed to close the CameraDevice because Future<CameraDevice> failed."
-
-    invoke-interface {v0, v1}, Licu;->f(Ljava/lang/String;)V
+    iput-object p3, p0, Leaa;->d:Lbns;
 
     return-void
 .end method

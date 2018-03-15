@@ -1,98 +1,82 @@
-.class public final Lgjn;
+.class final Lgjn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgkl;
+.implements Lgjj;
+.implements Lihb;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public final a:Lihg;
+
+.field private final b:Ljava/util/concurrent/Executor;
+
+.field private final synthetic c:Lgjm;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Lgjm;Lihg;Ljava/util/concurrent/Executor;)V
+    .locals 0
+
+    iput-object p1, p0, Lgjn;->c:Lgjm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p2, p0, Lgjn;->a:Lihg;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object v0, p0, Lgjn;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p3, p0, Lgjn;->b:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)Lawd;
+.method public final a(Ljava/lang/String;)V
     .locals 3
 
-    new-instance v1, Lawj;
+    iget-object v0, p0, Lgjn;->c:Lgjm;
 
-    invoke-direct {v1}, Lawj;-><init>()V
+    iget-object v0, v0, Lgjm;->c:Ljava/lang/String;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :goto_0
-    if-ge v0, p1, :cond_0
+    move-result v0
 
-    new-instance v2, Lgjp;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v2, p0}, Lgjp;-><init>(Lgjn;)V
+    iget-object v0, p0, Lgjn;->c:Lgjm;
 
-    invoke-virtual {v1, v2}, Lawj;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lgjm;->a()Ljava/lang/Object;
 
-    add-int/lit8 v0, v0, 0x1
+    move-result-object v0
 
-    goto :goto_0
+    if-nez v0, :cond_1
 
     :cond_0
-    new-instance v0, Laxr;
+    :goto_0
+    return-void
 
-    invoke-direct {v0}, Laxr;-><init>()V
+    :cond_1
+    iget-object v1, p0, Lgjn;->b:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v0, v1}, Laxr;->a(Lich;)Z
+    new-instance v2, Lgjo;
 
-    return-object v0
+    invoke-direct {v2, p0, v0}, Lgjo;-><init>(Lgjn;Ljava/lang/Object;)V
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
 .end method
 
-.method public final c()Liau;
+.method public final close()V
     .locals 1
 
-    const v0, 0x7fffffff
+    iget-object v0, p0, Lgjn;->c:Lgjm;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, v0, Lgjm;->a:Lgjq;
 
-    move-result-object v0
+    invoke-virtual {v0, p0}, Lgjq;->b(Lgjj;)V
 
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d()Lgki;
-    .locals 1
-
-    new-instance v0, Lgjp;
-
-    invoke-direct {v0, p0}, Lgjp;-><init>(Lgjn;)V
-
-    return-object v0
-.end method
-
-.method public final e()Lich;
-    .locals 1
-
-    new-instance v0, Lgjo;
-
-    invoke-direct {v0}, Lgjo;-><init>()V
-
-    return-object v0
+    return-void
 .end method

@@ -1,62 +1,76 @@
-.class public final Lcig;
+.class final Lcig;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lbpp;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field private a:Lijd;
+.field private final a:Ljava/io/File;
+
+.field private final b:Lgja;
+
+.field private final c:J
+
+.field private final d:Ljava/lang/String;
+
+.field private final e:Ljgw;
 
 
 # direct methods
-.method public constructor <init>(Lijd;)V
+.method public constructor <init>(Lgja;Ljava/io/File;Ljava/lang/String;JLjgw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcig;->a:Lijd;
+    iput-object p2, p0, Lcig;->a:Ljava/io/File;
+
+    iput-object p1, p0, Lcig;->b:Lgja;
+
+    iput-wide p4, p0, Lcig;->c:J
+
+    iput-object p3, p0, Lcig;->d:Ljava/lang/String;
+
+    iput-object p6, p0, Lcig;->e:Ljgw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)V
+.method public final synthetic call()Ljava/lang/Object;
     .locals 8
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v1, p0, Lcig;->b:Lgja;
 
-    move-result-object v7
+    iget-object v2, p0, Lcig;->a:Ljava/io/File;
 
-    :goto_0
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v3, p0, Lcig;->d:Ljava/lang/String;
 
-    move-result v0
+    iget-object v0, p0, Lcig;->e:Ljgw;
 
-    if-eqz v0, :cond_0
+    invoke-interface {v0}, Ljgw;->a()I
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v4
 
-    move-result-object v0
+    iget-object v0, p0, Lcig;->e:Ljgw;
 
-    check-cast v0, Lbpq;
+    invoke-interface {v0}, Ljgw;->b()I
 
-    iget-object v1, p0, Lcig;->a:Lijd;
+    move-result v5
 
-    iget-wide v2, v0, Lbpq;->e:J
+    iget-wide v6, p0, Lcig;->c:J
 
-    iget v4, v0, Lbpq;->f:F
+    invoke-virtual/range {v1 .. v7}, Lgja;->a(Ljava/io/File;Ljava/lang/String;IIJ)V
 
-    iget v5, v0, Lbpq;->g:F
+    iget-object v0, v1, Lgja;->d:Lgjc;
 
-    iget v6, v0, Lbpq;->h:F
+    iget-object v1, v1, Lgja;->b:Landroid/net/Uri;
 
-    invoke-virtual/range {v1 .. v6}, Lijd;->a(JFFF)V
+    invoke-virtual {v0}, Lgjc;->b()V
 
-    goto :goto_0
+    sget-object v0, Lipl;->a:Lipl;
 
-    :cond_0
-    return-void
+    return-object v0
 .end method

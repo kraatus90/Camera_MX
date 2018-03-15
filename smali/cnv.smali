@@ -1,141 +1,194 @@
-.class public final enum Lcnv;
-.super Ljava/lang/Enum;
+.class public Lcnv;
+.super Lglb;
 .source "PG"
 
 
 # static fields
-.field public static final enum a:Lcnv;
+.field public static final a:Ljava/lang/String;
 
-.field public static final enum b:Lcnv;
 
-.field public static final enum c:Lcnv;
+# instance fields
+.field public b:Lclo;
 
-.field public static final enum d:Lcnv;
+.field public c:Lcll;
 
-.field public static final enum e:Lcnv;
+.field public d:Lcnq;
 
-.field public static final enum f:Lcnv;
+.field public e:Landroid/app/ActionBar;
 
-.field private static synthetic g:[Lcnv;
+.field public f:Lgoy;
+
+.field private g:Lcmd;
+
+.field private h:Landroid/content/res/Resources;
+
+.field private i:Landroid/view/Window;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
-
-    const/4 v7, 0x4
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    new-instance v0, Lcnv;
-
-    const-string v1, "POSTVIEW"
-
-    invoke-direct {v0, v1, v3}, Lcnv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcnv;->a:Lcnv;
-
-    new-instance v0, Lcnv;
-
-    const-string v1, "JPEG"
-
-    invoke-direct {v0, v1, v4}, Lcnv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcnv;->b:Lcnv;
-
-    new-instance v0, Lcnv;
-
-    const-string v1, "YUV"
-
-    invoke-direct {v0, v1, v5}, Lcnv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcnv;->c:Lcnv;
-
-    new-instance v0, Lcnv;
-
-    const-string v1, "RGB"
-
-    invoke-direct {v0, v1, v6}, Lcnv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcnv;->d:Lcnv;
-
-    new-instance v0, Lcnv;
-
-    const-string v1, "MERGED_DNG"
-
-    invoke-direct {v0, v1, v7}, Lcnv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcnv;->e:Lcnv;
-
-    new-instance v0, Lcnv;
-
-    const-string v1, "MERGED_PD"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lcnv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcnv;->f:Lcnv;
-
-    const/4 v0, 0x6
-
-    new-array v0, v0, [Lcnv;
-
-    sget-object v1, Lcnv;->a:Lcnv;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcnv;->b:Lcnv;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcnv;->c:Lcnv;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcnv;->d:Lcnv;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lcnv;->e:Lcnv;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lcnv;->f:Lcnv;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcnv;->g:[Lcnv;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lcnv;
     .locals 1
 
-    sget-object v0, Lcnv;->g:[Lcnv;
+    const-string v0, "FilmstripUiState"
 
-    invoke-virtual {v0}, [Lcnv;->clone()Ljava/lang/Object;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lcnv;
+    sput-object v0, Lcnv;->a:Ljava/lang/String;
 
-    return-object v0
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
+    .locals 3
+
+    const v2, 0x7f0c0057
+
+    sget-object v0, Lcnv;->a:Ljava/lang/String;
+
+    const-string v1, "Filmstrip Ui Enter"
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcnv;->d:Lcnq;
+
+    iget-object v0, v0, Lcnq;->i:Landroid/widget/TextView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcnv;->i:Landroid/view/Window;
+
+    iget-object v1, p0, Lcnv;->h:Landroid/content/res/Resources;
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setNavigationBarColor(I)V
+
+    iget-object v0, p0, Lcnv;->i:Landroid/view/Window;
+
+    iget-object v1, p0, Lcnv;->h:Landroid/content/res/Resources;
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setStatusBarColor(I)V
+
+    iget-object v0, p0, Lcnv;->i:Landroid/view/Window;
+
+    const/16 v1, 0x400
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
+
+    return-void
+.end method
+
+.method public a(Lclz;Lclo;Lcll;Lcmd;Lcmh;Lcnq;Landroid/app/ActionBar;Landroid/content/res/Resources;Landroid/view/Window;Lgoy;)V
+    .locals 0
+
+    iput-object p2, p0, Lcnv;->b:Lclo;
+
+    iput-object p3, p0, Lcnv;->c:Lcll;
+
+    iput-object p4, p0, Lcnv;->g:Lcmd;
+
+    iput-object p6, p0, Lcnv;->d:Lcnq;
+
+    iput-object p7, p0, Lcnv;->e:Landroid/app/ActionBar;
+
+    iput-object p8, p0, Lcnv;->h:Landroid/content/res/Resources;
+
+    iput-object p9, p0, Lcnv;->i:Landroid/view/Window;
+
+    iput-object p10, p0, Lcnv;->f:Lgoy;
+
+    return-void
+.end method
+
+.method public b()V
+    .locals 4
+
+    const v3, 0x7f0c003c
+
+    const/4 v2, 0x0
+
+    sget-object v0, Lcnv;->a:Ljava/lang/String;
+
+    const-string v1, "Filmstrip Ui Exit"
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcnv;->f:Lgoy;
+
+    const/16 v1, 0x705
+
+    invoke-interface {v0, v1}, Lgoy;->a(I)V
+
+    iget-object v0, p0, Lcnv;->d:Lcnq;
+
+    iget-object v0, v0, Lcnq;->i:Landroid/widget/TextView;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcnv;->g:Lcmd;
+
+    iget-object v1, v0, Lcmd;->c:Landroid/view/ViewGroup;
+
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0, v2}, Lcmd;->a(Z)V
+
+    invoke-virtual {v0, v2}, Lcmd;->b(Z)V
+
+    :cond_0
+    iget-object v0, p0, Lcnv;->i:Landroid/view/Window;
+
+    iget-object v1, p0, Lcnv;->h:Landroid/content/res/Resources;
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setNavigationBarColor(I)V
+
+    iget-object v0, p0, Lcnv;->i:Landroid/view/Window;
+
+    iget-object v1, p0, Lcnv;->h:Landroid/content/res/Resources;
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setStatusBarColor(I)V
+
+    iget-object v0, p0, Lcnv;->i:Landroid/view/Window;
+
+    const/16 v1, 0x400
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
+
+    return-void
 .end method

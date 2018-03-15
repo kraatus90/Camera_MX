@@ -1,40 +1,42 @@
-.class final Lfle;
+.class public final Lfle;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfld;
+.field private final a:Lflb;
 
 
 # direct methods
-.method constructor <init>(Lfld;)V
+.method public constructor <init>(Lflb;)V
     .locals 0
 
-    iput-object p1, p0, Lfle;->a:Lfld;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfle;->a:Lflb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfle;->a:Lfld;
+    iget-object v0, p0, Lfle;->a:Lflb;
 
-    sget v1, Leh;->aK:I
+    iget-object v0, v0, Lflb;->c:Lfuo;
 
-    invoke-static {v0, v1}, Lfld;->a(Lfld;I)I
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Lfle;->a:Lfld;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lfld;->d()V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lfuo;
+
+    return-object v0
 .end method

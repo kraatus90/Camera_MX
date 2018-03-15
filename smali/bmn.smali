@@ -1,67 +1,151 @@
 .class public final Lbmn;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Landroid/content/res/Resources;
+.field public final a:Lbcs;
 
-.field private synthetic b:Lbls;
+.field public final b:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field private synthetic c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+.field private final c:Lgvc;
+
+.field private d:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Lbls;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
-    .locals 0
+.method public constructor <init>(Lgvc;Lbcs;)V
+    .locals 1
 
-    iput-object p1, p0, Lbmn;->a:Landroid/content/res/Resources;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lbmn;->b:Lbls;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object p3, p0, Lbmn;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object v0, p0, Lbmn;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lbmn;->d:Z
+
+    iput-object p1, p0, Lbmn;->c:Lgvc;
+
+    iput-object p2, p0, Lbmn;->a:Lbcs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public final declared-synchronized a()V
     .locals 2
 
-    iget-object v0, p0, Lbmn;->a:Landroid/content/res/Resources;
+    monitor-enter p0
 
-    const v1, 0x7f0d004b
+    :try_start_0
+    iget-object v0, p0, Lbmn;->c:Lgvc;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+    sget-object v1, Lgue;->a:Lgue;
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v1, p0, Lbmn;->b:Lbls;
-
-    invoke-virtual {v1, v0}, Lbls;->d(F)V
-
-    iget-object v0, p0, Lbmn;->a:Landroid/content/res/Resources;
-
-    const v1, 0x7f0d00f2
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v1
-
-    iget-object v1, p0, Lbmn;->b:Lbls;
-
-    invoke-virtual {v1, v0}, Lbls;->b(F)V
-
-    iget-object v0, p0, Lbmn;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->invalidate()V
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized a(Z)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lbmn;->d:Z
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lbmn;->c:Lgvc;
+
+    sget-object v1, Lgue;->e:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lbmn;->a:Lbcs;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Lbcs;->a(Z)V
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lbmn;->d:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b(Z)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lbmn;->d:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lbmn;->c:Lgvc;
+
+    sget-object v1, Lgue;->a:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lbmn;->a:Lbcs;
+
+    invoke-interface {v0}, Lbcs;->c()V
+
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lbmn;->d:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

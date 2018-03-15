@@ -30,7 +30,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -54,7 +54,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v2, v3}, Liya;->a(ZLjava/lang/String;Ljava/lang/Object;)V
+    invoke-static {v0, v2, v3}, Ljii;->a(ZLjava/lang/String;Ljava/lang/Object;)V
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -83,7 +83,7 @@
     :goto_0
     const-string v7, "Bitmap\'s row padding in bytes (%s) must evenly divide the number of channels (%s)"
 
-    invoke-static {v0, v7, v5, v4}, Liya;->a(ZLjava/lang/String;II)V
+    invoke-static {v0, v7, v5, v4}, Ljii;->a(ZLjava/lang/String;II)V
 
     invoke-static {p1}, Lcom/google/googlex/gcam/AndroidJniUtils;->lockBitmap(Landroid/graphics/Bitmap;)J
 

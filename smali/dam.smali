@@ -1,58 +1,40 @@
-.class public final Ldam;
+.class final Ldam;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldal;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldam;->a:Ldal;
 
-    iput-object p1, p0, Ldam;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 1
 
-    iget-object v0, p0, Ldam;->a:Ljxn;
+    iget-object v0, p0, Ldam;->a:Ldal;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldal;->w:Lbyy;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/content/res/Resources;
-
-    const v1, 0x7f0f0012
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    const-string v1, "VideoHfrModule"
-
-    new-instance v2, Lcqp;
-
-    invoke-direct {v2, v0, v1}, Lcqp;-><init>(ILjava/lang/String;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lbyy;->v()Ldzh;
 
     move-result-object v0
 
-    check-cast v0, Lcqp;
+    invoke-virtual {v0}, Ldzh;->b()V
 
-    return-object v0
+    return-void
 .end method

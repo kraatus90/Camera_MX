@@ -1,139 +1,81 @@
 .class public final Ljam;
-.super Ljai;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljqv;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x13
+.end annotation
 
 
 # instance fields
-.field private d:J
+.field private final a:Landroid/media/MediaFormat;
 
 
 # direct methods
-.method public constructor <init>(Ljcp;)V
-    .locals 8
+.method public constructor <init>(Landroid/media/MediaFormat;)V
+    .locals 0
 
-    const-wide/32 v6, 0x3b9aca00
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    const-wide/16 v4, 0x0
-
-    invoke-direct {p0, p1}, Ljai;-><init>(Ljcp;)V
-
-    cmp-long v0, v4, v4
-
-    if-ltz v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
-
-    cmp-long v0, v6, v4
-
-    if-ltz v0, :cond_1
-
-    :goto_1
-    invoke-static {v1}, Liya;->a(Z)V
-
-    iput-wide v6, p0, Ljam;->d:J
+    iput-object p1, p0, Ljam;->a:Landroid/media/MediaFormat;
 
     return-void
+.end method
 
-    :cond_0
-    move v0, v2
+.method public static a(Ljgs;Landroid/content/Context;)Lipn;
+    .locals 1
 
-    goto :goto_0
+    new-instance v0, Ljan;
 
-    :cond_1
-    move v1, v2
+    invoke-direct {v0, p0, p1}, Ljan;-><init>(Ljgs;Landroid/content/Context;)V
 
-    goto :goto_1
+    return-object v0
+.end method
+
+.method static a(Ljns;Ljnb;)Lipn;
+    .locals 1
+
+    new-instance v0, Ljap;
+
+    invoke-direct {v0, p0, p1}, Ljap;-><init>(Ljns;Ljnb;)V
+
+    return-object v0
+.end method
+
+.method public static b(Ljgs;Landroid/content/Context;)Lipn;
+    .locals 1
+
+    new-instance v0, Ljao;
+
+    invoke-direct {v0, p0, p1}, Ljao;-><init>(Ljgs;Landroid/content/Context;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljfx;
-    .locals 7
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget-object v1, p0, Ljam;->c:Ljava/lang/Object;
+    iget-object v0, p0, Ljam;->a:Landroid/media/MediaFormat;
 
-    monitor-enter v1
+    check-cast p1, Landroid/media/MediaFormat;
 
-    :try_start_0
-    iget-object v0, p0, Ljam;->a:Ljava/util/TreeSet;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
+    const-string v1, "oo.muxer.drop_initial_non_keyframes"
 
-    move-result v0
+    invoke-static {v1, v0, p1}, Ljbs;->a(Ljava/lang/String;Landroid/media/MediaFormat;Landroid/media/MediaFormat;)V
 
-    if-nez v0, :cond_0
+    const-string v1, "oo.muxer.force_sequential"
 
-    iget-object v0, p0, Ljam;->a:Ljava/util/TreeSet;
-
-    invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    cmp-long v0, p1, v2
-
-    if-ltz v0, :cond_0
-
-    iget-object v0, p0, Ljam;->a:Ljava/util/TreeSet;
-
-    invoke-virtual {v0}, Ljava/util/TreeSet;->last()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Ljam;->d:J
-
-    add-long/2addr v2, v4
-
-    cmp-long v0, p1, v2
-
-    if-gtz v0, :cond_0
-
-    new-instance v0, Ljfu;
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-direct {v0, v2}, Ljfu;-><init>(F)V
-
-    monitor-exit v1
-
-    :goto_0
-    return-object v0
+    invoke-static {v1, v0, p1}, Ljbs;->a(Ljava/lang/String;Landroid/media/MediaFormat;Landroid/media/MediaFormat;)V
 
     :cond_0
-    new-instance v0, Ljfu;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v2}, Ljfu;-><init>(F)V
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-object p1
 .end method

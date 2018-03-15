@@ -1,145 +1,136 @@
-.class final Lfmk;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final Lfmk;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfmi;
+.field private final a:Lfmh;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmi;)V
+.method private constructor <init>(Lfmh;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfmk;->a:Lfmi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p1, p0, Lfmk;->a:Lfmh;
+
+    iput-object p2, p0, Lfmk;->b:Lkgv;
+
+    iput-object p3, p0, Lfmk;->c:Lkgv;
+
+    iput-object p4, p0, Lfmk;->d:Lkgv;
+
+    iput-object p5, p0, Lfmk;->e:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lfmh;Lkgv;Lkgv;Lkgv;Lkgv;)Lfmk;
+    .locals 6
+
+    new-instance v0, Lfmk;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lfmk;-><init>(Lfmh;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final onCancelButtonPressed()V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Lfmk;->a:Lfmi;
+    iget-object v0, p0, Lfmk;->b:Lkgv;
 
-    invoke-virtual {v0}, Lfmi;->q()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final onRetakeButtonPressed()V
-    .locals 2
+    check-cast v1, Liaw;
 
-    iget-object v0, p0, Lfmk;->a:Lfmi;
+    iget-object v0, p0, Lfmk;->c:Lkgv;
 
-    iget v1, v0, Lfmi;->P:I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    add-int/lit8 v1, v1, 0x1
+    move-result-object v2
 
-    iput v1, v0, Lfmi;->P:I
+    check-cast v2, Libq;
 
-    iget-object v0, p0, Lfmk;->a:Lfmi;
+    iget-object v0, p0, Lfmk;->d:Lkgv;
 
-    iget v0, v0, Lfmi;->t:I
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Lfmi;->c:Ljava/lang/String;
-
-    const-string v1, "Can\'t undo capture, no images captured."
-
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lfmk;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->k:Lfns;
-
-    iget-object v0, v0, Lfns;->b:Labe;
-
-    invoke-virtual {v0}, Labe;->j()Lacn;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lacn;->a()I
+    move-object v3, v0
 
-    move-result v0
+    check-cast v3, Lfut;
 
-    const/16 v1, 0x8
+    iget-object v0, p0, Lfmk;->e:Lkgv;
 
-    if-eq v0, v1, :cond_3
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    :goto_1
-    if-nez v0, :cond_4
+    check-cast v0, Lflh;
 
-    :cond_2
-    sget-object v0, Lfmi;->c:Ljava/lang/String;
+    iget-object v4, v3, Lfut;->c:Ljrf;
 
-    const-string v1, "Can\'t undo capture, LightCycle not ready to undo."
+    invoke-virtual {v4}, Ljrf;->a()Z
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v4
 
-    goto :goto_0
+    invoke-static {v4}, Ljii;->b(Z)V
 
-    :cond_3
-    const/4 v0, 0x0
+    iget-object v3, v3, Lfut;->c:Ljrf;
 
-    goto :goto_1
+    invoke-virtual {v3}, Ljrf;->b()Ljava/lang/Object;
 
-    :cond_4
-    iget-object v0, p0, Lfmk;->a:Lfmi;
+    move-result-object v3
 
-    iget v0, v0, Lfmi;->t:I
+    move-object v4, v3
 
-    if-lez v0, :cond_5
+    check-cast v4, Lils;
 
-    iget-object v0, p0, Lfmk;->a:Lfmi;
+    iget-object v3, v4, Lils;->b:Lihc;
 
-    iget v1, v0, Lfmi;->t:I
+    iget v4, v4, Lils;->a:I
 
-    add-int/lit8 v1, v1, -0x1
+    const/4 v5, 0x3
 
-    iput v1, v0, Lfmi;->t:I
+    invoke-interface/range {v0 .. v5}, Lflh;->a(Liaw;Libq;Lihc;II)Lfla;
 
-    iget-object v0, p0, Lfmk;->a:Lfmi;
+    move-result-object v0
 
-    iget-object v0, v0, Lfmi;->u:Lfow;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-virtual {v0}, Lfow;->b()V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lfmk;->a:Lfmi;
+    move-result-object v0
 
-    iget-object v0, v0, Lfmi;->G:Landroid/os/Handler;
+    check-cast v0, Lfla;
 
-    const/16 v1, 0x65
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    :cond_5
-    iget-object v0, p0, Lfmk;->a:Lfmi;
-
-    iget v0, v0, Lfmi;->t:I
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lfmk;->a:Lfmi;
-
-    invoke-virtual {v0}, Lfmi;->p()V
-
-    goto :goto_0
+    return-object v0
 .end method

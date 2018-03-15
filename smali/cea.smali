@@ -3,88 +3,130 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Lfjg;
 
-.field private b:Ljxn;
+.field public final b:Lket;
 
-.field private c:Ljxn;
+.field public final c:Lkeh;
 
-.field private d:Ljxn;
+.field public final d:Lwk;
 
-.field private e:Ljxn;
+.field private final e:Lfnq;
+
+.field private final f:Ljava/util/concurrent/Executor;
+
+.field private final g:Ligz;
+
+.field private final h:Ljava/util/Collection;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lfjg;Lfnq;Ljava/util/concurrent/Executor;Ljava/util/Collection;Lket;Lkeh;Ligz;Lwk;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcea;->a:Ljxn;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p2, p0, Lcea;->b:Ljxn;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p3, p0, Lcea;->c:Ljxn;
+    invoke-static {p4}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p4, p0, Lcea;->d:Ljxn;
+    invoke-static {p5}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p5, p0, Lcea;->e:Ljxn;
+    invoke-static {p6}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lcea;->a:Lfjg;
+
+    iput-object p2, p0, Lcea;->e:Lfnq;
+
+    iput-object p3, p0, Lcea;->f:Ljava/util/concurrent/Executor;
+
+    iput-object p4, p0, Lcea;->h:Ljava/util/Collection;
+
+    iput-object p5, p0, Lcea;->b:Lket;
+
+    iput-object p6, p0, Lcea;->c:Lkeh;
+
+    iput-object p7, p0, Lcea;->g:Ligz;
+
+    iput-object p8, p0, Lcea;->d:Lwk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final run()V
+    .locals 3
 
-    new-instance v0, Lcdz;
+    :try_start_0
+    iget-object v0, p0, Lcea;->a:Lfjg;
 
-    iget-object v1, p0, Lcea;->a:Ljxn;
+    invoke-static {v0}, Lfnu;->a(Lfjg;)Lfnv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    iget-object v1, p0, Lcea;->h:Ljava/util/Collection;
 
-    check-cast v1, Landroid/content/Context;
+    invoke-virtual {v0, v1}, Lfnv;->a(Ljava/util/Collection;)Lfnv;
 
-    iget-object v2, p0, Lcea;->b:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lcea;->g:Ligz;
 
-    move-result-object v2
+    iput-object v1, v0, Lfnv;->a:Ligz;
 
-    check-cast v2, Lgrw;
+    invoke-virtual {v0}, Lfnv;->a()Lfnu;
 
-    iget-object v3, p0, Lcea;->c:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lcea;->e:Lfnq;
 
-    move-result-object v3
+    invoke-interface {v1, v0}, Lfnq;->a(Ljava/lang/Object;)Lkeh;
 
-    check-cast v3, Lgow;
+    move-result-object v0
 
-    iget-object v4, p0, Lcea;->d:Ljxn;
+    new-instance v1, Lcmm;
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v1, p0}, Lcmm;-><init>(Lcea;)V
 
-    move-result-object v4
+    iget-object v2, p0, Lcea;->f:Ljava/util/concurrent/Executor;
 
-    check-cast v4, Lcfe;
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v5, p0, Lcea;->e:Ljxn;
+    :goto_0
+    return-void
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    :catch_0
+    move-exception v0
 
-    move-result-object v5
+    :try_start_1
+    iget-object v1, p0, Lcea;->b:Lket;
 
-    check-cast v5, Lgvx;
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-direct/range {v0 .. v5}, Lcdz;-><init>(Landroid/content/Context;Lgrw;Lgow;Lcfe;Lgvx;)V
+    iget-object v0, p0, Lcea;->a:Lfjg;
 
-    return-object v0
+    invoke-virtual {v0}, Lfjg;->close()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcea;->a:Lfjg;
+
+    invoke-virtual {v1}, Lfjg;->close()V
+
+    throw v0
 .end method

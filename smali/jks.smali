@@ -1,58 +1,65 @@
-.class public final Ljks;
-.super Ljjg;
+.class public abstract Ljks;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field public static final serialVersionUID:J
-
-
-# instance fields
-.field private a:Ljava/lang/Object;
-
-.field private b:Ljava/lang/Object;
+.implements Ljko;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljjg;-><init>()V
-
-    iput-object p1, p0, Ljks;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Ljks;->b:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getKey()Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/util/List;)Ljava/util/List;
+    .locals 3
 
-    iget-object v0, p0, Ljks;->a:Ljava/lang/Object;
+    new-instance v1, Ljava/util/ArrayList;
 
-    return-object v0
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljkl;
+
+    invoke-virtual {p0, v0}, Ljks;->a(Ljkl;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    goto :goto_0
+
+    :cond_0
+    return-object v1
 .end method
 
-.method public final getValue()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljks;->b:Ljava/lang/Object;
-
-    return-object v0
+.method public abstract a(Ljkl;)Ljava/util/List;
 .end method
 
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+.method public toString()Ljava/lang/String;
     .locals 1
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    const-string v0, "Segmenter"
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+    return-object v0
 .end method

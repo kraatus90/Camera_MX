@@ -1,75 +1,36 @@
-.class public final enum Lipt;
-.super Ljava/lang/Enum;
+.class public final Lipt;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lipn;
 
-# static fields
-.field public static final enum a:Lipt;
 
-.field public static final enum b:Lipt;
-
-.field private static synthetic c:[Lipt;
+# instance fields
+.field private final synthetic a:Ljava/lang/Throwable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lipt;
-
-    const-string v1, "PORTRAIT"
-
-    invoke-direct {v0, v1, v2}, Lipt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lipt;->a:Lipt;
-
-    new-instance v0, Lipt;
-
-    const-string v1, "LANDSCAPE"
-
-    invoke-direct {v0, v1, v3}, Lipt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lipt;->b:Lipt;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lipt;
-
-    sget-object v1, Lipt;->a:Lipt;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lipt;->b:Lipt;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lipt;->c:[Lipt;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lipt;->a:Ljava/lang/Throwable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lipt;
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    sget-object v0, Lipt;->c:[Lipt;
+    check-cast p1, Ljava/lang/Throwable;
 
-    invoke-virtual {v0}, [Lipt;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lipt;->a:Ljava/lang/Throwable;
 
-    move-result-object v0
+    invoke-static {p1, v0}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-    check-cast v0, [Lipt;
-
-    return-object v0
+    throw p1
 .end method

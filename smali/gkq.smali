@@ -1,118 +1,61 @@
 .class final Lgkq;
-.super Ljava/lang/Object;
+.super Ljava/util/TimerTask;
 .source "PG"
 
 
 # instance fields
-.field public final a:Lgdq;
+.field private final synthetic a:Lket;
 
-.field public final b:Lici;
+.field private final synthetic b:I
 
-.field public final c:I
+.field private final synthetic c:F
+
+.field private final synthetic d:Lgkn;
 
 
 # direct methods
-.method constructor <init>(Lgdq;Lici;I)V
-    .locals 0
+.method constructor <init>(Lgkn;Lket;I)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgkq;->d:Lgkn;
 
-    iput-object p1, p0, Lgkq;->a:Lgdq;
+    iput-object p2, p0, Lgkq;->a:Lket;
 
-    iput-object p2, p0, Lgkq;->b:Lici;
+    iput p3, p0, Lgkq;->b:I
 
-    iput p3, p0, Lgkq;->c:I
+    const v0, 0x3f19999a    # 0.6f
+
+    iput v0, p0, Lgkq;->c:F
+
+    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
     return-void
 .end method
 
-.method static a(Ljava/util/List;Lici;)Lici;
-    .locals 11
 
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+# virtual methods
+.method public final run()V
+    .locals 5
 
-    move-result v0
+    iget-object v0, p0, Lgkq;->a:Lket;
 
-    if-nez v0, :cond_0
+    iget-object v1, p0, Lgkq;->d:Lgkn;
 
-    const/4 v0, 0x1
+    iget v2, p0, Lgkq;->b:I
 
-    :goto_0
-    invoke-static {v0}, Liya;->b(Z)V
+    iget v3, p0, Lgkq;->c:F
 
-    const/4 v1, 0x0
+    const/4 v4, -0x1
 
-    const-wide v4, 0x7fffffffffffffffL
+    invoke-virtual {v1, v2, v3, v4}, Lgkn;->a(IFI)I
 
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result v1
 
-    move-result-object v6
-
-    :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    invoke-virtual {v0}, Lici;->b()J
-
-    move-result-wide v2
-
-    iget v7, v0, Lici;->a:I
-
-    iget v8, p1, Lici;->a:I
-
-    if-lt v7, v8, :cond_3
-
-    iget v7, v0, Lici;->b:I
-
-    iget v8, p1, Lici;->b:I
-
-    if-lt v7, v8, :cond_3
-
-    cmp-long v7, v2, v4
-
-    if-gez v7, :cond_3
-
-    move-wide v9, v2
-
-    move-object v2, v0
-
-    move-wide v0, v9
-
-    :goto_2
-    move-wide v4, v0
-
-    move-object v1, v2
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    if-nez v1, :cond_2
-
-    invoke-static {p0}, Licj;->a(Ljava/util/List;)Lici;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    :cond_2
-    return-object v1
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
-    :cond_3
-    move-object v2, v1
-
-    move-wide v0, v4
-
-    goto :goto_2
+    return-void
 .end method

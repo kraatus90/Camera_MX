@@ -1,38 +1,48 @@
-.class final Lbww;
+.class public final Lbww;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lerq;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lidm;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lidm;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbww;->a:Lidm;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbww;->a:Lkgv;
+
+    iput-object p2, p0, Lbww;->b:Lkgv;
+
+    iput-object p3, p0, Lbww;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljri;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    const/4 v2, 0x0
+    new-instance v0, Lbwy;
 
-    iget-object v0, p0, Lbww;->a:Lidm;
+    iget-object v1, p0, Lbww;->a:Lkgv;
 
-    const/16 v1, 0x11
+    iget-object v2, p0, Lbww;->b:Lkgv;
 
-    invoke-interface {v0, v1, v2, v2, p1}, Lidm;->a(ILjra;Ljqm;Ljri;)V
+    iget-object v3, p0, Lbww;->c:Lkgv;
 
-    return-void
+    invoke-direct {v0, v1, v2, v3}, Lbwy;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method

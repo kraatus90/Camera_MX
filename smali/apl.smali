@@ -1,18 +1,18 @@
 .class public final Lapl;
-.super Landroid/support/v4/app/Fragment;
+.super Landroid/app/Fragment;
 .source "PG"
 
 
 # instance fields
-.field public final a:Laov;
+.field public final a:Lapa;
 
-.field public final b:Lapj;
+.field public final b:Lapo;
 
-.field public c:Ladj;
+.field public c:Lact;
 
-.field public d:Landroid/support/v4/app/Fragment;
+.field public d:Landroid/app/Fragment;
 
-.field private e:Ljava/util/HashSet;
+.field private final e:Ljava/util/Set;
 
 .field private f:Lapl;
 
@@ -21,16 +21,16 @@
 .method public constructor <init>()V
     .locals 1
 
-    new-instance v0, Laov;
+    new-instance v0, Lapa;
 
-    invoke-direct {v0}, Laov;-><init>()V
+    invoke-direct {v0}, Lapa;-><init>()V
 
-    invoke-direct {p0, v0}, Lapl;-><init>(Laov;)V
+    invoke-direct {p0, v0}, Lapl;-><init>(Lapa;)V
 
     return-void
 .end method
 
-.method private constructor <init>(Laov;)V
+.method private constructor <init>(Lapa;)V
     .locals 1
     .annotation build Landroid/annotation/SuppressLint;
         value = {
@@ -38,21 +38,21 @@
         }
     .end annotation
 
-    invoke-direct {p0}, Landroid/support/v4/app/Fragment;-><init>()V
+    invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     new-instance v0, Lapm;
 
     invoke-direct {v0, p0}, Lapm;-><init>(Lapl;)V
 
-    iput-object v0, p0, Lapl;->b:Lapj;
+    iput-object v0, p0, Lapl;->b:Lapo;
 
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lapl;->e:Ljava/util/HashSet;
+    iput-object v0, p0, Lapl;->e:Ljava/util/Set;
 
-    iput-object p1, p0, Lapl;->a:Laov;
+    iput-object p1, p0, Lapl;->a:Lapa;
 
     return-void
 .end method
@@ -66,9 +66,9 @@
 
     iget-object v0, p0, Lapl;->f:Lapl;
 
-    iget-object v0, v0, Lapl;->e:Ljava/util/HashSet;
+    iget-object v0, v0, Lapl;->e:Ljava/util/Set;
 
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     const/4 v0, 0x0
 
@@ -80,29 +80,25 @@
 
 
 # virtual methods
-.method public final onAttach(Landroid/content/Context;)V
+.method public final onAttach(Landroid/app/Activity;)V
     .locals 3
 
-    invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onAttach(Landroid/content/Context;)V
+    invoke-super {p0, p1}, Landroid/app/Fragment;->onAttach(Landroid/app/Activity;)V
 
     :try_start_0
-    invoke-virtual {p0}, Lapl;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-direct {p0}, Lapl;->a()V
+
+    invoke-static {p1}, Lacj;->a(Landroid/content/Context;)Lacj;
 
     move-result-object v0
 
-    invoke-direct {p0}, Lapl;->a()V
+    iget-object v0, v0, Lacj;->f:Lapn;
 
-    invoke-static {v0}, Lacz;->a(Landroid/content/Context;)Lacz;
+    invoke-virtual {p1}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
 
-    iget-object v1, v1, Lacz;->f:Laph;
-
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Laph;->a(Landroid/support/v4/app/FragmentManager;)Lapl;
+    invoke-virtual {v0, v1}, Lapn;->a(Landroid/app/FragmentManager;)Lapl;
 
     move-result-object v0
 
@@ -110,13 +106,17 @@
 
     iget-object v0, p0, Lapl;->f:Lapl;
 
-    if-eq v0, p0, :cond_0
+    invoke-virtual {p0, v0}, Lapl;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lapl;->f:Lapl;
 
-    iget-object v0, v0, Lapl;->e:Ljava/util/HashSet;
+    iget-object v0, v0, Lapl;->e:Ljava/util/Set;
 
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -127,7 +127,7 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "SupportRMFragment"
+    const-string v1, "RMFragment"
 
     const/4 v2, 0x5
 
@@ -137,7 +137,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "SupportRMFragment"
+    const-string v1, "RMFragment"
 
     const-string v2, "Unable to register fragment with root"
 
@@ -149,11 +149,11 @@
 .method public final onDestroy()V
     .locals 1
 
-    invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroy()V
+    invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
 
-    iget-object v0, p0, Lapl;->a:Laov;
+    iget-object v0, p0, Lapl;->a:Lapa;
 
-    invoke-virtual {v0}, Laov;->c()V
+    invoke-virtual {v0}, Lapa;->c()V
 
     invoke-direct {p0}, Lapl;->a()V
 
@@ -161,13 +161,9 @@
 .end method
 
 .method public final onDetach()V
-    .locals 1
+    .locals 0
 
-    invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDetach()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lapl;->d:Landroid/support/v4/app/Fragment;
+    invoke-super {p0}, Landroid/app/Fragment;->onDetach()V
 
     invoke-direct {p0}, Lapl;->a()V
 
@@ -177,11 +173,11 @@
 .method public final onStart()V
     .locals 1
 
-    invoke-super {p0}, Landroid/support/v4/app/Fragment;->onStart()V
+    invoke-super {p0}, Landroid/app/Fragment;->onStart()V
 
-    iget-object v0, p0, Lapl;->a:Laov;
+    iget-object v0, p0, Lapl;->a:Lapa;
 
-    invoke-virtual {v0}, Laov;->a()V
+    invoke-virtual {v0}, Lapa;->a()V
 
     return-void
 .end method
@@ -189,11 +185,11 @@
 .method public final onStop()V
     .locals 1
 
-    invoke-super {p0}, Landroid/support/v4/app/Fragment;->onStop()V
+    invoke-super {p0}, Landroid/app/Fragment;->onStop()V
 
-    iget-object v0, p0, Lapl;->a:Laov;
+    iget-object v0, p0, Lapl;->a:Lapa;
 
-    invoke-virtual {v0}, Laov;->b()V
+    invoke-virtual {v0}, Lapa;->b()V
 
     return-void
 .end method
@@ -201,11 +197,11 @@
 .method public final toString()Ljava/lang/String;
     .locals 4
 
-    invoke-super {p0}, Landroid/support/v4/app/Fragment;->toString()Ljava/lang/String;
+    invoke-super {p0}, Landroid/app/Fragment;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lapl;->getParentFragment()Landroid/support/v4/app/Fragment;
+    invoke-virtual {p0}, Lapl;->getParentFragment()Landroid/app/Fragment;
 
     move-result-object v0
 

@@ -3,50 +3,76 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lgkv;
 
 
 # instance fields
-.field private synthetic a:Lbzb;
+.field private final a:Lfat;
+
+.field private final b:Lihs;
 
 
 # direct methods
-.method constructor <init>(Lbzb;)V
+.method constructor <init>(Lfat;Lihs;)V
     .locals 0
 
-    iput-object p1, p0, Lbyz;->a:Lbzb;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbyz;->a:Lfat;
+
+    iput-object p2, p0, Lbyz;->b:Lihs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    check-cast p1, Lcom/google/android/apps/camera/burstchip/BurstChip;
+    iget-object v0, p0, Lbyz;->b:Lihs;
 
-    new-instance v0, Lbza;
+    const-string v1, "#cacheDeviceInfo"
 
-    iget-object v1, p0, Lbyz;->a:Lbzb;
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1, p1}, Lbza;-><init>(Lbzb;Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    iget-object v0, p0, Lbyz;->a:Lfat;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/burstchip/BurstChip;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0}, Lfat;->b()Ljava/util/List;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    sget-object v0, Lbyo;->a:Ljava/lang/String;
+    move-result-object v1
 
-    const-string v1, "Failed to set or retrieve BurstChip."
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {v0, v1, p1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lilb;
+
+    iget-object v2, p0, Lbyz;->a:Lfat;
+
+    invoke-virtual {v2, v0}, Lfat;->a(Lilb;)Lfdv;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lfdv;->c()Ljava/util/List;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lbyz;->b:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
 
     return-void
 .end method

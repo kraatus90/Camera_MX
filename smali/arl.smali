@@ -1,281 +1,184 @@
 .class public final Larl;
-.super Ljava/io/InputStream;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static b:Ljava/util/Queue;
+# interfaces
+.implements Ladu;
 
 
 # instance fields
-.field public a:Ljava/io/IOException;
+.field private final b:Ljava/lang/String;
 
-.field private c:Ljava/io/InputStream;
+.field private final c:J
+
+.field private final d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Larq;->a(I)Ljava/util/Queue;
-
-    move-result-object v0
-
-    sput-object v0, Larl;->b:Ljava/util/Queue;
-
-    return-void
-.end method
-
-.method constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;JI)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    if-nez p1, :cond_0
 
-.method public static a(Ljava/io/InputStream;)Larl;
-    .locals 2
-
-    sget-object v1, Larl;->b:Ljava/util/Queue;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Larl;->b:Ljava/util/Queue;
-
-    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Larl;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Larl;
-
-    invoke-direct {v0}, Larl;-><init>()V
+    const-string p1, ""
 
     :cond_0
-    iput-object p0, v0, Larl;->c:Ljava/io/InputStream;
+    iput-object p1, p0, Larl;->b:Ljava/lang/String;
 
-    return-object v0
+    iput-wide p2, p0, Larl;->c:J
 
-    :catchall_0
-    move-exception v0
+    iput p4, p0, Larl;->d:I
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(Ljava/security/MessageDigest;)V
+    .locals 4
 
-    const/4 v0, 0x0
+    const/16 v0, 0xc
 
-    iput-object v0, p0, Larl;->a:Ljava/io/IOException;
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
-    iput-object v0, p0, Larl;->c:Ljava/io/InputStream;
+    move-result-object v0
 
-    sget-object v1, Larl;->b:Ljava/util/Queue;
+    iget-wide v2, p0, Larl;->c:J
 
-    monitor-enter v1
+    invoke-virtual {v0, v2, v3}, Ljava/nio/ByteBuffer;->putLong(J)Ljava/nio/ByteBuffer;
 
-    :try_start_0
-    sget-object v0, Larl;->b:Ljava/util/Queue;
+    move-result-object v0
 
-    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
+    iget v1, p0, Larl;->d:I
 
-    monitor-exit v1
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    return-void
+    move-result-object v0
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    throw v0
-.end method
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
 
-.method public final available()I
-    .locals 1
+    iget-object v0, p0, Larl;->b:Ljava/lang/String;
 
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
+    sget-object v1, Larl;->a:Ljava/nio/charset/Charset;
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    move-result v0
+    move-result-object v0
 
-    return v0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
 
     return-void
 .end method
 
-.method public final mark(I)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
 
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    if-ne p0, p1, :cond_1
 
-.method public final markSupported()Z
-    .locals 1
-
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final read()I
-    .locals 1
-
-    :try_start_0
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
+    :cond_0
     :goto_0
     return v0
 
-    :catch_0
-    move-exception v0
+    :cond_1
+    if-eqz p1, :cond_2
 
-    iput-object v0, p0, Larl;->a:Ljava/io/IOException;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v0, -0x1
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_3
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    check-cast p1, Larl;
+
+    iget-wide v2, p0, Larl;->c:J
+
+    iget-wide v4, p1, Larl;->c:J
+
+    cmp-long v2, v2, v4
+
+    if-eqz v2, :cond_4
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_4
+    iget v2, p0, Larl;->d:I
+
+    iget v3, p1, Larl;->d:I
+
+    if-eq v2, v3, :cond_5
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_5
+    iget-object v2, p0, Larl;->b:Ljava/lang/String;
+
+    iget-object v3, p1, Larl;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    move v0, v1
 
     goto :goto_0
 .end method
 
-.method public final read([B)I
-    .locals 1
+.method public final hashCode()I
+    .locals 6
 
-    :try_start_0
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
+    iget-object v0, p0, Larl;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    :goto_0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v2, p0, Larl;->c:J
+
+    iget-wide v4, p0, Larl;->c:J
+
+    const/16 v1, 0x20
+
+    ushr-long/2addr v4, v1
+
+    xor-long/2addr v2, v4
+
+    long-to-int v1, v2
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Larl;->d:I
+
+    add-int/2addr v0, v1
+
     return v0
-
-    :catch_0
-    move-exception v0
-
-    iput-object v0, p0, Larl;->a:Ljava/io/IOException;
-
-    const/4 v0, -0x1
-
-    goto :goto_0
-.end method
-
-.method public final read([BII)I
-    .locals 1
-
-    :try_start_0
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v0
-
-    iput-object v0, p0, Larl;->a:Ljava/io/IOException;
-
-    const/4 v0, -0x1
-
-    goto :goto_0
-.end method
-
-.method public final declared-synchronized reset()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final skip(J)J
-    .locals 3
-
-    :try_start_0
-    iget-object v0, p0, Larl;->c:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-wide v0
-
-    :goto_0
-    return-wide v0
-
-    :catch_0
-    move-exception v0
-
-    iput-object v0, p0, Larl;->a:Ljava/io/IOException;
-
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
 .end method

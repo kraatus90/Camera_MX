@@ -1,137 +1,129 @@
-.class final Lkc;
+.class public Lkc;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field public a:I
+# static fields
+.field private static a:Ljava/lang/reflect/Field;
 
-.field public b:I
-
-.field public c:F
-
-.field public d:F
-
-.field public e:J
-
-.field public f:J
-
-.field public g:I
-
-.field public h:J
-
-.field public i:F
-
-.field public j:I
+.field private static b:Z
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/high16 v0, -0x8000000000000000L
-
-    iput-wide v0, p0, Lkc;->e:J
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lkc;->h:J
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lkc;->f:J
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lkc;->g:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(J)F
-    .locals 7
+.method public a(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
+    .locals 5
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/4 v1, 0x0
 
-    const/4 v0, 0x0
+    const/4 v4, 0x1
 
-    iget-wide v2, p0, Lkc;->e:J
+    sget-boolean v0, Lkc;->b:Z
 
-    cmp-long v1, p1, v2
+    if-nez v0, :cond_0
 
-    if-gez v1, :cond_0
+    :try_start_0
+    const-class v0, Landroid/widget/CompoundButton;
+
+    const-string v2, "mButtonDrawable"
+
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    sput-object v0, Lkc;->a:Ljava/lang/reflect/Field;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
-    return v0
+    sput-boolean v4, Lkc;->b:Z
 
     :cond_0
-    iget-wide v2, p0, Lkc;->h:J
+    sget-object v0, Lkc;->a:Ljava/lang/reflect/Field;
 
-    const-wide/16 v4, 0x0
+    if-eqz v0, :cond_1
 
-    cmp-long v1, v2, v4
+    :try_start_1
+    sget-object v0, Lkc;->a:Ljava/lang/reflect/Field;
 
-    if-ltz v1, :cond_1
+    invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-wide v2, p0, Lkc;->h:J
+    move-result-object v0
 
-    cmp-long v1, p1, v2
+    check-cast v0, Landroid/graphics/drawable/Drawable;
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
 
-    if-gez v1, :cond_2
+    :goto_1
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    const-string v2, "CompoundButtonCompat"
+
+    const-string v3, "Failed to retrieve mButtonDrawable field"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    const-string v2, "CompoundButtonCompat"
+
+    const-string v3, "Failed to get button drawable via reflection"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    sput-object v1, Lkc;->a:Ljava/lang/reflect/Field;
 
     :cond_1
-    iget-wide v2, p0, Lkc;->e:J
+    move-object v0, v1
 
-    sub-long v2, p1, v2
+    goto :goto_1
+.end method
 
-    const/high16 v1, 0x3f000000    # 0.5f
+.method public a(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
+    .locals 1
 
-    long-to-float v2, v2
+    instance-of v0, p1, Lli;
 
-    iget v3, p0, Lkc;->a:I
+    if-eqz v0, :cond_0
 
-    int-to-float v3, v3
+    check-cast p1, Lli;
 
-    div-float/2addr v2, v3
+    invoke-interface {p1, p2}, Lli;->a(Landroid/content/res/ColorStateList;)V
 
-    invoke-static {v2, v0, v6}, Lkb;->a(FFF)F
+    :cond_0
+    return-void
+.end method
 
-    move-result v0
+.method public a(Landroid/widget/CompoundButton;Landroid/graphics/PorterDuff$Mode;)V
+    .locals 1
 
-    mul-float/2addr v0, v1
+    instance-of v0, p1, Lli;
 
-    goto :goto_0
+    if-eqz v0, :cond_0
 
-    :cond_2
-    iget-wide v2, p0, Lkc;->h:J
+    check-cast p1, Lli;
 
-    sub-long v2, p1, v2
+    invoke-interface {p1, p2}, Lli;->a(Landroid/graphics/PorterDuff$Mode;)V
 
-    iget v1, p0, Lkc;->i:F
-
-    sub-float v1, v6, v1
-
-    iget v4, p0, Lkc;->i:F
-
-    long-to-float v2, v2
-
-    iget v3, p0, Lkc;->j:I
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    invoke-static {v2, v0, v6}, Lkb;->a(FFF)F
-
-    move-result v0
-
-    mul-float/2addr v0, v4
-
-    add-float/2addr v0, v1
-
-    goto :goto_0
+    :cond_0
+    return-void
 .end method

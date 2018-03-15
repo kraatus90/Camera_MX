@@ -15,7 +15,7 @@
 
     const-string v0, "BitmapIO"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -54,17 +54,17 @@
 
     if-eqz v1, :cond_0
 
-    invoke-static {p0}, Liel;->a([B)Liel;
+    invoke-static {p0}, Lijj;->a([B)Lijj;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    invoke-static {v0}, Liel;->a(Liel;)Licf;
+    invoke-static {v0}, Lijj;->a(Lijj;)Ligz;
 
     move-result-object v0
 
-    iget v0, v0, Licf;->e:I
+    iget v0, v0, Ligz;->e:I
 
     invoke-static {v1, v0}, Lcom/google/android/apps/refocus/image/BitmapProcessing;->rotate(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 

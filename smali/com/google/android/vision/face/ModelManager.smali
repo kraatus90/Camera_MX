@@ -433,14 +433,10 @@
 .end method
 
 .method private final isConnectionMetered()Z
-    .locals 6
+    .locals 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0x15
     .end annotation
-
-    const/4 v3, 0x0
-
-    const/4 v2, 0x1
 
     iget-object v0, p0, Lcom/google/android/vision/face/ModelManager;->mContext:Landroid/content/Context;
 
@@ -452,84 +448,21 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v4, 0x10
-
-    if-lt v1, v4, :cond_1
-
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->isActiveNetworkMetered()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
-
-    :cond_0
-    :goto_0
-    return v2
-
-    :cond_1
-    invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_3
-
-    invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    move v1, v2
-
-    :goto_1
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v5, 0xd
-
-    if-lt v4, v5, :cond_5
-
-    const/16 v4, 0x9
-
-    invoke-virtual {v0, v4}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    move v0, v2
-
-    :goto_2
-    if-nez v1, :cond_2
-
     if-eqz v0, :cond_0
 
-    :cond_2
-    move v2, v3
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
-
-    :cond_3
-    move v1, v3
-
-    goto :goto_1
-
-    :cond_4
-    move v0, v3
-
-    goto :goto_2
-
-    :cond_5
-    move v0, v3
-
-    goto :goto_2
 .end method
 
 .method private final unzipFile(Ljava/lang/String;Ljava/io/File;)V
@@ -928,47 +861,25 @@
 
     move-result-object v0
 
-    const-string v1, "v2"
-
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v1
 
-    add-int/lit8 v2, v2, 0x5
+    add-int/lit8 v1, v1, 0x7
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v2, "-"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ".zip"
+    const-string v1, "-v2.zip"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1096,7 +1007,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     invoke-virtual {v3, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1109,28 +1020,14 @@
 
     invoke-virtual {v2, v0}, Landroid/app/DownloadManager$Request;->setDestinationUri(Landroid/net/Uri;)Landroid/app/DownloadManager$Request;
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0xb
-
-    if-lt v0, v3, :cond_8
-
     const/4 v0, 0x2
 
     invoke-virtual {v2, v0}, Landroid/app/DownloadManager$Request;->setNotificationVisibility(I)Landroid/app/DownloadManager$Request;
 
-    :goto_4
     invoke-virtual {v2, v5}, Landroid/app/DownloadManager$Request;->setVisibleInDownloadsUi(Z)Landroid/app/DownloadManager$Request;
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x10
-
-    if-lt v0, v3, :cond_6
 
     invoke-virtual {v2, v5}, Landroid/app/DownloadManager$Request;->setAllowedOverMetered(Z)Landroid/app/DownloadManager$Request;
 
-    :cond_6
     invoke-virtual {v2, v5}, Landroid/app/DownloadManager$Request;->setAllowedOverRoaming(Z)Landroid/app/DownloadManager$Request;
 
     iput-boolean v5, p0, Lcom/google/android/vision/face/ModelManager;->mDownloadComplete:Z
@@ -1181,15 +1078,10 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_6
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     goto :goto_3
-
-    :cond_8
-    invoke-virtual {v2, v5}, Landroid/app/DownloadManager$Request;->setShowRunningNotification(Z)Landroid/app/DownloadManager$Request;
-
-    goto :goto_4
 .end method

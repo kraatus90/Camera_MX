@@ -1,38 +1,33 @@
-.class final Livm;
-.super Ljava/lang/Object;
+.class public final Livm;
+.super Lixm;
 .source "PG"
-
-# interfaces
-.implements Liuh;
 
 
 # instance fields
-.field private synthetic a:Landroid/content/Context;
+.field private final a:Landroid/opengl/EGLDisplay;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)V
     .locals 0
 
-    iput-object p1, p0, Livm;->a:Landroid/content/Context;
+    invoke-direct {p0, p2}, Lixm;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Livm;->a:Landroid/opengl/EGLDisplay;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 2
+.method protected final synthetic a(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Livm;->a:Landroid/content/Context;
+    check-cast p1, Landroid/opengl/EGLSurface;
 
-    const v1, 0x7f09000f
+    iget-object v0, p0, Livm;->a:Landroid/opengl/EGLDisplay;
 
-    invoke-static {v0, v1}, Liui;->a(Landroid/content/Context;I)Ljava/nio/ByteBuffer;
+    invoke-static {v0, p1}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

@@ -1,78 +1,64 @@
-.class final synthetic Lfix;
+.class public final Lfix;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lfim;
 
 
 # instance fields
-.field private a:Lfiw;
+.field private final a:Lfim;
 
 
 # direct methods
-.method constructor <init>(Lfiw;)V
+.method public constructor <init>(Lfim;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfix;->a:Lfiw;
+    iput-object p1, p0, Lfix;->a:Lfim;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 3
+.method public final a(Lfin;)Lfhq;
+    .locals 5
 
-    iget-object v1, p0, Lfix;->a:Lfiw;
+    new-instance v0, Lfiz;
 
-    check-cast p1, Ljava/lang/Integer;
+    invoke-direct {v0}, Lfiz;-><init>()V
 
-    iget-object v0, v1, Lfiw;->b:Ljht;
+    iget-object v1, p0, Lfix;->a:Lfim;
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    new-instance v2, Lfiy;
 
-    move-result-object v0
+    invoke-direct {v2, v0, p1}, Lfiy;-><init>(Lfiz;Lfin;)V
 
-    check-cast v0, Lfxc;
+    invoke-interface {v1, v2}, Lfim;->a(Lfin;)Lfhq;
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    move-result-object v1
 
-    move-result v2
+    const/4 v2, 0x2
 
-    invoke-static {v2}, Lgms;->a(I)Lgms;
+    new-array v2, v2, [Lfhq;
 
-    move-result-object v2
+    const/4 v3, 0x0
 
-    invoke-static {v2}, Lfiw;->a(Lgms;)Lfxd;
+    new-instance v4, Lfhv;
 
-    move-result-object v2
+    invoke-direct {v4, v0}, Lfhv;-><init>(Lihg;)V
 
-    invoke-interface {v0, v2}, Lfxc;->a(Lfxd;)V
+    aput-object v4, v2, v3
 
-    iget-object v0, v1, Lfiw;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    aput-object v1, v2, v0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, v1, Lfiw;->b:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-static {v2}, Lffm;->a([Lfhq;)Lfhq;
 
     move-result-object v0
 
-    check-cast v0, Lfxc;
-
-    invoke-interface {v0}, Lfxc;->e()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {v1, v0}, Lfiw;->a(Lich;)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

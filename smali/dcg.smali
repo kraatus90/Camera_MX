@@ -1,56 +1,100 @@
-.class final Ldcg;
+.class public final Ldcg;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field public final synthetic a:Ldby;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldby;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldcg;->a:Ldby;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldcg;->a:Lkgv;
+
+    iput-object p2, p0, Ldcg;->b:Lkgv;
+
+    iput-object p3, p0, Ldcg;->c:Lkgv;
+
+    iput-object p4, p0, Ldcg;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Ldcg;->a:Ldby;
+    iget-object v0, p0, Ldcg;->a:Lkgv;
 
-    iget-object v0, v0, Ldby;->j:Lddd;
-
-    invoke-interface {v0}, Lddd;->c()V
-
-    iget-object v0, p0, Ldcg;->a:Ldby;
-
-    iget-object v0, v0, Ldby;->b:Layp;
-
-    iget-object v1, p0, Ldcg;->a:Ldby;
-
-    invoke-interface {v0, v1}, Layp;->a(Lbaw;)Ljuw;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Ldch;
+    check-cast v0, Ldxx;
 
-    invoke-direct {v1, p0}, Ldch;-><init>(Ldcg;)V
+    iget-object v1, p0, Ldcg;->b:Lkgv;
 
-    iget-object v2, p0, Ldcg;->a:Ldby;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v2, v2, Ldby;->d:Lhzt;
+    move-result-object v1
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    check-cast v1, Lcsc;
 
-    return-void
+    iget-object v2, p0, Ldcg;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ldxw;
+
+    iget-object v3, p0, Ldcg;->d:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lbqc;
+
+    sget-object v4, Lfza;->d:Lbqf;
+
+    invoke-virtual {v3, v4}, Lbqc;->a(Lbqf;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    :goto_0
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldxw;
+
+    return-object v0
+
+    :cond_0
+    iget-object v1, v1, Lcsc;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ldxx;->a(Ljava/lang/String;)Ldxw;
+
+    move-result-object v2
+
+    goto :goto_0
 .end method

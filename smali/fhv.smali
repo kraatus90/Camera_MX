@@ -1,31 +1,33 @@
 .class public final Lfhv;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lfhq;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;
+.field private final synthetic a:Lihg;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;)V
+.method public constructor <init>(Lihg;)V
     .locals 0
 
-    iput-object p1, p0, Lfhv;->a:Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;
+    iput-object p1, p0, Lfhv;->a:Lihg;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Lfhq;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final a(Lfgk;)V
     .locals 1
 
-    iget-object v0, p0, Lfhv;->a:Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;
+    invoke-super {p0, p1}, Lfhq;->a(Lfgk;)V
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;->b()V
+    iget-object v0, p0, Lfhv;->a:Lihg;
+
+    invoke-interface {v0, p1}, Lihg;->a(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -1,54 +1,52 @@
-.class public final Lbre;
+.class final Lbre;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lbra;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lbra;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbre;->a:Lbra;
 
-    iput-object p1, p0, Lbre;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    iget-object v0, p0, Lbre;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbqu;
+    check-cast v0, Ljava/lang/Float;
 
-    const-string v1, "storage"
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    invoke-virtual {v0, v1}, Lbqu;->a(Ljava/lang/String;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
+    iget-object v1, p0, Lbre;->a:Lbra;
 
-    check-cast v0, Landroid/os/storage/StorageManager;
+    iget-object v1, v1, Lbra;->d:Lbqo;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-virtual {v1, v0}, Lbqo;->a(F)V
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Lbre;->a:Lbra;
 
-    move-result-object v0
+    iget-object v0, v0, Lbra;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
-    check-cast v0, Landroid/os/storage/StorageManager;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->invalidate()V
 
-    return-object v0
+    return-void
 .end method

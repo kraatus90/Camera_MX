@@ -1,89 +1,47 @@
-.class final Lahw;
+.class public final Lahw;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final a:J
 
-.field public b:Ljava/util/List;
-
-.field public c:Lahw;
-
-.field public d:Lahw;
+.field public final b:Laic;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lahw;-><init>(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
+.method private constructor <init>(Laic;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p0, p0, Lahw;->d:Lahw;
+    const-wide/32 v0, 0xfa00000
 
-    iput-object p0, p0, Lahw;->c:Lahw;
+    iput-wide v0, p0, Lahw;->a:J
 
-    iput-object p1, p0, Lahw;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lahw;->b:Laic;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 2
-
-    invoke-virtual {p0}, Lahw;->b()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    iget-object v1, p0, Lahw;->b:Ljava/util/List;
-
-    add-int/lit8 v0, v0, -0x1
-
-    invoke-interface {v1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final b()I
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    iget-object v0, p0, Lahw;->b:Ljava/util/List;
+    const-string v0, "image_manager_disk_cache"
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0, p1, v0}, Lahw;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lahw;->b:Ljava/util/List;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 1
 
-    move-result v0
+    new-instance v0, Laic;
 
-    :goto_0
-    return v0
+    invoke-direct {v0, p1, p2}, Laic;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-direct {p0, v0}, Lahw;-><init>(Laic;)V
 
-    goto :goto_0
+    return-void
 .end method

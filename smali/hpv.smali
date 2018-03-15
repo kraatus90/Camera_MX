@@ -1,88 +1,67 @@
-.class public final Lhpv;
+.class final Lhpv;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static a:Lhpv;
+# interfaces
+.implements Lhqe;
 
 
 # instance fields
-.field private b:Lhpu;
+.field private final synthetic a:Landroid/os/Bundle;
+
+.field private final synthetic b:J
+
+.field private final synthetic c:Lhpu;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lhpu;Landroid/os/Bundle;J)V
     .locals 1
 
-    new-instance v0, Lhpv;
+    iput-object p1, p0, Lhpv;->c:Lhpu;
 
-    invoke-direct {v0}, Lhpv;-><init>()V
+    iput-object p2, p0, Lhpv;->a:Landroid/os/Bundle;
 
-    sput-object v0, Lhpv;->a:Lhpv;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
+    iput-wide p3, p0, Lhpv;->b:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lhpv;->b:Lhpu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Landroid/content/Context;)Lhpu;
-    .locals 1
+.method public final a()Lhlp;
+    .locals 6
 
-    monitor-enter p0
+    sget-object v0, Lhqa;->b:Lhpy;
 
-    :try_start_0
-    iget-object v0, p0, Lhpv;->b:Lhpu;
+    iget-object v1, p0, Lhpv;->c:Lhpu;
 
-    if-nez v0, :cond_0
+    iget-object v1, v1, Lhpu;->a:Lhlm;
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    iget-object v2, p0, Lhpv;->c:Lhpu;
+
+    iget-object v2, v2, Lhpu;->b:Lcom/google/android/gms/googlehelp/GoogleHelp;
+
+    iget-object v3, p0, Lhpv;->a:Landroid/os/Bundle;
+
+    iget-wide v4, p0, Lhpv;->b:J
+
+    invoke-interface/range {v0 .. v5}, Lhpy;->b(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhlp;
 
     move-result-object v0
 
-    if-nez v0, :cond_1
-
-    :goto_0
-    new-instance v0, Lhpu;
-
-    invoke-direct {v0, p1}, Lhpu;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lhpv;->b:Lhpu;
-
-    :cond_0
-    iget-object v0, p0, Lhpv;->b:Lhpu;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
     return-object v0
+.end method
 
-    :cond_1
-    :try_start_1
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+.method public final b()V
+    .locals 2
 
-    move-result-object p1
+    const-string v0, "gH_GetAsyncFeedbackPsd"
 
-    goto :goto_0
+    const-string v1, "Failed to send async feedback psd to Help."
 
-    :catchall_0
-    move-exception v0
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    monitor-exit p0
-
-    throw v0
+    return-void
 .end method

@@ -1,123 +1,94 @@
-.class final Lcto;
-.super Lguh;
+.class public final Lcto;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Liau;
-
-.field private synthetic b:Lcsk;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcsk;Liau;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcto;->b:Lcsk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcto;->a:Liau;
-
-    invoke-direct {p0}, Lguh;-><init>()V
+    iput-object p1, p0, Lcto;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lcto;->b:Lcsk;
+    iget-object v0, p0, Lcto;->a:Lkgv;
 
-    iget-object v0, v0, Lcsk;->A:Ldhi;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    :goto_0
-    return-void
+    check-cast v0, Lbxs;
+
+    sget-object v1, Lild;->b:Lild;
+
+    iget-object v2, v0, Lbxs;->c:Landroid/content/Intent;
+
+    invoke-static {v2}, Lawl;->b(Landroid/content/Intent;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget-object v1, Lild;->a:Lild;
 
     :cond_0
-    iget-object v0, p0, Lcto;->b:Lcsk;
+    iget-object v2, v0, Lbxs;->a:Lfat;
 
-    iget-object v0, v0, Lcsk;->D:Lctv;
+    invoke-virtual {v2, v1}, Lfat;->b(Lild;)Lilb;
 
-    iget-object v0, v0, Lctv;->d:Lcom/google/android/apps/camera/legacy/app/ui/CountDownView;
+    move-result-object v1
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/ui/CountDownView;->a()Z
+    if-nez v1, :cond_1
 
-    move-result v0
+    iget-object v1, v0, Lbxs;->a:Lfat;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v1}, Lfat;->a()Lilb;
 
-    iget-object v0, p0, Lcto;->b:Lcsk;
-
-    invoke-virtual {v0}, Lcsk;->s()V
-
-    goto :goto_0
+    move-result-object v1
 
     :cond_1
-    iget-object v0, p0, Lcto;->b:Lcsk;
+    const-string v2, "There does not appear to be a camera!"
 
-    iget-object v0, v0, Lcsk;->w:Lbtx;
+    invoke-static {v1, v2}, Ljii;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Lbtx;->t()Leug;
+    iget-object v2, v0, Lbxs;->a:Lfat;
+
+    invoke-virtual {v2, v1}, Lfat;->a(Lilb;)Lfdv;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lfdv;->b()Lild;
+
+    move-result-object v2
+
+    new-instance v3, Lbxt;
+
+    iget-object v0, v0, Lbxs;->b:Laxf;
+
+    invoke-direct {v3, v0, v1, v2}, Lbxt;-><init>(Laxf;Lilb;Lild;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v3, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v0, v0, Leug;->y:Lfhe;
+    check-cast v0, Lbxt;
 
-    invoke-virtual {v0}, Lfhe;->a()V
-
-    iget-object v0, p0, Lcto;->a:Liau;
-
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-lez v0, :cond_2
-
-    iget-object v1, p0, Lcto;->b:Lcsk;
-
-    invoke-virtual {v1, v0}, Lcsk;->b(I)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcto;->b:Lcsk;
-
-    invoke-virtual {v0}, Lcsk;->p()V
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lcto;->b:Lcsk;
-
-    sget-object v1, Lbwt;->b:Lbwt;
-
-    invoke-virtual {v0, v1}, Lcsk;->a(Lbwt;)Ljuw;
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 3
-
-    iget-object v0, p0, Lcto;->b:Lcsk;
-
-    sget-object v1, Lbwt;->b:Lbwt;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcsk;->a(Lbwt;Z)Ljuw;
-
-    return-void
+    return-object v0
 .end method

@@ -1,70 +1,80 @@
 .class final Ljdx;
-.super Ljea;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
+
+
+# instance fields
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
+    const/16 v0, 0x8
 
-    invoke-direct {p0, p1, v0}, Ljea;-><init>(Ljava/lang/String;B)V
+    iput v0, p0, Ljdx;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
-    .locals 4
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+    new-instance v1, Ljla;
 
-    move-result v1
+    const-class v0, Ljme;
 
-    new-instance v2, Lcom/google/android/libraries/smartburst/utils/FloatArray;
+    const-string v2, "default"
 
-    invoke-direct {v2, v1}, Lcom/google/android/libraries/smartburst/utils/FloatArray;-><init>(I)V
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    :goto_0
-    if-ge v0, v1, :cond_0
+    check-cast v0, Ljme;
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readFloat()F
+    iget v2, p0, Ljdx;->a:I
 
-    move-result v3
+    invoke-direct {v1, v0, v2}, Ljla;-><init>(Ljme;I)V
 
-    invoke-virtual {v2, v3}, Lcom/google/android/libraries/smartburst/utils/FloatArray;->add(F)V
+    const-class v0, Ljjz;
 
-    add-int/lit8 v0, v0, 0x1
+    const-string v2, "summary_content_value"
 
-    goto :goto_0
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    :cond_0
-    return-object v2
-.end method
+    move-result-object v0
 
-.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
-    .locals 2
+    check-cast v0, Ljjz;
 
-    instance-of v0, p1, Lcom/google/android/libraries/smartburst/utils/FloatArray;
+    const/4 v2, 0x2
 
-    if-nez v0, :cond_0
+    new-array v2, v2, [Ljkq;
 
-    new-instance v0, Ljava/io/IOException;
+    const/4 v3, 0x0
 
-    const-string v1, "Incorrect type for serialization"
+    aput-object v1, v2, v3
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    const/4 v1, 0x1
 
-    throw v0
+    new-instance v3, Ljiu;
 
-    :cond_0
-    check-cast p1, Lcom/google/android/libraries/smartburst/utils/FloatArray;
+    const/4 v4, 0x3
 
-    invoke-static {p1, p2}, Licy;->a(Lcom/google/android/libraries/smartburst/utils/FloatArray;Ljava/io/DataOutputStream;)V
+    invoke-direct {v3, v0, v4}, Ljiu;-><init>(Ljjz;I)V
 
-    return-void
+    aput-object v3, v2, v1
+
+    invoke-static {v2}, Ljkw;->a([Ljkq;)Ljkw;
+
+    move-result-object v0
+
+    return-object v0
 .end method

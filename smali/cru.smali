@@ -1,56 +1,89 @@
-.class final Lcru;
+.class public abstract Lcru;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lcrz;
 
 
 # instance fields
-.field private synthetic a:Lcrs;
+.field public final a:Lbaa;
+
+.field public final b:Lbab;
 
 
 # direct methods
-.method constructor <init>(Lcrs;)V
+.method public constructor <init>(Lbaa;Lbab;)V
     .locals 0
 
-    iput-object p1, p0, Lcru;->a:Lcrs;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcru;->a:Lbaa;
+
+    iput-object p2, p0, Lcru;->b:Lbab;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p1, Ldhi;
-
-    iget-object v0, p0, Lcru;->a:Lcrs;
-
-    iget-object v0, v0, Lcrs;->e:Ljvi;
-
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Object;)Z
+.method public a(I)V
+    .locals 0
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
+.method public a()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public a_(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public e()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public m_()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public n_()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final o_()V
     .locals 2
 
-    sget-object v0, Lcrs;->a:Ljava/lang/String;
+    iget-object v0, p0, Lcru;->b:Lbab;
 
-    const-string v1, "Failed to start a OneCamera during initialization: "
+    invoke-interface {v0}, Lbab;->b()I
 
-    invoke-static {v0, v1, p1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result v0
 
-    iget-object v0, p0, Lcru;->a:Lcrs;
+    const/4 v1, -0x1
 
-    iget-object v0, v0, Lcrs;->e:Ljvi;
+    if-eq v0, v1, :cond_0
 
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Throwable;)Z
+    iget-object v1, p0, Lcru;->b:Lbab;
 
+    invoke-interface {v1, v0}, Lbab;->b(I)V
+
+    :cond_0
     return-void
 .end method

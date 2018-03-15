@@ -1,56 +1,31 @@
 .class public final Lqc;
-.super Lqb;
+.super Landroid/view/ViewGroup$MarginLayoutParams;
 .source "PG"
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/v7/widget/ActionBarContainer;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0, p1}, Lqb;-><init>(Landroid/support/v7/widget/ActionBarContainer;)V
+    const/4 v0, -0x1
+
+    invoke-direct {p0, v0, v0}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 0
 
-# virtual methods
-.method public final getOutline(Landroid/graphics/Outline;)V
-    .locals 1
+    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iget-object v0, p0, Lqc;->a:Landroid/support/v7/widget/ActionBarContainer;
-
-    iget-boolean v0, v0, Landroid/support/v7/widget/ActionBarContainer;->e:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lqc;->a:Landroid/support/v7/widget/ActionBarContainer;
-
-    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->d:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lqc;->a:Landroid/support/v7/widget/ActionBarContainer;
-
-    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->d:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
-
-    :cond_0
-    :goto_0
     return-void
+.end method
 
-    :cond_1
-    iget-object v0, p0, Lqc;->a:Landroid/support/v7/widget/ActionBarContainer;
+.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
+    .locals 0
 
-    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->b:Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lqc;->a:Landroid/support/v7/widget/ActionBarContainer;
-
-    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->b:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
-
-    goto :goto_0
+    return-void
 .end method

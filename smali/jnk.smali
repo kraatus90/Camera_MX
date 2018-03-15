@@ -1,150 +1,58 @@
-.class Ljnk;
-.super Ljmg;
+.class final Ljnk;
+.super Ljnm;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/SortedSet;
-
-
-# instance fields
-.field public final a:Ljnj;
 
 
 # direct methods
-.method constructor <init>(Ljnj;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljmg;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Ljnk;->a:Ljnj;
+    invoke-direct {p0, p1, v0}, Ljnm;-><init>(Ljava/lang/String;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final synthetic a()Ljmd;
+.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Ljnk;->a:Ljnj;
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readFloat()F
 
-    return-object v0
-.end method
+    move-result v0
 
-.method public comparator()Ljava/util/Comparator;
-    .locals 1
-
-    iget-object v0, p0, Ljnk;->a:Ljnj;
-
-    invoke-interface {v0}, Ljnj;->comparator()Ljava/util/Comparator;
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public first()Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
+    .locals 2
 
-    iget-object v0, p0, Ljnk;->a:Ljnj;
-
-    invoke-interface {v0}, Ljnj;->g()Ljme;
-
-    move-result-object v0
+    instance-of v0, p1, Ljava/lang/Float;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Ljava/util/NoSuchElementException;
+    new-instance v0, Ljava/io/IOException;
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    const-string v1, "Incorrect type for serialization"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_0
-    invoke-interface {v0}, Ljme;->a()Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Float;
 
-    move-result-object v0
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    return-object v0
-.end method
+    move-result v0
 
-.method public headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 2
+    invoke-virtual {p2, v0}, Ljava/io/DataOutputStream;->writeFloat(F)V
 
-    iget-object v0, p0, Ljnk;->a:Ljnj;
-
-    sget-object v1, Ljjr;->a:Ljjr;
-
-    invoke-interface {v0, p1, v1}, Ljnj;->a(Ljava/lang/Object;Ljjr;)Ljnj;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljnj;->f()Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public last()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljnk;->a:Ljnj;
-
-    invoke-interface {v0}, Ljnj;->h()Ljme;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    :cond_0
-    invoke-interface {v0}, Ljme;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 3
-
-    iget-object v0, p0, Ljnk;->a:Ljnj;
-
-    sget-object v1, Ljjr;->b:Ljjr;
-
-    sget-object v2, Ljjr;->a:Ljjr;
-
-    invoke-interface {v0, p1, v1, p2, v2}, Ljnj;->a(Ljava/lang/Object;Ljjr;Ljava/lang/Object;Ljjr;)Ljnj;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljnj;->f()Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 2
-
-    iget-object v0, p0, Ljnk;->a:Ljnj;
-
-    sget-object v1, Ljjr;->b:Ljjr;
-
-    invoke-interface {v0, p1, v1}, Ljnj;->b(Ljava/lang/Object;Ljjr;)Ljnj;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljnj;->f()Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

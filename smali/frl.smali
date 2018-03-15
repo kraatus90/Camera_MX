@@ -1,42 +1,41 @@
 .class public final Lfrl;
-.super Ljava/lang/Object;
+.super Linh;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Lfrk;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lfrk;)V
-    .locals 0
+.method public constructor <init>(Link;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Linh;-><init>(Link;)V
 
-    iput-object p1, p0, Lfrl;->a:Lfrk;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lfrl;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final close()V
     .locals 2
 
-    iget-object v0, p0, Lfrl;->a:Lfrk;
+    invoke-super {p0}, Linh;->close()V
 
-    iget-object v0, v0, Lfrk;->a:Lfrb;
+    iget-object v0, p0, Lfrl;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    move-result-object v0
-
-    check-cast v0, Lfrb;
-
-    return-object v0
+    return-void
 .end method

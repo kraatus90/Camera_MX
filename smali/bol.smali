@@ -1,36 +1,45 @@
-.class public final Lbol;
-.super Ljava/lang/Object;
+.class final Lbol;
+.super Lbod;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lboj;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lboj;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbol;->a:Lboj;
 
-    iput-object p1, p0, Lbol;->a:Ljxn;
+    invoke-direct {p0, p1}, Lbod;-><init>(Lboa;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a(F)V
     .locals 2
 
-    new-instance v0, Lbok;
+    iget-object v0, p0, Lbol;->a:Lboj;
 
-    iget-object v1, p0, Lbol;->a:Ljxn;
+    iget-object v0, v0, Lboj;->k:Lgld;
 
-    invoke-direct {v0, v1}, Lbok;-><init>(Ljxn;)V
+    invoke-virtual {v0}, Lgld;->a()V
 
-    return-object v0
+    invoke-super {p0, p1}, Lbod;->a(F)V
+
+    iget-object v0, p0, Lbol;->a:Lboj;
+
+    iget-object v0, v0, Lboj;->k:Lgld;
+
+    iget-object v1, p0, Lbol;->a:Lboj;
+
+    iget-object v1, v1, Lboj;->m:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lihg;
 
 
 # instance fields
-.field public final synthetic a:Ldea;
+.field private final synthetic a:Lddx;
 
 
 # direct methods
-.method constructor <init>(Ldea;)V
+.method constructor <init>(Lddx;)V
     .locals 0
 
-    iput-object p1, p0, Ldef;->a:Ldea;
+    iput-object p1, p0, Ldef;->a:Lddx;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,55 +23,49 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 3
 
-    iget-object v0, p0, Ldef;->a:Ldea;
+    check-cast p1, Ljava/lang/String;
 
-    iget-object v0, v0, Ldea;->g:Landroid/app/AlertDialog;
+    iget-object v0, p0, Ldef;->a:Lddx;
 
-    if-nez v0, :cond_0
+    iget-object v1, v0, Lddx;->k:Ljava/lang/Object;
 
-    iget-object v0, p0, Ldef;->a:Ldea;
+    monitor-enter v1
 
-    iget-object v1, p0, Ldef;->a:Ldea;
+    :try_start_0
+    iget-object v0, p0, Ldef;->a:Lddx;
 
-    iget-object v1, v1, Ldea;->e:Lest;
+    iget-object v0, v0, Lddx;->o:Ldej;
 
-    new-instance v2, Ldeg;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v2, p0}, Ldeg;-><init>(Ldef;)V
+    iget-object v0, p0, Ldef;->a:Lddx;
 
-    invoke-interface {v1, v2}, Lest;->a(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+    iget-object v0, v0, Lddx;->o:Ldej;
 
-    move-result-object v1
+    iget-object v2, p0, Ldef;->a:Lddx;
 
-    iput-object v1, v0, Ldea;->g:Landroid/app/AlertDialog;
+    iget-object v2, v2, Lddx;->h:Ljava/lang/String;
 
-    iget-object v0, p0, Ldef;->a:Ldea;
+    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, v0, Ldea;->g:Landroid/app/AlertDialog;
+    move-result v2
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
-
-    iget-object v0, p0, Ldef;->a:Ldea;
-
-    iget-object v0, v0, Ldea;->g:Landroid/app/AlertDialog;
-
-    const v1, 0x102000b
-
-    invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
+    invoke-interface {v0, v2}, Ldej;->a(Z)V
 
     :cond_0
+    monitor-exit v1
+
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

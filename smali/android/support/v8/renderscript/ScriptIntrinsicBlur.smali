@@ -29,7 +29,9 @@
 .end method
 
 .method public static create(Landroid/support/v8/renderscript/RenderScript;Landroid/support/v8/renderscript/Element;)Landroid/support/v8/renderscript/ScriptIntrinsicBlur;
-    .locals 4
+    .locals 5
+
+    const/4 v4, 0x0
 
     invoke-static {p0}, Landroid/support/v8/renderscript/Element;->U8_4(Landroid/support/v8/renderscript/RenderScript;)Landroid/support/v8/renderscript/Element;
 
@@ -62,45 +64,27 @@
     :cond_0
     invoke-virtual {p0}, Landroid/support/v8/renderscript/RenderScript;->isUseNative()Z
 
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x13
-
-    if-ge v0, v1, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    const/4 v1, 0x5
+    const/4 v0, 0x5
 
     invoke-virtual {p1, p0}, Landroid/support/v8/renderscript/Element;->getID(Landroid/support/v8/renderscript/RenderScript;)J
 
     move-result-wide v2
 
-    invoke-virtual {p0, v1, v2, v3, v0}, Landroid/support/v8/renderscript/RenderScript;->nScriptIntrinsicCreate(IJZ)J
+    invoke-virtual {p0, v0, v2, v3, v4}, Landroid/support/v8/renderscript/RenderScript;->nScriptIntrinsicCreate(IJZ)J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    new-instance v1, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;
+    new-instance v2, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;
 
-    invoke-direct {v1, v2, v3, p0}, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;-><init>(JLandroid/support/v8/renderscript/RenderScript;)V
+    invoke-direct {v2, v0, v1, p0}, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;-><init>(JLandroid/support/v8/renderscript/RenderScript;)V
 
-    invoke-virtual {v1, v0}, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;->setIncSupp(Z)V
+    invoke-virtual {v2, v4}, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;->setIncSupp(Z)V
 
     const/high16 v0, 0x40a00000    # 5.0f
 
-    invoke-virtual {v1, v0}, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
+    invoke-virtual {v2, v0}, Landroid/support/v8/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
 
-    return-object v1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v2
 .end method
 
 

@@ -1,64 +1,60 @@
-.class public final Ldjf;
+.class final Ldjf;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final synthetic a:Ldiv;
+
+.field private final synthetic b:Landroid/os/Handler;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Ldiv;Landroid/os/Handler;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldjf;->a:Ldiv;
 
-    iput-object p1, p0, Ldjf;->a:Ljxn;
+    iput-object p2, p0, Ldjf;->b:Landroid/os/Handler;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldjf;
-
-    invoke-direct {v0, p0}, Ldjf;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a(Ljava/lang/Throwable;)V
     .locals 2
 
-    iget-object v0, p0, Ldjf;->a:Ljxn;
+    iget-object v0, p0, Ldjf;->a:Ldiv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lbrv;->a:Lbrw;
 
-    move-result-object v0
+    new-instance v1, Ldhr;
 
-    check-cast v0, Ldiv;
+    invoke-direct {v1}, Ldhr;-><init>()V
 
-    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Ldiv;->a:Liau;
+    return-void
+.end method
 
-    invoke-static {v1, v0}, Lfsp;->a(Landroid/hardware/camera2/CaptureRequest$Key;Liau;)Liau;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
 
-    move-result-object v0
+    check-cast p1, Ljava/util/List;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Ldjf;->b:Landroid/os/Handler;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v1, Ldjg;
 
-    move-result-object v0
+    invoke-direct {v1, p0, p1}, Ldjg;-><init>(Ldjf;Ljava/util/List;)V
 
-    check-cast v0, Liau;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    return-object v0
+    return-void
 .end method

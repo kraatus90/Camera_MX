@@ -12,7 +12,7 @@
 
 .field public service:Landroid/support/v4/app/INotificationSideChannel;
 
-.field public taskQueue:Ljava/util/LinkedList;
+.field public taskQueue:Ljava/util/ArrayDeque;
 
 
 # direct methods
@@ -25,11 +25,11 @@
 
     iput-boolean v1, p0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->bound:Z
 
-    new-instance v0, Ljava/util/LinkedList;
+    new-instance v0, Ljava/util/ArrayDeque;
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->taskQueue:Ljava/util/LinkedList;
+    iput-object v0, p0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->taskQueue:Ljava/util/ArrayDeque;
 
     iput v1, p0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->retryCount:I
 

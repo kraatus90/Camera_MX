@@ -3,174 +3,132 @@
 .source "PG"
 
 # interfaces
-.implements Lggb;
-.implements Lich;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x17
-.end annotation
+.implements Ljqv;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field private final synthetic a:Z
 
-.field public final b:Lggu;
-
-.field public final c:Ljava/util/Collection;
-
-.field private d:Ldrb;
-
-.field private e:Lgkl;
-
-.field private f:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final synthetic b:Ldqt;
 
 
 # direct methods
-.method constructor <init>(Ldrb;Ljava/util/Set;Lggu;Ljava/util/Collection;Lgkl;)V
-    .locals 3
+.method constructor <init>(Ldqt;Z)V
+    .locals 0
 
-    const/4 v1, 0x1
+    iput-object p1, p0, Ldqu;->b:Ldqt;
 
-    const/4 v2, 0x0
+    iput-boolean p2, p0, Ldqu;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {p4}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
-
-    invoke-interface {p2}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :goto_1
-    invoke-static {v1}, Liya;->a(Z)V
-
-    iput-object p1, p0, Ldqu;->d:Ldrb;
-
-    iput-object p2, p0, Ldqu;->a:Ljava/util/Set;
-
-    iput-object p3, p0, Ldqu;->b:Lggu;
-
-    iput-object p4, p0, Ldqu;->c:Ljava/util/Collection;
-
-    iput-object p5, p0, Ldqu;->e:Lgkl;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Ldqu;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
-
     return-void
-
-    :cond_0
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a()Lggc;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
-    sget-object v0, Lggd;->a:Lggb;
+    const/4 v5, 0x1
 
-    invoke-interface {v0}, Lggb;->a()Lggc;
+    const/4 v6, 0x0
 
-    move-result-object v0
+    check-cast p1, Lfep;
 
-    return-object v0
-.end method
+    new-array v0, v5, [Lfhm;
 
-.method public final b()Lggc;
-    .locals 2
+    new-array v1, v5, [Lfhh;
 
-    iget-object v0, p0, Ldqu;->d:Ldrb;
+    new-instance v2, Lfhh;
 
-    invoke-interface {v0}, Ldrb;->a()Z
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_CAPTURE_INTENT:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v4, 0x2
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-direct {v2, v3, v4}, Lfhh;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    aput-object v2, v1, v6
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lffm;->a(Ljava/util/List;)Lfhm;
+
+    move-result-object v1
+
+    aput-object v1, v0, v6
+
+    invoke-virtual {p1, v0}, Lfep;->a([Lfhm;)Lfep;
+
+    move-result-object v1
+
+    iget-boolean v0, p0, Ldqu;->a:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ldqu;->b:Ldqt;
+
+    iget-object v0, v0, Ldqt;->a:Lfdv;
+
+    invoke-interface {v0}, Lfdv;->x_()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lggd;->a:Lggb;
-
-    invoke-interface {v0}, Lggb;->b()Lggc;
-
-    move-result-object v0
+    move-object v0, v1
 
     :goto_0
     return-object v0
 
     :cond_0
-    const/4 v0, 0x0
+    iget-boolean v0, p0, Ldqu;->a:Z
 
-    iget-object v1, p0, Ldqu;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    const/4 v0, 0x5
 
-    move-result v1
+    :goto_1
+    new-array v2, v5, [Lfhm;
 
-    if-nez v1, :cond_2
+    new-array v3, v5, [Lfhh;
 
-    iget-object v0, p0, Ldqu;->e:Lgkl;
+    new-instance v4, Lfhh;
 
-    invoke-interface {v0}, Lgkl;->d()Lgki;
+    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    move-object v1, v0
+    invoke-direct {v4, v5, v0}, Lfhh;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :goto_1
-    if-nez v1, :cond_1
+    aput-object v4, v3, v6
 
-    sget-object v0, Lggd;->a:Lggb;
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    invoke-interface {v0}, Lggb;->b()Lggc;
+    move-result-object v0
+
+    invoke-static {v0}, Lffm;->a(Ljava/util/List;)Lfhm;
+
+    move-result-object v0
+
+    aput-object v0, v2, v6
+
+    invoke-virtual {v1, v2}, Lfep;->a([Lfhm;)Lfep;
 
     move-result-object v0
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Ldqv;
-
-    invoke-direct {v0, p0, v1}, Ldqv;-><init>(Ldqu;Lgki;)V
-
-    goto :goto_0
-
-    :cond_2
-    move-object v1, v0
+    const/4 v0, 0x3
 
     goto :goto_1
-.end method
-
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Ldqu;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    return-void
 .end method

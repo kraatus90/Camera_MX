@@ -1,135 +1,167 @@
-.class public abstract Ljki;
-.super Ljkh;
+.class public final Ljki;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/SortedSet;
+.implements Ljko;
+
+
+# instance fields
+.field private final a:Ljjz;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method public constructor <init>(Ljjz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljkh;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljki;->a:Ljjz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected synthetic a()Ljava/util/Set;
-    .locals 1
+.method public final a(Ljava/util/List;)Ljava/util/List;
+    .locals 10
 
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    :cond_0
+    :goto_0
+    return-object p1
+
+    :cond_1
+    const/high16 v1, -0x800000    # Float.NEGATIVE_INFINITY
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Ljkl;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    move-object v2, v0
+
+    move v3, v1
+
+    :goto_1
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljkl;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0}, Ljkl;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    move v4, v1
+
+    :goto_2
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v8
+
+    iget-object v1, p0, Ljki;->a:Ljjz;
+
+    invoke-interface {v1, v8, v9}, Ljjz;->a(J)Ljpj;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljpj;->a()F
+
+    move-result v1
+
+    add-float/2addr v1, v4
+
+    move v4, v1
+
+    goto :goto_2
+
+    :cond_2
+    const/high16 v1, 0x40400000    # 3.0f
+
+    invoke-virtual {v0}, Ljkl;->a()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    mul-float/2addr v1, v6
+
+    add-float/2addr v1, v4
+
+    cmpl-float v4, v1, v3
+
+    if-lez v4, :cond_4
+
+    :goto_3
+    move-object v2, v0
+
+    move v3, v1
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_4
+    move-object v0, v2
+
+    move v1, v3
+
+    goto :goto_3
 .end method
 
-.method protected synthetic b()Ljava/util/Collection;
+.method public final toString()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected synthetic c()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public comparator()Ljava/util/Comparator;
-    .locals 1
-
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/SortedSet;->comparator()Ljava/util/Comparator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected abstract d()Ljava/util/SortedSet;
-.end method
-
-.method public first()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 1
-
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/SortedSet;->headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public last()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/SortedSet;->last()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 1
-
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/SortedSet;->subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 1
-
-    invoke-virtual {p0}, Ljki;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/SortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-
-    move-result-object v0
+    const-string v0, "BestSegmentSelector[scorer=BestSegmentSelector][segment size = 3.0]"
 
     return-object v0
 .end method

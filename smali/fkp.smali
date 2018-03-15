@@ -1,64 +1,200 @@
-.class public final Lfkp;
-.super Ljava/lang/Object;
+.class final Lfkp;
+.super Lfjs;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lfhz;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
+.method private constructor <init>(Lfhz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lfjs;-><init>()V
 
-    iput-object p1, p0, Lfkp;->a:Ljxn;
-
-    iput-object p2, p0, Lfkp;->b:Ljxn;
+    iput-object p1, p0, Lfkp;->a:Lfhz;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
+.method static a(Lfhz;Lful;)Lfhz;
+    .locals 6
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v2, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-interface {p0}, Lfhz;->e()I
+
+    move-result v0
+
+    invoke-direct {v2, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    invoke-interface {p0}, Lfhz;->a()Link;
+
+    move-result-object v0
+
+    :goto_0
+    if-eqz v0, :cond_0
+
+    new-instance v3, Lfkq;
+
+    invoke-direct {v3, v0, v2, p1}, Lfkq;-><init>(Link;Ljava/util/concurrent/atomic/AtomicInteger;Lful;)V
+
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {p0}, Lfhz;->a()Link;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-interface {p1}, Lful;->close()V
+
+    :cond_1
+    invoke-interface {p0}, Lfhz;->close()V
 
     new-instance v0, Lfkp;
 
-    invoke-direct {v0, p0, p1}, Lfkp;-><init>(Ljxn;Ljxn;)V
+    new-instance v2, Lfjt;
+
+    invoke-interface {p0}, Lfhz;->c()J
+
+    move-result-wide v4
+
+    invoke-interface {p0}, Lfhz;->d()Lkeh;
+
+    move-result-object v3
+
+    invoke-direct {v2, v4, v5, v3, v1}, Lfjt;-><init>(JLkeh;Ljava/util/List;)V
+
+    invoke-direct {v0, v2}, Lfkp;-><init>(Lfhz;)V
+
+    return-object v0
+.end method
+
+.method static b(Lfhz;Lful;)Lfhz;
+    .locals 6
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v2, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-interface {p0}, Lfhz;->e()I
+
+    move-result v0
+
+    invoke-direct {v2, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    invoke-interface {p0}, Lfhz;->b()Ljava/util/LinkedList;
+
+    move-result-object v0
+
+    invoke-interface {p0}, Lfhz;->f()Ljava/lang/Object;
+
+    move-result-object v3
+
+    monitor-enter v3
+
+    :try_start_0
+    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Link;
+
+    new-instance v5, Lfkr;
+
+    invoke-direct {v5, v0, v2, p1}, Lfkr;-><init>(Link;Ljava/util/concurrent/atomic/AtomicInteger;Lful;)V
+
+    invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-interface {p1}, Lful;->close()V
+
+    :cond_1
+    new-instance v0, Lfkp;
+
+    new-instance v2, Lfjt;
+
+    invoke-interface {p0}, Lfhz;->c()J
+
+    move-result-wide v4
+
+    invoke-interface {p0}, Lfhz;->d()Lkeh;
+
+    move-result-object v3
+
+    invoke-direct {v2, v4, v5, v3, v1}, Lfjt;-><init>(JLkeh;Ljava/util/List;)V
+
+    invoke-direct {v0, v2}, Lfkp;-><init>(Lfhz;)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final f()Ljava/lang/Object;
+    .locals 1
 
-    new-instance v2, Lfkn;
+    iget-object v0, p0, Lfkp;->a:Lfhz;
 
-    iget-object v0, p0, Lfkp;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lfhz;->f()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgmv;
+    return-object v0
+.end method
 
-    iget-object v1, p0, Lfkp;->b:Ljxn;
+.method protected final g()Lfhz;
+    .locals 1
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lfkp;->a:Lfhz;
 
-    move-result-object v1
-
-    check-cast v1, Lgdq;
-
-    invoke-direct {v2, v0, v1}, Lfkn;-><init>(Lgmv;Lgdq;)V
-
-    return-object v2
+    return-object v0
 .end method

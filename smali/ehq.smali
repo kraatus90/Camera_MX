@@ -3,28 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkds;
 
 
-# static fields
-.field public static final a:Lehq;
+# instance fields
+.field private final synthetic a:Lehp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lehq;
-
-    invoke-direct {v0}, Lehq;-><init>()V
-
-    sput-object v0, Lehq;->a:Lehq;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lehp;)V
     .locals 0
+
+    iput-object p1, p0, Lehq;->a:Lehp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,22 +23,54 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a(Ljava/lang/Throwable;)V
     .locals 2
 
-    sget-object v0, Lefy;->e:Lefy;
+    sget-object v0, Lehp;->a:Ljava/lang/String;
 
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
+    const-string v1, "Fail to connect to GoogleApiClient"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lehq;->a:Lehp;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    iput-object v1, v0, Lehp;->c:Lkeh;
 
-    check-cast v0, Liau;
+    return-void
+.end method
 
-    return-object v0
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
+
+    check-cast p1, Lhbn;
+
+    sget-object v0, Lehp;->a:Ljava/lang/String;
+
+    const-string v1, "Disconnecting"
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p1, Lhbn;->a:Lhbl;
+
+    iget-object v1, v0, Lhbl;->a:Lhlm;
+
+    invoke-virtual {v1, v0}, Lhlm;->b(Lhln;)V
+
+    iget-object v1, v0, Lhbl;->a:Lhlm;
+
+    invoke-virtual {v1, v0}, Lhlm;->b(Lhlo;)V
+
+    iget-object v0, v0, Lhbl;->a:Lhlm;
+
+    invoke-virtual {v0}, Lhlm;->d()V
+
+    iget-object v0, p0, Lehq;->a:Lehp;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lehp;->c:Lkeh;
+
+    return-void
 .end method

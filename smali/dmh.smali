@@ -1,147 +1,88 @@
 .class public final Ldmh;
-.super Libk;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private b:Ljava/util/Collection;
+.field private final a:Lkgv;
 
-.field private c:Ljava/util/Collection;
+.field private final b:Lkgv;
 
-.field private d:Lggq;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Collection;Ljava/util/Collection;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    invoke-static {}, Lfsp;->d()Lggq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p1, p0, Ldmh;->a:Lkgv;
 
-    invoke-direct {p0, p1, p2, v0}, Ldmh;-><init>(Ljava/util/Collection;Ljava/util/Collection;Lggq;)V
+    iput-object p2, p0, Ldmh;->b:Lkgv;
 
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/util/Collection;Ljava/util/Collection;Lggq;)V
-    .locals 1
-
-    invoke-static {p2}, Liav;->d(Ljava/util/Collection;)Liau;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Libk;-><init>(Liau;)V
-
-    iput-object p1, p0, Ldmh;->b:Ljava/util/Collection;
-
-    iput-object p2, p0, Ldmh;->c:Ljava/util/Collection;
-
-    iput-object p3, p0, Ldmh;->d:Lggq;
+    iput-object p3, p0, Ldmh;->c:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final varargs a([Lggq;)Ldmh;
-    .locals 6
+.method public static a(Lkgv;Lkgv;Lkgv;)Ldmh;
+    .locals 1
 
     new-instance v0, Ldmh;
 
-    iget-object v1, p0, Ldmh;->b:Ljava/util/Collection;
-
-    iget-object v2, p0, Ldmh;->c:Ljava/util/Collection;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lggq;
-
-    const/4 v4, 0x0
-
-    iget-object v5, p0, Ldmh;->d:Lggq;
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
-
-    invoke-static {p1}, Lfsp;->a([Lggq;)Lggq;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    invoke-static {v3}, Lfsp;->a([Lggq;)Lggq;
-
-    move-result-object v3
-
-    invoke-direct {v0, v1, v2, v3}, Ldmh;-><init>(Ljava/util/Collection;Ljava/util/Collection;Lggq;)V
+    invoke-direct {v0, p0, p1, p2}, Ldmh;-><init>(Lkgv;Lkgv;Lkgv;)V
 
     return-object v0
 .end method
 
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
 
-    check-cast p1, Ljava/util/List;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    new-instance v1, Lggm;
+    iget-object v0, p0, Ldmh;->a:Lkgv;
 
-    invoke-direct {v1}, Lggm;-><init>()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Ldmh;->b:Ljava/util/Collection;
+    move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    check-cast v0, Lfnw;
+
+    iget-object v1, p0, Ldmh;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldnz;
+
+    iget-object v2, p0, Ldmh;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v2, Lhbk;
 
-    move-result v0
+    new-instance v3, Ldlw;
 
-    if-eqz v0, :cond_0
+    new-instance v4, Lfnt;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v4, v0, v2}, Lfnt;-><init>(Lfnq;Lhbk;)V
 
-    move-result-object v0
+    invoke-direct {v3, v4, v1}, Ldlw;-><init>(Lfnq;Lfnq;)V
 
-    check-cast v0, Lggq;
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-virtual {v0, v1}, Lggq;->a(Lggm;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v3, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lggq;
-
-    invoke-virtual {v0, v1}, Lggq;->a(Lggm;)V
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v0, p0, Ldmh;->d:Lggq;
-
-    invoke-virtual {v0, v1}, Lggq;->a(Lggm;)V
-
-    invoke-virtual {v1}, Lggm;->c()Lggk;
-
-    move-result-object v0
+    check-cast v0, Lfnq;
 
     return-object v0
 .end method

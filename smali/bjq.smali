@@ -1,115 +1,147 @@
-.class Lbjq;
-.super Lgvh;
+.class final Lbjq;
+.super Lfhq;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lbjn;
+.field private final synthetic a:Lbjp;
 
 
 # direct methods
-.method constructor <init>(Lbjn;)V
-    .locals 1
+.method constructor <init>(Lbjp;)V
+    .locals 0
 
-    iput-object p1, p0, Lbjq;->a:Lbjn;
+    iput-object p1, p0, Lbjq;->a:Lbjp;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>(C)V
+    invoke-direct {p0}, Lfhq;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(Landroid/view/Surface;J)V
+    .locals 4
 
-    iget-object v0, p0, Lbjq;->a:Lbjn;
+    sget-object v0, Lbjm;->a:Ljava/lang/String;
 
-    iget-object v0, v0, Lbjn;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    const/16 v1, 0x2f
 
-    const/4 v1, 0x1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->b(Z)V
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, p0, Lbjq;->a:Lbjn;
+    const-string v1, "onCaptureBufferLost: frame="
 
-    iget-object v0, v0, Lbjn;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->a(Z)V
+    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lbjq;->a:Lbjn;
+    move-result-object v1
 
-    iget-object v0, v0, Lbjn;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/evcomp/EvCompView;->a()V
+    move-result-object v1
 
-    iget-object v0, p0, Lbjq;->a:Lbjn;
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, v0, Lbjn;->c:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Lbjq;->a:Lbjp;
 
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->reverse()V
+    iget-object v0, v0, Lbjp;->c:Lket;
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "onCaptureBufferLost"
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Throwable;)Z
+
+    iget-object v0, p0, Lbjq;->a:Lbjp;
+
+    iget-object v0, v0, Lbjp;->d:Lbjm;
+
+    invoke-virtual {v0}, Lbjm;->b()V
 
     return-void
 .end method
 
-.method public a(F)V
-    .locals 6
+.method public final a(Lfgk;)V
+    .locals 2
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    iget-object v0, p0, Lbjq;->a:Lbjp;
 
-    const/4 v4, 0x0
+    iget-object v0, v0, Lbjp;->a:Lket;
 
-    iget-object v0, p0, Lbjq;->a:Lbjn;
+    const/4 v1, 0x0
 
-    iget v1, v0, Lbjn;->e:F
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
-    iget-object v2, v0, Lbjn;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    return-void
+.end method
 
-    iget-object v3, v2, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+.method public final a(Lina;)V
+    .locals 4
 
-    invoke-virtual {v2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->getHeight()I
+    sget-object v0, Lbjm;->a:Ljava/lang/String;
 
-    move-result v2
+    invoke-interface {p1}, Lina;->a()I
 
-    invoke-virtual {v3, v2}, Lbjd;->a(I)I
+    move-result v1
 
-    move-result v2
+    const/16 v2, 0x23
 
-    int-to-float v2, v2
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    div-float v2, p1, v2
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/high16 v3, 0x40000000    # 2.0f
+    const-string v2, "onCaptureFailed: reason="
 
-    div-float/2addr v2, v3
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-float/2addr v1, v2
+    move-result-object v2
 
-    iput v1, v0, Lbjn;->e:F
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget v1, v0, Lbjn;->e:F
+    move-result-object v1
 
-    cmpl-float v1, v1, v5
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-lez v1, :cond_0
+    move-result-object v1
 
-    iput v5, v0, Lbjn;->e:F
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_0
-    iget v1, v0, Lbjn;->e:F
+    iget-object v0, p0, Lbjq;->a:Lbjp;
 
-    cmpg-float v1, v1, v4
+    iget-object v0, v0, Lbjp;->b:Lket;
 
-    if-gtz v1, :cond_1
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    iput v4, v0, Lbjn;->e:F
+    const-string v2, "onCaptureFailed"
 
-    :cond_1
-    invoke-virtual {v0}, Lbjn;->e_()V
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Throwable;)Z
+
+    iget-object v0, p0, Lbjq;->a:Lbjp;
+
+    iget-object v0, v0, Lbjp;->d:Lbjm;
+
+    invoke-virtual {v0}, Lbjm;->b()V
+
+    return-void
+.end method
+
+.method public final a_(Lind;)V
+    .locals 1
+
+    iget-object v0, p0, Lbjq;->a:Lbjp;
+
+    iget-object v0, v0, Lbjp;->b:Lket;
+
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Object;)Z
 
     return-void
 .end method

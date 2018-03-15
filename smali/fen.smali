@@ -1,61 +1,88 @@
-.class Lfen;
-.super Lgvh;
+.class public final Lfen;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfem;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfem;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfen;->a:Lfem;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lgvh;-><init>()V
+    iput-object p1, p0, Lfen;->a:Lkgv;
+
+    iput-object p2, p0, Lfen;->b:Lkgv;
+
+    iput-object p3, p0, Lfen;->c:Lkgv;
+
+    iput-object p4, p0, Lfen;->d:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;)Lfen;
+    .locals 1
+
+    new-instance v0, Lfen;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lfen;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    sget-object v0, Lfem;->a:Ljava/lang/String;
+    new-instance v4, Lfel;
 
-    const-string v1, "entered a video mode"
+    iget-object v0, p0, Lfen;->a:Lkgv;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lfen;->a:Lfem;
+    move-result-object v0
 
-    iget-object v0, v0, Lfem;->b:Lexn;
+    check-cast v0, Liaw;
 
-    const-class v1, Lfen;
+    iget-object v1, p0, Lfen;->b:Lkgv;
 
-    invoke-virtual {v0, v1}, Lexn;->a(Ljava/lang/Class;)V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final b()V
-    .locals 2
+    check-cast v1, Lfia;
 
-    iget-object v0, p0, Lfen;->a:Lfem;
+    iget-object v2, p0, Lfen;->c:Lkgv;
 
-    iget-object v0, v0, Lfem;->b:Lexn;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    const-class v1, Lfen;
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Lexn;->b(Ljava/lang/Class;)V
+    check-cast v2, Ljrf;
 
-    sget-object v0, Lfem;->a:Ljava/lang/String;
+    iget-object v3, p0, Lfen;->d:Lkgv;
 
-    const-string v1, "exited a video mode"
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v3
 
-    return-void
+    check-cast v3, Lfik;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lfel;-><init>(Liaw;Lfia;Ljrf;Lfik;)V
+
+    return-object v4
 .end method

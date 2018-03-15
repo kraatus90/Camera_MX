@@ -1,88 +1,74 @@
-.class final Ldrj;
-.super Laxe;
+.class public final Ldrj;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lghf;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lggb;
+.field private final a:Lkgv;
 
-.field private b:Lgjv;
-
-.field private c:Lhzr;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lggb;Lhzr;Lawa;Lgjv;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    invoke-direct {p0, p3}, Laxe;-><init>(Lawa;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldrj;->a:Lggb;
+    iput-object p1, p0, Ldrj;->a:Lkgv;
 
-    iput-object p2, p0, Ldrj;->c:Lhzr;
-
-    iput-object p4, p0, Ldrj;->b:Lgjv;
+    iput-object p2, p0, Ldrj;->b:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(I)Ljuw;
+.method public static a(Lkgv;Lkgv;)Ldrj;
     .locals 1
 
-    iget-object v0, p0, Ldrj;->b:Lgjv;
+    new-instance v0, Ldrj;
 
-    invoke-virtual {v0, p1}, Lgjv;->b(I)Ljuw;
-
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Ldrj;-><init>(Lkgv;Lkgv;)V
 
     return-object v0
 .end method
 
-.method public final b(I)Z
-    .locals 1
 
-    iget-object v0, p0, Ldrj;->b:Lgjv;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    invoke-virtual {v0, p1}, Lgjv;->c(I)Z
+    iget-object v0, p0, Ldrj;->a:Lkgv;
 
-    move-result v0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return v0
-.end method
+    move-result-object v0
 
-.method public final close()V
-    .locals 1
+    check-cast v0, Lfhx;
 
-    invoke-super {p0}, Laxe;->close()V
+    iget-object v1, p0, Ldrj;->b:Lkgv;
 
-    iget-object v0, p0, Ldrj;->c:Lhzr;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhzr;->close()V
+    move-result-object v1
 
-    return-void
-.end method
+    check-cast v1, Ldre;
 
-.method public final d()I
-    .locals 1
+    invoke-static {v1}, Lffm;->a(Lihg;)Lfhq;
 
-    iget-object v0, p0, Ldrj;->b:Lgjv;
+    move-result-object v2
 
-    invoke-virtual {v0}, Lgjv;->b()I
+    invoke-virtual {v0, v2}, Lfhx;->a(Lfhq;)V
 
-    move-result v0
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    return v0
-.end method
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final e()Lggb;
-    .locals 1
+    move-result-object v0
 
-    iget-object v0, p0, Ldrj;->a:Lggb;
+    check-cast v0, Lick;
 
     return-object v0
 .end method

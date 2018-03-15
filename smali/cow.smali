@@ -1,60 +1,42 @@
-.class public final Lcow;
+.class final Lcow;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Ljxn;
+.implements Landroid/animation/TimeInterpolator;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcow;->a:Ljxn;
-
     return-void
-.end method
-
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lcow;
-
-    invoke-direct {v0, p0}, Lcow;-><init>(Ljxn;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final getInterpolation(F)F
+    .locals 6
 
-    iget-object v0, p0, Lcow;->a:Ljxn;
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    move-result-object v0
+    sub-float/2addr v2, p1
 
-    check-cast v0, Lgdq;
+    float-to-double v2, v2
 
-    new-instance v1, Lcpt;
+    const-wide/high16 v4, 0x4010000000000000L    # 4.0
 
-    invoke-direct {v1, v0}, Lcpt;-><init>(Lgdq;)V
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    move-result-wide v2
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    sub-double/2addr v0, v2
 
-    move-result-object v0
+    double-to-float v0, v0
 
-    check-cast v0, Lcpt;
-
-    return-object v0
+    return v0
 .end method

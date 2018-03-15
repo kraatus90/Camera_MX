@@ -1,60 +1,78 @@
-.class public final Lcoo;
+.class final Lcoo;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Lcol;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lcol;)V
     .locals 0
 
+    iput-object p1, p0, Lcoo;->a:Lcol;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcoo;->a:Ljxn;
-
-    iput-object p2, p0, Lcoo;->b:Ljxn;
-
-    iput-object p3, p0, Lcoo;->c:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 2
 
-    new-instance v2, Lcon;
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-    iget-object v3, p0, Lcoo;->a:Ljxn;
+    const-string v1, "[fling] mXScrollAnimatorListener.onAnimationCancel"
 
-    iget-object v0, p0, Lcoo;->b:Ljxn;
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    check-cast v0, Ldii;
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-    iget-object v1, p0, Lcoo;->c:Ljxn;
+    const-string v1, "[fling] onScrollEnd from mXScrollAnimatorListener.onAnimationEnd"
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v1
+    iget-object v0, p0, Lcoo;->a:Lcol;
 
-    check-cast v1, Licz;
+    iget-object v0, v0, Lcol;->b:Lcop;
 
-    invoke-direct {v2, v3, v0, v1}, Lcon;-><init>(Ljxn;Ldii;Licz;)V
+    invoke-virtual {v0}, Lcop;->a()V
 
-    return-object v2
+    return-void
+.end method
+
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 2
+
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
+
+    const-string v1, "[fling] mXScrollAnimatorListener.onAnimationRepeat"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
+
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
+
+    const-string v1, "[fling] mXScrollAnimatorListener.onAnimationStart"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
 .end method

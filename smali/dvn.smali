@@ -1,58 +1,55 @@
-.class public final Ldvn;
+.class final Ldvn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljtu;
+.implements Landroid/text/TextWatcher;
 
 
 # instance fields
-.field private a:Ldvf;
+.field private final synthetic a:Ldux;
 
 
 # direct methods
-.method public constructor <init>(Ldvf;)V
+.method constructor <init>(Ldux;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldvn;->a:Ldux;
 
-    iput-object p1, p0, Ldvn;->a:Ldvf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljuw;
-    .locals 3
+.method public final afterTextChanged(Landroid/text/Editable;)V
+    .locals 1
 
-    iget-object v0, p0, Ldvn;->a:Ldvf;
+    iget-object v0, p0, Ldvn;->a:Ldux;
 
-    check-cast p1, Lgio;
+    iget-object v0, v0, Ldux;->p:Landroid/widget/TextView;
 
-    iget-object v0, v0, Ldvf;->e:Ldve;
+    if-eqz v0, :cond_0
 
-    iget-object v0, v0, Ldve;->i:Ljht;
+    iget-object v0, p0, Ldvn;->a:Ldux;
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    iget-object v0, v0, Ldux;->p:Landroid/widget/TextView;
 
-    move-result-object v0
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    check-cast v0, Lbko;
+    :cond_0
+    return-void
+.end method
 
-    invoke-virtual {v0, p1}, Lbko;->a(Lgpa;)Ljuw;
+.method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    new-instance v1, Ldwa;
+.method public final onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
 
-    invoke-direct {v1, p1}, Ldwa;-><init>(Lgio;)V
-
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

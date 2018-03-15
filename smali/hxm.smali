@@ -1,16 +1,12 @@
-.class public interface abstract Lhxm;
+.class public final Lhxm;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
 
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public abstract a(Lhxh;Lcom/google/android/gms/wearable/PutDataRequest;)V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract a(Lhxh;Lcom/google/android/gms/wearable/internal/zzc;)V
-.end method
-
-.method public abstract a(Lhxh;Lcom/google/android/gms/wearable/internal/zzcj;)V
+    return-void
 .end method

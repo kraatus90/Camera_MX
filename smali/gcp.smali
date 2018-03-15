@@ -1,18 +1,45 @@
-.class public interface abstract Lgcp;
-.super Ljava/lang/Object;
+.class final Lgcp;
+.super Lgdb;
 .source "PG"
 
-# interfaces
-.implements Lfqo;
-.implements Lich;
+
+# instance fields
+.field private final synthetic a:Lgcn;
+
+
+# direct methods
+.method constructor <init>(Lgcn;)V
+    .locals 0
+
+    iput-object p1, p0, Lgcp;->a:Lgcn;
+
+    invoke-direct {p0, p1}, Lgdb;-><init>(Lgcy;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final e()V
+    .locals 2
 
-.method public abstract a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;)V
-.end method
+    iget-object v0, p0, Lgcp;->a:Lgcn;
 
-.method public abstract b()V
+    iget-object v0, v0, Lgcn;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lgdb;->e()V
+
+    iget-object v0, p0, Lgcp;->a:Lgcn;
+
+    iget-object v0, v0, Lgcn;->a:Lgld;
+
+    iget-object v1, p0, Lgcp;->a:Lgcn;
+
+    iget-object v1, v1, Lgcn;->b:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

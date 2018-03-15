@@ -1,38 +1,46 @@
-.class public interface abstract Lbfa;
+.class public final Lbfa;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+
+# direct methods
+.method public constructor <init>(Lkgv;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbfa;->a:Lkgv;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(Lbfb;)V
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract a(Ljava/io/File;)V
-.end method
+    iget-object v0, p0, Lbfa;->a:Lkgv;
 
-.method public abstract a()Z
-.end method
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-.method public abstract b()Ljava/io/File;
-.end method
+    move-result-object v0
 
-.method public abstract c()Ljht;
-.end method
+    check-cast v0, Lieh;
 
-.method public abstract d()I
-.end method
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-.method public abstract e()Ljht;
-.end method
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public abstract f()Landroid/view/Surface;
-.end method
+    move-result-object v0
 
-.method public abstract g()V
-.end method
+    check-cast v0, Lieh;
 
-.method public abstract h()V
-.end method
-
-.method public abstract i()V
+    return-object v0
 .end method

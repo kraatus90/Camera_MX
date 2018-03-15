@@ -1,57 +1,84 @@
 .class public final Ldtk;
-.super Lgih;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lgki;
+.field private final a:Lkgv;
 
-.field private c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lgih;Lgki;)V
-    .locals 2
+.method private constructor <init>(Lkgv;Lkgv;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Lgih;-><init>(Lgih;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ldtk;->a:Lgki;
+    iput-object p1, p0, Ldtk;->a:Lkgv;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Ldtk;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p2, p0, Ldtk;->b:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;)Ldtk;
+    .locals 1
+
+    new-instance v0, Ldtk;
+
+    invoke-direct {v0, p0, p1}, Ldtk;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Ldtk;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Ldtk;->a:Lkgv;
 
-    const/4 v1, 0x1
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    move-result-object v0
+
+    check-cast v0, Lfdv;
+
+    iget-object v1, p0, Ldtk;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgem;
+
+    new-instance v2, Ldsl;
+
+    sget-object v3, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_WHITE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {v0, v3}, Lfdv;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    invoke-direct {v2, v0, v1}, Ldsl;-><init>(ILgem;)V
 
-    :goto_0
-    return-void
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    :cond_0
-    invoke-super {p0}, Lgih;->close()V
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, p0, Ldtk;->a:Lgki;
+    move-result-object v0
 
-    invoke-interface {v0}, Lgki;->close()V
+    check-cast v0, Ldso;
 
-    goto :goto_0
+    return-object v0
 .end method

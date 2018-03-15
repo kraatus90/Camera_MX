@@ -1,52 +1,346 @@
-.class public final Leip;
-.super Ljava/lang/Object;
+.class final Leip;
+.super Landroid/os/AsyncTask;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final synthetic a:Lein;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Lein;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leip;->a:Lein;
 
-    iput-object p1, p0, Leip;->a:Ljxn;
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
+.method private final varargs a()Ljava/lang/Void;
+    .locals 13
 
-    new-instance v0, Leip;
+    iget-object v0, p0, Leip;->a:Lein;
 
-    invoke-direct {v0, p0}, Leip;-><init>(Ljxn;)V
+    iget-boolean v0, v0, Lein;->u:Z
 
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
     return-object v0
+
+    :cond_0
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-object v0, v0, Lein;->c:Leht;
+
+    iget-object v1, v0, Leht;->b:Laao;
+
+    if-nez v1, :cond_1
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-object v0, v0, Lein;->J:Landroid/os/Handler;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Laao;->b(Landroid/os/Handler;Laan;)V
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-object v0, v0, Lein;->J:Landroid/os/Handler;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Laao;->a(Landroid/os/Handler;Laan;)V
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-object v2, p0, Leip;->a:Lein;
+
+    iget-object v2, v2, Lein;->h:Lejr;
+
+    invoke-virtual {v2}, Lejr;->d()[F
+
+    move-result-object v2
+
+    const/4 v3, 0x6
+
+    aget v2, v2, v3
+
+    neg-float v2, v2
+
+    float-to-double v2, v2
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->asin(D)D
+
+    move-result-wide v2
+
+    const-wide v4, 0x404ca5dc1a63c1f8L    # 57.29577951308232
+
+    mul-double/2addr v2, v4
+
+    double-to-float v2, v2
+
+    float-to-double v2, v2
+
+    iput-wide v2, v0, Lein;->j:D
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget v0, v0, Lein;->o:I
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-object v2, p0, Leip;->a:Lein;
+
+    iget-wide v2, v2, Lein;->j:D
+
+    iput-wide v2, v0, Lein;->i:D
+
+    :cond_2
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-wide v2, v0, Lein;->j:D
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-wide v4, v0, Lein;->i:D
+
+    sub-double/2addr v2, v4
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
+
+    move-result-wide v2
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-boolean v0, v0, Lein;->x:Z
+
+    if-eqz v0, :cond_4
+
+    invoke-static {v2, v3}, Leik;->a(D)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-boolean v0, v0, Lein;->I:Z
+
+    if-eqz v0, :cond_4
+
+    :cond_3
+    const/4 v0, 0x1
+
+    :goto_1
+    if-eqz v0, :cond_5
+
+    sget-object v0, Lein;->a:Ljava/lang/String;
+
+    const-string v2, "Auto-focusing."
+
+    invoke-static {v0, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    const/4 v2, 0x0
+
+    iput-boolean v2, v0, Lein;->k:Z
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    const/4 v2, 0x0
+
+    iput v2, v0, Lein;->l:I
+
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-object v0, v0, Lein;->m:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->drainPermits()I
+
+    const/4 v0, 0x0
+
+    :goto_2
+    const/4 v2, 0x3
+
+    if-ge v0, v2, :cond_6
+
+    iget-object v2, p0, Leip;->a:Lein;
+
+    iget-boolean v2, v2, Lein;->k:Z
+
+    if-nez v2, :cond_6
+
+    iget-object v2, p0, Leip;->a:Lein;
+
+    iget-object v2, v2, Lein;->J:Landroid/os/Handler;
+
+    new-instance v3, Leiq;
+
+    invoke-direct {v3, p0, v1}, Leiq;-><init>(Leip;Laao;)V
+
+    invoke-virtual {v1, v2, v3}, Laao;->a(Landroid/os/Handler;Laad;)V
+
+    :try_start_0
+    iget-object v2, p0, Leip;->a:Lein;
+
+    iget-object v2, v2, Lein;->m:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/Semaphore;->acquire()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_3
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v2
+
+    sget-object v2, Lein;->a:Ljava/lang/String;
+
+    const-string v3, "mFocusRetrySemaphore.acquire() InterruptedException "
+
+    invoke-static {v2, v3}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_3
+
+    :cond_5
+    iget-object v0, p0, Leip;->a:Lein;
+
+    iget-object v2, v0, Lein;->J:Landroid/os/Handler;
+
+    iget-object v3, v0, Lein;->M:Laaz;
+
+    iget-object v4, v0, Lein;->L:Laam;
+
+    iget-object v5, v0, Lein;->N:Laam;
+
+    invoke-virtual {v1, v2, v3, v4, v5}, Laao;->a(Landroid/os/Handler;Laaz;Laam;Laam;)V
+
+    iget-object v1, v0, Lein;->E:Ljava/util/List;
+
+    new-instance v2, Lekt;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    iget-object v3, v0, Lein;->r:Lhbx;
+
+    invoke-interface {v3}, Lhbx;->d()Landroid/location/Location;
+
+    move-result-object v3
+
+    iget-object v6, v0, Lein;->h:Lejr;
+
+    const/16 v7, 0x10
+
+    new-array v7, v7, [F
+
+    const/4 v8, 0x0
+
+    iget-object v9, v6, Lejr;->f:Lehz;
+
+    const/4 v10, 0x3
+
+    new-array v10, v10, [F
+
+    const/4 v11, 0x0
+
+    iget v12, v9, Lehz;->a:F
+
+    aput v12, v10, v11
+
+    const/4 v11, 0x1
+
+    iget v12, v9, Lehz;->b:F
+
+    aput v12, v10, v11
+
+    const/4 v11, 0x2
+
+    iget v9, v9, Lehz;->c:F
+
+    aput v9, v10, v11
+
+    iget-object v6, v6, Lejr;->i:[F
+
+    invoke-static {v7, v8, v10, v6}, Landroid/hardware/SensorManager;->getRotationMatrix([F[F[F[F)Z
+
+    const/16 v6, 0x10
+
+    new-array v6, v6, [F
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x3
+
+    invoke-static {v7, v8, v9, v6}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
+
+    const/4 v7, 0x3
+
+    new-array v7, v7, [F
+
+    invoke-static {v6, v7}, Landroid/hardware/SensorManager;->getOrientation([F[F)[F
+
+    const/4 v6, 0x0
+
+    aget v6, v7, v6
+
+    const/high16 v7, 0x43340000    # 180.0f
+
+    mul-float/2addr v6, v7
+
+    float-to-double v6, v6
+
+    const-wide v8, 0x400921fb54442d18L    # Math.PI
+
+    div-double/2addr v6, v8
+
+    double-to-int v6, v6
+
+    invoke-direct {v2, v4, v5, v3, v6}, Lekt;-><init>(JLandroid/location/Location;I)V
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lein;->I:Z
+
+    :cond_6
+    const/4 v0, 0x0
+
+    goto/16 :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method protected final synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance v1, Leio;
-
-    iget-object v0, p0, Leip;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {p0}, Leip;->a()Ljava/lang/Void;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;
-
-    invoke-direct {v1, v0}, Leio;-><init>(Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;)V
-
-    return-object v1
+    return-object v0
 .end method

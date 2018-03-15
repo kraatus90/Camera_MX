@@ -1,30 +1,45 @@
-.class final Lfhw;
-.super Ljava/lang/Object;
+.class Lfhw;
+.super Lfhq;
 .source "PG"
 
-# interfaces
-.implements Ljtu;
+
+# instance fields
+.field private final a:Lihg;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lihg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lfhq;-><init>()V
+
+    iput-object p1, p0, Lfhw;->a:Lihg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljuw;
+.method public equals(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Lfhp;
+    iget-object v0, p0, Lfhw;->a:Lihg;
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, p1, Lfhp;->i:Ljvi;
+    move-result v0
 
-    return-object v0
+    return v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lfhw;->a:Lihg;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

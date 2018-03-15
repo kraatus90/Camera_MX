@@ -3,30 +3,24 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# static fields
-.field public static final a:Lesa;
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lesa;
-
-    invoke-direct {v0}, Lesa;-><init>()V
-
-    sput-object v0, Lesa;->a:Lesa;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lesa;->a:Lkgv;
+
+    iput-object p2, p0, Lesa;->b:Lkgv;
 
     return-void
 .end method
@@ -34,11 +28,43 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
-    new-instance v0, Lerz;
+    iget-object v1, p0, Lesa;->a:Lkgv;
 
-    invoke-direct {v0}, Lerz;-><init>()V
+    iget-object v0, p0, Lesa;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbkx;
+
+    invoke-virtual {v0}, Lbkx;->c()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljrf;
 
     return-object v0
+
+    :cond_0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljrf;
+
+    goto :goto_0
 .end method

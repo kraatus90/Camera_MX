@@ -1,116 +1,42 @@
-.class final Leow;
+.class public final Leow;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lavl;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leow;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    new-instance v1, Lexh;
 
-.method public final a(ILjava/lang/String;ZZFLjava/lang/String;ZFLgzh;Ljava/lang/Boolean;Landroid/graphics/Rect;Ljqu;Ljava/lang/Boolean;)V
-    .locals 0
+    iget-object v0, p0, Leow;->a:Lkgv;
 
-    return-void
-.end method
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-.method public final a(J)V
-    .locals 0
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Leok;
 
-.method public final a(Lavo;)V
-    .locals 0
+    invoke-direct {v1, v0}, Lexh;-><init>(Leok;)V
 
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Lfsw;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Lftc;Ljava/lang/Long;Ljava/lang/Integer;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Liic;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Ljqh;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Ljqv;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Ljrc;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b(J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final d()Lavo;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
+    return-object v1
 .end method

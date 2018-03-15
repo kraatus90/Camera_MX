@@ -2,77 +2,76 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final a:Lgnn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lgnn;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbiq;->a:Ljxn;
-
-    iput-object p2, p0, Lbiq;->b:Ljxn;
-
-    iput-object p3, p0, Lbiq;->c:Ljxn;
-
-    iput-object p4, p0, Lbiq;->d:Ljxn;
+    iput-object p1, p0, Lbiq;->a:Lgnn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final a()V
+    .locals 8
 
-    new-instance v4, Lbip;
+    iget-object v0, p0, Lbiq;->a:Lgnn;
 
-    iget-object v0, p0, Lbiq;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lgnn;->a()Ljava/io/File;
 
     move-result-object v0
 
-    check-cast v0, Lbli;
+    new-instance v1, Lbir;
 
-    iget-object v1, p0, Lbiq;->b:Ljxn;
+    invoke-direct {v1}, Lbir;-><init>()V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
 
     move-result-object v1
 
-    check-cast v1, Lgzz;
+    if-nez v1, :cond_1
 
-    iget-object v2, p0, Lbiq;->c:Ljxn;
+    :cond_0
+    return-void
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    :cond_1
+    array-length v2, v1
 
-    move-result-object v2
+    const/4 v0, 0x0
 
-    check-cast v2, Lbmy;
+    :goto_0
+    if-ge v0, v2, :cond_0
 
-    iget-object v3, p0, Lbiq;->d:Ljxn;
+    aget-object v3, v1, v0
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/io/File;->isFile()Z
 
-    move-result-object v3
+    move-result v4
 
-    check-cast v3, Ljht;
+    if-eqz v4, :cond_2
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lbip;-><init>(Lbli;Lgzz;Lbmy;Ljht;)V
+    invoke-virtual {v3}, Ljava/io/File;->length()J
 
-    return-object v4
+    move-result-wide v4
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v4, v4, v6
+
+    if-nez v4, :cond_2
+
+    invoke-virtual {v3}, Ljava/io/File;->delete()Z
+
+    :cond_2
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
 .end method

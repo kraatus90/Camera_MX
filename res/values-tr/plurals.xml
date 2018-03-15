@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Seri Çekim (%1$d Fotoğraf)</item>
+        <item quantity="one">Seri Çekim (%1$d Fotoğraf)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d fotoğraf kaydedildi</item>
         <item quantity="one">%1$d fotoğraf kaydedildi</item>

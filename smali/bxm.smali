@@ -3,12 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lbwr;
+.implements Lihb;
+
+
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;)V
     .locals 0
+
+    iput-object p1, p0, Lbxm;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,73 +23,16 @@
 
 
 # virtual methods
-.method public final a(Lbwt;)Ljuw;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    iget-object v0, p0, Lbxm;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    iget-object v1, p0, Lbxm;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
 
-    move-result-object v0
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->b:Landroid/content/BroadcastReceiver;
 
-    return-object v0
-.end method
-
-.method public final a(Lbwt;Lema;Lgrw;Licf;Lige;ILbxn;Lbym;Lici;)Ljuw;
-    .locals 1
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a()V
-    .locals 0
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     return-void
-.end method
-
-.method public final a(Landroid/graphics/SurfaceTexture;Ljava/util/List;Lgkp;)V
-    .locals 0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->release()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a(Lbws;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b()Landroid/view/Surface;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final c()Liau;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
-
-    move-result-object v0
-
-    return-object v0
 .end method

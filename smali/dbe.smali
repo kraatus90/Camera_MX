@@ -1,71 +1,66 @@
 .class final Ldbe;
-.super Lewg;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
+
+
+# instance fields
+.field private final synthetic a:I
+
+.field private final synthetic b:Ldal;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(Ldal;)V
+    .locals 1
 
-    invoke-direct {p0}, Lewg;-><init>()V
+    iput-object p1, p0, Ldbe;->b:Ldal;
+
+    const v0, 0x7f11013d
+
+    iput v0, p0, Ldbe;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final A_()V
-    .locals 0
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 4
 
-    return-void
-.end method
+    iget-object v0, p0, Ldbe;->b:Ldal;
 
-.method public final b()V
-    .locals 0
+    invoke-static {v0}, Ldal;->a(Ldal;)Lbyy;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final c()Landroid/view/GestureDetector$OnGestureListener;
-    .locals 1
+    iget v1, p0, Ldbe;->a:I
 
-    new-instance v0, Landroid/view/GestureDetector$SimpleOnGestureListener;
+    const/16 v2, 0x2b
 
-    invoke-direct {v0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    return-object v0
-.end method
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public final d()Landroid/view/View$OnTouchListener;
-    .locals 1
+    const-string v2, "Fatal error in Panorama module: "
 
-    const/4 v0, 0x0
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
-.end method
+    move-result-object v2
 
-.method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .locals 0
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .locals 1
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    return v0
-.end method
-
-.method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-    .locals 0
+    invoke-interface {v0, v1}, Lbyy;->a(Ljava/lang/String;)V
 
     return-void
 .end method

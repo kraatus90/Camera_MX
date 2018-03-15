@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Serie (%1$d bilder)</item>
+        <item quantity="one">Serie (%1$d bilde)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d fotografier er lagret</item>
         <item quantity="one">%1$d fotografi er lagret</item>

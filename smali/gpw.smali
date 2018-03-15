@@ -1,47 +1,72 @@
-.class Lgpw;
-.super Lgpu;
+.class public final Lgpw;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lgpv;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgpv;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgpw;->a:Lgpv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lgpu;-><init>()V
+    iput-object p1, p0, Lgpw;->a:Lkgv;
+
+    iput-object p2, p0, Lgpw;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public O()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    return-void
-.end method
+    iget-object v0, p0, Lgpw;->a:Lkgv;
 
-.method public final a()V
-    .locals 2
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lgpw;->a:Lgpv;
+    move-result-object v0
 
-    iget-object v0, v0, Lgpv;->d:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+    check-cast v0, Lgnj;
 
-    const/16 v1, 0x8
+    iget-object v1, p0, Lgpw;->b:Lkgv;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lgpw;->a:Lgpv;
+    move-result-object v1
 
-    const/4 v1, 0x0
+    check-cast v1, Liho;
 
-    iput-boolean v1, v0, Lgpv;->e:Z
+    const-string v2, "CptrIndDskCsh"
 
-    return-void
+    invoke-interface {v1, v2}, Liho;->a(Ljava/lang/String;)Lihn;
+
+    move-result-object v1
+
+    new-instance v2, Lgpt;
+
+    invoke-direct {v2, v1, v0}, Lgpt;-><init>(Lihn;Lgnj;)V
+
+    invoke-static {v2}, Lghl;->a(Ljava/lang/Runnable;)Lgkv;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgkv;
+
+    return-object v0
 .end method

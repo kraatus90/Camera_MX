@@ -3,32 +3,24 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lddg;->a:Ljxn;
+    iput-object p1, p0, Lddg;->a:Lkgv;
 
-    iput-object p2, p0, Lddg;->b:Ljxn;
-
-    iput-object p3, p0, Lddg;->c:Ljxn;
-
-    iput-object p4, p0, Lddg;->d:Ljxn;
+    iput-object p2, p0, Lddg;->b:Lkgv;
 
     return-void
 .end method
@@ -36,43 +28,37 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+    .locals 2
 
-    new-instance v4, Ldde;
+    iget-object v0, p0, Lddg;->a:Lkgv;
 
-    iget-object v0, p0, Lddg;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/media/AudioManager;
+    check-cast v0, Ldxx;
 
-    iget-object v1, p0, Lddg;->b:Ljxn;
+    iget-object v1, p0, Lddg;->b:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lgum;
+    check-cast v1, Lcsc;
 
-    iget-object v2, p0, Lddg;->c:Ljxn;
+    iget-object v1, v1, Lcsc;->b:Ljava/lang/String;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ldxx;->a(Ljava/lang/String;)Ldxw;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/app/NotificationManager;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v3, p0, Lddg;->d:Ljxn;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v3
+    check-cast v0, Ldxw;
 
-    check-cast v3, Lgzz;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Ldde;-><init>(Landroid/media/AudioManager;Lgum;Landroid/app/NotificationManager;Lgzz;)V
-
-    return-object v4
+    return-object v0
 .end method

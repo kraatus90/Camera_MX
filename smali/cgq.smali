@@ -2,79 +2,43 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field public final synthetic a:Lcfk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lcfk;)V
     .locals 0
 
+    iput-object p1, p0, Lcgq;->a:Lcfk;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcgq;->a:Ljxn;
-
-    iput-object p2, p0, Lcgq;->b:Ljxn;
-
-    iput-object p3, p0, Lcgq;->c:Ljxn;
-
-    iput-object p4, p0, Lcgq;->d:Ljxn;
-
-    iput-object p5, p0, Lcgq;->e:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final a()V
+    .locals 3
 
-    new-instance v3, Lcgm;
+    iget-object v0, p0, Lcgq;->a:Lcfk;
 
-    iget-object v4, p0, Lcgq;->a:Ljxn;
+    iget-object v0, v0, Lcfk;->c:Lcfa;
 
-    iget-object v0, p0, Lcgq;->b:Ljxn;
+    iget-boolean v1, v0, Lcfa;->h:Z
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-nez v1, :cond_0
 
-    iget-object v0, p0, Lcgq;->c:Ljxn;
+    iget-object v1, v0, Lcfa;->b:Landroid/support/design/widget/FloatingActionButton;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/FloatingActionButton;->setVisibility(I)V
 
-    check-cast v0, Lflj;
+    invoke-virtual {v0}, Lcfa;->c()V
 
-    iget-object v1, p0, Lcgq;->d:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbip;
-
-    iget-object v2, p0, Lcgq;->e:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Licz;
-
-    invoke-direct {v3, v4, v0, v1, v2}, Lcgm;-><init>(Ljxn;Lflj;Lbip;Licz;)V
-
-    return-object v3
+    :cond_0
+    return-void
 .end method

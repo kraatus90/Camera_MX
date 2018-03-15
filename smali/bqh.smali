@@ -3,14 +3,20 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbqh;->a:Lkgv;
 
     return-void
 .end method
@@ -20,21 +26,17 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Landroid/os/Handler;
+    new-instance v1, Lbqc;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    iget-object v0, p0, Lbqh;->a:Lkgv;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/os/Handler;
+    check-cast v0, Lbqa;
 
-    return-object v0
+    invoke-direct {v1, v0}, Lbqc;-><init>(Lbqa;)V
+
+    return-object v1
 .end method

@@ -1,67 +1,241 @@
-.class final Ldr;
+.class public Ldr;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private a:Landroid/view/WindowId;
-
-
 # direct methods
-.method constructor <init>(Landroid/view/View;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Landroid/view/View;->getWindowId()Landroid/view/WindowId;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldr;->a:Landroid/view/WindowId;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public a(Landroid/view/View;)Ldy;
     .locals 2
 
-    instance-of v0, p1, Ldr;
+    new-instance v0, Ldw;
+
+    invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ldw;-><init>(Landroid/os/IBinder;)V
+
+    return-object v0
+.end method
+
+.method public a(Landroid/view/View;F)V
+    .locals 1
+
+    const v0, 0x7f0e0015
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Ldr;
-
-    iget-object v0, p1, Ldr;->a:Landroid/view/WindowId;
-
-    iget-object v1, p0, Ldr;->a:Landroid/view/WindowId;
-
-    invoke-virtual {v0, v1}, Landroid/view/WindowId;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
+    mul-float/2addr v0, p2
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
+
+    goto :goto_0
+.end method
+
+.method public a(Landroid/view/View;IIII)V
+    .locals 0
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setLeft(I)V
+
+    invoke-virtual {p1, p3}, Landroid/view/View;->setTop(I)V
+
+    invoke-virtual {p1, p4}, Landroid/view/View;->setRight(I)V
+
+    invoke-virtual {p1, p5}, Landroid/view/View;->setBottom(I)V
+
+    return-void
+.end method
+
+.method public a(Landroid/view/View;Landroid/graphics/Matrix;)V
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    instance-of v1, v0, Landroid/view/View;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroid/view/View;
+
+    invoke-virtual {p0, v0, p2}, Ldr;->a(Landroid/view/View;Landroid/graphics/Matrix;)V
+
+    invoke-virtual {v0}, Landroid/view/View;->getScrollX()I
+
+    move-result v1
+
+    neg-int v1, v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0}, Landroid/view/View;->getScrollY()I
+
+    move-result v0
+
+    neg-int v0, v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p2, v1, v0}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {p2, v0, v1}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+
+    invoke-virtual {p1}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/Matrix;->isIdentity()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p2, v0}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
+
+    :cond_1
+    return-void
+.end method
+
+.method public b(Landroid/view/View;)F
+    .locals 2
+
+    const v0, 0x7f0e0015
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+
+    move-result v1
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    div-float v0, v1, v0
 
     :goto_0
     return v0
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+
+    move-result v0
 
     goto :goto_0
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public b(Landroid/view/View;Landroid/graphics/Matrix;)V
+    .locals 2
 
-    iget-object v0, p0, Ldr;->a:Landroid/view/WindowId;
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    invoke-virtual {v0}, Landroid/view/WindowId;->hashCode()I
+    move-result-object v0
+
+    instance-of v1, v0, Landroid/view/View;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroid/view/View;
+
+    invoke-virtual {p0, v0, p2}, Ldr;->b(Landroid/view/View;Landroid/graphics/Matrix;)V
+
+    invoke-virtual {v0}, Landroid/view/View;->getScrollX()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0}, Landroid/view/View;->getScrollY()I
 
     move-result v0
 
-    return v0
+    int-to-float v0, v0
+
+    invoke-virtual {p2, v1, v0}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {p2, v0, v1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    invoke-virtual {p1}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/Matrix;->isIdentity()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    new-instance v1, Landroid/graphics/Matrix;
+
+    invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p2, v1}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
+
+    :cond_1
+    return-void
 .end method

@@ -1,66 +1,78 @@
-.class final Leen;
+.class public final Leen;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Leas;
+.field private final a:Lkgv;
 
-.field private synthetic b:Leeh;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Leeh;Leas;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Leen;->b:Leeh;
-
-    iput-object p2, p0, Leen;->a:Leas;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leen;->a:Lkgv;
+
+    iput-object p2, p0, Leen;->b:Lkgv;
+
+    iput-object p3, p0, Leen;->c:Lkgv;
+
+    iput-object p4, p0, Leen;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Leen;->b:Leeh;
+    new-instance v4, Leem;
 
-    invoke-static {v0}, Leeh;->a(Leeh;)Leou;
+    iget-object v0, p0, Leen;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Leen;->a:Leas;
+    check-cast v0, Legg;
 
-    iget-object v1, v1, Leas;->a:[B
+    iget-object v1, p0, Leen;->b:Lkgv;
 
-    iget-object v2, p0, Leen;->a:Leas;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v2, v2, Leas;->b:Lici;
+    move-result-object v1
 
-    iget v2, v2, Lici;->a:I
+    check-cast v1, Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v3, p0, Leen;->a:Leas;
+    iget-object v2, p0, Leen;->c:Lkgv;
 
-    iget-object v3, v3, Leas;->b:Lici;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget v3, v3, Lici;->b:I
+    move-result-object v2
 
-    iget-object v4, p0, Leen;->a:Leas;
+    check-cast v2, Lgvc;
 
-    iget v4, v4, Leas;->c:I
+    iget-object v3, p0, Leen;->d:Lkgv;
 
-    iget-object v5, p0, Leen;->a:Leas;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v5, v5, Leas;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;
+    move-result-object v3
 
-    invoke-static/range {v0 .. v5}, Ldym;->a(Lgou;[BIIILcom/google/android/libraries/camera/exif/ExifInterface;)Ljuw;
+    check-cast v3, Lfwg;
 
-    return-void
+    invoke-direct {v4, v0, v1, v2, v3}, Leem;-><init>(Legg;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lfwg;)V
+
+    return-object v4
 .end method

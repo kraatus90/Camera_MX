@@ -1,56 +1,29 @@
-.class public final Lcbd;
-.super Ljava/lang/Object;
+.class final Lcbd;
+.super Lipk;
 .source "PG"
 
 
-# instance fields
-.field public a:Lcdw;
-
-.field public b:Lcbe;
-
-.field public c:I
-
-
 # direct methods
-.method constructor <init>(Lcbe;Lcdw;I)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcbd;->b:Lcbe;
-
-    iput-object p2, p0, Lcbd;->a:Lcdw;
-
-    iput p3, p0, Lcbd;->c:I
+    invoke-direct {p0}, Lipk;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lcbd;->b:Lcbe;
+    check-cast p1, Ljhk;
 
-    sget-object v1, Lcbe;->b:Lcbe;
+    check-cast p2, Ljhk;
 
-    if-eq v0, v1, :cond_0
+    new-instance v0, Lcbh;
 
-    iget-object v0, p0, Lcbd;->b:Lcbe;
+    invoke-direct {v0, p1, p2}, Lcbh;-><init>(Ljhk;Ljhk;)V
 
-    sget-object v1, Lcbe;->a:Lcbe;
-
-    if-ne v0, v1, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method

@@ -2,94 +2,158 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field private static final f:[B
 
 
 # instance fields
-.field private synthetic a:Ljava/util/concurrent/atomic/AtomicReference;
+.field public final a:Ljava/lang/CharSequence;
 
-.field private synthetic b:Ljava/util/concurrent/Callable;
+.field public final b:Z
 
-.field private synthetic c:Ljava/util/concurrent/locks/ReentrantLock;
+.field public final c:I
 
-.field private synthetic d:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public d:I
 
-.field private synthetic e:Ljava/util/concurrent/locks/Condition;
+.field public e:C
 
 
 # direct methods
-.method constructor <init>(Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/Callable;Ljava/util/concurrent/locks/ReentrantLock;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/locks/Condition;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p1, p0, Lga;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    const/16 v3, 0x700
 
-    iput-object p2, p0, Lga;->b:Ljava/util/concurrent/Callable;
+    new-array v0, v3, [B
 
-    iput-object p3, p0, Lga;->c:Ljava/util/concurrent/locks/ReentrantLock;
+    sput-object v0, Lga;->f:[B
 
-    iput-object p4, p0, Lga;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v0, 0x0
 
-    iput-object p5, p0, Lga;->e:Ljava/util/concurrent/locks/Condition;
+    :goto_0
+    if-ge v0, v3, :cond_0
+
+    sget-object v1, Lga;->f:[B
+
+    invoke-static {v0}, Ljava/lang/Character;->getDirectionality(I)B
+
+    move-result v2
+
+    aput-byte v2, v1, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method constructor <init>(Ljava/lang/CharSequence;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lga;->a:Ljava/lang/CharSequence;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lga;->b:Z
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    iput v0, p0, Lga;->c:I
 
     return-void
 .end method
 
+.method static a(C)B
+    .locals 1
 
-# virtual methods
-.method public final run()V
-    .locals 2
+    const/16 v0, 0x700
 
-    :try_start_0
-    iget-object v0, p0, Lga;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    if-ge p0, v0, :cond_0
 
-    iget-object v1, p0, Lga;->b:Ljava/util/concurrent/Callable;
+    sget-object v0, Lga;->f:[B
 
-    invoke-interface {v1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    aget-byte v0, v0, p0
 
     :goto_0
-    iget-object v0, p0, Lga;->c:Ljava/util/concurrent/locks/ReentrantLock;
+    return v0
 
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+    :cond_0
+    invoke-static {p0}, Ljava/lang/Character;->getDirectionality(C)B
 
-    :try_start_1
-    iget-object v0, p0, Lga;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-result v0
 
-    const/4 v1, 0x0
+    goto :goto_0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    iget-object v0, p0, Lga;->e:Ljava/util/concurrent/locks/Condition;
+# virtual methods
+.method final a()B
+    .locals 3
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v0, p0, Lga;->a:Ljava/lang/CharSequence;
 
-    iget-object v0, p0, Lga;->c:Ljava/util/concurrent/locks/ReentrantLock;
+    iget v1, p0, Lga;->d:I
 
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    add-int/lit8 v1, v1, -0x1
 
-    return-void
+    invoke-interface {v0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
-    :catchall_0
-    move-exception v0
+    move-result v0
 
-    iget-object v1, p0, Lga;->c:Ljava/util/concurrent/locks/ReentrantLock;
+    iput-char v0, p0, Lga;->e:C
 
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    iget-char v0, p0, Lga;->e:C
 
-    throw v0
+    invoke-static {v0}, Ljava/lang/Character;->isLowSurrogate(C)Z
 
-    :catch_0
-    move-exception v0
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lga;->a:Ljava/lang/CharSequence;
+
+    iget v1, p0, Lga;->d:I
+
+    invoke-static {v0, v1}, Ljava/lang/Character;->codePointBefore(Ljava/lang/CharSequence;I)I
+
+    move-result v0
+
+    iget v1, p0, Lga;->d:I
+
+    invoke-static {v0}, Ljava/lang/Character;->charCount(I)I
+
+    move-result v2
+
+    sub-int/2addr v1, v2
+
+    iput v1, p0, Lga;->d:I
+
+    invoke-static {v0}, Ljava/lang/Character;->getDirectionality(I)B
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget v0, p0, Lga;->d:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lga;->d:I
+
+    iget-char v0, p0, Lga;->e:C
+
+    invoke-static {v0}, Lga;->a(C)B
+
+    move-result v0
 
     goto :goto_0
 .end method

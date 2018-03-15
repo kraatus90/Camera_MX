@@ -2,53 +2,180 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field private static b:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:J
+
+.field private final c:Lhbh;
+
+.field private final d:Lbxe;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "MaxNativeMemory"
 
-    iput-object p1, p0, Lepj;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lepj;->b:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Lbjy;Lhbh;Lbxe;)V
+    .locals 6
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    const-wide/16 v4, 0x3e8
 
-    iget-object v0, p0, Lepj;->a:Ljxn;
+    const/16 v0, 0x1a4
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v1, -0x1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lepj;->c:Lhbh;
+
+    iput-object p3, p0, Lepj;->d:Lbxe;
+
+    iget-object v2, p1, Lbjy;->a:Landroid/content/ContentResolver;
+
+    const-string v3, "camera:max_allowed_native_memory_mb"
+
+    invoke-static {v2, v3, v1}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-lez v2, :cond_0
+
+    sget-object v0, Lepj;->b:Ljava/lang/String;
+
+    const/16 v1, 0x35
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Max native memory overridden (gservices): "
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    int-to-long v0, v2
+
+    :goto_0
+    mul-long/2addr v0, v4
+
+    mul-long/2addr v0, v4
+
+    iput-wide v0, p0, Lepj;->a:J
+
+    return-void
+
+    :cond_0
+    iget-object v2, p0, Lepj;->c:Lhbh;
+
+    iget-object v2, v2, Lhbh;->b:Limm;
+
+    iget-boolean v2, v2, Limm;->f:Z
+
+    if-nez v2, :cond_1
+
+    iget-object v2, p0, Lepj;->c:Lhbh;
+
+    iget-object v2, v2, Lhbh;->b:Limm;
+
+    iget-boolean v2, v2, Limm;->g:Z
+
+    if-eqz v2, :cond_2
+
+    :cond_1
+    :goto_1
+    if-lez v0, :cond_3
+
+    sget-object v0, Lepj;->b:Ljava/lang/String;
+
+    const/16 v1, 0x32
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Max native memory overridden (device): 420"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-wide/16 v0, 0x1a4
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v2, p0, Lepj;->c:Lhbh;
+
+    invoke-virtual {v2}, Lhbh;->c()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v0, p0, Lepj;->d:Lbxe;
+
+    invoke-virtual {v0}, Lbxe;->b()Landroid/app/ActivityManager;
 
     move-result-object v0
 
-    check-cast v0, Lgsl;
+    invoke-virtual {v0}, Landroid/app/ActivityManager;->getMemoryClass()I
 
-    const-string v1, "pref_has_seen_swiped_to_video"
+    move-result v1
 
-    const/4 v2, 0x0
+    invoke-virtual {v0}, Landroid/app/ActivityManager;->getLargeMemoryClass()I
 
-    invoke-virtual {v0, v1, v2}, Lgsl;->a(Ljava/lang/String;Z)Liau;
+    move-result v0
 
-    move-result-object v0
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    move-result v0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    int-to-float v0, v0
 
-    move-result-object v0
+    const v1, 0x3f4ccccd    # 0.8f
 
-    check-cast v0, Liau;
+    mul-float/2addr v0, v1
 
-    return-object v0
+    float-to-int v0, v0
+
+    int-to-long v0, v0
+
+    goto :goto_0
 .end method

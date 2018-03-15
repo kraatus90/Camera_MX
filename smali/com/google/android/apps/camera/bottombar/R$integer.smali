@@ -4,15 +4,19 @@
 
 
 # static fields
-.field public static final cancel_button_image_alpha:I = 0x7f0f0014
+.field public static final abc_config_activityDefaultDur:I = 0x7f0f0000
 
-.field public static final config_change_fade_in_duration_ms:I = 0x7f0f0015
+.field public static final abc_config_activityShortDur:I = 0x7f0f0001
 
-.field public static final config_change_rotation_duration_ms:I = 0x7f0f0016
+.field public static final cancel_button_image_alpha:I = 0x7f0f0010
 
-.field public static final google_play_services_version:I = 0x7f0f001a
+.field public static final config_change_fade_in_duration_ms:I = 0x7f0f0011
 
-.field public static final status_bar_notification_info_maxnum:I = 0x7f0f0026
+.field public static final config_change_rotation_duration_ms:I = 0x7f0f0012
+
+.field public static final config_tooltipAnimTime:I = 0x7f0f0013
+
+.field public static final status_bar_notification_info_maxnum:I = 0x7f0f0022
 
 
 # direct methods

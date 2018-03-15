@@ -1,52 +1,75 @@
-.class public final Lilq;
+.class final Lilq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lilj;
+.implements Lino;
 
 
 # instance fields
-.field private synthetic a:Lilj;
+.field private final a:Lino;
+
+.field private final synthetic b:Lilp;
 
 
 # direct methods
-.method public constructor <init>(Lilj;)V
+.method constructor <init>(Lilp;Lino;)V
     .locals 0
 
-    iput-object p1, p0, Lilq;->a:Lilj;
+    iput-object p1, p0, Lilq;->b:Lilp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lilq;->a:Lino;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lilf;
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    check-cast p1, Ljava/lang/Iterable;
+    iget-object v0, p0, Lilq;->b:Lilp;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, v0, Lilp;->a:Ljava/lang/Object;
 
-    iget-object v0, p0, Lilq;->a:Lilj;
+    monitor-enter v1
 
-    invoke-static {p1, p2, v0}, Licy;->a(Ljava/lang/Iterable;Ljava/util/concurrent/Executor;Lilj;)Lilf;
+    :try_start_0
+    iget-object v0, p0, Lilq;->b:Lilp;
 
-    move-result-object v0
+    iget-boolean v0, v0, Lilp;->b:Z
 
-    return-object v0
-.end method
+    if-eqz v0, :cond_0
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    iget-object v0, p0, Lilq;->b:Lilp;
 
-    iget-object v0, p0, Lilq;->a:Lilj;
+    invoke-virtual {v0}, Lilp;->j()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    monitor-exit v1
 
-    move-result-object v0
+    :goto_0
+    return-void
 
-    return-object v0
+    :cond_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lilq;->a:Lino;
+
+    invoke-interface {v0}, Lino;->a()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

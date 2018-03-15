@@ -1,152 +1,151 @@
-.class public final Lebm;
-.super Ljava/lang/Object;
+.class Lebm;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Lebj;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lebj;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lebm;->a:Lebj;
 
-    iput-object p1, p0, Lebm;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lebm;->b:Ljxn;
-
-    iput-object p3, p0, Lebm;->c:Ljxn;
+    invoke-direct {p0, v0}, Lglb;-><init>([Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 19
+.method public final a()V
+    .locals 3
 
-    move-object/from16 v0, p0
+    const/4 v2, 0x4
 
-    iget-object v2, v0, Lebm;->a:Ljxn;
+    sget-object v0, Lebj;->a:Ljava/lang/String;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "enter PhotoSphere state"
 
-    move-result-object v2
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object v15, v2
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    check-cast v15, Leca;
+    iget-object v0, v0, Lebj;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToPhotoSphere()V
 
-    iget-object v2, v0, Lebm;->b:Ljxn;
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lebj;->g:Lgvc;
 
-    move-result-object v2
+    sget-object v1, Lgue;->a:Lgue;
 
-    check-cast v2, Ledh;
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    iget-object v3, v0, Lebm;->c:Ljxn;
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisibility(I)V
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    move-result-object v3
+    iget-object v0, v0, Lebj;->d:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
-    move-object v13, v3
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;->setVisibility(I)V
 
-    check-cast v13, Ledk;
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    new-instance v16, Ledp;
+    invoke-static {v0}, Lebj;->b(Lebj;)Lick;
 
-    invoke-virtual {v2}, Ledh;->a()Leai;
+    move-result-object v0
 
-    move-result-object v17
+    sget-object v1, Lhac;->f:Lhac;
 
-    invoke-static {}, Lfsp;->d()Lggq;
+    invoke-interface {v0, v1}, Lick;->a(Ljava/lang/Object;)V
 
-    move-result-object v2
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    iget-object v3, v13, Ledk;->e:Ljuw;
+    iget-object v0, v0, Lebj;->c:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
 
-    new-instance v4, Ledl;
+    const/4 v1, 0x0
 
-    invoke-direct {v4, v2}, Ledl;-><init>(Lggq;)V
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    sget-object v0, Lebj;->a:Ljava/lang/String;
 
-    invoke-static {v3, v4, v2}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
+    const-string v1, "Set rotation to crossfade"
 
-    move-result-object v9
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v18, Ledq;
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    new-instance v2, Leco;
+    iget-object v1, v0, Lebj;->e:Landroid/view/Window;
 
-    iget-object v3, v13, Ledk;->a:Licz;
+    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
-    iget-object v4, v13, Ledk;->b:Licv;
+    move-result-object v1
 
-    iget-object v5, v13, Ledk;->i:Leam;
+    const/4 v2, 0x1
 
-    iget-object v6, v13, Ledk;->c:Lghe;
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
 
-    iget-object v7, v13, Ledk;->d:Ldol;
+    iget-object v0, v0, Lebj;->e:Landroid/view/Window;
 
-    iget-object v8, v13, Ledk;->e:Ljuw;
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    iget-object v10, v13, Ledk;->f:Ldjo;
+    return-void
+.end method
 
-    iget-object v11, v13, Ledk;->g:Ldjm;
+.method public final b()V
+    .locals 3
 
-    iget-object v12, v13, Ledk;->h:Ldvc;
+    sget-object v0, Lebj;->a:Ljava/lang/String;
 
-    iget-object v13, v13, Ledk;->j:Lgez;
+    const-string v1, "exit PhotoSphere state"
 
-    const/4 v14, 0x1
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct/range {v2 .. v14}, Leco;-><init>(Licz;Licv;Leam;Lghe;Ldol;Ljuw;Ljuw;Ldjo;Ldjm;Ldvc;Lgfp;I)V
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    const/4 v3, 0x2
+    iget-object v0, v0, Lebj;->c:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
 
-    const/4 v4, 0x0
+    const/4 v1, 0x1
 
-    move-object/from16 v0, v18
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
 
-    invoke-direct {v0, v2, v3, v4}, Ledq;-><init>(Leai;IZ)V
+    sget-object v0, Lebj;->a:Ljava/lang/String;
 
-    move-object/from16 v0, v17
+    const-string v1, "Set rotation animation to seamless"
 
-    move-object/from16 v1, v18
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v15, v0, v1}, Leca;->a(Leai;Leai;)Leai;
+    iget-object v0, p0, Lebm;->a:Lebj;
 
-    move-result-object v2
+    iget-object v1, p0, Lebm;->a:Lebj;
 
-    move-object/from16 v0, v16
+    iget v1, v1, Lebj;->h:I
 
-    invoke-direct {v0, v2}, Ledp;-><init>(Leai;)V
+    iget-object v2, v0, Lebj;->e:Landroid/view/Window;
 
-    const-string v2, "Cannot return null from a non-@Nullable @Provides method"
-
-    move-object/from16 v0, v16
-
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v2
 
-    check-cast v2, Ledp;
+    iput v1, v2, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
 
-    return-object v2
+    iget-object v0, v0, Lebj;->e:Landroid/view/Window;
+
+    invoke-virtual {v0, v2}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    return-void
+.end method
+
+.method public t()V
+    .locals 0
+
+    return-void
 .end method

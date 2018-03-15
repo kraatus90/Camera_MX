@@ -1,56 +1,69 @@
-.class public final Leeg;
-.super Ljava/lang/Object;
+.class final Leeg;
+.super Lege;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
-
-# static fields
-.field public static final a:Leeg;
+# instance fields
+.field private final synthetic a:Leec;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Leeg;
-
-    invoke-direct {v0}, Leeg;-><init>()V
-
-    sput-object v0, Leeg;->a:Leeg;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Leec;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leeg;->a:Leec;
+
+    invoke-direct {p0, p1}, Lege;-><init>(Lega;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final I()V
     .locals 2
 
-    new-instance v0, Liag;
+    iget-object v0, p0, Leeg;->a:Leec;
 
-    invoke-static {}, Lfsp;->d()Lggq;
+    iget-object v0, v0, Leec;->a:Lgld;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
+    invoke-super {p0}, Lege;->I()V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Leeg;->a:Leec;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Leec;->a:Lgld;
 
-    move-result-object v0
+    iget-object v1, p0, Leeg;->a:Leec;
 
-    check-cast v0, Liag;
+    iget-object v1, v1, Leec;->d:Lglf;
 
-    return-object v0
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final J()V
+    .locals 2
+
+    iget-object v0, p0, Leeg;->a:Leec;
+
+    iget-object v0, v0, Leec;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lege;->J()V
+
+    iget-object v0, p0, Leeg;->a:Leec;
+
+    iget-object v0, v0, Leec;->a:Lgld;
+
+    iget-object v1, p0, Leeg;->a:Leec;
+
+    iget-object v1, v1, Leec;->b:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

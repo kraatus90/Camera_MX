@@ -3,152 +3,105 @@
 .source "PG"
 
 # interfaces
-.implements Lcjx;
+.implements Lihb;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+.field public final a:Ljava/lang/Object;
 
-.field public final b:I
+.field public final b:Landroid/view/Surface;
+
+.field public final c:Ljava/util/List;
+
+.field private final d:Landroid/graphics/SurfaceTexture;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/graphics/SurfaceTexture;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
+    iput-object p1, p0, Lcez;->d:Landroid/graphics/SurfaceTexture;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+    new-instance v0, Landroid/view/Surface;
 
-    iput-object v0, p0, Lcez;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    iget-object v1, p0, Lcez;->d:Landroid/graphics/SurfaceTexture;
 
-    const/4 v0, 0x3
+    invoke-direct {v0, v1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
-    iput v0, p0, Lcez;->b:I
+    iput-object v0, p0, Lcez;->b:Landroid/view/Surface;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcez;->c:Ljava/util/List;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lcez;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    iget-object v0, p0, Lcez;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    iget-object v1, p0, Lcez;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->iterator()Ljava/util/Iterator;
+    monitor-enter v1
 
-    move-result-object v1
+    :try_start_0
+    iget-object v0, p0, Lcez;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcjx;
+    check-cast v0, Lihb;
 
-    invoke-interface {v0}, Lcjx;->a()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a(ILcgh;)V
-    .locals 2
-
-    iget-object v0, p0, Lcez;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcjx;
-
-    invoke-interface {v0, p1, p2}, Lcjx;->a(ILcgh;)V
+    invoke-interface {v0}, Lihb;->close()V
 
     goto :goto_0
 
-    :cond_0
-    return-void
-.end method
+    :catchall_0
+    move-exception v0
 
-.method public final a(Lcjy;)V
-    .locals 2
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lcez;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcjx;
-
-    invoke-interface {v0, p1}, Lcjx;->a(Lcjy;)V
-
-    goto :goto_0
+    throw v0
 
     :cond_0
-    return-void
-.end method
+    :try_start_1
+    iget-object v0, p0, Lcez;->b:Landroid/view/Surface;
 
-.method public final b(ILcgh;)V
-    .locals 2
+    invoke-virtual {v0}, Landroid/view/Surface;->release()V
 
-    iget-object v0, p0, Lcez;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    iget-object v0, p0, Lcez;->d:Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->release()V
 
-    move-result-object v1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcjx;
-
-    invoke-interface {v0, p1, p2}, Lcjx;->b(ILcgh;)V
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method

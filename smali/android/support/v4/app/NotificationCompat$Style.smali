@@ -39,13 +39,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d0135
+    const v1, 0x7f0d012b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    const v2, 0x7f0d0136
+    const v2, 0x7f0d012c
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -184,7 +184,7 @@
 .method private createIconWithBackground(IIII)Landroid/graphics/Bitmap;
     .locals 6
 
-    const v0, 0x7f020120
+    const v0, 0x7f020123
 
     if-nez p4, :cond_0
 
@@ -249,15 +249,15 @@
 
     const/16 v1, 0x8
 
-    const v0, 0x7f0e001e
+    const v0, 0x7f0e0020
 
     invoke-virtual {p1, v0, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const v0, 0x7f0e001a
+    const v0, 0x7f0e001c
 
     invoke-virtual {p1, v0, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const v0, 0x7f0e0019
+    const v0, 0x7f0e001b
 
     invoke-virtual {p1, v0, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
@@ -301,99 +301,51 @@
 
     invoke-direct {v0, v1, p2}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
+    iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
-    invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$Builder;->getPriority()I
+    invoke-virtual {v2}, Landroid/support/v4/app/NotificationCompat$Builder;->getPriority()I
 
-    move-result v1
+    iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
-    const/4 v5, -0x1
+    iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mLargeIcon:Landroid/graphics/Bitmap;
 
-    if-ge v1, v5, :cond_6
+    if-eqz v2, :cond_6
 
-    const/4 v1, 0x1
-
-    :goto_0
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v6, 0x10
-
-    if-lt v5, v6, :cond_0
-
-    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v6, 0x15
-
-    if-ge v5, v6, :cond_0
-
-    if-eqz v1, :cond_7
-
-    const v1, 0x7f0e0173
-
-    const-string v5, "setBackgroundResource"
-
-    const v6, 0x7f02011a
-
-    invoke-virtual {v0, v1, v5, v6}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
-
-    const v1, 0x7f0e007e
-
-    const-string v5, "setBackgroundResource"
-
-    const v6, 0x7f020157
-
-    invoke-virtual {v0, v1, v5, v6}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
-
-    :cond_0
-    :goto_1
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    iget-object v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mLargeIcon:Landroid/graphics/Bitmap;
-
-    if-eqz v1, :cond_a
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v5, 0x10
-
-    if-lt v1, v5, :cond_8
-
-    const v1, 0x7f0e007e
+    const v2, 0x7f0e008f
 
     const/4 v5, 0x0
 
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v0, v2, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const v1, 0x7f0e007e
+    const v2, 0x7f0e008f
 
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
     iget-object v5, v5, Landroid/support/v4/app/NotificationCompat$Builder;->mLargeIcon:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
+    invoke-virtual {v0, v2, v5}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
-    :goto_2
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_0
 
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
+    iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
-    iget-object v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
+    iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    iget v1, v1, Landroid/app/Notification;->icon:I
+    iget v2, v2, Landroid/app/Notification;->icon:I
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_0
 
-    const v1, 0x7f0d0130
+    const v2, 0x7f0d0126
 
-    invoke-virtual {v4, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v4, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v1
+    move-result v2
 
-    const v5, 0x7f0d0132
+    const v5, 0x7f0d0128
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -401,13 +353,7 @@
 
     shl-int/lit8 v5, v5, 0x1
 
-    sub-int v5, v1, v5
-
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v7, 0x15
-
-    if-lt v6, v7, :cond_9
+    sub-int v5, v2, v5
 
     iget-object v6, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
@@ -421,45 +367,44 @@
 
     move-result v7
 
-    invoke-direct {p0, v6, v1, v5, v7}, Landroid/support/v4/app/NotificationCompat$Style;->createIconWithBackground(IIII)Landroid/graphics/Bitmap;
+    invoke-direct {p0, v6, v2, v5, v7}, Landroid/support/v4/app/NotificationCompat$Style;->createIconWithBackground(IIII)Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    move-result-object v2
 
-    const v5, 0x7f0e0172
+    const v5, 0x7f0e0157
 
-    invoke-virtual {v0, v5, v1}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
+    invoke-virtual {v0, v5, v2}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
-    :goto_3
-    const v1, 0x7f0e0172
+    const v2, 0x7f0e0157
 
     const/4 v5, 0x0
 
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v0, v2, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    :cond_1
-    :goto_4
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
+    :cond_0
+    :goto_0
+    iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
-    iget-object v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
+    iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_1
 
-    const v1, 0x7f0e001e
+    const v2, 0x7f0e0020
 
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
     iget-object v5, v5, Landroid/support/v4/app/NotificationCompat$Builder;->mContentTitle:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    invoke-virtual {v0, v2, v5}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    :cond_2
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
+    :cond_1
+    iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
-    iget-object v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mContentText:Ljava/lang/CharSequence;
+    iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mContentText:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_15
+    if-eqz v2, :cond_2
 
-    const v1, 0x7f0e0019
+    const v1, 0x7f0e001b
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
@@ -469,29 +414,16 @@
 
     const/4 v1, 0x1
 
-    :goto_5
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+    :cond_2
+    const/4 v2, 0x0
 
-    const/16 v5, 0x15
-
-    if-ge v2, v5, :cond_c
-
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mLargeIcon:Landroid/graphics/Bitmap;
-
-    if-eqz v2, :cond_c
-
-    const/4 v2, 0x1
-
-    :goto_6
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
     iget-object v5, v5, Landroid/support/v4/app/NotificationCompat$Builder;->mContentInfo:Ljava/lang/CharSequence;
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_7
 
-    const v1, 0x7f0e0171
+    const v1, 0x7f0e0156
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
@@ -499,34 +431,34 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    const v1, 0x7f0e0171
+    const v1, 0x7f0e0156
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const/4 v1, 0x1
-
     const/4 v2, 0x1
 
-    move v6, v2
+    const/4 v1, 0x1
 
-    move v7, v1
+    move v6, v1
 
-    :goto_7
+    move v7, v2
+
+    :goto_1
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
     iget-object v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mSubText:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_b
 
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x10
 
-    if-lt v1, v2, :cond_11
+    if-lt v1, v2, :cond_b
 
-    const v1, 0x7f0e0019
+    const v1, 0x7f0e001b
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
@@ -538,9 +470,9 @@
 
     iget-object v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mContentText:Ljava/lang/CharSequence;
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_a
 
-    const v1, 0x7f0e001a
+    const v1, 0x7f0e001c
 
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
@@ -548,7 +480,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    const v1, 0x7f0e001a
+    const v1, 0x7f0e001c
 
     const/4 v2, 0x0
 
@@ -556,18 +488,12 @@
 
     const/4 v1, 0x1
 
-    :goto_8
+    :goto_2
     if-eqz v1, :cond_4
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x10
-
-    if-lt v1, v2, :cond_4
 
     if-eqz p3, :cond_3
 
-    const v1, 0x7f0d0134
+    const v1, 0x7f0d012a
 
     invoke-virtual {v4, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -575,7 +501,7 @@
 
     int-to-float v1, v1
 
-    const v2, 0x7f0e0019
+    const v2, 0x7f0e001b
 
     const/4 v3, 0x0
 
@@ -611,21 +537,21 @@
 
     iget-boolean v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mUseChronometer:Z
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_c
 
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x10
 
-    if-lt v1, v2, :cond_12
+    if-lt v1, v2, :cond_c
 
-    const v1, 0x7f0e0170
+    const v1, 0x7f0e0155
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const v1, 0x7f0e0170
+    const v1, 0x7f0e0155
 
     const-string v2, "setBase"
 
@@ -649,7 +575,7 @@
 
     invoke-virtual {v0, v1, v2, v4, v5}, Landroid/widget/RemoteViews;->setLong(ILjava/lang/String;J)V
 
-    const v1, 0x7f0e0170
+    const v1, 0x7f0e0155
 
     const-string v2, "setStarted"
 
@@ -657,120 +583,62 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/RemoteViews;->setBoolean(ILjava/lang/String;Z)V
 
-    :goto_9
+    :goto_3
     const/4 v6, 0x1
 
     :cond_5
-    const v2, 0x7f0e016e
+    const v2, 0x7f0e0153
 
-    if-eqz v6, :cond_13
+    if-eqz v6, :cond_d
 
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_4
     invoke-virtual {v0, v2, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     const v2, 0x7f0e000c
 
-    if-eqz v7, :cond_14
+    if-eqz v7, :cond_e
 
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_5
     invoke-virtual {v0, v2, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     return-object v0
 
     :cond_6
-    const/4 v1, 0x0
+    if-eqz p1, :cond_0
 
-    goto/16 :goto_0
+    iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
-    :cond_7
-    const v1, 0x7f0e0173
+    iget-object v2, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
-    const-string v5, "setBackgroundResource"
+    iget v2, v2, Landroid/app/Notification;->icon:I
 
-    const v6, 0x7f020119
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v0, v1, v5, v6}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
-
-    const v1, 0x7f0e007e
-
-    const-string v5, "setBackgroundResource"
-
-    const v6, 0x7f020156
-
-    invoke-virtual {v0, v1, v5, v6}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
-
-    goto/16 :goto_1
-
-    :cond_8
-    const v1, 0x7f0e007e
-
-    const/16 v5, 0x8
-
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    goto/16 :goto_2
-
-    :cond_9
-    const v1, 0x7f0e0172
-
-    iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    iget-object v5, v5, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
-
-    iget v5, v5, Landroid/app/Notification;->icon:I
-
-    const/4 v6, -0x1
-
-    invoke-virtual {p0, v5, v6}, Landroid/support/v4/app/NotificationCompat$Style;->createColoredBitmap(II)Landroid/graphics/Bitmap;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
-
-    goto/16 :goto_3
-
-    :cond_a
-    if-eqz p1, :cond_1
-
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    iget-object v1, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
-
-    iget v1, v1, Landroid/app/Notification;->icon:I
-
-    if-eqz v1, :cond_1
-
-    const v1, 0x7f0e007e
+    const v2, 0x7f0e008f
 
     const/4 v5, 0x0
 
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v0, v2, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    const v2, 0x7f0d0123
 
-    const/16 v5, 0x15
+    invoke-virtual {v4, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    if-lt v1, v5, :cond_b
+    move-result v2
 
-    const v1, 0x7f0d012d
-
-    invoke-virtual {v4, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    const v5, 0x7f0d0124
+    const v5, 0x7f0d011a
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v5
 
-    sub-int/2addr v1, v5
+    sub-int/2addr v2, v5
 
-    const v5, 0x7f0d0133
+    const v5, 0x7f0d0129
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -788,48 +656,24 @@
 
     move-result v7
 
-    invoke-direct {p0, v6, v1, v5, v7}, Landroid/support/v4/app/NotificationCompat$Style;->createIconWithBackground(IIII)Landroid/graphics/Bitmap;
+    invoke-direct {p0, v6, v2, v5, v7}, Landroid/support/v4/app/NotificationCompat$Style;->createIconWithBackground(IIII)Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    move-result-object v2
 
-    const v5, 0x7f0e007e
+    const v5, 0x7f0e008f
 
-    invoke-virtual {v0, v5, v1}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
+    invoke-virtual {v0, v5, v2}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_0
 
-    :cond_b
-    const v1, 0x7f0e007e
-
-    iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    iget-object v5, v5, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
-
-    iget v5, v5, Landroid/app/Notification;->icon:I
-
-    const/4 v6, -0x1
-
-    invoke-virtual {p0, v5, v6}, Landroid/support/v4/app/NotificationCompat$Style;->createColoredBitmap(II)Landroid/graphics/Bitmap;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v1, v5}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
-
-    goto/16 :goto_4
-
-    :cond_c
-    const/4 v2, 0x0
-
-    goto/16 :goto_6
-
-    :cond_d
+    :cond_7
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
     iget v5, v5, Landroid/support/v4/app/NotificationCompat$Builder;->mNumber:I
 
-    if-lez v5, :cond_f
+    if-lez v5, :cond_9
 
-    const v1, 0x7f0f0026
+    const v1, 0x7f0f0022
 
     invoke-virtual {v4, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -839,11 +683,11 @@
 
     iget v2, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mNumber:I
 
-    if-le v2, v1, :cond_e
+    if-le v2, v1, :cond_8
 
-    const v1, 0x7f0e0171
+    const v1, 0x7f0e0156
 
-    const v2, 0x7f110305
+    const v2, 0x7f1101ec
 
     invoke-virtual {v4, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -851,29 +695,29 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    :goto_c
-    const v1, 0x7f0e0171
+    :goto_6
+    const v1, 0x7f0e0156
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const/4 v1, 0x1
-
     const/4 v2, 0x1
 
-    move v6, v2
+    const/4 v1, 0x1
 
-    move v7, v1
+    move v6, v1
 
-    goto/16 :goto_7
+    move v7, v2
 
-    :cond_e
+    goto/16 :goto_1
+
+    :cond_8
     invoke-static {}, Ljava/text/NumberFormat;->getIntegerInstance()Ljava/text/NumberFormat;
 
     move-result-object v1
 
-    const v2, 0x7f0e0171
+    const v2, 0x7f0e0156
 
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$Style;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
@@ -887,10 +731,10 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    goto :goto_c
+    goto :goto_6
 
-    :cond_f
-    const v5, 0x7f0e0171
+    :cond_9
+    const v5, 0x7f0e0156
 
     const/16 v6, 0x8
 
@@ -900,28 +744,28 @@
 
     move v7, v1
 
-    goto/16 :goto_7
+    goto/16 :goto_1
 
-    :cond_10
-    const v1, 0x7f0e001a
+    :cond_a
+    const v1, 0x7f0e001c
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    :cond_11
+    :cond_b
     move v1, v3
 
-    goto/16 :goto_8
+    goto/16 :goto_2
 
-    :cond_12
-    const v1, 0x7f0e016f
+    :cond_c
+    const v1, 0x7f0e0154
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const v1, 0x7f0e016f
+    const v1, 0x7f0e0154
 
     const-string v2, "setTime"
 
@@ -933,20 +777,15 @@
 
     invoke-virtual {v0, v1, v2, v4, v5}, Landroid/widget/RemoteViews;->setLong(ILjava/lang/String;J)V
 
-    goto/16 :goto_9
+    goto/16 :goto_3
 
-    :cond_13
+    :cond_d
     const/16 v1, 0x8
 
-    goto/16 :goto_a
+    goto/16 :goto_4
 
-    :cond_14
+    :cond_e
     const/16 v1, 0x8
-
-    goto/16 :goto_b
-
-    :cond_15
-    move v1, v2
 
     goto/16 :goto_5
 .end method
@@ -973,7 +812,7 @@
 .method public buildIntoRemoteViews(Landroid/widget/RemoteViews;Landroid/widget/RemoteViews;)V
     .locals 6
 
-    const v1, 0x7f0e016d
+    const v1, 0x7f0e0152
 
     const/4 v2, 0x0
 
@@ -989,13 +828,7 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
-
-    const v1, 0x7f0e016c
+    const v1, 0x7f0e0151
 
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$Style;->calculateTopPadding()I
 
@@ -1009,7 +842,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/RemoteViews;->setViewPadding(IIIII)V
 
-    :cond_0
     return-void
 .end method
 

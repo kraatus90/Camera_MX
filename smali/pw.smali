@@ -1,74 +1,56 @@
-.class final Lpw;
-.super Ljava/lang/Object;
+.class public final Lpw;
+.super Lpv;
 .source "PG"
-
-# interfaces
-.implements Landroid/view/View$OnAttachStateChangeListener;
-
-
-# instance fields
-.field private synthetic a:Lpu;
 
 
 # direct methods
-.method constructor <init>(Lpu;)V
+.method public constructor <init>(Landroid/support/v7/widget/ActionBarContainer;)V
     .locals 0
 
-    iput-object p1, p0, Lpw;->a:Lpu;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lpv;-><init>(Landroid/support/v7/widget/ActionBarContainer;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 0
+.method public final getOutline(Landroid/graphics/Outline;)V
+    .locals 1
 
-    return-void
-.end method
+    iget-object v0, p0, Lpw;->a:Landroid/support/v7/widget/ActionBarContainer;
 
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 2
-
-    iget-object v0, p0, Lpw;->a:Lpu;
-
-    iget-object v0, v0, Lpu;->d:Landroid/view/ViewTreeObserver;
+    iget-boolean v0, v0, Landroid/support/v7/widget/ActionBarContainer;->e:Z
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lpw;->a:Lpu;
+    iget-object v0, p0, Lpw;->a:Landroid/support/v7/widget/ActionBarContainer;
 
-    iget-object v0, v0, Lpu;->d:Landroid/view/ViewTreeObserver;
+    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->d:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
+    if-eqz v0, :cond_0
 
-    move-result v0
+    iget-object v0, p0, Lpw;->a:Landroid/support/v7/widget/ActionBarContainer;
 
-    if-nez v0, :cond_0
+    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->d:Landroid/graphics/drawable/Drawable;
 
-    iget-object v0, p0, Lpw;->a:Lpu;
-
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lpu;->d:Landroid/view/ViewTreeObserver;
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
 
     :cond_0
-    iget-object v0, p0, Lpw;->a:Lpu;
-
-    iget-object v0, v0, Lpu;->d:Landroid/view/ViewTreeObserver;
-
-    iget-object v1, p0, Lpw;->a:Lpu;
-
-    iget-object v1, v1, Lpu;->b:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    :goto_0
+    return-void
 
     :cond_1
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    iget-object v0, p0, Lpw;->a:Landroid/support/v7/widget/ActionBarContainer;
 
-    return-void
+    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->b:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lpw;->a:Landroid/support/v7/widget/ActionBarContainer;
+
+    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContainer;->b:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->getOutline(Landroid/graphics/Outline;)V
+
+    goto :goto_0
 .end method

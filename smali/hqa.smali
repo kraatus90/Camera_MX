@@ -1,327 +1,81 @@
-.class final Lhqa;
+.class public final Lhqa;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhpy;
 
+# static fields
+.field public static final a:Lhlf;
 
-# instance fields
-.field private a:Landroid/os/IBinder;
+.field public static final b:Lhpy;
+
+.field private static final c:Lhmr;
+
+.field private static final d:Lhli;
+
+.field private static final e:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/IBinder;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhqa;->a:Landroid/os/IBinder;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final asBinder()Landroid/os/IBinder;
-    .locals 1
-
-    iget-object v0, p0, Lhqa;->a:Landroid/os/IBinder;
-
-    return-object v0
-.end method
-
-.method public final getBooleanFlagValue(Ljava/lang/String;ZI)Z
-    .locals 7
-
-    const/4 v0, 0x1
+    new-instance v0, Lhmr;
 
     const/4 v1, 0x0
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-direct {v0, v1}, Lhmr;-><init>(B)V
 
-    move-result-object v3
+    sput-object v0, Lhqa;->c:Lhmr;
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    new-instance v0, Lhqb;
 
-    move-result-object v4
+    invoke-direct {v0}, Lhqb;-><init>()V
 
-    :try_start_0
-    const-string v2, "com.google.android.gms.flags.IFlagProvider"
+    sput-object v0, Lhqa;->d:Lhli;
 
-    invoke-virtual {v3, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    new-instance v0, Lhlf;
 
-    invoke-virtual {v3, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    const-string v1, "Help.API"
 
-    if-eqz p2, :cond_0
+    sget-object v2, Lhqa;->d:Lhli;
 
-    move v2, v0
+    sget-object v3, Lhqa;->c:Lhmr;
 
-    :goto_0
-    invoke-virtual {v3, v2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {v0, v1, v2, v3}, Lhlf;-><init>(Ljava/lang/String;Lhli;Lhmr;)V
 
-    invoke-virtual {v3, p3}, Landroid/os/Parcel;->writeInt(I)V
+    sput-object v0, Lhqa;->a:Lhlf;
 
-    iget-object v2, p0, Lhqa;->a:Landroid/os/IBinder;
+    new-instance v0, Lhpe;
 
-    const/4 v5, 0x2
+    invoke-direct {v0}, Lhpe;-><init>()V
 
-    const/4 v6, 0x0
+    sput-object v0, Lhqa;->b:Lhpy;
 
-    invoke-interface {v2, v5, v3, v4, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v4}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v4}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    :goto_1
-    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    return v0
-
-    :cond_0
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v4}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public final getIntFlagValue(Ljava/lang/String;II)I
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object v0, p0, Lhqa;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x3
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public final getLongFlagValue(Ljava/lang/String;JI)J
-    .locals 6
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
-
-    invoke-virtual {v1, p4}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object v0, p0, Lhqa;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x4
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readLong()J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-wide v4
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-wide v4
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public final getStringFlagValue(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object v0, p0, Lhqa;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x5
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-.end method
-
-.method public final init(Lhnb;)V
-    .locals 5
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    :try_start_0
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lhnb;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    iget-object v0, p0, Lhqa;->a:Landroid/os/IBinder;
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    sput-object v0, Lhqa;->e:Ljava/util/concurrent/Executor;
 
     return-void
+.end method
 
-    :cond_0
-    const/4 v0, 0x0
+.method public static a(Lhlm;Lhqe;)V
+    .locals 3
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xb
+    .end annotation
 
-    goto :goto_0
+    new-instance v0, Lhqc;
 
-    :catchall_0
-    move-exception v0
+    invoke-direct {v0, p0, p1}, Lhqc;-><init>(Lhlm;Lhqe;)V
 
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+    sget-object v1, Lhqa;->e:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    const/4 v2, 0x0
 
-    throw v0
+    new-array v2, v2, [Ljava/lang/Void;
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    return-void
 .end method

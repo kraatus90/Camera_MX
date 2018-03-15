@@ -1,47 +1,60 @@
-.class public interface abstract Lihy;
+.class public final Lihy;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lihy;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lihy;
+
+    invoke-direct {v0}, Lihy;-><init>()V
+
+    sput-object v0, Lihy;->a:Lihy;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(I)Liia;
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract a(Liic;)Liia;
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x17
-    .end annotation
-.end method
+    const-string v0, "Camera-Ex"
 
-.method public abstract a(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Lihv;Landroid/os/Handler;)V
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x17
-    .end annotation
-.end method
+    const/4 v1, 0x0
 
-.method public abstract a(Ljava/util/List;Lihv;Landroid/os/Handler;)V
-.end method
+    invoke-static {v0, v1}, Lhwt;->d(Ljava/lang/String;I)Ljava/util/concurrent/ThreadFactory;
 
-.method public abstract a(Ljava/util/List;Lihx;Landroid/os/Handler;)V
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x17
-    .end annotation
-.end method
+    move-result-object v0
 
-.method public abstract b(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Lihv;Landroid/os/Handler;)V
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x18
-    .end annotation
-.end method
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
-.method public abstract b(Ljava/util/List;Lihv;Landroid/os/Handler;)V
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x18
-    .end annotation
-.end method
+    move-result-object v0
 
-.method public abstract close()V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    return-object v0
 .end method

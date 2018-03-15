@@ -1,23 +1,74 @@
-.class public final Lhdq;
+.class final Lhdq;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final synthetic a:Landroid/content/Context;
-
-.field public final synthetic b:Landroid/os/Handler;
+.field private final synthetic a:Lhdp;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;)V
+.method constructor <init>(Lhdp;)V
     .locals 0
 
-    iput-object p1, p0, Lhdq;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lhdq;->b:Landroid/os/Handler;
+    iput-object p1, p0, Lhdq;->a:Lhdp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 4
+
+    iget-object v0, p0, Lhdq;->a:Lhdp;
+
+    iget-boolean v0, v0, Lhdp;->d:Z
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lhdq;->a:Lhdp;
+
+    iget-object v0, v0, Lhdp;->b:Landroid/widget/VideoView;
+
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lhdq;->a:Lhdp;
+
+    iget-object v0, v0, Lhdp;->a:Lhdy;
+
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lhdq;->a:Lhdp;
+
+    iget-object v0, v0, Lhdp;->a:Lhdy;
+
+    iget-object v1, p0, Lhdq;->a:Lhdp;
+
+    iget-object v1, v1, Lhdp;->b:Landroid/widget/VideoView;
+
+    invoke-virtual {v1}, Landroid/widget/VideoView;->getCurrentPosition()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lhdy;->b(I)V
+
+    iget-object v0, p0, Lhdq;->a:Lhdp;
+
+    iget-object v0, v0, Lhdp;->b:Landroid/widget/VideoView;
+
+    const-wide/16 v2, 0xa
+
+    invoke-virtual {v0, p0, v2, v3}, Landroid/widget/VideoView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_0
 .end method

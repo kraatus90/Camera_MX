@@ -6,7 +6,7 @@
 # instance fields
 .field public final mActivity:Landroid/app/Activity;
 
-.field public mAllLoaderManagers:Lhd;
+.field public mAllLoaderManagers:Lgz;
 
 .field public mCheckedForLoaderManager:Z
 
@@ -321,20 +321,20 @@
 .method getLoaderManager(Ljava/lang/String;ZZ)Landroid/support/v4/app/LoaderManagerImpl;
     .locals 2
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lhd;
+    new-instance v0, Lgz;
 
-    invoke-direct {v0}, Lhd;-><init>()V
+    invoke-direct {v0}, Lgz;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iput-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v0, p1}, Lhd;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lgz;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -348,9 +348,9 @@
 
     invoke-direct {v0, p1, p0, p2}, Landroid/support/v4/app/LoaderManagerImpl;-><init>(Ljava/lang/String;Landroid/support/v4/app/FragmentHostCallback;Z)V
 
-    iget-object v1, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v1, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v1, p1, v0}, Lhd;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, v0}, Lgz;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
     :goto_0
@@ -413,13 +413,13 @@
 .method inactivateFragment(Ljava/lang/String;)V
     .locals 2
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v0, p1}, Lhd;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lgz;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -433,9 +433,9 @@
 
     invoke-virtual {v0}, Landroid/support/v4/app/LoaderManagerImpl;->doDestroy()V
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v0, p1}, Lhd;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lgz;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
@@ -465,17 +465,13 @@
 .end method
 
 .method public onGetLayoutInflater()Landroid/view/LayoutInflater;
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mContext:Landroid/content/Context;
 
-    const-string v1, "layout_inflater"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
-
-    check-cast v0, Landroid/view/LayoutInflater;
 
     return-object v0
 .end method
@@ -605,13 +601,13 @@
 .method reportLoaderStart()V
     .locals 4
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v0}, Lhd;->size()I
+    invoke-virtual {v0}, Lgz;->size()I
 
     move-result v2
 
@@ -624,9 +620,9 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v0, v1}, Lhd;->c(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lgz;->c(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -660,14 +656,14 @@
     return-void
 .end method
 
-.method restoreLoaderNonConfig(Lhd;)V
+.method restoreLoaderNonConfig(Lgz;)V
     .locals 3
 
     if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1}, Lhd;->size()I
+    invoke-virtual {p1}, Lgz;->size()I
 
     move-result v2
 
@@ -676,7 +672,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    invoke-virtual {p1, v1}, Lhd;->c(I)Ljava/lang/Object;
+    invoke-virtual {p1, v1}, Lgz;->c(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -691,23 +687,23 @@
     goto :goto_0
 
     :cond_0
-    iput-object p1, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iput-object p1, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     return-void
 .end method
 
-.method retainLoaderNonConfig()Lhd;
+.method retainLoaderNonConfig()Lgz;
     .locals 7
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v0}, Lhd;->size()I
+    invoke-virtual {v0}, Lgz;->size()I
 
     move-result v3
 
@@ -720,9 +716,9 @@
     :goto_0
     if-ltz v2, :cond_0
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
-    invoke-virtual {v0, v2}, Lhd;->c(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lgz;->c(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -778,11 +774,11 @@
     :cond_3
     invoke-virtual {v5}, Landroid/support/v4/app/LoaderManagerImpl;->doDestroy()V
 
-    iget-object v6, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v6, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     iget-object v5, v5, Landroid/support/v4/app/LoaderManagerImpl;->mWho:Ljava/lang/String;
 
-    invoke-virtual {v6, v5}, Lhd;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v5}, Lgz;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
@@ -792,7 +788,7 @@
     :cond_5
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lhd;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentHostCallback;->mAllLoaderManagers:Lgz;
 
     :goto_3
     return-object v0

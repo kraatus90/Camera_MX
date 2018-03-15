@@ -1,44 +1,107 @@
-.class public final Lbdv;
+.class final synthetic Lbdv;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lbdv;
+# instance fields
+.field private final a:Lbdu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lbdv;
-
-    invoke-direct {v0}, Lbdv;-><init>()V
-
-    sput-object v0, Lbdv;->a:Lbdv;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lbdu;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbdv;->a:Lbdu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 5
 
-    new-instance v0, Lbdu;
+    iget-object v0, p0, Lbdv;->a:Lbdu;
 
-    invoke-direct {v0}, Lbdu;-><init>()V
+    iget-object v1, v0, Lbdu;->w:Ljava/lang/Object;
 
-    return-object v0
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v2, v0, Lbdu;->v:Lbef;
+
+    sget-object v3, Lbef;->b:Lbef;
+
+    if-eq v2, v3, :cond_0
+
+    sget-object v2, Lbdu;->a:Ljava/lang/String;
+
+    iget-object v0, v0, Lbdu;->v:Lbef;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1d
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Ignore restartPreview: state="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    monitor-exit v1
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v2, v0, Lbdu;->o:Lbhr;
+
+    iget-object v3, v0, Lbdu;->s:Lbhc;
+
+    iget-object v4, v0, Lbdu;->q:Landroid/view/Surface;
+
+    iget-object v0, v0, Lbdu;->t:Lbhl;
+
+    invoke-virtual {v2, v3, v4, v0}, Lbhr;->a(Lbhc;Landroid/view/Surface;Lbhl;)Lkeh;
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

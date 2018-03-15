@@ -1,62 +1,80 @@
-.class public final Lgrg;
+.class public Lgrg;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:I
 
-.field private b:Ljxn;
+.field public b:Z
 
-.field private c:Ljxn;
+.field public final c:Landroid/graphics/Paint;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Landroid/graphics/Paint;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgrg;->a:Ljxn;
+    iput-object p1, p0, Lgrg;->c:Landroid/graphics/Paint;
 
-    iput-object p2, p0, Lgrg;->b:Ljxn;
+    return-void
+.end method
 
-    iput-object p3, p0, Lgrg;->c:Ljxn;
+.method public constructor <init>(Landroid/graphics/Paint;B)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lgrg;-><init>(Landroid/graphics/Paint;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(I)V
+    .locals 1
 
-    new-instance v2, Lgra;
+    iget-object v0, p0, Lgrg;->c:Landroid/graphics/Paint;
 
-    iget-object v0, p0, Lgrg;->a:Ljxn;
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v0
+.method public a(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
+    .locals 6
 
-    check-cast v0, Lgrr;
+    iget-boolean v0, p0, Lgrg;->b:Z
 
-    iget-object v1, p0, Lgrg;->b:Ljxn;
+    if-nez v0, :cond_0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget v1, p2, Landroid/graphics/RectF;->left:F
 
-    iget-object v1, p0, Lgrg;->c:Ljxn;
+    iget v0, p2, Landroid/graphics/RectF;->top:F
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget v2, p0, Lgrg;->a:I
 
-    move-result-object v1
+    int-to-float v2, v2
 
-    check-cast v1, Lhzt;
+    add-float/2addr v2, v0
 
-    invoke-direct {v2, v0, v1}, Lgra;-><init>(Lgrr;Lhzt;)V
+    iget v3, p2, Landroid/graphics/RectF;->right:F
 
-    return-object v2
+    iget v0, p2, Landroid/graphics/RectF;->top:F
+
+    iget v4, p0, Lgrg;->a:I
+
+    int-to-float v4, v4
+
+    add-float/2addr v4, v0
+
+    iget-object v5, p0, Lgrg;->c:Landroid/graphics/Paint;
+
+    move-object v0, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+
+    :cond_0
+    return-void
 .end method

@@ -2,109 +2,43 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:Ljava/lang/String;
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldyl;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/OutputStream;
-    .locals 5
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
-    new-instance v0, Ljava/io/File;
+    check-cast p1, Ldym;
 
-    sget-object v1, Landroid/os/Environment;->DIRECTORY_DCIM:Ljava/lang/String;
+    check-cast p2, Ldym;
 
-    invoke-static {v1}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+    iget-object v0, p2, Ldym;->c:Ljava/lang/Integer;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v2, p0, Ldyl;->a:Ljava/lang/String;
+    move-result v0
 
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    iget-object v1, p1, Ldym;->c:Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-nez v1, :cond_0
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
 
-    new-instance v0, Ljava/io/IOException;
+    move-result v0
 
-    const-string v1, "Unable to create or find media storage directory"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    new-instance v1, Ljava/io/FileOutputStream;
-
-    new-instance v2, Ljava/io/File;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "."
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-direct {v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    return-object v1
+    return v0
 .end method

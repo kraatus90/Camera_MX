@@ -1,37 +1,42 @@
-.class public final Lead;
-.super Lggu;
+.class final Lead;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lihb;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final synthetic a:Leac;
 
 
 # direct methods
-.method public constructor <init>(Ljvi;)V
+.method constructor <init>(Leac;)V
     .locals 0
 
-    iput-object p1, p0, Lead;->a:Ljvi;
+    iput-object p1, p0, Lead;->a:Leac;
 
-    invoke-direct {p0}, Lggu;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liic;)V
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    iget-object v0, p0, Lead;->a:Ljvi;
+    iget-object v0, p0, Lead;->a:Leac;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Leac;->a:Leaa;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v1, v0, Leaa;->a:Liay;
 
-    move-result-object v1
+    new-instance v2, Leab;
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
+    invoke-direct {v2, v0}, Leab;-><init>(Leaa;)V
+
+    invoke-virtual {v1, v2}, Liay;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

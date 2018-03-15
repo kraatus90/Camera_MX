@@ -13,7 +13,7 @@
 
     const-string v0, "ColorImageIO"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -113,7 +113,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lhpj;->a([BLjava/lang/String;)Z
+    invoke-static {v0, p1}, Lhbc;->a([BLjava/lang/String;)Z
 
     move-result v0
 
@@ -197,7 +197,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     move v0, v6
 
@@ -230,7 +230,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     move v0, v6
 

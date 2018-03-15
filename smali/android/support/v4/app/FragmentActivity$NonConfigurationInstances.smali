@@ -8,7 +8,7 @@
 
 .field public fragments:Landroid/support/v4/app/FragmentManagerNonConfig;
 
-.field public loaders:Lhd;
+.field public loaders:Lgz;
 
 
 # direct methods

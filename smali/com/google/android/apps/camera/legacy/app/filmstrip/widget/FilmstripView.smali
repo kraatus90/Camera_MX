@@ -16,19 +16,19 @@
 # instance fields
 .field private A:Z
 
-.field private B:Lcgh;
+.field private B:Lckw;
 
-.field public b:Lbtx;
+.field public b:Lbyy;
 
-.field public c:Lckd;
+.field public c:Lcmh;
 
-.field public d:Lclq;
+.field public d:Lcnv;
 
-.field public e:Lcfa;
+.field public e:Lcjp;
 
-.field public final f:Lckw;
+.field public final f:Lcnb;
 
-.field public g:Lfmd;
+.field public g:Lgyq;
 
 .field public h:I
 
@@ -36,15 +36,15 @@
 
 .field public j:F
 
-.field public k:Lcml;
+.field public k:Lcoq;
 
 .field public l:I
 
-.field public final m:[Lcmu;
+.field public final m:[Lcoz;
 
-.field public n:Lckl;
+.field public n:Lcmq;
 
-.field public o:Lewo;
+.field public o:Lgyl;
 
 .field public p:I
 
@@ -60,11 +60,11 @@
 
 .field public final v:Landroid/util/SparseArray;
 
-.field public w:Ljvi;
+.field public w:Lket;
 
 .field public x:Landroid/widget/TextView;
 
-.field public y:Lcmt;
+.field public y:Lcoy;
 
 .field private z:Landroid/view/MotionEvent;
 
@@ -75,7 +75,7 @@
 
     const-string v0, "FilmstripView"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -101,13 +101,13 @@
 
     const/4 v0, 0x5
 
-    new-array v0, v0, [Lcmu;
+    new-array v0, v0, [Lcoz;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
     const/4 v0, 0x1
 
@@ -127,25 +127,25 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->v:Landroid/util/SparseArray;
 
-    new-instance v0, Ljvi;
+    new-instance v0, Lket;
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+    invoke-direct {v0}, Lket;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->w:Ljvi;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->w:Lket;
 
-    new-instance v0, Lcmf;
+    new-instance v0, Lcok;
 
-    invoke-direct {v0, p0}, Lcmf;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;)V
+    invoke-direct {v0, p0}, Lcok;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->f:Lckw;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->f:Lcnb;
 
     return-void
 .end method
 
-.method public static synthetic a(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;)Lbtx;
+.method public static synthetic a(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;)Lbyy;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->b:Lbtx;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->b:Lbyy;
 
     return-object v0
 .end method
@@ -164,17 +164,17 @@
 
     const-string v1, "translateLeftViewItem() - Index out of bound!"
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, p1
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int/lit8 v2, p1, 0x1
 
@@ -207,16 +207,16 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_3
-    invoke-virtual {v0}, Lcmu;->c()I
+    invoke-virtual {v0}, Lcoz;->c()I
 
     move-result v2
 
-    invoke-virtual {v1}, Lcmu;->c()I
+    invoke-virtual {v1}, Lcoz;->c()I
 
     move-result v1
 
@@ -234,15 +234,15 @@
 
     iget v6, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j:F
 
-    invoke-virtual {v0, v4, v5, v6}, Lcmu;->a(Landroid/graphics/Rect;IF)V
+    invoke-virtual {v0, v4, v5, v6}, Lcoz;->a(Landroid/graphics/Rect;IF)V
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, v4}, Lcmu;->c(F)V
+    invoke-virtual {v0, v4}, Lcoz;->c(F)V
 
     const/4 v4, 0x0
 
-    invoke-virtual {v0, v4}, Lcmu;->a(I)V
+    invoke-virtual {v0, v4}, Lcoz;->a(I)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j()Z
 
@@ -262,14 +262,14 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {v0, v1}, Lcmu;->b(F)V
+    invoke-virtual {v0, v1}, Lcoz;->b(F)V
 
     goto :goto_0
 
     :cond_4
     int-to-float v1, v3
 
-    invoke-virtual {v0, v1}, Lcmu;->b(F)V
+    invoke-virtual {v0, v1}, Lcoz;->b(F)V
 
     goto :goto_0
 .end method
@@ -287,7 +287,7 @@
 
     const/4 v6, 0x2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v6
 
@@ -335,15 +335,15 @@
 
     add-int/2addr v1, v0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a([Lcmu;)V
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a([Lcoz;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v6
 
-    invoke-virtual {v0}, Lcmu;->c()I
+    invoke-virtual {v0}, Lcoz;->c()I
 
     move-result v2
 
@@ -359,7 +359,7 @@
     :goto_2
     if-ltz v0, :cond_5
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v0
 
@@ -387,17 +387,17 @@
 
     iget v5, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j:F
 
-    invoke-virtual {v0, v2, v3, v5}, Lcmu;->a(Landroid/graphics/Rect;IF)V
+    invoke-virtual {v0, v2, v3, v5}, Lcoz;->a(Landroid/graphics/Rect;IF)V
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Lcmu;->b(F)V
+    invoke-virtual {v0, v2}, Lcoz;->b(F)V
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, v2}, Lcmu;->c(F)V
+    invoke-virtual {v0, v2}, Lcoz;->c(F)V
 
-    invoke-virtual {v0, v4}, Lcmu;->a(I)V
+    invoke-virtual {v0, v4}, Lcoz;->a(I)V
 
     goto :goto_1
 
@@ -407,7 +407,7 @@
     :goto_3
     if-ge v0, v7, :cond_6
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v1, v0
 
@@ -419,7 +419,7 @@
 
     iget v5, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j:F
 
-    invoke-virtual {v1, v2, v3, v5}, Lcmu;->a(Landroid/graphics/Rect;IF)V
+    invoke-virtual {v1, v2, v3, v5}, Lcoz;->a(Landroid/graphics/Rect;IF)V
 
     invoke-direct {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->d(I)V
 
@@ -448,17 +448,17 @@
     :goto_4
     if-ge v3, v7, :cond_9
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v3
 
     if-eqz v0, :cond_8
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v3
 
-    iget v0, v0, Lcmu;->f:I
+    iget v0, v0, Lcoz;->f:I
 
     if-ne v0, v9, :cond_9
 
@@ -495,11 +495,11 @@
     goto :goto_5
 
     :cond_b
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v3
 
-    invoke-virtual {v0}, Lcmu;->c()I
+    invoke-virtual {v0}, Lcoz;->c()I
 
     move-result v0
 
@@ -514,25 +514,25 @@
     :goto_6
     if-ge v2, v7, :cond_a
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v2
 
     if-eqz v0, :cond_a
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v2
 
-    iget v0, v0, Lcmu;->f:I
+    iget v0, v0, Lcoz;->f:I
 
     if-eq v0, v9, :cond_18
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v2
 
-    invoke-virtual {v0}, Lcmu;->c()I
+    invoke-virtual {v0}, Lcoz;->c()I
 
     move-result v0
 
@@ -563,9 +563,9 @@
 
     if-ge v2, v7, :cond_d
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int v5, v0, v1
 
@@ -583,11 +583,11 @@
     :goto_9
     if-ge v0, v7, :cond_f
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aput-object v8, v1, v0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int/lit8 v2, v0, -0x1
 
@@ -595,21 +595,21 @@
 
     if-eqz v1, :cond_e
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int/lit8 v2, v0, -0x1
 
     aget-object v1, v1, v2
 
-    iget-object v1, v1, Lcmu;->g:Lcgh;
+    iget-object v1, v1, Lcoz;->g:Lckw;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    invoke-interface {v1}, Lcgh;->a()Lcgh;
+    invoke-interface {v1}, Lckw;->a()Lckw;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcgh;)Lcmu;
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lckw;)Lcoz;
 
     move-result-object v1
 
@@ -626,59 +626,59 @@
     :cond_10
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->invalidate()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
     if-eqz v0, :cond_11
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e()Lcgh;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e()Lckw;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lckl;->b(Lcgh;)V
+    invoke-virtual {v0, v1}, Lcmq;->a(Lckw;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v6
 
-    iget v0, v0, Lcmu;->e:I
+    iget v0, v0, Lcoz;->e:I
 
     add-int/lit8 v0, v0, -0x2
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v1}, Lfmd;->c()I
+    invoke-interface {v1}, Lgyq;->c()I
 
     move-result v1
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
-    iget-object v2, v2, Lckl;->a:Lbua;
+    iget-object v2, v2, Lcmq;->a:Lbzb;
 
-    iget-object v2, v2, Lbua;->J:Lfmc;
+    iget-object v2, v2, Lbzb;->J:Lgyp;
 
-    invoke-virtual {v2, v8, v0, v7, v1}, Lfmc;->onScroll(Landroid/widget/AbsListView;III)V
+    invoke-virtual {v2, v8, v0, v7, v1}, Lgyp;->onScroll(Landroid/widget/AbsListView;III)V
 
     :cond_11
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->y:Lcmt;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->y:Lcoy;
 
     if-eqz v0, :cond_12
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v6
 
-    iget-object v0, v0, Lcmu;->h:Lfvf;
+    iget-object v0, v0, Lcoz;->h:Leqd;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->y:Lcmt;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->y:Lcoy;
 
-    invoke-interface {v1, v0}, Lcmt;->a(Lfvf;)V
+    invoke-interface {v1, v0}, Lcoy;->a(Leqd;)V
 
     :cond_12
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v6
 
@@ -686,16 +686,16 @@
 
     iget v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->l:I
 
-    iget v2, v0, Lcmu;->f:I
+    iget v2, v0, Lcoz;->f:I
 
     sub-int/2addr v1, v2
 
-    iput v4, v0, Lcmu;->f:I
+    iput v4, v0, Lcoz;->f:I
 
     iput v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->l:I
 
     :cond_13
-    iput-object v8, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lcgh;
+    iput-object v8, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lckw;
 
     goto/16 :goto_0
 
@@ -721,9 +721,9 @@
 
     if-ltz v2, :cond_16
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int v5, v0, v1
 
@@ -741,11 +741,11 @@
     :goto_c
     if-ltz v0, :cond_10
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aput-object v8, v1, v0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int/lit8 v2, v0, 0x1
 
@@ -753,21 +753,21 @@
 
     if-eqz v1, :cond_17
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int/lit8 v2, v0, 0x1
 
     aget-object v1, v1, v2
 
-    iget-object v1, v1, Lcmu;->g:Lcgh;
+    iget-object v1, v1, Lcoz;->g:Lckw;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    invoke-interface {v1}, Lcgh;->b()Lcgh;
+    invoke-interface {v1}, Lckw;->b()Lckw;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcgh;)Lcmu;
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lckw;)Lcoz;
 
     move-result-object v1
 
@@ -786,7 +786,7 @@
     goto/16 :goto_7
 .end method
 
-.method private final a([Lcmu;)V
+.method private final a([Lcoz;)V
     .locals 4
 
     const/4 v0, 0x2
@@ -801,7 +801,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    iput v1, v0, Lcmu;->f:I
+    iput v1, v0, Lcoz;->f:I
 
     const/4 v0, 0x1
 
@@ -816,9 +816,9 @@
 
     aget-object v2, p1, v2
 
-    iget v2, v2, Lcmu;->f:I
+    iget v2, v2, Lcoz;->f:I
 
-    iget-object v3, v1, Lcmu;->b:Landroid/view/View;
+    iget-object v3, v1, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -830,7 +830,7 @@
 
     sub-int/2addr v2, v3
 
-    iput v2, v1, Lcmu;->f:I
+    iput v2, v1, Lcoz;->f:I
 
     add-int/lit8 v0, v0, -0x1
 
@@ -852,9 +852,9 @@
 
     aget-object v2, p1, v2
 
-    iget v3, v2, Lcmu;->f:I
+    iget v3, v2, Lcoz;->f:I
 
-    iget-object v2, v2, Lcmu;->b:Landroid/view/View;
+    iget-object v2, v2, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -866,7 +866,7 @@
 
     add-int/2addr v2, v3
 
-    iput v2, v1, Lcmu;->f:I
+    iput v2, v1, Lcoz;->f:I
 
     add-int/lit8 v0, v0, 0x1
 
@@ -876,13 +876,13 @@
 .method private final c(I)V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     array-length v0, v0
 
     if-ge p1, v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, p1
 
@@ -893,13 +893,13 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, p1
 
-    iget-object v0, v0, Lcmu;->g:Lcgh;
+    iget-object v0, v0, Lcoz;->g:Lckw;
 
-    invoke-interface {v0}, Lcgh;->c()Lfvf;
+    invoke-interface {v0}, Lckw;->c()Leqd;
 
     move-result-object v0
 
@@ -909,18 +909,18 @@
 
     const-string v1, "removeItem() - Trying to remove a null item!"
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_2
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, p1
 
-    invoke-virtual {v0}, Lcmu;->d()V
+    invoke-virtual {v0}, Lcoz;->d()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v1, 0x0
 
@@ -945,17 +945,17 @@
 
     const-string v1, "fadeAndScaleRightViewItem() - bufferIndex out of bound!"
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, p1
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int/lit8 v2, p1, -0x1
 
@@ -988,7 +988,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -997,12 +997,12 @@
 
     if-le p1, v2, :cond_4
 
-    invoke-virtual {v0, v3}, Lcmu;->a(I)V
+    invoke-virtual {v0, v3}, Lcoz;->a(I)V
 
     goto :goto_0
 
     :cond_4
-    invoke-virtual {v1}, Lcmu;->c()I
+    invoke-virtual {v1}, Lcoz;->c()I
 
     move-result v1
 
@@ -1010,12 +1010,12 @@
 
     if-gt v2, v1, :cond_5
 
-    invoke-virtual {v0, v3}, Lcmu;->a(I)V
+    invoke-virtual {v0, v3}, Lcoz;->a(I)V
 
     goto :goto_0
 
     :cond_5
-    invoke-virtual {v0}, Lcmu;->c()I
+    invoke-virtual {v0}, Lcoz;->c()I
 
     move-result v2
 
@@ -1043,17 +1043,17 @@
 
     add-float/2addr v4, v5
 
-    invoke-virtual {v0, v3, v2, v4}, Lcmu;->a(Landroid/graphics/Rect;IF)V
+    invoke-virtual {v0, v3, v2, v4}, Lcoz;->a(Landroid/graphics/Rect;IF)V
 
-    invoke-virtual {v0, v1}, Lcmu;->c(F)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcmu;->b(F)V
+    invoke-virtual {v0, v1}, Lcoz;->c(F)V
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcmu;->a(I)V
+    invoke-virtual {v0, v1}, Lcoz;->b(F)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcoz;->a(I)V
 
     goto :goto_0
 .end method
@@ -1061,7 +1061,7 @@
 .method private final n()V
     .locals 6
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     array-length v2, v1
 
@@ -1074,15 +1074,15 @@
 
     if-eqz v3, :cond_0
 
-    iget-object v4, v3, Lcmu;->g:Lcgh;
+    iget-object v4, v3, Lcoz;->g:Lckw;
 
-    iget-object v5, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v5, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v5, v4}, Lfmd;->a(Lcgh;)I
+    invoke-interface {v5, v4}, Lgyq;->a(Lckw;)I
 
     move-result v4
 
-    iput v4, v3, Lcmu;->e:I
+    iput v4, v3, Lcoz;->e:I
 
     :cond_0
     add-int/lit8 v0, v0, 0x1
@@ -1107,17 +1107,17 @@
 
     if-ge v0, v2, :cond_1
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v0
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v0
 
-    iget-object v2, v2, Lcmu;->g:Lcgh;
+    iget-object v2, v2, Lcoz;->g:Lckw;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1127,7 +1127,7 @@
     goto :goto_0
 
     :cond_0
-    sget-object v2, Lcgh;->c:Lcgh;
+    sget-object v2, Lckw;->c:Lckw;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1139,7 +1139,7 @@
 
 
 # virtual methods
-.method public final a(Lcgh;)Lcmu;
+.method public final a(Lckw;)Lcoz;
     .locals 9
 
     const/4 v8, 0x0
@@ -1148,9 +1148,9 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->c:Lckd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->c:Lcmh;
 
-    invoke-interface {v0}, Lckd;->d()Z
+    invoke-interface {v0}, Lcmh;->d()Z
 
     move-result v0
 
@@ -1160,7 +1160,7 @@
 
     const-string v2, "Activity destroyed, don\'t load data"
 
-    invoke-static {v0, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -1168,7 +1168,7 @@
     return-object v0
 
     :cond_0
-    sget-object v0, Lcgh;->c:Lcgh;
+    sget-object v0, Lckw;->c:Lckw;
 
     if-ne p1, v0, :cond_1
 
@@ -1176,7 +1176,7 @@
 
     const-string v2, "Cannot build ViewItem from invalid node. Returning null."
 
-    invoke-static {v0, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -1239,21 +1239,21 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v3, v0, v2}, Lfmd;->a(II)V
+    invoke-interface {v3, v0, v2}, Lgyq;->a(II)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v0, p1}, Lfmd;->a(Lcgh;)I
+    invoke-interface {v0, p1}, Lgyq;->a(Lckw;)I
 
     move-result v3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v0, v3}, Lfmd;->c(I)I
+    invoke-interface {v0, v3}, Lgyq;->c(I)I
 
     move-result v0
 
@@ -1310,13 +1310,13 @@
 
     move-result-object v0
 
-    invoke-static {v4, v0}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v0}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    iget-object v4, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e:Lcfa;
+    iget-object v4, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e:Lcjp;
 
-    invoke-interface {v0, v2, p1, v4}, Lfmd;->a(Landroid/view/View;Lcgh;Lcfa;)Landroid/view/View;
+    invoke-interface {v0, v2, p1, v4}, Lgyq;->a(Landroid/view/View;Lckw;Lcjp;)Landroid/view/View;
 
     move-result-object v2
 
@@ -1328,9 +1328,9 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v3}, Lfmd;->c()I
+    invoke-interface {v3}, Lgyq;->c()I
 
     move-result v3
 
@@ -1372,7 +1372,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -1384,13 +1384,13 @@
     goto :goto_2
 
     :cond_4
-    new-instance v0, Lcmu;
+    new-instance v0, Lcoz;
 
-    invoke-direct {v0, v3, v2, p1, p0}, Lcmu;-><init>(ILandroid/view/View;Lcgh;Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;)V
+    invoke-direct {v0, v3, v2, p1, p0}, Lcoz;-><init>(ILandroid/view/View;Lckw;Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;)V
 
-    iget-object v1, v0, Lcmu;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v1, v0, Lcoz;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v2, v0, Lcmu;->b:Landroid/view/View;
+    iget-object v2, v0, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->indexOfChild(Landroid/view/View;)I
 
@@ -1398,22 +1398,22 @@
 
     if-gez v1, :cond_5
 
-    iget-object v1, v0, Lcmu;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v1, v0, Lcoz;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v2, v0, Lcmu;->b:Landroid/view/View;
+    iget-object v2, v0, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->addView(Landroid/view/View;)V
 
     :cond_5
     const/4 v1, 0x4
 
-    invoke-virtual {v0, v1}, Lcmu;->a(I)V
+    invoke-virtual {v0, v1}, Lcoz;->a(I)V
 
-    invoke-virtual {v0, v7}, Lcmu;->c(F)V
+    invoke-virtual {v0, v7}, Lcoz;->c(F)V
 
-    invoke-virtual {v0, v8}, Lcmu;->b(F)V
+    invoke-virtual {v0, v8}, Lcoz;->b(F)V
 
-    invoke-virtual {v0, v8}, Lcmu;->a(F)V
+    invoke-virtual {v0, v8}, Lcoz;->a(F)V
 
     goto/16 :goto_0
 
@@ -1428,7 +1428,7 @@
 
     const/4 v1, 0x2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v1
 
@@ -1439,21 +1439,21 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v1
 
-    iget-object v0, v0, Lcmu;->g:Lcgh;
+    iget-object v0, v0, Lcoz;->g:Lckw;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
     iget v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j:F
 
-    sget-object v3, Lcgh;->c:Lcgh;
+    sget-object v3, Lckw;->c:Lckw;
 
     if-eq v0, v3, :cond_0
 
-    invoke-interface {v0}, Lcgh;->c()Lfvf;
+    invoke-interface {v0}, Lckw;->c()Leqd;
 
     move-result-object v0
 
@@ -1461,11 +1461,11 @@
 
     move-result-wide v4
 
-    invoke-interface {v0}, Lfvf;->f()Lfvj;
+    invoke-interface {v0}, Leqd;->f()Leqh;
 
     move-result-object v3
 
-    iget-object v3, v3, Lfvj;->f:Ljava/util/Date;
+    iget-object v3, v3, Leqh;->f:Ljava/util/Date;
 
     invoke-virtual {v3}, Ljava/util/Date;->getTime()J
 
@@ -1473,11 +1473,11 @@
 
     sub-long/2addr v4, v6
 
-    invoke-interface {v0}, Lfvf;->f()Lfvj;
+    invoke-interface {v0}, Leqd;->f()Leqh;
 
     move-result-object v3
 
-    iget-object v3, v3, Lfvj;->g:Ljava/lang/String;
+    iget-object v3, v3, Leqh;->g:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1493,17 +1493,17 @@
 
     new-instance v3, Ljava/io/File;
 
-    invoke-interface {v0}, Lfvf;->f()Lfvj;
+    invoke-interface {v0}, Leqd;->f()Leqh;
 
     move-result-object v4
 
-    iget-object v4, v4, Lfvj;->g:Ljava/lang/String;
+    iget-object v4, v4, Leqh;->g:Ljava/lang/String;
 
     invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, v1, Lckl;->a:Lbua;
+    iget-object v1, v1, Lcmq;->a:Lbzb;
 
-    invoke-static {v1}, Lbua;->a(Lbua;)Lidm;
+    invoke-static {v1}, Lbzb;->a(Lbzb;)Liih;
 
     move-result-object v1
 
@@ -1511,17 +1511,17 @@
 
     move-result-object v3
 
-    invoke-interface {v0}, Lfvf;->f()Lfvj;
+    invoke-interface {v0}, Leqd;->f()Leqh;
 
     move-result-object v0
 
-    iget-object v0, v0, Lfvj;->f:Ljava/util/Date;
+    iget-object v0, v0, Leqh;->f:Ljava/util/Date;
 
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
     move-result-wide v4
 
-    invoke-interface {v1, v3, v4, v5, v2}, Lidm;->a(Ljava/lang/String;JF)V
+    invoke-interface {v1, v3, v4, v5, v2}, Liih;->a(Ljava/lang/String;JF)V
 
     goto :goto_0
 .end method
@@ -1529,7 +1529,7 @@
 .method public final a(I)V
     .locals 5
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, p1
 
@@ -1540,19 +1540,19 @@
     return-void
 
     :cond_1
-    iget v1, v0, Lcmu;->i:I
+    iget v1, v0, Lcoz;->i:I
 
-    sget v2, Leh;->Q:I
+    sget v2, Lep;->T:I
 
     if-eq v1, v2, :cond_0
 
-    sget v1, Leh;->Q:I
+    sget v1, Lep;->T:I
 
-    iput v1, v0, Lcmu;->i:I
+    iput v1, v0, Lcoz;->i:I
 
     sget-object v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-    iget v2, v0, Lcmu;->e:I
+    iget v2, v0, Lcoz;->e:I
 
     const/16 v3, 0x2d
 
@@ -1580,13 +1580,13 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, v0, Lcmu;->h:Lfvf;
+    iget-object v1, v0, Lcoz;->h:Leqd;
 
-    iget-object v0, v0, Lcmu;->b:Landroid/view/View;
+    iget-object v0, v0, Lcoz;->b:Landroid/view/View;
 
-    invoke-interface {v1, v0}, Lfvf;->b(Landroid/view/View;)V
+    invoke-interface {v1, v0}, Leqd;->b(Landroid/view/View;)V
 
     goto :goto_0
 .end method
@@ -1594,7 +1594,7 @@
 .method public final a(Landroid/graphics/Bitmap;)V
     .locals 6
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v1, 0x2
 
@@ -1606,13 +1606,13 @@
 
     const-string v1, "renderPlaceholderIntoFirstItem() --current filmstrip item is null()"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-virtual {v0}, Lcmu;->f()Z
+    invoke-virtual {v0}, Lcoz;->f()Z
 
     move-result v1
 
@@ -1622,20 +1622,20 @@
 
     const-string v1, "renderPlaceholderIntoFirstItem() -- current filmstrip isn\'t first node"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, v0, Lcmu;->b:Landroid/view/View;
+    iget-object v1, v0, Lcoz;->b:Landroid/view/View;
 
-    sget v2, Leh;->Q:I
+    sget v2, Lep;->T:I
 
-    iput v2, v0, Lcmu;->i:I
+    iput v2, v0, Lcoz;->i:I
 
     sget-object v2, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-    iget v3, v0, Lcmu;->e:I
+    iget v3, v0, Lcoz;->e:I
 
     const/16 v4, 0x3c
 
@@ -1663,23 +1663,23 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, v0, Lcmu;->h:Lfvf;
+    iget-object v0, v0, Lcoz;->h:Leqd;
 
-    invoke-interface {v0, v1, p1}, Lfvf;->a(Landroid/view/View;Landroid/graphics/Bitmap;)V
+    invoke-interface {v0, v1, p1}, Leqd;->a(Landroid/view/View;Landroid/graphics/Bitmap;)V
 
     goto :goto_0
 .end method
 
-.method public final a(Lcmu;)V
+.method public final a(Lcoz;)V
     .locals 4
 
     const/4 v3, 0x0
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->q:Landroid/animation/TimeInterpolator;
 
-    iget-object v1, p1, Lcmu;->j:Landroid/animation/ValueAnimator;
+    iget-object v1, p1, Lcoz;->j:Landroid/animation/ValueAnimator;
 
     if-nez v1, :cond_0
 
@@ -1687,34 +1687,34 @@
 
     invoke-direct {v1}, Landroid/animation/ValueAnimator;-><init>()V
 
-    iput-object v1, p1, Lcmu;->j:Landroid/animation/ValueAnimator;
+    iput-object v1, p1, Lcoz;->j:Landroid/animation/ValueAnimator;
 
-    iget-object v1, p1, Lcmu;->j:Landroid/animation/ValueAnimator;
+    iget-object v1, p1, Lcoz;->j:Landroid/animation/ValueAnimator;
 
-    new-instance v2, Lcmv;
+    new-instance v2, Lcpa;
 
-    invoke-direct {v2, p1}, Lcmv;-><init>(Lcmu;)V
+    invoke-direct {v2, p1}, Lcpa;-><init>(Lcoz;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     :cond_0
-    iget-object v1, p1, Lcmu;->j:Landroid/animation/ValueAnimator;
+    iget-object v1, p1, Lcoz;->j:Landroid/animation/ValueAnimator;
 
-    invoke-virtual {p1}, Lcmu;->b()F
+    invoke-virtual {p1}, Lcoz;->b()F
 
     move-result v2
 
-    invoke-static {v1, v2, v3, v0}, Lcmu;->a(Landroid/animation/ValueAnimator;FFLandroid/animation/TimeInterpolator;)V
+    invoke-static {v1, v2, v3, v0}, Lcoz;->a(Landroid/animation/ValueAnimator;FFLandroid/animation/TimeInterpolator;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->q:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {p1, v3, v0}, Lcmu;->a(FLandroid/animation/TimeInterpolator;)V
+    invoke-virtual {p1, v3, v0}, Lcoz;->a(FLandroid/animation/TimeInterpolator;)V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->q:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {p1, v0, v1}, Lcmu;->b(FLandroid/animation/TimeInterpolator;)V
+    invoke-virtual {p1, v0, v1}, Lcoz;->b(FLandroid/animation/TimeInterpolator;)V
 
     return-void
 .end method
@@ -1740,11 +1740,17 @@
 .end method
 
 .method public final b(I)V
-    .locals 9
+    .locals 12
 
-    const/16 v8, 0x28
+    const/16 v11, 0x28
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    const/4 v10, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v8, 0x0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v0, p1
 
@@ -1754,20 +1760,20 @@
 
     const-string v1, "updateViewItem() - Trying to update an null item!"
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-object v2, v1, Lcmu;->g:Lcgh;
+    iget-object v2, v1, Lcoz;->g:Lckw;
 
-    invoke-interface {v2}, Lcgh;->c()Lfvf;
+    invoke-interface {v2}, Lckw;->c()Leqd;
 
     move-result-object v3
 
-    iget-object v0, v1, Lcmu;->h:Lfvf;
+    iget-object v0, v1, Lcoz;->h:Leqd;
 
     invoke-virtual {v3, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -1775,81 +1781,81 @@
 
     if-nez v4, :cond_7
 
-    iget-object v4, v1, Lcmu;->b:Landroid/view/View;
+    iget-object v4, v1, Lcoz;->b:Landroid/view/View;
 
-    invoke-interface {v0, v4}, Lfvf;->d(Landroid/view/View;)V
+    invoke-interface {v0, v4}, Leqd;->d(Landroid/view/View;)V
 
-    invoke-static {v2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcgh;
-
-    iput-object v0, v1, Lcmu;->g:Lcgh;
-
-    invoke-interface {v2}, Lcgh;->c()Lfvf;
+    invoke-static {v2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, v1, Lcmu;->h:Lfvf;
+    check-cast v0, Lckw;
 
-    iget-object v0, v1, Lcmu;->h:Lfvf;
+    iput-object v0, v1, Lcoz;->g:Lckw;
 
-    invoke-interface {v0}, Lfvf;->k()Lici;
+    invoke-interface {v2}, Lckw;->c()Leqd;
 
     move-result-object v0
 
-    iget v0, v0, Lici;->a:I
+    iput-object v0, v1, Lcoz;->h:Leqd;
 
-    iget-object v4, v1, Lcmu;->h:Lfvf;
+    iget-object v0, v1, Lcoz;->h:Leqd;
 
-    invoke-interface {v4}, Lfvf;->k()Lici;
+    invoke-interface {v0}, Leqd;->l()Lihc;
+
+    move-result-object v0
+
+    iget v0, v0, Lihc;->a:I
+
+    iget-object v4, v1, Lcoz;->h:Leqd;
+
+    invoke-interface {v4}, Leqd;->l()Lihc;
 
     move-result-object v4
 
-    iget v4, v4, Lici;->b:I
+    iget v4, v4, Lihc;->b:I
 
-    iget-object v5, v1, Lcmu;->h:Lfvf;
+    iget-object v5, v1, Lcoz;->h:Leqd;
 
-    invoke-interface {v5}, Lfvf;->l()I
+    invoke-interface {v5}, Leqd;->m()I
 
     move-result v5
 
-    iget-object v6, v1, Lcmu;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v6, v1, Lcoz;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
     invoke-virtual {v6}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->getMeasuredWidth()I
 
     move-result v6
 
-    iget-object v7, v1, Lcmu;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v7, v1, Lcoz;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
     invoke-virtual {v7}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->getMeasuredHeight()I
 
     move-result v7
 
-    invoke-static {v0, v4, v5, v6, v7}, Lgkt;->a(IIIII)Landroid/graphics/Point;
+    invoke-static {v0, v4, v5, v6, v7}, Lhbi;->a(IIIII)Landroid/graphics/Point;
 
     move-result-object v0
 
-    iput-object v0, v1, Lcmu;->d:Landroid/graphics/Point;
+    iput-object v0, v1, Lcoz;->d:Landroid/graphics/Point;
 
-    iget v0, v1, Lcmu;->i:I
+    iget v0, v1, Lcoz;->i:I
 
-    sget v4, Leh;->P:I
+    sget v4, Lep;->S:I
 
     if-eq v0, v4, :cond_2
 
-    sget v0, Leh;->P:I
+    sget v0, Lep;->S:I
 
-    iput v0, v1, Lcmu;->i:I
+    iput v0, v1, Lcoz;->i:I
 
     sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-    iget v4, v1, Lcmu;->e:I
+    iget v4, v1, Lcoz;->e:I
 
     new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5, v8}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v5, v11}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v6, "[ViewItem:"
 
@@ -1871,13 +1877,13 @@
 
     move-result-object v4
 
-    invoke-static {v0, v4}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcmu;->h:Lfvf;
+    iget-object v0, v1, Lcoz;->h:Leqd;
 
-    iget-object v4, v1, Lcmu;->b:Landroid/view/View;
+    iget-object v4, v1, Lcoz;->b:Landroid/view/View;
 
-    invoke-interface {v0, v4}, Lfvf;->a(Landroid/view/View;)V
+    invoke-interface {v0, v4}, Leqd;->a(Landroid/view/View;)V
 
     :cond_2
     sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
@@ -1914,16 +1920,16 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    iget-object v1, v1, Lcmu;->b:Landroid/view/View;
+    iget-object v1, v1, Lcoz;->b:Landroid/view/View;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e:Lcfa;
+    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e:Lcjp;
 
-    invoke-interface {v0, v1, v2, v3}, Lfmd;->a(Landroid/view/View;Lcgh;Lcfa;)Landroid/view/View;
+    invoke-interface {v0, v1, v2, v3}, Lgyq;->a(Landroid/view/View;Lckw;Lcjp;)Landroid/view/View;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->c()Z
 
@@ -1931,18 +1937,16 @@
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcml;->a(Z)Z
+    invoke-virtual {v0, v10}, Lcoq;->a(Z)Z
 
     :cond_3
     sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v8}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v1, v11}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v2, "updateViewItem(bufferIndex: "
 
@@ -1964,7 +1968,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
@@ -1990,13 +1994,13 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v1}, Lcml;->f()Z
+    invoke-virtual {v1}, Lcoq;->f()Z
 
     move-result v1
 
@@ -2020,11 +2024,11 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v0}, Lcml;->f()Z
+    invoke-virtual {v0}, Lcoq;->f()Z
 
     move-result v0
 
@@ -2046,9 +2050,9 @@
 
     if-nez v0, :cond_6
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v0}, Lcml;->f()Z
+    invoke-virtual {v0}, Lcoq;->f()Z
 
     move-result v0
 
@@ -2061,17 +2065,59 @@
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->invalidate()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e()Lcgh;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e()Lckw;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lckl;->a(Lcgh;)V
+    iget-object v2, v0, Lcmq;->a:Lbzb;
+
+    iget-boolean v2, v2, Lbzb;->V:Z
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, v0, Lcmq;->a:Lbzb;
+
+    sget-object v0, Lckw;->c:Lckw;
+
+    if-ne v1, v0, :cond_8
+
+    sget-object v0, Lbzb;->a:Ljava/lang/String;
+
+    const-string v1, "Current data ID not found."
+
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, v2, Lbzb;->L:Lcll;
+
+    invoke-virtual {v0, v9}, Lcll;->a(Leqd;)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v8}, Lclo;->b(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v8}, Lclo;->e(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v8}, Lclo;->c(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v8}, Lclo;->d(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0}, Lclo;->a()V
+
+    invoke-virtual {v2}, Lbzb;->P()V
 
     goto/16 :goto_0
 
@@ -2080,12 +2126,137 @@
 
     const-string v3, "updateViewItem() - updating data with the same item"
 
-    invoke-static {v0, v3}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1
+
+    :cond_8
+    invoke-interface {v1}, Lckw;->c()Leqd;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lbzb;->a(Leqd;)V
+
+    invoke-virtual {v2}, Lbzb;->I()V
+
+    iget-object v0, v2, Lbzb;->L:Lcll;
+
+    invoke-virtual {v0, v3}, Lcll;->a(Leqd;)V
+
+    iget-boolean v0, v2, Lbzb;->w:Z
+
+    if-eqz v0, :cond_9
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v8}, Lclo;->b(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v8}, Lclo;->e(Z)V
+
+    :goto_2
+    iget-object v0, v2, Lbzb;->E:Lgyq;
+
+    invoke-interface {v0, v1}, Lgyq;->a(Lckw;)I
+
+    move-result v0
+
+    iget-object v1, v2, Lbzb;->E:Lgyq;
+
+    invoke-interface {v1, v0}, Lgyq;->b(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, v2, Lbzb;->E:Lgyq;
+
+    invoke-interface {v1, v0}, Lgyq;->a(I)Landroid/os/AsyncTask;
+
+    goto/16 :goto_0
+
+    :cond_9
+    iget-object v0, v2, Lbzb;->o:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0, v10}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result v0
+
+    if-nez v0, :cond_a
+
+    iget-object v0, v2, Lbzb;->n:Lihs;
+
+    const-string v4, "NFC#init"
+
+    invoke-interface {v0, v4}, Lihs;->a(Ljava/lang/String;)V
+
+    iget-object v0, v2, Lbzb;->e:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_a
+
+    iget-object v0, v2, Lbzb;->q:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v4, v9, v0}, Landroid/nfc/NfcAdapter;->setBeamPushUris([Landroid/net/Uri;Landroid/app/Activity;)V
+
+    new-instance v5, Lbzl;
+
+    invoke-direct {v5, v2}, Lbzl;-><init>(Lbzb;)V
+
+    iget-object v0, v2, Lbzb;->q:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v4, v5, v0}, Landroid/nfc/NfcAdapter;->setBeamPushUrisCallback(Landroid/nfc/NfcAdapter$CreateBeamUrisCallback;Landroid/app/Activity;)V
+
+    iget-object v0, v2, Lbzb;->n:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    :cond_a
+    invoke-interface {v3}, Leqd;->f()Leqh;
+
+    move-result-object v0
+
+    iget-object v0, v0, Leqh;->h:Landroid/net/Uri;
+
+    sget-object v3, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    invoke-virtual {v0, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_b
+
+    iget-object v3, v2, Lbzb;->p:[Landroid/net/Uri;
+
+    aput-object v0, v3, v8
+
+    goto :goto_2
+
+    :cond_b
+    iget-object v0, v2, Lbzb;->p:[Landroid/net/Uri;
+
+    aput-object v9, v0, v8
+
+    goto :goto_2
 .end method
 
-.method public final b(Lcgh;)V
+.method public final b(Lckw;)V
     .locals 13
 
     const/4 v12, 0x0
@@ -2109,7 +2280,7 @@
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g()V
 
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->d(Lcgh;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->d(Lckw;)I
 
     move-result v0
 
@@ -2121,23 +2292,23 @@
     return-void
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v5, v1, v0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    invoke-virtual {v0}, [Lcmu;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lcoz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lcmu;
+    check-cast v0, [Lcoz;
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o()Ljava/util/List;
 
     move-result-object v1
 
-    invoke-static {v1, v12}, Lckm;->a(Ljava/util/List;Lcgh;)Lckn;
+    invoke-static {v1, v12}, Lcmr;->a(Ljava/util/List;Lckw;)Lcms;
 
     move-result-object v6
 
@@ -2146,15 +2317,15 @@
     :goto_1
     if-ge v4, v11, :cond_5
 
-    iget-object v1, v6, Lckn;->a:Ljava/util/List;
+    iget-object v1, v6, Lcms;->a:Ljava/util/List;
 
     invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcgh;
+    check-cast v1, Lckw;
 
-    iget-object v2, v6, Lckn;->b:Ljava/util/List;
+    iget-object v2, v6, Lcms;->b:Ljava/util/List;
 
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2166,7 +2337,7 @@
 
     move-result v2
 
-    sget-object v7, Lcgh;->c:Lcgh;
+    sget-object v7, Lckw;->c:Lckw;
 
     if-ne v1, v7, :cond_3
 
@@ -2183,7 +2354,7 @@
     :cond_3
     if-ne v2, v9, :cond_4
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcgh;)Lcmu;
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lckw;)Lcoz;
 
     move-result-object v1
 
@@ -2202,7 +2373,7 @@
 
     aget-object v7, v0, v4
 
-    iget-object v7, v7, Lcmu;->b:Landroid/view/View;
+    iget-object v7, v7, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2216,16 +2387,16 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {v2, v1}, Lcmu;->b(F)V
+    invoke-virtual {v2, v1}, Lcoz;->b(F)V
 
     aget-object v1, v0, v4
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcmu;)V
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcoz;)V
 
     goto :goto_2
 
     :cond_4
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v1, v2
 
@@ -2234,14 +2405,14 @@
     goto :goto_3
 
     :cond_5
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a([Lcmu;)V
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a([Lcoz;)V
 
     move v1, v3
 
     :goto_4
     if-ge v1, v11, :cond_6
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v3, v0, v1
 
@@ -2254,9 +2425,9 @@
     :cond_6
     invoke-direct {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v0}, Lcml;->f()Z
+    invoke-virtual {v0}, Lcoq;->f()Z
 
     move-result v0
 
@@ -2275,7 +2446,7 @@
 
     div-int/lit8 v0, v0, 0x8
 
-    invoke-virtual {v5}, Lcmu;->a()F
+    invoke-virtual {v5}, Lcoz;->a()F
 
     move-result v1
 
@@ -2286,7 +2457,7 @@
     neg-int v0, v0
 
     :cond_8
-    invoke-virtual {v5}, Lcmu;->a()F
+    invoke-virtual {v5}, Lcoz;->a()F
 
     move-result v1
 
@@ -2296,15 +2467,15 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->q:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {v5, v0, v1}, Lcmu;->a(FLandroid/animation/TimeInterpolator;)V
+    invoke-virtual {v5, v0, v1}, Lcoz;->a(FLandroid/animation/TimeInterpolator;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->q:Landroid/animation/TimeInterpolator;
 
-    invoke-virtual {v5, v10, v0}, Lcmu;->b(FLandroid/animation/TimeInterpolator;)V
+    invoke-virtual {v5, v10, v0}, Lcoz;->b(FLandroid/animation/TimeInterpolator;)V
 
-    new-instance v0, Lcmd;
+    new-instance v0, Lcoi;
 
-    invoke-direct {v0, v5}, Lcmd;-><init>(Lcmu;)V
+    invoke-direct {v0, v5}, Lcoi;-><init>(Lcoz;)V
 
     const-wide/16 v2, 0x190
 
@@ -2314,12 +2485,12 @@
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->invalidate()V
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lcgh;
+    iput-object p1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lckw;
 
     goto/16 :goto_0
 .end method
 
-.method public final c(Lcgh;)V
+.method public final c(Lckw;)V
     .locals 11
 
     const/4 v10, 0x5
@@ -2343,9 +2514,9 @@
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g()V
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->c:Lckd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->c:Lcmh;
 
-    invoke-interface {v0}, Lckd;->d()Z
+    invoke-interface {v0}, Lcmh;->d()Z
 
     move-result v0
 
@@ -2355,25 +2526,25 @@
 
     const-string v1, "Aborting  animateNodeInsert, activity closing."
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    invoke-virtual {v0}, [Lcmu;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lcoz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lcmu;
+    check-cast v0, [Lcoz;
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o()Ljava/util/List;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v4
 
@@ -2382,9 +2553,9 @@
     invoke-interface {v1, v4, p1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lcgh;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lckw;
 
-    invoke-static {v1, v2}, Lckm;->a(Ljava/util/List;Lcgh;)Lckn;
+    invoke-static {v1, v2}, Lcmr;->a(Ljava/util/List;Lckw;)Lcms;
 
     move-result-object v5
 
@@ -2393,15 +2564,15 @@
     :goto_1
     if-ge v4, v10, :cond_8
 
-    iget-object v1, v5, Lckn;->a:Ljava/util/List;
+    iget-object v1, v5, Lcms;->a:Ljava/util/List;
 
     invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcgh;
+    check-cast v1, Lckw;
 
-    iget-object v2, v5, Lckn;->b:Ljava/util/List;
+    iget-object v2, v5, Lcms;->b:Ljava/util/List;
 
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2413,7 +2584,7 @@
 
     move-result v2
 
-    sget-object v6, Lcgh;->c:Lcgh;
+    sget-object v6, Lckw;->c:Lckw;
 
     if-ne v1, v6, :cond_3
 
@@ -2432,7 +2603,7 @@
     if-ne v1, p1, :cond_6
 
     :cond_4
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcgh;)Lcmu;
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lckw;)Lcoz;
 
     move-result-object v6
 
@@ -2448,7 +2619,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lcmu;->c(F)V
+    invoke-virtual {v1, v2}, Lcoz;->c(F)V
 
     aget-object v1, v0, v4
 
@@ -2460,23 +2631,23 @@
 
     int-to-float v2, v2
 
-    invoke-virtual {v1, v2}, Lcmu;->a(F)V
+    invoke-virtual {v1, v2}, Lcoz;->a(F)V
 
     :goto_4
     aget-object v1, v0, v4
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcmu;)V
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcoz;)V
 
     goto :goto_2
 
     :cond_6
-    iget-object v6, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v6, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v6, v6, v2
 
     aput-object v6, v0, v4
 
-    iget-object v6, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v6, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aput-object v9, v6, v2
 
@@ -2493,7 +2664,7 @@
 
     aget-object v6, v0, v4
 
-    iget-object v6, v6, Lcmu;->b:Landroid/view/View;
+    iget-object v6, v6, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2507,32 +2678,32 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {v2, v1}, Lcmu;->b(F)V
+    invoke-virtual {v2, v1}, Lcoz;->b(F)V
 
     goto :goto_4
 
     :cond_8
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a([Lcmu;)V
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a([Lcoz;)V
 
     move v1, v3
 
     :goto_5
     if-ge v1, v10, :cond_a
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v1
 
     if-eqz v2, :cond_9
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v1
 
-    invoke-virtual {v2}, Lcmu;->d()V
+    invoke-virtual {v2}, Lcoz;->d()V
 
     :cond_9
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v3, v0, v1
 
@@ -2543,7 +2714,7 @@
     goto :goto_5
 
     :cond_a
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->d(Lcgh;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->d(Lckw;)I
 
     move-result v0
 
@@ -2554,9 +2725,9 @@
     :cond_b
     invoke-direct {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v0}, Lcml;->f()Z
+    invoke-virtual {v0}, Lcoq;->f()Z
 
     move-result v0
 
@@ -2573,7 +2744,7 @@
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->invalidate()V
 
-    iput-object v9, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lcgh;
+    iput-object v9, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->B:Lckw;
 
     goto/16 :goto_0
 .end method
@@ -2585,7 +2756,7 @@
 
     const/4 v0, 0x0
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v3, 0x2
 
@@ -2598,7 +2769,7 @@
     return v0
 
     :cond_1
-    invoke-virtual {v3}, Lcmu;->f()Z
+    invoke-virtual {v3}, Lcoz;->f()Z
 
     move-result v2
 
@@ -2606,7 +2777,7 @@
 
     iget v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->l:I
 
-    invoke-virtual {v3}, Lcmu;->c()I
+    invoke-virtual {v3}, Lcoz;->c()I
 
     move-result v4
 
@@ -2618,7 +2789,7 @@
     :goto_1
     if-eqz v0, :cond_0
 
-    invoke-virtual {v3}, Lcmu;->c()I
+    invoke-virtual {v3}, Lcoz;->c()I
 
     move-result v1
 
@@ -2627,13 +2798,13 @@
     goto :goto_0
 
     :cond_3
-    iget-object v2, v3, Lcmu;->g:Lcgh;
+    iget-object v2, v3, Lcoz;->g:Lckw;
 
-    invoke-interface {v2}, Lcgh;->a()Lcgh;
+    invoke-interface {v2}, Lckw;->a()Lckw;
 
     move-result-object v2
 
-    sget-object v4, Lcgh;->c:Lcgh;
+    sget-object v4, Lckw;->c:Lckw;
 
     if-ne v2, v4, :cond_4
 
@@ -2644,7 +2815,7 @@
 
     iget v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->l:I
 
-    invoke-virtual {v3}, Lcmu;->c()I
+    invoke-virtual {v3}, Lcoz;->c()I
 
     move-result v4
 
@@ -2660,7 +2831,7 @@
     goto :goto_2
 .end method
 
-.method public final d(Lcgh;)I
+.method public final d(Lckw;)I
     .locals 2
 
     const/4 v0, 0x0
@@ -2670,17 +2841,17 @@
 
     if-ge v0, v1, :cond_1
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v1, v0
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v1, v0
 
-    iget-object v1, v1, Lcmu;->g:Lcgh;
+    iget-object v1, v1, Lcoz;->g:Lckw;
 
     if-ne v1, p1, :cond_0
 
@@ -2706,19 +2877,19 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v1, v0
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v1, v0
 
-    iget-object v2, v1, Lcmu;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v2, v1, Lcoz;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v1, v1, Lcmu;->b:Landroid/view/View;
+    iget-object v1, v1, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v2, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->bringChildToFront(Landroid/view/View;)V
 
@@ -2728,17 +2899,17 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->bringChildToFront(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public final e()Lcgh;
+.method public final e()Lckw;
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v1, 0x2
 
@@ -2746,13 +2917,13 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lcgh;->c:Lcgh;
+    sget-object v0, Lckw;->c:Lckw;
 
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, v0, Lcmu;->g:Lcgh;
+    iget-object v0, v0, Lcoz;->g:Lckw;
 
     goto :goto_0
 .end method
@@ -2833,7 +3004,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     return v2
 
@@ -2872,7 +3043,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v4
 
@@ -2882,70 +3053,70 @@
 
     iput v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j:F
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v2}, Lcml;->i()Z
+    invoke-virtual {v2}, Lcoq;->i()Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    iget-object v2, v2, Lcml;->b:Landroid/animation/ValueAnimator;
+    iget-object v2, v2, Lcoq;->b:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_2
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v2}, Lcml;->h()Z
+    invoke-virtual {v2}, Lcoq;->h()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    iget-object v2, v2, Lcml;->c:Landroid/animation/AnimatorSet;
+    iget-object v2, v2, Lcoq;->c:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
     :cond_3
-    invoke-virtual {v0}, Lcmu;->e()V
+    invoke-virtual {v0}, Lcoz;->e()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    iget-object v0, v0, Lcml;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
-    invoke-virtual {v0}, Lewo;->a()V
+    invoke-virtual {v0}, Lgyl;->a()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
     const/16 v2, 0x8
 
-    invoke-virtual {v0, v2}, Lewo;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Lgyl;->setVisibility(I)V
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
     move v0, v1
 
     :goto_0
     if-ge v0, v4, :cond_0
 
-    iget-object v3, v2, Lcml;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v3, v2, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v3, v3, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v3, v3, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v3, v3, v0
 
     if-eqz v3, :cond_4
 
-    iget-object v3, v2, Lcml;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v3, v2, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v3, v3, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v3, v3, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v3, v3, v0
 
-    invoke-virtual {v3, v1}, Lcmu;->a(I)V
+    invoke-virtual {v3, v1}, Lcoz;->a(I)V
 
     :cond_4
     add-int/lit8 v0, v0, 0x1
@@ -2956,7 +3127,7 @@
 .method public final h()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v1, 0x2
 
@@ -2964,7 +3135,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lcmu;->c()I
+    invoke-virtual {v0}, Lcoz;->c()I
 
     move-result v0
 
@@ -3047,38 +3218,38 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v2}, Lcml;->a(Z)Z
+    invoke-virtual {v0, v2}, Lcoq;->a(Z)Z
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    iget-object v0, v0, Lcml;->a:Landroid/animation/ValueAnimator;
+    iget-object v0, v0, Lcoq;->a:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     move v0, v1
 
     :goto_0
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     array-length v2, v2
 
     if-ge v0, v2, :cond_1
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v0
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v2, v2, v0
 
-    invoke-virtual {v2}, Lcmu;->d()V
+    invoke-virtual {v2}, Lcoz;->d()V
 
     :cond_0
     add-int/lit8 v0, v0, 0x1
@@ -3086,15 +3257,15 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v2, 0x0
 
     invoke-static {v0, v2}, Ljava/util/Arrays;->fill([Ljava/lang/Object;Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v0}, Lfmd;->c()I
+    invoke-interface {v0}, Lgyq;->c()I
 
     move-result v0
 
@@ -3105,31 +3276,31 @@
     return-void
 
     :cond_3
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lfmd;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->g:Lgyq;
 
-    invoke-interface {v2, v1}, Lfmd;->f(I)Lcgh;
+    invoke-interface {v2, v1}, Lgyq;->f(I)Lckw;
 
     move-result-object v2
 
-    invoke-virtual {p0, v2}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcgh;)Lcmu;
+    invoke-virtual {p0, v2}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lckw;)Lcoz;
 
     move-result-object v2
 
     aput-object v2, v0, v3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v3
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v0, v0, v3
 
-    iput v1, v0, Lcmu;->f:I
+    iput v1, v0, Lcoz;->f:I
 
     const/4 v0, 0x3
 
@@ -3138,27 +3309,27 @@
 
     if-ge v0, v1, :cond_4
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     add-int/lit8 v2, v0, -0x1
 
     aget-object v1, v1, v2
 
-    iget-object v1, v1, Lcmu;->g:Lcgh;
+    iget-object v1, v1, Lcoz;->g:Lckw;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
-    invoke-interface {v1}, Lcgh;->a()Lcgh;
+    invoke-interface {v1}, Lckw;->a()Lckw;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lcgh;)Lcmu;
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(Lckw;)Lcoz;
 
     move-result-object v1
 
     aput-object v1, v2, v0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     aget-object v1, v1, v0
 
@@ -3183,27 +3354,27 @@
 
     const-string v1, "reload() - Ensure all items are loaded at max size."
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->b()V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->invalidate()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
-    invoke-virtual {v0}, Lckl;->a()V
+    invoke-virtual {v0}, Lcmq;->a()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lckl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->n:Lcmq;
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e()Lcgh;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->e()Lckw;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lckl;->b(Lcgh;)V
+    invoke-virtual {v0, v1}, Lcmq;->a(Lckw;)V
 
     goto :goto_1
 .end method
@@ -3211,13 +3382,13 @@
 .method public final m()Z
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     const/4 v1, 0x2
 
     aget-object v0, v0, v1
 
-    invoke-virtual {v0}, Lcmu;->c()I
+    invoke-virtual {v0}, Lcoz;->c()I
 
     move-result v0
 
@@ -3255,9 +3426,9 @@
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcml;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
 
-    invoke-virtual {v2}, Lcml;->f()Z
+    invoke-virtual {v2}, Lcoq;->f()Z
 
     move-result v2
 
@@ -3417,11 +3588,11 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
     iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->i:Landroid/graphics/Rect;
 
@@ -3439,7 +3610,7 @@
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lewo;->layout(IIII)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Lgyl;->layout(IIII)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k()Z
@@ -3483,7 +3654,7 @@
     return-void
 
     :cond_1
-    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcmu;
+    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
 
     array-length v4, v3
 
@@ -3496,9 +3667,9 @@
 
     if-eqz v5, :cond_2
 
-    iget-object v6, v5, Lcmu;->g:Lcgh;
+    iget-object v6, v5, Lcoz;->g:Lckw;
 
-    invoke-interface {v6}, Lcgh;->c()Lfvf;
+    invoke-interface {v6}, Lckw;->c()Leqd;
 
     move-result-object v6
 
@@ -3508,7 +3679,7 @@
 
     const-string v6, "measureViewItem() - Trying to measure a null item!"
 
-    invoke-static {v5, v6}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
     :goto_2
@@ -3517,27 +3688,27 @@
     goto :goto_1
 
     :cond_3
-    invoke-interface {v6}, Lfvf;->k()Lici;
+    invoke-interface {v6}, Leqd;->l()Lihc;
 
     move-result-object v7
 
-    iget v7, v7, Lici;->a:I
+    iget v7, v7, Lihc;->a:I
 
-    invoke-interface {v6}, Lfvf;->k()Lici;
+    invoke-interface {v6}, Leqd;->l()Lihc;
 
     move-result-object v8
 
-    iget v8, v8, Lici;->b:I
+    iget v8, v8, Lihc;->b:I
 
-    invoke-interface {v6}, Lfvf;->l()I
+    invoke-interface {v6}, Leqd;->m()I
 
     move-result v6
 
-    invoke-static {v7, v8, v6, v1, v2}, Lgkt;->a(IIIII)Landroid/graphics/Point;
+    invoke-static {v7, v8, v6, v1, v2}, Lhbi;->a(IIIII)Landroid/graphics/Point;
 
     move-result-object v6
 
-    iput-object v6, v5, Lcmu;->d:Landroid/graphics/Point;
+    iput-object v6, v5, Lcoz;->d:Landroid/graphics/Point;
 
     iget v7, v6, Landroid/graphics/Point;->x:I
 
@@ -3551,7 +3722,7 @@
 
     move-result v6
 
-    iget-object v5, v5, Lcmu;->b:Landroid/view/View;
+    iget-object v5, v5, Lcoz;->b:Landroid/view/View;
 
     invoke-virtual {v5, v7, v6}, Landroid/view/View;->measure(II)V
 
@@ -3560,11 +3731,11 @@
     :cond_4
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->c()Z
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lewo;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->o:Lgyl;
 
     invoke-static {p1, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -3574,7 +3745,7 @@
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2}, Lewo;->measure(II)V
+    invoke-virtual {v0, v1, v2}, Lgyl;->measure(II)V
 
     goto :goto_0
 .end method

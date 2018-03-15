@@ -1,74 +1,74 @@
-.class final Lhck;
+.class final synthetic Lhck;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lgoq;
 
 
 # instance fields
-.field private synthetic a:Lhcj;
+.field private final a:Lhcj;
 
 
 # direct methods
 .method constructor <init>(Lhcj;)V
     .locals 0
 
-    iput-object p1, p0, Lhck;->a:Lhcj;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhck;->a:Lhcj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final a(J)V
+    .locals 5
 
     iget-object v0, p0, Lhck;->a:Lhcj;
 
-    iget-boolean v0, v0, Lhcj;->d:Z
+    const-wide/32 v2, 0x6400000
 
-    if-nez v0, :cond_0
+    cmp-long v1, p1, v2
 
-    :goto_0
-    return-void
+    if-gtz v1, :cond_0
+
+    sget-object v1, Lhcj;->a:Ljava/lang/String;
+
+    const/16 v2, 0x4b
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Stopping recording due to low storage. Remaining bytes="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, v0, Lhcj;->j:Lhcv;
+
+    iget-object v0, v0, Lhcv;->a:Ldev;
+
+    iget-object v1, v0, Ldev;->d:Liay;
+
+    new-instance v2, Ldey;
+
+    invoke-direct {v2, v0}, Ldey;-><init>(Ldev;)V
+
+    invoke-virtual {v1, v2}, Liay;->execute(Ljava/lang/Runnable;)V
 
     :cond_0
-    iget-object v0, p0, Lhck;->a:Lhcj;
-
-    iget-object v0, v0, Lhcj;->b:Landroid/widget/VideoView;
-
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhck;->a:Lhcj;
-
-    iget-object v0, v0, Lhcj;->a:Lhcs;
-
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhck;->a:Lhcj;
-
-    iget-object v0, v0, Lhcj;->a:Lhcs;
-
-    iget-object v1, p0, Lhck;->a:Lhcj;
-
-    iget-object v1, v1, Lhcj;->b:Landroid/widget/VideoView;
-
-    invoke-virtual {v1}, Landroid/widget/VideoView;->getCurrentPosition()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lhcs;->b(I)V
-
-    iget-object v0, p0, Lhck;->a:Lhcj;
-
-    iget-object v0, v0, Lhcj;->b:Landroid/widget/VideoView;
-
-    const-wide/16 v2, 0xa
-
-    invoke-virtual {v0, p0, v2, v3}, Landroid/widget/VideoView;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_0
+    return-void
 .end method

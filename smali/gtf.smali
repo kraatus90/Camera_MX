@@ -2,67 +2,84 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x17
+.end annotation
 
 
 # instance fields
-.field private synthetic a:I
+.field public final a:Landroid/animation/ObjectAnimator;
 
-.field private synthetic b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field public final b:Landroid/animation/ObjectAnimator;
+
+.field private final c:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;I)V
-    .locals 0
+.method public constructor <init>(Lgxn;Landroid/content/Context;)V
+    .locals 6
 
-    iput-object p1, p0, Lgtf;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iput p2, p0, Lgtf;->a:I
+    const-wide/16 v4, 0xfa
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iget-object v0, p1, Lgxn;->g:Lhcf;
 
+    const v1, 0x7f0e00f9
 
-# virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
+    check-cast v0, Landroid/view/View;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    iput-object v0, p0, Lgtf;->c:Landroid/view/View;
 
-    move-result v0
+    iget-object v1, p0, Lgtf;->c:Landroid/view/View;
 
-    iget-object v1, p0, Lgtf;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    const v0, 0x7f06002e
 
-    iget-object v2, p0, Lgtf;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-static {p2, v0}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
 
-    iget v2, v2, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->photoButtonRadius:I
+    move-result-object v0
 
-    int-to-float v2, v2
+    check-cast v0, Landroid/animation/ObjectAnimator;
 
-    iget v3, p0, Lgtf;->a:I
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setTarget(Ljava/lang/Object;)V
 
-    int-to-float v3, v3
+    invoke-virtual {v0, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    mul-float/2addr v0, v3
+    new-instance v2, Lgtg;
 
-    add-float/2addr v0, v2
+    invoke-direct {v2, v1}, Lgtg;-><init>(Landroid/view/View;)V
 
-    float-to-int v0, v0
+    invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    invoke-static {v1, v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$702(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;I)I
+    iput-object v0, p0, Lgtf;->a:Landroid/animation/ObjectAnimator;
 
-    iget-object v0, p0, Lgtf;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v1, p0, Lgtf;->c:Landroid/view/View;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidate()V
+    const v0, 0x7f06002f
+
+    invoke-static {p2, v0}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {v0, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setTarget(Ljava/lang/Object;)V
+
+    new-instance v2, Lgth;
+
+    invoke-direct {v2, v1}, Lgth;-><init>(Landroid/view/View;)V
+
+    invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    iput-object v0, p0, Lgtf;->b:Landroid/animation/ObjectAnimator;
 
     return-void
 .end method

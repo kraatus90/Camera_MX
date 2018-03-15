@@ -1,180 +1,193 @@
-.class public final Ljqy;
-.super Ljwj;
+.class public Ljqy;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public a:I
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput v0, p0, Ljqy;->a:I
+    move-result-object v0
 
-    const/4 v0, 0x0
+    check-cast v0, Ljava/lang/String;
 
-    iput-object v0, p0, Ljqy;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljqy;->cachedSize:I
+    iput-object v0, p0, Ljqy;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private final a(Ljwh;)Ljqy;
-    .locals 6
+.method constructor <init>(Ljqy;)V
+    .locals 1
 
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
+    iget-object v0, p1, Ljqy;->a:Ljava/lang/String;
 
-    sparse-switch v0, :sswitch_data_0
+    iput-object v0, p0, Ljqy;->a:Ljava/lang/String;
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    return-void
+.end method
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    invoke-virtual {p1}, Ljwh;->i()I
-
-    move-result v1
+.method private final a(Ljava/lang/StringBuilder;Ljava/util/Iterator;)Ljava/lang/StringBuilder;
+    .locals 2
 
     :try_start_0
-    invoke-virtual {p1}, Ljwh;->d()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_0
-
-    new-instance v3, Ljava/lang/IllegalArgumentException;
-
-    const/16 v4, 0x28
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v4, " is not a valid enum PanoType"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v3, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v3
+    invoke-virtual {p0, p1, p2}, Ljqy;->a(Ljava/lang/Appendable;Ljava/util/Iterator;)Ljava/lang/Appendable;
     :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
 
     :catch_0
-    move-exception v2
+    move-exception v0
 
-    invoke-virtual {p1, v1}, Ljwh;->e(I)V
+    new-instance v1, Ljava/lang/AssertionError;
 
-    invoke-virtual {p0, p1, v0}, Ljqy;->storeUnknownField(Ljwh;I)Z
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    goto :goto_0
+    throw v1
+.end method
 
-    :pswitch_0
-    :try_start_1
-    iput v2, p0, Ljqy;->a:I
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+.method public static a(Ljava/lang/String;)Ljqy;
+    .locals 1
 
-    goto :goto_0
+    new-instance v0, Ljqy;
 
-    nop
+    invoke-direct {v0, p0}, Ljqy;-><init>(Ljava/lang/String;)V
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 3
+.method public a(Ljava/lang/Appendable;Ljava/util/Iterator;)Ljava/lang/Appendable;
+    .locals 1
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    iget v1, p0, Ljqy;->a:I
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    iget v2, p0, Ljqy;->a:I
+    invoke-virtual {p0, v0}, Ljqy;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    move-result-object v0
 
-    move-result v1
+    invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    add-int/2addr v0, v1
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljqy;->a:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljqy;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    goto :goto_0
 
     :cond_0
-    return v0
+    return-object p1
 .end method
 
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
+.method a(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
-    invoke-direct {p0, p1}, Ljqy;->a(Ljwh;)Ljqy;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    instance-of v0, p1, Ljava/lang/CharSequence;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Ljava/lang/CharSequence;
+
+    :goto_0
+    return-object p1
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+.end method
+
+.method public final a(Ljava/lang/Iterable;)Ljava/lang/String;
+    .locals 2
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-direct {p0, v1, v0}, Ljqy;->a(Ljava/lang/StringBuilder;Ljava/util/Iterator;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
-    .locals 2
+.method public a()Ljqy;
+    .locals 1
 
-    iget v0, p0, Ljqy;->a:I
+    new-instance v0, Ljra;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, p0, p0}, Ljra;-><init>(Ljqy;Ljqy;)V
 
-    const/4 v0, 0x1
+    return-object v0
+.end method
 
-    iget v1, p0, Ljqy;->a:I
+.method public b(Ljava/lang/String;)Ljqy;
+    .locals 1
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    new-instance v0, Ljqz;
 
-    return-void
+    invoke-direct {v0, p0, p0, p1}, Ljqz;-><init>(Ljqy;Ljqy;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public c(Ljava/lang/String;)Ljrb;
+    .locals 1
+
+    new-instance v0, Ljrb;
+
+    invoke-direct {v0, p0, p1}, Ljrb;-><init>(Ljqy;Ljava/lang/String;)V
+
+    return-object v0
 .end method

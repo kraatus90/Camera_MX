@@ -2,63 +2,58 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Liho;
+
+.field private final b:Lick;
+
+.field private final c:Lick;
+
+.field private final d:Ldqt;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method public constructor <init>(Liho;Lick;Lick;Ldqt;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldpl;->a:Ljxn;
+    iput-object p1, p0, Ldpl;->a:Liho;
+
+    iput-object p2, p0, Ldpl;->b:Lick;
+
+    iput-object p3, p0, Ldpl;->c:Lick;
+
+    iput-object p4, p0, Ldpl;->d:Ldqt;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldpl;
-
-    invoke-direct {v0, p0}, Ldpl;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(Lfsx;)Lfsx;
+    .locals 6
 
-    iget-object v0, p0, Ldpl;->a:Ljxn;
+    iget-object v0, p0, Ldpl;->d:Ldqt;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lghg;
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Lghg;
-
-    invoke-interface {v0, v1}, Lghg;->a([Lghg;)Lghe;
+    invoke-virtual {v0}, Ldqt;->a()Lfsx;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    new-instance v1, Ldpv;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v2, p0, Ldpl;->a:Liho;
 
-    move-result-object v0
+    new-instance v3, Ldrg;
 
-    check-cast v0, Lghe;
+    iget-object v4, p0, Ldpl;->b:Lick;
 
-    return-object v0
+    iget-object v5, p0, Ldpl;->c:Lick;
+
+    invoke-direct {v3, v4, v5, v0, p1}, Ldrg;-><init>(Lick;Lick;Lfsx;Lfsx;)V
+
+    invoke-direct {v1, v2, v3}, Ldpv;-><init>(Liho;Lick;)V
+
+    return-object v1
 .end method

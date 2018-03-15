@@ -21,7 +21,7 @@
 
 .field public final synthetic val$inIsPop:Z
 
-.field public final synthetic val$nameOverrides:Lgm;
+.field public final synthetic val$nameOverrides:Lgh;
 
 .field public final synthetic val$nonExistentView:Landroid/view/View;
 
@@ -33,12 +33,12 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/app/FragmentTransitionImpl;Lgm;Ljava/lang/Object;Landroid/support/v4/app/FragmentTransition$FragmentContainerTransition;Ljava/util/ArrayList;Landroid/view/View;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLjava/util/ArrayList;Ljava/lang/Object;Landroid/graphics/Rect;)V
+.method constructor <init>(Landroid/support/v4/app/FragmentTransitionImpl;Lgh;Ljava/lang/Object;Landroid/support/v4/app/FragmentTransition$FragmentContainerTransition;Ljava/util/ArrayList;Landroid/view/View;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLjava/util/ArrayList;Ljava/lang/Object;Landroid/graphics/Rect;)V
     .locals 0
 
     iput-object p1, p0, Landroid/support/v4/app/FragmentTransition$4;->val$impl:Landroid/support/v4/app/FragmentTransitionImpl;
 
-    iput-object p2, p0, Landroid/support/v4/app/FragmentTransition$4;->val$nameOverrides:Lgm;
+    iput-object p2, p0, Landroid/support/v4/app/FragmentTransition$4;->val$nameOverrides:Lgh;
 
     iput-object p3, p0, Landroid/support/v4/app/FragmentTransition$4;->val$finalSharedElementTransition:Ljava/lang/Object;
 
@@ -72,13 +72,13 @@
 
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransition$4;->val$impl:Landroid/support/v4/app/FragmentTransitionImpl;
 
-    iget-object v1, p0, Landroid/support/v4/app/FragmentTransition$4;->val$nameOverrides:Lgm;
+    iget-object v1, p0, Landroid/support/v4/app/FragmentTransition$4;->val$nameOverrides:Lgh;
 
     iget-object v2, p0, Landroid/support/v4/app/FragmentTransition$4;->val$finalSharedElementTransition:Ljava/lang/Object;
 
     iget-object v3, p0, Landroid/support/v4/app/FragmentTransition$4;->val$fragments:Landroid/support/v4/app/FragmentTransition$FragmentContainerTransition;
 
-    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/app/FragmentTransition;->access$300(Landroid/support/v4/app/FragmentTransitionImpl;Lgm;Ljava/lang/Object;Landroid/support/v4/app/FragmentTransition$FragmentContainerTransition;)Lgm;
+    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/app/FragmentTransition;->access$300(Landroid/support/v4/app/FragmentTransitionImpl;Lgh;Ljava/lang/Object;Landroid/support/v4/app/FragmentTransition$FragmentContainerTransition;)Lgh;
 
     move-result-object v0
 
@@ -86,7 +86,7 @@
 
     iget-object v1, p0, Landroid/support/v4/app/FragmentTransition$4;->val$sharedElementsIn:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Lgm;->values()Ljava/util/Collection;
+    invoke-virtual {v0}, Lgh;->values()Ljava/util/Collection;
 
     move-result-object v2
 
@@ -107,7 +107,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v2, v3, v0, v4}, Landroid/support/v4/app/FragmentTransition;->access$200(Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLgm;Z)V
+    invoke-static {v1, v2, v3, v0, v4}, Landroid/support/v4/app/FragmentTransition;->access$200(Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLgh;Z)V
 
     iget-object v1, p0, Landroid/support/v4/app/FragmentTransition$4;->val$finalSharedElementTransition:Ljava/lang/Object;
 
@@ -129,7 +129,7 @@
 
     iget-boolean v3, p0, Landroid/support/v4/app/FragmentTransition$4;->val$inIsPop:Z
 
-    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/app/FragmentTransition;->access$400(Lgm;Landroid/support/v4/app/FragmentTransition$FragmentContainerTransition;Ljava/lang/Object;Z)Landroid/view/View;
+    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/app/FragmentTransition;->access$400(Lgh;Landroid/support/v4/app/FragmentTransition$FragmentContainerTransition;Ljava/lang/Object;Z)Landroid/view/View;
 
     move-result-object v0
 

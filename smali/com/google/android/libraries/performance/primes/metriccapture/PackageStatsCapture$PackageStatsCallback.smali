@@ -29,19 +29,11 @@
 
 # virtual methods
 .method public final onGetStatsCompleted(Landroid/content/pm/PackageStats;Z)V
-    .locals 4
+    .locals 5
 
-    if-eqz p2, :cond_1
+    const/4 v4, 0x0
 
-    const-string v0, "PackageStatsCapture"
-
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    if-eqz p2, :cond_0
 
     const-string v0, "PackageStatsCapture"
 
@@ -77,9 +69,12 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v2, v4, [Ljava/lang/Object;
 
-    :cond_0
+    const/4 v3, 0x3
+
+    invoke-static {v3, v0, v1, v2}, Lixt;->a(ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
     iput-object p1, p0, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsCallback;->b:Landroid/content/pm/PackageStats;
 
     :goto_0
@@ -89,12 +84,16 @@
 
     return-void
 
-    :cond_1
+    :cond_0
     const-string v0, "PackageStatsCapture"
 
     const-string v1, "Failure getting PackageStats"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v2, v4, [Ljava/lang/Object;
+
+    const/4 v3, 0x5
+
+    invoke-static {v3, v0, v1, v2}, Lixt;->a(ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 .end method

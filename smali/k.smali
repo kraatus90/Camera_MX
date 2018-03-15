@@ -1,86 +1,89 @@
-.class public Lk;
-.super Landroid/widget/FrameLayout;
+.class public final Lk;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# static fields
+.field public static final a:[I
+
+.field public static final b:[I
+
+.field public static final c:I = 0x0
+
+.field public static final d:I = 0x2
+
+.field public static final e:I = 0x4
+
+.field public static final f:I = 0x1
+
+.field public static final g:I = 0x3
+
+.field public static final h:I = 0x6
+
+.field public static final i:I = 0x5
+
+.field public static final j:I = 0x8
+
+.field public static final k:I = 0x7
+
+.field public static final l:I = 0x9
+
+.field public static final m:I = 0x0
+
+.field public static final n:I = 0x3
+
+.field public static final o:I = 0x4
+
+.field public static final p:I = 0x5
+
+.field public static final q:I = 0x1
+
+.field public static final r:I = 0x2
+
+
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, 0x0
+    const/4 v0, 0x6
 
-    invoke-direct {p0, p1, v0}, Lk;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    new-array v0, v0, [I
 
-    return-void
-.end method
+    fill-array-data v0, :array_0
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+    sput-object v0, Lk;->a:[I
 
-    invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    const/16 v0, 0xa
 
-    sget-object v0, Lb;->z:[I
+    new-array v0, v0, [I
 
-    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    fill-array-data v0, :array_1
 
-    move-result-object v0
-
-    sget v1, Lb;->B:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget v1, Lb;->B:I
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-static {p0, v1}, Lid;->a(Landroid/view/View;F)V
-
-    :cond_0
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lk;->setClickable(Z)V
+    sput-object v0, Lk;->b:[I
 
     return-void
-.end method
 
+    :array_0
+    .array-data 4
+        0x7f010160
+        0x7f010161
+        0x7f010162
+        0x7f010163
+        0x7f010164
+        0x7f010165
+    .end array-data
 
-# virtual methods
-.method protected onAttachedToWindow()V
-    .locals 1
-
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
-
-    sget-object v0, Lid;->a:Lim;
-
-    invoke-virtual {v0, p0}, Lim;->h(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method protected onDetachedFromWindow()V
-    .locals 0
-
-    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
-
-    return-void
-.end method
-
-.method protected onLayout(ZIIII)V
-    .locals 0
-
-    invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
-
-    return-void
+    :array_1
+    .array-data 4
+        0x1010532
+        0x1010533
+        0x101053f
+        0x101056f
+        0x1010570
+        0x7f010166
+        0x7f010167
+        0x7f010168
+        0x7f010169
+        0x7f01016a
+    .end array-data
 .end method

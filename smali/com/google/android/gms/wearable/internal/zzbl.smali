@@ -7,18 +7,18 @@
 
 
 # instance fields
-.field private a:I
+.field private final a:I
 
-.field private b:Ljava/util/List;
+.field private final b:Ljava/util/List;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhxd;
+    new-instance v0, Lhyc;
 
-    invoke-direct {v0}, Lhxd;-><init>()V
+    invoke-direct {v0}, Lhyc;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/wearable/internal/zzbl;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -44,7 +44,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -52,15 +52,15 @@
 
     iget v2, p0, Lcom/google/android/gms/wearable/internal/zzbl;->a:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzbl;->b:Ljava/util/List;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/util/List;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/util/List;)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

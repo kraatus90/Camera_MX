@@ -1,64 +1,42 @@
 .class final Lbm;
-.super Landroid/util/Property;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lbn;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Landroid/animation/Animator;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-virtual {p1}, Landroid/animation/Animator;->pause()V
 
-    return-object v0
+    return-void
 .end method
 
-.method public final synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 2
+.method public final a(Landroid/animation/Animator;Landroid/animation/AnimatorListenerAdapter;)V
+    .locals 0
 
-    check-cast p1, Lbs;
+    invoke-virtual {p1, p2}, Landroid/animation/Animator;->addPauseListener(Landroid/animation/Animator$AnimatorPauseListener;)V
 
-    check-cast p2, Landroid/graphics/PointF;
+    return-void
+.end method
 
-    iget v0, p2, Landroid/graphics/PointF;->x:F
+.method public final b(Landroid/animation/Animator;)V
+    .locals 0
 
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+    invoke-virtual {p1}, Landroid/animation/Animator;->resume()V
 
-    move-result v0
-
-    iput v0, p1, Lbs;->c:I
-
-    iget v0, p2, Landroid/graphics/PointF;->y:F
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p1, Lbs;->d:I
-
-    iget v0, p1, Lbs;->f:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p1, Lbs;->f:I
-
-    iget v0, p1, Lbs;->e:I
-
-    iget v1, p1, Lbs;->f:I
-
-    if-ne v0, v1, :cond_0
-
-    invoke-virtual {p1}, Lbs;->a()V
-
-    :cond_0
     return-void
 .end method

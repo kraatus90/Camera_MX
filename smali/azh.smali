@@ -1,54 +1,52 @@
-.class final Lazh;
+.class public final Lazh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Z
-
-.field private synthetic b:Lazd;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lazd;)V
-    .locals 1
-
-    iput-object p1, p0, Lazh;->b:Lazd;
+.method private constructor <init>(Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lazh;->a:Z
+    iput-object p1, p0, Lazh;->a:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public static a(Lkgv;)Lazh;
     .locals 1
 
-    iget-boolean v0, p0, Lazh;->a:Z
+    new-instance v0, Lazh;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, p0}, Lazh;-><init>(Lkgv;)V
 
-    const/4 v0, 0x0
+    return-object v0
+.end method
 
-    iput-boolean v0, p0, Lazh;->a:Z
 
-    :goto_0
-    return-void
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    :cond_0
-    iget-object v0, p0, Lazh;->b:Lazd;
+    new-instance v1, Lazg;
 
-    iget-object v0, v0, Lazd;->t:Ljava/lang/Runnable;
+    iget-object v0, p0, Lazh;->a:Lkgv;
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object v0
+
+    check-cast v0, Layc;
+
+    invoke-direct {v1, v0}, Lazg;-><init>(Layc;)V
+
+    return-object v1
 .end method

@@ -1,45 +1,273 @@
-.class final synthetic Liaw;
+.class public Liaw;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Liaa;
+.implements Lihb;
 
 
-# static fields
-.field public static final a:Ljhj;
+# instance fields
+.field private final a:Liaw;
+
+.field private final b:Libq;
+
+.field private final c:Ljava/lang/Object;
+
+.field private final d:Ljava/util/Set;
+
+.field private e:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
-    new-instance v0, Liaw;
+    sget-object v0, Libr;->a:Libq;
 
-    invoke-direct {v0}, Liaw;-><init>()V
-
-    sput-object v0, Liaw;->a:Ljhj;
+    invoke-direct {p0, v0}, Liaw;-><init>(Libq;)V
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method private constructor <init>(Liaw;Libq;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Liaw;->b:Libq;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Liaw;->c:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Liaw;->d:Ljava/util/Set;
+
+    iput-object p1, p0, Liaw;->a:Liaw;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Liaw;->e:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Libq;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liaw;->b:Libq;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Liaw;->c:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Liaw;->d:Ljava/util/Set;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Liaw;->a:Liaw;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Liaw;->e:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lihb;)Lihb;
+    .locals 3
 
-    check-cast p1, Ljava/util/List;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Liav;->d(Ljava/util/List;)Ljava/lang/Boolean;
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Liaw;->c:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v2, p0, Liaw;->e:Z
+
+    if-eqz v2, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Liaw;->b:Libq;
+
+    invoke-interface {v0, p1}, Libq;->a(Lihb;)V
+
+    :cond_0
+    return-object p1
+
+    :cond_1
+    :try_start_1
+    iget-object v2, p0, Liaw;->d:Ljava/util/Set;
+
+    invoke-interface {v2, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public a()Z
+    .locals 2
+
+    iget-object v1, p0, Liaw;->c:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Liaw;->e:Z
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public close()V
+    .locals 4
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v1, p0, Liaw;->c:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v2, p0, Liaw;->e:Z
+
+    if-eqz v2, :cond_0
+
+    monitor-exit v1
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Liaw;->e:Z
+
+    iget-object v2, p0, Liaw;->a:Liaw;
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Liaw;->a:Liaw;
+
+    iget-object v3, v2, Liaw;->c:Ljava/lang/Object;
+
+    monitor-enter v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v2, v2, Liaw;->d:Ljava/util/Set;
+
+    invoke-interface {v2, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :cond_1
+    :try_start_2
+    iget-object v2, p0, Liaw;->d:Ljava/util/Set;
+
+    invoke-interface {v0, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    iget-object v2, p0, Liaw;->d:Ljava/util/Set;
+
+    invoke-interface {v2}, Ljava/util/Set;->clear()V
+
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    iget-object v1, p0, Liaw;->b:Libq;
+
+    const-string v2, "Lifetime#close"
+
+    invoke-interface {v1, v0, v2}, Libq;->a(Ljava/lang/Iterable;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_3
+    monitor-exit v3
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :try_start_4
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    throw v0
+.end method
+
+.method public final g()Liaw;
+    .locals 2
+
+    new-instance v0, Liaw;
+
+    iget-object v1, p0, Liaw;->b:Libq;
+
+    invoke-direct {v0, p0, v1}, Liaw;-><init>(Liaw;Libq;)V
+
+    invoke-virtual {p0, v0}, Liaw;->a(Lihb;)Lihb;
 
     move-result-object v0
+
+    check-cast v0, Liaw;
 
     return-object v0
 .end method

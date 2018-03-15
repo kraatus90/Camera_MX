@@ -1,141 +1,265 @@
-.class public final enum Lejo;
-.super Ljava/lang/Enum;
+.class public final Lejo;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lejn;
 
-# static fields
-.field public static final enum a:Lejo;
 
-.field public static final enum b:Lejo;
+# instance fields
+.field private a:Z
 
-.field public static final enum c:Lejo;
+.field private b:Ljava/util/ArrayList;
 
-.field public static final enum d:Lejo;
-
-.field public static final enum e:Lejo;
-
-.field public static final enum f:Lejo;
-
-.field private static synthetic g:[Lejo;
+.field private c:[F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(Z)V
+    .locals 2
 
-    const/4 v7, 0x4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v6, 0x3
+    const/4 v0, 0x1
 
-    const/4 v5, 0x2
+    iput-boolean v0, p0, Lejo;->a:Z
 
-    const/4 v4, 0x1
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lejo;->b:Ljava/util/ArrayList;
+
+    const/16 v0, 0x10
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Lejo;->c:[F
+
+    iput-boolean p1, p0, Lejo;->a:Z
+
+    iget-object v0, p0, Lejo;->c:[F
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(FLeji;[FII)V
+    .locals 12
+
+    iget-object v8, p0, Lejo;->b:Ljava/util/ArrayList;
+
+    if-eqz v8, :cond_1
+
+    invoke-virtual {v8}, Ljava/util/ArrayList;->clear()V
+
+    const/4 v6, 0x0
+
+    const/high16 v0, 0x41a00000    # 20.0f
+
+    mul-float v9, p1, v0
+
+    iget-boolean v0, p0, Lejo;->a:Z
+
+    if-eqz v0, :cond_0
 
     const/4 v3, 0x0
 
-    new-instance v0, Lejo;
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    const-string v1, "CREATE_EARLY_FILMSTRIP_PREVIEW"
+    :goto_0
+    const/4 v0, -0x2
 
-    invoke-direct {v0, v1, v3}, Lejo;-><init>(Ljava/lang/String;I)V
+    move v7, v0
 
-    sput-object v0, Lejo;->a:Lejo;
+    :goto_1
+    const/4 v0, 0x2
 
-    new-instance v0, Lejo;
+    if-gt v7, v0, :cond_1
 
-    const-string v1, "COMPRESS_TO_JPEG_AND_WRITE_TO_DISK"
+    if-eqz v7, :cond_5
 
-    invoke-direct {v0, v1, v4}, Lejo;-><init>(Ljava/lang/String;I)V
+    int-to-float v0, v7
 
-    sput-object v0, Lejo;->b:Lejo;
+    mul-float v2, v9, v0
 
-    new-instance v0, Lejo;
+    const/16 v0, 0x10
 
-    const-string v1, "COMPRESS_TO_MARKED_JPEG_AND_WRITE_TO_DISK"
+    new-array v0, v0, [F
 
-    invoke-direct {v0, v1, v5}, Lejo;-><init>(Ljava/lang/String;I)V
+    const/4 v1, 0x0
 
-    sput-object v0, Lejo;->c:Lejo;
+    invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
-    new-instance v0, Lejo;
+    const/4 v1, 0x0
 
-    const-string v1, "CONVERT_TO_RGB_PREVIEW"
+    const/4 v5, 0x0
 
-    invoke-direct {v0, v1, v6}, Lejo;-><init>(Ljava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
-    sput-object v0, Lejo;->d:Lejo;
+    add-int/lit8 v1, v6, 0x1
 
-    new-instance v0, Lejo;
+    invoke-virtual {v8, v6, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    const-string v1, "BLOCK_UNTIL_ALL_TASKS_RELEASE"
+    move v0, v1
 
-    invoke-direct {v0, v1, v7}, Lejo;-><init>(Ljava/lang/String;I)V
+    :goto_2
+    add-int/lit8 v1, v7, 0x1
 
-    sput-object v0, Lejo;->e:Lejo;
+    move v7, v1
 
-    new-instance v0, Lejo;
+    move v6, v0
 
-    const-string v1, "CLOSE_ON_ALL_TASKS_RELEASE"
+    goto :goto_1
 
-    const/4 v2, 0x5
+    :cond_0
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    invoke-direct {v0, v1, v2}, Lejo;-><init>(Ljava/lang/String;I)V
+    const/4 v4, 0x0
 
-    sput-object v0, Lejo;->f:Lejo;
+    goto :goto_0
 
-    const/4 v0, 0x6
+    :cond_1
+    if-eqz p2, :cond_2
 
-    new-array v0, v0, [Lejo;
+    iget-object v2, p0, Lejo;->c:[F
 
-    sget-object v1, Lejo;->a:Lejo;
+    iget-object v10, p0, Lejo;->b:Ljava/util/ArrayList;
 
-    aput-object v1, v0, v3
+    if-eqz v10, :cond_2
 
-    sget-object v1, Lejo;->b:Lejo;
+    iget-object v0, p2, Leji;->g:Lejx;
 
-    aput-object v1, v0, v4
+    if-eqz v0, :cond_2
 
-    sget-object v1, Lejo;->c:Lejo;
+    iget-object v0, p2, Leji;->e:Leii;
 
-    aput-object v1, v0, v5
+    if-nez v0, :cond_3
 
-    sget-object v1, Lejo;->d:Lejo;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lejo;->e:Lejo;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lejo;->f:Lejo;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lejo;->g:[Lejo;
-
+    :cond_2
+    :goto_3
     return-void
-.end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+    :cond_3
+    iget-object v0, p2, Leji;->g:Lejx;
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iget v0, v0, Leif;->d:I
 
-    return-void
-.end method
+    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
-.method public static values()[Lejo;
-    .locals 1
+    iget-object v0, p2, Leji;->g:Lejx;
 
-    sget-object v0, Lejo;->g:[Lejo;
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0}, [Lejo;->clone()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lejx;->a(F)V
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    check-cast v0, [Lejo;
+    move v9, v0
 
-    return-object v0
+    :goto_4
+    :try_start_0
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-ge v9, v0, :cond_2
+
+    invoke-virtual {v10, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [F
+
+    iget-object v11, p2, Leji;->e:Leii;
+
+    iget-object v0, p2, Leji;->k:[F
+
+    const/4 v1, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v5, 0x0
+
+    invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
+
+    iget-object v3, p2, Leji;->j:[F
+
+    const/4 v4, 0x0
+
+    iget-object v5, p2, Leji;->k:[F
+
+    const/4 v6, 0x0
+
+    iget-object v7, p2, Leji;->i:[F
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v3 .. v8}, Landroid/opengl/Matrix;->multiplyMV([FI[FI[FI)V
+
+    iget-object v0, p2, Leji;->j:[F
+
+    invoke-static {v0}, Leji;->b([F)V
+
+    iget-object v0, p2, Leji;->j:[F
+
+    const/4 v1, 0x0
+
+    aget v0, v0, v1
+
+    iget v1, p2, Leji;->m:F
+
+    mul-float/2addr v0, v1
+
+    iget v1, p2, Leji;->m:F
+
+    add-float/2addr v0, v1
+
+    iget-object v1, p2, Leji;->j:[F
+
+    const/4 v3, 0x1
+
+    aget v1, v1, v3
+
+    iget v3, p2, Leji;->n:F
+
+    mul-float/2addr v1, v3
+
+    iget v3, p2, Leji;->n:F
+
+    add-float/2addr v1, v3
+
+    if-eqz v11, :cond_4
+
+    const v3, 0x3ecccccd    # 0.4f
+
+    invoke-virtual {v11, p3, v0, v1, v3}, Leii;->a([FFFF)V
+    :try_end_0
+    .catch Leie; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_4
+    add-int/lit8 v0, v9, 0x1
+
+    move v9, v0
+
+    goto :goto_4
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_3
+
+    :cond_5
+    move v0, v6
+
+    goto :goto_2
 .end method

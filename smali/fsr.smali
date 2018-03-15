@@ -7,14 +7,22 @@
 
 
 # instance fields
-.field private synthetic a:Lfsq;
+.field private final synthetic a:Landroid/graphics/Bitmap;
+
+.field private final synthetic b:I
+
+.field private final synthetic c:Lfsp;
 
 
 # direct methods
-.method constructor <init>(Lfsq;)V
+.method constructor <init>(Lfsp;Landroid/graphics/Bitmap;I)V
     .locals 0
 
-    iput-object p1, p0, Lfsr;->a:Lfsq;
+    iput-object p1, p0, Lfsr;->c:Lfsp;
+
+    iput-object p2, p0, Lfsr;->a:Landroid/graphics/Bitmap;
+
+    iput p3, p0, Lfsr;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,33 +32,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 3
 
-    const-wide/16 v2, 0x0
+    iget-object v0, p0, Lfsr;->c:Lfsp;
 
-    iget-object v0, p0, Lfsr;->a:Lfsq;
+    iget-object v0, v0, Lfsp;->b:Lgfr;
 
-    iput-wide v2, v0, Lfsq;->a:J
+    iget-object v1, p0, Lfsr;->a:Landroid/graphics/Bitmap;
 
-    iget-object v0, p0, Lfsr;->a:Lfsq;
+    iget v2, p0, Lfsr;->b:I
 
-    iput-wide v2, v0, Lfsq;->b:J
-
-    iget-object v0, p0, Lfsr;->a:Lfsq;
-
-    iput-wide v2, v0, Lfsq;->c:J
-
-    iget-object v0, p0, Lfsr;->a:Lfsq;
-
-    iput-wide v2, v0, Lfsq;->d:J
-
-    iget-object v0, p0, Lfsr;->a:Lfsq;
-
-    iput-wide v2, v0, Lfsq;->e:J
-
-    iget-object v0, p0, Lfsr;->a:Lfsq;
-
-    iput-wide v2, v0, Lfsq;->f:J
+    invoke-interface {v0, v1, v2}, Lgfr;->a(Landroid/graphics/Bitmap;I)V
 
     return-void
 .end method

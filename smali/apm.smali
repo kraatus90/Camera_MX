@@ -3,11 +3,11 @@
 .source "PG"
 
 # interfaces
-.implements Lapj;
+.implements Lapo;
 
 
 # instance fields
-.field private synthetic a:Lapl;
+.field private final synthetic a:Lapl;
 
 
 # direct methods

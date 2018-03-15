@@ -1,32 +1,45 @@
-.class public interface abstract Licu;
+.class final synthetic Licu;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljqv;
+
+
+# static fields
+.field public static final a:Ljqv;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Licu;
+
+    invoke-direct {v0}, Licu;-><init>()V
+
+    sput-object v0, Licu;->a:Ljqv;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)Licu;
-.end method
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/Throwable;)V
-.end method
+    check-cast p1, Ljava/util/List;
 
-.method public abstract b(Ljava/lang/String;)V
-.end method
+    invoke-static {p1}, Licl;->a(Ljava/util/List;)Ljava/lang/Integer;
 
-.method public abstract b(Ljava/lang/String;Ljava/lang/Throwable;)V
-.end method
+    move-result-object v0
 
-.method public abstract c(Ljava/lang/String;)V
-.end method
-
-.method public abstract c(Ljava/lang/String;Ljava/lang/Throwable;)V
-.end method
-
-.method public abstract d(Ljava/lang/String;)V
-.end method
-
-.method public abstract e(Ljava/lang/String;)V
-.end method
-
-.method public abstract f(Ljava/lang/String;)V
+    return-object v0
 .end method

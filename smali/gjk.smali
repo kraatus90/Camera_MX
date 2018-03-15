@@ -1,103 +1,75 @@
-.class final Lgjk;
-.super Ljava/lang/Object;
+.class public final enum Lgjk;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Lgki;
 
+# static fields
+.field public static final enum a:Lgjk;
 
-# instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public static final enum b:Lgjk;
 
-.field private synthetic b:Lgjj;
+.field private static final synthetic c:[Lgjk;
 
 
 # direct methods
-.method public constructor <init>(Lgjj;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p1, p0, Lgjk;->b:Lgjj;
+    const/4 v3, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v0, Lgjk;
 
-    const/4 v1, 0x0
+    const-string v1, "FPS_30"
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    invoke-direct {v0, v1, v2}, Lgjk;-><init>(Ljava/lang/String;I)V
 
-    iput-object v0, p0, Lgjk;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sput-object v0, Lgjk;->a:Lgjk;
+
+    new-instance v0, Lgjk;
+
+    const-string v1, "FPS_60"
+
+    invoke-direct {v0, v1, v3}, Lgjk;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lgjk;->b:Lgjk;
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lgjk;
+
+    sget-object v1, Lgjk;->a:Lgjk;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lgjk;->b:Lgjk;
+
+    aput-object v1, v0, v3
+
+    sput-object v0, Lgjk;->c:[Lgjk;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final close()V
-    .locals 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lgjk;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lgjk;->b:Lgjj;
-
-    iget-object v1, v0, Lgjj;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget v2, v0, Lgjj;->e:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, v0, Lgjj;->e:I
-
-    iget-object v2, v0, Lgjj;->d:Licj;
-
-    invoke-virtual {v0}, Lgjj;->b()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    iput-object v3, v2, Licj;->b:Ljava/lang/Object;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v1, v0, Lgjj;->d:Licj;
-
-    iget-object v1, v1, Licj;->a:Licb;
-
-    invoke-virtual {v1}, Licb;->a()V
-
-    :cond_0
-    invoke-virtual {v0}, Lgjj;->a()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    :cond_1
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public static values()[Lgjk;
+    .locals 1
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    sget-object v0, Lgjk;->c:[Lgjk;
 
-    throw v0
+    invoke-virtual {v0}, [Lgjk;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lgjk;
+
+    return-object v0
 .end method

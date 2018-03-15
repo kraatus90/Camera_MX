@@ -1,540 +1,189 @@
-.class public final Lhhv;
-.super Ljava/lang/Object;
+.class public final enum Lhhv;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
 # static fields
-.field public static final a:Ljava/lang/String;
+.field public static final enum a:Lhhv;
+
+.field public static final enum b:Lhhv;
+
+.field public static final enum c:Lhhv;
+
+.field public static final enum d:Lhhv;
+
+.field private static final f:Ljava/util/Set;
+
+.field private static final synthetic g:[Lhhv;
 
 
 # instance fields
-.field public b:[F
-
-.field public c:[Lhke;
-
-.field public d:I
+.field private final e:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 7
 
-    const-string v0, "BlurStack"
+    const/4 v6, 0x3
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    new-instance v0, Lhhv;
+
+    const-string v1, "BADGE"
+
+    const-string v2, "badge"
+
+    invoke-direct {v0, v1, v3, v2}, Lhhv;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lhhv;->a:Lhhv;
+
+    new-instance v0, Lhhv;
+
+    const-string v1, "EDIT"
+
+    const-string v2, "edit"
+
+    invoke-direct {v0, v1, v4, v2}, Lhhv;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lhhv;->b:Lhhv;
+
+    new-instance v0, Lhhv;
+
+    const-string v1, "INTERACT"
+
+    const-string v2, "interact"
+
+    invoke-direct {v0, v1, v5, v2}, Lhhv;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lhhv;->c:Lhhv;
+
+    new-instance v0, Lhhv;
+
+    const-string v1, "LAUNCH"
+
+    const-string v2, "launch"
+
+    invoke-direct {v0, v1, v6, v2}, Lhhv;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lhhv;->d:Lhhv;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lhhv;
+
+    sget-object v1, Lhhv;->a:Lhhv;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lhhv;->b:Lhhv;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lhhv;->c:Lhhv;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lhhv;->d:Lhhv;
+
+    aput-object v1, v0, v6
+
+    sput-object v0, Lhhv;->g:[Lhhv;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    new-array v1, v6, [Ljava/lang/String;
+
+    sget-object v2, Lhhv;->a:Lhhv;
+
+    invoke-virtual {v2}, Lhhv;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lhhv;->b:Lhhv;
+
+    invoke-virtual {v2}, Lhhv;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v4
+
+    sget-object v2, Lhhv;->c:Lhhv;
+
+    invoke-virtual {v2}, Lhhv;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v5
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v0
 
-    sput-object v0, Lhhv;->a:Ljava/lang/String;
+    sput-object v0, Lhhv;->f:Ljava/util/Set;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    sget-object v1, Lhhv;->f:Ljava/util/Set;
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sget-object v1, Lhhv;->d:Lhhv;
+
+    invoke-virtual {v1}, Lhhv;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput-object p3, p0, Lhhv;->e:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a()F
+.method public static values()[Lhhv;
     .locals 1
 
-    const/high16 v0, 0x41c80000    # 25.0f
+    sget-object v0, Lhhv;->g:[Lhhv;
 
-    return v0
-.end method
+    invoke-virtual {v0}, [Lhhv;->clone()Ljava/lang/Object;
 
-.method public static c(I)I
-    .locals 1
+    move-result-object v0
 
-    div-int/lit8 v0, p0, 0x4
+    check-cast v0, [Lhhv;
 
-    rsub-int/lit8 v0, v0, 0x40
-
-    return v0
-.end method
-
-.method public static d(I)I
-    .locals 1
-
-    rsub-int/lit8 v0, p0, 0x40
-
-    shl-int/lit8 v0, v0, 0x2
-
-    return v0
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(I)F
-    .locals 2
-
-    iget-object v0, p0, Lhhv;->b:[F
-
-    add-int/lit8 v1, p1, -0x1
-
-    aget v0, v0, v1
-
-    return v0
-.end method
-
-.method public final a(II)I
+.method public final toString()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lhhv;->c:[Lhke;
+    iget-object v0, p0, Lhhv;->e:Ljava/lang/String;
 
-    aget-object v0, v0, p1
-
-    iget v0, v0, Lhke;->b:I
-
-    add-int/2addr v0, p2
-
-    return v0
-.end method
-
-.method public final a(IF)Ljava/util/ArrayList;
-    .locals 6
-
-    const/16 v4, 0x40
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    iget-object v0, p0, Lhhv;->b:[F
-
-    array-length v0, v0
-
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    if-ne p1, v4, :cond_0
-
-    move-object v0, v1
-
-    :goto_0
     return-object v0
-
-    :cond_0
-    add-int/lit8 v2, p1, 0x1
-
-    new-instance v0, Lhke;
-
-    invoke-direct {v0, v2}, Lhke;-><init>(I)V
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0, v2}, Lhhv;->a(I)F
-
-    move-result v0
-
-    add-float/2addr v0, p2
-
-    move v5, v0
-
-    move v0, v2
-
-    move v2, v5
-
-    :goto_1
-    if-ge v0, v4, :cond_2
-
-    add-int/lit8 v3, v0, 0x1
-
-    invoke-virtual {p0, v3}, Lhhv;->a(I)F
-
-    move-result v0
-
-    cmpg-float v0, v0, v2
-
-    if-gtz v0, :cond_1
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhke;
-
-    iput v3, v0, Lhke;->a:I
-
-    move v0, v3
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v0, Lhke;
-
-    invoke-direct {v0, v3}, Lhke;-><init>(I)V
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0, v3}, Lhhv;->a(I)F
-
-    move-result v0
-
-    add-float/2addr v0, p2
-
-    move v2, v0
-
-    move v0, v3
-
-    goto :goto_1
-
-    :cond_2
-    move-object v0, v1
-
-    goto :goto_0
-.end method
-
-.method public final b(I)I
-    .locals 2
-
-    iget-object v0, p0, Lhhv;->c:[Lhke;
-
-    aget-object v0, v0, p1
-
-    iget v0, v0, Lhke;->a:I
-
-    iget-object v1, p0, Lhhv;->c:[Lhke;
-
-    aget-object v1, v1, p1
-
-    iget v1, v1, Lhke;->b:I
-
-    sub-int/2addr v0, v1
-
-    add-int/lit8 v0, v0, 0x1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 7
-
-    const-string v0, "disparity range: 64, 1\n"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhhv;->c:[Lhke;
-
-    iget v2, p0, Lhhv;->d:I
-
-    aget-object v1, v1, v2
-
-    iget v1, v1, Lhke;->a:I
-
-    iget-object v2, p0, Lhhv;->c:[Lhke;
-
-    iget v3, p0, Lhhv;->d:I
-
-    aget-object v2, v2, v3
-
-    iget v2, v2, Lhke;->b:I
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x2a
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, "focus disparity: "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhhv;->c:[Lhke;
-
-    array-length v1, v1
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1b
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "num of layers: "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget v1, p0, Lhhv;->d:I
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x19
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "focus layer: "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v2, p0, Lhhv;->c:[Lhke;
-
-    array-length v2, v2
-
-    if-ge v0, v2, :cond_1
-
-    iget-object v2, p0, Lhhv;->c:[Lhke;
-
-    aget-object v2, v2, v0
-
-    iget v2, v2, Lhke;->a:I
-
-    iget-object v3, p0, Lhhv;->c:[Lhke;
-
-    aget-object v3, v3, v0
-
-    iget v4, v3, Lhke;->b:I
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    sub-int v3, v2, v4
-
-    add-int/lit8 v3, v3, 0x1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/lit8 v5, v5, 0x32
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, "\nlayer "
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, " num of disparities "
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, "\n"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    :goto_1
-    if-lt v2, v4, :cond_0
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v2}, Lhhv;->a(I)F
-
-    move-result v3
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/lit8 v5, v5, 0x44
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, "layer "
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, " disparity "
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v5, " disk radius "
-
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, "\n"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    add-int/lit8 v1, v2, -0x1
-
-    move v2, v1
-
-    move-object v1, v3
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto/16 :goto_0
-
-    :cond_1
-    return-object v1
 .end method

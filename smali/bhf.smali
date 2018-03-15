@@ -3,198 +3,84 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Lbhe;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x17
+.end annotation
+
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private synthetic a:Lbfb;
+.field public final b:Limz;
 
-.field private synthetic b:Lbgq;
+.field private final c:Lias;
 
 
 # direct methods
-.method public constructor <init>(Lbgq;Lbfb;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbhf;->b:Lbgq;
+    const-string v0, "CamCapSesCreatorHfr"
 
-    iput-object p2, p0, Lbhf;->a:Lbfb;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
+
+    sput-object v0, Lbhf;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private final a()Ljava/io/File;
-    .locals 6
+.method public constructor <init>(Limz;Lias;)V
+    .locals 0
 
-    iget-object v0, p0, Lbhf;->b:Lbgq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v1, v0, Lbgq;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lbhf;->b:Limz;
 
-    monitor-enter v1
+    iput-object p2, p0, Lbhf;->c:Lias;
 
-    :try_start_0
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    iget-object v0, v0, Lbgq;->b:Lbhi;
-
-    sget-object v2, Lbhi;->a:Lbhi;
-
-    if-eq v0, v2, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    sget-object v2, Lbhi;->a:Lbhi;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lbhf;->b:Lbgq;
-
-    iget-object v3, v3, Lbgq;->b:Lbhi;
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/lit8 v4, v4, 0x18
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/2addr v4, v5
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v4, " is expected but we get "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    iget-object v0, v0, Lbgq;->f:Lbgn;
-
-    iget-object v2, p0, Lbhf;->a:Lbfb;
-
-    iget-object v0, v0, Lbgn;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/ConcurrentLinkedQueue;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    iget-object v0, v0, Lbgq;->g:Lbgp;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    iget-object v0, v0, Lbgq;->g:Lbgp;
-
-    invoke-interface {v0}, Lbgp;->a()V
-
-    :cond_1
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    iget-object v0, v0, Lbgq;->h:Lbgg;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    iget-object v0, v0, Lbgq;->h:Lbgg;
-
-    invoke-interface {v0}, Lbgg;->a()V
-
-    :cond_2
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    sget-object v2, Lbhi;->b:Lbhi;
-
-    iput-object v2, v0, Lbgq;->b:Lbhi;
-
-    iget-object v0, p0, Lbhf;->b:Lbgq;
-
-    iget-object v0, v0, Lbgq;->c:Ljava/lang/String;
-
-    if-nez v0, :cond_3
-
-    const/4 v0, 0x0
-
-    monitor-exit v1
-
-    :goto_0
-    return-object v0
-
-    :cond_3
-    new-instance v0, Ljava/io/File;
-
-    iget-object v2, p0, Lbhf;->b:Lbgq;
-
-    iget-object v2, v2, Lbgq;->c:Ljava/lang/String;
-
-    invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 1
+.method public final a(Landroid/view/Surface;Landroid/view/Surface;Ljrf;)Lkeh;
+    .locals 3
 
-    invoke-direct {p0}, Lbhf;->a()Ljava/io/File;
+    invoke-virtual {p3}, Ljrf;->a()Z
 
-    move-result-object v0
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    new-instance v0, Lket;
+
+    invoke-direct {v0}, Lket;-><init>()V
+
+    iget-object v1, p0, Lbhf;->c:Lias;
+
+    new-instance v2, Lbhg;
+
+    invoke-direct {v2, p0, p1, p2, v0}, Lbhg;-><init>(Lbhf;Landroid/view/Surface;Landroid/view/Surface;Lket;)V
+
+    invoke-virtual {v1, v2}, Lias;->execute(Ljava/lang/Runnable;)V
 
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

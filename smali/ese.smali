@@ -1,32 +1,38 @@
-.class final Lese;
+.class public interface abstract Lese;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lemz;
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public abstract a()V
+.end method
 
-    new-instance v0, Lesd;
+.method public abstract a(Landroid/view/View;)V
+.end method
 
-    new-instance v1, Lijl;
+.method public abstract a(Lesf;)V
+.end method
 
-    invoke-direct {v1}, Lijl;-><init>()V
+.method public abstract a(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+.end method
 
-    invoke-direct {v0, v1}, Lesd;-><init>(Lijl;)V
+.method public abstract b()V
+.end method
 
-    return-object v0
+.method public abstract c()Lesf;
+.end method
+
+.method public abstract d()Z
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract j()Lesc;
+.end method
+
+.method public abstract l()Z
 .end method

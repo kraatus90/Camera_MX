@@ -1,121 +1,185 @@
-.class final Ldlg;
-.super Ljava/lang/Object;
+.class public final Ldlg;
+.super Lfhq;
 .source "PG"
-
-# interfaces
-.implements Lase;
 
 
 # instance fields
-.field private a:Lgdq;
+.field private final synthetic a:Ljava/util/Set;
 
-.field private b:Ldlv;
+.field private final synthetic b:Ljava/util/Set;
 
-.field private c:Liag;
-
-.field private d:Lgfj;
-
-.field private e:Ljxn;
-
-.field private f:Ljuw;
+.field private final synthetic c:Lihn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "TrackingTTF"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method constructor <init>(Lgdq;Ldlv;Liag;Lgfj;Ljxn;)V
+.method public constructor <init>(Ljava/util/Set;Ljava/util/Set;Lihn;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldlg;->a:Ljava/util/Set;
 
-    iput-object p1, p0, Ldlg;->a:Lgdq;
+    iput-object p2, p0, Ldlg;->b:Ljava/util/Set;
 
-    iput-object p2, p0, Ldlg;->b:Ldlv;
+    iput-object p3, p0, Ldlg;->c:Lihn;
 
-    iput-object p3, p0, Ldlg;->c:Liag;
-
-    iput-object p4, p0, Ldlg;->d:Lgfj;
-
-    iput-object p5, p0, Ldlg;->e:Ljxn;
+    invoke-direct {p0}, Lfhq;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lasn;)Late;
-    .locals 6
+.method public final a_(Lind;)V
+    .locals 4
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Ldlg;->a:Ljava/util/Set;
 
-    iget-object v0, p0, Ldlg;->f:Ljuw;
+    invoke-interface {p1}, Lind;->b()Linc;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    iget-object v0, p0, Ldlg;->f:Ljuw;
+    sget-object v2, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-interface {v0, v1}, Ljuw;->cancel(Z)Z
+    invoke-interface {v1, v2}, Linc;->a(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;
 
-    :cond_0
-    iget-object v0, p0, Ldlg;->c:Liag;
+    move-result-object v1
 
-    iget-object v2, p1, Lasn;->a:Landroid/graphics/PointF;
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    iget-object v3, p1, Lasn;->a:Landroid/graphics/PointF;
+    move-result v0
 
-    iget-object v4, p0, Ldlg;->a:Lgdq;
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    invoke-interface {v4}, Lgdq;->d()I
+    iget-object v0, p0, Ldlg;->b:Ljava/util/Set;
 
-    move-result v4
+    invoke-interface {p1}, Lind;->b()Linc;
 
-    iget-object v5, p0, Ldlg;->d:Lgfj;
+    move-result-object v1
 
-    invoke-static {v2, v3, v4, v5}, Lgfe;->a(Landroid/graphics/PointF;Landroid/graphics/PointF;ILgfj;)Lgfe;
+    sget-object v2, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    move-result-object v2
+    invoke-interface {v1, v2}, Linc;->a(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Liag;->a(Ljava/lang/Object;)V
+    move-result-object v1
 
-    iget-object v0, p0, Ldlg;->e:Ljxn;
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
+
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldir;
+    check-cast v0, Ljava/lang/Integer;
 
-    iget-object v2, p0, Ldlg;->b:Ldlv;
+    iget-object v1, p0, Ldlg;->a:Ljava/util/Set;
 
-    invoke-virtual {v0, v2}, Ldir;->a(Ldlv;)Ljuw;
+    invoke-interface {v1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Ldlg;->c:Lihn;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    iput-object v2, p0, Ldlg;->f:Ljuw;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    iget-object v2, p0, Ldlg;->f:Ljuw;
+    move-result v2
 
-    if-eqz v2, :cond_1
+    add-int/lit8 v2, v2, 0x36
 
-    :goto_0
-    invoke-static {v1}, Liui;->a(Z)V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ldlh;
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-direct {v1, v0}, Ldlh;-><init>(Ldir;)V
+    const-string v2, "Capture result did not contain an acceptable NR mode: "
 
-    return-object v1
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v2, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    invoke-interface {v1, v0, v2}, Lihn;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_0
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->EDGE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    iget-object v1, p0, Ldlg;->b:Ljava/util/Set;
+
+    invoke-interface {v1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Ldlg;->c:Lihn;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x38
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Capture result did not contain an acceptable Edge mode: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v2, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    invoke-interface {v1, v0, v2}, Lihn;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_0
+    return-void
 .end method

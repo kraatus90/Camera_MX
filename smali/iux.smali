@@ -1,106 +1,112 @@
 .class final Liux;
-.super Ljava/lang/Object;
+.super Lium;
 .source "PG"
 
-# interfaces
-.implements Liuh;
+
+# instance fields
+.field private final synthetic e:Liut;
+
+.field private final synthetic f:I
+
+.field private final synthetic g:I
+
+.field private final synthetic h:Lixn;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(Livi;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILitl;Liut;ILixn;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p8, p0, Liux;->e:Liut;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Liux;->f:I
+
+    iput p9, p0, Liux;->g:I
+
+    iput-object p10, p0, Liux;->h:Lixn;
+
+    invoke-direct/range {p0 .. p7}, Lium;-><init>(Livi;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILitl;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 9
+.method public final c()Lirc;
+    .locals 3
 
-    const/4 v8, 0x2
+    :try_start_0
+    iget-object v0, p0, Liux;->e:Liut;
 
-    const/4 v7, 0x0
+    invoke-interface {v0}, Liut;->i()V
 
-    const-class v0, Ljee;
+    const/4 v0, 0x1
 
-    const-string v1, "default"
+    new-array v0, v0, [I
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    aput v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Landroid/opengl/GLES30;->glDeleteRenderbuffers(I[II)V
+
+    iget v0, p0, Liux;->g:I
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [I
+
+    const/4 v2, 0x0
+
+    aput v0, v1, v2
+
+    const/4 v0, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/opengl/GLES30;->glDeleteFramebuffers(I[II)V
+
+    iget-object v0, p0, Liux;->h:Lixn;
+
+    invoke-interface {v0}, Lixn;->a()Lirc;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    check-cast v0, Ljee;
+    :goto_0
+    return-object v0
 
-    const-class v1, Ljdi;
+    :catch_0
+    move-exception v0
 
-    const-string v2, "chroma_histogram_frame_distance_metric"
+    iget-object v1, p0, Liux;->h:Lixn;
 
-    invoke-virtual {p1, v1, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v1}, Lixn;->a()Lirc;
 
     move-result-object v1
 
-    check-cast v1, Ljdi;
+    sget-object v2, Lken;->a:Lken;
 
-    const-class v2, Ljan;
-
-    const-string v3, "post_proc_quality_metric"
-
-    invoke-virtual {p1, v2, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljan;
-
-    const/4 v3, 0x4
-
-    new-array v4, v3, [Ljbc;
-
-    const-class v3, Ljbc;
-
-    const-string v5, "image_sharpness_filter"
-
-    invoke-virtual {p1, v3, v5}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljbc;
-
-    aput-object v3, v4, v7
-
-    const/4 v5, 0x1
-
-    const-class v3, Ljbc;
-
-    const-string v6, "face_quality_filter"
-
-    invoke-virtual {p1, v3, v6}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljbc;
-
-    aput-object v3, v4, v5
-
-    new-instance v3, Ljbm;
-
-    invoke-direct {v3, v0, v2, v1, v7}, Ljbm;-><init>(Ljee;Ljan;Ljdi;B)V
-
-    aput-object v3, v4, v8
-
-    const/4 v0, 0x3
-
-    new-instance v1, Ljcg;
-
-    invoke-direct {v1, v8}, Ljcg;-><init>(I)V
-
-    aput-object v1, v4, v0
-
-    invoke-static {v4}, Ljax;->a([Ljbc;)Ljax;
+    invoke-static {v0}, Lihr;->a(Ljava/lang/Throwable;)Lipn;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v1, v2, v0}, Lirc;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lirc;->a(Liqz;)Lirc;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method

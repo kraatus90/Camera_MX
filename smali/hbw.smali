@@ -1,45 +1,50 @@
-.class final Lhbw;
-.super Lhbt;
+.class public final Lhbw;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lhbv;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lhbv;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lhbw;->a:Lhbv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lhbt;-><init>(Lhbs;)V
+    iput-object p1, p0, Lhbw;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final S()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lhbw;->a:Lhbv;
+    iget-object v0, p0, Lhbw;->a:Lkgv;
 
-    iget-object v0, v0, Lhbv;->b:Lgvj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lhbt;->S()V
+    check-cast v0, Landroid/content/Context;
 
-    iget-object v0, p0, Lhbw;->a:Lhbv;
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    iget-object v0, v0, Lhbv;->b:Lgvj;
+    move-result-object v0
 
-    iget-object v1, p0, Lhbw;->a:Lhbv;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v1, v1, Lhbv;->d:Lgvl;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Landroid/content/pm/PackageManager;
+
+    return-object v0
 .end method

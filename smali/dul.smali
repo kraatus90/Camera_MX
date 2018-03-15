@@ -3,146 +3,82 @@
 .source "PG"
 
 # interfaces
-.implements Ldvc;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x17
-.end annotation
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Licu;
-
-.field public final b:Licz;
-
-.field public final c:Lejh;
-
-.field public final d:Ljava/util/concurrent/Executor;
-
-.field public final e:Landroid/graphics/Rect;
-
-.field private f:Lfkn;
-
-.field private g:Lekf;
-
-.field private h:Ldvc;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Licv;Lfkn;Lejh;Lgkp;Lekf;Ldvc;Licz;)V
-    .locals 1
+.method private constructor <init>(Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "LSRprcssngIS"
-
-    invoke-interface {p1, v0}, Licv;->a(Ljava/lang/String;)Licu;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldul;->a:Licu;
-
-    iput-object p7, p0, Ldul;->b:Licz;
-
-    iput-object p2, p0, Ldul;->f:Lfkn;
-
-    iput-object p6, p0, Ldul;->h:Ldvc;
-
-    iput-object p3, p0, Ldul;->c:Lejh;
-
-    const-string v0, "LuckyShotEx"
-
-    invoke-static {v0}, Lapb;->b(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldul;->d:Ljava/util/concurrent/Executor;
-
-    iget-object v0, p4, Lgkp;->e:Landroid/graphics/Rect;
-
-    iput-object v0, p0, Ldul;->e:Landroid/graphics/Rect;
-
-    iput-object p5, p0, Ldul;->g:Lekf;
+    iput-object p1, p0, Ldul;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Ldul;
+    .locals 1
+
+    new-instance v0, Ldul;
+
+    invoke-direct {v0, p0}, Ldul;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(Leaq;)Ldvd;
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Ldul;->h:Ldvc;
+    iget-object v0, p0, Ldul;->a:Lkgv;
 
-    invoke-interface {v0, p1}, Ldvc;->a(Leaq;)Ldvd;
-
-    move-result-object v3
-
-    new-instance v0, Ldum;
-
-    iget-object v4, p0, Ldul;->f:Lfkn;
-
-    iget-object v5, p0, Ldul;->g:Lekf;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    invoke-direct/range {v0 .. v5}, Ldum;-><init>(Ldul;Leaq;Ldvd;Lfkn;Lekf;)V
-
-    return-object v0
-.end method
-
-.method public final a()Liau;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
+    check-cast v0, Limg;
+
+    invoke-virtual {v0}, Limg;->a()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v0, v0, Limg;->a:Lkeh;
+
+    new-instance v1, Lduj;
+
+    invoke-direct {v1}, Lduj;-><init>()V
+
+    sget-object v2, Lken;->a:Lken;
+
+    invoke-static {v0, v1, v2}, Lkcv;->a(Lkeh;Ljqv;Ljava/util/concurrent/Executor;)Lkeh;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public final b(Leaq;)Ldvd;
-    .locals 6
-
-    iget-object v0, p0, Ldul;->h:Ldvc;
-
-    invoke-interface {v0, p1}, Ldvc;->b(Leaq;)Ldvd;
-
-    move-result-object v3
-
-    new-instance v0, Ldum;
-
-    iget-object v4, p0, Ldul;->f:Lfkn;
-
-    iget-object v5, p0, Ldul;->g:Lekf;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    invoke-direct/range {v0 .. v5}, Ldum;-><init>(Ldul;Leaq;Ldvd;Lfkn;Lekf;)V
-
-    return-object v0
-.end method
-
-.method public final b()Ldzs;
-    .locals 1
-
-    iget-object v0, p0, Ldul;->h:Ldvc;
-
-    invoke-interface {v0}, Ldvc;->b()Ldzs;
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
 
     move-result-object v0
 
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
     return-object v0
+
+    :cond_0
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    goto :goto_0
 .end method

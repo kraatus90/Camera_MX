@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field private a:Ljfs;
+.field private final a:Ljpe;
 
-.field private b:[F
+.field private final b:[F
 
 
 # direct methods
-.method public constructor <init>(Ljfs;)V
+.method public constructor <init>(Ljpe;)V
     .locals 1
 
-    iget v0, p1, Ljfs;->A:I
+    iget v0, p1, Ljpe;->A:I
 
     new-array v0, v0, [F
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;[F)V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljfs;F)V
+.method public constructor <init>(Ljpe;F)V
     .locals 2
 
     const/4 v0, 0x1
@@ -33,28 +33,28 @@
 
     aput p2, v0, v1
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;[F)V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljfs;[F)V
+.method public constructor <init>(Ljpe;[F)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     array-length v0, p2
 
-    iget v1, p1, Ljfs;->A:I
+    iget v1, p1, Ljpe;->A:I
 
     if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    iput-object p1, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iput-object p1, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
     iput-object p2, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->b:[F
 
@@ -69,9 +69,9 @@
 .method private final varargs a(I[I)I
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
-    iget-object v1, v0, Ljfs;->C:[I
+    iget-object v1, v0, Ljpe;->C:[I
 
     const/4 v0, 0x0
 
@@ -107,7 +107,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Ljfs;->a(I)Ljfs;
+    invoke-static {v0}, Ljpe;->a(I)Ljpe;
 
     move-result-object v1
 
@@ -138,16 +138,16 @@
     throw v1
 
     :cond_0
-    iget v0, v1, Ljfs;->A:I
+    iget v0, v1, Ljpe;->A:I
 
-    invoke-static {v1, v0, p0}, Lcom/google/android/libraries/smartburst/utils/Feature;->readValues(Ljfs;ILjava/io/DataInputStream;)Lcom/google/android/libraries/smartburst/utils/Feature;
+    invoke-static {v1, v0, p0}, Lcom/google/android/libraries/smartburst/utils/Feature;->readValues(Ljpe;ILjava/io/DataInputStream;)Lcom/google/android/libraries/smartburst/utils/Feature;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static readValues(Ljfs;ILjava/io/DataInputStream;)Lcom/google/android/libraries/smartburst/utils/Feature;
+.method public static readValues(Ljpe;ILjava/io/DataInputStream;)Lcom/google/android/libraries/smartburst/utils/Feature;
     .locals 5
 
     const/4 v0, 0x0
@@ -170,7 +170,7 @@
     return-object v0
 
     :cond_1
-    iget v1, p0, Ljfs;->A:I
+    iget v1, p0, Ljpe;->A:I
 
     if-eq v1, p1, :cond_2
 
@@ -190,7 +190,7 @@
 
     const/4 v0, 0x1
 
-    iget v4, p0, Ljfs;->A:I
+    iget v4, p0, Ljpe;->A:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -225,7 +225,7 @@
     :cond_3
     new-instance v0, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;[F)V
+    invoke-direct {v0, p0, v1}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
 
     goto :goto_1
 .end method
@@ -259,9 +259,9 @@
 
     check-cast p1, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    iget-object v2, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v2, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
-    iget-object v3, p1, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v3, p1, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
     if-ne v2, v3, :cond_3
 
@@ -286,10 +286,10 @@
     goto :goto_0
 .end method
 
-.method public final getType()Ljfs;
+.method public final getType()Ljpe;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
     return-object v0
 .end method
@@ -354,7 +354,7 @@
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v2, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
     aput-object v2, v0, v1
 
@@ -406,9 +406,9 @@
 .method public final toString()Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
-    invoke-virtual {v0}, Ljfs;->name()Ljava/lang/String;
+    invoke-virtual {v0}, Ljpe;->name()Ljava/lang/String;
 
     move-result-object v0
 
@@ -460,15 +460,15 @@
 .method public final writeHeader(Ljava/io/DataOutputStream;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
-    iget v0, v0, Ljfs;->z:I
+    iget v0, v0, Ljpe;->z:I
 
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/utils/Feature;->a:Ljpe;
 
-    iget v0, v0, Ljfs;->A:I
+    iget v0, v0, Ljpe;->A:I
 
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
 

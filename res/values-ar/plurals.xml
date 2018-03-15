@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">صور متسلسلة (%1$d صورة)</item>
+        <item quantity="zero">صور متسلسلة (%1$d صورة)</item>
+        <item quantity="one">صور متسلسلة (صورة واحدة (%1$d))</item>
+        <item quantity="two">صور متسلسلة (صورتان (%1$d))</item>
+        <item quantity="few">صور متسلسلة (%1$d صور)</item>
+        <item quantity="many">صور متسلسلة (%1$d صورة)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">تم حفظ %1$d صورة</item>
         <item quantity="zero">تم حفظ %1$d صورة</item>

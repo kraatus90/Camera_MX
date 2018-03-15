@@ -1,194 +1,58 @@
-.class public final Ljnn;
-.super Ljnr;
+.class final Ljnn;
+.super Ljnm;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/Map$Entry;
-
-
-# static fields
-.field public static final serialVersionUID:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Map$Entry;Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    invoke-direct {p0, p1, p2}, Ljnr;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Ljnm;-><init>(Ljava/lang/String;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final synthetic b()Ljava/lang/Object;
-    .locals 1
+.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
+    .locals 2
 
-    invoke-super {p0}, Ljnr;->b()Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
 
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
     .locals 2
 
-    iget-object v1, p0, Ljnn;->a:Ljava/lang/Object;
+    instance-of v0, p1, Ljava/lang/Long;
 
-    monitor-enter v1
+    if-nez v0, :cond_0
 
-    :try_start_0
-    invoke-super {p0}, Ljnr;->b()Ljava/lang/Object;
+    new-instance v0, Ljava/io/IOException;
 
-    move-result-object v0
+    const-string v1, "Incorrect type for serialization"
 
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0, p1}, Ljava/util/Map$Entry;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    monitor-exit v1
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
 
-.method public final getKey()Ljava/lang/Object;
-    .locals 2
+    :cond_0
+    check-cast p1, Ljava/lang/Long;
 
-    iget-object v1, p0, Ljnn;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    monitor-enter v1
+    move-result-wide v0
 
-    :try_start_0
-    invoke-super {p0}, Ljnr;->b()Ljava/lang/Object;
+    invoke-virtual {p2, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
-
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final getValue()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v1, p0, Ljnn;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    invoke-super {p0}, Ljnr;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v1, p0, Ljnn;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    invoke-super {p0}, Ljnr;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->hashCode()I
-
-    move-result v0
-
-    monitor-exit v1
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    iget-object v1, p0, Ljnn;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    invoke-super {p0}, Ljnr;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0, p1}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-void
 .end method

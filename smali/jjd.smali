@@ -1,252 +1,108 @@
 .class final Ljjd;
-.super Ljjf;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/NavigableSet;
+.implements Lipn;
 
 
 # instance fields
-.field private synthetic e:Ljio;
+.field private final a:Ljgs;
+
+.field private final b:J
+
+.field private final synthetic c:Ljja;
 
 
 # direct methods
-.method constructor <init>(Ljio;Ljava/lang/Object;Ljava/util/NavigableSet;Ljiz;)V
+.method public constructor <init>(Ljja;JLjgs;)V
     .locals 0
 
-    iput-object p1, p0, Ljjd;->e:Ljio;
+    iput-object p1, p0, Ljjd;->c:Ljja;
 
-    invoke-direct {p0, p1, p2, p3, p4}, Ljjf;-><init>(Ljio;Ljava/lang/Object;Ljava/util/SortedSet;Ljiz;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p4, p0, Ljjd;->a:Ljgs;
+
+    iput-wide p2, p0, Ljjd;->b:J
 
     return-void
 .end method
 
-.method private final a(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;
-    .locals 4
-
-    new-instance v0, Ljjd;
-
-    iget-object v1, p0, Ljjd;->e:Ljio;
-
-    iget-object v2, p0, Ljjd;->a:Ljava/lang/Object;
-
-    iget-object v3, p0, Ljiz;->c:Ljiz;
-
-    if-nez v3, :cond_0
-
-    :goto_0
-    invoke-direct {v0, v1, v2, p1, p0}, Ljjd;-><init>(Ljio;Ljava/lang/Object;Ljava/util/NavigableSet;Ljiz;)V
-
-    return-object v0
-
-    :cond_0
-    iget-object p0, p0, Ljiz;->c:Ljiz;
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public final ceiling(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
+    check-cast p1, Ljgw;
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/NavigableSet;
-
-    invoke-interface {v0, p1}, Ljava/util/NavigableSet;->ceiling(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljpt;->a(Ljgw;)Ljpt;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iget-object v1, p0, Ljjd;->c:Ljja;
 
-.method final synthetic d()Ljava/util/SortedSet;
-    .locals 1
+    iget v1, v1, Ljja;->f:I
 
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
+    new-instance v2, Ljpt;
 
-    move-result-object v0
+    invoke-direct {v2, v1, v1}, Ljpt;-><init>(II)V
 
-    check-cast v0, Ljava/util/NavigableSet;
-
-    return-object v0
-.end method
-
-.method public final descendingIterator()Ljava/util/Iterator;
-    .locals 2
-
-    new-instance v1, Ljja;
-
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
+    invoke-static {v0, v2}, Lcom/google/android/libraries/smartburst/utils/MathUtils;->fitSizeInside(Ljpt;Ljpt;)Ljpt;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/NavigableSet;
+    iget v1, v0, Ljpt;->a:I
 
-    invoke-interface {v0}, Ljava/util/NavigableSet;->descendingIterator()Ljava/util/Iterator;
+    iget v0, v0, Ljpt;->b:I
 
-    move-result-object v0
+    iget-object v2, p0, Ljjd;->a:Ljgs;
 
-    invoke-direct {v1, p0, v0}, Ljja;-><init>(Ljiz;Ljava/util/Iterator;)V
+    invoke-interface {p1, v1, v0, v2}, Ljgw;->a(IILjgs;)Ljgv;
 
-    return-object v1
-.end method
+    move-result-object v1
 
-.method public final descendingSet()Ljava/util/NavigableSet;
-    .locals 1
+    iget-object v0, p0, Ljjd;->c:Ljja;
 
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
+    iget-object v2, v0, Ljja;->a:Ljid;
 
-    move-result-object v0
+    iget-wide v4, p0, Ljjd;->b:J
 
-    check-cast v0, Ljava/util/NavigableSet;
-
-    invoke-interface {v0}, Ljava/util/NavigableSet;->descendingSet()Ljava/util/NavigableSet;
+    invoke-interface {v1}, Ljgv;->e()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Ljjd;->a(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-interface {v2, v4, v5, v0}, Ljid;->a(JLandroid/graphics/Bitmap;)Ljne;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iget-object v2, p0, Ljjd;->c:Ljja;
 
-.method public final floor(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    iget-object v2, v2, Ljja;->e:Ljnq;
 
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
+    invoke-virtual {v2, v0}, Ljnq;->a(Ljne;)V
 
-    move-result-object v0
+    iget-object v0, p0, Ljjd;->c:Ljja;
 
-    check-cast v0, Ljava/util/NavigableSet;
+    iget-object v2, v0, Ljja;->c:Ljjj;
 
-    invoke-interface {v0, p1}, Ljava/util/NavigableSet;->floor(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1}, Ljgv;->e()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Landroid/graphics/Bitmap;
 
-.method public final headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 1
-
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
+    invoke-interface {v2, v0}, Ljjj;->a(Landroid/graphics/Bitmap;)Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/NavigableSet;
+    new-instance v2, Ljjb;
 
-    invoke-interface {v0, p1, p2}, Ljava/util/NavigableSet;->headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
+    iget-wide v4, p0, Ljjd;->b:J
 
-    move-result-object v0
+    invoke-direct {v2, v4, v5, v1, v0}, Ljjb;-><init>(JLjgv;Ljava/util/List;)V
 
-    invoke-direct {p0, v0}, Ljjd;->a(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final higher(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/NavigableSet;
-
-    invoke-interface {v0, p1}, Ljava/util/NavigableSet;->higher(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final lower(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/NavigableSet;
-
-    invoke-interface {v0, p1}, Ljava/util/NavigableSet;->lower(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final pollFirst()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljjd;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liui;->d(Ljava/util/Iterator;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final pollLast()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljjd;->descendingIterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liui;->d(Ljava/util/Iterator;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final subSet(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 1
-
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/NavigableSet;
-
-    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/NavigableSet;->subSet(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljjd;->a(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 1
-
-    invoke-super {p0}, Ljjf;->d()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/NavigableSet;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/NavigableSet;->tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljjd;->a(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v2
 .end method

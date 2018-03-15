@@ -32,7 +32,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1,156 +1,78 @@
 .class public final Lhlb;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+.super Lhlc;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static a(Landroid/content/Context;)I
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p0}, Lhlc;->c(Landroid/content/Context;)I
 
-    return-void
+    move-result v0
+
+    return v0
 .end method
 
+.method public static a(ILandroid/app/Activity;)Landroid/app/Dialog;
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-# virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 8
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
-
-    move-result v6
-
-    move-object v3, v5
-
-    move-object v2, v5
-
-    move v1, v4
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    invoke-static {p1, p0}, Lhlc;->a(Landroid/content/Context;I)Z
 
     move-result v0
 
-    if-ge v0, v6, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    const/16 p0, 0x12
 
-    move-result v0
+    :cond_0
+    const/4 v0, 0x0
 
-    const v7, 0xffff
+    const/4 v1, 0x0
 
-    and-int/2addr v7, v0
-
-    sparse-switch v7, :sswitch_data_0
-
-    invoke-static {p1, v0}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :sswitch_0
-    invoke-static {p1, v0}, Lhjg;->l(Landroid/os/Parcel;I)[Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :sswitch_1
-    sget-object v3, Landroid/database/CursorWindow;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v0, v3}, Lhjg;->b(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+    invoke-static {p1, p0, v0, v1}, Lhky;->a(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object v0
 
-    check-cast v0, [Landroid/database/CursorWindow;
+    return-object v0
+.end method
 
-    move-object v3, v0
+.method public static b(Landroid/content/Context;)Landroid/content/res/Resources;
+    .locals 1
 
-    goto :goto_0
+    invoke-static {p0}, Lhlc;->e(Landroid/content/Context;)Landroid/content/res/Resources;
 
-    :sswitch_2
-    invoke-static {p1, v0}, Lhjg;->e(Landroid/os/Parcel;I)I
+    move-result-object v0
 
-    move-result v4
+    return-object v0
+.end method
 
-    goto :goto_0
+.method public static b(ILandroid/app/Activity;)Z
+    .locals 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    :sswitch_3
-    invoke-static {p1, v0}, Lhjg;->i(Landroid/os/Parcel;I)Landroid/os/Bundle;
-
-    move-result-object v5
-
-    goto :goto_0
-
-    :sswitch_4
-    invoke-static {p1, v0}, Lhjg;->e(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    invoke-static {p1, p0}, Lhlc;->a(Landroid/content/Context;I)Z
 
     move-result v0
 
-    if-eq v0, v6, :cond_1
+    if-eqz v0, :cond_0
 
-    new-instance v0, Ladf;
+    const/16 p0, 0x12
 
-    const/16 v1, 0x25
+    :cond_0
+    sget-object v0, Lhky;->a:Lhky;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    const/4 v2, 0x0
 
-    const-string v1, "Overread allowed size end="
+    invoke-virtual {v0, p1, p0, v1, v2}, Lhky;->b(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
-
-    throw v0
-
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/common/data/DataHolder;
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/common/data/DataHolder;-><init>(I[Ljava/lang/String;[Landroid/database/CursorWindow;ILandroid/os/Bundle;)V
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/data/DataHolder;->a()V
-
-    return-object v0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_0
-        0x2 -> :sswitch_1
-        0x3 -> :sswitch_2
-        0x4 -> :sswitch_3
-        0x3e8 -> :sswitch_4
-    .end sparse-switch
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    new-array v0, p1, [Lcom/google/android/gms/common/data/DataHolder;
-
-    return-object v0
+    return v0
 .end method

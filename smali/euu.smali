@@ -2,22 +2,53 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public final a:Landroid/graphics/RectF;
 
-.field public final b:Landroid/graphics/RectF;
+# static fields
+.field public static final a:Leuu;
 
 
 # direct methods
-.method constructor <init>(Landroid/graphics/RectF;Landroid/graphics/RectF;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Leuu;
+
+    invoke-direct {v0}, Leuu;-><init>()V
+
+    sput-object v0, Leuu;->a:Leuu;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leuu;->a:Landroid/graphics/RectF;
-
-    iput-object p2, p0, Leuu;->b:Landroid/graphics/RectF;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    const-string v0, "mv-audio-sampler"
+
+    invoke-static {v0}, Leqp;->b(Ljava/lang/String;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Handler;
+
+    return-object v0
 .end method

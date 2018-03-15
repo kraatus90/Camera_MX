@@ -1,57 +1,47 @@
-.class final Lgdf;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class Lgdf;
+.super Lgdd;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lgcx;
+.field private final synthetic a:Lgde;
 
 
 # direct methods
-.method constructor <init>(Lgcx;)V
+.method constructor <init>(Lgde;)V
     .locals 0
 
-    iput-object p1, p0, Lgdf;->a:Lgcx;
+    iput-object p1, p0, Lgdf;->a:Lgde;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Lgdd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public P()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a()V
     .locals 2
 
-    sget-object v1, Lgcx;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lgdf;->a:Lgde;
 
-    monitor-enter v1
+    iget-object v0, v0, Lgde;->d:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
 
-    :try_start_0
-    iget-object v0, p0, Lgdf;->a:Lgcx;
+    const/16 v1, 0x8
 
-    iget-object v0, v0, Lgcx;->e:Lgdk;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lgdf;->a:Lgde;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lgdf;->a:Lgcx;
+    iput-boolean v1, v0, Lgde;->e:Z
 
-    invoke-virtual {v1, v0}, Lgcx;->b(Lgdk;)V
-
-    :cond_0
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
 .end method

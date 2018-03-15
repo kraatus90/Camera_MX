@@ -1,61 +1,60 @@
 .class public final Lfof;
-.super Lfoe;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private e:Ljava/lang/String;
+
+# static fields
+.field public static final a:Lfof;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lfoe;-><init>()V
+    new-instance v0, Lfof;
 
-    const-string v0, "precision mediump float;                            \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  gl_FragColor = texture2D( sTexture, vTexCoord );  \n}                                                   \n"
+    invoke-direct {v0}, Lfof;-><init>()V
 
-    iput-object v0, p0, Lfof;->e:Ljava/lang/String;
-
-    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
-
-    iget-object v1, p0, Lfof;->e:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lfof;->a(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfof;->d:I
-
-    iget v0, p0, Lfof;->d:I
-
-    const-string v1, "aPosition"
-
-    invoke-static {v0, v1}, Lfof;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfof;->a:I
-
-    iget v0, p0, Lfof;->d:I
-
-    const-string v1, "aTextureCoord"
-
-    invoke-static {v0, v1}, Lfof;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfof;->b:I
-
-    iget v0, p0, Lfof;->d:I
-
-    const-string v1, "uMvpMatrix"
-
-    invoke-static {v0, v1}, Lfof;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfof;->c:I
+    sput-object v0, Lfof;->a:Lfof;
 
     return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    const-string v0, "reproc-write"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lhwt;->d(Ljava/lang/String;I)Ljava/util/concurrent/ThreadFactory;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    return-object v0
 .end method

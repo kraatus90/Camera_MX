@@ -1,54 +1,267 @@
-.class public final Leqf;
-.super Ljava/lang/Object;
+.class public final enum Leqf;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# static fields
+.field public static final enum a:Leqf;
 
-# instance fields
-.field private a:Ljxn;
+.field public static final enum b:Leqf;
 
-.field private b:Ljxn;
+.field public static final enum c:Leqf;
 
-.field private c:Ljxn;
+.field public static final enum d:Leqf;
 
-.field private d:Ljxn;
+.field public static final enum e:Leqf;
+
+.field public static final enum f:Leqf;
+
+.field public static final enum g:Leqf;
+
+.field public static final enum h:Leqf;
+
+.field public static final enum i:Leqf;
+
+.field public static final enum j:Leqf;
+
+.field public static final enum k:Leqf;
+
+.field public static final enum l:Leqf;
+
+.field private static final enum m:Leqf;
+
+.field private static final synthetic n:[Leqf;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v7, 0x4
 
-    iput-object p1, p0, Leqf;->a:Ljxn;
+    const/4 v6, 0x3
 
-    iput-object p2, p0, Leqf;->b:Ljxn;
+    const/4 v5, 0x2
 
-    iput-object p3, p0, Leqf;->c:Ljxn;
+    const/4 v4, 0x1
 
-    iput-object p4, p0, Leqf;->d:Ljxn;
+    const/4 v3, 0x0
+
+    new-instance v0, Leqf;
+
+    const-string v1, "HAS_DETAILED_CAPTURE_INFO"
+
+    invoke-direct {v0, v1, v3}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->a:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "CAN_SHARE"
+
+    invoke-direct {v0, v1, v4}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->b:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "CAN_EDIT"
+
+    invoke-direct {v0, v1, v5}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->c:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "CAN_DELETE"
+
+    invoke-direct {v0, v1, v6}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->d:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "CAN_PLAY"
+
+    invoke-direct {v0, v1, v7}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->e:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "CAN_OPEN_VIEWER"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->m:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "CAN_SWIPE_AWAY"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->f:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "CAN_ZOOM_IN_PLACE"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->g:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "IS_RENDERING"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->h:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "IS_IMAGE"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->i:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "IS_VIDEO"
+
+    const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->j:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "IS_BURST"
+
+    const/16 v2, 0xb
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->k:Leqf;
+
+    new-instance v0, Leqf;
+
+    const-string v1, "IS_ANIMATION"
+
+    const/16 v2, 0xc
+
+    invoke-direct {v0, v1, v2}, Leqf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leqf;->l:Leqf;
+
+    const/16 v0, 0xd
+
+    new-array v0, v0, [Leqf;
+
+    sget-object v1, Leqf;->a:Leqf;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Leqf;->b:Leqf;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Leqf;->c:Leqf;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Leqf;->d:Leqf;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Leqf;->e:Leqf;
+
+    aput-object v1, v0, v7
+
+    const/4 v1, 0x5
+
+    sget-object v2, Leqf;->m:Leqf;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Leqf;->f:Leqf;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Leqf;->g:Leqf;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    sget-object v2, Leqf;->h:Leqf;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    sget-object v2, Leqf;->i:Leqf;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    sget-object v2, Leqf;->j:Leqf;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    sget-object v2, Leqf;->k:Leqf;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xc
+
+    sget-object v2, Leqf;->l:Leqf;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Leqf;->n:[Leqf;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Leqe;
+    return-void
+.end method
 
-    iget-object v1, p0, Leqf;->a:Ljxn;
+.method public static values()[Leqf;
+    .locals 1
 
-    iget-object v2, p0, Leqf;->b:Ljxn;
+    sget-object v0, Leqf;->n:[Leqf;
 
-    iget-object v3, p0, Leqf;->c:Ljxn;
+    invoke-virtual {v0}, [Leqf;->clone()Ljava/lang/Object;
 
-    iget-object v4, p0, Leqf;->d:Ljxn;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Leqe;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+    check-cast v0, [Leqf;
 
     return-object v0
 .end method

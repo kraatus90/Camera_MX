@@ -1,86 +1,42 @@
-.class public final Lhih;
-.super Landroid/view/GestureDetector$SimpleOnGestureListener;
+.class final Lhih;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+.field private final synthetic a:Landroid/widget/ImageView;
+
+.field private final synthetic b:Lhig;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;)V
+.method constructor <init>(Lhig;Landroid/widget/ImageView;)V
     .locals 0
 
-    iput-object p1, p0, Lhih;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+    iput-object p1, p0, Lhih;->b:Lhig;
 
-    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
+    iput-object p2, p0, Lhih;->a:Landroid/widget/ImageView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSingleTapUp(Landroid/view/MotionEvent;)Z
-    .locals 4
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 3
 
-    const/4 v3, 0x1
+    iget-object v0, p0, Lhih;->b:Lhig;
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
+    iget-object v1, p0, Lhih;->a:Landroid/widget/ImageView;
 
-    move-result v0
+    const/high16 v2, -0x3ee00000    # -10.0f
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
+    invoke-virtual {v0, v1, v2}, Lhig;->a(Landroid/widget/ImageView;F)V
 
-    move-result v1
-
-    iget-object v2, p0, Lhih;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
-
-    iget-object v2, v2, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->b:Landroid/graphics/RectF;
-
-    iget v2, v2, Landroid/graphics/RectF;->right:F
-
-    cmpg-float v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    iget-object v2, p0, Lhih;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
-
-    iget-object v2, v2, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->b:Landroid/graphics/RectF;
-
-    iget v2, v2, Landroid/graphics/RectF;->left:F
-
-    cmpl-float v2, v0, v2
-
-    if-lez v2, :cond_0
-
-    iget-object v2, p0, Lhih;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
-
-    iget-object v2, v2, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->b:Landroid/graphics/RectF;
-
-    iget v2, v2, Landroid/graphics/RectF;->bottom:F
-
-    cmpg-float v2, v1, v2
-
-    if-gez v2, :cond_0
-
-    iget-object v2, p0, Lhih;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
-
-    iget-object v2, v2, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->b:Landroid/graphics/RectF;
-
-    iget v2, v2, Landroid/graphics/RectF;->top:F
-
-    cmpl-float v2, v1, v2
-
-    if-lez v2, :cond_0
-
-    iget-object v2, p0, Lhih;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
-
-    float-to-int v0, v0
-
-    float-to-int v1, v1
-
-    invoke-virtual {v2, v3, v0, v1}, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->a(ZII)V
-
-    :cond_0
-    return v3
+    return-void
 .end method

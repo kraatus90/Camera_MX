@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lgug;
+.implements Lgvg;
 
 
 # virtual methods

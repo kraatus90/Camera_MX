@@ -1,36 +1,22 @@
-.class public final Ldvi;
+.class final Ldvi;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldvd;
+.implements Lgwv;
 
 
 # instance fields
-.field public final a:Leou;
-
-.field public final b:Ljava/util/UUID;
-
-.field public c:Z
-
-.field public d:Z
-
-.field public final synthetic e:Ldxx;
-
-.field private f:Z
+.field private final synthetic a:Ldux;
 
 
 # direct methods
-.method public constructor <init>(Ldxx;Leou;Ljava/util/UUID;)V
+.method constructor <init>(Ldux;)V
     .locals 0
 
-    iput-object p1, p0, Ldvi;->e:Ldxx;
+    iput-object p1, p0, Ldvi;->a:Ldux;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Ldvi;->a:Leou;
-
-    iput-object p3, p0, Ldvi;->b:Ljava/util/UUID;
 
     return-void
 .end method
@@ -38,55 +24,29 @@
 
 # virtual methods
 .method public final a()V
-    .locals 1
+    .locals 4
 
-    iget-boolean v0, p0, Ldvi;->c:Z
+    const/4 v3, 0x0
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Ldvi;->a:Ldux;
 
-    iget-boolean v0, p0, Ldvi;->d:Z
+    invoke-static {v0}, Ldux;->b(Ldux;)Lbyy;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Ldvi;->a:Leou;
+    invoke-interface {v0}, Lbyy;->t()Lgjq;
 
-    invoke-interface {v0}, Leou;->h()V
+    move-result-object v0
 
-    const/4 v0, 0x1
+    const-string v1, "default_scope"
 
-    iput-boolean v0, p0, Ldvi;->f:Z
+    const-string v2, "refocus_show_tutorial"
 
-    :cond_0
-    return-void
-.end method
+    invoke-virtual {v0, v1, v2, v3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Z)V
 
-.method public final a(Liil;Ljuw;)V
-    .locals 2
+    iget-object v0, p0, Ldvi;->a:Ldux;
 
-    new-instance v0, Ljava/lang/RuntimeException;
+    iput-boolean v3, v0, Ldux;->A:Z
 
-    const-string v1, "Should not call RawModeImageSaver.addFullSizeImage()"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-boolean v0, p0, Ldvi;->f:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Ldvi;->a:Leou;
-
-    invoke-interface {v0}, Leou;->h()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ldvi;->f:Z
-
-    :cond_0
     return-void
 .end method

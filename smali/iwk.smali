@@ -1,76 +1,86 @@
-.class final Liwk;
+.class final synthetic Liwk;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Liwj;
+
+.field private final b:Liwn;
+
+.field private final c:Lixf;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Liwj;Liwn;Lixf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liwk;->a:Liwj;
+
+    iput-object p2, p0, Liwk;->b:Liwn;
+
+    iput-object p3, p0, Liwk;->c:Lixf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 7
+.method public final run()V
+    .locals 5
 
-    const/high16 v6, 0x7f800000    # Float.POSITIVE_INFINITY
+    iget-object v1, p0, Liwk;->a:Liwj;
 
-    const-class v0, Ljee;
+    iget-object v0, p0, Liwk;->b:Liwn;
 
-    const-string v1, "default"
+    iget-object v2, p0, Liwk;->c:Lixf;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v3, v1, Liwj;->a:Ljava/lang/Object;
 
-    move-result-object v0
+    monitor-enter v3
 
-    check-cast v0, Ljee;
+    :try_start_0
+    iget-object v0, v0, Liwn;->b:Ljava/util/Set;
 
-    const/4 v1, 0x2
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    new-array v1, v1, [Ljbc;
+    move-result-object v4
 
-    const/4 v2, 0x0
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    new-instance v3, Ljbv;
+    move-result v0
 
-    new-instance v4, Ljar;
+    if-eqz v0, :cond_0
 
-    sget-object v5, Ljds;->e:Ljea;
-
-    invoke-direct {v4, v0, v5, v6}, Ljar;-><init>(Ljee;Ljea;F)V
-
-    const v5, 0x3ecccccd    # 0.4f
-
-    invoke-direct {v3, v4, v5}, Ljbv;-><init>(Ljan;F)V
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    new-instance v3, Ljbv;
-
-    new-instance v4, Ljar;
-
-    sget-object v5, Ljds;->g:Ljea;
-
-    invoke-direct {v4, v0, v5, v6}, Ljar;-><init>(Ljee;Ljea;F)V
-
-    const/high16 v0, 0x3f000000    # 0.5f
-
-    invoke-direct {v3, v4, v0}, Ljbv;-><init>(Ljan;F)V
-
-    aput-object v3, v1, v2
-
-    invoke-static {v1}, Ljax;->a([Ljbc;)Ljax;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Liwq;
+
+    invoke-virtual {v1, v2, v0}, Liwj;->a(Lixf;Liwq;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
 .end method

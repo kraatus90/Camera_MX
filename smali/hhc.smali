@@ -1,43 +1,58 @@
-.class public final Lhhc;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class final Lhhc;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private synthetic a:Lhhb;
+.field private final synthetic a:Lhgw;
 
 
 # direct methods
-.method public constructor <init>(Lhhb;)V
+.method constructor <init>(Lhgw;)V
     .locals 0
 
-    iput-object p1, p0, Lhhc;->a:Lhhb;
+    iput-object p1, p0, Lhhc;->a:Lhgw;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-    iget-object v0, p0, Lhhc;->a:Lhhb;
+    iget-object v0, p0, Lhhc;->a:Lhgw;
 
-    iget-object v0, v0, Lhhb;->a:Landroid/view/View;
+    iget-object v1, v0, Lhgw;->d:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+    move-result v2
 
-    iget-object v0, p0, Lhhc;->a:Lhhb;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lhhb;->a:Landroid/view/View;
+    cmpl-float v0, v2, v0
 
-    const/16 v1, 0x8
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    const/4 v0, 0x1
+
+    :goto_0
+    iput-boolean v0, v1, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->b:Z
+
+    iput v2, v1, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->d:F
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->invalidate()V
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

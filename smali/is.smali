@@ -1,38 +1,63 @@
 .class public final Lis;
-.super Ljava/lang/Object;
+.super Landroid/view/ViewGroup$LayoutParams;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/animation/Interpolator;
+
+# instance fields
+.field public a:Z
+
+.field public b:I
+
+.field public c:F
+
+.field public d:Z
+
+.field public e:I
+
+.field public f:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, -0x1
+
+    invoke-direct {p0, v0, v0}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lis;->c:F
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final getInterpolation(F)F
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sub-float v0, p1, v2
+    const/4 v0, 0x0
 
-    mul-float v1, v0, v0
+    iput v0, p0, Lis;->c:F
 
-    mul-float/2addr v1, v0
+    sget-object v0, Landroid/support/v4/view/ViewPager;->a:[I
 
-    mul-float/2addr v1, v0
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    mul-float/2addr v0, v1
+    move-result-object v0
 
-    add-float/2addr v0, v2
+    const/4 v1, 0x0
 
-    return v0
+    const/16 v2, 0x30
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInteger(II)I
+
+    move-result v1
+
+    iput v1, p0, Lis;->b:I
+
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
+    return-void
 .end method

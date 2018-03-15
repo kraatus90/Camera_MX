@@ -1,10 +1,13 @@
 .class final Ljiq;
-.super Ljly;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljpx;
 
 
 # instance fields
-.field private synthetic a:Ljip;
+.field private final synthetic a:Ljip;
 
 
 # direct methods
@@ -13,100 +16,75 @@
 
     iput-object p1, p0, Ljiq;->a:Ljip;
 
-    invoke-direct {p0}, Ljly;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()Ljava/util/Map;
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    iget-object v0, p0, Ljiq;->a:Ljip;
+    const-string v0, "FeatureExtractionPipeline"
 
-    return-object v0
+    const-string v1, "Started"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
+.method public final a(Ljava/lang/Exception;)V
+    .locals 2
+
+    const-string v0, "FeatureExtractionPipeline"
+
+    const-string v1, "onError"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Ljiq;->a:Ljip;
 
-    iget-object v0, v0, Ljip;->a:Ljava/util/Map;
+    invoke-virtual {v0}, Ljip;->a()V
 
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    iget-object v0, p0, Ljiq;->a:Ljip;
+
+    iget-object v1, v0, Ljip;->b:Liru;
+
+    invoke-static {p1}, Lirb;->a(Ljava/lang/Throwable;)Lirb;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Liui;->a(Ljava/util/Collection;Ljava/lang/Object;)Z
+    check-cast v0, Lirb;
 
-    move-result v0
+    invoke-virtual {v1, v0}, Liru;->a(Lirb;)Z
 
-    return v0
+    return-void
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
+.method public final b()V
     .locals 2
 
-    new-instance v0, Ljir;
+    const-string v0, "FeatureExtractionPipeline"
+
+    const-string v1, "onStopped"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Ljiq;->a:Ljip;
+
+    invoke-virtual {v0}, Ljip;->a()V
+
+    iget-object v0, p0, Ljiq;->a:Ljip;
+
+    iget-object v0, v0, Ljip;->b:Liru;
 
     iget-object v1, p0, Ljiq;->a:Ljip;
 
-    invoke-direct {v0, v1}, Ljir;-><init>(Ljip;)V
+    iget-object v1, v1, Ljip;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    return-object v0
-.end method
+    invoke-virtual {v0, v1}, Liru;->a(Ljava/lang/Object;)Z
 
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 3
-
-    invoke-virtual {p0, p1}, Ljiq;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    check-cast p1, Ljava/util/Map$Entry;
-
-    iget-object v0, p0, Ljiq;->a:Ljip;
-
-    iget-object v1, v0, Ljip;->b:Ljio;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
-
-    iget-object v2, v1, Ljio;->a:Ljava/util/Map;
-
-    invoke-static {v2, v0}, Liui;->c(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
-    move-result v2
-
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
-
-    iget v0, v1, Ljio;->b:I
-
-    sub-int/2addr v0, v2
-
-    iput v0, v1, Ljio;->b:I
-
-    :cond_1
-    const/4 v0, 0x1
-
-    goto :goto_0
+    return-void
 .end method

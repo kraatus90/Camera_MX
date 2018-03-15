@@ -1,176 +1,189 @@
-.class public final Lebp;
-.super Ljava/lang/Object;
+.class Lebp;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic a:Lebo;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lebo;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lebp;->a:Lebo;
 
-    iput-object p1, p0, Lebp;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lebp;->b:Ljxn;
-
-    iput-object p3, p0, Lebp;->c:Ljxn;
-
-    iput-object p4, p0, Lebp;->d:Ljxn;
+    invoke-direct {p0, v0}, Lglb;-><init>([F)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 20
+.method public final a()V
+    .locals 3
 
-    move-object/from16 v0, p0
+    const/4 v2, 0x0
 
-    iget-object v2, v0, Lebp;->a:Ljxn;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lebo;->b:Lick;
 
-    move-result-object v2
+    const/4 v1, 0x1
 
-    move-object v15, v2
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    check-cast v15, Leca;
+    move-result-object v1
 
-    move-object/from16 v0, p0
+    invoke-interface {v0, v1}, Lick;->a(Ljava/lang/Object;)V
 
-    iget-object v2, v0, Lebp;->b:Ljxn;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lebp;->a:Lebo;
 
-    move-result-object v2
+    iget-object v1, v1, Lebo;->a:Lgrz;
 
-    check-cast v2, Ledh;
+    iget-object v1, v1, Lgrz;->d:Lgsa;
 
-    move-object/from16 v0, p0
+    iget-boolean v1, v1, Lgsa;->g:Z
 
-    iget-object v3, v0, Lebp;->c:Ljxn;
+    iput-boolean v1, v0, Lebo;->g:Z
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    move-result-object v3
+    iget-object v0, v0, Lebo;->a:Lgrz;
 
-    move-object/from16 v16, v3
+    invoke-virtual {v0, v2}, Lgrz;->c(Z)V
 
-    check-cast v16, Ledn;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lebo;->c:Lbns;
 
-    iget-object v3, v0, Lebp;->d:Ljxn;
+    iget-object v0, v0, Lbns;->a:Lbnw;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lglb;->e()V
 
-    move-result-object v3
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    move-object v13, v3
+    iget-object v0, v0, Lebo;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    check-cast v13, Ledk;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startCountdown()V
 
-    new-instance v17, Ledp;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    invoke-virtual {v2}, Ledh;->a()Leai;
+    iget-object v0, v0, Lebo;->e:Lgvc;
 
-    move-result-object v18
+    sget-object v1, Lgue;->g:Lgue;
 
-    invoke-static {}, Lfsp;->d()Lggq;
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    move-result-object v2
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    iget-object v3, v13, Ledk;->e:Ljuw;
+    iget-object v0, v0, Lebo;->f:Lgqc;
 
-    new-instance v4, Ledl;
+    invoke-virtual {v0, v2}, Lgqc;->a(Z)Z
 
-    invoke-direct {v4, v2}, Ledl;-><init>(Lggq;)V
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    iget-object v0, v0, Lebo;->h:Lfwg;
 
-    invoke-static {v3, v4, v2}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
+    invoke-virtual {v0}, Lfwg;->b()V
 
-    move-result-object v9
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    new-instance v19, Ledq;
+    iget-object v0, v0, Lebo;->i:Lgwk;
 
-    new-instance v2, Leco;
+    invoke-virtual {v0, v2}, Lgwk;->a(Z)V
 
-    iget-object v3, v13, Ledk;->a:Licz;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    iget-object v4, v13, Ledk;->b:Licv;
+    iget-object v0, v0, Lebo;->k:Landroid/content/Context;
 
-    iget-object v5, v13, Ledk;->i:Leam;
+    iget-object v1, p0, Lebp;->a:Lebo;
 
-    iget-object v6, v13, Ledk;->c:Lghe;
+    iget-object v1, v1, Lebo;->j:Lick;
 
-    iget-object v7, v13, Ledk;->d:Ldol;
+    invoke-static {v0, v1}, Lhft;->a(Landroid/content/Context;Lick;)Z
 
-    iget-object v8, v13, Ledk;->e:Ljuw;
+    return-void
+.end method
 
-    iget-object v10, v13, Ledk;->f:Ldjo;
+.method public final b()V
+    .locals 3
 
-    iget-object v11, v13, Ledk;->g:Ldjm;
+    const/4 v2, 0x1
 
-    iget-object v12, v13, Ledk;->h:Ldvc;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    iget-object v13, v13, Ledk;->j:Lgez;
+    iget-object v0, v0, Lebo;->b:Lick;
 
-    const/4 v14, 0x1
+    const/4 v1, 0x0
 
-    invoke-direct/range {v2 .. v14}, Leco;-><init>(Licz;Licv;Leam;Lghe;Ldol;Ljuw;Ljuw;Ldjo;Ldjm;Ldvc;Lgfp;I)V
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/4 v3, 0x2
+    move-result-object v1
 
-    const/4 v4, 0x0
+    invoke-interface {v0, v1}, Lick;->a(Ljava/lang/Object;)V
 
-    move-object/from16 v0, v19
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    invoke-direct {v0, v2, v3, v4}, Ledq;-><init>(Leai;IZ)V
+    iget-object v0, v0, Lebo;->a:Lgrz;
 
-    const-wide/32 v2, 0x5f5e100
+    iget-object v1, p0, Lebp;->a:Lebo;
 
-    move-object/from16 v0, v16
+    iget-boolean v1, v1, Lebo;->g:Z
 
-    move-object/from16 v1, v19
+    invoke-virtual {v0, v1}, Lgrz;->c(Z)V
 
-    invoke-virtual {v0, v1, v2, v3}, Ledn;->a(Leai;J)Leai;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    move-result-object v2
+    iget-object v0, v0, Lebo;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    move-object/from16 v0, v18
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopCountdown()V
 
-    invoke-virtual {v15, v0, v2}, Leca;->a(Leai;Leai;)Leai;
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    move-result-object v2
+    iget-object v0, v0, Lebo;->e:Lgvc;
 
-    move-object/from16 v0, v17
+    sget-object v1, Lgue;->a:Lgue;
 
-    invoke-direct {v0, v2}, Ledp;-><init>(Leai;)V
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    const-string v2, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    move-object/from16 v0, v17
+    iget-object v0, v0, Lebo;->f:Lgqc;
 
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lgqc;->a(Z)Z
 
-    move-result-object v2
+    iget-object v0, p0, Lebp;->a:Lebo;
 
-    check-cast v2, Ledp;
+    iget-object v0, v0, Lebo;->h:Lfwg;
 
-    return-object v2
+    invoke-virtual {v0}, Lfwg;->a()V
+
+    iget-object v0, p0, Lebp;->a:Lebo;
+
+    iget-object v0, v0, Lebo;->i:Lgwk;
+
+    invoke-virtual {v0, v2}, Lgwk;->a(Z)V
+
+    iget-object v0, p0, Lebp;->a:Lebo;
+
+    iget-object v0, v0, Lebo;->k:Landroid/content/Context;
+
+    iget-object v1, p0, Lebp;->a:Lebo;
+
+    iget-object v1, v1, Lebo;->j:Lick;
+
+    invoke-static {v0, v1}, Lhft;->b(Landroid/content/Context;Lick;)Z
+
+    return-void
+.end method
+
+.method public u()V
+    .locals 0
+
+    return-void
 .end method

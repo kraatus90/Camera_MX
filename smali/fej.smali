@@ -1,55 +1,40 @@
-.class Lfej;
-.super Lfeh;
+.class public final Lfej;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lfei;
+.field private final a:Lfdy;
+
+.field private final b:Lfdx;
 
 
 # direct methods
-.method constructor <init>(Lfei;)V
+.method public constructor <init>(Lfdy;Lfdx;)V
     .locals 0
 
-    iput-object p1, p0, Lfej;->a:Lfei;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lfeh;-><init>()V
+    iput-object p1, p0, Lfej;->a:Lfdy;
+
+    iput-object p2, p0, Lfej;->b:Lfdx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lfej;->a:Lfei;
+    iget-object v0, p0, Lfej;->a:Lfdy;
 
-    iget-object v0, v0, Lfei;->g:Levh;
+    iget-object v1, p0, Lfej;->b:Lfdx;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Levh;->a(Z)Z
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lfej;->a:Lfei;
-
-    iget-object v0, v0, Lfei;->g:Levh;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Levh;->a(Z)Z
-
-    return-void
-.end method
-
-.method public r_()V
-    .locals 0
+    invoke-virtual {v0, v1}, Lfdy;->a(Lfdx;)Lkeh;
 
     return-void
 .end method

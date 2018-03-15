@@ -1,53 +1,77 @@
-.class public final Leuq;
-.super Landroid/animation/AnimatorListenerAdapter;
-.source "PG"
+.class public final synthetic Leuq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfrs;
 
 
 # instance fields
-.field private synthetic a:Landroid/animation/ValueAnimator;
+.field private final a:Lihs;
 
-.field private synthetic b:Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;Landroid/animation/ValueAnimator;)V
+.method public constructor <init>(Lihs;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Leuq;->b:Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Leuq;->a:Landroid/animation/ValueAnimator;
+    iput-object p1, p0, Leuq;->a:Lihs;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p2, p0, Leuq;->b:Lkgv;
+
+    iput-object p3, p0, Leuq;->c:Lkgv;
+
+    iput-object p4, p0, Leuq;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Leuq;->a:Landroid/animation/ValueAnimator;
+    iget-object v2, p0, Leuq;->a:Lihs;
 
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
+    iget-object v0, p0, Leuq;->b:Lkgv;
 
-    return-void
-.end method
+    iget-object v1, p0, Leuq;->c:Lkgv;
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+    iget-object v3, p0, Leuq;->d:Lkgv;
 
-    iget-object v0, p0, Leuq;->b:Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;
+    const-string v4, "MICRO_EncoderModule#shutdown_controller"
 
-    sget v1, Leh;->at:I
+    invoke-interface {v2, v4}, Lihs;->a(Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;->a(Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;I)I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Leuq;->b:Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;
+    move-result-object v0
 
-    const/4 v1, 0x0
+    check-cast v0, Lesi;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;->setVisibility(I)V
+    invoke-interface {v0}, Lesi;->close()V
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lerz;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lers;
+
+    invoke-interface {v0, v1}, Lerz;->b(Lers;)V
+
+    invoke-interface {v2}, Lihs;->a()V
 
     return-void
 .end method

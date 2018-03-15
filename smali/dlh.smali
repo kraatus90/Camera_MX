@@ -1,66 +1,114 @@
-.class final Ldlh;
+.class public final Ldlh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Late;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldir;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldir;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldlh;->a:Ldir;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldlh;->a:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ljuw;
+.method public static a(Lkgv;)Ldlh;
     .locals 1
 
-    iget-object v0, p0, Ldlh;->a:Ldir;
+    new-instance v0, Ldlh;
 
-    invoke-virtual {v0}, Ldir;->a()Ljuw;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Ldlh;-><init>(Lkgv;)V
 
     return-object v0
 .end method
 
-.method public final b()Ljuw;
-    .locals 1
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const/4 v5, 0x1
 
-    throw v0
-.end method
+    const/4 v4, 0x0
 
-.method public final c()V
-    .locals 1
+    iget-object v0, p0, Ldlh;->a:Lkgv;
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    move-result-object v0
 
-    throw v0
-.end method
+    check-cast v0, Liho;
 
-.method public final d()V
-    .locals 1
+    const-string v1, "Nexus2015PostPrcsg"
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-interface {v0, v1}, Liho;->a(Ljava/lang/String;)Lihn;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    move-result-object v0
 
-    throw v0
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v1, v2, v3}, Ljuo;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljuo;
+
+    move-result-object v1
+
+    const/4 v2, 0x3
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-static {v2, v3, v4}, Ljuo;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljuo;
+
+    move-result-object v2
+
+    new-instance v3, Ldlg;
+
+    invoke-direct {v3, v1, v2, v0}, Ldlg;-><init>(Ljava/util/Set;Ljava/util/Set;Lihn;)V
+
+    invoke-static {v3}, Ljuh;->a(Ljava/lang/Object;)Ljuh;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lffm;->a(Ljava/util/Collection;)Lfhm;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfhm;
+
+    return-object v0
 .end method

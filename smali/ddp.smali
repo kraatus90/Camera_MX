@@ -1,118 +1,334 @@
 .class public final Lddp;
-.super Ldba;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final c:Ljava/lang/String;
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private q:Licn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
+
+.field private final l:Lkgv;
+
+.field private final m:Lkgv;
+
+.field private final n:Lkgv;
+
+.field private final o:Lkgv;
+
+.field private final p:Lkgv;
+
+.field private final q:Lkgv;
+
+.field private final r:Lkgv;
+
+.field private final s:Lkgv;
+
+.field private final t:Lkgv;
+
+.field private final u:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 1
 
-    const-string v0, "VidMod"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lddp;->a:Lkgv;
 
-    move-result-object v0
+    iput-object p2, p0, Lddp;->b:Lkgv;
 
-    sput-object v0, Lddp;->c:Ljava/lang/String;
+    iput-object p3, p0, Lddp;->c:Lkgv;
 
-    return-void
-.end method
+    iput-object p4, p0, Lddp;->d:Lkgv;
 
-.method public constructor <init>(Lfic;Lbsa;Lbvl;Liee;Lhzt;Landroid/content/res/Resources;Ljxn;Liau;Lffs;Lerh;Lbje;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Leqd;Lexu;Ldbw;Ldav;Lbfe;Lhem;)V
-    .locals 21
+    iput-object p5, p0, Lddp;->e:Lkgv;
 
-    move-object/from16 v0, p11
+    iput-object p6, p0, Lddp;->f:Lkgv;
 
-    iget-object v13, v0, Lbje;->a:Liau;
+    iput-object p7, p0, Lddp;->g:Lkgv;
 
-    move-object/from16 v2, p0
+    iput-object p8, p0, Lddp;->h:Lkgv;
 
-    move-object/from16 v3, p16
+    iput-object p9, p0, Lddp;->i:Lkgv;
 
-    move-object/from16 v4, p1
+    iput-object p10, p0, Lddp;->j:Lkgv;
 
-    move-object/from16 v5, p2
+    iput-object p11, p0, Lddp;->k:Lkgv;
 
-    move-object/from16 v6, p3
+    iput-object p12, p0, Lddp;->l:Lkgv;
 
-    move-object/from16 v7, p4
+    iput-object p13, p0, Lddp;->m:Lkgv;
 
-    move-object/from16 v8, p5
+    iput-object p14, p0, Lddp;->n:Lkgv;
 
-    move-object/from16 v9, p6
+    move-object/from16 v0, p15
 
-    move-object/from16 v10, p7
+    iput-object v0, p0, Lddp;->o:Lkgv;
 
-    move-object/from16 v11, p8
+    move-object/from16 v0, p16
 
-    move-object/from16 v12, p9
+    iput-object v0, p0, Lddp;->p:Lkgv;
 
-    move-object/from16 v14, p12
+    move-object/from16 v0, p17
 
-    move-object/from16 v15, p13
+    iput-object v0, p0, Lddp;->q:Lkgv;
 
-    move-object/from16 v16, p14
+    move-object/from16 v0, p18
 
-    move-object/from16 v17, p15
+    iput-object v0, p0, Lddp;->r:Lkgv;
 
-    move-object/from16 v18, p17
+    move-object/from16 v0, p19
 
-    move-object/from16 v19, p18
+    iput-object v0, p0, Lddp;->s:Lkgv;
 
-    move-object/from16 v20, p19
+    move-object/from16 v0, p20
 
-    invoke-direct/range {v2 .. v20}, Ldba;-><init>(Liau;Lfic;Lbsa;Lbvl;Liee;Lhzt;Landroid/content/res/Resources;Ljxn;Liau;Lffs;Liau;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Leqd;Lexu;Ldav;Lbfe;Lhem;)V
+    iput-object v0, p0, Lddp;->t:Lkgv;
 
-    new-instance v2, Lddq;
+    move-object/from16 v0, p21
 
-    move-object/from16 v0, p0
+    iput-object v0, p0, Lddp;->u:Lkgv;
 
-    invoke-direct {v2, v0}, Lddq;-><init>(Lddp;)V
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lddp;->q:Licn;
-
-    if-eqz p10, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lddp;->g:Lhzr;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lddp;->q:Licn;
-
-    move-object/from16 v0, p10
-
-    move-object/from16 v1, p5
-
-    invoke-virtual {v0, v3, v1}, Lerh;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lhzr;->a(Lich;)Lich;
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;)Lcom/google/android/apps/camera/bottombar/BottomBarListener;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 21
 
-    new-instance v0, Lddr;
+    new-instance v1, Lddn;
 
-    invoke-direct {v0, p0, p1, p2}, Lddr;-><init>(Lddp;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;)V
+    move-object/from16 v0, p0
 
-    return-object v0
+    iget-object v2, v0, Lddp;->a:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lgxn;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lddp;->b:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lbaa;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lddp;->c:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lbab;
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lddp;->d:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lijc;
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lddp;->e:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Liay;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lddp;->f:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/content/res/Resources;
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lddp;->g:Lkgv;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lddp;->h:Lkgv;
+
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lddp;->i:Lkgv;
+
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lddp;->j:Lkgv;
+
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Lddp;->k:Lkgv;
+
+    invoke-interface {v10}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lhfx;
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lddp;->l:Lkgv;
+
+    invoke-interface {v11}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lbnr;
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lddp;->m:Lkgv;
+
+    invoke-interface {v12}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lddp;->n:Lkgv;
+
+    invoke-interface {v13}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lgvc;
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lddp;->o:Lkgv;
+
+    invoke-interface {v14}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Ldxw;
+
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lddp;->p:Lkgv;
+
+    invoke-interface {v15}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Leaf;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lddp;->q:Lkgv;
+
+    move-object/from16 v16, v0
+
+    invoke-interface/range {v16 .. v16}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v16
+
+    check-cast v16, Libw;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lddp;->r:Lkgv;
+
+    move-object/from16 v17, v0
+
+    invoke-interface/range {v17 .. v17}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v17
+
+    check-cast v17, Ldds;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lddp;->s:Lkgv;
+
+    move-object/from16 v18, v0
+
+    invoke-interface/range {v18 .. v18}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v18
+
+    check-cast v18, Lbiq;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lddp;->t:Lkgv;
+
+    move-object/from16 v19, v0
+
+    invoke-interface/range {v19 .. v19}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v19
+
+    check-cast v19, Lhgv;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lddp;->u:Lkgv;
+
+    move-object/from16 v20, v0
+
+    invoke-interface/range {v20 .. v20}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v20
+
+    check-cast v20, Lawr;
+
+    invoke-direct/range {v1 .. v20}, Lddn;-><init>(Lgxn;Lbaa;Lbab;Lijc;Liay;Landroid/content/res/Resources;Lkgv;Lick;Lhfx;Lbnr;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Ldxw;Leaf;Libw;Ldds;Lbiq;Lhgv;Lawr;)V
+
+    return-object v1
 .end method

@@ -1,13 +1,13 @@
-.class public final Lajt;
+.class final Lajt;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Laeg;
+.implements Lajs;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -15,54 +15,32 @@
     return-void
 .end method
 
-.method private static a(Ljava/nio/ByteBuffer;Ljava/io/File;)Z
-    .locals 4
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    invoke-static {p0, p1}, Larh;->a(Ljava/nio/ByteBuffer;Ljava/io/File;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    const-string v2, "ByteBufferEncoder"
-
-    const/4 v3, 0x3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const-string v2, "ByteBufferEncoder"
-
-    const-string v3, "Failed to write data"
-
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/io/File;Laeo;)Z
+.method public final a()Ljava/lang/Class;
     .locals 1
 
-    check-cast p1, Ljava/nio/ByteBuffer;
+    const-class v0, Ljava/io/InputStream;
 
-    invoke-static {p1, p2}, Lajt;->a(Ljava/nio/ByteBuffer;Ljava/io/File;)Z
+    return-object v0
+.end method
 
-    move-result v0
+.method public final synthetic a(Ljava/io/File;)Ljava/lang/Object;
+    .locals 1
 
-    return v0
+    new-instance v0, Ljava/io/FileInputStream;
+
+    invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Ljava/io/InputStream;
+
+    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
+
+    return-void
 .end method

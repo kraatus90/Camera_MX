@@ -1,35 +1,39 @@
-.class public final Lfwr;
+.class final synthetic Lfwr;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Lfvl;
 
 
 # instance fields
-.field public final a:Lfxq;
+.field private final a:Ljsr;
 
-.field public final b:Lgbe;
-
-.field public final c:Lgad;
-
-.field public final d:Lfyf;
-
-.field public final e:Lgbv;
+.field private final b:Lick;
 
 
 # direct methods
-.method public constructor <init>(Lgad;Lfxq;Lgbe;Lfyf;Lgbv;)V
+.method constructor <init>(Ljsr;Lick;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfwr;->c:Lgad;
+    iput-object p1, p0, Lfwr;->a:Ljsr;
 
-    iput-object p2, p0, Lfwr;->a:Lfxq;
+    iput-object p2, p0, Lfwr;->b:Lick;
 
-    iput-object p3, p0, Lfwr;->b:Lgbe;
+    return-void
+.end method
 
-    iput-object p4, p0, Lfwr;->d:Lfyf;
 
-    iput-object p5, p0, Lfwr;->e:Lgbv;
+# virtual methods
+.method public final a(Lfvk;)V
+    .locals 2
+
+    iget-object v0, p0, Lfwr;->a:Ljsr;
+
+    iget-object v1, p0, Lfwr;->b:Lick;
+
+    invoke-static {v0, v1, p1}, Lfwg;->b(Ljsr;Lick;Lfvk;)V
 
     return-void
 .end method

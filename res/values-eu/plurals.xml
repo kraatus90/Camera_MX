@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Segida (%1$d argazki)</item>
+        <item quantity="one">Segida (%1$d argazki)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d argazki gorde dira</item>
         <item quantity="one">%1$d argazki gorde da</item>

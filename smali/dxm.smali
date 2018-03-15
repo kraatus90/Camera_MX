@@ -3,91 +3,50 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lgio;
-
-.field private synthetic b:J
-
-.field private synthetic c:Ldvf;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ldvf;Lgio;J)V
-    .locals 1
-
-    iput-object p1, p0, Ldxm;->c:Ldvf;
-
-    iput-object p2, p0, Ldxm;->a:Lgio;
-
-    iput-wide p3, p0, Ldxm;->b:J
+.method public constructor <init>(Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldxm;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Ldug;
+    iget-object v0, p0, Ldxm;->a:Lkgv;
 
-    iget-object v0, p0, Ldxm;->a:Lgio;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lgio;->b:Liil;
+    new-instance v0, Libw;
 
-    invoke-interface {v0}, Liil;->close()V
+    const/4 v1, 0x0
 
-    if-nez p1, :cond_1
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    move-result-object v1
 
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {p0, v0}, Ldxm;->a(Ljava/lang/Throwable;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    :cond_0
-    :goto_0
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    :cond_1
-    iget-boolean v0, p1, Ldug;->f:Z
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, Lick;
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, Ldxm;->c:Ldvf;
-
-    iget-object v2, v2, Ldvf;->c:Lavl;
-
-    invoke-interface {v2}, Lavl;->d()Lavo;
-
-    move-result-object v2
-
-    iget-wide v4, p0, Ldxm;->b:J
-
-    iput-wide v4, v2, Lavo;->a:J
-
-    iput-wide v0, v2, Lavo;->b:J
-
-    goto :goto_0
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget-object v0, p0, Ldxm;->a:Lgio;
-
-    iget-object v0, v0, Lgio;->b:Liil;
-
-    invoke-interface {v0}, Liil;->close()V
-
-    return-void
+    return-object v0
 .end method

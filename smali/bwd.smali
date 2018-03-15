@@ -2,54 +2,45 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Ldol;
-
-.field public final b:Liau;
-
-.field public final c:Lghe;
-
-.field public final d:Ljuw;
-
-.field public final e:Landroid/view/Surface;
-
-.field public final f:Ljava/lang/Runnable;
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:Licz;
+.field private final a:Lbvr;
 
 
 # direct methods
-.method public constructor <init>(Ldol;Ljuw;Liau;Lghe;Landroid/view/Surface;Ljava/lang/Runnable;Licz;)V
-    .locals 1
+.method public constructor <init>(Lbvr;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbwd;->a:Ldol;
-
-    iput-object p2, p0, Lbwd;->d:Ljuw;
-
-    iput-object p3, p0, Lbwd;->b:Liau;
-
-    iput-object p4, p0, Lbwd;->c:Lghe;
-
-    iput-object p5, p0, Lbwd;->e:Landroid/view/Surface;
-
-    iput-object p6, p0, Lbwd;->f:Ljava/lang/Runnable;
-
-    const/16 v0, 0x8
-
-    iput v0, p0, Lbwd;->g:I
-
-    const/16 v0, 0xe
-
-    iput v0, p0, Lbwd;->h:I
-
-    iput-object p7, p0, Lbwd;->i:Licz;
+    iput-object p1, p0, Lbwd;->a:Lbvr;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lbwd;->a:Lbvr;
+
+    iget-object v0, v0, Lbvr;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/ContentResolver;
+
+    return-object v0
 .end method

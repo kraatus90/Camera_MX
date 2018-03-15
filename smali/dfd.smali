@@ -1,53 +1,56 @@
-.class public final Ldfd;
-.super Ldhe;
+.class final Ldfd;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Ldev;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Ldev;)V
+    .locals 0
 
-    const-string v0, "VidIntStForeground"
+    iput-object p1, p0, Ldfd;->a:Ldev;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldhe;)V
-    .locals 2
-
-    invoke-direct {p0, p1}, Ldhe;-><init>(Lcng;)V
-
-    new-instance v0, Ldfe;
-
-    invoke-direct {v0, p0}, Ldfe;-><init>(Ldfd;)V
-
-    const-class v1, Lcvq;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b()Lcng;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {p0}, Ldfd;->e()Ldhe;
+    iget-object v0, p0, Ldfd;->a:Ldev;
+
+    iget-object v0, v0, Ldev;->j:Ldga;
+
+    invoke-interface {v0}, Ldga;->c()V
+
+    iget-object v0, p0, Ldfd;->a:Ldev;
+
+    iget-object v0, v0, Ldev;->b:Lbds;
+
+    iget-object v1, p0, Ldfd;->a:Ldev;
+
+    invoke-interface {v0, v1}, Lbds;->a(Lbfm;)Lkeh;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    new-instance v1, Ldfe;
 
-.method public final e()Ldhe;
-    .locals 1
+    invoke-direct {v1, p0}, Ldfe;-><init>(Ldfd;)V
 
-    new-instance v0, Ldff;
+    iget-object v2, p0, Ldfd;->a:Ldev;
 
-    invoke-direct {v0, p0}, Ldff;-><init>(Ldhe;)V
+    iget-object v2, v2, Ldev;->d:Liay;
 
-    return-object v0
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    return-void
 .end method

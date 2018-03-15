@@ -2,189 +2,216 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:Ldlv;
 
-.field private b:Ljxn;
+.field public b:Lfuw;
 
-.field private c:Ljxn;
+.field public c:Ldki;
 
-.field private d:Ljxn;
+.field public d:Ldkh;
 
-.field private e:Ljxn;
+.field public e:Ldlu;
 
-.field private f:Ljxn;
+.field public f:Ldlt;
 
-.field private g:Ljxn;
+.field public g:Lfzo;
 
-.field private h:Ljxn;
+.field public h:Lfyd;
 
-.field private i:Ljxn;
+.field public i:Lfyu;
 
-.field private j:Ljxn;
+.field public j:Lfzn;
+
+.field public k:Ldkg;
+
+.field public l:Ldke;
+
+.field public m:Lkgv;
+
+.field public n:Ldkj;
+
+.field public o:Ldkf;
+
+.field public final synthetic p:Lcaf;
+
+.field private final q:Ldls;
+
+.field private final r:Ldkc;
+
+.field private final s:Lfya;
+
+.field private final t:Lfuv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lcaf;Ldls;Ldkc;Lfya;Lfuv;)V
+    .locals 3
+
+    iput-object p1, p0, Ldlj;->p:Lcaf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldlj;->a:Ljxn;
+    invoke-static {p2}, Lkfn;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p2, p0, Ldlj;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Ldlj;->c:Ljxn;
+    check-cast v0, Ldls;
 
-    iput-object p4, p0, Ldlj;->d:Ljxn;
+    iput-object v0, p0, Ldlj;->q:Ldls;
 
-    iput-object p5, p0, Ldlj;->e:Ljxn;
+    invoke-static {p3}, Lkfn;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p6, p0, Ldlj;->f:Ljxn;
+    move-result-object v0
 
-    iput-object p7, p0, Ldlj;->g:Ljxn;
+    check-cast v0, Ldkc;
 
-    iput-object p8, p0, Ldlj;->h:Ljxn;
+    iput-object v0, p0, Ldlj;->r:Ldkc;
 
-    iput-object p9, p0, Ldlj;->i:Ljxn;
+    invoke-static {p4}, Lkfn;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p10, p0, Ldlj;->j:Ljxn;
+    move-result-object v0
+
+    check-cast v0, Lfya;
+
+    iput-object v0, p0, Ldlj;->s:Lfya;
+
+    invoke-static {p5}, Lkfn;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfuv;
+
+    iput-object v0, p0, Ldlj;->t:Lfuv;
+
+    iget-object v0, p0, Ldlj;->q:Ldls;
+
+    new-instance v1, Ldlv;
+
+    invoke-direct {v1, v0}, Ldlv;-><init>(Ldls;)V
+
+    iput-object v1, p0, Ldlj;->a:Ldlv;
+
+    iget-object v0, p0, Ldlj;->t:Lfuv;
+
+    new-instance v1, Lfuw;
+
+    invoke-direct {v1, v0}, Lfuw;-><init>(Lfuv;)V
+
+    iput-object v1, p0, Ldlj;->b:Lfuw;
+
+    iget-object v0, p0, Ldlj;->r:Ldkc;
+
+    new-instance v1, Ldki;
+
+    invoke-direct {v1, v0}, Ldki;-><init>(Ldkc;)V
+
+    iput-object v1, p0, Ldlj;->c:Ldki;
+
+    iget-object v0, p0, Ldlj;->r:Ldkc;
+
+    new-instance v1, Ldkh;
+
+    invoke-direct {v1, v0}, Ldkh;-><init>(Ldkc;)V
+
+    iput-object v1, p0, Ldlj;->d:Ldkh;
+
+    iget-object v0, p0, Ldlj;->q:Ldls;
+
+    new-instance v1, Ldlu;
+
+    invoke-direct {v1, v0}, Ldlu;-><init>(Ldls;)V
+
+    iput-object v1, p0, Ldlj;->e:Ldlu;
+
+    iget-object v0, p0, Ldlj;->q:Ldls;
+
+    new-instance v1, Ldlt;
+
+    invoke-direct {v1, v0}, Ldlt;-><init>(Ldls;)V
+
+    iput-object v1, p0, Ldlj;->f:Ldlt;
+
+    iget-object v0, p0, Ldlj;->s:Lfya;
+
+    new-instance v1, Lfzo;
+
+    invoke-direct {v1, v0}, Lfzo;-><init>(Lfya;)V
+
+    iput-object v1, p0, Ldlj;->g:Lfzo;
+
+    iget-object v0, p0, Ldlj;->f:Ldlt;
+
+    new-instance v1, Lfyd;
+
+    invoke-direct {v1, v0}, Lfyd;-><init>(Lkgv;)V
+
+    iput-object v1, p0, Ldlj;->h:Lfyd;
+
+    iget-object v0, p0, Ldlj;->p:Lcaf;
+
+    iget-object v0, v0, Lcaf;->aS:Lkgv;
+
+    iget-object v1, p0, Ldlj;->f:Ldlt;
+
+    new-instance v2, Lfyu;
+
+    invoke-direct {v2, v0, v1}, Lfyu;-><init>(Lkgv;Lkgv;)V
+
+    iput-object v2, p0, Ldlj;->i:Lfyu;
+
+    iget-object v0, p0, Ldlj;->s:Lfya;
+
+    new-instance v1, Lfzn;
+
+    invoke-direct {v1, v0}, Lfzn;-><init>(Lfya;)V
+
+    iput-object v1, p0, Ldlj;->j:Lfzn;
+
+    iget-object v0, p0, Ldlj;->r:Ldkc;
+
+    new-instance v1, Ldkg;
+
+    invoke-direct {v1, v0}, Ldkg;-><init>(Ldkc;)V
+
+    iput-object v1, p0, Ldlj;->k:Ldkg;
+
+    iget-object v0, p0, Ldlj;->r:Ldkc;
+
+    new-instance v1, Ldke;
+
+    invoke-direct {v1, v0}, Ldke;-><init>(Ldkc;)V
+
+    iput-object v1, p0, Ldlj;->l:Ldke;
+
+    iget-object v0, p0, Ldlj;->r:Ldkc;
+
+    new-instance v1, Ldkd;
+
+    invoke-direct {v1, v0}, Ldkd;-><init>(Ldkc;)V
+
+    invoke-static {v1}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldlj;->m:Lkgv;
+
+    iget-object v0, p0, Ldlj;->r:Ldkc;
+
+    new-instance v1, Ldkj;
+
+    invoke-direct {v1, v0}, Ldkj;-><init>(Ldkc;)V
+
+    iput-object v1, p0, Ldlj;->n:Ldkj;
+
+    iget-object v0, p0, Ldlj;->r:Ldkc;
+
+    new-instance v1, Ldkf;
+
+    invoke-direct {v1, v0}, Ldkf;-><init>(Ldkc;)V
+
+    iput-object v1, p0, Ldlj;->o:Ldkf;
 
     return-void
-.end method
-
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 11
-
-    new-instance v0, Ldlj;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    move-object/from16 v10, p9
-
-    invoke-direct/range {v0 .. v10}, Ldlj;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 11
-
-    iget-object v0, p0, Ldlj;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhzr;
-
-    iget-object v0, p0, Ldlj;->b:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljuw;
-
-    iget-object v0, p0, Ldlj;->c:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Set;
-
-    iget-object v0, p0, Ldlj;->d:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lihd;
-
-    iget-object v0, p0, Ldlj;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Licv;
-
-    iget-object v0, p0, Ldlj;->f:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    iget-object v0, p0, Ldlj;->g:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Liee;
-
-    iget-object v0, p0, Ldlj;->h:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Lgzz;
-
-    iget-object v0, p0, Ldlj;->i:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Licz;
-
-    iget-object v0, p0, Ldlj;->j:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Ljava/util/concurrent/Executor;
-
-    new-instance v0, Ligx;
-
-    sget-object v7, Ljhi;->a:Ljhi;
-
-    iget-object v8, v8, Lgzz;->c:Lihj;
-
-    invoke-direct/range {v0 .. v10}, Ligx;-><init>(Lhzr;Ljuw;Ljava/util/Set;Lihd;Licv;Liee;Ljht;Lihj;Licz;Ljava/util/concurrent/Executor;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ligx;
-
-    return-object v0
 .end method

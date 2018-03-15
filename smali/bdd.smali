@@ -1,52 +1,33 @@
-.class final Lbdd;
-.super Ljava/lang/Object;
+.class public final Lbdd;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljug;
 
 
 # instance fields
-.field private synthetic a:Lbdc;
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
 
 # direct methods
-.method constructor <init>(Lbdc;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
     .locals 0
 
-    iput-object p1, p0, Lbdd;->a:Lbdc;
+    iput-object p1, p0, Lbdd;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-object v0, p0, Lbdd;->a:Lbdc;
+    iget-object v0, p0, Lbdd;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    iget-object v0, v0, Lbdc;->b:Ljvi;
+    const/16 v1, 0x8
 
-    iget-object v1, p0, Lbdd;->a:Lbdc;
-
-    iget-object v1, v1, Lbdc;->a:Liht;
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget-object v0, p0, Lbdd;->a:Lbdc;
-
-    iget-object v0, v0, Lbdc;->b:Ljvi;
-
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Throwable;)Z
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/burstchip/BurstChip;->setVisibility(I)V
 
     return-void
 .end method

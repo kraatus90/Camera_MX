@@ -1,43 +1,63 @@
-.class public final Lavv;
-.super Ljava/lang/Thread;
+.class final Lavv;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Liao;
 
 
 # instance fields
-.field private a:I
+.field public final synthetic a:Lavq;
 
 
 # direct methods
-.method private constructor <init>(ILjava/lang/Runnable;)V
+.method constructor <init>(Lavq;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+    iput-object p1, p0, Lavv;->a:Lavq;
 
-    iput p1, p0, Lavv;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/Runnable;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lavv;-><init>(ILjava/lang/Runnable;)V
-
-    invoke-virtual {p0, p3}, Lavv;->setName(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Lkeh;
+    .locals 2
 
-    iget v0, p0, Lavv;->a:I
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-super {p0}, Ljava/lang/Thread;->run()V
+    move-result v0
 
-    return-void
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lavv;->a:Lavq;
+
+    iget-object v1, p0, Lavv;->a:Lavq;
+
+    iget-object v1, v1, Lavq;->a:Late;
+
+    invoke-interface {v1}, Late;->b()Lhaw;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lavq;->c:Lhaw;
+
+    iget-object v0, p0, Lavv;->a:Lavq;
+
+    iget-object v0, v0, Lavq;->c:Lhaw;
+
+    new-instance v1, Lavw;
+
+    invoke-direct {v1, p0}, Lavw;-><init>(Lavv;)V
+
+    invoke-interface {v0, v1}, Lhaw;->a(Lhax;)V
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

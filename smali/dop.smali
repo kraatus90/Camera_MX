@@ -3,28 +3,50 @@
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Ldom;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(Ldom;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ldop;->a:Ldom;
+
     return-void
+.end method
+
+.method public static a(Ldom;)Ldop;
+    .locals 1
+
+    new-instance v0, Ldop;
+
+    invoke-direct {v0, p0}, Ldop;-><init>(Ldom;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Lggn;
+    iget-object v0, p0, Ldop;->a:Ldom;
 
-    new-instance v0, Ldon;
+    iget-object v0, v0, Ldom;->a:Libw;
 
-    invoke-direct {v0, p1}, Ldon;-><init>(Lggn;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
 
     return-object v0
 .end method

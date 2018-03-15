@@ -1,103 +1,106 @@
-.class final Ljju;
-.super Ljmn;
+.class public abstract Ljju;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field public static final serialVersionUID:J
+.implements Ljjz;
 
 
 # instance fields
-.field private a:Ljava/util/Comparator;
+.field public final a:Ljava/util/TreeSet;
+
+.field public final b:Ljava/util/TreeSet;
+
+.field public final c:Ljava/lang/Object;
+
+.field private final d:Ljmb;
+
+.field private final e:Ljjv;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Comparator;)V
-    .locals 1
+.method public constructor <init>(Ljmb;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljmn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Ljava/util/TreeSet;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
 
-    check-cast v0, Ljava/util/Comparator;
+    iput-object v0, p0, Ljju;->a:Ljava/util/TreeSet;
 
-    iput-object v0, p0, Ljju;->a:Ljava/util/Comparator;
+    new-instance v0, Ljava/util/TreeSet;
+
+    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+
+    iput-object v0, p0, Ljju;->b:Ljava/util/TreeSet;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Ljju;->c:Ljava/lang/Object;
+
+    new-instance v0, Ljjv;
+
+    invoke-direct {v0, p0}, Ljjv;-><init>(Ljju;)V
+
+    iput-object v0, p0, Ljju;->e:Ljjv;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljju;->d:Ljmb;
+
+    iget-object v0, p0, Ljju;->d:Ljmb;
+
+    iget-object v1, p0, Ljju;->e:Ljjv;
+
+    invoke-virtual {v0, v1}, Ljmb;->a(Ljmg;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-
-    iget-object v0, p0, Ljju;->a:Ljava/util/Comparator;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a()V
     .locals 2
 
-    if-ne p1, p0, :cond_0
+    iget-object v1, p0, Ljju;->c:Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    monitor-enter v1
 
-    :goto_0
-    return v0
+    :try_start_0
+    iget-object v0, p0, Ljju;->a:Ljava/util/TreeSet;
 
-    :cond_0
-    instance-of v0, p1, Ljju;
+    invoke-virtual {v0}, Ljava/util/TreeSet;->clear()V
 
-    if-eqz v0, :cond_1
+    iget-object v0, p0, Ljju;->b:Ljava/util/TreeSet;
 
-    check-cast p1, Ljju;
+    invoke-virtual {v0}, Ljava/util/TreeSet;->clear()V
 
-    iget-object v0, p0, Ljju;->a:Ljava/util/Comparator;
+    monitor-exit v1
 
-    iget-object v1, p1, Ljju;->a:Ljava/util/Comparator;
+    return-void
 
-    invoke-interface {v0, v1}, Ljava/util/Comparator;->equals(Ljava/lang/Object;)Z
+    :catchall_0
+    move-exception v0
 
-    move-result v0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    throw v0
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public final b(J)V
+    .locals 0
 
-    iget-object v0, p0, Ljju;->a:Ljava/util/Comparator;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final c(J)V
+    .locals 0
 
-    iget-object v0, p0, Ljju;->a:Ljava/util/Comparator;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

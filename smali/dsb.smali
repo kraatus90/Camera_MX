@@ -1,70 +1,110 @@
-.class final Ldsb;
-.super Liii;
+.class public final Ldsb;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Lkgv;
 
-.field private synthetic b:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final b:Lkgv;
 
-.field private synthetic c:Lgki;
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Liil;Ljava/util/concurrent/atomic/AtomicInteger;Lgki;)V
-    .locals 2
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    iput-object p2, p0, Ldsb;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Ldsb;->c:Lgki;
+    iput-object p1, p0, Ldsb;->a:Lkgv;
 
-    invoke-direct {p0, p1}, Liii;-><init>(Liil;)V
+    iput-object p2, p0, Ldsb;->b:Lkgv;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p3, p0, Ldsb;->c:Lkgv;
 
-    const/4 v1, 0x0
+    iput-object p4, p0, Ldsb;->d:Lkgv;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Ldsb;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p5, p0, Ldsb;->e:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Ldsb;
+    .locals 6
+
+    new-instance v0, Ldsb;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Ldsb;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Ldsb;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v0, Ldsa;
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Ldsb;->a:Lkgv;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v1
 
-    if-eqz v0, :cond_1
+    check-cast v1, Lcqk;
 
-    :cond_0
-    :goto_0
-    return-void
+    iget-object v2, p0, Ldsb;->b:Lkgv;
 
-    :cond_1
-    invoke-super {p0}, Liii;->close()V
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Ldsb;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    check-cast v2, Lfdv;
 
-    move-result v0
+    iget-object v3, p0, Ldsb;->c:Lkgv;
 
-    if-nez v0, :cond_0
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Ldsb;->c:Lgki;
+    move-result-object v3
 
-    invoke-interface {v0}, Lgki;->close()V
+    check-cast v3, Lggn;
 
-    goto :goto_0
+    iget-object v4, p0, Ldsb;->d:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Liay;
+
+    iget-object v5, p0, Ldsb;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lihn;
+
+    invoke-direct/range {v0 .. v5}, Ldsa;-><init>(Lcqk;Lfdv;Lggn;Liay;Lihn;)V
+
+    return-object v0
 .end method

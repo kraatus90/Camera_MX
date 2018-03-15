@@ -1,74 +1,52 @@
 .class public final Lfkx;
-.super Ljava/lang/Object;
+.super Lbcd;
 .source "PG"
+
+# interfaces
+.implements Lfjf;
 
 
 # instance fields
-.field public final a:Landroid/content/Intent;
-
-.field private b:Lhao;
-
-.field private c:Lham;
-
-.field private d:Lgzz;
+.field private final a:Lfib;
 
 
 # direct methods
-.method public constructor <init>(Lhao;Landroid/content/Intent;Landroid/content/Intent;Lham;Lgzz;)V
+.method public constructor <init>(Lfib;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lfkw;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0, p1}, Lfkw;-><init>(Lfib;)V
 
-    move-result-object v0
+    invoke-direct {p0, v0}, Lbcd;-><init>(Lbax;)V
 
-    check-cast v0, Lhao;
-
-    iput-object v0, p0, Lfkx;->b:Lhao;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/Intent;
-
-    iput-object v0, p0, Lfkx;->a:Landroid/content/Intent;
-
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p4, p0, Lfkx;->c:Lham;
-
-    iput-object p5, p0, Lfkx;->d:Lgzz;
+    iput-object p1, p0, Lfkx;->a:Lfib;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final d()I
+    .locals 1
 
-    iget-object v0, p0, Lfkx;->b:Lhao;
+    iget-object v0, p0, Lfkx;->a:Lfib;
 
-    iget-object v1, p0, Lfkx;->a:Landroid/content/Intent;
+    invoke-interface {v0}, Lfib;->d()I
 
-    invoke-interface {v0, v1}, Lhao;->b(Landroid/content/Intent;)V
+    move-result v0
 
-    iget-object v0, p0, Lfkx;->d:Lgzz;
+    return v0
+.end method
 
-    iget-object v0, v0, Lgzz;->c:Lihj;
+.method public final y_()Lfgt;
+    .locals 1
 
-    iget-boolean v0, v0, Lihj;->e:Z
+    iget-object v0, p0, Lfkx;->a:Lfib;
 
-    if-nez v0, :cond_0
+    invoke-interface {v0}, Lfib;->y_()Lfgt;
 
-    iget-object v0, p0, Lfkx;->c:Lham;
+    move-result-object v0
 
-    const-string v1, "Leaving secure mode."
-
-    invoke-virtual {v0, v1}, Lham;->a(Ljava/lang/String;)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

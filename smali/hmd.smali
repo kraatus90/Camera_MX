@@ -1,355 +1,156 @@
-.class final Lhmd;
+.class public final Lhmd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
-
-
-# instance fields
-.field public final a:Ljava/util/Set;
-
-.field public b:I
-
-.field public c:Z
-
-.field public d:Landroid/os/IBinder;
-
-.field public final e:Lhmb;
-
-.field public f:Landroid/content/ComponentName;
-
-.field public final synthetic g:Lhmc;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Lhmc;Lhmb;)V
-    .locals 1
-
-    iput-object p1, p0, Lhmd;->g:Lhmc;
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lhmd;->e:Lhmb;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lhmd;->a:Ljava/util/Set;
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lhmd;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 8
 
-    const/4 v0, 0x3
+    const/4 v3, 0x0
 
-    iput v0, p0, Lhmd;->b:I
+    const/4 v5, 0x0
 
-    iget-object v0, p0, Lhmd;->g:Lhmc;
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
-    invoke-static {v0}, Lhmc;->d(Lhmc;)Lhmo;
+    move-result v6
 
-    iget-object v0, p0, Lhmd;->g:Lhmc;
+    move v4, v5
 
-    invoke-static {v0}, Lhmc;->c(Lhmc;)Landroid/content/Context;
+    move-object v2, v3
 
-    move-result-object v0
-
-    iget-object v1, p0, Lhmd;->e:Lhmb;
-
-    invoke-virtual {v1}, Lhmb;->a()Landroid/content/Intent;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lhmo;->a(Landroid/content/Context;Landroid/content/Intent;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const-string v0, "ConnectionTracker"
-
-    const-string v1, "Attempted to bind to a service in a STOPPED package."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    const/4 v0, 0x0
+    move v1, v5
 
     :goto_0
-    iput-boolean v0, p0, Lhmd;->c:Z
-
-    iget-boolean v0, p0, Lhmd;->c:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v0}, Lhmc;->b(Lhmc;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Lhmd;->e:Lhmb;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v1}, Lhmc;->b(Lhmc;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v2}, Lhmc;->e(Lhmc;)J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    :goto_1
-    return-void
-
-    :cond_0
-    const/16 v2, 0x81
-
-    invoke-virtual {v0, v1, p0, v2}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
+    if-ge v0, v6, :cond_0
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    const v7, 0xffff
+
+    and-int/2addr v7, v0
+
+    packed-switch v7, :pswitch_data_0
+
+    invoke-static {p1, v0}, Lhmr;->b(Landroid/os/Parcel;I)V
+
     goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v0}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v1
+
+    goto :goto_0
+
+    :pswitch_1
+    invoke-static {p1, v0}, Lhmr;->h(Landroid/os/Parcel;I)Landroid/os/IBinder;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :pswitch_2
+    sget-object v3, Lcom/google/android/gms/common/ConnectionResult;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0, v3}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/common/ConnectionResult;
+
+    move-object v3, v0
+
+    goto :goto_0
+
+    :pswitch_3
+    invoke-static {p1, v0}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v4
+
+    goto :goto_0
+
+    :pswitch_4
+    invoke-static {p1, v0}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v5
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    if-eq v0, v6, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
 
     :cond_1
-    const/4 v0, 0x2
+    new-instance v0, Lcom/google/android/gms/common/internal/zzaf;
 
-    iput v0, p0, Lhmd;->b:I
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/common/internal/zzaf;-><init>(ILandroid/os/IBinder;Lcom/google/android/gms/common/ConnectionResult;ZZ)V
 
-    :try_start_0
-    iget-object v0, p0, Lhmd;->g:Lhmc;
+    return-object v0
 
-    invoke-static {v0}, Lhmc;->d(Lhmc;)Lhmo;
+    nop
 
-    iget-object v0, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v0}, Lhmc;->c(Lhmc;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p0}, Lhmo;->a(Landroid/content/Context;Landroid/content/ServiceConnection;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_1
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
 .end method
 
-.method public final a(Landroid/content/ServiceConnection;)V
+.method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lhmd;->g:Lhmc;
+    new-array v0, p1, [Lcom/google/android/gms/common/internal/zzaf;
 
-    invoke-static {v0}, Lhmc;->d(Lhmc;)Lhmo;
-
-    iget-object v0, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v0}, Lhmc;->c(Lhmc;)Landroid/content/Context;
-
-    iget-object v0, p0, Lhmd;->e:Lhmb;
-
-    invoke-virtual {v0}, Lhmb;->a()Landroid/content/Intent;
-
-    invoke-static {}, Lhmo;->b()V
-
-    iget-object v0, p0, Lhmd;->a:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    iget-object v0, p0, Lhmd;->a:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b(Landroid/content/ServiceConnection;)Z
-    .locals 1
-
-    iget-object v0, p0, Lhmd;->a:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 4
-
-    iget-object v0, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v0}, Lhmc;->a(Lhmc;)Ljava/util/HashMap;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v0}, Lhmc;->b(Lhmc;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    const/4 v2, 0x1
-
-    iget-object v3, p0, Lhmd;->e:Lhmb;
-
-    invoke-virtual {v0, v2, v3}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
-
-    iput-object p2, p0, Lhmd;->d:Landroid/os/IBinder;
-
-    iput-object p1, p0, Lhmd;->f:Landroid/content/ComponentName;
-
-    iget-object v0, p0, Lhmd;->a:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/ServiceConnection;
-
-    invoke-interface {v0, p1, p2}, Landroid/content/ServiceConnection;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :try_start_1
-    iput v0, p0, Lhmd;->b:I
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-void
-.end method
-
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 4
-
-    iget-object v0, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v0}, Lhmc;->a(Lhmc;)Ljava/util/HashMap;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lhmd;->g:Lhmc;
-
-    invoke-static {v0}, Lhmc;->b(Lhmc;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    const/4 v2, 0x1
-
-    iget-object v3, p0, Lhmd;->e:Lhmb;
-
-    invoke-virtual {v0, v2, v3}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lhmd;->d:Landroid/os/IBinder;
-
-    iput-object p1, p0, Lhmd;->f:Landroid/content/ComponentName;
-
-    iget-object v0, p0, Lhmd;->a:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/ServiceConnection;
-
-    invoke-interface {v0, p1}, Landroid/content/ServiceConnection;->onServiceDisconnected(Landroid/content/ComponentName;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_0
-    const/4 v0, 0x2
-
-    :try_start_1
-    iput v0, p0, Lhmd;->b:I
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-void
+    return-object v0
 .end method

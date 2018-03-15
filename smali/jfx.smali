@@ -1,13 +1,13 @@
-.class public abstract Ljfx;
+.class final Ljfx;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,5 +17,12 @@
 
 
 # virtual methods
-.method public abstract a()F
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Ljiy;
+
+    invoke-direct {v0}, Ljiy;-><init>()V
+
+    return-object v0
 .end method

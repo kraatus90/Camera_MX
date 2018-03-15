@@ -1,40 +1,60 @@
-.class final Lfmj;
+.class public final Lfmj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfmi;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmi;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfmj;->a:Lfmi;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfmj;->a:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public static a(Lkgv;)Lfmj;
     .locals 1
 
-    iget-object v0, p0, Lfmj;->a:Lfmi;
+    new-instance v0, Lfmj;
 
-    iget-object v0, v0, Lfmi;->x:Lbtx;
+    invoke-direct {v0, p0}, Lfmj;-><init>(Lkgv;)V
 
-    invoke-interface {v0}, Lbtx;->t()Leug;
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lfmj;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Leug;->b()V
+    check-cast v0, Lfla;
 
-    return-void
+    invoke-virtual {v0}, Lfla;->a()Landroid/view/Surface;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/Surface;
+
+    return-object v0
 .end method

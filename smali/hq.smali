@@ -1,5 +1,5 @@
-.class final Lhq;
-.super Lhr;
+.class Lhq;
+.super Ljava/lang/Object;
 .source "PG"
 
 
@@ -7,17 +7,45 @@
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lhr;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+.method public a(Landroid/view/MenuItem;CI)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
+    return-void
+.end method
+
+.method public a(Landroid/view/MenuItem;Landroid/content/res/ColorStateList;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public a(Landroid/view/MenuItem;Landroid/graphics/PorterDuff$Mode;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public a(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public b(Landroid/view/MenuItem;CI)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public b(Landroid/view/MenuItem;Ljava/lang/CharSequence;)V
+    .locals 0
 
     return-void
 .end method

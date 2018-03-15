@@ -1,31 +1,23 @@
-.class public final Len;
+.class final Len;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lek;
 
-.field public b:I
-
-.field public c:Z
-
-.field public d:I
+.field public final b:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;IZI)V
+.method varargs constructor <init>(Lek;[Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Len;->a:Ljava/lang/String;
+    iput-object p1, p0, Len;->a:Lek;
 
-    iput p2, p0, Len;->b:I
-
-    iput-boolean p3, p0, Len;->c:Z
-
-    iput p4, p0, Len;->d:I
+    iput-object p2, p0, Len;->b:[Ljava/lang/Object;
 
     return-void
 .end method

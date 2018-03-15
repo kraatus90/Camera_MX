@@ -1,86 +1,35 @@
-.class final synthetic Liny;
+.class public interface abstract Liny;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private a:Linw;
-
-.field private b:Liob;
-
-.field private c:Liop;
-
-
-# direct methods
-.method constructor <init>(Linw;Liob;Liop;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liny;->a:Linw;
-
-    iput-object p2, p0, Liny;->b:Liob;
-
-    iput-object p3, p0, Liny;->c:Liop;
-
-    return-void
-.end method
+.source "PG"
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public abstract a(J)Ljava/lang/Object;
+.end method
 
-    iget-object v1, p0, Liny;->a:Linw;
+.method public abstract a()Ljava/util/List;
+.end method
 
-    iget-object v0, p0, Liny;->b:Liob;
+.method public abstract a(JLjava/lang/Object;)V
+.end method
 
-    iget-object v2, p0, Liny;->c:Liop;
+.method public abstract a(I)Z
+.end method
 
-    iget-object v3, v1, Linw;->a:Ljava/lang/Object;
+.method public abstract b()I
+.end method
 
-    monitor-enter v3
+.method public abstract c()I
+.end method
 
-    :try_start_0
-    iget-object v0, v0, Liob;->b:Ljava/util/Set;
+.method public abstract d()Ljava/util/Collection;
+.end method
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+.method public abstract e()Ljava/lang/Object;
+.end method
 
-    move-result-object v4
+.method public abstract f()Ljava/lang/Object;
+.end method
 
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lioe;
-
-    invoke-virtual {v1, v2, v0}, Linw;->a(Liop;Lioe;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-void
+.method public abstract g()Ljava/lang/Object;
 .end method

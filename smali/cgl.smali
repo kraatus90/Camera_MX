@@ -1,106 +1,97 @@
-.class public final Lcgl;
-.super Ljava/lang/Object;
+.class final Lcgl;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;
 
-.field private b:Ljxn;
+.field private final synthetic b:Lkgd;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
+.field private final synthetic c:Lcgh;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lcgh;Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;Lkgd;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcgl;->c:Lcgh;
 
-    iput-object p1, p0, Lcgl;->a:Ljxn;
+    iput-object p2, p0, Lcgl;->a:Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;
 
-    iput-object p2, p0, Lcgl;->b:Ljxn;
+    iput-object p3, p0, Lcgl;->b:Lkgd;
 
-    iput-object p3, p0, Lcgl;->c:Ljxn;
-
-    iput-object p4, p0, Lcgl;->d:Ljxn;
-
-    iput-object p5, p0, Lcgl;->e:Ljxn;
-
-    iput-object p6, p0, Lcgl;->f:Ljxn;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 9
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 3
 
-    new-instance v1, Lcgk;
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lcgl;->a:Ljxn;
+    iget-object v0, p0, Lcgl;->a:Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;->setAlpha(F)V
+
+    iget-object v0, p0, Lcgl;->c:Lcgh;
+
+    iput-object v2, v0, Lcgh;->d:Landroid/animation/Animator;
+
+    iget-object v0, p0, Lcgl;->b:Lkgd;
+
+    invoke-virtual {v0, v2}, Lkgd;->setClipBounds(Landroid/graphics/Rect;)V
+
+    return-void
+.end method
+
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
+
+    iget-object v0, p0, Lcgl;->c:Lcgh;
+
+    iget-object v0, v0, Lcgh;->f:Landroid/support/v7/widget/RecyclerView;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
+
+    iget-object v0, p0, Lcgl;->c:Lcgh;
+
+    iget-object v0, v0, Lcgh;->l:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    move-result-object v1
 
-    move-result-wide v2
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v0, p0, Lcgl;->b:Ljxn;
+    move-result v0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v4
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    check-cast v4, Lcfp;
+    move-result-object v0
 
-    iget-object v0, p0, Lcgl;->c:Ljxn;
+    check-cast v0, Landroid/widget/ImageView;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Lcgh;->a(Landroid/view/View;)V
 
-    move-result-object v5
+    goto :goto_0
 
-    check-cast v5, Lcga;
+    :cond_0
+    invoke-virtual {p0, p1}, Lcgl;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    iget-object v0, p0, Lcgl;->d:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/content/ContentResolver;
-
-    iget-object v0, p0, Lcgl;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lcdz;
-
-    iget-object v0, p0, Lcgl;->f:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lgvz;
-
-    invoke-direct/range {v1 .. v8}, Lcgk;-><init>(JLcfp;Lcga;Landroid/content/ContentResolver;Lcdz;Lgvz;)V
-
-    return-object v1
+    return-void
 .end method

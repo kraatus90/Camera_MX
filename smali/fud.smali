@@ -1,86 +1,59 @@
-.class public final Lfud;
-.super Ljava/lang/Object;
+.class final Lfud;
+.super Lbce;
 .source "PG"
 
 
 # instance fields
-.field public final a:Ljxn;
-
-.field public final b:Ljxn;
-
-.field public final c:Ljxn;
+.field private final synthetic a:Lfuc;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 1
+.method constructor <init>(Lfuc;Lbbb;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfud;->a:Lfuc;
 
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Lfud;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lfud;->a:Ljxn;
-
-    const/4 v0, 0x2
-
-    invoke-static {p2, v0}, Lfud;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lfud;->b:Ljxn;
-
-    const/4 v0, 0x3
-
-    invoke-static {p3, v0}, Lfud;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lfud;->c:Ljxn;
+    invoke-direct {p0, p2}, Lbce;-><init>(Lbbb;)V
 
     return-void
 .end method
 
-.method static a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+# virtual methods
+.method public final close()V
     .locals 3
 
-    if-nez p0, :cond_0
+    invoke-super {p0}, Lbce;->close()V
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    iget-object v0, p0, Lfud;->a:Lfuc;
 
-    const/16 v1, 0x5d
+    iget-object v0, v0, Lfuc;->d:Lftx;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lftx;->a:Ljava/lang/Object;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    monitor-enter v1
 
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
+    :try_start_0
+    iget-object v0, p0, Lfud;->a:Lfuc;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v0, Lfuc;->d:Lftx;
 
-    move-result-object v1
+    iget-object v0, v0, Lftx;->c:Ljava/util/ArrayDeque;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lfud;->a:Lfuc;
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Ljava/util/ArrayDeque;->remove(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    monitor-exit v1
 
-    move-result-object v1
+    return-void
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-
-    :cond_0
-    return-object p0
 .end method

@@ -12,7 +12,7 @@
     return-void
 .end method
 
-.method public static loadRgbzMetadata(Landroid/content/Context;Landroid/net/Uri;Lfuw;)Z
+.method public static loadRgbzMetadata(Landroid/content/Context;Landroid/net/Uri;Lepu;)Z
     .locals 2
 
     const/4 v0, 0x1
@@ -23,7 +23,7 @@
 
     if-eqz v1, :cond_0
 
-    iput-boolean v0, p2, Lfuw;->i:Z
+    iput-boolean v0, p2, Lepu;->i:Z
 
     :goto_0
     return v0

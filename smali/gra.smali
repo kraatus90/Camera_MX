@@ -1,238 +1,194 @@
-.class public final Lgra;
-.super Ljava/lang/Object;
+.class public final enum Lgra;
+.super Ljava/lang/Enum;
 .source "PG"
-
-# interfaces
-.implements Lgfp;
 
 
 # static fields
-.field public static final a:Ljava/lang/String;
+.field public static final enum a:Lgra;
+
+.field public static final enum b:Lgra;
+
+.field public static final enum c:Lgra;
+
+.field public static final enum d:Lgra;
+
+.field private static final synthetic f:[Lgra;
 
 
 # instance fields
-.field public final b:Lgrr;
-
-.field public c:Ljvi;
-
-.field public d:Z
-
-.field private e:Lhzt;
-
-.field private f:I
-
-.field private g:Ljava/lang/Object;
+.field public final e:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "SelfieFlashSwitch"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lgra;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgrr;Lhzt;)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lgra;->d:Z
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lgra;->g:Ljava/lang/Object;
-
-    iput-object p1, p0, Lgra;->b:Lgrr;
-
-    iput-object p2, p0, Lgra;->e:Lhzt;
-
-    new-instance v0, Ljvi;
-
-    invoke-direct {v0}, Ljvi;-><init>()V
-
-    iput-object v0, p0, Lgra;->c:Ljvi;
-
-    iget-object v0, p0, Lgra;->c:Ljvi;
-
-    new-instance v1, Lgrs;
-
-    invoke-direct {v1}, Lgrs;-><init>()V
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lggn;Lggk;)Lgfq;
     .locals 6
 
-    new-instance v1, Lgrf;
+    const/4 v5, 0x3
 
-    new-instance v0, Lggm;
-
-    invoke-direct {v0, p2}, Lggm;-><init>(Lggk;)V
-
-    invoke-direct {v1, p0, p1, v0}, Lgrf;-><init>(Lgra;Lggn;Lggm;)V
-
-    :try_start_0
-    sget-object v0, Lgra;->a:Ljava/lang/String;
-
-    const-string v2, "acquiring selfie flash"
-
-    invoke-static {v0, v2}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v2, p0, Lgra;->g:Ljava/lang/Object;
-
-    monitor-enter v2
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :try_start_1
-    iget v0, p0, Lgra;->f:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lgra;->f:I
-
-    iget v0, p0, Lgra;->f:I
+    const/4 v4, 0x2
 
     const/4 v3, 0x1
 
-    if-ne v0, v3, :cond_0
+    const/4 v2, 0x0
 
-    sget-object v0, Lgra;->a:Ljava/lang/String;
+    new-instance v0, Lgra;
 
-    const-string v3, "first active selfie flash request"
+    const-string v1, "OFF"
 
-    invoke-static {v0, v3}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, v2}, Lgra;-><init>(Ljava/lang/String;II)V
 
-    new-instance v0, Ljvi;
+    sput-object v0, Lgra;->a:Lgra;
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+    new-instance v0, Lgra;
 
-    iget-object v3, p0, Lgra;->e:Lhzt;
+    const-string v1, "THREE_BY_THREE"
 
-    new-instance v4, Lgrc;
+    invoke-direct {v0, v1, v3, v3}, Lgra;-><init>(Ljava/lang/String;II)V
 
-    invoke-direct {v4, p0, v0}, Lgrc;-><init>(Lgra;Ljvi;)V
+    sput-object v0, Lgra;->b:Lgra;
 
-    invoke-virtual {v3, v4}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    new-instance v0, Lgra;
 
-    invoke-interface {v0}, Ljuw;->get()Ljava/lang/Object;
+    const-string v1, "FOUR_BY_FOUR"
 
-    move-result-object v0
+    invoke-direct {v0, v1, v4, v4}, Lgra;-><init>(Ljava/lang/String;II)V
 
-    check-cast v0, Lgrs;
+    sput-object v0, Lgra;->c:Lgra;
 
-    new-instance v3, Ljvi;
+    new-instance v0, Lgra;
 
-    invoke-direct {v3}, Ljvi;-><init>()V
+    const-string v1, "GOLDEN_RATIO"
 
-    iput-object v3, p0, Lgra;->c:Ljvi;
+    invoke-direct {v0, v1, v5, v5}, Lgra;-><init>(Ljava/lang/String;II)V
 
-    iget-wide v4, v0, Lgrs;->a:J
+    sput-object v0, Lgra;->d:Lgra;
 
-    invoke-virtual {v1, p2}, Lgrf;->a(Lggk;)Lggk;
+    const/4 v0, 0x4
 
-    move-result-object v0
+    new-array v0, v0, [Lgra;
 
-    invoke-static {v4, v5, v0, p1}, Lgkm;->a(JLggk;Lggn;)Z
+    sget-object v1, Lgra;->a:Lgra;
 
-    :cond_0
-    monitor-exit v2
+    aput-object v1, v0, v2
 
-    :goto_0
-    return-object v1
+    sget-object v1, Lgra;->b:Lgra;
 
-    :catchall_0
-    move-exception v0
+    aput-object v1, v0, v3
 
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    sget-object v1, Lgra;->c:Lgra;
 
-    :try_start_2
-    throw v0
-    :try_end_2
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_2 .. :try_end_2} :catch_0
+    aput-object v1, v0, v4
 
-    :catch_0
-    move-exception v0
+    sget-object v1, Lgra;->d:Lgra;
 
-    sget-object v2, Lgra;->a:Ljava/lang/String;
+    aput-object v1, v0, v5
 
-    const-string v3, "Couldn\'t turn on selfie flash"
-
-    invoke-static {v2, v3, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    invoke-virtual {v1}, Lgrf;->close()V
-
-    goto :goto_0
-.end method
-
-.method public final a()V
-    .locals 3
-
-    iget-object v1, p0, Lgra;->g:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lgra;->a:Ljava/lang/String;
-
-    const-string v2, "resetting selfie flash"
-
-    invoke-static {v0, v2}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget v0, p0, Lgra;->f:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lgra;->f:I
-
-    iget v0, p0, Lgra;->f:I
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lgra;->a:Ljava/lang/String;
-
-    const-string v2, "no more active selfie flash requests"
-
-    invoke-static {v0, v2}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lgra;->e:Lhzt;
-
-    new-instance v2, Lgrb;
-
-    invoke-direct {v2, p0}, Lgrb;-><init>(Lgra;)V
-
-    invoke-virtual {v0, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    :cond_0
-    monitor-exit v1
+    sput-object v0, Lgra;->f:[Lgra;
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    throw v0
+    iput p3, p0, Lgra;->e:I
+
+    return-void
+.end method
+
+.method public static a(I)Lgra;
+    .locals 1
+
+    packed-switch p0, :pswitch_data_0
+
+    sget-object v0, Lgra;->a:Lgra;
+
+    :goto_0
+    return-object v0
+
+    :pswitch_0
+    sget-object v0, Lgra;->a:Lgra;
+
+    goto :goto_0
+
+    :pswitch_1
+    sget-object v0, Lgra;->b:Lgra;
+
+    goto :goto_0
+
+    :pswitch_2
+    sget-object v0, Lgra;->c:Lgra;
+
+    goto :goto_0
+
+    :pswitch_3
+    sget-object v0, Lgra;->d:Lgra;
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
+.end method
+
+.method public static a()[I
+    .locals 3
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [I
+
+    const/4 v1, 0x0
+
+    sget-object v2, Lgra;->a:Lgra;
+
+    iget v2, v2, Lgra;->e:I
+
+    aput v2, v0, v1
+
+    const/4 v1, 0x1
+
+    sget-object v2, Lgra;->b:Lgra;
+
+    iget v2, v2, Lgra;->e:I
+
+    aput v2, v0, v1
+
+    const/4 v1, 0x2
+
+    sget-object v2, Lgra;->c:Lgra;
+
+    iget v2, v2, Lgra;->e:I
+
+    aput v2, v0, v1
+
+    const/4 v1, 0x3
+
+    sget-object v2, Lgra;->d:Lgra;
+
+    iget v2, v2, Lgra;->e:I
+
+    aput v2, v0, v1
+
+    return-object v0
+.end method
+
+.method public static values()[Lgra;
+    .locals 1
+
+    sget-object v0, Lgra;->f:[Lgra;
+
+    invoke-virtual {v0}, [Lgra;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lgra;
+
+    return-object v0
 .end method

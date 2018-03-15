@@ -1,37 +1,107 @@
-.class final synthetic Lbes;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljtu;
+.class final enum Lbes;
+.super Ljava/lang/Enum;
+.source "PG"
 
 
-# instance fields
-.field private a:Lber;
+# static fields
+.field public static final enum a:Lbes;
+
+.field public static final enum b:Lbes;
+
+.field public static final enum c:Lbes;
+
+.field public static final enum d:Lbes;
+
+.field private static final synthetic e:[Lbes;
 
 
 # direct methods
-.method constructor <init>(Lber;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v5, 0x3
 
-    iput-object p1, p0, Lbes;->a:Lber;
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Lbes;
+
+    const-string v1, "CLOSED"
+
+    invoke-direct {v0, v1, v2}, Lbes;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbes;->a:Lbes;
+
+    new-instance v0, Lbes;
+
+    const-string v1, "READY"
+
+    invoke-direct {v0, v1, v3}, Lbes;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbes;->b:Lbes;
+
+    new-instance v0, Lbes;
+
+    const-string v1, "STARTING_RECORD"
+
+    invoke-direct {v0, v1, v4}, Lbes;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbes;->c:Lbes;
+
+    new-instance v0, Lbes;
+
+    const-string v1, "RECORDING"
+
+    invoke-direct {v0, v1, v5}, Lbes;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbes;->d:Lbes;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lbes;
+
+    sget-object v1, Lbes;->a:Lbes;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lbes;->b:Lbes;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lbes;->c:Lbes;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lbes;->d:Lbes;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Lbes;->e:[Lbes;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final a(Ljava/lang/Object;)Ljuw;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Lbes;
     .locals 1
 
-    iget-object v0, p0, Lbes;->a:Lber;
+    sget-object v0, Lbes;->e:[Lbes;
 
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {v0, p1}, Lber;->a(Ljava/lang/Long;)Ljuw;
+    invoke-virtual {v0}, [Lbes;->clone()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, [Lbes;
 
     return-object v0
 .end method

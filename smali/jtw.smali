@@ -1,106 +1,213 @@
-.class final Ljtw;
-.super Ljtn;
+.class public final Ljtw;
+.super Ljtx;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
+# static fields
+.field public static final serialVersionUID:J
 
-    invoke-direct {p0}, Ljtn;-><init>()V
+
+# instance fields
+.field private transient c:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Ljtw;-><init>(B)V
 
     return-void
 .end method
 
-.method constructor <init>(Ljkp;)V
-    .locals 6
+.method private constructor <init>(B)V
+    .locals 2
 
-    invoke-direct {p0}, Ljtw;-><init>()V
+    const/4 v1, 0x2
 
-    new-instance v3, Ljtx;
-
-    invoke-direct {v3, p0, p1}, Ljtx;-><init>(Ljtw;Ljkp;)V
-
-    iput-object v3, p0, Ljtn;->f:Ljto;
-
-    iget-object v0, v3, Ljto;->a:Ljkp;
-
-    invoke-virtual {v0}, Ljkp;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v3}, Ljto;->c()V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    iget-boolean v0, v3, Ljto;->b:Z
-
-    if-eqz v0, :cond_2
-
-    const/4 v0, 0x0
-
-    iget-object v1, v3, Ljto;->a:Ljkp;
-
-    invoke-virtual {v1}, Ljkp;->a()Ljoe;
-
-    move-result-object v4
-
-    move v1, v0
-
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {}, Ljwl;->a()Ljava/util/Map;
 
     move-result-object v0
 
-    check-cast v0, Ljuw;
+    invoke-direct {p0, v0}, Ljtx;-><init>(Ljava/util/Map;)V
 
-    add-int/lit8 v2, v1, 0x1
+    iput v1, p0, Ljtw;->c:I
 
-    new-instance v5, Ljtp;
+    const/4 v0, 0x1
 
-    invoke-direct {v5, v3, v1, v0}, Ljtp;-><init>(Ljto;ILjuw;)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    sget-object v1, Ljvc;->a:Ljvc;
+    iput v1, p0, Ljtw;->c:I
 
-    invoke-interface {v0, v5, v1}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    return-void
+.end method
 
-    move v1, v2
+.method private final readObject(Ljava/io/ObjectInputStream;)V
+    .locals 2
 
-    goto :goto_0
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    :cond_2
-    iget-object v0, v3, Ljto;->a:Ljkp;
+    const/4 v0, 0x2
 
-    invoke-virtual {v0}, Ljkp;->a()Ljoe;
+    iput v0, p0, Ljtw;->c:I
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
+
+    move-result v0
+
+    invoke-static {}, Ljwl;->a()Ljava/util/Map;
 
     move-result-object v1
 
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p0, v1}, Ljtw;->a(Ljava/util/Map;)V
 
-    move-result v0
+    invoke-static {p0, p1, v0}, Ljwl;->a(Ljvg;Ljava/io/ObjectInputStream;I)V
 
-    if-eqz v0, :cond_0
+    return-void
+.end method
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+.method private final writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    invoke-static {p0, p1}, Ljwl;->a(Ljvg;Ljava/io/ObjectOutputStream;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method final a()Ljava/util/Set;
+    .locals 1
+
+    iget v0, p0, Ljtw;->c:I
+
+    invoke-static {v0}, Ljwl;->a(I)Ljava/util/Set;
 
     move-result-object v0
 
-    check-cast v0, Ljuw;
+    return-object v0
+.end method
 
-    sget-object v2, Ljvc;->a:Ljvc;
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/util/Set;
+    .locals 1
 
-    invoke-interface {v0, v3, v2}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-super {p0, p1}, Ljtx;->a(Ljava/lang/Object;)Ljava/util/Set;
 
-    goto :goto_1
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 1
+
+    invoke-super {p0, p1, p2}, Ljru;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method final synthetic b()Ljava/util/Collection;
+    .locals 1
+
+    iget v0, p0, Ljtw;->c:I
+
+    invoke-static {v0}, Ljwl;->a(I)Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic b(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 1
+
+    invoke-super {p0, p1, p2}, Ljtx;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final bridge synthetic c()I
+    .locals 1
+
+    invoke-super {p0}, Ljtx;->c()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final bridge synthetic d()V
+    .locals 0
+
+    invoke-super {p0}, Ljtx;->d()V
+
+    return-void
+.end method
+
+.method public final bridge synthetic equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    invoke-super {p0, p1}, Ljsi;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final bridge synthetic g()Z
+    .locals 1
+
+    invoke-super {p0}, Ljtx;->g()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final bridge synthetic h()Ljava/util/Set;
+    .locals 1
+
+    invoke-super {p0}, Ljtx;->h()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic hashCode()I
+    .locals 1
+
+    invoke-super {p0}, Ljtx;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final bridge synthetic i()Ljava/util/Map;
+    .locals 1
+
+    invoke-super {p0}, Ljsi;->i()Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-super {p0}, Ljtx;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

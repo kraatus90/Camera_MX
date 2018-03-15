@@ -1,70 +1,49 @@
-.class public final Lcnw;
-.super Ljava/lang/Object;
+.class Lcnw;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic a:Lcnv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lcnv;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcnw;->a:Lcnv;
 
-    iput-object p1, p0, Lcnw;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lcnw;->b:Ljxn;
-
-    iput-object p3, p0, Lcnw;->c:Ljxn;
-
-    iput-object p4, p0, Lcnw;->d:Ljxn;
+    invoke-direct {p0, v0}, Lglb;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final a()V
+    .locals 2
 
-    new-instance v2, Lcnu;
+    sget-object v0, Lcnv;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Lcnw;->a:Ljxn;
+    const-string v1, "Filmstrip Ui Hidden"
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    iget-object v0, p0, Lcnw;->a:Lcnv;
 
-    check-cast v0, Lbhn;
+    iget-object v0, v0, Lcnv;->f:Lgoy;
 
-    iget-object v1, p0, Lcnw;->b:Ljxn;
+    const/16 v1, 0x1707
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lgoy;->a(I)V
 
-    iget-object v1, p0, Lcnw;->c:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+.method public l()V
+    .locals 0
 
-    move-result-object v1
-
-    check-cast v1, Lihp;
-
-    iget-object v3, p0, Lcnw;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    invoke-direct {v2, v0, v1}, Lcnu;-><init>(Lbhn;Lihp;)V
-
-    return-object v2
+    return-void
 .end method

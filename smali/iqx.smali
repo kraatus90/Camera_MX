@@ -1,34 +1,31 @@
 .class final Liqx;
-.super Ljava/lang/Object;
+.super Liqd;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lcom/google/android/libraries/smartburst/filterpacks/motion/FrameWarper;
+.field private final a:Liru;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/smartburst/filterpacks/motion/FrameWarper;)V
+.method public constructor <init>(Liru;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Liqd;-><init>()V
 
-    iput-object p1, p0, Liqx;->a:Lcom/google/android/libraries/smartburst/filterpacks/motion/FrameWarper;
+    iput-object p1, p0, Liqx;->a:Liru;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a_(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Liqx;->a:Lcom/google/android/libraries/smartburst/filterpacks/motion/FrameWarper;
+    iget-object v0, p0, Liqx;->a:Liru;
 
-    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/motion/FrameWarper;->dispose()V
+    invoke-virtual {v0, p1}, Liru;->a(Ljava/lang/Object;)Z
 
     return-void
 .end method

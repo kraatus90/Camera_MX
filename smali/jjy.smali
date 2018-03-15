@@ -1,129 +1,139 @@
-.class final Ljjy;
-.super Ljjv;
+.class public final Ljjy;
+.super Ljju;
 .source "PG"
 
 
-# static fields
-.field public static final b:Ljjy;
-
-.field public static final serialVersionUID:J
+# instance fields
+.field private final d:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljmb;)V
+    .locals 8
 
-    new-instance v0, Ljjy;
+    const-wide/32 v6, 0x3b9aca00
 
-    invoke-direct {v0}, Ljjy;-><init>()V
+    const/4 v1, 0x1
 
-    sput-object v0, Ljjy;->b:Ljjy;
+    const/4 v2, 0x0
+
+    const-wide/16 v4, 0x0
+
+    invoke-direct {p0, p1}, Ljju;-><init>(Ljmb;)V
+
+    cmp-long v0, v4, v4
+
+    if-ltz v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    cmp-long v0, v6, v4
+
+    if-ltz v0, :cond_1
+
+    :goto_1
+    invoke-static {v1}, Ljii;->a(Z)V
+
+    iput-wide v6, p0, Ljjy;->d:J
 
     return-void
-.end method
 
-.method private constructor <init>()V
-    .locals 1
+    :cond_0
+    move v0, v2
 
-    const/4 v0, 0x0
+    goto :goto_0
 
-    invoke-direct {p0, v0}, Ljjv;-><init>(Ljava/lang/Comparable;)V
+    :cond_1
+    move v1, v2
 
-    return-void
-.end method
-
-.method private final readResolve()Ljava/lang/Object;
-    .locals 1
-
-    sget-object v0, Ljjy;->b:Ljjy;
-
-    return-object v0
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a(Ljjv;)I
-    .locals 1
+.method public final a(J)Ljpj;
+    .locals 7
 
-    if-ne p1, p0, :cond_0
+    iget-object v1, p0, Ljjy;->c:Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Ljjy;->a:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljjy;->a:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    cmp-long v0, p1, v2
+
+    if-ltz v0, :cond_0
+
+    iget-object v0, p0, Ljjy;->a:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->last()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Ljjy;->d:J
+
+    add-long/2addr v2, v4
+
+    cmp-long v0, p1, v2
+
+    if-gtz v0, :cond_0
+
+    new-instance v0, Ljpg;
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-direct {v0, v2}, Ljpg;-><init>(F)V
+
+    monitor-exit v1
 
     :goto_0
-    return v0
+    return-object v0
 
     :cond_0
-    const/4 v0, -0x1
+    new-instance v0, Ljpg;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2}, Ljpg;-><init>(F)V
+
+    monitor-exit v1
 
     goto :goto_0
-.end method
 
-.method final a()Ljava/lang/Comparable;
-    .locals 2
+    :catchall_0
+    move-exception v0
 
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "range unbounded on this side"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-.end method
-
-.method final a(Ljava/lang/StringBuilder;)V
-    .locals 1
-
-    const-string v0, "(-\u221e"
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    return-void
-.end method
-
-.method final a(Ljava/lang/Comparable;)Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method final b(Ljava/lang/StringBuilder;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-.end method
-
-.method public final synthetic compareTo(Ljava/lang/Object;)I
-    .locals 1
-
-    check-cast p1, Ljjv;
-
-    invoke-virtual {p0, p1}, Ljjy;->a(Ljjv;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "-\u221e"
-
-    return-object v0
 .end method

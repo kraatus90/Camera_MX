@@ -3,76 +3,127 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lgct;
+.implements Ljqv;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgcw;->a:Ljxn;
+    return-void
+.end method
 
-    iput-object p2, p0, Lgcw;->b:Ljxn;
+.method public constructor <init>(I)V
+    .locals 0
 
-    iput-object p3, p0, Lgcw;->c:Ljxn;
+    iput p1, p0, Lgcw;->a:I
 
-    iput-object p4, p0, Lgcw;->d:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 5
 
-    new-instance v4, Lgdj;
+    check-cast p1, Lbbi;
 
-    iget-object v0, p0, Lgcw;->a:Ljxn;
+    new-instance v2, Lbbi;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v2}, Lbbi;-><init>()V
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    iget v0, p0, Lgcw;->a:I
+
+    if-ge v1, v0, :cond_1
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p1}, Lbbi;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_1
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgdm;
+    check-cast v0, Ljava/util/List;
 
-    iget-object v1, p0, Lgcw;->b:Ljxn;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Lful;
 
-    check-cast v1, Lhzt;
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v2, p0, Lgcw;->c:Ljxn;
+    goto :goto_1
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    :cond_0
+    new-instance v0, Lftt;
 
-    move-result-object v2
+    invoke-direct {v0, v3}, Lftt;-><init>(Ljava/util/List;)V
 
-    check-cast v2, Lbip;
+    invoke-virtual {v2, v0}, Lbbi;->add(Ljava/lang/Object;)Z
 
-    iget-object v3, p0, Lgcw;->d:Ljxn;
+    add-int/lit8 v0, v1, 0x1
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    move v1, v0
 
-    move-result-object v3
+    goto :goto_0
 
-    check-cast v3, Ljava/lang/String;
+    :cond_1
+    return-object v2
+.end method
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lgdj;-><init>(Lgdm;Lhzt;Lbip;Ljava/lang/String;)V
+.method public final a()V
+    .locals 0
 
-    return-object v4
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 0
+
+    return-void
 .end method

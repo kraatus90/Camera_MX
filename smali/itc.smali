@@ -1,28 +1,31 @@
-.class final Litc;
-.super Ljava/lang/Object;
+.class public final Litc;
+.super Litb;
 .source "PG"
-
-# interfaces
-.implements Liuh;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Litb;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
+.method public final a()Ljava/lang/String;
     .locals 1
 
-    new-instance v0, Litd;
-
-    invoke-direct {v0}, Litd;-><init>()V
+    const-string v0, "Norm16"
 
     return-object v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    const/16 v0, 0x10
+
+    return v0
 .end method

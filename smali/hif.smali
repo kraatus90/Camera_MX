@@ -1,123 +1,115 @@
-.class public final synthetic Lhif;
+.class public final Lhif;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "PG"
 
 
 # instance fields
-.field private a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+.field public a:Lhie;
 
-.field private b:Lhij;
+.field public b:Lhie;
+
+.field public c:Lhio;
+
+.field public d:F
+
+.field public e:F
+
+.field public f:F
+
+.field public g:F
+
+.field public h:Z
+
+.field public i:Lhio;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;Lhij;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhif;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+    new-instance v0, Lhie;
 
-    iput-object p2, p0, Lhif;->b:Lhij;
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    invoke-direct {v0, v1}, Lhie;-><init>(F)V
+
+    iput-object v0, p0, Lhif;->a:Lhie;
+
+    new-instance v0, Lhie;
+
+    const v1, 0x3f666666    # 0.9f
+
+    invoke-direct {v0, v1}, Lhie;-><init>(F)V
+
+    iput-object v0, p0, Lhif;->b:Lhie;
+
+    new-instance v0, Lhio;
+
+    invoke-direct {v0}, Lhio;-><init>()V
+
+    iput-object v0, p0, Lhif;->c:Lhio;
+
+    new-instance v0, Lhio;
+
+    invoke-direct {v0}, Lhio;-><init>()V
+
+    iput-object v0, p0, Lhif;->i:Lhio;
+
+    invoke-virtual {p0}, Lhif;->a()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final a()V
+    .locals 2
 
-    iget-object v2, p0, Lhif;->a:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
-
-    iget-object v1, p0, Lhif;->b:Lhij;
-
-    invoke-virtual {v2}, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->a()V
-
-    invoke-virtual {v2}, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->getRootView()Landroid/view/View;
-
-    move-result-object v0
-
-    const v3, 0x7f0e01d5
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;
-
-    iget-object v3, v2, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->e:Lhii;
-
-    if-eqz v3, :cond_0
-
-    iget-object v3, v2, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->e:Lhii;
-
-    iput-object v3, v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhin;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a()V
-
-    :goto_0
-    new-instance v3, Lhsn;
-
-    invoke-direct {v3, v2, v1}, Lhsn;-><init>(Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;Lhij;)V
-
-    iput-object v3, v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhsn;
-
-    iget-object v1, v3, Lhsn;->a:Lhij;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, v3, Lhsn;->a:Lhij;
-
-    invoke-virtual {v1}, Lhij;->a()F
-
-    move-result v1
-
-    :goto_1
-    iput v1, v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a:F
-
-    iget v1, v0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a:F
-
-    const/high16 v3, 0x42c80000    # 100.0f
-
-    mul-float/2addr v1, v3
-
-    float-to-int v1, v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->setProgress(I)V
-
-    invoke-virtual {v0}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a()V
-
-    invoke-virtual {v2}, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->getRootView()Landroid/view/View;
-
-    move-result-object v0
-
-    const v1, 0x7f0e01d2
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    new-instance v1, Lhig;
-
-    invoke-direct {v1, v2}, Lhig;-><init>(Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    return-void
-
-    :cond_0
-    sget-object v3, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->a:Ljava/lang/String;
-
-    const-string v4, "clingView is null."
-
-    invoke-static {v3, v4}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
     const/4 v1, 0x0
 
-    goto :goto_1
+    iget-object v0, p0, Lhif;->a:Lhie;
+
+    invoke-virtual {v0, v1}, Lhie;->a(F)V
+
+    iget-object v0, p0, Lhif;->b:Lhie;
+
+    invoke-virtual {v0, v1}, Lhie;->a(F)V
+
+    iget-object v0, p0, Lhif;->c:Lhio;
+
+    invoke-virtual {v0}, Lhio;->b()V
+
+    iput v1, p0, Lhif;->d:F
+
+    iput v1, p0, Lhif;->e:F
+
+    iput v1, p0, Lhif;->g:F
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iput v0, p0, Lhif;->f:F
+
+    iget-object v0, p0, Lhif;->i:Lhio;
+
+    invoke-virtual {v0}, Lhio;->b()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lhif;->h:Z
+
+    return-void
+.end method
+
+.method public final b()F
+    .locals 2
+
+    iget v0, p0, Lhif;->d:F
+
+    iget v1, p0, Lhif;->f:F
+
+    div-float/2addr v0, v1
+
+    return v0
 .end method

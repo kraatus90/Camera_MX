@@ -1,126 +1,260 @@
 .class public final Libh;
-.super Ljava/lang/Object;
+.super Ljava/io/OutputStream;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
-
-.field private b:Z
-
-.field private c:Ljava/util/Queue;
+.field private final a:Libi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Libi;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Libh;->a:Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Libh;->b:Z
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Libh;->c:Ljava/util/Queue;
+    iput-object p1, p0, Libh;->a:Libi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 3
+.method public final close()V
+    .locals 5
 
-    iget-object v1, p0, Libh;->a:Ljava/lang/Object;
+    iget-object v0, p0, Libh;->a:Libi;
 
-    monitor-enter v1
+    iget-object v1, v0, Libi;->a:Ligr;
 
-    :try_start_0
-    iget-boolean v0, p0, Libh;->b:Z
+    invoke-virtual {v1}, Ligr;->a()I
 
-    if-eqz v0, :cond_1
+    move-result v1
 
-    iget-object v0, p0, Libh;->c:Ljava/util/Queue;
+    if-lez v1, :cond_0
 
-    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+    const-string v1, "CAM_ProcFSM"
 
-    monitor-exit v1
+    iget-object v2, v0, Libi;->a:Ligr;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x28
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Warning: unwritten bytes in the buffer: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
+    iget v1, v0, Libi;->d:I
+
+    if-lez v1, :cond_1
+
+    const-string v1, "CAM_ProcFSM"
+
+    iget v2, v0, Libi;->d:I
+
+    const/16 v3, 0x30
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Warning: still need to forward "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " bytes"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    iget v1, v0, Libi;->c:I
+
+    if-lez v1, :cond_2
+
+    const-string v1, "CAM_ProcFSM"
+
+    iget v2, v0, Libi;->d:I
+
+    const/16 v3, 0x2d
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Warning: still need to skip "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " bytes"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    iget-object v0, v0, Libi;->b:Ljava/io/OutputStream;
+
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+
+    return-void
+.end method
+
+.method public final flush()V
+    .locals 1
+
+    iget-object v0, p0, Libh;->a:Libi;
+
+    iget-object v0, v0, Libi;->b:Ljava/io/OutputStream;
+
+    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
+
+    return-void
+.end method
+
+.method public final write(I)V
+    .locals 5
+
+    iget-object v0, p0, Libh;->a:Libi;
+
+    iget v1, v0, Libi;->c:I
+
+    if-eqz v1, :cond_1
+
+    iget v1, v0, Libi;->c:I
+
+    if-lez v1, :cond_0
+
+    iget v1, v0, Libi;->c:I
+
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, v0, Libi;->c:I
+
+    :cond_0
+    :goto_0
     return-void
 
     :cond_1
-    const/4 v0, 0x1
+    iget v1, v0, Libi;->d:I
 
-    iput-boolean v0, p0, Libh;->b:Z
+    if-eqz v1, :cond_2
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, v0, Libi;->b:Ljava/io/OutputStream;
 
-    :goto_0
-    if-eqz p1, :cond_0
+    invoke-virtual {v1, p1}, Ljava/io/OutputStream;->write(I)V
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    iget v1, v0, Libi;->d:I
 
-    iget-object v1, p0, Libh;->a:Ljava/lang/Object;
+    if-lez v1, :cond_0
 
-    monitor-enter v1
+    iget v1, v0, Libi;->d:I
 
-    :try_start_1
-    iget-object v0, p0, Libh;->c:Ljava/util/Queue;
+    add-int/lit8 v1, v1, -0x1
 
-    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Runnable;
-
-    if-nez v0, :cond_2
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, p0, Libh;->b:Z
-
-    :cond_2
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    move-object p1, v0
+    iput v1, v0, Libi;->d:I
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_2
+    iget-object v1, v0, Libi;->a:Ligr;
 
-    :try_start_2
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    int-to-byte v2, p1
 
-    throw v0
+    const/4 v3, 0x1
 
-    :catchall_1
-    move-exception v0
+    invoke-virtual {v1, v3}, Ligr;->b(I)V
 
-    :try_start_3
-    monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    iget-object v3, v1, Ligr;->a:[B
 
-    throw v0
+    iget v4, v1, Ligr;->c:I
+
+    aput-byte v2, v3, v4
+
+    iget v2, v1, Ligr;->c:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, v1, Ligr;->c:I
+
+    invoke-virtual {v0}, Libi;->b()V
+
+    goto :goto_0
+.end method
+
+.method public final write([B)V
+    .locals 3
+
+    iget-object v0, p0, Libh;->a:Libi;
+
+    const/4 v1, 0x0
+
+    array-length v2, p1
+
+    invoke-virtual {v0, p1, v1, v2}, Libi;->a([BII)V
+
+    return-void
+.end method
+
+.method public final write([BII)V
+    .locals 1
+
+    iget-object v0, p0, Libh;->a:Libi;
+
+    invoke-virtual {v0, p1, p2, p3}, Libi;->a([BII)V
+
+    return-void
 .end method

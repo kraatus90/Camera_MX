@@ -1,112 +1,74 @@
-.class public final Licb;
+.class final Licb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liau;
+.implements Lihg;
 
 
 # instance fields
-.field private a:Ljig;
+.field private final a:Lihg;
 
-.field private b:Liag;
+.field private final b:Ljava/util/concurrent/Executor;
 
-.field private c:Liau;
+.field private final c:Liaw;
+
+.field private d:Liaw;
 
 
 # direct methods
-.method public constructor <init>(Ljig;)V
-    .locals 2
+.method constructor <init>(Lihg;Ljava/util/concurrent/Executor;Liaw;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Licb;->a:Ljig;
+    iput-object p1, p0, Licb;->a:Lihg;
 
-    new-instance v0, Liag;
+    iput-object p2, p0, Licb;->b:Ljava/util/concurrent/Executor;
 
-    invoke-interface {p1}, Ljig;->a()Ljava/lang/Object;
+    iput-object p3, p0, Licb;->c:Liaw;
 
-    move-result-object v1
+    iget-object v0, p0, Licb;->c:Liaw;
 
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Licb;->b:Liag;
-
-    iget-object v0, p0, Licb;->b:Liag;
-
-    invoke-static {v0}, Liav;->b(Liau;)Liau;
+    invoke-virtual {v0}, Liaw;->g()Liaw;
 
     move-result-object v0
 
-    iput-object v0, p0, Licb;->c:Liau;
+    iput-object v0, p0, Licb;->d:Liaw;
 
     return-void
-.end method
-
-.method public static a(Ljava/util/NavigableMap;ILibx;)Ljava/util/NavigableMap;
-    .locals 1
-
-    invoke-interface {p0}, Ljava/util/NavigableMap;->size()I
-
-    move-result v0
-
-    if-gt v0, p1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
-
-    new-instance v0, Licc;
-
-    invoke-direct {v0, p0, p1, p2}, Licc;-><init>(Ljava/util/NavigableMap;ILibx;)V
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Licn;Ljava/util/concurrent/Executor;)Lich;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Licb;->c:Liau;
+    check-cast p1, Lick;
 
-    invoke-interface {v0, p1, p2}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    iget-object v0, p0, Licb;->d:Liaw;
 
-    move-result-object v0
+    iget-object v1, p0, Licb;->c:Liaw;
 
-    return-object v0
-.end method
-
-.method public final a()V
-    .locals 2
-
-    iget-object v0, p0, Licb;->b:Liag;
-
-    iget-object v1, p0, Licb;->a:Ljig;
-
-    invoke-interface {v1}, Ljig;->a()Ljava/lang/Object;
+    invoke-virtual {v1}, Liaw;->g()Liaw;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Liag;->a(Ljava/lang/Object;)V
+    iput-object v1, p0, Licb;->d:Liaw;
+
+    iget-object v1, p0, Licb;->d:Liaw;
+
+    iget-object v2, p0, Licb;->a:Lihg;
+
+    iget-object v3, p0, Licb;->b:Ljava/util/concurrent/Executor;
+
+    invoke-interface {p1, v2, v3}, Lick;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Liaw;->a(Lihb;)Lihb;
+
+    invoke-virtual {v0}, Liaw;->close()V
 
     return-void
-.end method
-
-.method public final b()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Licb;->b:Liag;
-
-    invoke-virtual {v0}, Liag;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
 .end method

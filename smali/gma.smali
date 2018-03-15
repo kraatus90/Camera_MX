@@ -1,57 +1,42 @@
-.class final synthetic Lgma;
+.class public final Lgma;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lglx;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lglx;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgma;->a:Lglx;
+    iput-object p1, p0, Lgma;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lgma;->a:Lglx;
+    new-instance v1, Lglz;
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lgma;->a:Lkgv;
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    check-cast v0, Liih;
 
-    iget-object v1, v0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    invoke-direct {v1, v0}, Lglz;-><init>(Liih;)V
 
-    sget-object v2, Lglc;->c:Lglc;
-
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a(Lglc;)V
-
-    :goto_0
-    invoke-virtual {v0}, Lglx;->c()V
-
-    return-void
-
-    :cond_0
-    iget-object v1, v0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-
-    sget-object v2, Lglc;->c:Lglc;
-
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b(Lglc;)V
-
-    goto :goto_0
+    return-object v1
 .end method

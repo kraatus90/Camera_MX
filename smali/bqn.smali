@@ -3,92 +3,49 @@
 .source "PG"
 
 
-# instance fields
-.field public final a:Landroid/content/Context;
-
-
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbqn;->a:Landroid/content/Context;
-
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 1
+.method public static a(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;F)V
+    .locals 4
 
-    :try_start_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    const/high16 v3, 0x40000000    # 2.0f
 
-    invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0}, Landroid/graphics/Canvas;->getWidth()I
 
-    move-result-object v0
+    move-result v0
 
-    :goto_0
-    return-object v0
+    invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
 
-    :catch_0
-    move-exception v0
+    int-to-float v1, v0
 
-    const/4 v0, 0x0
+    sub-float/2addr v1, p2
 
-    goto :goto_0
-.end method
+    div-float/2addr v1, v3
 
+    int-to-float v2, v0
 
-# virtual methods
-.method public final a()Landroid/app/ActivityManager;
-    .locals 2
+    sub-float/2addr v2, p2
 
-    iget-object v0, p0, Lbqn;->a:Landroid/content/Context;
+    div-float/2addr v2, v3
 
-    const-string v1, "activity"
+    invoke-virtual {p0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    invoke-static {v0, v1}, Lbqn;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
+    int-to-float v0, v0
 
-    move-result-object v0
+    div-float v0, p2, v0
 
-    check-cast v0, Landroid/app/ActivityManager;
+    invoke-virtual {p0, v0, v0}, Landroid/graphics/Canvas;->scale(FF)V
 
-    return-object v0
-.end method
+    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-.method public final b()Landroid/hardware/SensorManager;
-    .locals 2
+    invoke-virtual {p0}, Landroid/graphics/Canvas;->restore()V
 
-    iget-object v0, p0, Lbqn;->a:Landroid/content/Context;
-
-    const-string v1, "sensor"
-
-    invoke-static {v0, v1}, Lbqn;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/SensorManager;
-
-    return-object v0
-.end method
-
-.method public final c()Landroid/view/WindowManager;
-    .locals 2
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    iget-object v0, p0, Lbqn;->a:Landroid/content/Context;
-
-    const-string v1, "window"
-
-    invoke-static {v0, v1}, Lbqn;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/WindowManager;
-
-    return-object v0
+    return-void
 .end method

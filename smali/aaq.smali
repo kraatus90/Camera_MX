@@ -1,4 +1,4 @@
-.class public final Laaq;
+.class final Laaq;
 .super Ljava/lang/Object;
 .source "PG"
 
@@ -7,26 +7,18 @@
 
 
 # instance fields
-.field private synthetic a:I
+.field private final synthetic a:[B
 
-.field private synthetic b:Landroid/os/Handler;
-
-.field private synthetic c:Laav;
-
-.field private synthetic d:Laap;
+.field private final synthetic b:Laao;
 
 
 # direct methods
-.method public constructor <init>(Laap;ILandroid/os/Handler;Laav;)V
+.method constructor <init>(Laao;[B)V
     .locals 0
 
-    iput-object p1, p0, Laaq;->d:Laap;
+    iput-object p1, p0, Laaq;->b:Laao;
 
-    iput p2, p0, Laaq;->a:I
-
-    iput-object p3, p0, Laaq;->b:Landroid/os/Handler;
-
-    iput-object p4, p0, Laaq;->c:Laav;
+    iput-object p2, p0, Laaq;->a:[B
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,29 +28,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 3
 
-    iget-object v0, p0, Laaq;->d:Laap;
+    iget-object v0, p0, Laaq;->b:Laao;
 
-    invoke-virtual {v0}, Laap;->c()Landroid/os/Handler;
+    invoke-virtual {v0}, Laao;->h()Landroid/os/Handler;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/16 v1, 0x69
 
-    iget v2, p0, Laaq;->a:I
+    iget-object v2, p0, Laaq;->a:[B
 
-    const/4 v3, 0x0
-
-    iget-object v4, p0, Laaq;->b:Landroid/os/Handler;
-
-    iget-object v5, p0, Laaq;->c:Laav;
-
-    invoke-static {v4, v5}, Laaw;->a(Landroid/os/Handler;Laav;)Laaw;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 

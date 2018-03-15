@@ -512,9 +512,9 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v0, Ljvs;->a:Ljvt;
+    sget-object v0, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v0, p1}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, p1}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto :goto_0
 

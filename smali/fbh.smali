@@ -1,200 +1,64 @@
 .class public final Lfbh;
-.super Lfdj;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgvk;
+.implements Lkgv;
 
 
 # instance fields
-.field public a:Lgvj;
+.field private final a:Lkgv;
 
-.field public b:Lgvl;
-
-.field public c:Lgvl;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Liau;Lezd;)V
-    .locals 4
+.method private constructor <init>(Lkgv;Lkgv;)V
+    .locals 0
 
-    const/4 v3, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfdj;-><init>(Liau;)V
+    iput-object p1, p0, Lfbh;->a:Lkgv;
 
-    new-instance v0, Lfbi;
-
-    invoke-direct {v0, p0}, Lfbi;-><init>(Lfbh;)V
-
-    new-instance v1, Lgvl;
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Lgvg;
-
-    aput-object p2, v2, v3
-
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
-
-    iput-object v1, p0, Lfbh;->b:Lgvl;
-
-    new-instance v0, Lfbj;
-
-    invoke-direct {v0, p0}, Lfbj;-><init>(Lfbh;)V
-
-    new-instance v1, Lgvl;
-
-    new-array v2, v3, [Lgvg;
-
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
-
-    iput-object v1, p0, Lfbh;->c:Lgvl;
-
-    new-instance v0, Lgvj;
-
-    iget-object v1, p0, Lfbh;->b:Lgvl;
-
-    invoke-direct {v0, v1, v3}, Lgvj;-><init>(Lgvl;Z)V
-
-    iput-object v0, p0, Lfbh;->a:Lgvj;
+    iput-object p2, p0, Lfbh;->b:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;)Lfbh;
+    .locals 1
+
+    new-instance v0, Lfbh;
+
+    invoke-direct {v0, p0, p1}, Lfbh;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final D()V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lfbh;->a:Lgvj;
+    new-instance v2, Lfbg;
 
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    iget-object v0, p0, Lfbh;->a:Lkgv;
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfbh;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v0, v0, Lgvl;->a:Lgvg;
+    check-cast v0, Libw;
 
-    check-cast v0, Lgvh;
+    iget-object v1, p0, Lfbh;->b:Lkgv;
 
-    invoke-virtual {v0}, Lgvh;->D()V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    goto :goto_0
-.end method
+    move-result-object v1
 
-.method public final E()V
-    .locals 1
+    check-cast v1, Lick;
 
-    iget-object v0, p0, Lfbh;->a:Lgvj;
+    invoke-direct {v2, v0, v1}, Lfbg;-><init>(Libw;Lick;)V
 
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfbh;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->E()V
-
-    goto :goto_0
-.end method
-
-.method public final a()V
-    .locals 1
-
-    invoke-super {p0}, Lfdj;->a()V
-
-    iget-object v0, p0, Lfbh;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->c()V
-
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Landroid/view/Window;Levh;Laxo;Ljht;)V
-    .locals 2
-
-    iget-object v0, p0, Lfbh;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-super/range {p0 .. p7}, Lfdj;->a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Landroid/view/Window;Levh;Laxo;Ljht;)V
-
-    iget-object v0, p0, Lfbh;->a:Lgvj;
-
-    sget v1, Leh;->bo:I
-
-    iput v1, v0, Lgvj;->a:I
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 1
-
-    invoke-super {p0}, Lfdj;->b()V
-
-    iget-object v0, p0, Lfbh;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->d()V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 0
-
-    invoke-interface {p0}, Lgvk;->j()V
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 1
-
-    iget-object v0, p0, Lfbh;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->e()V
-
-    iget-object v0, p0, Lfbh;->b:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    iget-object v0, p0, Lfbh;->c:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    return-void
+    return-object v2
 .end method

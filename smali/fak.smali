@@ -1,45 +1,75 @@
-.class final Lfak;
-.super Lezb;
+.class public final Lfak;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field private synthetic a:Lfah;
+.field public a:Z
+
+.field public b:I
+
+.field public c:I
+
+.field public d:Ljava/util/Date;
+
+.field public e:Landroid/view/View$OnClickListener;
+
+.field public final f:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lfah;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lfak;->a:Lfah;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lezb;-><init>(Leyy;)V
+    iput-object p1, p0, Lfak;->f:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final u()V
+.method public final synthetic compareTo(Ljava/lang/Object;)I
     .locals 2
 
-    iget-object v0, p0, Lfak;->a:Lfah;
+    check-cast p1, Lfak;
 
-    iget-object v0, v0, Lfah;->l:Lgvj;
+    iget v0, p0, Lfak;->b:I
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    iget v1, p1, Lfak;->b:I
 
-    invoke-super {p0}, Lezb;->u()V
+    if-ge v0, v1, :cond_0
 
-    iget-object v0, p0, Lfak;->a:Lfah;
+    const/4 v0, -0x1
 
-    iget-object v0, v0, Lfah;->l:Lgvj;
+    :goto_0
+    return v0
 
-    iget-object v1, p0, Lfak;->a:Lfah;
+    :cond_0
+    iget v0, p0, Lfak;->b:I
 
-    iget-object v1, v1, Lfah;->m:Lgvl;
+    iget v1, p1, Lfak;->b:I
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    if-le v0, v1, :cond_1
 
-    return-void
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lfak;->d:Ljava/util/Date;
+
+    iget-object v1, p1, Lfak;->d:Ljava/util/Date;
+
+    invoke-virtual {v0, v1}, Ljava/util/Date;->compareTo(Ljava/util/Date;)I
+
+    move-result v0
+
+    neg-int v0, v0
+
+    goto :goto_0
 .end method

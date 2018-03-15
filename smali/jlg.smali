@@ -1,38 +1,127 @@
-.class final Ljlg;
-.super Ljava/lang/Object;
+.class public final Ljlg;
+.super Ljkq;
 .source "PG"
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field public static final serialVersionUID:J
 
 
 # instance fields
-.field private a:[Ljava/lang/Object;
+.field private final a:Ljava/util/Set;
 
 
 # direct methods
-.method constructor <init>([Ljava/lang/Object;)V
-    .locals 0
+.method public varargs constructor <init>([Ljkq;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljkq;-><init>()V
 
-    iput-object p1, p0, Ljlg;->a:[Ljava/lang/Object;
+    array-length v0, p1
+
+    invoke-static {v0}, Ljwo;->a(I)Ljava/util/HashSet;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
+
+    iput-object v0, p0, Ljlg;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final readResolve()Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljkl;)Ljkl;
+    .locals 3
 
-    iget-object v0, p0, Ljlg;->a:[Ljava/lang/Object;
+    new-instance v1, Ljava/util/HashSet;
 
-    invoke-static {v0}, Ljle;->a([Ljava/lang/Object;)Ljle;
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+
+    iget-object v0, p0, Ljlg;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljkq;
+
+    invoke-virtual {v0, p1}, Ljkq;->a(Ljkl;)Ljkl;
+
+    move-result-object v0
+
+    iget-object v0, v0, Ljkl;->a:Ljava/util/List;
+
+    invoke-static {v0}, Ljuh;->a(Ljava/util/Collection;)Ljuh;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljkl;
+
+    invoke-direct {v0, v1}, Ljkl;-><init>(Ljava/util/Collection;)V
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    const-string v0, " | "
+
+    invoke-static {v0}, Ljqy;->a(Ljava/lang/String;)Ljqy;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ljlg;->a:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Ljqy;->a(Ljava/lang/Iterable;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

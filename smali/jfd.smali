@@ -1,20 +1,14 @@
-.class public final Ljfd;
+.class final Ljfd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
-
-
-# instance fields
-.field private synthetic a:Ljfq;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljfq;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljfd;->a:Ljfq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,16 +17,46 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 7
 
-    check-cast p1, Ljaf;
+    const-class v0, Ljnq;
 
-    new-instance v0, Ljfj;
+    const-string v1, "default"
 
-    iget-object v1, p0, Ljfd;->a:Ljfq;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-direct {v0, p1, v1}, Ljfj;-><init>(Ljaf;Ljfq;)V
+    move-result-object v4
+
+    check-cast v4, Ljnq;
+
+    const-class v0, Ljjz;
+
+    const-string v1, "post_proc_quality_metric"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljjz;
+
+    new-instance v0, Lizv;
+
+    const-string v1, "Collage_PhotoBooth"
+
+    const/4 v2, 0x7
+
+    const-class v3, [Liyv;
+
+    const-string v6, "combined_layouts"
+
+    invoke-virtual {p1, v3, v6}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, [Liyv;
+
+    invoke-direct/range {v0 .. v5}, Lizv;-><init>(Ljava/lang/String;I[Liyv;Ljnq;Ljjz;)V
 
     return-object v0
 .end method

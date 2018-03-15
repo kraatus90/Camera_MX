@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Серийно заснем. (%1$d снимки)</item>
+        <item quantity="one">Серийно заснем. (%1$d снимка)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Запазени са %1$d снимки</item>
         <item quantity="one">Запазена е %1$d снимка</item>

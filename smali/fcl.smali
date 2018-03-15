@@ -2,42 +2,43 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private a:Lfec;
 
-.field private b:Lbjf;
-
-.field private c:Ldiv;
+# static fields
+.field public static final a:Lfcl;
 
 
 # direct methods
-.method public constructor <init>(Lfec;Lbjf;Ldiv;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lfcl;
+
+    invoke-direct {v0}, Lfcl;-><init>()V
+
+    sput-object v0, Lfcl;->a:Lfcl;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfcl;->a:Lfec;
-
-    iput-object p2, p0, Lfcl;->b:Lbjf;
-
-    iput-object p3, p0, Lfcl;->c:Ldiv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lfcl;->a:Lfec;
+    new-instance v0, Lfci;
 
-    iget-object v1, p0, Lfcl;->b:Lbjf;
+    invoke-direct {v0}, Lfci;-><init>()V
 
-    iget-object v2, p0, Lfcl;->c:Ldiv;
-
-    invoke-virtual {v0, v1, v2}, Lfec;->a(Lbjf;Ldiv;)V
-
-    return-void
+    return-object v0
 .end method

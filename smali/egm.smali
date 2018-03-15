@@ -1,14 +1,35 @@
-.class public interface abstract Legm;
-.super Ljava/lang/Object;
+.class public Legm;
+.super Lglb;
 .source "PG"
 
 
+# instance fields
+.field public d:Lbns;
+
+.field public e:Lfax;
+
+.field public f:Lfdv;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>([[[S)V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(Lggn;Lggm;J)Legn;
-.end method
+.method public a(Lbns;Lfax;)V
+    .locals 0
 
-.method public abstract b()Ljht;
-.end method
+    iput-object p1, p0, Legm;->d:Lbns;
 
-.method public abstract c()I
+    iput-object p2, p0, Legm;->e:Lfax;
+
+    return-void
 .end method

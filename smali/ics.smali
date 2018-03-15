@@ -1,66 +1,45 @@
-.class public final Lics;
+.class final synthetic Lics;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljig;
+.implements Ljqv;
 
 
-# instance fields
-.field private a:Licj;
+# static fields
+.field public static final a:Ljqv;
 
 
 # direct methods
-.method public constructor <init>(Licj;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lics;
 
-    iput-object p1, p0, Lics;->a:Licj;
+    invoke-direct {v0}, Lics;-><init>()V
+
+    sput-object v0, Lics;->a:Ljqv;
 
     return-void
 .end method
 
-.method public static a(Ljht;)Licu;
-    .locals 2
+.method private constructor <init>()V
+    .locals 0
 
-    invoke-virtual {p0}, Ljht;->a()Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Licu;
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Licq;
-
-    invoke-direct {v0}, Licq;-><init>()V
-
-    const-string v1, "libcamera"
-
-    invoke-virtual {v0, v1}, Licq;->a(Ljava/lang/String;)Licp;
-
-    move-result-object v0
-
-    goto :goto_0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lics;->a:Licj;
+    check-cast p1, Ljava/util/List;
 
-    iget-object v0, v0, Licj;->b:Ljava/lang/Object;
+    invoke-static {p1}, Licl;->c(Ljava/util/List;)Ljava/lang/Integer;
+
+    move-result-object v0
 
     return-object v0
 .end method

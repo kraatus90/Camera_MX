@@ -1,49 +1,73 @@
 .class final Lgso;
-.super Lgsi;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>(Lgsm;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+# instance fields
+.field public final a:F
 
-    invoke-direct {p0, p1, p2, p3}, Lgsi;-><init>(Lgsm;Ljava/lang/String;Ljava/lang/String;)V
+.field public final b:F
+
+.field public final c:F
+
+
+# direct methods
+.method public constructor <init>(FF)V
+    .locals 2
+
+    const/high16 v1, 0x40400000    # 3.0f
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    mul-float v0, v1, p1
+
+    iput v0, p0, Lgso;->a:F
+
+    sub-float v0, p2, p1
+
+    mul-float/2addr v0, v1
+
+    iget v1, p0, Lgso;->a:F
+
+    sub-float/2addr v0, v1
+
+    iput v0, p0, Lgso;->c:F
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iget v1, p0, Lgso;->a:F
+
+    sub-float/2addr v0, v1
+
+    iget v1, p0, Lgso;->c:F
+
+    sub-float/2addr v0, v1
+
+    iput v0, p0, Lgso;->b:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(F)F
+    .locals 2
 
-    iget-object v0, p0, Lgso;->a:Lgsm;
+    iget v0, p0, Lgso;->b:F
 
-    iget-object v1, p0, Lgso;->b:Ljava/lang/String;
+    mul-float/2addr v0, p1
 
-    iget-object v2, p0, Lgso;->c:Ljava/lang/String;
+    iget v1, p0, Lgso;->c:F
 
-    invoke-virtual {v0, v1, v2}, Lgsm;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    add-float/2addr v0, v1
 
-    move-result-object v0
+    mul-float/2addr v0, p1
 
-    return-object v0
-.end method
+    iget v1, p0, Lgso;->a:F
 
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 3
+    add-float/2addr v0, v1
 
-    check-cast p1, Ljava/lang/String;
+    mul-float/2addr v0, p1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lgso;->a:Lgsm;
-
-    iget-object v1, p0, Lgso;->b:Ljava/lang/String;
-
-    iget-object v2, p0, Lgso;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2, p1}, Lgsm;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+    return v0
 .end method

@@ -1,21 +1,22 @@
-.class public final synthetic Lczz;
+.class final Lczz;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lczt;
+.field private final synthetic a:Lczn;
 
 
 # direct methods
-.method public constructor <init>(Lczt;)V
+.method constructor <init>(Lczn;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lczz;->a:Lczn;
 
-    iput-object p1, p0, Lczz;->a:Lczt;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -23,26 +24,43 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 4
 
-    iget-object v0, p0, Lczz;->a:Lczt;
+    iget-object v0, p0, Lczz;->a:Lczn;
 
-    iget-object v1, v0, Lczt;->B:Lcqw;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-    if-eqz v1, :cond_0
+    move-result-object v0
 
-    iget-object v1, v0, Lczt;->p:Lexp;
+    check-cast v0, Lcxo;
 
-    iget-object v2, v0, Lczt;->B:Lcqw;
+    iget-object v0, v0, Lcxo;->b:Lcwf;
 
-    iget-object v2, v2, Lcqw;->c:Lgdq;
+    iget-object v1, p0, Lczz;->a:Lczn;
 
-    iget-object v0, v0, Lczt;->B:Lcqw;
+    iget-object v1, v1, Lczn;->c:Landroid/graphics/Bitmap;
 
-    iget-object v0, v0, Lcqw;->a:Lhzr;
+    invoke-static {}, Liay;->a()V
 
-    invoke-virtual {v1, v2, v0}, Lgvh;->a(Lgdq;Lhzb;)V
+    iget-object v2, v0, Lcwf;->e:Lgtn;
 
-    :cond_0
+    iget-object v3, v0, Lcwf;->b:Lgro;
+
+    invoke-virtual {v3}, Lgro;->a()Landroid/graphics/RectF;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Lgtn;->a(Landroid/graphics/RectF;)V
+
+    iget-object v2, v0, Lcwf;->d:Landroid/widget/ImageView;
+
+    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    iget-object v0, v0, Lcwf;->d:Landroid/widget/ImageView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
     return-void
 .end method

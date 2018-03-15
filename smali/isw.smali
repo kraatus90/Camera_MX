@@ -1,9 +1,9 @@
-.class final Lisw;
+.class public abstract Lisw;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Lisq;
 
 
 # direct methods
@@ -15,14 +15,38 @@
     return-void
 .end method
 
+.method constructor <init>(B)V
+    .locals 0
+
+    invoke-direct {p0}, Lisw;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
+.method public final b()I
     .locals 1
 
-    new-instance v0, Liyb;
+    sget v0, Lfxq;->f:I
 
-    invoke-direct {v0}, Liyb;-><init>()V
+    return v0
+.end method
+
+.method public d()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lisw;->a()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

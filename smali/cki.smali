@@ -3,20 +3,30 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Lckf;
+# static fields
+.field public static final a:Lcki;
 
 
 # direct methods
-.method public constructor <init>(Lckf;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcki;
+
+    invoke-direct {v0}, Lcki;-><init>()V
+
+    sput-object v0, Lcki;->a:Lcki;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcki;->a:Lckf;
 
     return-void
 .end method
@@ -24,27 +34,11 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcki;->a:Lckf;
+    new-instance v0, Lckh;
 
-    iget-object v0, v0, Lckf;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/FilmstripFragmentImpl;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/FilmstripFragmentImpl;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/LayoutInflater;
+    invoke-direct {v0}, Lckh;-><init>()V
 
     return-object v0
 .end method

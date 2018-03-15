@@ -3,34 +3,30 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldme;->a:Ljxn;
-
-    iput-object p2, p0, Ldme;->b:Ljxn;
+    iput-object p1, p0, Ldme;->a:Lkgv;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
+.method public static a(Lkgv;)Ldme;
     .locals 1
 
     new-instance v0, Ldme;
 
-    invoke-direct {v0, p0, p1}, Ldme;-><init>(Ljxn;Ljxn;)V
+    invoke-direct {v0, p0}, Ldme;-><init>(Lkgv;)V
 
     return-object v0
 .end method
@@ -38,55 +34,37 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
-    iget-object v0, p0, Ldme;->a:Ljxn;
+    iget-object v0, p0, Ldme;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lhzr;
+    check-cast v0, Ldmo;
 
-    iget-object v1, p0, Ldme;->b:Ljxn;
+    new-instance v1, Ldmb;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    const/16 v2, 0x100
 
-    move-result-object v1
-
-    check-cast v1, Lhzr;
-
-    const-string v2, "SchCameraEx"
-
-    const/4 v3, 0x1
-
-    invoke-static {v2, v3}, Lapb;->a(Ljava/lang/String;I)Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v2}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
 
-    new-instance v3, Ldma;
+    move-result-object v2
 
-    invoke-direct {v3, v2}, Ldma;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
-
-    invoke-virtual {v0, v3}, Lhzr;->a(Lich;)Lich;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Ldmb;
-
-    invoke-direct {v0, v2}, Ldmb;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
-
-    invoke-virtual {v1, v0}, Lhzr;->a(Lich;)Lich;
+    invoke-direct {v1, v0, v2}, Ldmb;-><init>(Lfri;Ljava/util/Set;)V
 
     const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
+    check-cast v0, Lfri;
 
     return-object v0
 .end method

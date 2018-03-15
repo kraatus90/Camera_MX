@@ -1,203 +1,73 @@
-.class public final Lczf;
-.super Lcqj;
+.class final Lczf;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lcxp;
 
 
 # instance fields
-.field private a:Lbsa;
-
-.field private b:Lbvl;
-
-.field private c:Lgwb;
-
-.field private d:Lgum;
-
-.field private e:Leut;
-
-.field private f:Lbhn;
-
-.field private g:Lgoz;
-
-.field private h:Lgow;
-
-.field private i:Lffs;
-
-.field private j:Lfdq;
-
-.field private k:Lfdw;
-
-.field private l:Lest;
-
-.field private m:Lhzt;
-
-.field private n:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field private o:Lguc;
-
-.field private p:Lidm;
-
-.field private q:Lbod;
-
-.field private r:Lbnf;
+.field public final synthetic a:Lcyk;
 
 
 # direct methods
-.method constructor <init>(Lbsa;Lbvl;Lgwb;Lgum;Leut;Lbhn;Lgoz;Lgow;Lffs;Lfdq;Lfdw;Lest;Lhzt;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lidm;Lbod;Lbnf;)V
-    .locals 1
+.method constructor <init>(Lcyk;)V
+    .locals 0
 
-    invoke-direct {p0}, Lcqj;-><init>()V
+    iput-object p1, p0, Lczf;->a:Lcyk;
 
-    iput-object p1, p0, Lczf;->a:Lbsa;
-
-    iput-object p2, p0, Lczf;->b:Lbvl;
-
-    iput-object p3, p0, Lczf;->c:Lgwb;
-
-    iput-object p4, p0, Lczf;->d:Lgum;
-
-    iput-object p5, p0, Lczf;->e:Leut;
-
-    iput-object p6, p0, Lczf;->f:Lbhn;
-
-    iput-object p7, p0, Lczf;->g:Lgoz;
-
-    iput-object p8, p0, Lczf;->h:Lgow;
-
-    iput-object p9, p0, Lczf;->i:Lffs;
-
-    iput-object p10, p0, Lczf;->j:Lfdq;
-
-    iput-object p11, p0, Lczf;->k:Lfdw;
-
-    iput-object p12, p0, Lczf;->l:Lest;
-
-    iput-object p13, p0, Lczf;->m:Lhzt;
-
-    iput-object p14, p0, Lczf;->n:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    move-object/from16 v0, p15
-
-    iput-object v0, p0, Lczf;->o:Lguc;
-
-    move-object/from16 v0, p16
-
-    iput-object v0, p0, Lczf;->p:Lidm;
-
-    move-object/from16 v0, p17
-
-    iput-object v0, p0, Lczf;->q:Lbod;
-
-    move-object/from16 v0, p18
-
-    iput-object v0, p0, Lczf;->r:Lbnf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lbtx;)Lcqm;
-    .locals 24
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 4
 
-    new-instance v1, Lfmi;
+    check-cast p1, Lcwv;
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lczf;->a:Lcyk;
 
-    iget-object v2, v0, Lczf;->a:Lbsa;
+    iget-boolean v0, v0, Lcyk;->f:Z
 
-    move-object/from16 v0, p0
+    if-eqz v0, :cond_0
 
-    iget-object v3, v0, Lczf;->b:Lbvl;
+    iget-object v0, p0, Lczf;->a:Lcyk;
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    move-object/from16 v0, p0
+    iput-boolean v1, v0, Lcyk;->f:Z
 
-    iget-object v6, v0, Lczf;->e:Leut;
+    iget-object v0, p0, Lczf;->a:Lcyk;
 
-    move-object/from16 v0, p0
+    const/4 v1, 0x1
 
-    iget-object v7, v0, Lczf;->d:Lgum;
+    iput-boolean v1, v0, Lcyk;->g:Z
 
-    move-object/from16 v0, p0
+    iget-object v1, p1, Lcwv;->a:[B
 
-    iget-object v8, v0, Lczf;->f:Lbhn;
+    iget v2, p1, Lcwv;->b:I
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lczf;->a:Lcyk;
 
-    iget-object v9, v0, Lczf;->g:Lgoz;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-    move-object/from16 v0, p0
+    move-result-object v0
 
-    iget-object v10, v0, Lczf;->h:Lgow;
+    check-cast v0, Lcxo;
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lcxo;->n:Landroid/os/Handler;
 
-    iget-object v11, v0, Lczf;->c:Lgwb;
+    new-instance v3, Lczg;
 
-    const/4 v12, 0x0
+    invoke-direct {v3, p0, v1, v2}, Lczg;-><init>(Lczf;[BI)V
 
-    move-object/from16 v0, p0
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    iget-object v13, v0, Lczf;->m:Lhzt;
+    :cond_0
+    const/4 v0, 0x0
 
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lczf;->i:Lffs;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->j:Lfdq;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->k:Lfdw;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->l:Lest;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->n:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->o:Lguc;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->p:Lidm;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->q:Lbod;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lczf;->r:Lbnf;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 v4, p1
-
-    invoke-direct/range {v1 .. v23}, Lfmi;-><init>(Lbsa;Lbvl;Lbtx;ZLeut;Lgum;Lbhn;Lgoz;Lgow;Lgwb;Lhzb;Lhzt;Liau;Lffs;Lfdq;Lfdw;Lest;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lidm;Lbod;Lbnf;)V
-
-    return-object v1
+    return-object v0
 .end method

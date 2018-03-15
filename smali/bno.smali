@@ -3,76 +3,66 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lbnn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Landroid/content/Context;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final b:Lihn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lbpy;
+
+    const-string v1, "camera.dbg.bugtoast"
+
+    invoke-direct {v0, v1}, Lbpy;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lbqc;Liho;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbno;->a:Ljxn;
+    iput-object p1, p0, Lbno;->a:Landroid/content/Context;
 
-    iput-object p2, p0, Lbno;->b:Ljxn;
+    const-string v0, "ShotFailureHdlr"
 
-    iput-object p3, p0, Lbno;->c:Ljxn;
+    invoke-interface {p3, v0}, Liho;->a(Ljava/lang/String;)Lihn;
 
-    iput-object p4, p0, Lbno;->d:Ljxn;
+    move-result-object v0
+
+    iput-object v0, p0, Lbno;->b:Lihn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final a()V
+    .locals 3
 
-    new-instance v4, Lbnn;
+    new-instance v0, Lbnm;
 
-    iget-object v0, p0, Lbno;->a:Ljxn;
+    invoke-direct {v0}, Lbnm;-><init>()V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lbno;->b:Lihn;
 
-    move-result-object v0
+    const-string v2, "Shot Canceled!"
 
-    check-cast v0, Landroid/content/UriMatcher;
+    invoke-interface {v1, v2, v0}, Lihn;->c(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iget-object v1, p0, Lbno;->b:Ljxn;
+    iget-object v1, p0, Lbno;->a:Landroid/content/Context;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    const-string v2, "com.google.android.apps.camera.legacy.app.silentfeedback.SILENT_FEEDBACK"
 
-    move-result-object v1
+    invoke-static {v1, v0, v2}, Lbaj;->a(Landroid/content/Context;Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    check-cast v1, Lbnm;
-
-    iget-object v2, p0, Lbno;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lbnm;
-
-    iget-object v3, p0, Lbno;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lbnm;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lbnn;-><init>(Landroid/content/UriMatcher;Lbnm;Lbnm;Lbnm;)V
-
-    return-object v4
+    return-void
 .end method

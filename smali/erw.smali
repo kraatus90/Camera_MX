@@ -1,29 +1,66 @@
 .class public final Lerw;
-.super Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public a:J
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lijl;)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    const-string v0, "CameraChange"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;-><init>(Lijl;Ljava/lang/String;)V
+    iput-object p1, p0, Lerw;->a:Lkgv;
+
+    iput-object p2, p0, Lerw;->b:Lkgv;
+
+    iput-object p3, p0, Lerw;->c:Lkgv;
 
     return-void
 .end method
 
-.method public static a()Ljxn;
-    .locals 1
 
-    new-instance v0, Lerx;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    invoke-direct {v0}, Lerx;-><init>()V
+    new-instance v3, Lerv;
 
-    return-object v0
+    iget-object v0, p0, Lerw;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgnf;
+
+    iget-object v1, p0, Lerw;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgnv;
+
+    iget-object v2, p0, Lerw;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/content/Context;
+
+    invoke-direct {v3, v0, v1, v2}, Lerv;-><init>(Lgnf;Lgnv;Landroid/content/Context;)V
+
+    return-object v3
 .end method

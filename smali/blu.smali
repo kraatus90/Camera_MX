@@ -1,43 +1,44 @@
 .class public final Lblu;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+
+# static fields
+.field public static final a:Lblu;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lblu;
+
+    invoke-direct {v0}, Lblu;-><init>()V
+
+    sput-object v0, Lblu;->a:Lblu;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lblu;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    iget-object v0, p0, Lblu;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lblu;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+    new-instance v0, Lblt;
 
-    iput-object p1, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
+    invoke-direct {v0}, Lblt;-><init>()V
 
-    return-void
+    return-object v0
 .end method

@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field private b:Ljava/lang/Object;
+.field private final b:Ljava/lang/Object;
 
 .field private c:I
 
@@ -21,7 +21,7 @@
 
     const-string v0, "SilentFdbkService"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -59,7 +59,7 @@
 
     const-string v2, "Checking valid GmsCoreVersion."
 
-    invoke-static {v1, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -105,7 +105,7 @@
 
     const-string v1, "Trying to stop self."
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -189,7 +189,7 @@
 
     const-string v1, "Starting silent feedback service."
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->b()Z
 
@@ -201,7 +201,7 @@
 
     const-string v1, "Not sending silent feedback. GMS version too low."
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a()V
 
@@ -219,39 +219,39 @@
     throw v0
 
     :cond_0
-    new-instance v0, Lhac;
+    new-instance v0, Lhbl;
 
-    new-instance v1, Lhkm;
+    new-instance v1, Lhrk;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Lhkm;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Lhrk;-><init>(Landroid/content/Context;)V
 
-    sget-object v2, Lhni;->a:Lhkc;
+    sget-object v2, Lhoh;->a:Lhlf;
 
-    invoke-virtual {v1, v2}, Lhkm;->a(Lhkc;)Lhkm;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lhkm;->b()Lhkl;
+    invoke-virtual {v1, v2}, Lhrk;->a(Lhlf;)Lhrk;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lhac;-><init>(Lhkl;)V
+    invoke-virtual {v1}, Lhrk;->b()Lhlm;
 
-    invoke-virtual {v0}, Lhac;->a()Ljuw;
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lhbl;-><init>(Lhlm;)V
+
+    invoke-virtual {v0}, Lhbl;->a()Lkeh;
 
     move-result-object v0
 
-    new-instance v1, Lavh;
+    new-instance v1, Lbak;
 
-    invoke-direct {v1, p0, p1}, Lavh;-><init>(Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;Landroid/content/Intent;)V
+    invoke-direct {v1, p0, p1}, Lbak;-><init>(Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;Landroid/content/Intent;)V
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    sget-object v2, Lken;->a:Lken;
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
 
     goto :goto_0
 .end method

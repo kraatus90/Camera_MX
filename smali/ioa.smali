@@ -1,28 +1,13 @@
-.class final synthetic Lioa;
+.class public final Lioa;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
-
-
-# static fields
-.field public static final a:Ljhj;
+.implements Lioc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lioa;
-
-    invoke-direct {v0}, Lioa;-><init>()V
-
-    sput-object v0, Lioa;->a:Ljhj;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,12 +17,58 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lind;)F
+    .locals 3
 
-    new-instance v0, Ljava/lang/Object;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    if-nez v0, :cond_0
+
+    const/high16 v0, 0x7fc00000    # NaNf
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    if-eq v1, v2, :cond_1
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_2
+
+    :cond_1
+    const/4 v0, 0x1
+
+    :goto_1
+    if-eqz v0, :cond_3
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

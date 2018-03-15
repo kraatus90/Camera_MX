@@ -3,220 +3,229 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/os/Handler$Callback;
+.implements Lagw;
+.implements Lasf;
+
+
+# static fields
+.field private static final a:Lgw;
+
+
+# instance fields
+.field private final b:Lash;
+
+.field private c:Lagw;
+
+.field private d:Z
+
+.field private e:Z
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x14
+
+    new-instance v1, Lagv;
+
+    invoke-direct {v1}, Lagv;-><init>()V
+
+    invoke-static {v0, v1}, Larz;->a(ILasd;)Lgw;
+
+    move-result-object v0
+
+    sput-object v0, Lagu;->a:Lgw;
 
     return-void
 .end method
 
+.method constructor <init>()V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lash;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lash;-><init>(B)V
+
+    iput-object v0, p0, Lagu;->b:Lash;
+
+    return-void
+.end method
+
+.method static a(Lagw;)Lagu;
+    .locals 2
+
+    sget-object v0, Lagu;->a:Lgw;
+
+    invoke-interface {v0}, Lgw;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lagu;
+
+    const-string v1, "Argument must not be null"
+
+    invoke-static {v0, v1}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lagu;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lagu;->e:Z
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lagu;->d:Z
+
+    iput-object p0, v0, Lagu;->c:Lagw;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)Z
-    .locals 6
+.method public final a()Ljava/lang/Class;
+    .locals 1
 
-    const/4 v5, 0x1
+    iget-object v0, p0, Lagu;->c:Lagw;
 
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    invoke-interface {v0}, Lagw;->a()Ljava/lang/Class;
 
-    check-cast v0, Lags;
+    move-result-object v0
 
-    iget v1, p1, Landroid/os/Message;->what:I
+    return-object v0
+.end method
 
-    packed-switch v1, :pswitch_data_0
+.method public final b()Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-object v0, p0, Lagu;->c:Lagw;
 
-    iget v1, p1, Landroid/os/Message;->what:I
+    invoke-interface {v0}, Lagw;->b()Ljava/lang/Object;
 
-    const/16 v2, 0x21
+    move-result-object v0
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    return-object v0
+.end method
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+.method public final c()I
+    .locals 1
 
-    const-string v2, "Unrecognized message: "
+    iget-object v0, p0, Lagu;->c:Lagw;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Lagw;->c()I
 
-    move-result-object v2
+    move-result v0
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    return v0
+.end method
 
-    move-result-object v1
+.method public final c_()Lash;
+    .locals 1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lagu;->b:Lash;
 
-    move-result-object v1
+    return-object v0
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+.method public final declared-synchronized d()V
+    .locals 1
 
-    throw v0
+    monitor-enter p0
 
-    :pswitch_0
-    iget-object v1, v0, Lags;->b:Lasa;
+    :try_start_0
+    iget-object v0, p0, Lagu;->b:Lash;
 
-    invoke-virtual {v1}, Lasa;->a()V
+    invoke-virtual {v0}, Lash;->a()V
 
-    iget-boolean v1, v0, Lags;->o:Z
+    const/4 v0, 0x1
 
-    if-eqz v1, :cond_0
+    iput-boolean v0, p0, Lagu;->e:Z
 
-    iget-object v1, v0, Lags;->h:Lahg;
+    iget-boolean v0, p0, Lagu;->d:Z
 
-    invoke-interface {v1}, Lahg;->d()V
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Lags;->c()V
+    iget-object v0, p0, Lagu;->c:Lagw;
 
-    :goto_0
-    return v5
+    invoke-interface {v0}, Lagw;->d()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lagu;->c:Lagw;
+
+    sget-object v0, Lagu;->a:Lgw;
+
+    invoke-interface {v0, p0}, Lgw;->a(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
-    iget-object v1, v0, Lags;->a:Ljava/util/List;
+    monitor-exit p0
 
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    return-void
 
-    move-result v1
+    :catchall_0
+    move-exception v0
 
-    if-eqz v1, :cond_1
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method final declared-synchronized e()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lagu;->b:Lash;
+
+    invoke-virtual {v0}, Lash;->a()V
+
+    iget-boolean v0, p0, Lagu;->d:Z
+
+    if-nez v0, :cond_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Received a resource without any callbacks to notify"
+    const-string v1, "Already unlocked"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :try_start_1
+    iput-boolean v0, p0, Lagu;->d:Z
+
+    iget-boolean v0, p0, Lagu;->e:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lagu;->d()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_1
-    iget-boolean v1, v0, Lags;->j:Z
+    monitor-exit p0
 
-    if-eqz v1, :cond_2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Already have resource"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    iget-object v1, v0, Lags;->h:Lahg;
-
-    iget-boolean v2, v0, Lags;->f:Z
-
-    new-instance v3, Lagy;
-
-    invoke-direct {v3, v1, v2}, Lagy;-><init>(Lahg;Z)V
-
-    iput-object v3, v0, Lags;->m:Lagy;
-
-    iput-boolean v5, v0, Lags;->j:Z
-
-    iget-object v1, v0, Lags;->m:Lagy;
-
-    invoke-virtual {v1}, Lagy;->e()V
-
-    iget-object v1, v0, Lags;->c:Lagv;
-
-    iget-object v2, v0, Lags;->e:Laek;
-
-    iget-object v3, v0, Lags;->m:Lagy;
-
-    invoke-interface {v1, v2, v3}, Lagv;->a(Laek;Lagy;)V
-
-    iget-object v1, v0, Lags;->a:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_3
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Laqh;
-
-    invoke-virtual {v0, v1}, Lags;->b(Laqh;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    iget-object v3, v0, Lags;->m:Lagy;
-
-    invoke-virtual {v3}, Lagy;->e()V
-
-    iget-object v3, v0, Lags;->m:Lagy;
-
-    iget-object v4, v0, Lags;->i:Laed;
-
-    invoke-interface {v1, v3, v4}, Laqh;->a(Lahg;Laed;)V
-
-    goto :goto_1
-
-    :cond_4
-    iget-object v1, v0, Lags;->m:Lagy;
-
-    invoke-virtual {v1}, Lagy;->f()V
-
-    invoke-virtual {v0}, Lags;->c()V
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-virtual {v0}, Lags;->d()V
-
-    goto :goto_0
-
-    :pswitch_2
-    iget-object v1, v0, Lags;->b:Lasa;
-
-    invoke-virtual {v1}, Lasa;->a()V
-
-    iget-boolean v1, v0, Lags;->o:Z
-
-    if-nez v1, :cond_5
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Not cancelled"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_5
-    iget-object v1, v0, Lags;->c:Lagv;
-
-    iget-object v2, v0, Lags;->e:Laek;
-
-    invoke-interface {v1, v0, v2}, Lagv;->a(Lags;Laek;)V
-
-    invoke-virtual {v0}, Lags;->c()V
-
-    goto/16 :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    return-void
 .end method

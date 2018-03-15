@@ -37,27 +37,6 @@
 
     invoke-direct {p0, v0, v1, p1}, Landroid/support/v8/renderscript/BaseObj;-><init>(JLandroid/support/v8/renderscript/RenderScript;)V
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-ge v0, v1, :cond_0
-
-    invoke-virtual {p1}, Landroid/support/v8/renderscript/RenderScript;->isUseNative()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Landroid/support/v8/renderscript/RSRuntimeException;
-
-    const-string v1, "ScriptGroup2 not supported in this API level"
-
-    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
     invoke-static {p3}, Landroid/support/v8/renderscript/FieldPacker;->createFromArray([Ljava/lang/Object;)Landroid/support/v8/renderscript/FieldPacker;
 
     move-result-object v0
@@ -103,7 +82,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -137,7 +116,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     invoke-virtual {p2, p1}, Landroid/support/v8/renderscript/Script$InvokeID;->getID(Landroid/support/v8/renderscript/RenderScript;)J
 
     move-result-wide v1
@@ -172,27 +151,6 @@
 
     invoke-direct {v0, v2, v3, v1}, Landroid/support/v8/renderscript/BaseObj;-><init>(JLandroid/support/v8/renderscript/RenderScript;)V
 
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x17
-
-    if-ge v2, v3, :cond_0
-
-    invoke-virtual/range {p1 .. p1}, Landroid/support/v8/renderscript/RenderScript;->isUseNative()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
-
-    const-string v3, "ScriptGroup2 not supported in this API level"
-
-    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    :cond_0
     move-object/from16 v0, p4
 
     move-object/from16 v1, p0
@@ -254,7 +212,7 @@
 
     array-length v2, v0
 
-    if-ge v4, v2, :cond_1
+    if-ge v4, v2, :cond_0
 
     const-wide/16 v2, 0x0
 
@@ -274,7 +232,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     invoke-interface/range {p5 .. p5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -288,7 +246,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_1
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -324,7 +282,7 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     move-object/from16 v0, p2
 
     move-object/from16 v1, p1

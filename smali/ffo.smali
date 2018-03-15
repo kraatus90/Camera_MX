@@ -2,101 +2,93 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field private synthetic a:I
+.field public final a:Lihc;
 
-.field private synthetic b:I
-
-.field private synthetic c:Lffm;
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lffm;II)V
-    .locals 0
+.method constructor <init>(Lfdv;Lfut;)V
+    .locals 4
 
-    iput-object p1, p0, Lffo;->c:Lffm;
+    const/16 v3, 0x100
 
-    iput p2, p0, Lffo;->a:I
-
-    iput p3, p0, Lffo;->b:I
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    invoke-interface {p1}, Lfdv;->t()Ljava/util/List;
 
+    move-result-object v0
 
-# virtual methods
-.method public final run()V
-    .locals 5
+    iput-object v0, p0, Lffo;->b:Ljava/util/List;
 
-    sget-object v0, Lffm;->a:Ljava/lang/String;
+    iget-object v0, p0, Lffo;->b:Ljava/util/List;
 
-    iget v1, p0, Lffo;->a:I
+    new-instance v1, Lihc;
 
-    iget v2, p0, Lffo;->b:I
+    invoke-direct {v1, v2, v2}, Lihc;-><init>(II)V
 
-    const/16 v3, 0x2b
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    move-result v0
 
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-static {v0}, Ljii;->b(Z)V
 
-    const-string v3, "showActiveFocusAt("
+    const/4 v1, 0x0
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p2, Lfut;->c:Ljrf;
 
-    move-result-object v3
+    invoke-virtual {v0}, Ljrf;->a()Z
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v1
+    if-eqz v0, :cond_0
 
-    const-string v3, ", "
+    iget-object v0, p2, Lfut;->c:Ljrf;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    check-cast v0, Lils;
 
-    move-result-object v1
+    iget v0, v0, Lils;->a:I
 
-    const-string v2, ")"
+    if-ne v0, v3, :cond_0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p2, Lfut;->c:Ljrf;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Lils;
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v0, Lils;->b:Lihc;
 
-    iget-object v0, p0, Lffo;->c:Lffm;
-
-    iget-object v0, v0, Lffm;->b:Lffj;
-
-    invoke-interface {v0}, Lffj;->d()V
-
-    iget-object v0, p0, Lffo;->c:Lffm;
-
-    iget-object v0, v0, Lffm;->b:Lffj;
-
-    iget v1, p0, Lffo;->a:I
-
-    int-to-float v1, v1
-
-    iget v2, p0, Lffo;->b:I
-
-    int-to-float v2, v2
-
-    invoke-interface {v0, v1, v2}, Lffj;->a(FF)V
+    :goto_0
+    iput-object v0, p0, Lffo;->a:Lihc;
 
     return-void
+
+    :cond_0
+    iget-object v0, p2, Lfut;->a:Lils;
+
+    iget v0, v0, Lils;->a:I
+
+    if-ne v0, v3, :cond_1
+
+    iget-object v0, p2, Lfut;->a:Lils;
+
+    iget-object v0, v0, Lils;->b:Lihc;
+
+    goto :goto_0
+
+    :cond_1
+    move-object v0, v1
+
+    goto :goto_0
 .end method

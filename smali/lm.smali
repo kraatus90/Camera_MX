@@ -1,33 +1,36 @@
-.class public Llm;
+.class final Llm;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Llk;
+
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Llk;)V
     .locals 0
+
+    iput-object p1, p0, Llm;->a:Llk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method constructor <init>(B)V
-    .locals 0
-
-    invoke-direct {p0}, Llm;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public a(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Llm;->a:Llk;
 
-    invoke-virtual {p1, p2, v0, v0, v0}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Llk;->b(I)V
 
     return-void
 .end method

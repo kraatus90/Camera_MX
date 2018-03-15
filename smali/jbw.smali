@@ -1,195 +1,242 @@
 .class public final Ljbw;
-.super Ljbe;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-.field private b:F
-
-.field private c:F
-
-.field private d:F
+# interfaces
+.implements Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const v0, 0x3e99999a    # 0.3f
-
-    invoke-direct {p0}, Ljbe;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Ljbw;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    iput v0, p0, Ljbw;->b:F
-
-    iput v0, p0, Ljbw;->c:F
-
-    const/high16 v0, 0x3e800000    # 0.25f
-
-    iput v0, p0, Ljbw;->d:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Ljaz;
-    .locals 13
+.method public final create(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+    .locals 11
 
-    const-wide/16 v10, -0x1
+    const/4 v8, 0x7
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v10, 0x5
 
-    new-instance v9, Ljava/util/ArrayList;
+    const/4 v9, 0x1
 
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
+    new-instance v0, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;
 
-    invoke-virtual {p1}, Ljaz;->iterator()Ljava/util/Iterator;
+    invoke-direct {v0, p1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)V
 
-    move-result-object v12
+    const-string v1, "videoProvider"
 
-    move-wide v2, v10
+    const/4 v2, 0x0
 
-    :goto_0
-    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addVariable(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    move-result v0
+    const-string v1, "targetFrameRate"
 
-    if-eqz v0, :cond_2
+    const/high16 v2, 0x41f00000    # 30.0f
 
-    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Ljava/lang/Long;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addVariable(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    new-instance v1, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/video/VideoProviderSource;
 
-    move-result-wide v4
+    const-string v2, "camera"
 
-    new-instance v0, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;
+    invoke-direct {v1, p1, v2}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/video/VideoProviderSource;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    iget v1, p0, Ljbw;->b:F
+    invoke-virtual {v0, v1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    iget v6, p0, Ljbw;->c:F
+    const-string v2, "videoProvider"
 
-    iget v7, p0, Ljbw;->d:F
+    const-string v3, "camera"
 
-    invoke-direct {v0, v1, v6, v7}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;-><init>(FFF)V
+    const-string v4, "provider"
 
-    cmp-long v1, v2, v10
+    invoke-virtual {v0, v2, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignVariableToFilterInput(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    if-eqz v1, :cond_0
+    const/16 v2, 0xb4
 
-    iget-object v1, p0, Ljbw;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget v6, p0, Ljbw;->b:F
+    move-result-object v2
 
-    iget v7, p0, Ljbw;->c:F
+    const-string v3, "camera"
 
-    iget v8, p0, Ljbw;->d:F
+    const-string v4, "minDimension"
 
-    invoke-static/range {v1 .. v8}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;->getCumulativeMotionStatistics(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;JJFFF)Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;
+    invoke-virtual {v0, v2, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    move-result-object v0
+    const/4 v2, 0x4
 
-    :cond_0
-    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;->isMovementTooLarge()Z
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v1
+    move-result-object v2
 
-    if-nez v1, :cond_1
+    const-string v3, "camera"
 
-    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;->hasTooManyInvalidFrames()Z
+    const-string v4, "multipleOfX"
 
-    move-result v0
+    invoke-virtual {v0, v2, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    if-nez v0, :cond_1
+    const-string v2, "targetFrameRate"
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const-string v3, "camera"
 
-    move-result-object v0
+    const-string v4, "frameRate"
 
-    invoke-interface {v9, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignVariableToFilterInput(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    :cond_1
-    move-wide v2, v4
+    new-instance v2, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/image/ToGrayFilter;
 
-    goto :goto_0
+    const-string v3, "toGray"
 
-    :cond_2
-    new-instance v0, Ljaz;
+    invoke-direct {v2, p1, v3}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/image/ToGrayFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-direct {v0, v9}, Ljaz;-><init>(Ljava/util/Collection;)V
+    invoke-virtual {v0, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    return-object v0
-.end method
+    new-instance v3, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/BranchFilter;
 
-.method public final toString()Ljava/lang/String;
-    .locals 6
+    const-string v4, "inputBranch"
 
-    const-string v0, "SmallMotionSegmentFilter[maxValidMovement="
+    invoke-direct {v3, p1, v4}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/BranchFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    iget v1, p0, Ljbw;->b:F
+    invoke-virtual {v0, v3}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    iget v2, p0, Ljbw;->c:F
+    new-instance v4, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/image/BoxFilter;
 
-    iget v3, p0, Ljbw;->d:F
+    const-string v5, "verticalBoxFilter"
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v4, p1, v5}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/image/BoxFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    move-result-object v4
+    invoke-virtual {v0, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v4
+    move-result-object v5
 
-    add-int/lit8 v4, v4, 0x59
+    const-string v6, "verticalBoxFilter"
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string v7, "filterWidth"
 
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-virtual {v0, v5, v6, v7}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v5
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    const-string v6, "verticalBoxFilter"
 
-    move-result-object v0
+    const-string v7, "filterHeight"
 
-    const-string v1, ", maxFrameMovement="
+    invoke-virtual {v0, v5, v6, v7}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v5, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/image/BoxFilter;
 
-    move-result-object v0
+    const-string v6, "horizontalBoxFilter"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-direct {v5, p1, v6}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/image/BoxFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    move-result-object v0
+    invoke-virtual {v0, v5}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    const-string v1, ", maxInvalidFramesRatio="
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v0
+    const-string v7, "horizontalBoxFilter"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    const-string v8, "filterWidth"
 
-    move-result-object v0
+    invoke-virtual {v0, v6, v7, v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    const-string v1, "]"
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v0
+    const-string v7, "horizontalBoxFilter"
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v8, "filterHeight"
+
+    invoke-virtual {v0, v6, v7, v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    new-instance v6, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;
+
+    const-string v7, "imageStats"
+
+    invoke-direct {v6, p1, v7}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    const-string v8, "imageStats"
+
+    const-string v9, "numBlocksX"
+
+    invoke-virtual {v0, v7, v8, v9}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    const-string v8, "imageStats"
+
+    const-string v9, "numBlocksY"
+
+    invoke-virtual {v0, v7, v8, v9}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    const-string v7, "video"
+
+    const-string v8, "image"
+
+    invoke-virtual {v0, v1, v7, v2, v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v1, "image"
+
+    const-string v7, "input"
+
+    invoke-virtual {v0, v2, v1, v3, v7}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v1, "toHorizontalBlur"
+
+    const-string v2, "image"
+
+    invoke-virtual {v0, v3, v1, v5, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v1, "image"
+
+    const-string v2, "blurredX"
+
+    invoke-virtual {v0, v5, v1, v6, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v1, "toVerticalBlur"
+
+    const-string v2, "image"
+
+    invoke-virtual {v0, v3, v1, v4, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v1, "image"
+
+    const-string v2, "blurredY"
+
+    invoke-virtual {v0, v4, v1, v6, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v1, "toImageStats"
+
+    const-string v2, "image"
+
+    invoke-virtual {v0, v3, v1, v6, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->build()Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
 
     move-result-object v0
 

@@ -1,74 +1,59 @@
-.class final Lwg;
-.super Ljn;
+.class public interface abstract Lwg;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:Z
-
-.field private synthetic b:I
-
-.field private synthetic c:Lsh;
-
-
-# direct methods
-.method constructor <init>(Lsh;I)V
-    .locals 1
-
-    iput-object p1, p0, Lwg;->c:Lsh;
-
-    iput p2, p0, Lwg;->b:I
-
-    invoke-direct {p0}, Ljn;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lwg;->a:Z
-
-    return-void
-.end method
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)V
-    .locals 2
-
-    iget-object v0, p0, Lwg;->c:Lsh;
-
-    iget-object v0, v0, Lsh;->a:Landroid/support/v7/widget/Toolbar;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
-
-    return-void
+.method public abstract a()I
 .end method
 
-.method public final b(Landroid/view/View;)V
-    .locals 2
-
-    iget-boolean v0, p0, Lwg;->a:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lwg;->c:Lsh;
-
-    iget-object v0, v0, Lsh;->a:Landroid/support/v7/widget/Toolbar;
-
-    iget v1, p0, Lwg;->b:I
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
-
-    :cond_0
-    return-void
+.method public abstract a(I)V
 .end method
 
-.method public final c(Landroid/view/View;)V
-    .locals 1
+.method public abstract a(Ljava/util/TimeZone;)V
+.end method
 
-    const/4 v0, 0x1
+.method public abstract b()I
+.end method
 
-    iput-boolean v0, p0, Lwg;->a:Z
+.method public abstract b(I)V
+.end method
 
-    return-void
+.method public abstract c()I
+.end method
+
+.method public abstract c(I)V
+.end method
+
+.method public abstract d()I
+.end method
+
+.method public abstract d(I)V
+.end method
+
+.method public abstract e()I
+.end method
+
+.method public abstract e(I)V
+.end method
+
+.method public abstract f()I
+.end method
+
+.method public abstract f(I)V
+.end method
+
+.method public abstract g()I
+.end method
+
+.method public abstract g(I)V
+.end method
+
+.method public abstract h()Ljava/util/TimeZone;
+.end method
+
+.method public abstract i()Ljava/util/Calendar;
 .end method

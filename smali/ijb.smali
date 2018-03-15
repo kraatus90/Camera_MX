@@ -3,42 +3,112 @@
 .source "PG"
 
 # interfaces
-.implements Lijc;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lijb;->a:Lkgv;
+
+    iput-object p2, p0, Lijb;->b:Lkgv;
+
+    iput-object p3, p0, Lijb;->c:Lkgv;
+
+    iput-object p4, p0, Lijb;->d:Lkgv;
+
+    iput-object p5, p0, Lijb;->e:Lkgv;
+
+    iput-object p6, p0, Lijb;->f:Lkgv;
+
+    iput-object p7, p0, Lijb;->g:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liic;)F
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 8
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
+    new-instance v0, Lihw;
 
-    invoke-interface {p1, v0}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v1, p0, Lijb;->a:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    check-cast v0, [Landroid/hardware/camera2/params/Face;
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    check-cast v1, Liif;
 
-    array-length v0, v0
+    iget-object v2, p0, Lijb;->b:Lkgv;
 
-    int-to-float v0, v0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    :goto_0
-    return v0
+    move-result-object v2
 
-    :cond_0
-    const/high16 v0, 0x7fc00000    # NaNf
+    check-cast v2, Landroid/os/Handler;
 
-    goto :goto_0
+    iget-object v3, p0, Lijb;->c:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lijc;
+
+    iget-object v4, p0, Lijb;->d:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Liht;
+
+    iget-object v5, p0, Lijb;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Liiq;
+
+    iget-object v6, p0, Lijb;->f:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lihs;
+
+    iget-object v7, p0, Lijb;->g:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lihn;
+
+    invoke-direct/range {v0 .. v7}, Lihw;-><init>(Liif;Landroid/os/Handler;Lijc;Liht;Liiq;Lihs;Lihn;)V
+
+    return-object v0
 .end method

@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/media/MediaPlayer$OnCompletionListener;
 
 
 # instance fields
-.field private synthetic a:Lhae;
+.field private final synthetic a:Lhdv;
 
 
 # direct methods
-.method constructor <init>(Lhae;)V
+.method constructor <init>(Lhdv;)V
     .locals 0
 
-    iput-object p1, p0, Lhdw;->a:Lhae;
+    iput-object p1, p0, Lhdw;->a:Lhdv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,12 +23,14 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onCompletion(Landroid/media/MediaPlayer;)V
     .locals 1
 
-    iget-object v0, p0, Lhdw;->a:Lhae;
+    iget-object v0, p0, Lhdw;->a:Lhdv;
 
-    invoke-virtual {v0}, Lhae;->a()V
+    iget-object v0, v0, Lhdv;->a:Lhdr;
+
+    invoke-virtual {v0}, Lglb;->ae()V
 
     return-void
 .end method

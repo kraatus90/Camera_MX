@@ -3,138 +3,297 @@
 .source "PG"
 
 # interfaces
-.implements Lgbr;
+.implements Lihb;
 
 
 # instance fields
-.field private synthetic a:Ljava/io/File;
+.field private final a:Ljava/lang/Object;
 
-.field private synthetic b:Lgbr;
+.field private final b:Lgck;
+
+.field private c:Ljava/lang/Object;
+
+.field private d:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;Lgbr;)V
-    .locals 0
-
-    iput-object p1, p0, Lgcl;->a:Ljava/io/File;
-
-    iput-object p2, p0, Lgcl;->b:Lgbr;
+.method public constructor <init>(Lgck;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgcl;->b:Lgck;
+
+    iput-object p2, p0, Lgcl;->c:Ljava/lang/Object;
+
+    iput-object p3, p0, Lgcl;->d:Ljava/lang/Object;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lgcl;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    const-string v0, "MvLogging"
+    iget-object v1, p0, Lgcl;->a:Ljava/lang/Object;
 
-    iget-object v1, p0, Lgcl;->a:Ljava/io/File;
+    monitor-enter v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :try_start_0
+    iget-object v0, p0, Lgcl;->d:Ljava/lang/Object;
 
-    move-result-object v1
+    monitor-exit v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    return-object v0
 
-    move-result-object v2
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x2d
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Microvideo for "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " was cancelled by the trimmer."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, p0, Lgcl;->b:Lgbr;
-
-    invoke-interface {v0}, Lgbr;->a()V
-
-    return-void
+    throw v0
 .end method
 
-.method public final a(J)V
-    .locals 5
+.method public final close()V
+    .locals 8
 
-    const-string v0, "MvLogging"
+    iget-object v1, p0, Lgcl;->a:Ljava/lang/Object;
 
-    iget-object v1, p0, Lgcl;->a:Ljava/io/File;
+    monitor-enter v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :try_start_0
+    iget-object v0, p0, Lgcl;->d:Ljava/lang/Object;
 
-    move-result-object v1
+    if-eqz v0, :cond_5
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lgcl;->b:Lgck;
 
-    move-result-object v2
+    iget-object v2, p0, Lgcl;->c:Ljava/lang/Object;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    iget-object v3, p0, Lgcl;->d:Ljava/lang/Object;
 
-    move-result v2
+    iget-object v4, v0, Lgck;->b:Ljava/lang/Object;
 
-    add-int/lit8 v2, v2, 0x2d
+    monitor-enter v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    :try_start_1
+    iget-object v5, v0, Lgck;->a:Lgci;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-virtual {v0, v3}, Lgck;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "Microvideo for "
+    move-result-object v3
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
+    invoke-static {v3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v6, v5, Lgci;->a:Ljava/lang/Object;
 
-    move-result-object v1
+    monitor-enter v6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    const-string v2, " ended at "
+    :try_start_2
+    iget-object v0, v5, Lgci;->b:Ljava/util/LinkedList;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/util/LinkedList;->push(Ljava/lang/Object;)V
 
-    move-result-object v1
+    iget-object v0, v5, Lgci;->c:Ljava/util/HashMap;
 
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-nez v0, :cond_1
 
-    move-result-object v1
+    new-instance v0, Ljava/util/LinkedList;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    iget-object v0, p0, Lgcl;->b:Lgbr;
+    iget-object v7, v5, Lgci;->c:Ljava/util/HashMap;
 
-    invoke-interface {v0, p1, p2}, Lgbr;->a(J)V
+    invoke-virtual {v7, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :goto_0
+    invoke-interface {v0, v3}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    iget v0, v5, Lgci;->e:I
+
+    const/4 v2, 0x1
+
+    const-string v3, "Size was < 0."
+
+    invoke-static {v2, v3}, Ljii;->a(ZLjava/lang/Object;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, v5, Lgci;->e:I
+
+    iget v2, v5, Lgci;->d:I
+
+    :goto_1
+    iget v0, v5, Lgci;->e:I
+
+    if-le v0, v2, :cond_2
+
+    iget-object v0, v5, Lgci;->b:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, v5, Lgci;->b:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->removeLast()Ljava/lang/Object;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    iget-object v0, v5, Lgci;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Queue;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->remove()Ljava/lang/Object;
+
+    invoke-interface {v0}, Ljava/util/Queue;->size()I
+
+    move-result v0
+
+    if-gtz v0, :cond_0
+
+    iget-object v0, v5, Lgci;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    iget v0, v5, Lgci;->e:I
+
+    const/4 v3, 0x1
+
+    const-string v7, "Size was < 0."
+
+    invoke-static {v3, v7}, Ljii;->a(ZLjava/lang/Object;)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, v5, Lgci;->e:I
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v6
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit v4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :try_start_4
+    throw v0
+
+    :catchall_2
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    throw v0
+
+    :cond_1
+    :try_start_5
+    iget-object v0, v5, Lgci;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Queue;
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, v5, Lgci;->e:I
+
+    if-ltz v0, :cond_3
+
+    iget-object v0, v5, Lgci;->b:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget v0, v5, Lgci;->e:I
+
+    if-eqz v0, :cond_4
+
+    :cond_3
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v2, "LruPool.sizeOf() is reporting inconsistent results!"
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_4
+    monitor-exit v6
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :try_start_6
+    monitor-exit v4
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    const/4 v0, 0x0
+
+    :try_start_7
+    iput-object v0, p0, Lgcl;->d:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lgcl;->c:Ljava/lang/Object;
+
+    :cond_5
+    monitor-exit v1
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     return-void
 .end method

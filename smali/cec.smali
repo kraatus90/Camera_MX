@@ -1,35 +1,47 @@
-.class final synthetic Lcec;
+.class public final Lcec;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/concurrent/Callable;
+.source "PG"
 
 
 # instance fields
-.field private a:Lfvf;
+.field public final a:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field public final b:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method constructor <init>(Lfvf;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcec;->a:Lfvf;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, p0, Lcec;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, p0, Lcec;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
+.method public final a()Lfjg;
     .locals 1
 
-    iget-object v0, p0, Lcec;->a:Lfvf;
+    iget-object v0, p0, Lcec;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-interface {v0}, Lfvf;->c()Lfvf;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lfjg;
 
     return-object v0
 .end method

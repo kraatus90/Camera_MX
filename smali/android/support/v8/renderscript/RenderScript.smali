@@ -279,12 +279,6 @@
 
     iput-object v0, p0, Landroid/support/v8/renderscript/RenderScript;->mApplicationContext:Landroid/content/Context;
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x8
-
-    if-le v0, v1, :cond_0
-
     iget-object v0, p0, Landroid/support/v8/renderscript/RenderScript;->mApplicationContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -589,13 +583,11 @@
 .end method
 
 .method private static internalCreate(Landroid/content/Context;ILandroid/support/v8/renderscript/RenderScript$ContextType;I)Landroid/support/v8/renderscript/RenderScript;
-    .locals 11
+    .locals 10
 
-    const/4 v2, 0x0
+    const/4 v9, 0x0
 
-    const/16 v10, 0x17
-
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
     const/4 v4, 0x0
 
@@ -605,9 +597,9 @@
 
     sget v0, Landroid/support/v8/renderscript/RenderScript;->sSdkVersion:I
 
-    const/4 v3, -0x1
+    const/4 v2, -0x1
 
-    if-ne v0, v3, :cond_5
+    if-ne v0, v2, :cond_3
 
     sput p1, Landroid/support/v8/renderscript/RenderScript;->sSdkVersion:I
 
@@ -620,9 +612,9 @@
 
     sput-boolean v0, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
 
-    sget-object v3, Landroid/support/v8/renderscript/RenderScript;->lock:Ljava/lang/Object;
+    sget-object v2, Landroid/support/v8/renderscript/RenderScript;->lock:Ljava/lang/Object;
 
-    monitor-enter v3
+    monitor-enter v2
 
     :try_start_0
     sget-boolean v0, Landroid/support/v8/renderscript/RenderScript;->sInitialized:Z
@@ -638,59 +630,59 @@
 
     move-result-object v0
 
-    const-string v5, "getRuntime"
+    const-string v3, "getRuntime"
+
+    const/4 v5, 0x0
+
+    new-array v5, v5, [Ljava/lang/Class;
+
+    invoke-virtual {v0, v3, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v3
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    new-array v6, v6, [Ljava/lang/Class;
+    new-array v6, v6, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v5, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v3, v5, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v3
+
+    sput-object v3, Landroid/support/v8/renderscript/RenderScript;->sRuntime:Ljava/lang/Object;
+
+    const-string v3, "registerNativeAllocation"
+
+    const/4 v5, 0x1
+
+    new-array v5, v5, [Ljava/lang/Class;
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    sget-object v7, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    new-array v7, v7, [Ljava/lang/Object;
+    aput-object v7, v5, v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v3, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v5
+    move-result-object v3
 
-    sput-object v5, Landroid/support/v8/renderscript/RenderScript;->sRuntime:Ljava/lang/Object;
+    sput-object v3, Landroid/support/v8/renderscript/RenderScript;->registerNativeAllocation:Ljava/lang/reflect/Method;
 
-    const-string v5, "registerNativeAllocation"
+    const-string v3, "registerNativeFree"
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v6, v6, [Ljava/lang/Class;
+    new-array v5, v5, [Ljava/lang/Class;
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v7, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    aput-object v8, v6, v7
+    aput-object v7, v5, v6
 
-    invoke-virtual {v0, v5, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v5
-
-    sput-object v5, Landroid/support/v8/renderscript/RenderScript;->registerNativeAllocation:Ljava/lang/reflect/Method;
-
-    const-string v5, "registerNativeFree"
-
-    const/4 v6, 0x1
-
-    new-array v6, v6, [Ljava/lang/Class;
-
-    const/4 v7, 0x0
-
-    sget-object v8, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v8, v6, v7
-
-    invoke-virtual {v0, v5, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v3, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
@@ -705,37 +697,10 @@
 
     :goto_0
     :try_start_2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const-string v0, "rsjni"
 
-    if-ge v0, v10, :cond_6
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    iget-object v0, v1, Landroid/support/v8/renderscript/RenderScript;->mNativeLibDir:Ljava/lang/String;
-
-    if-eqz v0, :cond_6
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v5, v1, Landroid/support/v8/renderscript/RenderScript;->mNativeLibDir:Ljava/lang/String;
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v5, "/librsjni.so"
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/System;->load(Ljava/lang/String;)V
-
-    :goto_1
     const/4 v0, 0x1
 
     sput-boolean v0, Landroid/support/v8/renderscript/RenderScript;->sInitialized:Z
@@ -751,106 +716,63 @@
 
     :cond_1
     :try_start_3
-    monitor-exit v3
+    monitor-exit v2
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     sget-boolean v0, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_4
 
     const-string v0, "RenderScript_jni"
 
-    const-string v3, "RS native mode"
+    const-string v2, "RS native mode"
 
-    invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_1
+    sput-boolean v8, Landroid/support/v8/renderscript/RenderScript;->useIOlib:Z
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    if-ge p1, v0, :cond_a
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     :goto_2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget-boolean v2, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
 
-    const/16 v3, 0xe
-
-    if-lt v0, v3, :cond_2
-
-    sput-boolean v9, Landroid/support/v8/renderscript/RenderScript;->useIOlib:Z
-
-    :cond_2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ge p1, v0, :cond_e
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    :goto_3
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ge v3, v10, :cond_3
-
-    iget-object v3, v1, Landroid/support/v8/renderscript/RenderScript;->mNativeLibDir:Ljava/lang/String;
-
-    if-eqz v3, :cond_3
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, v1, Landroid/support/v8/renderscript/RenderScript;->mNativeLibDir:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "/libRSSupport.so"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    :cond_3
-    sget-boolean v3, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
-
-    invoke-virtual {v1, v3, v0, v2}, Landroid/support/v8/renderscript/RenderScript;->nLoadSO(ZILjava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_9
-
-    sget-boolean v3, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
-
-    if-eqz v3, :cond_4
-
-    const-string v3, "RenderScript_jni"
-
-    const-string v5, "Unable to load libRS.so, falling back to compat mode"
-
-    invoke-static {v3, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    sput-boolean v4, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
-
-    :cond_4
-    :try_start_4
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ge v3, v10, :cond_8
-
-    iget-object v3, v1, Landroid/support/v8/renderscript/RenderScript;->mNativeLibDir:Ljava/lang/String;
-
-    if-eqz v3, :cond_8
-
-    invoke-static {v2}, Ljava/lang/System;->load(Ljava/lang/String;)V
-    :try_end_4
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_4 .. :try_end_4} :catch_2
-
-    :goto_4
-    invoke-virtual {v1, v4, v0, v2}, Landroid/support/v8/renderscript/RenderScript;->nLoadSO(ZILjava/lang/String;)Z
+    invoke-virtual {v1, v2, v0, v9}, Landroid/support/v8/renderscript/RenderScript;->nLoadSO(ZILjava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_5
+
+    sget-boolean v2, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
+
+    if-eqz v2, :cond_2
+
+    const-string v2, "RenderScript_jni"
+
+    const-string v3, "Unable to load libRS.so, falling back to compat mode"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    sput-boolean v4, Landroid/support/v8/renderscript/RenderScript;->useNative:Z
+
+    :cond_2
+    :try_start_4
+    const-string v2, "RSSupport"
+
+    invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    :try_end_4
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_4 .. :try_end_4} :catch_2
+
+    invoke-virtual {v1, v4, v0, v9}, Landroid/support/v8/renderscript/RenderScript;->nLoadSO(ZILjava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_5
 
     const-string v0, "RenderScript_jni"
 
@@ -866,7 +788,7 @@
 
     throw v0
 
-    :cond_5
+    :cond_3
     sget v0, Landroid/support/v8/renderscript/RenderScript;->sSdkVersion:I
 
     if-eq v0, p1, :cond_0
@@ -885,73 +807,62 @@
     :try_start_5
     const-string v0, "RenderScript_jni"
 
-    const-string v5, "No GC methods"
+    const-string v3, "No GC methods"
 
-    invoke-static {v0, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/support/v8/renderscript/RenderScript;->sUseGCHooks:Z
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v3
+    monitor-exit v2
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     throw v0
 
-    :cond_6
-    :try_start_6
-    const-string v0, "rsjni"
-
-    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_6
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_6 .. :try_end_6} :catch_1
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    goto/16 :goto_1
-
     :catch_1
     move-exception v0
 
-    :try_start_7
+    :try_start_6
     const-string v1, "RenderScript_jni"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "Error loading RS jni library: "
 
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v1, Landroid/support/v8/renderscript/RSRuntimeException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "Error loading RS jni library: "
 
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v2, " Support lib API: 2301"
+    const-string v3, " Support lib API: 2301"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -962,27 +873,17 @@
     invoke-direct {v1, v0}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v1
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    :cond_7
+    :cond_4
     const-string v0, "RenderScript_jni"
 
-    const-string v3, "RS compat mode"
+    const-string v2, "RS compat mode"
 
-    invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_2
-
-    :cond_8
-    :try_start_8
-    const-string v3, "RSSupport"
-
-    invoke-static {v3}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_8
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_8 .. :try_end_8} :catch_2
-
-    goto :goto_4
+    goto/16 :goto_1
 
     :catch_2
     move-exception v0
@@ -1037,30 +938,30 @@
 
     throw v1
 
-    :cond_9
+    :cond_5
     sget-boolean v2, Landroid/support/v8/renderscript/RenderScript;->useIOlib:Z
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_7
 
-    :try_start_9
+    :try_start_7
     const-string v2, "RSSupportIO"
 
     invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_9
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_9 .. :try_end_9} :catch_3
+    :try_end_7
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_7 .. :try_end_7} :catch_3
 
-    :goto_5
+    :goto_3
     sget-boolean v2, Landroid/support/v8/renderscript/RenderScript;->useIOlib:Z
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_6
 
     invoke-virtual {v1}, Landroid/support/v8/renderscript/RenderScript;->nLoadIOSO()Z
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_7
 
-    :cond_a
+    :cond_6
     const-string v2, "RenderScript_jni"
 
     const-string v3, "Unable to load libRSSupportIO.so, USAGE_IO not supported"
@@ -1069,20 +970,22 @@
 
     sput-boolean v4, Landroid/support/v8/renderscript/RenderScript;->useIOlib:Z
 
-    :cond_b
-    if-lt v0, v10, :cond_c
+    :cond_7
+    const/16 v2, 0x17
 
-    iput-boolean v9, v1, Landroid/support/v8/renderscript/RenderScript;->mEnableMultiInput:Z
+    if-lt v0, v2, :cond_8
 
-    :try_start_a
+    iput-boolean v8, v1, Landroid/support/v8/renderscript/RenderScript;->mEnableMultiInput:Z
+
+    :try_start_8
     const-string v2, "blasV8"
 
     invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_a
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_a .. :try_end_a} :catch_4
+    :try_end_8
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_8 .. :try_end_8} :catch_4
 
-    :cond_c
-    :goto_6
+    :cond_8
+    :goto_4
     invoke-virtual {v1}, Landroid/support/v8/renderscript/RenderScript;->nDeviceCreate()J
 
     move-result-wide v2
@@ -1113,7 +1016,7 @@
 
     cmp-long v0, v2, v4
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_9
 
     new-instance v0, Landroid/support/v8/renderscript/RSDriverException;
 
@@ -1128,7 +1031,7 @@
 
     sput-boolean v4, Landroid/support/v8/renderscript/RenderScript;->useIOlib:Z
 
-    goto :goto_5
+    goto :goto_3
 
     :catch_4
     move-exception v2
@@ -1151,9 +1054,9 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_6
+    goto :goto_4
 
-    :cond_d
+    :cond_9
     new-instance v0, Landroid/support/v8/renderscript/RenderScript$MessageThread;
 
     invoke-direct {v0, v1}, Landroid/support/v8/renderscript/RenderScript$MessageThread;-><init>(Landroid/support/v8/renderscript/RenderScript;)V
@@ -1166,10 +1069,10 @@
 
     return-object v1
 
-    :cond_e
+    :cond_a
     move v0, p1
 
-    goto/16 :goto_3
+    goto/16 :goto_2
 .end method
 
 .method public static releaseAllContexts()V
@@ -1282,24 +1185,11 @@
 
     const/4 v1, 0x0
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-ge v0, p0, :cond_0
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-ge v0, v2, :cond_0
-
-    sput v1, Landroid/support/v8/renderscript/RenderScript;->sNative:I
-
-    :cond_0
     sget v0, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
     const/4 v2, -0x1
 
-    if-ne v0, v2, :cond_2
+    if-ne v0, v2, :cond_1
 
     :try_start_0
     const-string v0, "android.os.SystemProperties"
@@ -1367,16 +1257,16 @@
     :goto_0
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v2, v8, :cond_4
+    if-lt v2, v8, :cond_3
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     sput v4, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
     :goto_1
     sget v0, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
-    if-ne v0, v4, :cond_2
+    if-ne v0, v4, :cond_1
 
     :try_start_1
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -1435,7 +1325,7 @@
     :goto_2
     iget-object v0, v5, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     iget-object v0, v5, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
 
@@ -1445,17 +1335,17 @@
 
     move-result v0
 
-    if-ne v0, v4, :cond_1
+    if-ne v0, v4, :cond_0
 
     const-wide/16 v6, 0x0
 
     cmp-long v0, v2, v6
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     sput v1, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
-    :cond_1
+    :cond_0
     iget-object v0, v5, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
 
     const-string v2, "com.android.support.v8.renderscript.EnableBlurWorkaround"
@@ -1464,18 +1354,18 @@
 
     move-result v0
 
-    if-ne v0, v4, :cond_2
+    if-ne v0, v4, :cond_1
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-gt v0, v8, :cond_2
+    if-gt v0, v8, :cond_1
 
     sput v1, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
-    :cond_2
+    :cond_1
     sget v0, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
-    if-ne v0, v4, :cond_3
+    if-ne v0, v4, :cond_2
 
     sget-object v0, Landroid/support/v8/renderscript/RenderScript;->mBlackList:Ljava/lang/String;
 
@@ -1483,7 +1373,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_5
+    if-lez v0, :cond_4
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1533,11 +1423,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     sput v1, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
-    :cond_3
+    :cond_2
     :goto_3
     return v1
 
@@ -1548,7 +1438,7 @@
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_3
     sput v1, Landroid/support/v8/renderscript/RenderScript;->sNative:I
 
     goto/16 :goto_1
@@ -1560,7 +1450,7 @@
 
     goto :goto_3
 
-    :cond_5
+    :cond_4
     move v1, v4
 
     goto :goto_3
@@ -4526,56 +4416,25 @@
     :try_start_0
     invoke-virtual {p0}, Landroid/support/v8/renderscript/RenderScript;->validate()V
 
-    if-eqz p4, :cond_4
+    if-eqz p4, :cond_3
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-ge v0, v1, :cond_0
-
-    const-string v0, "RenderScript_jni"
-
-    const-string v1, "Incremental Intrinsics are not supported, please change targetSdkVersion to >= 21"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    new-instance v0, Landroid/support/v8/renderscript/RSRuntimeException;
-
-    const-string v1, "Incremental Intrinsics are not supported before Lollipop (API 21)"
-
-    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    iget-boolean v0, p0, Landroid/support/v8/renderscript/RenderScript;->mIncLoaded:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_0
-    move-exception v0
+    if-nez v0, :cond_1
 
-    monitor-exit p0
-
-    throw v0
-
-    :cond_0
     :try_start_1
-    iget-boolean v0, p0, Landroid/support/v8/renderscript/RenderScript;->mIncLoaded:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-nez v0, :cond_2
-
-    :try_start_2
     const-string v0, "RSSupport"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     const/16 v0, 0x17
 
-    :try_start_3
+    :try_start_2
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4600,7 +4459,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     new-instance v0, Landroid/support/v8/renderscript/RSRuntimeException;
 
@@ -4609,10 +4468,20 @@
     invoke-direct {v0, v1}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 
     :catch_0
     move-exception v0
 
+    :try_start_3
     const-string v1, "RenderScript_jni"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4651,19 +4520,19 @@
 
     throw v1
 
-    :cond_1
+    :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v8/renderscript/RenderScript;->mIncLoaded:Z
 
-    :cond_2
+    :cond_1
     iget-wide v0, p0, Landroid/support/v8/renderscript/RenderScript;->mIncCon:J
 
     const-wide/16 v2, 0x0
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     invoke-virtual {p0}, Landroid/support/v8/renderscript/RenderScript;->nIncDeviceCreate()J
 
@@ -4683,7 +4552,7 @@
 
     iput-wide v0, p0, Landroid/support/v8/renderscript/RenderScript;->mIncCon:J
 
-    :cond_3
+    :cond_2
     iget-wide v1, p0, Landroid/support/v8/renderscript/RenderScript;->mIncCon:J
 
     move-object v0, p0
@@ -4705,7 +4574,7 @@
 
     return-wide v0
 
-    :cond_4
+    :cond_3
     :try_start_4
     iget-wide v1, p0, Landroid/support/v8/renderscript/RenderScript;->mContext:J
 

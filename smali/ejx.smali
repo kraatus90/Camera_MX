@@ -1,63 +1,111 @@
-.class final synthetic Lejx;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljig;
+.class public final Lejx;
+.super Leif;
+.source "PG"
 
 
 # instance fields
-.field private a:Leju;
+.field public e:I
+
+.field private f:I
+
+.field private g:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Leju;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v2, 0x3f000000    # 0.5f
 
-    iput-object p1, p0, Lejx;->a:Leju;
+    invoke-direct {p0}, Leif;-><init>()V
+
+    const-string v0, "precision mediump float;                            \nuniform float uBrightness;                          \nuniform float uAlpha;                               \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  gl_FragColor = texture2D( sTexture, vTexCoord);   \n  gl_FragColor.rgb *= uBrightness * uAlpha;         \n  gl_FragColor.a = gl_FragColor.a * uAlpha;         \n}                                                   \n"
+
+    iput-object v0, p0, Lejx;->g:Ljava/lang/String;
+
+    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
+
+    iget-object v1, p0, Lejx;->g:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lejx;->a(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lejx;->d:I
+
+    iget v0, p0, Lejx;->d:I
+
+    const-string v1, "aPosition"
+
+    invoke-static {v0, v1}, Lejx;->a(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lejx;->a:I
+
+    iget v0, p0, Lejx;->d:I
+
+    const-string v1, "aTextureCoord"
+
+    invoke-static {v0, v1}, Lejx;->a(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lejx;->b:I
+
+    iget v0, p0, Lejx;->d:I
+
+    const-string v1, "uMvpMatrix"
+
+    invoke-static {v0, v1}, Lejx;->b(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lejx;->c:I
+
+    iget v0, p0, Lejx;->d:I
+
+    const-string v1, "uBrightness"
+
+    invoke-static {v0, v1}, Lejx;->b(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lejx;->e:I
+
+    iget v0, p0, Lejx;->d:I
+
+    const-string v1, "uAlpha"
+
+    invoke-static {v0, v1}, Lejx;->b(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lejx;->f:I
+
+    iget v0, p0, Leif;->d:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
+
+    iget v0, p0, Lejx;->e:I
+
+    invoke-static {v0, v2}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+
+    iget v0, p0, Lejx;->f:I
+
+    invoke-static {v0, v2}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 3
+.method public final a(F)V
+    .locals 1
 
-    iget-object v0, p0, Lejx;->a:Leju;
+    iget v0, p0, Lejx;->f:I
 
-    iget-object v0, v0, Leju;->a:Ljava/util/List;
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/16 v1, 0x2d
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "There are "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " listeners after removal"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

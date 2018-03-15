@@ -1,44 +1,35 @@
-.class public final Lavb;
+.class final synthetic Lavb;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lhax;
 
 
-# static fields
-.field public static final a:Lavb;
+# instance fields
+.field private final a:Lava;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lavb;
-
-    invoke-direct {v0}, Lavb;-><init>()V
-
-    sput-object v0, Lavb;->a:Lavb;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lava;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lavb;->a:Lava;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    new-instance v0, Lava;
+    iget-object v0, p0, Lavb;->a:Lava;
 
-    invoke-direct {v0}, Lava;-><init>()V
+    const/4 v1, 0x0
 
-    return-object v0
+    iput-object v1, v0, Lava;->c:Lhaw;
+
+    return-void
 .end method

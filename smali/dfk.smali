@@ -1,94 +1,123 @@
-.class final Ldfk;
-.super Ljava/lang/Object;
+.class final enum Ldfk;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Ldhd;
 
+# static fields
+.field public static final enum a:Ldfk;
 
-# instance fields
-.field public final synthetic a:Ldfh;
+.field public static final enum b:Ldfk;
+
+.field public static final enum c:Ldfk;
+
+.field public static final enum d:Ldfk;
+
+.field public static final enum e:Ldfk;
+
+.field private static final synthetic f:[Ldfk;
 
 
 # direct methods
-.method constructor <init>(Ldfh;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    iput-object p1, p0, Ldfk;->a:Ldfh;
+    const/4 v6, 0x4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v5, 0x3
+
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Ldfk;
+
+    const-string v1, "NO_RECORDING"
+
+    invoke-direct {v0, v1, v2}, Ldfk;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldfk;->a:Ldfk;
+
+    new-instance v0, Ldfk;
+
+    const-string v1, "CLOSED"
+
+    invoke-direct {v0, v1, v3}, Ldfk;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldfk;->b:Ldfk;
+
+    new-instance v0, Ldfk;
+
+    const-string v1, "STARTING_RECORDING"
+
+    invoke-direct {v0, v1, v4}, Ldfk;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldfk;->c:Ldfk;
+
+    new-instance v0, Ldfk;
+
+    const-string v1, "STOPPING_RECORDING"
+
+    invoke-direct {v0, v1, v5}, Ldfk;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldfk;->d:Ldfk;
+
+    new-instance v0, Ldfk;
+
+    const-string v1, "RECORDING"
+
+    invoke-direct {v0, v1, v6}, Ldfk;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldfk;->e:Ldfk;
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Ldfk;
+
+    sget-object v1, Ldfk;->a:Ldfk;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Ldfk;->b:Ldfk;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Ldfk;->c:Ldfk;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Ldfk;->d:Ldfk;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Ldfk;->e:Ldfk;
+
+    aput-object v1, v0, v6
+
+    sput-object v0, Ldfk;->f:[Ldfk;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 7
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    check-cast p1, Ldeq;
+    return-void
+.end method
 
-    iget-object v2, p1, Ldeq;->a:Lazv;
+.method public static values()[Ldfk;
+    .locals 1
 
-    iget-object v0, p0, Ldfk;->a:Ldfh;
+    sget-object v0, Ldfk;->f:[Ldfk;
 
-    iget-boolean v0, v0, Ldfh;->g:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Lazv;->close()V
-
-    new-instance v0, Ldez;
-
-    iget-object v1, p0, Ldfk;->a:Ldfh;
-
-    invoke-direct {v0, v1}, Ldez;-><init>(Ldhe;)V
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Ldfk;->a:Ldfh;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {v0}, [Ldfk;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldhc;
+    check-cast v0, [Ldfk;
 
-    iget-object v0, v0, Ldhc;->c:Lhzt;
-
-    new-instance v1, Ldfl;
-
-    invoke-direct {v1, p0}, Ldfl;-><init>(Ldfk;)V
-
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    new-instance v0, Ldgv;
-
-    iget-object v1, p0, Ldfk;->a:Ldfh;
-
-    iget-object v3, p0, Ldfk;->a:Ldfh;
-
-    iget-object v3, v3, Ldfh;->e:Ligc;
-
-    iget-object v4, p0, Ldfk;->a:Ldfh;
-
-    iget-object v4, v4, Ldfh;->d:Lige;
-
-    iget-object v5, p0, Ldfk;->a:Ldfh;
-
-    iget-object v5, v5, Ldfh;->f:Lgdq;
-
-    iget-object v6, p0, Ldfk;->a:Ldfh;
-
-    iget-object v6, v6, Ldfh;->h:Liag;
-
-    iget-object v6, p0, Ldfk;->a:Ldfh;
-
-    iget-object v6, v6, Ldfh;->i:Ldcz;
-
-    invoke-direct/range {v0 .. v6}, Ldgv;-><init>(Ldhe;Lazv;Ligc;Lige;Lgdq;Ldcz;)V
-
-    goto :goto_0
+    return-object v0
 .end method

@@ -3,18 +3,22 @@
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lixy;
+.field private final synthetic a:I
+
+.field private final synthetic b:Lbzv;
 
 
 # direct methods
-.method constructor <init>(Lixy;)V
+.method constructor <init>(Lbzv;I)V
     .locals 0
 
-    iput-object p1, p0, Lbzw;->a:Lixy;
+    iput-object p1, p0, Lbzw;->b:Lbzv;
+
+    iput p2, p0, Lbzw;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,10 +27,38 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lbzw;->a:Lixy;
+    iget v0, p0, Lbzw;->a:I
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lbzw;->b:Lbzv;
+
+    iget-object v0, v0, Lbzv;->a:Lbzb;
+
+    iget-object v0, v0, Lbzb;->Z:Ldzs;
+
+    iget-object v1, p0, Lbzw;->b:Lbzv;
+
+    iget-object v1, v1, Lbzv;->a:Lbzb;
+
+    iget-object v1, v1, Lbzb;->K:Lcmh;
+
+    invoke-virtual {v0, v1}, Ldzs;->a(Lcmh;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lbzw;->b:Lbzv;
+
+    iget-object v0, v0, Lbzv;->a:Lbzb;
+
+    iget-object v0, v0, Lbzb;->K:Lcmh;
+
+    invoke-interface {v0}, Lcmh;->e()V
+
+    goto :goto_0
 .end method

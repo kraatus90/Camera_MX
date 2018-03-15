@@ -2,109 +2,90 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lebo;
 
-.field private b:Ljxn;
+.field private final b:Lick;
 
-.field private c:Ljxn;
+.field private final c:Lbns;
 
-.field private d:Ljxn;
+.field private final d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field private e:Ljxn;
+.field private final e:Lgvc;
+
+.field private final f:Lgqc;
+
+.field private final g:Lgrz;
+
+.field private final h:Lfwg;
+
+.field private final i:Lgwk;
+
+.field private final j:Lick;
+
+.field private final k:Landroid/content/Context;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lebo;Lick;Lbns;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lgrz;Lfwg;Lgwk;Lick;Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ledc;->a:Ljxn;
+    iput-object p1, p0, Ledc;->a:Lebo;
 
-    iput-object p2, p0, Ledc;->b:Ljxn;
+    iput-object p2, p0, Ledc;->b:Lick;
 
-    iput-object p3, p0, Ledc;->c:Ljxn;
+    iput-object p3, p0, Ledc;->c:Lbns;
 
-    iput-object p4, p0, Ledc;->d:Ljxn;
+    iput-object p4, p0, Ledc;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iput-object p5, p0, Ledc;->e:Ljxn;
+    iput-object p5, p0, Ledc;->e:Lgvc;
+
+    iput-object p6, p0, Ledc;->f:Lgqc;
+
+    iput-object p7, p0, Ledc;->g:Lgrz;
+
+    iput-object p8, p0, Ledc;->h:Lfwg;
+
+    iput-object p9, p0, Ledc;->i:Lgwk;
+
+    iput-object p10, p0, Ledc;->j:Lick;
+
+    iput-object p11, p0, Ledc;->k:Landroid/content/Context;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 6
-
-    new-instance v0, Ledc;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v5}, Ledc;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a()V
+    .locals 11
 
-    new-instance v0, Ledb;
+    iget-object v0, p0, Ledc;->a:Lebo;
 
-    iget-object v1, p0, Ledc;->a:Ljxn;
+    iget-object v1, p0, Ledc;->b:Lick;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Ledc;->c:Lbns;
 
-    move-result-object v1
+    iget-object v3, p0, Ledc;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    check-cast v1, Licv;
+    iget-object v4, p0, Ledc;->e:Lgvc;
 
-    iget-object v2, p0, Ledc;->b:Ljxn;
+    iget-object v5, p0, Ledc;->f:Lgqc;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v6, p0, Ledc;->g:Lgrz;
 
-    move-result-object v2
+    iget-object v7, p0, Ledc;->h:Lfwg;
 
-    check-cast v2, Liau;
+    iget-object v8, p0, Ledc;->i:Lgwk;
 
-    iget-object v3, p0, Ledc;->c:Ljxn;
+    iget-object v9, p0, Ledc;->j:Lick;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v10, p0, Ledc;->k:Landroid/content/Context;
 
-    move-result-object v3
+    invoke-virtual/range {v0 .. v10}, Lebo;->a(Lick;Lbns;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lgrz;Lfwg;Lgwk;Lick;Landroid/content/Context;)V
 
-    check-cast v3, Lecw;
-
-    iget-object v4, p0, Ledc;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lefa;
-
-    iget-object v5, p0, Ledc;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lefe;
-
-    invoke-direct/range {v0 .. v5}, Ledb;-><init>(Licv;Liau;Lecw;Lefa;Lefe;)V
-
-    return-object v0
+    return-void
 .end method

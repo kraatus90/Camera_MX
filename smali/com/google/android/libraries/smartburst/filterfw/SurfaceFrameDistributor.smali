@@ -413,12 +413,6 @@
     monitor-enter v1
 
     :try_start_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x15
-
-    if-lt v0, v2, :cond_0
-
     const-class v0, Landroid/graphics/SurfaceTexture;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -466,7 +460,6 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :goto_0
     :try_start_2
     monitor-exit v1
 
@@ -475,7 +468,7 @@
     :catch_0
     move-exception v0
 
-    :goto_1
+    :goto_0
     new-instance v2, Ljava/lang/RuntimeException;
 
     invoke-direct {v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -491,28 +484,20 @@
 
     throw v0
 
-    :cond_0
-    :try_start_3
-    invoke-virtual {p0, p1}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_0
-
     :catch_1
     move-exception v0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_2
     move-exception v0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_3
     move-exception v0
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private static swap([I)V

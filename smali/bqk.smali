@@ -3,22 +3,48 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Ljxn;
+# static fields
+.field public static final a:Lbqk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lbqk;
+
+    invoke-direct {v0}, Lbqk;-><init>()V
+
+    sput-object v0, Lbqk;->a:Lbqk;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbqk;->a:Ljxn;
-
     return-void
+.end method
+
+.method public static b()Lbjw;
+    .locals 2
+
+    sget-object v0, Lbjw;->c:Lbjw;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbjw;
+
+    return-object v0
 .end method
 
 
@@ -26,31 +52,15 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbqk;->a:Ljxn;
+    sget-object v0, Lbjw;->c:Lbjw;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    move-result-object v0
-
-    check-cast v0, Landroid/view/WindowManager;
-
-    new-instance v1, Landroid/util/DisplayMetrics;
-
-    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
-
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/DisplayMetrics;
+    check-cast v0, Lbjw;
 
     return-object v0
 .end method

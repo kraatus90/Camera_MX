@@ -1,330 +1,89 @@
 .class public final Ljbi;
-.super Ljbd;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Liug;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x13
+.end annotation
 
 
 # instance fields
-.field private a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+.field private final synthetic a:Ljava/lang/String;
 
-.field private b:F
+.field private final synthetic b:[F
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;[F)V
+    .locals 0
 
-    invoke-direct {p0}, Ljbd;-><init>()V
+    iput-object p1, p0, Ljbi;->a:Ljava/lang/String;
 
-    iput-object p1, p0, Ljbi;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    iput-object p2, p0, Ljbi;->b:[F
 
-    const v0, 0x3f4ccccd    # 0.8f
-
-    iput v0, p0, Ljbi;->b:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Ljaz;)Ljava/util/Set;
-    .locals 14
-
-    invoke-virtual {p1}, Ljaz;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v2, 0x0
-
-    invoke-virtual {p1}, Ljaz;->b()J
-
-    move-result-wide v0
-
-    invoke-virtual {p1}, Ljaz;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    move-wide v12, v0
-
-    move v1, v2
-
-    move-wide v2, v12
-
-    :cond_1
-    :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    invoke-virtual {p1}, Ljaz;->b()J
-
-    move-result-wide v8
-
-    cmp-long v0, v4, v8
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Ljbi;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0, v2, v3}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowIterator(J)Lirt;
-
-    move-result-object v7
-
-    const/4 v2, 0x0
-
-    const/4 v0, 0x0
-
-    const/4 v3, 0x2
-
-    new-array v8, v3, [F
-
-    fill-array-data v8, :array_0
-
-    move v3, v2
-
-    move v2, v0
-
-    :goto_2
-    invoke-virtual {v7}, Lirt;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v7}, Lirt;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lirs;
-
-    invoke-virtual {v0}, Lirs;->b()J
-
-    move-result-wide v10
-
-    cmp-long v9, v10, v4
-
-    if-gtz v9, :cond_3
-
-    sget-object v9, Ljfs;->m:Ljfs;
-
-    invoke-virtual {v0, v9}, Lirs;->a(Ljfs;)Lcom/google/android/libraries/smartburst/utils/Feature;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValues()[F
-
-    move-result-object v0
-
-    const/4 v9, 0x0
-
-    aget v9, v0, v9
-
-    const v10, 0x3e4ccccd    # 0.2f
-
-    cmpg-float v9, v9, v10
-
-    if-gez v9, :cond_2
-
-    const/4 v9, 0x1
-
-    aget v9, v0, v9
-
-    const v10, 0x3e4ccccd    # 0.2f
-
-    cmpg-float v9, v9, v10
-
-    if-gez v9, :cond_2
-
-    const/4 v3, 0x0
-
-    aget v9, v8, v3
-
-    const/4 v10, 0x0
-
-    aget v10, v0, v10
-
-    add-float/2addr v9, v10
-
-    aput v9, v8, v3
-
-    const/4 v3, 0x1
-
-    aget v9, v8, v3
-
-    const/4 v10, 0x1
-
-    aget v0, v0, v10
-
-    add-float/2addr v0, v9
-
-    aput v0, v8, v3
-
-    const/4 v0, 0x0
-
-    move v3, v0
-
-    goto :goto_2
-
-    :cond_2
-    add-int/lit8 v0, v3, 0x1
-
-    const/4 v3, 0x4
-
-    if-le v0, v3, :cond_6
-
-    add-int/lit8 v0, v2, 0x1
-
-    const/4 v2, 0x0
-
-    :goto_3
-    move v3, v2
-
-    move v2, v0
-
-    goto :goto_2
-
-    :cond_3
-    const/4 v0, 0x0
-
-    aget v0, v8, v0
-
-    const/4 v3, 0x0
-
-    aget v3, v8, v3
-
-    mul-float/2addr v0, v3
-
-    const/4 v3, 0x1
-
-    aget v3, v8, v3
-
-    const/4 v7, 0x1
-
-    aget v7, v8, v7
-
-    mul-float/2addr v3, v7
-
-    add-float/2addr v0, v3
-
-    float-to-double v8, v0
-
-    invoke-static {v8, v9}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v8
-
-    double-to-float v0, v8
-
-    const v3, 0x3dcccccd    # 0.1f
-
-    int-to-float v2, v2
-
-    mul-float/2addr v2, v3
-
-    add-float/2addr v0, v2
-
-    add-float/2addr v0, v1
-
-    move-wide v2, v4
-
-    move v1, v0
-
-    goto/16 :goto_1
-
-    :cond_4
-    iget v0, p0, Ljbi;->b:F
-
-    cmpl-float v0, v1, v0
-
-    if-lez v0, :cond_5
-
-    sget-object v0, Ljba;->a:Ljba;
+.method public static a(Ljava/io/File;)Ljnq;
+    .locals 12
 
     const/4 v1, 0x0
 
-    new-array v1, v1, [Ljba;
+    const/4 v2, 0x0
 
-    invoke-static {v0, v1}, Liui;->a(Ljava/lang/Enum;[Ljava/lang/Enum;)Ljle;
+    new-instance v0, Ljava/io/File;
 
-    move-result-object v0
+    const-string v3, "metadatastore.bin"
 
-    goto/16 :goto_0
+    invoke-direct {v0, p0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    :cond_5
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+    new-instance v4, Ljava/io/DataInputStream;
 
-    move-result-object v0
+    new-instance v3, Ljava/io/BufferedInputStream;
 
-    goto/16 :goto_0
+    new-instance v5, Ljava/io/FileInputStream;
 
-    :cond_6
-    move v12, v2
+    invoke-direct {v5, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    move v2, v0
+    invoke-direct {v3, v5}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
 
-    move v0, v12
+    invoke-direct {v4, v3}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    goto :goto_3
+    :try_start_0
+    invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
 
-    :array_0
-    .array-data 4
-        0x0
-        0x0
-    .end array-data
-.end method
+    move-result v0
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    if-gtz v0, :cond_0
 
-    const-string v0, "[CameraPanningSegmentClassifier threshold: "
+    new-instance v2, Ljava/io/IOException;
 
-    iget v1, p0, Ljbi;->b:F
+    const/16 v3, 0x3d
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v5, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    const-string v3, "Unsupported serialization version ("
 
-    move-result v2
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v2, v2, 0x10
+    move-result-object v3
 
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    const-string v3, ", minimum is 1)"
 
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -332,5 +91,172 @@
 
     move-result-object v0
 
-    return-object v0
+    invoke-direct {v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v1
+
+    move-object v11, v1
+
+    move-object v1, v0
+
+    move-object v0, v11
+
+    :goto_0
+    invoke-static {v1, v4}, Ljbi;->a(Ljava/lang/Throwable;Ljava/io/DataInputStream;)V
+
+    throw v0
+
+    :cond_0
+    :try_start_2
+    new-instance v5, Ljnq;
+
+    invoke-direct {v5}, Ljnq;-><init>()V
+
+    invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v6
+
+    move v3, v2
+
+    :goto_1
+    if-ge v3, v6, :cond_2
+
+    new-instance v7, Ljne;
+
+    invoke-direct {v7}, Ljne;-><init>()V
+
+    invoke-virtual {v4}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v8
+
+    move v0, v2
+
+    :goto_2
+    if-ge v0, v8, :cond_1
+
+    invoke-virtual {v4}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9}, Ljne;->a(Ljava/lang/String;)Ljnm;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v4}, Ljnm;->a(Ljava/io/DataInputStream;)Ljava/lang/Object;
+
+    move-result-object v10
+
+    invoke-virtual {v7, v9, v10}, Ljne;->a(Ljnm;Ljava/lang/Object;)Ljne;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_1
+    invoke-virtual {v5, v7}, Ljnq;->a(Ljne;)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {v1, v4}, Ljbi;->a(Ljava/lang/Throwable;Ljava/io/DataInputStream;)V
+
+    return-object v5
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method private static synthetic a(Ljava/lang/Throwable;Ljava/io/DataInputStream;)V
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->close()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {p0, v0}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->close()V
+
+    goto :goto_0
+.end method
+
+.method public static synthetic a(Ljava/lang/Throwable;Ljava/io/DataOutputStream;)V
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/io/DataOutputStream;->close()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {p0, v0}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/io/DataOutputStream;->close()V
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final a(Livb;)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    iget-object v0, p0, Ljbi;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Livb;->a(Ljava/lang/String;)I
+
+    move-result v0
+
+    iget-object v1, p0, Ljbi;->b:[F
+
+    invoke-static {v0, v2, v2, v1, v2}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+
+    return-void
 .end method

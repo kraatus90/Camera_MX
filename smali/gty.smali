@@ -1,92 +1,66 @@
 .class public final Lgty;
-.super Landroid/view/GestureDetector$SimpleOnGestureListener;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgty;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
+    iput-object p1, p0, Lgty;->a:Lkgv;
+
+    iput-object p2, p0, Lgty;->b:Lkgv;
+
+    iput-object p3, p0, Lgty;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLongPress(Landroid/view/MotionEvent;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lgty;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    new-instance v3, Lgtv;
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$000(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/graphics/RectF;
+    iget-object v0, p0, Lgty;->a:Lkgv;
 
-    move-result-object v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/RectF;->contains(FF)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lgty;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$100(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lgty;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$200(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    check-cast v0, Liay;
 
-    const/4 v2, 0x1
+    iget-object v1, p0, Lgty;->b:Lkgv;
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    check-cast v1, Landroid/view/Window;
 
-    iget-object v0, p0, Lgty;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v2, p0, Lgty;->c:Lkgv;
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$300(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Lgug;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_0
+    check-cast v2, Ljava/util/concurrent/ScheduledExecutorService;
 
-    iget-object v0, p0, Lgty;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-direct {v3, v0, v1, v2}, Lgtv;-><init>(Liay;Landroid/view/Window;Ljava/util/concurrent/ScheduledExecutorService;)V
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$300(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Lgug;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lgug;->b()V
-
-    goto :goto_0
+    return-object v3
 .end method

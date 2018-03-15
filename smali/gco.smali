@@ -1,45 +1,45 @@
-.class final synthetic Lgco;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class final Lgco;
+.super Lgda;
+.source "PG"
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
-
-.field private b:Ljvi;
-
-.field private c:Ljuw;
+.field private final synthetic a:Lgcn;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Object;Ljvi;Ljuw;)V
+.method constructor <init>(Lgcn;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgco;->a:Lgcn;
 
-    iput-object p1, p0, Lgco;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lgco;->b:Ljvi;
-
-    iput-object p3, p0, Lgco;->c:Ljuw;
+    invoke-direct {p0}, Lgda;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final z_()V
+    .locals 2
 
-    iget-object v0, p0, Lgco;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lgco;->a:Lgcn;
 
-    iget-object v1, p0, Lgco;->b:Ljvi;
+    iget-object v0, v0, Lgcn;->a:Lgld;
 
-    iget-object v2, p0, Lgco;->c:Ljuw;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-static {v0, v1, v2}, Lgcm;->a(Ljava/lang/Object;Ljvi;Ljuw;)V
+    invoke-super {p0}, Lgda;->z_()V
+
+    iget-object v0, p0, Lgco;->a:Lgcn;
+
+    iget-object v0, v0, Lgcn;->a:Lgld;
+
+    iget-object v1, p0, Lgco;->a:Lgcn;
+
+    iget-object v1, v1, Lgcn;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

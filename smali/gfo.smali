@@ -1,64 +1,88 @@
-.class public final Lgfo;
+.class final synthetic Lgfo;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lgfm;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lgfm;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgfo;->a:Ljxn;
-
-    iput-object p2, p0, Lgfo;->b:Ljxn;
+    iput-object p1, p0, Lgfo;->a:Lgfm;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lgfo;
-
-    invoke-direct {v0, p0, p1}, Lgfo;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 7
 
-    new-instance v2, Lgfn;
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lgfo;->a:Ljxn;
+    const/high16 v6, 0x447a0000    # 1000.0f
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lgfo;->a:Lgfm;
 
-    move-result-object v0
+    check-cast p1, Lbmd;
 
-    check-cast v0, Lgem;
+    check-cast p2, Lbmd;
 
-    iget-object v1, p0, Lgfo;->b:Ljxn;
+    iget-object v2, v1, Lgfm;->d:Lioh;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {p1}, Lbmd;->g()J
 
-    move-result-object v1
+    move-result-wide v4
 
-    check-cast v1, Lgfb;
+    invoke-virtual {v2, v4, v5}, Lioh;->a(J)Ljava/lang/Float;
 
-    invoke-direct {v2, v0, v1}, Lgfn;-><init>(Lgem;Lgfb;)V
+    move-result-object v2
 
-    return-object v2
+    iget-object v1, v1, Lgfm;->d:Lioh;
+
+    invoke-interface {p2}, Lbmd;->g()J
+
+    move-result-wide v4
+
+    invoke-virtual {v1, v4, v5}, Lioh;->a(J)Ljava/lang/Float;
+
+    move-result-object v3
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v1
+
+    mul-float/2addr v1, v6
+
+    float-to-int v1, v1
+
+    :goto_0
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    mul-float/2addr v0, v6
+
+    float-to-int v0, v0
+
+    :cond_0
+    sub-int/2addr v0, v1
+
+    return v0
+
+    :cond_1
+    move v1, v0
+
+    goto :goto_0
 .end method

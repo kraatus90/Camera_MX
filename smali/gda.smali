@@ -1,37 +1,21 @@
-.class final synthetic Lgda;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private a:Lgcx;
+.class Lgda;
+.super Lgcx;
+.source "PG"
 
 
 # direct methods
-.method constructor <init>(Lgcx;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgda;->a:Lgcx;
+    invoke-direct {p0}, Lgcx;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
-
-    iget-object v0, p0, Lgda;->a:Lgcx;
-
-    iget-object v0, v0, Lgcx;->d:Lgdg;
-
-    iget-object v0, v0, Lgdg;->a:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->end()V
+.method public z_()V
+    .locals 0
 
     return-void
 .end method

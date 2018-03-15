@@ -1,84 +1,54 @@
-.class final Ldwu;
+.class public final Ldwu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldwr;
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Ldyy;
-
-.field private b:Ldwr;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldyy;Ldwr;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldwu;->a:Ldyy;
-
-    iput-object p2, p0, Ldwu;->b:Ldwr;
+    iput-object p1, p0, Ldwu;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;Licf;)Ljuw;
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    new-instance v1, Ljava/util/ArrayList;
+    iget-object v0, p0, Ldwu;->a:Lkgv;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liil;
+    check-cast v0, Lgjp;
 
-    invoke-interface {v0}, Liil;->e()J
+    const-string v1, "pref_camera_dirty_lens_key"
 
-    move-result-wide v4
+    const/4 v2, 0x0
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Ldwu;->b:Ldwr;
-
-    invoke-interface {v0, p1, p2}, Ldwr;->a(Ljava/util/List;Licf;)Ljuw;
+    invoke-virtual {v0, v1, v2}, Lgjp;->a(Ljava/lang/String;Z)Lick;
 
     move-result-object v0
 
-    new-instance v2, Ldwv;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-direct {v2, p0, v1}, Ldwv;-><init>(Ldwu;Ljava/util/List;)V
-
-    sget-object v1, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v2, v1}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lick;
 
     return-object v0
 .end method

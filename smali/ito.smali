@@ -1,23 +1,27 @@
-.class final Lito;
+.class public final Lito;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final a:Ljava/lang/Class;
-
-.field public final b:Litm;
+.field public final synthetic a:Litl;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Litm;)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lito;->a:Ljava/lang/Class;
+    return-void
+.end method
 
-    iput-object p2, p0, Lito;->b:Litm;
+.method public constructor <init>(Litl;)V
+    .locals 0
+
+    iput-object p1, p0, Lito;->a:Litl;
+
+    invoke-direct {p0}, Lito;-><init>()V
 
     return-void
 .end method

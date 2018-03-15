@@ -1,42 +1,55 @@
-.class final Liaj;
+.class public final synthetic Liaj;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lkdg;
 
 
 # instance fields
-.field private synthetic a:Lhze;
-
-.field private synthetic b:Liag;
+.field private final a:Liao;
 
 
 # direct methods
-.method constructor <init>(Liag;Lhze;)V
+.method public constructor <init>(Liao;)V
     .locals 0
 
-    iput-object p1, p0, Liaj;->b:Liag;
-
-    iput-object p2, p0, Liaj;->a:Lhze;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liaj;->a:Liao;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final a(Ljava/lang/Object;)Lkeh;
+    .locals 4
 
-    iget-object v0, p0, Liaj;->b:Liag;
+    iget-object v1, p0, Liaj;->a:Liao;
 
-    iget-object v0, v0, Liag;->b:Ljava/util/Set;
+    check-cast p1, Ljava/util/List;
 
-    iget-object v1, p0, Liaj;->a:Lhze;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    return-void
+    check-cast v0, Ljava/util/List;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v1, v2, v0}, Liao;->a(Ljava/lang/Object;Ljava/lang/Object;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
 .end method

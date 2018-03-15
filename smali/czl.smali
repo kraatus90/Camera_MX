@@ -1,60 +1,55 @@
-.class public final Lczl;
+.class final Lczl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lcxp;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final synthetic a:Lcyk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lczl;->a:Lcyk;
 
-    iput-object p1, p0, Lczl;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 2
 
-    iget-object v0, p0, Lczl;->a:Ljxn;
+    iget-object v0, p0, Lczl;->a:Lcyk;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-boolean v0, v0, Lcyk;->f:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Landroid/content/res/Resources;
+    iget-object v0, p0, Lczl;->a:Lcyk;
 
-    const v1, 0x7f0f000f
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    const-string v1, "PanoramaModule"
-
-    new-instance v2, Lcqp;
-
-    const/4 v3, 0x1
-
-    invoke-direct {v2, v0, v1, v3}, Lcqp;-><init>(ILjava/lang/String;Z)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Lcqp;
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->c:Liay;
+
+    new-instance v1, Lczm;
+
+    invoke-direct {v1, p0}, Lczm;-><init>(Lczl;)V
+
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    :cond_0
+    const/4 v0, 0x0
 
     return-object v0
 .end method

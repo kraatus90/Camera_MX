@@ -1,124 +1,103 @@
 .class public final Ldab;
-.super Ljava/lang/Object;
+.super Lcxq;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final c:Ljava/lang/String;
 
 
 # instance fields
-.field private synthetic a:Ldai;
+.field public final d:Lbci;
 
 
 # direct methods
-.method public constructor <init>(Ldai;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Ldab;->a:Ldai;
+    const-string v0, "StStartingPreview"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Ldab;->c:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcxq;Lbci;)V
+    .locals 2
+
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrv;)V
+
+    iput-object p2, p0, Ldab;->d:Lbci;
+
+    new-instance v0, Ldac;
+
+    invoke-direct {v0, p0}, Ldac;-><init>(Ldab;)V
+
+    const-class v1, Lcwu;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Ldad;
+
+    invoke-direct {v0, p0}, Ldad;-><init>(Ldab;)V
+
+    const-class v1, Lcwt;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Ldaf;
+
+    invoke-direct {v0, p0}, Ldaf;-><init>(Ldab;)V
+
+    const-class v1, Lcws;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final synthetic b()Lbrv;
+    .locals 1
 
-    const/4 v2, 0x2
-
-    iget-object v0, p0, Ldab;->a:Ldai;
-
-    iget-object v0, v0, Ldai;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->d:Lbtx;
-
-    invoke-interface {v0}, Lbtx;->t()Leug;
+    invoke-virtual {p0}, Ldab;->e()Lcxq;
 
     move-result-object v0
 
-    iget-object v0, v0, Leug;->x:Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;
+    return-object v0
+.end method
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;->e:Landroid/animation/AnimatorSet;
+.method public final e()Lcxq;
+    .locals 3
 
-    new-array v1, v2, [F
+    iget-object v0, p0, Ldab;->d:Lbci;
 
-    fill-array-data v1, :array_0
+    iget-object v0, v0, Lbci;->a:Lihb;
 
-    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    check-cast v0, Lcxh;
 
-    move-result-object v1
+    invoke-interface {v0}, Lcxh;->b()Lcxm;
 
-    new-array v2, v2, [F
+    move-result-object v0
 
-    fill-array-data v2, :array_1
+    invoke-interface {v0}, Lcxm;->g()Lkeh;
 
-    invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    move-result-object v0
 
-    move-result-object v2
+    new-instance v1, Ldag;
 
-    const-wide/16 v4, 0x42
+    invoke-direct {v1, p0}, Ldag;-><init>(Ldab;)V
 
-    invoke-virtual {v1, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    sget-object v2, Lken;->a:Lken;
 
-    const-wide/16 v4, 0xa6
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
 
-    invoke-virtual {v2, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    const/4 v0, 0x0
 
-    iget-object v3, v0, Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;->d:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    iget-object v3, v0, Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;->d:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    iget-object v3, v0, Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;->c:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    iget-object v3, v0, Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;->c:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    new-instance v3, Leuq;
-
-    invoke-direct {v3, v0, v2}, Leuq;-><init>(Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;Landroid/animation/ValueAnimator;)V
-
-    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    new-instance v3, Leur;
-
-    invoke-direct {v3, v0}, Leur;-><init>(Lcom/google/android/apps/camera/legacy/app/ui/CaptureAnimationOverlay;)V
-
-    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
-
-    iget-object v0, p0, Ldab;->a:Ldai;
-
-    iget-object v0, v0, Ldai;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->h:Lgum;
-
-    const v1, 0x7f090006
-
-    invoke-interface {v0, v1}, Lgum;->a(I)V
-
-    return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x3f428f5c    # 0.76f
-        0x3f428f5c    # 0.76f
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x3f428f5c    # 0.76f
-        0x0
-    .end array-data
+    return-object v0
 .end method

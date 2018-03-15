@@ -3,18 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljfn;
-
-
-# instance fields
-.field private synthetic a:Ljava/io/StringWriter;
+.implements Ljdt;
 
 
 # direct methods
-.method constructor <init>(Ljava/io/StringWriter;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljfm;->a:Ljava/io/StringWriter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,16 +17,22 @@
 
 
 # virtual methods
-.method public final a(Ljava/io/Writer;)V
-    .locals 1
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Ljfm;->a:Ljava/io/StringWriter;
+    new-instance v1, Ljlf;
 
-    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+    const-class v0, Ljnq;
+
+    const-string v2, "default"
+
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    check-cast v0, Ljnq;
 
-    return-void
+    invoke-direct {v1, v0}, Ljlf;-><init>(Ljnq;)V
+
+    return-object v1
 .end method

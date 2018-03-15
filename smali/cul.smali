@@ -1,280 +1,120 @@
-.class public final Lcul;
+.class final Lcul;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
-
-.field private j:Ljxn;
-
-.field private k:Ljxn;
-
-.field private l:Ljxn;
-
-.field private m:Ljxn;
-
-.field private n:Ljxn;
-
-.field private o:Ljxn;
-
-.field private p:Ljxn;
-
-.field private q:Ljxn;
+.field private final synthetic a:Lctw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 1
+.method constructor <init>(Lctw;)V
+    .locals 0
+
+    iput-object p1, p0, Lcul;->a:Lctw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcul;->a:Ljxn;
-
-    iput-object p2, p0, Lcul;->b:Ljxn;
-
-    iput-object p3, p0, Lcul;->c:Ljxn;
-
-    iput-object p4, p0, Lcul;->d:Ljxn;
-
-    iput-object p5, p0, Lcul;->e:Ljxn;
-
-    iput-object p6, p0, Lcul;->f:Ljxn;
-
-    iput-object p7, p0, Lcul;->g:Ljxn;
-
-    iput-object p8, p0, Lcul;->h:Ljxn;
-
-    iput-object p9, p0, Lcul;->i:Ljxn;
-
-    iput-object p10, p0, Lcul;->j:Ljxn;
-
-    iput-object p11, p0, Lcul;->k:Ljxn;
-
-    iput-object p12, p0, Lcul;->l:Ljxn;
-
-    iput-object p13, p0, Lcul;->m:Ljxn;
-
-    iput-object p14, p0, Lcul;->n:Ljxn;
-
-    move-object/from16 v0, p15
-
-    iput-object v0, p0, Lcul;->o:Ljxn;
-
-    move-object/from16 v0, p16
-
-    iput-object v0, p0, Lcul;->p:Ljxn;
-
-    move-object/from16 v0, p17
-
-    iput-object v0, p0, Lcul;->q:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 19
+.method public final run()V
+    .locals 6
 
-    new-instance v1, Lcuk;
+    const/4 v2, 0x2
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcul;->a:Lctw;
 
-    iget-object v2, v0, Lcul;->a:Ljxn;
+    iget-object v0, v0, Lctw;->x:Lbyy;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lbyy;->v()Ldzh;
+
+    move-result-object v0
+
+    iget-object v0, v0, Ldzh;->s:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->e:Landroid/animation/AnimatorSet;
+
+    new-array v1, v2, [F
+
+    fill-array-data v1, :array_0
+
+    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+
+    move-result-object v1
+
+    new-array v2, v2, [F
+
+    fill-array-data v2, :array_1
+
+    invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v2
 
-    check-cast v2, Lhar;
+    const-wide/16 v4, 0x42
 
-    move-object/from16 v0, p0
+    invoke-virtual {v1, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    iget-object v3, v0, Lcul;->b:Ljxn;
+    const-wide/16 v4, 0xa6
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v2, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    move-result-object v3
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->d:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    check-cast v3, Ljht;
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    move-object/from16 v0, p0
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->d:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    iget-object v4, v0, Lcul;->c:Ljxn;
+    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:Landroid/view/animation/Interpolator;
 
-    move-result-object v4
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    check-cast v4, Lgwb;
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:Landroid/view/animation/Interpolator;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    iget-object v5, v0, Lcul;->d:Ljxn;
+    new-instance v3, Lgxz;
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v3, v0, v2}, Lgxz;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;Landroid/animation/ValueAnimator;)V
 
-    move-result-object v5
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    check-cast v5, Lgrw;
+    new-instance v3, Lgya;
 
-    move-object/from16 v0, p0
+    invoke-direct {v3, v0}, Lgya;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
 
-    iget-object v6, v0, Lcul;->e:Ljxn;
+    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    move-result-object v6
+    iget-object v0, p0, Lcul;->a:Lctw;
 
-    check-cast v6, Lgni;
+    iget-object v0, v0, Lctw;->y:Lgkf;
 
-    move-object/from16 v0, p0
+    const v1, 0x7f090006
 
-    iget-object v7, v0, Lcul;->f:Ljxn;
+    invoke-interface {v0, v1}, Lgkf;->a(I)V
 
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
+    return-void
 
-    move-result-object v7
+    nop
 
-    check-cast v7, Landroid/hardware/SensorManager;
+    :array_0
+    .array-data 4
+        0x3f428f5c    # 0.76f
+        0x3f428f5c    # 0.76f
+    .end array-data
 
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcul;->g:Ljxn;
-
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Landroid/content/Context;
-
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lcul;->h:Ljxn;
-
-    invoke-interface {v9}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Ldhh;
-
-    move-object/from16 v0, p0
-
-    iget-object v10, v0, Lcul;->i:Ljxn;
-
-    invoke-interface {v10}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lcul;->j:Ljxn;
-
-    invoke-interface {v11}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lcul;->k:Ljxn;
-
-    invoke-interface {v12}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcul;->l:Ljxn;
-
-    invoke-interface {v13}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcul;->m:Ljxn;
-
-    invoke-interface {v14}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v14
-
-    check-cast v14, Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lcul;->n:Ljxn;
-
-    invoke-interface {v15}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v15
-
-    check-cast v15, Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcul;->o:Ljxn;
-
-    move-object/from16 v16, v0
-
-    invoke-interface/range {v16 .. v16}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v16
-
-    check-cast v16, Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcul;->p:Ljxn;
-
-    move-object/from16 v17, v0
-
-    invoke-interface/range {v17 .. v17}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v17
-
-    check-cast v17, Lgsm;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcul;->q:Ljxn;
-
-    move-object/from16 v18, v0
-
-    invoke-interface/range {v18 .. v18}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v18
-
-    check-cast v18, Lgow;
-
-    invoke-direct/range {v1 .. v18}, Lcuk;-><init>(Lhar;Ljht;Lgwb;Lgrw;Lgni;Landroid/hardware/SensorManager;Landroid/content/Context;Ldhh;Liau;Liau;Liau;Liau;Liau;Liau;Liau;Lgsm;Lgow;)V
-
-    return-object v1
+    :array_1
+    .array-data 4
+        0x3f428f5c    # 0.76f
+        0x0
+    .end array-data
 .end method

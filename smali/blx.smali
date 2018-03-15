@@ -1,42 +1,44 @@
-.class public final Lblx;
+.class final synthetic Lblx;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lblw;
+.field private final a:Lblz;
 
 
 # direct methods
-.method public constructor <init>(Lblw;)V
+.method constructor <init>(Lblz;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lblx;->a:Lblw;
+    iput-object p1, p0, Lblx;->a:Lblz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lblx;->a:Lblw;
+    iget-object v0, p0, Lblx;->a:Lblz;
 
-    iget-object v0, v0, Lblw;->a:Landroid/content/Context;
+    iget-object v1, v0, Lblz;->k:Landroid/graphics/Bitmap;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    if-eqz v1, :cond_0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v1, v0, Lblz;->a:Lgfr;
 
-    move-result-object v0
+    iget-object v0, v0, Lblz;->k:Landroid/graphics/Bitmap;
 
-    check-cast v0, Landroid/content/Context;
+    const/4 v2, 0x0
 
-    return-object v0
+    invoke-interface {v1, v0, v2}, Lgfr;->a(Landroid/graphics/Bitmap;I)V
+
+    :cond_0
+    return-void
 .end method

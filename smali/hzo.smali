@@ -1,39 +1,26 @@
-.class public final Lhzo;
-.super Ljava/lang/Object;
-.source "PG"
+.class abstract Lhzo;
+.super Lhsy;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lhlm;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lhxi;->a:Lhlf;
+
+    invoke-direct {p0, v0, p1}, Lhsy;-><init>(Lhlf;Lhlm;)V
 
     return-void
 .end method
 
-.method public static a(Lhzr;Ljava/lang/String;)Landroid/os/Handler;
-    .locals 2
 
-    new-instance v0, Landroid/os/HandlerThread;
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-direct {v0, p1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    check-cast p1, Lhlr;
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-super {p0, p1}, Lhsy;->a(Lhlr;)V
 
-    new-instance v1, Lhzp;
-
-    invoke-direct {v1, v0}, Lhzp;-><init>(Landroid/os/HandlerThread;)V
-
-    invoke-virtual {p0, v1}, Lhzr;->a(Lich;)Lich;
-
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    return-object v1
+    return-void
 .end method

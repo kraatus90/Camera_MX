@@ -60,44 +60,32 @@
 
 
 # virtual methods
-.method public ImageReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/InterleavedImageU16;)V
-    .locals 9
+.method public ImageReady(ILcom/google/googlex/gcam/InterleavedReadViewU16;)V
+    .locals 7
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PdImageCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
+    invoke-static {p2}, Lcom/google/googlex/gcam/InterleavedReadViewU16;->getCPtr(Lcom/google/googlex/gcam/InterleavedReadViewU16;)J
 
-    move-result-wide v3
-
-    invoke-static {p2}, Lcom/google/googlex/gcam/InterleavedImageU16;->getCPtr(Lcom/google/googlex/gcam/InterleavedImageU16;)J
-
-    move-result-wide v6
+    move-result-wide v4
 
     move-object v2, p0
 
-    move-object v5, p1
+    move v3, p1
 
-    move-object v8, p2
+    move-object v6, p2
 
-    invoke-static/range {v0 .. v8}, Lcom/google/googlex/gcam/GcamModuleJNI;->PdImageCallback_ImageReady(JLcom/google/googlex/gcam/PdImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/InterleavedImageU16;)V
+    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->PdImageCallback_ImageReady(JLcom/google/googlex/gcam/PdImageCallback;IJLcom/google/googlex/gcam/InterleavedReadViewU16;)V
 
     return-void
 .end method
 
-.method public MergePdFailed(Lcom/google/googlex/gcam/IShot;)V
-    .locals 6
+.method public MergePdFailed(I)V
+    .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PdImageCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->PdImageCallback_MergePdFailed(JLcom/google/googlex/gcam/PdImageCallback;JLcom/google/googlex/gcam/IShot;)V
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->PdImageCallback_MergePdFailed(JLcom/google/googlex/gcam/PdImageCallback;I)V
 
     return-void
 .end method

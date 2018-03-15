@@ -1,81 +1,32 @@
-.class final Limu;
-.super Landroid/media/MediaCodec$Callback;
+.class public interface abstract Limu;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:Landroid/media/MediaCodec$Callback;
-
-.field private b:Landroid/os/Handler;
-
-
-# direct methods
-.method constructor <init>(Landroid/media/MediaCodec$Callback;Landroid/os/Handler;)V
-    .locals 0
-
-    invoke-direct {p0}, Landroid/media/MediaCodec$Callback;-><init>()V
-
-    iput-object p1, p0, Limu;->a:Landroid/media/MediaCodec$Callback;
-
-    iput-object p2, p0, Limu;->b:Landroid/os/Handler;
-
-    return-void
-.end method
+# interfaces
+.implements Lihb;
 
 
 # virtual methods
-.method public final onError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
-    .locals 2
-
-    iget-object v0, p0, Limu;->b:Landroid/os/Handler;
-
-    new-instance v1, Limx;
-
-    invoke-direct {v1, p0, p1, p2}, Limx;-><init>(Limu;Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+.method public abstract a(Ljava/util/List;Limv;Landroid/os/Handler;)I
 .end method
 
-.method public final onInputBufferAvailable(Landroid/media/MediaCodec;I)V
-    .locals 2
-
-    iget-object v0, p0, Limu;->b:Landroid/os/Handler;
-
-    new-instance v1, Limv;
-
-    invoke-direct {v1, p0, p1, p2}, Limv;-><init>(Limu;Landroid/media/MediaCodec;I)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+.method public abstract a()V
 .end method
 
-.method public final onOutputBufferAvailable(Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V
-    .locals 2
-
-    iget-object v0, p0, Limu;->b:Landroid/os/Handler;
-
-    new-instance v1, Limw;
-
-    invoke-direct {v1, p0, p1, p2, p3}, Limw;-><init>(Limu;Landroid/media/MediaCodec;ILandroid/media/MediaCodec$BufferInfo;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+.method public abstract a(Ljava/util/List;)V
 .end method
 
-.method public final onOutputFormatChanged(Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V
-    .locals 2
+.method public abstract b(Ljava/util/List;Limv;Landroid/os/Handler;)I
+.end method
 
-    iget-object v0, p0, Limu;->b:Landroid/os/Handler;
+.method public abstract b()Limz;
+.end method
 
-    new-instance v1, Limy;
+.method public abstract c()V
+.end method
 
-    invoke-direct {v1, p0, p1, p2}, Limy;-><init>(Limu;Landroid/media/MediaCodec;Landroid/media/MediaFormat;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+.method public abstract d()Landroid/view/Surface;
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x17
+    .end annotation
 .end method

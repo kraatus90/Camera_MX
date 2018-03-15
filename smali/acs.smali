@@ -1,77 +1,289 @@
-.class public final Lacs;
+.class final synthetic Lacs;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # static fields
-.field public static final a:I
+.field public static final synthetic a:[I
+
+.field private static final synthetic b:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 3
 
-    const/4 v4, -0x1
+    invoke-static {}, Lacn;->values()[Lacn;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lacs;->b:[I
 
     :try_start_0
-    const-string v0, "android.hardware.camera2.CameraCharacteristics"
+    sget-object v0, Lacs;->b:[I
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    sget-object v1, Lacn;->d:Lacn;
 
-    move-result-object v0
+    invoke-virtual {v1}, Lacn;->ordinal()I
 
-    const-string v1, "CONTROL_SCENE_MODE_HDR"
+    move-result v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    const/4 v2, 0x1
 
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+    aput v2, v0, v1
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v0
-
-    sput v0, Lacs;->a:I
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_b
 
     :goto_0
+    :try_start_1
+    sget-object v0, Lacs;->b:[I
+
+    sget-object v1, Lacn;->c:Lacn;
+
+    invoke-virtual {v1}, Lacn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_a
+
+    :goto_1
+    :try_start_2
+    sget-object v0, Lacs;->b:[I
+
+    sget-object v1, Lacn;->b:Lacn;
+
+    invoke-virtual {v1}, Lacn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_9
+
+    :goto_2
+    :try_start_3
+    sget-object v0, Lacs;->b:[I
+
+    sget-object v1, Lacn;->a:Lacn;
+
+    invoke-virtual {v1}, Lacn;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_8
+
+    :goto_3
+    invoke-static {}, Landroid/widget/ImageView$ScaleType;->values()[Landroid/widget/ImageView$ScaleType;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lacs;->a:[I
+
+    :try_start_4
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_7
+
+    :goto_4
+    :try_start_5
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_6
+
+    :goto_5
+    :try_start_6
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_5
+
+    :goto_6
+    :try_start_7
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_START:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_4
+
+    :goto_7
+    :try_start_8
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_END:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_3
+
+    :goto_8
+    :try_start_9
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_2
+
+    :goto_9
+    :try_start_a
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_1
+
+    :goto_a
+    :try_start_b
+    sget-object v0, Lacs;->a:[I
+
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->MATRIX:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    aput v2, v0, v1
+    :try_end_b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_0
+
+    :goto_b
     return-void
 
     :catch_0
     move-exception v0
 
-    :try_start_1
-    const-string v1, "LegacyVendorTags"
+    goto :goto_b
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Error while reflecting on SCENE_MODE_HDR enum, HDR will not be available: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    sput v4, Lacs;->a:I
-
-    goto :goto_0
-
-    :catchall_0
+    :catch_1
     move-exception v0
 
-    sput v4, Lacs;->a:I
+    goto :goto_a
 
-    throw v0
+    :catch_2
+    move-exception v0
+
+    goto :goto_9
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_8
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_7
+
+    :catch_5
+    move-exception v0
+
+    goto :goto_6
+
+    :catch_6
+    move-exception v0
+
+    goto :goto_5
+
+    :catch_7
+    move-exception v0
+
+    goto :goto_4
+
+    :catch_8
+    move-exception v0
+
+    goto :goto_3
+
+    :catch_9
+    move-exception v0
+
+    goto/16 :goto_2
+
+    :catch_a
+    move-exception v0
+
+    goto/16 :goto_1
+
+    :catch_b
+    move-exception v0
+
+    goto/16 :goto_0
 .end method

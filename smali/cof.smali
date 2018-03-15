@@ -1,54 +1,45 @@
-.class public final Lcof;
-.super Ljava/lang/Object;
+.class final Lcof;
+.super Lcnx;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
-
-# static fields
-.field public static final a:Lcof;
+# instance fields
+.field private final synthetic a:Lcod;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcof;
-
-    invoke-direct {v0}, Lcof;-><init>()V
-
-    sput-object v0, Lcof;->a:Lcof;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lcod;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcof;->a:Lcod;
+
+    invoke-direct {p0, p1}, Lcnx;-><init>(Lcnv;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final l()V
     .locals 2
 
-    sget-object v0, Lcnv;->f:Lcnv;
+    iget-object v0, p0, Lcof;->a:Lcod;
 
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
+    iget-object v0, v0, Lcod;->g:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-super {p0}, Lcnx;->l()V
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Lcof;->a:Lcod;
 
-    move-result-object v0
+    iget-object v0, v0, Lcod;->g:Lgld;
 
-    check-cast v0, Liau;
+    iget-object v1, p0, Lcof;->a:Lcod;
 
-    return-object v0
+    iget-object v1, v1, Lcod;->h:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

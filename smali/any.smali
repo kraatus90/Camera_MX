@@ -3,8 +3,8 @@
 .source "PG"
 
 # interfaces
-.implements Lahc;
-.implements Lahg;
+.implements Lagr;
+.implements Lagw;
 
 
 # instance fields
@@ -19,7 +19,7 @@
 
     const-string v0, "Argument must not be null"
 
-    invoke-static {p1, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -68,15 +68,15 @@
     :cond_1
     iget-object v0, p0, Lany;->a:Landroid/graphics/drawable/Drawable;
 
-    instance-of v0, v0, Laod;
+    instance-of v0, v0, Laog;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lany;->a:Landroid/graphics/drawable/Drawable;
 
-    check-cast v0, Laod;
+    check-cast v0, Laog;
 
-    invoke-virtual {v0}, Laod;->a()Landroid/graphics/Bitmap;
+    invoke-virtual {v0}, Laog;->a()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -94,9 +94,17 @@
 
     move-result-object v0
 
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lany;->a:Landroid/graphics/drawable/Drawable;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    return-object v0
+    goto :goto_0
 .end method

@@ -1,13 +1,13 @@
-.class public final Lcva;
+.class final Lcva;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lemb;
+.implements Lgtr;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,22 +17,90 @@
 
 
 # virtual methods
-.method public final a(Lgrw;Leon;Ljava/lang/String;JLandroid/location/Location;Lavl;)Leou;
-    .locals 8
+.method public final b()V
+    .locals 0
 
-    new-instance v0, Lcuz;
+    return-void
+.end method
 
-    move-object v1, p3
+.method public final c()Landroid/view/GestureDetector$OnGestureListener;
+    .locals 1
 
-    move-wide v2, p4
+    new-instance v0, Landroid/view/GestureDetector$SimpleOnGestureListener;
 
-    move-object v4, p6
-
-    move-object v5, p2
-
-    move-object v6, p7
-
-    invoke-direct/range {v0 .. v6}, Lcuz;-><init>(Ljava/lang/String;JLandroid/location/Location;Leon;Lavl;)V
+    invoke-direct {v0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-object v0
+.end method
+
+.method public final d()Landroid/view/View$OnTouchListener;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final k_()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final l_()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final surfaceRedrawNeeded(Landroid/view/SurfaceHolder;)V
+    .locals 0
+
+    return-void
 .end method

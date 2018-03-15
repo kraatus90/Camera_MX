@@ -1,13 +1,13 @@
-.class final Lanq;
+.class public final Lanq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/concurrent/locks/Lock;
+.implements Lans;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,48 +17,26 @@
 
 
 # virtual methods
-.method public final lock()V
-    .locals 0
+.method public final synthetic a(Landroid/media/MediaMetadataRetriever;Ljava/lang/Object;)V
+    .locals 6
 
-    return-void
-.end method
+    check-cast p2, Landroid/content/res/AssetFileDescriptor;
 
-.method public final lockInterruptibly()V
-    .locals 0
+    invoke-virtual {p2}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final newCondition()Ljava/util/concurrent/locks/Condition;
-    .locals 2
+    invoke-virtual {p2}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    move-result-wide v2
 
-    const-string v1, "Should not be called"
+    invoke-virtual {p2}, Landroid/content/res/AssetFileDescriptor;->getLength()J
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result-wide v4
 
-    throw v0
-.end method
+    move-object v0, p1
 
-.method public final tryLock()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final tryLock(JLjava/util/concurrent/TimeUnit;)Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final unlock()V
-    .locals 0
+    invoke-virtual/range {v0 .. v5}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/io/FileDescriptor;JJ)V
 
     return-void
 .end method

@@ -1,24 +1,39 @@
 .class final Lhqk;
-.super Lhkf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Lcom/google/android/gms/internal/zzbgq;
+
+.field private final synthetic b:Lhqj;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lhqj;Lcom/google/android/gms/internal/zzbgq;)V
     .locals 0
 
-    invoke-direct {p0}, Lhkf;-><init>()V
+    iput-object p1, p0, Lhqk;->b:Lhqj;
+
+    iput-object p2, p0, Lhqk;->a:Lcom/google/android/gms/internal/zzbgq;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Landroid/content/Context;Landroid/os/Looper;Lhls;Ljava/lang/Object;Lhkn;Lhko;)Lhkj;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    iget-object v0, p0, Lhqk;->b:Lhqj;
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    iget-object v1, p0, Lhqk;->a:Lcom/google/android/gms/internal/zzbgq;
 
-    throw v0
+    invoke-static {v0, v1}, Lhqj;->a(Lhqj;Lcom/google/android/gms/internal/zzbgq;)V
+
+    return-void
 .end method

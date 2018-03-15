@@ -3,75 +3,170 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lbin;
+
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final b:Z
+
+.field private final c:Ljava/io/File;
+
+.field private final d:I
+
+.field private final e:Ligp;
+
+.field private final f:Ljrf;
+
+.field private final g:Ljrf;
+
+.field private final h:Landroid/view/Surface;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "PreparedMediaRec"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lbio;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(ZLjava/io/File;ILigp;Ljrf;Landroid/view/Surface;Ljrf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbio;->a:Ljxn;
+    iput-boolean p1, p0, Lbio;->b:Z
+
+    iput-object p2, p0, Lbio;->c:Ljava/io/File;
+
+    iput p3, p0, Lbio;->d:I
+
+    iput-object p4, p0, Lbio;->e:Ligp;
+
+    iput-object p5, p0, Lbio;->f:Ljrf;
+
+    iput-object p6, p0, Lbio;->h:Landroid/view/Surface;
+
+    iput-object p7, p0, Lbio;->g:Ljrf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final a(Lifj;)V
+    .locals 2
 
-    iget-object v0, p0, Lbio;->a:Ljxn;
+    iget-object v0, p0, Lbio;->e:Ligp;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v1, Lbip;
 
-    move-result-object v0
+    invoke-direct {v1, p1}, Lbip;-><init>(Lifj;)V
 
-    check-cast v0, Lbhl;
+    invoke-interface {v0, v1}, Ligp;->a(Landroid/media/MediaRecorder$OnInfoListener;)V
 
-    new-instance v1, Lbku;
+    iget-object v0, p0, Lbio;->e:Ligp;
 
-    const-string v2, "camera.shot_tracking"
+    invoke-interface {v0}, Ligp;->h()V
 
-    sget-object v3, Lbhl;->a:Lbhl;
+    return-void
+.end method
 
-    if-eq v0, v3, :cond_0
+.method public final a(Ljava/io/File;)V
+    .locals 1
 
-    sget-object v3, Lbhl;->b:Lbhl;
+    iget-object v0, p0, Lbio;->e:Ligp;
 
-    if-eq v0, v3, :cond_0
+    invoke-interface {v0, p1}, Ligp;->a(Ljava/io/File;)V
 
-    sget-object v3, Lbhl;->c:Lbhl;
+    return-void
+.end method
 
-    if-eq v0, v3, :cond_0
+.method public final a()Z
+    .locals 1
 
-    sget-object v3, Lbhl;->d:Lbhl;
+    iget-boolean v0, p0, Lbio;->b:Z
 
-    if-ne v0, v3, :cond_1
+    return v0
+.end method
 
-    :cond_0
-    const/4 v0, 0x1
+.method public final b()Ljava/io/File;
+    .locals 1
 
-    :goto_0
-    invoke-direct {v1, v2, v0}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbku;
+    iget-object v0, p0, Lbio;->c:Ljava/io/File;
 
     return-object v0
+.end method
 
-    :cond_1
-    const/4 v0, 0x0
+.method public final c()Ljrf;
+    .locals 1
 
-    goto :goto_0
+    iget-object v0, p0, Lbio;->g:Ljrf;
+
+    return-object v0
+.end method
+
+.method public final d()I
+    .locals 1
+
+    iget v0, p0, Lbio;->d:I
+
+    return v0
+.end method
+
+.method public final e()Ljrf;
+    .locals 1
+
+    iget-object v0, p0, Lbio;->f:Ljrf;
+
+    return-object v0
+.end method
+
+.method public final f()Landroid/view/Surface;
+    .locals 1
+
+    iget-object v0, p0, Lbio;->h:Landroid/view/Surface;
+
+    return-object v0
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Lbio;->e:Ligp;
+
+    invoke-interface {v0}, Ligp;->k()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 1
+
+    iget-object v0, p0, Lbio;->e:Ligp;
+
+    invoke-interface {v0}, Ligp;->i()V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lbio;->e:Ligp;
+
+    invoke-interface {v0}, Ligp;->j()V
+
+    return-void
 .end method

@@ -7,16 +7,16 @@
 
 
 # instance fields
-.field public final synthetic this$0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MIMD5INEPBI7C______0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FCTMN6BR9DPQ6ASJEC5M2UUJQC9JM493QF9GJM___0:Lhij;
+.field public final synthetic this$0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MIMD5INEPBI7C______0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MI6DTHNASQ3DTN78SJFDHPI8HJFCDQN6GRCD5IMST1R0:Lhjr;
 
 .field public wasCancelled:Z
 
 
 # direct methods
-.method private constructor <init>(Lhij;)V
+.method private constructor <init>(Lhjr;)V
     .locals 1
 
-    iput-object p1, p0, Lcom/google/android/apps/refocus/viewer/RGBZViewer$RenderProgress;->this$0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MIMD5INEPBI7C______0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FCTMN6BR9DPQ6ASJEC5M2UUJQC9JM493QF9GJM___0:Lhij;
+    iput-object p1, p0, Lcom/google/android/apps/refocus/viewer/RGBZViewer$RenderProgress;->this$0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MIMD5INEPBI7C______0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MI6DTHNASQ3DTN78SJFDHPI8HJFCDQN6GRCD5IMST1R0:Lhjr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,10 +27,10 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lhij;Lhil;)V
+.method public synthetic constructor <init>(Lhjr;Lhjl;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/google/android/apps/refocus/viewer/RGBZViewer$RenderProgress;-><init>(Lhij;)V
+    invoke-direct {p0, p1}, Lcom/google/android/apps/refocus/viewer/RGBZViewer$RenderProgress;-><init>(Lhjr;)V
 
     return-void
 .end method
@@ -54,8 +54,21 @@
 .end method
 
 .method public setProgress(F)V
-    .locals 0
+    .locals 1
 
+    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RGBZViewer$RenderProgress;->this$0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MIMD5INEPBI7C______0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MI6DTHNASQ3DTN78SJFDHPI8HJFCDQN6GRCD5IMST1R0:Lhjr;
+
+    iget-object v0, v0, Lhjr;->m:Lcom/google/android/apps/refocus/processing/ProgressListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RGBZViewer$RenderProgress;->this$0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MIMD5INEPBI7C______0$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIUTJ9CLRMASHFA93K4MI6DTHNASQ3DTN78SJFDHPI8HJFCDQN6GRCD5IMST1R0:Lhjr;
+
+    iget-object v0, v0, Lhjr;->m:Lcom/google/android/apps/refocus/processing/ProgressListener;
+
+    invoke-interface {v0, p1}, Lcom/google/android/apps/refocus/processing/ProgressListener;->onProgress(F)V
+
+    :cond_0
     return-void
 .end method
 
@@ -65,7 +78,7 @@
     return-void
 .end method
 
-.method public setStatus(Lgyr;)V
+.method public setStatus(Lgwx;)V
     .locals 0
 
     return-void

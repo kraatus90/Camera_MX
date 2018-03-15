@@ -4,5 +4,11 @@
 
 
 # virtual methods
-.method public abstract a()Ljuw;
+.method public abstract a()I
+.end method
+
+.method public abstract a(I)Lflu;
+.end method
+
+.method public abstract b()Lick;
 .end method

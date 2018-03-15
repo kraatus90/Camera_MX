@@ -10,25 +10,25 @@
 
 .field public c:Landroid/graphics/Matrix;
 
-.field public d:Landroid/graphics/RectF;
+.field public d:[Landroid/hardware/camera2/params/Face;
 
-.field public e:I
+.field public e:Landroid/graphics/RectF;
 
 .field public f:I
 
-.field private g:Licf;
+.field public g:I
 
-.field private h:[Landroid/hardware/camera2/params/Face;
+.field private h:Ligz;
 
 .field private i:Landroid/graphics/Paint;
 
 .field private j:I
 
-.field private k:Landroid/graphics/RectF;
+.field private final k:Landroid/graphics/RectF;
 
-.field private l:Landroid/view/Display;
+.field private final l:Landroid/view/Display;
 
-.field private m:Ljava/util/Map;
+.field private final m:Ljava/util/Map;
 
 
 # direct methods
@@ -37,7 +37,7 @@
 
     const-string v0, "FaceView"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
@@ -87,7 +87,7 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->i:Landroid/graphics/Paint;
 
-    const v2, 0x7f0d00d7
+    const v2, 0x7f0d00ae
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -95,7 +95,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    const v1, 0x7f0c0059
+    const v1, 0x7f0c0054
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -128,7 +128,106 @@
     return-void
 .end method
 
-.method private final c()V
+.method private final d()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->d:[Landroid/hardware/camera2/params/Face;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->d:[Landroid/hardware/camera2/params/Face;
+
+    array-length v0, v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 8
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->e:Landroid/graphics/RectF;
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->f:I
+
+    if-lez v0, :cond_0
+
+    iget v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->g:I
+
+    if-lez v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:Ligz;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->k:Landroid/graphics/RectF;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->e:Landroid/graphics/RectF;
+
+    iget v1, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->f:I
+
+    iget v2, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->g:I
+
+    iget v3, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->a:I
+
+    iget-object v4, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:Ligz;
+
+    iget-boolean v5, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->b:Z
+
+    iget-object v6, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->k:Landroid/graphics/RectF;
+
+    invoke-virtual {v6}, Landroid/graphics/RectF;->width()F
+
+    move-result v6
+
+    iget-object v7, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->k:Landroid/graphics/RectF;
+
+    invoke-virtual {v7}, Landroid/graphics/RectF;->height()F
+
+    move-result v7
+
+    invoke-static/range {v0 .. v7}, Lfrw;->a(Landroid/graphics/RectF;IIILigz;ZFF)Landroid/graphics/Matrix;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->c:Landroid/graphics/Matrix;
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->d:[Landroid/hardware/camera2/params/Face;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->m:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/faceboxes/FaceView;->c()V
+
+    return-void
+.end method
+
+.method public final c()V
     .locals 8
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/faceboxes/FaceView;->d()I
@@ -150,7 +249,7 @@
 
     if-lez v2, :cond_3
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:[Landroid/hardware/camera2/params/Face;
+    iget-object v3, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->d:[Landroid/hardware/camera2/params/Face;
 
     array-length v4, v3
 
@@ -189,15 +288,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lbkq;
+    check-cast v0, Lbpf;
 
     if-nez v0, :cond_2
 
-    new-instance v0, Lbkq;
+    new-instance v0, Lbpf;
 
     iget-object v7, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->c:Landroid/graphics/Matrix;
 
-    invoke-direct {v0, v5, v7}, Lbkq;-><init>(Landroid/hardware/camera2/params/Face;Landroid/graphics/Matrix;)V
+    invoke-direct {v0, v5, v7}, Lbpf;-><init>(Landroid/hardware/camera2/params/Face;Landroid/graphics/Matrix;)V
 
     iget-object v5, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->m:Ljava/util/Map;
 
@@ -207,27 +306,7 @@
 
     invoke-interface {v5, v6, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v5, v0, Lbkq;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v5}, Landroid/animation/ValueAnimator;->isStarted()Z
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    const/16 v5, 0xcc
-
-    iput v5, v0, Lbkq;->e:I
-
-    iget-object v5, v0, Lbkq;->c:Lhag;
-
-    iget v5, v5, Lhag;->a:F
-
-    iput v5, v0, Lbkq;->d:F
-
-    iget-object v0, v0, Lbkq;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
+    invoke-virtual {v0}, Lbpf;->a()V
 
     :cond_1
     :goto_1
@@ -238,7 +317,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v0, v5}, Lbkq;->a(Landroid/hardware/camera2/params/Face;)V
+    invoke-virtual {v0, v5}, Lbpf;->a(Landroid/hardware/camera2/params/Face;)V
 
     goto :goto_1
 
@@ -252,115 +331,6 @@
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
     :cond_4
-    return-void
-.end method
-
-.method private final d()I
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:[Landroid/hardware/camera2/params/Face;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:[Landroid/hardware/camera2/params/Face;
-
-    array-length v0, v0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 8
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->d:Landroid/graphics/RectF;
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->e:I
-
-    if-lez v0, :cond_0
-
-    iget v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->f:I
-
-    if-lez v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->g:Licf;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->k:Landroid/graphics/RectF;
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->d:Landroid/graphics/RectF;
-
-    iget v1, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->e:I
-
-    iget v2, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->f:I
-
-    iget v3, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->a:I
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->g:Licf;
-
-    iget-boolean v5, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->b:Z
-
-    iget-object v6, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->k:Landroid/graphics/RectF;
-
-    invoke-virtual {v6}, Landroid/graphics/RectF;->width()F
-
-    move-result v6
-
-    iget-object v7, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->k:Landroid/graphics/RectF;
-
-    invoke-virtual {v7}, Landroid/graphics/RectF;->height()F
-
-    move-result v7
-
-    invoke-static/range {v0 .. v7}, Lgja;->a(Landroid/graphics/RectF;IIILicf;ZFF)Landroid/graphics/Matrix;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->c:Landroid/graphics/Matrix;
-
-    goto :goto_0
-.end method
-
-.method public final a([Landroid/hardware/camera2/params/Face;)V
-    .locals 0
-
-    iput-object p1, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:[Landroid/hardware/camera2/params/Face;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/faceboxes/FaceView;->c()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:[Landroid/hardware/camera2/params/Face;
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->m:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/faceboxes/FaceView;->c()V
-
     return-void
 .end method
 
@@ -391,12 +361,12 @@
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Licf;->b(I)Licf;
+    invoke-static {v0}, Ligz;->b(I)Ligz;
 
     move-result-object v0
 
     :goto_0
-    iput-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->g:Licf;
+    iput-object v0, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:Ligz;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/faceboxes/FaceView;->a()V
 
@@ -405,7 +375,7 @@
     :pswitch_0
     const/16 v0, 0x5a
 
-    invoke-static {v0}, Licf;->b(I)Licf;
+    invoke-static {v0}, Ligz;->b(I)Ligz;
 
     move-result-object v0
 
@@ -414,7 +384,7 @@
     :pswitch_1
     const/16 v0, 0xb4
 
-    invoke-static {v0}, Licf;->b(I)Licf;
+    invoke-static {v0}, Ligz;->b(I)Ligz;
 
     move-result-object v0
 
@@ -423,7 +393,7 @@
     :pswitch_2
     const/16 v0, 0x10e
 
-    invoke-static {v0}, Licf;->b(I)Licf;
+    invoke-static {v0}, Ligz;->b(I)Ligz;
 
     move-result-object v0
 
@@ -456,7 +426,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->h:[Landroid/hardware/camera2/params/Face;
+    iget-object v1, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->d:[Landroid/hardware/camera2/params/Face;
 
     array-length v2, v1
 
@@ -510,27 +480,27 @@
 
     move-result-object v0
 
-    check-cast v0, Lbkq;
+    check-cast v0, Lbpf;
 
     iget-object v2, p0, Lcom/google/android/apps/camera/faceboxes/FaceView;->i:Landroid/graphics/Paint;
 
-    iget v3, v0, Lbkq;->e:I
+    iget v3, v0, Lbpf;->f:I
 
     if-lez v3, :cond_1
 
-    iget v3, v0, Lbkq;->e:I
+    iget v3, v0, Lbpf;->f:I
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    iget-object v3, v0, Lbkq;->a:Lhag;
+    iget-object v3, v0, Lbpf;->a:Lhbp;
 
-    iget v3, v3, Lhag;->a:F
+    iget v3, v3, Lhbp;->a:F
 
-    iget-object v4, v0, Lbkq;->b:Lhag;
+    iget-object v4, v0, Lbpf;->b:Lhbp;
 
-    iget v4, v4, Lhag;->a:F
+    iget v4, v4, Lhbp;->a:F
 
-    iget v0, v0, Lbkq;->d:F
+    iget v0, v0, Lbpf;->e:F
 
     invoke-virtual {p1, v3, v4, v0, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 

@@ -3,149 +3,132 @@
 .source "PG"
 
 # interfaces
-.implements Ljtu;
+.implements Lihg;
 
 
 # instance fields
-.field private synthetic a:Lazd;
+.field private final synthetic a:Landroid/hardware/camera2/CameraManager;
+
+.field private final synthetic b:Layq;
+
+.field private final synthetic c:Lazr;
 
 
 # direct methods
-.method constructor <init>(Lazd;)V
+.method constructor <init>(Landroid/hardware/camera2/CameraManager;Layq;Lazr;)V
     .locals 0
 
-    iput-object p1, p0, Lazn;->a:Lazd;
+    iput-object p1, p0, Lazn;->a:Landroid/hardware/camera2/CameraManager;
+
+    iput-object p2, p0, Lazn;->b:Layq;
+
+    iput-object p3, p0, Lazn;->c:Lazr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private final a(Lbgq;)Ljuw;
-    .locals 6
 
-    iget-object v0, p0, Lazn;->a:Lazd;
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 7
 
-    iget-object v1, v0, Lazd;->s:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    monitor-enter v1
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
 
     :try_start_0
-    iget-object v2, p0, Lazn;->a:Lazd;
+    new-instance v0, Ljava/util/ArrayList;
 
-    new-instance v3, Lbcv;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p1}, Lbgq;->a()Ljht;
+    iget-object v2, p0, Lazn;->a:Landroid/hardware/camera2/CameraManager;
 
-    move-result-object v0
+    invoke-virtual {v2}, Landroid/hardware/camera2/CameraManager;->getCameraIdList()[Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v0
+    array-length v4, v3
 
-    check-cast v0, Landroid/view/Surface;
+    move v2, v1
 
-    iget-object v4, p0, Lazn;->a:Lazd;
+    :goto_0
+    if-ge v2, v4, :cond_0
 
-    iget-object v4, v4, Lazd;->n:Licn;
+    aget-object v5, v3, v2
 
-    iget-object v5, p0, Lazn;->a:Lazd;
+    iget-object v6, p0, Lazn;->b:Layq;
 
-    invoke-static {v5}, Lazd;->a(Lazd;)Lggu;
+    invoke-static {v5}, Lilb;->a(Ljava/lang/String;)Lilb;
 
     move-result-object v5
 
-    invoke-direct {v3, v0, v4, v5}, Lbcv;-><init>(Landroid/view/Surface;Licn;Lggu;)V
+    invoke-virtual {v6, v5}, Layq;->a(Lilb;)Lazp;
 
-    iput-object v3, v2, Lazd;->p:Lbcv;
+    move-result-object v5
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    iget-object v1, p0, Lazn;->a:Lazd;
-
-    iget-object v1, v1, Lazd;->j:Ljht;
-
-    invoke-virtual {v1}, Ljht;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, p0, Lazn;->a:Lazd;
-
-    iget-object v0, v0, Lazd;->j:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbfx;
-
-    invoke-interface {v0}, Lbfx;->a()Landroid/view/Surface;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljht;->b(Ljava/lang/Object;)Ljht;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    :goto_0
-    iget-object v0, p0, Lazn;->a:Lazd;
-
-    iget-object v2, v0, Lazd;->d:Lbcp;
-
-    iget-object v0, p0, Lazn;->a:Lazd;
-
-    iget-object v3, v0, Lazd;->m:Landroid/view/Surface;
-
-    invoke-virtual {p1}, Lbgq;->a()Ljht;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/Surface;
-
-    invoke-interface {v2, v3, v0, v1}, Lbcp;->a(Landroid/view/Surface;Landroid/view/Surface;Ljht;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-
-    :cond_0
-    move-object v1, v0
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
-.end method
 
+    :cond_0
+    iget-object v3, p0, Lazn;->c:Lazr;
 
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljuw;
-    .locals 1
+    iget-object v2, v3, Lazr;->a:Lazv;
 
-    check-cast p1, Lbgq;
+    iget-object v2, v2, Lazv;->a:Lcom/google/googlex/gcam/DirtyLensHistory;
 
-    invoke-direct {p0, p1}, Lazn;->a(Lbgq;)Ljuw;
+    invoke-virtual {v2}, Lcom/google/googlex/gcam/DirtyLensHistory;->Reset()V
 
-    move-result-object v0
+    check-cast v0, Ljava/util/ArrayList;
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    move v2, v1
+
+    :goto_1
+    if-ge v2, v4, :cond_2
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    add-int/lit8 v2, v2, 0x1
+
+    check-cast v1, Lazp;
+
+    iget-object v5, v3, Lazr;->a:Lazv;
+
+    invoke-virtual {v5}, Lazv;->a()Lazw;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Lazp;->a(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    :cond_1
+    :goto_2
+    return-void
+
+    :cond_2
+    iget-object v0, v3, Lazr;->b:Lbqc;
+    :try_end_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_2
 .end method

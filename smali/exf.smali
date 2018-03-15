@@ -3,42 +3,74 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Licu;
+.field private final a:Lkgv;
 
-.field private synthetic b:Leth;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Licu;Leth;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lexf;->a:Licu;
-
-    iput-object p2, p0, Lexf;->b:Leth;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lexf;->a:Lkgv;
+
+    iput-object p2, p0, Lexf;->b:Lkgv;
+
+    iput-object p3, p0, Lexf;->c:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;Lkgv;)Lexf;
+    .locals 1
+
+    new-instance v0, Lexf;
+
+    invoke-direct {v0, p0, p1, p2}, Lexf;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lexf;->a:Licu;
+    new-instance v3, Lexd;
 
-    const-string v1, "pre-initializing indicator cache"
+    iget-object v0, p0, Lexf;->a:Lkgv;
 
-    invoke-interface {v0, v1}, Licu;->e(Ljava/lang/String;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lexf;->b:Leth;
+    move-result-object v0
 
-    invoke-virtual {v0}, Leth;->a()Ljuw;
+    check-cast v0, Levy;
 
-    return-void
+    iget-object v1, p0, Lexf;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lews;
+
+    iget-object v2, p0, Lexf;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/concurrent/Executor;
+
+    invoke-direct {v3, v0, v1, v2}, Lexd;-><init>(Levy;Lews;Ljava/util/concurrent/Executor;)V
+
+    return-object v3
 .end method

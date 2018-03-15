@@ -1,83 +1,46 @@
-.class Lig;
-.super Lif;
+.class final Lig;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/view/View$OnApplyWindowInsetsListener;
+
+
+# instance fields
+.field private final synthetic a:Lhw;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lhw;)V
     .locals 0
 
-    invoke-direct {p0}, Lif;-><init>()V
+    iput-object p1, p0, Lig;->a:Lhw;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;IIII)V
-    .locals 0
+.method public final onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+    .locals 2
 
-    invoke-virtual {p1, p2, p3, p4, p5}, Landroid/view/View;->setPaddingRelative(IIII)V
-
-    return-void
-.end method
-
-.method public final k(Landroid/view/View;)I
-    .locals 1
-
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutDirection()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final l(Landroid/view/View;)I
-    .locals 1
-
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingStart()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final m(Landroid/view/View;)I
-    .locals 1
-
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingEnd()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final n(Landroid/view/View;)I
-    .locals 1
-
-    invoke-virtual {p1}, Landroid/view/View;->getWindowSystemUiVisibility()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final o(Landroid/view/View;)Z
-    .locals 1
-
-    invoke-virtual {p1}, Landroid/view/View;->isPaddingRelative()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final p(Landroid/view/View;)Landroid/view/Display;
-    .locals 1
-
-    invoke-virtual {p1}, Landroid/view/View;->getDisplay()Landroid/view/Display;
+    invoke-static {p2}, Ljj;->a(Ljava/lang/Object;)Ljj;
 
     move-result-object v0
+
+    iget-object v1, p0, Lig;->a:Lhw;
+
+    invoke-interface {v1, p1, v0}, Lhw;->a(Landroid/view/View;Ljj;)Ljj;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljj;->a(Ljj;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/WindowInsets;
 
     return-object v0
 .end method

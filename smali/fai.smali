@@ -1,93 +1,56 @@
-.class final Lfai;
-.super Leyz;
+.class public final Lfai;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfah;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfah;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfai;->a:Lfah;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Leyz;-><init>(Leyy;)V
+    iput-object p1, p0, Lfai;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final r()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfai;->a:Lfah;
+    iget-object v0, p0, Lfai;->a:Lkgv;
 
-    iget-object v0, v0, Lfah;->l:Lgvj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Leyz;->r()V
+    check-cast v0, Landroid/content/Context;
 
-    iget-object v0, p0, Lfai;->a:Lfah;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    iget-object v0, v0, Lfah;->l:Lgvj;
+    move-result-object v0
 
-    iget-object v1, p0, Lfai;->a:Lfah;
+    const v1, 0x7f1100b3
 
-    iget-object v1, v1, Lfah;->o:Lgvl;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    move-result-object v0
 
-    return-void
-.end method
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-.method public final s()V
-    .locals 2
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lfai;->a:Lfah;
+    move-result-object v0
 
-    iget-object v0, v0, Lfah;->l:Lgvj;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Leyz;->s()V
-
-    iget-object v0, p0, Lfai;->a:Lfah;
-
-    iget-object v0, v0, Lfah;->l:Lgvj;
-
-    iget-object v1, p0, Lfai;->a:Lfah;
-
-    iget-object v1, v1, Lfah;->n:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final t()V
-    .locals 2
-
-    iget-object v0, p0, Lfai;->a:Lfah;
-
-    iget-object v0, v0, Lfah;->l:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Leyz;->t()V
-
-    iget-object v0, p0, Lfai;->a:Lfah;
-
-    iget-object v0, v0, Lfah;->l:Lgvj;
-
-    iget-object v1, p0, Lfai;->a:Lfah;
-
-    iget-object v1, v1, Lfah;->p:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

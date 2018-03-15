@@ -70,7 +70,7 @@
 
     instance-of v1, v0, Landroid/widget/ShareActionProvider;
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_0
 
     new-instance v0, Landroid/widget/ShareActionProvider;
 
@@ -117,28 +117,9 @@
 
     invoke-interface {p0, v0}, Landroid/view/MenuItem;->setActionProvider(Landroid/view/ActionProvider;)Landroid/view/MenuItem;
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x10
-
-    if-ge v0, v1, :cond_0
-
-    invoke-interface {p0}, Landroid/view/MenuItem;->hasSubMenu()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Landroid/support/v4/app/ShareCompat$IntentBuilder;->createChooserIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    invoke-interface {p0, v0}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
-
-    :cond_0
     return-void
 
-    :cond_1
+    :cond_0
     check-cast v0, Landroid/widget/ShareActionProvider;
 
     goto :goto_0

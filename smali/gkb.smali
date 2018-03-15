@@ -1,59 +1,99 @@
-.class final Lgkb;
-.super Laxf;
+.class public final Lgkb;
+.super Lido;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lgka;
+.field private final a:Ljsr;
 
 
 # direct methods
-.method constructor <init>(Lgka;Lawd;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/res/Resources;Lick;)V
+    .locals 6
 
-    iput-object p1, p0, Lgkb;->a:Lgka;
+    invoke-direct {p0, p2}, Lido;-><init>(Lick;)V
 
-    invoke-direct {p0, p2}, Laxf;-><init>(Lawd;)V
+    sget-object v0, Lgka;->a:Lgka;
+
+    const v1, 0x7f1101a6
+
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    sget-object v2, Lgka;->b:Lgka;
+
+    const v3, 0x7f1101a7
+
+    invoke-virtual {p1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    sget-object v4, Lgka;->c:Lgka;
+
+    const v5, 0x7f1101a5
+
+    invoke-virtual {p1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static/range {v0 .. v5}, Ljty;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljty;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lgkb;->a:Ljsr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    invoke-super {p0}, Laxf;->close()V
+    check-cast p1, Lgka;
 
-    iget-object v0, p0, Lgkb;->a:Lgka;
+    iget-object v0, p0, Lgkb;->a:Ljsr;
 
-    iget-object v0, v0, Lgka;->d:Lgjv;
+    invoke-interface {v0, p1}, Ljsr;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, v0, Lgjv;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    monitor-enter v1
+    check-cast v0, Ljava/lang/String;
 
-    :try_start_0
-    iget-object v0, p0, Lgkb;->a:Lgka;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lgka;->d:Lgjv;
+    move-result-object v0
 
-    iget-object v0, v0, Lgjv;->c:Ljava/util/ArrayDeque;
+    check-cast v0, Ljava/lang/String;
 
-    iget-object v2, p0, Lgkb;->a:Lgka;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayDeque;->remove(Ljava/lang/Object;)Z
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    monitor-exit v1
+    check-cast p1, Ljava/lang/String;
 
-    return-void
+    iget-object v0, p0, Lgkb;->a:Ljsr;
 
-    :catchall_0
-    move-exception v0
+    invoke-interface {v0}, Ljsr;->a()Ljsr;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    throw v0
+    invoke-interface {v0, p1}, Ljsr;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgka;
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lgka;->a:Lgka;
+
+    goto :goto_0
 .end method

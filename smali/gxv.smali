@@ -1,70 +1,42 @@
-.class final synthetic Lgxv;
+.class public final Lgxv;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lgxr;
-
-.field private b:Lgxp;
-
-.field private c:Lgyc;
+.field private final a:Lgxq;
 
 
 # direct methods
-.method constructor <init>(Lgxr;Lgxp;Lgyc;)V
+.method public constructor <init>(Lgxq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxv;->a:Lgxr;
-
-    iput-object p2, p0, Lgxv;->b:Lgxp;
-
-    iput-object p3, p0, Lgxv;->c:Lgyc;
+    iput-object p1, p0, Lgxv;->a:Lgxq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 5
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lgxv;->a:Lgxr;
+    iget-object v0, p0, Lgxv;->a:Lgxq;
 
-    iget-object v1, p0, Lgxv;->b:Lgxp;
+    iget-object v0, v0, Lgxq;->b:Lgxo;
 
-    iget-object v2, p0, Lgxv;->c:Lgyc;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v3, v0, Lgxr;->j:Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    monitor-enter v3
+    move-result-object v0
 
-    const/4 v4, 0x1
+    check-cast v0, Lgxo;
 
-    :try_start_0
-    iput-boolean v4, v0, Lgxr;->i:Z
-
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v1}, Lgxp;->close()V
-
-    invoke-interface {v2}, Lgyc;->close()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-object v0
 .end method

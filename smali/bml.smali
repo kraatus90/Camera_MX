@@ -3,88 +3,68 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lbmf;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lbmf;
 
-.field private b:Ljxn;
+.field private final synthetic b:Lihn;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private final synthetic c:Lihk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lbmf;Lihn;Lihk;)V
     .locals 0
 
+    iput-object p1, p0, Lbml;->a:Lbmf;
+
+    iput-object p2, p0, Lbml;->b:Lihn;
+
+    iput-object p3, p0, Lbml;->c:Lihk;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbml;->a:Ljxn;
-
-    iput-object p2, p0, Lbml;->b:Ljxn;
-
-    iput-object p3, p0, Lbml;->c:Ljxn;
-
-    iput-object p4, p0, Lbml;->d:Ljxn;
-
-    iput-object p5, p0, Lbml;->e:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a()V
+    .locals 1
 
-    new-instance v0, Lbmd;
+    iget-object v0, p0, Lbml;->a:Lbmf;
 
-    iget-object v1, p0, Lbml;->a:Ljxn;
+    invoke-interface {v0}, Lbmf;->a()V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v1
+.method public final a(Lbmg;)V
+    .locals 4
 
-    check-cast v1, Landroid/content/res/Resources;
+    iget-object v0, p0, Lbml;->a:Lbmf;
 
-    iget-object v2, p0, Lbml;->b:Ljxn;
+    new-instance v1, Lbmm;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Lbml;->b:Lihn;
 
-    move-result-object v2
+    iget-object v3, p0, Lbml;->c:Lihk;
 
-    check-cast v2, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+    invoke-direct {v1, p1, v2, v3}, Lbmm;-><init>(Lbmg;Lihn;Lihk;)V
 
-    iget-object v3, p0, Lbml;->c:Ljxn;
+    invoke-interface {v0, v1}, Lbmf;->a(Lbmg;)V
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v3
+.method public final b()V
+    .locals 1
 
-    check-cast v3, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+    iget-object v0, p0, Lbml;->a:Lbmf;
 
-    iget-object v4, p0, Lbml;->d:Ljxn;
+    invoke-interface {v0}, Lbmf;->b()V
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lbls;
-
-    iget-object v5, p0, Lbml;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lblt;
-
-    invoke-direct/range {v0 .. v5}, Lbmd;-><init>(Landroid/content/res/Resources;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;Lbls;Lblt;)V
-
-    return-object v0
+    return-void
 .end method

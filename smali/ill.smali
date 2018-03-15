@@ -3,18 +3,28 @@
 .source "PG"
 
 # interfaces
-.implements Lilj;
+.implements Lkgv;
 
 
-# instance fields
-.field private synthetic a:Lilf;
+# static fields
+.field public static final a:Lill;
 
 
 # direct methods
-.method public constructor <init>(Lilf;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lill;->a:Lilf;
+    new-instance v0, Lill;
+
+    invoke-direct {v0}, Lill;-><init>()V
+
+    sput-object v0, Lill;->a:Lill;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,24 +33,12 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lilf;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lilh;
+    new-instance v0, Lilk;
 
-    iget-object v0, p0, Lill;->a:Lilf;
-
-    new-instance v1, Lilm;
-
-    invoke-direct {v1, p1}, Lilm;-><init>(Lilh;)V
-
-    new-instance v2, Liln;
-
-    invoke-direct {v2, p1}, Liln;-><init>(Lilh;)V
-
-    invoke-interface {v0, p2, v1, v2}, Lilf;->a(Ljava/util/concurrent/Executor;Likg;Likg;)Lilf;
-
-    move-result-object v0
+    invoke-direct {v0}, Lilk;-><init>()V
 
     return-object v0
 .end method

@@ -1,69 +1,46 @@
-.class Leyz;
-.super Lgvh;
+.class public final Leyz;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Leyy;
+
+# static fields
+.field public static final a:Leyz;
 
 
 # direct methods
-.method constructor <init>(Leyy;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iput-object p1, p0, Leyz;->a:Leyy;
+    new-instance v0, Leyz;
 
-    const/4 v0, 0x0
+    invoke-direct {v0}, Leyz;-><init>()V
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([Z)V
+    sput-object v0, Leyz;->a:Leyz;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Leyz;->a:Leyy;
+    const/4 v0, 0x6
 
-    iget-object v0, v0, Leyy;->j:Levh;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Levh;->a(Z)Z
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Leyz;->a:Leyy;
-
-    iget-object v0, v0, Leyy;->j:Levh;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Levh;->a(Z)Z
-
-    return-void
-.end method
-
-.method public r()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public s()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public t()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

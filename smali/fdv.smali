@@ -1,27 +1,20 @@
-.class public Lfdv;
-.super Lgvh;
+.class public interface abstract Lfdv;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lgvh;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Likx;
 
 
 # virtual methods
-.method public F()V
-    .locals 0
-
-    return-void
+.method public abstract a(Lihc;)Ljava/util/List;
 .end method
 
-.method public G()V
-    .locals 0
+.method public abstract v_()Ljava/util/List;
+.end method
 
-    return-void
+.method public abstract w_()Z
+.end method
+
+.method public abstract x_()Z
 .end method

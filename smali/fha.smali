@@ -1,39 +1,58 @@
 .class final Lfha;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lfhb;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Landroid/view/View;
+.field private final synthetic a:Lfgy;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;)V
+.method constructor <init>(Lfgy;)V
     .locals 0
 
-    iput-object p1, p0, Lfha;->a:Landroid/view/View;
+    iput-object p1, p0, Lfha;->a:Lfgy;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p1}, Lfhb;-><init>(Lfgy;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+.method public final a(Lfgk;)V
+    .locals 3
 
-    iget-object v0, p0, Lfha;->a:Landroid/view/View;
+    iget-object v0, p0, Lfha;->a:Lfgy;
 
-    const/4 v1, 0x0
+    iget-object v1, v0, Lfgy;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+    monitor-enter v1
 
-    iget-object v0, p0, Lfha;->a:Landroid/view/View;
+    :try_start_0
+    iget-object v0, p0, Lfha;->a:Lfgy;
 
-    const/4 v1, 0x0
+    iget v2, v0, Lfgy;->f:I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    add-int/lit8 v2, v2, -0x1
+
+    iput v2, v0, Lfgy;->f:I
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-super {p0, p1}, Lfhb;->a(Lfgk;)V
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

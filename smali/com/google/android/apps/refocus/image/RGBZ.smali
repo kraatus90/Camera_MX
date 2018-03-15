@@ -12,13 +12,13 @@
 
 .field public depthTransform:Lcom/google/android/apps/refocus/image/DepthTransform;
 
-.field public depthmapData:Lhhu;
+.field public depthmapData:Lhiq;
 
 .field public final exif:Lcom/google/android/libraries/camera/exif/ExifInterface;
 
 .field public focusSettings:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
-.field public imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+.field public imageData:Lhis;
 
 .field public lazyInputStream:Ljava/io/InputStream;
 
@@ -31,7 +31,7 @@
 
     const-string v0, "RGBZ"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -212,7 +212,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -237,7 +237,7 @@
     :cond_1
     iget-object v1, p0, Lcom/google/android/apps/refocus/image/RGBZ;->lazyInputStream:Ljava/io/InputStream;
 
-    invoke-static {v1}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;)Lxb;
+    invoke-static {v1}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;)Lwk;
 
     move-result-object v2
 
@@ -253,19 +253,19 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_1
-    invoke-static {v2}, Lhtx;->a(Lxb;)Lhtx;
+    invoke-static {v2}, Lhis;->a(Lwk;)Lhis;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+    iput-object v1, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData:Lhis;
 
-    iget-object v1, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+    iget-object v1, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData:Lhis;
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+    iget-object v1, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData:Lhis;
 
-    iget-object v3, v1, Lhtx;->b:[B
+    iget-object v3, v1, Lhis;->b:[B
 
     if-nez v3, :cond_4
 
@@ -273,27 +273,27 @@
     iput-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->bitmap:Landroid/graphics/Bitmap;
 
     :cond_2
-    invoke-static {v2}, Lhhu;->a(Lxb;)Lhhu;
+    invoke-static {v2}, Lhiq;->a(Lwk;)Lhiq;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iput-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
-    iget-object v0, v0, Lhhu;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
+    iget-object v0, v0, Lhiq;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
 
     iput-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthTransform:Lcom/google/android/apps/refocus/image/DepthTransform;
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
     iget-object v3, p0, Lcom/google/android/apps/refocus/image/RGBZ;->bitmap:Landroid/graphics/Bitmap;
 
-    iget-object v1, v0, Lhhu;->b:[B
+    iget-object v1, v0, Lhiq;->b:[B
 
     if-eqz v1, :cond_3
 
@@ -301,13 +301,13 @@
 
     :cond_3
     :goto_3
-    invoke-static {v2}, Lhpj;->a(Lxb;)Lhpj;
+    invoke-static {v2}, Lhir;->a(Lwk;)Lhir;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lhpj;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
+    iget-object v0, v0, Lhir;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
     iput-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->focusSettings:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
@@ -350,14 +350,14 @@
 
     move-result-object v1
 
-    invoke-static {v3, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
     :cond_4
-    iget-object v0, v1, Lhtx;->b:[B
+    iget-object v0, v1, Lhis;->b:[B
 
-    iget-object v1, v1, Lhtx;->b:[B
+    iget-object v1, v1, Lhis;->b:[B
 
     array-length v1, v1
 
@@ -370,7 +370,7 @@
     :cond_5
     const-string v1, "image/jpeg"
 
-    iget-object v4, v0, Lhhu;->a:Ljava/lang/String;
+    iget-object v4, v0, Lhiq;->a:Ljava/lang/String;
 
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -378,7 +378,7 @@
 
     if-eqz v1, :cond_6
 
-    iget-object v0, v0, Lhhu;->b:[B
+    iget-object v0, v0, Lhiq;->b:[B
 
     const/4 v1, 0x3
 
@@ -387,9 +387,9 @@
     goto :goto_3
 
     :cond_6
-    iget-object v1, v0, Lhhu;->b:[B
+    iget-object v1, v0, Lhiq;->b:[B
 
-    iget-object v0, v0, Lhhu;->b:[B
+    iget-object v0, v0, Lhiq;->b:[B
 
     array-length v0, v0
 
@@ -619,7 +619,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->createXMPMeta()Lxb;
+    invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->createXMPMeta()Lwk;
 
     move-result-object v2
 
@@ -633,18 +633,18 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lhpj;->a(Lcom/google/android/apps/refocus/processing/FocusSettings;)Lhpj;
+    invoke-static {v0}, Lhir;->a(Lcom/google/android/apps/refocus/processing/FocusSettings;)Lhir;
 
     move-result-object v0
 
-    invoke-static {}, Lhpj;->a()V
+    invoke-static {}, Lhir;->a()V
 
     :try_start_0
     const-string v3, "http://ns.google.com/photos/1.0/focus/"
 
     const-string v4, "BlurAtInfinity"
 
-    iget-object v5, v0, Lhpj;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
+    iget-object v5, v0, Lhir;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
     iget v5, v5, Lcom/google/android/apps/refocus/processing/FocusSettings;->blurAtInfinity:F
 
@@ -652,13 +652,13 @@
 
     move-result-object v5
 
-    invoke-interface {v2, v3, v4, v5}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v3, v4, v5}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string v3, "http://ns.google.com/photos/1.0/focus/"
 
     const-string v4, "FocalDistance"
 
-    iget-object v5, v0, Lhpj;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
+    iget-object v5, v0, Lhir;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
     iget v5, v5, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalDistance:F
 
@@ -666,13 +666,13 @@
 
     move-result-object v5
 
-    invoke-interface {v2, v3, v4, v5}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v3, v4, v5}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string v3, "http://ns.google.com/photos/1.0/focus/"
 
     const-string v4, "DepthOfField"
 
-    iget-object v5, v0, Lhpj;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
+    iget-object v5, v0, Lhir;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
     iget v5, v5, Lcom/google/android/apps/refocus/processing/FocusSettings;->depthOfField:F
 
@@ -680,13 +680,13 @@
 
     move-result-object v5
 
-    invoke-interface {v2, v3, v4, v5}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v3, v4, v5}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string v3, "http://ns.google.com/photos/1.0/focus/"
 
     const-string v4, "FocalPointX"
 
-    iget-object v5, v0, Lhpj;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
+    iget-object v5, v0, Lhir;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
     iget v5, v5, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalPointX:F
 
@@ -694,13 +694,13 @@
 
     move-result-object v5
 
-    invoke-interface {v2, v3, v4, v5}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v3, v4, v5}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string v3, "http://ns.google.com/photos/1.0/focus/"
 
     const-string v4, "FocalPointY"
 
-    iget-object v0, v0, Lhpj;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
+    iget-object v0, v0, Lhir;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
     iget v0, v0, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalPointY:F
 
@@ -708,17 +708,17 @@
 
     move-result-object v0
 
-    invoke-interface {v2, v3, v4, v0}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v3, v4, v0}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_0
-    .catch Lwz; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_0
     :goto_0
-    invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->createXMPMeta()Lxb;
+    invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->createXMPMeta()Lwk;
 
     move-result-object v3
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData:Lhis;
 
     if-nez v0, :cond_1
 
@@ -726,17 +726,17 @@
 
     const-string v4, "Encoding image data"
 
-    invoke-static {v0, v4}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->bitmap:Landroid/graphics/Bitmap;
 
-    new-instance v4, Lhtx;
+    new-instance v4, Lhis;
 
-    invoke-direct {v4}, Lhtx;-><init>()V
+    invoke-direct {v4}, Lhis;-><init>()V
 
     const-string v5, "image/jpeg"
 
-    iput-object v5, v4, Lhtx;->a:Ljava/lang/String;
+    iput-object v5, v4, Lhis;->a:Ljava/lang/String;
 
     const/16 v5, 0x55
 
@@ -744,18 +744,18 @@
 
     move-result-object v0
 
-    iput-object v0, v4, Lhtx;->b:[B
+    iput-object v0, v4, Lhis;->b:[B
 
-    iput-object v4, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+    iput-object v4, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData:Lhis;
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData:Lhis;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFE9IMCRR3ELPIURB5EHGM8OBKC4NKEIBDC5JMAEO_0:Lhtx;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->imageData:Lhis;
 
-    invoke-static {}, Lhtx;->a()V
+    invoke-static {}, Lhis;->a()V
 
     :try_start_1
     const-string v4, "http://ns.google.com/photos/1.0/image/"
@@ -764,17 +764,17 @@
 
     const-string v6, "image/jpeg"
 
-    invoke-interface {v2, v4, v5, v6}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v4, v5, v6}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string v4, "http://ns.google.com/photos/1.0/image/"
 
     const-string v5, "Data"
 
-    iget-object v0, v0, Lhtx;->b:[B
+    iget-object v0, v0, Lhis;->b:[B
 
-    invoke-interface {v3, v4, v5, v0}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;[B)V
+    invoke-interface {v3, v4, v5, v0}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;[B)V
     :try_end_1
-    .catch Lwz; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Lwi; {:try_start_1 .. :try_end_1} :catch_1
 
     :cond_2
     :goto_1
@@ -784,7 +784,7 @@
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
     if-nez v0, :cond_3
 
@@ -792,20 +792,20 @@
 
     const-string v4, "Encoding depth data"
 
-    invoke-static {v0, v4}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {p0}, Lhhu;->a(Lcom/google/android/apps/refocus/image/RGBZ;)Lhhu;
+    invoke-static {p0}, Lhiq;->a(Lcom/google/android/apps/refocus/image/RGBZ;)Lhiq;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iput-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
     :cond_3
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhhu;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/image/RGBZ;->depthmapData:Lhiq;
 
     invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/GDepthUtil;->initialize()V
 
@@ -814,19 +814,19 @@
 
     const-string v5, "Format"
 
-    iget-object v6, v0, Lhhu;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
+    iget-object v6, v0, Lhiq;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
 
     invoke-interface {v6}, Lcom/google/android/apps/refocus/image/DepthTransform;->getFormat()Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-interface {v2, v4, v5, v6}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v4, v5, v6}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string v4, "http://ns.google.com/photos/1.0/depthmap/"
 
     const-string v5, "Near"
 
-    iget-object v6, v0, Lhhu;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
+    iget-object v6, v0, Lhiq;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
 
     invoke-interface {v6}, Lcom/google/android/apps/refocus/image/DepthTransform;->getNear()F
 
@@ -834,13 +834,13 @@
 
     float-to-double v6, v6
 
-    invoke-interface {v2, v4, v5, v6, v7}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;D)V
+    invoke-interface {v2, v4, v5, v6, v7}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;D)V
 
     const-string v4, "http://ns.google.com/photos/1.0/depthmap/"
 
     const-string v5, "Far"
 
-    iget-object v6, v0, Lhhu;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
+    iget-object v6, v0, Lhiq;->c:Lcom/google/android/apps/refocus/image/DepthTransform;
 
     invoke-interface {v6}, Lcom/google/android/apps/refocus/image/DepthTransform;->getFar()F
 
@@ -848,25 +848,25 @@
 
     float-to-double v6, v6
 
-    invoke-interface {v2, v4, v5, v6, v7}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;D)V
+    invoke-interface {v2, v4, v5, v6, v7}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;D)V
 
     const-string v4, "http://ns.google.com/photos/1.0/depthmap/"
 
     const-string v5, "Mime"
 
-    iget-object v6, v0, Lhhu;->a:Ljava/lang/String;
+    iget-object v6, v0, Lhiq;->a:Ljava/lang/String;
 
-    invoke-interface {v2, v4, v5, v6}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v2, v4, v5, v6}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string v4, "http://ns.google.com/photos/1.0/depthmap/"
 
     const-string v5, "Data"
 
-    iget-object v0, v0, Lhhu;->b:[B
+    iget-object v0, v0, Lhiq;->b:[B
 
-    invoke-interface {v3, v4, v5, v0}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;[B)V
+    invoke-interface {v3, v4, v5, v0}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;[B)V
     :try_end_2
-    .catch Lwz; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Lwi; {:try_start_2 .. :try_end_2} :catch_2
 
     :cond_4
     :goto_2
@@ -876,16 +876,16 @@
 
     if-eqz v0, :cond_6
 
-    sget-object v0, Lbnv;->b:Lbnv;
+    sget-object v0, Lbst;->b:Lbst;
 
-    invoke-virtual {v0}, Lbnv;->name()Ljava/lang/String;
+    invoke-virtual {v0}, Lbst;->f()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lfva;->a(Lxb;Ljava/lang/String;)Z
+    invoke-static {v2, v0}, Lepy;->a(Lwk;Ljava/lang/String;)Z
 
     :goto_3
-    invoke-static {v1, p3, v2, v3}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->writeXMPMeta(Ljava/io/InputStream;Ljava/io/OutputStream;Lxb;Lxb;)Z
+    invoke-static {v1, p3, v2, v3}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->writeXMPMeta(Ljava/io/InputStream;Ljava/io/OutputStream;Lwk;Lwk;)Z
 
     move-result v0
 
@@ -895,7 +895,7 @@
 
     const-string v1, "failed to write xmp data"
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_5
     return-void
@@ -903,27 +903,27 @@
     :catch_0
     move-exception v0
 
-    sget-object v3, Ljvs;->a:Ljvt;
+    sget-object v3, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v3, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v3, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto/16 :goto_0
 
     :catch_1
     move-exception v0
 
-    sget-object v4, Ljvs;->a:Ljvt;
+    sget-object v4, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v4, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v4, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1
 
     :catch_2
     move-exception v0
 
-    sget-object v4, Ljvs;->a:Ljvt;
+    sget-object v4, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v4, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v4, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto :goto_2
 
@@ -932,7 +932,7 @@
 
     const-string v4, "no depth map exists for current image"
 
-    invoke-static {v0, v4}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_3
 .end method

@@ -1,103 +1,289 @@
-.class abstract Ldre;
+.class final Ldre;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lghd;
+.implements Lick;
+.implements Lihg;
+
+
+# instance fields
+.field private final a:Lihn;
+
+.field private final b:J
+
+.field private final c:Libw;
+
+.field private final d:Lfdv;
+
+.field private e:J
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "AutoFlashIndicator"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    return-void
+.end method
+
+.method constructor <init>(Liho;Lfdv;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, p2, v0}, Ldre;-><init>(Liho;Lfdv;B)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Liho;Lfdv;B)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, "AutoFlashIndicator"
+
+    invoke-interface {p1, v0}, Liho;->a(Ljava/lang/String;)Lihn;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldre;->a:Lihn;
+
+    const-wide/16 v0, 0x1e
+
+    iput-wide v0, p0, Ldre;->b:J
+
+    iput-object p2, p0, Ldre;->d:Lfdv;
+
+    new-instance v0, Libw;
+
+    invoke-interface {p2}, Lfdv;->y()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Ldre;->c:Libw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a()Lghd;
-.end method
-
-.method public final c()Ljava/util/LinkedList;
+.method public final a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
     .locals 1
 
-    invoke-virtual {p0}, Ldre;->a()Lghd;
+    iget-object v0, p0, Ldre;->c:Libw;
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lghd;->c()Ljava/util/LinkedList;
+    invoke-virtual {v0, p1, p2}, Libw;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public close()V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 8
 
-    invoke-virtual {p0}, Ldre;->a()Lghd;
+    const/4 v7, 0x1
 
-    move-result-object v0
+    const/4 v6, 0x0
 
-    invoke-interface {v0}, Lghd;->close()V
+    check-cast p1, Lind;
 
-    return-void
-.end method
+    iget-object v0, p0, Ldre;->d:Lfdv;
 
-.method public final d()J
-    .locals 2
-
-    invoke-virtual {p0}, Ldre;->a()Lghd;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lghd;->d()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final e()Ljuw;
-    .locals 1
-
-    invoke-virtual {p0}, Ldre;->a()Lghd;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lghd;->e()Ljuw;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final f()I
-    .locals 1
-
-    invoke-virtual {p0}, Ldre;->a()Lghd;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lghd;->f()I
+    invoke-interface {v0}, Lfdv;->y()Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_2
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    if-eqz v0, :cond_2
+
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljre;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    iget-object v0, p0, Ldre;->c:Libw;
+
+    invoke-virtual {v0}, Libw;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ldre;->a:Lihn;
+
+    const-string v1, "Flash required"
+
+    invoke-interface {v0, v1}, Lihn;->b(Ljava/lang/String;)V
+
+    :cond_0
+    invoke-interface {p1}, Lind;->c()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ldre;->e:J
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Ldre;->c:Libw;
+
+    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
+
+    :cond_2
+    :goto_1
+    return-void
+
+    :cond_3
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljre;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p0, Ldre;->c:Libw;
+
+    invoke-virtual {v0}, Libw;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Ldre;->a:Lihn;
+
+    const-string v1, "Flash not required"
+
+    invoke-interface {v0, v1}, Lihn;->b(Ljava/lang/String;)V
+
+    :cond_4
+    invoke-interface {p1}, Lind;->c()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ldre;->e:J
+
+    iget-object v0, p0, Ldre;->c:Libw;
+
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_5
+    iget-wide v0, p0, Ldre;->e:J
+
+    iget-wide v2, p0, Ldre;->b:J
+
+    add-long/2addr v0, v2
+
+    invoke-interface {p1}, Lind;->c()J
+
+    move-result-wide v2
+
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_2
+
+    iget-object v0, p0, Ldre;->c:Libw;
+
+    invoke-virtual {v0}, Libw;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Ldre;->a:Lihn;
+
+    const-string v1, "No converged AE result for %d frames, falling back to single-image auto-flash photo"
+
+    new-array v2, v7, [Ljava/lang/Object;
+
+    iget-wide v4, p0, Ldre;->b:J
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    aput-object v3, v2, v6
+
+    const/4 v3, 0x0
+
+    invoke-static {v3, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lihn;->f(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method
 
-.method public final k_()Liil;
+.method public final synthetic c()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Ldre;->a()Lghd;
+    iget-object v0, p0, Ldre;->c:Libw;
+
+    invoke-virtual {v0}, Libw;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lghd;->k_()Liil;
-
-    move-result-object v0
+    check-cast v0, Ljava/lang/Boolean;
 
     return-object v0
 .end method

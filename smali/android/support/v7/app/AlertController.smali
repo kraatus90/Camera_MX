@@ -6,7 +6,7 @@
 # instance fields
 .field public final a:Landroid/content/Context;
 
-.field public final b:Lnf;
+.field public final b:Lmz;
 
 .field public final c:Landroid/view/Window;
 
@@ -50,7 +50,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lnf;Landroid/view/Window;)V
+.method public constructor <init>(Landroid/content/Context;Lmz;Landroid/view/Window;)V
     .locals 5
 
     const/4 v4, 0x1
@@ -63,35 +63,35 @@
 
     iput v0, p0, Landroid/support/v7/app/AlertController;->p:I
 
-    new-instance v0, Llv;
+    new-instance v0, Lls;
 
-    invoke-direct {v0, p0}, Llv;-><init>(Landroid/support/v7/app/AlertController;)V
+    invoke-direct {v0, p0}, Lls;-><init>(Landroid/support/v7/app/AlertController;)V
 
     iput-object v0, p0, Landroid/support/v7/app/AlertController;->v:Landroid/view/View$OnClickListener;
 
     iput-object p1, p0, Landroid/support/v7/app/AlertController;->a:Landroid/content/Context;
 
-    iput-object p2, p0, Landroid/support/v7/app/AlertController;->b:Lnf;
+    iput-object p2, p0, Landroid/support/v7/app/AlertController;->b:Lmz;
 
     iput-object p3, p0, Landroid/support/v7/app/AlertController;->c:Landroid/view/Window;
 
-    new-instance v0, Lma;
+    new-instance v0, Llv;
 
-    invoke-direct {v0, p2}, Lma;-><init>(Landroid/content/DialogInterface;)V
+    invoke-direct {v0, p2}, Llv;-><init>(Landroid/content/DialogInterface;)V
 
     iput-object v0, p0, Landroid/support/v7/app/AlertController;->u:Landroid/os/Handler;
 
     const/4 v0, 0x0
 
-    sget-object v1, Lnr;->D:[I
+    sget-object v1, Lnm;->D:[I
 
-    const v2, 0x7f010097
+    const v2, 0x7f0100cb
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    sget v1, Lnr;->E:I
+    sget v1, Lnm;->E:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -99,11 +99,11 @@
 
     iput v1, p0, Landroid/support/v7/app/AlertController;->q:I
 
-    sget v1, Lnr;->F:I
+    sget v1, Lnm;->G:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    sget v1, Lnr;->H:I
+    sget v1, Lnm;->I:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -111,15 +111,15 @@
 
     iput v1, p0, Landroid/support/v7/app/AlertController;->r:I
 
-    sget v1, Lnr;->I:I
+    sget v1, Lnm;->J:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    sget v1, Lnr;->K:I
+    sget v1, Lnm;->L:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    sget v1, Lnr;->G:I
+    sget v1, Lnm;->H:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -127,7 +127,7 @@
 
     iput v1, p0, Landroid/support/v7/app/AlertController;->s:I
 
-    sget v1, Lnr;->J:I
+    sget v1, Lnm;->K:I
 
     invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -135,13 +135,17 @@
 
     iput-boolean v1, p0, Landroid/support/v7/app/AlertController;->t:Z
 
+    sget v1, Lnm;->F:I
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-virtual {p2}, Lnf;->a()Lmg;
+    invoke-virtual {p2}, Lmz;->d()Lmb;
 
     move-result-object v0
 
-    invoke-virtual {v0, v4}, Lmg;->c(I)Z
+    invoke-virtual {v0, v4}, Lmb;->c(I)Z
 
     return-void
 .end method
@@ -207,56 +211,6 @@
     move-object v0, p1
 
     goto :goto_0
-.end method
-
-.method public static a(Landroid/view/View;Landroid/view/View;Landroid/view/View;)V
-    .locals 3
-
-    const/4 v2, 0x4
-
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_0
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->canScrollVertically(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    move v0, v1
-
-    :goto_0
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_0
-    if-eqz p2, :cond_1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->canScrollVertically(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    :goto_1
-    invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_1
-    return-void
-
-    :cond_2
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_3
-    move v1, v2
-
-    goto :goto_1
 .end method
 
 .method public static a(Landroid/widget/Button;)V

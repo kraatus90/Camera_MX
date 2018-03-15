@@ -1,130 +1,122 @@
-.class final synthetic Ljww;
-.super Ljava/lang/Object;
+.class Ljww;
+.super Ljwq;
 .source "PG"
+
+# interfaces
+.implements Ljava/util/Set;
 
 
 # static fields
-.field public static final synthetic a:[I
+.field public static final serialVersionUID:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Ljava/util/Set;Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-static {}, Landroid/widget/ImageView$ScaleType;->values()[Landroid/widget/ImageView$ScaleType;
+    invoke-direct {p0, p1, p2}, Ljwq;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method synthetic a()Ljava/util/Collection;
+    .locals 1
+
+    invoke-virtual {p0}, Ljww;->d()Ljava/util/Set;
 
     move-result-object v0
 
-    array-length v0, v0
+    return-object v0
+.end method
 
-    new-array v0, v0, [I
+.method synthetic b()Ljava/lang/Object;
+    .locals 1
 
-    sput-object v0, Ljww;->a:[I
+    invoke-virtual {p0}, Ljww;->d()Ljava/util/Set;
 
-    :try_start_0
-    sget-object v0, Ljww;->a:[I
+    move-result-object v0
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    return-object v0
+.end method
 
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+.method d()Ljava/util/Set;
+    .locals 1
 
-    move-result v1
+    invoke-super {p0}, Ljwq;->a()Ljava/util/Collection;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_4
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    if-ne p1, p0, :cond_0
+
+    const/4 v0, 0x1
 
     :goto_0
-    :try_start_1
-    sget-object v0, Ljww;->a:[I
+    return v0
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
+    :cond_0
+    iget-object v1, p0, Ljww;->a:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
+    monitor-enter v1
 
-    move-result v1
+    :try_start_0
+    invoke-virtual {p0}, Ljww;->d()Ljava/util/Set;
 
-    const/4 v2, 0x2
+    move-result-object v0
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_3
+    invoke-interface {v0, p1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
 
-    :goto_1
-    :try_start_2
-    sget-object v0, Ljww;->a:[I
+    move-result v0
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Ljww;->a:[I
-
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_1
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Ljww;->a:[I
-
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView$ScaleType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_0
-
-    :goto_4
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_4
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_3
-
-    :catch_2
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_3
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_4
-    move-exception v0
+    monitor-exit v1
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public hashCode()I
+    .locals 2
+
+    iget-object v1, p0, Ljww;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljww;->d()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->hashCode()I
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

@@ -1,253 +1,372 @@
-.class public final Loh;
+.class public abstract Loh;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lpi;
+
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public a:Landroid/content/Context;
 
-.field public b:Ljm;
+.field public b:Landroid/content/Context;
 
-.field public c:Z
+.field public c:Lot;
 
-.field private d:J
+.field public d:Lpj;
 
-.field private e:Landroid/view/animation/Interpolator;
+.field public e:Lpk;
 
-.field private f:Ljn;
+.field private f:Landroid/view/LayoutInflater;
+
+.field private g:I
+
+.field private h:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v0, -0x1
+    iput-object p1, p0, Loh;->a:Landroid/content/Context;
 
-    iput-wide v0, p0, Loh;->d:J
+    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    new-instance v0, Loi;
+    move-result-object v0
 
-    invoke-direct {v0, p0}, Loi;-><init>(Loh;)V
+    iput-object v0, p0, Loh;->f:Landroid/view/LayoutInflater;
 
-    iput-object v0, p0, Loh;->f:Ljn;
+    const v0, 0x7f040003
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput v0, p0, Loh;->g:I
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    const v0, 0x7f040002
 
-    iput-object v0, p0, Loh;->a:Ljava/util/ArrayList;
+    iput v0, p0, Loh;->h:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/animation/Interpolator;)Loh;
-    .locals 1
+.method public a(Lox;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 3
 
-    iget-boolean v0, p0, Loh;->c:Z
-
-    if-nez v0, :cond_0
-
-    iput-object p1, p0, Loh;->e:Landroid/view/animation/Interpolator;
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public final a(Lji;)Loh;
-    .locals 1
-
-    iget-boolean v0, p0, Loh;->c:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Loh;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public final a(Ljm;)Loh;
-    .locals 1
-
-    iget-boolean v0, p0, Loh;->c:Z
-
-    if-nez v0, :cond_0
-
-    iput-object p1, p0, Loh;->b:Ljm;
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public final a()V
-    .locals 10
-
-    iget-boolean v0, p0, Loh;->c:Z
+    instance-of v0, p2, Lpl;
 
     if-eqz v0, :cond_0
 
+    check-cast p2, Lpl;
+
+    move-object v0, p2
+
     :goto_0
-    return-void
+    invoke-virtual {p0, p1, v0}, Loh;->a(Lox;Lpl;)V
+
+    check-cast v0, Landroid/view/View;
+
+    return-object v0
 
     :cond_0
-    iget-object v0, p0, Loh;->a:Ljava/util/ArrayList;
+    iget-object v0, p0, Loh;->f:Landroid/view/LayoutInflater;
 
-    check-cast v0, Ljava/util/ArrayList;
+    iget v1, p0, Loh;->h:I
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    const/4 v2, 0x0
 
-    move-result v4
+    invoke-virtual {v0, v1, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    move v2, v1
+    check-cast v0, Lpl;
 
-    :goto_1
-    if-ge v2, v4, :cond_5
+    goto :goto_0
+.end method
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+.method public a(Landroid/view/ViewGroup;)Lpk;
+    .locals 3
 
-    move-result-object v1
+    iget-object v0, p0, Loh;->e:Lpk;
 
-    add-int/lit8 v3, v2, 0x1
+    if-nez v0, :cond_0
 
-    check-cast v1, Lji;
+    iget-object v0, p0, Loh;->f:Landroid/view/LayoutInflater;
 
-    iget-wide v6, p0, Loh;->d:J
+    iget v1, p0, Loh;->g:I
 
-    const-wide/16 v8, 0x0
+    const/4 v2, 0x0
 
-    cmp-long v2, v6, v8
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    if-ltz v2, :cond_1
+    move-result-object v0
 
-    iget-wide v6, p0, Loh;->d:J
+    check-cast v0, Lpk;
 
-    invoke-virtual {v1, v6, v7}, Lji;->a(J)Lji;
+    iput-object v0, p0, Loh;->e:Lpk;
 
-    :cond_1
-    iget-object v2, p0, Loh;->e:Landroid/view/animation/Interpolator;
+    iget-object v0, p0, Loh;->e:Lpk;
 
-    if-eqz v2, :cond_2
+    iget-object v1, p0, Loh;->c:Lot;
 
-    iget-object v5, p0, Loh;->e:Landroid/view/animation/Interpolator;
+    invoke-interface {v0, v1}, Lpk;->a(Lot;)V
 
-    iget-object v2, v1, Lji;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/View;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v5}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    :cond_2
-    iget-object v2, p0, Loh;->b:Ljm;
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Loh;->f:Ljn;
-
-    invoke-virtual {v1, v2}, Lji;->a(Ljm;)Lji;
-
-    :cond_3
-    iget-object v1, v1, Lji;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/View;
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    :cond_4
-    move v2, v3
-
-    goto :goto_1
-
-    :cond_5
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Loh;->c:Z
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 5
-
-    const/4 v3, 0x0
-
-    iget-boolean v0, p0, Loh;->c:Z
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
+    invoke-virtual {p0, v0}, Loh;->a(Z)V
 
     :cond_0
-    iget-object v0, p0, Loh;->a:Ljava/util/ArrayList;
+    iget-object v0, p0, Loh;->e:Lpk;
 
-    check-cast v0, Ljava/util/ArrayList;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+.method public a(Landroid/content/Context;Lot;)V
+    .locals 1
 
-    move-result v4
+    iput-object p1, p0, Loh;->b:Landroid/content/Context;
 
-    move v2, v3
+    iget-object v0, p0, Loh;->b:Landroid/content/Context;
 
-    :goto_1
-    if-ge v2, v4, :cond_1
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    iput-object p2, p0, Loh;->c:Lot;
+
+    return-void
+.end method
+
+.method public a(Lot;Z)V
+    .locals 1
+
+    iget-object v0, p0, Loh;->d:Lpj;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Loh;->d:Lpj;
+
+    invoke-interface {v0, p1, p2}, Lpj;->a(Lot;Z)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public abstract a(Lox;Lpl;)V
+.end method
+
+.method public final a(Lpj;)V
+    .locals 0
+
+    iput-object p1, p0, Loh;->d:Lpj;
+
+    return-void
+.end method
+
+.method public a(Z)V
+    .locals 10
+
+    const/4 v5, 0x0
+
+    iget-object v0, p0, Loh;->e:Lpk;
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    return-void
+
+    :cond_1
+    iget-object v1, p0, Loh;->c:Lot;
+
+    if-eqz v1, :cond_8
+
+    iget-object v1, p0, Loh;->c:Lot;
+
+    invoke-virtual {v1}, Lot;->i()V
+
+    iget-object v1, p0, Loh;->c:Lot;
+
+    invoke-virtual {v1}, Lot;->h()Ljava/util/ArrayList;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+
+    move-result v8
+
+    move v6, v5
+
+    move v4, v5
+
+    :goto_0
+    if-ge v6, v8, :cond_6
+
+    invoke-virtual {v7, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    add-int/lit8 v2, v2, 0x1
+    check-cast v1, Lox;
 
-    check-cast v1, Lji;
+    invoke-virtual {p0, v1}, Loh;->a(Lox;)Z
 
-    invoke-virtual {v1}, Lji;->a()V
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v3
+
+    instance-of v2, v3, Lpl;
+
+    if-eqz v2, :cond_5
+
+    move-object v2, v3
+
+    check-cast v2, Lpl;
+
+    invoke-interface {v2}, Lpl;->a()Lox;
+
+    move-result-object v2
+
+    :goto_1
+    invoke-virtual {p0, v1, v3, v0}, Loh;->a(Lox;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v9
+
+    if-eq v1, v2, :cond_2
+
+    invoke-virtual {v9, v5}, Landroid/view/View;->setPressed(Z)V
+
+    invoke-virtual {v9}, Landroid/view/View;->jumpDrawablesToCurrentState()V
+
+    :cond_2
+    if-eq v9, v3, :cond_4
+
+    invoke-virtual {v9}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewGroup;
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v1, v9}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    :cond_3
+    iget-object v1, p0, Loh;->e:Lpk;
+
+    check-cast v1, Landroid/view/ViewGroup;
+
+    invoke-virtual {v1, v9, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
+
+    :cond_4
+    add-int/lit8 v1, v4, 0x1
+
+    :goto_2
+    add-int/lit8 v2, v6, 0x1
+
+    move v6, v2
+
+    move v4, v1
+
+    goto :goto_0
+
+    :cond_5
+    const/4 v2, 0x0
 
     goto :goto_1
 
-    :cond_1
-    iput-boolean v3, p0, Loh;->c:Z
+    :cond_6
+    :goto_3
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v1
+
+    if-ge v4, v1, :cond_0
+
+    invoke-virtual {p0, v0, v4}, Loh;->a(Landroid/view/ViewGroup;I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_3
+
+    :cond_7
+    move v1, v4
+
+    goto :goto_2
+
+    :cond_8
+    move v4, v5
+
+    goto :goto_3
+.end method
+
+.method public a()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public a(Landroid/view/ViewGroup;I)Z
+    .locals 1
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeViewAt(I)V
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public a(Lox;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public a(Lpr;)Z
+    .locals 1
+
+    iget-object v0, p0, Loh;->d:Lpj;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Loh;->d:Lpj;
+
+    invoke-interface {v0, p1}, Lpj;->a(Lot;)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public final c()Loh;
-    .locals 2
+.method public final b(Lox;)Z
+    .locals 1
 
-    iget-boolean v0, p0, Loh;->c:Z
+    const/4 v0, 0x0
 
-    if-nez v0, :cond_0
+    return v0
+.end method
 
-    const-wide/16 v0, 0xfa
+.method public final c(Lox;)Z
+    .locals 1
 
-    iput-wide v0, p0, Loh;->d:J
+    const/4 v0, 0x0
 
-    :cond_0
-    return-object p0
+    return v0
 .end method

@@ -1,41 +1,41 @@
-.class final Lcdp;
-.super Likn;
-.source "PG"
+.class final synthetic Lcdp;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcdw;
 
 
-# instance fields
-.field private a:Leou;
+# static fields
+.field public static final a:Lcdw;
 
 
 # direct methods
-.method public constructor <init>(Leou;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcdp;
+
+    invoke-direct {v0}, Lcdp;-><init>()V
+
+    sput-object v0, Lcdp;->a:Lcdw;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Likn;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lcdp;->a:Leou;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 1
+.method public final a(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    .locals 0
 
-    check-cast p1, Lany;
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lcdp;->a:Leou;
-
-    invoke-interface {v0, p1}, Leou;->a(Lany;)V
-
-    iget-object v0, p0, Lcdp;->a:Leou;
-
-    invoke-interface {v0, p1}, Leou;->b(Lany;)V
+    invoke-static {p1}, Lcdj;->a(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     return-void
 .end method

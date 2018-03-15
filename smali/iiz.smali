@@ -1,70 +1,27 @@
-.class public final Liiz;
-.super Ljava/lang/Object;
+.class final Liiz;
+.super Liij;
 .source "PG"
-
-# interfaces
-.implements Liiw;
-
-
-# instance fields
-.field private volatile a:I
-
-.field private synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    iput p1, p0, Liiz;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget v0, p0, Liiz;->b:I
-
-    iput v0, p0, Liiz;->a:I
+    invoke-direct {p0}, Liij;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final a(Limz;)V
     .locals 1
 
-    iget v0, p0, Liiz;->a:I
+    new-instance v0, Lija;
 
-    return v0
-.end method
+    invoke-direct {v0, p0, p1}, Lija;-><init>(Liiz;Limz;)V
 
-.method public final a(I)Z
-    .locals 1
+    invoke-super {p0, v0}, Liij;->a(Limz;)V
 
-    iput p1, p0, Liiz;->a:I
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final a(Ljnj;)Z
-    .locals 2
-
-    invoke-interface {p1}, Ljnj;->size()I
-
-    move-result v0
-
-    iget v1, p0, Liiz;->a:I
-
-    if-le v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

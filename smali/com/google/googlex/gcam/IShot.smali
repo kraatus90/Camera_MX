@@ -90,7 +90,7 @@
 
     move-object/from16 v13, p5
 
-    invoke-static/range {v0 .. v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->IShot_AddMeteringFrame__SWIG_1(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)Z
+    invoke-static/range {v0 .. v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->IShot_AddMeteringFrame(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -106,64 +106,6 @@
     monitor-exit p0
 
     throw v0
-.end method
-
-.method public declared-synchronized AddMeteringFrame(Lcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/YuvWriteView;JLcom/google/googlex/gcam/RawWriteView;Lcom/google/googlex/gcam/SpatialGainMap;)Z
-    .locals 21
-
-    monitor-enter p0
-
-    :try_start_0
-    move-object/from16 v0, p0
-
-    iget-wide v2, v0, Lcom/google/googlex/gcam/IShot;->swigCPtr:J
-
-    invoke-static/range {p1 .. p1}, Lcom/google/googlex/gcam/FrameMetadata;->getCPtr(Lcom/google/googlex/gcam/FrameMetadata;)J
-
-    move-result-wide v5
-
-    invoke-static/range {p4 .. p4}, Lcom/google/googlex/gcam/YuvWriteView;->getCPtr(Lcom/google/googlex/gcam/YuvWriteView;)J
-
-    move-result-wide v10
-
-    invoke-static/range {p7 .. p7}, Lcom/google/googlex/gcam/RawWriteView;->getCPtr(Lcom/google/googlex/gcam/RawWriteView;)J
-
-    move-result-wide v15
-
-    invoke-static/range {p8 .. p8}, Lcom/google/googlex/gcam/SpatialGainMap;->getCPtr(Lcom/google/googlex/gcam/SpatialGainMap;)J
-
-    move-result-wide v18
-
-    move-object/from16 v4, p0
-
-    move-object/from16 v7, p1
-
-    move-wide/from16 v8, p2
-
-    move-object/from16 v12, p4
-
-    move-wide/from16 v13, p5
-
-    move-object/from16 v17, p7
-
-    move-object/from16 v20, p8
-
-    invoke-static/range {v2 .. v20}, Lcom/google/googlex/gcam/GcamModuleJNI;->IShot_AddMeteringFrame__SWIG_0(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JJLcom/google/googlex/gcam/YuvWriteView;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    monitor-exit p0
-
-    return v2
-
-    :catchall_0
-    move-exception v2
-
-    monitor-exit p0
-
-    throw v2
 .end method
 
 .method public declared-synchronized AddPayloadFrame(Lcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/InterleavedWriteViewU16;Lcom/google/googlex/gcam/SpatialGainMap;)Z
@@ -390,39 +332,7 @@
 
     iget-wide v2, p0, Lcom/google/googlex/gcam/IShot;->swigCPtr:J
 
-    invoke-static {v2, v3, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->IShot_EndMeteringFrames__SWIG_1(JLcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/BurstSpec;-><init>(JZ)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized EndMeteringFrames(F)Lcom/google/googlex/gcam/BurstSpec;
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v0, Lcom/google/googlex/gcam/BurstSpec;
-
-    iget-wide v2, p0, Lcom/google/googlex/gcam/IShot;->swigCPtr:J
-
-    invoke-static {v2, v3, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->IShot_EndMeteringFrames__SWIG_0(JLcom/google/googlex/gcam/IShot;F)J
+    invoke-static {v2, v3, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->IShot_EndMeteringFrames(JLcom/google/googlex/gcam/IShot;)J
 
     move-result-wide v2
 

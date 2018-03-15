@@ -1,108 +1,71 @@
-.class public final Lfis;
+.class final Lfis;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
+.field private final synthetic a:Lfiq;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lfiq;)V
     .locals 0
 
+    iput-object p1, p0, Lfis;->a:Lfiq;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfis;->a:Ljxn;
-
-    iput-object p2, p0, Lfis;->b:Ljxn;
-
-    iput-object p3, p0, Lfis;->c:Ljxn;
-
-    iput-object p4, p0, Lfis;->d:Ljxn;
-
-    iput-object p5, p0, Lfis;->e:Ljxn;
-
-    iput-object p6, p0, Lfis;->f:Ljxn;
-
-    iput-object p7, p0, Lfis;->g:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 8
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
 
-    new-instance v0, Lfip;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    iget-object v1, p0, Lfis;->a:Ljxn;
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    throw v0
+.end method
 
-    move-result-object v1
+.method public final b_(Ljava/lang/Object;)V
+    .locals 3
 
-    check-cast v1, Lbjf;
+    iget-object v0, p0, Lfis;->a:Lfiq;
 
-    iget-object v2, p0, Lfis;->b:Ljxn;
+    iget-object v1, v0, Lfiq;->c:Ljava/lang/Object;
 
-    iget-object v3, p0, Lfis;->c:Ljxn;
+    monitor-enter v1
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    :try_start_0
+    iget-object v0, p0, Lfis;->a:Lfiq;
 
-    move-result-object v3
+    const/4 v2, 0x1
 
-    check-cast v3, Ldiv;
+    iput-boolean v2, v0, Lfiq;->f:Z
 
-    iget-object v4, p0, Lfis;->d:Ljxn;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lfis;->a:Lfiq;
 
-    move-result-object v4
+    invoke-virtual {v0}, Lfiq;->a()V
 
-    check-cast v4, Lbje;
+    return-void
 
-    iget-object v5, p0, Lfis;->e:Ljxn;
+    :catchall_0
+    move-exception v0
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v5
-
-    check-cast v5, Lflj;
-
-    iget-object v6, p0, Lfis;->f:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/content/Context;
-
-    iget-object v7, p0, Lfis;->g:Ljxn;
-
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lhzt;
-
-    invoke-direct/range {v0 .. v7}, Lfip;-><init>(Lbjf;Ljxn;Ldiv;Lbje;Lflj;Landroid/content/Context;Lhzt;)V
-
-    return-object v0
+    throw v0
 .end method

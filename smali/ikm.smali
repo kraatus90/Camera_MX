@@ -1,28 +1,33 @@
-.class public abstract Likm;
-.super Likd;
-.source "PG"
+.class final synthetic Likm;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/media/ImageWriter$OnImageReleasedListener;
+
+
+# instance fields
+.field private final a:Linr;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Linr;)V
     .locals 0
 
-    invoke-direct {p0}, Likd;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Likm;->a:Linr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onImageReleased(Landroid/media/ImageWriter;)V
     .locals 1
 
-    invoke-virtual {p0, p1, p2}, Likm;->b(Ljava/lang/Object;Ljava/lang/Object;)V
+    iget-object v0, p0, Likm;->a:Linr;
 
-    sget-object v0, Like;->a:Like;
+    invoke-interface {v0}, Linr;->a()V
 
-    return-object v0
-.end method
-
-.method public abstract b(Ljava/lang/Object;Ljava/lang/Object;)V
+    return-void
 .end method

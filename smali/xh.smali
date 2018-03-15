@@ -2,320 +2,167 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lxs;
+
 
 # instance fields
-.field public a:[B
+.field private final synthetic a:Ljava/lang/String;
 
-.field public b:I
+.field private final synthetic b:Ljava/lang/String;
 
-.field private c:Ljava/lang/String;
+.field private final synthetic c:Ljava/lang/String;
+
+.field private final synthetic d:Lxm;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lxm;)V
+    .locals 0
+
+    iput-object p1, p0, Lxh;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lxh;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lxh;->c:Ljava/lang/String;
+
+    iput-object p4, p0, Lxh;->d:Lxm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    new-array v0, p1, [B
-
-    iput-object v0, p0, Lxh;->a:[B
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lxh;->b:I
-
-    return-void
-.end method
-
-.method public constructor <init>([B)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    iput-object p1, p0, Lxh;->a:[B
-
-    array-length v0, p1
-
-    iput v0, p0, Lxh;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/io/InputStream;
-    .locals 4
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    new-instance v0, Ljava/io/ByteArrayInputStream;
-
-    iget-object v1, p0, Lxh;->a:[B
-
-    const/4 v2, 0x0
-
-    iget v3, p0, Lxh;->b:I
-
-    invoke-direct {v0, v1, v2, v3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
+    iget-object v0, p0, Lxh;->a:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public final a(I)V
-    .locals 4
-
-    const/4 v3, 0x0
-
-    iget-object v0, p0, Lxh;->a:[B
-
-    array-length v0, v0
-
-    if-le p1, v0, :cond_0
-
-    iget-object v0, p0, Lxh;->a:[B
-
-    array-length v1, v0
-
-    shl-int/lit8 v1, v1, 0x1
-
-    new-array v1, v1, [B
-
-    iput-object v1, p0, Lxh;->a:[B
-
-    iget-object v1, p0, Lxh;->a:[B
-
-    array-length v2, v0
-
-    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a([BI)V
-    .locals 3
-
-    iget v0, p0, Lxh;->b:I
-
-    add-int/2addr v0, p2
-
-    invoke-virtual {p0, v0}, Lxh;->a(I)V
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lxh;->a:[B
-
-    iget v2, p0, Lxh;->b:I
-
-    invoke-static {p1, v0, v1, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget v0, p0, Lxh;->b:I
-
-    add-int/2addr v0, p2
-
-    iput v0, p0, Lxh;->b:I
-
-    return-void
 .end method
 
 .method public final b()Ljava/lang/String;
-    .locals 7
+    .locals 1
 
-    const/16 v6, 0xfe
+    iget-object v0, p0, Lxh;->b:Ljava/lang/String;
 
-    const/4 v5, 0x1
+    return-object v0
+.end method
 
-    const/4 v4, 0x4
+.method public final c()Ljava/lang/String;
+    .locals 1
 
-    const/4 v3, 0x2
-
-    const/4 v2, 0x0
-
-    iget-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    iget v0, p0, Lxh;->b:I
-
-    if-ge v0, v3, :cond_1
-
-    const-string v0, "UTF-8"
-
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    :cond_0
-    :goto_0
     iget-object v0, p0, Lxh;->c:Ljava/lang/String;
 
     return-object v0
+.end method
 
-    :cond_1
-    iget-object v0, p0, Lxh;->a:[B
+.method public final d()Lxm;
+    .locals 1
 
-    aget-byte v0, v0, v2
+    iget-object v0, p0, Lxh;->d:Lxm;
 
-    if-nez v0, :cond_5
+    return-object v0
+.end method
 
-    iget v0, p0, Lxh;->b:I
+.method public final toString()Ljava/lang/String;
+    .locals 6
 
-    if-lt v0, v4, :cond_2
+    iget-object v0, p0, Lxh;->b:Ljava/lang/String;
 
-    iget-object v0, p0, Lxh;->a:[B
+    iget-object v1, p0, Lxh;->c:Ljava/lang/String;
 
-    aget-byte v0, v0, v5
+    iget-object v2, p0, Lxh;->a:Ljava/lang/String;
 
-    if-eqz v0, :cond_3
+    iget-object v3, p0, Lxh;->d:Lxm;
 
-    :cond_2
-    const-string v0, "UTF-16BE"
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
+    move-result-object v3
 
-    goto :goto_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_3
-    iget-object v0, p0, Lxh;->a:[B
+    move-result-object v4
 
-    aget-byte v0, v0, v3
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    and-int/lit16 v0, v0, 0xff
+    move-result v4
 
-    if-ne v0, v6, :cond_4
+    add-int/lit8 v4, v4, 0xe
 
-    iget-object v0, p0, Lxh;->a:[B
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v1, 0x3
+    move-result-object v5
 
-    aget-byte v0, v0, v1
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    and-int/lit16 v0, v0, 0xff
+    move-result v5
 
-    const/16 v1, 0xff
+    add-int/2addr v4, v5
 
-    if-ne v0, v1, :cond_4
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v0, "UTF-32BE"
+    move-result-object v5
 
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    goto :goto_0
+    move-result v5
 
-    :cond_4
-    const-string v0, "UTF-32"
+    add-int/2addr v4, v5
 
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v5
 
-    :cond_5
-    iget-object v0, p0, Lxh;->a:[B
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    aget-byte v0, v0, v2
+    move-result v5
 
-    and-int/lit16 v0, v0, 0xff
+    add-int/2addr v4, v5
 
-    const/16 v1, 0x80
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    if-ge v0, v1, :cond_9
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, p0, Lxh;->a:[B
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-byte v0, v0, v5
+    move-result-object v0
 
-    if-eqz v0, :cond_6
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "UTF-8"
+    move-result-object v0
 
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
+    const-string v1, " NS("
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_6
-    iget v0, p0, Lxh;->b:I
+    move-result-object v0
 
-    if-lt v0, v4, :cond_7
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lxh;->a:[B
+    move-result-object v0
 
-    aget-byte v0, v0, v3
+    const-string v1, "), FORM ("
 
-    if-eqz v0, :cond_8
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_7
-    const-string v0, "UTF-16LE"
+    move-result-object v0
 
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_8
-    const-string v0, "UTF-32LE"
+    const-string v1, ")"
 
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_9
-    iget-object v0, p0, Lxh;->a:[B
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    aget-byte v0, v0, v2
+    move-result-object v0
 
-    and-int/lit16 v0, v0, 0xff
-
-    const/16 v1, 0xef
-
-    if-ne v0, v1, :cond_a
-
-    const-string v0, "UTF-8"
-
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_a
-    iget-object v0, p0, Lxh;->a:[B
-
-    aget-byte v0, v0, v2
-
-    and-int/lit16 v0, v0, 0xff
-
-    if-ne v0, v6, :cond_b
-
-    const-string v0, "UTF-16"
-
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_b
-    iget v0, p0, Lxh;->b:I
-
-    if-lt v0, v4, :cond_c
-
-    iget-object v0, p0, Lxh;->a:[B
-
-    aget-byte v0, v0, v3
-
-    if-eqz v0, :cond_d
-
-    :cond_c
-    const-string v0, "UTF-16"
-
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    goto/16 :goto_0
-
-    :cond_d
-    const-string v0, "UTF-32"
-
-    iput-object v0, p0, Lxh;->c:Ljava/lang/String;
-
-    goto/16 :goto_0
+    return-object v0
 .end method

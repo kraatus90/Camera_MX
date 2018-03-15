@@ -1,65 +1,110 @@
-.class public final Laqw;
-.super Ljava/lang/Object;
+.class public abstract Laqw;
+.super Laqr;
 .source "PG"
-
-# interfaces
-.implements Lard;
 
 
 # instance fields
-.field private a:I
+.field private final a:I
 
-.field private b:Z
-
-.field private c:Laqy;
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v0, -0x80000000
+
+    invoke-direct {p0, v0, v0}, Laqw;-><init>(II)V
+
+    return-void
+.end method
+
+.method public constructor <init>(II)V
+    .locals 0
+
+    invoke-direct {p0}, Laqr;-><init>()V
 
     iput p1, p0, Laqw;->a:I
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laqw;->b:Z
+    iput p2, p0, Laqw;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Laed;)Larb;
-    .locals 3
+.method public final a(Laqx;)V
+    .locals 5
 
-    sget-object v0, Laed;->e:Laed;
+    iget v0, p0, Laqw;->a:I
 
-    if-ne p1, v0, :cond_0
+    iget v1, p0, Laqw;->b:I
 
-    sget-object v0, Laqz;->a:Laqz;
+    invoke-static {v0, v1}, Larx;->a(II)Z
 
-    :goto_0
-    return-object v0
+    move-result v0
 
-    :cond_0
-    iget-object v0, p0, Laqw;->c:Laqy;
+    if-nez v0, :cond_0
 
-    if-nez v0, :cond_1
-
-    new-instance v0, Laqy;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
     iget v1, p0, Laqw;->a:I
 
-    const/4 v2, 0x0
+    iget v2, p0, Laqw;->b:I
 
-    invoke-direct {v0, v1, v2}, Laqy;-><init>(IZ)V
+    const/16 v3, 0xb0
 
-    iput-object v0, p0, Laqw;->c:Laqy;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    :cond_1
-    iget-object v0, p0, Laqw;->c:Laqy;
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    goto :goto_0
+    const-string v3, "Width and height must both be > 0 or Target#SIZE_ORIGINAL, but given width: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, " and height: "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", either provide dimensions in the constructor or call override()"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iget v0, p0, Laqw;->a:I
+
+    iget v1, p0, Laqw;->b:I
+
+    invoke-interface {p1, v0, v1}, Laqx;->a(II)V
+
+    return-void
+.end method
+
+.method public final b(Laqx;)V
+    .locals 0
+
+    return-void
 .end method

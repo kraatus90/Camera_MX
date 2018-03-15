@@ -2,55 +2,273 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final b:Lgjq;
+
+.field private final c:Lfat;
+
+.field private final d:Ljava/lang/String;
+
+.field private final e:Ljava/lang/String;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "ResolutionSettings"
 
-    iput-object p1, p0, Ldyi;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Ldyi;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
+.method public constructor <init>(Lgjq;Lfat;Lbjy;)V
+    .locals 3
 
-    new-instance v0, Ldyi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p0}, Ldyi;-><init>(Ljxn;)V
+    iput-object p1, p0, Ldyi;->b:Lgjq;
 
-    return-object v0
+    iput-object p2, p0, Ldyi;->c:Lfat;
+
+    invoke-virtual {p3}, Lbjy;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldyi;->d:Ljava/lang/String;
+
+    const-string v0, ""
+
+    iget-object v1, p3, Lbjy;->a:Landroid/content/ContentResolver;
+
+    const-string v2, "camera:blacklisted_resolutions_front"
+
+    invoke-static {v1, v2, v0}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldyi;->e:Ljava/lang/String;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(Lilb;Lild;)Lihc;
+    .locals 9
 
-    iget-object v0, p0, Ldyi;->a:Ljxn;
+    const/4 v4, 0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    sget-object v0, Lild;->a:Lild;
 
-    check-cast v0, Ldxf;
+    if-ne p2, v0, :cond_4
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    const-string v0, "pref_camera_picturesize_front_key"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :goto_0
+    const/4 v2, 0x0
 
-    move-result-object v0
+    const-string v1, ""
 
-    check-cast v0, Ldxf;
+    sget-object v5, Lild;->b:Lild;
 
-    return-object v0
+    if-ne p2, v5, :cond_5
+
+    iget-object v1, p0, Ldyi;->d:Ljava/lang/String;
+
+    :cond_0
+    :goto_1
+    iget-object v5, p0, Ldyi;->b:Lgjq;
+
+    const-string v6, "default_scope"
+
+    invoke-virtual {v5, v6, v0}, Lgjq;->d(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_9
+
+    iget-object v2, p0, Ldyi;->b:Lgjq;
+
+    const-string v5, "default_scope"
+
+    invoke-virtual {v2, v5, v0}, Lgjq;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lihp;->a(Ljava/lang/String;)Lihc;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_1
+
+    const-string v2, ","
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    array-length v7, v2
+
+    if-nez v7, :cond_6
+
+    move v2, v3
+
+    :goto_2
+    if-eqz v2, :cond_7
+
+    :cond_1
+    move v2, v4
+
+    :goto_3
+    iget-object v7, p0, Ldyi;->c:Lfat;
+
+    invoke-virtual {v7, p1}, Lfat;->a(Lilb;)Lfdv;
+
+    move-result-object v7
+
+    const/16 v8, 0x100
+
+    invoke-interface {v7, v8}, Lfdv;->a(I)Ljava/util/List;
+
+    move-result-object v7
+
+    if-eqz v5, :cond_8
+
+    iget v8, v5, Lihc;->a:I
+
+    if-lez v8, :cond_8
+
+    iget v8, v5, Lihc;->b:I
+
+    if-lez v8, :cond_8
+
+    invoke-interface {v7, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_8
+
+    :goto_4
+    if-eqz v6, :cond_2
+
+    if-nez v2, :cond_2
+
+    if-nez v4, :cond_3
+
+    :cond_2
+    invoke-static {v7, v1}, Lghl;->a(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lihp;->a(Ljava/util/List;)Lihc;
+
+    move-result-object v5
+
+    iget-object v1, p0, Ldyi;->b:Lgjq;
+
+    const-string v2, "default_scope"
+
+    invoke-static {v5}, Lihp;->a(Lihc;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v0, v3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Ldyi;->a:Ljava/lang/String;
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x35
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Picture size setting is not set. Selecting fallback: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_3
+    return-object v5
+
+    :cond_4
+    const-string v0, "pref_camera_picturesize_back_key"
+
+    goto/16 :goto_0
+
+    :cond_5
+    sget-object v5, Lild;->a:Lild;
+
+    if-ne p2, v5, :cond_0
+
+    iget-object v1, p0, Ldyi;->e:Ljava/lang/String;
+
+    goto/16 :goto_1
+
+    :cond_6
+    new-instance v7, Ljava/util/HashSet;
+
+    invoke-static {v2}, Ljwo;->a([Ljava/lang/Object;)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    invoke-direct {v7, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v5, v7}, Lghl;->a(Lihc;Ljava/util/Set;)Z
+
+    move-result v2
+
+    goto :goto_2
+
+    :cond_7
+    move v2, v3
+
+    goto :goto_3
+
+    :cond_8
+    move v4, v3
+
+    goto :goto_4
+
+    :cond_9
+    move-object v5, v2
+
+    move v2, v3
+
+    goto :goto_3
 .end method

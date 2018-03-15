@@ -2,108 +2,62 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkds;
+
 
 # instance fields
-.field public final a:Landroid/graphics/Bitmap;
-
-.field public final b:Licf;
+.field private final synthetic a:Lete;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;Licf;)V
+.method public constructor <init>(Lete;)V
     .locals 0
 
+    iput-object p1, p0, Letg;->a:Lete;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Letg;->a:Landroid/graphics/Bitmap;
-
-    iput-object p2, p0, Letg;->b:Licf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 5
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    iget-object v0, p0, Letg;->a:Landroid/graphics/Bitmap;
+    const-string v0, "MotionTrackSampler"
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const-string v1, "Failed to fetch gyro packet."
 
-    move-result-object v0
+    invoke-static {v0, v1, p1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iget-object v1, p0, Letg;->b:Licf;
+    return-void
+.end method
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 3
 
-    move-result-object v1
+    check-cast p1, Landroid/util/Pair;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    iget-object v0, p0, Letg;->a:Lete;
 
-    move-result v2
+    iget-object v2, v0, Lete;->b:Livx;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    if-eqz p1, :cond_0
 
-    move-result-object v3
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    move-result v3
+    check-cast v0, Ljava/nio/ByteBuffer;
 
-    add-int/lit8 v3, v3, 0x34
+    iget-object v1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v1, Landroid/media/MediaCodec$BufferInfo;
 
-    move-result-object v4
+    invoke-interface {v2, v0, v1}, Livx;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "OrientationBitmap[Bitmap: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, "][rotation: "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

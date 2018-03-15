@@ -1,69 +1,95 @@
-.class final Lmx;
-.super Ljn;
+.class public final Lmx;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lmw;
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:Landroid/view/ViewGroup;
+
+.field public f:Landroid/view/View;
+
+.field public g:Landroid/view/View;
+
+.field public h:Lot;
+
+.field public i:Loq;
+
+.field public j:Landroid/content/Context;
+
+.field public k:Z
+
+.field public l:Z
+
+.field public m:Z
+
+.field public n:Z
+
+.field public o:Z
+
+.field public p:Z
+
+.field public q:Landroid/os/Bundle;
 
 
 # direct methods
-.method constructor <init>(Lmw;)V
-    .locals 0
+.method constructor <init>(I)V
+    .locals 1
 
-    iput-object p1, p0, Lmx;->a:Lmw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljn;-><init>()V
+    iput p1, p0, Lmx;->a:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lmx;->o:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)V
+.method final a(Lot;)V
     .locals 2
 
-    iget-object v0, p0, Lmx;->a:Lmw;
+    iget-object v0, p0, Lmx;->h:Lot;
 
-    iget-object v0, v0, Lmw;->a:Lmt;
+    if-ne p1, v0, :cond_1
 
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lpz;->setVisibility(I)V
-
+    :cond_0
+    :goto_0
     return-void
-.end method
 
-.method public final b(Landroid/view/View;)V
-    .locals 3
+    :cond_1
+    iget-object v0, p0, Lmx;->h:Lot;
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lmx;->a:Lmw;
+    iget-object v0, p0, Lmx;->h:Lot;
 
-    iget-object v0, v0, Lmw;->a:Lmt;
+    iget-object v1, p0, Lmx;->i:Loq;
 
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
+    invoke-virtual {v0, v1}, Lot;->b(Lpi;)V
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    :cond_2
+    iput-object p1, p0, Lmx;->h:Lot;
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
+    if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lmx;->a:Lmw;
+    iget-object v0, p0, Lmx;->i:Loq;
 
-    iget-object v0, v0, Lmw;->a:Lmt;
+    if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lmt;->t:Lji;
+    iget-object v0, p0, Lmx;->i:Loq;
 
-    invoke-virtual {v0, v2}, Lji;->a(Ljm;)Lji;
+    invoke-virtual {p1, v0}, Lot;->a(Lpi;)V
 
-    iget-object v0, p0, Lmx;->a:Lmw;
-
-    iget-object v0, v0, Lmw;->a:Lmt;
-
-    iput-object v2, v0, Lmt;->t:Lji;
-
-    return-void
+    goto :goto_0
 .end method

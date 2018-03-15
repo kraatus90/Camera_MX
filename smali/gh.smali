@@ -1,121 +1,167 @@
-.class public final Lgh;
-.super Ljava/lang/Object;
+.class public Lgh;
+.super Lgz;
 .source "PG"
 
+# interfaces
+.implements Ljava/util/Map;
 
-# static fields
-.field public static final a:Lgg;
 
-.field public static final b:Lgg;
-
-.field public static final c:Lgg;
+# instance fields
+.field private c:Lgp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 0
 
-    const/4 v1, 0x0
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lgg;
-
-    invoke-direct {v0, v1, v2}, Lgg;-><init>(Lgk;Z)V
-
-    sput-object v0, Lgh;->a:Lgg;
-
-    new-instance v0, Lgg;
-
-    invoke-direct {v0, v1, v3}, Lgg;-><init>(Lgk;Z)V
-
-    sput-object v0, Lgh;->b:Lgg;
-
-    new-instance v0, Lgg;
-
-    sget-object v1, Lgj;->a:Lgj;
-
-    invoke-direct {v0, v1, v2}, Lgg;-><init>(Lgk;Z)V
-
-    sput-object v0, Lgh;->c:Lgg;
-
-    new-instance v0, Lgg;
-
-    sget-object v1, Lgj;->a:Lgj;
-
-    invoke-direct {v0, v1, v3}, Lgg;-><init>(Lgk;Z)V
-
-    new-instance v0, Lgg;
-
-    sget-object v1, Lgi;->a:Lgi;
-
-    invoke-direct {v0, v1, v2}, Lgg;-><init>(Lgk;Z)V
+    invoke-direct {p0}, Lgz;-><init>()V
 
     return-void
 .end method
 
-.method static a(I)I
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
-    packed-switch p0, :pswitch_data_0
+    invoke-direct {p0, p1}, Lgz;-><init>(I)V
 
-    const/4 v0, 0x2
-
-    :goto_0
-    return v0
-
-    :pswitch_0
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :pswitch_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method
 
-.method static b(I)I
+.method public constructor <init>(Lgz;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lgz;-><init>(Lgz;)V
+
+    return-void
+.end method
+
+.method private final a()Lgp;
     .locals 1
 
-    sparse-switch p0, :sswitch_data_0
+    iget-object v0, p0, Lgh;->c:Lgp;
 
-    const/4 v0, 0x2
+    if-nez v0, :cond_0
+
+    new-instance v0, Lgi;
+
+    invoke-direct {v0, p0}, Lgi;-><init>(Lgh;)V
+
+    iput-object v0, p0, Lgh;->c:Lgp;
+
+    :cond_0
+    iget-object v0, p0, Lgh;->c:Lgp;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public entrySet()Ljava/util/Set;
+    .locals 2
+
+    invoke-direct {p0}, Lgh;->a()Lgp;
+
+    move-result-object v0
+
+    iget-object v1, v0, Lgp;->a:Lgr;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lgr;
+
+    invoke-direct {v1, v0}, Lgr;-><init>(Lgp;)V
+
+    iput-object v1, v0, Lgp;->a:Lgr;
+
+    :cond_0
+    iget-object v0, v0, Lgp;->a:Lgr;
+
+    return-object v0
+.end method
+
+.method public keySet()Ljava/util/Set;
+    .locals 1
+
+    invoke-direct {p0}, Lgh;->a()Lgp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lgp;->d()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public putAll(Ljava/util/Map;)V
+    .locals 3
+
+    iget v0, p0, Lgh;->b:I
+
+    invoke-interface {p1}, Ljava/util/Map;->size()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {p0, v0}, Lgh;->a(I)V
+
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
 
     :goto_0
-    return v0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    :sswitch_0
-    const/4 v0, 0x1
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v2, v0}, Lgh;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    :sswitch_1
-    const/4 v0, 0x0
+    :cond_0
+    return-void
+.end method
 
-    goto :goto_0
+.method public values()Ljava/util/Collection;
+    .locals 2
 
-    nop
+    invoke-direct {p0}, Lgh;->a()Lgp;
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x1 -> :sswitch_1
-        0x2 -> :sswitch_1
-        0xe -> :sswitch_0
-        0xf -> :sswitch_0
-        0x10 -> :sswitch_1
-        0x11 -> :sswitch_1
-    .end sparse-switch
+    move-result-object v0
+
+    iget-object v1, v0, Lgp;->b:Lgu;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lgu;
+
+    invoke-direct {v1, v0}, Lgu;-><init>(Lgp;)V
+
+    iput-object v1, v0, Lgp;->b:Lgu;
+
+    :cond_0
+    iget-object v0, v0, Lgp;->b:Lgu;
+
+    return-object v0
 .end method

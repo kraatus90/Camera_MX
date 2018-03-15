@@ -2,50 +2,65 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Ljxn;
-
-.field public final b:Ljxn;
-
-.field public final c:Ljxn;
-
-.field public final d:Ljxn;
-
-.field public final e:Ljxn;
-
-.field public final f:Ljxn;
-
-.field public final g:Ljxn;
-
-.field public final h:Ljxn;
-
-.field public final i:Lfkf;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Lfkf;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lffb;->a:Ljxn;
-
-    iput-object p2, p0, Lffb;->b:Ljxn;
-
-    iput-object p3, p0, Lffb;->c:Ljxn;
-
-    iput-object p4, p0, Lffb;->d:Ljxn;
-
-    iput-object p5, p0, Lffb;->e:Ljxn;
-
-    iput-object p6, p0, Lffb;->f:Ljxn;
-
-    iput-object p7, p0, Lffb;->g:Ljxn;
-
-    iput-object p8, p0, Lffb;->h:Ljxn;
-
-    iput-object p9, p0, Lffb;->i:Lfkf;
+    iput-object p1, p0, Lffb;->a:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;)Lffb;
+    .locals 1
+
+    new-instance v0, Lffb;
+
+    invoke-direct {v0, p0}, Lffb;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lffb;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laxn;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->JPEG_ORIENTATION:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-virtual {v0}, Laxn;->b()Lick;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lffm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Lick;)Lick;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
+
+    return-object v0
 .end method

@@ -316,36 +316,6 @@
     return-object v0
 .end method
 
-.method public getColor_calibration()Lcom/google/googlex/gcam/ColorCalibrationVector;
-    .locals 4
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_color_calibration_get(JLcom/google/googlex/gcam/StaticMetadata;)J
-
-    move-result-wide v2
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, v2, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/ColorCalibrationVector;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/ColorCalibrationVector;-><init>(JZ)V
-
-    goto :goto_0
-.end method
-
 .method public getDevice()Ljava/lang/String;
     .locals 2
 
@@ -368,6 +338,36 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public getDng_color_calibration()Lcom/google/googlex/gcam/DngColorCalibrationVector;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_dng_color_calibration_get(JLcom/google/googlex/gcam/StaticMetadata;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/DngColorCalibrationVector;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/DngColorCalibrationVector;-><init>(JZ)V
+
+    goto :goto_0
 .end method
 
 .method public getFrame_raw_max_height()I
@@ -400,30 +400,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
 
     invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_frame_readout_time_ms_get(JLcom/google/googlex/gcam/StaticMetadata;)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getFrame_yuv_max_height()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_frame_yuv_max_height_get(JLcom/google/googlex/gcam/StaticMetadata;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getFrame_yuv_max_width()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_frame_yuv_max_width_get(JLcom/google/googlex/gcam/StaticMetadata;)I
 
     move-result v0
 
@@ -542,6 +518,36 @@
     move-result v0
 
     return v0
+.end method
+
+.method public getQc_color_calibration()Lcom/google/googlex/gcam/QcColorCalibration;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_qc_color_calibration_get(JLcom/google/googlex/gcam/StaticMetadata;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/QcColorCalibration;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/QcColorCalibration;-><init>(JZ)V
+
+    goto :goto_0
 .end method
 
 .method public getRaw_bits_per_pixel()I
@@ -690,24 +696,6 @@
     return-void
 .end method
 
-.method public setColor_calibration(Lcom/google/googlex/gcam/ColorCalibrationVector;)V
-    .locals 6
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/ColorCalibrationVector;->getCPtr(Lcom/google/googlex/gcam/ColorCalibrationVector;)J
-
-    move-result-wide v3
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/ColorCalibrationVector;)V
-
-    return-void
-.end method
-
 .method public setDevice(Ljava/lang/String;)V
     .locals 2
 
@@ -724,6 +712,24 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_device_os_version_set(JLcom/google/googlex/gcam/StaticMetadata;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public setDng_color_calibration(Lcom/google/googlex/gcam/DngColorCalibrationVector;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/DngColorCalibrationVector;->getCPtr(Lcom/google/googlex/gcam/DngColorCalibrationVector;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_dng_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/DngColorCalibrationVector;)V
 
     return-void
 .end method
@@ -754,26 +760,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_frame_readout_time_ms_set(JLcom/google/googlex/gcam/StaticMetadata;F)V
-
-    return-void
-.end method
-
-.method public setFrame_yuv_max_height(I)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_frame_yuv_max_height_set(JLcom/google/googlex/gcam/StaticMetadata;I)V
-
-    return-void
-.end method
-
-.method public setFrame_yuv_max_width(I)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_frame_yuv_max_width_set(JLcom/google/googlex/gcam/StaticMetadata;I)V
 
     return-void
 .end method
@@ -862,6 +848,24 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_pixel_array_width_set(JLcom/google/googlex/gcam/StaticMetadata;I)V
+
+    return-void
+.end method
+
+.method public setQc_color_calibration(Lcom/google/googlex/gcam/QcColorCalibration;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/QcColorCalibration;->getCPtr(Lcom/google/googlex/gcam/QcColorCalibration;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_qc_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/QcColorCalibration;)V
 
     return-void
 .end method

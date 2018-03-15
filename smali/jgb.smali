@@ -1,33 +1,92 @@
 .class final Ljgb;
-.super Ljfy;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljfy;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(FFF)F
-    .locals 1
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    const/high16 v0, 0x3f000000    # 0.5f
+    const v4, 0x3f19999a    # 0.6f
 
-    cmpg-float v0, p3, v0
+    const-class v0, Ljjz;
 
-    if-gez v0, :cond_0
+    const-string v1, "auc_quality"
 
-    :goto_0
-    return p1
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    :cond_0
-    move p1, p2
+    move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Ljjz;
+
+    new-instance v2, Ljkb;
+
+    invoke-direct {v2}, Ljkb;-><init>()V
+
+    const-class v1, Ljjz;
+
+    const-string v3, "color_diversity"
+
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljjz;
+
+    const v3, 0x3983126f    # 2.5E-4f
+
+    invoke-virtual {v2, v1, v3}, Ljkb;->a(Ljjz;F)Ljkb;
+
+    move-result-object v2
+
+    const-class v1, Ljjz;
+
+    const-string v3, "time_gap_score"
+
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljjz;
+
+    const v3, 0x3dcccccd    # 0.1f
+
+    invoke-virtual {v2, v1, v3}, Ljkb;->a(Ljjz;F)Ljkb;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljkb;->a()Ljka;
+
+    move-result-object v1
+
+    new-instance v2, Ljkb;
+
+    invoke-direct {v2}, Ljkb;-><init>()V
+
+    invoke-virtual {v2, v0, v4}, Ljkb;->a(Ljjz;F)Ljkb;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1, v4}, Ljkb;->a(Ljjz;F)Ljkb;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljkb;->a()Ljka;
+
+    move-result-object v0
+
+    return-object v0
 .end method

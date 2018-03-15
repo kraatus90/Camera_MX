@@ -3,46 +3,112 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgsz;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgsz;->a:Lkgv;
+
+    iput-object p2, p0, Lgsz;->b:Lkgv;
+
+    iput-object p3, p0, Lgsz;->c:Lkgv;
+
+    iput-object p4, p0, Lgsz;->d:Lkgv;
+
+    iput-object p5, p0, Lgsz;->e:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v1, p0, Lgsz;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v0, p0, Lgsz;->a:Lkgv;
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Landroid/content/Context;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    iget-object v1, p0, Lgsz;->b:Lkgv;
 
-    move-result v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iput v0, v1, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->photoRippleCurrentRadius:I
+    move-result-object v1
 
-    iget-object v0, p0, Lgsz;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    check-cast v1, Ljrf;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidate()V
+    iget-object v2, p0, Lgsz;->c:Lkgv;
 
-    return-void
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    iget-object v2, p0, Lgsz;->d:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lick;
+
+    iget-object v3, p0, Lgsz;->e:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lick;
+
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Lick;
+
+    const/4 v5, 0x0
+
+    aput-object v2, v4, v5
+
+    const/4 v2, 0x1
+
+    aput-object v3, v4, v2
+
+    invoke-static {v4}, Licl;->b([Lick;)Lick;
+
+    move-result-object v2
+
+    new-instance v3, Lgsx;
+
+    invoke-direct {v3, v1, v0}, Lgsx;-><init>(Ljrf;Landroid/content/Context;)V
+
+    invoke-static {v2, v3}, Licl;->a(Lick;Ljqv;)Lick;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
+
+    return-object v0
 .end method

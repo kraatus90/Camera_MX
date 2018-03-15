@@ -3,18 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/io/FilenameFilter;
-
-
-# instance fields
-.field private synthetic a:Ljem;
+.implements Ljdt;
 
 
 # direct methods
-.method constructor <init>(Ljem;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljen;->a:Ljem;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,24 +17,36 @@
 
 
 # virtual methods
-.method public final accept(Ljava/io/File;Ljava/lang/String;)Z
-    .locals 1
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Ljen;->a:Ljem;
+    new-instance v0, Ljmw;
 
-    iget-object v0, v0, Ljem;->a:Ljeo;
+    invoke-direct {v0}, Ljmw;-><init>()V
 
-    invoke-interface {v0}, Ljeo;->a()Ljava/util/regex/Pattern;
+    sget-object v1, Ljpe;->f:Ljpe;
+
+    new-instance v2, Ljmz;
+
+    invoke-direct {v2}, Ljmz;-><init>()V
+
+    const v3, 0x3f4ccccd    # 0.8f
+
+    invoke-virtual {v0, v1, v2, v3}, Ljmw;->a(Ljpe;Ljms;F)V
+
+    sget-object v1, Ljpe;->g:Ljpe;
+
+    new-instance v2, Ljmz;
+
+    invoke-direct {v2}, Ljmz;-><init>()V
+
+    const v3, 0x3e4ccccc    # 0.19999999f
+
+    invoke-virtual {v0, v1, v2, v3}, Ljmw;->a(Ljpe;Ljms;F)V
+
+    invoke-virtual {v0}, Ljmw;->a()Ljmv;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

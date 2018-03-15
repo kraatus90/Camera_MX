@@ -1,41 +1,61 @@
-.class public final Ldzt;
-.super Liii;
-.source "PG"
+.class final synthetic Ldzt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ligs;
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Ldzs;
+
+.field private final b:Lgyq;
+
+.field private final c:Lcmh;
 
 
 # direct methods
-.method public constructor <init>(Liil;)V
-    .locals 2
+.method constructor <init>(Ldzs;Lgyq;Lcmh;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Liii;-><init>(Liil;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Ldzt;->a:Ldzs;
 
-    const/4 v1, 0x0
+    iput-object p2, p0, Ldzt;->b:Lgyq;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Ldzt;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p3, p0, Ldzt;->c:Lcmh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final a(Ljava/lang/Object;)V
+    .locals 4
 
-    invoke-super {p0}, Liii;->close()V
+    iget-object v0, p0, Ldzt;->a:Ldzs;
 
-    iget-object v0, p0, Ldzt;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v1, p0, Ldzt;->b:Lgyq;
 
-    const/4 v1, 0x1
+    iget-object v2, p0, Ldzt;->c:Lcmh;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    invoke-virtual {v0, v1}, Ldzs;->a(Lgyq;)Leqd;
 
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v0, v2, v1, v3}, Ldzs;->a(Lcmh;Lgyq;Leqd;)V
+
+    :goto_0
     return-void
+
+    :cond_0
+    sget-object v0, Ldzs;->a:Ljava/lang/String;
+
+    const-string v1, "filmstrip item was null"
+
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

@@ -1,39 +1,63 @@
-.class final Lboy;
-.super Landroid/animation/AnimatorListenerAdapter;
-.source "PG"
+.class public final synthetic Lboy;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljqv;
 
 
 # instance fields
-.field private synthetic a:Lbov;
+.field private final a:Lbqc;
+
+.field private final b:Lbqf;
 
 
 # direct methods
-.method constructor <init>(Lbov;)V
+.method public constructor <init>(Lbqc;Lbqf;)V
     .locals 0
 
-    iput-object p1, p0, Lboy;->a:Lbov;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lboy;->a:Lbqc;
+
+    iput-object p2, p0, Lboy;->b:Lbqf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lboy;->a:Lbov;
+    iget-object v0, p0, Lboy;->a:Lbqc;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lboy;->b:Lbqf;
 
-    iput-boolean v1, v0, Lbov;->b:Z
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lboy;->a:Lbov;
+    invoke-virtual {v0, v1}, Lbqc;->a(Lbqf;)Z
 
-    iget-object v0, v0, Lbov;->c:Landroid/view/View;
+    move-result v0
 
-    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+    if-eqz v0, :cond_0
 
-    return-void
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

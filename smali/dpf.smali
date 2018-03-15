@@ -3,64 +3,54 @@
 .source "PG"
 
 # interfaces
-.implements Ldpe;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljuw;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljuw;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldpf;->a:Ljuw;
+    iput-object p1, p0, Ldpf;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Ldpf;
+    .locals 1
+
+    new-instance v0, Ldpf;
+
+    invoke-direct {v0, p0}, Ldpf;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(Lggk;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p1, Lggk;->e:Ljht;
+    iget-object v0, p0, Ldpf;->a:Lkgv;
 
-    invoke-virtual {v0}, Ljht;->a()Z
-
-    move-result v0
-
-    invoke-static {v0}, Liya;->a(Z)V
-
-    :try_start_0
-    iget-object v0, p0, Ldpf;->a:Ljuw;
-
-    invoke-interface {v0}, Ljuw;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lggn;
+    check-cast v0, Ldrb;
 
-    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    move-result-object v1
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    sget-object v2, Lggt;->b:Lggt;
+    move-result-object v0
 
-    invoke-interface {v0, v1, v2}, Lggn;->a(Ljava/util/List;Lggt;)V
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    check-cast v0, Lfan;
 
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Lief;
-
-    invoke-direct {v1, v0}, Lief;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
+    return-object v0
 .end method

@@ -1,51 +1,44 @@
 .class final Lcut;
-.super Lguh;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcuq;
+.field private final synthetic a:Lctw;
 
 
 # direct methods
-.method constructor <init>(Lcuq;)V
+.method constructor <init>(Lctw;)V
     .locals 0
 
-    iput-object p1, p0, Lcut;->a:Lcuq;
+    iput-object p1, p0, Lcut;->a:Lctw;
 
-    invoke-direct {p0}, Lguh;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lcut;->a:Lcuq;
+    iget-object v0, p0, Lcut;->a:Lctw;
 
-    iget-object v0, v0, Lcuq;->c:Lcnh;
+    iget-object v0, v0, Lctw;->ab:Leaa;
 
-    new-instance v1, Lcvv;
+    iget-object v1, p0, Lcut;->a:Lctw;
 
-    iget-object v2, p0, Lcut;->a:Lcuq;
+    iget-object v1, v1, Lctw;->C:Lfdv;
 
-    iget-object v2, v2, Lcuq;->e:Lgzh;
+    iget-object v2, p0, Lcut;->a:Lctw;
 
-    invoke-direct {v1, v2}, Lcvv;-><init>(Lgzh;)V
+    iget-object v2, v2, Lctw;->T:Liaw;
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final a(Lgzh;)V
-    .locals 1
-
-    iget-object v0, p0, Lcut;->a:Lcuq;
-
-    iput-object p1, v0, Lcuq;->e:Lgzh;
+    invoke-virtual {v0, v1, v2}, Lglb;->a(Lfdv;Liaa;)V
 
     return-void
 .end method

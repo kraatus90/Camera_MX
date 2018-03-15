@@ -360,6 +360,18 @@
     return v0
 .end method
 
+.method public getExecute_finish_on()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_execute_finish_on_get(JLcom/google/googlex/gcam/InitParams;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getFinish_priority()Lcom/google/googlex/gcam/ThreadPriority;
     .locals 4
 
@@ -600,54 +612,6 @@
     return v0
 .end method
 
-.method public getPlanning_to_process_bayer_for_metering()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_process_bayer_for_metering_get(JLcom/google/googlex/gcam/InitParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPlanning_to_process_bayer_for_payload()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_process_bayer_for_payload_get(JLcom/google/googlex/gcam/InitParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPlanning_to_provide_both_yuv_and_raw_for_metering()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_provide_both_yuv_and_raw_for_metering_get(JLcom/google/googlex/gcam/InitParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPlanning_to_provide_both_yuv_and_raw_for_payload()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_provide_both_yuv_and_raw_for_payload_get(JLcom/google/googlex/gcam/InitParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public getSimultaneous_merge_and_finish()Z
     .locals 2
 
@@ -678,18 +642,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
 
     invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_tuning_locked_get(JLcom/google/googlex/gcam/InitParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getUse_hexagon()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_use_hexagon_get(JLcom/google/googlex/gcam/InitParams;)Z
 
     move-result v0
 
@@ -806,6 +758,16 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_disable_smart_metering_set(JLcom/google/googlex/gcam/InitParams;Z)V
+
+    return-void
+.end method
+
+.method public setExecute_finish_on(I)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_execute_finish_on_set(JLcom/google/googlex/gcam/InitParams;I)V
 
     return-void
 .end method
@@ -968,46 +930,6 @@
     return-void
 .end method
 
-.method public setPlanning_to_process_bayer_for_metering(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_process_bayer_for_metering_set(JLcom/google/googlex/gcam/InitParams;Z)V
-
-    return-void
-.end method
-
-.method public setPlanning_to_process_bayer_for_payload(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_process_bayer_for_payload_set(JLcom/google/googlex/gcam/InitParams;Z)V
-
-    return-void
-.end method
-
-.method public setPlanning_to_provide_both_yuv_and_raw_for_metering(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_provide_both_yuv_and_raw_for_metering_set(JLcom/google/googlex/gcam/InitParams;Z)V
-
-    return-void
-.end method
-
-.method public setPlanning_to_provide_both_yuv_and_raw_for_payload(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_planning_to_provide_both_yuv_and_raw_for_payload_set(JLcom/google/googlex/gcam/InitParams;Z)V
-
-    return-void
-.end method
-
 .method public setSimultaneous_merge_and_finish(Z)V
     .locals 2
 
@@ -1034,16 +956,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_tuning_locked_set(JLcom/google/googlex/gcam/InitParams;Z)V
-
-    return-void
-.end method
-
-.method public setUse_hexagon(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InitParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->InitParams_use_hexagon_set(JLcom/google/googlex/gcam/InitParams;Z)V
 
     return-void
 .end method

@@ -1,119 +1,58 @@
-.class Lhfd;
-.super Lheu;
+.class public final Lhfd;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Lhev;
+
+# static fields
+.field public static final a:Lhfd;
 
 
 # direct methods
-.method constructor <init>(Lhev;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lhfd;->a:Lhev;
+    new-instance v0, Lhfd;
 
-    invoke-direct {p0}, Lheu;-><init>()V
+    invoke-direct {v0}, Lhfd;-><init>()V
+
+    sput-object v0, Lhfd;->a:Lhfd;
 
     return-void
 .end method
 
-.method private final al()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Lhfd;->a:Lhev;
-
-    iget-object v0, v0, Lhev;->j:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
-
-    iget-object v0, p0, Lhfd;->a:Lhev;
-
-    iget-object v0, v0, Lhev;->i:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->setVisibility(I)V
-
-    iget-object v0, p0, Lhfd;->a:Lhev;
-
-    iget-object v0, v0, Lhev;->n:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lhfd;->a:Lhev;
+    sget-object v0, Lhez;->a:Lhem;
 
-    iget-object v0, v0, Lhev;->l:Landroid/widget/SeekBar;
+    sget-object v1, Lhfa;->a:Lhel;
 
-    const/4 v1, 0x0
+    sget-object v2, Lhen;->b:Lhen;
 
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setEnabled(Z)V
+    invoke-static {v0, v1, v2}, Lhek;->a(Lhem;Lhel;Lhen;)Lhek;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public ad()V
-    .locals 0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-direct {p0}, Lhfd;->al()V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public ae()V
-    .locals 0
+    check-cast v0, Lhek;
 
-    invoke-direct {p0}, Lhfd;->al()V
-
-    return-void
-.end method
-
-.method public ai()V
-    .locals 2
-
-    const/16 v1, 0x8
-
-    iget-object v0, p0, Lhfd;->a:Lhev;
-
-    iget-object v0, v0, Lhev;->j:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
-
-    iget-object v0, p0, Lhfd;->a:Lhev;
-
-    iget-object v0, v0, Lhev;->i:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public ak()V
-    .locals 0
-
-    invoke-direct {p0}, Lhfd;->al()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lhfd;->a:Lhev;
-
-    iget-object v0, v0, Lhev;->l:Landroid/widget/SeekBar;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setEnabled(Z)V
-
-    return-void
+    return-object v0
 .end method

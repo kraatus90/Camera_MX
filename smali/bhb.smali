@@ -1,107 +1,92 @@
-.class public final enum Lbhb;
-.super Ljava/lang/Enum;
+.class final Lbhb;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Laue;
 
-# static fields
-.field public static final enum a:Lbhb;
 
-.field public static final enum b:Lbhb;
+# instance fields
+.field private final synthetic a:Lkeh;
 
-.field public static final enum c:Lbhb;
+.field private final synthetic b:Lket;
 
-.field public static final enum d:Lbhb;
+.field private final synthetic c:Ljava/lang/Runnable;
 
-.field private static synthetic e:[Lbhb;
+.field private final synthetic d:Lbgy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lbhb;
-
-    const-string v1, "READY"
-
-    invoke-direct {v0, v1, v2}, Lbhb;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbhb;->a:Lbhb;
-
-    new-instance v0, Lbhb;
-
-    const-string v1, "STARTED"
-
-    invoke-direct {v0, v1, v3}, Lbhb;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbhb;->b:Lbhb;
-
-    new-instance v0, Lbhb;
-
-    const-string v1, "STOPPED"
-
-    invoke-direct {v0, v1, v4}, Lbhb;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbhb;->c:Lbhb;
-
-    new-instance v0, Lbhb;
-
-    const-string v1, "CLOSED"
-
-    invoke-direct {v0, v1, v5}, Lbhb;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbhb;->d:Lbhb;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lbhb;
-
-    sget-object v1, Lbhb;->a:Lbhb;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lbhb;->b:Lbhb;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lbhb;->c:Lbhb;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lbhb;->d:Lbhb;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lbhb;->e:[Lbhb;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>(Lbgy;Lkeh;Lket;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lbhb;->d:Lbgy;
+
+    iput-object p2, p0, Lbhb;->a:Lkeh;
+
+    iput-object p3, p0, Lbhb;->b:Lket;
+
+    iput-object p4, p0, Lbhb;->c:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lbhb;
+
+# virtual methods
+.method public final a()Lkeh;
     .locals 1
 
-    sget-object v0, Lbhb;->e:[Lbhb;
-
-    invoke-virtual {v0}, [Lbhb;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lbhb;
+    iget-object v0, p0, Lbhb;->a:Lkeh;
 
     return-object v0
+.end method
+
+.method public final b()Lkeh;
+    .locals 1
+
+    iget-object v0, p0, Lbhb;->b:Lket;
+
+    return-object v0
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 4
+
+    iget-object v0, p0, Lbhb;->d:Lbgy;
+
+    iget-object v1, p0, Lbhb;->c:Ljava/lang/Runnable;
+
+    sget-object v2, Lbgy;->a:Ljava/lang/String;
+
+    const-string v3, "Execute AF reset runnable"
+
+    invoke-static {v2, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v2, v0, Lbgy;->c:Lihg;
+
+    invoke-static {}, Lfcm;->a()Lfco;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Lihg;->a(Ljava/lang/Object;)V
+
+    iget-object v0, v0, Lbgy;->d:Lihg;
+
+    invoke-static {}, Lfcm;->a()Lfco;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Lihg;->a(Ljava/lang/Object;)V
+
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+
+    return-void
 .end method

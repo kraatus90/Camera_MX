@@ -1,139 +1,74 @@
-.class public final Ljgk;
+.class final Ljgk;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:D
-
-.field private b:D
-
-.field private c:D
-
-.field private d:D
-
-.field private e:I
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
-
-    const-wide/16 v2, 0x0
+.method constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide v0, 0x7fefffffffffffffL    # Double.MAX_VALUE
-
-    iput-wide v0, p0, Ljgk;->a:D
-
-    const-wide/16 v0, 0x1
-
-    iput-wide v0, p0, Ljgk;->b:D
-
-    iput-wide v2, p0, Ljgk;->c:D
-
-    iput-wide v2, p0, Ljgk;->d:D
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ljgk;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljgj;
-    .locals 10
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 6
 
-    iget v0, p0, Ljgk;->e:I
+    new-instance v4, Ljig;
 
-    if-nez v0, :cond_0
+    const-class v0, Ljhk;
 
-    const-wide/high16 v8, 0x7ff8000000000000L    # NaN
+    const-string v1, "default"
 
-    :goto_0
-    new-instance v0, Ljgj;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget v1, p0, Ljgk;->e:I
+    move-result-object v0
 
-    iget-wide v2, p0, Ljgk;->a:D
+    check-cast v0, Ljhk;
 
-    iget-wide v4, p0, Ljgk;->b:D
+    const-class v1, Ljis;
 
-    iget-wide v6, p0, Ljgk;->c:D
+    const-string v2, "default"
 
-    invoke-direct/range {v0 .. v9}, Ljgj;-><init>(IDDDD)V
+    invoke-virtual {p1, v1, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object v1
 
-    :cond_0
-    iget-wide v0, p0, Ljgk;->d:D
+    check-cast v1, Ljis;
 
-    iget v2, p0, Ljgk;->e:I
+    const-class v2, Ljbo;
 
-    int-to-double v2, v2
+    const-string v3, "post_processing_executor"
 
-    div-double v8, v0, v2
+    invoke-virtual {p1, v2, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    goto :goto_0
-.end method
+    move-result-object v2
 
-.method public final a(D)Ljgk;
-    .locals 7
+    check-cast v2, Ljbo;
 
-    iget-wide v0, p0, Ljgk;->b:D
+    const-class v3, Ljgs;
 
-    cmpl-double v0, p1, v0
+    const-string v5, "post_processing_bitmapallocator"
 
-    if-lez v0, :cond_0
+    invoke-virtual {p1, v3, v5}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-wide p1, p0, Ljgk;->b:D
+    const-class v3, [Liyr;
 
-    :cond_0
-    iget-wide v0, p0, Ljgk;->a:D
+    const-string v5, "default"
 
-    cmpg-double v0, p1, v0
+    invoke-virtual {p1, v3, v5}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    if-gez v0, :cond_1
+    move-result-object v3
 
-    iput-wide p1, p0, Ljgk;->a:D
+    check-cast v3, [Liyr;
 
-    :cond_1
-    iget v0, p0, Ljgk;->e:I
+    invoke-direct {v4, v0, v1, v2, v3}, Ljig;-><init>(Ljhk;Ljis;Ljbo;[Liyr;)V
 
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Ljgk;->e:I
-
-    iget-wide v0, p0, Ljgk;->c:D
-
-    sub-double v0, p1, v0
-
-    iget-wide v2, p0, Ljgk;->c:D
-
-    iget v4, p0, Ljgk;->e:I
-
-    int-to-double v4, v4
-
-    div-double v4, v0, v4
-
-    add-double/2addr v2, v4
-
-    iput-wide v2, p0, Ljgk;->c:D
-
-    iget-wide v2, p0, Ljgk;->d:D
-
-    iget-wide v4, p0, Ljgk;->c:D
-
-    sub-double v4, p1, v4
-
-    mul-double/2addr v0, v4
-
-    add-double/2addr v0, v2
-
-    iput-wide v0, p0, Ljgk;->d:D
-
-    return-object p0
+    return-object v4
 .end method

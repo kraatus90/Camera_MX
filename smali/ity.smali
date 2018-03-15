@@ -1,13 +1,29 @@
-.class public final Lity;
+.class final Lity;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Lire;
+
+
+# static fields
+.field public static final a:Lity;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lity;
+
+    invoke-direct {v0}, Lity;-><init>()V
+
+    sput-object v0, Lity;->a:Lity;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,16 +33,14 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Liqz;
+    .locals 1
 
-    new-instance v0, Ljda;
+    check-cast p1, Lipj;
 
-    new-instance v1, Ljav;
+    invoke-interface {p1}, Lipj;->a()Lirc;
 
-    invoke-direct {v1}, Ljav;-><init>()V
-
-    invoke-direct {v0, v1}, Ljda;-><init>(Ljan;)V
+    move-result-object v0
 
     return-object v0
 .end method

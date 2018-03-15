@@ -2,49 +2,130 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Likv;
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x15
+.end annotation
 
 
 # instance fields
-.field private a:Likg;
+.field private final a:Ljava/lang/Object;
+
+.field private final b:Ljava/util/Map;
+
+.field private final c:Landroid/hardware/camera2/CameraManager;
+
+.field private final d:Liku;
 
 
 # direct methods
-.method public constructor <init>(Likg;)V
-    .locals 0
+.method constructor <init>(Landroid/hardware/camera2/CameraManager;Liku;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liks;->a:Likg;
+    iput-object p1, p0, Liks;->c:Landroid/hardware/camera2/CameraManager;
+
+    iput-object p2, p0, Liks;->d:Liku;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Liks;->b:Ljava/util/Map;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Liks;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;Liml;Lilv;)V
-    .locals 1
+.method public final a(Lilb;)Likx;
+    .locals 9
 
-    iget-object v0, p0, Liks;->a:Likg;
+    :try_start_0
+    iget-object v7, p0, Liks;->a:Ljava/lang/Object;
 
-    invoke-interface {v0, p1}, Likg;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    monitor-enter v7
+    :try_end_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v0
+    :try_start_1
+    iget-object v0, p0, Liks;->b:Ljava/util/Map;
 
-    invoke-virtual {p4, v0}, Lilv;->a(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Liks;->a:Likg;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Likx;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Liks;->c:Landroid/hardware/camera2/CameraManager;
+
+    iget-object v1, p1, Lilb;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+
+    move-result-object v2
+
+    iget-object v8, p0, Liks;->d:Liku;
+
+    new-instance v6, Likw;
+
+    new-instance v0, Likv;
+
+    iget-object v3, v8, Liku;->a:Liml;
+
+    iget-object v4, v8, Liku;->c:Lihs;
+
+    iget-object v5, v8, Liku;->d:Lihn;
+
+    move-object v1, p1
+
+    invoke-direct/range {v0 .. v5}, Likv;-><init>(Lilb;Landroid/hardware/camera2/CameraCharacteristics;Liml;Lihs;Lihn;)V
+
+    iget-object v1, v8, Liku;->b:Limm;
+
+    invoke-direct {v6, v0, v1}, Likw;-><init>(Likx;Limm;)V
+
+    iget-object v0, p0, Liks;->b:Ljava/util/Map;
+
+    invoke-interface {v0, p1, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-object v0, v6
+
+    :cond_0
+    monitor-exit v7
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    throw v0
+    :try_end_2
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "Unable to get camera characteristics."
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
 .end method

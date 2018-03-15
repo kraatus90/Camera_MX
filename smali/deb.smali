@@ -1,69 +1,58 @@
 .class final Ldeb;
-.super Ljava/lang/Object;
+.super Lgvh;
 .source "PG"
-
-# interfaces
-.implements Lfft;
 
 
 # instance fields
-.field private synthetic a:Ldea;
+.field private final synthetic a:Lddx;
 
 
 # direct methods
-.method constructor <init>(Ldea;)V
+.method constructor <init>(Lddx;)V
     .locals 0
 
-    iput-object p1, p0, Ldeb;->a:Ldea;
+    iput-object p1, p0, Ldeb;->a:Lddx;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lgvh;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 1
+.method public final onShutterButtonClick()V
+    .locals 2
 
-    if-nez p1, :cond_0
+    iget-object v0, p0, Ldeb;->a:Lddx;
 
-    iget-object v0, p0, Ldeb;->a:Ldea;
+    iget-object v1, v0, Lddx;->k:Ljava/lang/Object;
 
-    iget-object v0, v0, Ldea;->f:Lgug;
+    monitor-enter v1
 
-    invoke-interface {v0}, Lgug;->a()V
+    :try_start_0
+    iget-object v0, p0, Ldeb;->a:Lddx;
 
-    :cond_0
-    return-void
-.end method
+    iget-object v0, v0, Lddx;->o:Ldej;
 
-.method public final b(Z)V
-    .locals 1
+    if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_0
+    iget-object v0, p0, Ldeb;->a:Lddx;
 
-    iget-object v0, p0, Ldeb;->a:Ldea;
+    iget-object v0, v0, Lddx;->o:Ldej;
 
-    iget-object v0, v0, Ldea;->h:Lhem;
-
-    invoke-interface {v0}, Lhem;->k()V
+    invoke-interface {v0}, Ldej;->a()V
 
     :cond_0
+    monitor-exit v1
+
     return-void
-.end method
 
-.method public final c(Z)V
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    if-eqz p1, :cond_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Ldeb;->a:Ldea;
-
-    iget-object v0, v0, Ldea;->h:Lhem;
-
-    invoke-interface {v0}, Lhem;->j()V
-
-    :cond_0
-    return-void
+    throw v0
 .end method

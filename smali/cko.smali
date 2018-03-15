@@ -1,88 +1,94 @@
 .class public final Lcko;
-.super Ljava/lang/Object;
+.super Leqj;
 .source "PG"
-
-# interfaces
-.implements Lcjx;
-
-
-# instance fields
-.field public final a:Lcjx;
-
-.field private b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lcjx;)V
-    .locals 1
+.method public constructor <init>(Landroid/net/Uri;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lckt;
-
-    invoke-direct {v0}, Lckt;-><init>()V
-
-    iput-object v0, p0, Lcko;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p1, p0, Lcko;->a:Lcjx;
+    invoke-direct {p0, p1}, Leqj;-><init>(Landroid/net/Uri;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a()Lckn;
+    .locals 19
 
-    iget-object v0, p0, Lcko;->b:Ljava/util/concurrent/Executor;
+    new-instance v3, Lckn;
 
-    new-instance v1, Lckp;
+    move-object/from16 v0, p0
 
-    invoke-direct {v1, p0}, Lckp;-><init>(Lcko;)V
+    iget-wide v4, v0, Lcko;->b:J
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-object/from16 v0, p0
 
-    return-void
+    iget-object v6, v0, Lcko;->c:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcko;->d:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lcko;->e:Ljava/util/Date;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lcko;->f:Ljava/util/Date;
+
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Lcko;->g:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcko;->a:Landroid/net/Uri;
+
+    move-object/from16 v0, p0
+
+    iget-boolean v12, v0, Lcko;->h:Z
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcko;->i:Lihc;
+
+    const-wide/16 v14, 0x0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcko;->j:Leqk;
+
+    move-object/from16 v16, v0
+
+    const-wide/16 v17, 0x0
+
+    invoke-direct/range {v3 .. v18}, Lckn;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;Ljava/lang/String;Landroid/net/Uri;ZLihc;JLeqk;J)V
+
+    return-object v3
 .end method
 
-.method public final a(ILcgh;)V
-    .locals 2
+.method protected final bridge synthetic b()Leqj;
+    .locals 1
 
-    iget-object v0, p0, Lcko;->b:Ljava/util/concurrent/Executor;
+    if-nez p0, :cond_0
 
-    new-instance v1, Lckr;
+    const/4 v0, 0x0
 
-    invoke-direct {v1, p0, p1, p2}, Lckr;-><init>(Lcko;ILcgh;)V
+    throw v0
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    :cond_0
+    return-object p0
 .end method
 
-.method public final a(Lcjy;)V
-    .locals 2
+.method public final synthetic c()Leqh;
+    .locals 1
 
-    iget-object v0, p0, Lcko;->b:Ljava/util/concurrent/Executor;
+    invoke-virtual {p0}, Lcko;->a()Lckn;
 
-    new-instance v1, Lckq;
+    move-result-object v0
 
-    invoke-direct {v1, p0, p1}, Lckq;-><init>(Lcko;Lcjy;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final b(ILcgh;)V
-    .locals 2
-
-    iget-object v0, p0, Lcko;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lcks;
-
-    invoke-direct {v1, p0, p1, p2}, Lcks;-><init>(Lcko;ILcgh;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object v0
 .end method

@@ -1,62 +1,69 @@
 .class final Liuv;
-.super Ljava/lang/Object;
+.super Lium;
 .source "PG"
 
-# interfaces
-.implements Liuh;
+
+# instance fields
+.field private final synthetic e:Landroid/opengl/EGLDisplay;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(Livi;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;Litl;Landroid/opengl/EGLDisplay;)V
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p7, p0, Liuv;->e:Landroid/opengl/EGLDisplay;
+
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lium;-><init>(Livi;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILitl;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 7
+.method public final c()Lirc;
+    .locals 4
 
-    const-class v0, Ljee;
+    iget-object v0, p0, Liuv;->e:Landroid/opengl/EGLDisplay;
 
-    const-string v1, "default"
+    sget-object v1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    sget-object v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
-    move-result-object v4
+    sget-object v3, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
-    check-cast v4, Ljee;
+    invoke-static {v0, v1, v2, v3}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
-    const-class v0, Ljan;
+    iget-object v0, p0, Lium;->b:Landroid/opengl/EGLDisplay;
 
-    const-string v1, "post_proc_quality_metric"
+    iget-object v1, p0, Lium;->d:Landroid/opengl/EGLContext;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
 
-    move-result-object v5
+    iget-object v0, p0, Lium;->b:Landroid/opengl/EGLDisplay;
 
-    check-cast v5, Ljan;
+    iget-object v1, p0, Lium;->c:Landroid/opengl/EGLSurface;
 
-    new-instance v0, Liqq;
+    invoke-static {v0, v1}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
-    const-string v1, "Collage_Summary"
+    invoke-static {}, Lirc;->d()Lirc;
 
-    const/4 v2, 0x4
-
-    const-class v3, [Lips;
-
-    const-string v6, "noncropping_layouts"
-
-    invoke-virtual {p1, v3, v6}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, [Lips;
-
-    invoke-direct/range {v0 .. v5}, Liqq;-><init>(Ljava/lang/String;I[Lips;Ljee;Ljan;)V
+    move-result-object v0
 
     return-object v0
 .end method

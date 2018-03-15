@@ -1,183 +1,138 @@
-.class public Lijx;
-.super Ljava/lang/Object;
+.class public final Lijx;
+.super Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
 .source "PG"
-
-# interfaces
-.implements Lijy;
-.implements Lijz;
 
 
 # instance fields
-.field public a:Lika;
-
-.field public b:Lika;
-
-.field public c:Lika;
-
-.field public d:Lika;
-
-.field public e:Lika;
-
-.field public f:I
-
-.field public g:J
+.field private final a:Limv;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Limv;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;-><init>()V
 
-    sget-object v0, Lijs;->a:Ljava/util/concurrent/Callable;
-
-    invoke-static {v0}, Lika;->a(Ljava/util/concurrent/Callable;)Lika;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lijx;->d:Lika;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lijx;->f:I
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lijx;->g:J
+    iput-object p1, p0, Lijx;->a:Limv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/io/File;)Lijx;
+.method public final onCaptureBufferLost(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lijx;->a:Limv;
+
+    new-instance v1, Lika;
+
+    invoke-direct {v1, p2}, Lika;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
+
+    invoke-interface {v0, v1, p3, p4, p5}, Limv;->a(Linc;Landroid/view/Surface;J)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {v0}, Libn;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+.end method
+
+.method public final onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .locals 3
 
-    new-instance v0, Lijv;
+    iget-object v0, p0, Lijx;->a:Limv;
 
-    invoke-direct {v0, p1}, Lijv;-><init>(Ljava/io/File;)V
+    new-instance v1, Lika;
 
-    invoke-static {v0}, Lika;->a(Ljava/util/concurrent/Callable;)Lika;
+    invoke-direct {v1, p2}, Lika;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
 
-    move-result-object v0
+    new-instance v2, Likp;
 
-    iput-object v0, p0, Lijx;->b:Lika;
+    invoke-direct {v2, p3}, Likp;-><init>(Landroid/hardware/camera2/TotalCaptureResult;)V
 
-    iget-object v0, p0, Lijx;->b:Lika;
+    invoke-interface {v0, v1, v2}, Limv;->b(Linc;Lind;)V
 
-    iget-object v0, v0, Lika;->a:Ljvi;
-
-    new-instance v1, Lijr;
-
-    invoke-direct {v1}, Lijr;-><init>()V
-
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    new-instance v0, Lijw;
-
-    invoke-direct {v0, p1}, Lijw;-><init>(Ljava/io/File;)V
-
-    invoke-static {v0}, Lika;->a(Ljava/util/concurrent/Callable;)Lika;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lijx;->c:Lika;
-
-    return-object p0
+    return-void
 .end method
 
-.method public a(Ljava/io/OutputStream;)Lijx;
+.method public final onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
+    .locals 3
+
+    iget-object v0, p0, Lijx;->a:Limv;
+
+    new-instance v1, Lika;
+
+    invoke-direct {v1, p2}, Lika;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
+
+    new-instance v2, Lijz;
+
+    invoke-direct {v2, p3}, Lijz;-><init>(Landroid/hardware/camera2/CaptureFailure;)V
+
+    invoke-interface {v0, v1, v2}, Limv;->a(Linc;Lina;)V
+
+    return-void
+.end method
+
+.method public final onCaptureProgressed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V
+    .locals 3
+
+    iget-object v0, p0, Lijx;->a:Limv;
+
+    new-instance v1, Lika;
+
+    invoke-direct {v1, p2}, Lika;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
+
+    new-instance v2, Likb;
+
+    invoke-direct {v2, p3}, Likb;-><init>(Landroid/hardware/camera2/CaptureResult;)V
+
+    invoke-interface {v0, v1, v2}, Limv;->a(Linc;Lind;)V
+
+    return-void
+.end method
+
+.method public final onCaptureSequenceAborted(Landroid/hardware/camera2/CameraCaptureSession;I)V
     .locals 1
 
-    new-instance v0, Liju;
+    iget-object v0, p0, Lijx;->a:Limv;
 
-    invoke-direct {v0, p1}, Liju;-><init>(Ljava/io/OutputStream;)V
+    invoke-interface {v0, p2}, Limv;->a(I)V
 
-    invoke-static {v0}, Lika;->a(Ljava/util/concurrent/Callable;)Lika;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lijx;->e:Lika;
-
-    return-object p0
+    return-void
 .end method
 
-.method public a(J)Lijy;
+.method public final onCaptureSequenceCompleted(Landroid/hardware/camera2/CameraCaptureSession;IJ)V
     .locals 1
 
-    iput-wide p1, p0, Lijx;->g:J
+    iget-object v0, p0, Lijx;->a:Limv;
 
-    return-object p0
+    invoke-interface {v0, p2, p3, p4}, Limv;->a(IJ)V
+
+    return-void
 .end method
 
-.method public a(Ljava/io/InputStream;)Lijz;
-    .locals 1
+.method public final onCaptureStarted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;JJ)V
+    .locals 7
 
-    new-instance v0, Lijt;
+    iget-object v0, p0, Lijx;->a:Limv;
 
-    invoke-direct {v0, p1}, Lijt;-><init>(Ljava/io/InputStream;)V
+    new-instance v1, Lika;
 
-    invoke-static {v0}, Lika;->a(Ljava/util/concurrent/Callable;)Lika;
+    invoke-direct {v1, p2}, Lika;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
 
-    move-result-object v0
+    move-wide v2, p3
 
-    iput-object v0, p0, Lijx;->a:Lika;
+    move-wide v4, p5
 
-    return-object p0
-.end method
+    invoke-interface/range {v0 .. v5}, Limv;->a(Linc;JJ)V
 
-.method public a()Ljava/util/concurrent/Callable;
-    .locals 10
-
-    iget-object v0, p0, Lijx;->a:Lika;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lijx;->b:Lika;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lijx;->c:Lika;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lijx;->d:Lika;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lijx;->e:Lika;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v1, Lijq;
-
-    iget-object v2, p0, Lijx;->a:Lika;
-
-    iget-object v3, p0, Lijx;->b:Lika;
-
-    iget-object v4, p0, Lijx;->c:Lika;
-
-    iget-object v5, p0, Lijx;->d:Lika;
-
-    iget-object v6, p0, Lijx;->e:Lika;
-
-    iget v7, p0, Lijx;->f:I
-
-    iget-wide v8, p0, Lijx;->g:J
-
-    invoke-direct/range {v1 .. v9}, Lijq;-><init>(Lika;Lika;Lika;Lika;Lika;IJ)V
-
-    return-object v1
-.end method
-
-.method public b()Lijy;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lijx;->f:I
-
-    return-object p0
+    return-void
 .end method

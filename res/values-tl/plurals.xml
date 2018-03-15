@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Burst (%1$d na Larawan)</item>
+        <item quantity="one">Burst (%1$d Larawan)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d na larawan ang na-save</item>
         <item quantity="one">%1$d larawan ang na-save</item>

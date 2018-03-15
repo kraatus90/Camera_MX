@@ -1,196 +1,295 @@
 .class public final Lhby;
-.super Lhcg;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgvk;
+.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field public a:Lgvj;
-
-.field public b:Lgvl;
-
-.field public c:Lgvl;
+.field private final a:[I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 4
 
-    const/4 v3, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lhcg;-><init>()V
+    const-string v0, "\\."
 
-    new-instance v0, Lhbz;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    invoke-direct {v0, p0}, Lhbz;-><init>(Lhby;)V
+    move-result-object v1
 
-    new-instance v1, Lgvl;
+    if-eqz v1, :cond_0
 
-    new-array v2, v3, [Lgvg;
+    array-length v0, v1
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    const/4 v2, 0x2
 
-    iput-object v1, p0, Lhby;->b:Lgvl;
+    if-ge v0, v2, :cond_2
 
-    new-instance v0, Lhca;
+    :cond_0
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v0, p0}, Lhca;-><init>(Lhby;)V
+    const-string v2, "Unrecognized version name is found: "
 
-    new-instance v1, Lgvl;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-array v2, v3, [Lgvg;
+    move-result-object v0
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    iput-object v1, p0, Lhby;->c:Lgvl;
+    move-result v3
 
-    new-instance v0, Lgvj;
+    if-eqz v3, :cond_1
 
-    iget-object v1, p0, Lhby;->b:Lgvl;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v0, v1, v3}, Lgvj;-><init>(Lgvl;Z)V
+    move-result-object v0
 
-    iput-object v0, p0, Lhby;->a:Lgvj;
+    :goto_0
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
+    throw v1
+
+    :cond_1
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_2
+    array-length v0, v1
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lhby;->a:[I
+
+    const/4 v0, 0x0
+
+    :goto_1
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_4
+
+    :try_start_0
+    iget-object v2, p0, Lhby;->a:[I
+
+    aget-object v3, v1, v0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    aput v3, v2, v0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "Unrecognized version name is found: "
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_2
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_3
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_2
+
+    :cond_4
     return-void
 .end method
 
 
 # virtual methods
-.method public final U()V
-    .locals 1
+.method public final a(Lhby;)I
+    .locals 6
 
-    iget-object v0, p0, Lhby;->a:Lgvj;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    const/4 v3, -0x1
 
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhby;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->U()V
-
-    goto :goto_0
-.end method
-
-.method public final V()V
-    .locals 1
-
-    iget-object v0, p0, Lhby;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
+    move v0, v1
 
     :goto_0
-    return-void
+    iget-object v4, p0, Lhby;->a:[I
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_3
+
+    iget-object v4, p1, Lhby;->a:[I
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_3
+
+    iget-object v4, p0, Lhby;->a:[I
+
+    aget v4, v4, v0
+
+    iget-object v5, p1, Lhby;->a:[I
+
+    aget v5, v5, v0
+
+    if-le v4, v5, :cond_1
+
+    move v1, v2
 
     :cond_0
-    iget-object v0, p0, Lhby;->a:Lgvj;
+    :goto_1
+    return v1
 
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    :cond_1
+    iget-object v4, p0, Lhby;->a:[I
 
-    move-result-object v0
+    aget v4, v4, v0
 
-    iget-object v0, v0, Lgvl;->a:Lgvg;
+    iget-object v5, p1, Lhby;->a:[I
 
-    check-cast v0, Lgvh;
+    aget v5, v5, v0
 
-    invoke-virtual {v0}, Lgvh;->V()V
+    if-ge v4, v5, :cond_2
+
+    move v1, v3
+
+    goto :goto_1
+
+    :cond_2
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+
+    :cond_3
+    iget-object v0, p0, Lhby;->a:[I
+
+    array-length v0, v0
+
+    iget-object v4, p1, Lhby;->a:[I
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_6
+
+    iget-object v0, p0, Lhby;->a:[I
+
+    array-length v0, v0
+
+    :goto_2
+    iget-object v4, p1, Lhby;->a:[I
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_0
+
+    iget-object v4, p1, Lhby;->a:[I
+
+    aget v4, v4, v0
+
+    if-lez v4, :cond_4
+
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_4
+    iget-object v4, p1, Lhby;->a:[I
+
+    aget v4, v4, v0
+
+    if-gez v4, :cond_5
+
+    move v1, v3
+
+    goto :goto_1
+
+    :cond_5
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_6
+    iget-object v0, p1, Lhby;->a:[I
+
+    array-length v0, v0
+
+    :goto_3
+    iget-object v4, p0, Lhby;->a:[I
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_0
+
+    iget-object v4, p0, Lhby;->a:[I
+
+    aget v4, v4, v0
+
+    if-lez v4, :cond_7
+
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_7
+    iget-object v4, p0, Lhby;->a:[I
+
+    aget v4, v4, v0
+
+    if-gez v4, :cond_8
+
+    move v1, v3
+
+    goto :goto_1
+
+    :cond_8
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_3
 .end method
 
-.method public final a()V
+.method public final synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
 
-    invoke-super {p0}, Lhcg;->a()V
+    check-cast p1, Lhby;
 
-    iget-object v0, p0, Lhby;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->c()V
-
-    return-void
-.end method
-
-.method public final a(Lhcs;Lhcj;)V
-    .locals 2
-
-    iget-object v0, p0, Lhby;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->f()Z
+    invoke-virtual {p0, p1}, Lhby;->a(Lhby;)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-super {p0, p1, p2}, Lhcg;->a(Lhcs;Lhcj;)V
-
-    iget-object v0, p0, Lhby;->a:Lgvj;
-
-    sget v1, Leh;->bo:I
-
-    iput v1, v0, Lgvj;->a:I
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 1
-
-    invoke-super {p0}, Lhcg;->b()V
-
-    iget-object v0, p0, Lhby;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->d()V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 0
-
-    invoke-interface {p0}, Lgvk;->j()V
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 1
-
-    iget-object v0, p0, Lhby;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->e()V
-
-    iget-object v0, p0, Lhby;->b:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    iget-object v0, p0, Lhby;->c:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    return-void
+    return v0
 .end method

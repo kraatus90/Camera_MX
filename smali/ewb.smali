@@ -3,10 +3,26 @@
 .source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lewb;
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lewb;
+
+    invoke-direct {v0}, Lewb;-><init>()V
+
+    sput-object v0, Lewb;->a:Lewb;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -17,8 +33,12 @@
 
 
 # virtual methods
-.method public final close()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    new-instance v0, Levy;
+
+    invoke-direct {v0}, Levy;-><init>()V
+
+    return-object v0
 .end method

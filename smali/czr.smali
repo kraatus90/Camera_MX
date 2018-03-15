@@ -1,84 +1,64 @@
-.class public final Lczr;
+.class final Lczr;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lcxp;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lczn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lczn;)V
     .locals 0
 
+    iput-object p1, p0, Lczr;->a:Lczn;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lczr;->a:Ljxn;
-
-    iput-object p2, p0, Lczr;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
     .locals 3
 
-    iget-object v0, p0, Lczr;->a:Ljxn;
+    iget-object v2, p0, Lczr;->a:Lczn;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v2, Lczn;->d:Ljrf;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/content/res/Resources;
-
-    iget-object v1, p0, Lczr;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbli;
-
-    const v2, 0x7f0f000c
-
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v2
-
-    sget-object v0, Lgog;->d:Lbku;
-
-    invoke-virtual {v1, v0}, Lbli;->a(Lbku;)Z
+    invoke-virtual {v0}, Ljrf;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    const-string v0, "PhotoModule"
+    const/4 v0, 0x1
+
+    iput-boolean v0, v2, Lczn;->f:Z
+
+    const/4 v0, 0x0
 
     :goto_0
-    new-instance v1, Lcqp;
-
-    invoke-direct {v1, v2, v0}, Lcqp;-><init>(ILjava/lang/String;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcqp;
-
     return-object v0
 
     :cond_0
-    const-string v0, "GoudaModule"
+    new-instance v1, Ldaa;
+
+    iget-object v0, v2, Lczn;->d:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [B
+
+    invoke-direct {v1, v2, v0}, Ldaa;-><init>(Lcxq;[B)V
+
+    move-object v0, v1
 
     goto :goto_0
 .end method

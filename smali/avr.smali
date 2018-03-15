@@ -1,42 +1,35 @@
-.class public final Lavr;
+.class final synthetic Lavr;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lhax;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lavq;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lavq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lavr;->a:Ljxn;
+    iput-object p1, p0, Lavr;->a:Lavq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 2
 
-    new-instance v1, Lavp;
+    iget-object v0, p0, Lavr;->a:Lavq;
 
-    iget-object v0, p0, Lavr;->a:Ljxn;
+    const/4 v1, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iput-object v1, v0, Lavq;->b:Lhaw;
 
-    move-result-object v0
-
-    check-cast v0, Lidm;
-
-    invoke-direct {v1, v0}, Lavp;-><init>(Lidm;)V
-
-    return-object v1
+    return-void
 .end method

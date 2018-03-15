@@ -1,1311 +1,722 @@
-.class public final Leoc;
-.super Ljava/lang/Object;
+.class final Leoc;
+.super Leof;
 .source "PG"
-
-# interfaces
-.implements Leou;
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private A:Lgyr;
+.field private final a:I
 
-.field private volatile B:Leol;
+.field private final b:Ljava/lang/String;
 
-.field private C:Lgry;
+.field private final c:Z
 
-.field private D:Z
+.field private final d:Z
 
-.field public final b:Leoy;
+.field private final e:F
 
-.field public final c:Lgvp;
+.field private final f:Ljava/lang/String;
 
-.field public final d:Lgwb;
+.field private final g:Ljava/lang/String;
 
-.field public final e:Lgvx;
+.field private final h:Z
 
-.field public final f:Lgvs;
+.field private final i:F
 
-.field public final g:Leon;
+.field private final j:Ljrf;
 
-.field public final h:Lemy;
+.field private final k:Ljava/lang/Boolean;
 
-.field public final i:Ljava/lang/String;
+.field private final l:Landroid/graphics/Rect;
 
-.field public j:Ljuw;
+.field private final m:Ljrf;
 
-.field public k:Lfty;
-
-.field public final l:Ljvi;
-
-.field public m:Landroid/net/Uri;
-
-.field public n:Ljht;
-
-.field public final o:Lavl;
-
-.field public final p:Lbvw;
-
-.field public q:I
-
-.field public r:I
-
-.field private s:Ljava/util/concurrent/Executor;
-
-.field private t:Lgrw;
-
-.field private u:Lftn;
-
-.field private v:Lenz;
-
-.field private w:J
-
-.field private x:Leoa;
-
-.field private y:Lgox;
-
-.field private z:I
+.field private final n:Ljava/lang/Boolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(ILjava/lang/String;ZZFLjava/lang/String;Ljava/lang/String;ZFLjrf;Ljava/lang/Boolean;Landroid/graphics/Rect;Ljrf;Ljava/lang/Boolean;)V
+    .locals 0
 
-    const-string v0, "RefocusCaptSess"
+    invoke-direct {p0}, Leof;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput p1, p0, Leoc;->a:I
 
-    move-result-object v0
+    iput-object p2, p0, Leoc;->b:Ljava/lang/String;
 
-    sput-object v0, Leoc;->a:Ljava/lang/String;
+    iput-boolean p3, p0, Leoc;->c:Z
 
-    return-void
-.end method
+    iput-boolean p4, p0, Leoc;->d:Z
 
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lenz;Lemy;Lftn;Lgvp;Lgwb;Lgvx;Lgvs;Lavl;Lbvw;Lgrw;Leon;Ljava/lang/String;Ljht;JLeoy;Lhab;)V
-    .locals 3
+    iput p5, p0, Leoc;->e:F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p6, p0, Leoc;->f:Ljava/lang/String;
 
-    new-instance v2, Ljvi;
+    iput-object p7, p0, Leoc;->g:Ljava/lang/String;
 
-    invoke-direct {v2}, Ljvi;-><init>()V
+    iput-boolean p8, p0, Leoc;->h:Z
 
-    iput-object v2, p0, Leoc;->l:Ljvi;
+    iput p9, p0, Leoc;->i:F
 
-    sget-object v2, Ljhi;->a:Ljhi;
+    iput-object p10, p0, Leoc;->j:Ljrf;
 
-    iput-object v2, p0, Leoc;->n:Ljht;
+    iput-object p11, p0, Leoc;->k:Ljava/lang/Boolean;
 
-    const/4 v2, -0x1
+    iput-object p12, p0, Leoc;->l:Landroid/graphics/Rect;
 
-    iput v2, p0, Leoc;->z:I
+    iput-object p13, p0, Leoc;->m:Ljrf;
 
-    sget-object v2, Lewl;->a:Lgyr;
-
-    iput-object v2, p0, Leoc;->A:Lgyr;
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, p0, Leoc;->D:Z
-
-    const/4 v2, 0x0
-
-    iput v2, p0, Leoc;->q:I
-
-    const/4 v2, 0x0
-
-    iput v2, p0, Leoc;->r:I
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/concurrent/Executor;
-
-    iput-object v2, p0, Leoc;->s:Ljava/util/concurrent/Executor;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lenz;
-
-    iput-object v2, p0, Leoc;->v:Lenz;
-
-    iput-object p3, p0, Leoc;->h:Lemy;
-
-    iput-object p4, p0, Leoc;->u:Lftn;
-
-    iput-object p5, p0, Leoc;->c:Lgvp;
-
-    iput-object p6, p0, Leoc;->d:Lgwb;
-
-    invoke-static {p7}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgvx;
-
-    iput-object v2, p0, Leoc;->e:Lgvx;
-
-    invoke-static {p8}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgvs;
-
-    iput-object v2, p0, Leoc;->f:Lgvs;
-
-    invoke-static {p11}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgrw;
-
-    iput-object v2, p0, Leoc;->t:Lgrw;
-
-    invoke-static {p12}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Leon;
-
-    iput-object v2, p0, Leoc;->g:Leon;
-
-    invoke-static/range {p13 .. p13}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    iput-object v2, p0, Leoc;->i:Ljava/lang/String;
-
-    invoke-static/range {p14 .. p14}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljht;
-
-    iput-object v2, p0, Leoc;->n:Ljht;
-
-    move-wide/from16 v0, p15
-
-    iput-wide v0, p0, Leoc;->w:J
-
-    invoke-static/range {p17 .. p17}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Leoy;
-
-    iput-object v2, p0, Leoc;->b:Leoy;
-
-    iput-object p9, p0, Leoc;->o:Lavl;
-
-    iput-object p10, p0, Leoc;->p:Lbvw;
-
-    sget-object v2, Leol;->a:Leol;
-
-    iput-object v2, p0, Leoc;->B:Leol;
-
-    return-void
-.end method
-
-.method static final synthetic a(Lfty;)Ljuw;
-    .locals 1
-
-    const-string v0, "Processing Record was null"
-
-    invoke-static {p0, v0}, Liya;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lfty;->a:Ljvi;
-
-    return-object v0
-.end method
-
-.method private final varargs a([Leol;)V
-    .locals 5
-
-    const/4 v0, 0x0
-
-    iget-object v2, p0, Leoc;->B:Leol;
-
-    array-length v3, p1
-
-    move v1, v0
-
-    :goto_0
-    if-ge v1, v3, :cond_0
-
-    aget-object v4, p1, v1
-
-    if-ne v4, v2, :cond_1
-
-    const/4 v0, 0x1
-
-    :cond_0
-    iget-object v1, p0, Leoc;->B:Leol;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x17
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Invalid session state: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Liya;->b(ZLjava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-.end method
-
-.method private final q()V
-    .locals 3
-
-    iget-object v0, p0, Leoc;->j:Ljuw;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Leoc;->j:Ljuw;
-
-    new-instance v1, Leoe;
-
-    invoke-direct {v1, p0}, Leoe;-><init>(Leoc;)V
-
-    iget-object v2, p0, Leoc;->s:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Lhjg;->a(Ljuw;Libu;Ljava/util/concurrent/Executor;)V
+    iput-object p14, p0, Leoc;->n:Ljava/lang/Boolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final a()I
     .locals 1
 
-    iget-object v0, p0, Leoc;->i:Ljava/lang/String;
+    iget v0, p0, Leoc;->a:I
+
+    return v0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Leoc;->b:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final declared-synchronized a(Ljava/io/InputStream;Lgrz;)Ljuw;
-    .locals 8
+.method public final c()Z
+    .locals 1
 
-    monitor-enter p0
+    iget-boolean v0, p0, Leoc;->c:Z
 
-    :try_start_0
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v2, p2, Lgrz;->b:Lgvw;
-
-    iget-object v0, p2, Lgrz;->d:Ljht;
-
-    invoke-virtual {v0}, Ljht;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-    const-string v1, "saveAndFinish"
-
-    invoke-virtual {p0, v1}, Leoc;->a(Ljava/lang/String;)V
-
-    iget-object v1, p0, Leoc;->B:Leol;
-
-    sget-object v3, Leol;->d:Leol;
-
-    if-ne v1, v3, :cond_0
-
-    const-string v0, "Ignoring saveAndFinish. CaptureSession has been deleted or canceled."
-
-    invoke-virtual {p0, v0}, Leoc;->b(Ljava/lang/String;)V
-
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    :goto_0
-    monitor-exit p0
-
-    return-object v0
-
-    :cond_0
-    const/4 v1, 0x2
-
-    :try_start_1
-    new-array v1, v1, [Leol;
-
-    const/4 v3, 0x0
-
-    sget-object v4, Leol;->b:Leol;
-
-    aput-object v4, v1, v3
-
-    const/4 v3, 0x1
-
-    sget-object v4, Leol;->c:Leol;
-
-    aput-object v4, v1, v3
-
-    invoke-direct {p0, v1}, Leoc;->a([Leol;)V
-
-    iget-object v1, p0, Leoc;->n:Ljht;
-
-    invoke-virtual {v1}, Ljht;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/location/Location;
-
-    invoke-virtual {p2, v1}, Lgrz;->a(Landroid/location/Location;)Lgrz;
-
-    sget-object v1, Leol;->d:Leol;
-
-    iput-object v1, p0, Leoc;->B:Leol;
-
-    new-instance v6, Ljvi;
-
-    invoke-direct {v6}, Ljvi;-><init>()V
-
-    iget-object v1, p0, Leoc;->n:Ljht;
-
-    invoke-virtual {v1}, Ljht;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    sget-object v1, Lgvw;->c:Lgvw;
-
-    if-ne v2, v1, :cond_1
-
-    if-eqz v0, :cond_1
-
-    new-instance v1, Lieu;
-
-    invoke-direct {v1, v0}, Lieu;-><init>(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-
-    iget-object v0, p0, Leoc;->n:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/Location;
-
-    invoke-virtual {v1, v0}, Lieu;->a(Landroid/location/Location;)V
-
-    iget-object v0, v1, Lieu;->a:Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-    :cond_1
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lgzz;->f()Z
-
-    :cond_2
-    invoke-static {v0}, Ljht;->c(Ljava/lang/Object;)Ljht;
-
-    move-result-object v4
-
-    iget-object v1, p0, Leoc;->o:Lavl;
-
-    invoke-interface {v1, v0}, Lavl;->a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-
-    iget-object v7, p0, Leoc;->s:Ljava/util/concurrent/Executor;
-
-    new-instance v0, Leof;
-
-    move-object v1, p0
-
-    move-object v3, p1
-
-    move-object v5, p2
-
-    invoke-direct/range {v0 .. v5}, Leof;-><init>(Leoc;Lgvw;Ljava/io/InputStream;Ljht;Lgrz;)V
-
-    invoke-interface {v7, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    iget-object v0, p0, Leoc;->j:Ljuw;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Leoc;->j:Ljuw;
-
-    sget-object v1, Leog;->a:Ljtu;
-
-    iget-object v2, p0, Leoc;->s:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljtu;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v0
-
-    new-instance v1, Leoh;
-
-    invoke-direct {v1, p0, v6}, Leoh;-><init>(Leoc;Ljvi;)V
-
-    iget-object v2, p0, Leoc;->s:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    move-object v0, v6
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return v0
 .end method
 
-.method public final declared-synchronized a(I)V
-    .locals 3
+.method public final d()Z
+    .locals 1
 
-    monitor-enter p0
+    iget-boolean v0, p0, Leoc;->d:Z
 
-    :try_start_0
-    iget-object v0, p0, Leoc;->B:Leol;
+    return v0
+.end method
 
-    sget-object v1, Leol;->b:Leol;
+.method public final e()F
+    .locals 1
 
-    if-eq v0, v1, :cond_1
+    iget v0, p0, Leoc;->e:F
 
-    sget-object v0, Leoc;->a:Ljava/lang/String;
+    return v0
+.end method
 
-    const-string v1, "Ignoring setProgress. CaptureSession is not started."
-
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    :goto_0
-    monitor-exit p0
-
-    return-void
-
-    :cond_1
-    if-eqz p1, :cond_0
-
-    :try_start_1
-    iget-boolean v1, p0, Leoc;->D:Z
-
-    if-lez p1, :cond_2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     const/4 v0, 0x1
-
-    :goto_1
-    or-int/2addr v0, v1
-
-    iput-boolean v0, p0, Leoc;->D:Z
-
-    iput p1, p0, Leoc;->z:I
-
-    iget-object v0, p0, Leoc;->g:Leon;
-
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
-
-    iget v2, p0, Leoc;->z:I
-
-    invoke-virtual {v0, v1, v2}, Leon;->a(Landroid/net/Uri;I)V
-
-    iget-object v0, p0, Leoc;->y:Lgox;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Leoc;->y:Lgox;
-
-    invoke-interface {v0, p1}, Lgox;->a(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
-.end method
-
-.method public final a(Landroid/graphics/Bitmap;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final a(Landroid/graphics/Bitmap;I)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final a(Landroid/location/Location;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final declared-synchronized a(Landroid/net/Uri;Lgyr;Lgry;)V
-    .locals 7
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x11
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "startSession(Uri)"
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
-
-    sget-object v0, Lgry;->i:Lgry;
-
-    invoke-virtual {p3, v0}, Lgry;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    sget-object v1, Lgry;->i:Lgry;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x21
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "sessionType must be "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, ", but we get "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    iput-object p1, p0, Leoc;->m:Landroid/net/Uri;
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Leol;
 
     const/4 v1, 0x0
 
-    sget-object v2, Leol;->a:Leol;
-
-    aput-object v2, v0, v1
-
-    invoke-direct {p0, v0}, Leoc;->a([Leol;)V
-
-    sget-object v0, Leol;->b:Leol;
-
-    iput-object v0, p0, Leoc;->B:Leol;
-
-    iget-object v0, p0, Leoc;->v:Lenz;
-
-    invoke-virtual {v0, p1}, Lenz;->a(Landroid/net/Uri;)Leoa;
-
-    move-result-object v0
-
-    iput-object v0, p0, Leoc;->x:Leoa;
-
-    iget-object v0, p0, Leoc;->u:Lftn;
-
-    iget-wide v2, p0, Leoc;->w:J
-
-    iget-object v4, p0, Leoc;->i:Ljava/lang/String;
-
-    iget-object v6, p0, Leoc;->l:Ljvi;
-
-    move-object v1, p1
-
-    move-object v5, p3
-
-    invoke-interface/range {v0 .. v6}, Lftn;->a(Landroid/net/Uri;JLjava/lang/String;Lgry;Ljuw;)Lfty;
-
-    move-result-object v0
-
-    iput-object v0, p0, Leoc;->k:Lfty;
-
-    iget-object v0, p0, Leoc;->k:Lfty;
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
-
-    move-result-object v0
-
-    iput-object v0, p0, Leoc;->j:Ljuw;
-
-    iget-object v0, p0, Leoc;->k:Lfty;
-
-    invoke-virtual {p0, p2, p3, v0}, Leoc;->a(Lgyr;Lgry;Lfty;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final a(Lany;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final declared-synchronized a(Lany;Lgyr;Lgry;)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final a(Lcht;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final a(Lejz;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final a(Lgox;)V
-    .locals 1
-
-    iget-object v0, p0, Leoc;->A:Lgyr;
-
-    invoke-static {v0}, Lesn;->a(Lgyr;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Leoc;->A:Lgyr;
-
-    invoke-interface {p1, v0}, Lgox;->a(Lgyr;)V
-
-    :cond_0
-    iget v0, p0, Leoc;->z:I
-
-    invoke-interface {p1, v0}, Lgox;->a(I)V
-
-    iput-object p1, p0, Leoc;->y:Lgox;
-
-    return-void
-.end method
-
-.method public final a(Lgrv;)V
-    .locals 1
-
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    invoke-virtual {v0, p1}, Lemy;->a(Lgrv;)V
-
-    return-void
-.end method
-
-.method public final declared-synchronized a(Lgyr;)V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    const-string v0, "setProgressMessage"
-
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
-
-    iget-object v0, p0, Leoc;->B:Leol;
-
-    sget-object v1, Leol;->b:Leol;
-
-    if-eq v0, v1, :cond_1
-
-    const-string v0, "Ignoring setProgressMessage. CaptureSession is not started."
-
-    invoke-virtual {p0, v0}, Leoc;->b(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-ne p1, p0, :cond_1
 
     :cond_0
     :goto_0
-    monitor-exit p0
-
-    return-void
+    return v0
 
     :cond_1
-    :try_start_1
-    iput-object p1, p0, Leoc;->A:Lgyr;
+    instance-of v2, p1, Leof;
 
-    invoke-static {p1}, Lesn;->a(Lgyr;)Z
+    if-eqz v2, :cond_3
 
-    move-result v0
+    check-cast p1, Leof;
 
-    if-nez v0, :cond_2
+    iget v2, p0, Leoc;->a:I
 
-    iget v0, p0, Leoc;->z:I
+    invoke-virtual {p1}, Leof;->a()I
 
-    if-gez v0, :cond_2
+    move-result v3
 
-    const/4 v0, 0x0
+    if-ne v2, v3, :cond_2
 
-    iput v0, p0, Leoc;->z:I
+    iget-object v2, p0, Leoc;->b:Ljava/lang/String;
 
-    :cond_2
-    iget-object v0, p0, Leoc;->g:Leon;
+    invoke-virtual {p1}, Leof;->b()Ljava/lang/String;
 
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
+    move-result-object v3
 
-    invoke-virtual {v0, v1, p1}, Leon;->a(Landroid/net/Uri;Lgyr;)V
-
-    iget-object v0, p0, Leoc;->y:Lgox;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Leoc;->y:Lgox;
-
-    invoke-interface {v0, p1}, Lgox;->a(Lgyr;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method final a(Lgyr;Lgry;Lfty;)V
-    .locals 3
-
-    iput-object p2, p0, Leoc;->C:Lgry;
-
-    iput-object p1, p0, Leoc;->A:Lgyr;
-
-    iget-object v0, p0, Leoc;->y:Lgox;
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lesn;->a(Lgyr;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Leoc;->y:Lgox;
-
-    invoke-interface {v0, p1}, Lgox;->a(Lgyr;)V
-
-    :cond_0
-    invoke-static {p1}, Lesn;->a(Lgyr;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, -0x1
-
-    :goto_0
-    iput v0, p0, Leoc;->z:I
-
-    iget-object v0, p0, Leoc;->t:Lgrw;
-
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
-
-    invoke-interface {v0, v1, p0}, Lgrw;->a(Landroid/net/Uri;Leou;)V
-
-    iget-object v0, p0, Leoc;->g:Leon;
-
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
-
-    iget-object v2, p0, Leoc;->C:Lgry;
-
-    invoke-virtual {v0, v1, v2, p3}, Leon;->a(Landroid/net/Uri;Lgry;Lftv;)V
-
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    invoke-virtual {v0, p2}, Lemy;->onCaptureStarted(Lgry;)V
-
-    return-void
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final a(Lgyr;ZLjava/lang/String;)V
-    .locals 3
-
-    const-string v1, "finishWithFailure, throwable message = "
-
-    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-boolean v2, p0, Leoc;->c:Z
 
-    move-result-object v0
+    invoke-virtual {p1}, Leof;->c()Z
+
+    move-result v3
+
+    if-ne v2, v3, :cond_2
+
+    iget-boolean v2, p0, Leoc;->d:Z
+
+    invoke-virtual {p1}, Leof;->d()Z
+
+    move-result v3
+
+    if-ne v2, v3, :cond_2
+
+    iget v2, p0, Leoc;->e:F
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v2
+
+    invoke-virtual {p1}, Leof;->e()F
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v3
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v2, p0, Leoc;->f:Ljava/lang/String;
+
+    invoke-virtual {p1}, Leof;->f()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Leoc;->g:Ljava/lang/String;
+
+    invoke-virtual {p1}, Leof;->g()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-boolean v2, p0, Leoc;->h:Z
+
+    invoke-virtual {p1}, Leof;->h()Z
+
+    move-result v3
+
+    if-ne v2, v3, :cond_2
+
+    iget v2, p0, Leoc;->i:F
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v2
+
+    invoke-virtual {p1}, Leof;->i()F
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v3
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v2, p0, Leoc;->j:Ljrf;
+
+    invoke-virtual {p1}, Leof;->j()Ljrf;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljrf;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Leoc;->k:Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Leof;->k()Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Leoc;->l:Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Leof;->l()Landroid/graphics/Rect;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Leoc;->m:Ljrf;
+
+    invoke-virtual {p1}, Leof;->m()Ljrf;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljrf;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Leoc;->n:Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Leof;->n()Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_2
+    move v0, v1
+
+    goto/16 :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto/16 :goto_0
+.end method
+
+.method public final f()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Leoc;->f:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final g()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Leoc;->g:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    iget-boolean v0, p0, Leoc;->h:Z
+
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 5
+
+    const/16 v2, 0x4d5
+
+    const/16 v1, 0x4cf
+
+    const v4, 0xf4243
+
+    iget v0, p0, Leoc;->a:I
+
+    xor-int/2addr v0, v4
+
+    mul-int/2addr v0, v4
+
+    iget-object v3, p0, Leoc;->b:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
+
+    move-result v3
+
+    xor-int/2addr v0, v3
+
+    mul-int v3, v0, v4
+
+    iget-boolean v0, p0, Leoc;->c:Z
+
+    if-eqz v0, :cond_0
+
+    move v0, v1
 
     :goto_0
-    invoke-virtual {p0, v0}, Leoc;->b(Ljava/lang/String;)V
+    xor-int/2addr v0, v3
 
-    const/4 v0, 0x2
+    mul-int v3, v0, v4
 
-    new-array v0, v0, [Leol;
+    iget-boolean v0, p0, Leoc;->d:Z
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
 
-    sget-object v2, Leol;->b:Leol;
+    move v0, v1
 
-    aput-object v2, v0, v1
+    :goto_1
+    xor-int/2addr v0, v3
 
-    const/4 v1, 0x1
+    mul-int/2addr v0, v4
 
-    sget-object v2, Leol;->d:Leol;
+    iget v3, p0, Leoc;->e:F
 
-    aput-object v2, v0, v1
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    invoke-direct {p0, v0}, Leoc;->a([Leol;)V
+    move-result v3
 
-    iget-object v0, p0, Leoc;->x:Leoa;
+    xor-int/2addr v0, v3
 
-    if-nez v0, :cond_1
+    mul-int/2addr v0, v4
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-object v3, p0, Leoc;->f:Ljava/lang/String;
 
-    const-string v1, "Cannot call finish without calling startSession first."
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result v3
 
-    throw v0
+    xor-int/2addr v0, v3
+
+    mul-int/2addr v0, v4
+
+    iget-object v3, p0, Leoc;->g:Ljava/lang/String;
+
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
+
+    move-result v3
+
+    xor-int/2addr v0, v3
+
+    mul-int/2addr v0, v4
+
+    iget-boolean v3, p0, Leoc;->h:Z
+
+    if-eqz v3, :cond_2
+
+    :goto_2
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v4
+
+    iget v1, p0, Leoc;->i:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v4
+
+    iget-object v1, p0, Leoc;->j:Ljrf;
+
+    invoke-virtual {v1}, Ljrf;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v4
+
+    iget-object v1, p0, Leoc;->k:Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v4
+
+    iget-object v1, p0, Leoc;->l:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v4
+
+    iget-object v1, p0, Leoc;->m:Ljrf;
+
+    invoke-virtual {v1}, Ljrf;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v4
+
+    iget-object v1, p0, Leoc;->n:Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
 
     :cond_0
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    iput-object p1, p0, Leoc;->A:Lgyr;
+    move v0, v2
 
-    iget-object v0, p0, Leoc;->t:Lgrw;
+    goto :goto_1
 
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
+    :cond_2
+    move v1, v2
 
-    invoke-interface {v0, v1, p1}, Lgrw;->a(Landroid/net/Uri;Lgyr;)V
-
-    iget-object v0, p0, Leoc;->g:Leon;
-
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1, p1, p2}, Leon;->a(Landroid/net/Uri;Lgyr;Z)V
-
-    iget-object v0, p0, Leoc;->v:Lenz;
-
-    iget-object v1, p0, Leoc;->x:Leoa;
-
-    invoke-virtual {v0, v1}, Lenz;->b(Leoa;)V
-
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    iget v1, p0, Leoc;->q:I
-
-    iget v2, p0, Leoc;->r:I
-
-    invoke-virtual {v0, v1, v2}, Lemy;->onCaptureFailed(II)V
-
-    invoke-direct {p0}, Leoc;->q()V
-
-    return-void
+    goto :goto_2
 .end method
 
-.method public final declared-synchronized a(Lici;Lgry;)V
+.method public final i()F
     .locals 1
 
-    monitor-enter p0
+    iget v0, p0, Leoc;->i:F
 
-    :try_start_0
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return v0
 .end method
 
-.method final a(Ljava/lang/String;)V
-    .locals 5
+.method public final j()Ljrf;
+    .locals 1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    iget-object v0, p0, Leoc;->j:Ljrf;
 
-    move-result v0
+    return-object v0
+.end method
 
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+.method public final k()Ljava/lang/Boolean;
+    .locals 1
 
-    move-result-object v0
+    iget-object v0, p0, Leoc;->k:Ljava/lang/Boolean;
 
-    sget-object v1, Leoc;->a:Ljava/lang/String;
+    return-object v0
+.end method
 
-    iget-object v2, p0, Leoc;->i:Ljava/lang/String;
+.method public final l()Landroid/graphics/Rect;
+    .locals 1
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Leoc;->l:Landroid/graphics/Rect;
 
-    move-result-object v3
+    return-object v0
+.end method
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+.method public final m()Ljrf;
+    .locals 1
 
-    move-result v3
+    iget-object v0, p0, Leoc;->m:Ljrf;
 
-    add-int/lit8 v3, v3, 0x4
+    return-object v0
+.end method
+
+.method public final n()Ljava/lang/Boolean;
+    .locals 1
+
+    iget-object v0, p0, Leoc;->n:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 17
+
+    move-object/from16 v0, p0
+
+    iget v1, v0, Leoc;->a:I
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Leoc;->b:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-boolean v3, v0, Leoc;->c:Z
+
+    move-object/from16 v0, p0
+
+    iget-boolean v4, v0, Leoc;->d:Z
+
+    move-object/from16 v0, p0
+
+    iget v5, v0, Leoc;->e:F
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Leoc;->f:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Leoc;->g:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-boolean v8, v0, Leoc;->h:Z
+
+    move-object/from16 v0, p0
+
+    iget v9, v0, Leoc;->i:F
+
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Leoc;->j:Ljrf;
+
+    invoke-static {v10}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Leoc;->k:Ljava/lang/Boolean;
+
+    invoke-static {v11}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v11
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Leoc;->l:Landroid/graphics/Rect;
+
+    invoke-static {v12}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v12
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Leoc;->m:Ljrf;
+
+    invoke-static {v13}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v13
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Leoc;->n:Ljava/lang/Boolean;
+
+    invoke-static {v14}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v14
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v15
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-virtual {v15}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v15
 
-    add-int/2addr v3, v4
+    add-int/lit16 v15, v15, 0x120
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v16
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v16
 
-    add-int/2addr v3, v4
+    add-int v15, v15, v16
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    move-result-object v16
 
-    const-string v3, "["
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v16
 
-    move-result-object v3
+    add-int v15, v15, v16
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v10}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v16
 
-    const-string v3, "|"
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v16
 
-    move-result-object v0
+    add-int v15, v15, v16
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v11}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v16
 
-    const-string v2, "] "
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v16
 
-    move-result-object v0
+    add-int v15, v15, v16
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v12}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v16
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    move-result-object v0
+    move-result v16
 
-    invoke-static {v1, v0}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    add-int v15, v15, v16
 
-    return-void
-.end method
+    invoke-static {v13}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.method public final declared-synchronized a([BLgyr;Lgry;)V
-    .locals 8
+    move-result-object v16
 
-    monitor-enter p0
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    :try_start_0
-    const-string v0, "startSession(byte[])"
+    move-result v16
 
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
+    add-int v15, v15, v16
 
-    sget-object v0, Lgry;->h:Lgry;
+    invoke-static {v14}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p3, v0}, Lgry;->equals(Ljava/lang/Object;)Z
+    move-result-object v16
 
-    move-result v0
+    invoke-virtual/range {v16 .. v16}, Ljava/lang/String;->length()I
 
-    if-nez v0, :cond_0
+    move-result v16
 
-    sget-object v0, Lgry;->b:Lgry;
+    add-int v15, v15, v16
 
-    invoke-virtual {p3, v0}, Lgry;->equals(Ljava/lang/Object;)Z
+    new-instance v16, Ljava/lang/StringBuilder;
 
-    move-result v0
+    move-object/from16 v0, v16
 
-    if-nez v0, :cond_0
+    invoke-direct {v0, v15}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const-string v15, "DecorateAtTimeCaptureRequestData{mode="
 
-    sget-object v1, Lgry;->h:Lgry;
+    move-object/from16 v0, v16
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    sget-object v2, Lgry;->b:Lgry;
+    const-string v15, ", filename="
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/lit8 v4, v4, 0x25
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/2addr v4, v5
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/2addr v4, v5
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v4, "sessionType must be "
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v4, " or "
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1313,13 +724,129 @@
 
     move-result-object v1
 
-    const-string v2, ", but we get "
+    const-string v2, ", frontFacing="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", isHDR="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", zoom="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", flashSetting="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", hdrPlusSetting="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", gridLinesOn="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", timerSeconds="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", touchCoordinate="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", volumeButtonShutter="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", activeSensorSize="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", meteringData="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", isSelfieFlashOn="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "}"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -1327,573 +854,5 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :try_start_1
-    new-array v0, v0, [Leol;
-
-    const/4 v1, 0x0
-
-    sget-object v2, Leol;->a:Leol;
-
-    aput-object v2, v0, v1
-
-    invoke-direct {p0, v0}, Leoc;->a([Leol;)V
-
-    sget-object v0, Leol;->b:Leol;
-
-    iput-object v0, p0, Leoc;->B:Leol;
-
-    iget-object v0, p0, Leoc;->v:Lenz;
-
-    iget-object v1, p0, Leoc;->i:Ljava/lang/String;
-
-    iget-wide v2, p0, Leoc;->w:J
-
-    invoke-virtual {v0, v1, p1, v2, v3}, Lenz;->a(Ljava/lang/String;[BJ)Leoa;
-
-    move-result-object v0
-
-    iput-object v0, p0, Leoc;->x:Leoa;
-
-    iget-object v0, p0, Leoc;->x:Leoa;
-
-    iget-object v0, v0, Leoa;->b:Landroid/net/Uri;
-
-    iput-object v0, p0, Leoc;->m:Landroid/net/Uri;
-
-    iget-object v0, p0, Leoc;->v:Lenz;
-
-    iget-object v1, p0, Leoc;->x:Leoa;
-
-    invoke-virtual {v0, v1}, Lenz;->a(Leoa;)Ljht;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljht;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lany;
-
-    invoke-virtual {v0}, Lany;->f()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lgyw;->a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Leoc;->D:Z
-
-    iget-object v1, p0, Leoc;->g:Leon;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Leon;->a(Landroid/graphics/Bitmap;I)V
-
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    invoke-virtual {v0}, Lemy;->onTinyThumb()V
-
-    :cond_1
-    iget-object v1, p0, Leoc;->u:Lftn;
-
-    iget-wide v2, p0, Leoc;->w:J
-
-    iget-object v4, p0, Leoc;->i:Ljava/lang/String;
-
-    iget-object v6, p0, Leoc;->l:Ljvi;
-
-    sget-object v7, Lgvw;->c:Lgvw;
-
-    move-object v5, p3
-
-    invoke-interface/range {v1 .. v7}, Lftn;->a(JLjava/lang/String;Lgry;Ljuw;Lgvw;)Ljuw;
-
-    move-result-object v0
-
-    iput-object v0, p0, Leoc;->j:Ljuw;
-
-    iget-object v0, p0, Leoc;->j:Ljuw;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Leoc;->j:Ljuw;
-
-    new-instance v1, Leod;
-
-    invoke-direct {v1, p0, p2, p3}, Leod;-><init>(Leoc;Lgyr;Lgry;)V
-
-    iget-object v2, p0, Leoc;->s:Ljava/util/concurrent/Executor;
-
-    invoke-interface {v0, v1, v2}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final b()J
-    .locals 2
-
-    iget-wide v0, p0, Leoc;->w:J
-
-    return-wide v0
-.end method
-
-.method public final b(I)V
-    .locals 1
-
-    iget v0, p0, Leoc;->q:I
-
-    if-nez v0, :cond_0
-
-    iput p1, p0, Leoc;->q:I
-
-    :cond_0
-    iput p1, p0, Leoc;->r:I
-
-    return-void
-.end method
-
-.method public final b(Lany;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method final b(Ljava/lang/String;)V
-    .locals 5
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    sget-object v1, Leoc;->a:Ljava/lang/String;
-
-    iget-object v2, p0, Leoc;->i:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x4
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "["
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, "|"
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "] "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final declared-synchronized c()I
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget v0, p0, Leoc;->z:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized d()Lgyr;
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Leoc;->A:Lgyr;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final e()V
-    .locals 3
-
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    iget v1, p0, Leoc;->q:I
-
-    iget v2, p0, Leoc;->r:I
-
-    invoke-virtual {v0, v1, v2}, Lemy;->onCaptureStartCommitted(II)V
-
-    return-void
-.end method
-
-.method public final declared-synchronized f()V
-    .locals 3
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Leoc;->D:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "cancel() invoked, but userNotifiedCaptureOccurred. Invoking finishWithFailure."
-
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
-
-    sget-object v0, Lewl;->a:Lgyr;
-
-    const/4 v1, 0x1
-
-    const-string v2, ""
-
-    invoke-virtual {p0, v0, v1, v2}, Leoc;->a(Lgyr;ZLjava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_0
-    monitor-exit p0
-
-    return-void
-
-    :cond_0
-    :try_start_1
-    const-string v0, "cancel"
-
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
-
-    sget-object v0, Leol;->d:Leol;
-
-    iput-object v0, p0, Leoc;->B:Leol;
-
-    iget-object v0, p0, Leoc;->m:Landroid/net/Uri;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Leoc;->g:Leon;
-
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Leon;->a(Landroid/net/Uri;)V
-
-    :cond_1
-    iget-object v0, p0, Leoc;->x:Leoa;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Leoc;->v:Lenz;
-
-    iget-object v1, p0, Leoc;->x:Leoa;
-
-    invoke-virtual {v0, v1}, Lenz;->b(Leoa;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Leoc;->x:Leoa;
-
-    :cond_2
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    iget v1, p0, Leoc;->q:I
-
-    iget v2, p0, Leoc;->r:I
-
-    invoke-virtual {v0, v1, v2}, Lemy;->onCaptureCanceled(II)V
-
-    invoke-direct {p0}, Leoc;->q()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized g()V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    const-string v0, "delete"
-
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
-
-    sget-object v0, Leol;->d:Leol;
-
-    iput-object v0, p0, Leoc;->B:Leol;
-
-    iget-object v0, p0, Leoc;->m:Landroid/net/Uri;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Leoc;->g:Leon;
-
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Leon;->a(Landroid/net/Uri;)V
-
-    :cond_0
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    invoke-virtual {v0}, Lemy;->onCaptureDeleted()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final h()V
-    .locals 3
-
-    const-string v0, "finish"
-
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Leol;
-
-    const/4 v1, 0x0
-
-    sget-object v2, Leol;->b:Leol;
-
-    aput-object v2, v0, v1
-
-    invoke-direct {p0, v0}, Leoc;->a([Leol;)V
-
-    iget-object v0, p0, Leoc;->x:Leoa;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Cannot call finish without calling startSession first."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    sget-object v0, Leol;->c:Leol;
-
-    iput-object v0, p0, Leoc;->B:Leol;
-
-    iget-object v0, p0, Leoc;->s:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Leoj;
-
-    invoke-direct {v1, p0}, Leoj;-><init>(Leoc;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 2
-
-    iget-object v0, p0, Leoc;->g:Leon;
-
-    iget-object v1, p0, Leoc;->m:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Leon;->b(Landroid/net/Uri;)V
-
-    return-void
-.end method
-
-.method public final j()Leoy;
-    .locals 1
-
-    iget-object v0, p0, Leoc;->b:Leoy;
-
-    return-object v0
-.end method
-
-.method public final k()Landroid/net/Uri;
-    .locals 1
-
-    iget-object v0, p0, Leoc;->m:Landroid/net/Uri;
-
-    return-object v0
-.end method
-
-.method public final l()V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final m()V
-    .locals 2
-
-    const-string v0, "finalizeSession"
-
-    invoke-virtual {p0, v0}, Leoc;->a(Ljava/lang/String;)V
-
-    iget-object v0, p0, Leoc;->v:Lenz;
-
-    iget-object v1, p0, Leoc;->x:Leoa;
-
-    invoke-virtual {v0, v1}, Lenz;->b(Leoa;)V
-
-    iget-object v0, p0, Leoc;->h:Lemy;
-
-    invoke-virtual {v0}, Lemy;->onCaptureFinalized()V
-
-    return-void
-.end method
-
-.method public final n()Lavl;
-    .locals 1
-
-    iget-object v0, p0, Leoc;->o:Lavl;
-
-    return-object v0
-.end method
-
-.method public final o()Lgry;
-    .locals 1
-
-    iget-object v0, p0, Leoc;->C:Lgry;
-
-    return-object v0
-.end method
-
-.method public final p()Leov;
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+    return-object v1
 .end method

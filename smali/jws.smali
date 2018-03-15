@@ -1,116 +1,521 @@
-.class public Ljws;
-.super Ljava/lang/Object;
+.class Ljws;
+.super Ljwv;
 .source "PG"
+
+# interfaces
+.implements Ljava/util/Map;
 
 
 # static fields
-.field public static final a:Ljava/lang/String;
+.field public static final serialVersionUID:J
 
 
 # instance fields
-.field public final b:Landroid/content/pm/PackageManager;
+.field private transient b:Ljava/util/Set;
+
+.field private transient c:Ljava/util/Collection;
+
+.field private transient d:Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-class v0, Ljws;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ljws;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/pm/PackageManager;)V
+.method constructor <init>(Ljava/util/Map;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Ljws;->b:Landroid/content/pm/PackageManager;
+    invoke-direct {p0, p1, p2}, Ljwv;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 6
+.method a()Ljava/util/Map;
+    .locals 1
 
-    const/4 v0, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    :try_start_0
-    iget-object v1, p0, Ljws;->b:Landroid/content/pm/PackageManager;
-
-    invoke-virtual {v1, p1}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const-string v2, "string"
-
-    invoke-virtual {v1, p2, v2, p1}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    invoke-super {p0}, Ljwv;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_0
+    check-cast v0, Ljava/util/Map;
+
+    return-object v0
+.end method
+
+.method synthetic b()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public clear()V
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public containsKey(Ljava/lang/Object;)Z
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public containsValue(Ljava/lang/Object;)Z
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsValue(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public entrySet()Ljava/util/Set;
+    .locals 3
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Ljws;->d:Ljava/util/Set;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    iget-object v2, p0, Ljws;->a:Ljava/lang/Object;
+
+    invoke-static {v0, v2}, Ljwo;->a(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljws;->d:Ljava/util/Set;
+
+    :cond_0
+    iget-object v0, p0, Ljws;->d:Ljava/util/Set;
+
+    monitor-exit v1
+
     return-object v0
 
-    :catch_0
-    move-exception v1
+    :catchall_0
+    move-exception v0
 
-    sget-object v1, Ljws;->a:Ljava/lang/String;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v2, "Application package name \'%s\' not found."
+    throw v0
+.end method
 
-    new-array v3, v5, [Ljava/lang/Object;
+.method public equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    aput-object p1, v3, v4
+    if-ne p1, p0, :cond_0
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v0, 0x1
 
-    move-result-object v2
+    :goto_0
+    return v0
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :cond_0
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
 
-    goto :goto_0
+    monitor-enter v1
 
-    :catch_1
-    move-exception v1
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
 
-    sget-object v1, Ljws;->a:Ljava/lang/String;
+    move-result-object v0
 
-    const-string v2, "String resource name \'%s\' not found in package \'%s\'."
+    invoke-interface {v0, p1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
 
-    const/4 v3, 0x2
+    move-result v0
 
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object p2, v3, v4
-
-    aput-object p1, v3, v5
-
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    monitor-exit v1
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public hashCode()I
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->hashCode()I
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public isEmpty()Z
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public keySet()Ljava/util/Set;
+    .locals 3
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Ljws;->b:Ljava/util/Set;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    iget-object v2, p0, Ljws;->a:Ljava/lang/Object;
+
+    invoke-static {v0, v2}, Ljwo;->a(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljws;->b:Ljava/util/Set;
+
+    :cond_0
+    iget-object v0, p0, Ljws;->b:Ljava/util/Set;
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public putAll(Ljava/util/Map;)V
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public size()I
+    .locals 2
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public values()Ljava/util/Collection;
+    .locals 4
+
+    iget-object v1, p0, Ljws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Ljws;->c:Ljava/util/Collection;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Ljws;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    iget-object v2, p0, Ljws;->a:Ljava/lang/Object;
+
+    new-instance v3, Ljwq;
+
+    invoke-direct {v3, v0, v2}, Ljwq;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V
+
+    iput-object v3, p0, Ljws;->c:Ljava/util/Collection;
+
+    :cond_0
+    iget-object v0, p0, Ljws;->c:Ljava/util/Collection;
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

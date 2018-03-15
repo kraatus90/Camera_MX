@@ -1,336 +1,181 @@
-.class final Lfov;
+.class public final Lfov;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field private synthetic a:[B
+.field private final a:Lgah;
 
-.field private synthetic b:Lfom;
+.field private final b:Lfut;
 
 
 # direct methods
-.method constructor <init>(Lfom;[B)V
+.method constructor <init>(Lgab;Lfut;)V
     .locals 0
 
-    iput-object p1, p0, Lfov;->b:Lfom;
-
-    iput-object p2, p0, Lfov;->a:[B
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfov;->a:Lgah;
+
+    iput-object p2, p0, Lfov;->b:Lfut;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final a(Link;Ligz;)Lfow;
+    .locals 8
 
-    :try_start_0
-    iget-object v0, p0, Lfov;->b:Lfom;
+    const/4 v5, 0x0
 
-    iget-object v0, v0, Lfom;->H:Ljava/util/List;
+    new-instance v6, Lket;
 
-    const/4 v1, 0x0
+    invoke-direct {v6}, Lket;-><init>()V
 
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    new-instance v7, Lket;
 
-    move-result-object v0
+    invoke-direct {v7}, Lket;-><init>()V
 
-    check-cast v0, Ljava/lang/String;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance v1, Ljava/io/FileOutputStream;
+    const-string v1, "Thumbnail generation should not require metadata"
 
-    invoke-direct {v1, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    new-instance v2, Ljava/io/File;
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Throwable;)Lkeh;
 
-    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    move-result-object v2
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v3, Lfrl;
 
-    move-result-object v0
+    invoke-direct {v3, p1}, Lfrl;-><init>(Link;)V
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lfov;->b:Lfut;
 
-    move-result-object v3
+    iget-object v0, v0, Lfut;->c:Ljrf;
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0xb
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "imageFile: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Lfoj;->a()Z
+    invoke-virtual {v0}, Ljrf;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lfov;->a:[B
+    iget-object v0, p0, Lfov;->b:Lfut;
 
-    const/4 v3, 0x0
+    iget-object v0, v0, Lfut;->c:Ljrf;
 
-    iget-object v4, p0, Lfov;->a:[B
-
-    array-length v4, v4
-
-    invoke-static {v0, v3, v4}, Landroid/graphics/BitmapFactory;->decodeByteArray([BII)Landroid/graphics/Bitmap;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    check-cast v0, Lils;
 
-    const/16 v4, 0x64
+    iget-object v0, v0, Lils;->b:Lihc;
 
-    invoke-virtual {v0, v3, v4, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
-
-    :goto_0
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
-
-    iget-object v0, p0, Lfov;->b:Lfom;
-
-    iget v0, v0, Lfom;->o:I
-
-    iget-object v1, p0, Lfov;->b:Lfom;
-
-    iget-object v1, v1, Lfom;->F:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v0, p0, Lfov;->b:Lfom;
-
-    iget-object v0, v0, Lfom;->F:Ljava/util/List;
-
-    iget-object v1, p0, Lfov;->b:Lfom;
-
-    iget v1, v1, Lfom;->o:I
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    :cond_0
-    iget-object v0, p0, Lfov;->b:Lfom;
-
-    iget v0, v0, Lfom;->o:I
-
-    iget-object v1, p0, Lfov;->a:[B
-
-    array-length v1, v1
-
-    const/16 v3, 0x2c
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Photo "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ligq;->a(Lihc;)Ligq;
 
     move-result-object v0
 
-    const-string v3, " saved : "
+    new-instance v1, Lihc;
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {p1}, Link;->c()I
 
-    move-result-object v0
+    move-result v4
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " bytes."
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v0, p0, Lfov;->b:Lfom;
-
-    iget-object v0, v0, Lfom;->n:Ljava/util/Vector;
-
-    iget-object v1, p0, Lfov;->b:Lfom;
-
-    iget v1, v1, Lfom;->o:I
-
-    invoke-virtual {v0, v1}, Ljava/util/Vector;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    iget-object v0, p0, Lfov;->b:Lfom;
-
-    iget-object v0, v0, Lfom;->G:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [F
-
-    invoke-virtual {v0}, [F->clone()Ljava/lang/Object;
-
-    iget-object v0, p0, Lfov;->b:Lfom;
-
-    iget-object v0, v0, Lfom;->D:Lfol;
-
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v3, "alignNextImage called for "
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-interface {p1}, Link;->d()I
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    invoke-direct {v1, v4, v5}, Lihc;-><init>(II)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ligq;->b(Lihc;)Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    :goto_0
+    new-instance v1, Lgay;
+
+    invoke-direct {v1, v3, p2, v2, v0}, Lgay;-><init>(Link;Ligz;Lkeh;Landroid/graphics/Rect;)V
+
+    new-instance v4, Lgbo;
+
+    invoke-direct {v4}, Lgbo;-><init>()V
+
+    new-instance v2, Lkeo;
+
+    invoke-direct {v2}, Lkeo;-><init>()V
+
+    sget-object v0, Lgai;->f:Lgai;
+
+    sget-object v3, Lgai;->a:Lgai;
+
+    sget-object v5, Lgai;->d:Lgai;
+
+    invoke-static {v0, v3, v5}, Ljuo;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljuo;
+
+    move-result-object v3
+
+    new-instance v5, Lfor;
+
+    invoke-direct {v5}, Lfor;-><init>()V
+
+    new-instance v0, Lfoq;
+
+    invoke-direct {v0, v6, p2, v7}, Lfoq;-><init>(Lket;Ligz;Lket;)V
+
+    iput-object v0, v5, Lfor;->c:Lgap;
+
+    :try_start_0
+    iget-object v0, p0, Lfov;->a:Lgah;
+
+    iget-object v5, v5, Lfor;->d:Ljrf;
+
+    invoke-interface/range {v0 .. v5}, Lgah;->a(Lgay;Ljava/util/concurrent/Executor;Ljava/util/Set;Lfzv;Ljrf;)Z
     :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_1
-    :try_start_1
-    iget-object v0, v0, Lfol;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+    new-instance v0, Lfow;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;->put(Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_3
+    invoke-static {v6}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
 
-    :try_start_2
-    iget-object v0, p0, Lfov;->b:Lfom;
+    move-result-object v1
 
-    iget v1, v0, Lfom;->o:I
+    invoke-static {v7}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
 
-    add-int/lit8 v1, v1, 0x1
+    move-result-object v2
 
-    iput v1, v0, Lfom;->o:I
+    invoke-direct {v0, v1, v2}, Lfow;-><init>(Ljrf;Ljrf;)V
 
-    iget-object v0, p0, Lfov;->b:Lfom;
+    return-object v0
 
-    iget-object v0, v0, Lfom;->I:Lfpa;
+    :cond_0
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-static {v2}, Lfom;->a(Ljava/io/File;)D
+    invoke-interface {p1}, Link;->c()I
 
-    move-result-wide v2
+    move-result v1
 
-    iput-wide v2, v0, Lfpa;->b:D
+    invoke-interface {p1}, Link;->d()I
 
-    invoke-virtual {v0}, Lfpa;->a()V
+    move-result v4
 
-    :goto_2
-    return-void
+    invoke-direct {v0, v5, v5, v1, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    :cond_1
-    iget-object v0, p0, Lfov;->a:[B
-
-    invoke-virtual {v1, v0}, Ljava/io/FileOutputStream;->write([B)V
-    :try_end_2
-    .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_3
-
-    goto/16 :goto_0
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    sget-object v1, Ljvs;->a:Ljvt;
-
-    invoke-virtual {v1, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    :cond_2
-    :try_start_3
-    new-instance v4, Ljava/lang/String;
-
-    invoke-direct {v4, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-    :try_end_3
-    .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_0
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_3 .. :try_end_3} :catch_3
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    sget-object v1, Ljvs;->a:Ljvt;
-
-    invoke-virtual {v1, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    :catch_2
-    move-exception v0
-
-    :try_start_4
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
+    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
 
-    new-instance v0, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v1, "Unexpected interruption"
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_4
-    .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_0
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_4 .. :try_end_4} :catch_3
-
-    :catch_3
-    move-exception v0
-
-    sget-object v1, Ljvs;->a:Ljvt;
-
-    invoke-virtual {v1, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_2
+    throw v1
 .end method

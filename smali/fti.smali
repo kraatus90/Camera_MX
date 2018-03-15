@@ -1,65 +1,63 @@
 .class public final Lfti;
-.super Ljava/lang/Object;
+.super Lido;
 .source "PG"
 
 
 # instance fields
-.field public final a:Landroid/content/ContentValues;
+.field private final a:Lftl;
+
+.field private b:Z
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lick;Lfdv;Lftl;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lido;-><init>(Lick;)V
 
-    new-instance v0, Landroid/content/ContentValues;
+    invoke-interface {p2}, Lfdv;->y()Z
 
-    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
+    move-result v0
 
-    iput-object v0, p0, Lfti;->a:Landroid/content/ContentValues;
+    iput-boolean v0, p0, Lfti;->b:Z
+
+    iput-object p3, p0, Lfti;->a:Lftl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/Double;)V
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lfti;->a:Landroid/content/ContentValues;
+    check-cast p1, Lftl;
 
-    invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Double;)V
+    iget-object v0, p1, Lftl;->d:Ljava/lang/String;
 
-    return-void
+    return-object v0
 .end method
 
-.method public final a(Ljava/lang/String;Ljava/lang/Integer;)V
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lfti;->a:Landroid/content/ContentValues;
+    check-cast p1, Ljava/lang/String;
 
-    invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    iget-boolean v0, p0, Lfti;->b:Z
 
-    return-void
-.end method
+    if-nez v0, :cond_0
 
-.method public final a(Ljava/lang/String;Ljava/lang/Long;)V
-    .locals 1
+    sget-object v0, Lftl;->b:Lftl;
 
-    iget-object v0, p0, Lfti;->a:Landroid/content/ContentValues;
+    :goto_0
+    return-object v0
 
-    invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    :cond_0
+    iget-object v0, p0, Lfti;->a:Lftl;
 
-    return-void
-.end method
+    invoke-static {p1, v0}, Lftl;->a(Ljava/lang/String;Lftl;)Lftl;
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+    move-result-object v0
 
-    iget-object v0, p0, Lfti;->a:Landroid/content/ContentValues;
-
-    invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+    goto :goto_0
 .end method

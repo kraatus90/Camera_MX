@@ -1,67 +1,113 @@
-.class final synthetic Lfym;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljig;
+.class final Lfym;
+.super Lcom/google/googlex/gcam/GoudaProgressCallback;
+.source "PG"
 
 
 # instance fields
-.field private a:Landroid/media/MediaCodec$BufferInfo;
-
-.field private b:Landroid/media/MediaFormat;
+.field private final synthetic a:Lfzg;
 
 
 # direct methods
-.method constructor <init>(Landroid/media/MediaCodec$BufferInfo;Landroid/media/MediaFormat;)V
+.method constructor <init>(Lfzg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfym;->a:Lfzg;
 
-    iput-object p1, p0, Lfym;->a:Landroid/media/MediaCodec$BufferInfo;
-
-    iput-object p2, p0, Lfym;->b:Landroid/media/MediaFormat;
+    invoke-direct {p0}, Lcom/google/googlex/gcam/GoudaProgressCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 8
+.method public final Run(JF)V
+    .locals 5
 
-    iget-object v0, p0, Lfym;->a:Landroid/media/MediaCodec$BufferInfo;
+    const/high16 v4, 0x3f000000    # 0.5f
 
-    iget-object v1, p0, Lfym;->b:Landroid/media/MediaFormat;
+    const/4 v3, 0x0
 
-    const-string v2, "muxer writing <%d> %s"
+    sget-object v0, Lfyi;->a:Ljava/lang/String;
 
-    const/4 v3, 0x2
+    const/16 v1, 0x44
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-wide v6, v0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    const-string v1, "Gouda progress: id = "
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    aput-object v0, v3, v4
-
-    const/4 v0, 0x1
-
-    const-string v4, "mime"
-
-    invoke-virtual {v1, v4}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    aput-object v1, v3, v0
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v0
+    const-string v2, " progress = "
 
-    return-object v0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lfym;->a:Lfzg;
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lfym;->a:Lfzg;
+
+    cmpl-float v0, p3, v3
+
+    if-ltz v0, :cond_2
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    cmpg-float v0, p3, v0
+
+    if-gtz v0, :cond_2
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    cmpl-float v0, p3, v3
+
+    if-nez v0, :cond_0
+
+    iget-object v0, v1, Lfzg;->b:Ldmz;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    iput-wide v2, v0, Ldmz;->i:J
+
+    :cond_0
+    mul-float v0, p3, v4
+
+    add-float/2addr v0, v4
+
+    iget-object v1, v1, Lfzg;->a:Lfsn;
+
+    invoke-interface {v1, v0}, Lfsn;->a(F)V
+
+    :cond_1
+    return-void
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

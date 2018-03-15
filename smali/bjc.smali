@@ -1,19 +1,28 @@
-.class public final Lbjc;
+.class final Lbjc;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public a:J
+.field public final synthetic a:Lket;
 
-.field public b:Landroid/content/res/Resources;
+.field public final synthetic b:Lbjb;
 
-.field public c:Landroid/widget/TextView;
+.field private final synthetic c:Lbhc;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lbjb;Lbhc;Lket;)V
     .locals 0
+
+    iput-object p1, p0, Lbjc;->b:Lbjb;
+
+    iput-object p2, p0, Lbjc;->c:Lbhc;
+
+    iput-object p3, p0, Lbjc;->a:Lket;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,146 +31,74 @@
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .locals 4
 
-    const-wide/16 v0, 0x0
+    :try_start_0
+    iget-object v0, p0, Lbjc;->c:Lbhc;
 
-    invoke-virtual {p0, v0, v1}, Lbjc;->a(J)V
-
-    invoke-virtual {p0}, Lbjc;->b()V
-
-    iget-object v0, p0, Lbjc;->c:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    const-wide/16 v2, 0xc8
-
-    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    new-instance v1, Lbiy;
-
-    invoke-direct {v1, p0}, Lbiy;-><init>(Lbjc;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
-
-    return-void
-.end method
-
-.method public final a(J)V
-    .locals 5
-
-    iput-wide p1, p0, Lbjc;->a:J
-
-    iget-object v0, p0, Lbjc;->c:Landroid/widget/TextView;
-
-    iget-wide v2, p0, Lbjc;->a:J
-
-    invoke-static {v2, v3}, Lhaw;->a(J)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public final a(Landroid/widget/TextView;)V
-    .locals 3
-
-    new-instance v0, Lhaw;
-
-    invoke-direct {v0}, Lhaw;-><init>()V
-
-    invoke-virtual {p1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbjc;->b:Landroid/content/res/Resources;
-
-    iput-object p1, p0, Lbjc;->c:Landroid/widget/TextView;
-
-    iget-object v0, p0, Lbjc;->c:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lbjc;->b:Landroid/content/res/Resources;
-
-    const v2, 0x7f0d010a
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
-
-    return-void
-.end method
-
-.method public final a(Z)V
-    .locals 4
-
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Lbjc;->c:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    const-wide/16 v2, 0xc8
-
-    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    new-instance v1, Lbiz;
-
-    invoke-direct {v1, p0}, Lbiz;-><init>(Lbjc;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0}, Lbhc;->a()V
+    :try_end_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Limt; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
+    iget-object v0, p0, Lbjc;->b:Lbjb;
+
+    iget-object v0, v0, Lbjb;->b:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lbjd;
+
+    invoke-direct {v1, p0}, Lbjd;-><init>(Lbjc;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
     return-void
 
-    :cond_0
-    iget-object v0, p0, Lbjc;->c:Landroid/widget/TextView;
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
+    :goto_1
+    sget-object v1, Lbjb;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Lbjc;->c:Landroid/widget/TextView;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/16 v1, 0x8
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x35
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Failed when call CameraCaptureSession#abortCaptures: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
-.end method
 
-.method public final b()V
-    .locals 3
+    :catch_1
+    move-exception v0
 
-    const/4 v2, 0x0
-
-    iget-object v0, p0, Lbjc;->c:Landroid/widget/TextView;
-
-    const v1, 0x7f0200f3
-
-    invoke-virtual {v0, v1, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
-
-    return-void
+    goto :goto_1
 .end method

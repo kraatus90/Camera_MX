@@ -2,86 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final a:Lhkl;
+.field private final synthetic a:Landroid/content/SharedPreferences;
 
-.field public final b:Lcom/google/android/gms/googlehelp/GoogleHelp;
+.field private final synthetic b:Ljava/lang/String;
 
-.field private c:J
+.field private final synthetic c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lhkl;Lcom/google/android/gms/googlehelp/GoogleHelp;J)V
-    .locals 1
+.method public constructor <init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lhow;->a:Landroid/content/SharedPreferences;
+
+    iput-object p2, p0, Lhow;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lhow;->c:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhow;->a:Lhkl;
-
-    iput-object p2, p0, Lhow;->b:Lcom/google/android/gms/googlehelp/GoogleHelp;
-
-    iput-wide p3, p0, Lhow;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 3
 
-    :try_start_0
-    new-instance v0, Lhod;
+    iget-object v0, p0, Lhow;->a:Landroid/content/SharedPreferences;
 
-    invoke-direct {v0}, Lhod;-><init>()V
+    iget-object v1, p0, Lhow;->b:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lhod;->a()J
+    iget-object v2, p0, Lhow;->c:Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    move-exception v0
-
-    const-string v0, "gH_GetAsyncFeedbackPsd"
-
-    const-string v1, "Failed to get async Feedback psd."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "gms:feedback:async_feedback_psd_failure"
-
-    const-string v1, "exception"
-
-    invoke-static {v0, v1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lhjg;->a(Ljava/util/List;)Landroid/os/Bundle;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lhow;->c:J
-
-    iget-object v1, p0, Lhow;->a:Lhkl;
-
-    new-instance v4, Lhox;
-
-    invoke-direct {v4, p0, v0, v2, v3}, Lhox;-><init>(Lhow;Landroid/os/Bundle;J)V
-
-    invoke-static {v1, v4}, Lhpc;->a(Lhkl;Lhpg;)V
-
-    return-void
+    return-object v0
 .end method

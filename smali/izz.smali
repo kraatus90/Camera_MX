@@ -1,62 +1,44 @@
-.class public final Lizz;
+.class final Lizz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljan;
+.implements Lipn;
 
 
 # instance fields
-.field private a:F
+.field private final synthetic a:Landroid/content/Context;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method constructor <init>(Landroid/content/Context;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lizz;->a:Landroid/content/Context;
 
-    iput p1, p0, Lizz;->a:F
+    iput p2, p0, Lizz;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljfx;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    new-instance v0, Ljfu;
+    check-cast p1, Ljava/util/List;
 
-    iget v1, p0, Lizz;->a:F
+    new-instance v0, Ljah;
 
-    invoke-direct {v0, v1}, Ljfu;-><init>(F)V
+    iget-object v1, p0, Lizz;->a:Landroid/content/Context;
 
-    return-object v0
-.end method
+    iget v2, p0, Lizz;->b:I
 
-.method public final a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b(J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c(J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "ConstantScorer"
+    invoke-direct {v0, v1, p1, v2}, Ljah;-><init>(Landroid/content/Context;Ljava/util/List;I)V
 
     return-object v0
 .end method

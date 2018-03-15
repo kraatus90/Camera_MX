@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lipf;
+.implements Liyi;
 
 
 # static fields

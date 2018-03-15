@@ -1,52 +1,96 @@
-.class public final synthetic Lfiy;
+.class final Lfiy;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
+.implements Lfin;
 
 
 # instance fields
-.field private a:Lfiw;
+.field private final synthetic a:Lfiz;
 
-.field private b:Landroid/widget/ImageButton;
+.field private final synthetic b:Lfin;
 
 
 # direct methods
-.method public constructor <init>(Lfiw;Landroid/widget/ImageButton;)V
+.method constructor <init>(Lfiz;Lfin;)V
     .locals 0
 
+    iput-object p1, p0, Lfiy;->a:Lfiz;
+
+    iput-object p2, p0, Lfiy;->b:Lfin;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfiy;->a:Lfiw;
-
-    iput-object p2, p0, Lfiy;->b:Landroid/widget/ImageButton;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .locals 3
+.method public final a(Lfjg;)Lkeh;
+    .locals 6
 
-    iget-object v0, p0, Lfiy;->a:Lfiw;
+    iget-object v0, p0, Lfiy;->a:Lfiz;
 
-    iget-object v1, p0, Lfiy;->b:Landroid/widget/ImageButton;
+    invoke-virtual {p1}, Lfjg;->f()J
 
-    invoke-virtual {v0}, Lfiw;->c()Z
+    move-result-wide v2
 
-    move-result v2
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    if-nez v2, :cond_0
+    move-result-object v1
 
-    invoke-virtual {v1}, Landroid/widget/ImageButton;->isShown()Z
+    invoke-virtual {v0, v1}, Lfiz;->a(Ljava/lang/Long;)Lfgk;
 
-    move-result v2
+    move-result-object v1
 
-    if-eqz v2, :cond_0
+    invoke-static {v1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lfiw;->a(Landroid/view/View;)V
+    iget-wide v2, v1, Lfgk;->a:J
+
+    invoke-virtual {p1}, Lfjg;->f()J
+
+    move-result-wide v4
+
+    cmp-long v0, v2, v4
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->b(Z)V
+
+    iget-object v0, p0, Lfiy;->a:Lfiz;
+
+    invoke-virtual {v0, v1}, Lfiz;->a(Lfgk;)Z
+
+    sget-object v0, Lfji;->b:Lfjh;
+
+    invoke-virtual {p1, v0, v1}, Lfjg;->a(Lfjh;Ljava/lang/Object;)Lfjg;
+
+    iget-object v0, p0, Lfiy;->b:Lfin;
+
+    invoke-interface {v0, p1}, Lfin;->a(Lfjg;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
 
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final a()Z
+    .locals 1
+
+    iget-object v0, p0, Lfiy;->b:Lfin;
+
+    invoke-interface {v0}, Lfin;->a()Z
+
+    move-result v0
+
+    return v0
 .end method

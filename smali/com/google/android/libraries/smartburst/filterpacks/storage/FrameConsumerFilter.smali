@@ -10,7 +10,7 @@
 
 
 # instance fields
-.field public volatile mFrameConsumer:Liru;
+.field public volatile mFrameConsumer:Ljba;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Liru;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Ljba;
 
     return-void
 .end method
@@ -65,9 +65,9 @@
 .method protected onClose()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Liru;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Ljba;
 
-    invoke-interface {v0}, Liru;->a()V
+    invoke-interface {v0}, Ljba;->a()V
 
     return-void
 .end method
@@ -75,7 +75,7 @@
 .method protected onOpen()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Liru;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Ljba;
 
     if-nez v0, :cond_0
 
@@ -94,7 +94,7 @@
 .method protected onProcess()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Liru;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Ljba;
 
     const-string v1, "frame"
 
@@ -110,17 +110,17 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Liru;->a(Ljava/lang/Object;)V
+    invoke-interface {v0, v1}, Ljba;->a(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public setFrameConsumer(Liru;)V
+.method public setFrameConsumer(Ljba;)V
     .locals 0
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Liru;
+    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;->mFrameConsumer:Ljba;
 
     return-void
 .end method

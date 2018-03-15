@@ -3,20 +3,30 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Ljxn;
+# static fields
+.field public static final a:Lepq;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lepq;
+
+    invoke-direct {v0}, Lepq;-><init>()V
+
+    sput-object v0, Lepq;->a:Lepq;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lepq;->a:Ljxn;
 
     return-void
 .end method
@@ -24,33 +34,19 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lepq;->a:Ljxn;
+    new-instance v0, Liay;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgsl;
-
-    const-string v1, "pref_micro_mode"
-
-    sget-object v2, Lgms;->b:Lgms;
-
-    iget v2, v2, Lgms;->d:I
-
-    invoke-virtual {v0, v1, v2}, Lgsl;->a(Ljava/lang/String;I)Liau;
-
-    move-result-object v0
+    invoke-direct {v0}, Liay;-><init>()V
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liau;
+    check-cast v0, Ljava/util/concurrent/Executor;
 
     return-object v0
 .end method

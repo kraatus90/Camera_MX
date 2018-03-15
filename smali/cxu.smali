@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcxc;
+.field private final synthetic a:Lcxt;
 
 
 # direct methods
-.method constructor <init>(Lcxc;)V
+.method constructor <init>(Lcxt;)V
     .locals 0
 
-    iput-object p1, p0, Lcxu;->a:Lcxc;
+    iput-object p1, p0, Lcxu;->a:Lcxt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,31 +23,20 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Lcvx;
+    iget-object v0, p0, Lcxu;->a:Lcxt;
 
-    iget-object v0, p0, Lcxu;->a:Lcxc;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-    iget-boolean v0, v0, Lcxc;->e:Z
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, Lcxo;
 
-    iget-object v0, p0, Lcxu;->a:Lcxc;
+    iget-object v0, v0, Lcxo;->o:Lijc;
 
-    const/4 v1, 0x0
+    invoke-interface {v0}, Lijc;->d()V
 
-    iput-boolean v1, v0, Lcxc;->e:Z
-
-    iget-object v0, p0, Lcxu;->a:Lcxc;
-
-    iget-object v1, p1, Lcvx;->a:Lcwa;
-
-    invoke-virtual {v0, v1}, Lcxc;->a(Lcwa;)V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 .end method

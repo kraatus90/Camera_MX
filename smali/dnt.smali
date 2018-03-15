@@ -1,114 +1,66 @@
-.class public final Ldnt;
+.class final Ldnt;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldnr;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Ldnr;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldnt;->a:Ldnr;
 
-    iput-object p1, p0, Ldnt;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldnt;
-
-    invoke-direct {v0, p0}, Ldnt;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    const/4 v5, 0x1
+    iget-object v0, p0, Ldnt;->a:Ldnr;
 
-    const/4 v4, 0x0
+    iget-object v0, v0, Ldnr;->a:Ldnj;
 
-    iget-object v0, p0, Ldnt;->a:Ljxn;
+    iget-object v0, v0, Ldnj;->e:Ldni;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldni;->b:Lihn;
 
-    move-result-object v0
+    const-string v1, "Failed to generate thumbnail"
 
-    check-cast v0, Licv;
+    invoke-interface {v0, v1, p1}, Lihn;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const-string v1, "Nexus2015PostPrcsg"
+    return-void
+.end method
 
-    invoke-interface {v0, v1}, Licv;->a(Ljava/lang/String;)Licu;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
 
-    move-result-object v0
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    const/4 v1, 0x4
+    iget-object v0, p0, Ldnt;->a:Ldnr;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, v0, Ldnr;->a:Ldnj;
 
-    move-result-object v1
+    iget-object v0, v0, Ldnj;->a:Lfsn;
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, p0, Ldnt;->a:Ldnr;
 
-    move-result-object v2
+    iget-object v1, v1, Ldnr;->a:Ldnj;
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, v1, Ldnj;->d:Ligz;
 
-    move-result-object v3
+    iget v1, v1, Ligz;->e:I
 
-    invoke-static {v1, v2, v3}, Ljle;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljle;
+    invoke-interface {v0, p1, v1}, Lfsn;->a(Landroid/graphics/Bitmap;I)V
 
-    move-result-object v1
-
-    const/4 v2, 0x3
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-static {v2, v3, v4}, Ljle;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljle;
-
-    move-result-object v2
-
-    new-instance v3, Ldns;
-
-    invoke-direct {v3, v1, v2, v0}, Ldns;-><init>(Ljava/util/Set;Ljava/util/Set;Licu;)V
-
-    invoke-static {v3}, Ljkv;->a(Ljava/lang/Object;)Ljkv;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lfsp;->a(Ljava/util/Collection;)Lggq;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lggq;
-
-    return-object v0
+    return-void
 .end method

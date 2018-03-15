@@ -1,48 +1,54 @@
-.class final Lbvk;
+.class public final Lbvk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Laav;
-
-.field private synthetic b:I
-
-.field private synthetic c:Lbvg;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbvg;Laav;I)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbvk;->c:Lbvg;
-
-    iput-object p2, p0, Lbvk;->a:Laav;
-
-    iput p3, p0, Lbvk;->b:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbvk;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbvk;->a:Laav;
+    iget-object v0, p0, Lbvk;->a:Lkgv;
 
-    iget v1, p0, Lbvk;->b:I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Laav;->a(I)V
+    move-result-object v0
 
-    iget-object v0, p0, Lbvk;->c:Lbvg;
+    check-cast v0, Lbvg;
 
-    invoke-virtual {v0}, Lbvg;->c()V
+    const-string v1, "activity"
 
-    return-void
+    invoke-virtual {v0, v1}, Lbvg;->a(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/ActivityManager;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/ActivityManager;
+
+    return-object v0
 .end method

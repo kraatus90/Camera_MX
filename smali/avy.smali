@@ -1,53 +1,52 @@
-.class public final synthetic Lavy;
+.class public final Lavy;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Lkgv;
 
 
-# static fields
-.field public static final a:Ljhj;
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lavy;
-
-    invoke-direct {v0}, Lavy;-><init>()V
-
-    sput-object v0, Lavy;->a:Ljhj;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lavy;->a:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;)Lavy;
+    .locals 1
+
+    new-instance v0, Lavy;
+
+    invoke-direct {v0, p0}, Lavy;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    if-eqz p1, :cond_0
+    new-instance v1, Lavx;
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lavy;->a:Lkgv;
 
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lick;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-direct {v1, v0}, Lavx;-><init>(Lick;)V
 
-    goto :goto_0
+    return-object v1
 .end method

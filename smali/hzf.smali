@@ -1,41 +1,461 @@
-.class final synthetic Lhzf;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Lhzf;
+.super Lhmv;
 
 
 # instance fields
-.field private a:Lhze;
+.field public final g:Ljava/util/concurrent/ExecutorService;
 
-.field private b:Ljava/lang/Object;
+.field public final h:Lhyo;
+
+.field private final i:Lhyo;
+
+.field private final j:Lhyo;
+
+.field private final k:Lhyo;
+
+.field private final l:Lhyo;
+
+.field private final m:Lhyo;
+
+.field private final n:Lhyo;
+
+.field private final o:Lhyo;
+
+.field private final p:Lhzj;
 
 
 # direct methods
-.method constructor <init>(Lhze;Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lhln;Lhlo;Lhmq;)V
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Ljava/util/concurrent/Executors;->newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
 
-    iput-object p1, p0, Lhzf;->a:Lhze;
+    move-result-object v6
 
-    iput-object p2, p0, Lhzf;->b:Ljava/lang/Object;
+    invoke-static {p1}, Lhzj;->a(Landroid/content/Context;)Lhzj;
+
+    move-result-object v7
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    invoke-direct/range {v0 .. v7}, Lhzf;-><init>(Landroid/content/Context;Landroid/os/Looper;Lhln;Lhlo;Lhmq;Ljava/util/concurrent/ExecutorService;Lhzj;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lhln;Lhlo;Lhmq;Ljava/util/concurrent/ExecutorService;Lhzj;)V
+    .locals 7
+
+    const/16 v3, 0xe
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v4, p5
+
+    move-object v5, p3
+
+    move-object v6, p4
+
+    invoke-direct/range {v0 .. v6}, Lhmv;-><init>(Landroid/content/Context;Landroid/os/Looper;ILhmq;Lhln;Lhlo;)V
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->i:Lhyo;
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->j:Lhyo;
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->k:Lhyo;
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->l:Lhyo;
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->h:Lhyo;
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->m:Lhyo;
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->n:Lhyo;
+
+    new-instance v0, Lhyo;
+
+    invoke-direct {v0}, Lhyo;-><init>()V
+
+    iput-object v0, p0, Lhzf;->o:Lhyo;
+
+    invoke-static {p6}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/ExecutorService;
+
+    iput-object v0, p0, Lhzf;->g:Ljava/util/concurrent/ExecutorService;
+
+    iput-object p7, p0, Lhzf;->p:Lhzj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method protected final C_()Ljava/lang/String;
     .locals 2
 
-    iget-object v0, p0, Lhzf;->a:Lhze;
+    iget-object v0, p0, Lhzf;->p:Lhzj;
 
-    iget-object v1, p0, Lhzf;->b:Ljava/lang/Object;
+    const-string v1, "com.google.android.wearable.app.cn"
 
-    iget-object v0, v0, Lhze;->a:Licn;
+    invoke-virtual {v0, v1}, Lhzj;->a(Ljava/lang/String;)Z
 
-    invoke-interface {v0, v1}, Licn;->a(Ljava/lang/Object;)V
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "com.google.android.wearable.app.cn"
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const-string v0, "com.google.android.gms"
+
+    goto :goto_0
+.end method
+
+.method protected final synthetic a(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 1
+
+    invoke-static {p1}, Lhym;->a(Landroid/os/IBinder;)Lhyl;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected final a()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.wearable.BIND"
+
+    return-object v0
+.end method
+
+.method protected final a(ILandroid/os/IBinder;Landroid/os/Bundle;I)V
+    .locals 3
+
+    const-string v0, "WearableClient"
+
+    const/4 v1, 0x2
+
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "WearableClient"
+
+    const/16 v1, 0x29
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "onPostInitHandler: statusCode "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    iget-object v0, p0, Lhzf;->i:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, Lhzf;->j:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, Lhzf;->k:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, Lhzf;->l:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, Lhzf;->h:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, Lhzf;->m:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, Lhzf;->n:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    iget-object v0, p0, Lhzf;->o:Lhyo;
+
+    invoke-virtual {v0, p2}, Lhyo;->a(Landroid/os/IBinder;)V
+
+    :cond_1
+    invoke-super {p0, p1, p2, p3, p4}, Lhmv;->a(ILandroid/os/IBinder;Landroid/os/Bundle;I)V
 
     return-void
+.end method
+
+.method public final a(Lhml;)V
+    .locals 6
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0}, Lhzf;->g()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    :try_start_0
+    iget-object v1, p0, Lhmf;->c:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    const-string v2, "com.google.android.wearable.app.cn"
+
+    const/16 v3, 0x80
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v1
+
+    iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+
+    if-eqz v1, :cond_0
+
+    const-string v0, "com.google.android.wearable.api.version"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    :cond_0
+    sget v1, Lhla;->c:I
+
+    if-ge v0, v1, :cond_2
+
+    const-string v1, "WearableClient"
+
+    sget v2, Lhla;->c:I
+
+    const/16 v3, 0x50
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Android Wear out of date. Requires API version "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " but found "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, 0x6
+
+    iget-object v2, p0, Lhmf;->c:Landroid/content/Context;
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lhmf;->c:Landroid/content/Context;
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v5, "com.google.android.wearable.app.cn.UPDATE_ANDROID_WEAR"
+
+    invoke-direct {v0, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v5, "com.google.android.wearable.app.cn"
+
+    invoke-virtual {v0, v5}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v4
+
+    const/high16 v5, 0x10000
+
+    invoke-virtual {v4, v0, v5}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
+
+    :goto_0
+    const/4 v4, 0x0
+
+    invoke-static {v2, v3, v0, v4}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v1, v0}, Lhzf;->a(Lhml;ILandroid/app/PendingIntent;)V
+
+    :goto_1
+    return-void
+
+    :cond_1
+    const-string v0, "market://details"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v4, "id"
+
+    const-string v5, "com.google.android.wearable.app.cn"
+
+    invoke-virtual {v0, v4, v5}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v4
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v5, "android.intent.action.VIEW"
+
+    invoke-direct {v0, v5, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const/16 v0, 0x10
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v0, v1}, Lhzf;->a(Lhml;ILandroid/app/PendingIntent;)V
+
+    goto :goto_1
+
+    :cond_2
+    invoke-super {p0, p1}, Lhmv;->a(Lhml;)V
+
+    goto :goto_1
+.end method
+
+.method protected final b()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.wearable.internal.IWearableService"
+
+    return-object v0
+.end method
+
+.method public final g()Z
+    .locals 2
+
+    iget-object v0, p0, Lhzf;->p:Lhzj;
+
+    const-string v1, "com.google.android.wearable.app.cn"
+
+    invoke-virtual {v0, v1}, Lhzj;->a(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

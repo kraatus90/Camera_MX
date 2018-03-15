@@ -3,28 +3,24 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lddi;->a:Ljxn;
+    iput-object p1, p0, Lddi;->a:Lkgv;
 
-    iput-object p2, p0, Lddi;->b:Ljxn;
-
-    iput-object p3, p0, Lddi;->c:Ljxn;
+    iput-object p2, p0, Lddi;->b:Lkgv;
 
     return-void
 .end method
@@ -34,47 +30,27 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Lddi;->a:Ljxn;
+    iget-object v0, p0, Lddi;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbip;
-
-    iget-object v1, p0, Lddi;->b:Ljxn;
-
-    iget-object v2, p0, Lddi;->c:Ljxn;
-
-    invoke-virtual {v0}, Lbip;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lasl;
+    check-cast v0, Lcsc;
 
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v1, p0, Lddi;->b:Lkgv;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v2, Lcsi;
+
+    invoke-direct {v2, v0, v1}, Lcsi;-><init>(Lcsc;Lkgv;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lasl;
+    check-cast v0, Lcsb;
 
     return-object v0
-
-    :cond_0
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lasl;
-
-    goto :goto_0
 .end method

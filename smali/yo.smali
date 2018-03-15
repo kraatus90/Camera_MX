@@ -1,151 +1,286 @@
 .class final Lyo;
-.super Ljava/lang/Object;
+.super Landroid/hardware/camera2/CameraDevice$StateCallback;
 .source "PG"
-
-# interfaces
-.implements Lacd;
 
 
 # instance fields
-.field private a:Landroid/hardware/camera2/CameraManager;
-
-.field private b:[Ljava/lang/String;
-
-.field private c:I
+.field private final synthetic a:Lyl;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CameraManager;[Ljava/lang/String;)V
-    .locals 7
+.method constructor <init>(Lyl;)V
+    .locals 0
 
-    const/4 v3, -0x1
+    iput-object p1, p0, Lyo;->a:Lyl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lyo;->a:Landroid/hardware/camera2/CameraManager;
-
-    iput-object p2, p0, Lyo;->b:[Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    move v2, v3
-
-    :goto_0
-    array-length v0, p2
-
-    if-ge v1, v0, :cond_1
-
-    :try_start_0
-    aget-object v0, p2, v1
-
-    invoke-virtual {p1, v0}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object v0
-
-    sget-object v4, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-virtual {v0, v4}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-    :try_end_0
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
-    if-ne v2, v3, :cond_0
-
-    const/4 v4, 0x1
-
-    if-ne v0, v4, :cond_0
-
-    move v2, v1
-
-    :cond_0
-    :goto_1
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v4, Lyn;->a:Lacv;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "Couldn\'t get characteristics of camera \'"
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, "\'"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5, v0}, Lacu;->b(Lacv;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_1
-
-    :cond_1
-    iput v2, p0, Lyo;->c:I
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraDevice$StateCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
+    .locals 3
 
-    iget v0, p0, Lyo;->c:I
+    sget-object v0, Lxx;->a:Lacf;
 
-    return v0
-.end method
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.method public final a(I)Lace;
-    .locals 2
+    const-string v2, "Camera device \'"
 
-    iget-object v0, p0, Lyo;->b:[Ljava/lang/String;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    aget-object v0, v0, p1
+    iget-object v2, p0, Lyo;->a:Lyl;
 
-    :try_start_0
-    iget-object v1, p0, Lyo;->a:Landroid/hardware/camera2/CameraManager;
+    iget v2, v2, Lyl;->b:I
 
-    invoke-virtual {v1, v0}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    new-instance v0, Lyp;
+    const-string v2, "\' was disconnected"
 
-    invoke-direct {v0, v1}, Lyp;-><init>(Landroid/hardware/camera2/CameraCharacteristics;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lace;->e(Lacf;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final onError(Landroid/hardware/camera2/CameraDevice;I)V
+    .locals 4
+
+    sget-object v0, Lxx;->a:Lacf;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Camera device \'"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lyo;->a:Lyl;
+
+    iget v2, v2, Lyl;->b:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "\' encountered error code \'"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const/16 v2, 0x27
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lace;->b(Lacf;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    iget-object v0, v0, Lyl;->a:Laaf;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    iget-object v0, v0, Lyl;->a:Laaf;
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    iget v1, v1, Lyl;->b:I
+
+    iget-object v2, p0, Lyo;->a:Lyl;
+
+    iget-object v3, p0, Lyo;->a:Lyl;
+
+    iget v3, v3, Lyl;->b:I
+
+    invoke-virtual {v2, v3}, Lyl;->b(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Laaf;->a(ILjava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onOpened(Landroid/hardware/camera2/CameraDevice;)V
+    .locals 8
+
+    const/4 v7, 0x2
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    iput-object p1, v0, Lyl;->d:Landroid/hardware/camera2/CameraDevice;
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    iget-object v0, v0, Lyl;->a:Laaf;
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    iget-object v0, v0, Lyl;->q:Lxx;
+
+    iget-object v0, v0, Lxx;->e:Landroid/hardware/camera2/CameraManager;
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    iget-object v1, v1, Lyl;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+
+    move-result-object v5
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    iget-object v0, v0, Lyl;->q:Lxx;
+
+    invoke-virtual {v0}, Lxx;->b()Labn;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    iget v1, v1, Lyl;->b:I
+
+    invoke-interface {v0, v1}, Labn;->a(I)Labo;
+
+    move-result-object v4
+
+    iget-object v6, p0, Lyo;->a:Lyl;
+
+    new-instance v0, Lya;
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    iget-object v1, v1, Lyl;->q:Lxx;
+
+    iget-object v2, p0, Lyo;->a:Lyl;
+
+    iget-object v2, v2, Lyl;->q:Lxx;
+
+    iget-object v3, p0, Lyo;->a:Lyl;
+
+    iget v3, v3, Lyl;->b:I
+
+    invoke-direct/range {v0 .. v5}, Lya;-><init>(Lxx;Lxx;ILabo;Landroid/hardware/camera2/CameraCharacteristics;)V
+
+    iput-object v0, v6, Lyl;->e:Lya;
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    new-instance v1, Lach;
+
+    invoke-direct {v1}, Lach;-><init>()V
+
+    iput-object v1, v0, Lyl;->f:Lach;
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_ACTIVE_ARRAY_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-virtual {v5, v0}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Rect;
+
+    iput-object v0, v1, Lyl;->g:Landroid/graphics/Rect;
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-virtual {v5, v0}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-ne v0, v7, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    iput-boolean v0, v1, Lyl;->h:Z
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Lyl;->a(I)V
+
+    iget-object v0, p0, Lyo;->a:Lyl;
+
+    iget-object v0, v0, Lyl;->a:Laaf;
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    iget-object v1, v1, Lyl;->e:Lya;
+
+    invoke-interface {v0, v1}, Laaf;->a(Laao;)V
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
-    return-object v0
+    :cond_0
+    :goto_1
+    return-void
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lyo;->a:Lyl;
 
-    goto :goto_0
+    iget-object v0, v0, Lyl;->a:Laaf;
+
+    iget-object v1, p0, Lyo;->a:Lyl;
+
+    iget v1, v1, Lyl;->b:I
+
+    iget-object v2, p0, Lyo;->a:Lyl;
+
+    iget-object v3, p0, Lyo;->a:Lyl;
+
+    iget v3, v3, Lyl;->b:I
+
+    invoke-virtual {v2, v3}, Lyl;->b(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Laaf;->a(ILjava/lang/String;)V
+
+    goto :goto_1
 .end method

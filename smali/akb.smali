@@ -3,52 +3,56 @@
 .source "PG"
 
 # interfaces
-.implements Lakv;
+.implements Laki;
 
 
 # instance fields
-.field private a:Lakf;
+.field private final a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lakf;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lakb;->a:Lakf;
+    iput-object p1, p0, Lakb;->a:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;IILaeo;)Lakw;
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lakj;
     .locals 4
 
-    check-cast p1, Ljava/io/File;
+    check-cast p1, Landroid/net/Uri;
 
-    new-instance v0, Lakw;
+    new-instance v0, Lakj;
 
-    new-instance v1, Larg;
+    new-instance v1, Larm;
 
-    invoke-direct {v1, p1}, Larg;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p1}, Larm;-><init>(Ljava/lang/Object;)V
 
-    new-instance v2, Lake;
+    new-instance v2, Lakd;
 
-    iget-object v3, p0, Lakb;->a:Lakf;
+    iget-object v3, p0, Lakb;->a:Landroid/content/Context;
 
-    invoke-direct {v2, p1, v3}, Lake;-><init>(Ljava/io/File;Lakf;)V
+    invoke-direct {v2, v3, p1}, Lakd;-><init>(Landroid/content/Context;Landroid/net/Uri;)V
 
-    invoke-direct {v0, v1, v2}, Lakw;-><init>(Laek;Laet;)V
+    invoke-direct {v0, v1, v2}, Lakj;-><init>(Ladu;Laef;)V
 
     return-object v0
 .end method
 
-.method public final bridge synthetic a(Ljava/lang/Object;)Z
+.method public final synthetic a(Ljava/lang/Object;)Z
     .locals 1
 
-    const/4 v0, 0x1
+    check-cast p1, Landroid/net/Uri;
+
+    invoke-static {p1}, Laeq;->a(Landroid/net/Uri;)Z
+
+    move-result v0
 
     return v0
 .end method

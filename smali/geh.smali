@@ -1,59 +1,33 @@
-.class public final Lgeh;
-.super Libk;
-.source "PG"
+.class final synthetic Lgeh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lihg;
+
+
+# instance fields
+.field private final a:Lgee;
 
 
 # direct methods
-.method public constructor <init>(Liag;Liau;)V
-    .locals 2
+.method constructor <init>(Lgee;)V
+    .locals 0
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Liau;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    const/4 v1, 0x1
-
-    aput-object p2, v0, v1
-
-    invoke-static {v0}, Liav;->b([Liau;)Liau;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Libk;-><init>(Liau;)V
+    iput-object p1, p0, Lgeh;->a:Lgee;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final a(Ljava/lang/Object;)V
+    .locals 1
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Lgeh;->a:Lgee;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lgee;->c()V
 
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgey;
-
-    const/4 v1, 0x1
-
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/graphics/Rect;
-
-    invoke-interface {v0, v1}, Lgey;->a(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

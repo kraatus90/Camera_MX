@@ -1,231 +1,122 @@
-.class final Lcpy;
+.class public final Lcpy;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcpx;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcpx;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
-
-    iput-object p1, p0, Lcpy;->a:Lcpx;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lcpy;->a:Lkgv;
+
+    iput-object p2, p0, Lcpy;->b:Lkgv;
+
+    iput-object p3, p0, Lcpy;->c:Lkgv;
+
+    iput-object p4, p0, Lcpy;->d:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;)Lcpy;
+    .locals 1
+
+    new-instance v0, Lcpy;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lcpy;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 7
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    const/4 v6, 0x1
+    iget-object v0, p0, Lcpy;->a:Lkgv;
 
-    check-cast p1, Lhae;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    sget-object v0, Lcpw;->a:Ljava/lang/String;
+    move-result-object v0
 
-    const-string v1, "onConnected."
+    check-cast v0, Lfdv;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v1, p0, Lcpy;->b:Lkgv;
 
-    iget-object v0, p0, Lcpy;->a:Lcpx;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lcpx;->b:Lcpw;
+    move-result-object v1
 
-    iput-object p1, v0, Lcpw;->c:Lhae;
+    check-cast v1, Lbqc;
 
-    iget-object v0, p0, Lcpy;->a:Lcpx;
+    iget-object v2, p0, Lcpy;->c:Lkgv;
 
-    iget-object v0, v0, Lcpx;->b:Lcpw;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-boolean v0, v0, Lcpw;->e:Z
+    move-result-object v2
 
-    if-eqz v0, :cond_2
+    check-cast v2, Lick;
 
-    iget-object v0, p0, Lcpy;->a:Lcpx;
+    iget-object v3, p0, Lcpy;->d:Lkgv;
 
-    iget-object v0, v0, Lcpx;->b:Lcpw;
-
-    sget-object v1, Lcpw;->a:Ljava/lang/String;
-
-    const-string v2, "Start location updates."
-
-    invoke-static {v1, v2}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, v0, Lcpw;->c:Lhae;
-
-    if-eqz v1, :cond_1
-
-    new-instance v1, Lcom/google/android/gms/location/LocationRequest;
-
-    invoke-direct {v1}, Lcom/google/android/gms/location/LocationRequest;-><init>()V
-
-    sget v2, Lcpw;->g:I
-
-    int-to-long v2, v2
-
-    invoke-static {v2, v3}, Lcom/google/android/gms/location/LocationRequest;->a(J)V
-
-    iput-wide v2, v1, Lcom/google/android/gms/location/LocationRequest;->b:J
-
-    iget-boolean v2, v1, Lcom/google/android/gms/location/LocationRequest;->d:Z
-
-    if-nez v2, :cond_0
-
-    iget-wide v2, v1, Lcom/google/android/gms/location/LocationRequest;->b:J
-
-    long-to-double v2, v2
-
-    const-wide/high16 v4, 0x4018000000000000L    # 6.0
-
-    div-double/2addr v2, v4
-
-    double-to-long v2, v2
-
-    iput-wide v2, v1, Lcom/google/android/gms/location/LocationRequest;->c:J
-
-    :cond_0
-    invoke-static {}, Lcom/google/android/gms/location/LocationRequest;->a()V
-
-    const/16 v2, 0x64
-
-    iput v2, v1, Lcom/google/android/gms/location/LocationRequest;->a:I
-
-    :try_start_0
-    iget-object v2, v0, Lcpw;->c:Lhae;
-
-    iget-object v2, v2, Lhae;->a:Lhac;
-
-    iget-object v2, v2, Lhac;->a:Lhkl;
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v3
 
-    const-string v4, "Calling thread must be a prepared Looper thread."
+    check-cast v3, Lbqf;
 
-    invoke-static {v3, v4}, Lhjg;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v3, Lhun;
-
-    invoke-direct {v3, v2, v1, v0}, Lhun;-><init>(Lhkl;Lcom/google/android/gms/location/LocationRequest;Lhug;)V
-
-    invoke-virtual {v2, v3}, Lhkl;->b(Lhry;)Lhry;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcpw;->f:Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lcpy;->a:Lcpx;
-
-    iget-object v0, v0, Lcpx;->a:Ljvi;
-
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    :goto_1
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Lcpw;->a:Ljava/lang/String;
-
-    const-string v2, "requestLocationUpdates failed!"
-
-    invoke-static {v1, v2, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lcpy;->a:Lcpx;
-
-    iget-object v0, v0, Lcpx;->b:Lcpw;
-
-    invoke-virtual {v0}, Lcpw;->c()V
-
-    iget-object v0, p0, Lcpy;->a:Lcpx;
-
-    iget-object v0, v0, Lcpx;->a:Ljvi;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    goto :goto_1
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 4
-
-    sget-object v1, Lcpw;->a:Ljava/lang/String;
-
-    const-string v2, "fail to connect to GoogleApiClient: "
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-interface {v0}, Lfdv;->b()Lild;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    sget-object v4, Lild;->a:Lild;
 
-    move-result-object v0
+    if-ne v0, v4, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v1, v3}, Lbqc;->a(Lbqf;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    sget-object v0, Lcpq;->a:Ljqv;
+
+    invoke-static {v2, v0}, Licl;->a(Lick;Ljqv;)Lick;
 
     move-result-object v0
 
     :goto_0
-    invoke-static {v1, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Lcpy;->a:Lcpx;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lcpx;->b:Lcpw;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lcpw;->c()V
+    check-cast v0, Lick;
 
-    iget-object v0, p0, Lcpy;->a:Lcpx;
-
-    iget-object v0, v0, Lcpx;->a:Ljvi;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    return-void
+    return-object v0
 
     :cond_0
-    new-instance v0, Ljava/lang/String;
+    sget-object v0, Lcpn;->b:Lcpn;
 
-    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    invoke-static {v0}, Licl;->a(Ljava/lang/Object;)Lick;
+
+    move-result-object v0
 
     goto :goto_0
 .end method

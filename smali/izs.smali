@@ -1,109 +1,78 @@
-.class public final Lizs;
-.super Likn;
+.class final Lizs;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lire;
 
 
 # instance fields
-.field private synthetic a:Lizo;
+.field public final a:Ljhk;
+
+.field public final b:F
+
+.field public final c:Ljgs;
+
+.field public final d:Ljgv;
 
 
 # direct methods
-.method public constructor <init>(Lizo;)V
+.method public constructor <init>(Ljhk;FLjgs;Ljgv;)V
     .locals 0
 
-    iput-object p1, p0, Lizs;->a:Lizo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Likn;-><init>()V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p4}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lizs;->a:Ljhk;
+
+    iput p2, p0, Lizs;->b:F
+
+    iput-object p3, p0, Lizs;->c:Ljgs;
+
+    iput-object p4, p0, Lizs;->d:Ljgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 7
+.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Liqz;
+    .locals 2
 
-    check-cast p1, Ljava/util/List;
+    check-cast p1, Ljaq;
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
+    iget-wide v0, p1, Ljaq;->b:J
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    check-cast v0, Lizp;
+    invoke-static {v0}, Lihr;->b(Ljava/lang/Object;)Liqz;
 
-    iget-wide v4, v0, Lizp;->a:J
+    move-result-object v0
 
-    iget-object v1, v0, Lizp;->c:Ljava/util/List;
+    new-instance v1, Lizt;
 
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-direct {v1, p0}, Lizt;-><init>(Lizs;)V
 
-    move-result-object v3
+    invoke-interface {v0, p2, v1}, Liqz;->a(Ljava/util/concurrent/Executor;Lire;)Liqz;
 
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object v0
 
-    move-result v1
+    new-instance v1, Lizu;
 
-    if-eqz v1, :cond_0
+    invoke-direct {v1, p0, p1}, Lizu;-><init>(Lizs;Ljaq;)V
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0, p2, v1}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/google/android/libraries/smartburst/utils/Feature;
-
-    iget-object v6, p0, Lizs;->a:Lizo;
-
-    iget-object v6, v6, Lizo;->g:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v6, v4, v5, v1}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->setFeatureValue(JLcom/google/android/libraries/smartburst/utils/Feature;)Z
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v1, p0, Lizs;->a:Lizo;
-
-    iget-object v1, v1, Lizo;->e:Ljee;
-
-    invoke-virtual {v1, v4, v5}, Ljee;->a(J)Ljds;
-
-    move-result-object v3
-
-    iget-object v1, p0, Lizs;->a:Lizo;
-
-    iget-object v6, v1, Lizo;->b:Liyq;
-
-    iget-object v1, v0, Lizp;->b:Lixj;
-
-    invoke-interface {v1}, Lixj;->e()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/graphics/Bitmap;
-
-    invoke-interface {v6, v4, v5, v1}, Liyq;->a(JLandroid/graphics/Bitmap;)Ljds;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Ljds;->a(Ljds;)V
-
-    iget-object v0, v0, Lizp;->b:Lixj;
-
-    invoke-interface {v0}, Lixj;->close()V
-
-    goto :goto_0
-
-    :cond_1
-    return-void
+    return-object v0
 .end method

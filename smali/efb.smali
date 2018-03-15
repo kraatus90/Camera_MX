@@ -1,55 +1,74 @@
-.class final Lefb;
+.class public final Lefb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldjn;
+.field private final a:Lkgv;
 
-.field private synthetic b:Ldom;
+.field private final b:Lkgv;
 
-.field private synthetic c:Lich;
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldjn;Ldom;Lich;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lefb;->a:Ldjn;
-
-    iput-object p2, p0, Lefb;->b:Ldom;
-
-    iput-object p3, p0, Lefb;->c:Lich;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lefb;->a:Lkgv;
+
+    iput-object p2, p0, Lefb;->b:Lkgv;
+
+    iput-object p3, p0, Lefb;->c:Lkgv;
+
+    iput-object p4, p0, Lefb;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lefb;->a:Ldjn;
+    new-instance v3, Lefa;
 
-    invoke-interface {v0}, Ldjn;->close()V
+    iget-object v0, p0, Lefb;->a:Lkgv;
 
-    iget-object v0, p0, Lefb;->b:Ldom;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0}, Ldom;->close()V
+    iget-object v0, p0, Lefb;->b:Lkgv;
 
-    iget-object v0, p0, Lefb;->c:Lich;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Lefb;->c:Lich;
+    check-cast v0, Leew;
 
-    invoke-interface {v0}, Lich;->close()V
+    iget-object v1, p0, Lefb;->c:Lkgv;
 
-    :cond_0
-    return-void
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lefg;
+
+    iget-object v2, p0, Lefb;->d:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Leck;
+
+    invoke-direct {v3, v0, v1, v2}, Lefa;-><init>(Leew;Lefg;Leck;)V
+
+    return-object v3
 .end method

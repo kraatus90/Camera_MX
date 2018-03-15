@@ -1,13 +1,13 @@
 .class public Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-.super Lgzd;
+.super Lhal;
 .source "PG"
 
 # interfaces
-.implements Lgkz;
+.implements Lfvg;
 
 
 # static fields
-.field private static o:Ljava/lang/String;
+.field private static final j:Ljava/lang/String;
 
 
 # instance fields
@@ -17,33 +17,27 @@
 
 .field public c:Landroid/animation/AnimatorSet;
 
-.field public final d:Lgkx;
+.field public final d:Lfvc;
 
 .field public final e:Ljava/util/List;
 
-.field public final f:Ljava/util/Map;
+.field public f:Lfvr;
 
-.field public final g:Ljava/util/Map;
+.field public g:Landroid/animation/Animator;
 
-.field public final h:Ljava/util/Map;
+.field public h:Landroid/widget/FrameLayout;
 
-.field public i:Lgli;
+.field public i:Z
 
-.field public j:Landroid/animation/Animator;
+.field private final k:Ljava/util/Map;
 
-.field public k:Landroid/widget/FrameLayout;
+.field private final l:Lhak;
 
-.field public l:Z
+.field private final m:Lfvu;
 
-.field public m:Z
+.field private n:I
 
-.field public n:Z
-
-.field private p:Ljava/util/Map;
-
-.field private q:Lgzc;
-
-.field private r:Lgll;
+.field private o:Z
 
 
 # direct methods
@@ -56,7 +50,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->j:Ljava/lang/String;
 
     return-void
 .end method
@@ -64,37 +58,19 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
 
-    const/4 v2, 0x0
+    invoke-direct {p0, p1, p2}, Lhal;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-direct {p0, p1, p2}, Lgzd;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    sget v0, Lep;->aE:I
 
-    new-instance v0, Ljava/util/HashMap;
+    iput v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Ljava/util/Map;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->g:Ljava/util/Map;
-
-    new-instance v0, Ljava/util/EnumMap;
-
-    const-class v1, Lglc;
-
-    invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->h:Ljava/util/Map;
-
-    iput-boolean v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Z
-
-    iput-boolean v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Z
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Z
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:Z
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Z
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -112,113 +88,31 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->p:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->k:Ljava/util/Map;
 
-    new-instance v0, Lgkx;
+    new-instance v0, Lfvc;
 
-    invoke-direct {v0, p1, p0}, Lgkx;-><init>(Landroid/content/Context;Lgkz;)V
+    invoke-direct {v0, p1, p0}, Lfvc;-><init>(Landroid/content/Context;Lfvg;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    new-instance v0, Lgzc;
+    new-instance v0, Lhak;
 
-    invoke-direct {v0}, Lgzc;-><init>()V
+    invoke-direct {v0}, Lhak;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->q:Lgzc;
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Lhak;
 
-    new-instance v0, Lgll;
+    new-instance v0, Lfvu;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    iget-object v2, v2, Lgkx;->c:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
+    iget-object v2, v2, Lfvc;->e:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
 
-    invoke-direct {v0, v1, p0, v2}, Lgll;-><init>(Landroid/view/ViewGroup;Landroid/view/View;Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;)V
+    invoke-direct {v0, v1, p0, v2}, Lfvu;-><init>(Landroid/view/ViewGroup;Landroid/view/View;Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->r:Lgll;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->e:Ljava/util/List;
-
-    new-instance v0, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c:Landroid/animation/AnimatorSet;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lgkx;Lgzc;)V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    invoke-direct {p0, p1}, Lgzd;-><init>(Landroid/content/Context;)V
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Ljava/util/Map;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->g:Ljava/util/Map;
-
-    new-instance v0, Ljava/util/EnumMap;
-
-    const-class v1, Lglc;
-
-    invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->h:Ljava/util/Map;
-
-    iput-boolean v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Z
-
-    iput-boolean v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Z
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:Z
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a:Ljava/util/Map;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b:Ljava/util/List;
-
-    iput-object p2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->p:Ljava/util/Map;
-
-    iput-object p3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->q:Lgzc;
-
-    new-instance v0, Lgll;
-
-    iget-object v1, p2, Lgkx;->c:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
-
-    invoke-direct {v0, p2, p0, v1}, Lgll;-><init>(Landroid/view/ViewGroup;Landroid/view/View;Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;)V
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->r:Lgll;
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Lfvu;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -232,97 +126,101 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c:Landroid/animation/AnimatorSet;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b()V
+    invoke-direct {p0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d()V
 
     return-void
 .end method
 
-.method private final a(Lglc;Z)V
-    .locals 3
-
-    sget-object v0, Ljmx;->a:Ljmx;
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->h:Ljava/util/Map;
-
-    invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->h:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Set;
-
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lglh;
-
-    iget-object v0, v0, Lglh;->a:Lfiw;
-
-    if-eqz p2, :cond_1
-
-    invoke-virtual {v0}, Lfiw;->b()V
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Lfiw;->a(Lich;)V
-
-    goto :goto_0
-
-    :cond_2
-    return-void
-.end method
-
-.method public static final synthetic a(Ljava/util/Map$Entry;Z)V
+.method public constructor <init>(Landroid/content/Context;Lfvc;Lhak;)V
     .locals 2
 
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lhal;-><init>(Landroid/content/Context;)V
 
-    move-result-object v0
+    sget v0, Lep;->aE:I
 
-    check-cast v0, Ljhj;
+    iput v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v0, 0x0
 
-    move-result-object v1
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Z
 
-    invoke-interface {v0, v1}, Ljhj;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Z
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a:Ljava/util/Map;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b:Ljava/util/List;
+
+    iput-object p2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->k:Ljava/util/Map;
+
+    iput-object p3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Lhak;
+
+    new-instance v0, Lfvu;
+
+    iget-object v1, p2, Lfvc;->e:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
+
+    invoke-direct {v0, p2, p0, v1}, Lfvu;-><init>(Landroid/view/ViewGroup;Landroid/view/View;Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;)V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Lfvu;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->e:Ljava/util/List;
+
+    new-instance v0, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c:Landroid/animation/AnimatorSet;
+
+    invoke-direct {p0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d()V
 
     return-void
 .end method
 
-.method private final b()V
+.method public static synthetic a(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
+
+    return v0
+.end method
+
+.method public static synthetic a(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;I)I
+    .locals 0
+
+    iput p1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
+
+    return p1
+.end method
+
+.method private final d()V
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
     const/16 v1, 0x30
 
-    invoke-virtual {v0, v1}, Lgkx;->setGravity(I)V
+    invoke-virtual {v0, v1}, Lfvc;->setGravity(I)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -339,98 +237,120 @@
 
 
 # virtual methods
+.method public final a(Z)Landroid/animation/AnimatorListenerAdapter;
+    .locals 1
+
+    new-instance v0, Lfxb;
+
+    invoke-direct {v0, p0, p1}, Lfxb;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Z)V
+
+    return-object v0
+.end method
+
 .method public final a()V
     .locals 3
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Z
+    iget v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
 
-    if-eqz v0, :cond_1
+    sget v1, Lep;->aE:I
+
+    if-eq v0, v1, :cond_1
+
+    iget v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
+
+    sget v1, Lep;->aF:I
+
+    if-ne v0, v1, :cond_0
+
+    sget v0, Lep;->aG:I
+
+    iput v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->j:Landroid/animation/Animator;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->g:Landroid/animation/Animator;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Lgli;
+    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Lfvr;
 
     if-eqz v0, :cond_2
 
     if-nez v1, :cond_3
 
     :cond_2
-    sget-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Ljava/lang/String;
+    sget-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->j:Ljava/lang/String;
 
     const-string v1, "closeOptionsBar called on a closed options bar"
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_3
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    iput-boolean v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Z
+    iput-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Lfvr;
 
-    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
+    sget v2, Lep;->aH:I
 
-    new-instance v2, Lgmj;
+    iput v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
 
-    invoke-direct {v2, p0, v1}, Lgmj;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Landroid/view/View;)V
+    new-instance v2, Lfwx;
+
+    invoke-direct {v2, p0, v1}, Lfwx;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :cond_4
     :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgmg;
+    check-cast v0, Lfwv;
 
-    iget-object v1, v0, Lgmg;->b:Lfiw;
+    iget-object v2, v0, Lfwv;->b:Lgza;
 
-    iget-object v1, v1, Lfiw;->b:Ljht;
+    iget-object v2, v2, Lgza;->b:Ljrf;
 
-    invoke-virtual {v1}, Ljht;->a()Z
+    invoke-virtual {v2}, Ljrf;->a()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
-    iget-object v1, v0, Lgmg;->b:Lfiw;
+    iget-object v0, v0, Lfwv;->b:Lgza;
 
-    iget-object v1, v1, Lfiw;->b:Ljht;
+    iget-object v0, v0, Lgza;->b:Ljrf;
 
-    invoke-virtual {v1}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lfxc;
+    check-cast v0, Lese;
 
-    invoke-interface {v1}, Lfxc;->d()Z
-
-    iget-object v0, v0, Lgmg;->b:Lfiw;
-
-    invoke-virtual {v0}, Lfiw;->b()V
+    invoke-interface {v0}, Lese;->d()Z
 
     goto :goto_1
 .end method
 
-.method public final a(Lgla;)V
+.method public final a(Lfvh;)V
     .locals 10
 
     const/4 v5, -0x1
@@ -439,9 +359,11 @@
 
     const/4 v8, 0x1
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Z
+    iget v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
 
-    if-eqz v0, :cond_1
+    sget v1, Lep;->aE:I
+
+    if-eq v0, v1, :cond_1
 
     :cond_0
     :goto_0
@@ -465,83 +387,83 @@
 
     move-result-object v0
 
-    check-cast v0, Lglf;
+    check-cast v0, Lfvn;
 
-    iget-object v2, p1, Lgla;->a:Lglc;
+    iget-object v2, p1, Lfvh;->a:Lfvj;
 
-    iget-object v0, v0, Lglf;->a:Lglx;
+    iget-object v0, v0, Lfvn;->a:Lfwg;
 
-    invoke-virtual {v2}, Lglc;->ordinal()I
+    invoke-virtual {v2}, Lfvj;->ordinal()I
 
     move-result v2
 
     packed-switch v2, :pswitch_data_0
 
     :goto_2
-    iget-object v2, v0, Lglx;->g:Liau;
+    iget-object v2, v0, Lfwg;->g:Lick;
 
-    invoke-virtual {v0, v2}, Lglx;->a(Liau;)V
+    invoke-virtual {v0, v2}, Lfwg;->a(Lick;)V
 
     goto :goto_1
 
     :pswitch_0
-    iget-object v2, v0, Lglx;->g:Liau;
+    iget-object v2, v0, Lfwg;->g:Lick;
 
     const-string v3, "pano_horizontal"
 
-    invoke-interface {v2, v3}, Liau;->a(Ljava/lang/Object;)V
+    invoke-interface {v2, v3}, Lick;->a(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :pswitch_1
-    iget-object v2, v0, Lglx;->g:Liau;
+    iget-object v2, v0, Lfwg;->g:Lick;
 
     const-string v3, "pano_vertical"
 
-    invoke-interface {v2, v3}, Liau;->a(Ljava/lang/Object;)V
+    invoke-interface {v2, v3}, Lick;->a(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :pswitch_2
-    iget-object v2, v0, Lglx;->g:Liau;
+    iget-object v2, v0, Lfwg;->g:Lick;
 
     const-string v3, "pano_wide"
 
-    invoke-interface {v2, v3}, Liau;->a(Ljava/lang/Object;)V
+    invoke-interface {v2, v3}, Lick;->a(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :pswitch_3
-    iget-object v2, v0, Lglx;->g:Liau;
+    iget-object v2, v0, Lfwg;->g:Lick;
 
     const-string v3, "pano_fisheye"
 
-    invoke-interface {v2, v3}, Liau;->a(Ljava/lang/Object;)V
+    invoke-interface {v2, v3}, Lick;->a(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_2
-    iget-object v0, p1, Lgla;->c:Ljkv;
+    iget-object v0, p1, Lfvh;->c:Ljuh;
 
-    invoke-virtual {v0}, Ljkv;->isEmpty()Z
+    invoke-virtual {v0}, Ljuh;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->p:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->k:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgld;
+    check-cast v0, Lfvk;
 
     if-nez v0, :cond_3
 
-    sget-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Ljava/lang/String;
+    sget-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->j:Ljava/lang/String;
 
-    iget-object v1, p1, Lgla;->a:Lglc;
+    iget-object v1, p1, Lfvh;->a:Lfvj;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -581,36 +503,36 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
     :cond_3
-    new-instance v2, Lgli;
+    new-instance v2, Lfvr;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    iget-object v3, p1, Lgla;->c:Ljkv;
+    iget-object v3, p1, Lfvh;->c:Ljuh;
 
-    new-instance v4, Lgmh;
+    new-instance v4, Lfww;
 
-    invoke-direct {v4, p0, p1}, Lgmh;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Lgla;)V
+    invoke-direct {v4, p0, p1}, Lfww;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Lfvh;)V
 
-    invoke-direct {v2, v1, v3, v0, v4}, Lgli;-><init>(Landroid/content/Context;Ljava/util/List;Lgld;Lgle;)V
+    invoke-direct {v2, v1, v3, v0, v4}, Lfvr;-><init>(Landroid/content/Context;Ljava/util/List;Lfvk;Lfvl;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->q:Lgzc;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Lhak;
 
     new-array v1, v8, [Landroid/widget/LinearLayout;
 
     aput-object v2, v1, v9
 
-    sget-object v3, Lgzl;->a:Lgzl;
+    sget-object v3, Lhaq;->a:Lhaq;
 
-    iget-object v0, v0, Lgzc;->a:Lgzl;
+    iget-object v0, v0, Lhak;->a:Lhaq;
 
-    invoke-static {v3, v0, v1}, Lgzc;->a(Lgzl;Lgzl;[Landroid/widget/LinearLayout;)V
+    invoke-static {v3, v0, v1}, Lhak;->a(Lhaq;Lhaq;[Landroid/widget/LinearLayout;)V
 
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -620,13 +542,13 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {v2, v0}, Lgli;->setAlpha(F)V
+    invoke-virtual {v2, v0}, Lfvr;->setAlpha(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    iget-object v1, p1, Lgla;->a:Lglc;
+    iget-object v1, p1, Lfvh;->a:Lfvj;
 
-    iget-object v0, v0, Lgkx;->b:Ljava/util/Map;
+    iget-object v0, v0, Lfvc;->b:Ljava/util/Map;
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -634,29 +556,31 @@
 
     check-cast v0, Landroid/view/View;
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
-    iput-boolean v8, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Z
+    sget v1, Lep;->aF:I
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->r:Lgll;
+    iput v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->n:I
 
-    invoke-static {v2}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Lfvu;
+
+    invoke-static {v2}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/View;
 
-    invoke-static {v1}, Lgll;->a(Landroid/view/View;)Landroid/animation/ValueAnimator;
+    invoke-static {v1}, Lfvu;->a(Landroid/view/View;)Landroid/animation/ValueAnimator;
 
     move-result-object v4
 
-    iget-object v1, v3, Lgll;->c:Landroid/animation/Animator;
+    iget-object v1, v3, Lfvu;->c:Landroid/animation/Animator;
 
-    iget-object v5, v3, Lgll;->e:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
+    iget-object v5, v3, Lfvu;->e:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
 
     invoke-virtual {v5}, Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;->getIronView()Landroid/view/View;
 
@@ -668,13 +592,13 @@
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iget-object v6, v3, Lgll;->c:Landroid/animation/Animator;
+    iget-object v6, v3, Lfvu;->c:Landroid/animation/Animator;
 
     invoke-virtual {v1, v6}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
     move-result-object v6
 
-    invoke-static {v5}, Lgll;->b(Landroid/view/View;)Landroid/animation/ValueAnimator;
+    invoke-static {v5}, Lfvu;->b(Landroid/view/View;)Landroid/animation/ValueAnimator;
 
     move-result-object v5
 
@@ -693,7 +617,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v3, v0, v8}, Lgll;->a(Landroid/view/View;Z)Landroid/animation/Animator;
+    invoke-virtual {v3, v0, v8}, Lfvu;->a(Landroid/view/View;Z)Landroid/animation/Animator;
 
     move-result-object v4
 
@@ -701,27 +625,27 @@
 
     move-result-object v1
 
-    invoke-virtual {v3, v0, v8}, Lgll;->b(Landroid/view/View;Z)Landroid/animation/ValueAnimator;
+    invoke-virtual {v3, v0, v8}, Lfvu;->b(Landroid/view/View;Z)Landroid/animation/ValueAnimator;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->r:Lgll;
+    iget-object v3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Lfvu;
 
-    invoke-static {v2}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/View;
 
-    invoke-static {v1}, Lgll;->b(Landroid/view/View;)Landroid/animation/ValueAnimator;
+    invoke-static {v1}, Lfvu;->b(Landroid/view/View;)Landroid/animation/ValueAnimator;
 
     move-result-object v4
 
-    iget-object v1, v3, Lgll;->d:Landroid/animation/Animator;
+    iget-object v1, v3, Lfvu;->d:Landroid/animation/Animator;
 
-    iget-object v6, v3, Lgll;->e:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
+    iget-object v6, v3, Lfvu;->e:Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;
 
     invoke-virtual {v6}, Lcom/google/android/apps/camera/optionsbar/view/ViewMagnet;->getIronView()Landroid/view/View;
 
@@ -733,13 +657,13 @@
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iget-object v7, v3, Lgll;->d:Landroid/animation/Animator;
+    iget-object v7, v3, Lfvu;->d:Landroid/animation/Animator;
 
     invoke-virtual {v1, v7}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
     move-result-object v7
 
-    invoke-static {v6}, Lgll;->a(Landroid/view/View;)Landroid/animation/ValueAnimator;
+    invoke-static {v6}, Lfvu;->a(Landroid/view/View;)Landroid/animation/ValueAnimator;
 
     move-result-object v6
 
@@ -758,7 +682,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v3, v0, v9}, Lgll;->a(Landroid/view/View;Z)Landroid/animation/Animator;
+    invoke-virtual {v3, v0, v9}, Lfvu;->a(Landroid/view/View;Z)Landroid/animation/Animator;
 
     move-result-object v4
 
@@ -766,23 +690,23 @@
 
     move-result-object v1
 
-    invoke-virtual {v3, v0, v9}, Lgll;->b(Landroid/view/View;Z)Landroid/animation/ValueAnimator;
+    invoke-virtual {v3, v0, v9}, Lfvu;->b(Landroid/view/View;Z)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    iput-object v6, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->j:Landroid/animation/Animator;
+    iput-object v6, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->g:Landroid/animation/Animator;
 
-    new-instance v0, Lgmm;
+    new-instance v0, Lfxa;
 
-    invoke-direct {v0, p0}, Lgmm;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)V
+    invoke-direct {v0, p0}, Lfxa;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)V
 
     invoke-virtual {v5, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     invoke-virtual {v5}, Landroid/animation/Animator;->start()V
 
-    iput-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Lgli;
+    iput-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Lfvr;
 
     iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b:Ljava/util/List;
 
@@ -802,17 +726,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lgmg;
+    check-cast v0, Lfwv;
 
-    iget-object v1, p1, Lgla;->a:Lglc;
+    iget-object v1, p1, Lfvh;->a:Lfvj;
 
-    iget-object v3, v0, Lgmg;->b:Lfiw;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v4}, Lfiw;->a(Lich;)V
-
-    invoke-virtual {v1}, Lglc;->ordinal()I
+    invoke-virtual {v1}, Lfvj;->ordinal()I
 
     move-result v1
 
@@ -821,35 +739,35 @@
     goto :goto_3
 
     :pswitch_4
-    iget-object v1, v0, Lgmg;->b:Lfiw;
+    iget-object v1, v0, Lfwv;->b:Lgza;
 
-    iget-object v1, v1, Lfiw;->b:Ljht;
+    iget-object v1, v1, Lgza;->b:Ljrf;
 
-    invoke-virtual {v1}, Ljht;->a()Z
+    invoke-virtual {v1}, Ljrf;->a()Z
 
     move-result v1
 
     if-eqz v1, :cond_6
 
-    iget-object v1, v0, Lgmg;->b:Lfiw;
+    iget-object v1, v0, Lfwv;->b:Lgza;
 
-    iget-object v1, v1, Lfiw;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v1, v1, Lgza;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v1, v8}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    iget-object v1, v0, Lgmg;->b:Lfiw;
+    iget-object v1, v0, Lfwv;->b:Lgza;
 
-    iget-object v1, v1, Lfiw;->b:Ljht;
+    iget-object v1, v1, Lgza;->b:Ljrf;
 
-    invoke-virtual {v1}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lfxc;
+    check-cast v1, Lese;
 
-    iget-object v0, v0, Lgmg;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    iget-object v0, v0, Lfwv;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-    invoke-interface {v1, v0}, Lfxc;->a(Landroid/view/View;)V
+    invoke-interface {v1, v0}, Lese;->a(Landroid/view/View;)V
 
     goto :goto_3
 
@@ -862,27 +780,31 @@
     .end packed-switch
 
     :pswitch_data_1
-    .packed-switch 0x4
+    .packed-switch 0x5
         :pswitch_4
     .end packed-switch
 .end method
 
-.method public final a(Lgla;Lgld;)V
-    .locals 5
+.method public final a(Lfvh;Lfvk;)V
+    .locals 6
 
-    invoke-virtual {p1, p2}, Lgla;->b(Lgld;)Z
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, p2}, Lfvh;->b(Lfvk;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Ljava/lang/String;
+    sget-object v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->j:Ljava/lang/String;
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p1, Lgla;->a:Lglc;
+    iget-object v2, p1, Lfvh;->a:Lfvj;
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -936,22 +858,21 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
-    :goto_0
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->p:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->k:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v4, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    iget-object v0, v2, Lgkx;->b:Ljava/util/Map;
+    iget-object v0, v4, Lfvc;->b:Ljava/util/Map;
 
-    iget-object v1, p1, Lgla;->a:Lglc;
+    iget-object v1, p1, Lfvh;->a:Lfvj;
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -961,13 +882,13 @@
 
     if-eqz v0, :cond_3
 
-    invoke-virtual {p1, p2}, Lgla;->a(Lgld;)I
+    invoke-virtual {p1, p2}, Lfvh;->a(Lfvk;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setImageResource(I)V
 
-    invoke-virtual {v2}, Lgkx;->getContext()Landroid/content/Context;
+    invoke-virtual {v4}, Lfvc;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -975,319 +896,352 @@
 
     move-result-object v1
 
-    iget v3, p1, Lgla;->b:I
+    iget v5, p1, Lfvh;->b:I
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    sget-object v1, Lgld;->D:Lgld;
+    sget-object v1, Lfvk;->z:Lfvk;
 
     if-ne p2, v1, :cond_4
 
-    const/4 v1, 0x1
+    move v1, v2
 
-    :goto_1
+    :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setSelected(Z)V
 
-    iget-object v1, p1, Lgla;->a:Lglc;
+    iget-object v1, p1, Lfvh;->a:Lfvj;
 
-    sget-object v3, Lglc;->e:Lglc;
+    sget-object v5, Lfvj;->f:Lfvj;
 
-    if-ne v1, v3, :cond_3
+    if-ne v1, v5, :cond_3
 
-    sget-object v1, Lgld;->n:Lgld;
+    sget-object v1, Lfvk;->n:Lfvk;
 
     if-eq p2, v1, :cond_2
 
-    sget-object v1, Lgld;->o:Lgld;
+    sget-object v1, Lfvk;->o:Lfvk;
 
     if-ne p2, v1, :cond_5
 
     :cond_2
-    invoke-virtual {v2, v0}, Lgkx;->a(Landroid/widget/ImageButton;)V
+    invoke-virtual {v4, v0}, Lfvc;->a(Landroid/widget/ImageButton;)V
 
-    iget-boolean v0, v2, Lgkx;->j:Z
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, v2, Lgkx;->i:Landroid/graphics/drawable/VectorDrawable;
+    iget-boolean v0, v4, Lfvc;->l:Z
 
     if-eqz v0, :cond_3
 
-    iget-object v0, v2, Lgkx;->i:Landroid/graphics/drawable/VectorDrawable;
+    iget-object v0, v4, Lfvc;->k:Landroid/graphics/drawable/VectorDrawable;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, v4, Lfvc;->k:Landroid/graphics/drawable/VectorDrawable;
 
     const/16 v1, 0xff
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/VectorDrawable;->setAlpha(I)V
 
     :cond_3
-    :goto_2
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Lgli;
+    :goto_1
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Lfvr;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Lgli;
+    iget-object v4, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Lfvr;
 
-    invoke-virtual {v0, p2}, Lgli;->a(Lgld;)V
+    iget-object v0, v4, Lfvr;->b:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :goto_2
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Lfvi;
+
+    iget-object v0, v4, Lfvr;->b:Ljava/util/Map;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, v1, Lfvi;->a:Lfvk;
+
+    if-ne p2, v1, :cond_6
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setSelected(Z)V
+
+    goto :goto_2
+
+    :cond_4
+    move v1, v3
 
     goto :goto_0
 
-    :cond_4
-    const/4 v1, 0x0
+    :cond_5
+    invoke-virtual {v4}, Lfvc;->c()V
 
     goto :goto_1
 
-    :cond_5
-    invoke-virtual {v2}, Lgkx;->c()V
+    :cond_6
+    invoke-virtual {v0, v3}, Landroid/view/View;->setSelected(Z)V
 
     goto :goto_2
 .end method
 
-.method public final a(Lgla;Lgld;Lglg;)V
-    .locals 7
+.method public final a(Lfvh;Lfvk;Lfvo;)V
+    .locals 5
 
-    const/4 v0, 0x0
+    const/4 v4, -0x2
 
-    const/4 v5, -0x2
-
-    invoke-virtual {p1, p2}, Lgla;->b(Lgld;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->p:Ljava/util/Map;
-
-    invoke-interface {v1, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->q:Lgzc;
-
-    iget-object v2, v2, Lgzc;->a:Lgzl;
-
-    invoke-static {v2}, Lgzc;->a(Lgzl;)Z
-
-    move-result v2
-
-    new-instance v3, Landroid/widget/Space;
-
-    invoke-virtual {v1}, Lgkx;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Landroid/widget/Space;-><init>(Landroid/content/Context;)V
-
-    new-instance v4, Landroid/widget/LinearLayout$LayoutParams;
-
-    invoke-direct {v4, v5, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    iput v5, v4, Landroid/widget/LinearLayout$LayoutParams;->weight:F
-
-    invoke-virtual {v3, v4}, Landroid/widget/Space;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {v1, v3, v2}, Lgkx;->a(Landroid/view/View;Z)V
-
-    new-instance v3, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;
-
-    invoke-virtual {v1}, Lgkx;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    const v6, 0x7f1201ea
-
-    invoke-direct {v3, v4, v5, v0, v6}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-
-    iget-object v4, v1, Lgkx;->d:Landroid/widget/LinearLayout$LayoutParams;
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {p1, p2}, Lgla;->a(Lgld;)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->setImageResource(I)V
-
-    invoke-virtual {v1}, Lgkx;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    iget v5, p1, Lgla;->b:I
-
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    new-instance v4, Lgky;
-
-    invoke-direct {v4, v1, p1}, Lgky;-><init>(Lgkx;Lgla;)V
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v4, v1, Lgkx;->b:Ljava/util/Map;
-
-    iget-object v5, p1, Lgla;->a:Lglc;
-
-    invoke-interface {v4, v5, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v1, v3, v2}, Lgkx;->a(Landroid/view/View;Z)V
-
-    sget-object v2, Lgld;->D:Lgld;
-
-    if-ne p2, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    invoke-virtual {v3, v0}, Landroid/widget/ImageButton;->setSelected(Z)V
-
-    if-eqz p3, :cond_3
-
-    iget-object v2, p3, Lglg;->a:Lfiw;
-
-    iget-object v0, v2, Lfiw;->e:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageButton;
-
-    if-eq v0, v3, :cond_1
-
-    new-instance v4, Lfiy;
-
-    invoke-direct {v4, v2, v3}, Lfiy;-><init>(Lfiw;Landroid/widget/ImageButton;)V
-
-    invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
-
-    :cond_1
-    invoke-virtual {v2}, Lfiw;->c()Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Landroid/widget/ImageButton;->isEnabled()Z
+    invoke-virtual {p1, p2}, Lfvh;->b(Lfvk;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->k:Ljava/util/Map;
+
+    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Lhak;
+
+    iget-object v0, v0, Lhak;->a:Lhaq;
+
+    invoke-static {v0}, Lhak;->a(Lhaq;)Z
+
+    move-result v0
+
+    new-instance v2, Landroid/widget/Space;
+
+    invoke-virtual {v1}, Lfvc;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Landroid/widget/Space;-><init>(Landroid/content/Context;)V
+
+    new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {v3, v4, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    iput v4, v3, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+    invoke-virtual {v2, v3}, Landroid/widget/Space;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    invoke-virtual {v1, v2, v0}, Lfvc;->a(Landroid/view/View;Z)V
+
+    new-instance v2, Lfvb;
+
+    invoke-virtual {v1}, Lfvc;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Lfvb;-><init>(Landroid/content/Context;)V
+
+    iget-object v3, v1, Lfvc;->f:Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-virtual {v2, v3}, Lfvb;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    invoke-virtual {p1, p2}, Lfvh;->a(Lfvk;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lfvb;->setImageResource(I)V
+
+    invoke-virtual {v1}, Lfvc;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    iget v4, p1, Lfvh;->b:I
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lfvb;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v1}, Lfvc;->isEnabled()Z
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lfvb;->a(Z)V
+
+    new-instance v3, Lfvf;
+
+    invoke-direct {v3, v1, p1}, Lfvf;-><init>(Lfvc;Lfvh;)V
+
+    invoke-virtual {v2, v3}, Lfvb;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-object v3, v1, Lfvc;->b:Ljava/util/Map;
+
+    iget-object v4, p1, Lfvh;->a:Lfvj;
+
+    invoke-interface {v3, v4, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v1, v2, v0}, Lfvc;->a(Landroid/view/View;Z)V
+
+    sget-object v0, Lfvk;->z:Lfvk;
+
+    if-ne p2, v0, :cond_3
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-virtual {v2, v0}, Lfvb;->setSelected(Z)V
+
+    new-instance v0, Lfvd;
+
+    invoke-direct {v0, v1, p1}, Lfvd;-><init>(Lfvc;Lfvh;)V
+
+    iget-object v3, v2, Lfvb;->b:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance v0, Lfve;
+
+    invoke-direct {v0, v1, p1}, Lfve;-><init>(Lfvc;Lfvh;)V
+
+    iget-object v3, v2, Lfvb;->a:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    if-eqz p3, :cond_0
+
+    iget-object v0, p3, Lfvo;->a:Lgza;
+
+    iget-object v0, v0, Lgza;->e:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    iget-object v0, p1, Lfvh;->a:Lfvj;
+
+    sget-object v3, Lfvj;->f:Lfvj;
+
+    if-ne v0, v3, :cond_2
+
+    sget-object v0, Lfvk;->n:Lfvk;
+
+    if-eq p2, v0, :cond_1
+
+    sget-object v0, Lfvk;->o:Lfvk;
+
+    if-ne p2, v0, :cond_2
+
+    :cond_1
+    invoke-virtual {v1, v2}, Lfvc;->a(Landroid/widget/ImageButton;)V
 
     :cond_2
-    invoke-virtual {v2, v3}, Lfiw;->a(Landroid/view/View;)V
+    return-void
 
     :cond_3
-    iget-object v0, p1, Lgla;->a:Lglc;
+    const/4 v0, 0x0
 
-    sget-object v2, Lglc;->e:Lglc;
-
-    if-ne v0, v2, :cond_5
-
-    sget-object v0, Lgld;->n:Lgld;
-
-    if-eq p2, v0, :cond_4
-
-    sget-object v0, Lgld;->o:Lgld;
-
-    if-ne p2, v0, :cond_5
-
-    :cond_4
-    invoke-virtual {v1, v3}, Lgkx;->a(Landroid/widget/ImageButton;)V
-
-    :cond_5
-    return-void
+    goto :goto_0
 .end method
 
-.method public final a(Lglc;)V
-    .locals 5
+.method public final a(Lfvj;)V
+    .locals 4
 
-    const/16 v4, 0x7f
+    const/16 v3, 0x7f
 
-    const/4 v3, 0x0
+    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
-
-    iget-object v0, v1, Lgkx;->b:Ljava/util/Map;
+    iget-object v0, v1, Lfvc;->b:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageButton;
+    check-cast v0, Lfvb;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageButton;->setEnabled(Z)V
+    const/4 v2, 0x0
 
-    sget-object v2, Lglc;->e:Lglc;
+    invoke-virtual {v0, v2}, Lfvb;->setEnabled(Z)V
+
+    sget-object v2, Lfvj;->f:Lfvj;
 
     if-ne p1, v2, :cond_1
 
-    invoke-virtual {v1, v0, v4}, Lgkx;->a(Landroid/widget/ImageButton;I)V
+    invoke-virtual {v1, v0, v3}, Lfvc;->a(Landroid/widget/ImageButton;I)V
 
     :cond_0
     :goto_0
-    invoke-direct {p0, p1, v3}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a(Lglc;Z)V
-
     return-void
 
     :cond_1
-    invoke-virtual {v0, v4}, Landroid/widget/ImageButton;->setImageAlpha(I)V
+    invoke-virtual {v0, v3}, Lfvb;->setImageAlpha(I)V
 
     goto :goto_0
 .end method
 
-.method public final a(Lgzl;)V
+.method public final a(Lhaq;)V
     .locals 6
 
     const/4 v5, 0x1
 
     const/4 v4, 0x0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Lgli;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Lfvr;
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->q:Lgzc;
+    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Lhak;
 
     const/4 v2, 0x2
 
     new-array v2, v2, [Landroid/widget/LinearLayout;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v3, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
     aput-object v3, v2, v4
 
     aput-object v0, v2, v5
 
-    invoke-virtual {v1, p1, v2}, Lgzc;->a(Lgzl;[Landroid/widget/LinearLayout;)V
+    invoke-virtual {v1, p1, v2}, Lhak;->a(Lhaq;[Landroid/widget/LinearLayout;)V
 
     :goto_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    invoke-virtual {v0}, Lgkx;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0}, Lfvc;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-virtual {p1}, Lgzl;->ordinal()I
+    invoke-virtual {p1}, Lhaq;->ordinal()I
 
     move-result v1
 
@@ -1297,15 +1251,15 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->q:Lgzc;
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Lhak;
 
     new-array v1, v5, [Landroid/widget/LinearLayout;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    iget-object v2, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
     aput-object v2, v1, v4
 
-    invoke-virtual {v0, p1, v1}, Lgzc;->a(Lgzl;[Landroid/widget/LinearLayout;)V
+    invoke-virtual {v0, p1, v1}, Lhak;->a(Lhaq;[Landroid/widget/LinearLayout;)V
 
     goto :goto_0
 
@@ -1339,70 +1293,32 @@
     .end packed-switch
 .end method
 
-.method public final a(Z)V
-    .locals 4
+.method public final b()V
+    .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->f:Ljava/util/Map;
+    const/4 v1, 0x0
 
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Z
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setEnabled(Z)V
 
-    move-result-object v2
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0, v1}, Lfvc;->setEnabled(Z)V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/concurrent/Executor;
-
-    new-instance v3, Lgmi;
-
-    invoke-direct {v3, v0, p1}, Lgmi;-><init>(Ljava/util/Map$Entry;Z)V
-
-    invoke-interface {v1, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method
 
-.method public final b(Z)Landroid/animation/AnimatorListenerAdapter;
-    .locals 1
+.method public final b(Lfvj;)V
+    .locals 4
 
-    new-instance v0, Lgmn;
+    const/16 v3, 0xff
 
-    invoke-direct {v0, p0, p1}, Lgmn;-><init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Z)V
+    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-    return-object v0
-.end method
-
-.method public final b(Lglc;)V
-    .locals 5
-
-    const/16 v4, 0xff
-
-    const/4 v3, 0x1
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
-
-    iget-object v0, v1, Lgkx;->b:Ljava/util/Map;
+    iget-object v0, v1, Lfvc;->b:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1412,34 +1328,67 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageButton;->setEnabled(Z)V
+    const/4 v2, 0x1
 
-    sget-object v2, Lglc;->e:Lglc;
+    invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setEnabled(Z)V
+
+    sget-object v2, Lfvj;->f:Lfvj;
 
     if-ne p1, v2, :cond_1
 
-    invoke-virtual {v1, v0, v4}, Lgkx;->a(Landroid/widget/ImageButton;I)V
+    invoke-virtual {v1, v0, v3}, Lfvc;->a(Landroid/widget/ImageButton;I)V
 
     :cond_0
     :goto_0
-    invoke-direct {p0, p1, v3}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a(Lglc;Z)V
-
     return-void
 
     :cond_1
-    invoke-virtual {v0, v4}, Landroid/widget/ImageButton;->setImageAlpha(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/ImageButton;->setImageAlpha(I)V
 
     goto :goto_0
+.end method
+
+.method public final c()V
+    .locals 2
+
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Z
+
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setEnabled(Z)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
+
+    invoke-virtual {v0, v1}, Lfvc;->setEnabled(Z)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
+
+    invoke-virtual {v0}, Lfvc;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->dispatchOnGlobalLayout()V
+
+    :cond_0
+    return-void
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Z
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->o:Z
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Lgzd;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Lhal;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 

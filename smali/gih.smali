@@ -1,153 +1,223 @@
-.class public Lgih;
-.super Liii;
+.class public final Lgih;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final b:Ljava/util/Map;
+.field public final a:Lkgv;
+
+.field public final b:Lkgv;
+
+.field public final c:Lkgv;
+
+.field public final d:Lkgv;
+
+.field public final e:Lkgv;
+
+.field public final f:Lkgv;
+
+.field public final g:Lkgv;
+
+.field public final h:Lkgv;
+
+.field public final i:Lkgv;
+
+.field public final j:Lkgv;
+
+.field public final k:Lkgv;
+
+.field public final l:Lkgv;
+
+.field public final m:Lkgv;
+
+.field public final n:Lkgv;
+
+.field public final o:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lgih;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 2
 
-    invoke-direct {p0, p1}, Lgih;-><init>(Liil;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lgih;->b:Ljava/util/Map;
+    const/4 v1, 0x1
 
-    iget-object v1, p1, Lgih;->b:Ljava/util/Map;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Liil;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Liii;-><init>(Liil;)V
-
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v0, p0, Lgih;->b:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method public constructor <init>(Liil;Ljava/util/Map;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Liii;-><init>(Liil;)V
-
-    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(Ljava/util/Map;)V
-
-    iput-object v0, p0, Lgih;->b:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method public constructor <init>(Liil;Ljuw;)V
-    .locals 2
-
-    invoke-direct {p0, p1}, Lgih;-><init>(Liil;)V
-
-    iget-object v0, p0, Lgih;->b:Ljava/util/Map;
-
-    sget-object v1, Lgij;->a:Lgii;
-
-    invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public static a(Liil;)Lgih;
-    .locals 1
-
-    new-instance v0, Lgih;
-
-    invoke-direct {v0, p0}, Lgih;-><init>(Liil;)V
-
-    return-object v0
-.end method
-
-.method private final b(Lgii;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lgih;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lgih;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public final a(Lgii;Ljava/lang/Object;)Lgih;
-    .locals 1
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lgih;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final a(Lgii;)Ljava/lang/Object;
-    .locals 4
-
-    invoke-direct {p0, p1}, Lgih;->b(Lgii;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v1, Lkgv;
 
-    move-result-object v2
+    iput-object v1, p0, Lgih;->a:Lkgv;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    const/4 v1, 0x2
 
-    move-result v2
+    invoke-static {p2, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    add-int/lit8 v2, v2, 0x18
+    move-result-object v1
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    check-cast v1, Lkgv;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    iput-object v1, p0, Lgih;->b:Lkgv;
 
-    const-string v2, "No value found for key: "
+    const/4 v1, 0x3
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p3, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->c:Lkgv;
+
+    const/4 v1, 0x4
+
+    invoke-static {p4, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->d:Lkgv;
+
+    const/4 v1, 0x5
+
+    invoke-static {p5, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->e:Lkgv;
+
+    const/4 v1, 0x6
+
+    invoke-static {p6, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->f:Lkgv;
+
+    const/4 v1, 0x7
+
+    invoke-static {p7, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->g:Lkgv;
+
+    const/16 v1, 0x8
+
+    invoke-static {p8, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->h:Lkgv;
+
+    const/16 v1, 0x9
+
+    invoke-static {p9, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->i:Lkgv;
+
+    const/16 v1, 0xa
+
+    invoke-static {p10, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->j:Lkgv;
+
+    const/16 v1, 0xb
+
+    invoke-static {p11, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->k:Lkgv;
+
+    const/16 v1, 0xc
+
+    invoke-static {p12, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->l:Lkgv;
+
+    const/16 v1, 0xd
+
+    invoke-static {p13, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->m:Lkgv;
+
+    const/16 v1, 0xe
+
+    move-object/from16 v0, p14
+
+    invoke-static {v0, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->n:Lkgv;
+
+    const/16 v1, 0xf
+
+    move-object/from16 v0, p15
+
+    invoke-static {v0, v1}, Lgih;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkgv;
+
+    iput-object v1, p0, Lgih;->o:Lkgv;
+
+    return-void
+.end method
+
+.method static a(Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 3
+
+    if-nez p0, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const/16 v1, 0x5d
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -155,45 +225,10 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Liya;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final g()Z
-    .locals 2
-
-    invoke-virtual {p0}, Lgih;->l_()I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
+    throw v0
 
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final h()Ljuw;
-    .locals 1
-
-    sget-object v0, Lgij;->a:Lgii;
-
-    invoke-direct {p0, v0}, Lgih;->b(Lgii;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuw;
-
-    return-object v0
+    return-object p0
 .end method

@@ -6,8 +6,6 @@
 # static fields
 .field public static final kMeteringFrame:I = 0x1
 
-.field public static final kOutputFrame:I = 0x5
-
 .field public static final kPayloadAuxFrame:I = 0x3
 
 .field public static final kPayloadFrame:I = 0x2

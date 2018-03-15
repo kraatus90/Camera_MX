@@ -1,81 +1,107 @@
-.class public final Lcfy;
-.super Lfvj;
+.class public final enum Lcfy;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
-# instance fields
-.field public final a:J
+# static fields
+.field public static final enum a:Lcfy;
+
+.field public static final enum b:Lcfy;
+
+.field public static final enum c:Lcfy;
+
+.field public static final enum d:Lcfy;
+
+.field private static final synthetic e:[Lcfy;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;Ljava/lang/String;Landroid/net/Uri;ZLici;JLfvl;J)V
-    .locals 21
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-static/range {p10 .. p10}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    const/4 v5, 0x3
 
-    move-result-object v15
+    const/4 v4, 0x2
 
-    const/16 v18, 0x0
+    const/4 v3, 0x1
 
-    const/16 v20, 0x0
+    const/4 v2, 0x0
 
-    move-object/from16 v5, p0
+    new-instance v0, Lcfy;
 
-    move-wide/from16 v6, p1
+    const-string v1, "BEST_ELEMENTS_HEADER"
 
-    move-object/from16 v8, p3
+    invoke-direct {v0, v1, v2}, Lcfy;-><init>(Ljava/lang/String;I)V
 
-    move-object/from16 v9, p4
+    sput-object v0, Lcfy;->a:Lcfy;
 
-    move-object/from16 v10, p5
+    new-instance v0, Lcfy;
 
-    move-object/from16 v11, p6
+    const-string v1, "ALL_ELEMENTS_HEADER"
 
-    move-object/from16 v12, p7
+    invoke-direct {v0, v1, v3}, Lcfy;-><init>(Ljava/lang/String;I)V
 
-    move-object/from16 v13, p8
+    sput-object v0, Lcfy;->b:Lcfy;
 
-    move/from16 v14, p9
+    new-instance v0, Lcfy;
 
-    move-wide/from16 v16, p11
+    const-string v1, "BEST_ELEMENTS_THUMBNAIL"
 
-    move-object/from16 v19, p13
+    invoke-direct {v0, v1, v4}, Lcfy;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct/range {v5 .. v20}, Lfvj;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;Ljava/lang/String;Landroid/net/Uri;ZLjht;JILfvl;Z)V
+    sput-object v0, Lcfy;->c:Lcfy;
 
-    move-wide/from16 v0, p14
+    new-instance v0, Lcfy;
 
-    move-object/from16 v2, p0
+    const-string v1, "ALL_ELEMENTS_THUMBNAIL"
 
-    iput-wide v0, v2, Lcfy;->a:J
+    invoke-direct {v0, v1, v5}, Lcfy;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcfy;->d:Lcfy;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lcfy;
+
+    sget-object v1, Lcfy;->a:Lcfy;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcfy;->b:Lcfy;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lcfy;->c:Lcfy;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcfy;->d:Lcfy;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Lcfy;->e:[Lcfy;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final a()Landroid/net/Uri;
-    .locals 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    sget-object v0, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+.method public static values()[Lcfy;
+    .locals 1
 
-    move-result-object v0
+    sget-object v0, Lcfy;->e:[Lcfy;
 
-    iget-wide v2, p0, Lfvj;->b:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v0}, [Lcfy;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
+    check-cast v0, [Lcfy;
 
     return-object v0
 .end method

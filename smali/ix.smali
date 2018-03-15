@@ -1,63 +1,134 @@
 .class public final Lix;
-.super Landroid/view/ViewGroup$LayoutParams;
+.super Lhc;
 .source "PG"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+
+
 # instance fields
-.field public a:Z
+.field public a:I
 
-.field public b:I
+.field public d:Landroid/os/Parcelable;
 
-.field public c:F
-
-.field public d:Z
-
-.field public e:I
-
-.field public f:I
+.field public e:Ljava/lang/ClassLoader;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, -0x1
+    new-instance v0, Liy;
 
-    invoke-direct {p0, v0, v0}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    invoke-direct {v0}, Liy;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lix;->c:F
+    sput-object v0, Lix;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+.method constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .locals 1
 
-    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lhc;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    const/4 v0, 0x0
+    if-nez p2, :cond_0
 
-    iput v0, p0, Lix;->c:F
-
-    sget-object v0, Landroid/support/v4/view/ViewPager;->a:[I
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    const/16 v2, 0x30
+    move-result-object p2
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInteger(II)I
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lix;->a:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lix;->d:Landroid/os/Parcelable;
+
+    iput-object p2, p0, Lix;->e:Ljava/lang/ClassLoader;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcelable;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lhc;-><init>(Landroid/os/Parcelable;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "FragmentPager.SavedState{"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
 
-    iput v1, p0, Lix;->b:I
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " position="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lix;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 1
+
+    invoke-super {p0, p1, p2}, Lhc;->writeToParcel(Landroid/os/Parcel;I)V
+
+    iget v0, p0, Lix;->a:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object v0, p0, Lix;->d:Landroid/os/Parcelable;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     return-void
 .end method

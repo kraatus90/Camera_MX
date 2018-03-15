@@ -1,63 +1,45 @@
 .class final Leff;
-.super Ljava/lang/Object;
+.super Legv;
 .source "PG"
-
-# interfaces
-.implements Lich;
 
 
 # instance fields
-.field private synthetic a:Ldjn;
-
-.field private synthetic b:Lgfq;
-
-.field private synthetic c:Ldom;
-
-.field private synthetic d:Lich;
+.field private final synthetic a:Lefc;
 
 
 # direct methods
-.method constructor <init>(Ldjn;Lgfq;Ldom;Lich;)V
+.method constructor <init>(Lefc;)V
     .locals 0
 
-    iput-object p1, p0, Leff;->a:Ldjn;
+    iput-object p1, p0, Leff;->a:Lefc;
 
-    iput-object p2, p0, Leff;->b:Lgfq;
-
-    iput-object p3, p0, Leff;->c:Ldom;
-
-    iput-object p4, p0, Leff;->d:Lich;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Legv;-><init>(Legs;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
+.method public final D()V
+    .locals 2
 
-    iget-object v0, p0, Leff;->a:Ldjn;
+    iget-object v0, p0, Leff;->a:Lefc;
 
-    invoke-interface {v0}, Ldjn;->close()V
+    iget-object v0, v0, Lefc;->a:Lgld;
 
-    iget-object v0, p0, Leff;->b:Lgfq;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-interface {v0}, Lgfq;->close()V
+    invoke-super {p0}, Legv;->D()V
 
-    iget-object v0, p0, Leff;->c:Ldom;
+    iget-object v0, p0, Leff;->a:Lefc;
 
-    invoke-interface {v0}, Ldom;->close()V
+    iget-object v0, v0, Lefc;->a:Lgld;
 
-    iget-object v0, p0, Leff;->d:Lich;
+    iget-object v1, p0, Leff;->a:Lefc;
 
-    if-eqz v0, :cond_0
+    iget-object v1, v1, Lefc;->b:Lglf;
 
-    iget-object v0, p0, Leff;->d:Lich;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    invoke-interface {v0}, Lich;->close()V
-
-    :cond_0
     return-void
 .end method

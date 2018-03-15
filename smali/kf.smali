@@ -1,52 +1,73 @@
-.class public final Lkf;
+.class final Lkf;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final a:Lki;
+# interfaces
+.implements Landroid/view/View$OnApplyWindowInsetsListener;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>()V
+    .locals 0
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x17
+    return-void
+.end method
 
-    if-lt v0, v1, :cond_0
 
-    new-instance v0, Lkh;
+# virtual methods
+.method public final onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+    .locals 3
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x15
+    .end annotation
 
-    invoke-direct {v0}, Lkh;-><init>()V
+    const/4 v1, 0x1
 
-    sput-object v0, Lkf;->a:Lki;
+    const/4 v2, 0x0
+
+    check-cast p1, Lke;
+
+    invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    move v0, v1
 
     :goto_0
-    return-void
+    iput-object p2, p1, Lke;->i:Ljava/lang/Object;
+
+    iput-boolean v0, p1, Lke;->j:Z
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p1}, Lke;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    :goto_1
+    invoke-virtual {p1, v1}, Lke;->setWillNotDraw(Z)V
+
+    invoke-virtual {p1}, Lke;->requestLayout()V
+
+    invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
+
+    move-result-object v0
+
+    return-object v0
 
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_1
-
-    new-instance v0, Lkg;
-
-    invoke-direct {v0}, Lkg;-><init>()V
-
-    sput-object v0, Lkf;->a:Lki;
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Lki;
+    move v1, v2
 
-    invoke-direct {v0}, Lki;-><init>()V
-
-    sput-object v0, Lkf;->a:Lki;
-
-    goto :goto_0
+    goto :goto_1
 .end method

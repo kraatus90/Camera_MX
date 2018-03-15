@@ -2,73 +2,65 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Ljxn;
+.field private final a:Lkgv;
 
-.field public final b:Ljxn;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Latd;->a:Lkgv;
 
-    invoke-static {p1, v0}, Latd;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    iput-object p2, p0, Latd;->b:Lkgv;
 
-    move-result-object v0
+    iput-object p3, p0, Latd;->c:Lkgv;
 
-    check-cast v0, Ljxn;
+    iput-object p4, p0, Latd;->d:Lkgv;
 
-    iput-object v0, p0, Latd;->a:Ljxn;
+    iput-object p5, p0, Latd;->e:Lkgv;
 
-    const/4 v0, 0x2
-
-    invoke-static {p2, v0}, Latd;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Latd;->b:Ljxn;
+    iput-object p6, p0, Latd;->f:Lkgv;
 
     return-void
 .end method
 
-.method static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
 
-    if-nez p0, :cond_0
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    new-instance v0, Latb;
 
-    const/16 v1, 0x5d
+    iget-object v1, p0, Latd;->a:Lkgv;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget-object v2, p0, Latd;->b:Lkgv;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    iget-object v3, p0, Latd;->c:Lkgv;
 
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
+    iget-object v4, p0, Latd;->d:Lkgv;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v5, p0, Latd;->e:Lkgv;
 
-    move-result-object v1
+    iget-object v6, p0, Latd;->f:Lkgv;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct/range {v0 .. v6}, Latb;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    return-object p0
+    return-object v0
 .end method

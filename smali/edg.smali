@@ -1,76 +1,69 @@
-.class public final Ledg;
-.super Ljava/lang/Object;
+.class final Ledg;
+.super Lebu;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Lede;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lede;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ledg;->a:Lede;
 
-    iput-object p1, p0, Ledg;->a:Ljxn;
-
-    iput-object p2, p0, Ledg;->b:Ljxn;
-
-    iput-object p3, p0, Ledg;->c:Ljxn;
+    invoke-direct {p0, p1}, Lebu;-><init>(Lebs;)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ledg;
-
-    invoke-direct {v0, p0, p1, p2}, Ledg;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final p_()V
+    .locals 2
 
-    new-instance v3, Ledf;
+    iget-object v0, p0, Ledg;->a:Lede;
 
-    iget-object v0, p0, Ledg;->a:Ljxn;
+    iget-object v0, v0, Lede;->o:Lgld;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result-object v0
+    invoke-super {p0}, Lebu;->p_()V
 
-    check-cast v0, Lecq;
+    iget-object v0, p0, Ledg;->a:Lede;
 
-    iget-object v1, p0, Ledg;->b:Ljxn;
+    iget-object v0, v0, Lede;->o:Lgld;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Ledg;->a:Lede;
 
-    move-result-object v1
+    iget-object v1, v1, Lede;->p:Lglf;
 
-    check-cast v1, Lecj;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    iget-object v2, p0, Ledg;->c:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+.method public final q_()V
+    .locals 2
 
-    move-result-object v2
+    iget-object v0, p0, Ledg;->a:Lede;
 
-    check-cast v2, Lgdq;
+    iget-object v0, v0, Lede;->o:Lgld;
 
-    invoke-direct {v3, v0, v1, v2}, Ledf;-><init>(Lecq;Lecj;Lgdq;)V
+    invoke-virtual {v0}, Lgld;->a()V
 
-    return-object v3
+    invoke-super {p0}, Lebu;->q_()V
+
+    iget-object v0, p0, Ledg;->a:Lede;
+
+    iget-object v0, v0, Lede;->o:Lgld;
+
+    iget-object v1, p0, Ledg;->a:Lede;
+
+    iget-object v1, v1, Lede;->r:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

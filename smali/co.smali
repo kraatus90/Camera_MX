@@ -1,104 +1,53 @@
-.class public final Lco;
-.super Ljava/lang/Object;
+.class final Lco;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
-# static fields
-.field public static a:Lch;
+# instance fields
+.field private final synthetic a:Lgh;
 
-.field public static b:Ljava/util/ArrayList;
-
-.field private static c:Ljava/lang/ThreadLocal;
+.field private final synthetic b:Lcn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Lcn;Lgh;)V
+    .locals 0
 
-    new-instance v0, Lcr;
+    iput-object p1, p0, Lco;->b:Lcn;
 
-    const/4 v1, 0x0
+    iput-object p2, p0, Lco;->a:Lgh;
 
-    invoke-direct {v0, v1}, Lcr;-><init>(B)V
-
-    sput-object v0, Lco;->a:Lch;
-
-    new-instance v0, Ljava/lang/ThreadLocal;
-
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
-
-    sput-object v0, Lco;->c:Ljava/lang/ThreadLocal;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sput-object v0, Lco;->b:Ljava/util/ArrayList;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
-.method static a()Lgm;
-    .locals 2
 
-    sget-object v0, Lco;->c:Ljava/lang/ThreadLocal;
+# virtual methods
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    iget-object v0, p0, Lco;->a:Lgh;
 
-    move-result-object v0
+    invoke-virtual {v0, p1}, Lgh;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lco;->b:Lcn;
 
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lcn;->k:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    new-instance v1, Lgm;
-
-    invoke-direct {v1}, Lgm;-><init>()V
-
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    sget-object v1, Lco;->c:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v1, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
-
-    :cond_1
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgm;
-
-    return-object v0
+    return-void
 .end method
 
-.method static a(Landroid/view/ViewGroup;Lch;)V
-    .locals 2
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
 
-    if-eqz p1, :cond_0
+    iget-object v0, p0, Lco;->b:Lcn;
 
-    if-eqz p0, :cond_0
+    iget-object v0, v0, Lcn;->k:Ljava/util/ArrayList;
 
-    new-instance v0, Lcp;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {v0, p1, p0}, Lcp;-><init>(Lch;Landroid/view/ViewGroup;)V
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
-
-    :cond_0
     return-void
 .end method

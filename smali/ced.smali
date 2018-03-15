@@ -1,36 +1,25 @@
-.class final Lced;
+.class public final Lced;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
-
 
 # instance fields
-.field private synthetic a:Lcem;
+.field public final a:Lfnq;
+
+.field public final b:Ljava/util/Collection;
 
 
 # direct methods
-.method constructor <init>(Lcem;)V
+.method public constructor <init>(Lfnq;Ljava/util/Collection;)V
     .locals 0
-
-    iput-object p1, p0, Lced;->a:Lcem;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p2, p0, Lced;->b:Ljava/util/Collection;
 
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-# virtual methods
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lced;->a:Lcem;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcem;->cancel(Z)Z
+    iput-object p1, p0, Lced;->a:Lfnq;
 
     return-void
 .end method

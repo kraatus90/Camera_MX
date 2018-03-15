@@ -1,20 +1,14 @@
-.class public final Likj;
+.class final Likj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Likg;
-
-
-# instance fields
-.field private synthetic a:Ljava/lang/Object;
+.implements Linn;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Likj;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,10 +17,16 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(IIII)Linm;
+    .locals 2
 
-    iget-object v0, p0, Likj;->a:Ljava/lang/Object;
+    new-instance v0, Likh;
+
+    invoke-static {p1, p2, p3, p4}, Landroid/media/ImageReader;->newInstance(IIII)Landroid/media/ImageReader;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Likh;-><init>(Landroid/media/ImageReader;)V
 
     return-object v0
 .end method

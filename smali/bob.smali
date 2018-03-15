@@ -1,41 +1,39 @@
-.class public final Lbob;
-.super Landroid/database/sqlite/SQLiteOpenHelper;
+.class final Lbob;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Lboa;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+.method constructor <init>(Lboa;)V
+    .locals 0
 
-    const-string v0, "special_type_db_helper"
+    iput-object p1, p0, Lbob;->a:Lboa;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+.method public final run()V
     .locals 1
 
-    const-string v0, "CREATE TABLE type_uri (media_store_id INTEGER PRIMARY KEY, special_type_id TEXT NOT NULL)"
+    iget-object v0, p0, Lbob;->a:Lboa;
 
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    iget-object v0, v0, Lboa;->b:Lbnw;
 
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lglb;->e()V
+
+    :cond_0
     return-void
-.end method
-
-.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
 .end method

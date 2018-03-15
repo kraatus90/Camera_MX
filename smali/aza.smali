@@ -1,48 +1,35 @@
-.class final Laza;
+.class final synthetic Laza;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljtu;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Layr;
+.field private final a:Layz;
 
 
 # direct methods
-.method constructor <init>(Layr;)V
+.method constructor <init>(Layz;)V
     .locals 0
 
-    iput-object p1, p0, Laza;->a:Layr;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Laza;->a:Layz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljuw;
-    .locals 3
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Liht;
+    iget-object v0, p0, Laza;->a:Layz;
 
-    iget-object v0, p0, Laza;->a:Layr;
+    iget-object v0, v0, Layz;->a:Layw;
 
-    iget-object v0, v0, Layr;->o:Lbdb;
+    invoke-interface {v0}, Layw;->a()V
 
-    iget-object v1, p0, Laza;->a:Layr;
-
-    iget-object v1, v1, Layr;->q:Landroid/view/Surface;
-
-    iget-object v2, p0, Laza;->a:Layr;
-
-    iget-object v2, v2, Layr;->t:Lbcv;
-
-    invoke-virtual {v0, p1, v1, v2}, Lbdb;->a(Liht;Landroid/view/Surface;Lbcv;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

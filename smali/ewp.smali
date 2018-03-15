@@ -1,20 +1,30 @@
-.class final Lewp;
+.class public final Lewp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
+.implements Lkgv;
 
 
-# instance fields
-.field private synthetic a:Lewo;
+# static fields
+.field public static final a:Lewp;
 
 
 # direct methods
-.method constructor <init>(Lewo;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lewp;->a:Lewo;
+    new-instance v0, Lewp;
+
+    invoke-direct {v0}, Lewp;-><init>()V
+
+    sput-object v0, Lewp;->a:Lewp;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,34 +33,18 @@
 
 
 # virtual methods
-.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    sub-int v0, p4, p2
+    sget-object v0, Ljwb;->a:Ljwb;
 
-    sub-int v1, p5, p3
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v2, p0, Lewp;->a:Lewo;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget v2, v2, Lewo;->c:I
+    move-result-object v0
 
-    if-ne v2, v1, :cond_0
+    check-cast v0, Ljava/util/Set;
 
-    iget-object v2, p0, Lewp;->a:Lewo;
-
-    iget v2, v2, Lewo;->b:I
-
-    if-eq v2, v0, :cond_1
-
-    :cond_0
-    iget-object v2, p0, Lewp;->a:Lewo;
-
-    iput v0, v2, Lewo;->b:I
-
-    iget-object v0, p0, Lewp;->a:Lewo;
-
-    iput v1, v0, Lewo;->c:I
-
-    :cond_1
-    return-void
+    return-object v0
 .end method

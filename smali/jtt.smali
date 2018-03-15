@@ -1,70 +1,82 @@
-.class final Ljtt;
-.super Ljtr;
+.class public abstract Ljtt;
+.super Ljtp;
 .source "PG"
+
+# interfaces
+.implements Ljava/util/Set;
 
 
 # direct methods
-.method constructor <init>()V
+.method protected constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljtr;-><init>()V
+    invoke-direct {p0}, Ljtp;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljtq;)I
-    .locals 1
-
-    monitor-enter p1
-
-    :try_start_0
-    iget v0, p1, Ljtq;->d:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p1, Ljtq;->d:I
-
-    iget v0, p1, Ljtq;->d:I
-
-    monitor-exit p1
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+.method protected abstract a()Ljava/util/Set;
 .end method
 
-.method final a(Ljtq;Ljava/util/Set;)V
+.method protected synthetic b()Ljava/util/Collection;
     .locals 1
 
-    monitor-enter p1
+    invoke-virtual {p0}, Ljtt;->a()Ljava/util/Set;
 
-    :try_start_0
-    iget-object v0, p1, Ljtq;->c:Ljava/util/Set;
+    move-result-object v0
 
-    if-nez v0, :cond_0
+    return-object v0
+.end method
 
-    iput-object p2, p1, Ljtq;->c:Ljava/util/Set;
+.method protected synthetic c()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtt;->a()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-eq p1, p0, :cond_0
+
+    invoke-virtual {p0}, Ljtt;->a()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     :cond_0
-    monitor-exit p1
+    const/4 v0, 0x1
 
-    return-void
+    :goto_0
+    return v0
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    const/4 v0, 0x0
 
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_0
+.end method
 
-    throw v0
+.method public hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Ljtt;->a()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

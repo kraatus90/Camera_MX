@@ -1,80 +1,38 @@
-.class final Liwf;
+.class public interface abstract Liwf;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Liuh;
 
-
-# instance fields
-.field private synthetic a:I
+# static fields
+.field public static final a:Liwf;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/16 v0, 0x8
+    new-instance v0, Liwg;
 
-    iput v0, p0, Liwf;->a:I
+    invoke-direct {v0}, Liwg;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Liwf;->a:Liwf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 5
+.method public abstract a()V
+.end method
 
-    new-instance v1, Ljbo;
+.method public abstract a(I)V
+.end method
 
-    const-class v0, Ljcs;
+.method public abstract a(J)V
+.end method
 
-    const-string v2, "default"
+.method public abstract a(Landroid/media/MediaCodec$BufferInfo;)V
+.end method
 
-    invoke-virtual {p1, v0, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljcs;
-
-    iget v2, p0, Liwf;->a:I
-
-    invoke-direct {v1, v0, v2}, Ljbo;-><init>(Ljcs;I)V
-
-    const-class v0, Ljan;
-
-    const-string v2, "panning_content_value"
-
-    invoke-virtual {p1, v0, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljan;
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljbe;
-
-    const/4 v3, 0x0
-
-    aput-object v1, v2, v3
-
-    const/4 v1, 0x1
-
-    new-instance v3, Lizi;
-
-    const/4 v4, 0x5
-
-    invoke-direct {v3, v0, v4}, Lizi;-><init>(Ljan;I)V
-
-    aput-object v3, v2, v1
-
-    invoke-static {v2}, Ljbk;->a([Ljbe;)Ljbk;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract a(Livt;)V
 .end method

@@ -2,15 +2,19 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lase;
-.implements Lhzb;
-.implements Lich;
-
 
 # virtual methods
-.method public abstract a()Lbea;
+.method public abstract a()V
 .end method
 
-.method public abstract a(Lbaw;)Ljuw;
+.method public abstract a(Layy;)V
+.end method
+
+.method public abstract a(Lilb;)V
+.end method
+
+.method public abstract b()V
+.end method
+
+.method public abstract c()Layq;
 .end method

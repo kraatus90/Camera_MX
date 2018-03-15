@@ -2,81 +2,131 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
 
 # instance fields
-.field private synthetic a:Lfjy;
+.field public final a:I
+
+.field public final b:Lfgk;
+
+.field public final c:Ljava/util/Map;
+
+.field public d:Lful;
+
+.field public e:Lket;
 
 
 # direct methods
-.method constructor <init>(Lfjy;)V
-    .locals 0
-
-    iput-object p1, p0, Lfjz;->a:Lfjy;
+.method constructor <init>(ILfgk;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lfjz;->a:I
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lfjz;->d:Lful;
+
+    iput-object p2, p0, Lfjz;->b:Lfgk;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lfjz;->c:Ljava/util/Map;
+
+    new-instance v0, Lket;
+
+    invoke-direct {v0}, Lket;-><init>()V
+
+    iput-object v0, p0, Lfjz;->e:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method final a()V
+    .locals 2
 
-    const/4 v0, 0x7
+    iget-object v0, p0, Lfjz;->c:Ljava/util/Map;
 
-    iget-object v1, p0, Lfjz;->a:Lfjy;
-
-    iget-object v1, v1, Lfjy;->a:Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;
-
-    iget v2, v1, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->j:I
-
-    if-lt v2, v0, :cond_0
-
-    :goto_0
-    iput v0, v1, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->j:I
-
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->h:Liau;
-
-    iget v2, v1, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->j:I
-
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->a(I)F
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Liau;->a(Ljava/lang/Object;)V
-
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->h:Liau;
-
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    move-result-object v1
 
-    iget-object v0, p0, Lfjz;->a:Lfjy;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v0}, Lfjy;->a()V
+    move-result v0
 
-    iget-object v0, p0, Lfjz;->a:Lfjy;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lfjy;->b()V
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Link;
+
+    invoke-interface {v0}, Link;->close()V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lfjz;->d:Lful;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lfjz;->d:Lful;
+
+    invoke-interface {v0}, Lful;->close()V
+
+    :cond_1
+    iget-object v0, p0, Lfjz;->e:Lket;
+
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method final a(ILfjg;)V
+    .locals 2
+
+    iget-object v0, p0, Lfjz;->c:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->b(Z)V
+
+    iget-object v0, p0, Lfjz;->c:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 
     :cond_0
-    iget v0, v1, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->j:I
-
-    add-int/lit8 v0, v0, 0x1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

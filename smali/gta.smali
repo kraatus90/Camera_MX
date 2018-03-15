@@ -1,78 +1,33 @@
-.class public final Lgta;
-.super Ljava/lang/Object;
+.class public Lgta;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field public final e:Lbbp;
+
+.field public f:Lgtf;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
-    .locals 0
+.method public constructor <init>(Lbbp;)V
+    .locals 1
 
-    iput-object p1, p0, Lgta;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lglb;-><init>([[[Z)V
+
+    iput-object p1, p0, Lgta;->e:Lbbp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
+.method public a(Lgtf;)V
+    .locals 0
 
-    iget-object v0, p0, Lgta;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$2200(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/animation/ArgbEvaluator;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
-
-    move-result v1
-
-    iget-object v2, p0, Lgta;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v2}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$2000(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lgta;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v3}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$2100(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/animation/ArgbEvaluator;->evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    iget-object v1, p0, Lgta;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$2300(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/graphics/Paint;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
+    iput-object p1, p0, Lgta;->f:Lgtf;
 
     return-void
 .end method

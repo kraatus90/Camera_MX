@@ -80,16 +80,6 @@
     return v0
 .end method
 
-.method public Clear()V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_Clear(JLcom/google/googlex/gcam/ShotParams;)V
-
-    return-void
-.end method
-
 .method public DeserializeFromString(Ljava/lang/String;)Z
     .locals 2
 
@@ -356,18 +346,6 @@
     return v0
 .end method
 
-.method public getFull_sized_merged_output()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_full_sized_merged_output_get(JLcom/google/googlex/gcam/ShotParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public getGenerate_jpg_thumbnail()Z
     .locals 2
 
@@ -380,12 +358,24 @@
     return v0
 .end method
 
-.method public getIcc_profile_override()I
+.method public getGeometric_correction_override()I
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
 
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_icc_profile_override_get(JLcom/google/googlex/gcam/ShotParams;)I
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_geometric_correction_override_get(JLcom/google/googlex/gcam/ShotParams;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getIcc_output_profile_override()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_icc_output_profile_override_get(JLcom/google/googlex/gcam/ShotParams;)I
 
     move-result v0
 
@@ -468,6 +458,18 @@
     invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/AwbInfo;-><init>(JZ)V
 
     goto :goto_0
+.end method
+
+.method public getRaw_cropping_override()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_raw_cropping_override_get(JLcom/google/googlex/gcam/ShotParams;)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public getResampling_method_override()I
@@ -658,16 +660,6 @@
     return-void
 .end method
 
-.method public setFull_sized_merged_output(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_full_sized_merged_output_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-
-    return-void
-.end method
-
 .method public setGenerate_jpg_thumbnail(Z)V
     .locals 2
 
@@ -678,12 +670,22 @@
     return-void
 .end method
 
-.method public setIcc_profile_override(I)V
+.method public setGeometric_correction_override(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
 
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_icc_profile_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_geometric_correction_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+
+    return-void
+.end method
+
+.method public setIcc_output_profile_override(I)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_icc_output_profile_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
 
     return-void
 .end method
@@ -742,6 +744,16 @@
     move-object v5, p1
 
     invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_previous_viewfinder_wb_set(JLcom/google/googlex/gcam/ShotParams;JLcom/google/googlex/gcam/AwbInfo;)V
+
+    return-void
+.end method
+
+.method public setRaw_cropping_override(I)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_raw_cropping_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
 
     return-void
 .end method

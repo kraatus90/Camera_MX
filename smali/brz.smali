@@ -2,37 +2,22 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
 
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbrz;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
+    const-string v0, "ProcessingMedia"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object v0
 
-
-# virtual methods
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lbrz;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
-
-    iget-object v1, p0, Lbrz;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
-
-    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->b:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    sput-object v0, Lbrz;->a:Ljava/lang/String;
 
     return-void
 .end method

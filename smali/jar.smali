@@ -3,164 +3,128 @@
 .source "PG"
 
 # interfaces
-.implements Ljan;
+.implements Liza;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x13
+.end annotation
 
 
 # instance fields
-.field private a:Ljee;
+.field public final a:J
 
-.field private b:Ljea;
+.field public final b:F
 
-.field private c:F
+.field public final c:Z
+
+.field public final d:Z
+
+.field private final e:I
 
 
 # direct methods
-.method public constructor <init>(Ljee;Ljea;)V
+.method public constructor <init>(JIFZZ)V
     .locals 1
 
-    const/high16 v0, -0x800000    # Float.NEGATIVE_INFINITY
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, Ljar;-><init>(Ljee;Ljea;F)V
+    iput-wide p1, p0, Ljar;->a:J
+
+    iput p3, p0, Ljar;->e:I
+
+    iput p4, p0, Ljar;->b:F
+
+    iput-boolean p5, p0, Ljar;->c:Z
+
+    iput-boolean p6, p0, Ljar;->d:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Ljee;Ljea;F)V
-    .locals 0
+.method private final b(Ljhk;)Ljnt;
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljnt;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "image/jpeg"
 
-    iput-object p1, p0, Ljar;->a:Ljee;
+    iget-wide v2, p0, Ljar;->a:J
 
-    iput-object p2, p0, Ljar;->b:Ljea;
+    iget v4, p0, Ljar;->e:I
 
-    iput p3, p0, Ljar;->c:F
+    iget v5, p1, Ljhk;->a:I
 
-    return-void
+    iget v6, p1, Ljhk;->b:I
+
+    const/4 v7, 0x0
+
+    invoke-direct/range {v0 .. v7}, Ljnt;-><init>(Ljava/lang/String;JIIIB)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljfx;
-    .locals 3
+.method public final a(Ljhk;Landroid/content/Context;Ljava/util/concurrent/Executor;Ljgs;)Liqz;
+    .locals 2
 
-    iget-object v0, p0, Ljar;->a:Ljee;
+    iget-wide v0, p0, Ljar;->a:J
 
-    invoke-virtual {v0, p1, p2}, Ljee;->a(J)Ljds;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ljar;->b:Ljea;
-
-    invoke-virtual {v0, v1}, Ljds;->b(Ljea;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    new-instance v1, Ljfu;
-
-    iget-object v2, p0, Ljar;->b:Ljea;
-
-    invoke-virtual {v0, v2}, Ljds;->a(Ljea;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1}, Ljhk;->b(J)Liqz;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    invoke-direct {v1, v0}, Ljfu;-><init>(F)V
-
-    move-object v0, v1
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljfu;
-
-    iget v1, p0, Ljar;->c:F
-
-    invoke-direct {v0, v1}, Ljfu;-><init>(F)V
-
-    goto :goto_0
-.end method
-
-.method public final a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b(J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c(J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    const-string v0, "MetadataFrameScorer[key="
-
-    iget-object v1, p0, Ljar;->b:Ljea;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p4, p2}, Ljam;->b(Ljgs;Landroid/content/Context;)Lipn;
 
     move-result-object v1
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0, p3, v1}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final a(Ljhk;Ljns;Ljava/util/concurrent/Executor;Ljgs;)Liqz;
+    .locals 3
+
+    iget-wide v0, p0, Ljar;->a:J
+
+    invoke-virtual {p1, v0, v1}, Ljhk;->b(J)Liqz;
+
+    move-result-object v0
+
+    new-instance v1, Ljas;
+
+    invoke-direct {p0, p1}, Ljar;->b(Ljhk;)Ljnt;
+
+    move-result-object v2
+
+    invoke-direct {v1, p4, p2, v2}, Ljas;-><init>(Ljgs;Ljns;Ljnt;)V
+
+    invoke-interface {v0, p3, v1}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljhk;)Ljnr;
+    .locals 1
+
+    invoke-direct {p0, p1}, Ljar;->b(Ljhk;)Ljnt;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()J
+    .locals 2
+
+    iget-wide v0, p0, Ljar;->a:J
+
+    return-wide v0
 .end method

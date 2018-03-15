@@ -1,46 +1,25 @@
 .class public final Lgqy;
-.super Ljava/lang/Object;
+.super Lgqz;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Ljxn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x1
 
-    iput-object p1, p0, Lgqy;->a:Ljxn;
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v1, v0, v1}, Lgqz;-><init>(ZZZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(Landroid/graphics/RectF;)V
+    .locals 0
 
-    iget-object v0, p0, Lgqy;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgqs;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgrr;
-
-    return-object v0
+    return-void
 .end method

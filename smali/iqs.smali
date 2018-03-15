@@ -3,63 +3,42 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Lire;
 
 
 # instance fields
-.field public final a:I
-
-.field private b:F
+.field private final synthetic a:Lirf;
 
 
 # direct methods
-.method public constructor <init>(FI)V
+.method constructor <init>(Lirf;)V
     .locals 0
 
+    iput-object p1, p0, Liqs;->a:Lirf;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Liqs;->b:F
-
-    iput p2, p0, Liqs;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic compareTo(Ljava/lang/Object;)I
+.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Liqz;
     .locals 2
 
-    check-cast p1, Liqs;
+    iget-object v0, p0, Liqs;->a:Lirf;
 
-    iget v0, p0, Liqs;->b:F
+    invoke-virtual {v0}, Lirf;->a()Lirc;
 
-    iget v1, p1, Liqs;->b:F
+    move-result-object v0
 
-    cmpl-float v0, v0, v1
+    invoke-static {p1}, Lihr;->a(Ljava/lang/Object;)Lipn;
 
-    if-lez v0, :cond_0
+    move-result-object v1
 
-    const/4 v0, -0x1
+    invoke-virtual {v0, p2, v1}, Lirc;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_0
-    iget v0, p0, Liqs;->b:F
-
-    iget v1, p1, Liqs;->b:F
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method

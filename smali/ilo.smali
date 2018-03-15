@@ -1,40 +1,46 @@
 .class public final Lilo;
-.super Ljava/lang/Object;
+.super Linh;
 .source "PG"
-
-# interfaces
-.implements Lilj;
 
 
 # instance fields
-.field private synthetic a:Lilf;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lilf;)V
-    .locals 0
+.method public constructor <init>(Link;)V
+    .locals 2
 
-    iput-object p1, p0, Lilo;->a:Lilf;
+    invoke-direct {p0, p1}, Linh;-><init>(Link;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lilo;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lilf;
+.method public final close()V
     .locals 2
 
-    iget-object v0, p0, Lilo;->a:Lilf;
+    iget-object v0, p0, Lilo;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    new-instance v1, Lilp;
+    const/4 v1, 0x1
 
-    invoke-direct {v1, p1}, Lilp;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    invoke-interface {v0, p2, v1}, Lilf;->a(Ljava/util/concurrent/Executor;Likg;)Lilf;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    return-object v0
+    invoke-super {p0}, Linh;->close()V
+
+    :cond_0
+    return-void
 .end method

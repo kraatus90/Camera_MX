@@ -1,41 +1,42 @@
-.class public final Lfv;
+.class final Lfv;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Landroid/net/Uri;
+.field private final synthetic a:Ljava/lang/Object;
 
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:Z
-
-.field public final e:I
+.field private final synthetic b:Lfu;
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;IIZI)V
-    .locals 1
+.method constructor <init>(Lfu;Ljava/lang/Object;)V
+    .locals 0
+
+    iput-object p1, p0, Lfv;->b:Lfu;
+
+    iput-object p2, p0, Lfv;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Llb;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v0
 
-    check-cast v0, Landroid/net/Uri;
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    iput-object v0, p0, Lfv;->a:Landroid/net/Uri;
+    iget-object v0, p0, Lfv;->b:Lfu;
 
-    iput p2, p0, Lfv;->b:I
+    iget-object v0, v0, Lfu;->a:Lfx;
 
-    iput p3, p0, Lfv;->c:I
+    iget-object v1, p0, Lfv;->a:Ljava/lang/Object;
 
-    iput-boolean p4, p0, Lfv;->d:Z
-
-    iput p5, p0, Lfv;->e:I
+    invoke-interface {v0, v1}, Lfx;->a(Ljava/lang/Object;)V
 
     return-void
 .end method

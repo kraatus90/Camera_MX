@@ -362,9 +362,9 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Ljvs;->a:Ljvt;
+    sget-object v1, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v1, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     move-object v0, v2
 

@@ -1,60 +1,88 @@
-.class public final Lfjx;
-.super Ljava/lang/Object;
+.class final Lfjx;
+.super Lbcd;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfib;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lfgt;
 
-.field private b:Ljxn;
+.field private final b:Lftx;
 
-.field private c:Ljxn;
+.field private final c:Liaw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lfgt;Liaw;Lbax;Lftx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p3}, Lbcd;-><init>(Lbax;)V
 
-    iput-object p1, p0, Lfjx;->a:Ljxn;
+    iput-object p1, p0, Lfjx;->a:Lfgt;
 
-    iput-object p2, p0, Lfjx;->b:Ljxn;
+    iput-object p2, p0, Lfjx;->c:Liaw;
 
-    iput-object p3, p0, Lfjx;->c:Ljxn;
+    iput-object p4, p0, Lfjx;->b:Lftx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final a(I)Lkeh;
+    .locals 1
 
-    new-instance v2, Lfjw;
+    iget-object v0, p0, Lfjx;->b:Lftx;
 
-    iget-object v0, p0, Lfjx;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lftx;->b(I)Lkeh;
 
     move-result-object v0
 
-    check-cast v0, Lhem;
+    return-object v0
+.end method
 
-    iget-object v3, p0, Lfjx;->b:Ljxn;
+.method public final b(I)Z
+    .locals 1
 
-    iget-object v1, p0, Lfjx;->c:Ljxn;
+    iget-object v0, p0, Lfjx;->b:Lftx;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lftx;->c(I)Z
 
-    move-result-object v1
+    move-result v0
 
-    check-cast v1, Landroid/content/Context;
+    return v0
+.end method
 
-    invoke-direct {v2, v0, v3, v1}, Lfjw;-><init>(Lhem;Ljxn;Landroid/content/Context;)V
+.method public final close()V
+    .locals 1
 
-    return-object v2
+    invoke-super {p0}, Lbcd;->close()V
+
+    iget-object v0, p0, Lfjx;->c:Liaw;
+
+    invoke-virtual {v0}, Liaw;->close()V
+
+    return-void
+.end method
+
+.method public final d()I
+    .locals 1
+
+    iget-object v0, p0, Lfjx;->b:Lftx;
+
+    invoke-virtual {v0}, Lftx;->b()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final y_()Lfgt;
+    .locals 1
+
+    iget-object v0, p0, Lfjx;->a:Lfgt;
+
+    return-object v0
 .end method

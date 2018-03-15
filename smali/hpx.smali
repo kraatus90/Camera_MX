@@ -1,193 +1,67 @@
-.class public final Lhpx;
+.class final Lhpx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lhqe;
 
 
 # instance fields
-.field private a:Landroid/os/IBinder;
+.field private final synthetic a:Landroid/os/Bundle;
+
+.field private final synthetic b:J
+
+.field private final synthetic c:Lhpw;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/IBinder;)V
-    .locals 0
+.method constructor <init>(Lhpw;Landroid/os/Bundle;J)V
+    .locals 1
+
+    iput-object p1, p0, Lhpx;->c:Lhpw;
+
+    iput-object p2, p0, Lhpx;->a:Landroid/os/Bundle;
+
+    iput-wide p3, p0, Lhpx;->b:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhpx;->a:Landroid/os/IBinder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/gms/feedback/ErrorReport;)Z
-    .locals 7
+.method public final a()Lhlp;
+    .locals 6
 
-    const/4 v0, 0x1
+    sget-object v0, Lhqa;->b:Lhpy;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lhpx;->c:Lhpw;
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    iget-object v1, v1, Lhpw;->a:Lhlm;
 
-    move-result-object v2
+    iget-object v2, p0, Lhpx;->c:Lhpw;
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    iget-object v2, v2, Lhpw;->b:Lcom/google/android/gms/googlehelp/GoogleHelp;
 
-    move-result-object v3
+    iget-object v3, p0, Lhpx;->a:Landroid/os/Bundle;
 
-    :try_start_0
-    const-string v4, "com.google.android.gms.feedback.internal.IFeedbackService"
+    iget-wide v4, p0, Lhpx;->b:J
 
-    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-interface/range {v0 .. v5}, Lhpy;->a(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhlp;
 
-    if-eqz p1, :cond_0
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p1, v2, v4}, Lcom/google/android/gms/feedback/ErrorReport;->writeToParcel(Landroid/os/Parcel;I)V
-
-    :goto_0
-    iget-object v4, p0, Lhpx;->a:Landroid/os/IBinder;
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    invoke-interface {v4, v5, v2, v3, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    :goto_1
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    return v0
-
-    :cond_0
-    const/4 v4, 0x0
-
-    :try_start_1
-    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_1
-.end method
-
-.method public final asBinder()Landroid/os/IBinder;
-    .locals 1
-
-    iget-object v0, p0, Lhpx;->a:Landroid/os/IBinder;
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(Lcom/google/android/gms/feedback/ErrorReport;)Z
-    .locals 7
+.method public final b()V
+    .locals 2
 
-    const/4 v0, 0x1
+    const-string v0, "gH_GetAsyncHelpPsd"
 
-    const/4 v1, 0x0
+    const-string v1, "Failed to send async help psd to Help."
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v2
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v3
-
-    :try_start_0
-    const-string v4, "com.google.android.gms.feedback.internal.IFeedbackService"
-
-    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p1, v2, v4}, Lcom/google/android/gms/feedback/ErrorReport;->writeToParcel(Landroid/os/Parcel;I)V
-
-    :goto_0
-    iget-object v4, p0, Lhpx;->a:Landroid/os/IBinder;
-
-    const/4 v5, 0x3
-
-    const/4 v6, 0x0
-
-    invoke-interface {v4, v5, v2, v3, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->readException()V
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    :goto_1
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    return v0
-
-    :cond_0
-    const/4 v4, 0x0
-
-    :try_start_1
-    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_1
+    return-void
 .end method

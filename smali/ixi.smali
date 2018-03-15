@@ -1,109 +1,72 @@
-.class final synthetic Lixi;
+.class public final Lixi;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/AutoCloseable;
 
-# static fields
-.field public static final synthetic a:[I
+
+# instance fields
+.field public final synthetic a:Ljava/nio/ByteBuffer;
+
+.field public final synthetic b:Landroid/media/MediaCodec$BufferInfo;
+
+.field private final synthetic c:Landroid/media/MediaCodec;
+
+.field private final synthetic d:I
+
+.field private final synthetic e:Livs;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Livs;Landroid/media/MediaCodec;Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;I)V
+    .locals 0
 
-    invoke-static {}, Landroid/graphics/Bitmap$Config;->values()[Landroid/graphics/Bitmap$Config;
+    iput-object p1, p0, Lixi;->e:Livs;
 
-    move-result-object v0
+    iput-object p2, p0, Lixi;->c:Landroid/media/MediaCodec;
 
-    array-length v0, v0
+    iput-object p3, p0, Lixi;->a:Ljava/nio/ByteBuffer;
 
-    new-array v0, v0, [I
+    iput-object p4, p0, Lixi;->b:Landroid/media/MediaCodec$BufferInfo;
 
-    sput-object v0, Lixi;->a:[I
+    iput p5, p0, Lixi;->d:I
 
-    :try_start_0
-    sget-object v0, Lixi;->a:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_3
-
-    :goto_0
-    :try_start_1
-    sget-object v0, Lixi;->a:[I
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_2
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lixi;->a:[I
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_1
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lixi;->a:[I
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_0
-
-    :goto_3
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
 
-    goto :goto_3
+# virtual methods
+.method public final close()V
+    .locals 4
 
-    :catch_1
-    move-exception v0
+    iget-object v0, p0, Lixi;->c:Landroid/media/MediaCodec;
 
-    goto :goto_2
+    iget v1, p0, Lixi;->d:I
 
-    :catch_2
-    move-exception v0
+    const/4 v2, 0x0
 
-    goto :goto_1
+    invoke-virtual {v0, v1, v2}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
 
-    :catch_3
-    move-exception v0
+    iget-object v0, p0, Lixi;->e:Livs;
 
-    goto :goto_0
+    iget-object v0, v0, Livs;->a:Lixt;
+
+    iget-object v0, v0, Lixt;->i:Liwf;
+
+    iget-object v1, p0, Lixi;->b:Landroid/media/MediaCodec$BufferInfo;
+
+    iget-wide v2, v1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    invoke-interface {v0, v2, v3}, Liwf;->a(J)V
+
+    iget-object v0, p0, Lixi;->e:Livs;
+
+    iget-object v1, p0, Lixi;->b:Landroid/media/MediaCodec$BufferInfo;
+
+    invoke-virtual {v0, v1}, Livs;->a(Landroid/media/MediaCodec$BufferInfo;)V
+
+    return-void
 .end method

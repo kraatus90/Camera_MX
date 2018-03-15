@@ -1,103 +1,46 @@
-.class public final Lcyt;
-.super Lcwi;
+.class final Lcyt;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final c:Ljava/lang/String;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final d:Laxp;
+.field private final synthetic a:Lcys;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Lcys;)V
+    .locals 0
 
-    const-string v0, "StStartingPreview"
+    iput-object p1, p0, Lcyt;->a:Lcys;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcyt;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcwi;Laxp;)V
-    .locals 2
-
-    invoke-direct {p0, p1}, Lcwi;-><init>(Lcng;)V
-
-    iput-object p2, p0, Lcyt;->d:Laxp;
-
-    new-instance v0, Lcyu;
-
-    invoke-direct {v0, p0}, Lcyu;-><init>(Lcyt;)V
-
-    const-class v1, Lcvm;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
-
-    new-instance v0, Lcyv;
-
-    invoke-direct {v0, p0}, Lcyv;-><init>(Lcyt;)V
-
-    const-class v1, Lcvl;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
-
-    new-instance v0, Lcyx;
-
-    invoke-direct {v0, p0}, Lcyx;-><init>(Lcyt;)V
-
-    const-class v1, Lcvk;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b()Lcng;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    invoke-virtual {p0}, Lcyt;->e()Lcwi;
+    iget-object v0, p0, Lcyt;->a:Lcys;
 
-    move-result-object v0
+    iget-object v0, v0, Lcys;->a:Lcyk;
 
-    return-object v0
-.end method
-
-.method public final e()Lcwi;
-    .locals 3
-
-    iget-object v0, p0, Lcyt;->d:Laxp;
-
-    iget-object v0, v0, Laxp;->a:Lich;
-
-    check-cast v0, Lcvz;
-
-    invoke-interface {v0}, Lcvz;->b()Lcwe;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcwe;->g()Ljuw;
+    check-cast v0, Lcxo;
 
-    move-result-object v0
+    iget-object v0, v0, Lcxo;->b:Lcwf;
 
-    new-instance v1, Lcyy;
+    const/4 v1, 0x1
 
-    invoke-direct {v1, p0}, Lcyy;-><init>(Lcyt;)V
+    invoke-virtual {v0, v1}, Lcwf;->a(Z)V
 
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 .end method

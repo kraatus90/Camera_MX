@@ -1,206 +1,246 @@
-.class abstract Ljjh;
+.class public final Ljjh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljmc;
+.implements Ljjj;
 
 
 # instance fields
-.field private transient a:Ljava/util/Set;
+.field private final a:I
 
-.field private transient b:Ljava/util/Map;
+.field private final b:I
+
+.field private final c:I
+
+.field private final d:I
+
+.field private final e:I
+
+.field private final f:Ljava/nio/FloatBuffer;
+
+.field private final g:Ljava/nio/FloatBuffer;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x6
+
+    iput v0, p0, Ljjh;->a:I
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Ljjh;->b:I
+
+    const/16 v0, 0x1a
+
+    iput v0, p0, Ljjh;->c:I
+
+    const/16 v0, 0x33
+
+    iput v0, p0, Ljjh;->d:I
+
+    iget v0, p0, Ljjh;->a:I
+
+    iput v0, p0, Ljjh;->e:I
+
+    iget v0, p0, Ljjh;->a:I
+
+    iget v1, p0, Ljjh;->b:I
+
+    mul-int/2addr v0, v1
+
+    invoke-static {v0}, Ljjh;->a(I)Ljava/nio/FloatBuffer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljjh;->f:Ljava/nio/FloatBuffer;
+
+    iget v0, p0, Ljjh;->e:I
+
+    invoke-static {v0}, Ljjh;->a(I)Ljava/nio/FloatBuffer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljjh;->g:Ljava/nio/FloatBuffer;
 
     return-void
 .end method
 
+.method private static a(I)Ljava/nio/FloatBuffer;
+    .locals 2
+
+    shl-int/lit8 v0, p0, 0x2
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asFloatBuffer()Ljava/nio/FloatBuffer;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static a(Ljava/nio/FloatBuffer;)[F
+    .locals 1
+
+    invoke-virtual {p0}, Ljava/nio/FloatBuffer;->remaining()I
+
+    move-result v0
+
+    new-array v0, v0, [F
+
+    invoke-virtual {p0, v0}, Ljava/nio/FloatBuffer;->get([F)Ljava/nio/FloatBuffer;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public a(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
+.method public final declared-synchronized a(Landroid/graphics/Bitmap;)Ljava/util/List;
+    .locals 9
 
-    invoke-virtual {p0, p1}, Ljjh;->b(Ljava/lang/Object;)Ljava/util/Collection;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, p2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-static {}, Lcom/google/android/libraries/smartburst/filterfw/FrameManager;->attachToThread()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-result v0
+    :try_start_1
+    invoke-static {p1}, Ljdu;->a(Landroid/graphics/Bitmap;)Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;
 
-    return v0
-.end method
+    move-result-object v8
 
-.method public b(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
+    new-instance v1, Lcom/google/android/libraries/smartburst/filterfw/imageutils/RgbToHsvConverter;
 
-    invoke-virtual {p0}, Ljjh;->i()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p2}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
+    invoke-direct {v1, v0}, Lcom/google/android/libraries/smartburst/filterfw/imageutils/RgbToHsvConverter;-><init>(Z)V
 
-.method e()Ljava/util/Set;
-    .locals 2
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    new-instance v0, Ljlz;
+    move-result v0
 
-    invoke-virtual {p0}, Ljjh;->i()Ljava/util/Map;
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v2
+
+    invoke-static {v0, v2}, Ljdu;->a(II)Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v8, v0}, Lcom/google/android/libraries/smartburst/filterfw/imageutils/RgbToHsvConverter;->convertImage(Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;)V
+
+    iget-object v1, p0, Ljjh;->f:Ljava/nio/FloatBuffer;
+
+    invoke-virtual {v1}, Ljava/nio/FloatBuffer;->rewind()Ljava/nio/Buffer;
+
+    iget-object v1, p0, Ljjh;->g:Ljava/nio/FloatBuffer;
+
+    invoke-virtual {v1}, Ljava/nio/FloatBuffer;->rewind()Ljava/nio/Buffer;
+
+    iget v1, p0, Ljjh;->a:I
+
+    iget v2, p0, Ljjh;->b:I
+
+    iget v3, p0, Ljjh;->e:I
+
+    iget v4, p0, Ljjh;->c:I
+
+    iget v5, p0, Ljjh;->d:I
+
+    iget-object v6, p0, Ljjh;->f:Ljava/nio/FloatBuffer;
+
+    iget-object v7, p0, Ljjh;->g:Ljava/nio/FloatBuffer;
+
+    invoke-static/range {v0 .. v7}, Lcom/google/android/libraries/smartburst/filterfw/imageutils/Histograms;->extractHueSatValueHistogram(Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;IIIIILjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)V
+
+    iget-object v1, p0, Ljjh;->f:Ljava/nio/FloatBuffer;
+
+    invoke-static {v1}, Ljjh;->a(Ljava/nio/FloatBuffer;)[F
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljlz;-><init>(Ljava/util/Map;)V
+    iget-object v2, p0, Ljjh;->g:Ljava/nio/FloatBuffer;
+
+    invoke-static {v2}, Ljjh;->a(Ljava/nio/FloatBuffer;)[F
+
+    move-result-object v2
+
+    new-instance v3, Lcom/google/android/libraries/smartburst/utils/Feature;
+
+    sget-object v4, Ljpe;->f:Ljpe;
+
+    invoke-direct {v3, v4, v1}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
+
+    new-instance v1, Lcom/google/android/libraries/smartburst/utils/Feature;
+
+    sget-object v4, Ljpe;->g:Ljpe;
+
+    invoke-direct {v1, v4, v2}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
+
+    invoke-virtual {v8}, Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;->release()Lcom/google/android/libraries/smartburst/filterfw/Frame;
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;->release()Lcom/google/android/libraries/smartburst/filterfw/Frame;
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lcom/google/android/libraries/smartburst/utils/Feature;
+
+    const/4 v2, 0x0
+
+    aput-object v3, v0, v2
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Ljwo;->a([Ljava/lang/Object;)Ljava/util/ArrayList;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result-object v0
+
+    :try_start_2
+    invoke-static {}, Lcom/google/android/libraries/smartburst/filterfw/FrameManager;->detachFromThread()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    monitor-exit p0
 
     return-object v0
-.end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    :catchall_0
+    move-exception v0
 
-    if-ne p1, p0, :cond_0
+    :try_start_3
+    invoke-static {}, Lcom/google/android/libraries/smartburst/filterfw/FrameManager;->detachFromThread()V
 
-    const/4 v0, 0x1
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    :goto_0
-    return v0
+    :catchall_1
+    move-exception v0
 
-    :cond_0
-    instance-of v0, p1, Ljmc;
+    monitor-exit p0
 
-    if-eqz v0, :cond_1
-
-    check-cast p1, Ljmc;
-
-    invoke-interface {p0}, Ljmc;->i()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Ljmc;->i()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method abstract f()Ljava/util/Map;
-.end method
-
-.method public g()Z
-    .locals 1
-
-    invoke-virtual {p0}, Ljjh;->c()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public h()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Ljjh;->a:Ljava/util/Set;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Ljjh;->e()Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljjh;->a:Ljava/util/Set;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    invoke-virtual {p0}, Ljjh;->i()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public i()Ljava/util/Map;
-    .locals 1
-
-    iget-object v0, p0, Ljjh;->b:Ljava/util/Map;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Ljjh;->f()Ljava/util/Map;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljjh;->b:Ljava/util/Map;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Ljjh;->i()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method

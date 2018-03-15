@@ -1,53 +1,35 @@
-.class final Lci;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lci;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lgm;
-
-.field private synthetic b:Lch;
-
-
 # direct methods
-.method constructor <init>(Lch;Lgm;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lci;->b:Lch;
-
-    iput-object p2, p0, Lci;->a:Lgm;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method constructor <init>(B)V
+    .locals 0
 
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object v0, p0, Lci;->a:Lgm;
-
-    invoke-virtual {v0, p1}, Lgm;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lci;->b:Lch;
-
-    iget-object v0, v0, Lch;->f:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-direct {p0}, Lci;-><init>()V
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public static a(FFFF)Landroid/graphics/Path;
     .locals 1
 
-    iget-object v0, p0, Lci;->b:Lch;
+    new-instance v0, Landroid/graphics/Path;
 
-    iget-object v0, v0, Lch;->f:Ljava/util/ArrayList;
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0, p1}, Landroid/graphics/Path;->moveTo(FF)V
 
-    return-void
+    invoke-virtual {v0, p2, p3}, Landroid/graphics/Path;->lineTo(FF)V
+
+    return-object v0
 .end method

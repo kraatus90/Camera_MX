@@ -1,138 +1,59 @@
-.class public final Lefx;
-.super Ljava/lang/Object;
+.class public Lefx;
+.super Lglb;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final d:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field private b:Ljxn;
+.field public f:Lgvc;
 
-.field private c:Ljxn;
+.field public g:Lgqc;
 
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field public h:Lfwg;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "LensBlurStatechart"
 
-    iput-object p1, p0, Lefx;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lefx;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Lefx;->c:Ljxn;
-
-    iput-object p4, p0, Lefx;->d:Ljxn;
-
-    iput-object p5, p0, Lefx;->e:Ljxn;
+    sput-object v0, Lefx;->d:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 6
+.method public constructor <init>()V
+    .locals 1
 
-    new-instance v0, Lefx;
+    const/4 v0, 0x0
 
-    move-object v1, p0
+    invoke-direct {p0, v0}, Lglb;-><init>([[F)V
 
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lefx;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lfwg;)V
+    .locals 0
 
-    iget-object v0, p0, Lefx;->a:Ljxn;
+    iput-object p1, p0, Lefx;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iput-object p2, p0, Lefx;->f:Lgvc;
 
-    move-result-object v0
+    iput-object p3, p0, Lefx;->g:Lgqc;
 
-    check-cast v0, Lhzr;
+    iput-object p4, p0, Lefx;->h:Lfwg;
 
-    iget-object v1, p0, Lefx;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldlv;
-
-    iget-object v2, p0, Lefx;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lefs;
-
-    iget-object v3, p0, Lefx;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljuw;
-
-    iget-object v4, p0, Lefx;->e:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljuw;
-
-    new-instance v5, Ldmg;
-
-    invoke-direct {v5, v1, v2}, Ldmg;-><init>(Ldlv;Ldlu;)V
-
-    new-instance v6, Lefv;
-
-    invoke-direct {v6, v5, v0}, Lefv;-><init>(Ljava/lang/Runnable;Lhzr;)V
-
-    sget-object v0, Ljvc;->a:Ljvc;
-
-    invoke-static {v3, v6, v0}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    sget-object v0, Ljvc;->a:Ljvc;
-
-    invoke-interface {v4, v5, v0}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    new-instance v0, Lefu;
-
-    invoke-direct {v0, v1, v2}, Lefu;-><init>(Ldlv;Lefs;)V
-
-    invoke-static {v0}, Lapb;->a(Lhzc;)Lhzc;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhzc;
-
-    return-object v0
+    return-void
 .end method

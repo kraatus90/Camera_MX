@@ -1,48 +1,111 @@
-.class public final Lhuc;
+.class abstract Lhuc;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field private final synthetic a:Lhts;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Lhts;)V
+    .locals 0
+
+    iput-object p1, p0, Lhuc;->a:Lhts;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lhuc;->a:Ljava/util/Set;
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/Object;Landroid/os/Looper;Ljava/lang/String;)Lhty;
-    .locals 1
 
-    const-string v0, "Listener must not be null"
+# virtual methods
+.method protected abstract a()V
+.end method
 
-    invoke-static {p0, v0}, Lhjg;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public run()V
+    .locals 4
 
-    const-string v0, "Looper must not be null"
+    iget-object v0, p0, Lhuc;->a:Lhts;
 
-    invoke-static {p1, v0}, Lhjg;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, v0, Lhts;->b:Ljava/util/concurrent/locks/Lock;
 
-    const-string v0, "Listener type must not be null"
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    invoke-static {p2, v0}, Lhjg;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_start_0
+    invoke-static {}, Ljava/lang/Thread;->interrupted()Z
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v0, Lhty;
+    move-result v0
 
-    invoke-direct {v0, p1, p0, p2}, Lhty;-><init>(Landroid/os/Looper;Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz v0, :cond_0
 
-    return-object v0
+    iget-object v0, p0, Lhuc;->a:Lhts;
+
+    iget-object v0, v0, Lhts;->b:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    :try_start_1
+    invoke-virtual {p0}, Lhuc;->a()V
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object v0, p0, Lhuc;->a:Lhts;
+
+    iget-object v0, v0, Lhts;->b:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_2
+    iget-object v1, p0, Lhuc;->a:Lhts;
+
+    iget-object v1, v1, Lhts;->a:Lhui;
+
+    iget-object v2, v1, Lhui;->e:Lhuk;
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v2, v3, v0}, Lhuk;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    iget-object v1, v1, Lhui;->e:Lhuk;
+
+    invoke-virtual {v1, v0}, Lhuk;->sendMessage(Landroid/os/Message;)Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    iget-object v0, p0, Lhuc;->a:Lhts;
+
+    iget-object v0, v0, Lhts;->b:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lhuc;->a:Lhts;
+
+    iget-object v1, v1, Lhts;->b:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw v0
 .end method

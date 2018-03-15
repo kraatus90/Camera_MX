@@ -1,13 +1,14 @@
-.class final Lafk;
+.class public interface abstract Lafk;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
+# virtual methods
+.method public abstract a(Ladu;Ljava/lang/Exception;Laef;Ladm;)V
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract a(Ladu;Ljava/lang/Object;Laef;Ladm;Ladu;)V
+.end method
 
-    return-void
+.method public abstract c()V
 .end method

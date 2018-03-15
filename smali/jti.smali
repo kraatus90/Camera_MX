@@ -1,16 +1,12 @@
 .class final Ljti;
-.super Ljava/lang/Object;
+.super Ljth;
 .source "PG"
 
 
 # static fields
-.field public static final a:Ljti;
+.field public static final b:Ljti;
 
-
-# instance fields
-.field public volatile next:Ljti;
-
-.field public volatile thread:Ljava/lang/Thread;
+.field public static final serialVersionUID:J
 
 
 # direct methods
@@ -21,43 +17,113 @@
 
     invoke-direct {v0}, Ljti;-><init>()V
 
-    sput-object v0, Ljti;->a:Ljti;
+    sput-object v0, Ljti;->b:Ljti;
 
     return-void
 .end method
 
-.method constructor <init>()V
-    .locals 0
+.method private constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Ljth;-><init>(Ljava/lang/Comparable;)V
 
     return-void
 .end method
 
-.method constructor <init>(B)V
-    .locals 2
+.method private final readResolve()Ljava/lang/Object;
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Ljti;->b:Ljti;
 
-    sget-object v0, Ljsw;->c:Ljsx;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p0, v1}, Ljsx;->a(Ljti;Ljava/lang/Thread;)V
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method final a(Ljti;)V
+.method public final a(Ljth;)I
     .locals 1
 
-    sget-object v0, Ljsw;->c:Ljsx;
+    if-ne p1, p0, :cond_0
 
-    invoke-virtual {v0, p0, p1}, Ljsx;->a(Ljti;Ljti;)V
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method final a()Ljava/lang/Comparable;
+    .locals 2
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "range unbounded on this side"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method final a(Ljava/lang/StringBuilder;)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+.end method
+
+.method final a(Ljava/lang/Comparable;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method final b(Ljava/lang/StringBuilder;)V
+    .locals 1
+
+    const-string v0, "+\u221e)"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     return-void
+.end method
+
+.method public final synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
+
+    check-cast p1, Ljth;
+
+    invoke-virtual {p0, p1}, Ljti;->a(Ljth;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "+\u221e"
+
+    return-object v0
 .end method

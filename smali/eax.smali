@@ -1,13 +1,13 @@
-.class final Leax;
+.class public final Leax;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Leak;
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,14 +17,20 @@
 
 
 # virtual methods
-.method public final c()Liau;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    sget-object v0, Leal;->a:Leal;
+    new-instance v0, Leec;
 
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
+    invoke-direct {v0}, Leec;-><init>()V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lega;
 
     return-object v0
 .end method

@@ -1,65 +1,53 @@
 .class final Ljtd;
-.super Ljava/lang/Object;
+.super Ljava/util/AbstractCollection;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljsw;
-
-.field public final b:Ljuw;
+.field private final synthetic a:Ljsv;
 
 
 # direct methods
-.method constructor <init>(Ljsw;Ljuw;)V
+.method constructor <init>(Ljsv;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljtd;->a:Ljsv;
 
-    iput-object p1, p0, Ljtd;->a:Ljsw;
-
-    iput-object p2, p0, Ljtd;->b:Ljuw;
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final clear()V
+    .locals 1
 
-    iget-object v0, p0, Ljtd;->a:Ljsw;
+    iget-object v0, p0, Ljtd;->a:Ljsv;
 
-    iget-object v0, v0, Ljsw;->value:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljsv;->clear()V
 
-    if-eq v0, p0, :cond_1
-
-    :cond_0
-    :goto_0
     return-void
+.end method
 
-    :cond_1
-    iget-object v0, p0, Ljtd;->b:Ljuw;
+.method public final iterator()Ljava/util/Iterator;
+    .locals 2
 
-    invoke-static {v0}, Ljsw;->b(Ljuw;)Ljava/lang/Object;
+    iget-object v0, p0, Ljtd;->a:Ljsv;
 
-    move-result-object v0
+    new-instance v1, Ljsy;
 
-    sget-object v1, Ljsw;->c:Ljsx;
+    invoke-direct {v1, v0}, Ljsy;-><init>(Ljsv;)V
 
-    iget-object v2, p0, Ljtd;->a:Ljsw;
+    return-object v1
+.end method
 
-    invoke-virtual {v1, v2, p0, v0}, Ljsx;->a(Ljsw;Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public final size()I
+    .locals 1
 
-    move-result v0
+    iget-object v0, p0, Ljtd;->a:Ljsv;
 
-    if-eqz v0, :cond_0
+    iget v0, v0, Ljsv;->e:I
 
-    iget-object v0, p0, Ljtd;->a:Ljsw;
-
-    invoke-static {v0}, Ljsw;->a(Ljsw;)V
-
-    goto :goto_0
+    return v0
 .end method

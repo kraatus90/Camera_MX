@@ -1,54 +1,39 @@
 .class final Lap;
-.super Ljava/lang/Object;
+.super Lar;
 .source "PG"
-
-# interfaces
-.implements Landroid/graphics/drawable/Drawable$Callback;
 
 
 # instance fields
-.field private synthetic a:Lao;
+.field private final synthetic a:Lal;
 
 
 # direct methods
-.method constructor <init>(Lao;)V
-    .locals 0
+.method constructor <init>(Lal;)V
+    .locals 1
 
-    iput-object p1, p0, Lap;->a:Lao;
+    iput-object p1, p0, Lap;->a:Lal;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lar;-><init>(Lal;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+.method protected final a()F
+    .locals 2
 
-    iget-object v0, p0, Lap;->a:Lao;
+    iget-object v0, p0, Lap;->a:Lal;
 
-    invoke-virtual {v0}, Lao;->invalidateSelf()V
+    iget v0, v0, Lal;->j:F
 
-    return-void
-.end method
+    iget-object v1, p0, Lap;->a:Lal;
 
-.method public final scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
-    .locals 1
+    iget v1, v1, Lal;->l:F
 
-    iget-object v0, p0, Lap;->a:Lao;
+    add-float/2addr v0, v1
 
-    invoke-virtual {v0, p2, p3, p4}, Lao;->scheduleSelf(Ljava/lang/Runnable;J)V
-
-    return-void
-.end method
-
-.method public final unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
-    .locals 1
-
-    iget-object v0, p0, Lap;->a:Lao;
-
-    invoke-virtual {v0, p2}, Lao;->unscheduleSelf(Ljava/lang/Runnable;)V
-
-    return-void
+    return v0
 .end method

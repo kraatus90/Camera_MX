@@ -1,106 +1,257 @@
-.class public final Lfla;
+.class public Lfla;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:Lfks;
 
-.field private b:Ljxn;
+.field public b:Lfld;
 
-.field private c:Ljxn;
+.field public c:Lflc;
 
-.field private d:Ljxn;
+.field public d:Lkgv;
 
-.field private e:Ljxn;
+.field public e:Lkgv;
 
-.field private f:Ljxn;
+.field public f:Lkgv;
+
+.field public g:Lihm;
+
+.field public h:Lbkg;
+
+.field public i:Lkgv;
+
+.field public j:Lkgv;
+
+.field public k:Lkgv;
+
+.field public l:Lkgv;
+
+.field public m:Lkgv;
+
+.field public n:Lfle;
+
+.field public o:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lfky;)V
+    .locals 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfla;->a:Ljxn;
+    iget-object v0, p1, Lfky;->a:Lfks;
 
-    iput-object p2, p0, Lfla;->b:Ljxn;
+    iput-object v0, p0, Lfla;->a:Lfks;
 
-    iput-object p3, p0, Lfla;->c:Ljxn;
+    iget-object v0, p1, Lfky;->b:Lflb;
 
-    iput-object p4, p0, Lfla;->d:Ljxn;
+    new-instance v1, Lfld;
 
-    iput-object p5, p0, Lfla;->e:Ljxn;
+    invoke-direct {v1, v0}, Lfld;-><init>(Lflb;)V
 
-    iput-object p6, p0, Lfla;->f:Ljxn;
+    iput-object v1, p0, Lfla;->b:Lfld;
+
+    iget-object v0, p1, Lfky;->b:Lflb;
+
+    new-instance v1, Lflc;
+
+    invoke-direct {v1, v0}, Lflc;-><init>(Lflb;)V
+
+    iput-object v1, p0, Lfla;->c:Lflc;
+
+    iget-object v0, p1, Lfky;->a:Lfks;
+
+    new-instance v1, Lfkt;
+
+    invoke-direct {v1, v0}, Lfkt;-><init>(Lfks;)V
+
+    invoke-static {v1}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->d:Lkgv;
+
+    iget-object v0, p1, Lfky;->c:Lbqu;
+
+    new-instance v0, Lbkf;
+
+    invoke-direct {v0}, Lbkf;-><init>()V
+
+    invoke-static {v0}, Lkgs;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->e:Lkgv;
+
+    iget-object v0, p0, Lfla;->e:Lkgv;
+
+    new-instance v1, Lfkz;
+
+    invoke-direct {v1, v0}, Lfkz;-><init>(Lkgv;)V
+
+    iput-object v1, p0, Lfla;->f:Lkgv;
+
+    iget-object v0, p0, Lfla;->f:Lkgv;
+
+    invoke-static {v0}, Lihm;->a(Lkgv;)Lihm;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->g:Lihm;
+
+    iget-object v0, p1, Lfky;->c:Lbqu;
+
+    iget-object v1, p0, Lfla;->g:Lihm;
+
+    invoke-static {v0, v1}, Lbkg;->a(Lbqu;Lkgv;)Lbkg;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->h:Lbkg;
+
+    iget-object v0, p1, Lfky;->d:Lbbt;
+
+    new-instance v0, Lbbx;
+
+    invoke-direct {v0}, Lbbx;-><init>()V
+
+    invoke-static {v0}, Lkgs;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->i:Lkgv;
+
+    iget-object v0, p0, Lfla;->h:Lbkg;
+
+    iget-object v1, p0, Lfla;->i:Lkgv;
+
+    new-instance v2, Lfip;
+
+    invoke-direct {v2, v0, v1}, Lfip;-><init>(Lkgv;Lkgv;)V
+
+    invoke-static {v2}, Lkgs;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->j:Lkgv;
+
+    iget-object v0, p0, Lfla;->b:Lfld;
+
+    iget-object v1, p0, Lfla;->d:Lkgv;
+
+    iget-object v2, p0, Lfla;->j:Lkgv;
+
+    new-instance v3, Lfkc;
+
+    invoke-direct {v3, v0, v1, v2}, Lfkc;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    invoke-static {v3}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->k:Lkgv;
+
+    iget-object v0, p0, Lfla;->b:Lfld;
+
+    iget-object v1, p0, Lfla;->c:Lflc;
+
+    iget-object v2, p0, Lfla;->d:Lkgv;
+
+    iget-object v3, p0, Lfla;->k:Lkgv;
+
+    new-instance v4, Lfkl;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lfkl;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    invoke-static {v4}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->l:Lkgv;
+
+    iget-object v0, p0, Lfla;->b:Lfld;
+
+    iget-object v1, p0, Lfla;->c:Lflc;
+
+    iget-object v2, p0, Lfla;->d:Lkgv;
+
+    iget-object v3, p0, Lfla;->k:Lkgv;
+
+    new-instance v4, Lfki;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lfki;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    invoke-static {v4}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->m:Lkgv;
+
+    iget-object v0, p1, Lfky;->b:Lflb;
+
+    new-instance v1, Lfle;
+
+    invoke-direct {v1, v0}, Lfle;-><init>(Lflb;)V
+
+    iput-object v1, p0, Lfla;->n:Lfle;
+
+    iget-object v0, p1, Lfky;->e:Lfkd;
+
+    iget-object v1, p0, Lfla;->l:Lkgv;
+
+    iget-object v2, p0, Lfla;->m:Lkgv;
+
+    iget-object v3, p0, Lfla;->n:Lfle;
+
+    new-instance v4, Lfke;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lfke;-><init>(Lfkd;Lkgv;Lkgv;Lkgv;)V
+
+    invoke-static {v4}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfla;->o:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+.method public a()Landroid/view/Surface;
+    .locals 2
 
-    new-instance v0, Lfky;
+    iget-object v0, p0, Lfla;->a:Lfks;
 
-    iget-object v1, p0, Lfla;->a:Ljxn;
+    iget-object v0, v0, Lfks;->a:Linm;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Linm;->e()Landroid/view/Surface;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lhap;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v2, p0, Lfla;->b:Ljxn;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v2
+    check-cast v0, Landroid/view/Surface;
 
-    check-cast v2, Landroid/content/Context;
+    return-object v0
+.end method
 
-    iget-object v3, p0, Lfla;->c:Ljxn;
+.method public b()Lfic;
+    .locals 1
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lfla;->o:Lkgv;
 
-    move-result-object v3
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/Boolean;
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v3
-
-    iget-object v4, p0, Lfla;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lbsj;
-
-    iget-object v5, p0, Lfla;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lgzz;
-
-    iget-object v6, p0, Lfla;->f:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lffs;
-
-    invoke-direct/range {v0 .. v6}, Lfky;-><init>(Lhap;Landroid/content/Context;ZLbsj;Lgzz;Lffs;)V
+    check-cast v0, Lfic;
 
     return-object v0
 .end method

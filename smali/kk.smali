@@ -1,73 +1,117 @@
-.class final Lkk;
-.super Ljava/lang/Object;
+.class public final Lkk;
+.super Lhc;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnApplyWindowInsetsListener;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+
+
+# instance fields
+.field public a:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkl;
+
+    invoke-direct {v0}, Lkl;-><init>()V
+
+    sput-object v0, Lkk;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .locals 1
+
+    invoke-direct {p0, p1, p2}, Lhc;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lkk;->a:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lkk;->a:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lkk;->d:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lkk;->e:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lkk;->f:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lkk;->g:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcelable;)V
+    .locals 1
+
+    invoke-direct {p0, p1}, Lhc;-><init>(Landroid/os/Parcelable;)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lkk;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .locals 3
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x15
-    .end annotation
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 1
 
-    const/4 v1, 0x1
+    invoke-super {p0, p1, p2}, Lhc;->writeToParcel(Landroid/os/Parcel;I)V
 
-    const/4 v2, 0x0
+    iget v0, p0, Lkk;->a:I
 
-    check-cast p1, Lkj;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
+    iget v0, p0, Lkk;->d:I
 
-    move-result v0
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-lez v0, :cond_0
+    iget v0, p0, Lkk;->e:I
 
-    move v0, v1
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    :goto_0
-    iput-object p2, p1, Lkj;->i:Ljava/lang/Object;
+    iget v0, p0, Lkk;->f:I
 
-    iput-boolean v0, p1, Lkj;->j:Z
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-nez v0, :cond_1
+    iget v0, p0, Lkk;->g:I
 
-    invoke-virtual {p1}, Lkj;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    :goto_1
-    invoke-virtual {p1, v1}, Lkj;->setWillNotDraw(Z)V
-
-    invoke-virtual {p1}, Lkj;->requestLayout()V
-
-    invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    goto :goto_1
+    return-void
 .end method

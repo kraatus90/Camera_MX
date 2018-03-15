@@ -1,12 +1,13 @@
-.class public final Lhng;
+.class public interface abstract Lhng;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/os/IInterface;
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public abstract a()Lhnz;
+.end method
 
-    return-void
+.method public abstract b()I
 .end method

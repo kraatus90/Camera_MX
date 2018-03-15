@@ -17,84 +17,68 @@
 
 # virtual methods
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 8
+    .locals 7
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
-    move-result v6
+    move-result v4
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v0, 0x0
 
-    move-object v2, v3
-
-    move-object v1, v3
+    move-object v3, v2
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v0
+    move-result v5
 
-    if-ge v0, v6, :cond_0
+    if-ge v5, v4, :cond_0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v5
 
-    const v7, 0xffff
+    const v6, 0xffff
 
-    and-int/2addr v7, v0
+    and-int/2addr v6, v5
 
-    packed-switch v7, :pswitch_data_0
+    packed-switch v6, :pswitch_data_0
+
+    invoke-static {p1, v5}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v0}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_1
-    sget-object v1, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v0, v1}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/Uri;
-
-    move-object v1, v0
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {p1, v0}, Lhjg;->i(Landroid/os/Parcel;I)Landroid/os/Bundle;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-static {p1, v0}, Lhjg;->j(Landroid/os/Parcel;I)[B
+    invoke-static {p1, v5}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_0
 
-    :pswitch_4
-    invoke-static {p1, v0}, Lhjg;->f(Landroid/os/Parcel;I)J
+    :pswitch_1
+    invoke-static {p1, v5}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    move-result-wide v4
+    move-result-object v2
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-static {p1, v5}, Lhmr;->f(Landroid/os/Parcel;I)J
+
+    move-result-wide v0
 
     goto :goto_0
 
     :cond_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v0
+    move-result v5
 
-    if-eq v0, v6, :cond_1
+    if-eq v5, v4, :cond_1
 
-    new-instance v0, Ladf;
+    new-instance v0, Lacp;
 
     const/16 v1, 0x25
 
@@ -108,7 +92,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -116,31 +100,31 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
 
     throw v0
 
     :cond_1
-    new-instance v0, Lcom/google/android/gms/wearable/PutDataRequest;
+    new-instance v4, Lcom/google/android/gms/wearable/internal/PackageStorageInfo;
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/wearable/PutDataRequest;-><init>(Landroid/net/Uri;Landroid/os/Bundle;[BJ)V
+    invoke-direct {v4, v3, v2, v0, v1}, Lcom/google/android/gms/wearable/internal/PackageStorageInfo;-><init>(Ljava/lang/String;Ljava/lang/String;J)V
 
-    return-object v0
+    return-object v4
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_1
         :pswitch_0
+        :pswitch_1
         :pswitch_2
-        :pswitch_3
-        :pswitch_4
     .end packed-switch
 .end method
 
 .method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/wearable/PutDataRequest;
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/PackageStorageInfo;
 
     return-object v0
 .end method

@@ -1,46 +1,144 @@
-.class public final Ldzm;
+.class final Ldzm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/hardware/display/DisplayManager$DisplayListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldzh;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Ldzh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldzm;->a:Ldzh;
 
-    iput-object p1, p0, Ldzm;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final onDisplayAdded(I)V
+    .locals 0
 
-    iget-object v0, p0, Ldzm;->a:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+.method public final onDisplayChanged(I)V
+    .locals 3
+
+    const/16 v2, 0xb4
+
+    iget-object v0, p0, Ldzm;->a:Ldzh;
+
+    iget-object v0, v0, Ldzh;->N:Landroid/view/WindowManager;
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v0
 
-    check-cast v0, Ldzo;
+    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    move-result v0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Ligz;->a:Ligz;
+
+    :goto_0
+    invoke-virtual {v0}, Ligz;->a()I
+
+    move-result v0
+
+    iget-object v1, p0, Ldzm;->a:Ldzh;
+
+    iget v1, v1, Ldzh;->q:I
+
+    sub-int v1, v0, v1
+
+    add-int/lit16 v1, v1, 0x168
+
+    rem-int/lit16 v1, v1, 0x168
+
+    if-ne v1, v2, :cond_0
+
+    iget-object v1, p0, Ldzm;->a:Ldzh;
+
+    iget-object v1, v1, Ldzh;->x:Lgtr;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ldzm;->a:Ldzh;
+
+    iget-object v1, v1, Ldzh;->x:Lgtr;
+
+    invoke-interface {v1}, Lgtr;->b()V
+
+    iget-object v1, p0, Ldzm;->a:Ldzh;
+
+    iget-object v1, v1, Ldzh;->E:Lgto;
+
+    invoke-interface {v1}, Lgto;->b()V
+
+    :cond_0
+    iget-object v1, p0, Ldzm;->a:Ldzh;
+
+    iput v0, v1, Ldzh;->q:I
+
+    return-void
+
+    :pswitch_0
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ligz;->b(I)Ligz;
 
     move-result-object v0
 
-    check-cast v0, Lhzc;
+    goto :goto_0
 
-    return-object v0
+    :pswitch_1
+    const/16 v0, 0x5a
+
+    invoke-static {v0}, Ligz;->b(I)Ligz;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-static {v2}, Ligz;->b(I)Ligz;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_3
+    const/16 v0, 0x10e
+
+    invoke-static {v0}, Ligz;->b(I)Ligz;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
+.end method
+
+.method public final onDisplayRemoved(I)V
+    .locals 0
+
+    return-void
 .end method

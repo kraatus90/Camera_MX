@@ -1,88 +1,47 @@
-.class final Lbxg;
+.class public final Lbxg;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljug;
-
 
 # instance fields
-.field private synthetic a:Lbxf;
+.field public final a:Lbfe;
+
+.field public final b:Lawr;
+
+.field public final c:Lfat;
+
+.field public final d:Ldyi;
+
+.field public final e:Lgjq;
+
+.field public final f:Ldfy;
+
+.field public final g:Lick;
+
+.field public final h:Lgkb;
 
 
 # direct methods
-.method constructor <init>(Lbxf;)V
+.method public constructor <init>(Lbfe;Lawr;Lfat;Ldyi;Lgjq;Ldfy;Lick;Lgkb;)V
     .locals 0
-
-    iput-object p1, p0, Lbxg;->a:Lbxf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lbxg;->a:Lbfe;
 
+    iput-object p2, p0, Lbxg;->b:Lawr;
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+    iput-object p3, p0, Lbxg;->c:Lfat;
 
-    iget-object v0, p0, Lbxg;->a:Lbxf;
+    iput-object p4, p0, Lbxg;->d:Ldyi;
 
-    iget-object v0, v0, Lbxf;->a:Lbxc;
+    iput-object p5, p0, Lbxg;->e:Lgjq;
 
-    iget-object v0, v0, Lbxc;->e:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object p6, p0, Lbxg;->f:Ldfy;
 
-    const/4 v1, 0x0
+    iput-object p7, p0, Lbxg;->g:Lick;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbym;
-
-    invoke-virtual {v0}, Lbym;->a()V
-
-    iget-object v0, p0, Lbxg;->a:Lbxf;
-
-    iget-object v0, v0, Lbxf;->a:Lbxc;
-
-    iget-object v0, v0, Lbxc;->t:Lerp;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lerp;->a(Z)V
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
-
-    iget-object v0, p0, Lbxg;->a:Lbxf;
-
-    iget-object v0, v0, Lbxf;->a:Lbxc;
-
-    iget-object v0, v0, Lbxc;->e:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbym;
-
-    invoke-virtual {v0}, Lbym;->a()V
-
-    iget-object v0, p0, Lbxg;->a:Lbxf;
-
-    iget-object v0, v0, Lbxf;->a:Lbxc;
-
-    iget-object v0, v0, Lbxc;->t:Lerp;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lerp;->a(Z)V
+    iput-object p8, p0, Lbxg;->h:Lgkb;
 
     return-void
 .end method

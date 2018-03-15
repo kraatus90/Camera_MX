@@ -1,74 +1,207 @@
-.class final Lcee;
-.super Likn;
+.class public final Lcee;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Landroid/net/Uri;
+# static fields
+.field private static final a:Ljava/lang/String;
 
-.field private synthetic b:Lceb;
+
+# instance fields
+.field private final b:Ljava/io/File;
+
+.field private final c:Ljava/io/File;
 
 
 # direct methods
-.method constructor <init>(Lceb;Landroid/net/Uri;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcee;->b:Lceb;
+    const-string v0, "BurstFSPM"
 
-    iput-object p2, p0, Lcee;->a:Landroid/net/Uri;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {p0}, Likn;-><init>()V
+    move-result-object v0
+
+    sput-object v0, Lcee;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/io/File;)V
+    .locals 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lcee;->b:Ljava/io/File;
+
+    new-instance v0, Ljava/io/File;
+
+    iget-object v1, p0, Lcee;->b:Ljava/io/File;
+
+    const-string v2, ".burst_in_progress.lock"
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcee;->c:Ljava/io/File;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 3
+.method public final declared-synchronized a()V
+    .locals 2
 
-    check-cast p1, Lfvf;
+    monitor-enter p0
 
-    invoke-static {}, Lhzt;->a()V
+    :try_start_0
+    iget-object v0, p0, Lcee;->b:Ljava/io/File;
 
-    iget-object v0, p0, Lcee;->b:Lceb;
-
-    iget-object v1, p0, Lcee;->a:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Lceb;->a(Landroid/net/Uri;)I
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v0
 
-    sget v1, Lcge;->a:I
+    if-nez v0, :cond_0
 
-    if-eq v0, v1, :cond_0
+    iget-object v0, p0, Lcee;->b:Ljava/io/File;
 
-    iget-object v1, p0, Lcee;->b:Lceb;
+    invoke-virtual {v0}, Ljava/io/File;->mkdir()Z
 
-    iget-object v1, v1, Lceb;->i:Lcge;
+    :cond_0
+    iget-object v0, p0, Lcee;->c:Ljava/io/File;
 
-    invoke-virtual {v1, v0}, Lcge;->a(I)Lcgh;
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v1
+    move-result v0
 
-    if-nez p1, :cond_1
+    if-nez v0, :cond_1
 
-    invoke-interface {v1}, Lcgh;->e()V
+    :try_start_1
+    iget-object v0, p0, Lcee;->c:Ljava/io/File;
 
-    iget-object v2, p0, Lcee;->b:Lceb;
+    invoke-virtual {v0}, Ljava/io/File;->createNewFile()Z
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object v2, v2, Lceb;->b:Lcez;
+    :cond_1
+    monitor-exit p0
 
-    invoke-virtual {v2, v0, v1}, Lcez;->b(ILcgh;)V
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    :try_start_2
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcee;->c:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcee;->c:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcee;->a:Ljava/lang/String;
+
+    const-string v1, "Could not delete in progress lock file."
+
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
     :goto_0
+    monitor-exit p0
+
     return-void
 
     :cond_1
-    iget-object v1, p0, Lcee;->b:Lceb;
+    :try_start_1
+    sget-object v0, Lcee;->a:Ljava/lang/String;
 
-    invoke-virtual {v1, v0, p1}, Lceb;->a(ILfvf;)V
+    const-string v1, "Could not find in progress lock file."
+
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized c()Z
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcee;->c:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    monitor-exit p0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

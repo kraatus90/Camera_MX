@@ -1,122 +1,94 @@
-.class public final Lcou;
+.class final Lcou;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lcoz;
 
-.field private b:Ljxn;
+.field private final synthetic b:F
 
-.field private c:Ljxn;
+.field private final synthetic c:F
 
-.field private d:Ljxn;
+.field private final synthetic d:Lcoq;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lcoq;Lcoz;FF)V
     .locals 0
 
+    iput-object p1, p0, Lcou;->d:Lcoq;
+
+    iput-object p2, p0, Lcou;->a:Lcoz;
+
+    iput p3, p0, Lcou;->b:F
+
+    iput p4, p0, Lcou;->c:F
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcou;->a:Ljxn;
-
-    iput-object p2, p0, Lcou;->b:Ljxn;
-
-    iput-object p3, p0, Lcou;->c:Ljxn;
-
-    iput-object p4, p0, Lcou;->d:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lcou;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lcou;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 6
 
-    iget-object v0, p0, Lcou;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljht;
+    check-cast v0, Ljava/lang/Float;
 
-    iget-object v1, p0, Lcou;->b:Ljxn;
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    iget-object v1, p0, Lcou;->d:Lcoq;
 
-    check-cast v1, Lhzr;
+    iget-object v1, v1, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v2, p0, Lcou;->c:Ljxn;
+    iget v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j:F
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    div-float v3, v0, v1
 
-    move-result-object v2
+    iget-object v1, p0, Lcou;->d:Lcoq;
 
-    check-cast v2, Ldig;
+    iget-object v1, v1, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iget-object v3, p0, Lcou;->d:Ljxn;
+    iput v0, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->j:F
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lcou;->a:Lcoz;
 
-    invoke-virtual {v2}, Ldig;->e()Z
+    iget v1, p0, Lcou;->b:F
 
-    move-result v2
+    iget v2, p0, Lcou;->c:F
 
-    if-eqz v2, :cond_0
+    iget-object v4, p0, Lcou;->d:Lcoq;
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    iget-object v4, v4, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    move-result v2
+    iget-object v4, v4, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->i:Landroid/graphics/Rect;
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    move-result v4
 
-    move-result-object v0
+    iget-object v5, p0, Lcou;->d:Lcoq;
 
-    check-cast v0, Lbpn;
+    iget-object v5, v5, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    invoke-interface {v0}, Lbpn;->a()Lbpo;
+    iget-object v5, v5, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->i:Landroid/graphics/Rect;
 
-    move-result-object v0
+    invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
 
-    invoke-virtual {v1, v0}, Lhzr;->a(Lich;)Lich;
+    move-result v5
 
-    invoke-static {v0}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    invoke-virtual/range {v0 .. v5}, Lcoz;->a(FFFII)V
 
-    move-result-object v0
-
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljht;
-
-    return-object v0
-
-    :cond_0
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    goto :goto_0
+    return-void
 .end method

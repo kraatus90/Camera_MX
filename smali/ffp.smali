@@ -3,82 +3,62 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Landroid/graphics/RectF;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lffm;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lffm;Landroid/graphics/RectF;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lffp;->b:Lffm;
-
-    iput-object p2, p0, Lffp;->a:Landroid/graphics/RectF;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lffp;->a:Lkgv;
+
+    iput-object p2, p0, Lffp;->b:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;)Lffp;
+    .locals 1
+
+    new-instance v0, Lffp;
+
+    invoke-direct {v0, p0, p1}, Lffp;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    sget-object v0, Lffm;->a:Ljava/lang/String;
+    new-instance v2, Lffo;
 
-    iget-object v1, p0, Lffp;->a:Landroid/graphics/RectF;
+    iget-object v0, p0, Lffp;->a:Lkgv;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v0, Lfdv;
 
-    move-result-object v2
+    iget-object v1, p0, Lffp;->b:Lkgv;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1c
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "configurePreviewDimensions("
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    const-string v2, ")"
+    check-cast v1, Lfut;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v0, v1}, Lffo;-><init>(Lfdv;Lfut;)V
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lffp;->b:Lffm;
-
-    iget-object v0, v0, Lffm;->b:Lffj;
-
-    invoke-interface {v0}, Lffj;->e()V
-
-    return-void
+    return-object v2
 .end method

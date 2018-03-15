@@ -3,178 +3,190 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
+.field private final b:Lkgv;
 
-.field private c:Ljxn;
+.field private final c:Lkgv;
 
-.field private d:Ljxn;
+.field private final d:Lkgv;
 
-.field private e:Ljxn;
+.field private final e:Lkgv;
 
-.field private f:Ljxn;
+.field private final f:Lkgv;
 
-.field private g:Ljxn;
+.field private final g:Lkgv;
 
-.field private h:Ljxn;
+.field private final h:Lkgv;
 
-.field private i:Ljxn;
+.field private final i:Lkgv;
 
-.field private j:Ljxn;
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
+
+.field private final l:Lkgv;
+
+.field private final m:Lkgv;
+
+.field private final n:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ledj;->a:Ljxn;
+    iput-object p1, p0, Ledj;->a:Lkgv;
 
-    iput-object p2, p0, Ledj;->b:Ljxn;
+    iput-object p2, p0, Ledj;->b:Lkgv;
 
-    iput-object p3, p0, Ledj;->c:Ljxn;
+    iput-object p3, p0, Ledj;->c:Lkgv;
 
-    iput-object p4, p0, Ledj;->d:Ljxn;
+    iput-object p4, p0, Ledj;->d:Lkgv;
 
-    iput-object p5, p0, Ledj;->e:Ljxn;
+    iput-object p5, p0, Ledj;->e:Lkgv;
 
-    iput-object p6, p0, Ledj;->f:Ljxn;
+    iput-object p6, p0, Ledj;->f:Lkgv;
 
-    iput-object p7, p0, Ledj;->g:Ljxn;
+    iput-object p7, p0, Ledj;->g:Lkgv;
 
-    iput-object p8, p0, Ledj;->h:Ljxn;
+    iput-object p8, p0, Ledj;->h:Lkgv;
 
-    iput-object p9, p0, Ledj;->i:Ljxn;
+    iput-object p9, p0, Ledj;->i:Lkgv;
 
-    iput-object p10, p0, Ledj;->j:Ljxn;
+    iput-object p10, p0, Ledj;->j:Lkgv;
+
+    iput-object p11, p0, Ledj;->k:Lkgv;
+
+    iput-object p12, p0, Ledj;->l:Lkgv;
+
+    iput-object p13, p0, Ledj;->m:Lkgv;
+
+    iput-object p14, p0, Ledj;->n:Lkgv;
 
     return-void
-.end method
-
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 11
-
-    new-instance v0, Ledj;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    move-object/from16 v10, p9
-
-    invoke-direct/range {v0 .. v10}, Ledj;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 11
+    .locals 15
 
-    new-instance v0, Ledh;
+    new-instance v0, Ledi;
 
-    iget-object v1, p0, Ledj;->a:Ljxn;
+    iget-object v1, p0, Ledj;->a:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Licz;
+    check-cast v1, Lebs;
 
-    iget-object v2, p0, Ledj;->b:Ljxn;
+    iget-object v2, p0, Ledj;->b:Lkgv;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Licv;
+    check-cast v2, Leea;
 
-    iget-object v3, p0, Ledj;->c:Ljxn;
+    iget-object v3, p0, Ledj;->c:Lkgv;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lghe;
+    check-cast v3, Leer;
 
-    iget-object v4, p0, Ledj;->d:Ljxn;
+    iget-object v4, p0, Ledj;->d:Lkgv;
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Ldol;
+    check-cast v4, Lgsv;
 
-    iget-object v5, p0, Ledj;->e:Ljxn;
+    iget-object v5, p0, Ledj;->e:Lkgv;
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v6, p0, Ledj;->f:Lkgv;
 
-    move-result-object v5
-
-    check-cast v5, Ljuw;
-
-    iget-object v6, p0, Ledj;->f:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Ldjm;
+    check-cast v6, Lgwk;
 
-    iget-object v7, p0, Ledj;->g:Ljxn;
+    iget-object v7, p0, Ledj;->g:Lkgv;
 
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v7
 
-    check-cast v7, Ldvc;
+    check-cast v7, Lfax;
 
-    iget-object v8, p0, Ledj;->h:Ljxn;
+    iget-object v8, p0, Ledj;->h:Lkgv;
 
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v8
 
-    check-cast v8, Leam;
+    check-cast v8, Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v9, p0, Ledj;->i:Ljxn;
+    iget-object v9, p0, Ledj;->i:Lkgv;
 
-    invoke-interface {v9}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v9
 
-    check-cast v9, Lgra;
+    check-cast v9, Lgvc;
 
-    iget-object v10, p0, Ledj;->j:Ljxn;
+    iget-object v10, p0, Ledj;->j:Lkgv;
 
-    invoke-interface {v10}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v10}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v10
 
-    check-cast v10, Lgdq;
+    check-cast v10, Lgew;
 
-    invoke-direct/range {v0 .. v10}, Ledh;-><init>(Licz;Licv;Lghe;Ldol;Ljuw;Ldjm;Ldvc;Leam;Lgra;Lgdq;)V
+    iget-object v11, p0, Ledj;->k:Lkgv;
+
+    invoke-interface {v11}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lhgv;
+
+    iget-object v12, p0, Ledj;->l:Lkgv;
+
+    invoke-interface {v12}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljrf;
+
+    iget-object v13, p0, Ledj;->m:Lkgv;
+
+    invoke-interface {v13}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lbqc;
+
+    iget-object v14, p0, Ledj;->n:Lkgv;
+
+    invoke-interface {v14}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lgqc;
+
+    invoke-direct/range {v0 .. v14}, Ledi;-><init>(Lebs;Leea;Leer;Lgsv;Lkgv;Lgwk;Lfax;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgew;Lhgv;Ljrf;Lbqc;Lgqc;)V
 
     return-object v0
 .end method

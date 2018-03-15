@@ -1,74 +1,53 @@
-.class public final Lgew;
-.super Ljava/lang/Object;
+.class public Lgew;
+.super Lglb;
 .source "PG"
 
-# interfaces
-.implements Lgey;
 
+# instance fields
+.field public f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-# static fields
-.field private static a:[Landroid/hardware/camera2/params/MeteringRectangle;
+.field public g:Lhat;
+
+.field public h:Lgff;
+
+.field public i:Lgoy;
+
+.field public j:Liih;
+
+.field public k:Lick;
+
+.field public l:Ljrf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    const/4 v1, 0x0
-
-    const/4 v0, 0x1
-
-    new-array v6, v0, [Landroid/hardware/camera2/params/MeteringRectangle;
-
-    new-instance v0, Landroid/hardware/camera2/params/MeteringRectangle;
-
-    move v2, v1
-
-    move v3, v1
-
-    move v4, v1
-
-    move v5, v1
-
-    invoke-direct/range {v0 .. v5}, Landroid/hardware/camera2/params/MeteringRectangle;-><init>(IIIII)V
-
-    aput-object v0, v6, v1
-
-    sput-object v6, Lgew;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a()Lgey;
+.method public constructor <init>(Liih;)V
     .locals 1
 
-    sget-object v0, Lgex;->a:Lgew;
+    const/4 v0, 0x0
 
-    return-object v0
+    invoke-direct {p0, v0}, Lglb;-><init>([[[I)V
+
+    iput-object p1, p0, Lgew;->j:Liih;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
-    .locals 1
+.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgff;Lhat;Lgoy;Lick;Ljrf;)V
+    .locals 0
 
-    sget-object v0, Lgew;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
+    iput-object p2, p0, Lgew;->h:Lgff;
 
-    return-object v0
-.end method
+    iput-object p1, p0, Lgew;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.method public final b(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
-    .locals 1
+    iput-object p3, p0, Lgew;->g:Lhat;
 
-    sget-object v0, Lgew;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
+    iput-object p4, p0, Lgew;->i:Lgoy;
 
-    return-object v0
+    iput-object p5, p0, Lgew;->k:Lick;
+
+    iput-object p6, p0, Lgew;->l:Ljrf;
+
+    return-void
 .end method

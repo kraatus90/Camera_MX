@@ -1,175 +1,129 @@
 .class public final Lhtd;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhth;
-
-
-# instance fields
-.field private a:Lhti;
+.super Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>(Lhti;)V
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lhtd;-><init>(Landroid/os/Looper;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Looper;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhtd;->a:Lhti;
+    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhry;)Lhry;
-    .locals 1
-
-    iget-object v0, p0, Lhtd;->a:Lhti;
-
-    iget-object v0, v0, Lhti;->m:Lhte;
-
-    iget-object v0, v0, Lhte;->d:Ljava/util/Queue;
-
-    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-
-    return-object p1
-.end method
-
-.method public final a()V
+.method public final a(Lhls;Lhlr;)V
     .locals 2
-
-    iget-object v0, p0, Lhtd;->a:Lhti;
-
-    iget-object v0, v0, Lhti;->f:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhkj;
-
-    invoke-interface {v0}, Lhkj;->c()V
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lhtd;->a:Lhti;
-
-    iget-object v0, v0, Lhti;->m:Lhte;
-
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lhte;->f:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public final a(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/os/Bundle;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/gms/common/ConnectionResult;Lhkc;Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b(Lhry;)Lhry;
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "GoogleApiClient is not connected yet."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final b()Z
-    .locals 1
 
     const/4 v0, 0x1
 
-    return v0
-.end method
+    new-instance v1, Landroid/util/Pair;
 
-.method public final c()V
-    .locals 8
+    invoke-direct {v1, p1, p2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lhtd;->a:Lhti;
+    invoke-virtual {p0, v0, v1}, Lhtd;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    iget-object v0, v1, Lhti;->a:Ljava/util/concurrent/locks/Lock;
+    move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
-
-    :try_start_0
-    new-instance v0, Lhss;
-
-    iget-object v2, v1, Lhti;->h:Lhls;
-
-    iget-object v3, v1, Lhti;->i:Ljava/util/Map;
-
-    iget-object v4, v1, Lhti;->d:Lhjx;
-
-    iget-object v5, v1, Lhti;->j:Lhkf;
-
-    iget-object v6, v1, Lhti;->a:Ljava/util/concurrent/locks/Lock;
-
-    iget-object v7, v1, Lhti;->c:Landroid/content/Context;
-
-    invoke-direct/range {v0 .. v7}, Lhss;-><init>(Lhti;Lhls;Ljava/util/Map;Lhjx;Lhkf;Ljava/util/concurrent/locks/Lock;Landroid/content/Context;)V
-
-    iput-object v0, v1, Lhti;->k:Lhth;
-
-    iget-object v0, v1, Lhti;->k:Lhth;
-
-    invoke-interface {v0}, Lhth;->a()V
-
-    iget-object v0, v1, Lhti;->b:Ljava/util/concurrent/locks/Condition;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signalAll()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, v1, Lhti;->a:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    invoke-virtual {p0, v0}, Lhtd;->sendMessage(Landroid/os/Message;)Z
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public final handleMessage(Landroid/os/Message;)V
+    .locals 4
 
-    iget-object v1, v1, Lhti;->a:Ljava/util/concurrent/locks/Lock;
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    packed-switch v0, :pswitch_data_0
 
-    throw v0
+    const-string v0, "BasePendingResult"
+
+    iget v1, p1, Landroid/os/Message;->what:I
+
+    const/16 v2, 0x2d
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Don\'t know how to handle message: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/Exception;
+
+    invoke-direct {v2}, Ljava/lang/Exception;-><init>()V
+
+    invoke-static {v0, v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Landroid/util/Pair;
+
+    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v1, Lhls;
+
+    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v0, Lhlr;
+
+    :try_start_0
+    invoke-interface {v1, v0}, Lhls;->a(Lhlr;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    invoke-static {v0}, Lhtb;->b(Lhlr;)V
+
+    throw v1
+
+    :pswitch_1
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lhtb;
+
+    sget-object v1, Lcom/google/android/gms/common/api/Status;->c:Lcom/google/android/gms/common/api/Status;
+
+    invoke-virtual {v0, v1}, Lhtb;->c(Lcom/google/android/gms/common/api/Status;)V
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

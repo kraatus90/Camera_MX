@@ -1,16 +1,11 @@
-.class public Lhlv;
+.class public final Lhlv;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public synthetic a:Landroid/content/Intent;
+.field public a:Lhqm;
 
-.field public synthetic b:Landroid/app/Activity;
-
-.field public synthetic c:I
+.field private b:Landroid/os/Looper;
 
 
 # direct methods
@@ -22,75 +17,56 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Intent;Landroid/app/Activity;I)V
-    .locals 0
-
-    iput-object p1, p0, Lhlv;->a:Landroid/content/Intent;
-
-    iput-object p2, p0, Lhlv;->b:Landroid/app/Activity;
-
-    iput p3, p0, Lhlv;->c:I
-
-    invoke-direct {p0}, Lhlv;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public a()V
+.method public final a()Lhlu;
     .locals 3
 
-    iget-object v0, p0, Lhlv;->a:Landroid/content/Intent;
+    iget-object v0, p0, Lhlv;->a:Lhqm;
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lhlv;->b:Landroid/app/Activity;
+    new-instance v0, Lhqm;
 
-    iget-object v1, p0, Lhlv;->a:Landroid/content/Intent;
+    invoke-direct {v0}, Lhqm;-><init>()V
 
-    iget v2, p0, Lhlv;->c:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+    iput-object v0, p0, Lhlv;->a:Lhqm;
 
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Lhlv;->b:Landroid/os/Looper;
 
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+    if-nez v0, :cond_1
 
-    :try_start_0
-    invoke-virtual {p0}, Lhlv;->a()V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    move-result-object v0
 
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhlv;->b:Landroid/os/Looper;
+
+    :cond_1
     :goto_0
-    return-void
+    new-instance v0, Lhlu;
 
-    :catch_0
-    move-exception v0
+    iget-object v1, p0, Lhlv;->a:Lhqm;
 
-    :try_start_1
-    const-string v1, "DialogRedirect"
+    iget-object v2, p0, Lhlv;->b:Landroid/os/Looper;
 
-    const-string v2, "Failed to start resolution intent"
+    invoke-direct {v0, v1, v2}, Lhlu;-><init>(Lhqm;Landroid/os/Looper;)V
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    return-object v0
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    :cond_2
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhlv;->b:Landroid/os/Looper;
 
     goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    throw v0
 .end method

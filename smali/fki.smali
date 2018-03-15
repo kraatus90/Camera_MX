@@ -2,117 +2,77 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# static fields
-.field public static a:Ljava/lang/String;
 
-.field private static b:I
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    const v0, 0x7f110057
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lfki;->b:I
+    iput-object p1, p0, Lfki;->a:Lkgv;
 
-    const-string v0, "com.android.camera.action.REVIEW"
+    iput-object p2, p0, Lfki;->b:Lkgv;
 
-    sput-object v0, Lfki;->a:Ljava/lang/String;
+    iput-object p3, p0, Lfki;->c:Lkgv;
+
+    iput-object p4, p0, Lfki;->d:Lkgv;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Landroid/view/Menu;Ljht;)Ljht;
-    .locals 3
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v4, Lfkg;
 
-    invoke-virtual {p2}, Ljht;->a()Z
+    iget-object v0, p0, Lfki;->a:Lkgv;
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-virtual {p2}, Ljht;->b()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Intent;
+    check-cast v0, Liaw;
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    iget-object v1, p0, Lfki;->b:Lkgv;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    const-string v1, "com.google.android.apps.photos"
-
-    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Lfki;->b:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    if-nez v0, :cond_2
-
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    invoke-interface {p1, v0}, Landroid/view/Menu;->add(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    const/4 v0, 0x2
+    check-cast v1, Libq;
 
-    invoke-interface {v1, v0}, Landroid/view/MenuItem;->setShowAsAction(I)V
+    iget-object v2, p0, Lfki;->c:Lkgv;
 
-    invoke-virtual {p2}, Ljht;->b()Ljava/lang/Object;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Landroid/content/Intent;
+    check-cast v2, Linm;
 
-    const/high16 v2, 0x10000
+    iget-object v3, p0, Lfki;->d:Lkgv;
 
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v1, v0}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+    move-result-object v3
 
-    invoke-static {v1}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    check-cast v3, Lfim;
 
-    move-result-object v0
+    invoke-direct {v4, v0, v1, v2, v3}, Lfkg;-><init>(Liaw;Libq;Linm;Lfim;)V
 
-    goto :goto_0
+    return-object v4
 .end method

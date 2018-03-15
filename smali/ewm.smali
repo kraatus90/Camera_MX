@@ -3,52 +3,117 @@
 .source "PG"
 
 # interfaces
-.implements Lgyr;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:I
+.field private final a:Lkgv;
 
-.field private b:I
+.field private final b:Lkgv;
 
-.field private c:[Ljava/lang/Object;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public varargs constructor <init>(II[Ljava/lang/Object;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0x7f100000
+    iput-object p1, p0, Lewm;->a:Lkgv;
 
-    iput v0, p0, Lewm;->a:I
+    iput-object p2, p0, Lewm;->b:Lkgv;
 
-    iput p2, p0, Lewm;->b:I
-
-    iput-object p3, p0, Lewm;->c:[Ljava/lang/Object;
+    iput-object p3, p0, Lewm;->c:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;)Lewm;
+    .locals 1
 
-# virtual methods
-.method public final a(Landroid/content/Context;)Ljava/lang/String;
-    .locals 4
+    new-instance v0, Lewm;
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    iget v1, p0, Lewm;->a:I
-
-    iget v2, p0, Lewm;->b:I
-
-    iget-object v3, p0, Lewm;->c:[Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, p0, p1, p2}, Lewm;-><init>(Lkgv;Lkgv;Lkgv;)V
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
+
+    iget-object v2, p0, Lewm;->a:Lkgv;
+
+    iget-object v0, p0, Lewm;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbkx;
+
+    iget-object v1, p0, Lewm;->c:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lesd;
+
+    invoke-static {v0, v1}, Leqp;->a(Lbkx;Lesd;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    new-instance v1, Lewf;
+
+    invoke-direct {v1, v2}, Lewf;-><init>(Lkgv;)V
+
+    invoke-static {v1}, Lffm;->a(Lfgs;)Lfhm;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    sget-object v1, Lhju;->r:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    if-eqz v1, :cond_1
+
+    sget-object v1, Lhju;->r:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sget-object v2, Lhju;->s:Ljava/lang/Integer;
+
+    invoke-static {v1, v2}, Lffm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lfhm;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    invoke-static {v0}, Ljuo;->a(Ljava/util/Collection;)Ljuo;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method

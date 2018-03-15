@@ -2,57 +2,133 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljug;
-
 
 # instance fields
-.field private synthetic a:Ldwg;
+.field public a:Ldwi;
+
+.field public b:Lhio;
+
+.field public c:Lhid;
+
+.field public d:Lhif;
+
+.field public e:I
+
+.field public f:I
+
+.field public g:Z
+
+.field public h:Z
+
+.field public i:Z
+
+.field public j:Z
+
+.field public k:Z
+
+.field public l:Z
+
+.field public m:Z
+
+.field public n:Z
+
+.field public o:Z
+
+.field public p:Z
+
+.field public q:Z
+
+.field public r:Z
+
+.field public s:Z
 
 
 # direct methods
-.method public constructor <init>(Ldwg;)V
-    .locals 0
+.method public constructor <init>(Ldwi;Lhio;Lhid;Lhif;)V
+    .locals 1
 
-    iput-object p1, p0, Ldwh;->a:Ldwg;
+    const/4 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldwh;->a:Ldwi;
+
+    iput-object p2, p0, Ldwh;->b:Lhio;
+
+    iput-object p3, p0, Ldwh;->c:Lhid;
+
+    iput-object p4, p0, Ldwh;->d:Lhif;
+
+    iput-boolean v0, p0, Ldwh;->l:Z
+
+    iput-boolean v0, p0, Ldwh;->g:Z
+
+    iput-boolean v0, p0, Ldwh;->h:Z
+
+    iput-boolean v0, p0, Ldwh;->i:Z
+
+    iput-boolean v0, p0, Ldwh;->m:Z
+
+    iput-boolean v0, p0, Ldwh;->k:Z
+
+    iput-boolean v0, p0, Ldwh;->n:Z
+
+    iput-boolean v0, p0, Ldwh;->o:Z
+
+    iput-boolean v0, p0, Ldwh;->j:Z
+
+    iput-boolean v0, p0, Ldwh;->p:Z
+
+    iput-boolean v0, p0, Ldwh;->q:Z
+
+    iput-boolean v0, p0, Ldwh;->r:Z
+
+    iput v0, p0, Ldwh;->e:I
+
+    iput v0, p0, Ldwh;->f:I
+
+    iput-boolean v0, p0, Ldwh;->s:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final a()Z
     .locals 1
 
-    check-cast p1, Landroid/graphics/Bitmap;
+    iget-boolean v0, p0, Ldwh;->s:Z
 
-    iget-object v0, p0, Ldwh;->a:Ldwg;
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Ldwg;->a:Ldvf;
+    iget-boolean v0, p0, Ldwh;->g:Z
 
-    iget-object v0, v0, Ldvf;->a:Lear;
+    if-nez v0, :cond_0
 
-    invoke-interface {v0, p1}, Lear;->a(Landroid/graphics/Bitmap;)V
+    iget-boolean v0, p0, Ldwh;->h:Z
 
-    return-void
-.end method
+    if-nez v0, :cond_0
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    iget-boolean v0, p0, Ldwh;->i:Z
 
-    iget-object v0, p0, Ldwh;->a:Ldwg;
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Ldwg;->a:Ldvf;
+    iget-boolean v0, p0, Ldwh;->j:Z
 
-    iget-object v0, v0, Ldvf;->e:Ldve;
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Ldve;->b:Licu;
+    iget-boolean v0, p0, Ldwh;->k:Z
 
-    const-string v1, "Failed to generate thumbnail"
+    if-eqz v0, :cond_1
 
-    invoke-interface {v0, v1, p1}, Licu;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :cond_0
+    const/4 v0, 0x1
 
-    return-void
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    invoke-static {}, Lgzj;->values()[Lgzj;
+    invoke-static {}, Lhao;->values()[Lhao;
 
     move-result-object v0
 
@@ -24,9 +24,9 @@
     :try_start_0
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$9;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Lgzj;->c:Lgzj;
+    sget-object v1, Lhao;->c:Lhao;
 
-    invoke-virtual {v1}, Lgzj;->ordinal()I
+    invoke-virtual {v1}, Lhao;->ordinal()I
 
     move-result v1
 
@@ -40,9 +40,9 @@
     :try_start_1
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$9;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Lgzj;->b:Lgzj;
+    sget-object v1, Lhao;->b:Lhao;
 
-    invoke-virtual {v1}, Lgzj;->ordinal()I
+    invoke-virtual {v1}, Lhao;->ordinal()I
 
     move-result v1
 
@@ -56,9 +56,9 @@
     :try_start_2
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$9;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Lgzj;->d:Lgzj;
+    sget-object v1, Lhao;->d:Lhao;
 
-    invoke-virtual {v1}, Lgzj;->ordinal()I
+    invoke-virtual {v1}, Lhao;->ordinal()I
 
     move-result v1
 
@@ -72,9 +72,9 @@
     :try_start_3
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$9;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Lgzj;->e:Lgzj;
+    sget-object v1, Lhao;->e:Lhao;
 
-    invoke-virtual {v1}, Lgzj;->ordinal()I
+    invoke-virtual {v1}, Lhao;->ordinal()I
 
     move-result v1
 

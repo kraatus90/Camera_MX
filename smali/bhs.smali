@@ -1,189 +1,140 @@
-.class public final Lbhs;
+.class final Lbhs;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Lbrf;
+.field public final synthetic a:Lbhc;
 
-.field public b:Ljxn;
+.field public final synthetic b:Lket;
 
-.field public c:Ljxn;
+.field private final synthetic c:Landroid/view/Surface;
 
-.field public final synthetic d:Lbva;
+.field private final synthetic d:Lbhl;
 
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
-
-.field private j:Ljxn;
-
-.field private k:Ljxn;
-
-.field private l:Ljxn;
-
-.field private m:Ljxn;
-
-.field private n:Ljxn;
-
-.field private o:Ljxn;
-
-.field private p:Ljxn;
-
-.field private q:Ljxn;
+.field private final synthetic e:Lbhr;
 
 
 # direct methods
-.method public constructor <init>(Lbva;Lbrf;)V
-    .locals 6
+.method constructor <init>(Lbhr;Lbhc;Landroid/view/Surface;Lbhl;Lket;)V
+    .locals 0
 
-    iput-object p1, p0, Lbhs;->d:Lbva;
+    iput-object p1, p0, Lbhs;->e:Lbhr;
+
+    iput-object p2, p0, Lbhs;->a:Lbhc;
+
+    iput-object p3, p0, Lbhs;->c:Landroid/view/Surface;
+
+    iput-object p4, p0, Lbhs;->d:Lbhl;
+
+    iput-object p5, p0, Lbhs;->b:Lket;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p2}, Ljwd;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 6
+
+    iget-object v0, p0, Lbhs;->e:Lbhr;
+
+    iget-object v1, v0, Lbhr;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lbhs;->e:Lbhr;
+
+    iget-boolean v0, v0, Lbhr;->e:Z
+
+    if-eqz v0, :cond_0
+
+    monitor-exit v1
+
+    :goto_0
+    return-void
+
+    :cond_0
+    sget-object v0, Lbhr;->a:Ljava/lang/String;
+
+    const-string v2, "Send preview command"
+
+    invoke-static {v0, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    iget-object v0, p0, Lbhs;->e:Lbhr;
+
+    iget-object v0, v0, Lbhr;->b:Lbhk;
+
+    iget-object v2, p0, Lbhs;->a:Lbhc;
+
+    invoke-virtual {v0, v2}, Lbhk;->a(Lbhc;)Linb;
 
     move-result-object v0
 
-    check-cast v0, Lbrf;
+    iget-object v2, p0, Lbhs;->c:Landroid/view/Surface;
 
-    iput-object v0, p0, Lbhs;->a:Lbrf;
+    invoke-virtual {v0, v2}, Linb;->a(Landroid/view/Surface;)V
 
-    iget-object v0, p0, Lbhs;->a:Lbrf;
+    iget-object v2, p0, Lbhs;->a:Lbhc;
 
-    new-instance v1, Lbrg;
+    sget-object v3, Lfhp;->a:Lfhp;
 
-    invoke-direct {v1, v0}, Lbrg;-><init>(Lbrf;)V
+    iget-object v4, p0, Lbhs;->e:Lbhr;
 
-    iput-object v1, p0, Lbhs;->e:Ljxn;
+    iget-object v4, v4, Lbhr;->c:Lbhn;
 
-    iget-object v0, p0, Lbhs;->e:Ljxn;
+    iget-object v5, p0, Lbhs;->d:Lbhl;
 
-    new-instance v1, Lbnp;
+    invoke-virtual {v2, v3, v0, v4, v5}, Lbhc;->a(Lfhp;Linb;Lbhn;Lfhq;)V
 
-    invoke-direct {v1, v0}, Lbnp;-><init>(Ljxn;)V
+    iget-object v0, p0, Lbhs;->d:Lbhl;
 
-    iput-object v1, p0, Lbhs;->f:Ljxn;
+    iget-object v0, v0, Lbhl;->a:Lket;
 
-    iget-object v0, p0, Lbhs;->d:Lbva;
+    new-instance v2, Lbht;
 
-    iget-object v0, v0, Lbva;->aE:Ljxn;
+    invoke-direct {v2, p0}, Lbht;-><init>(Lbhs;)V
 
-    new-instance v1, Lbnr;
+    sget-object v3, Lken;->a:Lken;
 
-    invoke-direct {v1, v0}, Lbnr;-><init>(Ljxn;)V
+    invoke-static {v0, v2, v3}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+    :try_end_1
+    .catch Lijd; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iput-object v1, p0, Lbhs;->g:Ljxn;
+    :goto_1
+    :try_start_2
+    monitor-exit v1
 
-    iget-object v0, p0, Lbhs;->g:Ljxn;
+    goto :goto_0
 
-    iput-object v0, p0, Lbhs;->h:Ljxn;
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, p0, Lbhs;->a:Lbrf;
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    new-instance v1, Lbrh;
+    throw v0
 
-    invoke-direct {v1, v0}, Lbrh;-><init>(Lbrf;)V
+    :catch_0
+    move-exception v0
 
-    iput-object v1, p0, Lbhs;->i:Ljxn;
+    :try_start_3
+    iget-object v2, p0, Lbhs;->b:Lket;
 
-    iget-object v0, p0, Lbhs;->i:Ljxn;
+    invoke-virtual {v2, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    iget-object v1, p0, Lbhs;->e:Ljxn;
-
-    new-instance v2, Lbnt;
-
-    invoke-direct {v2, v0, v1}, Lbnt;-><init>(Ljxn;Ljxn;)V
-
-    iput-object v2, p0, Lbhs;->j:Ljxn;
-
-    iget-object v0, p0, Lbhs;->j:Ljxn;
-
-    iput-object v0, p0, Lbhs;->k:Ljxn;
-
-    iget-object v0, p0, Lbhs;->d:Lbva;
-
-    iget-object v0, v0, Lbva;->bh:Ljxn;
-
-    iget-object v1, p0, Lbhs;->f:Ljxn;
-
-    iget-object v2, p0, Lbhs;->d:Lbva;
-
-    iget-object v2, v2, Lbva;->aE:Ljxn;
-
-    new-instance v3, Lbnl;
-
-    invoke-direct {v3, v0, v1, v2}, Lbnl;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    iput-object v3, p0, Lbhs;->l:Ljxn;
-
-    iget-object v0, p0, Lbhs;->l:Ljxn;
-
-    iput-object v0, p0, Lbhs;->m:Ljxn;
-
-    iget-object v0, p0, Lbhs;->f:Ljxn;
-
-    iget-object v1, p0, Lbhs;->h:Ljxn;
-
-    iget-object v2, p0, Lbhs;->k:Ljxn;
-
-    iget-object v3, p0, Lbhs;->m:Ljxn;
-
-    new-instance v4, Lbno;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lbno;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    iput-object v4, p0, Lbhs;->n:Ljxn;
-
-    iget-object v0, p0, Lbhs;->n:Ljxn;
-
-    iput-object v0, p0, Lbhs;->b:Ljxn;
-
-    sget-object v0, Lbot;->a:Lbot;
-
-    new-instance v1, Lbor;
-
-    invoke-direct {v1, v0}, Lbor;-><init>(Ljxn;)V
-
-    iput-object v1, p0, Lbhs;->o:Ljxn;
-
-    sget-object v0, Lbot;->a:Lbot;
-
-    new-instance v1, Lbol;
-
-    invoke-direct {v1, v0}, Lbol;-><init>(Ljxn;)V
-
-    iput-object v1, p0, Lbhs;->p:Ljxn;
-
-    iget-object v0, p0, Lbhs;->d:Lbva;
-
-    iget-object v1, v0, Lbva;->bh:Ljxn;
-
-    sget-object v2, Lgyx;->a:Lgyx;
-
-    iget-object v0, p0, Lbhs;->d:Lbva;
-
-    iget-object v3, v0, Lbva;->o:Ljxn;
-
-    iget-object v4, p0, Lbhs;->o:Ljxn;
-
-    iget-object v5, p0, Lbhs;->p:Ljxn;
-
-    new-instance v0, Lbop;
-
-    invoke-direct/range {v0 .. v5}, Lbop;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    iput-object v0, p0, Lbhs;->q:Ljxn;
-
-    iget-object v0, p0, Lbhs;->q:Ljxn;
-
-    iput-object v0, p0, Lbhs;->c:Ljxn;
-
-    return-void
+    goto :goto_1
 .end method

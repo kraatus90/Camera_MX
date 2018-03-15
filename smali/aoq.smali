@@ -2,41 +2,40 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Laor;
+
+# static fields
+.field public static final a:Ladv;
+
+.field public static final b:Ladv;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lahg;)Lahg;
+.method static constructor <clinit>()V
     .locals 2
 
-    invoke-interface {p1}, Lahg;->b()Ljava/lang/Object;
+    const-string v0, "com.bumptech.glide.load.resource.gif.GifOptions.DecodeFormat"
+
+    sget-object v1, Ladn;->d:Ladn;
+
+    invoke-static {v0, v1}, Ladv;->a(Ljava/lang/String;Ljava/lang/Object;)Ladv;
 
     move-result-object v0
 
-    check-cast v0, Laod;
+    sput-object v0, Laoq;->a:Ladv;
 
-    invoke-virtual {v0}, Laod;->b()Ljava/nio/ByteBuffer;
+    const-string v0, "com.bumptech.glide.load.resource.gif.GifOptions.DisableAnimation"
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ladv;->a(Ljava/lang/String;Ljava/lang/Object;)Ladv;
 
     move-result-object v0
 
-    new-instance v1, Lanx;
+    sput-object v0, Laoq;->b:Ladv;
 
-    invoke-static {v0}, Larh;->a(Ljava/nio/ByteBuffer;)[B
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Lanx;-><init>([B)V
-
-    return-object v1
+    return-void
 .end method

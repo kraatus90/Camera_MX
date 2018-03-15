@@ -3,64 +3,62 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:F
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic b:Lgqs;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lgqs;F)V
     .locals 0
 
+    iput-object p1, p0, Lgqw;->b:Lgqs;
+
+    iput p2, p0, Lgqw;->a:F
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgqw;->a:Ljxn;
-
-    iput-object p2, p0, Lgqw;->b:Ljxn;
-
-    iput-object p3, p0, Lgqw;->c:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final run()V
+    .locals 2
 
-    new-instance v3, Lgqs;
+    iget-object v0, p0, Lgqw;->b:Lgqs;
 
-    iget-object v0, p0, Lgqw;->a:Ljxn;
+    iget-object v0, v0, Lgqs;->b:Lgqo;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lgqo;->a()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lgrk;
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lgqw;->b:Ljxn;
+    iget-object v0, p0, Lgqw;->b:Lgqs;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lgqs;->b:Lgqo;
 
-    move-result-object v1
+    invoke-interface {v0}, Lgqo;->b()Z
 
-    check-cast v1, Lhzt;
+    move-result v0
 
-    iget-object v2, p0, Lgqw;->c:Ljxn;
+    if-eqz v0, :cond_1
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    :cond_0
+    iget-object v0, p0, Lgqw;->b:Lgqs;
 
-    move-result-object v2
+    iget-object v0, v0, Lgqs;->b:Lgqo;
 
-    check-cast v2, Liau;
+    iget v1, p0, Lgqw;->a:F
 
-    invoke-direct {v3, v0, v1, v2}, Lgqs;-><init>(Lgrk;Lhzt;Liau;)V
+    invoke-interface {v0, v1}, Lgqo;->a(F)V
 
-    return-object v3
+    :cond_1
+    return-void
 .end method

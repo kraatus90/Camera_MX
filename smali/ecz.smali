@@ -1,154 +1,196 @@
 .class public final Lecz;
-.super Ljava/lang/Object;
+.super Lebo;
 .source "PG"
+
+# interfaces
+.implements Lgle;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public l:Lgld;
 
-.field private b:Ljxn;
+.field public m:Lglf;
 
-.field private c:Ljxn;
+.field public n:Lglf;
 
 
 # direct methods
-.method constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Lebo;-><init>()V
 
-    invoke-static {p1, v0}, Lecz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    new-instance v0, Leda;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Leda;-><init>(Lecz;)V
 
-    check-cast v0, Ljxn;
+    new-instance v1, Lglf;
 
-    iput-object v0, p0, Lecz;->a:Ljxn;
+    new-array v2, v3, [Lgla;
 
-    const/4 v0, 0x2
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    invoke-static {p2, v0}, Lecz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    iput-object v1, p0, Lecz;->m:Lglf;
 
-    move-result-object v0
+    new-instance v0, Ledb;
 
-    check-cast v0, Ljxn;
+    invoke-direct {v0, p0}, Ledb;-><init>(Lecz;)V
 
-    iput-object v0, p0, Lecz;->b:Ljxn;
+    new-instance v1, Lglf;
 
-    const/4 v0, 0x3
+    new-array v2, v3, [Lgla;
 
-    invoke-static {p3, v0}, Lecz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    move-result-object v0
+    iput-object v1, p0, Lecz;->n:Lglf;
 
-    check-cast v0, Ljxn;
+    new-instance v0, Lgld;
 
-    iput-object v0, p0, Lecz;->c:Ljxn;
+    iget-object v1, p0, Lecz;->n:Lglf;
+
+    invoke-direct {v0, v1, v3}, Lgld;-><init>(Lglf;Z)V
+
+    iput-object v0, p0, Lecz;->l:Lgld;
 
     return-void
 .end method
 
-.method private static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
-
-    if-nez p0, :cond_0
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const/16 v1, 0x5d
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final a(Leai;)Lecy;
-    .locals 6
+.method public final a()V
+    .locals 1
 
-    new-instance v4, Lecy;
+    invoke-super {p0}, Lebo;->a()V
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lecz;->l:Lgld;
 
-    invoke-static {p1, v0}, Lecz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->c()V
+
+    return-void
+.end method
+
+.method public final a(Lick;Lbns;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lgrz;Lfwg;Lgwk;Lick;Landroid/content/Context;)V
+    .locals 2
+
+    iget-object v0, p0, Lecz;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-super/range {p0 .. p10}, Lebo;->a(Lick;Lbns;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lgrz;Lfwg;Lgwk;Lick;Landroid/content/Context;)V
+
+    iget-object v0, p0, Lecz;->l:Lgld;
+
+    sget v1, Lep;->bi:I
+
+    iput v1, v0, Lgld;->a:I
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 1
+
+    invoke-super {p0}, Lebo;->b()V
+
+    iget-object v0, p0, Lecz;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-interface {p0}, Lgle;->i()V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lecz;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->e()V
+
+    iget-object v0, p0, Lecz;->m:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lecz;->n:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    return-void
+.end method
+
+.method public final u()V
+    .locals 1
+
+    iget-object v0, p0, Lecz;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
     move-result-object v0
 
-    check-cast v0, Leai;
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lecz;->a:Ljxn;
+    :goto_0
+    return-void
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    :cond_0
+    iget-object v0, p0, Lecz;->l:Lgld;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
-    check-cast v1, Lgdq;
+    move-result-object v0
 
-    const/4 v2, 0x2
+    iget-object v0, v0, Lglf;->a:Lgla;
 
-    invoke-static {v1, v2}, Lecz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    check-cast v0, Lglb;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lglb;->u()V
 
-    check-cast v1, Lgdq;
+    goto :goto_0
+.end method
 
-    iget-object v2, p0, Lecz;->b:Ljxn;
+.method public final v()V
+    .locals 1
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lecz;->l:Lgld;
 
-    move-result-object v2
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
-    check-cast v2, Ljht;
+    move-result-object v0
 
-    const/4 v3, 0x3
+    if-nez v0, :cond_0
 
-    invoke-static {v2, v3}, Lecz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    :goto_0
+    return-void
 
-    move-result-object v2
+    :cond_0
+    iget-object v0, p0, Lecz;->l:Lgld;
 
-    check-cast v2, Ljht;
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
-    iget-object v3, p0, Lecz;->c:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lglf;->a:Lgla;
 
-    move-result-object v3
+    check-cast v0, Lglb;
 
-    check-cast v3, Ljht;
+    invoke-virtual {v0}, Lglb;->v()V
 
-    const/4 v5, 0x4
-
-    invoke-static {v3, v5}, Lecz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljht;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lecy;-><init>(Leai;Lgdq;Ljht;Ljht;)V
-
-    return-object v4
+    goto :goto_0
 .end method

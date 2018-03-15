@@ -328,9 +328,9 @@
 
     new-instance v2, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    sget-object v3, Ljfs;->k:Ljfs;
+    sget-object v3, Ljpe;->k:Ljpe;
 
-    invoke-direct {v2, v3, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;F)V
+    invoke-direct {v2, v3, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;F)V
 
     invoke-virtual {v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FrameValue;->setValue(Ljava/lang/Object;)V
 

@@ -1,136 +1,111 @@
-.class final Lhsu;
+.class public final Lhsu;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lhln;
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Lhlf;
 
-.field private b:Ljava/lang/ref/WeakReference;
+.field private final b:Z
 
-.field private c:Lhkc;
+.field private final c:I
+
+.field private final d:Lhlg;
 
 
 # direct methods
-.method public constructor <init>(Lhss;Lhkc;Z)V
-    .locals 1
+.method public constructor <init>(Lhlf;Lhlg;)V
+    .locals 3
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    iput-boolean v2, p0, Lhsu;->b:Z
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    iput-object p1, p0, Lhsu;->a:Lhlf;
 
-    iput-object v0, p0, Lhsu;->b:Ljava/lang/ref/WeakReference;
+    iput-object p2, p0, Lhsu;->d:Lhlg;
 
-    iput-object p2, p0, Lhsu;->c:Lhkc;
+    const/4 v0, 0x2
 
-    iput-boolean p3, p0, Lhsu;->a:Z
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget-object v1, p0, Lhsu;->a:Lhlf;
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lhsu;->d:Lhlg;
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    iput v0, p0, Lhsu;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/gms/common/ConnectionResult;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
+    const/4 v0, 0x1
+
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lhsu;->b:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhss;
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
+    if-ne p1, p0, :cond_1
 
     :cond_0
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v2
-
-    iget-object v3, v0, Lhss;->a:Lhti;
-
-    iget-object v3, v3, Lhti;->m:Lhte;
-
-    iget-object v3, v3, Lhte;->c:Landroid/os/Looper;
-
-    if-ne v2, v3, :cond_1
-
-    const/4 v1, 0x1
+    :goto_0
+    return v0
 
     :cond_1
-    const-string v2, "onReportServiceBinding must be called on the GoogleApiClient handler thread"
+    instance-of v2, p1, Lhsu;
 
-    invoke-static {v1, v2}, Lhjg;->a(ZLjava/lang/Object;)V
+    if-nez v2, :cond_2
 
-    iget-object v1, v0, Lhss;->b:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->lock()V
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    invoke-virtual {v0, v1}, Lhss;->b(I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget-object v0, v0, Lhss;->b:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    :try_start_1
-    invoke-virtual {p1}, Lcom/google/android/gms/common/ConnectionResult;->b()Z
+    check-cast p1, Lhsu;
 
-    move-result v1
+    iget-object v2, p0, Lhsu;->a:Lhlf;
 
-    if-nez v1, :cond_3
+    iget-object v3, p1, Lhsu;->a:Lhlf;
 
-    iget-object v1, p0, Lhsu;->c:Lhkc;
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-boolean v2, p0, Lhsu;->a:Z
+    move-result v2
 
-    invoke-virtual {v0, p1, v1, v2}, Lhss;->b(Lcom/google/android/gms/common/ConnectionResult;Lhkc;Z)V
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lhsu;->d:Lhlg;
+
+    iget-object v3, p1, Lhsu;->d:Lhlg;
+
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
 
     :cond_3
-    invoke-virtual {v0}, Lhss;->d()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {v0}, Lhss;->e()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :cond_4
-    iget-object v0, v0, Lhss;->b:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    move v0, v1
 
     goto :goto_0
+.end method
 
-    :catchall_0
-    move-exception v1
+.method public final hashCode()I
+    .locals 1
 
-    iget-object v0, v0, Lhss;->b:Ljava/util/concurrent/locks/Lock;
+    iget v0, p0, Lhsu;->c:I
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    throw v1
+    return v0
 .end method

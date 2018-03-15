@@ -1,13 +1,11 @@
-.class final Lfco;
-.super Lfeg;
+.class public interface abstract Lfco;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>(Lfcn;)V
-    .locals 0
+# virtual methods
+.method public abstract a(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
+.end method
 
-    invoke-direct {p0, p1}, Lfeg;-><init>(Lfef;)V
-
-    return-void
+.method public abstract b(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
 .end method

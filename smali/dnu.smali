@@ -1,30 +1,20 @@
-.class public final Ldnu;
+.class final Ldnu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkds;
 
 
-# static fields
-.field public static final a:Ldnu;
+# instance fields
+.field private final synthetic a:Ldnj;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldnu;
-
-    invoke-direct {v0}, Ldnu;-><init>()V
-
-    sput-object v0, Ldnu;->a:Ldnu;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Ldnj;)V
     .locals 0
+
+    iput-object p1, p0, Ldnu;->a:Ldnj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,60 +23,36 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    const/4 v0, 0x2
+    iget-object v0, p0, Ldnu;->a:Ldnj;
 
-    new-array v0, v0, [Lggl;
+    iget-object v0, v0, Ldnj;->e:Ldni;
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Ldni;->b:Lihn;
 
-    new-instance v2, Lggl;
+    const-string v1, "Final result failed, not updating remote thumbnail."
 
-    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-interface {v0, v1}, Lihn;->c(Ljava/lang/String;)V
 
-    const/4 v4, 0x3
+    return-void
+.end method
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
 
-    move-result-object v4
+    check-cast p1, Lfso;
 
-    invoke-direct {v2, v3, v4}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    aput-object v2, v0, v1
+    iget-object v0, p0, Ldnu;->a:Ldnj;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Ldnj;->a:Lfsn;
 
-    new-instance v2, Lggl;
+    iget-object v1, p1, Lfso;->a:[B
 
-    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-interface {v0, v1}, Lfsn;->a([B)V
 
-    const/4 v4, 0x4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, v4}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lfsp;->a(Ljava/util/List;)Lggq;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lggq;
-
-    return-object v0
+    return-void
 .end method

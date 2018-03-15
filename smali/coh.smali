@@ -1,60 +1,132 @@
 .class public final Lcoh;
-.super Ljava/lang/Object;
+.super Landroid/view/View$AccessibilityDelegate;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lcmh;
+
+.field private final synthetic b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;Lcmh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcoh;->b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    iput-object p1, p0, Lcoh;->a:Ljxn;
+    iput-object p2, p0, Lcoh;->a:Lcmh;
+
+    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lcoh;
-
-    invoke-direct {v0, p0}, Lcoh;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
 
-    iget-object v0, p0, Lcoh;->a:Ljxn;
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-class v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-    move-result-object v0
-
-    check-cast v0, Ldup;
-
-    invoke-static {v0}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
 
-    check-cast v0, Ljht;
+    const/16 v0, 0x1000
 
-    return-object v0
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
+
+    const/16 v0, 0x2000
+
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
+
+    return-void
+.end method
+
+.method public final performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Lcoh;->b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
+
+    invoke-virtual {v1}, Lcoq;->f()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    sparse-switch p2, :sswitch_data_0
+
+    :cond_0
+    invoke-super {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+
+    move-result v0
+
+    :cond_1
+    :goto_0
+    return v0
+
+    :sswitch_0
+    iget-object v1, p0, Lcoh;->b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v1, v2}, Lcoq;->c(I)Z
+
+    goto :goto_0
+
+    :sswitch_1
+    iget-object v1, p0, Lcoh;->b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
+
+    invoke-virtual {v1, v0}, Lcoq;->c(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Lcoh;->a:Lcmh;
+
+    invoke-interface {v1}, Lcmh;->f()V
+
+    goto :goto_0
+
+    :sswitch_2
+    iget-object v1, p0, Lcoh;->b:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    iget-object v1, v1, Lcoz;->b:Landroid/view/View;
+
+    invoke-virtual {v1, p2, p3}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+
+    goto :goto_0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x40 -> :sswitch_2
+        0x1000 -> :sswitch_0
+        0x2000 -> :sswitch_1
+    .end sparse-switch
 .end method

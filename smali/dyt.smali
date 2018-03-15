@@ -2,25 +2,32 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ldyo;
+
+# instance fields
+.field public a:Lidz;
+
+.field public b:Lidz;
+
+.field public c:Lidz;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    sget-object v0, Lidz;->a:Lidz;
 
+    iput-object v0, p0, Ldyt;->a:Lidz;
 
-# virtual methods
-.method public final a(Liil;Ljava/io/OutputStream;)V
-    .locals 0
+    sget-object v0, Lidz;->a:Lidz;
 
-    invoke-interface {p1}, Liil;->close()V
+    iput-object v0, p0, Ldyt;->b:Lidz;
+
+    sget-object v0, Lidz;->a:Lidz;
+
+    iput-object v0, p0, Ldyt;->c:Lidz;
 
     return-void
 .end method

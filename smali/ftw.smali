@@ -1,148 +1,111 @@
-.class public final Lftw;
+.class final Lftw;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x10
-.end annotation
+# interfaces
+.implements Lful;
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private b:Lftj;
-
-.field private c:J
+.field private final synthetic b:Lftu;
 
 
 # direct methods
-.method public constructor <init>(Lftj;)V
+.method constructor <init>(Lftu;)V
     .locals 2
+
+    iput-object p1, p0, Lftw;->b:Lftu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v0, -0x1
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-wide v0, p0, Lftw;->c:J
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lftw;->b:Lftj;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lftw;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfti;
-    .locals 6
+.method public final close()V
+    .locals 5
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Lftw;->a:Ljava/lang/String;
+    iget-object v0, p0, Lftw;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    iget-wide v2, p0, Lftw;->c:J
+    move-result v0
 
-    const-wide/16 v4, 0x0
-
-    cmp-long v0, v2, v4
-
-    if-ltz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-static {v0}, Liya;->b(Z)V
-
-    new-instance v0, Lfti;
-
-    invoke-direct {v0}, Lfti;-><init>()V
-
-    const-string v2, "_data"
-
-    iget-object v3, p0, Lftw;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lfti;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v2, "mime_type"
-
-    iget-object v3, v0, Lfti;->a:Landroid/content/ContentValues;
-
-    invoke-virtual {v3, v2}, Landroid/content/ContentValues;->putNull(Ljava/lang/String;)V
-
-    const-string v2, "media_type"
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Lfti;->a(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    const-string v2, "date_modified"
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v2, v1}, Lfti;->a(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    const-string v1, "datetaken"
-
-    iget-wide v2, p0, Lftw;->c:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lfti;->a(Ljava/lang/String;Ljava/lang/Long;)V
-
-    return-object v0
+    if-eqz v0, :cond_1
 
     :cond_0
-    move v0, v1
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v2, p0, Lftw;->b:Lftu;
+
+    const/4 v0, 0x0
+
+    iget-object v3, v2, Lftu;->b:Ljava/lang/Object;
+
+    monitor-enter v3
+
+    :try_start_0
+    iget v4, v2, Lftu;->d:I
+
+    add-int/lit8 v4, v4, -0x1
+
+    iput v4, v2, Lftu;->d:I
+
+    iget v4, v2, Lftu;->d:I
+
+    if-ltz v4, :cond_3
+
+    :goto_1
+    invoke-static {v1}, Ljii;->b(Z)V
+
+    iget-boolean v1, v2, Lftu;->c:Z
+
+    if-eqz v1, :cond_2
+
+    iget v1, v2, Lftu;->d:I
+
+    if-nez v1, :cond_2
+
+    iget-object v0, v2, Lftu;->a:Lful;
+
+    :cond_2
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Lful;->close()V
 
     goto :goto_0
-.end method
 
-.method public final a(J)Lftw;
-    .locals 3
+    :cond_3
+    const/4 v1, 0x0
 
-    const-wide/16 v0, 0x0
+    goto :goto_1
 
-    cmp-long v0, p1, v0
+    :catchall_0
+    move-exception v0
 
-    if-gtz v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const/16 v1, 0x2d
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "invalid image taken time "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    :try_start_1
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-
-    :cond_0
-    iput-wide p1, p0, Lftw;->c:J
-
-    return-object p0
 .end method

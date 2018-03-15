@@ -2,65 +2,98 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# static fields
+.field public static final a:Landroid/net/Uri;
 
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field public static final b:[Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    iput-object p1, p0, Lckc;->a:Ljxn;
+    sput-object v0, Lckc;->a:Landroid/net/Uri;
 
-    iput-object p2, p0, Lckc;->b:Ljxn;
+    const/16 v0, 0xc
 
-    iput-object p3, p0, Lckc;->c:Ljxn;
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "_id"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string v2, "title"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const-string v2, "mime_type"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string v2, "datetaken"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    const-string v2, "date_modified"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    const-string v2, "_data"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    const-string v2, "orientation"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    const-string v2, "width"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    const-string v2, "height"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    const-string v2, "_size"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    const-string v2, "latitude"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    const-string v2, "longitude"
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lckc;->b:[Ljava/lang/String;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
-
-    new-instance v3, Lcjz;
-
-    iget-object v0, p0, Lckc;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcll;
-
-    iget-object v1, p0, Lckc;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/content/res/Resources;
-
-    iget-object v2, p0, Lckc;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lfmd;
-
-    invoke-direct {v3, v0, v1, v2}, Lcjz;-><init>(Lcll;Landroid/content/res/Resources;Lfmd;)V
-
-    return-object v3
 .end method

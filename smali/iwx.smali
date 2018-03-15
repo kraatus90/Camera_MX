@@ -1,58 +1,65 @@
-.class final Liwx;
+.class final synthetic Liwx;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Lkeh;
+
+.field private final b:Lkeh;
+
+.field private final c:Lket;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lkeh;Lkeh;Lket;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liwx;->a:Lkeh;
+
+    iput-object p2, p0, Liwx;->b:Lkeh;
+
+    iput-object p3, p0, Liwx;->c:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+.method public final run()V
+    .locals 3
 
-    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    iget-object v0, p0, Liwx;->a:Lkeh;
 
-    const-string v1, "default"
+    iget-object v1, p0, Liwx;->b:Lkeh;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v2, p0, Liwx;->c:Lket;
+
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    check-cast v0, Landroid/media/MediaMuxer;
 
-    new-instance v1, Ljbj;
-
-    invoke-direct {v1}, Ljbj;-><init>()V
-
-    new-instance v2, Ljca;
-
-    new-instance v3, Ljbh;
-
-    invoke-direct {v3, v0}, Ljbh;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
-
-    invoke-virtual {v1, v3}, Ljbj;->a(Ljbd;)Ljbj;
+    invoke-static {v1}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v1
 
-    new-instance v3, Ljbi;
+    check-cast v1, Landroid/media/MediaFormat;
 
-    invoke-direct {v3, v0}, Ljbi;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+    invoke-virtual {v0, v1}, Landroid/media/MediaMuxer;->addTrack(Landroid/media/MediaFormat;)I
 
-    invoke-virtual {v1, v3}, Ljbj;->a(Ljbd;)Ljbj;
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Ljca;-><init>(Ljbc;)V
+    invoke-virtual {v2, v0}, Lkch;->a(Ljava/lang/Object;)Z
 
-    return-object v2
+    return-void
 .end method

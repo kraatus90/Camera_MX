@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract getAssignmentCount(Ljfs;)I
+.method public abstract getAssignmentCount(Ljpe;)I
 .end method
 
 .method public abstract getCapacity()I
@@ -13,13 +13,13 @@
 .method public abstract getColumnCount()I
 .end method
 
-.method public abstract getColumnValues(Ljfs;)[Lcom/google/android/libraries/smartburst/utils/Feature;
+.method public abstract getColumnValues(Ljpe;)[Lcom/google/android/libraries/smartburst/utils/Feature;
 .end method
 
 .method public abstract getEarliestTimestamp()J
 .end method
 
-.method public abstract getFeature(JLjfs;)Lcom/google/android/libraries/smartburst/utils/Feature;
+.method public abstract getFeature(JLjpe;)Lcom/google/android/libraries/smartburst/utils/Feature;
 .end method
 
 .method public abstract getFeatureCount()I
@@ -40,10 +40,10 @@
 .method public abstract getRowCount()I
 .end method
 
-.method public abstract getRowForTimestamp(J)Lirs;
+.method public abstract getRowForTimestamp(J)Ljay;
 .end method
 
-.method public abstract getRowIterator(J)Lirt;
+.method public abstract getRowIterator(J)Ljaz;
 .end method
 
 .method public abstract setFeatureValue(JLcom/google/android/libraries/smartburst/utils/Feature;)Z

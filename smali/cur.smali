@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lfft;
+.implements Lihg;
 
 
 # instance fields
-.field private synthetic a:Lcuq;
+.field public final synthetic a:Lctw;
 
 
 # direct methods
-.method constructor <init>(Lcuq;)V
+.method constructor <init>(Lctw;)V
     .locals 0
 
-    iput-object p1, p0, Lcur;->a:Lcuq;
+    iput-object p1, p0, Lcur;->a:Lctw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,71 +23,43 @@
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
-    if-nez p1, :cond_0
+    check-cast p1, Lfao;
 
-    iget-object v0, p0, Lcur;->a:Lcuq;
+    iget-object v1, p0, Lcur;->a:Lctw;
 
-    invoke-virtual {v0}, Lcuq;->m()Z
+    sget-object v0, Lfao;->b:Lfao;
 
-    move-result v0
+    if-ne p1, v0, :cond_1
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lcur;->a:Lcuq;
+    :goto_0
+    iput-boolean v0, v1, Lctw;->V:Z
 
-    iget-object v0, v0, Lcuq;->d:Lgug;
+    iget-object v0, p0, Lcur;->a:Lctw;
 
-    invoke-interface {v0}, Lgug;->a()V
+    iget-boolean v0, v0, Lctw;->V:Z
 
-    :cond_0
-    return-void
-.end method
+    if-nez v0, :cond_0
 
-.method public final b(Z)V
-    .locals 1
+    iget-object v0, p0, Lcur;->a:Lctw;
 
-    if-eqz p1, :cond_0
+    iget-object v0, v0, Lctw;->W:Ljava/util/concurrent/Executor;
 
-    iget-object v0, p0, Lcur;->a:Lcuq;
+    new-instance v1, Lcus;
 
-    invoke-virtual {v0}, Lcuq;->m()Z
+    invoke-direct {v1, p0}, Lcus;-><init>(Lcur;)V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcur;->a:Lcuq;
-
-    iget-object v0, v0, Lcuq;->f:Lhem;
-
-    invoke-interface {v0}, Lhem;->k()V
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     :cond_0
     return-void
-.end method
 
-.method public final c(Z)V
-    .locals 1
+    :cond_1
+    const/4 v0, 0x0
 
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Lcur;->a:Lcuq;
-
-    invoke-virtual {v0}, Lcuq;->m()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcur;->a:Lcuq;
-
-    iget-object v0, v0, Lcuq;->f:Lhem;
-
-    invoke-interface {v0}, Lhem;->j()V
-
-    :cond_0
-    return-void
+    goto :goto_0
 .end method

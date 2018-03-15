@@ -1,5 +1,5 @@
 .class public final Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
-.super Ljwj;
+.super Lkfr;
 .source "PG"
 
 
@@ -8,15 +8,15 @@
 
 
 # instance fields
-.field public autoFocusReport:Ljpl;
+.field public autoFocusReport:Ljyt;
 
-.field public dirtyLensEvents:[Ljqe;
+.field public dirtyLensEvents:[Ljzm;
 
 .field public launchReport:Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
-.field public meteringData:[Ljqu;
+.field public meteringData:[Lkad;
 
-.field public previewSmoothnessReport:[Ljre;
+.field public previewSmoothnessReport:[Lkan;
 
 .field public shutterButtonDisabledDuration:F
 
@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-direct {p0}, Lkfr;-><init>()V
 
     invoke-virtual {p0}, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->clear()Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
 
@@ -39,7 +39,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v1, Ljwn;->b:Ljava/lang/Object;
+    sget-object v1, Lkfv;->b:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -75,14 +75,14 @@
     throw v0
 .end method
 
-.method public static parseFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
+.method public static parseFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
     .locals 1
 
     new-instance v0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;-><init>()V
 
-    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
+    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
 
     move-result-object v0
 
@@ -96,7 +96,7 @@
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;-><init>()V
 
-    invoke-static {v0, p0}, Ljwp;->mergeFrom(Ljwp;[B)Ljwp;
+    invoke-static {v0, p0}, Lkfx;->mergeFrom(Lkfx;[B)Lkfx;
 
     move-result-object v0
 
@@ -112,33 +112,33 @@
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
     iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->launchReport:Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
-    invoke-static {}, Ljre;->a()[Ljre;
+    invoke-static {}, Lkan;->a()[Lkan;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
-    invoke-static {}, Ljqe;->a()[Ljqe;
+    invoke-static {}, Ljzm;->a()[Ljzm;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->shutterButtonDisabledDuration:F
 
-    invoke-static {}, Ljqu;->a()[Ljqu;
+    invoke-static {}, Lkad;->a()[Lkad;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->unknownFieldData:Ljwl;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->unknownFieldData:Lkft;
 
     const/4 v0, -0x1
 
@@ -152,19 +152,19 @@
 
     const/4 v1, 0x0
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-super {p0}, Lkfr;->computeSerializedSize()I
 
     move-result v0
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
     if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
-    invoke-static {v2, v3}, Ljwi;->b(ILjwp;)I
+    invoke-static {v2, v3}, Lkfp;->b(ILkfx;)I
 
     move-result v2
 
@@ -179,18 +179,18 @@
 
     iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->launchReport:Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
-    invoke-static {v2, v3}, Ljwi;->b(ILjwp;)I
+    invoke-static {v2, v3}, Lkfp;->b(ILkfx;)I
 
     move-result v2
 
     add-int/2addr v0, v2
 
     :cond_1
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     if-eqz v2, :cond_4
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     array-length v2, v2
 
@@ -201,13 +201,13 @@
     move v0, v1
 
     :goto_0
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     array-length v3, v3
 
     if-ge v0, v3, :cond_3
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     aget-object v3, v3, v0
 
@@ -215,7 +215,7 @@
 
     const/4 v4, 0x3
 
-    invoke-static {v4, v3}, Ljwi;->b(ILjwp;)I
+    invoke-static {v4, v3}, Lkfp;->b(ILkfx;)I
 
     move-result v3
 
@@ -230,11 +230,11 @@
     move v0, v2
 
     :cond_4
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     if-eqz v2, :cond_7
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     array-length v2, v2
 
@@ -245,13 +245,13 @@
     move v0, v1
 
     :goto_1
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     array-length v3, v3
 
     if-ge v0, v3, :cond_6
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     aget-object v3, v3, v0
 
@@ -259,7 +259,7 @@
 
     const/4 v4, 0x4
 
-    invoke-static {v4, v3}, Ljwi;->b(ILjwp;)I
+    invoke-static {v4, v3}, Lkfp;->b(ILkfx;)I
 
     move-result v3
 
@@ -290,7 +290,7 @@
 
     const/16 v2, 0x28
 
-    invoke-static {v2}, Ljwi;->d(I)I
+    invoke-static {v2}, Lkfp;->d(I)I
 
     move-result v2
 
@@ -299,24 +299,24 @@
     add-int/2addr v0, v2
 
     :cond_8
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     if-eqz v2, :cond_a
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     array-length v2, v2
 
     if-lez v2, :cond_a
 
     :goto_2
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     array-length v2, v2
 
     if-ge v1, v2, :cond_a
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     aget-object v2, v2, v1
 
@@ -324,7 +324,7 @@
 
     const/4 v3, 0x6
 
-    invoke-static {v3, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v3, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v2
 
@@ -339,20 +339,20 @@
     return v0
 .end method
 
-.method public final mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
+.method public final mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
     .locals 4
 
     const/4 v1, 0x0
 
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    invoke-super {p0, p1, v0}, Lkfr;->storeUnknownField(Lkfo;I)Z
 
     move-result v0
 
@@ -362,20 +362,20 @@
     return-object p0
 
     :sswitch_1
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
     if-nez v0, :cond_1
 
-    new-instance v0, Ljpl;
+    new-instance v0, Ljyt;
 
-    invoke-direct {v0}, Ljpl;-><init>()V
+    invoke-direct {v0}, Ljyt;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
     :cond_1
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto :goto_0
 
@@ -393,18 +393,18 @@
     :cond_2
     iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->launchReport:Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto :goto_0
 
     :sswitch_3
     const/16 v0, 0x1a
 
-    invoke-static {p1, v0}, Ljwr;->a(Ljwh;I)I
+    invoke-static {p1, v0}, Lkfz;->a(Lkfo;I)I
 
     move-result v2
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     if-nez v0, :cond_4
 
@@ -413,11 +413,11 @@
     :goto_1
     add-int/2addr v2, v0
 
-    new-array v2, v2, [Ljre;
+    new-array v2, v2, [Lkan;
 
     if-eqz v0, :cond_3
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -429,52 +429,52 @@
 
     if-ge v0, v3, :cond_5
 
-    new-instance v3, Ljre;
+    new-instance v3, Lkan;
 
-    invoke-direct {v3}, Ljre;-><init>()V
+    invoke-direct {v3}, Lkan;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v3, v2, v0
 
-    invoke-virtual {p1, v3}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v3}, Lkfo;->a(Lkfx;)V
 
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
     :cond_4
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     array-length v0, v0
 
     goto :goto_1
 
     :cond_5
-    new-instance v3, Ljre;
+    new-instance v3, Lkan;
 
-    invoke-direct {v3}, Ljre;-><init>()V
+    invoke-direct {v3}, Lkan;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v0, v2, v0
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
-    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     goto :goto_0
 
     :sswitch_4
     const/16 v0, 0x22
 
-    invoke-static {p1, v0}, Ljwr;->a(Ljwh;I)I
+    invoke-static {p1, v0}, Lkfz;->a(Lkfo;I)I
 
     move-result v2
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     if-nez v0, :cond_7
 
@@ -483,11 +483,11 @@
     :goto_3
     add-int/2addr v2, v0
 
-    new-array v2, v2, [Ljqe;
+    new-array v2, v2, [Ljzm;
 
     if-eqz v0, :cond_6
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -499,46 +499,46 @@
 
     if-ge v0, v3, :cond_8
 
-    new-instance v3, Ljqe;
+    new-instance v3, Ljzm;
 
-    invoke-direct {v3}, Ljqe;-><init>()V
+    invoke-direct {v3}, Ljzm;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v3, v2, v0
 
-    invoke-virtual {p1, v3}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v3}, Lkfo;->a(Lkfx;)V
 
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
     :cond_7
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     array-length v0, v0
 
     goto :goto_3
 
     :cond_8
-    new-instance v3, Ljqe;
+    new-instance v3, Ljzm;
 
-    invoke-direct {v3}, Ljqe;-><init>()V
+    invoke-direct {v3}, Ljzm;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v0, v2, v0
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
-    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     goto/16 :goto_0
 
     :sswitch_5
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-virtual {p1}, Lkfo;->e()I
 
     move-result v0
 
@@ -553,11 +553,11 @@
     :sswitch_6
     const/16 v0, 0x32
 
-    invoke-static {p1, v0}, Ljwr;->a(Ljwh;I)I
+    invoke-static {p1, v0}, Lkfz;->a(Lkfo;I)I
 
     move-result v2
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     if-nez v0, :cond_a
 
@@ -566,11 +566,11 @@
     :goto_5
     add-int/2addr v2, v0
 
-    new-array v2, v2, [Ljqu;
+    new-array v2, v2, [Lkad;
 
     if-eqz v0, :cond_9
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -582,41 +582,41 @@
 
     if-ge v0, v3, :cond_b
 
-    new-instance v3, Ljqu;
+    new-instance v3, Lkad;
 
-    invoke-direct {v3}, Ljqu;-><init>()V
+    invoke-direct {v3}, Lkad;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v3, v2, v0
 
-    invoke-virtual {p1, v3}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v3}, Lkfo;->a(Lkfx;)V
 
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_6
 
     :cond_a
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     array-length v0, v0
 
     goto :goto_5
 
     :cond_b
-    new-instance v3, Ljqu;
+    new-instance v3, Lkad;
 
-    invoke-direct {v3}, Ljqu;-><init>()V
+    invoke-direct {v3}, Lkad;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v0, v2, v0
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
-    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     goto/16 :goto_0
 
@@ -632,30 +632,30 @@
     .end sparse-switch
 .end method
 
-.method public final bridge synthetic mergeFrom(Ljwh;)Ljwp;
+.method public final bridge synthetic mergeFrom(Lkfo;)Lkfx;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
+    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
+.method public final writeTo(Lkfp;)V
     .locals 4
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljpl;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->autoFocusReport:Ljyt;
 
-    invoke-virtual {p1, v0, v2}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v2}, Lkfp;->a(ILkfx;)V
 
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->launchReport:Lcom/google/common/logging/nano/eventprotos$LaunchReport;
@@ -666,14 +666,14 @@
 
     iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->launchReport:Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
-    invoke-virtual {p1, v0, v2}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v2}, Lkfp;->a(ILkfx;)V
 
     :cond_1
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     array-length v0, v0
 
@@ -682,13 +682,13 @@
     move v0, v1
 
     :goto_0
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     array-length v2, v2
 
     if-ge v0, v2, :cond_3
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Ljre;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->previewSmoothnessReport:[Lkan;
 
     aget-object v2, v2, v0
 
@@ -696,7 +696,7 @@
 
     const/4 v3, 0x3
 
-    invoke-virtual {p1, v3, v2}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v3, v2}, Lkfp;->a(ILkfx;)V
 
     :cond_2
     add-int/lit8 v0, v0, 0x1
@@ -704,11 +704,11 @@
     goto :goto_0
 
     :cond_3
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     array-length v0, v0
 
@@ -717,13 +717,13 @@
     move v0, v1
 
     :goto_1
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     array-length v2, v2
 
     if-ge v0, v2, :cond_5
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljqe;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->dirtyLensEvents:[Ljzm;
 
     aget-object v2, v2, v0
 
@@ -731,7 +731,7 @@
 
     const/4 v3, 0x4
 
-    invoke-virtual {p1, v3, v2}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v3, v2}, Lkfp;->a(ILkfx;)V
 
     :cond_4
     add-int/lit8 v0, v0, 0x1
@@ -757,27 +757,27 @@
 
     iget v2, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->shutterButtonDisabledDuration:F
 
-    invoke-virtual {p1, v0, v2}, Ljwi;->a(IF)V
+    invoke-virtual {p1, v0, v2}, Lkfp;->a(IF)V
 
     :cond_6
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     if-eqz v0, :cond_8
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     array-length v0, v0
 
     if-lez v0, :cond_8
 
     :goto_2
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     array-length v0, v0
 
     if-ge v1, v0, :cond_8
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$BackgroundEvent;->meteringData:[Lkad;
 
     aget-object v0, v0, v1
 
@@ -785,7 +785,7 @@
 
     const/4 v2, 0x6
 
-    invoke-virtual {p1, v2, v0}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v2, v0}, Lkfp;->a(ILkfx;)V
 
     :cond_7
     add-int/lit8 v1, v1, 0x1
@@ -793,7 +793,7 @@
     goto :goto_2
 
     :cond_8
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    invoke-super {p0, p1}, Lkfr;->writeTo(Lkfp;)V
 
     return-void
 .end method

@@ -1,62 +1,43 @@
-.class final Lcxv;
-.super Ljava/lang/Object;
+.class public final Lcxv;
+.super Lcxq;
 .source "PG"
-
-# interfaces
-.implements Lcwh;
-
-
-# instance fields
-.field private synthetic a:Lcxc;
 
 
 # direct methods
-.method constructor <init>(Lcxc;)V
-    .locals 0
+.method public constructor <init>(Lcxq;)V
+    .locals 2
 
-    iput-object p1, p0, Lcxv;->a:Lcxc;
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrv;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcxw;
+
+    invoke-direct {v0, p0}, Lcxw;-><init>(Lcxv;)V
+
+    const-class v1, Lcwu;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 5
+.method public final synthetic b()Lbrv;
+    .locals 1
 
-    iget-object v0, p0, Lcxv;->a:Lcxc;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {p0}, Lcxv;->e()Lcxq;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    return-object v0
+.end method
 
-    iget-object v1, v0, Lcwg;->l:Leqd;
+.method public final e()Lcxq;
+    .locals 1
 
-    invoke-virtual {v1}, Leqd;->b()Lige;
+    new-instance v0, Lcxx;
 
-    move-result-object v1
+    invoke-direct {v0, p0}, Lcxx;-><init>(Lcxq;)V
 
-    iget-object v2, v0, Lcwg;->h:Lgds;
-
-    invoke-virtual {v2, v1}, Lgds;->b(Lige;)Ligc;
-
-    move-result-object v2
-
-    iget-object v0, v0, Lcwg;->h:Lgds;
-
-    invoke-virtual {v0, v2}, Lgds;->a(Ligc;)Lgdq;
-
-    move-result-object v0
-
-    new-instance v3, Lcws;
-
-    iget-object v4, p0, Lcxv;->a:Lcxc;
-
-    invoke-direct {v3, v4, v1, v2, v0}, Lcws;-><init>(Lcwi;Lige;Ligc;Lgdq;)V
-
-    return-object v3
+    return-object v0
 .end method

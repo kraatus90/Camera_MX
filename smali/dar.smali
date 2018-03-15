@@ -1,170 +1,159 @@
 .class final Ldar;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Laba;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field private synthetic b:Ldaq;
+.field private final synthetic a:Ldal;
 
 
 # direct methods
-.method constructor <init>(Ldaq;Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
-    iput-object p1, p0, Ldar;->b:Ldaq;
+    iput-object p1, p0, Ldar;->a:Ldal;
 
-    iput-object p2, p0, Ldar;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFpsSwitch(I)V
+.method public final a()V
     .locals 5
 
-    iget-object v0, p0, Ldar;->b:Ldaq;
+    const/4 v0, 0x0
 
-    iget-object v1, v0, Ldaq;->k:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    monitor-enter v1
+    iget-object v2, p0, Ldar;->a:Ldal;
 
-    :try_start_0
-    iget-object v0, p0, Ldar;->b:Ldaq;
+    iget-object v2, v2, Ldal;->v:Lein;
 
-    iget-object v0, v0, Ldaq;->n:Ldbi;
-
-    sget-object v2, Ldbi;->d:Ldbi;
-
-    if-eq v0, v2, :cond_0
-
-    sget-object v0, Ldaq;->c:Ljava/lang/String;
-
-    iget-object v2, p0, Ldar;->b:Ldaq;
-
-    iget-object v2, v2, Ldaq;->n:Ldbi;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x1f
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Do nothing onFpsSwitch. mState="
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    monitor-exit v1
+    if-nez v2, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v0, p0, Ldar;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iget-object v2, p0, Ldar;->a:Ldal;
 
-    const/4 v2, 0x0
+    iput-boolean v1, v2, Ldal;->m:Z
 
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+    iget-object v2, p0, Ldar;->a:Ldal;
 
-    sget-object v0, Lbbw;->c:Lbbw;
+    iget-object v2, v2, Ldal;->v:Lein;
 
-    if-nez p1, :cond_2
+    iput-boolean v1, v2, Lein;->u:Z
 
-    sget-object v0, Lbbw;->c:Lbbw;
+    iget-object v2, p0, Ldar;->a:Ldal;
+
+    iget-object v3, v2, Ldal;->d:Lejr;
+
+    iput-boolean v1, v3, Lejr;->b:Z
+
+    iget-object v2, v2, Ldal;->v:Lein;
+
+    iget-object v2, v2, Lein;->b:Leix;
+
+    iput-boolean v0, v2, Leix;->F:Z
+
+    iget-object v2, p0, Ldar;->a:Ldal;
+
+    iget-object v2, v2, Ldal;->j:Leim;
+
+    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
+
+    iget-object v2, p0, Ldar;->a:Ldal;
+
+    invoke-virtual {v2}, Ldal;->s()V
+
+    iget-object v2, v2, Ldal;->y:Lgro;
+
+    invoke-virtual {v2, v0, v0, v1}, Lgro;->a(IIZ)V
+
+    :try_start_0
+    iget-object v2, p0, Ldar;->a:Ldal;
+
+    iget-object v3, p0, Ldar;->a:Ldal;
+
+    iget-object v3, v3, Ldal;->v:Lein;
+
+    invoke-virtual {v3}, Lein;->e()F
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    cmpg-float v3, v3, v4
+
+    if-gtz v3, :cond_1
+
+    move v0, v1
 
     :cond_1
-    :goto_1
-    iget-object v2, p0, Ldar;->b:Ldaq;
+    iput-boolean v0, v2, Ldal;->I:Z
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v2, v0}, Ldaq;->a(Lbbw;)V
+    iget-object v0, p0, Ldar;->a:Ldal;
 
-    monitor-exit v1
+    iget-object v0, v0, Ldal;->J:Landroid/os/Handler;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Ldar;->a:Ldal;
+
+    iget-object v2, v0, Ldal;->J:Landroid/os/Handler;
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v0, Ldal;->J:Landroid/os/Handler;
+
+    invoke-virtual {v2, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
+
+    iget-object v2, v0, Ldal;->J:Landroid/os/Handler;
+
+    const/4 v3, 0x2
+
+    iget v4, v0, Ldal;->A:I
+
+    iget v0, v0, Ldal;->B:I
+
+    invoke-virtual {v2, v3, v4, v0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    :cond_2
+    iget-object v0, p0, Ldar;->a:Ldal;
+
+    iget-object v0, v0, Ldal;->v:Lein;
+
+    iget-object v2, p0, Ldar;->a:Ldal;
+
+    iget-object v2, v2, Ldal;->K:Lbts;
+
+    iput-object v2, v0, Lein;->v:Lbts;
+
+    :cond_3
+    iget-object v0, p0, Ldar;->a:Ldal;
+
+    invoke-virtual {v0, v1}, Ldal;->c(Z)V
 
     goto :goto_0
 
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_2
-    const/4 v2, 0x1
-
-    if-ne p1, v2, :cond_1
-
-    :try_start_1
-    sget-object v0, Lbbw;->d:Lbbw;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_1
-.end method
-
-.method public final onThumbnailButtonClicked()V
-    .locals 2
-
-    iget-object v0, p0, Ldar;->b:Ldaq;
-
-    iget-object v1, v0, Ldaq;->k:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Ldar;->b:Ldaq;
-
-    iget-object v0, v0, Ldaq;->o:Ldbl;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ldar;->b:Ldaq;
-
-    iget-object v0, v0, Ldaq;->o:Ldbl;
-
-    invoke-interface {v0}, Ldbl;->e()V
-
-    :cond_0
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    goto :goto_0
 .end method

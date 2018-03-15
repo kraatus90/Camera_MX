@@ -1,27 +1,75 @@
-.class public final Lfzs;
+.class final Lfzs;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lihg;
 
-# static fields
-.field public static final a:I
+
+# instance fields
+.field private final synthetic a:Lfzq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lfzq;)V
+    .locals 0
 
-    const v0, 0xac44
+    iput-object p1, p0, Lfzs;->a:Lfzq;
 
-    const/16 v1, 0xc
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, 0x2
+    return-void
+.end method
 
-    invoke-static {v0, v1, v2}, Landroid/media/AudioRecord;->getMinBufferSize(III)I
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
+
+    iget-object v0, p0, Lfzs;->a:Lfzq;
+
+    iget-object v1, v0, Lfzq;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lfzs;->a:Lfzq;
+
+    iget-boolean v0, v0, Lfzq;->e:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lfzs;->a:Lfzq;
+
+    iget-object v0, v0, Lfzq;->c:Lick;
+
+    invoke-interface {v0}, Lick;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    sput v0, Lfzs;->a:I
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfzs;->a:Lfzq;
+
+    invoke-virtual {v0}, Lfzq;->c()V
+
+    :cond_0
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

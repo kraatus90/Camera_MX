@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lakx;
+.implements Lakk;
 
 
 # direct methods
@@ -17,20 +17,20 @@
 
 
 # virtual methods
-.method public final a(Lald;)Lakv;
+.method public final a(Lakq;)Laki;
     .locals 3
 
-    new-instance v0, Lall;
+    new-instance v0, Lalm;
 
-    const-class v1, Landroid/net/Uri;
+    const-class v1, Laju;
 
     const-class v2, Ljava/io/InputStream;
 
-    invoke-virtual {p1, v1, v2}, Lald;->a(Ljava/lang/Class;Ljava/lang/Class;)Lakv;
+    invoke-virtual {p1, v1, v2}, Lakq;->a(Ljava/lang/Class;Ljava/lang/Class;)Laki;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lall;-><init>(Lakv;)V
+    invoke-direct {v0, v1}, Lalm;-><init>(Laki;)V
 
     return-object v0
 .end method

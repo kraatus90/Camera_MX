@@ -48,7 +48,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     iput-boolean p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/PittPattFaceDetector;->mEnableTracking:Z
 

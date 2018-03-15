@@ -1,50 +1,65 @@
 .class final Lyw;
-.super Ljava/lang/Object;
+.super Labp;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Z
-
-.field private synthetic b:Labe;
-
-.field private synthetic c:Lyv;
 
 
 # direct methods
-.method constructor <init>(Lyv;ZLabe;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lyw;->c:Lyv;
+    const/4 v0, 0x0
 
-    iput-boolean p2, p0, Lyw;->a:Z
-
-    iput-object p3, p0, Lyw;->b:Labe;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Labp;-><init>(Landroid/os/Handler;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a(I)V
     .locals 3
 
-    iget-object v0, p0, Lyw;->c:Lyv;
+    sget-object v0, Lyv;->a:Lacf;
 
-    iget-object v0, v0, Lyv;->a:Lyu;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lyu;->a:Laau;
+    const-string v2, "onCameraError called with no handler set: "
 
-    iget-boolean v1, p0, Lyw;->a:Z
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lyw;->b:Labe;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0, v1, v2}, Laau;->a(ZLabe;)V
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lace;->e(Lacf;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final a(Ljava/lang/RuntimeException;)V
+    .locals 2
+
+    sget-object v0, Lyv;->a:Lacf;
+
+    const-string v1, "onDispatchThreadException called with no handler set"
+
+    invoke-static {v0, v1, p1}, Lace;->b(Lacf;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final a(Ljava/lang/RuntimeException;Ljava/lang/String;II)V
+    .locals 2
+
+    sget-object v0, Lyv;->a:Lacf;
+
+    const-string v1, "onCameraException called with no handler set"
+
+    invoke-static {v0, v1, p1}, Lace;->b(Lacf;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

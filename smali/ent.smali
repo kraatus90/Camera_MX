@@ -1,122 +1,80 @@
-.class final Lent;
+.class public final Lent;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lfua;
+
+# static fields
+.field private static h:Lent;
 
 
 # instance fields
-.field private synthetic a:Ljava/io/File;
+.field public a:J
 
-.field private synthetic b:Lgvw;
+.field public b:J
 
-.field private synthetic c:Lgrz;
+.field public c:J
 
-.field private synthetic d:Lenn;
+.field public d:J
+
+.field public e:J
+
+.field public f:J
+
+.field public final g:Lenx;
 
 
 # direct methods
-.method constructor <init>(Lenn;Ljava/io/File;Lgvw;Lgrz;)V
-    .locals 0
+.method private constructor <init>(Liom;)V
+    .locals 2
 
-    iput-object p1, p0, Lent;->d:Lenn;
-
-    iput-object p2, p0, Lent;->a:Ljava/io/File;
-
-    iput-object p3, p0, Lent;->b:Lgvw;
-
-    iput-object p4, p0, Lent;->c:Lgrz;
+    const-wide/16 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide v0, p0, Lent;->a:J
+
+    iput-wide v0, p0, Lent;->b:J
+
+    iput-wide v0, p0, Lent;->c:J
+
+    iput-wide v0, p0, Lent;->d:J
+
+    iput-wide v0, p0, Lent;->e:J
+
+    iput-wide v0, p0, Lent;->f:J
+
+    new-instance v0, Lenx;
+
+    new-instance v1, Lenu;
+
+    invoke-direct {v1, p0}, Lenu;-><init>(Lent;)V
+
+    invoke-direct {v0, v1}, Lenx;-><init>(Ljava/lang/Runnable;)V
+
+    iput-object v0, p0, Lent;->g:Lenx;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ljava/io/File;
-    .locals 1
-
-    iget-object v0, p0, Lent;->a:Ljava/io/File;
-
-    return-object v0
-.end method
-
-.method public final b()Lgvw;
-    .locals 1
-
-    iget-object v0, p0, Lent;->b:Lgvw;
-
-    return-object v0
-.end method
-
-.method public final c()Licf;
+.method public static a()Lent;
     .locals 2
 
-    iget-object v0, p0, Lent;->c:Lgrz;
+    sget-object v0, Lent;->h:Lent;
 
-    iget-object v0, v0, Lgrz;->c:Ljht;
+    if-nez v0, :cond_0
 
-    const/4 v1, 0x0
+    new-instance v0, Lent;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-instance v1, Liom;
 
-    move-result-object v1
+    invoke-direct {v1}, Liom;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljht;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lent;-><init>(Liom;)V
 
-    move-result-object v0
+    sput-object v0, Lent;->h:Lent;
 
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v0}, Licf;->a(I)Licf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d()Lici;
-    .locals 3
-
-    new-instance v0, Lici;
-
-    iget-object v1, p0, Lent;->c:Lgrz;
-
-    iget-object v1, v1, Lgrz;->a:Lici;
-
-    iget v1, v1, Lici;->a:I
-
-    iget-object v2, p0, Lent;->c:Lgrz;
-
-    iget-object v2, v2, Lgrz;->a:Lici;
-
-    iget v2, v2, Lici;->b:I
-
-    invoke-direct {v0, v1, v2}, Lici;-><init>(II)V
-
-    return-object v0
-.end method
-
-.method public final e()Ljht;
-    .locals 1
-
-    iget-object v0, p0, Lent;->d:Lenn;
-
-    iget-object v0, v0, Lenn;->d:Ljht;
-
-    return-object v0
-.end method
-
-.method public final f()Ljht;
-    .locals 1
-
-    sget-object v0, Ljhi;->a:Ljhi;
+    :cond_0
+    sget-object v0, Lent;->h:Lent;
 
     return-object v0
 .end method

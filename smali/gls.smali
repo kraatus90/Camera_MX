@@ -1,35 +1,36 @@
-.class final Lgls;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lgls;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Lgll;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgll;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lgls;->a:Lgll;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lgls;->a:Lgll;
+    new-instance v0, Lcom/google/android/apps/camera/stats/CameraActivitySession;
 
-    iget-object v0, v0, Lgll;->b:Lgmu;
+    invoke-static {}, Lglt;->a()Lglt;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    iput-boolean v1, v0, Lgmu;->b:Z
+    new-instance v2, Liom;
 
-    return-void
+    invoke-direct {v2}, Liom;-><init>()V
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/apps/camera/stats/CameraActivitySession;-><init>(Lglt;Liom;)V
+
+    return-object v0
 .end method

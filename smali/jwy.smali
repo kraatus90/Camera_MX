@@ -1,391 +1,262 @@
-.class final Ljwy;
-.super Ljava/lang/Object;
+.class Ljwy;
+.super Ljww;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/SortedSet;
 
 
-# instance fields
-.field private a:J
-
-.field private b:F
-
-.field private c:F
-
-.field private d:F
-
-.field private e:F
-
-.field private f:Z
-
-.field private g:Landroid/view/animation/AccelerateDecelerateInterpolator;
-
-.field private h:Landroid/graphics/PointF;
-
-.field private i:Landroid/graphics/PointF;
-
-.field private synthetic j:Ljwv;
+# static fields
+.field public static final serialVersionUID:J
 
 
 # direct methods
-.method constructor <init>(Ljwv;FFFZ)V
-    .locals 4
+.method constructor <init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
+    .locals 0
 
-    iput-object p1, p0, Ljwy;->j:Ljwv;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/view/animation/AccelerateDecelerateInterpolator;
-
-    invoke-direct {v0}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
-
-    iput-object v0, p0, Ljwy;->g:Landroid/view/animation/AccelerateDecelerateInterpolator;
-
-    sget v0, Leh;->bT:I
-
-    iput v0, p1, Ljwv;->c:I
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Ljwy;->a:J
-
-    iget v0, p1, Ljwv;->a:F
-
-    iput v0, p0, Ljwy;->b:F
-
-    iput p2, p0, Ljwy;->c:F
-
-    iput-boolean p5, p0, Ljwy;->f:Z
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p3, p4, v0}, Ljwv;->a(FFZ)Landroid/graphics/PointF;
-
-    move-result-object v0
-
-    iget v1, v0, Landroid/graphics/PointF;->x:F
-
-    iput v1, p0, Ljwy;->d:F
-
-    iget v0, v0, Landroid/graphics/PointF;->y:F
-
-    iput v0, p0, Ljwy;->e:F
-
-    iget v0, p0, Ljwy;->d:F
-
-    iget v1, p0, Ljwy;->e:F
-
-    iget-object v2, p1, Ljwv;->b:Landroid/graphics/Matrix;
-
-    iget-object v3, p1, Ljwv;->f:[F
-
-    invoke-virtual {v2, v3}, Landroid/graphics/Matrix;->getValues([F)V
-
-    invoke-virtual {p1}, Ljwv;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-virtual {p1}, Ljwv;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float/2addr v0, v2
-
-    div-float/2addr v1, v3
-
-    iget-object v2, p1, Ljwv;->f:[F
-
-    const/4 v3, 0x2
-
-    aget v2, v2, v3
-
-    invoke-virtual {p1}, Ljwv;->d()F
-
-    move-result v3
-
-    mul-float/2addr v0, v3
-
-    add-float/2addr v0, v2
-
-    iget-object v2, p1, Ljwv;->f:[F
-
-    const/4 v3, 0x5
-
-    aget v2, v2, v3
-
-    invoke-virtual {p1}, Ljwv;->e()F
-
-    move-result v3
-
-    mul-float/2addr v1, v3
-
-    add-float/2addr v1, v2
-
-    new-instance v2, Landroid/graphics/PointF;
-
-    invoke-direct {v2, v0, v1}, Landroid/graphics/PointF;-><init>(FF)V
-
-    iput-object v2, p0, Ljwy;->h:Landroid/graphics/PointF;
-
-    new-instance v0, Landroid/graphics/PointF;
-
-    iget v1, p1, Ljwv;->i:I
-
-    div-int/lit8 v1, v1, 0x2
-
-    int-to-float v1, v1
-
-    iget v2, p1, Ljwv;->j:I
-
-    div-int/lit8 v2, v2, 0x2
-
-    int-to-float v2, v2
-
-    invoke-direct {v0, v1, v2}, Landroid/graphics/PointF;-><init>(FF)V
-
-    iput-object v0, p0, Ljwy;->i:Landroid/graphics/PointF;
+    invoke-direct {p0, p1, p2}, Ljww;-><init>(Ljava/util/Set;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 9
+.method synthetic a()Ljava/util/Collection;
+    .locals 1
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result-object v0
 
-    move-result-wide v0
+    return-object v0
+.end method
 
-    iget-wide v2, p0, Ljwy;->a:J
+.method synthetic b()Ljava/lang/Object;
+    .locals 1
 
-    sub-long/2addr v0, v2
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    long-to-float v0, v0
+    move-result-object v0
 
-    const/high16 v1, 0x43fa0000    # 500.0f
+    return-object v0
+.end method
 
-    div-float/2addr v0, v1
+.method c()Ljava/util/SortedSet;
+    .locals 1
 
-    invoke-static {v8, v0}, Ljava/lang/Math;->min(FF)F
+    invoke-super {p0}, Ljww;->d()Ljava/util/Set;
 
-    move-result v0
+    move-result-object v0
 
-    iget-object v1, p0, Ljwy;->g:Landroid/view/animation/AccelerateDecelerateInterpolator;
+    check-cast v0, Ljava/util/SortedSet;
 
-    invoke-virtual {v1, v0}, Landroid/view/animation/AccelerateDecelerateInterpolator;->getInterpolation(F)F
+    return-object v0
+.end method
 
-    move-result v0
+.method public comparator()Ljava/util/Comparator;
+    .locals 2
 
-    iget v1, p0, Ljwy;->b:F
+    iget-object v1, p0, Ljwy;->a:Ljava/lang/Object;
 
-    iget v2, p0, Ljwy;->c:F
+    monitor-enter v1
 
-    iget v3, p0, Ljwy;->b:F
+    :try_start_0
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    sub-float/2addr v2, v3
+    move-result-object v0
 
-    mul-float/2addr v2, v0
+    invoke-interface {v0}, Ljava/util/SortedSet;->comparator()Ljava/util/Comparator;
 
-    add-float/2addr v1, v2
+    move-result-object v0
 
-    float-to-double v2, v1
+    monitor-exit v1
 
-    iget-object v1, p0, Ljwy;->j:Ljwv;
+    return-object v0
 
-    iget v1, v1, Ljwv;->a:F
+    :catchall_0
+    move-exception v0
 
-    float-to-double v4, v1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    div-double/2addr v2, v4
+    throw v0
+.end method
 
-    iget-object v1, p0, Ljwy;->j:Ljwv;
+.method synthetic d()Ljava/util/Set;
+    .locals 1
 
-    iget v4, p0, Ljwy;->d:F
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    iget v5, p0, Ljwy;->e:F
+    move-result-object v0
 
-    iget-boolean v6, p0, Ljwy;->f:Z
+    return-object v0
+.end method
 
-    invoke-static/range {v1 .. v6}, Ljwv;->a(Ljwv;DFFZ)V
+.method public first()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v1, p0, Ljwy;->h:Landroid/graphics/PointF;
+    iget-object v1, p0, Ljwy;->a:Ljava/lang/Object;
 
-    iget v1, v1, Landroid/graphics/PointF;->x:F
+    monitor-enter v1
 
-    iget-object v2, p0, Ljwy;->i:Landroid/graphics/PointF;
+    :try_start_0
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    iget v2, v2, Landroid/graphics/PointF;->x:F
+    move-result-object v0
 
-    iget-object v3, p0, Ljwy;->h:Landroid/graphics/PointF;
+    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
 
-    iget v3, v3, Landroid/graphics/PointF;->x:F
+    move-result-object v0
 
-    sub-float/2addr v2, v3
+    monitor-exit v1
 
-    mul-float/2addr v2, v0
+    return-object v0
 
-    add-float/2addr v1, v2
+    :catchall_0
+    move-exception v0
 
-    iget-object v2, p0, Ljwy;->h:Landroid/graphics/PointF;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget v2, v2, Landroid/graphics/PointF;->y:F
+    throw v0
+.end method
 
-    iget-object v3, p0, Ljwy;->i:Landroid/graphics/PointF;
+.method public headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+    .locals 4
 
-    iget v3, v3, Landroid/graphics/PointF;->y:F
+    iget-object v1, p0, Ljwy;->a:Ljava/lang/Object;
 
-    iget-object v4, p0, Ljwy;->h:Landroid/graphics/PointF;
+    monitor-enter v1
 
-    iget v4, v4, Landroid/graphics/PointF;->y:F
+    :try_start_0
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    sub-float/2addr v3, v4
+    move-result-object v0
 
-    mul-float/2addr v3, v0
+    invoke-interface {v0, p1}, Ljava/util/SortedSet;->headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
 
-    add-float/2addr v2, v3
+    move-result-object v0
 
-    iget-object v3, p0, Ljwy;->j:Ljwv;
+    iget-object v2, p0, Ljwy;->a:Ljava/lang/Object;
 
-    iget v4, p0, Ljwy;->d:F
+    new-instance v3, Ljwy;
 
-    iget v5, p0, Ljwy;->e:F
+    invoke-direct {v3, v0, v2}, Ljwy;-><init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
 
-    iget-object v6, v3, Ljwv;->b:Landroid/graphics/Matrix;
+    monitor-exit v1
 
-    iget-object v7, v3, Ljwv;->f:[F
+    return-object v3
 
-    invoke-virtual {v6, v7}, Landroid/graphics/Matrix;->getValues([F)V
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v3}, Ljwv;->getDrawable()Landroid/graphics/drawable/Drawable;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v6
+    throw v0
+.end method
 
-    invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+.method public last()Ljava/lang/Object;
+    .locals 2
 
-    move-result v6
+    iget-object v1, p0, Ljwy;->a:Ljava/lang/Object;
 
-    int-to-float v6, v6
+    monitor-enter v1
 
-    invoke-virtual {v3}, Ljwv;->getDrawable()Landroid/graphics/drawable/Drawable;
+    :try_start_0
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-interface {v0}, Ljava/util/SortedSet;->last()Ljava/lang/Object;
 
-    move-result v7
+    move-result-object v0
 
-    int-to-float v7, v7
+    monitor-exit v1
 
-    div-float/2addr v4, v6
+    return-object v0
 
-    div-float/2addr v5, v7
+    :catchall_0
+    move-exception v0
 
-    iget-object v6, v3, Ljwv;->f:[F
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v7, 0x2
+    throw v0
+.end method
 
-    aget v6, v6, v7
+.method public subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
+    .locals 4
 
-    invoke-virtual {v3}, Ljwv;->d()F
+    iget-object v1, p0, Ljwy;->a:Ljava/lang/Object;
 
-    move-result v7
+    monitor-enter v1
 
-    mul-float/2addr v4, v7
+    :try_start_0
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    add-float/2addr v4, v6
+    move-result-object v0
 
-    iget-object v6, v3, Ljwv;->f:[F
+    invoke-interface {v0, p1, p2}, Ljava/util/SortedSet;->subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
 
-    const/4 v7, 0x5
+    move-result-object v0
 
-    aget v6, v6, v7
+    iget-object v2, p0, Ljwy;->a:Ljava/lang/Object;
 
-    invoke-virtual {v3}, Ljwv;->e()F
+    new-instance v3, Ljwy;
 
-    move-result v3
+    invoke-direct {v3, v0, v2}, Ljwy;-><init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
 
-    mul-float/2addr v3, v5
+    monitor-exit v1
 
-    add-float/2addr v3, v6
+    return-object v3
 
-    new-instance v5, Landroid/graphics/PointF;
+    :catchall_0
+    move-exception v0
 
-    invoke-direct {v5, v4, v3}, Landroid/graphics/PointF;-><init>(FF)V
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v3, p0, Ljwy;->j:Ljwv;
+    throw v0
+.end method
 
-    iget-object v3, v3, Ljwv;->b:Landroid/graphics/Matrix;
+.method public tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+    .locals 4
 
-    iget v4, v5, Landroid/graphics/PointF;->x:F
+    iget-object v1, p0, Ljwy;->a:Ljava/lang/Object;
 
-    sub-float/2addr v1, v4
+    monitor-enter v1
 
-    iget v4, v5, Landroid/graphics/PointF;->y:F
+    :try_start_0
+    invoke-virtual {p0}, Ljwy;->c()Ljava/util/SortedSet;
 
-    sub-float/2addr v2, v4
+    move-result-object v0
 
-    invoke-virtual {v3, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+    invoke-interface {v0, p1}, Ljava/util/SortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
 
-    iget-object v1, p0, Ljwy;->j:Ljwv;
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljwv;->c()V
+    iget-object v2, p0, Ljwy;->a:Ljava/lang/Object;
 
-    iget-object v1, p0, Ljwy;->j:Ljwv;
+    new-instance v3, Ljwy;
 
-    iget-object v2, p0, Ljwy;->j:Ljwv;
+    invoke-direct {v3, v0, v2}, Ljwy;-><init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
 
-    iget-object v2, v2, Ljwv;->b:Landroid/graphics/Matrix;
+    monitor-exit v1
 
-    invoke-virtual {v1, v2}, Ljwv;->setImageMatrix(Landroid/graphics/Matrix;)V
+    return-object v3
 
-    cmpg-float v0, v0, v8
+    :catchall_0
+    move-exception v0
 
-    if-gez v0, :cond_1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Ljwy;->j:Ljwv;
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x10
-
-    if-lt v1, v2, :cond_0
-
-    invoke-virtual {v0, p0}, Ljwv;->postOnAnimation(Ljava/lang/Runnable;)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    const-wide/16 v2, 0x10
-
-    invoke-virtual {v0, p0, v2, v3}, Ljwv;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Ljwy;->j:Ljwv;
-
-    sget v1, Leh;->bP:I
-
-    iput v1, v0, Ljwv;->c:I
-
-    goto :goto_0
+    throw v0
 .end method

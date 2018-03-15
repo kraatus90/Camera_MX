@@ -1,43 +1,69 @@
-.class public final Lecj;
-.super Ljava/lang/Object;
+.class final Lecj;
+.super Leah;
 .source "PG"
 
 
 # instance fields
-.field public final a:Licz;
-
-.field public final b:Licv;
-
-.field public final c:Lhzr;
-
-.field public final d:Lghe;
-
-.field public final e:Ldvc;
-
-.field public final f:Leam;
-
-.field public final g:Ldnd;
+.field private final synthetic a:Lech;
 
 
 # direct methods
-.method constructor <init>(Licz;Licv;Lhzr;Lghe;Ldvc;Leam;Ldnd;)V
+.method constructor <init>(Lech;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lecj;->a:Lech;
 
-    iput-object p1, p0, Lecj;->a:Licz;
+    invoke-direct {p0, p1}, Leah;-><init>(Leaf;)V
 
-    iput-object p2, p0, Lecj;->b:Licv;
+    return-void
+.end method
 
-    iput-object p3, p0, Lecj;->c:Lhzr;
 
-    iput-object p4, p0, Lecj;->d:Lghe;
+# virtual methods
+.method public final n()V
+    .locals 2
 
-    iput-object p5, p0, Lecj;->e:Ldvc;
+    iget-object v0, p0, Lecj;->a:Lech;
 
-    iput-object p6, p0, Lecj;->f:Leam;
+    iget-object v0, v0, Lech;->l:Lgld;
 
-    iput-object p7, p0, Lecj;->g:Ldnd;
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Leah;->n()V
+
+    iget-object v0, p0, Lecj;->a:Lech;
+
+    iget-object v0, v0, Lech;->l:Lgld;
+
+    iget-object v1, p0, Lecj;->a:Lech;
+
+    iget-object v1, v1, Lech;->m:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final p()V
+    .locals 2
+
+    iget-object v0, p0, Lecj;->a:Lech;
+
+    iget-object v0, v0, Lech;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Leah;->p()V
+
+    iget-object v0, p0, Lecj;->a:Lech;
+
+    iget-object v0, v0, Lech;->l:Lgld;
+
+    iget-object v1, p0, Lecj;->a:Lech;
+
+    iget-object v1, v1, Lech;->m:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

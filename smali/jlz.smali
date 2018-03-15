@@ -1,119 +1,85 @@
-.class Ljlz;
-.super Ljne;
+.class public final Ljlz;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final b:Ljava/util/Map;
+.field public final a:Ljjz;
+
+.field public final b:Ljjz;
+
+.field public final c:Ljjz;
+
+.field public d:F
+
+.field public e:F
+
+.field public f:F
+
+.field public g:F
+
+.field public h:F
+
+.field public i:F
+
+.field public j:F
+
+.field public k:F
+
+.field public l:Ljma;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Map;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljne;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    iput-object v0, p0, Ljlz;->b:Ljava/util/Map;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public clear()V
-    .locals 1
-
-    iget-object v0, p0, Ljlz;->b:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
-
-    return-void
-.end method
-
-.method public contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljlz;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isEmpty()Z
-    .locals 1
-
-    iget-object v0, p0, Ljlz;->b:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public iterator()Ljava/util/Iterator;
+.method public constructor <init>(Ljjz;Ljjz;Ljjz;)V
     .locals 2
 
-    iget-object v0, p0, Ljlz;->b:Ljava/util/Map;
+    const v1, 0x3dcccccd    # 0.1f
 
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    iput v0, p0, Ljlz;->d:F
 
-    move-result-object v0
+    const v0, 0x3e4ccccd    # 0.2f
 
-    sget-object v1, Ljlv;->a:Ljlv;
+    iput v0, p0, Ljlz;->e:F
 
-    invoke-static {v0, v1}, Liui;->a(Ljava/util/Iterator;Ljhj;)Ljava/util/Iterator;
+    const v0, 0x3c23d70a    # 0.01f
 
-    move-result-object v0
+    iput v0, p0, Ljlz;->f:F
 
-    return-object v0
-.end method
+    const/high16 v0, 0x437a0000    # 250.0f
 
-.method public remove(Ljava/lang/Object;)Z
-    .locals 1
+    iput v0, p0, Ljlz;->g:F
 
-    invoke-virtual {p0, p1}, Ljlz;->contains(Ljava/lang/Object;)Z
+    const/high16 v0, 0x43fa0000    # 500.0f
 
-    move-result v0
+    iput v0, p0, Ljlz;->h:F
 
-    if-eqz v0, :cond_0
+    iput v1, p0, Ljlz;->i:F
 
-    iget-object v0, p0, Ljlz;->b:Ljava/util/Map;
+    const v0, 0x3e99999a    # 0.3f
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    iput v0, p0, Ljlz;->j:F
 
-    const/4 v0, 0x1
+    iput v1, p0, Ljlz;->k:F
 
-    :goto_0
-    return v0
+    sget-object v0, Ljma;->a:Ljma;
 
-    :cond_0
-    const/4 v0, 0x0
+    iput-object v0, p0, Ljlz;->l:Ljma;
 
-    goto :goto_0
-.end method
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public size()I
-    .locals 1
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Ljlz;->b:Ljava/util/Map;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljava/util/Map;->size()I
+    iput-object p1, p0, Ljlz;->a:Ljjz;
 
-    move-result v0
+    iput-object p2, p0, Ljlz;->b:Ljjz;
 
-    return v0
+    iput-object p3, p0, Ljlz;->c:Ljjz;
+
+    return-void
 .end method

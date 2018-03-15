@@ -1,49 +1,58 @@
-.class final Ldxu;
+.class public final Ldxu;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private a:Ldxe;
+
+# static fields
+.field public static final a:Ldxu;
 
 
 # direct methods
-.method public constructor <init>(Ldxe;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ldxu;
+
+    invoke-direct {v0}, Ldxu;-><init>()V
+
+    sput-object v0, Ldxu;->a:Ldxu;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldxu;->a:Ldxe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldxw;
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Ldxw;
+    new-instance v0, Libw;
 
-    iget-object v1, p0, Ldxu;->a:Ldxe;
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    iget-object v1, v1, Ldxe;->b:Ljava/util/List;
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-direct {v0, v1}, Ldxw;-><init>(Ljava/util/List;)V
+    move-result-object v1
 
-    return-object v0
-.end method
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
 
-.method public final b()Ldxw;
-    .locals 2
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    new-instance v0, Ldxw;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v1, p0, Ldxu;->a:Ldxe;
+    move-result-object v0
 
-    iget-object v1, v1, Ldxe;->c:Ljava/util/List;
-
-    invoke-direct {v0, v1}, Ldxw;-><init>(Ljava/util/List;)V
+    check-cast v0, Lick;
 
     return-object v0
 .end method

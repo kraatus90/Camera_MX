@@ -1,57 +1,47 @@
-.class final Lguo;
+.class public final synthetic Lguo;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private synthetic a:Lgun;
+.field private final a:Lgug;
 
 
 # direct methods
-.method constructor <init>(Lgun;)V
+.method public constructor <init>(Lgug;)V
     .locals 0
 
-    iput-object p1, p0, Lguo;->a:Lgun;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lguo;->a:Lgug;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lguo;->a:Lgug;
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Lgvj;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lguo;->a:Lgun;
-
-    iget-object v0, v0, Lgun;->a:Lgut;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-interface {v0, v1}, Lgut;->d(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+    invoke-virtual {v1, v0}, Lgvj;->f(I)Lgvj;
 
     return-void
 .end method

@@ -3,54 +3,40 @@
 .source "PG"
 
 # interfaces
-.implements Lbii;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbim;->a:Lkgv;
+
+    iput-object p2, p0, Lbim;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    return-void
-.end method
+    new-instance v0, Lbii;
 
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    iget-object v1, p0, Lbim;->a:Lkgv;
 
-    return-void
-.end method
+    iget-object v2, p0, Lbim;->b:Lkgv;
 
-.method public final a()Z
-    .locals 1
+    invoke-direct {v0, v1, v2}, Lbii;-><init>(Lkgv;Lkgv;)V
 
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final b(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

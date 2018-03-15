@@ -1,42 +1,52 @@
-.class public final Lbrh;
+.class final Lbrh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Lbrf;
+.field private final synthetic a:Lbra;
 
 
 # direct methods
-.method public constructor <init>(Lbrf;)V
+.method constructor <init>(Lbra;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbrh;->a:Lbra;
 
-    iput-object p1, p0, Lbrh;->a:Lbrf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    iget-object v0, p0, Lbrh;->a:Lbrf;
-
-    iget-object v0, v0, Lbrf;->b:Landroid/content/Context;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Context;
+    check-cast v0, Ljava/lang/Float;
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    iget-object v1, p0, Lbrh;->a:Lbra;
+
+    iget-object v1, v1, Lbra;->d:Lbqo;
+
+    invoke-virtual {v1, v0}, Lbqo;->b(F)V
+
+    iget-object v0, p0, Lbrh;->a:Lbra;
+
+    iget-object v0, v0, Lbra;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->invalidate()V
+
+    return-void
 .end method

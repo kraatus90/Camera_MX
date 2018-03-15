@@ -1,131 +1,121 @@
 .class final Lgi;
-.super Ljava/lang/Object;
+.super Lgp;
 .source "PG"
-
-# interfaces
-.implements Lgk;
-
-
-# static fields
-.field public static final a:Lgi;
 
 
 # instance fields
-.field private b:Z
+.field private final synthetic c:Lgh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lgi;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lgi;-><init>(Z)V
-
-    sput-object v0, Lgi;->a:Lgi;
-
-    new-instance v0, Lgi;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lgi;-><init>(Z)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Z)V
+.method constructor <init>(Lgh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgi;->c:Lgh;
 
-    iput-boolean p1, p0, Lgi;->b:Z
+    invoke-direct {p0}, Lgp;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/CharSequence;II)I
-    .locals 6
+.method protected final a()I
+    .locals 1
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Lgi;->c:Lgh;
 
-    const/4 v2, 0x0
+    iget v0, v0, Lgh;->b:I
 
-    add-int/lit8 v4, p3, 0x0
+    return v0
+.end method
 
-    move v3, v2
+.method protected final a(Ljava/lang/Object;)I
+    .locals 1
 
-    move v0, v2
+    iget-object v0, p0, Lgi;->c:Lgh;
 
-    :goto_0
-    if-ge v3, v4, :cond_2
+    invoke-virtual {v0, p1}, Lgh;->a(Ljava/lang/Object;)I
 
-    invoke-interface {p1, v3}, Ljava/lang/CharSequence;->charAt(I)C
+    move-result v0
 
-    move-result v5
+    return v0
+.end method
 
-    invoke-static {v5}, Ljava/lang/Character;->getDirectionality(C)B
+.method protected final a(II)Ljava/lang/Object;
+    .locals 2
 
-    move-result v5
+    iget-object v0, p0, Lgi;->c:Lgh;
 
-    invoke-static {v5}, Lgh;->a(I)I
+    iget-object v0, v0, Lgh;->a:[Ljava/lang/Object;
 
-    move-result v5
+    shl-int/lit8 v1, p1, 0x1
 
-    packed-switch v5, :pswitch_data_0
+    add-int/2addr v1, p2
 
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
+    aget-object v0, v0, v1
 
-    goto :goto_0
+    return-object v0
+.end method
 
-    :pswitch_0
-    iget-boolean v0, p0, Lgi;->b:Z
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    if-eqz v0, :cond_1
+    iget-object v0, p0, Lgi;->c:Lgh;
 
-    move v1, v2
+    invoke-virtual {v0, p1, p2}, Lgh;->a(ILjava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    :goto_2
-    return v1
+    move-result-object v0
 
-    :cond_1
-    move v0, v1
+    return-object v0
+.end method
 
-    goto :goto_1
+.method protected final a(I)V
+    .locals 1
 
-    :pswitch_1
-    iget-boolean v0, p0, Lgi;->b:Z
+    iget-object v0, p0, Lgi;->c:Lgh;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, p1}, Lgh;->d(I)Ljava/lang/Object;
 
-    move v0, v1
+    return-void
+.end method
 
-    goto :goto_1
+.method protected final a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
 
-    :cond_2
-    if-eqz v0, :cond_3
+    iget-object v0, p0, Lgi;->c:Lgh;
 
-    iget-boolean v0, p0, Lgi;->b:Z
+    invoke-virtual {v0, p1, p2}, Lgh;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    return-void
+.end method
 
-    move v1, v2
+.method protected final b(Ljava/lang/Object;)I
+    .locals 1
 
-    goto :goto_2
+    iget-object v0, p0, Lgi;->c:Lgh;
 
-    :cond_3
-    const/4 v1, 0x2
+    invoke-virtual {v0, p1}, Lgh;->b(Ljava/lang/Object;)I
 
-    goto :goto_2
+    move-result v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    return v0
+.end method
+
+.method protected final b()Ljava/util/Map;
+    .locals 1
+
+    iget-object v0, p0, Lgi;->c:Lgh;
+
+    return-object v0
+.end method
+
+.method protected final c()V
+    .locals 1
+
+    iget-object v0, p0, Lgi;->c:Lgh;
+
+    invoke-virtual {v0}, Lgh;->clear()V
+
+    return-void
 .end method

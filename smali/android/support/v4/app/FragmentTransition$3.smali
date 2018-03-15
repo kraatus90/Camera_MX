@@ -17,13 +17,13 @@
 
 .field public final synthetic val$inIsPop:Z
 
-.field public final synthetic val$inSharedElements:Lgm;
+.field public final synthetic val$inSharedElements:Lgh;
 
 .field public final synthetic val$outFragment:Landroid/support/v4/app/Fragment;
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLgm;Landroid/view/View;Landroid/support/v4/app/FragmentTransitionImpl;Landroid/graphics/Rect;)V
+.method constructor <init>(Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLgh;Landroid/view/View;Landroid/support/v4/app/FragmentTransitionImpl;Landroid/graphics/Rect;)V
     .locals 0
 
     iput-object p1, p0, Landroid/support/v4/app/FragmentTransition$3;->val$inFragment:Landroid/support/v4/app/Fragment;
@@ -32,7 +32,7 @@
 
     iput-boolean p3, p0, Landroid/support/v4/app/FragmentTransition$3;->val$inIsPop:Z
 
-    iput-object p4, p0, Landroid/support/v4/app/FragmentTransition$3;->val$inSharedElements:Lgm;
+    iput-object p4, p0, Landroid/support/v4/app/FragmentTransition$3;->val$inSharedElements:Lgh;
 
     iput-object p5, p0, Landroid/support/v4/app/FragmentTransition$3;->val$epicenterView:Landroid/view/View;
 
@@ -56,11 +56,11 @@
 
     iget-boolean v2, p0, Landroid/support/v4/app/FragmentTransition$3;->val$inIsPop:Z
 
-    iget-object v3, p0, Landroid/support/v4/app/FragmentTransition$3;->val$inSharedElements:Lgm;
+    iget-object v3, p0, Landroid/support/v4/app/FragmentTransition$3;->val$inSharedElements:Lgh;
 
     const/4 v4, 0x0
 
-    invoke-static {v0, v1, v2, v3, v4}, Landroid/support/v4/app/FragmentTransition;->access$200(Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLgm;Z)V
+    invoke-static {v0, v1, v2, v3, v4}, Landroid/support/v4/app/FragmentTransition;->access$200(Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLgh;Z)V
 
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransition$3;->val$epicenterView:Landroid/view/View;
 

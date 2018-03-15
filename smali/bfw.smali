@@ -1,43 +1,35 @@
-.class public final Lbfw;
+.class final synthetic Lbfw;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljqv;
 
 
 # instance fields
-.field public a:Ljuw;
-
-.field public b:Ljuw;
+.field private final a:Lbfv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p1}, Ljuh;->a(Ljava/lang/Throwable;)Ljuw;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbfw;->b:Ljuw;
-
-    invoke-static {p1}, Ljuh;->a(Ljava/lang/Throwable;)Ljuw;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbfw;->a:Ljuw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljuw;Ljuw;)V
+.method constructor <init>(Lbfv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbfw;->b:Ljuw;
-
-    iput-object p2, p0, Lbfw;->a:Ljuw;
+    iput-object p1, p0, Lbfw;->a:Lbfv;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lbfw;->a:Lbfv;
+
+    invoke-virtual {v0}, Lbfv;->n()Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
 .end method

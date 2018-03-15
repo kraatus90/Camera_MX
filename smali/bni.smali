@@ -3,88 +3,206 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lijc;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field public a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbni;->a:Ljxn;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    iput-object p2, p0, Lbni;->b:Ljxn;
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
-    iput-object p3, p0, Lbni;->c:Ljxn;
-
-    iput-object p4, p0, Lbni;->d:Ljxn;
-
-    iput-object p5, p0, Lbni;->e:Ljxn;
+    iput-object v0, p0, Lbni;->a:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a()V
+    .locals 2
 
-    new-instance v0, Lbng;
+    iget-object v0, p0, Lbni;->a:Ljava/util/List;
 
-    iget-object v1, p0, Lbni;->a:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lbnc;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v2, p0, Lbni;->b:Ljxn;
+    move-result v0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v2
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    check-cast v2, Landroid/content/ContentResolver;
+    move-result-object v0
 
-    iget-object v3, p0, Lbni;->c:Ljxn;
+    check-cast v0, Lijc;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lijc;->a()V
 
-    move-result-object v3
+    goto :goto_0
 
-    check-cast v3, Lgrw;
+    :cond_0
+    return-void
+.end method
 
-    iget-object v4, p0, Lbni;->d:Ljxn;
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lbni;->a:Ljava/util/List;
 
-    move-result-object v4
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    check-cast v4, Lgvx;
+    move-result-object v1
 
-    iget-object v5, p0, Lbni;->e:Ljxn;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v5
+    if-eqz v0, :cond_0
 
-    check-cast v5, Lbod;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v5}, Lbng;-><init>(Lbnc;Landroid/content/ContentResolver;Lgrw;Lgvx;Lbod;)V
+    move-result-object v0
 
-    return-object v0
+    check-cast v0, Lijc;
+
+    invoke-interface {v0, p1}, Lijc;->a(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lbni;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lijc;
+
+    invoke-interface {v0}, Lijc;->b()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Lbni;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lijc;
+
+    invoke-interface {v0}, Lijc;->c()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final d()V
+    .locals 2
+
+    iget-object v0, p0, Lbni;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lijc;
+
+    invoke-interface {v0}, Lijc;->d()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final e()V
+    .locals 2
+
+    iget-object v0, p0, Lbni;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lijc;
+
+    invoke-interface {v0}, Lijc;->e()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

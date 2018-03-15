@@ -48,7 +48,7 @@
     :goto_0
     const-string v3, "Width must be positive."
 
-    invoke-static {v0, v3}, Liya;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Ljii;->b(ZLjava/lang/Object;)V
 
     iget v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor$Builder;->mHeight:I
 
@@ -57,7 +57,7 @@
     :goto_1
     const-string v0, "Height must be positive."
 
-    invoke-static {v1, v0}, Liya;->b(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Ljii;->b(ZLjava/lang/Object;)V
 
     new-instance v0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;
 
@@ -120,14 +120,14 @@
     :goto_0
     const-string v3, "Width must be positive"
 
-    invoke-static {v0, v3}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
 
     if-lez p2, :cond_1
 
     :goto_1
     const-string v0, "Height must be positive"
 
-    invoke-static {v1, v0}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Ljii;->a(ZLjava/lang/Object;)V
 
     iput p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor$Builder;->mWidth:I
 
@@ -159,7 +159,7 @@
 .method public setPittPattAsDetector(Ljava/nio/ByteBuffer;)Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor$Builder;
     .locals 0
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor$Builder;->mLandmarkModels:Ljava/nio/ByteBuffer;
 

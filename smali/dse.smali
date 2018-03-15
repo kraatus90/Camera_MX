@@ -1,19 +1,26 @@
-.class public Ldse;
+.class public final Ldse;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:Liin;
+# interfaces
+.implements Ldou;
 
 
 # direct methods
-.method public constructor <init>(Liin;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldse;->a:Liin;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(J)J
+    .locals 2
+
+    const-wide/16 v0, -0x1
+
+    return-wide v0
 .end method

@@ -1,48 +1,96 @@
-.class final Lvi;
+.class public final Lvi;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/os/Parcelable$ClassLoaderCreator;
+
+# instance fields
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:Z
+
+.field public h:Z
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
+
+    const/high16 v1, -0x80000000
+
+    const/4 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput v0, p0, Lvi;->a:I
+
+    iput v0, p0, Lvi;->b:I
+
+    iput v1, p0, Lvi;->c:I
+
+    iput v1, p0, Lvi;->d:I
+
+    iput v0, p0, Lvi;->e:I
+
+    iput v0, p0, Lvi;->f:I
+
+    iput-boolean v0, p0, Lvi;->g:Z
+
+    iput-boolean v0, p0, Lvi;->h:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public final a(II)V
     .locals 2
 
-    new-instance v0, Lvh;
+    const/high16 v1, -0x80000000
 
-    const/4 v1, 0x0
+    iput p1, p0, Lvi;->c:I
 
-    invoke-direct {v0, p1, v1}, Lvh;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    iput p2, p0, Lvi;->d:I
 
-    return-object v0
-.end method
+    const/4 v0, 0x1
 
-.method public final synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
-    .locals 1
+    iput-boolean v0, p0, Lvi;->h:Z
 
-    new-instance v0, Lvh;
+    iget-boolean v0, p0, Lvi;->g:Z
 
-    invoke-direct {v0, p1, p2}, Lvh;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    if-eqz v0, :cond_2
 
-    return-object v0
-.end method
+    if-eq p2, v1, :cond_0
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+    iput p2, p0, Lvi;->a:I
 
-    new-array v0, p1, [Lvh;
+    :cond_0
+    if-eq p1, v1, :cond_1
 
-    return-object v0
+    iput p1, p0, Lvi;->b:I
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :cond_2
+    if-eq p1, v1, :cond_3
+
+    iput p1, p0, Lvi;->a:I
+
+    :cond_3
+    if-eq p2, v1, :cond_1
+
+    iput p2, p0, Lvi;->b:I
+
+    goto :goto_0
 .end method

@@ -2,89 +2,56 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lcm;
-
 
 # instance fields
-.field private synthetic a:Landroid/view/View;
+.field public a:I
 
-.field private synthetic b:Ljava/util/ArrayList;
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field private g:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;Ljava/util/ArrayList;)V
+.method constructor <init>(Landroid/view/View;)V
     .locals 0
 
-    iput-object p1, p0, Lbx;->a:Landroid/view/View;
-
-    iput-object p2, p0, Lbx;->b:Ljava/util/ArrayList;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbx;->g:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
+.method final a()V
+    .locals 6
 
-    return-void
-.end method
+    const/4 v5, 0x0
 
-.method public final a(Lch;)V
-    .locals 4
+    iget-object v0, p0, Lbx;->g:Landroid/view/View;
 
-    const/4 v2, 0x0
+    iget v1, p0, Lbx;->a:I
 
-    invoke-virtual {p1, p0}, Lch;->b(Lcm;)Lch;
+    iget v2, p0, Lbx;->b:I
 
-    iget-object v0, p0, Lbx;->a:Landroid/view/View;
+    iget v3, p0, Lbx;->c:I
 
-    const/16 v1, 0x8
+    iget v4, p0, Lbx;->d:I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-static {v0, v1, v2, v3, v4}, Ldk;->a(Landroid/view/View;IIII)V
 
-    iget-object v0, p0, Lbx;->b:Ljava/util/ArrayList;
+    iput v5, p0, Lbx;->e:I
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    move v1, v2
-
-    :goto_0
-    if-ge v1, v3, :cond_0
-
-    iget-object v0, p0, Lbx;->b:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 0
+    iput v5, p0, Lbx;->f:I
 
     return-void
 .end method

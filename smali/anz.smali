@@ -1,38 +1,79 @@
-.class public final Lanz;
-.super Ljava/lang/Object;
+.class final Lanz;
+.super Lany;
 .source "PG"
-
-# interfaces
-.implements Laep;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lany;-><init>(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;IILaeo;)Lahg;
+.method static a(Landroid/graphics/drawable/Drawable;)Lagw;
     .locals 1
 
-    check-cast p1, Ljava/io/File;
+    if-eqz p0, :cond_0
 
-    new-instance v0, Lamh;
+    new-instance v0, Lanz;
 
-    invoke-direct {v0, p1}, Lamh;-><init>(Ljava/io/File;)V
+    invoke-direct {v0, p0}, Lanz;-><init>(Landroid/graphics/drawable/Drawable;)V
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/lang/Class;
+    .locals 1
+
+    iget-object v0, p0, Lanz;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final bridge synthetic a(Ljava/lang/Object;Laeo;)Z
-    .locals 1
+.method public final c()I
+    .locals 3
 
     const/4 v0, 0x1
 
+    iget-object v1, p0, Lanz;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v1
+
+    iget-object v2, p0, Lanz;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v2
+
+    mul-int/2addr v1, v2
+
+    shl-int/lit8 v1, v1, 0x2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
     return v0
+.end method
+
+.method public final d()V
+    .locals 0
+
+    return-void
 .end method

@@ -3,50 +3,94 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgis;->a:Ljxn;
+    iput-object p1, p0, Lgis;->a:Lkgv;
+
+    iput-object p2, p0, Lgis;->b:Lkgv;
+
+    iput-object p3, p0, Lgis;->c:Lkgv;
+
+    iput-object p4, p0, Lgis;->d:Lkgv;
+
+    iput-object p5, p0, Lgis;->e:Lkgv;
+
+    iput-object p6, p0, Lgis;->f:Lkgv;
+
+    iput-object p7, p0, Lgis;->g:Lkgv;
+
+    iput-object p8, p0, Lgis;->h:Lkgv;
+
+    iput-object p9, p0, Lgis;->i:Lkgv;
+
+    iput-object p10, p0, Lgis;->j:Lkgv;
+
+    iput-object p11, p0, Lgis;->k:Lkgv;
 
     return-void
-.end method
-
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lgis;
-
-    invoke-direct {v0, p0}, Lgis;-><init>(Ljxn;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    .locals 12
 
-    new-instance v1, Lgiq;
+    new-instance v0, Lgir;
 
-    iget-object v0, p0, Lgis;->a:Ljxn;
+    iget-object v1, p0, Lgis;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Lgis;->b:Lkgv;
 
-    move-result-object v0
+    iget-object v3, p0, Lgis;->c:Lkgv;
 
-    check-cast v0, Ljava/util/Set;
+    iget-object v4, p0, Lgis;->d:Lkgv;
 
-    invoke-direct {v1, v0}, Lgiq;-><init>(Ljava/util/Set;)V
+    iget-object v5, p0, Lgis;->e:Lkgv;
 
-    return-object v1
+    iget-object v6, p0, Lgis;->f:Lkgv;
+
+    iget-object v7, p0, Lgis;->g:Lkgv;
+
+    iget-object v8, p0, Lgis;->h:Lkgv;
+
+    iget-object v9, p0, Lgis;->i:Lkgv;
+
+    iget-object v10, p0, Lgis;->j:Lkgv;
+
+    iget-object v11, p0, Lgis;->k:Lkgv;
+
+    invoke-direct/range {v0 .. v11}, Lgir;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method

@@ -99,13 +99,13 @@
 .method public static getAverageFaceImageDistance(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;II)F
     .locals 9
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -120,7 +120,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Liya;->b(Z)V
+    invoke-static {v0}, Ljii;->b(Z)V
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -135,7 +135,7 @@
     const/4 v0, 0x1
 
     :goto_1
-    invoke-static {v0}, Liya;->b(Z)V
+    invoke-static {v0}, Ljii;->b(Z)V
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -150,7 +150,7 @@
     const/4 v0, 0x1
 
     :goto_2
-    invoke-static {v0}, Liya;->b(Z)V
+    invoke-static {v0}, Ljii;->b(Z)V
 
     const/4 v1, 0x0
 
@@ -175,7 +175,7 @@
 
     check-cast v0, Lcom/google/android/vision/face/Face;
 
-    invoke-static {p4, p5, v0}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceUtils;->getFaceDimension(IILcom/google/android/vision/face/Face;)Ljgh;
+    invoke-static {p4, p5, v0}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceUtils;->getFaceDimension(IILcom/google/android/vision/face/Face;)Ljpt;
 
     move-result-object v6
 
@@ -208,7 +208,7 @@
 
     const/4 v5, 0x1
 
-    invoke-static {p4, p5, v1}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceUtils;->getFaceDimension(IILcom/google/android/vision/face/Face;)Ljgh;
+    invoke-static {p4, p5, v1}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceUtils;->getFaceDimension(IILcom/google/android/vision/face/Face;)Ljpt;
 
     move-result-object v7
 
@@ -224,7 +224,7 @@
 
     check-cast v1, Ljava/nio/ByteBuffer;
 
-    invoke-static {v0, v6, v1, v7}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceUtils;->getFaceImageDistance(Ljava/nio/ByteBuffer;Ljgh;Ljava/nio/ByteBuffer;Ljgh;)F
+    invoke-static {v0, v6, v1, v7}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceUtils;->getFaceImageDistance(Ljava/nio/ByteBuffer;Ljpt;Ljava/nio/ByteBuffer;Ljpt;)F
 
     move-result v0
 
@@ -310,9 +310,9 @@
 
     const/4 v3, 0x0
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -327,7 +327,7 @@
     move v0, v2
 
     :goto_0
-    invoke-static {v0}, Liya;->b(Z)V
+    invoke-static {v0}, Ljii;->b(Z)V
 
     move v4, v3
 
@@ -449,7 +449,7 @@
 .method public static getAverageJoyScore(Ljava/util/List;FFF)F
     .locals 3
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x0
 
@@ -501,7 +501,7 @@
     return v1
 .end method
 
-.method private static getFaceDimension(IILcom/google/android/vision/face/Face;)Ljgh;
+.method private static getFaceDimension(IILcom/google/android/vision/face/Face;)Ljpt;
     .locals 4
 
     const/4 v3, 0x1
@@ -528,37 +528,37 @@
 
     aget v0, v0, v3
 
-    invoke-static {v1, v0}, Ljgh;->a(II)Ljgh;
+    invoke-static {v1, v0}, Ljpt;->a(II)Ljpt;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static getFaceImageDistance(Ljava/nio/ByteBuffer;Ljgh;Ljava/nio/ByteBuffer;Ljgh;)F
+.method public static getFaceImageDistance(Ljava/nio/ByteBuffer;Ljpt;Ljava/nio/ByteBuffer;Ljpt;)F
     .locals 6
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget v0, p1, Ljgh;->a:I
-
-    if-lez v0, :cond_0
-
-    iget v0, p1, Ljgh;->b:I
+    iget v0, p1, Ljpt;->a:I
 
     if-lez v0, :cond_0
 
-    iget v0, p3, Ljgh;->a:I
+    iget v0, p1, Ljpt;->b:I
 
     if-lez v0, :cond_0
 
-    iget v0, p3, Ljgh;->b:I
+    iget v0, p3, Ljpt;->a:I
+
+    if-lez v0, :cond_0
+
+    iget v0, p3, Ljpt;->b:I
 
     if-gtz v0, :cond_1
 
@@ -573,7 +573,7 @@
 
     const/4 v3, 0x0
 
-    iget v4, p1, Ljgh;->a:I
+    iget v4, p1, Ljpt;->a:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -583,7 +583,7 @@
 
     const/4 v3, 0x1
 
-    iget v4, p1, Ljgh;->b:I
+    iget v4, p1, Ljpt;->b:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -593,7 +593,7 @@
 
     const/4 v3, 0x2
 
-    iget v4, p3, Ljgh;->a:I
+    iget v4, p3, Ljpt;->a:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -603,7 +603,7 @@
 
     const/4 v3, 0x3
 
-    iget v4, p3, Ljgh;->b:I
+    iget v4, p3, Ljpt;->b:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -623,13 +623,13 @@
     return v0
 
     :cond_1
-    iget v1, p1, Ljgh;->a:I
+    iget v1, p1, Ljpt;->a:I
 
-    iget v2, p1, Ljgh;->b:I
+    iget v2, p1, Ljpt;->b:I
 
-    iget v4, p3, Ljgh;->a:I
+    iget v4, p3, Ljpt;->a:I
 
-    iget v5, p3, Ljgh;->b:I
+    iget v5, p3, Ljpt;->b:I
 
     move-object v0, p0
 
@@ -672,12 +672,12 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     if-lez p2, :cond_1
 
     :goto_1
-    invoke-static {v1}, Liya;->a(Z)V
+    invoke-static {v1}, Ljii;->a(Z)V
 
     new-instance v0, Landroid/graphics/RectF;
 
@@ -793,9 +793,9 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/android/vision/face/Face;->getIsLeftEyeOpenScore()F
 
@@ -951,7 +951,7 @@
 .method public static getJoyScore(Lcom/google/android/vision/face/Face;FFF)F
     .locals 6
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/android/vision/face/Face;->getIsLeftEyeOpenScore()F
 

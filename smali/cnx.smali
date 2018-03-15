@@ -1,94 +1,115 @@
-.class public final Lcnx;
-.super Ljava/lang/Object;
+.class Lcnx;
+.super Lglb;
 .source "PG"
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
+.field private final synthetic a:Lcnv;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
+.method constructor <init>(Lcnv;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcnx;->a:Lcnv;
 
-    iput p1, p0, Lcnx;->a:I
+    const/4 v0, 0x0
 
-    iput p2, p0, Lcnx;->b:I
+    invoke-direct {p0, v0}, Lglb;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final a()V
+    .locals 4
 
-    const/4 v0, 0x0
+    const/4 v3, 0x1
 
-    if-nez p1, :cond_1
+    const/4 v2, 0x0
 
-    :cond_0
-    :goto_0
-    return v0
+    sget-object v0, Lcnv;->a:Ljava/lang/String;
 
-    :cond_1
-    instance-of v1, p1, Lcnx;
+    const-string v1, "Filmstrip Ui Shown"
 
-    if-eqz v1, :cond_0
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    check-cast p1, Lcnx;
+    iget-object v0, p0, Lcnx;->a:Lcnv;
 
-    iget v1, p0, Lcnx;->a:I
+    iget-object v1, v0, Lcnv;->e:Landroid/app/ActionBar;
 
-    iget v2, p1, Lcnx;->a:I
+    invoke-virtual {v1}, Landroid/app/ActionBar;->show()V
 
-    if-ne v1, v2, :cond_0
+    iget-object v1, v0, Lcnv;->d:Lcnq;
 
-    iget v1, p0, Lcnx;->b:I
+    iget-object v1, v1, Lcnq;->j:Landroid/view/View;
 
-    iget v2, p1, Lcnx;->b:I
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    if-ne v1, v2, :cond_0
+    iget-object v1, v0, Lcnv;->d:Lcnq;
 
-    const/4 v0, 0x1
+    iget-object v1, v1, Lcnq;->k:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;
 
-    goto :goto_0
+    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;->setVisibility(I)V
+
+    iget-object v1, v0, Lcnv;->c:Lcll;
+
+    invoke-virtual {v1, v3}, Lcll;->a(Z)V
+
+    iget-object v0, v0, Lcnv;->b:Lclo;
+
+    invoke-virtual {v0, v3}, Lclo;->a(Z)V
+
+    iget-object v0, p0, Lcnx;->a:Lcnv;
+
+    iget-object v0, v0, Lcnv;->f:Lgoy;
+
+    const/16 v1, 0x701
+
+    invoke-interface {v0, v1}, Lgoy;->a(I)V
+
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final b()V
+    .locals 4
 
-    const/4 v0, 0x2
+    const/4 v3, 0x4
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lcnx;->a:Lcnv;
 
-    iget v2, p0, Lcnx;->a:I
+    iget-object v1, v0, Lcnv;->e:Landroid/app/ActionBar;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1}, Landroid/app/ActionBar;->hide()V
 
-    move-result-object v2
+    iget-object v1, v0, Lcnv;->d:Lcnq;
 
-    aput-object v2, v0, v1
+    iget-object v1, v1, Lcnq;->j:Landroid/view/View;
 
-    const/4 v1, 0x1
+    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    iget v2, p0, Lcnx;->b:I
+    iget-object v1, v0, Lcnv;->d:Lcnq;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, v1, Lcnq;->k:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;
 
-    move-result-object v2
+    invoke-virtual {v1, v3}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;->setVisibility(I)V
 
-    aput-object v2, v0, v1
+    iget-object v1, v0, Lcnv;->c:Lcll;
 
-    invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    invoke-virtual {v1, v2}, Lcll;->a(Z)V
 
-    move-result v0
+    iget-object v0, v0, Lcnv;->b:Lclo;
 
-    return v0
+    invoke-virtual {v0, v2}, Lclo;->a(Z)V
+
+    return-void
+.end method
+
+.method public l()V
+    .locals 0
+
+    return-void
 .end method

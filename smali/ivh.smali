@@ -3,98 +3,72 @@
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field private final synthetic a:Litv;
+
+.field private final synthetic b:Litl;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Litv;Litl;)V
     .locals 0
+
+    iput-object p1, p0, Livh;->a:Litv;
+
+    iput-object p2, p0, Livh;->b:Litl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
+.method private final a()Liva;
     .locals 6
 
-    const/4 v4, 0x1
+    iget-object v0, p0, Livh;->a:Litv;
+
+    invoke-interface {v0}, Litv;->d()Livi;
+
+    move-result-object v1
+
+    iget-object v4, p0, Livh;->b:Litl;
+
+    new-instance v0, Livd;
+
+    invoke-static {}, Livd;->f()I
+
+    move-result v2
+
+    const/16 v3, 0xde1
 
     const/4 v5, 0x0
 
-    const/4 v0, 0x5
+    invoke-direct/range {v0 .. v5}, Livd;-><init>(Livi;IILitl;B)V
 
-    new-array v1, v0, [Ljbc;
+    :try_start_0
+    invoke-interface {v0}, Liva;->e()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-class v0, Ljbc;
+    return-object v0
 
-    const-string v2, "segmenter"
+    :catch_0
+    move-exception v1
 
-    invoke-virtual {p1, v0, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Liva;->close()V
 
-    move-result-object v0
+    throw v1
+.end method
 
-    check-cast v0, Ljbc;
 
-    aput-object v0, v1, v5
+# virtual methods
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 1
 
-    const-class v0, Ljbc;
-
-    const-string v2, "segment_classifier"
-
-    invoke-virtual {p1, v0, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljbc;
-
-    aput-object v0, v1, v4
-
-    const/4 v2, 0x2
-
-    const-class v0, Ljbc;
-
-    const-string v3, "action_merger"
-
-    invoke-virtual {p1, v0, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljbc;
-
-    aput-object v0, v1, v2
-
-    const/4 v0, 0x3
-
-    new-instance v2, Ljcf;
-
-    new-array v3, v4, [Ljba;
-
-    sget-object v4, Ljba;->b:Ljba;
-
-    aput-object v4, v3, v5
-
-    invoke-direct {v2, v3}, Ljcf;-><init>([Ljba;)V
-
-    aput-object v2, v1, v0
-
-    const/4 v2, 0x4
-
-    const-class v0, Ljbc;
-
-    const-string v3, "jump_cut"
-
-    invoke-virtual {p1, v0, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljbc;
-
-    aput-object v0, v1, v2
-
-    invoke-static {v1}, Ljax;->a([Ljbc;)Ljax;
+    invoke-direct {p0}, Livh;->a()Liva;
 
     move-result-object v0
 

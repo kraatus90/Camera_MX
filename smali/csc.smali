@@ -2,45 +2,36 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:I
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>(ILjava/lang/String;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lcsc;->a:Ljxn;
+    invoke-direct {p0, p1, p2, v0}, Lcsc;-><init>(ILjava/lang/String;Z)V
 
     return-void
 .end method
 
+.method public constructor <init>(ILjava/lang/String;Z)V
+    .locals 0
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lcsc;->a:Ljxn;
+    iput p1, p0, Lcsc;->a:I
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iput-object p2, p0, Lcsc;->b:Ljava/lang/String;
 
-    move-result-object v0
+    iput-boolean p3, p0, Lcsc;->c:Z
 
-    check-cast v0, Ljvi;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuw;
-
-    return-object v0
+    return-void
 .end method

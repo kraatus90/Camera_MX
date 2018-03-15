@@ -1,62 +1,49 @@
 .class final Limj;
-.super Ljava/lang/Object;
+.super Linf;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
-
-.field private b:Lilv;
-
-.field private c:Ljava/lang/Runnable;
-
-.field private d:Liml;
+.field private final a:Landroid/view/Surface;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Runnable;Lilv;Liml;)V
-    .locals 0
+.method constructor <init>(ILandroid/view/Surface;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Liko;
 
-    iput-object p1, p0, Limj;->a:Ljava/lang/Object;
+    new-instance v1, Landroid/hardware/camera2/params/OutputConfiguration;
 
-    iput-object p3, p0, Limj;->b:Lilv;
+    invoke-direct {v1, p1, p2}, Landroid/hardware/camera2/params/OutputConfiguration;-><init>(ILandroid/view/Surface;)V
 
-    iput-object p2, p0, Limj;->c:Ljava/lang/Runnable;
+    invoke-direct {v0, v1}, Liko;-><init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
 
-    iput-object p4, p0, Limj;->d:Liml;
+    invoke-direct {p0, v0}, Linf;-><init>(Ling;)V
+
+    iput-object p2, p0, Limj;->a:Landroid/view/Surface;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
-
-    iget-object v0, p0, Limj;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Limj;->c:Ljava/lang/Runnable;
-
-    iget-object v2, p0, Limj;->b:Lilv;
-
-    invoke-static {v0, v1, v2}, Lilv;->a(Ljava/lang/Object;Ljava/lang/Runnable;Lilv;)V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a()Landroid/view/Surface;
     .locals 1
 
-    iget-object v0, p0, Limj;->c:Ljava/lang/Runnable;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    iget-object v0, p0, Limj;->a:Landroid/view/Surface;
 
     return-object v0
+.end method
+
+.method public final a(Landroid/view/Surface;)V
+    .locals 2
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "addSurface is not supported."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

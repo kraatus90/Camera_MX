@@ -1,45 +1,41 @@
-.class final Lezs;
-.super Lexr;
-.source "PG"
+.class public final synthetic Lezs;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic b:Lezr;
+.field private final a:Lfaj;
+
+.field private final b:Lfam;
 
 
 # direct methods
-.method constructor <init>(Lezr;)V
+.method public constructor <init>(Lfaj;Lfam;)V
     .locals 0
 
-    iput-object p1, p0, Lezs;->b:Lezr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lexr;-><init>(Lexp;)V
+    iput-object p1, p0, Lezs;->a:Lfaj;
+
+    iput-object p2, p0, Lezs;->b:Lfam;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgdq;Lhzb;)V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lezs;->b:Lezr;
+    iget-object v0, p0, Lezs;->a:Lfaj;
 
-    iget-object v0, v0, Lezr;->e:Lgvj;
+    iget-object v1, p0, Lezs;->b:Lfam;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    iget-object v0, v0, Lfaj;->b:Lfak;
 
-    invoke-super {p0, p1, p2}, Lexr;->a(Lgdq;Lhzb;)V
-
-    iget-object v0, p0, Lezs;->b:Lezr;
-
-    iget-object v0, v0, Lezr;->e:Lgvj;
-
-    iget-object v1, p0, Lezs;->b:Lezr;
-
-    iget-object v1, v1, Lezr;->g:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    invoke-interface {v1, v0}, Lfam;->a(Lfak;)V
 
     return-void
 .end method

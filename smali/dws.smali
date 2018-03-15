@@ -3,64 +3,58 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
-
-
-# instance fields
-.field private synthetic a:Ldwg;
+.implements Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ldwg;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Ldws;->a:Ldwg;
+    new-instance v0, Ldws;
+
+    invoke-direct {v0}, Ldws;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public static b()Ljava/util/Set;
     .locals 2
 
-    check-cast p1, Landroid/graphics/Bitmap;
+    sget-object v0, Ljwb;->a:Ljwb;
 
-    iget-object v0, p0, Ldws;->a:Ldwg;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, v0, Ldwg;->a:Ldvf;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Ldvf;->a:Lear;
+    move-result-object v0
 
-    iget-object v1, p0, Ldws;->a:Ldwg;
+    check-cast v0, Ljava/util/Set;
 
-    iget-object v1, v1, Ldwg;->a:Ldvf;
-
-    iget-object v1, v1, Ldvf;->d:Licf;
-
-    iget v1, v1, Licf;->e:I
-
-    invoke-interface {v0, p1, v1}, Lear;->a(Landroid/graphics/Bitmap;I)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Ldws;->a:Ldwg;
+    sget-object v0, Ljwb;->a:Ljwb;
 
-    iget-object v0, v0, Ldwg;->a:Ldvf;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, v0, Ldvf;->e:Ldve;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Ldve;->b:Licu;
+    move-result-object v0
 
-    const-string v1, "Failed to generate thumbnail"
+    check-cast v0, Ljava/util/Set;
 
-    invoke-interface {v0, v1, p1}, Licu;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+    return-object v0
 .end method

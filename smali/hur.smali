@@ -1,114 +1,102 @@
-.class public final Lhur;
-.super Landroid/os/Binder;
+.class final Lhur;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhuq;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lhrz;
+.field private final synthetic a:Lcom/google/android/gms/common/ConnectionResult;
+
+.field private final synthetic b:Lhql;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
-
-    const-string v0, "com.google.android.gms.location.internal.IFusedLocationProviderCallback"
-
-    invoke-virtual {p0, p0, v0}, Lhur;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhrz;)V
+.method constructor <init>(Lhql;Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 0
 
-    invoke-direct {p0}, Lhur;-><init>()V
+    iput-object p1, p0, Lhur;->b:Lhql;
 
-    iput-object p1, p0, Lhur;->a:Lhrz;
+    iput-object p2, p0, Lhur;->a:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/gms/location/internal/zzf;)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lhur;->a:Lhrz;
+    iget-object v0, p0, Lhur;->a:Lcom/google/android/gms/common/ConnectionResult;
 
-    iget-object v1, p1, Lcom/google/android/gms/location/internal/zzf;->a:Lcom/google/android/gms/common/api/Status;
-
-    invoke-interface {v0, v1}, Lhrz;->a(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final asBinder()Landroid/os/IBinder;
-    .locals 0
-
-    return-object p0
-.end method
-
-.method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 2
-
-    const/4 v1, 0x1
-
-    sparse-switch p1, :sswitch_data_0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->b()Z
 
     move-result v0
 
-    :goto_0
-    return v0
+    if-eqz v0, :cond_1
 
-    :sswitch_0
-    const-string v0, "com.google.android.gms.location.internal.IFusedLocationProviderCallback"
+    iget-object v0, p0, Lhur;->b:Lhql;
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    const/4 v1, 0x1
 
-    move v0, v1
+    iput-boolean v1, v0, Lhql;->e:Z
 
-    goto :goto_0
+    iget-object v0, p0, Lhur;->b:Lhql;
 
-    :sswitch_1
-    const-string v0, "com.google.android.gms.location.internal.IFusedLocationProviderCallback"
+    iget-object v0, v0, Lhql;->a:Lhlk;
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-interface {v0}, Lhlk;->f()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/gms/location/internal/zzf;->CREATOR:Landroid/os/Parcelable$Creator;
+    iget-object v0, p0, Lhur;->b:Lhql;
 
-    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lhql;->a()V
 
-    move-result-object v0
+    :goto_0
+    return-void
 
-    check-cast v0, Lcom/google/android/gms/location/internal/zzf;
+    :cond_0
+    iget-object v0, p0, Lhur;->b:Lhql;
 
-    :goto_1
-    invoke-virtual {p0, v0}, Lhur;->a(Lcom/google/android/gms/location/internal/zzf;)V
+    iget-object v0, v0, Lhql;->a:Lhlk;
 
-    move v0, v1
+    const/4 v1, 0x0
+
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lhlk;->a(Lhnd;Ljava/util/Set;)V
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
+    :cond_1
+    iget-object v0, p0, Lhur;->b:Lhql;
 
-    goto :goto_1
+    iget-object v0, v0, Lhql;->f:Lhum;
 
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_1
-        0x5f4e5446 -> :sswitch_0
-    .end sparse-switch
+    invoke-static {v0}, Lhum;->h(Lhum;)Ljava/util/Map;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lhur;->b:Lhql;
+
+    iget-object v1, v1, Lhql;->b:Lhsu;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhun;
+
+    iget-object v1, p0, Lhur;->a:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-virtual {v0, v1}, Lhun;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+
+    goto :goto_0
 .end method

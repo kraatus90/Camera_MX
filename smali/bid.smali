@@ -1,24 +1,14 @@
-.class public final Lbid;
+.class final Lbid;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lich;
-
-
-# instance fields
-.field private synthetic a:Ljava/lang/String;
-
-.field private synthetic b:Ljava/lang/String;
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lbid;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lbid;->b:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,14 +17,62 @@
 
 
 # virtual methods
-.method public final close()V
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 2
 
-    iget-object v0, p0, Lbid;->a:Ljava/lang/String;
+    check-cast p1, Landroid/util/Range;
 
-    iget-object v1, p0, Lbid;->b:Ljava/lang/String;
+    check-cast p2, Landroid/util/Range;
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-virtual {p2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    sub-int v0, v1, v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-virtual {p2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    sub-int v0, v1, v0
+
+    goto :goto_0
 .end method

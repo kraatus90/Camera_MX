@@ -1,30 +1,20 @@
-.class public final Lbed;
+.class final Lbed;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkdg;
 
 
-# static fields
-.field public static final a:Lbed;
+# instance fields
+.field private final synthetic a:Lbdu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lbed;
-
-    invoke-direct {v0}, Lbed;-><init>()V
-
-    sput-object v0, Lbed;->a:Lbed;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lbdu;)V
     .locals 0
+
+    iput-object p1, p0, Lbed;->a:Lbdu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,12 +23,26 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)Lkeh;
+    .locals 3
 
-    new-instance v0, Lbec;
+    check-cast p1, Lbhc;
 
-    invoke-direct {v0}, Lbec;-><init>()V
+    iget-object v0, p0, Lbed;->a:Lbdu;
+
+    iget-object v0, v0, Lbdu;->o:Lbhr;
+
+    iget-object v1, p0, Lbed;->a:Lbdu;
+
+    iget-object v1, v1, Lbdu;->q:Landroid/view/Surface;
+
+    iget-object v2, p0, Lbed;->a:Lbdu;
+
+    iget-object v2, v2, Lbdu;->t:Lbhl;
+
+    invoke-virtual {v0, p1, v1, v2}, Lbhr;->a(Lbhc;Landroid/view/Surface;Lbhl;)Lkeh;
+
+    move-result-object v0
 
     return-object v0
 .end method

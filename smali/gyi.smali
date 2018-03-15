@@ -1,65 +1,77 @@
-.class final synthetic Lgyi;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+.class public final Lgyi;
+.super Landroid/animation/AnimatorListenerAdapter;
+.source "PG"
 
 
 # instance fields
-.field private a:Lgyh;
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
 
 # direct methods
-.method constructor <init>(Lgyh;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
-    iput-object p1, p0, Lgyi;->a:Lgyh;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 2
 
-    iget-object v0, p0, Lgyi;->a:Lgyh;
+    iget-object v0, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
-    invoke-virtual {v0}, Lgyh;->a()V
+    sget v1, Lep;->by:I
 
-    iget-object v0, v0, Lgyh;->d:Ljava/util/List;
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->a(Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;I)I
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
-    move-result-object v2
+    const/4 v1, 0x4
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->setVisibility(I)V
 
-    move-result v0
+    return-void
+.end method
 
-    if-eqz v0, :cond_0
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
-    move-result-object v0
+    sget v1, Lep;->by:I
 
-    check-cast v0, Landroid/util/Pair;
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->a(Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;I)I
 
-    iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+    iget-object v0, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
-    check-cast v1, Ljava/util/concurrent/Executor;
+    const/4 v1, 0x4
 
-    iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->setVisibility(I)V
 
-    check-cast v0, Ljava/lang/Runnable;
+    return-void
+.end method
 
-    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-    goto :goto_0
+    iget-object v0, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
-    :cond_0
+    iget-object v1, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
+    iget v1, v1, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->b:I
+
+    iput v1, v0, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->g:I
+
+    iget-object v0, p0, Lgyi;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
+    sget v1, Lep;->bA:I
+
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->a(Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;I)I
+
     return-void
 .end method

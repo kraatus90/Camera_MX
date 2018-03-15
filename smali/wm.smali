@@ -3,18 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Lwl;
+.implements Lwo;
 
 
 # direct methods
-.method constructor <init>(Lwl;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lwm;->a:Lwl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,14 +17,18 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lwm;->a:Lwl;
+    const-string v0, "Adobe XMP Core 5.1.0-jc003"
 
-    const/4 v1, 0x0
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Lwl;->a(Z)V
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    return-void
+    const-string v0, "Adobe XMP Core 5.1.0-jc003"
+
+    return-object v0
 .end method

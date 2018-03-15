@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">ภาพถ่ายอัจฉริยะ (%1$d รูป)</item>
+        <item quantity="one">ภาพถ่ายอัจฉริยะ (%1$d รูป)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">บันทึก %1$d รูป</item>
         <item quantity="one">บันทึก %1$d รูป</item>

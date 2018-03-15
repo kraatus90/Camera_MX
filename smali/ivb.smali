@@ -1,52 +1,37 @@
-.class final Livb;
-.super Ljava/lang/Object;
+.class public final Livb;
+.super Liuz;
 .source "PG"
-
-# interfaces
-.implements Liuh;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Liuz;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+.method public final a(Ljava/lang/String;)I
+    .locals 1
 
-    new-instance v0, Ljdk;
+    iget v0, p0, Livb;->e:I
 
-    invoke-direct {v0}, Ljdk;-><init>()V
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
 
-    sget-object v1, Ljfs;->f:Ljfs;
+    move-result v0
 
-    new-instance v2, Ljdn;
+    return v0
+.end method
 
-    invoke-direct {v2}, Ljdn;-><init>()V
+.method public final close()V
+    .locals 1
 
-    const v3, 0x3f4ccccd    # 0.8f
+    iget v0, p0, Livb;->e:I
 
-    invoke-virtual {v0, v1, v2, v3}, Ljdk;->a(Ljfs;Ljdg;F)V
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    sget-object v1, Ljfs;->g:Ljfs;
-
-    new-instance v2, Ljdn;
-
-    invoke-direct {v2}, Ljdn;-><init>()V
-
-    const v3, 0x3e4ccccc    # 0.19999999f
-
-    invoke-virtual {v0, v1, v2, v3}, Ljdk;->a(Ljfs;Ljdg;F)V
-
-    invoke-virtual {v0}, Ljdk;->a()Ljdj;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

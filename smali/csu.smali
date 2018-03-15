@@ -7,14 +7,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcsk;
+.field private final synthetic a:Lcss;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
+.method constructor <init>(Lcss;)V
     .locals 0
 
-    iput-object p1, p0, Lcsu;->a:Lcsk;
+    iput-object p1, p0, Lcsu;->a:Lcss;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,44 +24,50 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lcsu;->a:Lcsk;
+    iget-object v0, p0, Lcsu;->a:Lcss;
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcsk;->S:Z
-
-    iget-object v0, p0, Lcsu;->a:Lcsk;
-
-    iget-object v0, v0, Lcsk;->A:Ldhi;
+    iget-object v0, v0, Lcss;->c:Lkeh;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcsu;->a:Lcsk;
+    iget-object v0, p0, Lcsu;->a:Lcss;
 
-    iget-object v0, v0, Lcsk;->A:Ldhi;
+    iget-object v0, v0, Lcss;->c:Lkeh;
 
-    invoke-interface {v0}, Ldhi;->b()Ldhv;
+    invoke-interface {v0}, Lkeh;->isDone()Z
 
-    move-result-object v0
+    move-result v0
 
-    iget-object v0, v0, Ldhv;->d:Liau;
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lcsu;->a:Lcsk;
+    iget-object v0, p0, Lcsu;->a:Lcss;
 
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
+    iget-object v0, v0, Lcss;->c:Lkeh;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    check-cast v0, Lefy;
+    invoke-interface {v0, v1}, Lkeh;->cancel(Z)Z
 
-    iget-boolean v2, v1, Lcsk;->S:Z
+    iget-object v0, p0, Lcsu;->a:Lcss;
 
-    if-eqz v2, :cond_0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v0}, Lcsk;->a(Lefy;)V
+    iput-object v1, v0, Lcss;->c:Lkeh;
 
     :cond_0
+    iget-object v0, p0, Lcsu;->a:Lcss;
+
+    iget-object v0, v0, Lcss;->e:Lcvj;
+
+    invoke-virtual {v0}, Lcvj;->a()V
+
+    iget-object v0, p0, Lcsu;->a:Lcss;
+
+    iget-object v0, v0, Lcss;->b:Liaw;
+
+    invoke-virtual {v0}, Liaw;->close()V
+
     return-void
 .end method

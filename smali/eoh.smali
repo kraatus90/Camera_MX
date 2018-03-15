@@ -1,120 +1,184 @@
-.class final Leoh;
+.class public final Leoh;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljug;
+
+# static fields
+.field private static final a:Ljava/nio/charset/Charset;
+
+.field private static b:Leoh;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final c:Ljava/security/MessageDigest;
 
-.field private synthetic b:Leoc;
+.field private final d:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Leoc;Ljvi;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Leoh;->b:Leoc;
+    const-string v0, "FilenameHasher"
 
-    iput-object p2, p0, Leoh;->a:Ljvi;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    const-string v0, "UTF-8"
+
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    sput-object v0, Leoh;->a:Ljava/nio/charset/Charset;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/security/MessageDigest;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Leoh;->c:Ljava/security/MessageDigest;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Leoh;->d:Ljava/lang/Object;
+
     return-void
+.end method
+
+.method public static a()Leoh;
+    .locals 3
+
+    sget-object v0, Leoh;->b:Leoh;
+
+    if-nez v0, :cond_0
+
+    :try_start_0
+    const-string v0, "SHA-1"
+
+    invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v0
+
+    new-instance v1, Leoh;
+
+    invoke-direct {v1, v0}, Leoh;-><init>(Ljava/security/MessageDigest;)V
+
+    sput-object v1, Leoh;->b:Leoh;
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    sget-object v0, Leoh;->b:Leoh;
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "Cannot initialize file name hasher"
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method private final b(Ljava/lang/String;)Ljava/lang/String;
+    .locals 7
+
+    iget-object v1, p0, Leoh;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Leoh;->c:Ljava/security/MessageDigest;
+
+    sget-object v2, Leoh;->a:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/security/MessageDigest;->digest([B)[B
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    array-length v4, v2
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v4, :cond_0
+
+    aget-byte v5, v2, v0
+
+    and-int/lit16 v5, v5, 0xff
+
+    add-int/lit16 v5, v5, 0x100
+
+    const/16 v6, 0x10
+
+    invoke-static {v5, v6}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 4
+.method public final a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
 
-    check-cast p1, Landroid/net/Uri;
-
-    iget-object v0, p0, Leoh;->b:Leoc;
-
-    iget-object v0, v0, Leoc;->m:Landroid/net/Uri;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v1, p0, Leoh;->b:Leoc;
-
-    iget-object v1, v1, Leoc;->e:Lgvx;
-
-    invoke-interface {v1, p1, v0}, Lgvx;->a(Landroid/net/Uri;Landroid/net/Uri;)V
-
-    iget-object v1, p0, Leoh;->b:Leoc;
-
-    iget-object v1, v1, Leoc;->h:Lemy;
-
-    iget-object v2, p0, Leoh;->b:Leoc;
-
-    iget v2, v2, Leoc;->q:I
-
-    iget-object v3, p0, Leoh;->b:Leoc;
-
-    iget v3, v3, Leoc;->r:I
-
-    invoke-virtual {v1, v2, v3}, Lemy;->onCapturePersisted(II)V
-
-    iget-object v1, p0, Leoh;->b:Leoc;
-
-    iget-object v1, v1, Leoc;->o:Lavl;
-
-    invoke-interface {v1}, Lavl;->b()V
-
-    iget-object v1, p0, Leoh;->b:Leoc;
-
-    iget-object v1, v1, Leoc;->g:Leon;
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {v1, v0, v2}, Leon;->a(Landroid/net/Uri;Ljava/util/List;)V
-
-    iget-object v1, p0, Leoh;->b:Leoc;
-
-    const-string v2, "capturePersisted"
-
-    invoke-virtual {v1, v2}, Leoc;->a(Ljava/lang/String;)V
-
-    iget-object v1, p0, Leoh;->a:Ljvi;
-
-    invoke-static {v0}, Ljht;->c(Ljava/lang/Object;)Ljht;
+    invoke-direct {p0, p1}, Leoh;->b(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Object;)Z
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Leoh;->b:Leoc;
+    const/16 v2, 0xa
 
-    iget-object v0, v0, Leoc;->p:Lbvw;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Lbvw;->a(Landroid/net/Uri;)V
+    move-result-object v0
 
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 4
-
-    iget-object v0, p0, Leoh;->a:Ljvi;
-
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Throwable;)Z
-
-    iget-object v0, p0, Leoh;->b:Leoc;
-
-    sget-object v1, Lewl;->a:Lgyr;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v1, v2, v3}, Leoc;->a(Lgyr;ZLjava/lang/String;)V
-
-    return-void
+    return-object v0
 .end method

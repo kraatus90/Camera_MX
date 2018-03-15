@@ -1,8 +1,17 @@
-.class public interface abstract Lhv;
+.class public final Lhv;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract stopNestedScroll()V
+# instance fields
+.field public a:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

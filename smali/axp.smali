@@ -3,114 +3,62 @@
 .source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Lich;
+.field private final a:Lkgv;
 
-.field private b:Ljava/lang/Object;
-
-.field private c:I
-
-.field private d:Z
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lich;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Laxp;-><init>(Lich;B)V
+    iput-object p1, p0, Laxp;->a:Lkgv;
+
+    iput-object p2, p0, Laxp;->b:Lkgv;
 
     return-void
 .end method
 
-.method private constructor <init>(Lich;B)V
-    .locals 2
+.method public static a(Lkgv;Lkgv;)Laxp;
+    .locals 1
 
-    const/4 v1, 0x1
+    new-instance v0, Laxp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, p0, p1}, Laxp;-><init>(Lkgv;Lkgv;)V
 
-    const-string v0, "initialReferenceCount is not greater than 0."
-
-    invoke-static {v1, v0}, Liya;->b(ZLjava/lang/Object;)V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Laxp;->b:Ljava/lang/Object;
-
-    iput-object p1, p0, Laxp;->a:Lich;
-
-    iput v1, p0, Laxp;->c:I
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laxp;->d:Z
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v1, p0, Laxp;->b:Ljava/lang/Object;
+    new-instance v2, Laxn;
 
-    monitor-enter v1
+    iget-object v0, p0, Laxp;->a:Lkgv;
 
-    :try_start_0
-    iget-boolean v0, p0, Laxp;->d:Z
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    monitor-exit v1
+    check-cast v0, Lfxi;
 
-    :goto_0
-    return-void
+    iget-object v1, p0, Laxp;->b:Lkgv;
 
-    :cond_0
-    iget v0, p0, Laxp;->c:I
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    add-int/lit8 v0, v0, -0x1
+    move-result-object v1
 
-    iput v0, p0, Laxp;->c:I
+    check-cast v1, Lfdv;
 
-    iget v0, p0, Laxp;->c:I
+    invoke-direct {v2, v0, v1}, Laxn;-><init>(Lfxi;Lfdv;)V
 
-    if-lez v0, :cond_1
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_1
-    const/4 v0, 0x1
-
-    :try_start_1
-    iput-boolean v0, p0, Laxp;->d:Z
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    iget-object v0, p0, Laxp;->a:Lich;
-
-    invoke-interface {v0}, Lich;->close()V
-
-    goto :goto_0
+    return-object v2
 .end method

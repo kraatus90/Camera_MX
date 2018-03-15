@@ -1,99 +1,69 @@
-.class public final Lgss;
-.super Libn;
+.class final Lgss;
+.super Lgtb;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljjq;
+.field private final synthetic a:Lgsr;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Liau;)V
-    .locals 6
+.method constructor <init>(Lgsr;)V
+    .locals 0
 
-    invoke-direct {p0, p2}, Libn;-><init>(Liau;)V
+    iput-object p1, p0, Lgss;->a:Lgsr;
 
-    sget-object v0, Lgsr;->a:Lgsr;
-
-    const v1, 0x7f1102aa
-
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    sget-object v2, Lgsr;->b:Lgsr;
-
-    const v3, 0x7f1102ab
-
-    invoke-virtual {p1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    sget-object v4, Lgsr;->c:Lgsr;
-
-    const v5, 0x7f1102a9
-
-    invoke-virtual {p1, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static/range {v0 .. v5}, Ljkm;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljkm;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lgss;->a:Ljjq;
+    invoke-direct {p0}, Lgtb;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final T()V
+    .locals 2
 
-    check-cast p1, Lgsr;
+    iget-object v0, p0, Lgss;->a:Lgsr;
 
-    iget-object v0, p0, Lgss;->a:Ljjq;
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    invoke-interface {v0, p1}, Ljjq;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result-object v0
+    invoke-super {p0}, Lgtb;->T()V
 
-    check-cast v0, Ljava/lang/String;
+    iget-object v0, p0, Lgss;->a:Lgsr;
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    move-result-object v0
+    iget-object v1, p0, Lgss;->a:Lgsr;
 
-    check-cast v0, Ljava/lang/String;
+    iget-object v1, v1, Lgsr;->d:Lglf;
 
-    return-object v0
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method
 
-.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final V()V
+    .locals 2
 
-    check-cast p1, Ljava/lang/String;
+    iget-object v0, p0, Lgss;->a:Lgsr;
 
-    iget-object v0, p0, Lgss;->a:Ljjq;
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    invoke-interface {v0}, Ljjq;->a()Ljjq;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result-object v0
+    invoke-super {p0}, Lgtb;->V()V
 
-    invoke-interface {v0, p1}, Ljjq;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lgss;->a:Lgsr;
 
-    move-result-object v0
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    check-cast v0, Lgsr;
+    iget-object v1, p0, Lgss;->a:Lgsr;
 
-    if-eqz v0, :cond_0
+    iget-object v1, v1, Lgsr;->c:Lglf;
 
-    :goto_0
-    return-object v0
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    :cond_0
-    sget-object v0, Lgsr;->a:Lgsr;
-
-    goto :goto_0
+    return-void
 .end method

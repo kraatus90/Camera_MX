@@ -1,52 +1,41 @@
-.class public final Lcnb;
+.class public interface abstract Lcnb;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lcli;
-
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;)V
-    .locals 0
-
-    iput-object p1, p0, Lcnb;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a()V
-    .locals 2
-
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
-
-    const-string v1, "Filmstrip hide animation cancelled."
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+.method public abstract a()V
 .end method
 
-.method public final b()V
-    .locals 2
+.method public abstract a(FF)Z
+.end method
 
-    iget-object v0, p0, Lcnb;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+.method public abstract a(FFF)Z
+.end method
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->e()V
+.method public abstract a(FFFFFFIJ)Z
+.end method
 
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
+.method public abstract a(FFIJ)Z
+.end method
 
-    const-string v1, "Filmstrip hide animation complete."
+.method public abstract b(FF)Z
+.end method
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract b(FFIJ)Z
+.end method
 
-    return-void
+.method public abstract c(FF)Z
+.end method
+
+.method public abstract d(FF)Z
+.end method
+
+.method public abstract e(FF)V
+.end method
+
+.method public abstract f(FF)Z
+.end method
+
+.method public abstract g(FF)Z
 .end method

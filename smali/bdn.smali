@@ -3,28 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
-# static fields
-.field public static final a:Lbdn;
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lbdn;
-
-    invoke-direct {v0}, Lbdn;-><init>()V
-
-    sput-object v0, Lbdn;->a:Lbdn;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
     .locals 0
+
+    iput-object p1, p0, Lbdn;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,12 +23,24 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
 
-    new-instance v0, Lbdl;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    invoke-direct {v0}, Lbdl;-><init>()V
+    move-result-object v0
 
-    return-object v0
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iget-object v1, p0, Lbdn;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    return-void
 .end method

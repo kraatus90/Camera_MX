@@ -1,111 +1,54 @@
-.class final Lgju;
+.class public final Lgju;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgki;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lgjt;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgjt;)V
-    .locals 2
-
-    iput-object p1, p0, Lgju;->b:Lgjt;
+.method public constructor <init>(Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Lgju;->a:Lkgv;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lgju;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p2, p0, Lgju;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 5
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    const/4 v1, 0x1
+    new-instance v2, Lgjp;
 
-    iget-object v0, p0, Lgju;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lgju;->a:Lkgv;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_1
+    check-cast v0, Lgjq;
 
-    :cond_0
-    :goto_0
-    return-void
+    iget-object v1, p0, Lgju;->b:Lkgv;
 
-    :cond_1
-    iget-object v2, p0, Lgju;->b:Lgjt;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move-result-object v1
 
-    iget-object v3, v2, Lgjt;->b:Ljava/lang/Object;
+    check-cast v1, Liho;
 
-    monitor-enter v3
+    invoke-direct {v2, v0, v1}, Lgjp;-><init>(Lgjq;Liho;)V
 
-    :try_start_0
-    iget v4, v2, Lgjt;->d:I
-
-    add-int/lit8 v4, v4, -0x1
-
-    iput v4, v2, Lgjt;->d:I
-
-    iget v4, v2, Lgjt;->d:I
-
-    if-ltz v4, :cond_3
-
-    :goto_1
-    invoke-static {v1}, Liya;->b(Z)V
-
-    iget-boolean v1, v2, Lgjt;->c:Z
-
-    if-eqz v1, :cond_2
-
-    iget v1, v2, Lgjt;->d:I
-
-    if-nez v1, :cond_2
-
-    iget-object v0, v2, Lgjt;->a:Lgki;
-
-    :cond_2
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lgki;->close()V
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v1, 0x0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-object v2
 .end method

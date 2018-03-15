@@ -3,170 +3,394 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lfia;
 
 
 # instance fields
-.field private synthetic a:I
+.field private final a:Ljava/util/List;
 
-.field private synthetic b:Ljava/lang/Exception;
+.field private final b:Libq;
 
-.field private synthetic c:Lfkj;
+.field private final c:Lfuo;
 
 
 # direct methods
-.method constructor <init>(Lfkj;ILjava/lang/Exception;)V
-    .locals 0
-
-    iput-object p1, p0, Lfkk;->c:Lfkj;
-
-    iput p2, p0, Lfkk;->a:I
-
-    iput-object p3, p0, Lfkk;->b:Ljava/lang/Exception;
+.method constructor <init>(Ljava/util/List;Libq;)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p1}, Ljuh;->a(Ljava/util/Collection;)Ljuh;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfkk;->a:Ljava/util/List;
+
+    iput-object p2, p0, Lfkk;->b:Libq;
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfkj;
+
+    iget-object v0, v0, Lfkj;->b:Lfue;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lgbj;
+
+    invoke-direct {v0, v1}, Lgbj;-><init>(Ljava/util/List;)V
+
+    iput-object v0, p0, Lfkk;->c:Lfuo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 6
+.method public final a()Lfib;
+    .locals 10
 
-    check-cast p1, Lhae;
+    new-instance v2, Liaw;
 
-    iget-object v1, p0, Lfkk;->c:Lfkj;
+    iget-object v0, p0, Lfkk;->b:Libq;
 
-    iget v2, p0, Lfkk;->a:I
+    invoke-direct {v2, v0}, Liaw;-><init>(Libq;)V
 
-    iget-object v0, p0, Lfkk;->b:Ljava/lang/Exception;
+    iget-object v0, p0, Lfkk;->a:Ljava/util/List;
 
-    new-instance v3, Landroid/app/ApplicationErrorReport$CrashInfo;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v3, v0}, Landroid/app/ApplicationErrorReport$CrashInfo;-><init>(Ljava/lang/Throwable;)V
+    move-result-object v1
 
-    new-instance v0, Lhno;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-direct {v0}, Lhno;-><init>()V
+    move-result v0
 
-    iget-object v4, v1, Lfkj;->e:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    iput-object v4, v0, Lhno;->e:Ljava/lang/String;
-
-    iget-object v4, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
-
-    invoke-virtual {v0, v4}, Lhno;->a(Ljava/lang/String;)Lhno;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v4, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->throwClassName:Ljava/lang/String;
+    check-cast v0, Lfkj;
 
-    invoke-virtual {v0, v4}, Lhno;->c(Ljava/lang/String;)Lhno;
+    iget-object v0, v0, Lfkj;->e:Liaw;
 
-    move-result-object v0
-
-    iget-object v4, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
-
-    invoke-virtual {v0, v4}, Lhno;->b(Ljava/lang/String;)Lhno;
+    invoke-virtual {v0}, Liaw;->g()Liaw;
 
     move-result-object v0
 
-    iget-object v4, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->throwMethodName:Ljava/lang/String;
+    invoke-virtual {v0, v2}, Liaw;->a(Lihb;)Lihb;
 
-    invoke-virtual {v0, v4}, Lhno;->d(Ljava/lang/String;)Lhno;
+    invoke-virtual {v2, v0}, Liaw;->a(Lihb;)Lihb;
 
-    move-result-object v0
+    goto :goto_0
 
-    iget-object v4, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
-
-    invoke-virtual {v0, v4}, Lhno;->e(Ljava/lang/String;)Lhno;
-
-    move-result-object v0
-
-    iget-object v4, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionMessage:Ljava/lang/String;
-
-    iget-object v5, v0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v5, v5, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iput-object v4, v5, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionMessage:Ljava/lang/String;
-
-    iget v3, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
-
-    invoke-virtual {v0, v3}, Lhno;->a(I)Lhno;
+    :cond_0
+    invoke-static {}, Lfju;->d()Lfju;
 
     move-result-object v3
 
-    iget-object v0, v1, Lfkj;->e:Ljava/lang/String;
+    invoke-virtual {v2, v3}, Liaw;->a(Lihb;)Lihb;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v4, Lftx;
 
-    move-result-object v4
+    iget-object v0, p0, Lfkk;->c:Lfuo;
 
-    const-string v0, ".CAMERA_ACCESS"
+    invoke-direct {v4, v0}, Lftx;-><init>(Lfuo;)V
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v4}, Liaw;->a(Lihb;)Lihb;
+
+    new-instance v5, Lfjy;
+
+    iget-object v0, p0, Lfkk;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-direct {v5, v4, v3, v0}, Lfjy;-><init>(Lfuo;Lbaz;I)V
+
+    invoke-virtual {v2, v5}, Liaw;->a(Lihb;)Lihb;
+
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v7, Ljava/util/HashSet;
+
+    invoke-direct {v7}, Ljava/util/HashSet;-><init>()V
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lfkk;->a:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    move v1, v0
+
+    :goto_1
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    check-cast v0, Lfkj;
 
-    move-result v5
+    iget-object v9, v0, Lfkj;->d:Landroid/view/Surface;
 
-    if-eqz v5, :cond_0
+    invoke-interface {v7, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v0, v0, Lfkj;->a:Lfim;
 
-    move-result-object v0
+    invoke-virtual {v5, v1}, Lfjy;->a(I)Lfin;
 
-    :goto_0
-    iput-object v0, v3, Lhnn;->b:Ljava/lang/String;
+    move-result-object v9
 
-    iget-object v0, v1, Lfkj;->f:Landroid/content/Context;
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-interface {v0, v9}, Lfim;->a(Lfin;)Lfhq;
 
     move-result-object v0
 
-    iput-object v0, v3, Lhnn;->a:Ljava/lang/String;
+    invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v3}, Lhnn;->a()Lcom/google/android/gms/feedback/FeedbackOptions;
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v6}, Lffm;->b(Ljava/util/Collection;)Lfhq;
 
     move-result-object v0
 
-    iget-object v1, p1, Lhae;->a:Lhac;
-
-    iget-object v1, v1, Lhac;->a:Lhkl;
-
-    invoke-static {v1, v0}, Lhni;->a(Lhkl;Lcom/google/android/gms/feedback/FeedbackOptions;)Lhkp;
+    invoke-static {v7, v0}, Lfgv;->a(Ljava/util/Set;Lfhq;)Lfgt;
 
     move-result-object v0
 
-    new-instance v1, Lfkl;
+    new-instance v1, Lfjx;
 
-    invoke-direct {v1, p1}, Lfkl;-><init>(Lhae;)V
+    invoke-direct {v1, v0, v2, v3, v4}, Lfjx;-><init>(Lfgt;Liaw;Lbax;Lftx;)V
 
-    invoke-virtual {v0, v1}, Lhkp;->a(Lhkt;)V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
+    return-object v1
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+.method public final a(IILfil;)Lfid;
+    .locals 9
 
-    sget-object v0, Lfkj;->a:Ljava/lang/String;
+    new-instance v2, Liaw;
 
-    const-string v1, "Google API client connection suspended"
+    iget-object v0, p0, Lfkk;->b:Libq;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v0}, Liaw;-><init>(Libq;)V
 
-    return-void
+    add-int v0, p1, p2
+
+    div-int/lit8 v0, v0, 0x2
+
+    new-instance v3, Lfkn;
+
+    invoke-direct {v3, p3, p2, v0}, Lfkn;-><init>(Lfil;II)V
+
+    invoke-virtual {v2, v3}, Liaw;->a(Lihb;)Lihb;
+
+    new-instance v4, Lfjy;
+
+    iget-object v0, p0, Lfkk;->c:Lfuo;
+
+    iget-object v1, p0, Lfkk;->a:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    invoke-direct {v4, v0, v3, v1}, Lfjy;-><init>(Lfuo;Lbaz;I)V
+
+    invoke-virtual {v2, v4}, Liaw;->a(Lihb;)Lihb;
+
+    iget-object v0, p0, Lfkk;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfkj;
+
+    iget-object v5, v0, Lfkj;->b:Lfue;
+
+    invoke-virtual {v5, v3}, Lfue;->a(Lfuf;)Lihb;
+
+    move-result-object v5
+
+    iget-object v0, v0, Lfkj;->b:Lfue;
+
+    invoke-virtual {v0, v4}, Lfue;->a(Lfuf;)Lihb;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v5}, Liaw;->a(Lihb;)Lihb;
+
+    invoke-virtual {v2, v0}, Liaw;->a(Lihb;)Lihb;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v5, Ljava/util/ArrayList;
+
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v6, Ljava/util/HashSet;
+
+    invoke-direct {v6}, Ljava/util/HashSet;-><init>()V
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lfkk;->a:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    move v1, v0
+
+    :goto_1
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfkj;
+
+    iget-object v8, v0, Lfkj;->d:Landroid/view/Surface;
+
+    invoke-interface {v6, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    iget-object v0, v0, Lfkj;->a:Lfim;
+
+    invoke-virtual {v4, v1}, Lfjy;->a(I)Lfin;
+
+    move-result-object v8
+
+    invoke-interface {v0, v8}, Lfim;->a(Lfin;)Lfhq;
+
+    move-result-object v0
+
+    invoke-interface {v5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v5}, Lffm;->b(Ljava/util/Collection;)Lfhq;
+
+    move-result-object v0
+
+    invoke-static {v6, v0}, Lfgv;->a(Ljava/util/Set;Lfhq;)Lfgt;
+
+    move-result-object v0
+
+    new-instance v1, Lfkm;
+
+    invoke-direct {v1, v3, v0, v2}, Lfkm;-><init>(Lfjw;Lfgt;Lihb;)V
+
+    return-object v1
+.end method
+
+.method public final b()I
+    .locals 3
+
+    const v0, 0x7fffffff
+
+    iget-object v1, p0, Lfkk;->a:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    move v1, v0
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfkj;
+
+    iget v0, v0, Lfkj;->c:I
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    return v1
+.end method
+
+.method public final c()Lick;
+    .locals 1
+
+    iget-object v0, p0, Lfkk;->c:Lfuo;
+
+    invoke-interface {v0}, Lfuo;->c()Lick;
+
+    move-result-object v0
+
+    return-object v0
 .end method

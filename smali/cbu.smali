@@ -1,165 +1,150 @@
-.class final Lcbu;
+.class public final Lcbu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Landroid/net/Uri;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lcbn;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcbn;Landroid/net/Uri;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcbu;->b:Lcbn;
-
-    iput-object p2, p0, Lcbu;->a:Landroid/net/Uri;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcbu;->a:Lkgv;
+
+    iput-object p2, p0, Lcbu;->b:Lkgv;
+
+    iput-object p3, p0, Lcbu;->c:Lkgv;
+
+    iput-object p4, p0, Lcbu;->d:Lkgv;
+
+    iput-object p5, p0, Lcbu;->e:Lkgv;
+
+    iput-object p6, p0, Lcbu;->f:Lkgv;
+
+    iput-object p7, p0, Lcbu;->g:Lkgv;
+
+    iput-object p8, p0, Lcbu;->h:Lkgv;
+
+    iput-object p9, p0, Lcbu;->i:Lkgv;
+
+    iput-object p10, p0, Lcbu;->j:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 5
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 11
 
-    iget-object v0, p0, Lcbu;->b:Lcbn;
+    new-instance v0, Lcbo;
 
-    iget-object v0, v0, Lcbn;->a:Lcbw;
+    iget-object v1, p0, Lcbu;->a:Lkgv;
 
-    iget-object v1, p0, Lcbu;->a:Landroid/net/Uri;
-
-    iget-object v2, v0, Lcbw;->a:Lcaq;
-
-    invoke-virtual {v2, v1}, Lcaq;->a(Landroid/net/Uri;)Lcdw;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, v0, Lcbw;->a:Lcaq;
+    check-cast v1, Landroid/content/Context;
 
-    monitor-enter v2
+    iget-object v2, p0, Lcbu;->b:Lkgv;
 
-    :try_start_0
-    iget-object v3, v0, Lcbw;->a:Lcaq;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v3, v3, Lcaq;->e:Lcbl;
+    move-result-object v2
 
-    if-nez v3, :cond_0
+    check-cast v2, Lfzx;
 
-    iget-object v3, v0, Lcbw;->a:Lcaq;
+    iget-object v3, p0, Lcbu;->c:Lkgv;
 
-    new-instance v4, Lcbl;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v4, v1}, Lcbl;-><init>(Lcdw;)V
+    move-result-object v3
 
-    iput-object v4, v3, Lcaq;->e:Lcbl;
+    check-cast v3, Lgnb;
 
-    iget-object v1, v0, Lcbw;->a:Lcaq;
+    iget-object v4, p0, Lcbu;->d:Lkgv;
 
-    iget-object v1, v1, Lcaq;->e:Lcbl;
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v3, Landroid/content/Intent;
+    move-result-object v4
 
-    const-string v4, "android.intent.action.EDIT"
+    check-cast v4, Lick;
 
-    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    iget-object v5, p0, Lcbu;->e:Lkgv;
 
-    iget-object v4, v1, Lcbl;->a:Lcdw;
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v4, v4, Lcfq;->c:Lcfo;
+    move-result-object v5
 
-    iget-object v4, v4, Lcfb;->e:Lfvj;
+    check-cast v5, Lick;
 
-    iget-object v4, v4, Lfvj;->h:Landroid/net/Uri;
+    iget-object v6, p0, Lcbu;->f:Lkgv;
 
-    iget-object v1, v1, Lcbl;->a:Lcdw;
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v1, Lcfq;->c:Lcfo;
+    move-result-object v6
 
-    iget-object v1, v1, Lcfb;->e:Lfvj;
+    check-cast v6, Lbjy;
 
-    iget-object v1, v1, Lfvj;->d:Ljava/lang/String;
+    iget-object v7, p0, Lcbu;->g:Lkgv;
 
-    invoke-virtual {v3, v4, v1}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v7
 
-    const/4 v3, 0x1
+    check-cast v7, Lgnf;
 
-    invoke-virtual {v1, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v8, p0, Lcbu;->h:Lkgv;
 
-    move-result-object v1
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
 
-    :try_start_1
-    iget-object v3, v0, Lcbw;->a:Lcaq;
+    move-result-object v8
 
-    const/4 v4, 0x1
+    check-cast v8, Lihs;
 
-    invoke-virtual {v3, v1, v4}, Lcaq;->startActivityForResult(Landroid/content/Intent;I)V
-    :try_end_1
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v9, p0, Lcbu;->i:Lkgv;
 
-    :goto_0
-    :try_start_2
-    monitor-exit v2
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v9
 
-    :catch_0
-    move-exception v3
+    check-cast v9, Lcom/google/android/apps/camera/stats/Instrumentation;
 
-    iget-object v3, v0, Lcbw;->a:Lcaq;
+    iget-object v10, p0, Lcbu;->j:Lkgv;
 
-    iget-object v0, v0, Lcbw;->a:Lcaq;
+    invoke-interface {v10}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lcaq;->getResources()Landroid/content/res/Resources;
+    move-result-object v10
 
-    move-result-object v0
+    check-cast v10, Liih;
 
-    const v4, 0x7f1100d5
+    invoke-direct/range {v0 .. v10}, Lcbo;-><init>(Landroid/content/Context;Lfzx;Lgnb;Lick;Lick;Lbjy;Lgnf;Lihs;Lcom/google/android/apps/camera/stats/Instrumentation;Liih;)V
 
-    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v3, v0, v1}, Lcaq;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v0
-
-    :cond_0
-    :try_start_3
-    sget-object v0, Lcaq;->a:Ljava/lang/String;
-
-    const-string v1, "Edit request already in progress"
-
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_0
+    return-object v0
 .end method

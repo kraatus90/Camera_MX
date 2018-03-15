@@ -3,20 +3,30 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Ljxn;
+# static fields
+.field public static final a:Letd;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Letd;
+
+    invoke-direct {v0}, Letd;-><init>()V
+
+    sput-object v0, Letd;->a:Letd;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Letd;->a:Ljxn;
 
     return-void
 .end method
@@ -26,17 +36,9 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Letd;->a:Ljxn;
+    new-instance v0, Letc;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/Context;
-
-    invoke-static {v0}, Letc;->a(Landroid/content/Context;)Ljht;
-
-    move-result-object v0
+    invoke-direct {v0}, Letc;-><init>()V
 
     return-object v0
 .end method

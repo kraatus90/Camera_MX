@@ -3,44 +3,68 @@
 .source "PG"
 
 # interfaces
-.implements Lgyr;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:I
+.field private final a:Lkgv;
 
-.field private b:[Ljava/lang/Object;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public varargs constructor <init>(I[Ljava/lang/Object;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lewn;->a:I
+    iput-object p1, p0, Lewn;->a:Lkgv;
 
-    iput-object p2, p0, Lewn;->b:[Ljava/lang/Object;
+    iput-object p2, p0, Lewn;->b:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;)Lewn;
+    .locals 1
+
+    new-instance v0, Lewn;
+
+    invoke-direct {v0, p0, p1}, Lewn;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Ljava/lang/String;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    iget-object v0, p0, Lewn;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liaw;
+
+    iget-object v1, p0, Lewn;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    const-string v1, "MicrovideoQSharedStartup"
+
+    invoke-static {v0, v1}, Liat;->a(Liaw;Ljava/lang/String;)Landroid/os/Handler;
 
     move-result-object v0
 
-    iget v1, p0, Lewn;->a:I
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v2, p0, Lewn;->b:[Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Landroid/os/Handler;
 
     return-object v0
 .end method

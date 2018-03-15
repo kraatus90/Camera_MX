@@ -1,57 +1,155 @@
-.class Lfdk;
-.super Lgvh;
+.class public final Lfdk;
+.super Lido;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lfdj;
+.field public a:Lick;
 
 
 # direct methods
-.method constructor <init>(Lfdj;)V
-    .locals 1
+.method public constructor <init>(Lick;)V
+    .locals 0
 
-    iput-object p1, p0, Lfdk;->a:Lfdj;
+    invoke-direct {p0, p1}, Lido;-><init>(Lick;)V
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>([[Z)V
+    iput-object p1, p0, Lfdk;->a:Lick;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public D()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a()V
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfdk;->a:Lfdj;
+    check-cast p1, Lfdj;
 
-    iget-object v0, v0, Lfdj;->f:Levh;
+    invoke-virtual {p1}, Lfdj;->ordinal()I
 
-    const/4 v1, 0x1
+    move-result v0
 
-    invoke-virtual {v0, v1}, Levh;->a(Z)Z
+    packed-switch v0, :pswitch_data_0
 
-    return-void
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "Unknown WB output value"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_0
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :pswitch_1
+    const/4 v0, 0x6
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_2
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_3
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_4
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
 .end method
 
-.method public final b()V
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfdk;->a:Lfdj;
+    check-cast p1, Ljava/lang/Integer;
 
-    iget-object v0, v0, Lfdj;->f:Levh;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    const/4 v1, 0x0
+    move-result v0
 
-    invoke-virtual {v0, v1}, Levh;->a(Z)Z
+    packed-switch v0, :pswitch_data_0
 
-    return-void
+    :pswitch_0
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "Unknown WB input value"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_1
+    sget-object v0, Lfdj;->a:Lfdj;
+
+    :goto_0
+    return-object v0
+
+    :pswitch_2
+    sget-object v0, Lfdj;->b:Lfdj;
+
+    goto :goto_0
+
+    :pswitch_3
+    sget-object v0, Lfdj;->c:Lfdj;
+
+    goto :goto_0
+
+    :pswitch_4
+    sget-object v0, Lfdj;->d:Lfdj;
+
+    goto :goto_0
+
+    :pswitch_5
+    sget-object v0, Lfdj;->e:Lfdj;
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_4
+        :pswitch_5
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+    .end packed-switch
 .end method

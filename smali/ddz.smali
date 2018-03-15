@@ -1,50 +1,87 @@
-.class public final Lddz;
+.class final Lddz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lhfy;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lddx;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lddx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lddz;->a:Lddx;
 
-    iput-object p1, p0, Lddz;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(Z)V
+    .locals 1
 
-    iget-object v0, p0, Lddz;->a:Ljxn;
+    if-nez p1, :cond_0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lddz;->a:Lddx;
 
-    move-result-object v0
+    iget-object v0, v0, Lddx;->l:Lhcu;
 
-    check-cast v0, Ldbj;
+    invoke-static {}, Ldzh;->h()Z
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    iget-object v0, p0, Lddz;->a:Lddx;
 
-    move-result-object v0
+    iget-object v0, v0, Lddx;->i:Lgvg;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-interface {v0}, Lgvg;->onShutterButtonClick()V
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :cond_0
+    return-void
+.end method
 
-    move-result-object v0
+.method public final b(Z)V
+    .locals 1
 
-    check-cast v0, Ljuw;
+    if-eqz p1, :cond_0
 
-    return-object v0
+    iget-object v0, p0, Lddz;->a:Lddx;
+
+    iget-object v0, v0, Lddx;->l:Lhcu;
+
+    invoke-static {}, Ldzh;->h()Z
+
+    iget-object v0, p0, Lddz;->a:Lddx;
+
+    iget-object v0, v0, Lddx;->j:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->k()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Z)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lddz;->a:Lddx;
+
+    iget-object v0, v0, Lddx;->l:Lhcu;
+
+    invoke-static {}, Ldzh;->h()Z
+
+    iget-object v0, p0, Lddz;->a:Lddx;
+
+    iget-object v0, v0, Lddx;->j:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->j()V
+
+    :cond_0
+    return-void
 .end method

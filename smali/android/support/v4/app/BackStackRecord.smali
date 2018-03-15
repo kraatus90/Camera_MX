@@ -454,9 +454,9 @@
 
     if-eqz v0, :cond_2
 
-    sget-object v0, Lid;->a:Lim;
+    sget-object v0, Lhz;->a:Lii;
 
-    invoke-virtual {v0, p1}, Lim;->t(Landroid/view/View;)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lii;->t(Landroid/view/View;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -796,11 +796,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v0, Lgr;
+    new-instance v0, Lgm;
 
     const-string v1, "FragmentManager"
 
-    invoke-direct {v0, v1}, Lgr;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lgm;-><init>(Ljava/lang/String;)V
 
     new-instance v1, Ljava/io/PrintWriter;
 

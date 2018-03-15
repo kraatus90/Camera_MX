@@ -13,7 +13,7 @@
 .method public constructor <init>()V
     .locals 3
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FloatSmoothKeyValueMap__SWIG_0()J
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FloatSmoothKeyValueMap()J
 
     move-result-wide v0
 
@@ -32,24 +32,6 @@
     iput-boolean p3, p0, Lcom/google/googlex/gcam/FloatSmoothKeyValueMap;->swigCMemOwn:Z
 
     iput-wide p1, p0, Lcom/google/googlex/gcam/FloatSmoothKeyValueMap;->swigCPtr:J
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/googlex/gcam/SWIGTYPE_p_std__initializer_listT_std__pairT_float_float_t_t;)V
-    .locals 3
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__initializer_listT_std__pairT_float_float_t_t;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_std__initializer_listT_std__pairT_float_float_t_t;)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FloatSmoothKeyValueMap__SWIG_1(J)J
-
-    move-result-wide v0
-
-    const/4 v2, 0x1
-
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/googlex/gcam/FloatSmoothKeyValueMap;-><init>(JZ)V
 
     return-void
 .end method

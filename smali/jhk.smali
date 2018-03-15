@@ -1,186 +1,422 @@
-.class public final Ljhk;
+.class public Ljhk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/io/Serializable;
-.implements Ljhj;
-
-
-# static fields
-.field public static final serialVersionUID:J
+.implements Ljava/lang/AutoCloseable;
+.implements Ljha;
 
 
 # instance fields
-.field private a:Ljhj;
+.field public final a:I
 
-.field private b:Ljhj;
+.field public final b:I
+
+.field public c:Ljava/util/Set;
+
+.field private final d:Ljava/util/Map;
+
+.field private final e:Ljava/util/concurrent/Executor;
+
+.field private final f:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Ljhj;Ljhj;)V
+.method public constructor <init>(Ljava/util/Map;IILjava/util/Set;)V
+    .locals 6
+
+    new-instance v4, Lkeo;
+
+    invoke-direct {v4}, Lkeo;-><init>()V
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Ljhk;-><init>(Ljava/util/Map;IILjava/util/concurrent/Executor;Ljava/util/Set;)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/util/Map;IILjava/util/concurrent/Executor;Ljava/util/Set;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    check-cast v0, Ljhj;
+    iput-object v0, p0, Ljhk;->f:Ljava/util/List;
 
-    iput-object v0, p0, Ljhk;->a:Ljhj;
+    iput-object p1, p0, Ljhk;->d:Ljava/util/Map;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput p2, p0, Ljhk;->a:I
 
-    move-result-object v0
+    iput p3, p0, Ljhk;->b:I
 
-    check-cast v0, Ljhj;
+    iput-object p4, p0, Ljhk;->e:Ljava/util/concurrent/Executor;
 
-    iput-object v0, p0, Ljhk;->b:Ljhj;
+    iput-object p5, p0, Ljhk;->c:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final a()I
+    .locals 1
 
-    iget-object v0, p0, Ljhk;->a:Ljhj;
+    iget v0, p0, Ljhk;->a:I
 
-    iget-object v1, p0, Ljhk;->b:Ljhj;
+    return v0
+.end method
 
-    invoke-interface {v1, p1}, Ljhj;->a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a(J)Liqz;
+    .locals 3
+
+    iget-object v0, p0, Ljhk;->d:Ljava/util/Map;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljhj;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liqz;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const/16 v1, 0x21
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "No image at "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "!"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final a(Ljava/util/Set;)V
+    .locals 2
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-virtual {p0}, Ljhk;->c()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    iput-object v0, p0, Ljhk;->c:Ljava/util/Set;
+
+    iget-object v0, p0, Ljhk;->c:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->retainAll(Ljava/util/Collection;)Z
+
+    return-void
+.end method
+
+.method public final b()I
+    .locals 1
+
+    iget v0, p0, Ljhk;->b:I
+
+    return v0
+.end method
+
+.method public final b(J)Liqz;
+    .locals 3
+
+    invoke-virtual {p0, p1, p2}, Ljhk;->a(J)Liqz;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ljhk;->e:Ljava/util/concurrent/Executor;
+
+    sget-object v2, Ljhl;->a:Lipn;
+
+    invoke-interface {v0, v1, v2}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final declared-synchronized b(Ljava/util/Set;)Ljhk;
+    .locals 9
 
-    const/4 v0, 0x0
+    monitor-enter p0
 
-    instance-of v1, p1, Ljhk;
+    :try_start_0
+    new-instance v1, Ljho;
 
-    if-eqz v1, :cond_0
+    invoke-direct {v1}, Ljho;-><init>()V
 
-    check-cast p1, Ljhk;
+    invoke-virtual {p0}, Ljhk;->c()Ljava/util/Set;
 
-    iget-object v1, p0, Ljhk;->b:Ljhj;
+    move-result-object v0
 
-    iget-object v2, p1, Ljhk;->b:Ljhj;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v1, v2}, Ljhj;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Ljhk;->a:Ljhj;
-
-    iget-object v2, p1, Ljhk;->a:Ljhj;
-
-    invoke-interface {v1, v2}, Ljhj;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
+    move-result-object v8
 
     :cond_0
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Ljhk;->b:Ljhj;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    :goto_0
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    iget-object v1, p0, Ljhk;->a:Ljhj;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v0
 
-    xor-int/2addr v0, v1
+    check-cast v0, Ljava/lang/Long;
 
-    return v0
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, v2, v3}, Ljhk;->c(J)Liqz;
+
+    move-result-object v4
+
+    iget v5, p0, Ljhk;->a:I
+
+    iget v6, p0, Ljhk;->b:I
+
+    iget-object v0, p0, Ljhk;->c:Ljava/util/Set;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-interface {v0, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    invoke-virtual/range {v1 .. v7}, Ljho;->a(JLiqz;IIZ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1
+    :try_start_1
+    invoke-virtual {v1}, Ljho;->a()Ljhk;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result-object v0
+
+    monitor-exit p0
+
+    return-object v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final declared-synchronized c(J)Liqz;
+    .locals 3
 
-    iget-object v0, p0, Ljhk;->a:Ljhj;
+    monitor-enter p0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ljhk;->b:Ljhj;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x2
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    invoke-virtual {p0, p1, p2}, Ljhk;->a(J)Liqz;
 
     move-result-object v0
 
-    const-string v2, "("
+    iget-object v1, p0, Ljhk;->e:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v2, Ljhn;
 
-    move-result-object v0
+    invoke-direct {v2}, Ljhn;-><init>()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ")"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0, v1, v2}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, p0, Ljhk;->f:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final c()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Ljhk;->d:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public declared-synchronized close()V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    new-instance v0, Lipo;
+
+    invoke-direct {v0}, Lipo;-><init>()V
+
+    iget-object v1, p0, Ljhk;->d:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lihr;->a(Ljava/lang/Object;)Lipn;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ljhk;->f:Ljava/util/List;
+
+    invoke-static {v2}, Lihr;->a(Ljava/lang/Iterable;)Liqz;
+
+    move-result-object v2
+
+    iget-object v3, p0, Ljhk;->e:Ljava/util/concurrent/Executor;
+
+    invoke-interface {v2, v3, v1, v1}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;Lipn;)Liqz;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ljhk;->e:Ljava/util/concurrent/Executor;
+
+    new-instance v3, Liro;
+
+    invoke-direct {v3, v0}, Liro;-><init>(Lipn;)V
+
+    invoke-interface {v1, v2, v3}, Liqz;->a(Ljava/util/concurrent/Executor;Lire;)Liqz;
+
+    move-result-object v0
+
+    sget-object v1, Liqb;->a:Liqb;
+
+    invoke-interface {v0, v1}, Liqz;->a(Lipm;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final d()Ljava/util/List;
+    .locals 2
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v1, p0, Ljhk;->d:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/util/List;
+    .locals 2
+
+    invoke-virtual {p0}, Ljhk;->d()Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ljhk;->c:Ljava/util/Set;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
+
+    return-object v0
+.end method
+
+.method public final f()I
+    .locals 1
+
+    iget-object v0, p0, Ljhk;->d:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
+    return v0
 .end method

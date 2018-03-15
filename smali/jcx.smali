@@ -1,134 +1,142 @@
-.class public final Ljcx;
+.class final Ljcx;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljcs;
+.implements Ljoz;
 
 
 # instance fields
-.field public final a:Ljava/io/Writer;
-
-.field private b:Ljcs;
-
-.field private c:Ljava/util/concurrent/ExecutorService;
+.field private final synthetic a:Ljcw;
 
 
 # direct methods
-.method public constructor <init>(Ljcs;Ljava/io/Writer;)V
-    .locals 1
+.method constructor <init>(Ljcw;)V
+    .locals 0
+
+    iput-object p1, p0, Ljcx;->a:Ljcw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljcx;->c:Ljava/util/concurrent/ExecutorService;
-
-    iput-object p1, p0, Ljcx;->b:Ljcs;
-
-    iput-object p2, p0, Ljcx;->a:Ljava/io/Writer;
-
-    return-void
-.end method
-
-.method private final a(Ljava/lang/String;J)V
-    .locals 2
-
-    iget-object v0, p0, Ljcx;->c:Ljava/util/concurrent/ExecutorService;
-
-    new-instance v1, Ljcy;
-
-    invoke-direct {v1, p0, p1, p2, p3}, Ljcy;-><init>(Ljcx;Ljava/lang/String;J)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 3
+.method public final a(Ljava/io/Writer;)V
+    .locals 5
 
-    iget-object v0, p0, Ljcx;->b:Ljcs;
+    iget-object v0, p0, Ljcx;->a:Ljcw;
 
-    invoke-interface {v0}, Ljcs;->a()J
+    iget-object v0, v0, Ljcw;->a:Ljava/util/Map;
 
-    move-result-wide v0
-
-    const-string v2, "SELECT"
-
-    invoke-direct {p0, v2, v0, v1}, Ljcx;->a(Ljava/lang/String;J)V
-
-    return-wide v0
-.end method
-
-.method public final a(J)V
-    .locals 1
-
-    iget-object v0, p0, Ljcx;->b:Ljcs;
-
-    invoke-interface {v0, p1, p2}, Ljcs;->a(J)V
-
-    const-string v0, "ON_DROPPED"
-
-    invoke-direct {p0, v0, p1, p2}, Ljcx;->a(Ljava/lang/String;J)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 4
-
-    const-string v0, "RESET"
-
-    const-wide/16 v2, 0x0
-
-    invoke-direct {p0, v0, v2, v3}, Ljcx;->a(Ljava/lang/String;J)V
-
-    iget-object v0, p0, Ljcx;->b:Ljcs;
-
-    invoke-interface {v0}, Ljcs;->b()V
-
-    return-void
-.end method
-
-.method public final b(J)V
-    .locals 1
-
-    const-string v0, "ON_INSERTED"
-
-    invoke-direct {p0, v0, p1, p2}, Ljcx;->a(Ljava/lang/String;J)V
-
-    iget-object v0, p0, Ljcx;->b:Ljcs;
-
-    invoke-interface {v0, p1, p2}, Ljcs;->b(J)V
-
-    return-void
-.end method
-
-.method public final c()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Ljcx;->b:Ljcs;
-
-    invoke-interface {v0}, Ljcs;->c()Ljava/util/Set;
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-.method public final d()Ljht;
-    .locals 1
+    move-result-object v1
 
-    iget-object v0, p0, Ljcx;->b:Ljcs;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {v0}, Ljcs;->d()Ljht;
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Ljava/lang/String;
+
+    iget-object v2, p0, Ljcx;->a:Ljcw;
+
+    iget-object v2, v2, Ljcw;->b:Ljava/util/Map;
+
+    invoke-interface {v2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x5
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, " -> "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "\n"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    :goto_1
+    const-string v0, "\n"
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, " -> [Instantiator not invoked]\n"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    return-void
 .end method

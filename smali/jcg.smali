@@ -1,85 +1,48 @@
-.class public final Ljcg;
-.super Ljbf;
+.class final Ljcg;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:I
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljbf;-><init>()V
-
-    iput p1, p0, Ljcg;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Z
-    .locals 2
-
-    invoke-virtual {p1}, Ljaz;->a()I
-
-    move-result v0
-
-    iget v1, p0, Ljcg;->a:I
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 4
 
-    const-string v0, "MinCountSegmentSelector[minCount="
+    new-instance v2, Ljip;
 
-    iget v1, p0, Ljcg;->a:I
+    const-class v0, Liyf;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const-string v1, "default"
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0xc
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    check-cast v0, Liyf;
 
-    move-result-object v0
+    const-class v1, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    const-string v1, "]"
+    const-string v3, "default"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v1, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    move-result-object v0
+    invoke-direct {v2, v0, v1}, Ljip;-><init>(Liyf;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
 
-    return-object v0
+    return-object v2
 .end method

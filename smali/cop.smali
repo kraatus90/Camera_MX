@@ -1,56 +1,292 @@
-.class public interface abstract Lcop;
+.class public final Lcop;
 .super Ljava/lang/Object;
 .source "PG"
 
 
+# instance fields
+.field public a:I
+
+.field private final synthetic b:Lcoq;
+
+
+# direct methods
+.method constructor <init>(Lcoq;)V
+    .locals 1
+
+    iput-object p1, p0, Lcop;->b:Lcoq;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcop;->a:I
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(Lcpa;Liic;Liil;)Lcom/google/googlex/gcam/AeResults;
+.method public final a()V
+    .locals 7
+
+    const/4 v6, 0x1
+
+    const/4 v5, 0x2
+
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iput-boolean v6, v0, Lcoq;->e:Z
+
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
+
+    const-string v1, "[fling] onScrollEnd() - onScrollEnd"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
+
+    aget-object v0, v0, v5
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v1, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m:[Lcoz;
+
+    aget-object v0, v0, v5
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m()Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->f()Z
+
+    move-result v2
+
+    if-nez v2, :cond_4
+
+    :cond_2
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->y:Lcoy;
+
+    if-eqz v2, :cond_3
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->y:Lcoy;
+
+    iget-object v0, v0, Lcoz;->h:Leqd;
+
+    invoke-interface {v1, v0}, Lcoy;->a(Leqd;)V
+
+    :cond_3
+    :goto_1
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->m()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
+
+    const-string v1, "[fling] onScrollEnd() - Ensuring that items are at full resolution."
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    invoke-virtual {v0, v5}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(I)V
+
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(I)V
+
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    invoke-virtual {v0, v6}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(I)V
+
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a(I)V
+
+    goto :goto_0
+
+    :cond_4
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
+
+    invoke-virtual {v2}, Lcoq;->f()Z
+
+    move-result v2
+
+    if-nez v2, :cond_5
+
+    iget-boolean v2, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->r:Z
+
+    if-eqz v2, :cond_6
+
+    :cond_5
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
+
+    invoke-virtual {v1}, Lcoq;->f()Z
+
+    move-result v1
+
+    const/16 v2, 0x29
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "[fling] mController.isScrolling() - "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_6
+    invoke-virtual {v0}, Lcoz;->c()I
+
+    move-result v2
+
+    const/high16 v0, 0x44160000    # 600.0f
+
+    iget v3, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->l:I
+
+    sub-int/2addr v3, v2
+
+    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    mul-float/2addr v0, v3
+
+    iget-object v3, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->i:Landroid/graphics/Rect;
+
+    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v0, v3
+
+    float-to-int v0, v0
+
+    if-gez v0, :cond_7
+
+    const/16 v0, 0x190
+
+    :cond_7
+    sget-object v3, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
+
+    const-string v4, "[fling] Scroll to center."
+
+    invoke-static {v3, v4}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v0, v3}, Lcoq;->a(IIZ)V
+
+    goto/16 :goto_1
 .end method
 
-.method public abstract a(Lcpa;Lcom/google/googlex/gcam/AeResults;)Lcom/google/googlex/gcam/BurstSpec;
-.end method
+.method public final a(I)V
+    .locals 3
 
-.method public abstract a(ILeaq;Lgdv;Lcom/google/googlex/gcam/AeResults;Liic;)Lcpa;
-.end method
+    iget-object v0, p0, Lcop;->b:Lcoq;
 
-.method public abstract a(ILeaq;Lgdv;Liic;)Lcpa;
-.end method
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-.method public abstract a()Liau;
-.end method
+    iget v1, p0, Lcop;->a:I
 
-.method public abstract a(I)V
-.end method
+    sub-int v1, p1, v1
 
-.method public abstract a(ILiil;Liic;)V
-.end method
+    iget v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->l:I
 
-.method public abstract a(Lcpa;ILiic;Liil;)V
-.end method
+    add-int/2addr v1, v2
 
-.method public abstract a(Lcpa;ILiic;Liil;Liil;[Landroid/hardware/camera2/params/Face;)V
-.end method
+    iput v1, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->l:I
 
-.method public abstract a(Lcpa;Lcom/google/googlex/gcam/BurstSpec;)V
-.end method
+    iput p1, p0, Lcop;->a:I
 
-.method public abstract a(Lcpa;)Z
-.end method
+    iget-object v0, p0, Lcop;->b:Lcoq;
 
-.method public abstract b()Lcom/google/googlex/gcam/InitParams;
-.end method
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
 
-.method public abstract b(Lcpa;)Z
-.end method
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->c()Z
 
-.method public abstract c(Lcpa;)Z
-.end method
+    move-result v0
 
-.method public abstract d(Lcpa;)Lcom/google/googlex/gcam/BurstSpec;
-.end method
+    if-eqz v0, :cond_0
 
-.method public abstract e(Lcpa;)Lcom/google/googlex/gcam/BurstSpec;
-.end method
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-.method public abstract f(Lcpa;)Z
+    const-string v1, "[fling] onScrollUpdate() - stopScrolling!"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->k:Lcoq;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcoq;->a(Z)Z
+
+    :cond_0
+    iget-object v0, p0, Lcop;->b:Lcoq;
+
+    iget-object v0, v0, Lcoq;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->invalidate()V
+
+    return-void
 .end method

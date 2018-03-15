@@ -1,88 +1,44 @@
-.class public final Ldiu;
+.class final Ldiu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic a:Ldit;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Ldit;)V
     .locals 0
 
+    iput-object p1, p0, Ldiu;->a:Ldit;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldiu;->a:Ljxn;
-
-    iput-object p2, p0, Ldiu;->b:Ljxn;
-
-    iput-object p3, p0, Ldiu;->c:Ljxn;
-
-    iput-object p4, p0, Ldiu;->d:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldiu;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Ldiu;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final run()V
+    .locals 1
 
-    new-instance v4, Ldir;
+    iget-object v0, p0, Ldiu;->a:Ldit;
 
-    iget-object v0, p0, Ldiu;->a:Ljxn;
+    iget-object v0, v0, Ldit;->a:Ldil;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Ldol;
+    check-cast v0, Ldjx;
 
-    iget-object v1, p0, Ldiu;->b:Ljxn;
+    iget-object v0, v0, Ldjx;->x:Legm;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lglb;->N()V
 
-    move-result-object v1
-
-    check-cast v1, Ljuw;
-
-    iget-object v2, p0, Ldiu;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgec;
-
-    iget-object v3, p0, Ldiu;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lges;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Ldir;-><init>(Ldol;Ljuw;Lgec;Lges;)V
-
-    return-object v4
+    return-void
 .end method

@@ -1,136 +1,106 @@
 .class final Lilu;
-.super Likn;
+.super Linh;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:I
+.field private a:Z
 
-.field private synthetic b:Lils;
+.field private final synthetic b:Lilt;
 
 
 # direct methods
-.method constructor <init>(Lils;I)V
-    .locals 0
+.method constructor <init>(Lilt;Link;)V
+    .locals 1
 
-    iput-object p1, p0, Lilu;->b:Lils;
+    iput-object p1, p0, Lilu;->b:Lilt;
 
-    iput p2, p0, Lilu;->a:I
+    invoke-direct {p0, p2}, Linh;-><init>(Link;)V
 
-    invoke-direct {p0}, Likn;-><init>()V
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lilu;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 6
+.method public final close()V
+    .locals 4
 
-    check-cast p1, Lilh;
-
-    iget-object v0, p0, Lilu;->b:Lils;
-
-    iget-object v0, v0, Lils;->c:[Lilh;
-
-    iget v1, p0, Lilu;->a:I
-
-    aput-object p1, v0, v1
-
-    iget-object v0, p0, Lilu;->b:Lils;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lils;->e:Z
-
-    iget-object v3, p0, Lilu;->b:Lils;
-
-    iget-object v0, v3, Lils;->d:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    iget-boolean v0, v3, Lils;->e:Z
-
-    if-eqz v0, :cond_5
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    iget-object v4, v3, Lils;->c:[Lilh;
+    iget-object v2, p0, Lilu;->b:Lilt;
 
-    array-length v5, v4
+    iget-object v2, v2, Lilt;->a:Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    monitor-enter v2
 
-    move v2, v0
+    :try_start_0
+    iget-boolean v3, p0, Lilu;->a:Z
+
+    if-nez v3, :cond_1
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lilu;->a:Z
 
     :goto_0
-    if-ge v2, v5, :cond_2
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    aget-object v0, v4, v2
+    if-eqz v0, :cond_0
 
-    if-eqz v0, :cond_1
+    invoke-super {p0}, Linh;->close()V
 
-    if-nez v1, :cond_0
+    iget-object v0, p0, Lilu;->b:Lilt;
 
-    :goto_1
-    add-int/lit8 v1, v2, 0x1
+    iget-object v1, v0, Lilt;->a:Ljava/lang/Object;
 
-    move v2, v1
+    monitor-enter v1
 
-    move-object v1, v0
+    :try_start_1
+    iget-object v0, p0, Lilu;->b:Lilt;
 
-    goto :goto_0
+    iget v2, v0, Lilt;->b:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    iput v2, v0, Lilt;->b:I
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :cond_0
-    invoke-static {v1, v0}, Ljvs;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    :cond_1
-    move-object v0, v1
-
-    goto :goto_1
-
-    :cond_2
-    if-eqz v1, :cond_4
-
-    iget-object v0, v3, Lils;->a:Lilv;
-
-    invoke-virtual {v0, v1}, Lilv;->a(Lilh;)Z
-
-    :cond_3
-    :goto_2
     return-void
 
-    :cond_4
-    iget-object v0, v3, Lils;->a:Lilv;
+    :catchall_0
+    move-exception v0
 
-    new-instance v1, Ljava/lang/AssertionError;
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    const-string v2, "Result list was marked as having an exception,but no exception was found"
+    throw v0
 
-    invoke-direct {v1, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    :catchall_1
+    move-exception v0
 
-    invoke-static {v1}, Lilh;->a(Ljava/lang/Throwable;)Lilh;
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    move-result-object v1
+    throw v0
 
-    invoke-virtual {v0, v1}, Lilv;->a(Lilh;)Z
+    :cond_1
+    move v0, v1
 
-    goto :goto_2
-
-    :cond_5
-    iget-object v0, v3, Lils;->a:Lilv;
-
-    iget-object v1, v3, Lils;->b:[Ljava/lang/Object;
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lilv;->a(Ljava/lang/Object;)Z
-
-    goto :goto_2
+    goto :goto_0
 .end method

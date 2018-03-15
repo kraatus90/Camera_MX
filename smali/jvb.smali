@@ -1,44 +1,27 @@
 .class final Ljvb;
-.super Ljava/lang/Object;
+.super Ljwz;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Ljava/lang/Runnable;
-
-.field private synthetic b:Ljva;
 
 
 # direct methods
-.method constructor <init>(Ljva;Ljava/lang/Runnable;)V
+.method constructor <init>(Ljava/util/Iterator;)V
     .locals 0
 
-    iput-object p1, p0, Ljvb;->b:Ljva;
-
-    iput-object p2, p0, Ljvb;->a:Ljava/lang/Runnable;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljwz;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Ljvb;->b:Ljva;
+    check-cast p1, Ljava/util/Map$Entry;
 
-    const/4 v1, 0x0
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    iput-boolean v1, v0, Ljva;->a:Z
+    move-result-object v0
 
-    iget-object v0, p0, Ljvb;->a:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    return-void
+    return-object v0
 .end method

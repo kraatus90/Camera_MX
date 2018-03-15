@@ -1,70 +1,145 @@
-.class final Lnl;
-.super Ljava/lang/Object;
+.class public final Lnl;
+.super Lnr;
 .source "PG"
 
-
-# static fields
-.field public static a:Lnl;
+# interfaces
+.implements Lou;
 
 
 # instance fields
-.field private b:Landroid/content/Context;
+.field public final a:Lot;
 
-.field private c:Landroid/location/LocationManager;
+.field private final d:Landroid/content/Context;
 
-.field private d:Lnm;
+.field private e:Lns;
+
+.field private f:Ljava/lang/ref/WeakReference;
+
+.field private final synthetic g:Lni;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/location/LocationManager;)V
-    .locals 1
+.method public constructor <init>(Lni;Landroid/content/Context;Lns;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnl;->g:Lni;
 
-    new-instance v0, Lnm;
+    invoke-direct {p0}, Lnr;-><init>()V
 
-    invoke-direct {v0}, Lnm;-><init>()V
+    iput-object p2, p0, Lnl;->d:Landroid/content/Context;
 
-    iput-object v0, p0, Lnl;->d:Lnm;
+    iput-object p3, p0, Lnl;->e:Lns;
 
-    iput-object p1, p0, Lnl;->b:Landroid/content/Context;
+    new-instance v0, Lot;
 
-    iput-object p2, p0, Lnl;->c:Landroid/location/LocationManager;
+    invoke-direct {v0, p2}, Lot;-><init>(Landroid/content/Context;)V
+
+    const/4 v1, 0x1
+
+    iput v1, v0, Lot;->e:I
+
+    iput-object v0, p0, Lnl;->a:Lot;
+
+    iget-object v0, p0, Lnl;->a:Lot;
+
+    invoke-virtual {v0, p0}, Lot;->a(Lou;)V
 
     return-void
 .end method
 
-.method private final a(Ljava/lang/String;)Landroid/location/Location;
-    .locals 3
 
-    :try_start_0
-    iget-object v0, p0, Lnl;->c:Landroid/location/LocationManager;
+# virtual methods
+.method public final a()Landroid/view/MenuInflater;
+    .locals 2
 
-    invoke-virtual {v0, p1}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
+    new-instance v0, Lny;
 
-    move-result v0
+    iget-object v1, p0, Lnl;->d:Landroid/content/Context;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, v1}, Lny;-><init>(Landroid/content/Context;)V
 
-    iget-object v0, p0, Lnl;->c:Landroid/location/LocationManager;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, p1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+.method public final a(I)V
+    .locals 1
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v0, v0, Lni;->a:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
+    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lnl;->b(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final a(Landroid/view/View;)V
+    .locals 1
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->a(Landroid/view/View;)V
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lnl;->f:Ljava/lang/ref/WeakReference;
+
+    return-void
+.end method
+
+.method public final a(Ljava/lang/CharSequence;)V
+    .locals 1
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->b(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final a(Z)V
+    .locals 1
+
+    invoke-super {p0, p1}, Lnr;->a(Z)V
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->a(Z)V
+
+    return-void
+.end method
+
+.method public final a(Lot;Landroid/view/MenuItem;)Z
+    .locals 1
+
+    iget-object v0, p0, Lnl;->e:Lns;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lnl;->e:Lns;
+
+    invoke-interface {v0, p0, p2}, Lns;->a(Lnr;Landroid/view/MenuItem;)Z
+
+    move-result v0
+
     :goto_0
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "TwilightManager"
-
-    const-string v2, "Failed to get last known location"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    return v0
 
     :cond_0
     const/4 v0, 0x0
@@ -72,300 +147,293 @@
     goto :goto_0
 .end method
 
+.method public final b()Landroid/view/Menu;
+    .locals 1
 
-# virtual methods
-.method final a()Z
-    .locals 20
+    iget-object v0, p0, Lnl;->a:Lot;
 
-    move-object/from16 v0, p0
+    return-object v0
+.end method
 
-    iget-object v15, v0, Lnl;->d:Lnm;
+.method public final b(I)V
+    .locals 1
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    iget-object v2, v0, Lnl;->d:Lnm;
+    iget-object v0, v0, Lni;->a:Landroid/content/Context;
 
-    iget-wide v2, v2, Lnm;->b:J
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result-object v0
 
-    move-result-wide v4
+    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    cmp-long v2, v2, v4
+    move-result-object v0
 
-    if-lez v2, :cond_0
+    invoke-virtual {p0, v0}, Lnl;->a(Ljava/lang/CharSequence;)V
 
-    const/4 v2, 0x1
+    return-void
+.end method
 
-    :goto_0
-    if-eqz v2, :cond_1
+.method public final b(Ljava/lang/CharSequence;)V
+    .locals 1
 
-    iget-boolean v2, v15, Lnm;->a:Z
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    :goto_1
-    return v2
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
 
-    :cond_0
-    const/4 v2, 0x0
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->a(Ljava/lang/CharSequence;)V
 
-    goto :goto_0
+    return-void
+.end method
 
-    :cond_1
-    const/4 v2, 0x0
+.method public final c()V
+    .locals 4
 
     const/4 v3, 0x0
 
-    move-object/from16 v0, p0
+    const/4 v2, 0x0
 
-    iget-object v4, v0, Lnl;->b:Landroid/content/Context;
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    const-string v5, "android.permission.ACCESS_COARSE_LOCATION"
+    iget-object v0, v0, Lni;->g:Lnl;
 
-    invoke-static {v4, v5}, Llb;->a(Landroid/content/Context;Ljava/lang/String;)I
+    if-eq v0, p0, :cond_0
 
-    move-result v4
+    :goto_0
+    return-void
 
-    if-nez v4, :cond_2
+    :cond_0
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    const-string v2, "network"
+    iget-boolean v0, v0, Lni;->k:Z
 
-    move-object/from16 v0, p0
+    iget-object v1, p0, Lnl;->g:Lni;
 
-    invoke-direct {v0, v2}, Lnl;->a(Ljava/lang/String;)Landroid/location/Location;
+    iget-boolean v1, v1, Lni;->l:Z
 
-    move-result-object v2
+    invoke-static {v0, v1, v2}, Lni;->a(ZZZ)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iput-object p0, v0, Lni;->h:Lnr;
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v1, p0, Lnl;->e:Lns;
+
+    iput-object v1, v0, Lni;->i:Lns;
+
+    :goto_1
+    iput-object v3, p0, Lnl;->e:Lns;
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    invoke-virtual {v0, v2}, Lni;->f(Z)V
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
+
+    iget-object v1, v0, Landroid/support/v7/widget/ActionBarContextView;->h:Landroid/view/View;
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->b()V
+
+    :cond_1
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v0, v0, Lni;->d:Lsa;
+
+    iget-object v0, v0, Lsa;->a:Landroid/support/v7/widget/Toolbar;
+
+    const/16 v1, 0x20
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->sendAccessibilityEvent(I)V
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iget-object v0, v0, Lni;->b:Landroid/support/v7/widget/ActionBarOverlayLayout;
+
+    iget-object v1, p0, Lnl;->g:Lni;
+
+    iget-boolean v1, v1, Lni;->n:Z
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->a(Z)V
+
+    iget-object v0, p0, Lnl;->g:Lni;
+
+    iput-object v3, v0, Lni;->g:Lnl;
+
+    goto :goto_0
 
     :cond_2
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lnl;->e:Lns;
 
-    iget-object v4, v0, Lnl;->b:Landroid/content/Context;
+    invoke-interface {v0, p0}, Lns;->a(Lnr;)V
 
-    const-string v5, "android.permission.ACCESS_FINE_LOCATION"
+    goto :goto_1
+.end method
 
-    invoke-static {v4, v5}, Llb;->a(Landroid/content/Context;Ljava/lang/String;)I
+.method public final d()V
+    .locals 2
 
-    move-result v4
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    if-nez v4, :cond_3
+    iget-object v0, v0, Lni;->g:Lnl;
 
-    const-string v3, "gps"
+    if-eq v0, p0, :cond_0
 
-    move-object/from16 v0, p0
+    :goto_0
+    return-void
 
-    invoke-direct {v0, v3}, Lnl;->a(Ljava/lang/String;)Landroid/location/Location;
+    :cond_0
+    iget-object v0, p0, Lnl;->a:Lot;
 
-    move-result-object v3
+    invoke-virtual {v0}, Lot;->d()V
 
-    :cond_3
-    if-eqz v3, :cond_7
+    :try_start_0
+    iget-object v0, p0, Lnl;->e:Lns;
 
-    if-eqz v2, :cond_7
+    iget-object v1, p0, Lnl;->a:Lot;
 
-    invoke-virtual {v3}, Landroid/location/Location;->getTime()J
+    invoke-interface {v0, p0, v1}, Lns;->b(Lnr;Landroid/view/Menu;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-wide v4
+    iget-object v0, p0, Lnl;->a:Lot;
 
-    invoke-virtual {v2}, Landroid/location/Location;->getTime()J
+    invoke-virtual {v0}, Lot;->e()V
 
-    move-result-wide v6
+    goto :goto_0
 
-    cmp-long v4, v4, v6
+    :catchall_0
+    move-exception v0
 
-    if-lez v4, :cond_6
+    iget-object v1, p0, Lnl;->a:Lot;
 
-    move-object v14, v3
+    invoke-virtual {v1}, Lot;->e()V
 
-    :goto_2
-    if-eqz v14, :cond_d
+    throw v0
+.end method
 
-    move-object/from16 v0, p0
+.method public final e()Z
+    .locals 2
 
-    iget-object v0, v0, Lnl;->d:Lnm;
+    iget-object v0, p0, Lnl;->a:Lot;
 
-    move-object/from16 v16, v0
+    invoke-virtual {v0}, Lot;->d()V
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    :try_start_0
+    iget-object v0, p0, Lnl;->e:Lns;
 
-    move-result-wide v18
+    iget-object v1, p0, Lnl;->a:Lot;
 
-    sget-object v2, Lnk;->a:Lnk;
+    invoke-interface {v0, p0, v1}, Lns;->a(Lnr;Landroid/view/Menu;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v2, :cond_4
+    move-result v0
 
-    new-instance v2, Lnk;
+    iget-object v1, p0, Lnl;->a:Lot;
 
-    invoke-direct {v2}, Lnk;-><init>()V
+    invoke-virtual {v1}, Lot;->e()V
 
-    sput-object v2, Lnk;->a:Lnk;
+    return v0
 
-    :cond_4
-    sget-object v3, Lnk;->a:Lnk;
+    :catchall_0
+    move-exception v0
 
-    const-wide/32 v4, 0x5265c00
+    iget-object v1, p0, Lnl;->a:Lot;
 
-    sub-long v4, v18, v4
+    invoke-virtual {v1}, Lot;->e()V
 
-    invoke-virtual {v14}, Landroid/location/Location;->getLatitude()D
+    throw v0
+.end method
 
-    move-result-wide v6
+.method public final f()Ljava/lang/CharSequence;
+    .locals 1
 
-    invoke-virtual {v14}, Landroid/location/Location;->getLongitude()D
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    move-result-wide v8
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
 
-    invoke-virtual/range {v3 .. v9}, Lnk;->a(JDD)V
+    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContextView;->f:Ljava/lang/CharSequence;
 
-    invoke-virtual {v14}, Landroid/location/Location;->getLatitude()D
+    return-object v0
+.end method
 
-    move-result-wide v6
+.method public final g()Ljava/lang/CharSequence;
+    .locals 1
 
-    invoke-virtual {v14}, Landroid/location/Location;->getLongitude()D
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    move-result-wide v8
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
 
-    move-wide/from16 v4, v18
+    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContextView;->g:Ljava/lang/CharSequence;
 
-    invoke-virtual/range {v3 .. v9}, Lnk;->a(JDD)V
+    return-object v0
+.end method
 
-    iget v2, v3, Lnk;->d:I
+.method public final h()Z
+    .locals 1
 
-    const/4 v4, 0x1
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    if-ne v2, v4, :cond_9
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
 
-    const/4 v2, 0x1
+    iget-boolean v0, v0, Landroid/support/v7/widget/ActionBarContextView;->i:Z
 
-    :goto_3
-    iget-wide v12, v3, Lnk;->c:J
+    return v0
+.end method
 
-    iget-wide v10, v3, Lnk;->b:J
+.method public final i()Landroid/view/View;
+    .locals 1
 
-    const-wide/32 v4, 0x5265c00
+    iget-object v0, p0, Lnl;->f:Ljava/lang/ref/WeakReference;
 
-    add-long v4, v4, v18
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v14}, Landroid/location/Location;->getLatitude()D
+    iget-object v0, p0, Lnl;->f:Ljava/lang/ref/WeakReference;
 
-    move-result-wide v6
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    invoke-virtual {v14}, Landroid/location/Location;->getLongitude()D
+    move-result-object v0
 
-    move-result-wide v8
+    check-cast v0, Landroid/view/View;
 
-    invoke-virtual/range {v3 .. v9}, Lnk;->a(JDD)V
+    :goto_0
+    return-object v0
 
-    iget-wide v4, v3, Lnk;->c:J
+    :cond_0
+    const/4 v0, 0x0
 
-    const-wide/16 v6, -0x1
+    goto :goto_0
+.end method
 
-    cmp-long v3, v12, v6
+.method public final n()V
+    .locals 1
 
-    if-eqz v3, :cond_5
+    iget-object v0, p0, Lnl;->e:Lns;
 
-    const-wide/16 v6, -0x1
+    if-nez v0, :cond_0
 
-    cmp-long v3, v10, v6
+    :goto_0
+    return-void
 
-    if-nez v3, :cond_a
+    :cond_0
+    invoke-virtual {p0}, Lnl;->d()V
 
-    :cond_5
-    const-wide/32 v4, 0x2932e00
+    iget-object v0, p0, Lnl;->g:Lni;
 
-    add-long v4, v4, v18
+    iget-object v0, v0, Lni;->e:Landroid/support/v7/widget/ActionBarContextView;
 
-    :goto_4
-    move-object/from16 v0, v16
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->a()Z
 
-    iput-boolean v2, v0, Lnm;->a:Z
-
-    move-object/from16 v0, v16
-
-    iput-wide v4, v0, Lnm;->b:J
-
-    iget-boolean v2, v15, Lnm;->a:Z
-
-    goto/16 :goto_1
-
-    :cond_6
-    move-object v14, v2
-
-    goto :goto_2
-
-    :cond_7
-    if-eqz v3, :cond_8
-
-    move-object v14, v3
-
-    goto :goto_2
-
-    :cond_8
-    move-object v14, v2
-
-    goto :goto_2
-
-    :cond_9
-    const/4 v2, 0x0
-
-    goto :goto_3
-
-    :cond_a
-    cmp-long v3, v18, v10
-
-    if-lez v3, :cond_b
-
-    :goto_5
-    const-wide/32 v6, 0xea60
-
-    add-long/2addr v4, v6
-
-    goto :goto_4
-
-    :cond_b
-    cmp-long v3, v18, v12
-
-    if-lez v3, :cond_c
-
-    move-wide v4, v10
-
-    goto :goto_5
-
-    :cond_c
-    move-wide v4, v12
-
-    goto :goto_5
-
-    :cond_d
-    const-string v2, "TwilightManager"
-
-    const-string v3, "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values."
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v2
-
-    const/16 v3, 0xb
-
-    invoke-virtual {v2, v3}, Ljava/util/Calendar;->get(I)I
-
-    move-result v2
-
-    const/4 v3, 0x6
-
-    if-lt v2, v3, :cond_e
-
-    const/16 v3, 0x16
-
-    if-lt v2, v3, :cond_f
-
-    :cond_e
-    const/4 v2, 0x1
-
-    goto/16 :goto_1
-
-    :cond_f
-    const/4 v2, 0x0
-
-    goto/16 :goto_1
+    goto :goto_0
 .end method

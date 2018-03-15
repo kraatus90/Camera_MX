@@ -1,65 +1,35 @@
 .class final Ljsy;
-.super Ljava/lang/Object;
+.super Ljta;
 .source "PG"
 
 
-# static fields
-.field public static final a:Ljsy;
-
-.field public static final b:Ljsy;
-
-
 # instance fields
-.field public final c:Z
-
-.field public final d:Ljava/lang/Throwable;
+.field private final synthetic a:Ljsv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Ljsv;)V
+    .locals 1
 
-    const/4 v2, 0x0
+    iput-object p1, p0, Ljsy;->a:Ljsv;
 
-    sget-boolean v0, Ljsw;->a:Z
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0, p1, v0}, Ljta;-><init>(Ljsv;B)V
 
-    sput-object v2, Ljsy;->b:Ljsy;
-
-    sput-object v2, Ljsy;->a:Ljsy;
-
-    :goto_0
     return-void
-
-    :cond_0
-    new-instance v0, Ljsy;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljsy;-><init>(ZLjava/lang/Throwable;)V
-
-    sput-object v0, Ljsy;->b:Ljsy;
-
-    new-instance v0, Ljsy;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1, v2}, Ljsy;-><init>(ZLjava/lang/Throwable;)V
-
-    sput-object v0, Ljsy;->a:Ljsy;
-
-    goto :goto_0
 .end method
 
-.method constructor <init>(ZLjava/lang/Throwable;)V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method final a(I)Ljava/lang/Object;
+    .locals 1
 
-    iput-boolean p1, p0, Ljsy;->c:Z
+    iget-object v0, p0, Ljsy;->a:Ljsv;
 
-    iput-object p2, p0, Ljsy;->d:Ljava/lang/Throwable;
+    iget-object v0, v0, Ljsv;->c:[Ljava/lang/Object;
 
-    return-void
+    aget-object v0, v0, p1
+
+    return-object v0
 .end method

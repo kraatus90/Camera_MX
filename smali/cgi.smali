@@ -1,14 +1,20 @@
-.class final Lcgi;
+.class public final Lcgi;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcgh;
+.implements Liu;
+
+
+# instance fields
+.field private final synthetic a:Lcgh;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Lcgh;)V
     .locals 0
+
+    iput-object p1, p0, Lcgi;->a:Lcgh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,86 +23,91 @@
 
 
 # virtual methods
-.method public final a()Lcgh;
-    .locals 2
+.method public final a()V
+    .locals 0
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "INVALID_NODE doesn\'t support next"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method
 
-.method public final a(I)Ljava/util/List;
-    .locals 2
+.method public final a(I)V
+    .locals 4
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    if-nez p1, :cond_1
 
-    const-string v1, "INVALID_NODE doesn\'t support getSurroundingNodes"
+    iget-object v0, p0, Lcgi;->a:Lcgh;
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object v0, v0, Lcgh;->l:Ljava/util/Map;
 
-    throw v0
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    iget-object v1, p0, Lcgi;->a:Lcgh;
+
+    iget-object v1, v1, Lcgh;->b:Ljava/util/List;
+
+    iget-object v3, p0, Lcgi;->a:Lcgh;
+
+    iget-object v3, v3, Lcgh;->m:Landroid/support/v4/view/ViewPager;
+
+    iget v3, v3, Landroid/support/v4/view/ViewPager;->e:I
+
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcil;
+
+    iget-object v1, v1, Lckf;->c:Lckd;
+
+    iget-object v1, v1, Lcjq;->e:Leqh;
+
+    iget-object v1, v1, Leqh;->h:Landroid/net/Uri;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgd;
+
+    invoke-virtual {v0}, Lkgd;->a()V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
 .end method
 
-.method public final a(Lfvf;)V
-    .locals 2
+.method public final b()V
+    .locals 0
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "INVALID_NODE doesn\'t support replaceItem"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final b()Lcgh;
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "INVALID_NODE doesn\'t support previous"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final c()Lfvf;
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "INVALID_NODE doesn\'t support value"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final d()Z
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "INVALID_NODE doesn\'t support isRemoved"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final e()V
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "INVALID_NODE doesn\'t support remove"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method

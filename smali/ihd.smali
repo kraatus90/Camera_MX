@@ -2,86 +2,87 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/util/Comparator;
 
-# instance fields
-.field private a:Ljava/lang/Object;
 
-.field private b:Ljava/util/HashSet;
+# static fields
+.field public static final a:Lihd;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
+    new-instance v0, Lihd;
+
+    invoke-direct {v0}, Lihd;-><init>()V
+
+    sput-object v0, Lihd;->a:Lihd;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lihd;->b:Ljava/util/HashSet;
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lihd;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/Collection;)V
-    .locals 2
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 4
 
-    iget-object v1, p0, Lihd;->a:Ljava/lang/Object;
+    check-cast p1, Lihc;
 
-    monitor-enter v1
+    check-cast p2, Lihc;
 
-    :try_start_0
-    iget-object v0, p0, Lihd;->b:Ljava/util/HashSet;
+    invoke-virtual {p1}, Lihc;->b()J
 
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
+    move-result-wide v0
 
-    monitor-exit v1
+    invoke-virtual {p2}, Lihc;->b()J
 
-    return-void
+    move-result-wide v2
 
-    :catchall_0
-    move-exception v0
+    cmp-long v0, v0, v2
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-nez v0, :cond_0
 
-    throw v0
-.end method
+    iget v0, p1, Lihc;->a:I
 
-.method public final a(Landroid/view/Surface;)Z
-    .locals 2
+    iget v1, p1, Lihc;->b:I
 
-    iget-object v1, p0, Lihd;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lihd;->b:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    monitor-exit v1
+    iget v1, p2, Lihc;->a:I
 
+    iget v2, p2, Lihc;->b:I
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
+
+    move-result v0
+
+    :cond_0
+    if-nez v0, :cond_1
+
+    iget v0, p1, Lihc;->a:I
+
+    iget v1, p2, Lihc;->a:I
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
+
+    move-result v0
+
+    :cond_1
     return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

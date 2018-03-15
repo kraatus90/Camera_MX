@@ -2,155 +2,227 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static a:Ljava/util/Queue;
+# interfaces
+.implements Laki;
 
 
 # instance fields
-.field private b:I
+.field private final a:Laki;
 
-.field private c:I
-
-.field private d:Ljava/lang/Object;
+.field private final b:Landroid/content/res/Resources;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Larq;->a(I)Ljava/util/Queue;
-
-    move-result-object v0
-
-    sput-object v0, Laku;->a:Ljava/util/Queue;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Landroid/content/res/Resources;Laki;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Laku;->b:Landroid/content/res/Resources;
+
+    iput-object p2, p0, Laku;->a:Laki;
+
     return-void
 .end method
 
-.method public static a(Ljava/lang/Object;)Laku;
-    .locals 3
-
-    const/4 v2, 0x0
-
-    sget-object v1, Laku;->a:Ljava/util/Queue;
-
-    monitor-enter v1
+.method private final a(Ljava/lang/Integer;)Landroid/net/Uri;
+    .locals 5
 
     :try_start_0
-    sget-object v0, Laku;->a:Ljava/util/Queue;
+    iget-object v0, p0, Laku;->b:Landroid/content/res/Resources;
 
-    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getResourcePackageName(I)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Laku;
+    iget-object v1, p0, Laku;->b:Landroid/content/res/Resources;
 
-    monitor-exit v1
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Laku;->b:Landroid/content/res/Resources;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x15
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "android.resource://"
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v3, 0x2f
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x2f
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    new-instance v0, Laku;
-
-    invoke-direct {v0}, Laku;-><init>()V
-
-    :cond_0
-    iput-object p0, v0, Laku;->d:Ljava/lang/Object;
-
-    iput v2, v0, Laku;->c:I
-
-    iput v2, v0, Laku;->b:I
-
+    :goto_0
     return-object v0
 
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const-string v1, "ResourceLoader"
 
-    throw v0
-.end method
+    const/4 v2, 0x5
 
-
-# virtual methods
-.method public final a()V
-    .locals 2
-
-    sget-object v1, Laku;->a:Ljava/util/Queue;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Laku;->a:Ljava/util/Queue;
-
-    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    instance-of v1, p1, Laku;
-
-    if-eqz v1, :cond_0
-
-    check-cast p1, Laku;
-
-    iget-object v1, p0, Laku;->d:Ljava/lang/Object;
-
-    iget-object v2, p1, Laku;->d:Ljava/lang/Object;
-
-    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    const/4 v0, 0x1
+    const-string v1, "ResourceLoader"
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1e
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Received invalid resource id: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
-    return v0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final hashCode()I
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lakj;
+    .locals 2
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-direct {p0, p1}, Laku;->a(Ljava/lang/Integer;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v1, p0, Laku;->a:Laki;
+
+    invoke-interface {v1, v0, p2, p3, p4}, Laki;->a(Ljava/lang/Object;IILady;)Lakj;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Laku;->d:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, 0x0
+    const/4 v0, 0x1
 
     return v0
 .end method

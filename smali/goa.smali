@@ -1,37 +1,46 @@
 .class public final Lgoa;
-.super Lgyo;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lgyp;)V
-    .locals 1
+.method public constructor <init>(Lkgv;)V
+    .locals 0
 
-    const v0, 0x7f040064
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0, p2}, Lgyo;-><init>(Landroid/content/Context;ILgyp;)V
+    iput-object p1, p0, Lgoa;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Landroid/view/View;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    const v0, 0x7f0e019f
+    iget-object v0, p0, Lgoa;->a:Lkgv;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/Button;
+    check-cast v0, Lgoc;
 
-    new-instance v1, Lgob;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-direct {v1, p0}, Lgob;-><init>(Lgoa;)V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lgob;
+
+    return-object v0
 .end method

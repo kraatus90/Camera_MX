@@ -1,105 +1,80 @@
 .class public final Lwc;
-.super Llu;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# static fields
+.field public static d:Lgw;
+
+
 # instance fields
-.field public b:I
+.field public a:I
+
+.field public b:Lul;
+
+.field public c:Lul;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lgx;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1}, Lgx;-><init>(I)V
+
+    sput-object v0, Lwc;->d:Lgw;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a()Lwc;
     .locals 1
 
-    invoke-direct {p0}, Llu;-><init>()V
+    sget-object v0, Lwc;->d:Lgw;
+
+    invoke-interface {v0}, Lgw;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lwc;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lwc;
+
+    invoke-direct {v0}, Lwc;-><init>()V
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public static a(Lwc;)V
+    .locals 2
+
+    const/4 v1, 0x0
 
     const/4 v0, 0x0
-
-    iput v0, p0, Lwc;->b:I
-
-    const v0, 0x800013
 
     iput v0, p0, Lwc;->a:I
 
-    return-void
-.end method
+    iput-object v1, p0, Lwc;->b:Lul;
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+    iput-object v1, p0, Lwc;->c:Lul;
 
-    invoke-direct {p0, p1, p2}, Llu;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    sget-object v0, Lwc;->d:Lgw;
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lwc;->b:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Llu;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lwc;->b:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Llu;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lwc;->b:I
-
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    iput v0, p0, Lwc;->leftMargin:I
-
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    iput v0, p0, Lwc;->topMargin:I
-
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    iput v0, p0, Lwc;->rightMargin:I
-
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    iput v0, p0, Lwc;->bottomMargin:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Llu;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Llu;-><init>(Llu;)V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lwc;->b:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Lwc;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Llu;-><init>(Llu;)V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lwc;->b:I
-
-    iget v0, p1, Lwc;->b:I
-
-    iput v0, p0, Lwc;->b:I
+    invoke-interface {v0, p0}, Lgw;->a(Ljava/lang/Object;)Z
 
     return-void
 .end method

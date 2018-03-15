@@ -3,12 +3,19 @@
 .source "PG"
 
 # interfaces
-.implements Likg;
+.implements Lemx;
+.implements Lemz;
+
+
+# instance fields
+.field private final synthetic a:Lbzy;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lbzy;)V
     .locals 0
+
+    iput-object p1, p0, Lbzz;->a:Lbzy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,18 +24,12 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final f()V
     .locals 1
 
-    check-cast p1, Ljava/util/Map;
+    iget-object v0, p0, Lbzz;->a:Lbzy;
 
-    invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-virtual {v0}, Lbzy;->d()Z
 
-    move-result-object v0
-
-    invoke-static {v0}, Ljkv;->a(Ljava/util/Collection;)Ljkv;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

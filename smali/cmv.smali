@@ -1,20 +1,24 @@
-.class public final Lcmv;
+.class final Lcmv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcmu;
+.field private final synthetic a:Lcmc;
+
+.field private final synthetic b:Lcmt;
 
 
 # direct methods
-.method public constructor <init>(Lcmu;)V
+.method constructor <init>(Lcmt;Lcmc;)V
     .locals 0
 
-    iput-object p1, p0, Lcmv;->a:Lcmu;
+    iput-object p1, p0, Lcmv;->b:Lcmt;
+
+    iput-object p2, p0, Lcmv;->a:Lcmc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,14 +27,16 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lcmv;->a:Lcmu;
+    iget-object v0, p0, Lcmv;->b:Lcmt;
 
-    iget-object v0, v0, Lcmu;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;
+    iget-object v0, v0, Lcmt;->a:Lcmb;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->invalidate()V
+    iget-object v1, p0, Lcmv;->a:Lcmc;
+
+    invoke-interface {v0, v1}, Lcmb;->a(Lcmc;)V
 
     return-void
 .end method

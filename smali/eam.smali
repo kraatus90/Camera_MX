@@ -3,64 +3,100 @@
 .source "PG"
 
 # interfaces
-.implements Leah;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
+.field private final a:Lkgv;
 
-.field private b:J
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/Object;
+    iput-object p1, p0, Leam;->a:Lkgv;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Leam;->b:Lkgv;
 
-    iput-object v0, p0, Leam;->a:Ljava/lang/Object;
+    iput-object p3, p0, Leam;->c:Lkgv;
 
-    const-wide/16 v0, -0x1
+    iput-object p4, p0, Leam;->d:Lkgv;
 
-    iput-wide v0, p0, Leam;->b:J
+    iput-object p5, p0, Leam;->e:Lkgv;
+
+    iput-object p6, p0, Leam;->f:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)J
-    .locals 7
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v1, p0, Leam;->a:Ljava/lang/Object;
+    iget-object v0, p0, Leam;->a:Lkgv;
 
-    monitor-enter v1
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    :try_start_0
-    iget-wide v2, p0, Leam;->b:J
+    move-result-object v0
 
-    iget-wide v4, p0, Leam;->b:J
+    check-cast v0, Ldzy;
 
-    invoke-static {v4, v5, p1, p2}, Ljava/lang/Math;->max(JJ)J
+    iget-object v1, p0, Leam;->b:Lkgv;
 
-    move-result-wide v4
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iput-wide v4, p0, Leam;->b:J
+    move-result-object v1
 
-    monitor-exit v1
+    check-cast v1, Lfat;
 
-    return-wide v2
+    iget-object v2, p0, Leam;->c:Lkgv;
 
-    :catchall_0
-    move-exception v0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v2
 
-    throw v0
+    check-cast v2, Lgfd;
+
+    iget-object v3, p0, Leam;->d:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    iget-object v3, p0, Leam;->e:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lgem;
+
+    iget-object v4, p0, Leam;->f:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    new-instance v4, Lech;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lech;-><init>(Ldzy;Lfat;Lgfd;Lgem;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v4, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Leaf;
+
+    return-object v0
 .end method

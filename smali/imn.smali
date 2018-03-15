@@ -1,9 +1,28 @@
-.class public abstract Limn;
+.class public final Limn;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Limn;
+
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Limn;
+
+    invoke-direct {v0}, Limn;-><init>()V
+
+    sput-object v0, Limn;->a:Limn;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -14,11 +33,20 @@
 
 
 # virtual methods
-.method public abstract a()Ljava/nio/ByteBuffer;
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract b()I
-.end method
+    invoke-static {}, Liml;->a()Liml;
 
-.method public abstract c()J
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liml;
+
+    return-object v0
 .end method

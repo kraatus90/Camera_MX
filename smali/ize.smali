@@ -1,90 +1,47 @@
-.class final Lize;
+.class public final Lize;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljgl;
-
 
 # instance fields
-.field private synthetic a:Lizd;
+.field public final a:Lizf;
+
+.field public final b:I
+
+.field public final c:I
 
 
 # direct methods
-.method constructor <init>(Lizd;)V
-    .locals 0
+.method public constructor <init>(Lizf;)V
+    .locals 2
 
-    iput-object p1, p0, Lize;->a:Lizd;
+    const/4 v1, -0x1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
+    const/4 v0, 0x1
 
-# virtual methods
-.method public final a()V
-    .locals 2
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    const-string v0, "FeatureExtractionPipeline"
+    iput-object p1, p0, Lize;->a:Lizf;
 
-    const-string v1, "Started"
+    iput v1, p0, Lize;->b:I
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget v0, p0, Lize;->b:I
 
-    return-void
-.end method
+    if-ne v0, v1, :cond_0
 
-.method public final a(Ljava/lang/Exception;)V
-    .locals 2
+    const/4 v0, 0x0
 
-    const-string v0, "FeatureExtractionPipeline"
-
-    const-string v1, "onError"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, p0, Lize;->a:Lizd;
-
-    invoke-virtual {v0}, Lizd;->a()V
-
-    iget-object v0, p0, Lize;->a:Lizd;
-
-    iget-object v1, v0, Lizd;->b:Lilv;
-
-    invoke-static {p1}, Lilh;->a(Ljava/lang/Throwable;)Lilh;
-
-    move-result-object v0
-
-    check-cast v0, Lilh;
-
-    invoke-virtual {v1, v0}, Lilv;->a(Lilh;)Z
+    :goto_0
+    iput v0, p0, Lize;->c:I
 
     return-void
-.end method
 
-.method public final b()V
-    .locals 2
+    :cond_0
+    const/4 v0, 0x2
 
-    const-string v0, "FeatureExtractionPipeline"
-
-    const-string v1, "onStopped"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, p0, Lize;->a:Lizd;
-
-    invoke-virtual {v0}, Lizd;->a()V
-
-    iget-object v0, p0, Lize;->a:Lizd;
-
-    iget-object v0, v0, Lizd;->b:Lilv;
-
-    iget-object v1, p0, Lize;->a:Lizd;
-
-    iget-object v1, v1, Lizd;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-virtual {v0, v1}, Lilv;->a(Ljava/lang/Object;)Z
-
-    return-void
+    goto :goto_0
 .end method

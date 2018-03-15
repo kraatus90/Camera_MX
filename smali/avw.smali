@@ -1,43 +1,37 @@
-.class public final synthetic Lavw;
+.class final synthetic Lavw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhzc;
+.implements Lhax;
 
 
 # instance fields
-.field private a:Ljava/lang/Runnable;
+.field private final a:Lavv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;)V
+.method constructor <init>(Lavv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lavw;->a:Ljava/lang/Runnable;
+    iput-object p1, p0, Lavw;->a:Lavv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljuw;
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    iget-object v0, p0, Lavw;->a:Ljava/lang/Runnable;
+    iget-object v0, p0, Lavw;->a:Lavv;
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    iget-object v0, v0, Lavv;->a:Lavq;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iput-object v1, v0, Lavq;->c:Lhaw;
 
-    move-result-object v0
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

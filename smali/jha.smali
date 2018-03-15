@@ -3,9 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljgp;
+.implements Ljava/lang/AutoCloseable;
 
 
 # virtual methods
-.method public abstract H_()Ljha;
+.method public abstract a()I
+.end method
+
+.method public abstract b()I
 .end method

@@ -1,70 +1,114 @@
-.class public final Leae;
-.super Ljava/lang/Object;
+.class Leae;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private a:Liaw;
+
+.field private final synthetic b:Leaa;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method constructor <init>(Leaa;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leae;->b:Leaa;
 
-    iput-object p1, p0, Leae;->a:Ljxn;
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>([C)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leae;
-
-    invoke-direct {v0, p0}, Leae;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 4
 
-    iget-object v0, p0, Leae;->a:Ljxn;
+    new-instance v0, Liaw;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v0}, Liaw;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Leae;->a:Liaw;
 
-    check-cast v0, Lghb;
+    iget-object v0, p0, Leae;->b:Leaa;
 
-    new-instance v1, Ljvi;
+    iget-object v0, v0, Leaa;->c:Lfax;
 
-    invoke-direct {v1}, Ljvi;-><init>()V
+    invoke-virtual {v0}, Lfax;->a()V
 
-    new-instance v2, Lead;
+    iget-object v0, p0, Leae;->b:Leaa;
 
-    invoke-direct {v2, v1}, Lead;-><init>(Ljvi;)V
+    iget-object v0, v0, Leaa;->b:Lfdv;
 
-    invoke-virtual {v0, v2}, Lghb;->a(Lggu;)V
+    invoke-interface {v0}, Lfdv;->k()Z
 
-    new-instance v0, Leac;
+    move-result v0
 
-    invoke-direct {v0, v1}, Leac;-><init>(Ljvi;)V
+    if-eqz v0, :cond_0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Leae;->b:Leaa;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Leaa;->d:Lbns;
 
-    move-result-object v0
+    iget-object v1, p0, Leae;->b:Leaa;
 
-    check-cast v0, Lhzc;
+    iget-object v1, v1, Leaa;->b:Lfdv;
 
-    return-object v0
+    invoke-interface {v1}, Lfdv;->l()I
+
+    move-result v1
+
+    iget-object v2, p0, Leae;->b:Leaa;
+
+    iget-object v2, v2, Leaa;->b:Lfdv;
+
+    invoke-interface {v2}, Lfdv;->m()I
+
+    move-result v2
+
+    iget-object v3, p0, Leae;->b:Leaa;
+
+    iget-object v3, v3, Leaa;->b:Lfdv;
+
+    invoke-interface {v3}, Lfdv;->n()F
+
+    move-result v3
+
+    invoke-virtual {v0, v1, v2, v3}, Lbns;->a(IIF)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Leae;->b:Leaa;
+
+    iget-object v0, v0, Leaa;->d:Lbns;
+
+    iget-object v0, v0, Lbns;->a:Lbnw;
+
+    invoke-virtual {v0}, Lglb;->d()V
+
+    iget-object v0, p0, Leae;->a:Liaw;
+
+    invoke-virtual {v0}, Liaw;->close()V
+
+    iget-object v0, p0, Leae;->b:Leaa;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Leaa;->b:Lfdv;
+
+    return-void
+.end method
+
+.method public m()V
+    .locals 0
+
+    return-void
 .end method

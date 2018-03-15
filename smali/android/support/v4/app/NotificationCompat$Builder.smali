@@ -800,7 +800,7 @@
 .end method
 
 .method public setSound(Landroid/net/Uri;)Landroid/support/v4/app/NotificationCompat$Builder;
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
@@ -812,11 +812,35 @@
 
     iput v1, v0, Landroid/app/Notification;->audioStreamType:I
 
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
+
+    new-instance v1, Landroid/media/AudioAttributes$Builder;
+
+    invoke-direct {v1}, Landroid/media/AudioAttributes$Builder;-><init>()V
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v1, v2}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
+
+    move-result-object v1
+
+    const/4 v2, 0x5
+
+    invoke-virtual {v1, v2}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
+
+    move-result-object v1
+
+    iput-object v1, v0, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;
+
     return-object p0
 .end method
 
 .method public setSound(Landroid/net/Uri;I)Landroid/support/v4/app/NotificationCompat$Builder;
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
@@ -825,6 +849,28 @@
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
 
     iput p2, v0, Landroid/app/Notification;->audioStreamType:I
+
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification:Landroid/app/Notification;
+
+    new-instance v1, Landroid/media/AudioAttributes$Builder;
+
+    invoke-direct {v1}, Landroid/media/AudioAttributes$Builder;-><init>()V
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v1, v2}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Landroid/media/AudioAttributes$Builder;->setLegacyStreamType(I)Landroid/media/AudioAttributes$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
+
+    move-result-object v1
+
+    iput-object v1, v0, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;
 
     return-object p0
 .end method

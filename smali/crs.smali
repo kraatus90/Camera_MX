@@ -3,162 +3,466 @@
 .source "PG"
 
 # interfaces
-.implements Lhzc;
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
+.implements Lkgv;
 
 
 # instance fields
-.field public final b:Licz;
+.field private final a:Lkgv;
 
-.field public final c:Lcqr;
+.field private final b:Lkgv;
 
-.field public final d:Ljuw;
+.field private final c:Lkgv;
 
-.field public final e:Ljvi;
+.field private final d:Lkgv;
 
-.field public final f:Ljxe;
+.field private final e:Lkgv;
 
-.field public final g:Lgra;
+.field private final f:Lkgv;
 
-.field private h:Ljava/util/concurrent/Executor;
+.field private final g:Lkgv;
 
-.field private i:Lidd;
+.field private final h:Lkgv;
 
-.field private j:Lbsh;
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
+
+.field private final l:Lkgv;
+
+.field private final m:Lkgv;
+
+.field private final n:Lkgv;
+
+.field private final o:Lkgv;
+
+.field private final p:Lkgv;
+
+.field private final q:Lkgv;
+
+.field private final r:Lkgv;
+
+.field private final s:Lkgv;
+
+.field private final t:Lkgv;
+
+.field private final u:Lkgv;
+
+.field private final v:Lkgv;
+
+.field private final w:Lkgv;
+
+.field private final x:Lkgv;
+
+.field private final y:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 1
 
-    const-string v0, "CaptureModeStartup"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lcrs;->a:Lkgv;
 
-    move-result-object v0
+    iput-object p2, p0, Lcrs;->b:Lkgv;
 
-    sput-object v0, Lcrs;->a:Ljava/lang/String;
+    iput-object p3, p0, Lcrs;->c:Lkgv;
+
+    iput-object p4, p0, Lcrs;->d:Lkgv;
+
+    iput-object p5, p0, Lcrs;->e:Lkgv;
+
+    iput-object p6, p0, Lcrs;->f:Lkgv;
+
+    iput-object p7, p0, Lcrs;->g:Lkgv;
+
+    iput-object p8, p0, Lcrs;->h:Lkgv;
+
+    iput-object p9, p0, Lcrs;->i:Lkgv;
+
+    iput-object p10, p0, Lcrs;->j:Lkgv;
+
+    iput-object p11, p0, Lcrs;->k:Lkgv;
+
+    iput-object p12, p0, Lcrs;->l:Lkgv;
+
+    iput-object p13, p0, Lcrs;->m:Lkgv;
+
+    iput-object p14, p0, Lcrs;->n:Lkgv;
+
+    move-object/from16 v0, p15
+
+    iput-object v0, p0, Lcrs;->o:Lkgv;
+
+    move-object/from16 v0, p16
+
+    iput-object v0, p0, Lcrs;->p:Lkgv;
+
+    move-object/from16 v0, p17
+
+    iput-object v0, p0, Lcrs;->q:Lkgv;
+
+    move-object/from16 v0, p18
+
+    iput-object v0, p0, Lcrs;->r:Lkgv;
+
+    move-object/from16 v0, p19
+
+    iput-object v0, p0, Lcrs;->s:Lkgv;
+
+    move-object/from16 v0, p20
+
+    iput-object v0, p0, Lcrs;->t:Lkgv;
+
+    move-object/from16 v0, p21
+
+    iput-object v0, p0, Lcrs;->u:Lkgv;
+
+    move-object/from16 v0, p22
+
+    iput-object v0, p0, Lcrs;->v:Lkgv;
+
+    move-object/from16 v0, p23
+
+    iput-object v0, p0, Lcrs;->w:Lkgv;
+
+    move-object/from16 v0, p24
+
+    iput-object v0, p0, Lcrs;->x:Lkgv;
+
+    move-object/from16 v0, p25
+
+    iput-object v0, p0, Lcrs;->y:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>(Lidd;Ljava/util/concurrent/Executor;Lbsh;Lcqr;Ljuw;Ljvi;Ljxe;Licz;Lgra;)V
-    .locals 0
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Lcrs;
+    .locals 26
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcrs;
 
-    iput-object p2, p0, Lcrs;->h:Ljava/util/concurrent/Executor;
+    move-object/from16 v1, p0
 
-    iput-object p1, p0, Lcrs;->i:Lidd;
+    move-object/from16 v2, p1
 
-    iput-object p3, p0, Lcrs;->j:Lbsh;
+    move-object/from16 v3, p2
 
-    iput-object p4, p0, Lcrs;->c:Lcqr;
+    move-object/from16 v4, p3
 
-    iput-object p5, p0, Lcrs;->d:Ljuw;
+    move-object/from16 v5, p4
 
-    iput-object p6, p0, Lcrs;->e:Ljvi;
+    move-object/from16 v6, p5
 
-    iput-object p7, p0, Lcrs;->f:Ljxe;
+    move-object/from16 v7, p6
 
-    iput-object p8, p0, Lcrs;->b:Licz;
+    move-object/from16 v8, p7
 
-    iput-object p9, p0, Lcrs;->g:Lgra;
+    move-object/from16 v9, p8
 
-    return-void
+    move-object/from16 v10, p9
+
+    move-object/from16 v11, p10
+
+    move-object/from16 v12, p11
+
+    move-object/from16 v13, p12
+
+    move-object/from16 v14, p13
+
+    move-object/from16 v15, p14
+
+    move-object/from16 v16, p15
+
+    move-object/from16 v17, p16
+
+    move-object/from16 v18, p17
+
+    move-object/from16 v19, p18
+
+    move-object/from16 v20, p19
+
+    move-object/from16 v21, p20
+
+    move-object/from16 v22, p21
+
+    move-object/from16 v23, p22
+
+    move-object/from16 v24, p23
+
+    move-object/from16 v25, p24
+
+    invoke-direct/range {v0 .. v25}, Lcrs;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljuw;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 26
 
-    iget-object v0, p0, Lcrs;->b:Licz;
+    new-instance v1, Lcql;
 
-    const-string v1, "CaptureModeStartup"
+    move-object/from16 v0, p0
 
-    invoke-interface {v0, v1}, Licz;->a(Ljava/lang/String;)V
+    iget-object v2, v0, Lcrs;->a:Lkgv;
 
-    iget-object v0, p0, Lcrs;->b:Licz;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    const-string v1, "CameraDevice#prewarm"
+    move-result-object v2
 
-    invoke-interface {v0, v1}, Licz;->a(Ljava/lang/String;)V
+    check-cast v2, Landroid/util/DisplayMetrics;
 
-    iget-object v0, p0, Lcrs;->i:Lidd;
+    move-object/from16 v0, p0
 
-    iget-object v1, p0, Lcrs;->j:Lbsh;
+    iget-object v3, v0, Lcrs;->b:Lkgv;
 
-    iget-object v1, v1, Lbsh;->a:Ligc;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v2, Lidz;
+    move-result-object v3
 
-    invoke-direct {v2}, Lidz;-><init>()V
+    check-cast v3, Lcqv;
 
-    invoke-virtual {v0, v1, v2}, Lidd;->a(Ligc;Lide;)V
+    move-object/from16 v0, p0
 
-    iget-object v0, p0, Lcrs;->b:Licz;
+    iget-object v4, v0, Lcrs;->c:Lkgv;
 
-    const-string v1, "OneCameraCreator#resolve"
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Licz;->b(Ljava/lang/String;)V
+    move-result-object v4
 
-    new-instance v0, Ljvi;
+    check-cast v4, Lcqa;
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+    move-object/from16 v0, p0
 
-    iget-object v1, p0, Lcrs;->h:Ljava/util/concurrent/Executor;
+    iget-object v5, v0, Lcrs;->d:Lkgv;
 
-    new-instance v2, Lcrv;
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v2, p0, v0}, Lcrv;-><init>(Lcrs;Ljvi;)V
+    move-result-object v5
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    check-cast v5, Lfdv;
 
-    iget-object v1, p0, Lcrs;->b:Licz;
+    move-object/from16 v0, p0
 
-    const-string v2, "OneCameraCreator#setupCreateAndStart"
+    iget-object v6, v0, Lcrs;->e:Lkgv;
 
-    invoke-interface {v1, v2}, Licz;->b(Ljava/lang/String;)V
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Lcrt;
+    move-result-object v6
 
-    invoke-direct {v1, p0}, Lcrt;-><init>(Lcrs;)V
+    check-cast v6, Lfax;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    move-object/from16 v0, p0
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljtu;Ljava/util/concurrent/Executor;)Ljuw;
+    iget-object v7, v0, Lcrs;->f:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Lcru;
+    move-result-object v7
 
-    invoke-direct {v1, p0}, Lcru;-><init>(Lcrs;)V
+    check-cast v7, Lfut;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    move-object/from16 v0, p0
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    iget-object v8, v0, Lcrs;->g:Lkgv;
 
-    iget-object v0, p0, Lcrs;->b:Licz;
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0}, Licz;->a()V
+    move-result-object v8
 
-    iget-object v0, p0, Lcrs;->b:Licz;
+    check-cast v8, Ldkv;
 
-    invoke-interface {v0}, Licz;->a()V
+    move-object/from16 v0, p0
 
-    const/4 v0, 0x1
+    iget-object v9, v0, Lcrs;->h:Lkgv;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v9
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    check-cast v9, Lcom/google/googlex/gcam/Gcam;
 
-    move-result-object v0
+    move-object/from16 v0, p0
 
-    return-object v0
+    iget-object v10, v0, Lcrs;->i:Lkgv;
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcrs;->j:Lkgv;
+
+    invoke-interface {v11}, Lkgv;->a()Ljava/lang/Object;
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcrs;->k:Lkgv;
+
+    invoke-interface {v11}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lhbx;
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Lcrs;->l:Lkgv;
+
+    invoke-interface {v12}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljava/util/Set;
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcrs;->m:Lkgv;
+
+    invoke-interface {v13}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Liaw;
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lcrs;->n:Lkgv;
+
+    invoke-interface {v14}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lfdk;
+
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lcrs;->o:Lkgv;
+
+    invoke-interface {v15}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Lcrp;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->p:Lkgv;
+
+    move-object/from16 v16, v0
+
+    invoke-interface/range {v16 .. v16}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v16
+
+    check-cast v16, Ljrf;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->q:Lkgv;
+
+    move-object/from16 v17, v0
+
+    invoke-interface/range {v17 .. v17}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v17
+
+    check-cast v17, Ljrf;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->r:Lkgv;
+
+    move-object/from16 v18, v0
+
+    invoke-interface/range {v18 .. v18}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v18
+
+    check-cast v18, Ljrf;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->s:Lkgv;
+
+    move-object/from16 v19, v0
+
+    invoke-interface/range {v19 .. v19}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v19
+
+    check-cast v19, Ljrf;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->t:Lkgv;
+
+    move-object/from16 v20, v0
+
+    invoke-interface/range {v20 .. v20}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v20
+
+    check-cast v20, Lbqc;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->u:Lkgv;
+
+    move-object/from16 v21, v0
+
+    invoke-interface/range {v21 .. v21}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v21
+
+    check-cast v21, Lcpm;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->v:Lkgv;
+
+    move-object/from16 v22, v0
+
+    invoke-interface/range {v22 .. v22}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v22
+
+    check-cast v22, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->w:Lkgv;
+
+    move-object/from16 v23, v0
+
+    invoke-interface/range {v23 .. v23}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v23
+
+    check-cast v23, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->x:Lkgv;
+
+    move-object/from16 v24, v0
+
+    invoke-interface/range {v24 .. v24}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v24
+
+    check-cast v24, Ljrf;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcrs;->y:Lkgv;
+
+    move-object/from16 v25, v0
+
+    invoke-interface/range {v25 .. v25}, Lkgv;->a()Ljava/lang/Object;
+
+    invoke-direct/range {v1 .. v24}, Lcql;-><init>(Landroid/util/DisplayMetrics;Lcqv;Lcqa;Lfdv;Lfax;Lfut;Ldkv;Lcom/google/googlex/gcam/Gcam;Lkgv;Lhbx;Ljava/util/Set;Liaw;Lfdk;Lcrp;Ljrf;Ljrf;Ljrf;Ljrf;Lbqc;Lcpm;Lick;Lick;Ljrf;)V
+
+    return-object v1
 .end method

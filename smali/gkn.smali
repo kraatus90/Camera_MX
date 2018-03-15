@@ -1,210 +1,809 @@
-.class final Lgkn;
+.class public final Lgkn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lgkm;
+.implements Lihb;
+
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field public final a:Ljvi;
+.field public final b:Ljava/lang/Object;
 
-.field private b:J
+.field public c:Z
 
-.field private c:J
+.field private final d:Landroid/content/Context;
 
-.field private d:Ljava/lang/Long;
+.field private final e:Landroid/util/SparseArray;
 
-.field private e:Z
+.field private f:Landroid/media/SoundPool;
+
+.field private final g:Lick;
+
+.field private final h:Lkgv;
+
+.field private final i:Landroid/media/SoundPool$OnLoadCompleteListener;
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "SoundPlayer"
 
-    const/4 v0, 0x0
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-boolean v0, p0, Lgkn;->e:Z
+    move-result-object v0
 
-    iput-wide p1, p0, Lgkn;->b:J
-
-    const-wide/16 v0, 0xa
-
-    iput-wide v0, p0, Lgkn;->c:J
-
-    new-instance v0, Ljvi;
-
-    invoke-direct {v0}, Ljvi;-><init>()V
-
-    iput-object v0, p0, Lgkn;->a:Ljvi;
+    sput-object v0, Lgkn;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Lick;Lkgv;)V
+    .locals 1
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v8, 0x1
+    new-instance v0, Lgko;
 
-    check-cast p1, Liic;
+    invoke-direct {v0, p0}, Lgko;-><init>(Lgkn;)V
 
-    iget-boolean v0, p0, Lgkn;->e:Z
+    iput-object v0, p0, Lgkn;->i:Landroid/media/SoundPool$OnLoadCompleteListener;
 
-    if-nez v0, :cond_1
+    iput-object p1, p0, Lgkn;->d:Landroid/content/Context;
 
-    iget-object v0, p0, Lgkn;->d:Ljava/lang/Long;
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lgkn;->b:Ljava/lang/Object;
+
+    new-instance v0, Landroid/util/SparseArray;
+
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+
+    iput-object v0, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    iput-object p2, p0, Lgkn;->g:Lick;
+
+    iput-object p3, p0, Lgkn;->h:Lkgv;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lgkn;->c:Z
+
+    return-void
+.end method
+
+.method private final c()Landroid/media/SoundPool;
+    .locals 2
+
+    iget-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
 
     if-nez v0, :cond_0
 
-    invoke-interface {p1}, Liic;->d()J
+    iget-boolean v0, p0, Lgkn;->c:Z
 
-    move-result-wide v0
+    if-nez v0, :cond_0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    sget-object v0, Lgkn;->a:Ljava/lang/String;
+
+    const-string v1, "Creating SoundPool"
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgkn;->h:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lgkn;->d:Ljava/lang/Long;
+    check-cast v0, Landroid/media/SoundPool;
+
+    iput-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
+
+    iget-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
+
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/SoundPool;
+
+    iget-object v1, p0, Lgkn;->i:Landroid/media/SoundPool$OnLoadCompleteListener;
+
+    invoke-virtual {v0, v1}, Landroid/media/SoundPool;->setOnLoadCompleteListener(Landroid/media/SoundPool$OnLoadCompleteListener;)V
 
     :cond_0
-    invoke-interface {p1}, Liic;->d()J
+    iget-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
 
-    move-result-wide v2
-
-    iget-object v0, p0, Lgkn;->d:Ljava/lang/Long;
-
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
+    check-cast v0, Landroid/media/SoundPool;
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    return-object v0
+.end method
 
-    move-result-wide v0
 
-    sub-long/2addr v2, v0
+# virtual methods
+.method public final a(IFI)I
+    .locals 9
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v3, -0x1
 
-    invoke-interface {p1, v0}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v1, p0, Lgkn;->g:Lick;
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    iget-wide v6, p0, Lgkn;->b:J
-
-    cmp-long v1, v4, v6
-
-    if-lez v1, :cond_2
-
-    iput-boolean v8, p0, Lgkn;->e:Z
-
-    iget-object v0, p0, Lgkn;->a:Ljvi;
-
-    invoke-static {v8}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v1}, Lick;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    sget-object v1, Lgkn;->a:Ljava/lang/String;
+
+    const-string v2, "Sounds disabled by settings."
+
+    invoke-static {v1, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    move v1, v3
+
+    :goto_0
+    return v1
+
+    :cond_0
+    iget-object v8, p0, Lgkn;->b:Ljava/lang/Object;
+
+    monitor-enter v8
+
+    :try_start_0
+    iget-boolean v1, p0, Lgkn;->c:Z
+
+    if-nez v1, :cond_2
+
+    iget-object v1, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v0, v1
+
+    check-cast v0, Lgkr;
+
+    move-object v2, v0
+
+    if-eqz v2, :cond_1
+
+    invoke-direct {p0}, Lgkn;->c()Landroid/media/SoundPool;
+
+    move-result-object v1
+
+    iget v2, v2, Lgkr;->b:I
+
+    const/4 v5, 0x0
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    move v3, p2
+
+    move v4, p2
+
+    move v6, p3
+
+    invoke-virtual/range {v1 .. v7}, Landroid/media/SoundPool;->play(IFFIIF)I
+
+    move-result v3
+
+    move v1, v3
+
+    :goto_1
+    monitor-exit v8
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 
     :cond_1
-    :goto_0
-    return-void
+    :try_start_1
+    sget-object v1, Lgkn;->a:Ljava/lang/String;
+
+    const/16 v2, 0x32
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Ignoring sound that is not yet loaded: "
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_2
-    iget-wide v4, p0, Lgkn;->c:J
+    move v1, v3
 
-    cmp-long v1, v2, v4
+    goto :goto_1
+.end method
 
-    if-ltz v1, :cond_1
+.method public final a(I)Lkeh;
+    .locals 6
 
-    sget-object v1, Lgkm;->a:Ljava/lang/String;
+    iget-object v1, p0, Lgkn;->b:Ljava/lang/Object;
 
-    iget-wide v4, p0, Lgkn;->b:J
+    monitor-enter v1
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :try_start_0
+    iget-boolean v0, p0, Lgkn;->c:Z
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v0, Lgkr;
 
-    move-result-object v6
+    if-nez v0, :cond_0
 
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    sget-object v0, Lgkn;->a:Ljava/lang/String;
 
-    move-result v6
+    const/16 v2, 0x1a
 
-    add-int/lit8 v6, v6, 0x4e
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+    const-string v2, "Loading sound: "
 
-    const-string v6, "timeout waiting for "
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v6
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Lgkr;
+
+    invoke-direct {v0}, Lgkr;-><init>()V
+
+    iput p1, v0, Lgkr;->a:I
+
+    iget-object v2, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v2, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    invoke-direct {p0}, Lgkn;->c()Landroid/media/SoundPool;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lgkn;->d:Landroid/content/Context;
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v2, v3, p1, v4}, Landroid/media/SoundPool;->load(Landroid/content/Context;II)I
+
+    move-result v2
+
+    iput v2, v0, Lgkr;->b:I
+
+    sget-object v2, Lgkn;->a:Ljava/lang/String;
+
+    iget v3, v0, Lgkr;->b:I
+
+    const/16 v4, 0x2c
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Sound: "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    const-string v5, " at "
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " got sampleId: "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    iget-object v0, v0, Lgkr;->c:Lket;
+
+    monitor-exit v1
+
+    :goto_1
+    return-object v0
+
+    :cond_0
+    sget-object v2, Lgkn;->a:Ljava/lang/String;
+
+    const/16 v3, 0x3e
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Ignoring loadSound for previously loaded resource: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :try_start_1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    const-string v4, ", after "
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
+.end method
+
+.method public final a()V
+    .locals 2
+
+    iget-object v1, p0, Lgkn;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Lgkn;->c:Z
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lgkn;->c()Landroid/media/SoundPool;
 
     move-result-object v0
 
-    const-string v2, "frames"
+    invoke-virtual {v0}, Landroid/media/SoundPool;->autoResume()V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v1, p0, Lgkn;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Lgkn;->c:Z
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lgkn;->c()Landroid/media/SoundPool;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/media/SoundPool;->autoPause()V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final b(I)V
+    .locals 3
+
+    invoke-virtual {p0, p1}, Lgkn;->a(I)Lkeh;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v1, Lgkp;
 
-    iput-boolean v8, p0, Lgkn;->e:Z
+    invoke-direct {v1, p0, p1}, Lgkp;-><init>(Lgkn;I)V
 
-    iget-object v0, p0, Lgkn;->a:Ljvi;
+    sget-object v2, Lken;->a:Lken;
 
-    const/4 v1, 0x0
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    return-void
+.end method
+
+.method public final c(I)Lkeh;
+    .locals 6
+
+    new-instance v0, Lket;
+
+    invoke-direct {v0}, Lket;-><init>()V
+
+    new-instance v1, Ljava/util/Timer;
+
+    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
+
+    new-instance v2, Lgkq;
+
+    const v3, 0x7f090004
+
+    invoke-direct {v2, p0, v0, v3}, Lgkq;-><init>(Lgkn;Lket;I)V
+
+    const-wide/16 v4, 0x12c
+
+    invoke-virtual {v1, v2, v4, v5}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 3
+
+    iget-object v1, p0, Lgkn;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Lgkn;->c:Z
+
+    if-eqz v0, :cond_0
+
+    monitor-exit v1
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lgkn;->c:Z
+
+    iget-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lgkn;->a:Ljava/lang/String;
+
+    const-string v2, "Closing SoundPool"
+
+    invoke-static {v0, v2}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
+
+    iget-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
+
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/SoundPool;
+
+    invoke-virtual {v0}, Landroid/media/SoundPool;->autoPause()V
+
+    iget-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
+
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/SoundPool;
+
+    invoke-virtual {v0}, Landroid/media/SoundPool;->release()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lgkn;->f:Landroid/media/SoundPool;
+
+    :cond_1
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final d(I)V
+    .locals 2
+
+    iget-object v1, p0, Lgkn;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Lgkn;->c:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, -0x1
+
+    if-eq p1, v0, :cond_0
+
+    invoke-direct {p0}, Lgkn;->c()Landroid/media/SoundPool;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/media/SoundPool;->stop(I)V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method final e(I)Lgkr;
+    .locals 4
+
+    iget-object v2, p0, Lgkn;->b:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    :try_start_0
+    iget-object v0, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_1
+
+    iget-object v0, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v0, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgkr;
+
+    iget v3, v0, Lgkr;->b:I
+
+    if-ne v3, p1, :cond_0
+
+    monitor-exit v2
+
+    return-object v0
+
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_1
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    const/16 v1, 0x2d
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "SoundInfo for sampleId "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " not found."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public final f(I)Z
+    .locals 3
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lgkn;->b:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-boolean v0, p0, Lgkn;->c:Z
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgkr;
+
+    if-nez v0, :cond_0
+
+    monitor-exit v2
+
+    move v0, v1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-object v1, p0, Lgkn;->e:Landroid/util/SparseArray;
+
+    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->remove(I)V
+
+    invoke-direct {p0}, Lgkn;->c()Landroid/media/SoundPool;
+
+    move-result-object v1
+
+    iget v0, v0, Lgkr;->b:I
+
+    invoke-virtual {v1, v0}, Landroid/media/SoundPool;->unload(I)Z
+
+    move-result v0
+
+    monitor-exit v2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move v0, v1
 
     goto :goto_0
 .end method

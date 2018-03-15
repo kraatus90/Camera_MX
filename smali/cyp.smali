@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcyf;
+.field private final synthetic a:Lcyk;
 
 
 # direct methods
-.method constructor <init>(Lcyf;)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
-    iput-object p1, p0, Lcyp;->a:Lcyf;
+    iput-object p1, p0, Lcyp;->a:Lcyk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,28 +23,46 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
+.method public final run()V
     .locals 2
 
-    check-cast p1, Lcvo;
+    iget-object v0, p0, Lcyp;->a:Lcyk;
 
-    iget-object v0, p0, Lcyp;->a:Lcyf;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-    iget-object v1, p1, Lcvo;->b:[B
+    move-result-object v0
 
-    invoke-static {v1}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    check-cast v0, Lcxo;
 
-    move-result-object v1
+    iget-object v0, v0, Lcxo;->x:Laws;
 
-    iput-object v1, v0, Lcyf;->d:Ljht;
+    invoke-interface {v0}, Laws;->d()Z
 
-    iget-object v0, p0, Lcyp;->a:Lcyf;
+    move-result v0
 
-    iget-object v1, p1, Lcvo;->a:Landroid/graphics/Bitmap;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lcyf;->a(Landroid/graphics/Bitmap;)V
+    sget-object v0, Lcyk;->c:Ljava/lang/String;
 
-    const/4 v0, 0x0
+    const-string v1, "Visible lifecycle closed, not displaying rest of UI"
 
-    return-object v0
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcyp;->a:Lcyk;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->b:Lcwf;
+
+    invoke-virtual {v0}, Lcwf;->b()V
+
+    goto :goto_0
 .end method

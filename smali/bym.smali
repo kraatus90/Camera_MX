@@ -2,53 +2,71 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Lgni;
+.field private final a:Lkgv;
 
-.field public final b:Lbyk;
+.field private final b:Lkgv;
 
-.field public c:Z
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lgni;Lbyk;)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lbym;->a:Lkgv;
 
-    iput-boolean v0, p0, Lbym;->c:Z
+    iput-object p2, p0, Lbym;->b:Lkgv;
 
-    iput-object p1, p0, Lbym;->a:Lgni;
-
-    iput-object p2, p0, Lbym;->b:Lbyk;
+    iput-object p3, p0, Lbym;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    invoke-static {}, Lhzt;->a()V
+    iget-object v0, p0, Lbym;->a:Lkgv;
 
-    iget-boolean v0, p0, Lbym;->c:Z
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Lbym;->a:Lgni;
+    check-cast v0, Liay;
 
-    invoke-interface {v0}, Lgni;->b()V
+    iget-object v1, p0, Lbym;->b:Lkgv;
 
-    iget-object v0, p0, Lbym;->b:Lbyk;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lbyk;->a(Z)V
+    check-cast v1, Lelo;
 
-    :cond_0
-    return-void
+    iget-object v2, p0, Lbym;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbli;
+
+    invoke-static {v0, v1, v2}, Ldzf;->a(Liay;Lemf;Lemz;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgkv;
+
+    return-object v0
 .end method

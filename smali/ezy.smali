@@ -1,69 +1,43 @@
-.class final Lezy;
-.super Lexw;
-.source "PG"
+.class final synthetic Lezy;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lezw;
+.field private final a:Lezx;
+
+.field private final b:Lfak;
 
 
 # direct methods
-.method constructor <init>(Lezw;)V
+.method constructor <init>(Lezx;Lfak;)V
     .locals 0
 
-    iput-object p1, p0, Lezy;->a:Lezw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lexw;-><init>(Lexu;)V
+    iput-object p1, p0, Lezy;->a:Lezx;
+
+    iput-object p2, p0, Lezy;->b:Lfak;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o()V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lezy;->a:Lezw;
+    iget-object v0, p0, Lezy;->a:Lezx;
 
-    iget-object v0, v0, Lezw;->l:Lgvj;
+    iget-object v1, p0, Lezy;->b:Lfak;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    iget-object v0, v0, Lezx;->c:Landroid/widget/TextView;
 
-    invoke-super {p0}, Lexw;->o()V
+    iget-object v1, v1, Lfak;->f:Ljava/lang/String;
 
-    iget-object v0, p0, Lezy;->a:Lezw;
-
-    iget-object v0, v0, Lezw;->l:Lgvj;
-
-    iget-object v1, p0, Lezy;->a:Lezw;
-
-    iget-object v1, v1, Lezw;->m:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final q()V
-    .locals 2
-
-    iget-object v0, p0, Lezy;->a:Lezw;
-
-    iget-object v0, v0, Lezw;->l:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lexw;->q()V
-
-    iget-object v0, p0, Lezy;->a:Lezw;
-
-    iget-object v0, v0, Lezw;->l:Lgvj;
-
-    iget-object v1, p0, Lezy;->a:Lezw;
-
-    iget-object v1, v1, Lezw;->m:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

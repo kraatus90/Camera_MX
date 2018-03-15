@@ -2,55 +2,78 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lfjk;
 
+# static fields
+.field public static final a:Lfjh;
 
-# instance fields
-.field private a:Lgpk;
+.field public static final b:Lfjh;
 
-.field private b:Ljxn;
+.field public static final c:Lfjh;
+
+.field public static final d:Lfjh;
+
+.field public static final e:Lfjh;
+
+.field public static final f:Lfjh;
 
 
 # direct methods
-.method constructor <init>(Lgpk;Ljxn;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfji;->a:Lgpk;
-
-    iput-object p2, p0, Lfji;->b:Ljxn;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
+.method static constructor <clinit>()V
     .locals 2
 
-    iget-object v0, p0, Lfji;->b:Ljxn;
+    new-instance v0, Lfjh;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "TOTAL_CAPTURE_RESULT"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Lfjh;-><init>(Ljava/lang/String;)V
 
-    check-cast v0, Lfic;
+    sput-object v0, Lfji;->a:Lfjh;
 
-    iget-object v0, v0, Lfic;->f:Lhaz;
+    new-instance v0, Lfjh;
 
-    const v1, 0x7f0e00e4
+    const-string v1, "IMAGE_ID"
 
-    invoke-virtual {v0, v1}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lfjh;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    sput-object v0, Lfji;->b:Lfjh;
 
-    check-cast v0, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+    new-instance v0, Lfjh;
 
-    iget-object v1, p0, Lfji;->a:Lgpk;
+    const-string v1, "REQUEST"
 
-    invoke-interface {v1, v0}, Lgpk;->a(Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;)V
+    invoke-direct {v0, v1}, Lfjh;-><init>(Ljava/lang/String;)V
+
+    new-instance v0, Lfjh;
+
+    const-string v1, "ORIENTATION"
+
+    invoke-direct {v0, v1}, Lfjh;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lfji;->c:Lfjh;
+
+    new-instance v0, Lfjh;
+
+    const-string v1, "BURST_ID"
+
+    invoke-direct {v0, v1}, Lfjh;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lfji;->d:Lfjh;
+
+    new-instance v0, Lfjh;
+
+    const-string v1, "BURST_START_TIME"
+
+    invoke-direct {v0, v1}, Lfjh;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lfji;->e:Lfjh;
+
+    new-instance v0, Lfjh;
+
+    const-string v1, "BURST_INDEX"
+
+    invoke-direct {v0, v1}, Lfjh;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lfji;->f:Lfjh;
 
     return-void
 .end method

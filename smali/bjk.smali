@@ -1,101 +1,95 @@
-.class Lbjk;
-.super Lgvh;
+.class public final Lbjk;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# static fields
+.field private static final a:Ljava/lang/Byte;
+
+
 # instance fields
-.field private synthetic a:Lbjj;
+.field private final b:Linn;
+
+.field private final c:Lgnv;
+
+.field private final d:Lgmy;
 
 
 # direct methods
-.method constructor <init>(Lbjj;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iput-object p1, p0, Lbjk;->a:Lbjj;
+    const/16 v0, 0x5f
 
-    const/4 v0, 0x0
+    invoke-static {v0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>(B)V
+    move-result-object v0
+
+    sput-object v0, Lbjk;->a:Ljava/lang/Byte;
+
+    return-void
+.end method
+
+.method public constructor <init>(Linn;Lgnv;Lgmy;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbjk;->b:Linn;
+
+    iput-object p2, p0, Lbjk;->c:Lgnv;
+
+    iput-object p3, p0, Lbjk;->d:Lgmy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(Lbhk;Ljrf;Lick;Lick;Lick;Lihc;Landroid/os/Handler;Lias;)Lbjj;
+    .locals 13
 
-    iget-object v0, p0, Lbjk;->a:Lbjj;
+    iget-object v1, p0, Lbjk;->b:Linn;
 
-    iget-object v0, v0, Lbjj;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    move-object/from16 v0, p6
 
-    const/16 v1, 0x8
+    iget v2, v0, Lihc;->a:I
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setVisibility(I)V
+    move-object/from16 v0, p6
 
-    return-void
-.end method
+    iget v3, v0, Lihc;->b:I
 
-.method public a(IIF)V
-    .locals 3
+    const/16 v4, 0x100
 
-    iget-object v0, p0, Lbjk;->a:Lbjj;
+    const/4 v5, 0x1
 
-    iget-object v0, v0, Lbjj;->d:Lbjn;
+    invoke-interface {v1, v2, v3, v4, v5}, Linn;->a(IIII)Linm;
 
-    iput p1, v0, Lbjn;->f:I
+    move-result-object v8
 
-    sub-int v1, p2, p1
+    new-instance v1, Lbjm;
 
-    iput v1, v0, Lbjn;->g:I
+    iget-object v2, p0, Lbjk;->c:Lgnv;
 
-    iput p3, v0, Lbjn;->h:F
+    iget-object v3, p0, Lbjk;->d:Lgmy;
 
-    iget-object v0, v0, Lbjn;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    sget-object v6, Lbjk;->a:Ljava/lang/Byte;
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    move-object/from16 v4, p7
 
-    add-int v0, p1, p2
+    move-object/from16 v5, p8
 
-    if-nez v0, :cond_0
+    move-object v7, p1
 
-    const/4 v0, 0x1
+    move-object v9, p2
 
-    :goto_0
-    const-string v2, "Expecting -minExposure to be equal to maxExposure, was [%s, %s]"
+    move-object/from16 v10, p3
 
-    invoke-static {v0, v2, p1, p2}, Liya;->a(ZLjava/lang/String;II)V
+    move-object/from16 v11, p4
 
-    int-to-float v0, p2
+    move-object/from16 v12, p5
 
-    mul-float/2addr v0, p3
+    invoke-direct/range {v1 .. v12}, Lbjm;-><init>(Lgnv;Lgmy;Landroid/os/Handler;Lias;Ljava/lang/Byte;Lbhk;Linm;Ljrf;Lick;Lick;Lick;)V
 
-    float-to-int v0, v0
-
-    mul-int/lit8 v0, v0, 0x6
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, v1, Lbjd;->s:I
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lbjk;->a:Lbjj;
-
-    iget-object v0, v0, Lbjj;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setVisibility(I)V
-
-    return-void
+    return-object v1
 .end method

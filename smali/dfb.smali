@@ -1,47 +1,60 @@
-.class public final Ldfb;
-.super Ldhe;
+.class final Ldfb;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkds;
+
+
+# instance fields
+.field private final synthetic a:Ldev;
 
 
 # direct methods
-.method public constructor <init>(Ldhe;)V
+.method constructor <init>(Ldev;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ldhe;-><init>(Lcng;)V
+    iput-object p1, p0, Ldfb;->a:Ldev;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b()Lcng;
-    .locals 1
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 0
 
-    invoke-virtual {p0}, Ldfb;->e()Ldhe;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method public final e()Ldhe;
-    .locals 2
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 3
 
-    invoke-virtual {p0}, Lcng;->d()Lich;
+    iget-object v0, p0, Ldfb;->a:Ldev;
 
-    move-result-object v0
+    iget-object v0, v0, Ldev;->h:Lhcu;
 
-    check-cast v0, Ldhc;
+    iget-object v1, v0, Lhcu;->g:Ldzh;
 
-    iget-object v0, v0, Ldhc;->c:Lhzt;
+    const/4 v2, 0x0
 
-    new-instance v1, Ldfc;
+    invoke-virtual {v1, v2}, Ldzh;->c(Z)V
 
-    invoke-direct {v1, p0}, Ldfc;-><init>(Ldfb;)V
+    iget-object v1, v0, Lhcu;->c:Lgob;
 
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v0}, Lhcu;->a()Landroid/content/DialogInterface$OnClickListener;
 
-    const/4 v0, 0x0
+    move-result-object v2
 
-    return-object v0
+    invoke-interface {v1, v2}, Lgob;->d(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lhcu;->h:Landroid/app/AlertDialog;
+
+    invoke-virtual {v0}, Lhcu;->d()V
+
+    return-void
 .end method

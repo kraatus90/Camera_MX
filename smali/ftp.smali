@@ -1,47 +1,103 @@
-.class final synthetic Lftp;
+.class final Lftp;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Lful;
 
 
 # instance fields
-.field private a:Lfto;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private b:Lfti;
+.field private final synthetic b:Lfto;
 
 
 # direct methods
-.method constructor <init>(Lfto;Lfti;)V
-    .locals 0
+.method public constructor <init>(Lfto;)V
+    .locals 2
+
+    iput-object p1, p0, Lftp;->b:Lfto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lftp;->a:Lfto;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p2, p0, Lftp;->b:Lfti;
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lftp;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 3
+.method public final close()V
+    .locals 4
 
-    iget-object v0, p0, Lftp;->a:Lfto;
+    iget-object v0, p0, Lftp;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v1, p0, Lftp;->b:Lfti;
+    const/4 v1, 0x1
 
-    iget-object v2, v0, Lfto;->b:Landroid/content/ContentResolver;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    iget-object v0, v0, Lfto;->a:Landroid/net/Uri;
+    move-result v0
 
-    iget-object v1, v1, Lfti;->a:Landroid/content/ContentValues;
+    if-nez v0, :cond_1
 
-    invoke-virtual {v2, v0, v1}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    iget-object v0, p0, Lftp;->b:Lfto;
 
-    move-result-object v0
+    iget-object v1, v0, Lfto;->b:Ljava/lang/Object;
 
-    return-object v0
+    monitor-enter v1
+
+    :try_start_0
+    iget v2, v0, Lfto;->e:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, v0, Lfto;->e:I
+
+    iget-object v2, v0, Lfto;->d:Lidg;
+
+    invoke-virtual {v0}, Lfto;->b()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lidg;->b:Ljava/lang/Object;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v1, v0, Lfto;->d:Lidg;
+
+    iget-object v1, v1, Lidg;->a:Lidb;
+
+    invoke-virtual {v1}, Lidb;->a()V
+
+    :cond_0
+    invoke-virtual {v0}, Lfto;->a()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    :cond_1
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

@@ -1,86 +1,123 @@
 .class public final Lfvr;
-.super Ljava/lang/Object;
+.super Landroid/widget/LinearLayout;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# instance fields
+.field public final a:Lfvl;
 
-# static fields
-.field public static final a:Lfvr;
+.field public final b:Ljava/util/Map;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Ljava/util/List;Lfvk;Lfvl;)V
+    .locals 7
 
-    new-instance v0, Lfvr;
+    const/4 v6, 0x0
 
-    invoke-direct {v0}, Lfvr;-><init>()V
+    const/4 v5, -0x2
 
-    sput-object v0, Lfvr;->a:Lfvr;
+    invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    return-void
-.end method
+    iput-object p4, p0, Lfvr;->a:Lfvl;
 
-.method public constructor <init>()V
-    .locals 0
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    return-void
-.end method
+    iput-object v0, p0, Lfvr;->b:Ljava/util/Map;
 
+    invoke-virtual {p0, v6}, Lfvr;->setOrientation(I)V
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+    const v0, 0x7f0c0091
 
-    new-instance v0, Ljvj;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
-    invoke-direct {v0}, Ljvj;-><init>()V
+    move-result v0
 
-    const-string v1, "mv-disk-writer-%d"
+    invoke-virtual {p0, v0}, Lfvr;->setBackgroundColor(I)V
 
-    invoke-virtual {v0, v1}, Ljvj;->a(Ljava/lang/String;)Ljvj;
+    invoke-virtual {p0}, Lfvr;->removeAllViews()V
 
-    move-result-object v0
+    iget-object v0, p0, Lfvr;->b:Ljava/util/Map;
 
-    iget-object v1, v0, Ljvj;->a:Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
-
-    if-eqz v1, :cond_0
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    const-wide/16 v4, 0x0
-
-    invoke-direct {v0, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+    move-result-object v1
 
     :goto_0
-    new-instance v3, Ljvk;
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-direct {v3, v2, v1, v0}, Ljvk;-><init>(Ljava/util/concurrent/ThreadFactory;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
+    move-result v0
 
-    invoke-static {v3}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+    if-eqz v0, :cond_1
 
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/concurrent/Executor;
+    check-cast v0, Lfvi;
 
-    return-object v0
+    new-instance v2, Lfxf;
 
-    :cond_0
-    const/4 v0, 0x0
+    iget v3, v0, Lfvi;->b:I
+
+    iget v4, v0, Lfvi;->c:I
+
+    invoke-direct {v2, p1, v3, v4}, Lfxf;-><init>(Landroid/content/Context;II)V
+
+    invoke-virtual {p0}, Lfvr;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    iget v4, v0, Lfvi;->d:I
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object v3, p0, Lfvr;->b:Ljava/util/Map;
+
+    invoke-interface {v3, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    invoke-direct {v3, v5, v5, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+
+    invoke-virtual {p0, v2, v3}, Lfvr;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v3, v0, Lfvi;->a:Lfvk;
+
+    if-ne p3, v3, :cond_0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setSelected(Z)V
+
+    :goto_1
+    new-instance v3, Lfvs;
+
+    invoke-direct {v3, p0, v0}, Lfvs;-><init>(Lfvr;Lfvi;)V
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2, v6}, Landroid/view/View;->setSelected(Z)V
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v0, 0x11
+
+    invoke-virtual {p0, v0}, Lfvr;->setGravity(I)V
+
+    return-void
 .end method

@@ -3,82 +3,88 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
+.field private final b:Lkgv;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Latr;->a:Ljxn;
+    iput-object p1, p0, Latr;->a:Lkgv;
 
-    iput-object p2, p0, Latr;->b:Ljxn;
+    iput-object p2, p0, Latr;->b:Lkgv;
 
-    iput-object p3, p0, Latr;->c:Ljxn;
-
-    iput-object p4, p0, Latr;->d:Ljxn;
-
-    iput-object p5, p0, Latr;->e:Ljxn;
-
-    iput-object p6, p0, Latr;->f:Ljxn;
-
-    iput-object p7, p0, Latr;->g:Ljxn;
-
-    iput-object p8, p0, Latr;->h:Ljxn;
-
-    iput-object p9, p0, Latr;->i:Ljxn;
+    iput-object p3, p0, Latr;->c:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;)Latr;
+    .locals 1
+
+    new-instance v0, Latr;
+
+    invoke-direct {v0, p0, p1, p2}, Latr;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 10
+    .locals 3
 
-    new-instance v0, Latq;
+    iget-object v0, p0, Latr;->a:Lkgv;
 
-    iget-object v1, p0, Latr;->a:Ljxn;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v2, p0, Latr;->b:Ljxn;
+    move-result-object v0
 
-    iget-object v3, p0, Latr;->c:Ljxn;
+    check-cast v0, Lfdv;
 
-    iget-object v4, p0, Latr;->d:Ljxn;
+    iget-object v1, p0, Latr;->b:Lkgv;
 
-    iget-object v5, p0, Latr;->e:Ljxn;
+    iget-object v2, p0, Latr;->c:Lkgv;
 
-    iget-object v6, p0, Latr;->f:Ljxn;
+    invoke-interface {v0}, Lfdv;->p()Z
 
-    iget-object v7, p0, Latr;->g:Ljxn;
+    move-result v0
 
-    iget-object v8, p0, Latr;->h:Ljxn;
+    if-eqz v0, :cond_0
 
-    iget-object v9, p0, Latr;->i:Ljxn;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v9}, Latq;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    move-result-object v0
+
+    check-cast v0, Lfhq;
+
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfhq;
 
     return-object v0
+
+    :cond_0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfhq;
+
+    goto :goto_0
 .end method

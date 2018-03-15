@@ -1,155 +1,166 @@
-.class final Ldgs;
+.class public final Ldgs;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Lkgv;
 
 
 # instance fields
-.field public final synthetic a:Ldgn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
+
+.field private final l:Lkgv;
+
+.field private final m:Lkgv;
+
+.field private final n:Lkgv;
+
+.field private final o:Lkgv;
+
+.field private final p:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldgn;)V
-    .locals 0
-
-    iput-object p1, p0, Ldgs;->a:Ldgn;
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldgs;->a:Lkgv;
+
+    iput-object p2, p0, Ldgs;->b:Lkgv;
+
+    iput-object p3, p0, Ldgs;->c:Lkgv;
+
+    iput-object p4, p0, Ldgs;->d:Lkgv;
+
+    iput-object p5, p0, Ldgs;->e:Lkgv;
+
+    iput-object p6, p0, Ldgs;->f:Lkgv;
+
+    iput-object p7, p0, Ldgs;->g:Lkgv;
+
+    iput-object p8, p0, Ldgs;->h:Lkgv;
+
+    iput-object p9, p0, Ldgs;->i:Lkgv;
+
+    iput-object p10, p0, Ldgs;->j:Lkgv;
+
+    iput-object p11, p0, Ldgs;->k:Lkgv;
+
+    iput-object p12, p0, Ldgs;->l:Lkgv;
+
+    iput-object p13, p0, Ldgs;->m:Lkgv;
+
+    iput-object p14, p0, Ldgs;->n:Lkgv;
+
+    move-object/from16 v0, p15
+
+    iput-object v0, p0, Ldgs;->o:Lkgv;
+
+    move-object/from16 v0, p16
+
+    iput-object v0, p0, Ldgs;->p:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 18
 
-    const/4 v3, 0x0
+    new-instance v1, Ldge;
 
-    iget-object v0, p0, Ldgs;->a:Ldgn;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    iget-object v2, v0, Ldgs;->a:Lkgv;
 
-    move-result-object v0
+    move-object/from16 v0, p0
 
-    check-cast v0, Ldhc;
+    iget-object v3, v0, Ldgs;->b:Lkgv;
 
-    iget-object v0, v0, Ldhc;->b:Ldei;
+    move-object/from16 v0, p0
 
-    iget-object v0, v0, Ldei;->d:Ldel;
+    iget-object v4, v0, Ldgs;->c:Lkgv;
 
-    iget-object v0, v0, Ldel;->a:Landroid/widget/ImageView;
+    move-object/from16 v0, p0
 
-    const/16 v1, 0x8
+    iget-object v5, v0, Ldgs;->d:Lkgv;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    move-object/from16 v0, p0
 
-    iget-object v1, p0, Ldgs;->a:Ldgn;
+    iget-object v6, v0, Ldgs;->e:Lkgv;
 
-    iget-object v0, v1, Ldgn;->d:Lbbo;
+    move-object/from16 v0, p0
 
-    if-eqz v0, :cond_0
+    iget-object v7, v0, Ldgs;->f:Lkgv;
 
-    iget-object v0, v1, Ldgn;->d:Lbbo;
+    move-object/from16 v0, p0
 
-    iget-object v0, v0, Lbbo;->a:Ljava/io/File;
+    iget-object v8, v0, Ldgs;->g:Lkgv;
 
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
+    move-object/from16 v0, p0
 
-    invoke-virtual {v1}, Lcng;->d()Lich;
+    iget-object v9, v0, Ldgs;->h:Lkgv;
 
-    move-result-object v0
+    move-object/from16 v0, p0
 
-    check-cast v0, Ldhc;
+    iget-object v10, v0, Ldgs;->i:Lkgv;
 
-    iget-object v0, v0, Ldhc;->H:Ljht;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    iget-object v11, v0, Ldgs;->j:Lkgv;
 
-    move-result v0
+    move-object/from16 v0, p0
 
-    if-eqz v0, :cond_0
+    iget-object v12, v0, Ldgs;->k:Lkgv;
 
-    invoke-virtual {v1}, Lcng;->d()Lich;
+    move-object/from16 v0, p0
 
-    move-result-object v0
+    iget-object v13, v0, Ldgs;->l:Lkgv;
 
-    check-cast v0, Ldhc;
+    move-object/from16 v0, p0
 
-    iget-object v2, v0, Ldhc;->o:Landroid/content/ContentResolver;
+    iget-object v14, v0, Ldgs;->m:Lkgv;
 
-    invoke-virtual {v1}, Lcng;->d()Lich;
+    move-object/from16 v0, p0
 
-    move-result-object v0
+    iget-object v15, v0, Ldgs;->n:Lkgv;
 
-    check-cast v0, Ldhc;
+    move-object/from16 v0, p0
 
-    iget-object v0, v0, Ldhc;->H:Ljht;
+    iget-object v0, v0, Ldgs;->o:Lkgv;
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    move-object/from16 v16, v0
 
-    move-result-object v0
+    move-object/from16 v0, p0
 
-    check-cast v0, Landroid/net/Uri;
+    iget-object v0, v0, Ldgs;->p:Lkgv;
 
-    invoke-virtual {v2, v0, v3, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
+    move-object/from16 v17, v0
 
-    :cond_0
-    invoke-virtual {v1}, Lcng;->d()Lich;
+    invoke-direct/range {v1 .. v17}, Ldge;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
 
-    move-result-object v0
-
-    check-cast v0, Ldhc;
-
-    invoke-virtual {v0, v3}, Ldhc;->a(Landroid/net/Uri;)V
-
-    iget-object v0, p0, Ldgs;->a:Ldgn;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
-
-    move-result-object v0
-
-    check-cast v0, Ldhc;
-
-    iget-object v0, v0, Ldhc;->z:Ldiv;
-
-    invoke-virtual {v0}, Ldiv;->a()V
-
-    iget-object v0, p0, Ldgs;->a:Ldgn;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
-
-    move-result-object v0
-
-    check-cast v0, Ldhc;
-
-    iget-object v0, v0, Ldhc;->b:Ldei;
-
-    invoke-virtual {v0}, Ldei;->a()V
-
-    iget-object v0, p0, Ldgs;->a:Ldgn;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
-
-    move-result-object v0
-
-    check-cast v0, Ldhc;
-
-    iget-object v0, v0, Ldhc;->c:Lhzt;
-
-    new-instance v1, Ldgt;
-
-    invoke-direct {v1, p0}, Ldgt;-><init>(Ldgs;)V
-
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    new-instance v0, Ldff;
-
-    iget-object v1, p0, Ldgs;->a:Ldgn;
-
-    invoke-direct {v0, v1}, Ldff;-><init>(Ldhe;)V
-
-    return-object v0
+    return-object v1
 .end method

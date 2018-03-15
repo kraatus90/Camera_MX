@@ -1,56 +1,145 @@
-.class public final Lebs;
-.super Ljava/lang/Object;
+.class public Lebs;
+.super Lebr;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public b:Lgwk;
+
+.field public c:Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
+
+.field public d:Landroid/widget/ImageButton;
+
+.field public e:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+.field public f:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
+
+.field public g:Lfax;
+
+.field public h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field public i:Lgvc;
+
+.field public j:Lgew;
+
+.field public k:Lhgv;
+
+.field public l:Ljrf;
+
+.field public m:Lbqc;
+
+.field public n:Lgqc;
+
+.field private final o:Lick;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "DualCamChart"
 
-    iput-object p1, p0, Lebs;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lebs;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
+.method public constructor <init>(Lick;)V
+    .locals 0
+
+    invoke-direct {p0}, Lebr;-><init>()V
+
+    iput-object p1, p0, Lebs;->o:Lick;
+
+    return-void
+.end method
+
+.method static synthetic a(Lebs;)Lick;
     .locals 1
 
-    new-instance v0, Lebs;
-
-    invoke-direct {v0, p0}, Lebs;-><init>(Ljxn;)V
+    iget-object v0, p0, Lebs;->o:Lick;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public a(Lkgv;Lgwk;Lfax;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgew;Lhgv;Ljrf;Lbqc;Lgqc;)V
     .locals 2
 
-    iget-object v0, p0, Lebs;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {p1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ledp;
+    check-cast v0, Lgxn;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v1, v0, Lgxn;->g:Lhcf;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-object p2, p0, Lebs;->b:Lgwk;
+
+    const v0, 0x7f0e00fd
+
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Leak;
+    check-cast v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
 
-    return-object v0
+    iput-object v0, p0, Lebs;->e:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    const v0, 0x7f0e00ee
+
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
+
+    iput-object v0, p0, Lebs;->f:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
+
+    iput-object p3, p0, Lebs;->g:Lfax;
+
+    iput-object p4, p0, Lebs;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iput-object p5, p0, Lebs;->i:Lgvc;
+
+    iput-object p6, p0, Lebs;->j:Lgew;
+
+    iput-object p7, p0, Lebs;->k:Lhgv;
+
+    const v0, 0x7f0e00f7
+
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageButton;
+
+    iput-object v0, p0, Lebs;->d:Landroid/widget/ImageButton;
+
+    const v0, 0x7f0e00f8
+
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
+
+    iput-object v0, p0, Lebs;->c:Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
+
+    iput-object p8, p0, Lebs;->l:Ljrf;
+
+    iput-object p9, p0, Lebs;->m:Lbqc;
+
+    iput-object p10, p0, Lebs;->n:Lgqc;
+
+    return-void
 .end method

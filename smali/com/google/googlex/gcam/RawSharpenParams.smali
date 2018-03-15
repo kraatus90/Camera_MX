@@ -108,7 +108,7 @@
     return-void
 .end method
 
-.method public getCurves()Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;
+.method public getCurves()Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;
     .locals 4
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/RawSharpenParams;->swigCPtr:J
@@ -129,21 +129,21 @@
     return-object v0
 
     :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;
+    new-instance v0, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;-><init>(JZ)V
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;-><init>(JZ)V
 
     goto :goto_0
 .end method
 
-.method public setCurves(Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;)V
+.method public setCurves(Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;)V
     .locals 4
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/RawSharpenParams;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;)J
+    invoke-static {p1}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;)J
 
     move-result-wide v2
 

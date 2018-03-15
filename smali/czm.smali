@@ -1,50 +1,64 @@
-.class public final Lczm;
+.class final Lczm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lczl;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lczl;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lczm;->a:Lczl;
 
-    iput-object p1, p0, Lczm;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lczm;->a:Ljxn;
+    iget-object v0, p0, Lczm;->a:Lczl;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lczl;->a:Lcyk;
 
-    move-result-object v0
-
-    check-cast v0, Lczf;
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    check-cast v0, Lcxo;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Lcxo;->b:Lcwf;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcwf;->a(Z)V
+
+    iget-object v0, p0, Lczm;->a:Lczl;
+
+    iget-object v0, v0, Lczl;->a:Lcyk;
+
+    iget-object v0, v0, Lcyk;->d:Lbci;
+
+    iget-object v0, v0, Lbci;->a:Lihb;
+
+    check-cast v0, Lcxh;
+
+    invoke-interface {v0}, Lcxh;->d()Lgkf;
 
     move-result-object v0
 
-    check-cast v0, Ljuw;
+    const v1, 0x7f090006
 
-    return-object v0
+    invoke-interface {v0, v1}, Lgkf;->a(I)V
+
+    return-void
 .end method

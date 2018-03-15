@@ -1,77 +1,65 @@
-.class public interface abstract Lfl;
+.class final Lfl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/view/MenuItem;
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field private final synthetic a:Landroid/content/Context;
+
+.field private final synthetic b:Lfj;
+
+.field private final synthetic c:I
+
+.field private final synthetic d:Ljava/lang/String;
+
+
+# direct methods
+.method constructor <init>(Landroid/content/Context;Lfj;ILjava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lfl;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lfl;->b:Lfj;
+
+    iput p3, p0, Lfl;->c:I
+
+    iput-object p4, p0, Lfl;->d:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lhn;)Lfl;
-.end method
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 4
 
-.method public abstract a(Ljava/lang/CharSequence;)Lfl;
-.end method
+    iget-object v0, p0, Lfl;->a:Landroid/content/Context;
 
-.method public abstract a()Lhn;
-.end method
+    iget-object v1, p0, Lfl;->b:Lfj;
 
-.method public abstract b(Ljava/lang/CharSequence;)Lfl;
-.end method
+    iget v2, p0, Lfl;->c:I
 
-.method public abstract collapseActionView()Z
-.end method
+    invoke-static {v0, v1, v2}, Lfk;->a(Landroid/content/Context;Lfj;I)Lfr;
 
-.method public abstract expandActionView()Z
-.end method
+    move-result-object v0
 
-.method public abstract getActionView()Landroid/view/View;
-.end method
+    iget-object v1, v0, Lfr;->a:Landroid/graphics/Typeface;
 
-.method public abstract getAlphabeticModifiers()I
-.end method
+    if-eqz v1, :cond_0
 
-.method public abstract getContentDescription()Ljava/lang/CharSequence;
-.end method
+    sget-object v1, Lfk;->a:Lgo;
 
-.method public abstract getIconTintList()Landroid/content/res/ColorStateList;
-.end method
+    iget-object v2, p0, Lfl;->d:Ljava/lang/String;
 
-.method public abstract getIconTintMode()Landroid/graphics/PorterDuff$Mode;
-.end method
+    iget-object v3, v0, Lfr;->a:Landroid/graphics/Typeface;
 
-.method public abstract getNumericModifiers()I
-.end method
+    invoke-virtual {v1, v2, v3}, Lgo;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public abstract getTooltipText()Ljava/lang/CharSequence;
-.end method
-
-.method public abstract isActionViewExpanded()Z
-.end method
-
-.method public abstract setActionView(I)Landroid/view/MenuItem;
-.end method
-
-.method public abstract setActionView(Landroid/view/View;)Landroid/view/MenuItem;
-.end method
-
-.method public abstract setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-.end method
-
-.method public abstract setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
-.end method
-
-.method public abstract setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
-.end method
-
-.method public abstract setNumericShortcut(CI)Landroid/view/MenuItem;
-.end method
-
-.method public abstract setShortcut(CCII)Landroid/view/MenuItem;
-.end method
-
-.method public abstract setShowAsAction(I)V
-.end method
-
-.method public abstract setShowAsActionFlags(I)Landroid/view/MenuItem;
+    :cond_0
+    return-object v0
 .end method

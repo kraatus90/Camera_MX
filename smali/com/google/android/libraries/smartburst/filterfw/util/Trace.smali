@@ -9,25 +9,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_0
+    .locals 1
 
     const/4 v0, 0x1
 
-    :goto_0
     sput-boolean v0, Lcom/google/android/libraries/smartburst/filterfw/util/Trace;->ENABLED:Z
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method public constructor <init>()V

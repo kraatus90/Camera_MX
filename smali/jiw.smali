@@ -1,16 +1,23 @@
 .class final Ljiw;
-.super Ljjb;
+.super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/util/RandomAccess;
+
+# instance fields
+.field public final a:J
+
+.field public final b:F
 
 
 # direct methods
-.method constructor <init>(Ljio;Ljava/lang/Object;Ljava/util/List;Ljiz;)V
-    .locals 0
+.method public constructor <init>(JF)V
+    .locals 1
 
-    invoke-direct {p0, p1, p2, p3, p4}, Ljjb;-><init>(Ljio;Ljava/lang/Object;Ljava/util/List;Ljiz;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Ljiw;->a:J
+
+    iput p3, p0, Ljiw;->b:F
 
     return-void
 .end method

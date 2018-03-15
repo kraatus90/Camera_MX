@@ -1,37 +1,44 @@
-.class final synthetic Lasi;
+.class public final Lasi;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Lasf;
+# static fields
+.field public static final a:Lasi;
 
 
 # direct methods
-.method constructor <init>(Lasf;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lasi;
+
+    invoke-direct {v0}, Lasi;-><init>()V
+
+    sput-object v0, Lasi;->a:Lasi;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lasi;->a:Lasf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lasi;->a:Lasf;
+    new-instance v0, Lasy;
 
-    check-cast p1, Lgep;
+    invoke-direct {v0}, Lasy;-><init>()V
 
-    iget-object v0, v0, Lasf;->a:Lass;
-
-    invoke-interface {v0, p1}, Lass;->a(Ljava/lang/Object;)V
-
-    return-void
+    return-object v0
 .end method

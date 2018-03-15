@@ -1,352 +1,377 @@
 .class final Lyq;
-.super Labe;
+.super Lyr;
 .source "PG"
 
 
 # instance fields
-.field public final a:Lace;
+.field private a:I
 
-.field public b:Z
+.field private b:J
 
-.field public final synthetic c:Lyn;
+.field private c:J
 
-.field private d:Lyn;
-
-.field private e:I
-
-.field private f:Lzj;
-
-.field private g:Lacl;
+.field private final synthetic d:Lyl;
 
 
 # direct methods
-.method public constructor <init>(Lyn;Lyn;ILace;Landroid/hardware/camera2/CameraCharacteristics;)V
-    .locals 1
+.method constructor <init>(Lyl;)V
+    .locals 4
 
-    iput-object p1, p0, Lyq;->c:Lyn;
+    const-wide/16 v2, -0x1
 
-    invoke-direct {p0}, Labe;-><init>()V
+    iput-object p1, p0, Lyq;->d:Lyl;
 
-    iput-object p2, p0, Lyq;->d:Lyn;
+    invoke-direct {p0}, Lyr;-><init>()V
 
-    iput p3, p0, Lyq;->e:I
+    const/4 v0, -0x1
 
-    iput-object p4, p0, Lyq;->a:Lace;
+    iput v0, p0, Lyq;->a:I
 
-    new-instance v0, Lzj;
+    iput-wide v2, p0, Lyq;->b:J
 
-    invoke-direct {v0, p5}, Lzj;-><init>(Landroid/hardware/camera2/CameraCharacteristics;)V
-
-    iput-object v0, p0, Lyq;->f:Lzj;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lyq;->g:Lacl;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lyq;->b:Z
+    iput-wide v2, p0, Lyq;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a()V
+    .locals 4
 
-    iget v0, p0, Lyq;->e:I
+    const-wide/16 v2, -0x1
 
-    return v0
+    const/4 v0, -0x1
+
+    iput v0, p0, Lyq;->a:I
+
+    iput-wide v2, p0, Lyq;->b:J
+
+    iput-wide v2, p0, Lyq;->c:J
+
+    return-void
 .end method
 
-.method public final a(Landroid/graphics/SurfaceTexture;)V
-    .locals 2
+.method public final a(Landroid/hardware/camera2/CaptureResult;)V
+    .locals 9
 
-    invoke-virtual {p0}, Lyq;->g()Lacl;
+    const/4 v8, 0x0
 
-    move-result-object v0
+    const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Lacl;->f:Z
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-super {p0, p1}, Labe;->a(Landroid/graphics/SurfaceTexture;)V
+    invoke-virtual {p1, v0}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final a(Landroid/os/Handler;Laat;)V
-    .locals 2
+    check-cast v0, Ljava/lang/Integer;
 
-    :try_start_0
-    iget-object v0, p0, Lyq;->c:Lyn;
+    if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lyn;->d:Lacp;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    new-instance v1, Lyr;
+    move-result v3
 
-    invoke-direct {v1, p0, p2, p1}, Lyr;-><init>(Lyq;Laat;Landroid/os/Handler;)V
+    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
 
-    invoke-virtual {v0, v1}, Lacp;->a(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-wide v4
 
-    :goto_0
-    return-void
+    iget-wide v6, p0, Lyq;->b:J
 
-    :catch_0
-    move-exception v0
+    cmp-long v0, v4, v6
 
-    iget-object v1, p0, Lyq;->d:Lyn;
+    if-lez v0, :cond_0
 
-    iget-object v1, v1, Lyn;->g:Lacf;
+    iget v0, p0, Lyq;->a:I
 
-    invoke-virtual {v1, v0}, Lacf;->a(Ljava/lang/RuntimeException;)V
+    if-eq v3, v0, :cond_2
 
-    goto :goto_0
-.end method
-
-.method public final a(Landroid/os/Handler;Laau;)V
-    .locals 2
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x10
-    .end annotation
-
-    :try_start_0
-    iget-object v0, p0, Lyq;->c:Lyn;
-
-    iget-object v0, v0, Lyn;->d:Lacp;
-
-    new-instance v1, Lyu;
-
-    invoke-direct {v1, p0, p2, p1}, Lyu;-><init>(Lyq;Laau;Landroid/os/Handler;)V
-
-    invoke-virtual {v0, v1}, Lacp;->a(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    move v0, v1
 
     :goto_0
-    return-void
+    iput v3, p0, Lyq;->a:I
 
-    :catch_0
-    move-exception v0
+    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
 
-    iget-object v1, p0, Lyq;->d:Lyn;
+    move-result-wide v4
 
-    iget-object v1, v1, Lyn;->g:Lacf;
+    iput-wide v4, p0, Lyq;->b:J
 
-    invoke-virtual {v1, v0}, Lacf;->a(Ljava/lang/RuntimeException;)V
-
-    goto :goto_0
-.end method
-
-.method public final a(Landroid/os/Handler;Labd;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/os/Handler;Labp;Labc;Labc;)V
-    .locals 3
-
-    new-instance v0, Lyx;
-
-    invoke-direct {v0, p0, p2, p1, p4}, Lyx;-><init>(Lyq;Labp;Landroid/os/Handler;Labc;)V
-
-    :try_start_0
-    iget-object v1, p0, Lyq;->c:Lyn;
-
-    iget-object v1, v1, Lyn;->d:Lacp;
-
-    new-instance v2, Lza;
-
-    invoke-direct {v2, p0, v0}, Lza;-><init>(Lyq;Lzi;)V
-
-    invoke-virtual {v1, v2}, Lacp;->a(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    iget-object v1, p0, Lyq;->d:Lyn;
-
-    iget-object v1, v1, Lyn;->g:Lacf;
-
-    invoke-virtual {v1, v0}, Lacf;->a(Ljava/lang/RuntimeException;)V
-
-    goto :goto_0
-.end method
-
-.method public final a(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lyq;->b:Z
-
-    return-void
-.end method
-
-.method public final a([B)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Lacl;)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_1
-
-    sget-object v1, Lyn;->a:Lacv;
-
-    const-string v2, "null parameters in applySettings()"
-
-    invoke-static {v1, v2}, Lacu;->e(Lacv;Ljava/lang/String;)V
+    packed-switch v3, :pswitch_data_0
 
     :cond_0
-    :goto_0
-    return v0
+    :goto_1
+    :pswitch_0
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
 
-    :cond_1
-    instance-of v1, p1, Lzk;
+    invoke-virtual {p1, v0}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    if-nez v1, :cond_2
+    move-result-object v0
 
-    sget-object v1, Lyn;->a:Lacv;
+    check-cast v0, Ljava/lang/Integer;
 
-    const-string v2, "Provided settings not compatible with the backing framework API"
+    if-eqz v0, :cond_1
 
-    invoke-static {v1, v2}, Lacu;->b(Lacv;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v1, -0x2
-
-    invoke-virtual {p0, p1, v1}, Lyq;->a(Lacl;I)Z
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
 
-    iput-object p1, p0, Lyq;->g:Lacl;
+    move-result-wide v2
 
-    const/4 v0, 0x1
+    iget-wide v4, p0, Lyq;->c:J
+
+    cmp-long v2, v2, v4
+
+    if-lez v2, :cond_1
+
+    iget-object v2, p0, Lyq;->d:Lyl;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, v2, Lyl;->o:I
+
+    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Lyq;->c:J
+
+    packed-switch v1, :pswitch_data_1
+
+    :cond_1
+    :goto_2
+    return-void
+
+    :cond_2
+    move v0, v2
 
     goto :goto_0
+
+    :pswitch_1
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iget-object v0, v0, Lyl;->n:Laae;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iget-object v0, v0, Lyl;->n:Laae;
+
+    if-ne v3, v1, :cond_3
+
+    :goto_3
+    iget-object v2, p0, Lyq;->d:Lyl;
+
+    iget-object v2, v2, Lyl;->e:Lya;
+
+    invoke-interface {v0, v1, v2}, Laae;->a(ZLaao;)V
+
+    goto :goto_1
+
+    :cond_3
+    move v1, v2
+
+    goto :goto_3
+
+    :pswitch_2
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iget-object v0, v0, Lyl;->l:Laad;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iget-object v0, v0, Lyl;->l:Laad;
+
+    const/4 v4, 0x4
+
+    if-ne v3, v4, :cond_4
+
+    :goto_4
+    iget-object v2, p0, Lyq;->d:Lyl;
+
+    iget-object v2, v2, Lyl;->e:Lya;
+
+    invoke-interface {v0, v1, v2}, Laad;->a(ZLaao;)V
+
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iput-object v8, v0, Lyl;->l:Laad;
+
+    goto :goto_1
+
+    :cond_4
+    move v1, v2
+
+    goto :goto_4
+
+    :pswitch_3
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iget-object v0, v0, Lyl;->m:Lys;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iget-object v0, v0, Lyl;->j:Landroid/media/ImageReader;
+
+    iget-object v1, p0, Lyq;->d:Lyl;
+
+    iget-object v1, v1, Lyl;->m:Lys;
+
+    iget-object v2, p0, Lyq;->d:Lyl;
+
+    invoke-virtual {v0, v1, v2}, Landroid/media/ImageReader;->setOnImageAvailableListener(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V
+
+    :try_start_0
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iget-object v0, v0, Lyl;->i:Landroid/hardware/camera2/CameraCaptureSession;
+
+    iget-object v1, p0, Lyq;->d:Lyl;
+
+    iget-object v1, v1, Lyl;->f:Lach;
+
+    iget-object v2, p0, Lyq;->d:Lyl;
+
+    iget-object v2, v2, Lyl;->d:Landroid/hardware/camera2/CameraDevice;
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    new-array v4, v4, [Landroid/view/Surface;
+
+    const/4 v5, 0x0
+
+    iget-object v6, p0, Lyq;->d:Lyl;
+
+    iget-object v6, v6, Lyl;->j:Landroid/media/ImageReader;
+
+    invoke-virtual {v6}, Landroid/media/ImageReader;->getSurface()Landroid/view/Surface;
+
+    move-result-object v6
+
+    aput-object v6, v4, v5
+
+    invoke-virtual {v1, v2, v3, v4}, Lach;->a(Landroid/hardware/camera2/CameraDevice;I[Landroid/view/Surface;)Landroid/hardware/camera2/CaptureRequest;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lyq;->d:Lyl;
+
+    iget-object v2, v2, Lyl;->m:Lys;
+
+    iget-object v3, p0, Lyq;->d:Lyl;
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/hardware/camera2/CameraCaptureSession;->capture(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I
+    :try_end_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iput-object v8, v0, Lyl;->m:Lys;
+
+    goto :goto_2
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    sget-object v1, Lxx;->a:Lacf;
+
+    const-string v2, "Unable to initiate capture"
+
+    invoke-static {v1, v2, v0}, Lace;->a(Lacf;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object v0, p0, Lyq;->d:Lyl;
+
+    iput-object v8, v0, Lyl;->m:Lys;
+
+    goto/16 :goto_2
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lyq;->d:Lyl;
+
+    iput-object v8, v1, Lyl;->m:Lys;
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x2
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
+    .end packed-switch
 .end method
 
-.method public final b()Lace;
-    .locals 1
-
-    iget-object v0, p0, Lyq;->a:Lace;
-
-    return-object v0
-.end method
-
-.method public final b(Landroid/os/Handler;Labd;)V
+.method public final onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .locals 0
 
-    return-void
-.end method
-
-.method public final c()Labw;
-    .locals 1
-
-    iget-object v0, p0, Lyq;->f:Lzj;
-
-    return-object v0
-.end method
-
-.method public final d()Laap;
-    .locals 1
-
-    iget-object v0, p0, Lyq;->d:Lyn;
-
-    return-object v0
-.end method
-
-.method public final e()V
-    .locals 2
-
-    invoke-virtual {p0}, Lyq;->g()Lacl;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lacl;->f:Z
-
-    const/4 v0, 0x0
-
-    invoke-super {p0, v0}, Labe;->a(Landroid/graphics/SurfaceTexture;)V
+    invoke-virtual {p0, p3}, Lyq;->a(Landroid/hardware/camera2/CaptureResult;)V
 
     return-void
 .end method
 
-.method public final f()Landroid/hardware/Camera$Parameters;
-    .locals 1
+.method public final onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
+    .locals 3
 
-    const/4 v0, 0x0
+    sget-object v0, Lxx;->a:Lacf;
 
-    return-object v0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Capture attempt failed with reason "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3}, Landroid/hardware/camera2/CaptureFailure;->getReason()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lace;->b(Lacf;Ljava/lang/String;)V
+
+    return-void
 .end method
 
-.method public final g()Lacl;
-    .locals 1
+.method public final onCaptureProgressed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V
+    .locals 0
 
-    iget-object v0, p0, Lyq;->g:Lacl;
+    invoke-virtual {p0, p3}, Lyq;->a(Landroid/hardware/camera2/CaptureResult;)V
 
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lyq;->c:Lyn;
-
-    iget-object v0, v0, Lyn;->b:Lzb;
-
-    invoke-virtual {v0}, Lzb;->a()Lacl;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lyq;->g:Lacl;
-
-    :cond_0
-    iget-object v0, p0, Lyq;->g:Lacl;
-
-    return-object v0
-.end method
-
-.method public final h()Landroid/os/Handler;
-    .locals 1
-
-    iget-object v0, p0, Lyq;->c:Lyn;
-
-    iget-object v0, v0, Lyn;->b:Lzb;
-
-    return-object v0
-.end method
-
-.method public final i()Lacp;
-    .locals 1
-
-    iget-object v0, p0, Lyq;->c:Lyn;
-
-    iget-object v0, v0, Lyn;->d:Lacp;
-
-    return-object v0
-.end method
-
-.method public final j()Lacn;
-    .locals 1
-
-    iget-object v0, p0, Lyq;->c:Lyn;
-
-    iget-object v0, v0, Lyn;->c:Lacn;
-
-    return-object v0
+    return-void
 .end method

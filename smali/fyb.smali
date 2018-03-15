@@ -1,52 +1,72 @@
-.class final Lfyb;
+.class public final Lfyb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Linq;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfyb;->a:Lkgv;
+
+    iput-object p2, p0, Lfyb;->b:Lkgv;
+
+    iput-object p3, p0, Lfyb;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    return-void
-.end method
+    iget-object v0, p0, Lfyb;->a:Lkgv;
 
-.method public final a(I)V
-    .locals 0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final a(J)V
-    .locals 0
+    check-cast v0, Lemf;
 
-    return-void
-.end method
+    iget-object v1, p0, Lfyb;->b:Lkgv;
 
-.method public final a(Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 1
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    iput v0, p1, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    check-cast v1, Liay;
 
-    return-void
-.end method
+    iget-object v2, p0, Lfyb;->c:Lkgv;
 
-.method public final a(Linb;)V
-    .locals 0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v2
+
+    check-cast v2, Lfxy;
+
+    invoke-static {v1, v0, v2}, Ldzf;->a(Liay;Lemf;Lemz;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfxx;
+
+    return-object v0
 .end method

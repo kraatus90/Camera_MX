@@ -3,69 +3,93 @@
 .source "PG"
 
 
-# static fields
-.field public static final a:Lgxn;
+# instance fields
+.field public final a:Landroid/view/ViewStub;
 
-.field public static final b:Lgxn;
+.field public final b:Landroid/view/ViewStub;
+
+.field public final c:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+
+.field public final d:Landroid/widget/FrameLayout;
+
+.field public final e:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+.field public final f:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+.field public final g:Lhcf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lhcf;)V
+    .locals 1
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v3, 0x3ecccccd    # 0.4f
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const v2, 0x3e4ccccd    # 0.2f
+    move-result-object v0
 
-    const/4 v1, 0x0
+    check-cast v0, Lhcf;
 
-    new-instance v0, Lgxn;
+    iput-object v0, p0, Lgxo;->g:Lhcf;
 
-    invoke-direct {v0, v3, v2}, Lgxn;-><init>(FF)V
+    const v0, 0x7f0e00bc
 
-    sput-object v0, Lgxo;->a:Lgxn;
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    new-instance v0, Lgxn;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2}, Lgxn;-><init>(FF)V
+    check-cast v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
 
-    new-instance v0, Lgxn;
+    iput-object v0, p0, Lgxo;->c:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
 
-    invoke-direct {v0, v3, v4}, Lgxn;-><init>(FF)V
+    const v0, 0x7f0e00bd
 
-    sput-object v0, Lgxo;->b:Lgxn;
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    new-instance v0, Lgxn;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v4}, Lgxn;-><init>(FF)V
+    check-cast v0, Landroid/view/ViewStub;
+
+    iput-object v0, p0, Lgxo;->a:Landroid/view/ViewStub;
+
+    const v0, 0x7f0e00c3
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewStub;
+
+    iput-object v0, p0, Lgxo;->b:Landroid/view/ViewStub;
+
+    const v0, 0x7f0e0190
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/FrameLayout;
+
+    iput-object v0, p0, Lgxo;->d:Landroid/widget/FrameLayout;
+
+    const v0, 0x7f0e00c2
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    iput-object v0, p0, Lgxo;->e:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    iget-object v0, p0, Lgxo;->e:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getThumbnailButton()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lgxo;->f:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
     return-void
-.end method
-
-.method public static a(Lgxn;Lgxn;F)F
-    .locals 3
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    invoke-virtual {p0, p2}, Lgxn;->a(F)F
-
-    move-result v1
-
-    sub-float/2addr v0, v1
-
-    iget-object v1, p1, Lgxn;->a:Lgxm;
-
-    iget-object v2, p1, Lgxn;->b:Lgxm;
-
-    invoke-static {v0, v2}, Lgxn;->a(FLgxm;)F
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Lgxm;->a(F)F
-
-    move-result v0
-
-    return v0
 .end method

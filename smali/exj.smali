@@ -1,74 +1,97 @@
-.class public final Lexj;
+.class final synthetic Lexj;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lexj;
+# instance fields
+.field private final a:Lexi;
+
+.field private final b:Lexr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lexj;
-
-    invoke-direct {v0}, Lexj;-><init>()V
-
-    sput-object v0, Lexj;->a:Lexj;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lexi;Lexr;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lexj;->a:Lexi;
+
+    iput-object p2, p0, Lexj;->b:Lexr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 10
+.method public final run()V
+    .locals 5
 
-    const/4 v2, 0x1
+    iget-object v0, p0, Lexj;->b:Lexr;
 
-    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+    const/4 v1, 0x0
 
-    const-wide/16 v4, 0x1e
+    iget-object v2, v0, Lexr;->a:Ljava/lang/String;
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    iget-object v0, v0, Lexr;->b:Ljava/lang/String;
 
-    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+    move-result-object v3
 
-    new-instance v8, Lexd;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-direct {v8}, Lexd;-><init>()V
+    move-result v3
 
-    new-instance v9, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;
+    add-int/lit8 v3, v3, 0x12
 
-    invoke-direct {v9}, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;-><init>()V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move v3, v2
+    move-result-object v4
 
-    invoke-direct/range {v1 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
+    move-result v4
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    add-int/2addr v3, v4
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Started: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", ended: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/concurrent/Executor;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-object v0
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    return-void
 .end method

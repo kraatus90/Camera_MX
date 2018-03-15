@@ -1,230 +1,846 @@
 .class final Lcpp;
-.super Lcom/google/googlex/gcam/PostviewCallback;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lcpb;
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcpb;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcpp;->a:Lcpb;
+    const-string v0, "HdrPImageConv"
 
-    invoke-direct {p0}, Lcom/google/googlex/gcam/PostviewCallback;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcpp;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static a(Link;)Lcom/google/googlex/gcam/RawWriteView;
+    .locals 15
 
-# virtual methods
-.method public final Run(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/InterleavedImageU8;I)V
-    .locals 10
+    const/16 v14, 0x26
 
-    const/4 v4, 0x0
+    const/16 v13, 0x25
 
-    const/4 v7, 0x1
+    const/16 v12, 0x20
 
-    const/4 v2, 0x0
+    const/4 v8, 0x1
 
-    sget-object v1, Lcpb;->a:Ljava/lang/String;
+    const/4 v6, 0x0
 
-    const-string v3, "Got postview (shot_id = %d, pixelFormat = %s)"
+    const-string v0, "wrapRawWriteView"
 
-    const/4 v5, 0x2
+    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    new-array v5, v5, [Ljava/lang/Object;
+    invoke-interface {p0}, Link;->c()I
 
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/IShot;->shot_id()I
+    move-result v2
 
-    move-result v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    aput-object v6, v5, v2
-
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    aput-object v6, v5, v7
-
-    invoke-static {v4, v3, v5}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lcpp;->a:Lcpb;
-
-    iget-object v5, v1, Lcpb;->b:Ljava/lang/Object;
-
-    monitor-enter v5
-
-    :try_start_0
-    iget-object v1, p0, Lcpp;->a:Lcpb;
-
-    iget-object v1, v1, Lcpb;->d:Ljava/util/HashMap;
-
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/IShot;->shot_id()I
+    invoke-interface {p0}, Link;->d()I
 
     move-result v3
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v0, v1
-
-    check-cast v0, Lcps;
-
-    move-object v3, v0
-
-    monitor-exit v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-static {v3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v1, v3, Lcps;->a:Leaq;
-
-    iget-object v8, v1, Leaq;->d:Lear;
-
-    invoke-virtual {p3}, Lcom/google/googlex/gcam/InterleavedImageU8;->width()I
-
-    move-result v1
-
-    invoke-virtual {p3}, Lcom/google/googlex/gcam/InterleavedImageU8;->height()I
-
-    move-result v5
-
-    iget-object v6, p0, Lcpp;->a:Lcpb;
-
-    iget-object v6, v6, Lcpb;->s:Landroid/util/DisplayMetrics;
-
-    sget-object v9, Lcns;->a:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v6, v1, v5, v9}, Landroid/graphics/Bitmap;->createBitmap(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    :try_start_1
-    invoke-static {v1}, Lcom/google/googlex/gcam/LockedBitmap;->acquire(Landroid/graphics/Bitmap;)Lcom/google/googlex/gcam/LockedBitmap;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    move-result-object v4
-
-    :try_start_2
-    invoke-virtual {v4}, Lcom/google/googlex/gcam/LockedBitmap;->view()Lcom/google/googlex/gcam/InterleavedWriteViewU8;
-
-    move-result-object v5
-
-    invoke-static {p3, v5}, Lcom/google/googlex/gcam/AndroidJniUtils;->copyContents(Lcom/google/googlex/gcam/InterleavedReadViewU8;Lcom/google/googlex/gcam/InterleavedWriteViewU8;)Z
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v4}, Lcom/google/googlex/gcam/LockedBitmap;->close()V
-
-    :cond_0
-    iget v4, v3, Lcps;->b:I
-
-    if-eqz v4, :cond_1
-
-    new-instance v6, Landroid/graphics/Matrix;
-
-    invoke-direct {v6}, Landroid/graphics/Matrix;-><init>()V
-
-    iget v3, v3, Lcps;->b:I
-
-    int-to-float v3, v3
-
-    invoke-virtual {v6, v3}, Landroid/graphics/Matrix;->postRotate(F)Z
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
+    invoke-interface {p0}, Link;->b()I
 
     move-result v4
 
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-interface {p0}, Link;->e()Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Linl;
+
+    invoke-interface {v0}, Linl;->b()I
+
+    move-result v1
+
+    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Linl;
+
+    invoke-interface {v0}, Linl;->a()I
+
+    move-result v9
+
+    rem-int/lit8 v0, v2, 0x2
+
+    if-nez v0, :cond_3
+
+    rem-int/lit8 v0, v3, 0x2
+
+    if-nez v0, :cond_3
+
+    move v0, v8
+
+    :goto_0
+    const/16 v7, 0x3d
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "Should have even dimensions, but was: "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v10, "x"
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v0, v7}, Ljii;->a(ZLjava/lang/Object;)V
+
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ne v0, v8, :cond_4
+
+    move v0, v8
+
+    :goto_1
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v7
+
+    const/16 v10, 0x37
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11, v10}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v10, "Should have a single RAW_SENSOR plane, has: "
+
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v0, v7}, Ljii;->a(ZLjava/lang/Object;)V
+
+    if-eq v4, v12, :cond_0
+
+    if-eq v4, v13, :cond_0
+
+    if-ne v4, v14, :cond_5
+
+    :cond_0
+    move v0, v8
+
+    :goto_2
+    const/16 v7, 0x23
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "Unsupported raw format: "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v0, v7}, Ljii;->a(ZLjava/lang/Object;)V
+
+    if-ne v4, v12, :cond_7
+
+    const/4 v0, 0x2
+
+    if-ne v1, v0, :cond_6
+
+    move v0, v8
+
+    :goto_3
+    const/16 v7, 0x2f
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "Unexpected RAW_SENSOR pixel stride: "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljii;->a(ZLjava/lang/Object;)V
+
+    :cond_1
+    :goto_4
+    const/4 v1, 0x0
+
+    invoke-interface {v5, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Linl;
+
+    invoke-interface {v0}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/googlex/gcam/BufferUtils;->getDirectBufferAddress(Ljava/nio/Buffer;)J
+
+    move-result-wide v10
+
+    invoke-static {v10, v11}, Lcom/google/googlex/gcam/BufferUtils;->wrapNativePointerWithSwigUnsignedChar(J)Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;
+
+    move-result-object v7
+
+    if-ne v4, v12, :cond_f
+
+    div-int/lit8 v0, v9, 0x2
+
+    sub-int/2addr v0, v2
+
+    new-instance v1, Lcom/google/googlex/gcam/RawWriteView;
+
+    int-to-long v4, v0
+
+    const/4 v6, 0x2
+
+    invoke-direct/range {v1 .. v7}, Lcom/google/googlex/gcam/RawWriteView;-><init>(IIJILcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)V
+
+    :cond_2
+    :goto_5
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    return-object v1
+
+    :cond_3
+    move v0, v6
+
+    goto/16 :goto_0
+
+    :cond_4
+    move v0, v6
+
+    goto :goto_1
+
+    :cond_5
+    move v0, v6
+
+    goto :goto_2
+
+    :cond_6
+    move v0, v6
+
+    goto :goto_3
+
+    :cond_7
+    if-ne v4, v13, :cond_b
+
+    rem-int/lit8 v0, v2, 0x4
+
+    if-nez v0, :cond_8
+
+    move v0, v8
+
+    :goto_6
+    const/16 v7, 0x4c
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "RAW10 image width should be divisible by 4, but was: "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v10, "x"
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v0, v7}, Ljii;->a(ZLjava/lang/Object;)V
+
+    if-nez v1, :cond_9
+
+    move v0, v8
+
+    :goto_7
+    const/16 v7, 0x2a
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "Unexpected RAW10 pixel stride: "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljii;->a(ZLjava/lang/Object;)V
+
+    mul-int/lit8 v0, v2, 0x5
+
+    div-int/lit8 v0, v0, 0x4
+
+    if-lt v9, v0, :cond_a
+
+    move v0, v8
+
+    :goto_8
+    mul-int/lit8 v1, v2, 0x5
+
+    div-int/lit8 v1, v1, 0x4
+
+    const/16 v7, 0x3a
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "RAW10 row stride "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v10, "should be at least "
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljii;->a(ZLjava/lang/Object;)V
+
+    goto/16 :goto_4
+
+    :cond_8
+    move v0, v6
+
+    goto :goto_6
+
+    :cond_9
+    move v0, v6
+
+    goto :goto_7
+
+    :cond_a
+    move v0, v6
+
+    goto :goto_8
+
+    :cond_b
+    if-ne v4, v14, :cond_1
+
+    rem-int/lit8 v0, v2, 0x4
+
+    if-nez v0, :cond_c
+
+    move v0, v8
+
+    :goto_9
+    const/16 v7, 0x4c
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "RAW12 image width should be divisible by 4, but was: "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v10, "x"
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v0, v7}, Ljii;->a(ZLjava/lang/Object;)V
+
+    if-nez v1, :cond_d
+
+    move v0, v8
+
+    :goto_a
+    const/16 v7, 0x2a
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "Unexpected RAW12 pixel stride: "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljii;->a(ZLjava/lang/Object;)V
+
+    mul-int/lit8 v0, v2, 0x3
+
+    div-int/lit8 v0, v0, 0x2
+
+    if-lt v9, v0, :cond_e
+
+    move v0, v8
+
+    :goto_b
+    mul-int/lit8 v1, v2, 0x3
+
+    div-int/lit8 v1, v1, 0x2
+
+    const/16 v7, 0x3a
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "RAW12 row stride "
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v10, "should be at least "
+
+    invoke-virtual {v7, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljii;->a(ZLjava/lang/Object;)V
+
+    goto/16 :goto_4
+
+    :cond_c
+    move v0, v6
+
+    goto :goto_9
+
+    :cond_d
+    move v0, v6
+
+    goto :goto_a
+
+    :cond_e
+    move v0, v6
+
+    goto :goto_b
+
+    :cond_f
+    if-ne v4, v13, :cond_10
+
+    mul-int/lit8 v0, v2, 0x5
+
+    div-int/lit8 v0, v0, 0x4
+
+    sub-int v0, v9, v0
+
+    new-instance v1, Lcom/google/googlex/gcam/RawWriteView;
+
+    int-to-long v4, v0
+
+    invoke-direct/range {v1 .. v7}, Lcom/google/googlex/gcam/RawWriteView;-><init>(IIJILcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)V
+
+    goto/16 :goto_5
+
+    :cond_10
+    invoke-interface {p0}, Link;->b()I
+
+    move-result v0
+
+    if-ne v0, v14, :cond_2
+
+    mul-int/lit8 v0, v2, 0x3
+
+    div-int/lit8 v0, v0, 0x2
+
+    sub-int v0, v9, v0
+
+    new-instance v1, Lcom/google/googlex/gcam/RawWriteView;
+
+    int-to-long v4, v0
+
+    move v6, v8
+
+    invoke-direct/range {v1 .. v7}, Lcom/google/googlex/gcam/RawWriteView;-><init>(IIJILcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)V
+
+    goto/16 :goto_5
+.end method
+
+.method public static a(I)Z
+    .locals 1
+
+    const/16 v0, 0x25
+
+    if-eq p0, v0, :cond_0
+
+    const/16 v0, 0x20
+
+    if-ne p0, v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static b(Link;)Ljrf;
+    .locals 12
+
+    const-wide/16 v10, 0x1f80
+
+    const-wide/16 v6, 0x0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const-string v0, "wrapPdWriteView"
+
+    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    invoke-interface {p0}, Link;->b()I
+
+    move-result v3
+
+    invoke-interface {p0}, Link;->e()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    invoke-interface {v4}, Ljava/util/List;->size()I
 
     move-result v5
 
-    move v3, v2
+    const/16 v8, 0x43
 
-    invoke-static/range {v1 .. v7}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v9, v8}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v8, "Should have a single DEPTH_POINT_CLOUD (PD) plane, has: "
+
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v0, v5}, Ljii;->a(ZLjava/lang/Object;)V
+
+    const/16 v0, 0x101
+
+    if-ne v3, v0, :cond_1
+
+    :goto_1
+    const/16 v0, 0x22
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "Unsupported PD format: "
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Ljii;->a(ZLjava/lang/Object;)V
+
+    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Linl;
+
+    invoke-interface {v0}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/googlex/gcam/BufferUtils;->getDirectBufferAddress(Ljava/nio/Buffer;)J
+
+    move-result-wide v2
+
+    invoke-virtual {v0}, Ljava/nio/Buffer;->remaining()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    rem-long v4, v0, v10
+
+    cmp-long v4, v4, v6
+
+    if-eqz v4, :cond_2
+
+    sget-object v2, Lcpp;->a:Ljava/lang/String;
+
+    const/16 v3, 0x62
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "The row stride in bytes (8064) should evenly divide the PD buffer capacity ("
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")."
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    :goto_2
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    return-object v0
+
+    :cond_0
+    move v0, v2
+
+    goto :goto_0
 
     :cond_1
-    invoke-interface {v8, v1}, Lear;->a(Landroid/graphics/Bitmap;)V
+    move v1, v2
 
-    invoke-interface {v8, v1, v2}, Lear;->a(Landroid/graphics/Bitmap;I)V
+    goto :goto_1
 
-    new-instance v2, Ljava/io/ByteArrayOutputStream;
+    :cond_2
+    div-long v8, v0, v10
 
-    invoke-direct {v2}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    const-wide/16 v0, 0x2f4
 
-    sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    cmp-long v0, v8, v0
 
-    const/16 v4, 0x5a
+    if-eqz v0, :cond_3
 
-    invoke-virtual {v1, v3, v4, v2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    const-wide/16 v0, 0x2f6
 
-    invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    cmp-long v0, v8, v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lcpp;->a:Ljava/lang/String;
+
+    const/16 v1, 0x54
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "The inferred PD data height should be one of 756 or 758, but is "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-interface {v8, v1}, Lear;->a([B)V
+    invoke-virtual {v1, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    if-eqz p2, :cond_2
+    move-result-object v1
 
-    invoke-static {p2}, Lcom/google/googlex/gcam/BufferUtils;->deleteNativeImage(Lcom/google/googlex/gcam/YuvImage;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_2
-    if-eqz p3, :cond_3
+    move-result-object v1
 
-    invoke-static {p3}, Lcom/google/googlex/gcam/BufferUtils;->deleteNativeImage(Lcom/google/googlex/gcam/InterleavedImageU8;)V
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    goto :goto_2
 
     :cond_3
-    return-void
+    invoke-static {v2, v3}, Lcom/google/googlex/gcam/BufferUtils;->wrapNativePointerWithSwigUnsignedShort(J)Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_short;
 
-    :catchall_0
-    move-exception v1
+    move-result-object v5
 
-    :try_start_3
-    monitor-exit v5
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    new-instance v1, Lcom/google/googlex/gcam/InterleavedWriteViewU16;
 
-    throw v1
+    const/16 v2, 0x7e0
 
-    :catchall_1
-    move-exception v1
+    long-to-int v3, v8
 
-    move-object v2, v4
+    const/4 v4, 0x2
+
+    invoke-direct/range {v1 .. v7}, Lcom/google/googlex/gcam/InterleavedWriteViewU16;-><init>(IIILcom/google/googlex/gcam/SWIGTYPE_p_unsigned_short;J)V
+
+    invoke-static {v1}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
+
+    goto :goto_2
+.end method
+
+.method public static b(I)Z
+    .locals 1
+
+    const/16 v0, 0x101
+
+    if-ne p0, v0, :cond_0
+
+    const/4 v0, 0x1
 
     :goto_0
-    if-eqz v2, :cond_4
+    return v0
 
-    invoke-virtual {v2}, Lcom/google/googlex/gcam/LockedBitmap;->close()V
-
-    :cond_4
-    throw v1
-
-    :catchall_2
-    move-exception v1
-
-    move-object v2, v4
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

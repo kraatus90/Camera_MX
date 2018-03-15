@@ -14,7 +14,7 @@
 # instance fields
 .field public final context:Landroid/content/Context;
 
-.field public final gservicesHelper:Lbhn;
+.field public final gservicesHelper:Lbjy;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     const-string v0, "FaceDetector"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -32,14 +32,14 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lbhn;)V
+.method public constructor <init>(Landroid/content/Context;Lbjy;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/apps/refocus/processing/FaceDetector;->context:Landroid/content/Context;
 
-    iput-object p2, p0, Lcom/google/android/apps/refocus/processing/FaceDetector;->gservicesHelper:Lbhn;
+    iput-object p2, p0, Lcom/google/android/apps/refocus/processing/FaceDetector;->gservicesHelper:Lbjy;
 
     return-void
 .end method
@@ -180,7 +180,7 @@
 
     const-string v4, "Face detection interrupted.  Skipping face detection."
 
-    invoke-static {v3, v4, v0}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v3, v4, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
@@ -225,7 +225,7 @@
 
     const-string v4, "Face detection execution failed.  Skipping face detection."
 
-    invoke-static {v3, v4, v0}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v3, v4, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
@@ -288,7 +288,7 @@
 
     const-string v2, "No face detected."
 
-    invoke-static {v0, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -305,7 +305,7 @@
 
     const-string v4, "Face models missing.  Skipping face detection."
 
-    invoke-static {v3, v4, v0}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v3, v4, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
@@ -449,13 +449,13 @@
 
     const/4 v0, 0x0
 
-    iget-object v2, p0, Lcom/google/android/apps/refocus/processing/FaceDetector;->gservicesHelper:Lbhn;
+    iget-object v2, p0, Lcom/google/android/apps/refocus/processing/FaceDetector;->gservicesHelper:Lbjy;
 
-    iget-object v3, v2, Lbhn;->a:Landroid/content/ContentResolver;
+    iget-object v3, v2, Lbjy;->a:Landroid/content/ContentResolver;
 
     const-string v4, "camera:refocus_face_enabled"
 
-    invoke-virtual {v2, v3, v4, v1}, Lbhn;->a(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+    invoke-virtual {v2, v3, v4, v1}, Lbjy;->a(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
     move-result v2
 
@@ -465,7 +465,7 @@
 
     const-string v2, "Refocus face detection is disabled."
 
-    invoke-static {v1, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
@@ -482,7 +482,7 @@
 
     const-string v2, "No depthmap set for supplied rgbz"
 
-    invoke-static {v1, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 

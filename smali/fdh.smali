@@ -1,23 +1,14 @@
-.class Lfdh;
-.super Lgvh;
+.class public interface abstract Lfdh;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# direct methods
-.method constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>([[B)V
-
-    return-void
-.end method
+# interfaces
+.implements Lihb;
 
 
 # virtual methods
-.method public B()V
-    .locals 0
+.method public abstract a(Lfhg;)Lfhg;
+.end method
 
-    return-void
+.method public abstract close()V
 .end method

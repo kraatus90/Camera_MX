@@ -4,585 +4,440 @@
 
 
 # static fields
-.field public static final a:Landroid/hardware/camera2/CameraCharacteristics$Key;
+.field public static final a:Ljava/lang/String;
 
-.field public static final b:Landroid/hardware/camera2/CaptureRequest$Key;
 
-.field public static final c:Landroid/hardware/camera2/CaptureRequest$Key;
+# instance fields
+.field public b:[F
 
-.field public static final d:Ljava/lang/Byte;
+.field public c:[Lhiw;
 
-.field public static final e:Ljava/lang/Byte;
-
-.field public static final f:Ljava/lang/Byte;
-
-.field public static final g:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final h:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final i:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final j:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final k:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final l:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final m:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final n:Landroid/hardware/camera2/CaptureResult$Key;
-
-.field public static final o:Landroid/hardware/camera2/CaptureRequest$Key;
-
-.field private static p:Z
+.field public d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 1
 
-    const/4 v4, 0x2
+    const-string v0, "BlurStack"
 
-    const/4 v3, 0x1
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    const/4 v1, 0x0
+    sput-object v0, Lhit;->a:Ljava/lang/String;
 
-    sget-object v0, Lhir;->a:[I
+    return-void
+.end method
 
-    invoke-static {v0, v4}, Lhir;->a([II)Z
+.method public constructor <init>()V
+    .locals 0
 
-    move-result v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-boolean v0, Lhit;->p:Z
+    return-void
+.end method
 
-    invoke-static {v2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+.method public static a()F
+    .locals 1
 
-    invoke-static {v3}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    const/high16 v0, 0x41c80000    # 25.0f
 
-    sget-boolean v0, Lhit;->p:Z
+    return v0
+.end method
 
-    if-eqz v0, :cond_5
+.method public static c(I)I
+    .locals 1
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_SENSOR_EEPROM_INFORMATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    div-int/lit8 v0, p0, 0x4
+
+    rsub-int/lit8 v0, v0, 0x40
+
+    return v0
+.end method
+
+.method public static d(I)I
+    .locals 1
+
+    rsub-int/lit8 v0, p0, 0x40
+
+    shl-int/lit8 v0, v0, 0x2
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public final a(I)F
+    .locals 2
+
+    iget-object v0, p0, Lhit;->b:[F
+
+    add-int/lit8 v1, p1, -0x1
+
+    aget v0, v0, v1
+
+    return v0
+.end method
+
+.method public final a(II)I
+    .locals 1
+
+    iget-object v0, p0, Lhit;->c:[Lhiw;
+
+    aget-object v0, v0, p1
+
+    iget v0, v0, Lhiw;->b:I
+
+    add-int/2addr v0, p2
+
+    return v0
+.end method
+
+.method public final b(I)I
+    .locals 2
+
+    iget-object v0, p0, Lhit;->c:[Lhiw;
+
+    aget-object v0, v0, p1
+
+    iget v0, v0, Lhiw;->a:I
+
+    iget-object v1, p0, Lhit;->c:[Lhiw;
+
+    aget-object v1, v1, p1
+
+    iget v1, v1, Lhiw;->b:I
+
+    sub-int/2addr v0, v1
+
+    add-int/lit8 v0, v0, 0x1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 7
+
+    const-string v0, "disparity range: 64, 1\n"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lhit;->c:[Lhiw;
+
+    iget v2, p0, Lhit;->d:I
+
+    aget-object v1, v1, v2
+
+    iget v1, v1, Lhiw;->a:I
+
+    iget-object v2, p0, Lhit;->c:[Lhiw;
+
+    iget v3, p0, Lhit;->d:I
+
+    aget-object v2, v2, v3
+
+    iget v2, v2, Lhiw;->b:I
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x2a
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, "focus disparity: "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lhit;->c:[Lhiw;
+
+    array-length v1, v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1b
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "num of layers: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget v1, p0, Lhit;->d:I
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x19
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "focus layer: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v0, 0x0
 
     :goto_0
-    sput-object v0, Lhit;->a:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    iget-object v2, p0, Lhit;->c:[Lhiw;
 
-    sget-boolean v0, Lhit;->p:Z
+    array-length v2, v2
 
-    if-eqz v0, :cond_0
+    if-ge v0, v2, :cond_1
 
-    invoke-static {}, Lhit;->d()Z
+    iget-object v2, p0, Lhit;->c:[Lhiw;
 
-    :cond_0
-    sget-boolean v0, Lhit;->p:Z
+    aget-object v2, v2, v0
 
-    if-eqz v0, :cond_6
+    iget v2, v2, Lhiw;->a:I
 
-    invoke-static {}, Lhit;->d()Z
+    iget-object v3, p0, Lhit;->c:[Lhiw;
 
-    move-result v0
+    aget-object v3, v3, v0
 
-    if-eqz v0, :cond_6
+    iget v4, v3, Lhiw;->b:I
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_SENSOR_PD_ENABLE:Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    sub-int v3, v2, v4
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x32
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v5, "\nlayer "
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v5, " num of disparities "
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, "\n"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
 
     :goto_1
-    sput-object v0, Lhit;->b:Landroid/hardware/camera2/CaptureRequest$Key;
+    if-lt v2, v4, :cond_0
 
-    sget-boolean v0, Lhit;->p:Z
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-eqz v0, :cond_7
+    move-result-object v1
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_CONTROL_TRACKING_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-virtual {p0, v2}, Lhit;->a(I)F
 
-    :goto_2
-    sput-object v0, Lhit;->c:Landroid/hardware/camera2/CaptureRequest$Key;
+    move-result v3
 
-    invoke-static {v2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v5
 
-    sput-object v0, Lhit;->d:Ljava/lang/Byte;
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    invoke-static {v3}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    move-result v5
 
-    move-result-object v0
+    add-int/lit8 v5, v5, 0x44
 
-    sput-object v0, Lhit;->e:Ljava/lang/Byte;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-static {v4}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-result-object v0
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sput-object v0, Lhit;->f:Ljava/lang/Byte;
+    move-result-object v1
 
-    sget-boolean v0, Lhit;->p:Z
+    const-string v5, "layer "
 
-    if-eqz v0, :cond_8
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_CONTROL_AF_REGIONS_CONFIDENCE:Landroid/hardware/camera2/CaptureResult$Key;
+    move-result-object v1
 
-    :goto_3
-    sput-object v0, Lhit;->g:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    sget-boolean v0, Lhit;->p:Z
+    move-result-object v1
 
-    if-eqz v0, :cond_9
+    const-string v5, " disparity "
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_FRAME_TIMESTAMP_BOOTTIME:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_4
-    sput-object v0, Lhit;->h:Landroid/hardware/camera2/CaptureResult$Key;
+    move-result-object v1
 
-    sget-boolean v0, Lhit;->p:Z
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_a
+    move-result-object v1
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_TIMESTAMPS_BOOTTIME:Landroid/hardware/camera2/CaptureResult$Key;
+    const-string v5, " disk radius "
 
-    :goto_5
-    sput-object v0, Lhit;->i:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-boolean v0, Lhit;->p:Z
+    move-result-object v1
 
-    if-eqz v0, :cond_b
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_X:Landroid/hardware/camera2/CaptureResult$Key;
+    move-result-object v1
 
-    :goto_6
-    sput-object v0, Lhit;->j:Landroid/hardware/camera2/CaptureResult$Key;
+    const-string v3, "\n"
 
-    sget-boolean v0, Lhit;->p:Z
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_c
+    move-result-object v1
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_Y:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :goto_7
-    sput-object v0, Lhit;->k:Landroid/hardware/camera2/CaptureResult$Key;
+    move-result-object v3
 
-    sget-boolean v0, Lhit;->p:Z
+    add-int/lit8 v1, v2, -0x1
 
-    if-eqz v0, :cond_d
+    move v2, v1
 
-    invoke-static {}, Lhit;->b()Z
+    move-object v1, v3
 
-    move-result v0
+    goto :goto_1
 
-    if-eqz v0, :cond_d
-
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_PIXEL_X:Landroid/hardware/camera2/CaptureResult$Key;
-
-    :goto_8
-    sput-object v0, Lhit;->l:Landroid/hardware/camera2/CaptureResult$Key;
-
-    sget-boolean v0, Lhit;->p:Z
-
-    if-eqz v0, :cond_e
-
-    invoke-static {}, Lhit;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_PIXEL_Y:Landroid/hardware/camera2/CaptureResult$Key;
-
-    :goto_9
-    sput-object v0, Lhit;->m:Landroid/hardware/camera2/CaptureResult$Key;
-
-    sget-boolean v0, Lhit;->p:Z
-
-    if-eqz v0, :cond_f
-
-    invoke-static {}, Lhit;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_CONTROL_EXP_TIME_BOOST:Landroid/hardware/camera2/CaptureResult$Key;
-
-    :goto_a
-    sput-object v0, Lhit;->n:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-static {}, Lhit;->e()Z
-
-    invoke-static {}, Lhit;->e()Z
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    invoke-static {}, Lhit;->e()Z
-
-    invoke-static {}, Lhit;->e()Z
-
-    invoke-static {}, Lhit;->e()Z
-
-    invoke-static {}, Lhit;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    sget-object v1, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_DISABLE_HDRPLUS:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    :cond_1
-    sput-object v1, Lhit;->o:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {}, Lhit;->g()Z
-
-    sget-boolean v0, Lhit;->p:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-static {}, Lhit;->a()Z
-
-    :cond_2
-    sget-boolean v0, Lhit;->p:Z
-
-    if-eqz v0, :cond_3
-
-    invoke-static {}, Lhit;->a()Z
-
-    :cond_3
-    sget-boolean v0, Lhit;->p:Z
-
-    if-eqz v0, :cond_4
-
-    invoke-static {}, Lhit;->a()Z
-
-    :cond_4
-    return-void
-
-    :cond_5
-    move-object v0, v1
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
 
     goto/16 :goto_0
 
-    :cond_6
-    move-object v0, v1
-
-    goto/16 :goto_1
-
-    :cond_7
-    move-object v0, v1
-
-    goto/16 :goto_2
-
-    :cond_8
-    move-object v0, v1
-
-    goto/16 :goto_3
-
-    :cond_9
-    move-object v0, v1
-
-    goto/16 :goto_4
-
-    :cond_a
-    move-object v0, v1
-
-    goto/16 :goto_5
-
-    :cond_b
-    move-object v0, v1
-
-    goto :goto_6
-
-    :cond_c
-    move-object v0, v1
-
-    goto :goto_7
-
-    :cond_d
-    move-object v0, v1
-
-    goto :goto_8
-
-    :cond_e
-    move-object v0, v1
-
-    goto :goto_9
-
-    :cond_f
-    move-object v0, v1
-
-    goto :goto_a
-.end method
-
-.method private static a()Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    sget-boolean v1, Lhit;->p:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x7
-
-    :try_start_0
-    invoke-static {}, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->getLibraryVersion()I
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    if-gt v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method private static b()Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    sget-boolean v1, Lhit;->p:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x3
-
-    :try_start_0
-    invoke-static {}, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->getLibraryVersion()I
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    if-gt v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method private static c()Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    sget-boolean v1, Lhit;->p:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x2
-
-    :try_start_0
-    invoke-static {}, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->getLibraryVersion()I
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    if-gt v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method private static d()Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    sget-boolean v2, Lhit;->p:Z
-
-    if-eqz v2, :cond_0
-
-    :try_start_0
-    invoke-static {}, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->getLibraryVersion()I
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    if-gt v0, v2, :cond_1
-
-    :goto_0
-    move v1, v0
-
-    :cond_0
-    :goto_1
-    return v1
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_1
-
     :cond_1
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method private static e()Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    sget-boolean v1, Lhit;->p:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x4
-
-    :try_start_0
-    invoke-static {}, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->getLibraryVersion()I
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    if-gt v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method private static f()Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    sget-boolean v1, Lhit;->p:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x5
-
-    :try_start_0
-    invoke-static {}, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->getLibraryVersion()I
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    if-gt v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method private static g()Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    sget-boolean v1, Lhit;->p:Z
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x6
-
-    :try_start_0
-    invoke-static {}, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->getLibraryVersion()I
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoSuchMethodError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    if-gt v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v1
-
-    goto :goto_0
+    return-object v1
 .end method

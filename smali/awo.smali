@@ -3,299 +3,158 @@
 .source "PG"
 
 # interfaces
-.implements Lawa;
-.implements Lawc;
+.implements Lawm;
 
 
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x17
-.end annotation
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field public final a:Licw;
+.field public final b:Landroid/content/Context;
 
-.field private b:Lawk;
+.field public final c:Ljava/lang/Class;
 
-.field private c:Ljava/lang/Object;
+.field public final d:Lkgv;
 
-.field private d:Licj;
+.field private final e:Lawr;
+
+.field private final f:Z
+
+.field private final g:Landroid/app/Activity;
 
 
 # direct methods
-.method public constructor <init>(Lawn;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "IntentLauncher"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lawo;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lawr;Landroid/content/Context;Lkgv;Lawn;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lawk;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lawp;
+    move-result-object v0
 
-    invoke-direct {v1, p0, p1}, Lawp;-><init>(Lawo;Lawn;)V
+    check-cast v0, Lawr;
 
-    invoke-direct {v0, v1}, Lawk;-><init>(Lawn;)V
+    iput-object v0, p0, Lawo;->e:Lawr;
 
-    iput-object v0, p0, Lawo;->b:Lawk;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Ljava/lang/Object;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    check-cast v0, Landroid/content/Context;
 
-    iput-object v0, p0, Lawo;->c:Ljava/lang/Object;
+    iput-object v0, p0, Lawo;->b:Landroid/content/Context;
 
-    new-instance v0, Licj;
+    iget-boolean v0, p4, Lawn;->c:Z
 
-    const/4 v1, 0x0
+    iput-boolean v0, p0, Lawo;->f:Z
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, p4, Lawn;->a:Landroid/app/Activity;
+
+    iput-object v0, p0, Lawo;->g:Landroid/app/Activity;
+
+    iget-object v0, p4, Lawn;->b:Ljava/lang/Class;
+
+    iput-object v0, p0, Lawo;->c:Ljava/lang/Class;
+
+    iput-object p3, p0, Lawo;->d:Lkgv;
+
+    return-void
+.end method
+
+.method private final a(Landroid/content/Intent;Z)V
+    .locals 4
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-boolean v0, p0, Lawo;->f:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lawo;->b:Landroid/content/Context;
+
+    const-string v1, "keyguard"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/KeyguardManager;
+
+    iget-object v1, p0, Lawo;->d:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Licj;-><init>(Ljava/lang/Object;)V
+    check-cast v1, Lhfx;
 
-    iput-object v0, p0, Lawo;->d:Licj;
+    iget v2, v1, Lhfx;->a:I
 
-    new-instance v0, Licw;
+    iget-object v1, p0, Lawo;->d:Lkgv;
 
-    iget-object v1, p0, Lawo;->d:Licj;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Licw;-><init>(Liau;)V
+    move-result-object v1
 
-    iput-object v0, p0, Lawo;->a:Licw;
+    check-cast v1, Lhfx;
 
-    return-void
-.end method
+    sget v3, Lep;->bL:I
 
+    iput v3, v1, Lhfx;->a:I
 
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+    new-instance v1, Lawp;
 
-    iget-object v0, p0, Lawo;->b:Lawk;
+    invoke-direct {v1, p0, p1, p2, v2}, Lawp;-><init>(Lawo;Landroid/content/Intent;ZI)V
 
-    invoke-virtual {v0}, Lawk;->a()Ljava/lang/Object;
+    iget-object v2, p0, Lawo;->g:Landroid/app/Activity;
 
-    move-result-object v0
-
-    invoke-virtual {p0}, Lawo;->d()V
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/lang/Object;)V
-    .locals 6
-
-    iget-object v0, p0, Lawo;->a:Licw;
-
-    invoke-virtual {v0}, Licw;->c()Lich;
-
-    move-result-object v2
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    iget-object v3, p0, Lawo;->c:Ljava/lang/Object;
-
-    monitor-enter v3
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
-
-    :try_start_1
-    iget-object v4, p0, Lawo;->d:Licj;
-
-    iget-object v0, p0, Lawo;->d:Licj;
-
-    invoke-virtual {v0}, Licj;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, v4, Licj;->b:Ljava/lang/Object;
-
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    iget-object v0, p0, Lawo;->d:Licj;
-
-    iget-object v0, v0, Licj;->a:Licb;
-
-    invoke-virtual {v0}, Licb;->a()V
-
-    iget-object v0, p0, Lawo;->b:Lawk;
-
-    invoke-virtual {v0, p1}, Lawk;->a(Ljava/lang/Object;)V
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    invoke-interface {v2}, Lich;->close()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_3
-    monitor-exit v3
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw v0
-    :try_end_4
-    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_0
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    :catch_0
-    move-exception v0
-
-    :try_start_5
-    throw v0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
-
-    :catchall_1
-    move-exception v1
-
-    move-object v5, v1
-
-    move-object v1, v0
-
-    move-object v0, v5
+    invoke-virtual {v0, v2, v1}, Landroid/app/KeyguardManager;->requestDismissKeyguard(Landroid/app/Activity;Landroid/app/KeyguardManager$KeyguardDismissCallback;)V
 
     :goto_0
-    if-eqz v1, :cond_0
-
-    :try_start_6
-    invoke-interface {v2}, Lich;->close()V
-    :try_end_6
-    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_1
-
-    :goto_1
-    throw v0
-
-    :catch_1
-    move-exception v2
-
-    invoke-static {v1, v2}, Ljvs;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    goto :goto_1
+    return-void
 
     :cond_0
-    invoke-interface {v2}, Lich;->close()V
+    iget-object v0, p0, Lawo;->e:Lawr;
 
-    goto :goto_1
-
-    :catchall_2
-    move-exception v0
+    invoke-virtual {v0, p1}, Lawr;->a(Landroid/content/Intent;)V
 
     goto :goto_0
 .end method
 
-.method public final b()Ljava/lang/Object;
+
+# virtual methods
+.method public final a(Landroid/content/Intent;)V
     .locals 1
 
-    iget-object v0, p0, Lawo;->b:Lawk;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Lawk;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lawo;->d()V
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    iget-object v0, p0, Lawo;->b:Lawk;
-
-    invoke-virtual {v0}, Lawk;->c()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lawo;->b:Lawk;
-
-    invoke-virtual {v0}, Lawk;->close()V
+    invoke-direct {p0, p1, v0}, Lawo;->a(Landroid/content/Intent;Z)V
 
     return-void
 .end method
 
-.method final d()V
-    .locals 3
+.method public final b(Landroid/content/Intent;)V
+    .locals 1
 
-    iget-object v1, p0, Lawo;->c:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v2, p0, Lawo;->d:Licj;
-
-    iget-object v0, p0, Lawo;->d:Licj;
-
-    invoke-virtual {v0}, Licj;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, v2, Licj;->b:Ljava/lang/Object;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Lawo;->d:Licj;
-
-    iget-object v0, v0, Licj;->a:Licb;
-
-    invoke-virtual {v0}, Licb;->a()V
+    invoke-direct {p0, p1, v0}, Lawo;->a(Landroid/content/Intent;Z)V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
 .end method

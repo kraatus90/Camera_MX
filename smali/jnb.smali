@@ -1,47 +1,202 @@
 .class public final Ljnb;
-.super Ljava/lang/Object;
+.super Ljnr;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljava/lang/reflect/Field;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/reflect/Field;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JII)V
+    .locals 11
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide/16 v8, 0x0
 
-    iput-object p1, p0, Ljnb;->a:Ljava/lang/reflect/Field;
+    move-object v1, p0
 
-    const/4 v0, 0x1
+    move-object v2, p1
 
-    invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    move-object v3, p2
+
+    move-wide v4, p3
+
+    move/from16 v6, p5
+
+    move/from16 v7, p6
+
+    invoke-direct/range {v1 .. v9}, Ljnb;-><init>(Ljava/lang/String;Ljava/lang/String;JIIJ)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JIIJ)V
+    .locals 9
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-wide v2, p3
+
+    move v4, p5
+
+    move v5, p6
+
+    move-wide/from16 v6, p7
+
+    invoke-direct/range {v0 .. v7}, Ljnr;-><init>(Ljava/lang/String;JIIJ)V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljnb;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
 
-    :try_start_0
-    iget-object v0, p0, Ljnb;->a:Ljava/lang/reflect/Field;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v1, 0x0
 
-    return-void
+    if-ne p0, p1, :cond_1
 
-    :catch_0
-    move-exception v0
+    :cond_0
+    :goto_0
+    return v0
 
-    new-instance v1, Ljava/lang/AssertionError;
+    :cond_1
+    instance-of v2, p1, Ljnb;
 
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    if-nez v2, :cond_2
 
-    throw v1
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    check-cast p1, Ljnb;
+
+    iget-object v2, p0, Ljnb;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Ljnb;->a:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Ljnb;->b:Ljava/lang/String;
+
+    iget-object v3, p1, Ljnr;->b:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-wide v2, p0, Ljnb;->c:J
+
+    iget-wide v4, p1, Ljnr;->c:J
+
+    cmp-long v2, v2, v4
+
+    if-nez v2, :cond_3
+
+    iget v2, p0, Ljnb;->e:I
+
+    iget v3, p1, Ljnr;->e:I
+
+    if-ne v2, v3, :cond_3
+
+    iget v2, p0, Ljnb;->d:I
+
+    iget v3, p1, Ljnr;->d:I
+
+    if-ne v2, v3, :cond_3
+
+    iget-wide v2, p0, Ljnb;->f:J
+
+    iget-wide v4, p1, Ljnr;->f:J
+
+    cmp-long v2, v2, v4
+
+    if-eqz v2, :cond_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    const/4 v0, 0x6
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Ljnb;->a:Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Ljnb;->b:Ljava/lang/String;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    iget-wide v2, p0, Ljnb;->c:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    iget v2, p0, Ljnb;->e:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    iget v2, p0, Ljnb;->d:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    iget-wide v2, p0, Ljnb;->f:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
 .end method

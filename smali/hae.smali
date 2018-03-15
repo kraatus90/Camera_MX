@@ -2,40 +2,37 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:Lhac;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lhac;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhae;->a:Lhac;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lhae;->a:Lhac;
+    new-instance v0, Libw;
 
-    iget-object v1, v0, Lhac;->a:Lhkl;
+    sget-object v1, Lhac;->a:Lhac;
 
-    invoke-virtual {v1, v0}, Lhkl;->b(Lhkn;)V
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
 
-    iget-object v1, v0, Lhac;->a:Lhkl;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-virtual {v1, v0}, Lhkl;->b(Lhko;)V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lhac;->a:Lhkl;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lhkl;->d()V
+    check-cast v0, Lick;
 
-    return-void
+    return-object v0
 .end method

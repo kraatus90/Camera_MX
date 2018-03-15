@@ -1,11 +1,47 @@
-.class public interface abstract Ljhw;
-.super Ljava/lang/Object;
+.class final Ljhw;
+.super Ljic;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a(Ljava/lang/Object;)Z
+# direct methods
+.method constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Ljic;-><init>(B)V
+
+    return-void
 .end method
 
-.method public abstract equals(Ljava/lang/Object;)Z
+
+# virtual methods
+.method public final a(Lcom/google/android/vision/face/Face;)Ljava/lang/Float;
+    .locals 1
+
+    invoke-virtual {p1}, Lcom/google/android/vision/face/Face;->getIsLeftEyeOpenScore()F
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Lcom/google/android/vision/face/Face;
+
+    invoke-virtual {p1}, Lcom/google/android/vision/face/Face;->getIsLeftEyeOpenScore()F
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    return-object v0
 .end method

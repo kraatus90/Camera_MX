@@ -1,42 +1,39 @@
-.class final Lfz;
+.class public final Lfz;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field private synthetic a:Ljava/lang/Object;
+.field public a:Z
 
-.field private synthetic b:Lfy;
+.field public b:I
+
+.field public c:Lgb;
 
 
 # direct methods
-.method constructor <init>(Lfy;Ljava/lang/Object;)V
-    .locals 0
-
-    iput-object p1, p0, Lfz;->b:Lfy;
-
-    iput-object p2, p0, Lfz;->a:Ljava/lang/Object;
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
+    move-result-object v0
 
-# virtual methods
-.method public final run()V
-    .locals 2
+    invoke-static {v0}, Lfy;->a(Ljava/util/Locale;)Z
 
-    iget-object v0, p0, Lfz;->b:Lfy;
+    move-result v0
 
-    iget-object v0, v0, Lfy;->a:Lgb;
+    iput-boolean v0, p0, Lfz;->a:Z
 
-    iget-object v1, p0, Lfz;->a:Ljava/lang/Object;
+    sget-object v0, Lfy;->a:Lgb;
 
-    invoke-interface {v0, v1}, Lgb;->a(Ljava/lang/Object;)V
+    iput-object v0, p0, Lfz;->c:Lgb;
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lfz;->b:I
 
     return-void
 .end method

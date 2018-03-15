@@ -1,20 +1,20 @@
-.class public final Lbib;
+.class final Lbib;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licv;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Licu;
+.field private final synthetic a:Lbhx;
 
 
 # direct methods
-.method public constructor <init>(Licu;)V
+.method constructor <init>(Lbhx;)V
     .locals 0
 
-    iput-object p1, p0, Lbib;->a:Licu;
+    iput-object p1, p0, Lbib;->a:Lbhx;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,14 +23,24 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Licu;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lbib;->a:Licu;
+    sget-object v0, Lbhx;->a:Ljava/lang/String;
 
-    invoke-interface {v0, p1}, Licu;->a(Ljava/lang/String;)Licu;
+    const-string v1, "start monitor scene change"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v0
+    iget-object v0, p0, Lbib;->a:Lbhx;
+
+    iget-object v0, v0, Lbhx;->h:Lauj;
+
+    iget-object v1, p0, Lbib;->a:Lbhx;
+
+    iget-object v1, v1, Lbhx;->k:Ljava/lang/Runnable;
+
+    iput-object v1, v0, Lauj;->b:Ljava/lang/Runnable;
+
+    return-void
 .end method

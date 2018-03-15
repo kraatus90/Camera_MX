@@ -15,15 +15,15 @@
 # static fields
 .field public static final a:J
 
-.field private static b:Ljava/lang/String;
+.field private static final b:Ljava/lang/String;
 
 .field private static e:J
 
 
 # instance fields
-.field private c:Z
+.field private final c:Z
 
-.field private d:Landroid/util/LongSparseArray;
+.field private final d:Landroid/util/LongSparseArray;
 
 
 # direct methods
@@ -32,7 +32,7 @@
 
     const-string v0, "HdrPFrameReleaser"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -52,36 +52,40 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 3
+    .locals 4
+
+    const/4 v1, 0x1
 
     const/4 v0, 0x0
 
     invoke-direct {p0}, Lcom/google/googlex/gcam/ImageReleaseCallback;-><init>()V
 
-    invoke-static {}, Ldig;->a()Ldig;
+    invoke-static {}, Ldkv;->a()Ldkv;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "persist.gcam.sm.log"
+    const-string v3, "persist.gcam.sm.log"
 
-    invoke-virtual {v1, v2, v0}, Ldig;->a(Ljava/lang/String;Z)Z
+    invoke-virtual {v2, v3, v0}, Ldkv;->a(Ljava/lang/String;Z)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    invoke-static {}, Ldig;->a()Ldig;
+    invoke-static {}, Ldkv;->a()Ldkv;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ldig;->f()Z
+    const-string v3, "persist.gcam.sm.enabled"
 
-    move-result v1
+    invoke-virtual {v2, v3, v1}, Ldkv;->a(Ljava/lang/String;Z)Z
 
-    if-nez v1, :cond_1
+    move-result v2
+
+    if-nez v2, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    move v0, v1
 
     :cond_1
     iput-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/hdrplus/HdrPlusInFlightImages;->c:Z
@@ -159,7 +163,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     sget-wide v0, Lcom/google/android/apps/camera/legacy/app/hdrplus/HdrPlusInFlightImages;->a:J
@@ -174,11 +178,11 @@
 
     move-result-object v0
 
-    check-cast v0, Liil;
+    check-cast v0, Link;
 
     if-eqz v0, :cond_1
 
-    invoke-interface {v0}, Liil;->close()V
+    invoke-interface {v0}, Link;->close()V
 
     :cond_1
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/hdrplus/HdrPlusInFlightImages;->d:Landroid/util/LongSparseArray;
@@ -211,7 +215,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -228,7 +232,7 @@
     throw v0
 .end method
 
-.method public final declared-synchronized a(Liil;)J
+.method public final declared-synchronized a(Link;)J
     .locals 3
 
     monitor-enter p0

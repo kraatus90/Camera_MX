@@ -1,127 +1,398 @@
-.class final Ljph;
-.super Ljou;
+.class public final Ljph;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljava/io/File;
+.field public final a:I
 
-.field private b:Ljle;
+.field public final b:[[F
+
+.field public final c:[[I
+
+.field public d:[[F
+
+.field private final e:I
+
+.field private final f:Ljpi;
+
+.field private final g:Ljpi;
+
+.field private final h:[Z
+
+.field private final i:[I
 
 
 # direct methods
-.method varargs constructor <init>(Ljava/io/File;[Ljpe;)V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 3
 
-    invoke-direct {p0}, Ljou;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput p1, p0, Ljph;->a:I
+
+    iget v0, p0, Ljph;->a:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Ljph;->e:I
+
+    iget v0, p0, Ljph;->a:I
+
+    iget v1, p0, Ljph;->a:I
+
+    filled-new-array {v0, v1}, [I
 
     move-result-object v0
 
-    check-cast v0, Ljava/io/File;
+    sget-object v1, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput-object v0, p0, Ljph;->a:Ljava/io/File;
-
-    invoke-static {p2}, Ljle;->a([Ljava/lang/Object;)Ljle;
+    invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Ljph;->b:Ljle;
+    check-cast v0, [[F
+
+    iput-object v0, p0, Ljph;->b:[[F
+
+    new-instance v0, Ljpi;
+
+    iget v1, p0, Ljph;->a:I
+
+    iget v2, p0, Ljph;->a:I
+
+    mul-int/2addr v1, v2
+
+    invoke-direct {v0, v1}, Ljpi;-><init>(I)V
+
+    iput-object v0, p0, Ljph;->g:Ljpi;
+
+    new-instance v0, Ljpi;
+
+    iget v1, p0, Ljph;->a:I
+
+    invoke-direct {v0, v1}, Ljpi;-><init>(I)V
+
+    iput-object v0, p0, Ljph;->f:Ljpi;
+
+    iget v0, p0, Ljph;->a:I
+
+    iget v1, p0, Ljph;->a:I
+
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    invoke-static {v1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [[I
+
+    iput-object v0, p0, Ljph;->c:[[I
+
+    iget v0, p0, Ljph;->a:I
+
+    new-array v0, v0, [Z
+
+    iput-object v0, p0, Ljph;->h:[Z
+
+    iget v0, p0, Ljph;->a:I
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Ljph;->i:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/io/OutputStream;
-    .locals 4
+.method public final a()F
+    .locals 7
 
-    new-instance v0, Ljava/io/FileOutputStream;
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Ljph;->a:Ljava/io/File;
+    const v0, 0x7f7fffff    # Float.MAX_VALUE
 
-    iget-object v2, p0, Ljph;->b:Ljle;
+    move v2, v0
 
-    sget-object v3, Ljpe;->a:Ljpe;
+    move v0, v1
 
-    invoke-virtual {v2, v3}, Ljle;->contains(Ljava/lang/Object;)Z
+    :goto_0
+    iget-object v3, p0, Ljph;->f:Ljpi;
+
+    iget v3, v3, Ljpi;->b:I
+
+    if-ge v0, v3, :cond_0
+
+    iget-object v3, p0, Ljph;->f:Ljpi;
+
+    iget-object v3, v3, Ljpi;->a:[I
+
+    aget v3, v3, v0
+
+    iget-object v4, p0, Ljph;->f:Ljpi;
+
+    add-int/lit8 v5, v0, -0x1
+
+    iget-object v4, v4, Ljpi;->a:[I
+
+    aget v4, v4, v5
+
+    iget-object v5, p0, Ljph;->d:[[F
+
+    aget-object v5, v5, v3
+
+    aget v5, v5, v4
+
+    iget-object v6, p0, Ljph;->b:[[F
+
+    aget-object v3, v6, v3
+
+    aget v3, v3, v4
+
+    sub-float v3, v5, v3
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v2
 
-    invoke-direct {v0, v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+    add-int/lit8 v0, v0, 0x1
 
-    return-object v0
+    goto :goto_0
+
+    :cond_0
+    :goto_1
+    iget-object v0, p0, Ljph;->f:Ljpi;
+
+    iget v0, v0, Ljpi;->b:I
+
+    if-ge v1, v0, :cond_1
+
+    iget-object v0, p0, Ljph;->f:Ljpi;
+
+    iget-object v0, v0, Ljpi;->a:[I
+
+    aget v0, v0, v1
+
+    iget-object v3, p0, Ljph;->f:Ljpi;
+
+    add-int/lit8 v4, v1, -0x1
+
+    iget-object v3, v3, Ljpi;->a:[I
+
+    aget v3, v3, v4
+
+    iget-object v4, p0, Ljph;->b:[[F
+
+    aget-object v4, v4, v0
+
+    aget v5, v4, v3
+
+    add-float/2addr v5, v2
+
+    aput v5, v4, v3
+
+    iget-object v4, p0, Ljph;->b:[[F
+
+    aget-object v3, v4, v3
+
+    aget v4, v3, v0
+
+    sub-float/2addr v4, v2
+
+    aput v4, v3, v0
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    return v2
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final a(Z)Z
+    .locals 8
 
-    iget-object v0, p0, Ljph;->a:Ljava/io/File;
+    const/4 v7, 0x0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v3, 0x1
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    iget-object v1, p0, Ljph;->b:Ljle;
+    iget-object v0, p0, Ljph;->h:[Z
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v2}, Ljava/util/Arrays;->fill([ZZ)V
 
-    move-result-object v1
+    iget-object v0, p0, Ljph;->f:Ljpi;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iput v2, v0, Ljpi;->b:I
 
-    move-result-object v2
+    iget-object v0, p0, Ljph;->g:Ljpi;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    iput v2, v0, Ljpi;->b:I
 
-    move-result v2
+    iget-object v0, p0, Ljph;->g:Ljpi;
 
-    add-int/lit8 v2, v2, 0x14
+    invoke-virtual {v0, v2}, Ljpi;->a(I)V
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :goto_0
+    iget-object v0, p0, Ljph;->g:Ljpi;
 
-    move-result-object v3
+    iget v0, v0, Ljpi;->b:I
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    if-nez v0, :cond_2
 
-    move-result v3
+    move v0, v3
 
-    add-int/2addr v2, v3
+    :goto_1
+    if-nez v0, :cond_1
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Ljph;->g:Ljpi;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    iget v1, v0, Ljpi;->b:I
 
-    const-string v2, "Files.asByteSink("
+    add-int/lit8 v1, v1, -0x1
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v1, v0, Ljpi;->b:I
 
-    move-result-object v2
+    iget-object v1, v0, Ljpi;->a:[I
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v0, v0, Ljpi;->b:I
 
-    move-result-object v0
+    aget v0, v1, v0
 
-    const-string v2, ", "
+    move v1, v2
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_2
+    iget v4, p0, Ljph;->a:I
 
-    move-result-object v0
+    if-ge v1, v4, :cond_8
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Ljph;->c:[[I
 
-    move-result-object v0
+    aget-object v4, v4, v0
 
-    const-string v1, ")"
+    aget v4, v4, v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v4, :cond_8
 
-    move-result-object v0
+    iget-object v4, p0, Ljph;->c:[[I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aget-object v4, v4, v0
 
-    move-result-object v0
+    aget v5, v4, v1
 
-    return-object v0
+    iget-object v4, p0, Ljph;->h:[Z
+
+    aget-boolean v4, v4, v5
+
+    if-nez v4, :cond_7
+
+    iget-object v4, p0, Ljph;->d:[[F
+
+    aget-object v4, v4, v0
+
+    aget v4, v4, v5
+
+    iget-object v6, p0, Ljph;->b:[[F
+
+    aget-object v6, v6, v0
+
+    aget v6, v6, v5
+
+    sub-float/2addr v4, v6
+
+    cmpl-float v4, v4, v7
+
+    if-lez v4, :cond_3
+
+    move v4, v3
+
+    :goto_3
+    if-eqz p1, :cond_0
+
+    iget-object v6, p0, Ljph;->d:[[F
+
+    aget-object v6, v6, v0
+
+    aget v6, v6, v5
+
+    cmpl-float v6, v6, v7
+
+    if-lez v6, :cond_4
+
+    if-eqz v4, :cond_4
+
+    move v4, v3
+
+    :cond_0
+    :goto_4
+    if-eqz v4, :cond_7
+
+    iget v4, p0, Ljph;->e:I
+
+    if-ne v5, v4, :cond_6
+
+    iget-object v1, p0, Ljph;->f:Ljpi;
+
+    invoke-virtual {v1, v5}, Ljpi;->a(I)V
+
+    :goto_5
+    iget-object v1, p0, Ljph;->f:Ljpi;
+
+    invoke-virtual {v1, v0}, Ljpi;->a(I)V
+
+    if-nez v0, :cond_5
+
+    move v2, v3
+
+    :cond_1
+    return v2
+
+    :cond_2
+    move v0, v2
+
+    goto :goto_1
+
+    :cond_3
+    move v4, v2
+
+    goto :goto_3
+
+    :cond_4
+    move v4, v2
+
+    goto :goto_4
+
+    :cond_5
+    iget-object v1, p0, Ljph;->i:[I
+
+    aget v0, v1, v0
+
+    goto :goto_5
+
+    :cond_6
+    iget-object v4, p0, Ljph;->i:[I
+
+    aput v0, v4, v5
+
+    iget-object v4, p0, Ljph;->g:Ljpi;
+
+    invoke-virtual {v4, v5}, Ljpi;->a(I)V
+
+    :cond_7
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_8
+    iget-object v1, p0, Ljph;->h:[Z
+
+    aput-boolean v3, v1, v0
+
+    goto :goto_0
 .end method

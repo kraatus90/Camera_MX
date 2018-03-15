@@ -1,57 +1,99 @@
-.class public Lhcl;
-.super Lgvh;
+.class final Lhcl;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public e:Lhcs;
-
-.field public f:Landroid/widget/VideoView;
-
-.field public g:Lhcg;
-
-.field public h:Landroid/net/Uri;
-
-.field public i:I
-
-.field public j:Z
+.field private final synthetic a:Lhcj;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Lhcj;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lhcl;->a:Lhcj;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[[B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lhcs;Landroid/net/Uri;Lhcg;IZ)V
-    .locals 1
+.method public final run()V
+    .locals 6
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lhcl;->a:Lhcj;
 
-    move-result-object v0
+    iget-object v1, v0, Lhcj;->h:Ljava/lang/Object;
 
-    check-cast v0, Lhcs;
+    monitor-enter v1
 
-    iput-object v0, p0, Lhcl;->e:Lhcs;
+    :try_start_0
+    iget-object v0, p0, Lhcl;->a:Lhcj;
 
-    iget-object v0, p1, Lhcs;->g:Landroid/widget/VideoView;
+    iget-object v0, v0, Lhcj;->b:Lbfl;
 
-    iput-object v0, p0, Lhcl;->f:Landroid/widget/VideoView;
+    if-eqz v0, :cond_0
 
-    iput-object p3, p0, Lhcl;->g:Lhcg;
+    iget-object v0, p0, Lhcl;->a:Lhcj;
 
-    iput-object p2, p0, Lhcl;->h:Landroid/net/Uri;
+    invoke-static {v0}, Lhcj;->a(Lhcj;)I
 
-    iput p4, p0, Lhcl;->i:I
+    move-result v0
 
-    iput-boolean p5, p0, Lhcl;->j:Z
+    sget v2, Lep;->bC:I
+
+    if-ne v0, v2, :cond_0
+
+    iget-object v0, p0, Lhcl;->a:Lhcj;
+
+    iget-object v0, v0, Lhcj;->d:Lhcd;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    iget-object v0, p0, Lhcl;->a:Lhcj;
+
+    iget-object v0, v0, Lhcj;->b:Lbfl;
+
+    invoke-interface {v0}, Lbfl;->g()J
+
+    move-result-wide v4
+
+    sub-long/2addr v2, v4
+
+    iget-object v0, p0, Lhcl;->a:Lhcj;
+
+    iget-object v0, v0, Lhcj;->b:Lbfl;
+
+    invoke-interface {v0}, Lbfl;->h()J
+
+    move-result-wide v4
+
+    sub-long/2addr v2, v4
+
+    iget-object v0, p0, Lhcl;->a:Lhcj;
+
+    iget-object v0, v0, Lhcj;->f:Lgqg;
+
+    invoke-virtual {v0, v2, v3}, Lgqg;->a(J)V
+
+    :cond_0
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

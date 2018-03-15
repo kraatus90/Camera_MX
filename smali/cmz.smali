@@ -3,110 +3,98 @@
 .source "PG"
 
 # interfaces
-.implements Lcli;
+.implements Lcmp;
 
 
 # instance fields
-.field private synthetic a:Lclc;
+.field private final a:Lgyq;
 
 
 # direct methods
-.method public constructor <init>(Lclc;)V
+.method public constructor <init>(Lgyq;)V
     .locals 0
 
-    iput-object p1, p0, Lcmz;->a:Lclc;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcmz;->a:Lgyq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final a()Lckw;
+    .locals 2
 
-    iget-object v0, p0, Lcmz;->a:Lclc;
+    iget-object v0, p0, Lcmz;->a:Lgyq;
 
-    iget-object v0, v0, Lclc;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+    const/4 v1, 0x0
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->c:Landroid/widget/FrameLayout;
+    invoke-interface {v0, v1}, Lgyq;->f(I)Lckw;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x106000c
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->setBackgroundColor(I)V
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->b:Lckl;
-
-    invoke-virtual {v1}, Lckl;->b()V
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->k:Lclm;
-
-    invoke-virtual {v0}, Lgvh;->l()V
-
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
-
-    const-string v1, "Filmstrip swipeout cancelled return animation complete."
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+.method public final a(I)V
+    .locals 0
 
     return-void
 .end method
 
-.method public final b()V
-    .locals 4
+.method public final a(Lcmq;)V
+    .locals 0
 
-    iget-object v0, p0, Lcmz;->a:Lclc;
+    return-void
+.end method
 
-    iget-object v0, v0, Lclc;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+.method public final a(Lgyq;)V
+    .locals 0
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->c:Landroid/widget/FrameLayout;
+    return-void
+.end method
 
-    const/4 v2, 0x0
+.method public final a(Leqd;)Z
+    .locals 1
 
-    invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->getResources()Landroid/content/res/Resources;
+    return v0
+.end method
 
-    move-result-object v1
+.method public final b()Z
+    .locals 1
 
-    const v2, 0x106000c
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    return v0
+.end method
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+.method public final b(I)Z
+    .locals 1
 
-    move-result v1
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->setBackgroundColor(I)V
+    return v0
+.end method
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->b:Lckl;
+.method public final c()Z
+    .locals 1
 
-    invoke-virtual {v1}, Lckl;->b()V
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->k:Lclm;
+    return v0
+.end method
 
-    invoke-virtual {v0}, Lgvh;->l()V
+.method public final d()V
+    .locals 0
 
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
+    return-void
+.end method
 
-    const-string v1, "Filmstrip swipeout cancelled return animation complete."
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+.method public final e()V
+    .locals 0
 
     return-void
 .end method

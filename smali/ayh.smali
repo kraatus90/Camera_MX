@@ -1,41 +1,82 @@
 .class public final Layh;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+# interfaces
+.implements Layc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Layh;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+.method public final a(Layy;)V
+    .locals 0
 
-    const/4 v1, 0x1
+    return-void
+.end method
 
-    iget-object v0, p0, Layh;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+.method public final a(Lgay;)V
+    .locals 0
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    return-void
+.end method
 
-    invoke-virtual {v0, v1, v1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setVisible(ZZ)Z
+.method public final a(Lilb;)V
+    .locals 0
 
-    iget-object v0, p0, Layh;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    return-void
+.end method
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
+.method public final a()Z
+    .locals 1
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final b()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final b(Lgay;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 0
 
     return-void
 .end method

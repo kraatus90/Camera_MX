@@ -1,194 +1,125 @@
-.class public final Lenk;
+.class final Lenk;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/location/LocationListener;
+
 
 # instance fields
-.field public final a:Ljxn;
+.field public a:Landroid/location/Location;
 
-.field public final b:Ljxn;
+.field public b:Z
 
-.field public final c:Ljxn;
-
-.field public final d:Ljxn;
-
-.field public final e:Ljxn;
-
-.field public final f:Ljxn;
-
-.field public final g:Ljxn;
-
-.field public final h:Ljxn;
-
-.field public final i:Ljxn;
-
-.field public final j:Ljxn;
-
-.field public final k:Ljxn;
-
-.field public final l:Ljxn;
+.field private c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    iput-boolean v0, p0, Lenk;->b:Z
 
-    move-result-object v0
+    iput-object p1, p0, Lenk;->c:Ljava/lang/String;
 
-    check-cast v0, Ljxn;
+    new-instance v0, Landroid/location/Location;
 
-    iput-object v0, p0, Lenk;->a:Ljxn;
+    iget-object v1, p0, Lenk;->c:Ljava/lang/String;
 
-    const/4 v0, 0x2
+    invoke-direct {v0, v1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p2, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->b:Ljxn;
-
-    const/4 v0, 0x3
-
-    invoke-static {p3, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->c:Ljxn;
-
-    const/4 v0, 0x4
-
-    invoke-static {p4, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->d:Ljxn;
-
-    const/4 v0, 0x5
-
-    invoke-static {p5, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->e:Ljxn;
-
-    const/4 v0, 0x6
-
-    invoke-static {p6, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->f:Ljxn;
-
-    const/4 v0, 0x7
-
-    invoke-static {p7, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->g:Ljxn;
-
-    const/16 v0, 0x8
-
-    invoke-static {p8, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->h:Ljxn;
-
-    const/16 v0, 0x9
-
-    invoke-static {p9, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->i:Ljxn;
-
-    const/16 v0, 0xa
-
-    invoke-static {p10, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->j:Ljxn;
-
-    const/16 v0, 0xb
-
-    invoke-static {p11, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->k:Ljxn;
-
-    const/16 v0, 0xc
-
-    invoke-static {p12, v0}, Lenk;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lenk;->l:Ljxn;
+    iput-object v0, p0, Lenk;->a:Landroid/location/Location;
 
     return-void
 .end method
 
-.method static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
 
-    if-nez p0, :cond_0
+# virtual methods
+.method public final onLocationChanged(Landroid/location/Location;)V
+    .locals 4
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    const-wide/16 v2, 0x0
 
-    const/16 v1, 0x5d
+    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result-wide v0
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    cmpl-double v0, v0, v2
 
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
+    if-nez v0, :cond_0
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
-    move-result-object v1
+    move-result-wide v0
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    cmpl-double v0, v0, v2
 
-    move-result-object v1
+    if-nez v0, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    :goto_0
+    return-void
 
     :cond_0
-    return-object p0
+    iget-boolean v0, p0, Lenk;->b:Z
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Lenj;->a:Ljava/lang/String;
+
+    const-string v1, "Got first location."
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1
+    iget-object v0, p0, Lenk;->a:Landroid/location/Location;
+
+    invoke-virtual {v0, p1}, Landroid/location/Location;->set(Landroid/location/Location;)V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lenk;->b:Z
+
+    goto :goto_0
+.end method
+
+.method public final onProviderDisabled(Ljava/lang/String;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lenk;->b:Z
+
+    return-void
+.end method
+
+.method public final onProviderEnabled(Ljava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .locals 1
+
+    packed-switch p2, :pswitch_data_0
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lenk;->b:Z
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
 .end method

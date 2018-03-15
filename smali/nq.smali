@@ -1,439 +1,131 @@
 .class public final Lnq;
-.super Lnx;
+.super Ljava/lang/Object;
 .source "PG"
-
-# interfaces
-.implements Lpa;
 
 
 # instance fields
-.field public final a:Loz;
-
-.field private d:Landroid/content/Context;
-
-.field private e:Lny;
-
-.field private f:Ljava/lang/ref/WeakReference;
-
-.field private synthetic g:Lnn;
+.field public a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lnn;Landroid/content/Context;Lny;)V
-    .locals 2
+.method private constructor <init>(Landroid/content/Context;)V
+    .locals 0
 
-    iput-object p1, p0, Lnq;->g:Lnn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lnx;-><init>()V
-
-    iput-object p2, p0, Lnq;->d:Landroid/content/Context;
-
-    iput-object p3, p0, Lnq;->e:Lny;
-
-    new-instance v0, Loz;
-
-    invoke-direct {v0, p2}, Loz;-><init>(Landroid/content/Context;)V
-
-    const/4 v1, 0x1
-
-    iput v1, v0, Loz;->e:I
-
-    iput-object v0, p0, Lnq;->a:Loz;
-
-    iget-object v0, p0, Lnq;->a:Loz;
-
-    invoke-virtual {v0, p0}, Loz;->a(Lpa;)V
+    iput-object p1, p0, Lnq;->a:Landroid/content/Context;
 
     return-void
+.end method
+
+.method public static a(Landroid/content/Context;)Lnq;
+    .locals 1
+
+    new-instance v0, Lnq;
+
+    invoke-direct {v0, p0}, Lnq;-><init>(Landroid/content/Context;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/view/MenuInflater;
-    .locals 2
+.method public final a()I
+    .locals 8
 
-    new-instance v0, Loe;
+    const/16 v7, 0x3c0
 
-    iget-object v1, p0, Lnq;->d:Landroid/content/Context;
+    const/16 v6, 0x2d0
 
-    invoke-direct {v0, v1}, Loe;-><init>(Landroid/content/Context;)V
+    const/16 v5, 0x280
 
-    return-object v0
-.end method
+    const/16 v4, 0x258
 
-.method public final a(I)V
-    .locals 1
+    const/16 v3, 0x1e0
 
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->a:Landroid/content/Context;
+    iget-object v0, p0, Lnq;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lnq;->b(Ljava/lang/CharSequence;)V
+    iget v1, v0, Landroid/content/res/Configuration;->screenWidthDp:I
 
-    return-void
-.end method
+    iget v2, v0, Landroid/content/res/Configuration;->screenHeightDp:I
 
-.method public final a(Landroid/view/View;)V
-    .locals 1
+    iget v0, v0, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
-    iget-object v0, p0, Lnq;->g:Lnn;
+    if-gt v0, v4, :cond_1
 
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
+    if-gt v1, v4, :cond_1
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->a(Landroid/view/View;)V
+    if-le v1, v7, :cond_0
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lnq;->f:Ljava/lang/ref/WeakReference;
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->b(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public final a(Z)V
-    .locals 1
-
-    invoke-super {p0, p1}, Lnx;->a(Z)V
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->a(Z)V
-
-    return-void
-.end method
-
-.method public final a(Loz;Landroid/view/MenuItem;)Z
-    .locals 1
-
-    iget-object v0, p0, Lnq;->e:Lny;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lnq;->e:Lny;
-
-    invoke-interface {v0, p0, p2}, Lny;->a(Lnx;Landroid/view/MenuItem;)Z
-
-    move-result v0
-
-    :goto_0
-    return v0
+    if-gt v2, v6, :cond_1
 
     :cond_0
-    const/4 v0, 0x0
+    if-le v1, v6, :cond_2
 
-    goto :goto_0
-.end method
-
-.method public final b()Landroid/view/Menu;
-    .locals 1
-
-    iget-object v0, p0, Lnq;->a:Loz;
-
-    return-object v0
-.end method
-
-.method public final b(I)V
-    .locals 1
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lnq;->a(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public final b(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->a(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 4
-
-    const/4 v3, 0x0
-
-    const/4 v2, 0x0
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->g:Lnq;
-
-    if-eq v0, p0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-boolean v0, v0, Lnn;->k:Z
-
-    iget-object v1, p0, Lnq;->g:Lnn;
-
-    iget-boolean v1, v1, Lnn;->l:Z
-
-    invoke-static {v0, v1, v2}, Lnn;->a(ZZZ)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iput-object p0, v0, Lnn;->h:Lnx;
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v1, p0, Lnq;->e:Lny;
-
-    iput-object v1, v0, Lnn;->i:Lny;
-
-    :goto_1
-    iput-object v3, p0, Lnq;->e:Lny;
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    invoke-virtual {v0, v2}, Lnn;->f(Z)V
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    iget-object v1, v0, Landroid/support/v7/widget/ActionBarContextView;->h:Landroid/view/View;
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->b()V
+    if-le v2, v7, :cond_2
 
     :cond_1
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->d:Lsh;
-
-    iget-object v0, v0, Lsh;->a:Landroid/support/v7/widget/Toolbar;
-
-    const/16 v1, 0x20
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->sendAccessibilityEvent(I)V
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->b:Landroid/support/v7/widget/ActionBarOverlayLayout;
-
-    iget-object v1, p0, Lnq;->g:Lnn;
-
-    iget-boolean v1, v1, Lnn;->n:Z
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->a(Z)V
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iput-object v3, v0, Lnn;->g:Lnq;
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lnq;->e:Lny;
-
-    invoke-interface {v0, p0}, Lny;->a(Lnx;)V
-
-    goto :goto_1
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->g:Lnq;
-
-    if-eq v0, p0, :cond_0
+    const/4 v0, 0x5
 
     :goto_0
-    return-void
+    return v0
 
-    :cond_0
-    iget-object v0, p0, Lnq;->a:Loz;
+    :cond_2
+    const/16 v0, 0x1f4
 
-    invoke-virtual {v0}, Loz;->d()V
+    if-ge v1, v0, :cond_4
 
-    :try_start_0
-    iget-object v0, p0, Lnq;->e:Lny;
+    if-le v1, v5, :cond_3
 
-    iget-object v1, p0, Lnq;->a:Loz;
+    if-gt v2, v3, :cond_4
 
-    invoke-interface {v0, p0, v1}, Lny;->b(Lnx;Landroid/view/Menu;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_3
+    if-le v1, v3, :cond_5
 
-    iget-object v0, p0, Lnq;->a:Loz;
+    if-le v2, v5, :cond_5
 
-    invoke-virtual {v0}, Loz;->e()V
+    :cond_4
+    const/4 v0, 0x4
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_5
+    const/16 v0, 0x168
 
-    iget-object v1, p0, Lnq;->a:Loz;
+    if-lt v1, v0, :cond_6
 
-    invoke-virtual {v1}, Loz;->e()V
+    const/4 v0, 0x3
 
-    throw v0
+    goto :goto_0
+
+    :cond_6
+    const/4 v0, 0x2
+
+    goto :goto_0
 .end method
 
-.method public final e()Z
+.method public final b()Z
     .locals 2
 
-    iget-object v0, p0, Lnq;->a:Loz;
+    iget-object v0, p0, Lnq;->a:Landroid/content/Context;
 
-    invoke-virtual {v0}, Loz;->d()V
-
-    :try_start_0
-    iget-object v0, p0, Lnq;->e:Lny;
-
-    iget-object v1, p0, Lnq;->a:Loz;
-
-    invoke-interface {v0, p0, v1}, Lny;->a(Lnx;Landroid/view/Menu;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v0
-
-    iget-object v1, p0, Lnq;->a:Loz;
-
-    invoke-virtual {v1}, Loz;->e()V
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lnq;->a:Loz;
-
-    invoke-virtual {v1}, Loz;->e()V
-
-    throw v0
-.end method
-
-.method public final f()Ljava/lang/CharSequence;
-    .locals 1
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContextView;->f:Ljava/lang/CharSequence;
-
-    return-object v0
-.end method
-
-.method public final g()Ljava/lang/CharSequence;
-    .locals 1
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    iget-object v0, v0, Landroid/support/v7/widget/ActionBarContextView;->g:Ljava/lang/CharSequence;
-
-    return-object v0
-.end method
-
-.method public final h()Z
-    .locals 1
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    iget-boolean v0, v0, Landroid/support/v7/widget/ActionBarContextView;->i:Z
-
-    return v0
-.end method
-
-.method public final i()Landroid/view/View;
-    .locals 1
-
-    iget-object v0, p0, Lnq;->f:Ljava/lang/ref/WeakReference;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lnq;->f:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/View;
+    const/high16 v1, 0x7f0b0000
 
-    :goto_0
-    return-object v0
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
-    :cond_0
-    const/4 v0, 0x0
+    move-result v0
 
-    goto :goto_0
-.end method
-
-.method public final n()V
-    .locals 1
-
-    iget-object v0, p0, Lnq;->e:Lny;
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-virtual {p0}, Lnq;->d()V
-
-    iget-object v0, p0, Lnq;->g:Lnn;
-
-    iget-object v0, v0, Lnn;->e:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->a()Z
-
-    goto :goto_0
+    return v0
 .end method

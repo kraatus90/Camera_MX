@@ -1,98 +1,160 @@
-.class public Ljry;
-.super Ljava/lang/Object;
+.class final Ljry;
+.super Ljvd;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljlb;
+.field public final synthetic a:Ljru;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Ljru;Ljava/util/Map;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljry;->a:Ljru;
 
-    sget-object v0, Ljms;->a:Ljlb;
-
-    iput-object v0, p0, Ljry;->a:Ljlb;
+    invoke-direct {p0, p2}, Ljvd;-><init>(Ljava/util/Map;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/reflect/TypeVariable;Ljry;)Ljava/lang/reflect/Type;
-    .locals 3
+.method public final clear()V
+    .locals 1
 
-    iget-object v0, p0, Ljry;->a:Ljlb;
-
-    new-instance v1, Ljsa;
-
-    invoke-direct {v1, p1}, Ljsa;-><init>(Ljava/lang/reflect/TypeVariable;)V
-
-    invoke-virtual {v0, v1}, Ljlb;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljry;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/reflect/Type;
+    invoke-static {v0}, Ljwo;->d(Ljava/util/Iterator;)V
 
-    if-nez v0, :cond_3
+    return-void
+.end method
 
-    invoke-interface {p1}, Ljava/lang/reflect/TypeVariable;->getBounds()[Ljava/lang/reflect/Type;
+.method public final containsAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    iget-object v0, p0, Ljvd;->b:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    array-length v1, v0
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    :goto_0
-    return-object p1
-
-    :cond_1
-    new-instance v1, Ljwg;
-
-    invoke-direct {v1, p2}, Ljwg;-><init>(Ljry;)V
-
-    invoke-virtual {v1, v0}, Ljwg;->a([Ljava/lang/reflect/Type;)[Ljava/lang/reflect/Type;
-
-    move-result-object v1
-
-    sget-boolean v2, Ljsp;->a:Z
-
-    if-eqz v2, :cond_2
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    return v0
+.end method
 
-    :cond_2
-    invoke-interface {p1}, Ljava/lang/reflect/TypeVariable;->getGenericDeclaration()Ljava/lang/reflect/GenericDeclaration;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-eq p0, p1, :cond_0
+
+    iget-object v0, p0, Ljvd;->b:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    invoke-interface {p1}, Ljava/lang/reflect/TypeVariable;->getName()Ljava/lang/String;
+    invoke-interface {v0, p1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-static {v0, v2, v1}, Ljsd;->a(Ljava/lang/reflect/GenericDeclaration;Ljava/lang/String;[Ljava/lang/reflect/Type;)Ljava/lang/reflect/TypeVariable;
+    if-eqz v0, :cond_1
 
-    move-result-object p1
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    :cond_3
-    new-instance v1, Ljwg;
+.method public final hashCode()I
+    .locals 1
 
-    invoke-direct {v1, p2}, Ljwg;-><init>(Ljry;)V
+    iget-object v0, p0, Ljvd;->b:Ljava/util/Map;
 
-    invoke-virtual {v1, v0}, Ljwg;->a(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object p1
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 2
+
+    iget-object v0, p0, Ljvd;->b:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    new-instance v1, Ljrz;
+
+    invoke-direct {v1, p0, v0}, Ljrz;-><init>(Ljry;Ljava/util/Iterator;)V
+
+    return-object v1
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Ljvd;->b:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    invoke-interface {v0}, Ljava/util/Collection;->clear()V
+
+    iget-object v0, p0, Ljry;->a:Ljru;
+
+    invoke-static {v0, v2}, Ljru;->b(Ljru;I)I
+
+    move v0, v2
+
+    :goto_0
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_1
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_1
+    move v0, v1
 
     goto :goto_0
 .end method

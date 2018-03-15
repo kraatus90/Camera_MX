@@ -1,23 +1,13 @@
 .class public final Lbmx;
-.super Ljava/lang/Object;
+.super Ljava/lang/Exception;
 .source "PG"
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const-string v0, "ProcessingMedia"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lbmx;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
     return-void
 .end method

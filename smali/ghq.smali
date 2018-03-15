@@ -1,50 +1,68 @@
-.class public final Lghq;
+.class final Lghq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lghm;
 
-.field private b:Ljxn;
+.field private final synthetic b:Lioj;
+
+.field private final synthetic c:Lghn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lghn;Lghm;Lioj;)V
     .locals 0
 
+    iput-object p1, p0, Lghq;->c:Lghn;
+
+    iput-object p2, p0, Lghq;->a:Lghm;
+
+    iput-object p3, p0, Lghq;->b:Lioj;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lghq;->a:Ljxn;
-
-    iput-object p2, p0, Lghq;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
 
-    new-instance v1, Lghp;
+    iget-object v0, p0, Lghq;->c:Lghn;
 
-    iget-object v0, p0, Lghq;->a:Ljxn;
+    iget-object v0, v0, Lghn;->A:Lket;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Licv;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 5
 
-    iget-object v2, p0, Lghq;->b:Ljxn;
+    check-cast p1, Ljava/io/File;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lghq;->c:Lghn;
 
-    invoke-direct {v1, v0}, Lghp;-><init>(Licv;)V
+    iget-object v0, v0, Lghn;->A:Lket;
 
-    return-object v1
+    iget-object v1, p0, Lghq;->c:Lghn;
+
+    iget-object v2, p0, Lghq;->a:Lghm;
+
+    iget-object v3, p0, Lghq;->b:Lioj;
+
+    new-instance v4, Lghs;
+
+    invoke-direct {v4, v1, p1, v3, v2}, Lghs;-><init>(Lghn;Ljava/io/File;Lioj;Lghm;)V
+
+    invoke-virtual {v0, v4}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
 .end method

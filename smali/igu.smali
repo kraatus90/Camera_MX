@@ -1,58 +1,45 @@
-.class public final Ligu;
+.class public final synthetic Ligu;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ligt;
 
 
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+# static fields
+.field public static final a:Ligt;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ligu;
+
+    invoke-direct {v0}, Ligu;-><init>()V
+
+    sput-object v0, Ligu;->a:Ligt;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ligu;->a:Ljxn;
-
-    iput-object p2, p0, Ligu;->b:Ljxn;
-
-    iput-object p3, p0, Ligu;->c:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/util/Set;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance v1, Ligt;
-
-    iget-object v0, p0, Ligu;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {p1}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liio;
+    check-cast v0, Ljava/lang/Comparable;
 
-    iget-object v2, p0, Ligu;->b:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    iget-object v2, p0, Ligu;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    invoke-direct {v1, v0}, Ligt;-><init>(Liio;)V
-
-    return-object v1
+    return-object v0
 .end method

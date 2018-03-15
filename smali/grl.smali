@@ -1,150 +1,78 @@
-.class Lgrl;
-.super Lgvh;
+.class public final Lgrl;
+.super Landroid/widget/FrameLayout$LayoutParams;
 .source "PG"
 
 
 # instance fields
-.field public final synthetic a:Lgrk;
-
-.field private b:Landroid/animation/Animator;
+.field public a:I
 
 
 # direct methods
-.method constructor <init>(Lgrk;)V
+.method public constructor <init>(I)V
     .locals 1
 
-    iput-object p1, p0, Lgrl;->a:Lgrk;
+    const/4 v0, -0x1
 
-    const/4 v0, 0x0
+    invoke-direct {p0, v0, v0}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[I)V
+    iput p1, p0, Lgrl;->a:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public R()V
+.method public constructor <init>(III)V
     .locals 0
 
+    invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
     return-void
 .end method
 
-.method public final a()V
-    .locals 6
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 3
 
-    iget-object v0, p0, Lgrl;->a:Lgrk;
+    invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iget-object v0, v0, Lgrk;->h:Lgrt;
+    sget-object v0, Lgrn;->a:[I
 
-    const/16 v1, 0x14d
-
-    new-instance v2, Ljy;
-
-    invoke-direct {v2}, Ljy;-><init>()V
-
-    invoke-static {v1, v2}, Lgyv;->a(ILandroid/view/animation/Interpolator;)Lgyv;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lgrt;->k:Lgyz;
-
-    const-string v3, "color"
-
-    iget v4, v0, Lgrt;->c:I
-
-    iget v5, v0, Lgrt;->d:I
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Lgyv;->a(Ljava/lang/Object;Ljava/lang/String;II)Lgyv;
-
-    iget-object v2, v0, Lgrt;->n:Landroid/view/View;
-
-    const-string v3, "backgroundColor"
-
-    iget v4, v0, Lgrt;->a:I
-
-    iget v5, v0, Lgrt;->b:I
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Lgyv;->a(Ljava/lang/Object;Ljava/lang/String;II)Lgyv;
-
-    iget-object v2, v0, Lgrt;->l:Lgyz;
-
-    const-string v3, "color"
-
-    iget v4, v0, Lgrt;->g:I
-
-    iget v5, v0, Lgrt;->h:I
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Lgyv;->a(Ljava/lang/Object;Ljava/lang/String;II)Lgyv;
-
-    iget-object v2, v0, Lgrt;->m:Lgyz;
-
-    const-string v3, "color"
-
-    iget v4, v0, Lgrt;->e:I
-
-    iget v5, v0, Lgrt;->f:I
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Lgyv;->a(Ljava/lang/Object;Ljava/lang/String;II)Lgyv;
-
-    iget-object v2, v0, Lgrt;->o:Landroid/view/Window;
-
-    const-string v3, "navigationBarColor"
-
-    iget v4, v0, Lgrt;->j:I
-
-    iget v0, v0, Lgrt;->i:I
-
-    invoke-virtual {v1, v2, v3, v4, v0}, Lgyv;->a(Ljava/lang/Object;Ljava/lang/String;II)Lgyv;
-
-    iget-object v0, v1, Lgyv;->b:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->clone()Landroid/animation/AnimatorSet;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    iput-object v0, p0, Lgrl;->b:Landroid/animation/Animator;
+    sget v1, Lgrn;->b:I
 
-    iget-object v0, p0, Lgrl;->b:Landroid/animation/Animator;
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    new-instance v1, Lgrm;
+    move-result v1
 
-    invoke-direct {v1, p0}, Lgrm;-><init>(Lgrl;)V
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    sget v1, Lgrn;->b:I
 
-    iget-object v0, p0, Lgrl;->b:Landroid/animation/Animator;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    return-void
-.end method
+    move-result v1
 
-.method public final b()V
-    .locals 1
+    invoke-static {}, Lep;->values$50KLMJ33DTMIUPRFDTJMOP9FC5N68SJFD5I2UOBGE1PIUOR1DLIN4O9FELKIUR31F5NNAT1F8THM2J31F5NNAT1489NNGEO_0()[I
 
-    iget-object v0, p0, Lgrl;->b:Landroid/animation/Animator;
+    move-result-object v2
 
-    invoke-virtual {v0}, Landroid/animation/Animator;->isRunning()Z
+    aget v1, v2, v1
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lgrl;->b:Landroid/animation/Animator;
-
-    invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
-
-    iget-object v0, p0, Lgrl;->b:Landroid/animation/Animator;
-
-    invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
+    iput v1, p0, Lgrl;->a:I
 
     :cond_0
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
     return-void
 .end method
 
-.method public z_()V
+.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .locals 0
+
+    invoke-direct {p0, p1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method

@@ -1,35 +1,47 @@
-.class public final Limz;
+.class public interface abstract Limz;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:Landroid/media/MediaFormat;
-
-.field public b:Landroid/os/Handler;
-
-.field public c:Z
-
-.field public d:Ljhj;
+# interfaces
+.implements Lihb;
 
 
-# direct methods
-.method public constructor <init>(Landroid/media/MediaFormat;)V
-    .locals 1
+# virtual methods
+.method public abstract a(I)Linb;
+.end method
 
-    const/4 v0, 0x0
+.method public abstract a(Lind;)Linb;
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x17
+    .end annotation
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract a(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Limw;Landroid/os/Handler;)V
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x17
+    .end annotation
+.end method
 
-    iput-object p1, p0, Limz;->a:Landroid/media/MediaFormat;
+.method public abstract a(Ljava/util/List;Limw;Landroid/os/Handler;)V
+.end method
 
-    iput-object v0, p0, Limz;->b:Landroid/os/Handler;
+.method public abstract a(Ljava/util/List;Limy;Landroid/os/Handler;)V
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x17
+    .end annotation
+.end method
 
-    iput-object v0, p0, Limz;->d:Ljhj;
+.method public abstract b(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Limw;Landroid/os/Handler;)V
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x18
+    .end annotation
+.end method
 
-    const/4 v0, 0x0
+.method public abstract b(Ljava/util/List;Limw;Landroid/os/Handler;)V
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x18
+    .end annotation
+.end method
 
-    iput-boolean v0, p0, Limz;->c:Z
-
-    return-void
+.method public abstract close()V
 .end method

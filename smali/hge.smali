@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Labq;
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Lhfp;
+.field private final synthetic a:Lhgc;
 
 
 # direct methods
-.method constructor <init>(Lhfp;)V
+.method constructor <init>(Lhgc;)V
     .locals 0
 
-    iput-object p1, p0, Lhge;->a:Lhfp;
+    iput-object p1, p0, Lhge;->a:Lhgc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,105 +23,62 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    const/4 v2, 0x0
+    sget-object v0, Lhgc;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Lhge;->a:Lhfp;
+    const-string v1, "Fail to connect to GoogleApiClient"
 
-    iget-object v0, v0, Lhfp;->l:Lhgv;
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v0, :cond_0
-
-    :goto_0
     return-void
+.end method
 
-    :cond_0
-    iget-object v0, p0, Lhge;->a:Lhfp;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 6
 
-    iget-object v0, v0, Lhfp;->q:Lffe;
+    check-cast p1, Lhbn;
 
-    iget-object v1, p0, Lhge;->a:Lhfp;
+    iget-object v0, p0, Lhge;->a:Lhgc;
 
-    iget-object v1, v1, Lhfp;->l:Lhgv;
+    iget-object v1, p1, Lhbn;->a:Lhbl;
 
-    iget-object v1, v1, Lhgv;->f:Lacl;
+    iget-object v1, v1, Lhbl;->a:Lhlm;
 
-    iget-object v1, v1, Lacl;->q:Labz;
+    new-instance v2, Lhyr;
 
-    invoke-virtual {v0, v1}, Lffe;->a(Labz;)Labz;
+    invoke-direct {v2, v1, v0}, Lhyr;-><init>(Lhlm;Lhxd;)V
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Lhlm;->a(Lhsy;)Lhsy;
 
-    sget-object v1, Labz;->b:Labz;
+    iget-object v0, p0, Lhge;->a:Lhgc;
 
-    if-ne v0, v1, :cond_1
+    new-instance v1, Lhgf;
 
-    iget-object v0, p0, Lhge;->a:Lhfp;
+    invoke-direct {v1, p1}, Lhgf;-><init>(Lhbn;)V
 
-    invoke-virtual {v0}, Lhfp;->n()V
+    const-string v2, "/camera_packet"
 
-    :cond_1
-    iget-object v0, p0, Lhge;->a:Lhfp;
+    invoke-static {v2}, Lhxg;->a(Ljava/lang/String;)Lhxg;
 
-    invoke-virtual {v0}, Lhfp;->u()V
+    move-result-object v2
 
-    iget-object v0, p0, Lhge;->a:Lhfp;
+    iget-object v3, v2, Lhxg;->b:Lhxb;
 
-    iget-object v0, v0, Lhfp;->q:Lffe;
+    const-string v4, "camera_ready"
 
-    iput-boolean v2, v0, Lffe;->i:Z
+    iget-object v3, v3, Lhxb;->a:Ljava/util/HashMap;
 
-    iget-object v0, p0, Lhge;->a:Lhfp;
+    const/4 v5, 0x0
 
-    invoke-virtual {v0}, Lhfp;->t()V
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lhge;->a:Lhfp;
+    move-result-object v5
 
-    iget-object v0, v0, Lhfp;->j:Lbtx;
+    invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {}, Leug;->k()V
+    invoke-virtual {v0, v2, v1}, Lhgc;->a(Lhxg;Ljava/lang/Runnable;)V
 
-    iget-object v0, p0, Lhge;->a:Lhfp;
-
-    iget-object v0, v0, Lhfp;->q:Lffe;
-
-    iput v2, v0, Lffe;->e:I
-
-    iget-object v0, p0, Lhge;->a:Lhfp;
-
-    new-instance v1, Lhhs;
-
-    iget-object v2, p0, Lhge;->a:Lhfp;
-
-    iget-object v2, v2, Lhfp;->l:Lhgv;
-
-    invoke-virtual {v2}, Lhgv;->a()I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Lhhs;-><init>(I)V
-
-    iput-object v1, v0, Lhfp;->t:Lhhs;
-
-    iget-object v0, p0, Lhge;->a:Lhfp;
-
-    sget v1, Leh;->bz:I
-
-    invoke-static {v0, v1}, Lhfp;->a(Lhfp;I)I
-
-    iget-object v0, p0, Lhge;->a:Lhfp;
-
-    iget-object v0, v0, Lhfp;->j:Lbtx;
-
-    invoke-interface {v0}, Lbtx;->t()Leug;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Leug;->c(Z)V
-
-    goto :goto_0
+    return-void
 .end method

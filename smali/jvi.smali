@@ -1,25 +1,14 @@
-.class public final Ljvi;
-.super Ljtf;
+.class public interface abstract Ljvi;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljtf;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a()Ljava/lang/Object;
 .end method
 
+.method public abstract b()I
+.end method
 
-# virtual methods
-.method public final a(Ljuw;)Z
-    .locals 1
-
-    invoke-super {p0, p1}, Ljtf;->a(Ljuw;)Z
-
-    move-result v0
-
-    return v0
+.method public abstract toString()Ljava/lang/String;
 .end method

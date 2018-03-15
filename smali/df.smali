@@ -1,49 +1,23 @@
 .class final Ldf;
-.super Landroid/util/Property;
+.super Landroid/animation/LayoutTransition;
 .source "PG"
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {p0}, Landroid/animation/LayoutTransition;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final isChangingLayout()Z
     .locals 1
 
-    check-cast p1, Landroid/view/View;
+    const/4 v0, 0x1
 
-    sget-object v0, Lde;->a:Ldl;
-
-    invoke-virtual {v0, p1}, Ldl;->b(Landroid/view/View;)F
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p1, Landroid/view/View;
-
-    check-cast p2, Ljava/lang/Float;
-
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    invoke-static {p1, v0}, Lde;->a(Landroid/view/View;F)V
-
-    return-void
+    return v0
 .end method

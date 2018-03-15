@@ -1,36 +1,14 @@
-.class final Lajs;
+.class public interface abstract Lajs;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lajp;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
-
-    const-class v0, Ljava/io/InputStream;
-
-    return-object v0
+.method public abstract a()Ljava/lang/Class;
 .end method
 
-.method public final synthetic a([B)Ljava/lang/Object;
-    .locals 1
+.method public abstract a(Ljava/io/File;)Ljava/lang/Object;
+.end method
 
-    new-instance v0, Ljava/io/ByteArrayInputStream;
-
-    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
-    return-object v0
+.method public abstract a(Ljava/lang/Object;)V
 .end method

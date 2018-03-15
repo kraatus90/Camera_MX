@@ -1,90 +1,56 @@
-.class final synthetic Lgym;
+.class final Lgym;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # instance fields
-.field private a:Lgyh;
-
-.field private b:Landroid/app/Activity;
-
-.field private c:Landroid/transition/Transition;
+.field private final synthetic a:Lgyl;
 
 
 # direct methods
-.method constructor <init>(Lgyh;Landroid/app/Activity;Landroid/transition/Transition;)V
+.method constructor <init>(Lgyl;)V
     .locals 0
 
+    iput-object p1, p0, Lgym;->a:Lgyl;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgym;->a:Lgyh;
-
-    iput-object p2, p0, Lgym;->b:Landroid/app/Activity;
-
-    iput-object p3, p0, Lgym;->c:Landroid/transition/Transition;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 8
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 3
 
-    iget-object v0, p0, Lgym;->a:Lgyh;
+    sub-int v0, p4, p2
 
-    iget-object v1, p0, Lgym;->b:Landroid/app/Activity;
+    sub-int v1, p5, p3
 
-    iget-object v2, p0, Lgym;->c:Landroid/transition/Transition;
+    iget-object v2, p0, Lgym;->a:Lgyl;
 
-    iget-object v3, v0, Lgyh;->n:Ljava/lang/Object;
+    iget v2, v2, Lgyl;->c:I
 
-    monitor-enter v3
+    if-ne v2, v1, :cond_0
 
-    :try_start_0
-    iget-object v4, v0, Lgyh;->e:Landroid/widget/PopupWindow;
+    iget-object v2, p0, Lgym;->a:Lgyl;
 
-    iget-boolean v0, v0, Lgyh;->m:Z
+    iget v2, v2, Lgyl;->b:I
 
-    if-nez v0, :cond_0
-
-    invoke-virtual {v1}, Landroid/app/Activity;->isFinishing()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    if-eqz v4, :cond_0
-
-    new-instance v0, Landroid/transition/Fade;
-
-    invoke-direct {v0}, Landroid/transition/Fade;-><init>()V
-
-    const-wide/16 v6, 0x12c
-
-    invoke-virtual {v2, v6, v7}, Landroid/transition/Transition;->setDuration(J)Landroid/transition/Transition;
-
-    new-instance v1, Ljy;
-
-    invoke-direct {v1}, Ljy;-><init>()V
-
-    invoke-virtual {v2, v1}, Landroid/transition/Transition;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/transition/Transition;
-
-    invoke-virtual {v4, v0}, Landroid/widget/PopupWindow;->setExitTransition(Landroid/transition/Transition;)V
+    if-eq v2, v0, :cond_1
 
     :cond_0
-    monitor-exit v3
+    iget-object v2, p0, Lgym;->a:Lgyl;
 
+    iput v0, v2, Lgyl;->b:I
+
+    iget-object v0, p0, Lgym;->a:Lgyl;
+
+    iput v1, v0, Lgyl;->c:I
+
+    :cond_1
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

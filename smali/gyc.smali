@@ -1,20 +1,46 @@
-.class interface abstract Lgyc;
-.super Ljava/lang/Object;
+.class public final Lgyc;
+.super Landroid/os/Handler;
 .source "PG"
 
-# interfaces
-.implements Lich;
+
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/views/CountDownView;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/CountDownView;)V
+    .locals 0
+
+    iput-object p1, p0, Lgyc;->a:Lcom/google/android/apps/camera/ui/views/CountDownView;
+
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final handleMessage(Landroid/os/Message;)V
+    .locals 3
 
-.method public abstract a(Ljava/lang/Runnable;)V
-.end method
+    iget v0, p1, Landroid/os/Message;->what:I
 
-.method public abstract b()V
-.end method
+    const/4 v1, 0x1
 
-.method public abstract b(Ljava/lang/Runnable;)V
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lgyc;->a:Lcom/google/android/apps/camera/ui/views/CountDownView;
+
+    iget-object v1, p0, Lgyc;->a:Lcom/google/android/apps/camera/ui/views/CountDownView;
+
+    iget v1, v1, Lcom/google/android/apps/camera/ui/views/CountDownView;->a:I
+
+    add-int/lit8 v1, v1, -0x1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/apps/camera/ui/views/CountDownView;->a(ZI)V
+
+    :cond_0
+    return-void
 .end method

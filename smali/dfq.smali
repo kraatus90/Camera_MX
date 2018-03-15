@@ -1,125 +1,46 @@
-.class public final Ldfq;
-.super Ldhe;
+.class final Ldfq;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final c:Ljava/lang/String;
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public d:Ljava/util/concurrent/Executor;
-
-.field public e:Lddd;
-
-.field public f:Layp;
-
-.field public g:Lazv;
-
-.field public h:Ldcz;
+.field private final synthetic a:Ldfo;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Ldfo;)V
+    .locals 0
 
-    const-string v0, "StateReadyCap"
+    iput-object p1, p0, Ldfq;->a:Ldfo;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ldfq;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldhe;Lddd;Ljava/util/concurrent/Executor;Layp;Lazv;Ldcz;)V
-    .locals 2
-
-    invoke-direct {p0, p1}, Ldhe;-><init>(Lcng;)V
-
-    iput-object p3, p0, Ldfq;->d:Ljava/util/concurrent/Executor;
-
-    iput-object p2, p0, Ldfq;->e:Lddd;
-
-    iput-object p4, p0, Ldfq;->f:Layp;
-
-    iput-object p5, p0, Ldfq;->g:Lazv;
-
-    iput-object p6, p0, Ldfq;->h:Ldcz;
-
-    new-instance v0, Ldfr;
-
-    invoke-direct {v0, p0}, Ldfr;-><init>(Ldfq;)V
-
-    const-class v1, Lcvq;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
-
-    new-instance v0, Ldfs;
-
-    invoke-direct {v0, p0}, Ldfs;-><init>(Ldfq;)V
-
-    const-class v1, Ldes;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
-
-    new-instance v0, Ldft;
-
-    invoke-direct {v0, p0}, Ldft;-><init>(Ldfq;)V
-
-    const-class v1, Lcvv;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
-
-    new-instance v0, Ldfy;
-
-    invoke-direct {v0, p0}, Ldfy;-><init>(Ldfq;)V
-
-    const-class v1, Lcvw;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b()Lcng;
-    .locals 1
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
-    invoke-virtual {p0}, Ldfq;->e()Ldhe;
+    iget-object v0, p0, Ldfq;->a:Ldfo;
 
-    move-result-object v0
+    iget-object v0, v0, Lhcu;->g:Ldzh;
 
-    return-object v0
-.end method
+    const/4 v1, 0x1
 
-.method public final e()Ldhe;
-    .locals 3
+    invoke-virtual {v0, v1}, Ldzh;->c(Z)V
 
-    iget-object v1, p0, Ldfq;->f:Layp;
+    iget-object v0, p0, Ldfq;->a:Ldfo;
 
-    invoke-virtual {p0}, Lcng;->d()Lich;
+    iget-object v0, v0, Lhcu;->g:Ldzh;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ldzh;->b()V
 
-    check-cast v0, Ldhc;
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    iget-object v0, v0, Ldhc;->b:Ldei;
-
-    iget-object v2, v0, Ldei;->b:Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;
-
-    iget-object v0, v0, Ldei;->f:Lewd;
-
-    invoke-virtual {v2, v0}, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->a(Lewd;)Lich;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Layp;->a(Lich;)Lich;
-
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 .end method

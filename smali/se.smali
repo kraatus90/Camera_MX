@@ -1,17 +1,24 @@
-.class public final Lse;
+.class final Lse;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final synthetic a:Landroid/support/v7/widget/RecyclerView;
+.field private final synthetic a:Ljava/util/ArrayList;
+
+.field private final synthetic b:Lsb;
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/v7/widget/RecyclerView;)V
+.method constructor <init>(Lsb;Ljava/util/ArrayList;)V
     .locals 0
 
-    iput-object p1, p0, Lse;->a:Landroid/support/v7/widget/RecyclerView;
+    iput-object p1, p0, Lse;->b:Lsb;
+
+    iput-object p2, p0, Lse;->a:Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,72 +27,80 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)I
-    .locals 1
+.method public final run()V
+    .locals 10
 
-    iget-object v0, p0, Lse;->a:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lse;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->indexOfChild(Landroid/view/View;)I
+    check-cast v0, Ljava/util/ArrayList;
 
-    move-result v0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    return v0
-.end method
-
-.method public final a(I)V
-    .locals 1
-
-    iget-object v0, p0, Lse;->a:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {v0}, Landroid/support/v7/widget/RecyclerView;->b(Landroid/view/View;)Lvm;
-
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
-
-    :cond_0
-    iget-object v0, p0, Lse;->a:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->removeViewAt(I)V
-
-    return-void
-.end method
-
-.method public final b(I)Landroid/view/View;
-    .locals 1
-
-    iget-object v0, p0, Lse;->a:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(Landroid/view/View;)V
-    .locals 3
-
-    invoke-static {p1}, Landroid/support/v7/widget/RecyclerView;->b(Landroid/view/View;)Lvm;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lse;->a:Landroid/support/v7/widget/RecyclerView;
-
-    iget v2, v0, Lvm;->m:I
-
-    invoke-virtual {v1, v0, v2}, Landroid/support/v7/widget/RecyclerView;->a(Lvm;I)Z
+    move-result v3
 
     const/4 v1, 0x0
 
-    iput v1, v0, Lvm;->m:I
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v3, :cond_0
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    add-int/lit8 v2, v2, 0x1
+
+    check-cast v1, Lve;
+
+    iget-object v4, p0, Lse;->b:Lsb;
+
+    iget-object v5, v1, Lve;->a:Landroid/view/View;
+
+    invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v6
+
+    iget-object v7, v4, Lsb;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v7, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    invoke-virtual {v6, v7}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v7
+
+    iget-wide v8, v4, Lui;->i:J
+
+    invoke-virtual {v7, v8, v9}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v7
+
+    new-instance v8, Lsg;
+
+    invoke-direct {v8, v4, v1, v5, v6}, Lsg;-><init>(Lsb;Lve;Landroid/view/View;Landroid/view/ViewPropertyAnimator;)V
+
+    invoke-virtual {v7, v8}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    goto :goto_0
 
     :cond_0
+    iget-object v0, p0, Lse;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v0, p0, Lse;->b:Lsb;
+
+    iget-object v0, v0, Lsb;->a:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lse;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
     return-void
 .end method

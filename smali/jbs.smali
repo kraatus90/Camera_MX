@@ -1,192 +1,163 @@
 .class public final Ljbs;
-.super Ljbe;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljdi;
+.field private final a:I
 
-.field private b:Ljck;
+.field private final b:Livj;
+
+.field private final c:Liup;
 
 
 # direct methods
-.method public constructor <init>(Ljdi;Ljck;)V
-    .locals 0
+.method public constructor <init>(Livj;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljbe;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    iput-object p1, p0, Ljbs;->a:Ljdi;
+    const/4 v0, 0x5
 
-    iput-object p2, p0, Ljbs;->b:Ljck;
+    iput v0, p0, Ljbs;->a:I
 
+    iput-object p1, p0, Ljbs;->b:Livj;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ljbs;->c:Liup;
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 5
+
+    :try_start_0
+    const-string v0, "android.os.SystemProperties"
+
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-string v1, "get"
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Class;
+
+    const/4 v3, 0x0
+
+    const-class v4, Ljava/lang/String;
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    const-class v4, Ljava/lang/String;
+
+    aput-object v4, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p0, v2, v3
+
+    const/4 v3, 0x1
+
+    aput-object p1, v2, v3
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "SystemProperties"
+
+    const-string v2, "Exception while getting system property: "
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    move-object v0, p1
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/String;Landroid/media/MediaFormat;Landroid/media/MediaFormat;)V
+    .locals 1
+
+    invoke-virtual {p1, p0}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1, p0}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {p2, p0, v0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Ljaz;
-    .locals 10
+.method public final a(Liuq;)Lixj;
+    .locals 4
 
-    const-wide/16 v4, -0x1
+    iget-object v0, p0, Ljbs;->b:Livj;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, v0, Livj;->a:Litq;
 
-    new-instance v7, Ljava/util/ArrayList;
+    iget-object v0, v0, Liua;->a:Litv;
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    iget-object v1, p1, Liua;->a:Litv;
 
-    invoke-virtual {p1}, Ljaz;->iterator()Ljava/util/Iterator;
+    if-ne v0, v1, :cond_0
 
-    move-result-object v8
-
-    move-wide v2, v4
+    const/4 v0, 0x1
 
     :goto_0
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    move-result v0
+    new-instance v0, Lixj;
 
-    if-eqz v0, :cond_1
+    iget v1, p0, Ljbs;->a:I
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v2, p0, Ljbs;->b:Livj;
 
-    move-result-object v0
+    const/4 v3, 0x0
 
-    check-cast v0, Ljava/lang/Long;
+    invoke-direct {v0, v1, v2, v3, p1}, Lixj;-><init>(ILivj;Liup;Liuq;)V
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    const/4 v6, 0x0
-
-    cmp-long v9, v2, v4
-
-    if-eqz v9, :cond_2
-
-    iget-object v6, p0, Ljbs;->a:Ljdi;
-
-    invoke-virtual {v6, v2, v3, v0, v1}, Ljdi;->a(JJ)F
-
-    move-result v2
-
-    :goto_1
-    iget-object v3, p0, Ljbs;->b:Ljck;
-
-    invoke-interface {v3, p1, v0, v1}, Ljck;->a(Ljaz;J)F
-
-    move-result v3
-
-    cmpg-float v2, v2, v3
-
-    if-gez v2, :cond_0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-interface {v7, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    return-object v0
 
     :cond_0
-    move-wide v2, v0
+    const/4 v0, 0x0
 
     goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljaz;
-
-    invoke-direct {v0, v7}, Ljaz;-><init>(Ljava/util/Collection;)V
-
-    return-object v0
-
-    :cond_2
-    move v2, v6
-
-    goto :goto_1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    const-string v0, "MaxSequentialDistanceSegmentFilter[distance metric="
-
-    iget-object v1, p0, Ljbs;->a:Ljdi;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ljbs;->b:Ljck;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x17
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", threshold generator="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

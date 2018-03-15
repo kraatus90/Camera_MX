@@ -1,64 +1,91 @@
-.class final Ldzo;
-.super Ljava/lang/Object;
+.class public final enum Ldzo;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Lhzc;
 
+# static fields
+.field public static final enum a:Ldzo;
 
-# instance fields
-.field private a:Lihp;
+.field public static final enum b:Ldzo;
+
+.field public static final enum c:Ldzo;
+
+.field private static final synthetic d:[Ldzo;
 
 
 # direct methods
-.method public constructor <init>(Lihp;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v4, 0x2
 
-    iput-object p1, p0, Ldzo;->a:Lihp;
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Ldzo;
+
+    const-string v1, "NONE"
+
+    invoke-direct {v0, v1, v2}, Ldzo;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldzo;->a:Ldzo;
+
+    new-instance v0, Ldzo;
+
+    const-string v1, "SURFACE_VIEW"
+
+    invoke-direct {v0, v1, v3}, Ldzo;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldzo;->b:Ldzo;
+
+    new-instance v0, Ldzo;
+
+    const-string v1, "TEXTURE_VIEW_LEGACY"
+
+    invoke-direct {v0, v1, v4}, Ldzo;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldzo;->c:Ldzo;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ldzo;
+
+    sget-object v1, Ldzo;->a:Ldzo;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Ldzo;->b:Ldzo;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Ldzo;->c:Ldzo;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Ldzo;->d:[Ldzo;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final a()Ljuw;
-    .locals 3
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Ldzo;->a:Lihp;
+    return-void
+.end method
 
-    const-string v1, "persist.camera.dumpmetadata"
+.method public static values()[Ldzo;
+    .locals 1
 
-    const-string v2, "1"
+    sget-object v0, Ldzo;->d:[Ldzo;
 
-    invoke-virtual {v0, v1, v2}, Lihp;->a(Ljava/lang/String;Ljava/lang/String;)Z
-
-    iget-object v0, p0, Ldzo;->a:Lihp;
-
-    const-string v1, "persist.camera.debug_ui"
-
-    const-string v2, "1"
-
-    invoke-virtual {v0, v1, v2}, Lihp;->a(Ljava/lang/String;Ljava/lang/String;)Z
-
-    iget-object v0, p0, Ldzo;->a:Lihp;
-
-    const-string v1, "persist.camera.frame_log"
-
-    const-string v2, "1"
-
-    invoke-virtual {v0, v1, v2}, Lihp;->a(Ljava/lang/String;Ljava/lang/String;)Z
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0}, [Ldzo;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
-
-    move-result-object v0
+    check-cast v0, [Ldzo;
 
     return-object v0
 .end method

@@ -1,62 +1,124 @@
-.class public final Lizq;
+.class public abstract Lizq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lilj;
+.implements Liyq;
 
 
 # instance fields
-.field private a:Lixg;
+.field public final a:Ljava/lang/String;
 
-.field private synthetic b:Lizo;
+.field public final b:I
+
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lizo;Lixg;)V
-    .locals 0
-
-    iput-object p1, p0, Lizq;->b:Lizo;
+.method protected constructor <init>(Ljava/lang/String;I)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lizq;->a:Lixg;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lizq;->c:Ljava/lang/String;
+
+    iput-object p1, p0, Lizq;->a:Ljava/lang/String;
+
+    iput p2, p0, Lizq;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lilf;
-    .locals 6
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    check-cast p1, Ljava/lang/Long;
+    iget-object v0, p0, Lizq;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Lizq;->b:Lizo;
+    return-object v0
+.end method
 
-    iget-object v0, v0, Lizo;->d:Lixy;
+.method public final b()I
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    iget v0, p0, Lizq;->b:I
 
-    move-result-wide v2
+    return v0
+.end method
 
-    invoke-virtual {v0, v2, v3}, Lixy;->b(J)Lilf;
+.method public toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lizq;->c:Ljava/lang/String;
+
+    iget-object v1, p0, Lizq;->a:Ljava/lang/String;
+
+    iget v2, p0, Lizq;->b:I
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1d
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    new-instance v1, Lizr;
+    const-string v3, "[type="
 
-    iget-object v2, p0, Lizq;->b:Lizo;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    move-result-object v0
 
-    move-result-wide v4
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lizq;->a:Lixg;
+    move-result-object v0
 
-    invoke-direct {v1, v2, v4, v5, v3}, Lizr;-><init>(Lizo;JLixg;)V
+    const-string v1, ", priority="
 
-    invoke-interface {v0, p2, v1}, Lilf;->a(Ljava/util/concurrent/Executor;Likg;)Lilf;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

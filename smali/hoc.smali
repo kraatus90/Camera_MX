@@ -1,75 +1,164 @@
 .class public final Lhoc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhpg;
+.super Lhoa;
 
 
 # instance fields
-.field private synthetic a:Landroid/content/Intent;
-
-.field private synthetic b:Ljava/util/List;
-
-.field private synthetic c:Lhob;
+.field private final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lhob;Landroid/content/Intent;Ljava/util/List;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
 
-    iput-object p1, p0, Lhoc;->c:Lhob;
+    invoke-direct {p0}, Lhoa;-><init>()V
 
-    iput-object p2, p0, Lhoc;->a:Landroid/content/Intent;
+    iput-object p1, p0, Lhoc;->a:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public static a(Lhnz;)Ljava/lang/Object;
+    .locals 9
+
+    const/4 v8, 0x1
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lhoc;->b:Ljava/util/List;
+    instance-of v1, p0, Lhoc;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-eqz v1, :cond_0
 
-    return-void
-.end method
+    check-cast p0, Lhoc;
 
+    iget-object v0, p0, Lhoc;->a:Ljava/lang/Object;
 
-# virtual methods
-.method public final a()Lhkp;
-    .locals 6
+    :goto_0
+    return-object v0
 
-    sget-object v0, Lhpc;->b:Lhpa;
+    :cond_0
+    invoke-interface {p0}, Lhnz;->asBinder()Landroid/os/IBinder;
 
-    iget-object v1, p0, Lhoc;->c:Lhob;
+    move-result-object v4
 
-    iget-object v1, v1, Lhob;->b:Lhkl;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v2, p0, Lhoc;->c:Lhob;
+    move-result-object v1
 
-    iget-object v2, v2, Lhob;->a:Landroid/app/Activity;
+    invoke-virtual {v1}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
-    iget-object v3, p0, Lhoc;->a:Landroid/content/Intent;
+    move-result-object v5
 
-    iget-object v4, p0, Lhoc;->b:Ljava/util/List;
+    const/4 v2, 0x0
 
-    iget-object v5, p0, Lhoc;->c:Lhob;
+    array-length v6, v5
 
-    iget-object v5, v5, Lhob;->c:Ljava/io/File;
+    move v3, v0
 
-    invoke-interface/range {v0 .. v5}, Lhpa;->a(Lhkl;Landroid/app/Activity;Landroid/content/Intent;Ljava/util/List;Ljava/io/File;)Lhkp;
+    :goto_1
+    if-ge v3, v6, :cond_1
+
+    aget-object v1, v5, v3
+
+    invoke-virtual {v1}, Ljava/lang/reflect/Field;->isSynthetic()Z
+
+    move-result v7
+
+    if-nez v7, :cond_4
+
+    add-int/lit8 v0, v0, 0x1
+
+    :goto_2
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
+
+    move-object v2, v1
+
+    goto :goto_1
+
+    :cond_1
+    if-ne v0, v8, :cond_3
+
+    invoke-virtual {v2}, Ljava/lang/reflect/Field;->isAccessible()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {v2, v8}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+
+    :try_start_0
+    invoke-virtual {v2, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v0
 
-    return-object v0
-.end method
+    goto :goto_0
 
-.method public final b()V
-    .locals 3
+    :catch_0
+    move-exception v0
 
-    iget-object v0, p0, Lhoc;->c:Lhob;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const/16 v1, 0x10
+    const-string v2, "Binder object is null."
 
-    iget-object v2, p0, Lhoc;->a:Landroid/content/Intent;
+    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-virtual {v0, v1, v2}, Lhob;->a(ILandroid/content/Intent;)V
+    throw v1
 
-    return-void
+    :catch_1
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "Could not access the field in remoteBinder."
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "IObjectWrapper declared field not private!"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_3
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    array-length v1, v5
+
+    const/16 v2, 0x40
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unexpected number of IObjectWrapper declared fields: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_4
+    move-object v1, v2
+
+    goto :goto_2
 .end method

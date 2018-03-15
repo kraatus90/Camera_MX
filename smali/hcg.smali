@@ -1,35 +1,38 @@
-.class public Lhcg;
-.super Lgvh;
+.class public final Lhcg;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lhch;
 
 
 # instance fields
-.field public d:Landroid/widget/VideoView;
-
-.field public e:Lhcj;
+.field public final a:Landroid/app/Activity;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/app/Activity;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[F)V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lhcg;->a:Landroid/app/Activity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lhcs;Lhcj;)V
+.method public final a(I)Landroid/view/View;
     .locals 1
 
-    iget-object v0, p1, Lhcs;->g:Landroid/widget/VideoView;
+    iget-object v0, p0, Lhcg;->a:Landroid/app/Activity;
 
-    iput-object v0, p0, Lhcg;->d:Landroid/widget/VideoView;
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
-    iput-object p2, p0, Lhcg;->e:Lhcj;
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

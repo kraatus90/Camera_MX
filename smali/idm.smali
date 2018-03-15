@@ -1,137 +1,180 @@
-.class public interface abstract Lidm;
+.class final Lidm;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lick;
+
+
+# instance fields
+.field public final synthetic a:Lidl;
+
+.field private final synthetic b:Lick;
+
+
+# direct methods
+.method constructor <init>(Lidl;Lick;)V
+    .locals 0
+
+    iput-object p1, p0, Lidm;->a:Lidl;
+
+    iput-object p2, p0, Lidm;->b:Lick;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()J
+.method public final a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+    .locals 2
+
+    iget-object v0, p0, Lidm;->b:Lick;
+
+    new-instance v1, Lidn;
+
+    invoke-direct {v1, p0, p1}, Lidn;-><init>(Lidm;Lihg;)V
+
+    invoke-interface {v0, v1, p2}, Lick;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public abstract a(I)V
-.end method
+.method public final c()Ljava/lang/Object;
+    .locals 5
 
-.method public abstract a(II)V
-.end method
+    iget-object v0, p0, Lidm;->a:Lidl;
 
-.method public abstract a(IIIF)V
-.end method
+    iget-object v1, p0, Lidm;->b:Lick;
 
-.method public abstract a(IIIZZZ)V
-.end method
+    invoke-interface {v1}, Lick;->c()Ljava/lang/Object;
 
-.method public abstract a(IIJJ)V
-.end method
+    move-result-object v1
 
-.method public abstract a(IILjava/lang/String;F)V
-.end method
+    if-nez v1, :cond_0
 
-.method public abstract a(ILjava/lang/String;II)V
-.end method
+    new-instance v1, Ljava/lang/NullPointerException;
 
-.method public abstract a(ILjava/lang/String;Lcom/google/android/libraries/camera/exif/ExifInterface;ZZZFLjava/lang/String;ZLjava/lang/Float;Ljava/lang/Float;Lgzh;Ljava/lang/Boolean;Ljava/util/List;Landroid/graphics/Rect;Ljqp;Ljqu;ILftc;Ljava/lang/Long;Ljava/lang/Integer;Ljqv;Ljqh;Ljrc;Ljava/lang/Long;)V
-.end method
+    iget-object v0, v0, Lidl;->a:Lick;
 
-.method public abstract a(ILjra;Ljqm;Ljri;)V
-.end method
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.method public abstract a(IZ)V
-.end method
+    move-result-object v0
 
-.method public abstract a(I[Ljre;Lcom/google/common/logging/nano/eventprotos$LaunchReport;)V
-.end method
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.method public abstract a(JJJJJJJ[Ljqq;JLgry;II)V
-.end method
+    move-result-object v2
 
-.method public abstract a(JLgry;)V
-.end method
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-.method public abstract a(JLgry;II)V
-.end method
+    move-result v2
 
-.method public abstract a(Lfsz;)V
-.end method
+    add-int/lit8 v2, v2, 0x1d
 
-.method public abstract a(Lgzh;Ljava/lang/Float;Z)V
-.end method
+    new-instance v3, Ljava/lang/StringBuilder;
 
-.method public abstract a(Lidn;)V
-.end method
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public abstract a(Ljava/lang/String;IF)V
-.end method
+    const-string v2, "Input: "
 
-.method public abstract a(Ljava/lang/String;JF)V
-.end method
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract a(Ljava/lang/String;Lcom/google/android/libraries/camera/exif/ExifInterface;ZFZ)V
-.end method
+    move-result-object v2
 
-.method public abstract a(Ljava/lang/String;Lige;Liei;FZF)V
-.end method
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract a(Ljava/lang/String;Ljrl;Lige;F)V
-.end method
+    move-result-object v0
 
-.method public abstract a(Ljava/lang/String;ZLgry;)V
-.end method
+    const-string v2, " returned a null value"
 
-.method public abstract a(Ljava/util/HashMap;Ljava/lang/String;)V
-.end method
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract a(Z)V
-.end method
+    move-result-object v0
 
-.method public abstract a(ZLjava/lang/String;Lige;Lici;JJFZZZI)V
-.end method
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public abstract a(ZZZZZZZZZ)V
-.end method
+    move-result-object v0
 
-.method public abstract b()J
-.end method
+    invoke-direct {v1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-.method public abstract b(I)V
-.end method
+    throw v1
 
-.method public abstract b(II)V
-.end method
+    :cond_0
+    invoke-virtual {v0, v1}, Lidl;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public abstract b(IIJJ)V
-.end method
+    move-result-object v2
 
-.method public abstract b(JLgry;)V
-.end method
+    if-nez v2, :cond_1
 
-.method public abstract b(JLgry;II)V
-.end method
+    new-instance v2, Ljava/lang/NullPointerException;
 
-.method public abstract c()V
-.end method
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.method public abstract c(JLgry;II)V
-.end method
+    move-result-object v1
 
-.method public abstract d()Z
-.end method
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public abstract e()V
-.end method
+    move-result-object v0
 
-.method public abstract f()V
-.end method
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-.method public abstract g()V
-.end method
+    move-result-object v0
 
-.method public abstract h()V
-.end method
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.method public abstract i()V
-.end method
+    move-result-object v3
 
-.method public abstract j()V
-.end method
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-.method public abstract k()V
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x3a
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Transforming input value: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, " resulted in a null output for: "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_1
+    return-object v2
 .end method

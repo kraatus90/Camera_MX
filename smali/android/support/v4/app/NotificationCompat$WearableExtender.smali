@@ -150,9 +150,9 @@
 .method public constructor <init>(Landroid/app/Notification;)V
     .locals 11
 
-    const/16 v10, 0x50
+    const v10, 0x800005
 
-    const/16 v9, 0x10
+    const/16 v9, 0x50
 
     const/4 v8, 0x1
 
@@ -176,21 +176,19 @@
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mPages:Ljava/util/ArrayList;
 
-    const v0, 0x800005
-
-    iput v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mContentIconGravity:I
+    iput v10, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mContentIconGravity:I
 
     iput v7, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mContentActionIndex:I
 
     iput v3, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mCustomSizePreset:I
 
-    iput v10, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mGravity:I
+    iput v9, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mGravity:I
 
     invoke-static {p1}, Landroid/support/v4/app/NotificationCompat;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     const-string v1, "android.wearable.EXTENSIONS"
 
@@ -201,7 +199,7 @@
     move-object v4, v0
 
     :goto_0
-    if-eqz v4, :cond_6
+    if-eqz v4, :cond_5
 
     const-string v0, "actions"
 
@@ -209,11 +207,7 @@
 
     move-result-object v5
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v9, :cond_4
-
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_3
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
@@ -226,13 +220,13 @@
     :goto_1
     array-length v0, v1
 
-    if-ge v2, v0, :cond_3
+    if-ge v2, v0, :cond_2
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v6, 0x14
 
-    if-lt v0, v6, :cond_2
+    if-lt v0, v6, :cond_1
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -246,7 +240,6 @@
 
     aput-object v0, v1, v2
 
-    :cond_0
     :goto_2
     add-int/lit8 v0, v2, 0x1
 
@@ -254,18 +247,14 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     const/4 v0, 0x0
 
     move-object v4, v0
 
     goto :goto_0
 
-    :cond_2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v9, :cond_0
-
+    :cond_1
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -280,7 +269,7 @@
 
     goto :goto_2
 
-    :cond_3
+    :cond_2
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mActions:Ljava/util/ArrayList;
 
     move-object v0, v1
@@ -289,7 +278,7 @@
 
     invoke-static {v2, v0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    :cond_4
+    :cond_3
     const-string v0, "flags"
 
     invoke-virtual {v4, v0, v8}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
@@ -314,13 +303,13 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mPages:Ljava/util/ArrayList;
 
     invoke-static {v1, v0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    :cond_5
+    :cond_4
     const-string v0, "background"
 
     invoke-virtual {v4, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -341,9 +330,7 @@
 
     const-string v0, "contentIconGravity"
 
-    const v1, 0x800005
-
-    invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {v4, v0, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -375,7 +362,7 @@
 
     const-string v0, "gravity"
 
-    invoke-virtual {v4, v0, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {v4, v0, v9}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
@@ -405,7 +392,7 @@
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mBridgeTag:Ljava/lang/String;
 
-    :cond_6
+    :cond_5
     return-void
 .end method
 
@@ -432,7 +419,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     new-instance v0, Landroid/os/Bundle;
 
@@ -451,26 +438,19 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x18
-
-    if-lt v2, v3, :cond_0
-
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompat$Action;->getAllowGeneratedReplies()Z
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/app/Notification$Action$Builder;->setAllowGeneratedReplies(Z)Landroid/app/Notification$Action$Builder;
 
-    :cond_0
     invoke-virtual {v1, v0}, Landroid/app/Notification$Action$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
 
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompat$Action;->getRemoteInputs()[Landroid/support/v4/app/RemoteInput;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-static {v0}, Landroid/support/v4/app/RemoteInput;->fromCompat([Landroid/support/v4/app/RemoteInput;)[Landroid/app/RemoteInput;
 
@@ -481,7 +461,7 @@
     const/4 v0, 0x0
 
     :goto_1
-    if-ge v0, v3, :cond_2
+    if-ge v0, v3, :cond_1
 
     aget-object v4, v2, v0
 
@@ -491,14 +471,14 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     invoke-virtual {v1}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
     move-result-object v0
@@ -679,9 +659,7 @@
 .end method
 
 .method public final extend(Landroid/support/v4/app/NotificationCompat$Builder;)Landroid/support/v4/app/NotificationCompat$Builder;
-    .locals 9
-
-    const/16 v8, 0x10
+    .locals 6
 
     new-instance v3, Landroid/os/Bundle;
 
@@ -693,11 +671,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v8, :cond_11
+    if-nez v0, :cond_1
 
     new-instance v4, Ljava/util/ArrayList;
 
@@ -721,9 +695,8 @@
 
     move v2, v1
 
-    :cond_0
     :goto_0
-    if-ge v2, v5, :cond_2
+    if-ge v2, v5, :cond_0
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -733,12 +706,6 @@
 
     check-cast v1, Landroid/support/v4/app/NotificationCompat$Action;
 
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v7, 0x14
-
-    if-lt v6, v7, :cond_1
-
     invoke-static {v1}, Landroid/support/v4/app/NotificationCompat$WearableExtender;->getActionFromActionCompat(Landroid/support/v4/app/NotificationCompat$Action;)Landroid/app/Notification$Action;
 
     move-result-object v1
@@ -747,31 +714,17 @@
 
     goto :goto_0
 
-    :cond_1
-    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v6, v8, :cond_0
-
-    invoke-static {v1}, Landroid/support/v4/app/NotificationCompatJellybean;->getBundleForAction(Landroid/support/v4/app/NotificationCompat$Action;)Landroid/os/Bundle;
-
-    move-result-object v1
-
-    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_2
+    :cond_0
     const-string v0, "actions"
 
     invoke-virtual {v3, v0, v4}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    :cond_3
-    :goto_1
+    :cond_1
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mFlags:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_4
+    if-eq v0, v1, :cond_2
 
     const-string v0, "flags"
 
@@ -779,10 +732,10 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_4
+    :cond_2
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mDisplayIntent:Landroid/app/PendingIntent;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
     const-string v0, "displayIntent"
 
@@ -790,14 +743,14 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    :cond_5
+    :cond_3
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mPages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_4
 
     const-string v1, "pages"
 
@@ -819,10 +772,10 @@
 
     invoke-virtual {v3, v1, v0}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
 
-    :cond_6
+    :cond_4
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mBackground:Landroid/graphics/Bitmap;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_5
 
     const-string v0, "background"
 
@@ -830,10 +783,10 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    :cond_7
+    :cond_5
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mContentIcon:I
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_6
 
     const-string v0, "contentIcon"
 
@@ -841,12 +794,12 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_8
+    :cond_6
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mContentIconGravity:I
 
     const v1, 0x800005
 
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_7
 
     const-string v0, "contentIconGravity"
 
@@ -854,12 +807,12 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_9
+    :cond_7
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mContentActionIndex:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_a
+    if-eq v0, v1, :cond_8
 
     const-string v0, "contentActionIndex"
 
@@ -867,10 +820,10 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_a
+    :cond_8
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mCustomSizePreset:I
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_9
 
     const-string v0, "customSizePreset"
 
@@ -878,10 +831,10 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_b
+    :cond_9
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mCustomContentHeight:I
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_a
 
     const-string v0, "customContentHeight"
 
@@ -889,12 +842,12 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_c
+    :cond_a
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mGravity:I
 
     const/16 v1, 0x50
 
-    if-eq v0, v1, :cond_d
+    if-eq v0, v1, :cond_b
 
     const-string v0, "gravity"
 
@@ -902,10 +855,10 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_d
+    :cond_b
     iget v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mHintScreenTimeout:I
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_c
 
     const-string v0, "hintScreenTimeout"
 
@@ -913,10 +866,10 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    :cond_e
+    :cond_c
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mDismissalId:Ljava/lang/String;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_d
 
     const-string v0, "dismissalId"
 
@@ -924,10 +877,10 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_f
+    :cond_d
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mBridgeTag:Ljava/lang/String;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_e
 
     const-string v0, "bridgeTag"
 
@@ -935,7 +888,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_10
+    :cond_e
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompat$Builder;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
@@ -945,15 +898,6 @@
     invoke-virtual {v0, v1, v3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     return-object p1
-
-    :cond_11
-    const-string v0, "actions"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    goto/16 :goto_1
 .end method
 
 .method public final getActions()Ljava/util/List;

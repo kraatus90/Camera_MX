@@ -1,28 +1,20 @@
-.class final Liro;
+.class public final Liro;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Lire;
 
 
 # instance fields
-.field private synthetic a:Ljava/io/InputStream;
-
-.field private synthetic b:Ljava/io/OutputStream;
-
-.field private synthetic c:Ljdp;
+.field private final synthetic a:Lipn;
 
 
 # direct methods
-.method constructor <init>(Ljava/io/InputStream;Ljava/io/OutputStream;Ljdp;)V
+.method public constructor <init>(Lipn;)V
     .locals 0
 
-    iput-object p1, p0, Liro;->a:Ljava/io/InputStream;
-
-    iput-object p2, p0, Liro;->b:Ljava/io/OutputStream;
-
-    iput-object p3, p0, Liro;->c:Ljdp;
+    iput-object p1, p0, Liro;->a:Lipn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,24 +23,30 @@
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Liqz;
+    .locals 1
 
-    iget-object v0, p0, Liro;->a:Ljava/io/InputStream;
+    check-cast p1, Ljava/lang/Iterable;
 
-    iget-object v1, p0, Liro;->b:Ljava/io/OutputStream;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lcom/google/common/io/ByteStreams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+    iget-object v0, p0, Liro;->a:Lipn;
 
-    iget-object v0, p0, Liro;->a:Ljava/io/InputStream;
+    invoke-static {p1, p2, v0}, Lihr;->b(Ljava/lang/Iterable;Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+    move-result-object v0
 
-    iget-object v0, p0, Liro;->b:Ljava/io/OutputStream;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Liro;->c:Ljdp;
+    iget-object v0, p0, Liro;->a:Lipn;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

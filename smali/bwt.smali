@@ -1,123 +1,59 @@
-.class public final enum Lbwt;
-.super Ljava/lang/Enum;
-.source "PG"
+.class final synthetic Lbwt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ligs;
 
 
-# static fields
-.field public static final enum a:Lbwt;
+# instance fields
+.field private final a:Lkeh;
 
-.field public static final enum b:Lbwt;
-
-.field public static final enum c:Lbwt;
-
-.field public static final enum d:Lbwt;
-
-.field public static final enum e:Lbwt;
-
-.field private static synthetic f:[Lbwt;
+.field private final b:Laue;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    const/4 v6, 0x4
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lbwt;
-
-    const-string v1, "ABSENT"
-
-    invoke-direct {v0, v1, v2}, Lbwt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbwt;->a:Lbwt;
-
-    new-instance v0, Lbwt;
-
-    const-string v1, "SHUTTER_BUTTON"
-
-    invoke-direct {v0, v1, v3}, Lbwt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbwt;->b:Lbwt;
-
-    new-instance v0, Lbwt;
-
-    const-string v1, "VOLUME_BUTTON"
-
-    invoke-direct {v0, v1, v4}, Lbwt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbwt;->c:Lbwt;
-
-    new-instance v0, Lbwt;
-
-    const-string v1, "A11Y_BUTTON"
-
-    invoke-direct {v0, v1, v5}, Lbwt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbwt;->d:Lbwt;
-
-    new-instance v0, Lbwt;
-
-    const-string v1, "FORCE_STOP"
-
-    invoke-direct {v0, v1, v6}, Lbwt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbwt;->e:Lbwt;
-
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Lbwt;
-
-    sget-object v1, Lbwt;->a:Lbwt;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lbwt;->b:Lbwt;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lbwt;->c:Lbwt;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lbwt;->d:Lbwt;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lbwt;->e:Lbwt;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lbwt;->f:[Lbwt;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>(Lkeh;Laue;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbwt;->a:Lkeh;
+
+    iput-object p2, p0, Lbwt;->b:Laue;
 
     return-void
 .end method
 
-.method public static values()[Lbwt;
-    .locals 1
 
-    sget-object v0, Lbwt;->f:[Lbwt;
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 3
 
-    invoke-virtual {v0}, [Lbwt;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lbwt;->a:Lkeh;
+
+    iget-object v1, p0, Lbwt;->b:Laue;
+
+    invoke-interface {v0}, Lkeh;->isDone()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lbwt;
+    check-cast v0, Ljava/lang/Boolean;
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    invoke-interface {v1}, Laue;->d()V
+
+    :cond_1
+    return-void
 .end method

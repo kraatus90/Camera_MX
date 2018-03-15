@@ -3,58 +3,214 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfsx;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lfuo;
+
+.field private final b:Lfsx;
+
+.field private final c:Lihn;
+
+.field private final d:Lick;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lfuo;Liho;Ldqn;Lcpm;)V
+    .locals 10
+
+    const/4 v9, 0x1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldqc;->a:Ljxn;
+    iput-object p1, p0, Ldqc;->a:Lfuo;
+
+    const-string v0, "GoudaCptrCmd"
+
+    invoke-interface {p2, v0}, Liho;->a(Ljava/lang/String;)Lihn;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldqc;->c:Lihn;
+
+    invoke-static {}, Lcpm;->a()I
+
+    invoke-virtual {p4}, Lcpm;->b()I
+
+    move-result v0
+
+    iget-object v1, p3, Ldqn;->c:Ldqg;
+
+    iget-object v2, p3, Ldqn;->d:Lfsx;
+
+    iget-object v3, p3, Ldqn;->f:Lfel;
+
+    invoke-virtual {v3, v0}, Lfel;->a(I)Lfek;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v0, v2, v3}, Ldqg;->a(ILfsx;Lfek;)Lfsx;
+
+    move-result-object v2
+
+    new-instance v7, Ldpv;
+
+    iget-object v8, p3, Ldqn;->a:Liho;
+
+    new-instance v0, Ldpp;
+
+    iget-object v1, p3, Ldqn;->b:Lick;
+
+    iget-object v3, p3, Ldqn;->e:Lfsx;
+
+    iget-object v5, p3, Ldqn;->e:Lfsx;
+
+    move-object v4, v2
+
+    move-object v6, v2
+
+    invoke-direct/range {v0 .. v6}, Ldpp;-><init>(Lick;Lfsx;Lfsx;Lfsx;Lfsx;Lfsx;)V
+
+    invoke-direct {v7, v8, v0}, Ldpv;-><init>(Liho;Lick;)V
+
+    iput-object v7, p0, Ldqc;->b:Lfsx;
+
+    invoke-interface {p1}, Lfuo;->c()Lick;
+
+    move-result-object v0
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Licl;->a(Lick;Ljava/lang/Comparable;)Lick;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Lick;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Ldqc;->b:Lfsx;
+
+    invoke-interface {v3}, Lfsx;->a()Lick;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    aput-object v0, v1, v9
+
+    invoke-static {v1}, Licl;->a([Lick;)Lick;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldqc;->d:Lick;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
+
+# virtual methods
+.method public final a()Lick;
     .locals 1
 
-    new-instance v0, Ldqc;
-
-    invoke-direct {v0, p0}, Ldqc;-><init>(Ljxn;)V
+    iget-object v0, p0, Ldqc;->d:Lick;
 
     return-object v0
 .end method
 
+.method public final a(Lfsy;Lfsm;)V
+    .locals 5
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    iget-object v0, p0, Ldqc;->a:Lfuo;
 
-    iget-object v0, p0, Ldqc;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lfuo;->d()Lful;
 
     move-result-object v0
 
-    check-cast v0, Ldsl;
+    iget-object v1, p0, Ldqc;->c:Lihn;
 
-    invoke-virtual {v0}, Ldsl;->a()Landroid/view/Surface;
+    iget-object v2, p0, Ldqc;->a:Lfuo;
+
+    invoke-interface {v2}, Lfuo;->c()Lick;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lick;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x13
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Remaining tickets: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2}, Lihn;->b(Ljava/lang/String;)V
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p2, Lfsm;->a:Lfaq;
+
+    iget-object v1, v1, Lfaq;->g:Liaw;
+
+    invoke-virtual {v1, v0}, Liaw;->a(Lihb;)Lihb;
+
+    iget-object v0, p0, Ldqc;->b:Lfsx;
+
+    invoke-interface {v0, p1, p2}, Lfsx;->a(Lfsy;Lfsm;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ldqc;->c:Lihn;
+
+    const-string v1, "Ticket not available"
+
+    invoke-interface {v0, v1}, Lihn;->f(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method public final b()Lick;
+    .locals 1
+
+    iget-object v0, p0, Ldqc;->b:Lfsx;
+
+    invoke-interface {v0}, Lfsx;->b()Lick;
 
     move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/Surface;
 
     return-object v0
 .end method

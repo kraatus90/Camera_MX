@@ -1,91 +1,66 @@
-.class final Lila;
+.class public final Lila;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
+.field private final a:Lkgv;
 
-.field private b:Lilv;
+.field private final b:Lkgv;
 
-.field private c:Likg;
-
-.field private d:Liml;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Likg;Lilv;Liml;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lila;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lila;->a:Lkgv;
 
-    iput-object p3, p0, Lila;->b:Lilv;
+    iput-object p2, p0, Lila;->b:Lkgv;
 
-    iput-object p2, p0, Lila;->c:Likg;
-
-    iput-object p4, p0, Lila;->d:Liml;
+    iput-object p3, p0, Lila;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lila;->a:Ljava/lang/Object;
+    new-instance v3, Likz;
 
-    iget-object v1, p0, Lila;->c:Likg;
+    iget-object v0, p0, Lila;->a:Lkgv;
 
-    iget-object v2, p0, Lila;->b:Lilv;
-
-    :try_start_0
-    invoke-interface {v1, v0}, Likg;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Lilv;->a(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Lilh; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+    check-cast v0, Landroid/hardware/camera2/CameraManager;
 
-    :goto_0
-    return-void
+    iget-object v1, p0, Lila;->b:Lkgv;
 
-    :catch_0
-    move-exception v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v2, v0}, Lilv;->a(Lilh;)Z
+    move-result-object v1
 
-    goto :goto_0
+    check-cast v1, Liks;
 
-    :catch_1
-    move-exception v0
+    iget-object v2, p0, Lila;->c:Lkgv;
 
-    invoke-static {v0}, Lilh;->a(Ljava/lang/Throwable;)Lilh;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Lilh;
+    check-cast v2, Lihn;
 
-    invoke-virtual {v2, v0}, Lilv;->a(Lilh;)Z
+    invoke-direct {v3, v0, v1, v2}, Likz;-><init>(Landroid/hardware/camera2/CameraManager;Liks;Lihn;)V
 
-    goto :goto_0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lila;->c:Likg;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v3
 .end method

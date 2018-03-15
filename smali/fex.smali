@@ -3,100 +3,62 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfex;->a:Ljxn;
-
-    iput-object p2, p0, Lfex;->b:Ljxn;
-
-    iput-object p3, p0, Lfex;->c:Ljxn;
-
-    iput-object p4, p0, Lfex;->d:Ljxn;
-
-    iput-object p5, p0, Lfex;->e:Ljxn;
+    iput-object p1, p0, Lfex;->a:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;)Lfex;
+    .locals 1
+
+    new-instance v0, Lfex;
+
+    invoke-direct {v0, p0}, Lfex;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+    .locals 2
 
-    iget-object v0, p0, Lfex;->a:Ljxn;
+    iget-object v0, p0, Lfex;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lfid;
-
-    iget-object v0, p0, Lfex;->b:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/WindowManager;
-
-    iget-object v0, p0, Lfex;->c:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v3, v0
+    check-cast v0, Lfax;
 
-    check-cast v3, Lbje;
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_EXPOSURE_COMPENSATION:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iget-object v0, p0, Lfex;->d:Ljxn;
+    iget-object v0, v0, Lfax;->b:Lick;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v1, v0}, Lffm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Lick;)Lick;
 
-    move-result-object v4
-
-    check-cast v4, Lidm;
-
-    iget-object v0, p0, Lfex;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    new-instance v0, Lfge;
-
-    iget-object v3, v3, Lbje;->b:Liau;
-
-    invoke-direct/range {v0 .. v5}, Lfge;-><init>(Lfid;Landroid/view/WindowManager;Liau;Lidm;Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    move-result-object v0
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfge;
+    check-cast v0, Lick;
 
     return-object v0
 .end method

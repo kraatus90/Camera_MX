@@ -1,76 +1,100 @@
-.class public final Ladn;
-.super Ljava/lang/Object;
+.class public final enum Ladn;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Cloneable;
 
+# static fields
+.field public static final enum a:Ladn;
 
-# instance fields
-.field public a:Lard;
+.field public static final enum b:Ladn;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public static final enum c:Ladn;
+
+.field public static final d:Ladn;
+
+.field private static final synthetic e:[Ladn;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 5
+
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Ladn;
+
+    const-string v1, "PREFER_ARGB_8888"
+
+    invoke-direct {v0, v1, v2}, Ladn;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ladn;->a:Ladn;
+
+    new-instance v0, Ladn;
+
+    const-string v1, "PREFER_ARGB_8888_DISALLOW_HARDWARE"
+
+    invoke-direct {v0, v1, v3}, Ladn;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ladn;->b:Ladn;
+
+    new-instance v0, Ladn;
+
+    const-string v1, "PREFER_RGB_565"
+
+    invoke-direct {v0, v1, v4}, Ladn;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ladn;->c:Ladn;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ladn;
+
+    sget-object v1, Ladn;->a:Ladn;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Ladn;->b:Ladn;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Ladn;->c:Ladn;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Ladn;->e:[Ladn;
+
+    sget-object v0, Ladn;->b:Ladn;
+
+    sput-object v0, Ladn;->d:Ladn;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Ladn;
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Ladn;->e:[Ladn;
 
-    sget-object v0, Laqz;->b:Lard;
-
-    iput-object v0, p0, Ladn;->a:Lard;
-
-    return-void
-.end method
-
-.method public constructor <init>(B)V
-    .locals 0
-
-    invoke-direct {p0}, Ladn;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(C)V
-    .locals 0
-
-    invoke-direct {p0}, Ladn;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a()Ladn;
-    .locals 2
-
-    :try_start_0
-    invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ladn;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ladn;
-    :try_end_0
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method protected final synthetic clone()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ladn;->a()Ladn;
-
-    move-result-object v0
+    check-cast v0, [Ladn;
 
     return-object v0
 .end method

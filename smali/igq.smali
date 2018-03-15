@@ -3,57 +3,127 @@
 .source "PG"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final a:Ligq;
 
-.field public final b:Lici;
+.field public static final b:Ligq;
+
+
+# instance fields
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>(ILici;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x4
 
-    iput p1, p0, Ligq;->a:I
+    const/4 v1, 0x3
 
-    iput-object p2, p0, Ligq;->b:Lici;
+    invoke-static {v0, v1}, Ligq;->a(II)Ligq;
+
+    move-result-object v0
+
+    sput-object v0, Ligq;->a:Ligq;
+
+    const/16 v0, 0x10
+
+    const/16 v1, 0x9
+
+    invoke-static {v0, v1}, Ligq;->a(II)Ligq;
+
+    move-result-object v0
+
+    sput-object v0, Ligq;->b:Ligq;
 
     return-void
 .end method
 
+.method private constructor <init>(II)V
+    .locals 0
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_0
+    iput p1, p0, Ligq;->c:I
 
-    instance-of v0, p1, Ligq;
+    iput p2, p0, Ligq;->d:I
 
-    if-eqz v0, :cond_0
+    return-void
+.end method
 
-    move-object v0, p1
+.method public static a(II)Ligq;
+    .locals 4
 
-    check-cast v0, Ligq;
+    int-to-long v0, p0
 
-    iget v0, v0, Ligq;->a:I
+    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
-    iget v1, p0, Ligq;->a:I
+    move-result-object v0
 
-    if-ne v0, v1, :cond_0
+    int-to-long v2, p1
 
-    check-cast p1, Ligq;
+    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
-    iget-object v0, p1, Ligq;->b:Lici;
+    move-result-object v1
 
-    iget-object v1, p0, Ligq;->b:Lici;
+    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->gcd(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    invoke-virtual {v0, v1}, Lici;->equals(Ljava/lang/Object;)Z
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/math/BigInteger;->intValue()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    div-int v1, p0, v0
+
+    div-int v0, p1, v0
+
+    new-instance v2, Ligq;
+
+    invoke-direct {v2, v1, v0}, Ligq;-><init>(II)V
+
+    return-object v2
+.end method
+
+.method public static a(Lihc;)Ligq;
+    .locals 2
+
+    iget v0, p0, Lihc;->a:I
+
+    iget v1, p0, Lihc;->b:I
+
+    invoke-static {v0, v1}, Ligq;->a(II)Ligq;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private final c()Ligq;
+    .locals 2
+
+    iget v0, p0, Ligq;->d:I
+
+    iget v1, p0, Ligq;->c:I
+
+    invoke-static {v0, v1}, Ligq;->a(II)Ligq;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private final d()Z
+    .locals 2
+
+    iget v0, p0, Ligq;->c:I
+
+    iget v1, p0, Ligq;->d:I
+
+    if-gt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
@@ -62,6 +132,296 @@
 
     :cond_0
     const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final a()F
+    .locals 2
+
+    iget v0, p0, Ligq;->c:I
+
+    int-to-float v0, v0
+
+    iget v1, p0, Ligq;->d:I
+
+    int-to-float v1, v1
+
+    div-float/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final a(Landroid/graphics/Rect;)Landroid/graphics/Rect;
+    .locals 5
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ligq;->a(II)Ligq;
+
+    move-result-object v0
+
+    iget v1, p0, Ligq;->c:I
+
+    iget v2, v0, Ligq;->d:I
+
+    mul-int/2addr v1, v2
+
+    iget v0, v0, Ligq;->c:I
+
+    iget v2, p0, Ligq;->d:I
+
+    mul-int/2addr v0, v2
+
+    if-le v1, v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v0
+
+    iget v1, p0, Ligq;->d:I
+
+    mul-int/2addr v0, v1
+
+    iget v1, p0, Ligq;->c:I
+
+    div-int/2addr v0, v1
+
+    iget v1, p1, Landroid/graphics/Rect;->top:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v2
+
+    sub-int/2addr v2, v0
+
+    div-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v1, v2
+
+    add-int v2, v1, v0
+
+    iget v3, p1, Landroid/graphics/Rect;->left:I
+
+    iget v0, p1, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v4
+
+    add-int/2addr v4, v0
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0, v3, v1, v4, v2}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v0
+
+    iget v1, p0, Ligq;->c:I
+
+    mul-int/2addr v0, v1
+
+    iget v1, p0, Ligq;->d:I
+
+    div-int/2addr v0, v1
+
+    iget v1, p1, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    sub-int/2addr v2, v0
+
+    div-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v1, v2
+
+    add-int v2, v1, v0
+
+    iget v3, p1, Landroid/graphics/Rect;->top:I
+
+    iget v0, p1, Landroid/graphics/Rect;->top:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v4
+
+    add-int/2addr v4, v0
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0, v1, v3, v2, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    goto :goto_0
+.end method
+
+.method public final a(Ligq;)Z
+    .locals 4
+
+    invoke-virtual {p0}, Ligq;->a()F
+
+    move-result v0
+
+    invoke-virtual {p1, p0}, Ligq;->b(Ligq;)Ligq;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ligq;->a()F
+
+    move-result v1
+
+    sub-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    float-to-double v0, v0
+
+    const-wide v2, 0x3f60624dd2f1a9fcL    # 0.002
+
+    cmpg-double v0, v0, v2
+
+    if-gez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final b(Lihc;)Landroid/graphics/Rect;
+    .locals 4
+
+    const/4 v3, 0x0
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    iget v1, p1, Lihc;->a:I
+
+    iget v2, p1, Lihc;->b:I
+
+    invoke-direct {v0, v3, v3, v1, v2}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    invoke-virtual {p0, v0}, Ligq;->a(Landroid/graphics/Rect;)Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()Ligq;
+    .locals 2
+
+    iget v0, p0, Ligq;->c:I
+
+    iget v1, p0, Ligq;->d:I
+
+    if-lt v0, v1, :cond_0
+
+    :goto_0
+    return-object p0
+
+    :cond_0
+    invoke-direct {p0}, Ligq;->c()Ligq;
+
+    move-result-object p0
+
+    goto :goto_0
+.end method
+
+.method public final b(Ligq;)Ligq;
+    .locals 1
+
+    invoke-direct {p1}, Ligq;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-direct {p0}, Ligq;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object p0
+
+    :cond_0
+    invoke-direct {p0}, Ligq;->c()Ligq;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Ligq;->b()Ligq;
+
+    move-result-object p0
+
+    goto :goto_0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-ne p0, p1, :cond_1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    instance-of v2, p1, Ligq;
+
+    if-nez v2, :cond_2
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    check-cast p1, Ligq;
+
+    iget v2, p0, Ligq;->d:I
+
+    iget v3, p1, Ligq;->d:I
+
+    if-ne v2, v3, :cond_3
+
+    iget v2, p0, Ligq;->c:I
+
+    iget v3, p1, Ligq;->c:I
+
+    if-eq v2, v3, :cond_0
+
+    :cond_3
+    move v0, v1
 
     goto :goto_0
 .end method
@@ -75,7 +435,7 @@
 
     const/4 v1, 0x0
 
-    iget v2, p0, Ligq;->a:I
+    iget v2, p0, Ligq;->c:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -85,7 +445,11 @@
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Ligq;->b:Lici;
+    iget v2, p0, Ligq;->d:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
 
     aput-object v2, v0, v1
 
@@ -97,35 +461,37 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 3
+    .locals 5
 
-    const-string v0, "ImageReaderFormat"
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Liui;->c(Ljava/lang/String;)Ljhq;
+    const-string v1, "AspectRatio[%d:%d]"
 
-    move-result-object v0
+    const/4 v2, 0x2
 
-    const-string v1, "ImageFormat"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    iget v2, p0, Ligq;->a:I
+    const/4 v3, 0x0
 
-    invoke-static {v2}, Licy;->a(I)Ljava/lang/String;
+    iget v4, p0, Ligq;->c:I
 
-    move-result-object v2
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
+    move-result-object v4
 
-    move-result-object v0
+    aput-object v4, v2, v3
 
-    const-string v1, "Size"
+    const/4 v3, 0x1
 
-    iget-object v2, p0, Ligq;->b:Lici;
+    iget v4, p0, Ligq;->d:I
 
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v4
 
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
+    aput-object v4, v2, v3
+
+    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

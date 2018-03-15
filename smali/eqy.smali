@@ -1,44 +1,35 @@
-.class final Leqy;
+.class final synthetic Leqy;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljrm;
+
+
+# instance fields
+.field private final a:J
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(J)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Leqy;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public final a()Ljava/lang/Object;
     .locals 2
 
-    check-cast p1, Leqz;
+    iget-wide v0, p0, Leqy;->a:J
 
-    check-cast p2, Leqz;
+    invoke-static {v0, v1}, Leqt;->b(J)Ljava/lang/String;
 
-    iget-object v0, p2, Leqz;->c:Ljava/lang/Integer;
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    iget-object v1, p1, Leqz;->c:Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

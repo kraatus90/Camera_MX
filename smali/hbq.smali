@@ -1,31 +1,37 @@
 .class public final Lhbq;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
+.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput-object p1, p0, Lhbq;->a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, Lhbq;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public final a()Lhbr;
     .locals 1
 
-    iget-object v0, p0, Lhbq;->a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
+    new-instance v0, Lhbr;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->finish()V
+    invoke-direct {v0, p0}, Lhbr;-><init>(Lhbq;)V
 
-    return-void
+    return-object v0
 .end method

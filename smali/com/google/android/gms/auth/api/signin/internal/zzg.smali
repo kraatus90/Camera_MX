@@ -9,7 +9,7 @@
 # instance fields
 .field public a:I
 
-.field private b:I
+.field private final b:I
 
 .field private c:Landroid/os/Bundle;
 
@@ -18,9 +18,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhiw;
+    new-instance v0, Lhka;
 
-    invoke-direct {v0}, Lhiw;-><init>()V
+    invoke-direct {v0}, Lhka;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/auth/api/signin/internal/zzg;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -48,7 +48,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -56,21 +56,21 @@
 
     iget v2, p0, Lcom/google/android/gms/auth/api/signin/internal/zzg;->b:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
     iget v2, p0, Lcom/google/android/gms/auth/api/signin/internal/zzg;->a:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/auth/api/signin/internal/zzg;->c:Landroid/os/Bundle;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

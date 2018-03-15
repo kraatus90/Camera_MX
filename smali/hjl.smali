@@ -1,79 +1,200 @@
 .class public final Lhjl;
-.super Lhlx;
+.super Ljava/lang/Thread;
+.source "PG"
+
+
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/refocus/image/RGBZ;
+
+.field private final synthetic b:Ljava/lang/Runnable;
+
+.field private final synthetic c:Lhjr;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lhls;Lhkn;Lhko;)V
-    .locals 7
+.method public constructor <init>(Lhjr;Lcom/google/android/apps/refocus/image/RGBZ;Ljava/lang/Runnable;)V
+    .locals 0
 
-    const/16 v3, 0x28
+    iput-object p1, p0, Lhjl;->c:Lhjr;
 
-    move-object v0, p0
+    iput-object p2, p0, Lhjl;->a:Lcom/google/android/apps/refocus/image/RGBZ;
 
-    move-object v1, p1
+    iput-object p3, p0, Lhjl;->b:Ljava/lang/Runnable;
 
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lhlx;-><init>(Landroid/content/Context;Landroid/os/Looper;ILhls;Lhkn;Lhko;)V
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a(Landroid/os/IBinder;)Landroid/os/IInterface;
-    .locals 2
+.method public final run()V
+    .locals 6
 
-    if-nez p1, :cond_0
+    iget-object v1, p0, Lhjl;->c:Lhjr;
 
-    const/4 v0, 0x0
+    iget-object v2, p0, Lhjl;->a:Lcom/google/android/apps/refocus/image/RGBZ;
 
-    :goto_0
-    return-object v0
+    new-instance v0, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    const/16 v3, 0x200
+
+    invoke-direct {v0, v2, v3}, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;-><init>(Lcom/google/android/apps/refocus/image/RGBZ;I)V
+
+    iput-object v0, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    iget-object v0, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    iget-object v0, v0, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;->rgbz:Lcom/google/android/apps/refocus/image/RGBZ;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    iget-object v0, v0, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;->rgbz:Lcom/google/android/apps/refocus/image/RGBZ;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/refocus/image/RGBZ;->hasDepthmap()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
 
     :cond_0
-    const-string v0, "com.google.android.gms.clearcut.internal.IClearcutLoggerService"
+    const/4 v0, 0x0
 
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    iput-object v0, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    iget-object v0, v1, Lhjr;->n:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lhjl;->b:Ljava/lang/Runnable;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lhjl;->b:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    :cond_2
+    return-void
+
+    :cond_3
+    iget-object v0, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    iget-object v0, v0, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;->rgbz:Lcom/google/android/apps/refocus/image/RGBZ;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/refocus/image/RGBZ;->getWidth()I
+
+    move-result v0
+
+    iget-object v3, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    iget-object v3, v3, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;->rgbz:Lcom/google/android/apps/refocus/image/RGBZ;
+
+    invoke-virtual {v3}, Lcom/google/android/apps/refocus/image/RGBZ;->getHeight()I
+
+    move-result v3
+
+    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v0, v3, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    iput-object v0, v1, Lhjr;->g:Landroid/graphics/Bitmap;
 
-    instance-of v1, v0, Lhjo;
+    new-instance v0, Lhjf;
 
-    if-eqz v1, :cond_1
+    iget-object v3, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
 
-    check-cast v0, Lhjo;
+    iget-object v3, v3, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;->rgbz:Lcom/google/android/apps/refocus/image/RGBZ;
+
+    invoke-direct {v0, v3}, Lhjf;-><init>(Lcom/google/android/apps/refocus/image/RGBZ;)V
+
+    iput-object v0, v1, Lhjr;->i:Lhjf;
+
+    invoke-virtual {v2}, Lcom/google/android/apps/refocus/image/RGBZ;->hasFocusSettings()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    new-instance v0, Lcom/google/android/apps/refocus/processing/FaceDetector;
+
+    iget-object v3, v1, Lhjr;->a:Landroid/content/Context;
+
+    iget-object v4, v1, Lhjr;->c:Lbjy;
+
+    invoke-direct {v0, v3, v4}, Lcom/google/android/apps/refocus/processing/FaceDetector;-><init>(Landroid/content/Context;Lbjy;)V
+
+    iget-object v3, v1, Lhjr;->f:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+
+    iget-object v3, v3, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;->rgbz:Lcom/google/android/apps/refocus/image/RGBZ;
+
+    iget-object v4, v1, Lhjr;->i:Lhjf;
+
+    invoke-static {v0, v3, v4}, Lcom/google/android/apps/refocus/processing/FocusSettings;->createDefault(Lcom/google/android/apps/refocus/processing/FaceDetector;Lcom/google/android/apps/refocus/image/RGBZ;Lhjf;)Lcom/google/android/apps/refocus/processing/FocusSettings;
+
+    move-result-object v0
+
+    iput-object v0, v1, Lhjr;->k:Lcom/google/android/apps/refocus/processing/FocusSettings;
+
+    :goto_1
+    iget-object v3, v1, Lhjr;->i:Lhjf;
+
+    iget-object v0, v1, Lhjr;->k:Lcom/google/android/apps/refocus/processing/FocusSettings;
+
+    iget v4, v0, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalDistance:F
+
+    iget-object v0, v1, Lhjr;->k:Lcom/google/android/apps/refocus/processing/FocusSettings;
+
+    iget v5, v0, Lcom/google/android/apps/refocus/processing/FocusSettings;->depthOfField:F
+
+    iget-object v0, v1, Lhjr;->k:Lcom/google/android/apps/refocus/processing/FocusSettings;
+
+    iget v0, v0, Lcom/google/android/apps/refocus/processing/FocusSettings;->blurAtInfinity:F
+
+    invoke-virtual {v3, v4, v5}, Lhjf;->a(FF)F
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    cmpl-float v4, v3, v4
+
+    if-nez v4, :cond_5
+
+    :goto_2
+    iput v0, v1, Lhjr;->j:F
+
+    iget-object v0, v1, Lhjr;->n:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    invoke-virtual {v2}, Lcom/google/android/apps/refocus/image/RGBZ;->hasFocusSettings()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {v1}, Lhjr;->d()V
 
     goto :goto_0
 
-    :cond_1
-    new-instance v0, Lhjo;
+    :cond_4
+    invoke-virtual {v2}, Lcom/google/android/apps/refocus/image/RGBZ;->getFocusSettings()Lcom/google/android/apps/refocus/processing/FocusSettings;
 
-    invoke-direct {v0, p1}, Lhjo;-><init>(Landroid/os/IBinder;)V
+    move-result-object v0
 
-    goto :goto_0
-.end method
+    iput-object v0, v1, Lhjr;->k:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
-.method protected final a()Ljava/lang/String;
-    .locals 1
+    goto :goto_1
 
-    const-string v0, "com.google.android.gms.clearcut.service.START"
+    :cond_5
+    mul-float/2addr v0, v3
 
-    return-object v0
-.end method
-
-.method protected final b()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.clearcut.internal.IClearcutLoggerService"
-
-    return-object v0
+    goto :goto_2
 .end method

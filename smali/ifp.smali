@@ -1,171 +1,526 @@
 .class public final Lifp;
-.super Ljava/lang/Object;
+.super Ljava/lang/Thread;
 .source "PG"
-
-# interfaces
-.implements Liif;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
-
-.field private b:Landroid/hardware/camera2/params/OutputConfiguration;
-
-.field private c:Z
+.field private final synthetic a:Lifb;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
-    .locals 1
+.method public constructor <init>(Lifb;Ljava/lang/String;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lifp;->a:Lifb;
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lifp;->c:Z
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lifp;->a:Ljava/lang/Object;
-
-    iput-object p1, p0, Lifp;->b:Landroid/hardware/camera2/params/OutputConfiguration;
+    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/view/Surface;
-    .locals 2
+.method public final run()V
+    .locals 12
 
-    iget-object v1, p0, Lifp;->a:Ljava/lang/Object;
+    const/4 v3, 0x1
 
-    monitor-enter v1
+    const/4 v2, 0x0
 
-    :try_start_0
-    iget-object v0, p0, Lifp;->b:Landroid/hardware/camera2/params/OutputConfiguration;
+    const-string v0, "AudioEncoder"
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/params/OutputConfiguration;->getSurface()Landroid/view/Surface;
+    const-string v1, "starting"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-object v4, p0, Lifp;->a:Lifb;
+
+    new-instance v5, Landroid/media/MediaCodec$BufferInfo;
+
+    invoke-direct {v5}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
+
+    iget-object v0, v4, Lifb;->d:Landroid/media/MediaCodec;
+
+    const-wide/16 v6, 0x2710
+
+    invoke-virtual {v0, v5, v6, v7}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
+
+    move-result v6
+
+    const/4 v0, -0x1
+
+    if-eq v6, v0, :cond_f
+
+    const/4 v0, -0x2
+
+    if-ne v6, v0, :cond_4
+
+    iget-object v0, v4, Lifb;->e:Lifi;
+
+    invoke-virtual {v0}, Lifi;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "format changed twice"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iget-object v0, v4, Lifb;->d:Landroid/media/MediaCodec;
+
+    invoke-virtual {v0}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
 
     move-result-object v0
 
-    monitor-exit v1
+    const-string v1, "AudioEncoder"
 
-    return-object v0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :catchall_0
-    move-exception v0
+    move-result-object v5
 
-    monitor-exit v1
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/lit8 v6, v6, 0x25
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "Audio encoder output format changed: "
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v1, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, v4, Lifb;->e:Lifi;
+
+    iget-object v5, v1, Lifi;->c:Ljava/lang/Object;
+
+    monitor-enter v5
+
+    :try_start_0
+    iget-object v6, v1, Lifi;->e:Lifz;
+
+    sget-object v7, Lifz;->a:Lifz;
+
+    if-eq v6, v7, :cond_2
+
+    const-string v0, "MediaMuxerMul"
+
+    const-string v1, "already started, cannot add audio track."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v0
-.end method
+    :goto_0
+    iget-object v0, v4, Lifb;->e:Lifi;
 
-.method public final a(Landroid/view/Surface;)V
-    .locals 2
+    invoke-virtual {v0}, Lifi;->a()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    move v0, v2
 
-    iget-object v1, p0, Lifp;->a:Ljava/lang/Object;
+    :goto_1
+    if-eqz v0, :cond_0
 
-    monitor-enter v1
+    const-string v0, "AudioEncoder"
 
-    :try_start_0
-    iget-boolean v0, p0, Lifp;->c:Z
+    const-string v1, "stopping"
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lifp;->c:Z
-
-    iget-object v0, p0, Lifp;->b:Landroid/hardware/camera2/params/OutputConfiguration;
-
-    invoke-static {v0, p1}, Lhir;->a(Landroid/hardware/camera2/params/OutputConfiguration;Landroid/view/Surface;)V
-
-    :cond_0
-    monitor-exit v1
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_2
+    :try_start_1
+    iget-object v6, v1, Lifi;->f:Lifk;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-boolean v6, v6, Lifk;->a:Z
 
-    throw v0
-.end method
+    if-nez v6, :cond_3
 
-.method public final b()Lifo;
-    .locals 3
+    const-string v0, "MediaMuxerMul"
 
-    iget-object v1, p0, Lifp;->a:Ljava/lang/Object;
+    const-string v1, "Audio track is not supported"
 
-    monitor-enter v1
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    :try_start_0
-    new-instance v0, Lifo;
+    monitor-exit v5
 
-    iget-object v2, p0, Lifp;->b:Landroid/hardware/camera2/params/OutputConfiguration;
-
-    invoke-direct {v0, v2}, Lifo;-><init>(Ljava/lang/Object;)V
-
-    monitor-exit v1
-
-    return-object v0
+    goto :goto_0
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    monitor-exit v5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
-.end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    :cond_3
+    :try_start_2
+    iget-object v6, v1, Lifi;->f:Lifk;
 
-    iget-object v1, p0, Lifp;->a:Ljava/lang/Object;
+    iget-object v7, v1, Lifi;->a:Landroid/media/MediaMuxer;
 
-    monitor-enter v1
+    invoke-virtual {v7, v0}, Landroid/media/MediaMuxer;->addTrack(Landroid/media/MediaFormat;)I
 
-    :try_start_0
-    const-string v0, "AndroidOutputConfiguration"
+    move-result v7
 
-    invoke-static {v0}, Liui;->c(Ljava/lang/String;)Ljhq;
+    invoke-virtual {v6, v7}, Lifk;->a(I)V
+
+    iget-object v6, v1, Lifi;->f:Lifk;
+
+    iput-object v0, v6, Lifk;->d:Landroid/media/MediaFormat;
+
+    const-string v0, "MediaMuxerMul"
+
+    iget-object v1, v1, Lifi;->f:Lifk;
+
+    invoke-virtual {v1}, Lifk;->a()I
+
+    move-result v1
+
+    const/16 v6, 0x23
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "Audio track getIndex(): "
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v5
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v0, -0x3
+
+    if-eq v6, v0, :cond_f
+
+    iget v0, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+
+    and-int/lit8 v0, v0, 0x2
+
+    if-eqz v0, :cond_5
+
+    iput v2, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    :cond_5
+    iget v0, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    if-eqz v0, :cond_7
+
+    iget-object v7, v4, Lifb;->g:Ljava/util/Deque;
+
+    iget-wide v8, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    :goto_2
+    invoke-interface {v7}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
+    invoke-interface {v7}, Ljava/util/Queue;->peek()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v2, "outputConfiguration"
+    check-cast v0, Ljvs;
 
-    iget-object v3, p0, Lifp;->b:Landroid/hardware/camera2/params/OutputConfiguration;
-
-    invoke-virtual {v0, v2, v3}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
+    check-cast v0, Ljvs;
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljvs;->b(Ljava/lang/Comparable;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    move v0, v3
+
+    :goto_3
+    if-nez v0, :cond_7
+
+    iget-object v0, v4, Lifb;->e:Lifi;
+
+    invoke-virtual {v0}, Lifi;->c()Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    iget-object v0, v4, Lifb;->e:Lifi;
+
+    const-wide/16 v8, 0x7d0
+
+    invoke-virtual {v0, v8, v9}, Lifi;->a(J)V
+
+    :cond_6
+    iget-object v0, v4, Lifb;->d:Landroid/media/MediaCodec;
+
+    invoke-virtual {v0, v6}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    monitor-exit v1
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    return-object v0
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    :catchall_0
-    move-exception v0
+    iget v1, v5, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget v7, v5, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    throw v0
+    add-int/2addr v1, v7
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+
+    iget-object v1, v4, Lifb;->e:Lifi;
+
+    iget-wide v8, v4, Lifb;->h:J
+
+    iget-wide v10, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    sub-long/2addr v8, v10
+
+    const-wide/16 v10, 0x0
+
+    cmp-long v7, v8, v10
+
+    if-gez v7, :cond_d
+
+    const-string v1, "MediaMuxerMul"
+
+    const-string v7, "The duration of record cannot be shorter than existing one."
+
+    invoke-static {v1, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_4
+    iget-wide v8, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    iget-wide v10, v4, Lifb;->j:J
+
+    sub-long/2addr v8, v10
+
+    iput-wide v8, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    iget-wide v8, v4, Lifb;->k:J
+
+    iget-wide v10, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    cmp-long v1, v8, v10
+
+    if-gez v1, :cond_e
+
+    iget-wide v8, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    iput-wide v8, v4, Lifb;->k:J
+
+    iget-object v1, v4, Lifb;->e:Lifi;
+
+    invoke-virtual {v1, v0, v5}, Lifi;->b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+
+    :cond_7
+    :goto_5
+    iget-object v0, v4, Lifb;->d:Landroid/media/MediaCodec;
+
+    invoke-virtual {v0, v6, v2}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
+
+    iget-wide v0, v5, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    iget-wide v6, v4, Lifb;->i:J
+
+    cmp-long v0, v0, v6
+
+    if-gez v0, :cond_8
+
+    iget v0, v5, Landroid/media/MediaCodec$BufferInfo;->flags:I
+
+    and-int/lit8 v0, v0, 0x4
+
+    if-eqz v0, :cond_f
+
+    :cond_8
+    move v0, v3
+
+    goto/16 :goto_1
+
+    :cond_9
+    iget-object v1, v0, Ljvs;->a:Ljth;
+
+    sget-object v10, Ljtk;->b:Ljtk;
+
+    if-eq v1, v10, :cond_b
+
+    move v1, v3
+
+    :goto_6
+    if-eqz v1, :cond_a
+
+    iget-object v1, v0, Ljvs;->a:Ljth;
+
+    invoke-virtual {v1}, Ljth;->a()Ljava/lang/Comparable;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v10
+
+    cmp-long v1, v10, v8
+
+    if-gtz v1, :cond_c
+
+    :cond_a
+    const-string v1, "AudioEncoder"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/String;->length()I
+
+    move-result v10
+
+    add-int/lit8 v10, v10, 0x14
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11, v10}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v10, "remove a time range "
+
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-interface {v7}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    goto/16 :goto_2
+
+    :cond_b
+    move v1, v2
+
+    goto :goto_6
+
+    :cond_c
+    move v0, v2
+
+    goto/16 :goto_3
+
+    :cond_d
+    iget-object v1, v1, Lifi;->i:Liff;
+
+    iget-wide v10, v1, Liff;->d:J
+
+    add-long/2addr v8, v10
+
+    iput-wide v8, v1, Liff;->d:J
+
+    goto :goto_4
+
+    :cond_e
+    const-string v0, "AudioEncoder"
+
+    iget-wide v8, v4, Lifb;->k:J
+
+    const/16 v1, 0x31
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Ignore frame at "
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v7, " after resume"
+
+    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_5
+
+    :cond_f
+    move v0, v2
+
+    goto/16 :goto_1
 .end method

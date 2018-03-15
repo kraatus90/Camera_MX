@@ -1,196 +1,75 @@
-.class public final Lfao;
-.super Lezd;
+.class public final enum Lfao;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Lgvk;
 
+# static fields
+.field public static final enum a:Lfao;
 
-# instance fields
-.field public i:Lgvj;
+.field public static final enum b:Lfao;
 
-.field public j:Lgvl;
-
-.field public k:Lgvl;
+.field private static final synthetic c:[Lfao;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 4
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    invoke-direct {p0}, Lezd;-><init>()V
+    const/4 v2, 0x0
 
-    new-instance v0, Lfap;
+    new-instance v0, Lfao;
 
-    invoke-direct {v0, p0}, Lfap;-><init>(Lfao;)V
+    const-string v1, "IDLE"
 
-    new-instance v1, Lgvl;
+    invoke-direct {v0, v1, v2}, Lfao;-><init>(Ljava/lang/String;I)V
 
-    new-array v2, v3, [Lgvg;
+    sput-object v0, Lfao;->a:Lfao;
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    new-instance v0, Lfao;
 
-    iput-object v1, p0, Lfao;->j:Lgvl;
+    const-string v1, "RUNNING"
 
-    new-instance v0, Lfaq;
+    invoke-direct {v0, v1, v3}, Lfao;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, p0}, Lfaq;-><init>(Lfao;)V
+    sput-object v0, Lfao;->b:Lfao;
 
-    new-instance v1, Lgvl;
+    const/4 v0, 0x2
 
-    new-array v2, v3, [Lgvg;
+    new-array v0, v0, [Lfao;
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    sget-object v1, Lfao;->a:Lfao;
 
-    iput-object v1, p0, Lfao;->k:Lgvl;
+    aput-object v1, v0, v2
 
-    new-instance v0, Lgvj;
+    sget-object v1, Lfao;->b:Lfao;
 
-    iget-object v1, p0, Lfao;->k:Lgvl;
+    aput-object v1, v0, v3
 
-    invoke-direct {v0, v1, v3}, Lgvj;-><init>(Lgvl;Z)V
-
-    iput-object v0, p0, Lfao;->i:Lgvj;
+    sput-object v0, Lfao;->c:[Lfao;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()V
-    .locals 1
-
-    invoke-super {p0}, Lezd;->a()V
-
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->c()V
-
-    return-void
-.end method
-
-.method public final a(Liau;Lbjf;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Levh;Lfge;Ljht;)V
-    .locals 2
-
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-super/range {p0 .. p7}, Lezd;->a(Liau;Lbjf;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Levh;Lfge;Ljht;)V
-
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    sget v1, Leh;->bo:I
-
-    iput v1, v0, Lgvj;->a:I
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 1
-
-    invoke-super {p0}, Lezd;->b()V
-
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->d()V
-
-    return-void
-.end method
-
-.method public final i()V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-interface {p0}, Lgvk;->j()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public final j()V
+.method public static values()[Lfao;
     .locals 1
 
-    iget-object v0, p0, Lfao;->i:Lgvj;
+    sget-object v0, Lfao;->c:[Lfao;
 
-    invoke-virtual {v0}, Lgvj;->e()V
-
-    iget-object v0, p0, Lfao;->j:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    iget-object v0, p0, Lfao;->k:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    return-void
-.end method
-
-.method public final v()V
-    .locals 1
-
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    invoke-virtual {v0}, [Lfao;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, [Lfao;
 
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->v()V
-
-    goto :goto_0
-.end method
-
-.method public final w()V
-    .locals 1
-
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfao;->i:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->w()V
-
-    goto :goto_0
+    return-object v0
 .end method

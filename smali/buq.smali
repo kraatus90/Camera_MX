@@ -1,125 +1,46 @@
-.class final Lbuq;
+.class public final Lbuq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:I
-
-.field private synthetic b:Ljava/util/concurrent/atomic/AtomicReference;
-
-.field private synthetic c:Lbua;
+.field private final a:Lbvr;
 
 
 # direct methods
-.method constructor <init>(Lbua;ILjava/util/concurrent/atomic/AtomicReference;)V
+.method public constructor <init>(Lbvr;)V
     .locals 0
 
-    iput-object p1, p0, Lbuq;->c:Lbua;
-
-    iput p2, p0, Lbuq;->a:I
-
-    iput-object p3, p0, Lbuq;->b:Ljava/util/concurrent/atomic/AtomicReference;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbuq;->a:Lbvr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 8
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lbuq;->a:Lbvr;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v0, v0, Lbvr;->a:Landroid/app/Activity;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lbuq;->c:Lbua;
-
-    iget-object v0, v0, Lbua;->h:Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->modeSwitch()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
+    invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->getCurrentSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lesd;
+    check-cast v0, Landroid/content/res/Resources;
 
-    invoke-virtual {v0}, Lesd;->b()V
-
-    iget-object v0, p0, Lbuq;->c:Lbua;
-
-    invoke-static {v0}, Lbua;->a(Lbua;)Lidm;
-
-    move-result-object v1
-
-    iget v2, p0, Lbuq;->a:I
-
-    const/4 v3, 0x0
-
-    iget-object v0, p0, Lbuq;->c:Lbua;
-
-    iget-object v0, v0, Lbua;->h:Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->modeSwitch()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->getCurrentSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
-
-    move-result-object v0
-
-    check-cast v0, Lesd;
-
-    iget-wide v4, v0, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;->k:J
-
-    iget-object v0, p0, Lbuq;->c:Lbua;
-
-    iget-object v0, v0, Lbua;->h:Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->modeSwitch()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->getCurrentSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
-
-    move-result-object v0
-
-    check-cast v0, Lesd;
-
-    iget-wide v6, v0, Lesd;->a:J
-
-    invoke-interface/range {v1 .. v7}, Lidm;->a(IIJJ)V
-
-    iget-object v0, p0, Lbuq;->b:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lbuq;->b:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lich;
-
-    invoke-interface {v0}, Lich;->close()V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

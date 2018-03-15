@@ -1,93 +1,66 @@
-.class final Lfxm;
+.class public final Lfxm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liol;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Liol;
+.field private final a:Lkgv;
 
-.field private b:Ljvi;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Liol;Ljvi;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfxm;->a:Liol;
+    iput-object p1, p0, Lfxm;->a:Lkgv;
 
-    iput-object p2, p0, Lfxm;->b:Ljvi;
+    iput-object p2, p0, Lfxm;->b:Lkgv;
+
+    iput-object p3, p0, Lfxm;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 4
 
-    :try_start_0
-    iget-object v0, p0, Lfxm;->a:Liol;
+    new-instance v3, Lfxi;
 
-    invoke-interface {v0, p1, p2}, Liol;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    iget-object v0, p0, Lfxm;->a:Lkgv;
 
-    iget v0, p2, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    and-int/lit8 v0, v0, 0x1
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, Liay;
 
-    iget-object v0, p0, Lfxm;->b:Ljvi;
+    iget-object v1, p0, Lfxm;->b:Lkgv;
 
-    iget-wide v2, p2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    check-cast v1, Landroid/content/Context;
 
-    :cond_0
-    return-void
+    iget-object v2, p0, Lfxm;->c:Lkgv;
 
-    :catch_0
-    move-exception v0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, p0, Lfxm;->b:Ljvi;
+    move-result-object v2
 
-    const/4 v2, 0x0
+    check-cast v2, Liho;
 
-    invoke-virtual {v1, v2}, Ljsw;->cancel(Z)Z
+    invoke-direct {v3, v0, v1, v2}, Lfxi;-><init>(Liay;Landroid/content/Context;Liho;)V
 
-    throw v0
-.end method
-
-.method public final close()V
-    .locals 3
-
-    :try_start_0
-    iget-object v0, p0, Lfxm;->a:Liol;
-
-    invoke-interface {v0}, Liol;->close()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    iget-object v1, p0, Lfxm;->b:Ljvi;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Ljsw;->cancel(Z)Z
-
-    throw v0
+    return-object v3
 .end method

@@ -3,84 +3,177 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lexn;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x10
+.end annotation
 
 
 # instance fields
-.field private a:Ljxn;
+.field public a:Ljava/lang/String;
 
-.field private b:Ljxn;
+.field private final b:Leok;
 
-.field private c:Ljxn;
+.field private c:J
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Leok;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lexh;->a:Ljxn;
+    const-wide/16 v0, -0x1
 
-    iput-object p2, p0, Lexh;->b:Ljxn;
+    iput-wide v0, p0, Lexh;->c:J
 
-    iput-object p3, p0, Lexh;->c:Ljxn;
+    iput-object p1, p0, Lexh;->b:Leok;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+.method public final a()J
+    .locals 2
 
-    iget-object v0, p0, Lexh;->a:Ljxn;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lexp;->a()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final a(J)Lexh;
+    .locals 3
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p1, v0
+
+    if-gtz v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const/16 v1, 0x2d
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "invalid image taken time "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    check-cast v1, Ljuw;
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lexh;->b:Ljxn;
+    move-result-object v1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iput-wide p1, p0, Lexh;->c:J
+
+    return-object p0
+.end method
+
+.method public final a(Lexo;)V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    new-instance v1, Lexi;
+
+    invoke-direct {v1, p0, p1}, Lexi;-><init>(Lexh;Lexo;)V
+
+    invoke-virtual {v0, v1}, Lexp;->a(Lexo;)V
+
+    return-void
+.end method
+
+.method public final b()Leoj;
+    .locals 6
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Lexh;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-wide v2, p0, Lexh;->c:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v0, v2, v4
+
+    if-ltz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->b(Z)V
+
+    iget-object v0, p0, Lexh;->b:Leok;
+
+    invoke-interface {v0}, Leok;->b()Leoj;
+
+    move-result-object v0
+
+    const-string v2, "_data"
+
+    iget-object v3, p0, Lexh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v2, v3}, Leoj;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v2, "mime_type"
+
+    iget-object v3, v0, Leoj;->a:Landroid/content/ContentValues;
+
+    invoke-virtual {v3, v2}, Landroid/content/ContentValues;->putNull(Ljava/lang/String;)V
+
+    const-string v2, "media_type"
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    check-cast v3, Ljava/util/concurrent/Executor;
+    invoke-virtual {v0, v2, v3}, Leoj;->a(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    iget-object v0, p0, Lexh;->c:Ljxn;
+    const-string v2, "date_modified"
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    move-object v6, v0
+    invoke-virtual {v0, v2, v1}, Leoj;->a(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    check-cast v6, Licv;
+    const-string v1, "datetaken"
 
-    new-instance v0, Leth;
+    iget-wide v2, p0, Lexh;->c:J
 
-    const-string v2, "indicatorThumbnail"
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    new-instance v4, Letf;
+    move-result-object v2
 
-    invoke-direct {v4}, Letf;-><init>()V
-
-    new-instance v5, Ldym;
-
-    invoke-direct {v5, v6}, Ldym;-><init>(Licv;)V
-
-    invoke-direct/range {v0 .. v5}, Leth;-><init>(Ljuw;Ljava/lang/String;Ljava/util/concurrent/Executor;Letf;Ldym;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Leth;
+    invoke-virtual {v0, v1, v2}, Leoj;->a(Ljava/lang/String;Ljava/lang/Long;)V
 
     return-object v0
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
 .end method

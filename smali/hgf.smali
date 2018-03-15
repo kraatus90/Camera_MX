@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/text/TextWatcher;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lhfp;
+.field private final synthetic a:Lhbn;
 
 
 # direct methods
-.method constructor <init>(Lhfp;)V
+.method constructor <init>(Lhbn;)V
     .locals 0
 
-    iput-object p1, p0, Lhgf;->a:Lhfp;
+    iput-object p1, p0, Lhgf;->a:Lhbn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,33 +23,12 @@
 
 
 # virtual methods
-.method public final afterTextChanged(Landroid/text/Editable;)V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lhgf;->a:Lhfp;
+    iget-object v0, p0, Lhgf;->a:Lhbn;
 
-    iget-object v0, v0, Lhfp;->o:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lhgf;->a:Lhfp;
-
-    iget-object v0, v0, Lhfp;->o:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->announceForAccessibility(Ljava/lang/CharSequence;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
+    invoke-virtual {v0}, Lhbn;->a()V
 
     return-void
 .end method

@@ -354,6 +354,36 @@
     return v0
 .end method
 
+.method public getFinal_crop()Lcom/google/googlex/gcam/NormalizedRect;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_final_crop_get(JLcom/google/googlex/gcam/ExifMetadata;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/NormalizedRect;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/NormalizedRect;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
 .method public getFlash_mode()I
     .locals 2
 
@@ -540,6 +570,30 @@
     return v0
 .end method
 
+.method public getXmp_metadata_extended()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_xmp_metadata_extended_get(JLcom/google/googlex/gcam/ExifMetadata;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getXmp_metadata_main()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_xmp_metadata_main_get(JLcom/google/googlex/gcam/ExifMetadata;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public setClient_exif(Lcom/google/googlex/gcam/ClientExifMetadata;)V
     .locals 6
 
@@ -582,6 +636,24 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_exposure_compensation_set(JLcom/google/googlex/gcam/ExifMetadata;F)V
+
+    return-void
+.end method
+
+.method public setFinal_crop(Lcom/google/googlex/gcam/NormalizedRect;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/NormalizedRect;->getCPtr(Lcom/google/googlex/gcam/NormalizedRect;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_final_crop_set(JLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/NormalizedRect;)V
 
     return-void
 .end method
@@ -712,6 +784,26 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_wb_mode_set(JLcom/google/googlex/gcam/ExifMetadata;I)V
+
+    return-void
+.end method
+
+.method public setXmp_metadata_extended(Ljava/lang/String;)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_xmp_metadata_extended_set(JLcom/google/googlex/gcam/ExifMetadata;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public setXmp_metadata_main(Ljava/lang/String;)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ExifMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ExifMetadata_xmp_metadata_main_set(JLcom/google/googlex/gcam/ExifMetadata;Ljava/lang/String;)V
 
     return-void
 .end method

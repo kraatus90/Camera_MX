@@ -1,82 +1,74 @@
-.class final Ldgd;
+.class public final Ldgd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldga;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldga;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldgd;->a:Ldga;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldgd;->a:Lkgv;
+
+    iput-object p2, p0, Ldgd;->b:Lkgv;
+
+    iput-object p3, p0, Ldgd;->c:Lkgv;
+
+    iput-object p4, p0, Ldgd;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v1, p0, Ldgd;->a:Ldga;
+    new-instance v3, Ldgb;
 
-    new-instance v2, Landroid/os/Handler;
+    iget-object v0, p0, Ldgd;->a:Lkgv;
 
-    invoke-virtual {v1}, Lcng;->d()Lich;
-
-    move-result-object v0
-
-    check-cast v0, Ldhc;
-
-    iget-object v0, v0, Ldhc;->d:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    check-cast v0, Landroid/media/AudioManager;
 
-    new-instance v0, Ldgb;
+    iget-object v1, p0, Ldgd;->b:Lkgv;
 
-    invoke-direct {v0, v1}, Ldgb;-><init>(Ldga;)V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    move-result-object v1
 
-    iget-object v0, v1, Ldga;->c:Lbav;
+    check-cast v1, Lgkf;
 
-    invoke-interface {v0}, Lbav;->b()Ljuw;
+    iget-object v2, p0, Ldgd;->c:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v3, Ldgk;
+    move-result-object v2
 
-    invoke-direct {v3, v1, v2}, Ldgk;-><init>(Ldga;Landroid/os/Handler;)V
+    check-cast v2, Landroid/app/NotificationManager;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    iget-object v4, p0, Ldgd;->d:Lkgv;
 
-    invoke-static {v0, v3, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v1, Ldga;->g:Ldcz;
+    invoke-direct {v3, v0, v1, v2}, Ldgb;-><init>(Landroid/media/AudioManager;Lgkf;Landroid/app/NotificationManager;)V
 
-    invoke-virtual {v0}, Ldcz;->b()V
-
-    iget-object v0, v1, Ldga;->d:Lddd;
-
-    invoke-interface {v0}, Lddd;->b()V
-
-    iget-object v0, v1, Ldga;->d:Lddd;
-
-    invoke-interface {v0}, Lddd;->d()V
-
-    const/4 v0, 0x0
-
-    return-object v0
+    return-object v3
 .end method

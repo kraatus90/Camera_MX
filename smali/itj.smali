@@ -1,116 +1,41 @@
-.class public final enum Litj;
-.super Ljava/lang/Enum;
+.class public final Litj;
+.super Litk;
 .source "PG"
 
 
-# static fields
-.field public static final enum a:Litj;
-
-.field public static final enum b:Litj;
-
-.field public static final enum c:Litj;
-
-.field private static synthetic d:[Litj;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Litj;
-
-    const-string v1, "FIXED_FPS"
-
-    invoke-direct {v0, v1, v2}, Litj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Litj;->a:Litj;
-
-    new-instance v0, Litj;
-
-    const-string v1, "SMART_BURST"
-
-    invoke-direct {v0, v1, v3}, Litj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Litj;->b:Litj;
-
-    new-instance v0, Litj;
-
-    const-string v1, "HYBRID_BURST"
-
-    invoke-direct {v0, v1, v4}, Litj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Litj;->c:Litj;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Litj;
-
-    sget-object v1, Litj;->a:Litj;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Litj;->b:Litj;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Litj;->c:Litj;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Litj;->d:[Litj;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Litk;-><init>()V
 
     return-void
-.end method
-
-.method public static values()[Litj;
-    .locals 1
-
-    sget-object v0, Litj;->d:[Litj;
-
-    invoke-virtual {v0}, [Litj;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Litj;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method public final a()Ljava/lang/String;
     .locals 1
 
-    sget-object v0, Litj;->b:Litj;
+    const-string v0, "UInt8"
 
-    if-eq p0, v0, :cond_0
+    return-object v0
+.end method
 
-    sget-object v0, Litj;->c:Litj;
+.method public final c()I
+    .locals 1
 
-    if-ne p0, v0, :cond_1
+    const/16 v0, 0x8
 
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
+.end method
 
-    :cond_1
-    const/4 v0, 0x0
+.method public final bridge synthetic d()Z
+    .locals 1
 
-    goto :goto_0
+    invoke-super {p0}, Litk;->d()Z
+
+    move-result v0
+
+    return v0
 .end method

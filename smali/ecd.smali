@@ -1,55 +1,45 @@
-.class public final Lecd;
-.super Ljava/lang/Object;
+.class final Lecd;
+.super Leac;
 .source "PG"
 
 
 # instance fields
-.field public final a:Licv;
-
-.field public final b:Liau;
-
-.field public final c:Lecw;
-
-.field public final d:Leai;
-
-.field public final e:Leai;
-
-.field public final f:Lecz;
+.field private final synthetic b:Lecc;
 
 
 # direct methods
-.method public constructor <init>(Licv;Liau;Lecw;Lefa;Lefe;Lecz;)V
-    .locals 3
+.method constructor <init>(Lecc;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lecd;->b:Lecc;
 
-    iput-object p1, p0, Lecd;->a:Licv;
+    invoke-direct {p0, p1}, Leac;-><init>(Leaa;)V
 
-    iput-object p2, p0, Lecd;->b:Liau;
+    return-void
+.end method
 
-    iput-object p3, p0, Lecd;->c:Lecw;
 
-    new-instance v0, Ledq;
+# virtual methods
+.method public final a(Lfdv;Liaa;)V
+    .locals 2
 
-    const/4 v1, 0x4
+    iget-object v0, p0, Lecd;->b:Lecc;
 
-    const/4 v2, 0x0
+    iget-object v0, v0, Lecc;->e:Lgld;
 
-    invoke-direct {v0, p4, v1, v2}, Ledq;-><init>(Leai;IZ)V
+    invoke-virtual {v0}, Lgld;->a()V
 
-    iput-object v0, p0, Lecd;->d:Leai;
+    invoke-super {p0, p1, p2}, Leac;->a(Lfdv;Liaa;)V
 
-    new-instance v0, Ledq;
+    iget-object v0, p0, Lecd;->b:Lecc;
 
-    const/4 v1, 0x5
+    iget-object v0, v0, Lecc;->e:Lgld;
 
-    const/4 v2, 0x1
+    iget-object v1, p0, Lecd;->b:Lecc;
 
-    invoke-direct {v0, p5, v1, v2}, Ledq;-><init>(Leai;IZ)V
+    iget-object v1, v1, Lecc;->g:Lglf;
 
-    iput-object v0, p0, Lecd;->e:Leai;
-
-    iput-object p6, p0, Lecd;->f:Lecz;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

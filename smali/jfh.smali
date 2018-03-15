@@ -1,13 +1,13 @@
-.class public final Ljfh;
+.class final Ljfh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,18 +17,32 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 4
 
-    const-class v0, Liyz;
+    new-instance v2, Liyr;
 
-    const-string v1, "default"
+    const-class v0, Ljko;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    const-string v1, "Collage_PhotoBooth"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liyz;
+    check-cast v0, Ljko;
 
-    return-object v0
+    const-class v1, Liyq;
+
+    const-string v3, "photobooth_artifact_renderer"
+
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liyq;
+
+    invoke-direct {v2, v0, v1}, Liyr;-><init>(Ljko;Liyq;)V
+
+    return-object v2
 .end method

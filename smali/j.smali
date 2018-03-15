@@ -1,55 +1,132 @@
-.class final Lj;
-.super Ljava/lang/Object;
+.class public final Lj;
+.super Landroid/app/Fragment;
 .source "PG"
-
-# interfaces
-.implements Landroid/os/Handler$Callback;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final handleMessage(Landroid/os/Message;)Z
+.method private final a(Le;)V
     .locals 2
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lj;->getActivity()Landroid/app/Activity;
 
-    iget v1, p1, Landroid/os/Message;->what:I
+    move-result-object v0
 
-    packed-switch v1, :pswitch_data_0
+    instance-of v1, v0, Li;
 
-    const/4 v0, 0x0
+    if-eqz v1, :cond_1
 
+    check-cast v0, Li;
+
+    invoke-interface {v0}, Li;->a()Lh;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lh;->a(Le;)V
+
+    :cond_0
     :goto_0
-    return v0
+    return-void
 
-    :pswitch_0
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    :cond_1
+    instance-of v1, v0, Lg;
 
-    invoke-static {}, Li;->a()V
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lg;
+
+    invoke-interface {v0}, Lg;->getLifecycle()Ld;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lh;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lh;
+
+    invoke-virtual {v0, p1}, Lh;->a(Le;)V
 
     goto :goto_0
+.end method
 
-    :pswitch_1
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget v1, p1, Landroid/os/Message;->arg1:I
+# virtual methods
+.method public final onActivityCreated(Landroid/os/Bundle;)V
+    .locals 1
 
-    invoke-static {}, Li;->b()V
+    invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    goto :goto_0
+    sget-object v0, Le;->a:Le;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    invoke-direct {p0, v0}, Lj;->a(Le;)V
+
+    return-void
+.end method
+
+.method public final onDestroy()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
+
+    sget-object v0, Le;->f:Le;
+
+    invoke-direct {p0, v0}, Lj;->a(Le;)V
+
+    return-void
+.end method
+
+.method public final onPause()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/app/Fragment;->onPause()V
+
+    sget-object v0, Le;->d:Le;
+
+    invoke-direct {p0, v0}, Lj;->a(Le;)V
+
+    return-void
+.end method
+
+.method public final onResume()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/app/Fragment;->onResume()V
+
+    sget-object v0, Le;->c:Le;
+
+    invoke-direct {p0, v0}, Lj;->a(Le;)V
+
+    return-void
+.end method
+
+.method public final onStart()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/app/Fragment;->onStart()V
+
+    sget-object v0, Le;->b:Le;
+
+    invoke-direct {p0, v0}, Lj;->a(Le;)V
+
+    return-void
+.end method
+
+.method public final onStop()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/app/Fragment;->onStop()V
+
+    sget-object v0, Le;->e:Le;
+
+    invoke-direct {p0, v0}, Lj;->a(Le;)V
+
+    return-void
 .end method

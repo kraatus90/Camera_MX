@@ -3,34 +3,48 @@
 .source "PG"
 
 # interfaces
-.implements Lakx;
+.implements Laki;
+
+
+# instance fields
+.field private final a:Laki;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Laki;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lalw;->a:Laki;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lald;)Lakv;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lakj;
+    .locals 2
 
-    new-instance v0, Lalv;
+    check-cast p1, Ljava/net/URL;
 
-    const-class v1, Lakh;
+    iget-object v0, p0, Lalw;->a:Laki;
 
-    const-class v2, Ljava/io/InputStream;
+    new-instance v1, Laju;
 
-    invoke-virtual {p1, v1, v2}, Lald;->a(Ljava/lang/Class;Ljava/lang/Class;)Lakv;
+    invoke-direct {v1, p1}, Laju;-><init>(Ljava/net/URL;)V
 
-    move-result-object v1
+    invoke-interface {v0, v1, p2, p3, p4}, Laki;->a(Ljava/lang/Object;IILady;)Lakj;
 
-    invoke-direct {v0, v1}, Lalv;-><init>(Lakv;)V
+    move-result-object v0
 
     return-object v0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

@@ -2,68 +2,55 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lftf;->a:Lkgv;
+
     return-void
 .end method
 
-.method public static a(Lftg;)Landroid/media/MediaCodec;
-    .locals 5
+.method public static a(Lkgv;)Lftf;
+    .locals 1
 
-    invoke-interface {p0}, Lftg;->a()Ljava/lang/String;
+    new-instance v0, Lftf;
 
-    move-result-object v1
-
-    const-string v2, "MediaCodecFac"
-
-    const-string v3, "create mediaCodec for"
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :try_start_0
-    invoke-static {v1}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Lftf;-><init>(Lkgv;)V
 
     return-object v0
+.end method
 
-    :cond_0
-    new-instance v0, Ljava/lang/String;
 
-    invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    goto :goto_0
+    iget-object v0, p0, Lftf;->a:Lkgv;
 
-    :catch_0
-    move-exception v0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Laeh;
+    move-result-object v0
 
-    const-string v2, "fail to create media codec"
+    check-cast v0, Libw;
 
-    invoke-direct {v1, v2, p0, v0}, Laeh;-><init>(Ljava/lang/String;Lftg;Ljava/lang/Throwable;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    throw v1
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
+
+    return-object v0
 .end method

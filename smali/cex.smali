@@ -1,98 +1,185 @@
-.class public final Lcex;
+.class final Lcex;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lipn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Ljava/util/concurrent/Executor;
 
-.field private b:Ljxn;
+.field private final b:Ljgs;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private final synthetic c:Lcep;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lcep;Ljava/util/concurrent/Executor;Ljgs;)V
     .locals 0
+
+    iput-object p1, p0, Lcex;->c:Lcep;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcex;->a:Ljxn;
+    iput-object p2, p0, Lcex;->a:Ljava/util/concurrent/Executor;
 
-    iput-object p2, p0, Lcex;->b:Ljxn;
-
-    iput-object p3, p0, Lcex;->c:Ljxn;
-
-    iput-object p4, p0, Lcex;->d:Ljxn;
-
-    iput-object p5, p0, Lcex;->e:Ljxn;
+    iput-object p3, p0, Lcex;->b:Ljgs;
 
     return-void
 .end method
 
+.method private final a()Lcom/google/android/libraries/smartburst/pipeline/Pipeline;
+    .locals 7
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+    iget-object v0, p0, Lcex;->c:Lcep;
 
-    iget-object v0, p0, Lcex;->a:Ljxn;
+    iget-object v0, v0, Lcep;->b:Ljava/io/File;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Lcep;->a(Ljava/io/File;)Z
 
-    move-result-object v1
+    move-result v0
 
-    check-cast v1, Landroid/content/Context;
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcex;->b:Ljxn;
+    new-instance v0, Lcew;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v0}, Lcew;-><init>()V
 
-    move-result-object v3
+    :goto_0
+    return-object v0
 
-    check-cast v3, Landroid/content/ContentResolver;
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Lcex;->c:Lcep;
 
-    iget-object v0, p0, Lcex;->c:Ljxn;
+    iget-object v0, v0, Lcep;->b:Ljava/io/File;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Ljbf;->a(Ljava/io/File;)Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
     move-result-object v2
 
-    check-cast v2, Lcfe;
+    iget-object v0, p0, Lcex;->c:Lcep;
 
-    iget-object v0, p0, Lcex;->d:Ljxn;
+    iget-object v0, v0, Lcep;->b:Ljava/io/File;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Ljbi;->a(Ljava/io/File;)Ljnq;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lcfl;
+    iget-object v0, p0, Lcex;->c:Lcep;
 
-    iget-object v0, p0, Lcex;->e:Ljxn;
+    iget-object v0, v0, Lcep;->b:Ljava/io/File;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v3}, Ljnv;->a(Ljnq;)Ljoc;
 
-    move-result-object v5
+    move-result-object v1
 
-    check-cast v5, Lgvx;
-
-    new-instance v0, Lcfp;
-
-    invoke-direct/range {v0 .. v5}, Lcfp;-><init>(Landroid/content/Context;Lcfe;Landroid/content/ContentResolver;Lcfl;Lgvx;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljhj;->a(Ljava/io/File;Ljoc;)Ljho;
 
     move-result-object v0
 
-    check-cast v0, Lcfp;
+    invoke-virtual {v0}, Ljho;->a()Ljhk;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljhk;->c()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Lcew;
+
+    invoke-direct {v0}, Lcew;-><init>()V
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lcep;->a:Ljava/lang/String;
+
+    iget-object v2, p0, Lcex;->c:Lcep;
+
+    iget-object v2, v2, Lcep;->b:Ljava/io/File;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x22
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Failed to load feature files from "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v1, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
+
+    new-instance v0, Lcew;
+
+    invoke-direct {v0}, Lcew;-><init>()V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcex;->c:Lcep;
+
+    iget-object v1, p0, Lcex;->c:Lcep;
+
+    iget-object v1, v1, Lcep;->c:Landroid/content/Context;
+
+    iget-object v5, p0, Lcex;->a:Ljava/util/concurrent/Executor;
+
+    iget-object v6, p0, Lcex;->b:Ljgs;
+
+    invoke-virtual/range {v0 .. v6}, Lcep;->a(Landroid/content/Context;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljnq;Ljhk;Ljava/util/concurrent/Executor;Ljgs;)Ljig;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-direct {p0}, Lcex;->a()Lcom/google/android/libraries/smartburst/pipeline/Pipeline;
+
+    move-result-object v0
 
     return-object v0
 .end method

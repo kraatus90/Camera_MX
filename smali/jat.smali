@@ -1,279 +1,382 @@
 .class public final Ljat;
-.super Ljava/lang/Object;
+.super Liyp;
 .source "PG"
-
-# interfaces
-.implements Ljan;
 
 
 # instance fields
-.field private a:Ljan;
+.field private final d:Ljava/io/File;
 
-.field private b:F
+.field private final e:J
 
-.field private c:F
-
-.field private d:F
-
-.field private e:F
-
-.field private f:F
+.field private final f:J
 
 
 # direct methods
-.method private constructor <init>(Ljan;)V
-    .locals 3
-
-    const/high16 v2, 0x7fc00000    # NaNf
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljat;->a:Ljan;
-
-    iput v1, p0, Ljat;->b:F
-
-    const/high16 v0, -0x40800000    # -1.0f
-
-    iput v0, p0, Ljat;->c:F
-
-    iput v1, p0, Ljat;->d:F
-
-    iput v2, p0, Ljat;->e:F
-
-    iput v2, p0, Ljat;->f:F
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljan;B)V
+.method public constructor <init>(Ljava/lang/String;IJLjava/io/File;JJ)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljat;-><init>(Ljan;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Liyp;-><init>(Ljava/lang/String;IJ)V
+
+    invoke-static {p5}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p5, p0, Ljat;->d:Ljava/io/File;
+
+    iput-wide p6, p0, Ljat;->e:J
+
+    iput-wide p8, p0, Ljat;->f:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljfx;
-    .locals 5
+.method public final a(Ljhk;Landroid/content/Context;Ljava/util/concurrent/Executor;Ljgs;)Liqz;
+    .locals 2
 
-    iget-object v0, p0, Ljat;->a:Ljan;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2}, Ljan;->a(J)Ljfx;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-wide v0, p0, Liyp;->c:J
+
+    invoke-virtual {p1, v0, v1}, Ljhk;->b(J)Liqz;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljfx;->a()F
-
-    move-result v0
-
-    iget v1, p0, Ljat;->e:F
-
-    cmpg-float v1, v0, v1
-
-    if-gez v1, :cond_0
-
-    iget v0, p0, Ljat;->e:F
-
-    :cond_0
-    iget v1, p0, Ljat;->f:F
-
-    cmpl-float v1, v0, v1
-
-    if-lez v1, :cond_1
-
-    iget v0, p0, Ljat;->f:F
-
-    :cond_1
-    iget v1, p0, Ljat;->d:F
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    cmpl-float v1, v1, v2
-
-    if-eqz v1, :cond_2
-
-    float-to-double v0, v0
-
-    iget v2, p0, Ljat;->d:F
-
-    float-to-double v2, v2
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v0
-
-    double-to-float v0, v0
-
-    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    const/4 v0, 0x0
-
-    :cond_2
-    iget v1, p0, Ljat;->c:F
-
-    mul-float/2addr v0, v1
-
-    iget v1, p0, Ljat;->b:F
-
-    add-float/2addr v0, v1
-
-    new-instance v1, Ljfu;
-
-    invoke-direct {v1, v0}, Ljfu;-><init>(F)V
-
-    return-object v1
-.end method
-
-.method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Ljat;->a:Ljan;
-
-    invoke-interface {v0}, Ljan;->a()V
-
-    return-void
-.end method
-
-.method public final b(J)V
-    .locals 1
-
-    iget-object v0, p0, Ljat;->a:Ljan;
-
-    invoke-interface {v0, p1, p2}, Ljan;->b(J)V
-
-    return-void
-.end method
-
-.method public final c(J)V
-    .locals 1
-
-    iget-object v0, p0, Ljat;->a:Ljan;
-
-    invoke-interface {v0, p1, p2}, Ljan;->c(J)V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 9
-
-    const-string v0, "PolynomialScoreTransformer[scorer="
-
-    iget-object v1, p0, Ljat;->a:Ljan;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p4, p2}, Ljam;->b(Ljgs;Landroid/content/Context;)Lipn;
 
     move-result-object v1
 
-    iget v2, p0, Ljat;->b:F
-
-    iget v3, p0, Ljat;->c:F
-
-    iget v4, p0, Ljat;->d:F
-
-    iget v5, p0, Ljat;->e:F
-
-    iget v6, p0, Ljat;->f:F
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    add-int/lit16 v7, v7, 0x82
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    add-int/2addr v7, v8
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8, v7}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", translate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", scale="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", exponent="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", clampLow="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", clampHigh="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0, p3, v1}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final a(Ljhk;Ljns;Ljava/util/concurrent/Executor;Ljgs;)Liqz;
+    .locals 17
+
+    invoke-static/range {p1 .. p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static/range {p2 .. p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static/range {p3 .. p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :try_start_0
+    new-instance v3, Ljnb;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Liyp;->a:Ljava/lang/String;
+
+    const-string v5, "video/mp4"
+
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Liyp;->c:J
+
+    move-object/from16 v0, p1
+
+    iget v8, v0, Ljhk;->a:I
+
+    move-object/from16 v0, p1
+
+    iget v9, v0, Ljhk;->b:I
+
+    move-object/from16 v0, p0
+
+    iget-wide v10, v0, Ljat;->f:J
+
+    move-object/from16 v0, p0
+
+    iget-wide v12, v0, Ljat;->e:J
+
+    sub-long/2addr v10, v12
+
+    const-wide/32 v12, 0xf4240
+
+    div-long/2addr v10, v12
+
+    invoke-direct/range {v3 .. v11}, Ljnb;-><init>(Ljava/lang/String;Ljava/lang/String;JIIJ)V
+
+    iget v2, v3, Ljnr;->e:I
+
+    iget v4, v3, Ljnr;->d:I
+
+    mul-int v6, v2, v4
+
+    new-instance v7, Ljava/io/BufferedOutputStream;
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v3}, Ljns;->a(Ljnr;)Ljava/io/OutputStream;
+
+    move-result-object v2
+
+    invoke-direct {v7, v2, v6}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
+
+    const-string v2, "tempVideo"
+
+    const-string v4, ".mp4"
+
+    invoke-static {v2, v4}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v8
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Ljat;->d:Ljava/io/File;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+
+    :try_start_1
+    invoke-static {}, Ljhn;->a()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v8}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoders;->newCPUTranscoder(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoder;
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+
+    move-result-object v2
+
+    :goto_0
+    const/4 v5, 0x0
+
+    :try_start_2
+    move-object/from16 v0, p0
+
+    iget-wide v10, v0, Ljat;->e:J
+
+    const-wide/16 v12, 0x3e8
+
+    div-long/2addr v10, v12
+
+    move-object/from16 v0, p0
+
+    iget-wide v12, v0, Ljat;->f:J
+
+    const-wide/16 v14, 0x3e8
+
+    div-long/2addr v12, v14
+
+    invoke-interface {v2, v10, v11, v12, v13}, Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoder;->transcode(JJ)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    if-eqz v2, :cond_0
+
+    :try_start_3
+    invoke-interface {v2}, Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoder;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+
+    :cond_0
+    :goto_1
+    :try_start_4
+    new-instance v2, Ljava/io/BufferedInputStream;
+
+    new-instance v4, Ljava/io/FileInputStream;
+
+    invoke-direct {v4, v8}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    invoke-direct {v2, v4, v6}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;I)V
+
+    new-instance v4, Ljau;
+
+    invoke-direct {v4, v2, v7, v3}, Ljau;-><init>(Ljava/io/InputStream;Ljava/io/OutputStream;Ljnb;)V
+
+    move-object/from16 v0, p3
+
+    invoke-static {v0, v4}, Lihr;->a(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Callable;)Liqz;
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+
+    move-result-object v2
+
+    return-object v2
+
+    :cond_1
+    :try_start_5
+    invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v8}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2, v4}, Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoders;->newGPUTranscoder(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoder;
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v4
+
+    :try_start_6
+    throw v4
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+
+    :catchall_0
+    move-exception v5
+
+    move-object/from16 v16, v5
+
+    move-object v5, v4
+
+    move-object/from16 v4, v16
+
+    :goto_2
+    if-eqz v2, :cond_2
+
+    if-eqz v5, :cond_3
+
+    :try_start_7
+    invoke-interface {v2}, Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoder;->close()V
+    :try_end_7
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_3
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
+
+    :cond_2
+    :goto_3
+    :try_start_8
+    throw v4
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1
+
+    :catch_1
+    move-exception v2
+
+    :try_start_9
+    const-string v4, "VFRVideoArtifact"
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x20
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "Error transcoding file. Error = "
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v4, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_2
+
+    goto :goto_1
+
+    :catch_2
+    move-exception v2
+
+    new-instance v2, Ljava/lang/RuntimeException;
+
+    const-string v3, "Temporary variable frame rate video not found."
+
+    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :catch_3
+    move-exception v2
+
+    :try_start_a
+    invoke-static {v5, v2}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_3
+
+    :cond_3
+    invoke-interface {v2}, Lcom/google/android/libraries/smartburst/filterpacks/video/Transcoder;->close()V
+    :try_end_a
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_1
+
+    goto :goto_3
+
+    :catchall_1
+    move-exception v4
+
+    goto :goto_2
+.end method
+
+.method public final a()Ljava/util/Collection;
+    .locals 4
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Long;
+
+    const/4 v1, 0x0
+
+    iget-wide v2, p0, Liyp;->c:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljhk;)Ljnr;
+    .locals 8
+
+    new-instance v1, Ljnb;
+
+    iget-object v2, p0, Liyp;->a:Ljava/lang/String;
+
+    const-string v3, "video/mp4"
+
+    iget-wide v4, p0, Liyp;->c:J
+
+    iget v6, p1, Ljhk;->a:I
+
+    iget v7, p1, Ljhk;->b:I
+
+    invoke-direct/range {v1 .. v7}, Ljnb;-><init>(Ljava/lang/String;Ljava/lang/String;JII)V
+
+    return-object v1
 .end method

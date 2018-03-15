@@ -1,122 +1,123 @@
-.class public final Lcbb;
-.super Ljava/lang/Object;
+.class final Lcbb;
+.super Liqd;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private final synthetic a:Lcaz;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lcaz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcbb;->a:Lcaz;
 
-    iput-object p1, p0, Lcbb;->a:Ljxn;
-
-    iput-object p2, p0, Lcbb;->b:Ljxn;
-
-    iput-object p3, p0, Lcbb;->c:Ljxn;
-
-    iput-object p4, p0, Lcbb;->d:Ljxn;
-
-    iput-object p5, p0, Lcbb;->e:Ljxn;
+    invoke-direct {p0}, Liqd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final synthetic a_(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lcbb;->a:Ljxn;
+    check-cast p1, Lirb;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Lcaz;->a:Ljava/lang/String;
 
-    move-result-object v0
+    const-string v1, "processBurstResults : stopping previewer with error"
 
-    check-cast v0, Lcjv;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcbb;->b:Ljxn;
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lcaz;->l:Lihs;
 
-    move-result-object v1
+    const-string v1, "BurstControllerImpl#processBurstResults_stopPreviewWithError"
 
-    check-cast v1, Ljava/lang/Boolean;
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    :try_start_0
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    move-result v4
+    iget-object v0, v0, Lcaz;->i:Lceo;
 
-    iget-object v1, p0, Lcbb;->c:Ljxn;
+    invoke-virtual {v0}, Lceo;->b()V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    move-result-object v1
+    iget-object v0, v0, Lcaz;->i:Lceo;
 
-    check-cast v1, Landroid/content/Context;
+    invoke-virtual {p1}, Lirb;->getCause()Ljava/lang/Throwable;
 
-    iget-object v2, p0, Lcbb;->d:Ljxn;
+    iget-object v0, v0, Lceo;->a:Lbcs;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lbcs;->b()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v2
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    check-cast v2, Lfmd;
+    iget-object v0, v0, Lcaz;->l:Lihs;
 
-    iget-object v3, p0, Lcbb;->e:Ljxn;
+    invoke-interface {v0}, Lihs;->a()V
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Lcaz;->a:Ljava/lang/String;
 
-    move-result-object v3
+    const-string v1, "processBurstResults : handling exception"
 
-    check-cast v3, Lidm;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lacz;->b(Landroid/content/Context;)Ladj;
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    move-result-object v1
+    iget-object v0, v0, Lcaz;->l:Lihs;
 
-    new-instance v5, Lcaq;
+    const-string v1, "BurstControllerImpl#processBurstResults_handleException"
 
-    invoke-direct {v5}, Lcaq;-><init>()V
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    invoke-static {}, Lhzt;->a()V
+    :try_start_1
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    iput-object v0, v5, Lcaq;->o:Lcjv;
+    invoke-virtual {v0}, Lcaz;->b()V
 
-    iput-boolean v4, v5, Lcaq;->n:Z
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    iput-object v1, v5, Lcaq;->p:Ladj;
+    iget-object v0, v0, Lcaz;->c:Lcdg;
 
-    iput-object v3, v5, Lcaq;->q:Lidm;
+    invoke-virtual {v0, p1}, Lcdg;->a(Ljava/lang/Exception;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcbb;->a:Lcaz;
 
-    iput-boolean v0, v5, Lcaq;->l:Z
+    iget-object v0, v0, Lcaz;->l:Lihs;
 
-    invoke-interface {v2, v5}, Lfmd;->a(Lcjx;)V
+    invoke-interface {v0}, Lihs;->a()V
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    return-void
 
-    invoke-static {v5, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v0
+    iget-object v1, p0, Lcbb;->a:Lcaz;
 
-    check-cast v0, Lcaq;
+    iget-object v1, v1, Lcaz;->l:Lihs;
 
-    return-object v0
+    invoke-interface {v1}, Lihs;->a()V
+
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    iget-object v1, p0, Lcbb;->a:Lcaz;
+
+    iget-object v1, v1, Lcaz;->l:Lihs;
+
+    invoke-interface {v1}, Lihs;->a()V
+
+    throw v0
 .end method

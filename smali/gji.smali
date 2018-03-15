@@ -1,54 +1,57 @@
-.class public final Lgji;
-.super Ljava/lang/Object;
+.class final Lgji;
+.super Lgjm;
 .source "PG"
 
 
-# instance fields
-.field public final a:Z
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:Z
-
-.field public final e:Z
-
-
 # direct methods
-.method public constructor <init>(ZZIIZZ)V
-    .locals 1
+.method constructor <init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0, p1, p2, p3}, Lgjm;-><init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    if-nez p1, :cond_0
 
-    if-nez p2, :cond_0
+# virtual methods
+.method protected final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    if-eqz p5, :cond_0
+    iget-object v0, p0, Lgji;->a:Lgjq;
 
-    move p5, v0
+    iget-object v1, p0, Lgji;->b:Ljava/lang/String;
 
-    :cond_0
-    if-nez p1, :cond_1
+    iget-object v2, p0, Lgji;->c:Ljava/lang/String;
 
-    if-eqz p2, :cond_2
+    invoke-virtual {v0, v1, v2}, Lgjq;->c(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
-    const/4 v0, 0x1
+    move-result v0
 
-    :cond_2
-    iput-boolean v0, p0, Lgji;->a:Z
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iput p3, p0, Lgji;->b:I
+    move-result-object v0
 
-    iput p4, p0, Lgji;->c:I
+    return-object v0
+.end method
 
-    iput-boolean p5, p0, Lgji;->d:Z
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 4
 
-    iput-boolean p6, p0, Lgji;->e:Z
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lgji;->a:Lgjq;
+
+    iget-object v1, p0, Lgji;->b:Ljava/lang/String;
+
+    iget-object v2, p0, Lgji;->c:Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v0, v1, v2, v3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method

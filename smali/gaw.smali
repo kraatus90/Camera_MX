@@ -3,150 +3,159 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lgav;
+
+
+# static fields
+.field private static final c:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Lgcm;
 
-.field private b:Ljxn;
+.field public final b:Ljava/lang/Runnable;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
+.field private final d:Lfzv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "ImageShadowTask"
 
-    iput-object p1, p0, Lgaw;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lgaw;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Lgaw;->c:Ljxn;
-
-    iput-object p4, p0, Lgaw;->d:Ljxn;
-
-    iput-object p5, p0, Lgaw;->e:Ljxn;
-
-    iput-object p6, p0, Lgaw;->f:Ljxn;
-
-    iput-object p7, p0, Lgaw;->g:Ljxn;
-
-    iput-object p8, p0, Lgaw;->h:Ljxn;
+    sput-object v0, Lgaw;->c:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 9
+.method public constructor <init>(Lgcm;Lfzv;Ljrf;)V
+    .locals 1
 
-    new-instance v0, Lgaw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p0
+    iput-object p1, p0, Lgaw;->a:Lgcm;
 
-    move-object v2, p1
+    iput-object p2, p0, Lgaw;->d:Lfzv;
 
-    move-object v3, p2
+    invoke-virtual {p3}, Ljrf;->c()Ljava/lang/Object;
 
-    move-object v4, p3
+    move-result-object v0
 
-    move-object v5, p4
+    check-cast v0, Ljava/lang/Runnable;
 
-    move-object v6, p5
+    iput-object v0, p0, Lgaw;->b:Ljava/lang/Runnable;
 
-    move-object v7, p6
+    return-void
+.end method
 
-    move-object/from16 v8, p7
+.method public constructor <init>(Lgfr;)V
+    .locals 2
 
-    invoke-direct/range {v0 .. v8}, Lgaw;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    new-instance v0, Lgcm;
 
-    return-object v0
+    invoke-direct {v0}, Lgcm;-><init>()V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lgcm;->a(I)Lgcm;
+
+    move-result-object v0
+
+    sget-object v1, Ljqu;->a:Ljqu;
+
+    invoke-direct {p0, v0, p1, v1}, Lgaw;-><init>(Lgcm;Lfzv;Ljrf;)V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 9
+.method public final a()V
+    .locals 2
 
-    new-instance v0, Lgav;
+    iget-object v0, p0, Lgaw;->a:Lgcm;
 
-    iget-object v1, p0, Lgaw;->a:Ljxn;
+    const/4 v1, 0x0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lgcm;->a(I)Lgcm;
 
-    move-result-object v1
+    iget-object v0, p0, Lgaw;->a:Lgcm;
 
-    check-cast v1, Lgdq;
+    invoke-virtual {v0}, Lgcm;->c()V
 
-    iget-object v2, p0, Lgaw;->b:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+.method public final addFinishedCallback(Ligs;)V
+    .locals 2
 
-    move-result-object v2
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    check-cast v2, Lfzy;
+    const-string v1, "Not implemented yet"
 
-    iget-object v3, p0, Lgaw;->c:Ljxn;
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    throw v0
+.end method
 
-    move-result-object v3
+.method public final getSession()Lfzv;
+    .locals 1
 
-    check-cast v3, Lgat;
-
-    iget-object v4, p0, Lgaw;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lgax;
-
-    iget-object v5, p0, Lgaw;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lgzz;
-
-    iget-object v6, p0, Lgaw;->f:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lici;
-
-    iget-object v7, p0, Lgaw;->g:Ljxn;
-
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lgbe;
-
-    iget-object v8, p0, Lgaw;->h:Ljxn;
-
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lgkp;
-
-    invoke-direct/range {v0 .. v8}, Lgav;-><init>(Lgdq;Lfzy;Lgat;Lgax;Lgzz;Lici;Lgbe;Lgkp;)V
+    iget-object v0, p0, Lgaw;->d:Lfzv;
 
     return-object v0
+.end method
+
+.method public final process(Landroid/content/Context;)V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lgaw;->a:Lgcm;
+
+    invoke-virtual {v0}, Lgcm;->b()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v0, Lgaw;->c:Ljava/lang/String;
+
+    const-string v1, "Image Shadow task Interrupted."
+
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method public final removeFinishedCallback(Ligs;)V
+    .locals 2
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "Not implemented yet"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final resume()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final suspend()V
+    .locals 0
+
+    return-void
 .end method

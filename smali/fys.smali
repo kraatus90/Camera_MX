@@ -1,37 +1,37 @@
-.class final synthetic Lfys;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lgcg;
-
-
-# instance fields
-.field private a:Lfzw;
+.class public final Lfys;
+.super Lgwu;
+.source "PG"
 
 
 # direct methods
-.method constructor <init>(Lfzw;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lgwv;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const v0, 0x7f04005a
 
-    iput-object p1, p0, Lfys;->a:Lfzw;
+    invoke-direct {p0, p1, v0, p2}, Lgwu;-><init>(Landroid/content/Context;ILgwv;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
+.method protected final a(Landroid/view/View;)V
     .locals 2
 
-    iget-object v0, p0, Lfys;->a:Lfzw;
+    const v0, 0x7f0e0167
 
-    check-cast p1, Lfyo;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iget-object v1, p1, Lfyo;->d:Ljvi;
+    move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Object;)Z
+    check-cast v0, Landroid/widget/Button;
+
+    new-instance v1, Lfyt;
+
+    invoke-direct {v1, p0}, Lfyt;-><init>(Lfys;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

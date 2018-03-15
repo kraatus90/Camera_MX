@@ -1,27 +1,121 @@
 .class public final Lfif;
-.super Ljava/lang/Object;
+.super Lfhq;
 .source "PG"
+
+# interfaces
+.implements Lfii;
 
 
 # instance fields
-.field public final a:Landroid/app/ActionBar;
+.field private final a:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field public final b:Lfid;
-
-.field public final c:Landroid/view/LayoutInflater;
+.field private final b:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/ActionBar;Landroid/view/LayoutInflater;Lfid;)V
-    .locals 0
+.method public constructor <init>(J)V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lfhq;-><init>()V
 
-    iput-object p1, p0, Lfif;->a:Landroid/app/ActionBar;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    iput-object p2, p0, Lfif;->c:Landroid/view/LayoutInflater;
+    const-wide v2, 0x7fffffffffffffffL
 
-    iput-object p3, p0, Lfif;->b:Lfid;
+    invoke-direct {v0, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+
+    iput-object v0, p0, Lfif;->a:Ljava/util/concurrent/atomic/AtomicLong;
+
+    iput-wide p1, p0, Lfif;->b:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lind;)Z
+    .locals 8
+
+    const/4 v1, 0x0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    iget-object v0, p0, Lfif;->a:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v4
+
+    const-wide v6, 0x7fffffffffffffffL
+
+    cmp-long v0, v4, v6
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-wide v6, p0, Lfif;->b:J
+
+    sub-long/2addr v4, v6
+
+    cmp-long v0, v2, v4
+
+    if-gez v0, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public final a_(Lind;)V
+    .locals 4
+
+    iget-object v1, p0, Lfif;->a:Ljava/util/concurrent/atomic/AtomicLong;
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
     return-void
 .end method

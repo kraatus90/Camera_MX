@@ -1,44 +1,69 @@
-.class public final Lhdd;
-.super Ljava/lang/Object;
+.class final Lhdd;
+.super Lhda;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
-
-# static fields
-.field public static final a:Lhdd;
+# instance fields
+.field private final synthetic a:Lhdb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lhdd;
-
-    invoke-direct {v0}, Lhdd;-><init>()V
-
-    sput-object v0, Lhdd;->a:Lhdd;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lhdb;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhdd;->a:Lhdb;
+
+    invoke-direct {p0, p1}, Lhda;-><init>(Lhcy;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final W()V
+    .locals 2
 
-    new-instance v0, Lhdc;
+    iget-object v0, p0, Lhdd;->a:Lhdb;
 
-    invoke-direct {v0}, Lhdc;-><init>()V
+    iget-object v0, v0, Lhdb;->b:Lgld;
 
-    return-object v0
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lhda;->W()V
+
+    iget-object v0, p0, Lhdd;->a:Lhdb;
+
+    iget-object v0, v0, Lhdb;->b:Lgld;
+
+    iget-object v1, p0, Lhdd;->a:Lhdb;
+
+    iget-object v1, v1, Lhdb;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final X()V
+    .locals 2
+
+    iget-object v0, p0, Lhdd;->a:Lhdb;
+
+    iget-object v0, v0, Lhdb;->b:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lhda;->X()V
+
+    iget-object v0, p0, Lhdd;->a:Lhdb;
+
+    iget-object v0, v0, Lhdb;->b:Lgld;
+
+    iget-object v1, p0, Lhdd;->a:Lhdb;
+
+    iget-object v1, v1, Lhdb;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

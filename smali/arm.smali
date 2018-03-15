@@ -2,80 +2,133 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ladu;
 
-# static fields
-.field private static a:D
+
+# instance fields
+.field private final b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 1
 
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v2, 0x11
+    const-string v0, "Argument must not be null"
 
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-static {p1, v0}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    if-gt v2, v3, :cond_0
+    move-result-object v0
 
-    const-wide/high16 v2, 0x4024000000000000L    # 10.0
-
-    const-wide/high16 v4, 0x4018000000000000L    # 6.0
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v2
-
-    div-double/2addr v0, v2
-
-    :cond_0
-    sput-wide v0, Larm;->a:D
+    iput-object v0, p0, Larm;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static a(J)D
-    .locals 4
 
-    invoke-static {}, Larm;->a()J
+# virtual methods
+.method public final a(Ljava/security/MessageDigest;)V
+    .locals 2
 
-    move-result-wide v0
+    iget-object v0, p0, Larm;->b:Ljava/lang/Object;
 
-    sub-long/2addr v0, p0
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    long-to-double v0, v0
+    move-result-object v0
 
-    sget-wide v2, Larm;->a:D
+    sget-object v1, Larm;->a:Ljava/nio/charset/Charset;
 
-    mul-double/2addr v0, v2
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    return-wide v0
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+
+    return-void
 .end method
 
-.method public static a()J
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x11
-    .end annotation
 
-    const/16 v0, 0x11
+    instance-of v0, p1, Larm;
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-eqz v0, :cond_0
 
-    if-gt v0, v1, :cond_0
+    check-cast p1, Larm;
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+    iget-object v0, p0, Larm;->b:Ljava/lang/Object;
 
-    move-result-wide v0
+    iget-object v1, p1, Larm;->b:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
 
     :goto_0
-    return-wide v0
+    return v0
 
     :cond_0
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v0
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Larm;->b:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Larm;->b:Ljava/lang/Object;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x12
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "ObjectKey{object="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

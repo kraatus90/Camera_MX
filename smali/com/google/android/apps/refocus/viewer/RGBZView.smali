@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public a:Lhik;
+.field public a:Lhjk;
 
 .field public final b:Landroid/graphics/RectF;
 
@@ -123,15 +123,15 @@
 
     invoke-virtual {v5, v0}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RGBZView;->a:Lhik;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RGBZView;->a:Lhjk;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RGBZView;->a:Lhik;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RGBZView;->a:Lhjk;
 
     iget-object v1, p0, Lcom/google/android/apps/refocus/viewer/RGBZView;->b:Landroid/graphics/RectF;
 
-    invoke-interface {v0, v1}, Lhik;->a(Landroid/graphics/RectF;)V
+    invoke-interface {v0, v1}, Lhjk;->a(Landroid/graphics/RectF;)V
 
     :cond_0
     return-void

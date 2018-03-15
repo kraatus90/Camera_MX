@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final toybox_hfr_mode_descriptions:I = 0x7f0a0039
+.field public static final toybox_hfr_mode_descriptions:I = 0x7f0a0021
 
-.field public static final toybox_hfr_mode_rates:I = 0x7f0a003a
+.field public static final toybox_hfr_mode_rates:I = 0x7f0a0022
 
 
 # direct methods

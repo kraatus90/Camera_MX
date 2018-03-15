@@ -1,107 +1,143 @@
-.class final enum Lenx;
-.super Ljava/lang/Enum;
+.class public final Lenx;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field public static final enum a:Lenx;
+# instance fields
+.field public a:Z
 
-.field public static final enum b:Lenx;
+.field private final b:Ljava/lang/Runnable;
 
-.field public static final enum c:Lenx;
-
-.field public static final enum d:Lenx;
-
-.field private static synthetic e:[Lenx;
+.field private c:Lenv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lenx;
-
-    const-string v1, "NOT_STARTED"
-
-    invoke-direct {v0, v1, v2}, Lenx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lenx;->a:Lenx;
-
-    new-instance v0, Lenx;
-
-    const-string v1, "STARTED"
-
-    invoke-direct {v0, v1, v3}, Lenx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lenx;->b:Lenx;
-
-    new-instance v0, Lenx;
-
-    const-string v1, "FINISHING"
-
-    invoke-direct {v0, v1, v4}, Lenx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lenx;->c:Lenx;
-
-    new-instance v0, Lenx;
-
-    const-string v1, "FINISHED_CANCELED"
-
-    invoke-direct {v0, v1, v5}, Lenx;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lenx;->d:Lenx;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lenx;
-
-    sget-object v1, Lenx;->a:Lenx;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lenx;->b:Lenx;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lenx;->c:Lenx;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lenx;->d:Lenx;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lenx;->e:[Lenx;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lenx;
+.method public constructor <init>(Ljava/lang/Runnable;)V
     .locals 1
 
-    sget-object v0, Lenx;->e:[Lenx;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, [Lenx;->clone()Ljava/lang/Object;
+    sget-object v0, Lenv;->c:Lenv;
 
-    move-result-object v0
+    iput-object v0, p0, Lenx;->c:Lenv;
 
-    check-cast v0, [Lenx;
+    const/4 v0, 0x0
 
-    return-object v0
+    iput-boolean v0, p0, Lenx;->a:Z
+
+    iput-object p1, p0, Lenx;->b:Ljava/lang/Runnable;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final declared-synchronized a(Lenv;)Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v2, p0, Lenx;->c:Lenv;
+
+    iget-object v3, p1, Lenv;->b:Ljuh;
+
+    iget-object v2, v2, Lenv;->a:Lenw;
+
+    invoke-virtual {v3, v2}, Ljuh;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    iget-object v2, p1, Lenv;->b:Ljuh;
+
+    sget-object v3, Lenw;->g:Lenw;
+
+    invoke-virtual {v2, v3}, Ljuh;->contains(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    if-nez v2, :cond_2
+
+    :goto_1
+    monitor-exit p0
+
+    return v0
+
+    :cond_1
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_2
+    :try_start_1
+    iget-object v0, p0, Lenx;->c:Lenv;
+
+    sget-object v2, Lenv;->c:Lenv;
+
+    if-eq v0, v2, :cond_3
+
+    iget-object v0, p0, Lenx;->c:Lenv;
+
+    sget-object v2, Lenv;->h:Lenv;
+
+    if-ne v0, v2, :cond_4
+
+    :cond_3
+    sget-object v0, Lenv;->d:Lenv;
+
+    if-ne p1, v0, :cond_5
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lenx;->a:Z
+
+    iget-object v0, p0, Lenx;->b:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    :cond_4
+    :goto_2
+    iput-object p1, p0, Lenx;->c:Lenv;
+
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_5
+    sget-object v0, Lenv;->e:Lenv;
+
+    if-ne p1, v0, :cond_4
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lenx;->a:Z
+
+    iget-object v0, p0, Lenx;->b:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

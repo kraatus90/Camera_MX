@@ -1,36 +1,54 @@
-.class public interface abstract Lgzp;
+.class public final Lgzp;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lgzo;
 
-# static fields
-.field public static final a:Ljuw;
+
+# instance fields
+.field private final synthetic a:Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/util/Set;)V
+    .locals 0
 
-    new-instance v0, Lgzn;
+    iput-object p1, p0, Lgzp;->a:Ljava/util/Set;
 
-    invoke-direct {v0}, Lgzn;-><init>()V
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Throwable;)Ljuw;
-
-    move-result-object v0
-
-    sput-object v0, Lgzp;->a:Ljuw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Ljuw;
-.end method
+.method public final a()V
+    .locals 2
 
-.method public abstract a(Lgzq;)V
-.end method
+    iget-object v0, p0, Lgzp;->a:Ljava/util/Set;
 
-.method public abstract b()V
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgzo;
+
+    invoke-interface {v0}, Lgzo;->a()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

@@ -21,7 +21,7 @@
 
     new-array v0, v8, [Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsInvocation;
 
-    new-instance v1, Liou;
+    new-instance v1, Lixu;
 
     const-string v2, "getPackageSizeInfo"
 
@@ -35,11 +35,11 @@
 
     aput-object v4, v3, v6
 
-    invoke-direct {v1, v2, v3}, Liou;-><init>(Ljava/lang/String;[Ljava/lang/Class;)V
+    invoke-direct {v1, v2, v3}, Lixu;-><init>(Ljava/lang/String;[Ljava/lang/Class;)V
 
     aput-object v1, v0, v5
 
-    new-instance v1, Liov;
+    new-instance v1, Lixv;
 
     const-string v2, "getPackageSizeInfo"
 
@@ -57,11 +57,11 @@
 
     aput-object v4, v3, v7
 
-    invoke-direct {v1, v2, v3}, Liov;-><init>(Ljava/lang/String;[Ljava/lang/Class;)V
+    invoke-direct {v1, v2, v3}, Lixv;-><init>(Ljava/lang/String;[Ljava/lang/Class;)V
 
     aput-object v1, v0, v6
 
-    new-instance v1, Liow;
+    new-instance v1, Lixw;
 
     const-string v2, "getPackageSizeInfoAsUser"
 
@@ -79,7 +79,7 @@
 
     aput-object v4, v3, v7
 
-    invoke-direct {v1, v2, v3}, Liow;-><init>(Ljava/lang/String;[Ljava/lang/Class;)V
+    invoke-direct {v1, v2, v3}, Lixw;-><init>(Ljava/lang/String;[Ljava/lang/Class;)V
 
     aput-object v1, v0, v7
 
@@ -157,7 +157,9 @@
 
     const-string v3, "failure"
 
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    new-array v4, v1, [Ljava/lang/Object;
+
+    invoke-static {v2, v3, v0, v4}, Lixt;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;[Ljava/lang/Object;)V
 
     move v0, v1
 
@@ -170,116 +172,23 @@
 .end method
 
 .method public static getPackageStats(Landroid/content/Context;)Landroid/content/pm/PackageStats;
-    .locals 5
-
-    const/4 v1, 0x1
-
-    const/4 v0, 0x0
+    .locals 1
 
     :try_start_0
-    sget-object v2, Liui;->a:Ljava/lang/Thread;
+    invoke-static {}, Ljhn;->b()V
 
-    if-nez v2, :cond_0
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    sput-object v2, Liui;->a:Ljava/lang/Thread;
-
-    :cond_0
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    sget-object v3, Liui;->a:Ljava/lang/Thread;
-
-    if-ne v2, v3, :cond_1
-
-    move v2, v1
-
-    :goto_0
-    if-eqz v2, :cond_2
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Must be called on a background thread"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    invoke-static {p0}, Lixx;->a(Landroid/content/Context;)Landroid/content/pm/PackageStats;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v0
+
+    return-object v0
 
     :catchall_0
     move-exception v0
 
     throw v0
-
-    :cond_1
-    move v2, v0
-
-    goto :goto_0
-
-    :cond_2
-    :try_start_1
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    const-string v3, "android.permission.GET_PACKAGE_SIZE"
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    const-string v2, "android.permission.GET_PACKAGE_SIZE"
-
-    invoke-virtual {p0, v2}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    :cond_3
-    move v0, v1
-
-    :cond_4
-    if-eqz v0, :cond_5
-
-    const-wide/16 v0, 0x3a98
-
-    sget-object v2, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture;->GETTER_INVOCATIONS:[Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsInvocation;
-
-    invoke-static {p0, v0, v1, v2}, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture;->getPackageStatsUsingInternalAPI(Landroid/content/Context;J[Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsInvocation;)Landroid/content/pm/PackageStats;
-
-    move-result-object v0
-
-    :goto_1
-    return-object v0
-
-    :cond_5
-    const-string v0, "PackageStatsCapture"
-
-    const-string v1, "android.permission.GET_PACKAGE_SIZE required"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const/4 v0, 0x0
-
-    goto :goto_1
 .end method
 
 .method static varargs getPackageStatsUsingInternalAPI(Landroid/content/Context;J[Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsInvocation;)Landroid/content/pm/PackageStats;
@@ -287,17 +196,23 @@
 
     const/4 v0, 0x0
 
+    const/4 v4, 0x5
+
+    const/4 v1, 0x0
+
     invoke-static {}, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture;->a()Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
-    const-string v1, "PackageStatsCapture"
+    const-string v2, "PackageStatsCapture"
 
-    const-string v2, "Callback implementation stripped by proguard."
+    const-string v3, "Callback implementation stripped by proguard."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-static {v4, v2, v3, v1}, Lixt;->a(ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_0
     return-object v0
@@ -308,9 +223,9 @@
     invoke-direct {v2}, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsCallback;-><init>()V
 
     :try_start_0
-    iget-object v1, v2, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsCallback;->a:Ljava/util/concurrent/Semaphore;
+    iget-object v3, v2, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsCallback;->a:Ljava/util/concurrent/Semaphore;
 
-    invoke-virtual {v1}, Ljava/util/concurrent/Semaphore;->acquire()V
+    invoke-virtual {v3}, Ljava/util/concurrent/Semaphore;->acquire()V
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -325,8 +240,6 @@
     move-result v5
 
     array-length v6, p3
-
-    const/4 v1, 0x0
 
     :goto_1
     if-ge v1, v6, :cond_3
@@ -343,7 +256,13 @@
 
     const-string v3, "Success invoking PackageStats capture."
 
-    invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v4, 0x0
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    const/4 v5, 0x4
+
+    invoke-static {v5, v1, v3, v4}, Lixt;->a(ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v1, v2, Lcom/google/android/libraries/performance/primes/metriccapture/PackageStatsCapture$PackageStatsCallback;->a:Ljava/util/concurrent/Semaphore;
 
@@ -364,7 +283,13 @@
 
     const-string v2, "Timeout while waiting for PackageStats callback"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x5
+
+    invoke-static {v4, v1, v2, v3}, Lixt;->a(ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -392,7 +317,13 @@
 
     const-string v2, "Couldn\'t capture PackageStats."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x5
+
+    invoke-static {v4, v1, v2, v3}, Lixt;->a(ILjava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 

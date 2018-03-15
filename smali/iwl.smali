@@ -1,28 +1,110 @@
-.class final Liwl;
+.class final synthetic Liwl;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Lixf;
+
+.field private final b:Liwq;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lixf;Liwq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liwl;->a:Lixf;
+
+    iput-object p2, p0, Liwl;->b:Liwq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 10
 
-    new-instance v0, Lizm;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Lizm;-><init>()V
+    const/4 v1, 0x0
 
-    return-object v0
+    iget-object v3, p0, Liwl;->a:Lixf;
+
+    iget-object v4, p0, Liwl;->b:Liwq;
+
+    iget-object v2, v4, Liwq;->b:Landroid/media/MediaCodec$BufferInfo;
+
+    iget-wide v6, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    iget-wide v8, v3, Lixf;->b:J
+
+    cmp-long v2, v6, v8
+
+    if-ltz v2, :cond_1
+
+    move v2, v0
+
+    :goto_0
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v3, v6, v7}, Lixf;->a(J)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    :goto_1
+    if-eqz v0, :cond_3
+
+    iget-object v0, v3, Lixf;->a:Ljava/lang/Object;
+
+    check-cast v0, Liwy;
+
+    iget-object v1, v4, Liwq;->a:Ljava/nio/ByteBuffer;
+
+    iget-object v2, v4, Liwq;->b:Landroid/media/MediaCodec$BufferInfo;
+
+    invoke-interface {v0, v1, v2}, Liwy;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+
+    iget-object v0, v4, Liwq;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+
+    :cond_0
+    :goto_2
+    return-void
+
+    :cond_1
+    move v2, v1
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v0, v4, Liwq;->b:Landroid/media/MediaCodec$BufferInfo;
+
+    iget-wide v0, v0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    invoke-virtual {v3, v0, v1}, Lixf;->a(J)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v3, Lixf;->a:Ljava/lang/Object;
+
+    check-cast v0, Liwy;
+
+    invoke-interface {v0}, Liwy;->close()V
+
+    goto :goto_2
 .end method

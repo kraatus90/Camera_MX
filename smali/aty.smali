@@ -1,37 +1,66 @@
-.class final synthetic Laty;
+.class public final Laty;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Lgzq;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Latx;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Latx;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Laty;->a:Latx;
+    iput-object p1, p0, Laty;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Laty;
+    .locals 1
+
+    new-instance v0, Laty;
+
+    invoke-direct {v0, p0}, Laty;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Laty;->a:Latx;
+    iget-object v0, p0, Laty;->a:Lkgv;
 
-    iget-object v0, v0, Latx;->a:Lats;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    iput-object v1, v0, Lats;->c:Lgzp;
+    check-cast v0, Lfdv;
 
-    return-void
+    invoke-interface {v0}, Lfdv;->p()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x2
+
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x4
+
+    goto :goto_0
 .end method

@@ -1,122 +1,82 @@
 .class public final Ljak;
-.super Ljai;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Liyq;
 
 
 # instance fields
-.field private d:F
+.field public final a:Ljava/io/Writer;
+
+.field public final b:Ljava/lang/String;
+
+.field private final c:Liyq;
 
 
 # direct methods
-.method public constructor <init>(Ljcp;)V
-    .locals 4
+.method public constructor <init>(Liyq;Ljava/lang/String;Ljava/io/Writer;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Ljai;-><init>(Ljcp;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Ljak;->c:Liyq;
 
-    invoke-static {v0}, Liya;->a(Z)V
+    iput-object p2, p0, Ljak;->b:Ljava/lang/String;
 
-    const-wide v0, 0x41fa13b860000000L    # 7.0E9
-
-    const-wide/high16 v2, 0x4000000000000000L    # 2.0
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v2
-
-    mul-double/2addr v0, v2
-
-    double-to-float v0, v0
-
-    iput v0, p0, Ljak;->d:F
+    iput-object p3, p0, Ljak;->a:Ljava/io/Writer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljfx;
-    .locals 7
+.method public final a(Ljkl;Ljava/util/concurrent/Executor;)Liqz;
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ljak;->c:Liyq;
 
-    iget-object v2, p0, Ljak;->c:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_0
-    iget-object v1, p0, Ljak;->a:Ljava/util/TreeSet;
-
-    invoke-virtual {v1}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    move v1, v0
-
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Liyq;->a(Ljkl;Ljava/util/concurrent/Executor;)Liqz;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
+    sget-object v1, Ljbn;->a:Ljbn;
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    new-instance v2, Ljal;
 
-    move-result-wide v4
+    invoke-direct {v2, p0, p1}, Ljal;-><init>(Ljak;Ljkl;)V
 
-    sub-long/2addr v4, p1
+    invoke-interface {v0, v1, v2}, Liqz;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
 
-    long-to-float v0, v4
+    move-result-object v1
 
-    iget v4, p0, Ljak;->d:F
+    sget-object v2, Liqb;->a:Liqb;
 
-    div-float/2addr v0, v4
-
-    float-to-double v4, v1
-
-    neg-float v1, v0
-
-    mul-float/2addr v0, v1
-
-    float-to-double v0, v0
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->exp(D)D
-
-    move-result-wide v0
-
-    add-double/2addr v0, v4
-
-    double-to-float v0, v0
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    new-instance v0, Ljfu;
-
-    invoke-direct {v0, v1}, Ljfu;-><init>(F)V
+    invoke-interface {v1, v2}, Liqz;->a(Lipm;)V
 
     return-object v0
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v0, p0, Ljak;->c:Liyq;
 
-    throw v0
+    invoke-interface {v0}, Liyq;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()I
+    .locals 1
+
+    iget-object v0, p0, Ljak;->c:Liyq;
+
+    invoke-interface {v0}, Liyq;->b()I
+
+    move-result v0
+
+    return v0
 .end method

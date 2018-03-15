@@ -2,33 +2,38 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# instance fields
+.field public final a:Leta;
+
+.field public final b:Lexd;
+
+.field public final c:Lewd;
+
+.field public final d:Leti;
+
+.field public final e:Lexs;
+
+.field public final f:Lezo;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lewd;Leta;Lexd;Leti;Lexs;Lezo;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lers;->c:Lewd;
+
+    iput-object p2, p0, Lers;->a:Leta;
+
+    iput-object p3, p0, Lers;->b:Lexd;
+
+    iput-object p4, p0, Lers;->d:Leti;
+
+    iput-object p5, p0, Lers;->e:Lexs;
+
+    iput-object p6, p0, Lers;->f:Lezo;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
-
-    new-instance v0, Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;
-
-    new-instance v1, Lijl;
-
-    invoke-direct {v1}, Lijl;-><init>()V
-
-    sget-object v2, Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;->a:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2}, Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;-><init>(Lijl;Ljava/lang/String;)V
-
-    return-object v0
 .end method

@@ -2,63 +2,216 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
-
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "OneCamFtrCnfgCrtr"
 
-    iput-object p1, p0, Ldko;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Ldko;->b:Ljxn;
+    move-result-object v0
+
+    sput-object v0, Ldko;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
+.method public static a()Ldkv;
     .locals 1
 
-    new-instance v0, Ldko;
+    invoke-static {}, Ldkv;->a()Ldkv;
 
-    invoke-direct {v0, p0, p1}, Ldko;-><init>(Ljxn;Ljxn;)V
+    move-result-object v0
 
     return-object v0
 .end method
 
+.method public static a(Lbjy;Lbll;Lhbh;Lihs;)Lffv;
+    .locals 5
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    const-string v0, "OneFeatureConfig#provide"
 
-    new-instance v2, Ldkn;
+    invoke-interface {p3, v0}, Lihs;->a(Ljava/lang/String;)V
 
-    iget-object v0, p0, Ldko;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    :try_start_0
+    invoke-virtual {p1}, Lbll;->a()Lkeh;
 
     move-result-object v0
 
-    check-cast v0, Licz;
+    invoke-interface {v0}, Lkeh;->get()Ljava/lang/Object;
 
-    iget-object v1, p0, Ldko;->b:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v0, Ljava/lang/Boolean;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    check-cast v1, Licv;
+    move-result v0
 
-    invoke-direct {v2, v0, v1}, Ldkn;-><init>(Licz;Licv;)V
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "No Cameras are currently available."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+
+    :catch_0
+    move-exception v0
+
+    :goto_0
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "No Cameras are currently available."
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :cond_0
+    const-string v0, "HdrPlus#getSupportLevel"
+
+    invoke-interface {p3, v0}, Lihs;->a(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lbjy;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget v0, Lep;->ax:I
+
+    :goto_1
+    const-string v1, "CaptureModuleDetector#new"
+
+    invoke-interface {p3, v1}, Lihs;->b(Ljava/lang/String;)V
+
+    new-instance v1, Ldkp;
+
+    invoke-direct {v1, p0, p2}, Ldkp;-><init>(Lbjy;Lhbh;)V
+
+    const-string v2, "OneFeatureConfig#new"
+
+    invoke-interface {p3, v2}, Lihs;->b(Ljava/lang/String;)V
+
+    new-instance v2, Lffv;
+
+    invoke-virtual {p0}, Lbjy;->e()I
+
+    move-result v3
+
+    invoke-virtual {p0}, Lbjy;->f()I
+
+    invoke-virtual {p0}, Lbjy;->g()I
+
+    move-result v4
+
+    invoke-direct {v2, v1, v0, v3, v4}, Lffv;-><init>(Ljqv;III)V
+
+    invoke-interface {p3}, Lihs;->a()V
+
+    invoke-interface {p3}, Lihs;->a()V
 
     return-object v2
+
+    :cond_1
+    sget v0, Lep;->aw:I
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method static a(Lfdv;Lbjy;)Ljrf;
+    .locals 3
+
+    const/4 v2, -0x1
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p0, v0}, Lfdv;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Ldko;->a:Ljava/lang/String;
+
+    const-string v1, "Camera not facing anywhere."
+
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Ldko;->a:Ljava/lang/String;
+
+    const-string v1, "Not sure where camera is facing to."
+
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p1, Lbjy;->a:Landroid/content/ContentResolver;
+
+    const-string v1, "camera:capture_support_level_override_back"
+
+    invoke-static {v0, v1, v2}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    invoke-static {v0}, Lffw;->a(I)Ljrf;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v0, p1, Lbjy;->a:Landroid/content/ContentResolver;
+
+    const-string v1, "camera:capture_support_level_override_front"
+
+    invoke-static {v0, v1, v2}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    invoke-static {v0}, Lffw;->a(I)Ljrf;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

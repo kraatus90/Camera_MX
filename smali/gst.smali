@@ -1,54 +1,45 @@
-.class public final Lgst;
-.super Ljava/lang/Object;
+.class final Lgst;
+.super Lgtc;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lgsr;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lgsr;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgst;->a:Lgsr;
 
-    iput-object p1, p0, Lgst;->a:Ljxn;
-
-    iput-object p2, p0, Lgst;->b:Ljxn;
+    invoke-direct {p0, p1}, Lgtc;-><init>(Lgta;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final U()V
+    .locals 2
 
-    new-instance v2, Lgss;
+    iget-object v0, p0, Lgst;->a:Lgsr;
 
-    iget-object v0, p0, Lgst;->a:Ljxn;
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result-object v0
+    invoke-super {p0}, Lgtc;->U()V
 
-    check-cast v0, Landroid/content/res/Resources;
+    iget-object v0, p0, Lgst;->a:Lgsr;
 
-    iget-object v1, p0, Lgst;->b:Ljxn;
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lgst;->a:Lgsr;
 
-    move-result-object v1
+    iget-object v1, v1, Lgsr;->b:Lglf;
 
-    check-cast v1, Liau;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    invoke-direct {v2, v0, v1}, Lgss;-><init>(Landroid/content/res/Resources;Liau;)V
-
-    return-object v2
+    return-void
 .end method

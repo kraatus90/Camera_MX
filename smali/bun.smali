@@ -1,13 +1,29 @@
-.class final Lbun;
+.class public final Lbun;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lbun;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lbun;
+
+    invoke-direct {v0}, Lbun;-><init>()V
+
+    sput-object v0, Lbun;->a:Lbun;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,26 +33,12 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    sget-object v0, Lbua;->a:Ljava/lang/String;
+    new-instance v0, Lbum;
 
-    const-string v1, "updated cached indicator Bitmap"
+    invoke-direct {v0}, Lbum;-><init>()V
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
-
-    sget-object v0, Lbua;->a:Ljava/lang/String;
-
-    const-string v1, "failure updating cached indicator Bitmap"
-
-    invoke-static {v0, v1, p1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+    return-object v0
 .end method

@@ -1,8 +1,16 @@
-.class public final Lhmt;
+.class public Lhmt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Landroid/content/DialogInterface$OnClickListener;
+
+
+# instance fields
+.field public final synthetic a:Landroid/content/Intent;
+
+.field public final synthetic b:Landroid/app/Activity;
+
+.field public final synthetic c:I
 
 
 # direct methods
@@ -14,105 +22,75 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Intent;Landroid/app/Activity;I)V
+    .locals 0
 
-# virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 5
+    iput-object p1, p0, Lhmt;->a:Landroid/content/Intent;
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    iput-object p2, p0, Lhmt;->b:Landroid/app/Activity;
 
-    move-result v2
+    iput p3, p0, Lhmt;->c:I
 
-    const/4 v1, 0x0
+    invoke-direct {p0}, Lhmt;-><init>()V
 
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v3
-
-    if-ge v3, v2, :cond_0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    const v4, 0xffff
-
-    and-int/2addr v4, v3
-
-    packed-switch v4, :pswitch_data_0
-
-    invoke-static {p1, v3}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v3}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v3}, Lhjg;->e(Landroid/os/Parcel;I)I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v3
-
-    if-eq v3, v2, :cond_1
-
-    new-instance v0, Ladf;
-
-    const/16 v1, 0x25
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
-
-    throw v0
-
-    :cond_1
-    new-instance v2, Lcom/google/android/gms/common/zzc;
-
-    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/common/zzc;-><init>(Ljava/lang/String;I)V
-
-    return-object v2
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/common/zzc;
+# virtual methods
+.method public a()V
+    .locals 3
 
-    return-object v0
+    iget-object v0, p0, Lhmt;->a:Landroid/content/Intent;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lhmt;->b:Landroid/app/Activity;
+
+    iget-object v1, p0, Lhmt;->a:Landroid/content/Intent;
+
+    iget v2, p0, Lhmt;->c:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 3
+
+    :try_start_0
+    invoke-virtual {p0}, Lhmt;->a()V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    const-string v1, "DialogRedirect"
+
+    const-string v2, "Failed to start resolution intent"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    throw v0
 .end method

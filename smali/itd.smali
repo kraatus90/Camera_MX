@@ -1,54 +1,31 @@
-.class final Litd;
-.super Ljava/lang/Object;
+.class public final Litd;
+.super Litb;
 .source "PG"
-
-# interfaces
-.implements Liyz;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Litb;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final process()Lilf;
+.method public final a()Ljava/lang/String;
     .locals 1
 
-    new-instance v0, Liyb;
-
-    invoke-direct {v0}, Liyb;-><init>()V
-
-    invoke-virtual {v0}, Liyb;->a()Lixy;
-
-    move-result-object v0
-
-    invoke-static {v0}, Licy;->b(Ljava/lang/Object;)Lilf;
-
-    move-result-object v0
+    const-string v0, "Norm32"
 
     return-object v0
 .end method
 
-.method public final resume()V
-    .locals 0
+.method public final c()I
+    .locals 1
 
-    return-void
-.end method
+    const/16 v0, 0x20
 
-.method public final stop()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final suspend()V
-    .locals 0
-
-    return-void
+    return v0
 .end method

@@ -1,91 +1,69 @@
-.class public final enum Ljjr;
-.super Ljava/lang/Enum;
+.class public abstract Ljjr;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljjz;
 
-# static fields
-.field public static final enum a:Ljjr;
 
-.field public static final enum b:Ljjr;
-
-.field private static synthetic c:[Ljjr;
+# instance fields
+.field public final a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Ljjr;
-
-    const-string v1, "OPEN"
-
-    invoke-direct {v0, v1, v2}, Ljjr;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ljjr;->a:Ljjr;
-
-    new-instance v0, Ljjr;
-
-    const-string v1, "CLOSED"
-
-    invoke-direct {v0, v1, v3}, Ljjr;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ljjr;->b:Ljjr;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljjr;
-
-    sget-object v1, Ljjr;->a:Ljjr;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Ljjr;->b:Ljjr;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Ljjr;->c:[Ljjr;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljjr;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
     return-void
 .end method
 
-.method static a(Z)Ljjr;
+
+# virtual methods
+.method public final a(J)Ljpj;
     .locals 1
 
-    if-eqz p0, :cond_0
+    iget-object v0, p0, Ljjr;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    sget-object v0, Ljjr;->b:Ljjr;
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    sget-object v0, Ljjr;->a:Ljjr;
-
-    goto :goto_0
-.end method
-
-.method public static values()[Ljjr;
-    .locals 1
-
-    sget-object v0, Ljjr;->c:[Ljjr;
-
-    invoke-virtual {v0}, [Ljjr;->clone()Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowForTimestamp(J)Ljay;
 
     move-result-object v0
 
-    check-cast v0, [Ljjr;
+    invoke-virtual {p0, p1, p2, v0}, Ljjr;->a(JLjay;)Ljpj;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract a(JLjay;)Ljpj;
+.end method
+
+.method public final a()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b(J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c(J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "FeatureTableFrameScorer"
 
     return-object v0
 .end method

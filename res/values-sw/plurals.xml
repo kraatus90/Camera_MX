@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Picha (%1$d za Kipengele cha Kupiga Picha kwa Mfululizo)</item>
+        <item quantity="one">Picha (%1$d ya Kipengele cha Kupiga Picha kwa Mfululizo)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Picha %1$d zimehifadhiwa</item>
         <item quantity="one">Picha %1$d imehifadhiwa</item>

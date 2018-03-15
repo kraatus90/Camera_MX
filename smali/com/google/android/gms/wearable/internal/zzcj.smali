@@ -7,18 +7,18 @@
 
 
 # instance fields
-.field private a:I
+.field private final a:I
 
-.field private b:Lhxj;
+.field private final b:Lhyi;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhxz;
+    new-instance v0, Lhyy;
 
-    invoke-direct {v0}, Lhxz;-><init>()V
+    invoke-direct {v0}, Lhyy;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/wearable/internal/zzcj;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -34,11 +34,11 @@
 
     if-eqz p2, :cond_0
 
-    invoke-static {p2}, Lhxk;->a(Landroid/os/IBinder;)Lhxj;
+    invoke-static {p2}, Lhyj;->a(Landroid/os/IBinder;)Lhyi;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhxj;
+    iput-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhyi;
 
     :goto_0
     return-void
@@ -46,12 +46,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhxj;
+    iput-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhyi;
 
     goto :goto_0
 .end method
 
-.method public constructor <init>(Lhxj;)V
+.method public constructor <init>(Lhyi;)V
     .locals 1
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/zza;-><init>()V
@@ -60,7 +60,7 @@
 
     iput v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->a:I
 
-    iput-object p1, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhxj;
+    iput-object p1, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhyi;
 
     return-void
 .end method
@@ -72,7 +72,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -80,27 +80,27 @@
 
     iget v2, p0, Lcom/google/android/gms/wearable/internal/zzcj;->a:I
 
-    invoke-static {p1, v0, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v0, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v2, 0x2
 
-    iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhxj;
+    iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhyi;
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     :goto_0
-    invoke-static {p1, v2, v0}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/IBinder;)V
+    invoke-static {p1, v2, v0}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/IBinder;)V
 
-    invoke-static {p1, v1}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v1}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhxj;
+    iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzcj;->b:Lhyi;
 
-    invoke-interface {v0}, Lhxj;->asBinder()Landroid/os/IBinder;
+    invoke-interface {v0}, Lhyi;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 

@@ -1,32 +1,106 @@
-.class public final Ldwa;
+.class final Ldwa;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ligs;
 
 
 # instance fields
-.field private a:Lgio;
+.field public final synthetic a:Lcom/google/android/apps/camera/legacy/app/refocus/ViewerActivity;
+
+.field private final synthetic b:Landroid/net/Uri;
+
+.field private final synthetic c:Lket;
+
+.field private final synthetic d:Lcom/google/android/apps/refocus/processing/RenderingTask;
 
 
 # direct methods
-.method public constructor <init>(Lgio;)V
+.method constructor <init>(Lcom/google/android/apps/camera/legacy/app/refocus/ViewerActivity;Landroid/net/Uri;Lket;Lcom/google/android/apps/refocus/processing/RenderingTask;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldwa;->a:Lcom/google/android/apps/camera/legacy/app/refocus/ViewerActivity;
 
-    iput-object p1, p0, Ldwa;->a:Lgio;
+    iput-object p2, p0, Ldwa;->b:Landroid/net/Uri;
+
+    iput-object p3, p0, Ldwa;->c:Lket;
+
+    iput-object p4, p0, Ldwa;->d:Lcom/google/android/apps/refocus/processing/RenderingTask;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 5
 
-    iget-object v0, p0, Ldwa;->a:Lgio;
+    new-instance v0, Landroid/content/Intent;
 
-    return-object v0
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    iget-object v1, p0, Ldwa;->b:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    sget-object v1, Lcom/google/android/apps/camera/legacy/app/refocus/ViewerActivity;->d:Ljava/lang/String;
+
+    iget-object v2, p0, Ldwa;->b:Landroid/net/Uri;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0xc
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "finish with "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Ldwa;->c:Lket;
+
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Ldwa;->d:Lcom/google/android/apps/refocus/processing/RenderingTask;
+
+    invoke-virtual {v0, p0}, Lcom/google/android/apps/refocus/processing/RenderingTask;->removeFinishedCallback(Ligs;)V
+
+    iget-object v0, p0, Ldwa;->a:Lcom/google/android/apps/camera/legacy/app/refocus/ViewerActivity;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/refocus/ViewerActivity;->r:Landroid/os/Handler;
+
+    new-instance v1, Ldwb;
+
+    invoke-direct {v1, p0}, Ldwb;-><init>(Ldwa;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
 .end method

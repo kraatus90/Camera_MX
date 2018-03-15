@@ -1,57 +1,52 @@
-.class public final synthetic Lbis;
+.class public final Lbis;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/preference/Preference$OnPreferenceChangeListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lbir;
-
-.field private b:Ljava/lang/String;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lbir;Ljava/lang/String;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbis;->a:Lbir;
-
-    iput-object p2, p0, Lbis;->b:Ljava/lang/String;
+    iput-object p1, p0, Lbis;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lbis;
+    .locals 1
+
+    new-instance v0, Lbis;
+
+    invoke-direct {v0, p0}, Lbis;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v1, p0, Lbis;->a:Lbir;
+    new-instance v1, Lbiq;
 
-    iget-object v2, p0, Lbis;->b:Ljava/lang/String;
+    iget-object v0, p0, Lbis;->a:Lkgv;
 
-    move-object v0, p2
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
-
-    iget-object v0, v1, Lbir;->c:Landroid/content/SharedPreferences;
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast p2, Ljava/lang/String;
+    check-cast v0, Lgnn;
 
-    invoke-interface {v0, v2, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-direct {v1, v0}, Lbiq;-><init>(Lgnn;)V
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    const/4 v0, 0x1
-
-    return v0
+    return-object v1
 .end method

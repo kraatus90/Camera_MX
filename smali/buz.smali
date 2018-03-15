@@ -1,31 +1,27 @@
-.class public final Lbuz;
+.class public Lbuz;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
+.field public final a:Landroid/app/Application;
 
-.field public final b:Ljxn;
-
-.field public final c:Ljxn;
-
-.field public final d:Ljxn;
+.field public final b:Landroid/content/Context;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/concurrent/Executor;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Landroid/app/Application;Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbuz;->a:Ljava/util/concurrent/Executor;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p2, p0, Lbuz;->c:Ljxn;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p4, p0, Lbuz;->b:Ljxn;
+    iput-object p1, p0, Lbuz;->a:Landroid/app/Application;
 
-    iput-object p3, p0, Lbuz;->d:Ljxn;
+    iput-object p2, p0, Lbuz;->b:Landroid/content/Context;
 
     return-void
 .end method

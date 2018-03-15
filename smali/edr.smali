@@ -3,38 +3,72 @@
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
 # instance fields
-.field public final synthetic a:Leap;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Leap;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ledr;->a:Leap;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ledr;->a:Lkgv;
+
+    iput-object p2, p0, Ledr;->b:Lkgv;
+
+    iput-object p3, p0, Ledr;->c:Lkgv;
+
+    iput-object p4, p0, Ledr;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Ledr;->a:Leap;
+    new-instance v3, Ledq;
 
-    iget-object v0, v0, Leap;->b:Lhzt;
+    iget-object v0, p0, Ledr;->a:Lkgv;
 
-    new-instance v1, Leds;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v1, p0}, Leds;-><init>(Ledr;)V
+    iget-object v0, p0, Ledr;->b:Lkgv;
 
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Ledv;
+
+    iget-object v1, p0, Ledr;->c:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lecf;
+
+    iget-object v2, p0, Ledr;->d:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Leck;
+
+    invoke-direct {v3, v0, v1, v2}, Ledq;-><init>(Ledv;Lecf;Leck;)V
+
+    return-object v3
 .end method

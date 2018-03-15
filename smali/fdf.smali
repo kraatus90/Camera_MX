@@ -3,106 +3,62 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfdf;->a:Ljxn;
+    iput-object p1, p0, Lfdf;->a:Lkgv;
 
-    iput-object p2, p0, Lfdf;->b:Ljxn;
-
-    iput-object p3, p0, Lfdf;->c:Ljxn;
-
-    iput-object p4, p0, Lfdf;->d:Ljxn;
-
-    iput-object p5, p0, Lfdf;->e:Ljxn;
-
-    iput-object p6, p0, Lfdf;->f:Ljxn;
-
-    iput-object p7, p0, Lfdf;->g:Ljxn;
+    iput-object p2, p0, Lfdf;->b:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;)Lfdf;
+    .locals 1
+
+    new-instance v0, Lfdf;
+
+    invoke-direct {v0, p0, p1}, Lfdf;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 8
+    .locals 3
 
-    new-instance v0, Lfde;
+    new-instance v2, Lfde;
 
-    iget-object v1, p0, Lfdf;->a:Ljxn;
+    iget-object v0, p0, Lfdf;->a:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihs;
+
+    iget-object v1, p0, Lfdf;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lfeq;
+    check-cast v1, Liho;
 
-    iget-object v2, p0, Lfdf;->b:Ljxn;
+    invoke-direct {v2, v0, v1}, Lfde;-><init>(Lihs;Liho;)V
 
-    iget-object v3, p0, Lfdf;->c:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v4, p0, Lfdf;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lguc;
-
-    iget-object v5, p0, Lfdf;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Levh;
-
-    iget-object v6, p0, Lfdf;->f:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lhem;
-
-    iget-object v7, p0, Lfdf;->g:Ljxn;
-
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljht;
-
-    invoke-direct/range {v0 .. v7}, Lfde;-><init>(Lfeq;Ljxn;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Levh;Lhem;Ljht;)V
-
-    return-object v0
+    return-object v2
 .end method

@@ -1,125 +1,152 @@
-.class final Ldps;
+.class public final Ldps;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:I
+.field private final a:Lkgv;
 
-.field private synthetic b:I
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
 
 
 # direct methods
-.method constructor <init>(I)V
-    .locals 1
-
-    iput p1, p0, Ldps;->b:I
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
+    iput-object p1, p0, Ldps;->a:Lkgv;
 
-    iput v0, p0, Ldps;->a:I
+    iput-object p2, p0, Ldps;->b:Lkgv;
+
+    iput-object p3, p0, Ldps;->c:Lkgv;
+
+    iput-object p4, p0, Ldps;->d:Lkgv;
+
+    iput-object p5, p0, Ldps;->e:Lkgv;
+
+    iput-object p6, p0, Ldps;->f:Lkgv;
+
+    iput-object p7, p0, Ldps;->g:Lkgv;
+
+    iput-object p8, p0, Ldps;->h:Lkgv;
 
     return-void
 .end method
 
-.method private final declared-synchronized a(Ljava/lang/Integer;)V
-    .locals 5
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Ldps;
+    .locals 9
 
-    monitor-enter p0
+    new-instance v0, Ldps;
 
-    if-eqz p1, :cond_0
+    move-object v1, p0
 
-    :try_start_0
-    iget v0, p0, Ldps;->a:I
+    move-object v2, p1
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    move-object v3, p2
 
-    move-result v1
+    move-object v4, p3
 
-    if-eq v0, v1, :cond_0
+    move-object v5, p4
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    move-object v6, p5
 
-    move-result v0
+    move-object v7, p6
 
-    iput v0, p0, Ldps;->a:I
+    move-object/from16 v8, p7
 
-    sget-object v0, Ldpr;->a:Ljava/lang/String;
+    invoke-direct/range {v0 .. v8}, Ldps;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget v2, p0, Ldps;->b:I
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x21
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Global ticket count: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, "/"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 9
 
-    check-cast p1, Ljava/lang/Integer;
+    new-instance v0, Ldpq;
 
-    invoke-direct {p0, p1}, Ldps;->a(Ljava/lang/Integer;)V
+    iget-object v1, p0, Ldps;->a:Lkgv;
 
-    return-void
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lihs;
+
+    iget-object v2, p0, Ldps;->b:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Liho;
+
+    iget-object v3, p0, Ldps;->c:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lfia;
+
+    iget-object v4, p0, Ldps;->d:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lffz;
+
+    iget-object v5, p0, Ldps;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lkeh;
+
+    iget-object v6, p0, Ldps;->f:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lfcc;
+
+    iget-object v7, p0, Ldps;->g:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lfri;
+
+    iget-object v8, p0, Ldps;->h:Lkgv;
+
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ldpa;
+
+    invoke-direct/range {v0 .. v8}, Ldpq;-><init>(Lihs;Liho;Lfia;Lffz;Lkeh;Lfcc;Lfri;Ldpa;)V
+
+    return-object v0
 .end method

@@ -1,99 +1,194 @@
-.class public final Ljwr;
-.super Ljava/lang/Object;
+.class final Ljwr;
+.super Ljwv;
 .source "PG"
+
+# interfaces
+.implements Ljava/util/Map$Entry;
 
 
 # static fields
-.field public static final a:I
-
-.field public static final b:I
-
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:[I
-
-.field public static final f:[J
-
-.field public static final g:[F
-
-.field public static final h:[Z
-
-.field public static final i:[B
+.field public static final serialVersionUID:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Ljava/util/Map$Entry;Ljava/lang/Object;)V
+    .locals 0
 
-    const/4 v1, 0x0
-
-    const/16 v0, 0xb
-
-    sput v0, Ljwr;->a:I
-
-    const/16 v0, 0xc
-
-    sput v0, Ljwr;->b:I
-
-    const/16 v0, 0x10
-
-    sput v0, Ljwr;->c:I
-
-    const/16 v0, 0x1a
-
-    sput v0, Ljwr;->d:I
-
-    new-array v0, v1, [I
-
-    sput-object v0, Ljwr;->e:[I
-
-    new-array v0, v1, [J
-
-    sput-object v0, Ljwr;->f:[J
-
-    new-array v0, v1, [F
-
-    sput-object v0, Ljwr;->g:[F
-
-    new-array v0, v1, [Z
-
-    sput-object v0, Ljwr;->h:[Z
-
-    new-array v0, v1, [B
-
-    sput-object v0, Ljwr;->i:[B
+    invoke-direct {p0, p1, p2}, Ljwv;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static final a(Ljwh;I)I
-    .locals 3
 
-    const/4 v0, 0x1
+# virtual methods
+.method final synthetic b()Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {p0}, Ljwh;->i()I
+    invoke-super {p0}, Ljwv;->b()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Ljwh;->b(I)Z
+    check-cast v0, Ljava/util/Map$Entry;
 
-    :goto_0
-    invoke-virtual {p0}, Ljwh;->a()I
+    return-object v0
+.end method
 
-    move-result v2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    if-ne v2, p1, :cond_0
+    iget-object v1, p0, Ljwr;->a:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Ljwh;->b(I)Z
+    monitor-enter v1
 
-    add-int/lit8 v0, v0, 0x1
+    :try_start_0
+    invoke-super {p0}, Ljwv;->b()Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_0
-    invoke-virtual {p0, v1, p1}, Ljwh;->b(II)V
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0, p1}, Ljava/util/Map$Entry;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    monitor-exit v1
 
     return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final getKey()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v1, p0, Ljwr;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-super {p0}, Ljwv;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final getValue()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v1, p0, Ljwr;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-super {p0}, Ljwv;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v1, p0, Ljwr;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-super {p0}, Ljwv;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->hashCode()I
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v1, p0, Ljwr;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-super {p0}, Ljwv;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0, p1}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

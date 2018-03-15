@@ -2,45 +2,28 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Liuh;
+
+# instance fields
+.field public final a:Ljrf;
+
+.field public final b:Ljrf;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
-
-    new-instance v1, Ljca;
-
-    new-instance v2, Ljcd;
-
-    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    const-string v3, "default"
-
-    invoke-virtual {p1, v0, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    iput-object v0, p0, Liwo;->a:Ljrf;
 
-    new-instance v3, Ljcc;
+    sget-object v0, Ljqu;->a:Ljqu;
 
-    invoke-direct {v3}, Ljcc;-><init>()V
+    iput-object v0, p0, Liwo;->b:Ljrf;
 
-    invoke-direct {v2, v0, v3}, Ljcd;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljcc;)V
-
-    invoke-direct {v1, v2}, Ljca;-><init>(Ljbc;)V
-
-    return-object v1
+    return-void
 .end method

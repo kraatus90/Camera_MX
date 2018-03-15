@@ -3,334 +3,239 @@
 .source "PG"
 
 
-# static fields
-.field public static final a:[I
-
-.field private static b:Landroid/util/SparseArray;
+# instance fields
+.field public a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Landroid/util/SparseArray;
-
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
-
-    sput-object v0, Lhir;->b:Landroid/util/SparseArray;
-
-    const/4 v1, 0x0
-
-    const-string v2, "com.google.android.camera.experimental2015.ExperimentalKeys"
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
-
-    sget-object v0, Lhir;->b:Landroid/util/SparseArray;
-
-    const/4 v1, 0x1
-
-    const-string v2, "com.google.android.camera.experimental2016.ExperimentalKeys"
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
-
-    sget-object v0, Lhir;->b:Landroid/util/SparseArray;
-
-    const/4 v1, 0x2
-
-    const-string v2, "com.google.android.camera.experimental2017.ExperimentalKeys"
-
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
-
-    invoke-static {}, Lhir;->a()[I
-
-    move-result-object v0
-
-    sput-object v0, Lhir;->a:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/util/Size;Ljava/lang/Class;)Landroid/hardware/camera2/params/OutputConfiguration;
-    .locals 2
+.method public static a(Lcom/google/android/apps/refocus/processing/FocusSettings;)Lhir;
+    .locals 1
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v0, Lhir;
 
-    const/16 v1, 0x1a
+    invoke-direct {v0}, Lhir;-><init>()V
 
-    if-lt v0, v1, :cond_0
+    iput-object p0, v0, Lhir;->a:Lcom/google/android/apps/refocus/processing/FocusSettings;
 
-    new-instance v0, Landroid/hardware/camera2/params/OutputConfiguration;
+    return-object v0
+.end method
 
-    invoke-direct {v0, p0, p1}, Landroid/hardware/camera2/params/OutputConfiguration;-><init>(Landroid/util/Size;Ljava/lang/Class;)V
+.method public static a(Lwk;)Lhir;
+    .locals 4
 
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_1
+
+    :cond_0
     :goto_0
     return-object v0
 
-    :cond_0
-    sget-object v0, Lhir;->a:[I
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lhir;->a([II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {p0, p1}, Lcom/google/android/camera/experimental2016/ExperimentalOutputConfigExtensions;->createOutputConfiguration(Landroid/util/Size;Ljava/lang/Class;)Landroid/hardware/camera2/params/OutputConfiguration;
-
-    move-result-object v0
-
-    goto :goto_0
-
     :cond_1
-    const/4 v0, 0x0
+    invoke-static {}, Lhir;->a()V
 
-    goto :goto_0
-.end method
+    const-string v1, "http://ns.google.com/photos/1.0/focus/"
 
-.method public static a(Landroid/hardware/camera2/CameraCaptureSession;Ljava/util/List;)V
-    .locals 2
+    const-string v2, "FocalDistance"
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-interface {p0, v1, v2}, Lwk;->d(Ljava/lang/String;Ljava/lang/String;)Z
 
-    const/16 v1, 0x1a
+    move-result v1
 
-    if-lt v0, v1, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {p0, p1}, Landroid/hardware/camera2/CameraCaptureSession;->finalizeOutputConfigurations(Ljava/util/List;)V
+    const-string v1, "http://ns.google.com/photos/1.0/focus/"
 
-    :goto_0
-    return-void
+    const-string v2, "BlurAtInfinity"
 
-    :cond_0
-    sget-object v0, Lhir;->a:[I
+    invoke-interface {p0, v1, v2}, Lwk;->d(Ljava/lang/String;Ljava/lang/String;)Z
 
-    const/4 v1, 0x1
+    move-result v1
 
-    invoke-static {v0, v1}, Lhir;->a([II)Z
+    if-eqz v1, :cond_0
 
-    move-result v0
+    new-instance v1, Lcom/google/android/apps/refocus/processing/FocusSettings;
 
-    if-eqz v0, :cond_1
-
-    invoke-static {p0, p1}, Lcom/google/android/camera/experimental2016/ExperimentalSessionExtensions;->finishDeferredConfiguration(Landroid/hardware/camera2/CameraCaptureSession;Ljava/util/List;)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Implementation isn\'t available"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public static a(Landroid/hardware/camera2/params/OutputConfiguration;Landroid/view/Surface;)V
-    .locals 2
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_0
-
-    invoke-virtual {p0, p1}, Landroid/hardware/camera2/params/OutputConfiguration;->addSurface(Landroid/view/Surface;)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    sget-object v0, Lhir;->a:[I
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lhir;->a([II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {p0, p1}, Lcom/google/android/camera/experimental2016/ExperimentalOutputConfigExtensions;->setDeferredSurface(Landroid/hardware/camera2/params/OutputConfiguration;Landroid/view/Surface;)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Implementation isn\'t available"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public static a(Landroid/media/MediaRecorder;II)V
-    .locals 2
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1a
-
-    if-lt v0, v1, :cond_0
-
-    invoke-virtual {p0, p1, p2}, Landroid/media/MediaRecorder;->setVideoEncodingProfileLevel(II)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    sget-object v0, Lhir;->a:[I
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lhir;->a([II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {p0, p1, p2}, Lcom/google/android/camera/experimental2016/ExperimentalMediaRecorderExtensions;->setVideoEncodingProfileLevel(Landroid/media/MediaRecorder;II)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Implementation isn\'t available"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public static a([II)Z
-    .locals 1
-
-    invoke-static {p0, p1}, Ljava/util/Arrays;->binarySearch([II)I
-
-    move-result v0
-
-    if-ltz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private static a()[I
-    .locals 7
-
-    const/4 v3, 0x0
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    move v2, v3
-
-    :goto_0
-    sget-object v0, Lhir;->b:Landroid/util/SparseArray;
-
-    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
-
-    move-result v0
-
-    if-ge v2, v0, :cond_0
+    invoke-direct {v1}, Lcom/google/android/apps/refocus/processing/FocusSettings;-><init>()V
 
     :try_start_0
-    sget-object v0, Lhir;->b:Landroid/util/SparseArray;
+    const-string v2, "http://ns.google.com/photos/1.0/focus/"
 
-    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+    const-string v3, "FocalDistance"
 
-    move-result-object v0
+    invoke-interface {p0, v2, v3}, Lwk;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
 
-    check-cast v0, Ljava/lang/String;
+    move-result-object v2
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-virtual {v2}, Ljava/lang/Double;->floatValue()F
 
-    sget-object v0, Lhir;->b:Landroid/util/SparseArray;
+    move-result v2
 
-    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->keyAt(I)I
+    iput v2, v1, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalDistance:F
 
-    move-result v0
+    const-string v2, "http://ns.google.com/photos/1.0/focus/"
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string v3, "BlurAtInfinity"
 
-    move-result-object v0
+    invoke-interface {p0, v2, v3}, Lwk;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Double;->floatValue()F
+
+    move-result v2
+
+    iput v2, v1, Lcom/google/android/apps/refocus/processing/FocusSettings;->blurAtInfinity:F
     :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_1
-    add-int/lit8 v0, v2, 0x1
+    const-string v0, "http://ns.google.com/photos/1.0/focus/"
 
-    move v2, v0
+    const-string v2, "DepthOfField"
 
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    invoke-interface {p0, v0, v2}, Lwk;->d(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    new-array v4, v0, [I
+    if-eqz v0, :cond_2
 
-    move-object v0, v1
+    :try_start_1
+    const-string v0, "http://ns.google.com/photos/1.0/focus/"
 
-    check-cast v0, Ljava/util/ArrayList;
+    const-string v2, "DepthOfField"
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-interface {p0, v0, v2}, Lwk;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
 
-    move-result v5
+    move-result-object v0
 
-    move v2, v3
+    invoke-virtual {v0}, Ljava/lang/Double;->floatValue()F
 
+    move-result v0
+
+    iput v0, v1, Lcom/google/android/apps/refocus/processing/FocusSettings;->depthOfField:F
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    :cond_2
+    :goto_1
+    const-string v0, "http://ns.google.com/photos/1.0/focus/"
+
+    const-string v2, "FocalPointX"
+
+    invoke-interface {p0, v0, v2}, Lwk;->d(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const-string v0, "http://ns.google.com/photos/1.0/focus/"
+
+    const-string v2, "FocalPointY"
+
+    invoke-interface {p0, v0, v2}, Lwk;->d(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    :try_start_2
+    const-string v0, "http://ns.google.com/photos/1.0/focus/"
+
+    const-string v2, "FocalPointX"
+
+    invoke-interface {p0, v0, v2}, Lwk;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Double;->floatValue()F
+
+    move-result v0
+
+    iput v0, v1, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalPointX:F
+
+    const-string v0, "http://ns.google.com/photos/1.0/focus/"
+
+    const-string v2, "FocalPointY"
+
+    invoke-interface {p0, v0, v2}, Lwk;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Double;->floatValue()F
+
+    move-result v0
+
+    iput v0, v1, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalPointY:F
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+
+    :cond_3
     :goto_2
-    if-ge v3, v5, :cond_1
+    invoke-static {v1}, Lhir;->a(Lcom/google/android/apps/refocus/processing/FocusSettings;)Lhir;
 
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
-
-    add-int/lit8 v3, v3, 0x1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v6
-
-    add-int/lit8 v1, v2, 0x1
-
-    aput v6, v4, v2
-
-    move v2, v1
-
-    goto :goto_2
-
-    :cond_1
-    invoke-static {v4}, Ljava/util/Arrays;->sort([I)V
-
-    return-object v4
+    goto/16 :goto_0
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    goto :goto_1
+    sget-object v2, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v2, v1}, Lkfe;->b(Ljava/lang/Throwable;)V
+
+    goto/16 :goto_0
 
     :catch_1
     move-exception v0
 
+    sget-object v2, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v2, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
+
     goto :goto_1
+
+    :catch_2
+    move-exception v0
+
+    sget-object v2, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v2, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_2
+.end method
+
+.method public static a()V
+    .locals 3
+
+    :try_start_0
+    sget-object v0, Lwl;->a:Lwn;
+
+    const-string v1, "http://ns.google.com/photos/1.0/focus/"
+
+    const-string v2, "GFocus"
+
+    invoke-virtual {v0, v1, v2}, Lwn;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :try_end_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_0
 .end method

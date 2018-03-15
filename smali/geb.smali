@@ -1,64 +1,93 @@
-.class public final Lgeb;
-.super Ljava/lang/Object;
+.class final Lgeb;
+.super Lgez;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic b:Lgdz;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Lgdz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgeb;->b:Lgdz;
 
-    iput-object p1, p0, Lgeb;->a:Ljxn;
+    invoke-direct {p0, p1}, Lgez;-><init>(Lgew;)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lgeb;
-
-    invoke-direct {v0, p0}, Lgeb;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final A_()V
     .locals 2
 
-    iget-object v0, p0, Lgeb;->a:Ljxn;
+    iget-object v0, p0, Lgeb;->b:Lgdz;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lgdz;->a:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v0, Lify;
+    invoke-super {p0}, Lgez;->A_()V
 
-    new-instance v1, Lgfd;
+    iget-object v0, p0, Lgeb;->b:Lgdz;
 
-    invoke-interface {v0}, Lify;->d()I
+    iget-object v0, v0, Lgdz;->a:Lgld;
 
-    move-result v0
+    iget-object v1, p0, Lgeb;->b:Lgdz;
 
-    invoke-direct {v1, v0}, Lgfd;-><init>(I)V
+    iget-object v1, v1, Lgdz;->e:Lglf;
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final R()V
+    .locals 2
 
-    check-cast v0, Lgfd;
+    iget-object v0, p0, Lgeb;->b:Lgdz;
 
-    return-object v0
+    iget-object v0, v0, Lgdz;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lgez;->R()V
+
+    iget-object v0, p0, Lgeb;->b:Lgdz;
+
+    iget-object v0, v0, Lgdz;->a:Lgld;
+
+    iget-object v1, p0, Lgeb;->b:Lgdz;
+
+    iget-object v1, v1, Lgdz;->b:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final t_()V
+    .locals 2
+
+    iget-object v0, p0, Lgeb;->b:Lgdz;
+
+    iget-object v0, v0, Lgdz;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lgez;->t_()V
+
+    iget-object v0, p0, Lgeb;->b:Lgdz;
+
+    iget-object v0, v0, Lgdz;->a:Lgld;
+
+    iget-object v1, p0, Lgeb;->b:Lgdz;
+
+    iget-object v1, v1, Lgdz;->d:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

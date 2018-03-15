@@ -1,29 +1,24 @@
-.class public final synthetic Lggr;
+.class final Lggr;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Ljhj;
+# instance fields
+.field private final synthetic a:Landroid/graphics/Bitmap;
+
+.field private final synthetic b:Lgit;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lggr;
-
-    invoke-direct {v0}, Lggr;-><init>()V
-
-    sput-object v0, Lggr;->a:Ljhj;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method constructor <init>(Lgit;Landroid/graphics/Bitmap;)V
     .locals 0
+
+    iput-object p1, p0, Lggr;->b:Lgit;
+
+    iput-object p2, p0, Lggr;->a:Landroid/graphics/Bitmap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,14 +27,61 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    check-cast p1, Lggl;
+    iget-object v0, p0, Lggr;->b:Lgit;
 
-    invoke-static {p1}, Lfsp;->a(Lggl;)Lggq;
+    iget-object v0, v0, Lgit;->a:Lggo;
+
+    iget-object v1, v0, Lggo;->c:Ljava/util/LinkedList;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lggr;->b:Lgit;
+
+    iget-object v0, v0, Lgit;->a:Lggo;
+
+    iget-object v0, v0, Lggo;->c:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lghb;
+
+    iget-object v3, p0, Lggr;->a:Landroid/graphics/Bitmap;
+
+    invoke-interface {v0, v3}, Lghb;->a(Landroid/graphics/Bitmap;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
 .end method

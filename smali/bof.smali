@@ -1,54 +1,278 @@
 .class public final Lbof;
-.super Ljava/lang/Object;
+.super Lbnw;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lgle;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public f:Lgld;
 
-.field private b:Ljxn;
+.field public g:Lglf;
+
+.field public h:Lglf;
+
+.field public i:Lglf;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lboa;)V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x0
 
-    iput-object p1, p0, Lbof;->a:Ljxn;
+    invoke-direct {p0}, Lbnw;-><init>()V
 
-    iput-object p2, p0, Lbof;->b:Ljxn;
+    new-instance v0, Lbog;
+
+    invoke-direct {v0, p0}, Lbog;-><init>(Lbof;)V
+
+    new-instance v1, Lglf;
+
+    new-array v2, v3, [Lgla;
+
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
+
+    iput-object v1, p0, Lbof;->g:Lglf;
+
+    new-instance v0, Lboh;
+
+    invoke-direct {v0, p0}, Lboh;-><init>(Lbof;)V
+
+    new-instance v1, Lglf;
+
+    new-array v2, v3, [Lgla;
+
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
+
+    iput-object v1, p0, Lbof;->h:Lglf;
+
+    new-instance v0, Lboi;
+
+    invoke-direct {v0, p0}, Lboi;-><init>(Lbof;)V
+
+    new-instance v1, Lglf;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Lgla;
+
+    aput-object p1, v2, v3
+
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
+
+    iput-object v1, p0, Lbof;->i:Lglf;
+
+    new-instance v0, Lgld;
+
+    iget-object v1, p0, Lbof;->g:Lglf;
+
+    invoke-direct {v0, v1, v3}, Lgld;-><init>(Lglf;Z)V
+
+    iput-object v0, p0, Lbof;->f:Lgld;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 1
 
-    new-instance v2, Lboe;
+    invoke-super {p0}, Lbnw;->a()V
 
-    iget-object v0, p0, Lbof;->a:Ljxn;
+    iget-object v0, p0, Lbof;->f:Lgld;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->c()V
+
+    return-void
+.end method
+
+.method public final a(IIF)V
+    .locals 1
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
     move-result-object v0
 
-    check-cast v0, Lbnw;
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lbof;->b:Ljxn;
+    :goto_0
+    return-void
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    :cond_0
+    iget-object v0, p0, Lbof;->f:Lgld;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
-    check-cast v1, Lbog;
+    move-result-object v0
 
-    invoke-direct {v2, v0, v1}, Lboe;-><init>(Lbnw;Lbog;)V
+    iget-object v0, v0, Lglf;->a:Lgla;
 
-    return-object v2
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0, p1, p2, p3}, Lglb;->a(IIF)V
+
+    goto :goto_0
+.end method
+
+.method public final a(Lcom/google/android/apps/camera/evcomp/EvCompView;Lbon;Landroid/animation/ObjectAnimator;Lboa;Lbnr;)V
+    .locals 2
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-super/range {p0 .. p5}, Lbnw;->a(Lcom/google/android/apps/camera/evcomp/EvCompView;Lbon;Landroid/animation/ObjectAnimator;Lboa;Lbnr;)V
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    sget v1, Lep;->bi:I
+
+    iput v1, v0, Lgld;->a:I
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 1
+
+    invoke-super {p0}, Lbnw;->b()V
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->d()V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->c()V
+
+    goto :goto_0
+.end method
+
+.method public final d()V
+    .locals 1
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->d()V
+
+    goto :goto_0
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->e()V
+
+    goto :goto_0
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-interface {p0}, Lgle;->i()V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->e()V
+
+    iget-object v0, p0, Lbof;->g:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lbof;->h:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lbof;->i:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    return-void
 .end method

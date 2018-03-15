@@ -1,4 +1,4 @@
-.class public Lcvs;
+.class public final Lcvs;
 .super Ljava/lang/Object;
 .source "PG"
 

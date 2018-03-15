@@ -1,36 +1,24 @@
-.class public final Leyn;
+.class public interface abstract Leyn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lela;
+.implements Lihb;
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public abstract a()V
+.end method
 
-    new-instance v0, Lfby;
+.method public abstract a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;)V
+.end method
 
-    invoke-direct {v0}, Lfby;-><init>()V
+.method public abstract b()V
+.end method
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+.method public abstract c()V
+.end method
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfdw;
-
-    return-object v0
+.method public abstract d()V
 .end method

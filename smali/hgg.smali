@@ -1,34 +1,73 @@
 .class final Lhgg;
-.super Ljava/lang/Object;
+.super Laqw;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lhfp;
+.field private final synthetic a:Lhgc;
 
 
 # direct methods
-.method constructor <init>(Lhfp;)V
-    .locals 0
+.method constructor <init>(Lhgc;)V
+    .locals 1
 
-    iput-object p1, p0, Lhgg;->a:Lhfp;
+    const/16 v0, 0x140
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhgg;->a:Lhgc;
+
+    invoke-direct {p0, v0, v0}, Laqw;-><init>(II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;Larh;)V
+    .locals 5
 
-    iget-object v0, p0, Lhgg;->a:Lhfp;
+    check-cast p1, [B
 
-    invoke-virtual {v0}, Lhfp;->r()V
+    :try_start_0
+    iget-object v0, p0, Lhgg;->a:Lhgc;
 
+    invoke-static {p1}, Lcom/google/android/gms/wearable/Asset;->a([B)Lcom/google/android/gms/wearable/Asset;
+
+    move-result-object v1
+
+    const-string v2, "/camera_packet"
+
+    invoke-static {v2}, Lhxg;->a(Ljava/lang/String;)Lhxg;
+
+    move-result-object v2
+
+    if-eqz v1, :cond_0
+
+    iget-object v3, v2, Lhxg;->b:Lhxb;
+
+    const-string v4, "postview_thumbnail"
+
+    iget-object v3, v3, Lhxb;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v3, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v2, v1}, Lhgc;->a(Lhxg;Ljava/lang/Runnable;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lhgc;->a:Ljava/lang/String;
+
+    const-string v2, "error setting thumbnail data item"
+
+    invoke-static {v1, v2, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
 .end method

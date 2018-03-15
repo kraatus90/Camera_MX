@@ -1,57 +1,62 @@
-.class abstract Ljjl;
-.super Ljio;
+.class public final Ljjl;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljmc;
+.implements Ljjz;
 
 
-# static fields
-.field public static final serialVersionUID:J = 0x67226fd4cd0928d8L
+# instance fields
+.field private final a:F
 
 
 # direct methods
-.method protected constructor <init>(Ljava/util/Map;)V
+.method public constructor <init>(F)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljio;-><init>(Ljava/util/Map;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Ljjl;->a:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract a()Ljava/util/Set;
-.end method
+.method public final a(J)Ljpj;
+    .locals 2
 
-.method public a(Ljava/lang/Object;)Ljava/util/Set;
-    .locals 1
+    new-instance v0, Ljpg;
 
-    invoke-super {p0, p1}, Ljio;->b(Ljava/lang/Object;)Ljava/util/Collection;
+    iget v1, p0, Ljjl;->a:F
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Set;
+    invoke-direct {v0, v1}, Ljpg;-><init>(F)V
 
     return-object v0
 .end method
 
-.method synthetic b()Ljava/util/Collection;
-    .locals 1
+.method public final a()V
+    .locals 0
 
-    invoke-virtual {p0}, Ljjl;->a()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method public synthetic b(Ljava/lang/Object;)Ljava/util/Collection;
+.method public final b(J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c(J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0, p1}, Ljjl;->a(Ljava/lang/Object;)Ljava/util/Set;
-
-    move-result-object v0
+    const-string v0, "ConstantScorer"
 
     return-object v0
 .end method

@@ -2,111 +2,154 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lgfw;
-
 
 # instance fields
-.field private a:Z
+.field public final a:Landroid/widget/FrameLayout;
 
-.field private b:Z
+.field public final b:Landroid/widget/LinearLayout;
 
-.field private c:Z
+.field public final c:Landroid/widget/LinearLayout;
+
+.field public final d:Landroid/widget/ImageView;
+
+.field public final e:Landroid/widget/TextView;
+
+.field public final f:Landroid/widget/ProgressBar;
+
+.field public final g:Landroid/view/ViewGroup;
+
+.field public final h:Landroid/view/View;
+
+.field public final i:Landroid/widget/TextView;
+
+.field public final j:Landroid/view/View;
+
+.field public final k:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;
 
 
 # direct methods
-.method public constructor <init>(Labw;Ldii;Z)V
-    .locals 4
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+.method public constructor <init>(Lhcf;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Laca;->h:Laca;
+    const v0, 0x7f0e0106
 
-    invoke-virtual {p1, v0}, Labw;->a(Laca;)Z
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    move-result v0
+    const v0, 0x7f0e0109
 
-    iput-boolean v0, p0, Lcnq;->a:Z
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    if-eqz p3, :cond_2
+    const v0, 0x7f0e0108
 
-    sget-object v0, Lige;->a:Lige;
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    :goto_0
-    invoke-virtual {p2, v0}, Ldii;->a(Lige;)I
+    move-result-object v0
 
-    move-result v0
+    check-cast v0, Landroid/widget/FrameLayout;
 
-    sget v3, Leh;->W:I
+    iput-object v0, p0, Lcnq;->a:Landroid/widget/FrameLayout;
 
-    if-eq v0, v3, :cond_3
+    const v0, 0x7f0e0129
 
-    move v0, v1
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    :goto_1
-    iput-boolean v0, p0, Lcnq;->b:Z
+    move-result-object v0
 
-    sget-object v0, Laby;->b:Laby;
+    check-cast v0, Landroid/widget/LinearLayout;
 
-    invoke-virtual {p1, v0}, Labw;->a(Laby;)Z
+    iput-object v0, p0, Lcnq;->b:Landroid/widget/LinearLayout;
 
-    move-result v0
+    const v0, 0x7f0e010f
 
-    if-nez v0, :cond_0
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    sget-object v0, Laby;->d:Laby;
+    move-result-object v0
 
-    invoke-virtual {p1, v0}, Labw;->a(Laby;)Z
+    check-cast v0, Landroid/widget/LinearLayout;
 
-    move-result v0
+    iput-object v0, p0, Lcnq;->c:Landroid/widget/LinearLayout;
 
-    if-eqz v0, :cond_1
+    const v0, 0x7f0e0111
 
-    :cond_0
-    move v2, v1
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
-    :cond_1
-    iput-boolean v2, p0, Lcnq;->c:Z
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    iput-object v0, p0, Lcnq;->d:Landroid/widget/ImageView;
+
+    const v0, 0x7f0e0112
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcnq;->e:Landroid/widget/TextView;
+
+    const v0, 0x7f0e0110
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ProgressBar;
+
+    iput-object v0, p0, Lcnq;->f:Landroid/widget/ProgressBar;
+
+    const v0, 0x7f0e0180
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iput-object v0, p0, Lcnq;->g:Landroid/view/ViewGroup;
+
+    const v0, 0x7f0e0181
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    iput-object v0, p0, Lcnq;->h:Landroid/view/View;
+
+    const v0, 0x7f0e010d
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcnq;->i:Landroid/widget/TextView;
+
+    const v0, 0x7f0e010a
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    iput-object v0, p0, Lcnq;->j:Landroid/view/View;
+
+    const v0, 0x7f0e0138
+
+    invoke-virtual {p1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;
+
+    iput-object v0, p0, Lcnq;->k:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;
 
     return-void
-
-    :cond_2
-    sget-object v0, Lige;->b:Lige;
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v2
-
-    goto :goto_1
-.end method
-
-
-# virtual methods
-.method public final a()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcnq;->a:Z
-
-    return v0
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcnq;->b:Z
-
-    return v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcnq;->c:Z
-
-    return v0
 .end method

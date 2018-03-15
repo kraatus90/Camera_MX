@@ -1,110 +1,279 @@
-.class public final Lgbw;
+.class public abstract Lgbw;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final c:Lgax;
 
-.field private b:Ljxn;
+.field public final d:Ljava/util/concurrent/Executor;
 
-.field private c:Ljxn;
+.field public final e:J
 
-.field private d:Ljxn;
+.field public final f:I
 
-.field private e:Ljxn;
+.field public final g:Lgay;
+
+.field public final h:Lfzv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "TaskImgContain"
 
-    iput-object p1, p0, Lgbw;->a:Ljxn;
-
-    iput-object p2, p0, Lgbw;->b:Ljxn;
-
-    iput-object p3, p0, Lgbw;->c:Ljxn;
-
-    iput-object p4, p0, Lgbw;->d:Ljxn;
-
-    iput-object p5, p0, Lgbw;->e:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 6
+.method public constructor <init>(Lgay;Ljava/util/concurrent/Executor;Lgax;ILfzv;)V
+    .locals 2
 
-    new-instance v0, Lgbw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p0
+    iput-object p1, p0, Lgbw;->g:Lgay;
 
-    move-object v2, p1
+    iget-object v0, p0, Lgbw;->g:Lgay;
 
-    move-object v3, p2
+    iget-object v0, v0, Lgay;->b:Link;
 
-    move-object v4, p3
+    invoke-interface {v0}, Link;->f()J
 
-    move-object v5, p4
+    move-result-wide v0
 
-    invoke-direct/range {v0 .. v5}, Lgbw;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    iput-wide v0, p0, Lgbw;->e:J
+
+    iput-object p2, p0, Lgbw;->d:Ljava/util/concurrent/Executor;
+
+    iput-object p3, p0, Lgbw;->c:Lgax;
+
+    iput p4, p0, Lgbw;->f:I
+
+    iput-object p5, p0, Lgbw;->h:Lfzv;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lgbw;I)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget-wide v0, p1, Lgbw;->e:J
+
+    iput-wide v0, p0, Lgbw;->e:J
+
+    iget-object v0, p1, Lgbw;->d:Ljava/util/concurrent/Executor;
+
+    iput-object v0, p0, Lgbw;->d:Ljava/util/concurrent/Executor;
+
+    iget-object v0, p1, Lgbw;->c:Lgax;
+
+    iput-object v0, p0, Lgbw;->c:Lgax;
+
+    iput p2, p0, Lgbw;->f:I
+
+    iget-object v0, p1, Lgbw;->h:Lfzv;
+
+    iput-object v0, p0, Lgbw;->h:Lfzv;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lgbw;->g:Lgay;
+
+    return-void
+.end method
+
+.method public static a(IILandroid/graphics/Rect;)Landroid/graphics/Rect;
+    .locals 4
+
+    const/4 v3, 0x0
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0, v3, v3, p0, p1}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    :cond_0
+    :goto_0
+    return-object v0
+
+    :cond_1
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0, p2}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+
+    iget v1, p2, Landroid/graphics/Rect;->top:I
+
+    iget v2, p2, Landroid/graphics/Rect;->bottom:I
+
+    if-gt v1, v2, :cond_2
+
+    iget v1, p2, Landroid/graphics/Rect;->left:I
+
+    iget v2, p2, Landroid/graphics/Rect;->right:I
+
+    if-gt v1, v2, :cond_2
+
+    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    if-lez v1, :cond_2
+
+    invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
+
+    move-result v1
+
+    if-gtz v1, :cond_3
+
+    :cond_2
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    goto :goto_0
+
+    :cond_3
+    iget v1, v0, Landroid/graphics/Rect;->left:I
+
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->left:I
+
+    iget v1, v0, Landroid/graphics/Rect;->top:I
+
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->top:I
+
+    iget v1, v0, Landroid/graphics/Rect;->right:I
+
+    invoke-static {v1, p0}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    iget v2, v0, Landroid/graphics/Rect;->left:I
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->right:I
+
+    iget v1, v0, Landroid/graphics/Rect;->bottom:I
+
+    invoke-static {v1, p1}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    iget v2, v0, Landroid/graphics/Rect;->top:I
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->bottom:I
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    if-lez v1, :cond_4
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v1
+
+    if-gtz v1, :cond_0
+
+    :cond_4
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    goto :goto_0
+.end method
+
+.method protected static a(Landroid/graphics/Rect;Ligz;)Landroid/graphics/Rect;
+    .locals 5
+
+    sget-object v0, Ligz;->a:Ligz;
+
+    if-eq p1, v0, :cond_0
+
+    sget-object v0, Ligz;->c:Ligz;
+
+    if-ne p1, v0, :cond_1
+
+    :cond_0
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0, p0}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+
+    :goto_0
+    return-object v0
+
+    :cond_1
+    new-instance v0, Landroid/graphics/Rect;
+
+    iget v1, p0, Landroid/graphics/Rect;->top:I
+
+    iget v2, p0, Landroid/graphics/Rect;->left:I
+
+    iget v3, p0, Landroid/graphics/Rect;->bottom:I
+
+    iget v4, p0, Landroid/graphics/Rect;->right:I
+
+    invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    goto :goto_0
+.end method
+
+.method public static a(Link;Landroid/graphics/Rect;)Landroid/graphics/Rect;
+    .locals 2
+
+    invoke-interface {p0}, Link;->c()I
+
+    move-result v0
+
+    invoke-interface {p0}, Link;->d()I
+
+    move-result v1
+
+    invoke-static {v0, v1, p1}, Lgbw;->a(IILandroid/graphics/Rect;)Landroid/graphics/Rect;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a(JLgby;I)V
+    .locals 3
 
-    new-instance v0, Lgbv;
+    new-instance v0, Lgbz;
 
-    iget-object v1, p0, Lgbw;->a:Ljxn;
+    invoke-direct {v0, p1, p2, p3, p4}, Lgbz;-><init>(JLgby;I)V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lgbw;->c:Lgax;
+
+    invoke-interface {v1}, Lgax;->a()Lgaq;
 
     move-result-object v1
 
-    check-cast v1, Lfzy;
+    invoke-interface {v1, v0}, Lgap;->a(Lgbz;)V
 
-    iget-object v2, p0, Lgbw;->b:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/List;
-
-    iget-object v3, p0, Lgbw;->c:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lbip;
-
-    iget-object v4, p0, Lgbw;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/util/concurrent/Executor;
-
-    iget-object v5, p0, Lgbw;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/content/Context;
-
-    invoke-direct/range {v0 .. v5}, Lgbv;-><init>(Lfzy;Ljava/util/List;Lbip;Ljava/util/concurrent/Executor;Landroid/content/Context;)V
-
-    return-object v0
+    return-void
 .end method

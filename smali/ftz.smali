@@ -1,158 +1,111 @@
-.class public final Lftz;
+.class final synthetic Lftz;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lftx;
 
-.field private b:Ljxn;
+.field private final b:Lbbb;
 
-.field private c:Ljxn;
+.field private final c:Lket;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 1
+.method constructor <init>(Lftx;Lbbb;Lket;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lftz;->a:Lftx;
 
-    invoke-static {p1, v0}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    iput-object p2, p0, Lftz;->b:Lbbb;
 
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lftz;->a:Ljxn;
-
-    const/4 v0, 0x2
-
-    invoke-static {p2, v0}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lftz;->b:Ljxn;
-
-    const/4 v0, 0x3
-
-    invoke-static {p3, v0}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lftz;->c:Ljxn;
+    iput-object p3, p0, Lftz;->c:Lket;
 
     return-void
 .end method
 
-.method private static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
-
-    if-nez p0, :cond_0
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const/16 v1, 0x5d
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final a(Landroid/net/Uri;JLjava/lang/String;Lgry;)Lfty;
-    .locals 10
+.method public final run()V
+    .locals 5
 
-    new-instance v1, Lfty;
+    iget-object v1, p0, Lftz;->a:Lftx;
 
-    iget-object v0, p0, Lftz;->a:Ljxn;
+    iget-object v2, p0, Lftz;->b:Lbbb;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v3, p0, Lftz;->c:Lket;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/content/ContentResolver;
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v2}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/content/ContentResolver;
-
-    iget-object v0, p0, Lftz;->b:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v2}, Lbbb;->b()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Landroid/net/Uri;
+    check-cast v0, Lbbi;
 
-    const/4 v3, 0x2
+    if-eqz v0, :cond_0
 
-    invoke-static {v0, v3}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lftx;->a(Ljava/util/Collection;)V
 
-    move-result-object v3
+    :goto_0
+    iget-object v4, v1, Lftx;->a:Ljava/lang/Object;
 
-    check-cast v3, Landroid/net/Uri;
+    monitor-enter v4
 
-    iget-object v4, p0, Lftz;->c:Ljxn;
+    :try_start_0
+    iget-object v0, v1, Lftx;->b:Ljava/util/Set;
 
-    const/4 v0, 0x4
+    invoke-interface {v0, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v5
+    const/4 v0, 0x1
 
-    check-cast v5, Landroid/net/Uri;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/4 v0, 0x6
+    move-result-object v0
 
-    invoke-static {p4, v0}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Lkch;->a(Ljava/lang/Object;)Z
 
-    move-result-object v8
+    return-void
 
-    check-cast v8, Ljava/lang/String;
+    :cond_0
+    invoke-interface {v2}, Lbbb;->c()Ljava/lang/Throwable;
 
-    const/4 v0, 0x7
+    move-result-object v0
 
-    invoke-static {p5, v0}, Lftz;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    move-result-object v9
+    invoke-interface {v2}, Lbbb;->c()Ljava/lang/Throwable;
 
-    check-cast v9, Lgry;
+    move-result-object v0
 
-    move-wide v6, p2
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct/range {v1 .. v9}, Lfty;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;Ljxn;Landroid/net/Uri;JLjava/lang/String;Lgry;)V
+    invoke-virtual {v3, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    return-object v1
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Lijd;
+
+    invoke-direct {v0}, Lijd;-><init>()V
+
+    invoke-virtual {v3, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

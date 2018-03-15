@@ -1,20 +1,20 @@
-.class public final Lcbp;
+.class final Lcbp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liz;
+.implements Lglp;
 
 
 # instance fields
-.field private synthetic a:Lcbn;
+.field private final synthetic a:Liih;
 
 
 # direct methods
-.method public constructor <init>(Lcbn;)V
+.method constructor <init>(Liih;)V
     .locals 0
 
-    iput-object p1, p0, Lcbp;->a:Lcbn;
+    iput-object p1, p0, Lcbp;->a:Liih;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,40 +23,16 @@
 
 
 # virtual methods
-.method public final a()V
+.method public final a(Lkar;)V
     .locals 3
 
-    iget-object v1, p0, Lcbp;->a:Lcbn;
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lcbp;->a:Lcbn;
+    iget-object v0, p0, Lcbp;->a:Liih;
 
-    iget-object v0, v0, Lcbn;->b:Ljava/util/List;
+    const/16 v1, 0x11
 
-    iget-object v2, p0, Lcbp;->a:Lcbn;
-
-    iget-object v2, v2, Lcbn;->l:Landroid/support/v4/view/ViewPager;
-
-    iget v2, v2, Landroid/support/v4/view/ViewPager;->c:I
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcdw;
-
-    iget-object v0, v0, Lcfq;->c:Lcfo;
-
-    iget-object v0, v0, Lcfb;->e:Lfvj;
-
-    iget-object v0, v0, Lfvj;->h:Landroid/net/Uri;
-
-    invoke-virtual {v1, v0}, Lcbn;->a(Landroid/net/Uri;)V
-
-    return-void
-.end method
-
-.method public final a(I)V
-    .locals 0
+    invoke-interface {v0, v1, v2, v2, p1}, Liih;->a(ILkaj;Ljzv;Lkar;)V
 
     return-void
 .end method

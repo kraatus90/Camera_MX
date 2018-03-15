@@ -1,45 +1,69 @@
-.class public final Lgsu;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class final Lgsu;
+.super Lgtd;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final synthetic b:Lgsr;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method constructor <init>(Lgsr;)V
     .locals 0
 
-    iput-object p1, p0, Lgsu;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iput-object p1, p0, Lgsu;->b:Lgsr;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p1}, Lgtd;-><init>(Lgta;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
+.method public final U()V
     .locals 2
 
-    iget-object v0, p0, Lgsu;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v0, p0, Lgsu;->b:Lgsr;
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$602(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Z)Z
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lgtd;->U()V
+
+    iget-object v0, p0, Lgsu;->b:Lgsr;
+
+    iget-object v0, v0, Lgsr;->a:Lgld;
+
+    iget-object v1, p0, Lgsu;->b:Lgsr;
+
+    iget-object v1, v1, Lgsr;->b:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final V()V
     .locals 2
 
-    iget-object v0, p0, Lgsu;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v0, p0, Lgsu;->b:Lgsr;
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Lgsr;->a:Lgld;
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$602(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Z)Z
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lgtd;->V()V
+
+    iget-object v0, p0, Lgsu;->b:Lgsr;
+
+    iget-object v0, v0, Lgsr;->a:Lgld;
+
+    iget-object v1, p0, Lgsu;->b:Lgsr;
+
+    iget-object v1, v1, Lgsr;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

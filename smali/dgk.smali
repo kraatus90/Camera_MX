@@ -1,60 +1,50 @@
-.class final Ldgk;
+.class public final Ldgk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field public final synthetic a:Ldga;
-
-.field private synthetic b:Landroid/os/Handler;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldga;Landroid/os/Handler;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldgk;->a:Ldga;
-
-    iput-object p2, p0, Ldgk;->b:Landroid/os/Handler;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldgk;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Ldgk;->a:Lkgv;
 
-    iget-object v0, p0, Ldgk;->b:Landroid/os/Handler;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Ldgl;
+    move-result-object v0
 
-    invoke-direct {v1, p0, p1}, Ldgl;-><init>(Ldgk;Ljava/util/List;)V
+    check-cast v0, Lcrz;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Ldgk;->a:Ldga;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lcng;->a:Lcnh;
+    move-result-object v0
 
-    new-instance v1, Ldew;
+    check-cast v0, Lkeh;
 
-    invoke-direct {v1}, Ldew;-><init>()V
-
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
-
-    return-void
+    return-object v0
 .end method

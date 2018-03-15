@@ -1,105 +1,86 @@
-.class public Lfei;
-.super Lfeh;
+.class public final Lfei;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lhem;
+.field private final a:Lfdy;
 
-.field public e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+.field private final b:Lfdx;
 
-.field public f:Lguc;
+.field private final c:Ljava/lang/Object;
 
-.field public g:Levh;
-
-.field public h:Ljht;
+.field private d:Ljava/util/concurrent/Future;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lfdy;Lfdx;)V
+    .locals 1
 
-    invoke-direct {p0}, Lfeh;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfei;->a:Lfdy;
+
+    iput-object p2, p0, Lfei;->b:Lfdx;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lfei;->c:Ljava/lang/Object;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfei;->d:Ljava/util/concurrent/Future;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lfei;->a:Lhem;
+    iget-object v1, p0, Lfei;->c:Ljava/lang/Object;
 
-    invoke-interface {v0}, Lhem;->e()V
+    monitor-enter v1
 
-    iget-object v0, p0, Lfei;->a:Lhem;
+    :try_start_0
+    iget-object v0, p0, Lfei;->d:Ljava/util/concurrent/Future;
 
-    invoke-interface {v0}, Lhem;->f()V
+    const/4 v2, 0x1
 
-    iget-object v0, p0, Lfei;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    invoke-interface {v0, v2}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->disablePhotoVideoSwitch()V
+    iget-object v0, p0, Lfei;->a:Lfdy;
 
-    return-void
-.end method
+    iget-object v2, p0, Lfei;->b:Lfdx;
 
-.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Landroid/view/Window;Levh;Laxo;Ljht;)V
-    .locals 2
-
-    iput-object p1, p0, Lfei;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iput-object p2, p0, Lfei;->f:Lguc;
-
-    iput-object p3, p0, Lfei;->a:Lhem;
-
-    iput-object p5, p0, Lfei;->g:Levh;
-
-    iput-object p7, p0, Lfei;->h:Ljht;
-
-    invoke-virtual {p6}, Laxo;->a()V
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToVideoIntent()V
-
-    iget-object v0, p2, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    sget-object v1, Lgua;->b:Lgua;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setMode(Lgua;)V
-
-    iget-object v0, p2, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setVisibility(I)V
-
-    invoke-virtual {p4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual {v0, v2}, Lfdy;->a(Lfdx;)Lkeh;
 
     move-result-object v0
 
-    const/4 v1, 0x3
+    iput-object v0, p0, Lfei;->d:Ljava/util/concurrent/Future;
 
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
-
-    invoke-virtual {p4, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    monitor-exit v1
 
     return-void
-.end method
 
-.method public b()V
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, p0, Lfei;->a:Lhem;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v0}, Lhem;->d()V
-
-    iget-object v0, p0, Lfei;->a:Lhem;
-
-    invoke-interface {v0}, Lhem;->f()V
-
-    iget-object v0, p0, Lfei;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->enablePhotoVideoSwitch()V
-
-    return-void
+    throw v0
 .end method

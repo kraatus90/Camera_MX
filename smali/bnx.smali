@@ -1,65 +1,101 @@
-.class final synthetic Lbnx;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class Lbnx;
+.super Lglb;
+.source "PG"
 
 
 # instance fields
-.field private a:Lbnw;
-
-.field private b:Lbob;
+.field private final synthetic a:Lbnw;
 
 
 # direct methods
-.method constructor <init>(Lbnw;Lbob;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method constructor <init>(Lbnw;)V
+    .locals 1
 
     iput-object p1, p0, Lbnx;->a:Lbnw;
 
-    iput-object p2, p0, Lbnx;->b:Lbob;
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>(B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final a()V
+    .locals 2
 
-    iget-object v1, p0, Lbnx;->a:Lbnw;
+    iget-object v0, p0, Lbnx;->a:Lbnw;
 
-    iget-object v2, p0, Lbnx;->b:Lbob;
+    iget-object v0, v0, Lbnw;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    iget-object v0, v1, Lbnw;->b:Ljvi;
+    const/16 v1, 0x8
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setVisibility(I)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Ljvi;
+.method public a(IIF)V
+    .locals 3
 
-    invoke-virtual {v2}, Lbob;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v0, p0, Lbnx;->a:Lbnw;
 
-    move-result-object v3
+    iget-object v0, v0, Lbnw;->d:Lboa;
 
-    invoke-virtual {v0, v3}, Ljsw;->a(Ljava/lang/Object;)Z
+    iput p1, v0, Lboa;->f:I
 
-    iget-object v0, v1, Lbnw;->c:Ljvi;
+    sub-int v1, p2, p1
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput v1, v0, Lboa;->g:I
 
-    move-result-object v0
+    iput p3, v0, Lboa;->h:F
 
-    check-cast v0, Ljvi;
+    iget-object v0, v0, Lboa;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    invoke-virtual {v2}, Lbob;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    iget-object v1, v0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
-    move-result-object v1
+    add-int v0, p1, p2
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    const-string v2, "Expecting -minExposure to be equal to maxExposure, was [%s, %s]"
+
+    invoke-static {v0, v2, p1, p2}, Ljii;->a(ZLjava/lang/String;II)V
+
+    int-to-float v0, p2
+
+    mul-float/2addr v0, p3
+
+    float-to-int v0, v0
+
+    mul-int/lit8 v0, v0, 0x6
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, v1, Lbnq;->s:I
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lbnx;->a:Lbnw;
+
+    iget-object v0, v0, Lbnw;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setVisibility(I)V
 
     return-void
 .end method

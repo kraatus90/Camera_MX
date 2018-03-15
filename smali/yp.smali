@@ -1,93 +1,74 @@
 .class final Lyp;
-.super Lace;
+.super Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
 .source "PG"
 
 
 # instance fields
-.field private a:Landroid/hardware/camera2/CameraCharacteristics;
+.field private final synthetic a:Lyl;
 
 
 # direct methods
-.method constructor <init>(Landroid/hardware/camera2/CameraCharacteristics;)V
+.method constructor <init>(Lyl;)V
     .locals 0
 
-    invoke-direct {p0}, Lace;-><init>()V
+    iput-object p1, p0, Lyp;->a:Lyl;
 
-    iput-object p1, p0, Lyp;->a:Landroid/hardware/camera2/CameraCharacteristics;
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method public final onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
     .locals 2
 
-    iget-object v0, p0, Lyp;->a:Landroid/hardware/camera2/CameraCharacteristics;
+    iget-object v0, p0, Lyp;->a:Lyl;
 
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    iget-object v0, v0, Lyl;->k:Laba;
 
-    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Lyp;->a:Lyl;
 
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v0, v0, Lyl;->k:Laba;
 
-    const/4 v1, 0x1
+    invoke-interface {v0}, Laba;->a()V
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b()Z
-    .locals 2
-
-    iget-object v0, p0, Lyp;->a:Landroid/hardware/camera2/CameraCharacteristics;
-
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v0, p0, Lyp;->a:Lyl;
 
     const/4 v1, 0x0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iput-object v1, v0, Lyl;->k:Laba;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
+    :cond_0
+    return-void
 .end method
 
-.method public final c()I
+.method public final onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
     .locals 2
 
-    iget-object v0, p0, Lyp;->a:Landroid/hardware/camera2/CameraCharacteristics;
+    sget-object v0, Lxx;->a:Lacf;
 
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    const-string v1, "Failed to configure the camera for capture"
 
-    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lace;->b(Lacf;Ljava/lang/String;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Ljava/lang/Integer;
+.method public final onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .locals 2
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    iget-object v0, p0, Lyp;->a:Lyl;
 
-    move-result v0
+    iput-object p1, v0, Lyl;->i:Landroid/hardware/camera2/CameraCaptureSession;
 
-    return v0
+    iget-object v0, p0, Lyp;->a:Lyl;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lyl;->a(I)V
+
+    return-void
 .end method

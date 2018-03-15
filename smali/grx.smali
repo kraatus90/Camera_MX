@@ -1,38 +1,71 @@
-.class public interface abstract Lgrx;
-.super Ljava/lang/Object;
+.class final Lgrx;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
+# instance fields
+.field private final synthetic a:Z
+
+.field private final synthetic b:Lgrz;
+
+
+# direct methods
+.method constructor <init>(Lgrz;Z)V
+    .locals 0
+
+    iput-object p1, p0, Lgrx;->b:Lgrz;
+
+    iput-boolean p2, p0, Lgrx;->a:Z
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(Landroid/graphics/Bitmap;)V
-.end method
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-.method public abstract a(Landroid/graphics/Bitmap;I)V
-.end method
+    iget-object v0, p0, Lgrx;->b:Lgrz;
 
-.method public abstract a(Landroid/net/Uri;)V
-.end method
+    iget-object v0, v0, Lgrz;->b:Lcom/google/android/apps/camera/ui/modeswitch/ViewfinderCover;
 
-.method public abstract a(Landroid/net/Uri;I)V
-.end method
+    const/16 v1, 0x8
 
-.method public abstract a(Landroid/net/Uri;Lgry;Lftv;)V
-.end method
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/modeswitch/ViewfinderCover;->setVisibility(I)V
 
-.method public abstract a(Landroid/net/Uri;Lgyr;)V
-.end method
+    iget-boolean v0, p0, Lgrx;->a:Z
 
-.method public abstract a(Landroid/net/Uri;Lgyr;Z)V
-.end method
+    if-eqz v0, :cond_0
 
-.method public abstract a(Landroid/net/Uri;Ljava/util/List;)V
-.end method
+    iget-object v0, p0, Lgrx;->b:Lgrz;
 
-.method public abstract a([BI)V
-.end method
+    iget-object v0, v0, Lgrz;->d:Lgsa;
 
-.method public abstract b(Landroid/net/Uri;)V
-.end method
+    invoke-virtual {v0}, Lgsa;->d()V
 
-.method public abstract c(Landroid/net/Uri;)V
+    :goto_0
+    iget-object v0, p0, Lgrx;->b:Lgrz;
+
+    iget-object v0, v0, Lgrz;->c:Lgry;
+
+    invoke-interface {v0}, Lgry;->s()V
+
+    iget-object v0, p0, Lgrx;->b:Lgrz;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lgrz;->e:Z
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lgrx;->b:Lgrz;
+
+    iget-object v0, v0, Lgrz;->d:Lgsa;
+
+    invoke-virtual {v0}, Lgsa;->c()V
+
+    goto :goto_0
 .end method

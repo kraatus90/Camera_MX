@@ -198,6 +198,66 @@
     goto :goto_0
 .end method
 
+.method public getFinal_image_rgb_allocator()Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_final_image_rgb_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
+.method public getFinal_image_yuv_allocator()Lcom/google/googlex/gcam/ClientYuvAllocator;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_final_image_yuv_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/ClientYuvAllocator;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/ClientYuvAllocator;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
 .method public getFinished_callback()Lcom/google/googlex/gcam/BurstCallback;
     .locals 4
 
@@ -288,6 +348,36 @@
     goto :goto_0
 .end method
 
+.method public getMerged_pd_allocator()Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_merged_pd_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
 .method public getMerged_pd_callback()Lcom/google/googlex/gcam/PdImageCallback;
     .locals 4
 
@@ -348,6 +438,36 @@
     goto :goto_0
 .end method
 
+.method public getMutable_merged_raw_callback()Lcom/google/googlex/gcam/PlanarRawImageCallback;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_mutable_merged_raw_callback_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/PlanarRawImageCallback;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/PlanarRawImageCallback;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
 .method public getPostview_callback()Lcom/google/googlex/gcam/PostviewCallback;
     .locals 4
 
@@ -374,6 +494,66 @@
     const/4 v1, 0x0
 
     invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/PostviewCallback;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
+.method public getPostview_rgb_allocator()Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_postview_rgb_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
+.method public getPostview_yuv_allocator()Lcom/google/googlex/gcam/ClientYuvAllocator;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_postview_yuv_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/ClientYuvAllocator;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/ClientYuvAllocator;-><init>(JZ)V
 
     goto :goto_0
 .end method
@@ -462,6 +642,42 @@
     return-void
 .end method
 
+.method public setFinal_image_rgb_allocator(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;->getCPtr(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_final_image_rgb_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientInterleavedU8Allocator;)V
+
+    return-void
+.end method
+
+.method public setFinal_image_yuv_allocator(Lcom/google/googlex/gcam/ClientYuvAllocator;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/ClientYuvAllocator;->getCPtr(Lcom/google/googlex/gcam/ClientYuvAllocator;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_final_image_yuv_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientYuvAllocator;)V
+
+    return-void
+.end method
+
 .method public setFinished_callback(Lcom/google/googlex/gcam/BurstCallback;)V
     .locals 6
 
@@ -516,6 +732,24 @@
     return-void
 .end method
 
+.method public setMerged_pd_allocator(Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;->getCPtr(Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_merged_pd_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientInterleavedU16Allocator;)V
+
+    return-void
+.end method
+
 .method public setMerged_pd_callback(Lcom/google/googlex/gcam/PdImageCallback;)V
     .locals 6
 
@@ -552,6 +786,24 @@
     return-void
 .end method
 
+.method public setMutable_merged_raw_callback(Lcom/google/googlex/gcam/PlanarRawImageCallback;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/PlanarRawImageCallback;->getCPtr(Lcom/google/googlex/gcam/PlanarRawImageCallback;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_mutable_merged_raw_callback_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/PlanarRawImageCallback;)V
+
+    return-void
+.end method
+
 .method public setPostview_callback(Lcom/google/googlex/gcam/PostviewCallback;)V
     .locals 6
 
@@ -566,6 +818,42 @@
     move-object v5, p1
 
     invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_postview_callback_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/PostviewCallback;)V
+
+    return-void
+.end method
+
+.method public setPostview_rgb_allocator(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;->getCPtr(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_postview_rgb_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientInterleavedU8Allocator;)V
+
+    return-void
+.end method
+
+.method public setPostview_yuv_allocator(Lcom/google/googlex/gcam/ClientYuvAllocator;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotCallbacks;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/ClientYuvAllocator;->getCPtr(Lcom/google/googlex/gcam/ClientYuvAllocator;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotCallbacks_postview_yuv_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientYuvAllocator;)V
 
     return-void
 .end method

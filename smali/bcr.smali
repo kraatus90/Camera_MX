@@ -1,92 +1,202 @@
-.class final synthetic Lbcr;
+.class public final Lbcr;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lfzw;
+
+
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Lbcq;
-
-.field private b:Landroid/view/Surface;
-
-.field private c:Landroid/view/Surface;
-
-.field private d:Ljvi;
+.field private b:Landroid/net/Uri;
 
 
 # direct methods
-.method constructor <init>(Lbcq;Landroid/view/Surface;Landroid/view/Surface;Ljvi;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "NewVideoBroadcastTask"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lbcr;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/net/Uri;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbcr;->a:Lbcq;
-
-    iput-object p2, p0, Lbcr;->b:Landroid/view/Surface;
-
-    iput-object p3, p0, Lbcr;->c:Landroid/view/Surface;
-
-    iput-object p4, p0, Lbcr;->d:Ljvi;
+    iput-object p1, p0, Lbcr;->b:Landroid/net/Uri;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public final addFinishedCallback(Ligs;)V
+    .locals 0
 
-    const/4 v6, 0x0
-
-    iget-object v0, p0, Lbcr;->a:Lbcq;
-
-    iget-object v1, p0, Lbcr;->b:Landroid/view/Surface;
-
-    iget-object v2, p0, Lbcr;->c:Landroid/view/Surface;
-
-    iget-object v3, p0, Lbcr;->d:Ljvi;
-
-    sget-object v4, Lbcq;->a:Ljava/lang/String;
-
-    const-string v5, "Execute CameraCaptureSession-creation task on camera handler thread."
-
-    invoke-static {v4, v5}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v4, Ljava/util/LinkedList;
-
-    invoke-direct {v4}, Ljava/util/LinkedList;-><init>()V
-
-    invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :try_start_0
-    iget-object v0, v0, Lbcq;->b:Lihy;
-
-    new-instance v1, Lihx;
-
-    invoke-direct {v1, v3}, Lihx;-><init>(Ljvi;)V
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v4, v1, v2}, Lihy;->a(Ljava/util/List;Lihx;Landroid/os/Handler;)V
-    :try_end_0
-    .catch Lief; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method public final getSession()Lfzv;
+    .locals 1
 
-    sget-object v0, Lbcq;->a:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    const-string v1, "CameraDeviceProxy has been closed. (ResourceUnavailableException)"
+    return-object v0
+.end method
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+.method public final process(Landroid/content/Context;)V
+    .locals 5
 
-    invoke-virtual {v3, v6}, Ljsw;->a(Ljava/lang/Object;)Z
+    const-string v0, "android.hardware.action.NEW_VIDEO"
 
-    goto :goto_0
+    sget-object v1, Lbcr;->a:Ljava/lang/String;
+
+    iget-object v2, p0, Lbcr;->b:Landroid/net/Uri;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x17
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Sending broadcast: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " -> "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v1, Landroid/content/Intent;
+
+    iget-object v2, p0, Lbcr;->b:Landroid/net/Uri;
+
+    invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    const/high16 v0, 0x40000000    # 2.0f
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {p1, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public final removeFinishedCallback(Ligs;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final resume()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final suspend()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Lbcr;->b:Landroid/net/Uri;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1d
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "NewVideoBroadcastTask{ uri="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, " }"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

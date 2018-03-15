@@ -1,48 +1,38 @@
-.class final Liup;
+.class public final Liup;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lipj;
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+.method public final a()Lirc;
+    .locals 1
 
-    new-instance v2, Lipo;
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    const-class v0, Ljbc;
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    const-string v1, "Collage_Action"
+    throw v0
+.end method
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+.method public final close()V
+    .locals 1
 
-    move-result-object v0
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    check-cast v0, Ljbc;
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    const-class v1, Lipn;
+    throw v0
+.end method
 
-    const-string v3, "action_collage_artifact_renderer"
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    move-result-object v1
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    check-cast v1, Lipn;
-
-    invoke-direct {v2, v0, v1}, Lipo;-><init>(Ljbc;Lipn;)V
-
-    return-object v2
+    throw v0
 .end method

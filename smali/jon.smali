@@ -1,25 +1,38 @@
-.class final Ljon;
+.class public final Ljon;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljcy;
 
-# static fields
-.field public static final a:Ljok;
+
+# instance fields
+.field private final synthetic a:Ljpc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Ljpc;)V
+    .locals 0
 
-    new-instance v0, Ljoo;
+    iput-object p1, p0, Ljon;->a:Ljpc;
 
-    const-string v1, "SHA-256"
-
-    const-string v2, "Hashing.sha256()"
-
-    invoke-direct {v0, v1, v2}, Ljoo;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    sput-object v0, Ljon;->a:Ljok;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    .locals 2
+
+    check-cast p1, Ljjz;
+
+    new-instance v0, Ljow;
+
+    iget-object v1, p0, Ljon;->a:Ljpc;
+
+    invoke-direct {v0, p1, p2, v1}, Ljow;-><init>(Ljjz;Ljava/lang/String;Ljpc;)V
+
+    return-object v0
 .end method

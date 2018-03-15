@@ -2,65 +2,39 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Liq;
+
+# instance fields
+.field private final synthetic a:Landroid/support/v4/view/ViewPager;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/support/v4/view/ViewPager;)V
+    .locals 0
+
+    iput-object p1, p0, Lio;->a:Landroid/support/v4/view/ViewPager;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 2
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x15
-
-    if-lt v0, v1, :cond_0
-
-    new-instance v0, Lip;
-
-    invoke-direct {v0}, Lip;-><init>()V
-
-    sput-object v0, Lio;->a:Liq;
-
-    :goto_0
-    return-void
-
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x12
-
-    if-lt v0, v1, :cond_1
-
-    new-instance v0, Liq;
+    iget-object v0, p0, Lio;->a:Landroid/support/v4/view/ViewPager;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Liq;-><init>(B)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->a(I)V
 
-    sput-object v0, Lio;->a:Liq;
+    iget-object v0, p0, Lio;->a:Landroid/support/v4/view/ViewPager;
 
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Liq;
-
-    invoke-direct {v0}, Liq;-><init>()V
-
-    sput-object v0, Lio;->a:Liq;
-
-    goto :goto_0
-.end method
-
-.method public static a(Landroid/view/ViewGroup;)V
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setMotionEventSplittingEnabled(Z)V
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->b()V
 
     return-void
 .end method

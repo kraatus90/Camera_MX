@@ -1,64 +1,69 @@
-.class public final Leep;
-.super Libk;
+.class final Leep;
+.super Legk;
 .source "PG"
 
 
+# instance fields
+.field private final synthetic a:Leeo;
+
+
 # direct methods
-.method public constructor <init>(Liau;Liau;)V
-    .locals 2
+.method constructor <init>(Leeo;)V
+    .locals 0
 
-    const/4 v0, 0x2
+    iput-object p1, p0, Leep;->a:Leeo;
 
-    new-array v0, v0, [Liau;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    const/4 v1, 0x1
-
-    aput-object p2, v0, v1
-
-    invoke-static {v0}, Liav;->b([Liau;)Liau;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Libk;-><init>(Liau;)V
+    invoke-direct {p0, p1}, Legk;-><init>(Legj;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final L()V
     .locals 2
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Leep;->a:Leeo;
 
-    const/4 v0, 0x0
+    iget-object v0, v0, Leeo;->a:Lgld;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result-object v0
+    invoke-super {p0}, Legk;->L()V
 
-    check-cast v0, Lgdv;
+    iget-object v0, p0, Leep;->a:Leeo;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Leeo;->a:Lgld;
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v1, p0, Leep;->a:Leeo;
 
-    move-result-object v1
+    iget-object v1, v1, Leeo;->c:Lglf;
 
-    check-cast v1, Ljava/lang/Integer;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    return-void
+.end method
 
-    move-result v1
+.method public final M()V
+    .locals 2
 
-    if-eqz v1, :cond_0
+    iget-object v0, p0, Leep;->a:Leeo;
 
-    sget-object v0, Lgdv;->b:Lgdv;
+    iget-object v0, v0, Leeo;->a:Lgld;
 
-    :cond_0
-    return-object v0
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Legk;->M()V
+
+    iget-object v0, p0, Leep;->a:Leeo;
+
+    iget-object v0, v0, Leeo;->a:Lgld;
+
+    iget-object v1, p0, Leep;->a:Leeo;
+
+    iget-object v1, v1, Leeo;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

@@ -1,20 +1,24 @@
-.class public final Liby;
+.class final Liby;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Liag;
+.field private final synthetic a:Liah;
+
+.field private final synthetic b:Libw;
 
 
 # direct methods
-.method public constructor <init>(Liag;)V
+.method constructor <init>(Libw;Liah;)V
     .locals 0
 
-    iput-object p1, p0, Liby;->a:Liag;
+    iput-object p1, p0, Liby;->b:Libw;
+
+    iput-object p2, p0, Liby;->a:Liah;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,20 +27,16 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    check-cast p1, Liau;
+    iget-object v0, p0, Liby;->a:Liah;
 
-    iget-object v0, p0, Liby;->a:Liag;
+    iget-object v1, p0, Liby;->b:Libw;
 
-    invoke-virtual {v0, p1}, Liag;->a(Ljava/lang/Object;)V
+    iget-object v1, v1, Libw;->c:Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+    invoke-virtual {v0, v1}, Liah;->a(Ljava/lang/Object;)V
 
     return-void
 .end method

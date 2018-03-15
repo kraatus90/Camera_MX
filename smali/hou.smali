@@ -2,86 +2,54 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final a:Lhkl;
+.field private final synthetic a:Landroid/content/SharedPreferences;
 
-.field public final b:Lcom/google/android/gms/googlehelp/GoogleHelp;
+.field private final synthetic b:Ljava/lang/String;
 
-.field private c:J
+.field private final synthetic c:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>(Lhkl;Lcom/google/android/gms/googlehelp/GoogleHelp;Ljava/io/File;J)V
+.method public constructor <init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Integer;)V
     .locals 0
 
+    iput-object p1, p0, Lhou;->a:Landroid/content/SharedPreferences;
+
+    iput-object p2, p0, Lhou;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lhou;->c:Ljava/lang/Integer;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhou;->a:Lhkl;
-
-    iput-object p2, p0, Lhou;->b:Lcom/google/android/gms/googlehelp/GoogleHelp;
-
-    iput-wide p4, p0, Lhou;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 3
 
-    new-instance v3, Landroid/os/Bundle;
+    iget-object v0, p0, Lhou;->a:Landroid/content/SharedPreferences;
 
-    const/4 v0, 0x1
+    iget-object v1, p0, Lhou;->b:Ljava/lang/String;
 
-    invoke-direct {v3, v0}, Landroid/os/Bundle;-><init>(I)V
+    iget-object v2, p0, Lhou;->c:Ljava/lang/Integer;
 
-    :try_start_0
-    new-instance v0, Lhod;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-direct {v0}, Lhod;-><init>()V
+    move-result v2
 
-    invoke-virtual {v0}, Lhod;->a()J
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    move-result v0
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    throw v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v0
 
-    :catch_0
-    move-exception v0
-
-    const-string v0, "gH_GetAsyncFeedbackPsbd"
-
-    const-string v1, "Failed to get async Feedback psbd."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    const-string v0, "gms:feedback:async_feedback_psbd_failure"
-
-    const-string v1, "exception"
-
-    invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-wide v4, p0, Lhou;->c:J
-
-    iget-object v6, p0, Lhou;->a:Lhkl;
-
-    new-instance v0, Lhov;
-
-    const/4 v2, 0x0
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v5}, Lhov;-><init>(Lhou;Ljava/util/List;Landroid/os/Bundle;J)V
-
-    invoke-static {v6, v0}, Lhpc;->a(Lhkl;Lhpg;)V
-
-    return-void
+    return-object v0
 .end method

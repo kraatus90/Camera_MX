@@ -2,63 +2,71 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lahg;
 
-
-# instance fields
-.field private a:[B
+# static fields
+.field private static volatile a:Z
 
 
 # direct methods
-.method public constructor <init>([B)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    const-string v0, "Argument must not be null"
+    sput-boolean v0, Lanx;->a:Z
 
-    invoke-static {p1, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    :try_start_0
+    sget-boolean v0, Lanx;->a:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0, p1}, Lnn;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    :try_end_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v0
 
-    check-cast v0, [B
-
-    iput-object v0, p0, Lanx;->a:[B
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
-
-    const-class v0, [B
-
+    :goto_0
     return-object v0
-.end method
 
-.method public final synthetic b()Ljava/lang/Object;
-    .locals 1
+    :catch_0
+    move-exception v0
 
-    iget-object v0, p0, Lanx;->a:[B
+    const/4 v0, 0x0
 
-    return-object v0
-.end method
+    sput-boolean v0, Lanx;->a:Z
 
-.method public final c()I
-    .locals 1
+    :cond_0
+    :goto_1
+    if-eqz p2, :cond_1
 
-    iget-object v0, p0, Lanx;->a:[B
+    :goto_2
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    array-length v0, v0
+    move-result-object v0
 
-    return v0
-.end method
+    invoke-virtual {v0, p1, p2}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
-.method public final d()V
-    .locals 0
+    move-result-object v0
 
-    return-void
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object p2
+
+    goto :goto_2
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
 .end method

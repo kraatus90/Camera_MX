@@ -1,43 +1,42 @@
-.class final synthetic Lgxu;
+.class public final Lgxu;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lgxr;
-
-.field private b:Lgxp;
+.field private final a:Lgxq;
 
 
 # direct methods
-.method constructor <init>(Lgxr;Lgxp;)V
+.method public constructor <init>(Lgxq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxu;->a:Lgxr;
-
-    iput-object p2, p0, Lgxu;->b:Lgxp;
+    iput-object p1, p0, Lgxu;->a:Lgxq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lgxu;->a:Lgxr;
+    iget-object v0, p0, Lgxu;->a:Lgxq;
 
-    iget-object v1, p0, Lgxu;->b:Lgxp;
+    iget-object v0, v0, Lgxq;->a:Landroid/app/ActionBar;
 
-    iget-object v0, v0, Lgxr;->k:Lgxq;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, v0, Lgxq;->b:Ljava/util/Set;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    return-void
+    check-cast v0, Landroid/app/ActionBar;
+
+    return-object v0
 .end method

@@ -325,49 +325,33 @@
 .end method
 
 .method public static create(Landroid/support/v8/renderscript/RenderScript;)Landroid/support/v8/renderscript/ScriptIntrinsicBLAS;
-    .locals 4
+    .locals 5
+
+    const/4 v4, 0x0
 
     invoke-virtual {p0}, Landroid/support/v8/renderscript/RenderScript;->isUseNative()Z
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    const/16 v1, 0xd
+    const/16 v0, 0xd
 
     invoke-static {p0}, Landroid/support/v8/renderscript/Element;->U32(Landroid/support/v8/renderscript/RenderScript;)Landroid/support/v8/renderscript/Element;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p0}, Landroid/support/v8/renderscript/Element;->getID(Landroid/support/v8/renderscript/RenderScript;)J
-
-    move-result-wide v2
-
-    invoke-virtual {p0, v1, v2, v3, v0}, Landroid/support/v8/renderscript/RenderScript;->nScriptIntrinsicCreate(IJZ)J
+    invoke-virtual {v1, p0}, Landroid/support/v8/renderscript/Element;->getID(Landroid/support/v8/renderscript/RenderScript;)J
 
     move-result-wide v2
 
-    new-instance v1, Landroid/support/v8/renderscript/ScriptIntrinsicBLAS;
+    invoke-virtual {p0, v0, v2, v3, v4}, Landroid/support/v8/renderscript/RenderScript;->nScriptIntrinsicCreate(IJZ)J
 
-    invoke-direct {v1, v2, v3, p0}, Landroid/support/v8/renderscript/ScriptIntrinsicBLAS;-><init>(JLandroid/support/v8/renderscript/RenderScript;)V
+    move-result-wide v0
 
-    invoke-virtual {v1, v0}, Landroid/support/v8/renderscript/ScriptIntrinsicBLAS;->setIncSupp(Z)V
+    new-instance v2, Landroid/support/v8/renderscript/ScriptIntrinsicBLAS;
 
-    return-object v1
+    invoke-direct {v2, v0, v1, p0}, Landroid/support/v8/renderscript/ScriptIntrinsicBLAS;-><init>(JLandroid/support/v8/renderscript/RenderScript;)V
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v2, v4}, Landroid/support/v8/renderscript/ScriptIntrinsicBLAS;->setIncSupp(Z)V
 
-    goto :goto_0
+    return-object v2
 .end method
 
 .method static validateConjTranspose(I)V

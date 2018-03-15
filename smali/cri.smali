@@ -1,106 +1,88 @@
-.class public final Lcri;
-.super Ljava/lang/Object;
+.class final Lcri;
+.super Lcom/google/googlex/gcam/ProgressCallback;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
+.field private final synthetic a:Lcqv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lcqv;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcri;->a:Lcqv;
 
-    iput-object p1, p0, Lcri;->a:Ljxn;
-
-    iput-object p2, p0, Lcri;->b:Ljxn;
-
-    iput-object p3, p0, Lcri;->c:Ljxn;
-
-    iput-object p4, p0, Lcri;->d:Ljxn;
-
-    iput-object p5, p0, Lcri;->e:Ljxn;
-
-    iput-object p6, p0, Lcri;->f:Ljxn;
-
-    iput-object p7, p0, Lcri;->g:Ljxn;
+    invoke-direct {p0}, Lcom/google/googlex/gcam/ProgressCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final Run(IF)V
+    .locals 3
 
-    new-instance v0, Lcrf;
+    iget-object v0, p0, Lcri;->a:Lcqv;
 
-    iget-object v1, p0, Lcri;->a:Ljxn;
+    iget-object v1, v0, Lcqv;->b:Ljava/lang/Object;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    monitor-enter v1
 
-    move-result-object v1
+    :try_start_0
+    iget-object v0, p0, Lcri;->a:Lcqv;
 
-    check-cast v1, Lflj;
+    iget-object v0, v0, Lcqv;->d:Ljava/util/HashMap;
 
-    iget-object v2, p0, Lcri;->b:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    check-cast v2, Lcts;
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v3, p0, Lcri;->c:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v0, Lcrm;
 
-    move-result-object v3
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v3, Lgds;
+    if-eqz v0, :cond_1
 
-    iget-object v4, p0, Lcri;->d:Ljxn;
+    iget-object v1, v0, Lcrm;->e:Ljrf;
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljrf;->a()Z
 
-    iget-object v4, p0, Lcri;->e:Ljxn;
+    move-result v1
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    iget-object v4, p0, Lcri;->f:Ljxn;
+    iget-object v1, v0, Lcrm;->e:Ljrf;
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljrf;->b()Ljava/lang/Object;
 
-    move-result-object v4
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    check-cast v4, Lgra;
+    mul-float/2addr p2, v1
 
-    iget-object v5, p0, Lcri;->g:Ljxn;
+    :cond_0
+    iget-object v0, v0, Lcrm;->a:Lfsm;
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lfsm;->d:Lfsn;
 
-    move-result-object v5
+    invoke-interface {v0, p2}, Lfsn;->a(F)V
 
-    check-cast v5, Lfhs;
+    :cond_1
+    return-void
 
-    invoke-direct/range {v0 .. v5}, Lcrf;-><init>(Lflj;Lcts;Lgds;Lgra;Lfhs;)V
+    :catchall_0
+    move-exception v0
 
-    return-object v0
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

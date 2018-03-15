@@ -2,22 +2,45 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public a:Lcom/google/googlex/gcam/DirtyLensHistory;
+
+# static fields
+.field public static final a:Lauw;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
+
+    new-instance v0, Lauw;
+
+    invoke-direct {v0}, Lauw;-><init>()V
+
+    sput-object v0, Lauw;->a:Lauw;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lcom/google/googlex/gcam/DirtyLensHistory;
-
-    invoke-direct {v0}, Lcom/google/googlex/gcam/DirtyLensHistory;-><init>()V
-
-    iput-object v0, p0, Lauw;->a:Lcom/google/googlex/gcam/DirtyLensHistory;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
+
+    const/4 v0, 0x4
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
 .end method

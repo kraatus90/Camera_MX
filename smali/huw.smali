@@ -1,23 +1,13 @@
-.class public final Lhuw;
+.class public interface abstract Lhuw;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lhub;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 0
+.method public abstract a(IZ)V
+.end method
 
-    return-void
+.method public abstract a(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract a(Lcom/google/android/gms/common/ConnectionResult;)V
 .end method

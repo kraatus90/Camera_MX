@@ -1,73 +1,106 @@
-.class public final Lup;
-.super Landroid/database/Observable;
+.class final Lup;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lwa;
+
+
+# instance fields
+.field private final synthetic a:Lun;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lun;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/database/Observable;-><init>()V
+    iput-object p1, p0, Lup;->a:Lun;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method public final a()I
     .locals 1
 
-    iget-object v0, p0, Lup;->mObservers:Ljava/util/ArrayList;
+    iget-object v0, p0, Lup;->a:Lun;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Lun;->s()I
 
     move-result v0
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
-.method public final b()V
+.method public final a(Landroid/view/View;)I
     .locals 2
 
-    iget-object v0, p0, Lup;->mObservers:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    move v1, v0
-
-    :goto_0
-    if-ltz v1, :cond_0
-
-    iget-object v0, p0, Lup;->mObservers:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    check-cast v0, Luq;
+    check-cast v0, Lur;
 
-    invoke-virtual {v0}, Luq;->a()V
+    invoke-static {p1}, Lun;->b(Landroid/view/View;)I
 
-    add-int/lit8 v0, v1, -0x1
+    move-result v1
 
-    move v1, v0
+    iget v0, v0, Lur;->topMargin:I
 
-    goto :goto_0
+    sub-int v0, v1, v0
 
-    :cond_0
-    return-void
+    return v0
+.end method
+
+.method public final a(I)Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Lup;->a:Lun;
+
+    invoke-virtual {v0, p1}, Lun;->f(I)Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()I
+    .locals 2
+
+    iget-object v0, p0, Lup;->a:Lun;
+
+    iget v0, v0, Lun;->r:I
+
+    iget-object v1, p0, Lup;->a:Lun;
+
+    invoke-virtual {v1}, Lun;->u()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final b(Landroid/view/View;)I
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Lur;
+
+    invoke-static {p1}, Lun;->c(Landroid/view/View;)I
+
+    move-result v1
+
+    iget v0, v0, Lur;->bottomMargin:I
+
+    add-int/2addr v0, v1
+
+    return v0
 .end method

@@ -1,45 +1,24 @@
-.class public final Lgtr;
+.class public interface abstract Lgtr;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
-    .locals 0
-
-    iput-object p1, p0, Lgtr;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Landroid/view/SurfaceHolder$Callback2;
+.implements Landroid/view/TextureView$SurfaceTextureListener;
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public abstract b()V
+.end method
 
-    iget-object v0, p0, Lgtr;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.method public abstract c()Landroid/view/GestureDetector$OnGestureListener;
+.end method
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->isEnabled()Z
+.method public abstract d()Landroid/view/View$OnTouchListener;
+.end method
 
-    move-result v0
+.method public abstract k_()V
+.end method
 
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgtr;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$3400(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Z)V
-
-    :cond_0
-    return-void
+.method public abstract l_()Z
 .end method

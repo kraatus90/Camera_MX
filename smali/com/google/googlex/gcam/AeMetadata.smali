@@ -108,6 +108,18 @@
     return-void
 .end method
 
+.method public getExposure_compensation()F
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/AeMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeMetadata_exposure_compensation_get(JLcom/google/googlex/gcam/AeMetadata;)F
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getLock()Z
     .locals 2
 
@@ -184,6 +196,16 @@
     move-result v0
 
     return v0
+.end method
+
+.method public setExposure_compensation(F)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/AeMetadata;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeMetadata_exposure_compensation_set(JLcom/google/googlex/gcam/AeMetadata;F)V
+
+    return-void
 .end method
 
 .method public setLock(Z)V

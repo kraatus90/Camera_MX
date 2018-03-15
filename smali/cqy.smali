@@ -1,223 +1,662 @@
-.class public final Lcqy;
-.super Ljava/lang/Object;
+.class final Lcqy;
+.super Lcom/google/googlex/gcam/FinalImageCallback;
 .source "PG"
-
-# interfaces
-.implements Liau;
-.implements Lich;
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field public final b:Liag;
-
-.field public final c:Ljava/util/concurrent/Executor;
-
-.field public d:Liau;
-
-.field public e:Liau;
-
-.field public f:Lich;
-
-.field public g:Lich;
-
-.field public h:Z
+.field public final synthetic a:Lcqv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Lcqv;)V
+    .locals 0
 
-    const-string v0, "CptrBtnReadiness"
+    iput-object p1, p0, Lcqy;->a:Lcqv;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcqy;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    new-instance v0, Lhzt;
-
-    invoke-direct {v0}, Lhzt;-><init>()V
-
-    invoke-direct {p0, v0}, Lcqy;-><init>(Ljava/util/concurrent/Executor;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/util/concurrent/Executor;)V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean v2, p0, Lcqy;->h:Z
-
-    new-instance v0, Liag;
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lcqy;->b:Liag;
-
-    iput-object p1, p0, Lcqy;->c:Ljava/util/concurrent/Executor;
-
-    new-instance v0, Liag;
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Lcqy;->b(Liau;)V
-
-    new-instance v0, Liag;
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Lcqy;->c(Liau;)V
+    invoke-direct {p0}, Lcom/google/googlex/gcam/FinalImageCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Licn;Ljava/util/concurrent/Executor;)Lich;
-    .locals 1
+.method public final RgbReady(ILcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ExifMetadata;I)V
+    .locals 7
 
-    iget-object v0, p0, Lcqy;->b:Liag;
+    const/4 v4, 0x3
 
-    invoke-virtual {v0, p1, p2}, Liag;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-ne p4, v4, :cond_2
+
+    move v0, v1
+
+    :goto_0
+    const-string v3, "RgbReady only supports GcamPixelFormat.kRgb."
+
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
+
+    sget-object v0, Lcqv;->a:Ljava/lang/String;
+
+    const-string v3, "RGB image ready. shotId = %d, resolution = %d x %d"
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v2
+
+    invoke-virtual {p2}, Lcom/google/googlex/gcam/InterleavedImageU8;->width()I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v4, v1
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p2}, Lcom/google/googlex/gcam/InterleavedImageU8;->height()I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v4, v1
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcqy;->a:Lcqv;
+
+    iget-object v1, v0, Lcqv;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lcqy;->a:Lcqv;
+
+    iget-object v0, v0, Lcqv;->d:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Lcrm;
 
-.method public final a()Ljava/lang/Boolean;
-    .locals 1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lcqy;->b:Liag;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Liag;->c:Ljava/lang/Object;
+    iget-object v1, v0, Lcrm;->e:Ljrf;
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {v1}, Ljrf;->a()Z
 
-    return-object v0
-.end method
+    move-result v1
 
-.method public final a(Liau;)V
-    .locals 2
+    const-string v2, "RgbReady configured but Gouda Processor is not present."
 
-    iget-object v0, p0, Lcqy;->c:Ljava/util/concurrent/Executor;
+    invoke-static {v1, v2}, Ljii;->a(ZLjava/lang/Object;)V
 
-    new-instance v1, Lcqz;
+    new-instance v2, Lcom/google/googlex/gcam/ExifMetadata;
 
-    invoke-direct {v1, p0, p1}, Lcqz;-><init>(Lcqy;Liau;)V
+    invoke-direct {v2, p3}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(Lcom/google/googlex/gcam/ExifMetadata;)V
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    iget-object v1, v0, Lcrm;->e:Ljrf;
 
-    return-void
-.end method
+    invoke-virtual {v1}, Ljrf;->b()Ljava/lang/Object;
 
-.method public final synthetic b()Ljava/lang/Object;
-    .locals 1
+    move-result-object v1
 
-    invoke-virtual {p0}, Lcqy;->a()Ljava/lang/Boolean;
+    check-cast v1, Ldmw;
+
+    iget-object v3, v0, Lcrm;->a:Lfsm;
+
+    invoke-virtual {v1, v3}, Ldmw;->c(Lfsm;)Ldmz;
+
+    move-result-object v1
+
+    invoke-virtual {p2}, Lcom/google/googlex/gcam/InterleavedImageU8;->width()I
+
+    move-result v3
+
+    invoke-virtual {p2}, Lcom/google/googlex/gcam/InterleavedImageU8;->height()I
+
+    move-result v4
+
+    invoke-static {v3, v4, p3, v0}, Lcqa;->a(IILcom/google/googlex/gcam/ExifMetadata;Lcrm;)Lcom/google/googlex/gcam/GoudaRequest;
+
+    move-result-object v3
+
+    iput-object p2, v1, Ldmz;->d:Lcom/google/googlex/gcam/InterleavedImageU8;
+
+    iput-object v3, v1, Ldmz;->e:Lcom/google/googlex/gcam/GoudaRequest;
+
+    iput-object v2, v1, Ldmz;->f:Lcom/google/googlex/gcam/ExifMetadata;
+
+    iget-object v2, v0, Lcrm;->l:Lket;
+
+    iput-object v2, v1, Ldmz;->g:Lkeh;
+
+    iget-object v2, v0, Lcrm;->a:Lfsm;
+
+    iget-object v2, v2, Lfsm;->a:Lfaq;
+
+    iget-object v2, v2, Lfaq;->g:Liaw;
+
+    iput-object v2, v1, Ldmz;->h:Liaw;
+
+    iput-object v0, v1, Ldmz;->l:Lcrm;
+
+    iget-object v0, v1, Ldmz;->m:Ldmw;
+
+    iget-object v2, v0, Ldmw;->h:Lddd;
+
+    iget-object v3, v1, Ldmz;->e:Lcom/google/googlex/gcam/GoudaRequest;
+
+    iget-object v0, v1, Ldmz;->a:Lgfr;
+
+    invoke-interface {v0}, Lgfr;->b()J
+
+    move-result-wide v4
+
+    iget-object v0, v2, Lddd;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljrf;
 
-.method final b(Liau;)V
-    .locals 3
+    iget-object v2, v2, Lddd;->b:Lbqc;
 
-    iput-object p1, p0, Lcqy;->d:Liau;
+    sget-object v6, Lfza;->c:Lbqf;
 
-    iget-object v0, p0, Lcqy;->f:Lich;
+    invoke-virtual {v2, v6}, Lbqc;->a(Lbqf;)Z
 
-    if-eqz v0, :cond_0
+    move-result v2
 
-    iget-object v0, p0, Lcqy;->f:Lich;
+    if-eqz v2, :cond_1
 
-    invoke-interface {v0}, Lich;->close()V
+    invoke-virtual {v0}, Ljrf;->a()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/io/File;
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v6, "portrait"
+
+    invoke-direct {v2, v0, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, "PortraitRequestDecorator"
+
+    const-string v6, "Could not create portrait mode debug data folder."
+
+    invoke-static {v0, v6}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
-    iget-object v0, p0, Lcqy;->d:Liau;
-
-    new-instance v1, Lcrc;
-
-    invoke-direct {v1, p0}, Lcrc;-><init>(Lcqy;)V
-
-    iget-object v2, p0, Lcqy;->c:Ljava/util/concurrent/Executor;
-
-    invoke-interface {v0, v1, v2}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcqy;->f:Lich;
+    invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/GoudaRequest;->setPortrait_raw_path(Ljava/lang/String;)V
+
+    invoke-static {v4, v5}, Lcpk;->a(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/GoudaRequest;->setShot_prefix(Ljava/lang/String;)V
+
+    :cond_1
+    invoke-virtual {v1}, Ldmz;->close()V
 
     return-void
+
+    :cond_2
+    move v0, v2
+
+    goto/16 :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method
 
-.method final c(Liau;)V
-    .locals 2
+.method public final YuvReady(ILcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ExifMetadata;I)V
+    .locals 22
 
-    iput-object p1, p0, Lcqy;->e:Liau;
+    const/4 v4, 0x1
 
-    iget-object v0, p0, Lcqy;->g:Lich;
+    move/from16 v0, p4
 
-    if-eqz v0, :cond_0
+    if-ne v0, v4, :cond_0
 
-    iget-object v0, p0, Lcqy;->g:Lich;
+    const/4 v4, 0x1
 
-    invoke-interface {v0}, Lich;->close()V
+    :goto_0
+    const-string v5, "YuvReady only supports GcamPixelFormat.kNv12."
+
+    invoke-static {v4, v5}, Ljii;->a(ZLjava/lang/Object;)V
+
+    sget-object v4, Lcqv;->a:Ljava/lang/String;
+
+    const-string v5, "YUV image ready. shotId = %d, resolution = %d x %d"
+
+    const/4 v6, 0x3
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    aput-object v8, v6, v7
+
+    const/4 v7, 0x1
+
+    invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/gcam/YuvImage;->width()I
+
+    move-result v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    aput-object v8, v6, v7
+
+    const/4 v7, 0x2
+
+    invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/gcam/YuvImage;->height()I
+
+    move-result v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    aput-object v8, v6, v7
+
+    const/4 v7, 0x0
+
+    invoke-static {v7, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcqy;->a:Lcqv;
+
+    iget-object v5, v4, Lcqv;->b:Ljava/lang/Object;
+
+    monitor-enter v5
+
+    :try_start_0
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcqy;->a:Lcqv;
+
+    iget-object v4, v4, Lcqv;->d:Ljava/util/HashMap;
+
+    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v0, v4
+
+    check-cast v0, Lcrm;
+
+    move-object v11, v0
+
+    monitor-exit v5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {v11}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v11, v4}, Lcrm;->a(I)Lind;
+
+    move-result-object v7
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v11, v4}, Lcrm;->b(I)J
+
+    move-result-wide v14
+
+    if-nez v7, :cond_1
+
+    sget-object v4, Lcqv;->a:Ljava/lang/String;
+
+    const/16 v5, 0x3e
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "Not metadata associated with shot "
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    move/from16 v0, p1
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, " found, aborting."
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static/range {p2 .. p2}, Lcom/google/googlex/gcam/BufferUtils;->deleteNativeImage(Lcom/google/googlex/gcam/YuvImage;)V
+
+    :goto_1
+    return-void
 
     :cond_0
-    new-instance v0, Lcrd;
+    const/4 v4, 0x0
 
-    invoke-direct {v0, p0}, Lcrd;-><init>(Lcqy;)V
+    goto/16 :goto_0
 
-    iget-object v1, p0, Lcqy;->c:Ljava/util/concurrent/Executor;
+    :catchall_0
+    move-exception v4
 
-    invoke-interface {p1, v0, v1}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    :try_start_1
+    monitor-exit v5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v0
+    throw v4
 
-    iput-object v0, p0, Lcqy;->g:Lich;
+    :cond_1
+    iget-object v13, v11, Lcrm;->h:Ljrf;
 
-    return-void
-.end method
+    invoke-virtual {v13}, Ljrf;->a()Z
 
-.method public final close()V
-    .locals 2
+    move-result v4
 
-    iget-object v0, p0, Lcqy;->c:Ljava/util/concurrent/Executor;
+    if-nez v4, :cond_2
 
-    new-instance v1, Lcrb;
+    sget-object v4, Lcqv;->a:Ljava/lang/String;
 
-    invoke-direct {v1, p0}, Lcrb;-><init>(Lcqy;)V
+    const/16 v5, 0x40
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    return-void
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "No image saver associated with shot "
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    move/from16 v0, p1
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, " found, aborting."
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static/range {p2 .. p2}, Lcom/google/googlex/gcam/BufferUtils;->deleteNativeImage(Lcom/google/googlex/gcam/YuvImage;)V
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/gcam/YuvImage;->width()I
+
+    move-result v4
+
+    invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/gcam/YuvImage;->height()I
+
+    move-result v5
+
+    move-object/from16 v0, p3
+
+    invoke-static {v4, v5, v0}, Lcpk;->a(IILcom/google/googlex/gcam/ExifMetadata;)Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    move-result-object v9
+
+    new-instance v16, Lcrq;
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, p2
+
+    invoke-direct {v0, v1, v14, v15}, Lcrq;-><init>(Lcom/google/googlex/gcam/YuvImage;J)V
+
+    iget v4, v11, Lcrm;->c:I
+
+    invoke-static {v4}, Ligz;->a(I)Ligz;
+
+    move-result-object v6
+
+    new-instance v17, Liln;
+
+    const/4 v4, 0x1
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v16
+
+    invoke-direct {v0, v1, v4}, Liln;-><init>(Link;I)V
+
+    const/4 v12, 0x0
+
+    :try_start_2
+    new-instance v4, Lgay;
+
+    invoke-virtual/range {v17 .. v17}, Liln;->i()Link;
+
+    move-result-object v5
+
+    invoke-static {v7}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
+
+    move-result-object v7
+
+    new-instance v8, Landroid/graphics/Rect;
+
+    const/4 v10, 0x0
+
+    const/16 v18, 0x0
+
+    invoke-interface/range {v16 .. v16}, Link;->c()I
+
+    move-result v19
+
+    invoke-interface/range {v16 .. v16}, Link;->d()I
+
+    move-result v20
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    move/from16 v2, v20
+
+    invoke-direct {v8, v10, v0, v1, v2}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    iget-object v10, v11, Lcrm;->a:Lfsm;
+
+    iget-object v10, v10, Lfsm;->b:Lgfr;
+
+    invoke-interface {v10}, Lfzv;->n()Lgly;
+
+    move-result-object v10
+
+    invoke-direct/range {v4 .. v10}, Lgay;-><init>(Link;Ligz;Lkeh;Landroid/graphics/Rect;Lcom/google/android/libraries/camera/exif/ExifInterface;Lgly;)V
+
+    iget-object v5, v11, Lcrm;->i:Ljrf;
+
+    invoke-virtual {v5}, Ljrf;->a()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3
+
+    iget-object v5, v11, Lcrm;->i:Ljrf;
+
+    invoke-virtual {v5}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lezq;
+
+    invoke-virtual/range {v17 .. v17}, Liln;->i()Link;
+
+    move-result-object v6
+
+    invoke-interface {v5, v6, v14, v15}, Lezq;->a(Link;J)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    :cond_3
+    invoke-virtual/range {v17 .. v17}, Liln;->close()V
+
+    invoke-virtual {v13}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ldmd;
+
+    invoke-virtual {v5, v4}, Ldmd;->a(Lgay;)Lkeh;
+
+    move-result-object v4
+
+    new-instance v5, Lcqz;
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v16
+
+    invoke-direct {v5, v0, v1, v9, v11}, Lcqz;-><init>(Lcqy;Link;Lcom/google/android/libraries/camera/exif/ExifInterface;Lcrm;)V
+
+    sget-object v6, Lken;->a:Lken;
+
+    invoke-static {v4, v5, v6}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    goto/16 :goto_1
+
+    :catch_0
+    move-exception v4
+
+    :try_start_3
+    throw v4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception v5
+
+    move-object/from16 v21, v5
+
+    move-object v5, v4
+
+    move-object/from16 v4, v21
+
+    :goto_2
+    if-eqz v5, :cond_4
+
+    :try_start_4
+    invoke-virtual/range {v17 .. v17}, Liln;->close()V
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_1
+
+    :goto_3
+    throw v4
+
+    :catch_1
+    move-exception v6
+
+    invoke-static {v5, v6}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_3
+
+    :cond_4
+    invoke-virtual/range {v17 .. v17}, Liln;->close()V
+
+    goto :goto_3
+
+    :catchall_2
+    move-exception v4
+
+    move-object v5, v12
+
+    goto :goto_2
 .end method

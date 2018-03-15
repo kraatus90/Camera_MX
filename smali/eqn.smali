@@ -2,55 +2,109 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Z
+
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leqn;->a:Ljxn;
+    iput-boolean v0, p0, Leqn;->a:Z
+
+    iput-boolean v0, p0, Leqn;->b:Z
 
     return-void
 .end method
 
+.method public constructor <init>(Leqm;)V
+    .locals 7
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Leqn;->a:Ljxn;
+    const/4 v2, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/high16 v6, 0x43b40000    # 360.0f
 
-    move-result-object v0
+    const/high16 v5, 0x428c0000    # 70.0f
 
-    check-cast v0, Lgsl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "default_scope"
+    iget v0, p1, Leqm;->c:I
 
-    const-string v2, "pref_camera_advice_settings"
+    int-to-float v0, v0
 
-    const/4 v3, 0x1
+    mul-float/2addr v0, v6
 
-    invoke-virtual {v0, v1, v2, v3}, Lgsl;->a(Ljava/lang/String;Ljava/lang/String;Z)Liau;
+    iget v3, p1, Leqm;->e:I
 
-    move-result-object v0
+    int-to-float v3, v3
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    div-float v3, v0, v3
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const/high16 v0, 0x43340000    # 180.0f
 
-    move-result-object v0
+    iget v4, p1, Leqm;->d:I
 
-    check-cast v0, Liau;
+    int-to-float v4, v4
 
-    return-object v0
+    mul-float/2addr v0, v4
+
+    iget v4, p1, Leqm;->f:I
+
+    int-to-float v4, v4
+
+    div-float/2addr v0, v4
+
+    iget-boolean v4, p1, Leqm;->b:Z
+
+    if-eqz v4, :cond_1
+
+    iget-boolean v4, p1, Leqm;->g:Z
+
+    if-nez v4, :cond_1
+
+    cmpl-float v4, v3, v5
+
+    if-gez v4, :cond_0
+
+    cmpl-float v0, v0, v5
+
+    if-ltz v0, :cond_1
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    iput-boolean v0, p0, Leqn;->a:Z
+
+    iget-boolean v0, p1, Leqm;->g:Z
+
+    if-nez v0, :cond_2
+
+    cmpl-float v0, v3, v6
+
+    if-nez v0, :cond_2
+
+    :goto_1
+    iput-boolean v1, p0, Leqn;->b:Z
+
+    return-void
+
+    :cond_1
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_2
+    move v1, v2
+
+    goto :goto_1
 .end method

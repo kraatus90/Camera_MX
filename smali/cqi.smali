@@ -1,163 +1,107 @@
 .class public final Lcqi;
-.super Lcqh;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lgkv;
+
+
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private c:Lgcp;
+.field private final b:Lkgv;
 
-.field private d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+.field private final c:Lffv;
 
-.field private e:Lguc;
+.field private final d:Lihs;
 
 
 # direct methods
-.method public constructor <init>(Lbsa;Lbvl;Lgcp;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "HdrPlusPrewarm"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcqi;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lkgv;Lffv;Lihs;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcqh;-><init>(Lbsa;Lbvl;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lcqi;->c:Lgcp;
+    iput-object p1, p0, Lcqi;->b:Lkgv;
 
-    iput-object p4, p0, Lcqi;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iput-object p2, p0, Lcqi;->c:Lffv;
 
-    iput-object p5, p0, Lcqi;->e:Lguc;
+    iput-object p3, p0, Lcqi;->d:Lihs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Labe;)V
-    .locals 0
+.method public final run()V
+    .locals 2
 
+    iget-object v0, p0, Lcqi;->c:Lffv;
+
+    iget v0, v0, Lffv;->a:I
+
+    sget v1, Lep;->aw:I
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcqi;->c:Lffv;
+
+    iget v0, v0, Lffv;->a:I
+
+    sget v1, Lep;->aw:I
+
+    if-eq v0, v1, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcqi;->d:Lihs;
+
+    const-string v1, "HdrPlus#initialize"
+
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcqi;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    iget-object v0, p0, Lcqi;->d:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    :goto_1
     return-void
-.end method
 
-.method public final a(Lbtx;Lgcq;)V
-    .locals 3
-
-    iget-object v0, p0, Lcqi;->c:Lgcp;
-
-    invoke-interface {p1}, Lbtx;->B()Lhaz;
-
-    move-result-object v1
-
-    const v2, 0x7f0e01d6
-
-    invoke-virtual {v1, v2}, Lhaz;->a(I)Ljava/lang/Object;
-
-    iget-object v1, p0, Lcqi;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v2, p0, Lcqi;->e:Lguc;
-
-    invoke-interface {v0, v1, v2}, Lgcp;->a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;)V
-
-    return-void
-.end method
-
-.method public final a(Lgsm;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a()Z
-    .locals 1
-
-    iget-object v0, p0, Lcqi;->c:Lgcp;
-
-    invoke-interface {v0}, Lgcp;->K()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final a(ILandroid/view/KeyEvent;)Z
-    .locals 1
-
+    :cond_1
     const/4 v0, 0x0
 
-    return v0
-.end method
+    goto :goto_0
 
-.method public final b(ILandroid/view/KeyEvent;)Z
-    .locals 1
+    :cond_2
+    sget-object v0, Lcqi;->a:Ljava/lang/String;
 
-    const/4 v0, 0x0
+    const-string v1, "HdrPlus is not supported on this device."
 
-    return v0
-.end method
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lcqi;->c:Lgcp;
-
-    invoke-interface {v0}, Lgcp;->close()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lcqi;->c:Lgcp;
-
-    invoke-interface {v0}, Lgcp;->a()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 1
-
-    iget-object v0, p0, Lcqi;->c:Lgcp;
-
-    invoke-interface {v0}, Lgcp;->b()V
-
-    return-void
-.end method
-
-.method public final j()Lgfw;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final k()Ljava/lang/String;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final l()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+    goto :goto_1
 .end method

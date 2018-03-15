@@ -1,54 +1,81 @@
-.class public final Lbnt;
+.class public final synthetic Lbnt;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:F
 
-.field private b:Ljxn;
+.field private final b:F
+
+.field private final c:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method public constructor <init>(FFLcom/google/android/apps/camera/evcomp/EvCompView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbnt;->a:Ljxn;
+    iput p1, p0, Lbnt;->a:F
 
-    iput-object p2, p0, Lbnt;->b:Ljxn;
+    iput p2, p0, Lbnt;->b:F
+
+    iput-object p3, p0, Lbnt;->c:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 4
 
-    new-instance v2, Lbns;
+    iget v0, p0, Lbnt;->a:F
 
-    iget-object v0, p0, Lbnt;->a:Ljxn;
+    iget v1, p0, Lbnt;->b:F
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Lbnt;->c:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    check-cast v0, Landroid/content/Context;
+    move-result v3
 
-    iget-object v1, p0, Lbnt;->b:Ljxn;
+    sub-float/2addr v1, v0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    mul-float/2addr v1, v3
 
-    move-result-object v1
+    add-float/2addr v0, v1
 
-    check-cast v1, Ljava/lang/String;
+    iput v0, v2, Lcom/google/android/apps/camera/evcomp/EvCompView;->c:F
 
-    invoke-direct {v2, v0, v1}, Lbns;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->invalidate()V
 
-    return-object v2
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result v1
+
+    const/4 v0, 0x0
+
+    cmpl-float v0, v1, v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    iput-boolean v0, v2, Lcom/google/android/apps/camera/evcomp/EvCompView;->f:Z
+
+    iput v1, v2, Lcom/google/android/apps/camera/evcomp/EvCompView;->d:F
+
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->invalidate()V
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

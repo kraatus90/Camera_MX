@@ -1,81 +1,48 @@
-.class final Ldda;
+.class final synthetic Ldda;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lgmw;
+.implements Lihg;
 
 
 # instance fields
-.field private synthetic a:Ldcz;
+.field private final a:Ldcy;
 
 
 # direct methods
-.method constructor <init>(Ldcz;)V
+.method constructor <init>(Ldcy;)V
     .locals 0
 
-    iput-object p1, p0, Ldda;->a:Ldcz;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldda;->a:Ldcy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Licf;)V
+.method public final a(Ljava/lang/Object;)V
     .locals 3
 
-    iget-object v0, p0, Ldda;->a:Ldcz;
+    iget-object v0, p0, Ldda;->a:Ldcy;
 
-    invoke-virtual {v0, p1}, Ldcz;->a(Licf;)Ljava/lang/Integer;
+    check-cast p1, Lfbn;
 
-    move-result-object v0
+    iget-object v1, p1, Lfbn;->b:Lfbk;
 
-    iget-object v1, p0, Ldda;->a:Ldcz;
+    iget-object v1, v1, Lfbk;->b:Lgdk;
 
-    iget-object v1, v1, Ldcz;->c:Ljava/lang/Object;
+    sget-object v2, Lgdk;->d:Lgdk;
 
-    monitor-enter v1
+    if-ne v1, v2, :cond_0
 
-    :try_start_0
-    iget-object v2, p0, Ldda;->a:Ldcz;
+    iget-object v0, v0, Ldcy;->a:Ldcm;
 
-    iget-boolean v2, v2, Ldcz;->d:Z
+    iget-object v0, v0, Ldcm;->F:Lfyy;
 
-    if-nez v2, :cond_0
-
-    iget-object v2, p0, Ldda;->a:Ldcz;
-
-    iget-object v2, v2, Ldcz;->a:Liag;
-
-    invoke-virtual {v2, v0}, Liag;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0}, Lfyy;->b()V
 
     :cond_0
-    iget-object v2, p0, Ldda;->a:Ldcz;
-
-    iget-object v2, v2, Ldcz;->b:Liag;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v0}, Licf;->a(I)Licf;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Liag;->a(Ljava/lang/Object;)V
-
-    monitor-exit v1
-
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

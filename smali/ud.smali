@@ -1,11 +1,38 @@
-.class public interface abstract Lud;
+.class public final Lud;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/view/animation/Interpolator;
 
-# virtual methods
-.method public abstract a(Loz;Landroid/view/MenuItem;)V
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method
 
-.method public abstract b(Loz;Landroid/view/MenuItem;)V
+
+# virtual methods
+.method public final getInterpolation(F)F
+    .locals 3
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    sub-float v0, p1, v2
+
+    mul-float v1, v0, v0
+
+    mul-float/2addr v1, v0
+
+    mul-float/2addr v1, v0
+
+    mul-float/2addr v0, v1
+
+    add-float/2addr v0, v2
+
+    return v0
 .end method

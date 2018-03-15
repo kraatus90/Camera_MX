@@ -1,121 +1,136 @@
-.class final Lcub;
+.class final synthetic Lcub;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Lihg;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;
+.field private final a:Lctw;
 
-.field private synthetic b:Ldhi;
+.field private final b:Lglv;
 
-.field private synthetic c:Lctz;
+.field private final c:Z
+
+.field private final d:Z
+
+.field private final e:Ljava/lang/Long;
+
+.field private final f:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method constructor <init>(Lctz;Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;Ldhi;)V
+.method constructor <init>(Lctw;Lglv;ZZLjava/lang/Long;Ljava/util/concurrent/atomic/AtomicReference;)V
     .locals 0
 
-    iput-object p1, p0, Lcub;->c:Lctz;
-
-    iput-object p2, p0, Lcub;->a:Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;
-
-    iput-object p3, p0, Lcub;->b:Ldhi;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcub;->a:Lctw;
+
+    iput-object p2, p0, Lcub;->b:Lglv;
+
+    iput-boolean p3, p0, Lcub;->c:Z
+
+    iput-boolean p4, p0, Lcub;->d:Z
+
+    iput-object p5, p0, Lcub;->e:Ljava/lang/Long;
+
+    iput-object p6, p0, Lcub;->f:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
-.method private final a()Ldhi;
-    .locals 6
 
-    sget-object v0, Lctz;->a:Ljava/lang/String;
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 13
 
-    const-string v1, "OneCamera started!"
+    const/4 v7, 0x2
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v6, 0x1
 
-    iget-object v0, p0, Lcub;->c:Lctz;
+    iget-object v8, p0, Lcub;->a:Lctw;
 
-    iget-object v1, v0, Lctz;->e:Ljava/lang/Object;
+    iget-object v0, p0, Lcub;->b:Lglv;
 
-    monitor-enter v1
+    iget-boolean v9, p0, Lcub;->c:Z
 
-    :try_start_0
-    iget-object v0, p0, Lcub;->c:Lctz;
+    iget-boolean v10, p0, Lcub;->d:Z
 
-    const/4 v2, 0x0
+    iget-object v11, p0, Lcub;->e:Ljava/lang/Long;
 
-    iput-object v2, v0, Lctz;->f:Ljuw;
+    iget-object v12, p0, Lcub;->f:Ljava/util/concurrent/atomic/AtomicReference;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lcub;->a:Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;->e:J
+    move-result v1
 
-    const-wide/16 v4, 0x0
+    if-eqz v1, :cond_0
 
-    cmp-long v1, v2, v4
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x1
-
-    :goto_0
-    const-string v2, "Accidental session reuse."
-
-    invoke-static {v1, v2}, Liya;->b(ZLjava/lang/Object;)V
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;->m:Lijl;
+    iget-object v1, v0, Lglv;->m:Liom;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;->e:J
+    iput-wide v2, v0, Lglv;->a:J
 
-    const-string v1, "OneCamera Started"
+    const-string v1, "Camera Change"
 
-    iget-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;->d:J
+    iget-wide v2, v0, Lcom/google/android/apps/camera/stats/InstrumentationSession;->k:J
 
-    iget-wide v4, v0, Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;->e:J
+    iget-wide v4, v0, Lglv;->a:J
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/apps/camera/legacy/app/stats/OneCameraSession;->a(Ljava/lang/String;JJ)V
+    invoke-virtual/range {v0 .. v5}, Lglv;->a(Ljava/lang/String;JJ)V
 
-    iget-object v0, p0, Lcub;->b:Ldhi;
+    iget-object v1, v8, Lctw;->ad:Liih;
 
-    return-object v0
+    if-eqz v9, :cond_1
 
-    :catchall_0
-    move-exception v0
+    move v2, v7
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :goto_0
+    if-eqz v10, :cond_2
 
-    throw v0
+    move v3, v6
 
-    :cond_0
-    const/4 v1, 0x0
+    :goto_1
+    invoke-virtual {v11}, Ljava/lang/Long;->longValue()J
 
-    goto :goto_0
-.end method
+    move-result-wide v4
 
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    move-result-wide v6
 
-    invoke-direct {p0}, Lcub;->a()Ldhi;
+    invoke-interface/range {v1 .. v7}, Liih;->b(IIJJ)V
+
+    invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihb;
+
+    invoke-interface {v0}, Lihb;->close()V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    move v2, v6
+
+    goto :goto_0
+
+    :cond_2
+    move v3, v7
+
+    goto :goto_1
 .end method

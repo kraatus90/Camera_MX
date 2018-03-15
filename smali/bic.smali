@@ -2,55 +2,89 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljug;
-
-
-# instance fields
-.field private synthetic a:Licu;
-
-.field private synthetic b:Ljava/lang/String;
-
-.field private synthetic c:Ljava/lang/String;
-
 
 # direct methods
-.method public constructor <init>(Licu;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lbic;->a:Licu;
-
-    iput-object p2, p0, Lbic;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Lbic;->c:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public static a(Ljava/util/List;)Ljrf;
+    .locals 5
 
-# virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+    new-instance v2, Ljava/util/LinkedList;
 
-    iget-object v0, p0, Lbic;->a:Licu;
+    invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
 
-    iget-object v1, p0, Lbic;->b:Ljava/lang/String;
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v0, v1}, Licu;->d(Ljava/lang/String;)V
+    move-result-object v3
 
-    return-void
-.end method
+    :cond_0
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    move-result v0
 
-    iget-object v0, p0, Lbic;->a:Licu;
+    if-eqz v0, :cond_1
 
-    iget-object v1, p0, Lbic;->c:Ljava/lang/String;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Licu;->c(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Landroid/util/Range;
+
+    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v2, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/util/LinkedList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    :goto_1
+    return-object v0
+
+    :cond_2
+    new-instance v0, Lbid;
+
+    invoke-direct {v0}, Lbid;-><init>()V
+
+    invoke-static {v2, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    invoke-virtual {v2}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Range;
+
+    invoke-static {v0}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
+
+    goto :goto_1
 .end method

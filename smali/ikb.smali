@@ -1,77 +1,76 @@
-.class public final Likb;
+.class public Likb;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lind;
+
 
 # instance fields
-.field public final a:[B
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
+.field public final a:Landroid/hardware/camera2/CaptureResult;
 
 
 # direct methods
-.method public constructor <init>([BIII)V
-    .locals 4
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+.method public constructor <init>(Landroid/hardware/camera2/CaptureResult;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-ltz p3, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    const-string v3, "offset must be >= 0"
-
-    invoke-static {v0, v3}, Liya;->a(ZLjava/lang/Object;)V
-
-    if-lez p4, :cond_1
-
-    move v0, v1
-
-    :goto_1
-    const-string v3, "length must be > 0"
-
-    invoke-static {v0, v3}, Liya;->a(ZLjava/lang/Object;)V
-
-    array-length v0, p1
-
-    if-gt p4, v0, :cond_2
-
-    :goto_2
-    const-string v0, "length exceeds data length"
-
-    invoke-static {v1, v0}, Liya;->a(ZLjava/lang/Object;)V
-
-    iput-object p1, p0, Likb;->a:[B
-
-    iput p2, p0, Likb;->d:I
-
-    iput p3, p0, Likb;->b:I
-
-    iput p4, p0, Likb;->c:I
+    iput-object p1, p0, Likb;->a:Landroid/hardware/camera2/CaptureResult;
 
     return-void
+.end method
 
-    :cond_0
-    move v0, v2
 
-    goto :goto_0
+# virtual methods
+.method public final a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    .locals 1
 
-    :cond_1
-    move v0, v2
+    iget-object v0, p0, Likb;->a:Landroid/hardware/camera2/CaptureResult;
 
-    goto :goto_1
+    invoke-virtual {v0, p1}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    :cond_2
-    move v1, v2
+    move-result-object v0
 
-    goto :goto_2
+    return-object v0
+.end method
+
+.method public final a()Ljava/util/List;
+    .locals 1
+
+    iget-object v0, p0, Likb;->a:Landroid/hardware/camera2/CaptureResult;
+
+    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult;->getKeys()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()Linc;
+    .locals 2
+
+    new-instance v0, Lika;
+
+    iget-object v1, p0, Likb;->a:Landroid/hardware/camera2/CaptureResult;
+
+    invoke-virtual {v1}, Landroid/hardware/camera2/CaptureResult;->getRequest()Landroid/hardware/camera2/CaptureRequest;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lika;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
+
+    return-object v0
+.end method
+
+.method public final c()J
+    .locals 2
+
+    iget-object v0, p0, Likb;->a:Landroid/hardware/camera2/CaptureResult;
+
+    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

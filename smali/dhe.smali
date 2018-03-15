@@ -1,53 +1,54 @@
-.class public Ldhe;
-.super Lcng;
+.class final Ldhe;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lhfr;
+
+
+# instance fields
+.field private final synthetic a:Ldgx;
 
 
 # direct methods
-.method protected constructor <init>(Lcng;)V
+.method constructor <init>(Ldgx;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcng;-><init>(Lcng;)V
+    iput-object p1, p0, Ldhe;->a:Ldgx;
 
-    return-void
-.end method
-
-.method protected constructor <init>(Lcnh;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcng;-><init>(Lcnh;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Class;)Lcnf;
-    .locals 1
+.method public final a(Landroid/graphics/PointF;)Z
+    .locals 5
 
-    invoke-super {p0, p1}, Lcng;->a(Ljava/lang/Class;)Lcnf;
+    iget-object v0, p0, Ldhe;->a:Ldgx;
 
-    move-result-object v0
+    iget-object v0, v0, Ldgx;->d:Lbrw;
 
-    check-cast v0, Ldhd;
+    new-instance v1, Lcxb;
 
-    return-object v0
-.end method
+    new-instance v2, Landroid/graphics/Point;
 
-.method public synthetic b()Lcng;
-    .locals 1
+    iget v3, p1, Landroid/graphics/PointF;->x:F
 
-    invoke-virtual {p0}, Ldhe;->e()Ldhe;
+    float-to-int v3, v3
 
-    move-result-object v0
+    iget v4, p1, Landroid/graphics/PointF;->y:F
 
-    return-object v0
-.end method
+    float-to-int v4, v4
 
-.method public e()Ldhe;
-    .locals 1
+    invoke-direct {v2, v3, v4}, Landroid/graphics/Point;-><init>(II)V
 
-    const/4 v0, 0x0
+    invoke-direct {v1}, Lcxb;-><init>()V
 
-    return-object v0
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

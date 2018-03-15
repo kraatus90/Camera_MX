@@ -463,12 +463,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/MediaExtractor;->selectTrack(I)V
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x11
-
-    if-lt v0, v1, :cond_8
-
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterfw/decoder/MediaDecoder$DecoderRunnable;->this$0:Lcom/google/android/libraries/smartburst/filterfw/decoder/MediaDecoder;
 
     invoke-static {v0}, Lcom/google/android/libraries/smartburst/filterfw/decoder/MediaDecoder;->access$1100(Lcom/google/android/libraries/smartburst/filterfw/decoder/MediaDecoder;)Landroid/content/Context;

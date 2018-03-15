@@ -1,568 +1,360 @@
 .class final Lbeb;
-.super Lbeh;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Liao;
 
 
 # instance fields
-.field private a:I
+.field private final synthetic a:Lbfm;
 
-.field private b:I
-
-.field private c:I
-
-.field private d:I
-
-.field private e:I
-
-.field private f:I
-
-.field private g:I
-
-.field private h:I
-
-.field private i:I
-
-.field private j:I
-
-.field private k:I
-
-.field private l:I
-
-.field private m:I
+.field private final synthetic b:Lbdu;
 
 
 # direct methods
-.method constructor <init>(IIIIIIIIIIIII)V
+.method constructor <init>(Lbdu;Lbfm;)V
     .locals 0
 
-    invoke-direct {p0}, Lbeh;-><init>()V
+    iput-object p1, p0, Lbeb;->b:Lbdu;
 
-    iput p1, p0, Lbeb;->a:I
+    iput-object p2, p0, Lbeb;->a:Lbfm;
 
-    iput p2, p0, Lbeb;->b:I
-
-    iput p3, p0, Lbeb;->c:I
-
-    iput p4, p0, Lbeb;->d:I
-
-    iput p5, p0, Lbeb;->e:I
-
-    iput p6, p0, Lbeb;->f:I
-
-    iput p7, p0, Lbeb;->g:I
-
-    iput p8, p0, Lbeb;->h:I
-
-    iput p9, p0, Lbeb;->i:I
-
-    iput p10, p0, Lbeb;->j:I
-
-    iput p11, p0, Lbeb;->k:I
-
-    iput p12, p0, Lbeb;->l:I
-
-    iput p13, p0, Lbeb;->m:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method private final a(Lbin;)Lkeh;
+    .locals 28
 
-# virtual methods
-.method public final a()I
-    .locals 1
+    move-object/from16 v0, p0
 
-    iget v0, p0, Lbeb;->a:I
+    iget-object v2, v0, Lbeb;->b:Lbdu;
 
-    return v0
-.end method
+    iget-object v0, v2, Lbdu;->w:Ljava/lang/Object;
 
-.method public final b()I
-    .locals 1
+    move-object/from16 v26, v0
 
-    iget v0, p0, Lbeb;->b:I
+    monitor-enter v26
 
-    return v0
-.end method
+    :try_start_0
+    move-object/from16 v0, p0
 
-.method public final c()I
-    .locals 1
+    iget-object v2, v0, Lbeb;->b:Lbdu;
 
-    iget v0, p0, Lbeb;->c:I
+    iget-object v2, v2, Lbdu;->v:Lbef;
 
-    return v0
-.end method
+    sget-object v3, Lbef;->a:Lbef;
 
-.method public final d()I
-    .locals 1
+    invoke-virtual {v2, v3}, Lbef;->equals(Ljava/lang/Object;)Z
 
-    iget v0, p0, Lbeb;->d:I
+    move-result v2
 
-    return v0
-.end method
+    if-eqz v2, :cond_0
 
-.method public final e()I
-    .locals 1
+    new-instance v2, Ljava/lang/IllegalStateException;
 
-    iget v0, p0, Lbeb;->e:I
+    move-object/from16 v0, p0
 
-    return v0
-.end method
+    iget-object v3, v0, Lbeb;->b:Lbdu;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    iget-object v3, v3, Lbdu;->v:Lbef;
 
-    const/4 v0, 0x1
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move-result-object v3
 
-    if-ne p1, p0, :cond_1
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x22
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "CamcorderCaptureSessionImpl state="
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v2
 
     :cond_0
-    :goto_0
-    return v0
+    :try_start_1
+    move-object/from16 v0, p0
 
-    :cond_1
-    instance-of v2, p1, Lbeh;
+    iget-object v2, v0, Lbeb;->b:Lbdu;
 
-    if-eqz v2, :cond_3
+    iget-object v2, v2, Lbdu;->v:Lbef;
 
-    check-cast p1, Lbeh;
+    sget-object v3, Lbef;->c:Lbef;
 
-    iget v2, p0, Lbeb;->a:I
+    invoke-virtual {v2, v3}, Lbef;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Lbeh;->a()I
+    move-result v2
 
-    move-result v3
+    invoke-static {v2}, Ljii;->a(Z)V
 
-    if-ne v2, v3, :cond_2
+    move-object/from16 v0, p0
 
-    iget v2, p0, Lbeb;->b:I
+    iget-object v2, v0, Lbeb;->b:Lbdu;
 
-    invoke-virtual {p1}, Lbeh;->b()I
+    sget-object v3, Lbef;->d:Lbef;
 
-    move-result v3
+    iput-object v3, v2, Lbdu;->v:Lbef;
 
-    if-ne v2, v3, :cond_2
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    iget v2, p0, Lbeb;->c:I
+    move-result-wide v20
 
-    invoke-virtual {p1}, Lbeh;->c()I
+    new-instance v2, Lbgv;
 
-    move-result v3
+    move-object/from16 v0, p0
 
-    if-ne v2, v3, :cond_2
+    iget-object v3, v0, Lbeb;->b:Lbdu;
 
-    iget v2, p0, Lbeb;->d:I
+    iget-object v3, v3, Lbdu;->s:Lbhc;
 
-    invoke-virtual {p1}, Lbeh;->d()I
+    move-object/from16 v0, p0
 
-    move-result v3
+    iget-object v4, v0, Lbeb;->b:Lbdu;
 
-    if-ne v2, v3, :cond_2
+    iget-object v4, v4, Lbdu;->t:Lbhl;
 
-    iget v2, p0, Lbeb;->e:I
+    move-object/from16 v0, p0
 
-    invoke-virtual {p1}, Lbeh;->e()I
+    iget-object v5, v0, Lbeb;->b:Lbdu;
 
-    move-result v3
+    iget-object v5, v5, Lbdu;->q:Landroid/view/Surface;
 
-    if-ne v2, v3, :cond_2
+    invoke-interface/range {p1 .. p1}, Lbin;->f()Landroid/view/Surface;
 
-    iget v2, p0, Lbeb;->f:I
+    move-result-object v6
 
-    invoke-virtual {p1}, Lbeh;->f()I
+    move-object/from16 v0, p0
 
-    move-result v3
+    iget-object v7, v0, Lbeb;->b:Lbdu;
 
-    if-ne v2, v3, :cond_2
+    iget-object v7, v7, Lbdu;->b:Lbgx;
 
-    iget v2, p0, Lbeb;->g:I
+    move-object/from16 v0, p0
 
-    invoke-virtual {p1}, Lbeh;->g()I
+    iget-object v8, v0, Lbeb;->b:Lbdu;
 
-    move-result v3
+    iget-object v8, v8, Lbdu;->p:Lbhv;
 
-    if-ne v2, v3, :cond_2
+    invoke-direct/range {v2 .. v8}, Lbgv;-><init>(Lbhc;Lbhl;Landroid/view/Surface;Landroid/view/Surface;Lbgx;Lbhv;)V
 
-    iget v2, p0, Lbeb;->h:I
+    new-instance v23, Lbhu;
 
-    invoke-virtual {p1}, Lbeh;->h()I
+    move-object/from16 v0, p0
 
-    move-result v3
+    iget-object v3, v0, Lbeb;->b:Lbdu;
 
-    if-ne v2, v3, :cond_2
+    iget-object v3, v3, Lbdu;->p:Lbhv;
 
-    iget v2, p0, Lbeb;->i:I
+    invoke-interface/range {p1 .. p1}, Lbin;->f()Landroid/view/Surface;
 
-    invoke-virtual {p1}, Lbeh;->i()I
+    move-result-object v4
 
-    move-result v3
+    move-object/from16 v0, p0
 
-    if-ne v2, v3, :cond_2
+    iget-object v5, v0, Lbeb;->b:Lbdu;
 
-    iget v2, p0, Lbeb;->j:I
+    iget-object v5, v5, Lbdu;->s:Lbhc;
 
-    invoke-virtual {p1}, Lbeh;->j()I
+    move-object/from16 v0, p0
 
-    move-result v3
+    iget-object v6, v0, Lbeb;->b:Lbdu;
 
-    if-ne v2, v3, :cond_2
+    iget-object v6, v6, Lbdu;->t:Lbhl;
 
-    iget v2, p0, Lbeb;->k:I
+    move-object/from16 v0, v23
 
-    invoke-virtual {p1}, Lbeh;->k()I
+    invoke-direct {v0, v3, v4, v5, v6}, Lbhu;-><init>(Lbhv;Landroid/view/Surface;Lbhc;Lbhl;)V
 
-    move-result v3
+    invoke-interface/range {p1 .. p1}, Lbin;->c()Ljrf;
 
-    if-ne v2, v3, :cond_2
+    move-result-object v24
 
-    iget v2, p0, Lbeb;->l:I
+    move-object/from16 v0, p0
 
-    invoke-virtual {p1}, Lbeh;->l()I
+    iget-object v0, v0, Lbeb;->b:Lbdu;
 
-    move-result v3
+    move-object/from16 v27, v0
 
-    if-ne v2, v3, :cond_2
+    new-instance v3, Lbfn;
 
-    iget v2, p0, Lbeb;->m:I
+    move-object/from16 v0, p0
 
-    invoke-virtual {p1}, Lbeh;->m()I
+    iget-object v4, v0, Lbeb;->a:Lbfm;
 
-    move-result v3
+    move-object/from16 v0, p0
 
-    if-eq v2, v3, :cond_0
+    iget-object v5, v0, Lbeb;->b:Lbdu;
 
-    :cond_2
-    move v0, v1
+    move-object/from16 v0, p0
 
-    goto :goto_0
+    iget-object v6, v0, Lbeb;->b:Lbdu;
 
-    :cond_3
-    move v0, v1
+    iget-object v6, v6, Lbdu;->c:Liej;
 
-    goto :goto_0
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lbeb;->b:Lbdu;
+
+    iget-object v7, v7, Lbdu;->s:Lbhc;
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lbeb;->b:Lbdu;
+
+    iget-object v8, v8, Lbdu;->k:Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lbeb;->b:Lbdu;
+
+    iget-object v9, v9, Lbdu;->l:Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Lbeb;->b:Lbdu;
+
+    iget-object v10, v10, Lbdu;->m:Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lbeb;->b:Lbdu;
+
+    iget-object v11, v11, Lbdu;->n:Ljrf;
+
+    invoke-interface/range {p1 .. p1}, Lbin;->b()Ljava/io/File;
+
+    move-result-object v12
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lbeb;->b:Lbdu;
+
+    iget-object v13, v13, Lbdu;->e:Ljava/util/concurrent/Executor;
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Lbeb;->b:Lbdu;
+
+    iget-object v14, v14, Lbdu;->f:Lgnv;
+
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lbeb;->b:Lbdu;
+
+    iget-object v15, v15, Lbdu;->h:Lbja;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lbeb;->b:Lbdu;
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, v16
+
+    iget-object v0, v0, Lbdu;->j:Lbiv;
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lbeb;->b:Lbdu;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    iget-object v0, v0, Lbdu;->i:Lbit;
+
+    move-object/from16 v17, v0
+
+    new-instance v18, Lhcd;
+
+    invoke-direct/range {v18 .. v18}, Lhcd;-><init>()V
+
+    invoke-interface/range {p1 .. p1}, Lbin;->e()Ljrf;
+
+    move-result-object v19
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lbeb;->b:Lbdu;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v22
+
+    iget-object v0, v0, Lbdu;->t:Lbhl;
+
+    move-object/from16 v25, v0
+
+    move-object/from16 v22, v2
+
+    invoke-direct/range {v3 .. v25}, Lbfn;-><init>(Lbfm;Lbgd;Liej;Lbhc;Lick;Lick;Lick;Ljrf;Ljava/io/File;Ljava/util/concurrent/Executor;Lgnv;Lbja;Lbiv;Lbit;Lhcd;Ljrf;JLbgv;Lbhu;Ljrf;Lbhl;)V
+
+    move-object/from16 v0, v27
+
+    iput-object v3, v0, Lbdu;->u:Lbfn;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lbeb;->b:Lbdu;
+
+    iget-object v2, v2, Lbdu;->u:Lbfn;
+
+    invoke-static {v2}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
+
+    move-result-object v2
+
+    monitor-exit v26
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-object v2
 .end method
 
-.method public final f()I
+
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Lkeh;
     .locals 1
 
-    iget v0, p0, Lbeb;->f:I
+    check-cast p2, Lbin;
 
-    return v0
-.end method
-
-.method public final g()I
-    .locals 1
-
-    iget v0, p0, Lbeb;->g:I
-
-    return v0
-.end method
-
-.method public final h()I
-    .locals 1
-
-    iget v0, p0, Lbeb;->h:I
-
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const v2, 0xf4243
-
-    iget v0, p0, Lbeb;->a:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->b:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->c:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->d:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->e:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->f:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->g:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->h:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->i:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->j:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->k:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->l:I
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v2
-
-    iget v1, p0, Lbeb;->m:I
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final i()I
-    .locals 1
-
-    iget v0, p0, Lbeb;->i:I
-
-    return v0
-.end method
-
-.method public final j()I
-    .locals 1
-
-    iget v0, p0, Lbeb;->j:I
-
-    return v0
-.end method
-
-.method public final k()I
-    .locals 1
-
-    iget v0, p0, Lbeb;->k:I
-
-    return v0
-.end method
-
-.method public final l()I
-    .locals 1
-
-    iget v0, p0, Lbeb;->l:I
-
-    return v0
-.end method
-
-.method public final m()I
-    .locals 1
-
-    iget v0, p0, Lbeb;->m:I
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 15
-
-    iget v0, p0, Lbeb;->a:I
-
-    iget v1, p0, Lbeb;->b:I
-
-    iget v2, p0, Lbeb;->c:I
-
-    iget v3, p0, Lbeb;->d:I
-
-    iget v4, p0, Lbeb;->e:I
-
-    iget v5, p0, Lbeb;->f:I
-
-    iget v6, p0, Lbeb;->g:I
-
-    iget v7, p0, Lbeb;->h:I
-
-    iget v8, p0, Lbeb;->i:I
-
-    iget v9, p0, Lbeb;->j:I
-
-    iget v10, p0, Lbeb;->k:I
-
-    iget v11, p0, Lbeb;->l:I
-
-    iget v12, p0, Lbeb;->m:I
-
-    const/16 v13, 0x177
-
-    new-instance v14, Ljava/lang/StringBuilder;
-
-    invoke-direct {v14, v13}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v13, "SimpleCamcorderProfileProxy{audioBitRate="
-
-    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v13, ", audioChannels="
-
-    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", audioCodec="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", audioSampleRate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", fileFormat="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", quality="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", videoBitRate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", videoCodec="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", videoCodecProfile="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", videoCodecLevel="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", videoFrameHeight="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", videoFrameRate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", videoFrameWidth="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {p0, p2}, Lbeb;->a(Lbin;)Lkeh;
 
     move-result-object v0
 

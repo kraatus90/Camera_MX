@@ -1,56 +1,54 @@
-.class final Lcpv;
+.class public final Lcpv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liim;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Ljava/nio/ByteBuffer;
-
-.field private b:I
-
-.field private c:I
+# static fields
+.field public static final a:Lcpv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/nio/ByteBuffer;II)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcpv;
+
+    invoke-direct {v0}, Lcpv;-><init>()V
+
+    sput-object v0, Lcpv;->a:Lcpv;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcpv;->a:Ljava/nio/ByteBuffer;
-
-    iput p2, p0, Lcpv;->b:I
-
-    iput p3, p0, Lcpv;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget v0, p0, Lcpv;->b:I
+    sget-object v0, Lcpn;->f:Lcpn;
 
-    return v0
-.end method
+    invoke-static {v0}, Licl;->a(Ljava/lang/Object;)Lick;
 
-.method public final b()I
-    .locals 1
+    move-result-object v0
 
-    iget v0, p0, Lcpv;->c:I
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return v0
-.end method
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final c()Ljava/nio/ByteBuffer;
-    .locals 1
+    move-result-object v0
 
-    iget-object v0, p0, Lcpv;->a:Ljava/nio/ByteBuffer;
+    check-cast v0, Lick;
 
     return-object v0
 .end method

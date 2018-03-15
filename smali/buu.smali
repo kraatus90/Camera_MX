@@ -1,24 +1,14 @@
-.class final Lbuu;
+.class public final Lbuu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:I
-
-.field private synthetic b:Lbut;
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbut;I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lbuu;->b:Lbut;
-
-    iput p2, p0, Lbuu;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,38 +17,24 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget v0, p0, Lbuu;->a:I
+    new-instance v0, Landroid/os/Handler;
 
-    if-nez v0, :cond_0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    iget-object v0, p0, Lbuu;->b:Lbut;
+    move-result-object v1
 
-    iget-object v0, v0, Lbut;->a:Lbua;
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iget-object v0, v0, Lbua;->Z:Levo;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v1, p0, Lbuu;->b:Lbut;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v1, v1, Lbut;->a:Lbua;
+    move-result-object v0
 
-    iget-object v1, v1, Lbua;->K:Lckd;
+    check-cast v0, Landroid/os/Handler;
 
-    invoke-virtual {v0, v1}, Levo;->a(Lckd;)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lbuu;->b:Lbut;
-
-    iget-object v0, v0, Lbut;->a:Lbua;
-
-    iget-object v0, v0, Lbua;->K:Lckd;
-
-    invoke-interface {v0}, Lckd;->e()V
-
-    goto :goto_0
+    return-object v0
 .end method

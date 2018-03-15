@@ -1,107 +1,92 @@
-.class final enum Lidj;
-.super Ljava/lang/Enum;
+.class final Lidj;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljqv;
 
-# static fields
-.field public static final enum a:Lidj;
 
-.field public static final enum b:Lidj;
-
-.field public static final enum c:Lidj;
-
-.field public static final enum d:Lidj;
-
-.field private static synthetic e:[Lidj;
+# instance fields
+.field private a:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lidj;
-
-    const-string v1, "CONNECTED"
-
-    invoke-direct {v0, v1, v2}, Lidj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lidj;->a:Lidj;
-
-    new-instance v0, Lidj;
-
-    const-string v1, "RETRY"
-
-    invoke-direct {v0, v1, v3}, Lidj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lidj;->b:Lidj;
-
-    new-instance v0, Lidj;
-
-    const-string v1, "ERROR"
-
-    invoke-direct {v0, v1, v4}, Lidj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lidj;->c:Lidj;
-
-    new-instance v0, Lidj;
-
-    const-string v1, "ERROR_TIMEOUT"
-
-    invoke-direct {v0, v1, v5}, Lidj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lidj;->d:Lidj;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lidj;
-
-    sget-object v1, Lidj;->a:Lidj;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lidj;->b:Lidj;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lidj;->c:Lidj;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lidj;->d:Lidj;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lidj;->e:[Lidj;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lidj;
-    .locals 1
+.method private final declared-synchronized a(Ljava/util/List;)Ljava/lang/Object;
+    .locals 3
 
-    sget-object v0, Lidj;->e:[Lidj;
+    monitor-enter p0
 
-    invoke-virtual {v0}, [Lidj;->clone()Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    const/4 v0, 0x1
+
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lidj;
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iget-object v2, p0, Lidj;->a:Ljava/lang/Object;
+
+    if-eqz v2, :cond_0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    iput-object v1, p0, Lidj;->a:Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-object v0, v1
+
+    :goto_0
+    monitor-exit p0
+
+    return-object v0
+
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Lidj;->a:Ljava/lang/Object;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Ljava/util/List;
+
+    invoke-direct {p0, p1}, Lidj;->a(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object v0
 
     return-object v0
 .end method

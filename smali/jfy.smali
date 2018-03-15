@@ -1,50 +1,13 @@
-.class public abstract Ljfy;
+.class final Ljfy;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final a:Ljfy;
-
-.field public static final b:Ljfy;
-
-.field public static final c:Ljfy;
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljfz;
-
-    invoke-direct {v0}, Ljfz;-><init>()V
-
-    sput-object v0, Ljfy;->a:Ljfy;
-
-    new-instance v0, Ljga;
-
-    invoke-direct {v0}, Ljga;-><init>()V
-
-    new-instance v0, Ljgb;
-
-    invoke-direct {v0}, Ljgb;-><init>()V
-
-    new-instance v0, Ljgc;
-
-    invoke-direct {v0}, Ljgc;-><init>()V
-
-    sput-object v0, Ljfy;->b:Ljfy;
-
-    new-instance v0, Ljgd;
-
-    invoke-direct {v0}, Ljgd;-><init>()V
-
-    sput-object v0, Ljfy;->c:Ljfy;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,5 +17,14 @@
 
 
 # virtual methods
-.method public abstract a(FFF)F
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Ljjl;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-direct {v0, v1}, Ljjl;-><init>(F)V
+
+    return-object v0
 .end method

@@ -1,39 +1,43 @@
-.class final Ly;
-.super Laa;
+.class public Ly;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lv;
-
-
 # direct methods
-.method constructor <init>(Lv;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Ly;->a:Lv;
+    new-instance v0, Landroid/os/Handler;
 
-    const/4 v0, 0x0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    invoke-direct {p0, p1, v0}, Laa;-><init>(Lv;B)V
+    move-result-object v1
+
+    new-instance v2, Lz;
+
+    invoke-direct {v2}, Lz;-><init>()V
+
+    invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
     return-void
 .end method
 
+.method static a()V
+    .locals 1
 
-# virtual methods
-.method protected final a()F
-    .locals 2
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    iget-object v0, p0, Ly;->a:Lv;
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    iget v0, v0, Lv;->h:F
+    throw v0
+.end method
 
-    iget-object v1, p0, Ly;->a:Lv;
+.method static b()V
+    .locals 1
 
-    iget v1, v1, Lv;->i:F
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    add-float/2addr v0, v1
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    return v0
+    throw v0
 .end method

@@ -1,87 +1,232 @@
-.class final Ljvp;
-.super Ljuu;
+.class Ljvp;
+.super Ljtr;
 .source "PG"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final serialVersionUID:J
 
 
 # instance fields
-.field private c:Ljava/util/concurrent/Callable;
+.field private final a:Ljvh;
 
-.field private synthetic d:Ljvn;
+.field private transient b:Ljava/util/Set;
+
+.field private transient c:Ljava/util/Set;
 
 
 # direct methods
-.method constructor <init>(Ljvn;Ljava/util/concurrent/Callable;)V
-    .locals 1
+.method constructor <init>(Ljvh;)V
+    .locals 0
 
-    iput-object p1, p0, Ljvp;->d:Ljvn;
+    invoke-direct {p0}, Ljtr;-><init>()V
 
-    invoke-direct {p0}, Ljuu;-><init>()V
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Callable;
-
-    iput-object v0, p0, Ljvp;->c:Ljava/util/concurrent/Callable;
+    iput-object p1, p0, Ljvp;->a:Ljvh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljava/lang/Object;Ljava/lang/Throwable;)V
+.method public F_()Ljava/util/Set;
     .locals 1
 
-    if-nez p2, :cond_0
+    iget-object v0, p0, Ljvp;->b:Ljava/util/Set;
 
-    iget-object v0, p0, Ljvp;->d:Ljvn;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, p1}, Ljvn;->a(Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Ljvp;->d()Ljava/util/Set;
 
-    :goto_0
-    return-void
+    move-result-object v0
+
+    iput-object v0, p0, Ljvp;->b:Ljava/util/Set;
 
     :cond_0
-    iget-object v0, p0, Ljvp;->d:Ljvn;
-
-    invoke-virtual {v0, p2}, Ljvn;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method final a()Z
+.method public final a(Ljava/lang/Object;I)I
     .locals 1
 
-    iget-object v0, p0, Ljvp;->d:Ljvn;
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {v0}, Ljsw;->isDone()Z
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    move-result v0
-
-    return v0
+    throw v0
 .end method
 
-.method final b()Ljava/lang/Object;
+.method public final a(Ljava/lang/Object;II)Z
     .locals 1
 
-    iget-object v0, p0, Ljvp;->c:Ljava/util/concurrent/Callable;
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-interface {v0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public add(Ljava/lang/Object;)Z
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public addAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final b(Ljava/lang/Object;I)I
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method protected synthetic b()Ljava/util/Collection;
+    .locals 1
+
+    invoke-virtual {p0}, Ljvp;->g()Ljvh;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final c(Ljava/lang/Object;I)I
     .locals 1
 
-    iget-object v0, p0, Ljvp;->c:Ljava/util/concurrent/Callable;
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method protected synthetic c()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljvp;->g()Ljvh;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public clear()V
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method d()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Ljvp;->a:Ljvh;
+
+    invoke-interface {v0}, Ljvh;->F_()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Ljvp;->c:Ljava/util/Set;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljvp;->a:Ljvh;
+
+    invoke-interface {v0}, Ljvh;->e()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljvp;->c:Ljava/util/Set;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method protected g()Ljvh;
+    .locals 1
+
+    iget-object v0, p0, Ljvp;->a:Ljvh;
+
+    return-object v0
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .locals 1
+
+    iget-object v0, p0, Ljvp;->a:Ljvh;
+
+    invoke-interface {v0}, Ljvh;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljwo;->c(Ljava/util/Iterator;)Ljxk;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public remove(Ljava/lang/Object;)Z
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
 .end method

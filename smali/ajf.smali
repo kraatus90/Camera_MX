@@ -1,42 +1,36 @@
-.class final enum Lajf;
-.super Laje;
+.class final Lajf;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lajc;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Laje;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Ljava/lang/Throwable;)V
-    .locals 2
+.method public final a()Ljava/lang/Class;
+    .locals 1
 
-    if-eqz p1, :cond_0
+    const-class v0, Ljava/io/InputStream;
 
-    const-string v0, "GlideExecutor"
+    return-object v0
+.end method
 
-    const/4 v1, 0x6
+.method public final synthetic a([B)Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    new-instance v0, Ljava/io/ByteArrayInputStream;
 
-    move-result v0
+    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    if-eqz v0, :cond_0
-
-    const-string v0, "GlideExecutor"
-
-    const-string v1, "Request threw uncaught throwable"
-
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

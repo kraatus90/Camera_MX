@@ -1,16 +1,18 @@
 .class public final Ljpw;
-.super Ljwj;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public a:Ljpo;
+.field private a:D
 
-.field public b:J
+.field private b:D
 
-.field public c:J
+.field private c:D
 
-.field public d:Ljqb;
+.field private d:D
+
+.field private e:I
 
 
 # direct methods
@@ -19,313 +21,119 @@
 
     const-wide/16 v2, 0x0
 
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide v0, 0x7fefffffffffffffL    # Double.MAX_VALUE
+
+    iput-wide v0, p0, Ljpw;->a:D
+
+    const-wide/16 v0, 0x1
+
+    iput-wide v0, p0, Ljpw;->b:D
+
+    iput-wide v2, p0, Ljpw;->c:D
+
+    iput-wide v2, p0, Ljpw;->d:D
+
     const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljwj;-><init>()V
-
-    iput-object v0, p0, Ljpw;->a:Ljpo;
-
-    iput-wide v2, p0, Ljpw;->b:J
-
-    iput-wide v2, p0, Ljpw;->c:J
-
-    iput-object v0, p0, Ljpw;->d:Ljqb;
-
-    iput-object v0, p0, Ljpw;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljpw;->cachedSize:I
+    iput v0, p0, Ljpw;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 6
+.method public final a()Ljpv;
+    .locals 10
 
-    const-wide/16 v4, 0x0
-
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
-
-    move-result v0
-
-    iget-object v1, p0, Ljpw;->a:Ljpo;
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Ljpw;->a:Ljpo;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget-wide v2, p0, Ljpw;->b:J
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-wide v2, p0, Ljpw;->b:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    iget-wide v2, p0, Ljpw;->c:J
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_2
-
-    const/4 v1, 0x3
-
-    iget-wide v2, p0, Ljpw;->c:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    iget-object v1, p0, Ljpw;->d:Ljqb;
-
-    if-eqz v1, :cond_3
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Ljpw;->d:Ljqb;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_3
-    return v0
-.end method
-
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 11
-
-    const-wide/16 v2, 0x0
-
-    const/16 v10, 0x40
-
-    const/4 v5, 0x0
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
+    iget v0, p0, Ljpw;->e:I
 
     if-nez v0, :cond_0
 
-    :sswitch_0
-    return-object p0
+    const-wide/high16 v8, 0x7ff8000000000000L    # NaN
 
-    :sswitch_1
-    iget-object v0, p0, Ljpw;->a:Ljpo;
+    :goto_0
+    new-instance v0, Ljpv;
 
-    if-nez v0, :cond_1
+    iget v1, p0, Ljpw;->e:I
 
-    new-instance v0, Ljpo;
+    iget-wide v2, p0, Ljpw;->a:D
 
-    invoke-direct {v0}, Ljpo;-><init>()V
+    iget-wide v4, p0, Ljpw;->b:D
 
-    iput-object v0, p0, Ljpw;->a:Ljpo;
+    iget-wide v6, p0, Ljpw;->c:D
 
-    :cond_1
-    iget-object v0, p0, Ljpw;->a:Ljpo;
+    invoke-direct/range {v0 .. v9}, Ljpv;-><init>(IDDDD)V
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    :sswitch_2
-    move-wide v0, v2
-
-    move v4, v5
-
-    :goto_1
-    if-ge v4, v10, :cond_3
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v6
-
-    and-int/lit8 v7, v6, 0x7f
-
-    int-to-long v8, v7
-
-    shl-long/2addr v8, v4
-
-    or-long/2addr v0, v8
-
-    and-int/lit16 v6, v6, 0x80
-
-    if-nez v6, :cond_2
-
-    iput-wide v0, p0, Ljpw;->b:J
-
-    goto :goto_0
-
-    :cond_2
-    add-int/lit8 v4, v4, 0x7
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {}, Ljwo;->c()Ljwo;
-
-    move-result-object v0
-
-    throw v0
-
-    :sswitch_3
-    move-wide v0, v2
-
-    move v4, v5
-
-    :goto_2
-    if-ge v4, v10, :cond_5
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v6
-
-    and-int/lit8 v7, v6, 0x7f
-
-    int-to-long v8, v7
-
-    shl-long/2addr v8, v4
-
-    or-long/2addr v0, v8
-
-    and-int/lit16 v6, v6, 0x80
-
-    if-nez v6, :cond_4
-
-    iput-wide v0, p0, Ljpw;->c:J
-
-    goto :goto_0
-
-    :cond_4
-    add-int/lit8 v4, v4, 0x7
-
-    goto :goto_2
-
-    :cond_5
-    invoke-static {}, Ljwo;->c()Ljwo;
-
-    move-result-object v0
-
-    throw v0
-
-    :sswitch_4
-    iget-object v0, p0, Ljpw;->d:Ljqb;
-
-    if-nez v0, :cond_6
-
-    new-instance v0, Ljqb;
-
-    invoke-direct {v0}, Ljqb;-><init>()V
-
-    iput-object v0, p0, Ljpw;->d:Ljqb;
-
-    :cond_6
-    iget-object v0, p0, Ljpw;->d:Ljqb;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xa -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x18 -> :sswitch_3
-        0x22 -> :sswitch_4
-    .end sparse-switch
-.end method
-
-.method public final writeTo(Ljwi;)V
-    .locals 6
-
-    const-wide/16 v4, 0x0
-
-    iget-object v0, p0, Ljpw;->a:Ljpo;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iget-object v1, p0, Ljpw;->a:Ljpo;
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    return-object v0
 
     :cond_0
-    iget-wide v0, p0, Ljpw;->b:J
+    iget-wide v0, p0, Ljpw;->d:D
 
-    cmp-long v0, v0, v4
+    iget v2, p0, Ljpw;->e:I
 
-    if-eqz v0, :cond_1
+    int-to-double v2, v2
 
-    const/4 v0, 0x2
+    div-double v8, v0, v2
 
-    iget-wide v2, p0, Ljpw;->b:J
+    goto :goto_0
+.end method
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+.method public final a(D)Ljpw;
+    .locals 7
+
+    iget-wide v0, p0, Ljpw;->b:D
+
+    cmpl-double v0, p1, v0
+
+    if-lez v0, :cond_0
+
+    iput-wide p1, p0, Ljpw;->b:D
+
+    :cond_0
+    iget-wide v0, p0, Ljpw;->a:D
+
+    cmpg-double v0, p1, v0
+
+    if-gez v0, :cond_1
+
+    iput-wide p1, p0, Ljpw;->a:D
 
     :cond_1
-    iget-wide v0, p0, Ljpw;->c:J
+    iget v0, p0, Ljpw;->e:I
 
-    cmp-long v0, v0, v4
+    add-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_2
+    iput v0, p0, Ljpw;->e:I
 
-    const/4 v0, 0x3
+    iget-wide v0, p0, Ljpw;->c:D
 
-    iget-wide v2, p0, Ljpw;->c:J
+    sub-double v0, p1, v0
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    iget-wide v2, p0, Ljpw;->c:D
 
-    :cond_2
-    iget-object v0, p0, Ljpw;->d:Ljqb;
+    iget v4, p0, Ljpw;->e:I
 
-    if-eqz v0, :cond_3
+    int-to-double v4, v4
 
-    const/4 v0, 0x4
+    div-double v4, v0, v4
 
-    iget-object v1, p0, Ljpw;->d:Ljqb;
+    add-double/2addr v2, v4
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    iput-wide v2, p0, Ljpw;->c:D
 
-    :cond_3
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    iget-wide v2, p0, Ljpw;->d:D
 
-    return-void
+    iget-wide v4, p0, Ljpw;->c:D
+
+    sub-double v4, p1, v4
+
+    mul-double/2addr v0, v4
+
+    add-double/2addr v0, v2
+
+    iput-wide v0, p0, Ljpw;->d:D
+
+    return-object p0
 .end method

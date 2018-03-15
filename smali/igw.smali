@@ -1,54 +1,94 @@
-.class final Ligw;
-.super Liig;
+.class public final Ligw;
+.super Ligx;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final synthetic a:I
 
-.field private synthetic b:Ligv;
+.field private final synthetic b:Ligt;
 
 
 # direct methods
-.method constructor <init>(Ligv;Liih;)V
-    .locals 2
+.method public constructor <init>(Ljava/util/NavigableMap;ILigt;)V
+    .locals 0
 
-    iput-object p1, p0, Ligw;->b:Ligv;
+    iput p2, p0, Ligw;->a:I
 
-    invoke-direct {p0, p2}, Liig;-><init>(Liih;)V
+    iput-object p3, p0, Ligw;->b:Ligt;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Ligw;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {p0, p1}, Ligx;-><init>(Ljava/util/NavigableMap;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final close()V
+.method private final a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Ligw;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    invoke-virtual {p0}, Ligw;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    iget v1, p0, Ligw;->a:I
 
-    invoke-super {p0}, Liig;->close()V
+    if-le v0, v1, :cond_0
 
-    iget-object v0, p0, Ligw;->b:Ligv;
+    iget-object v0, p0, Ligw;->b:Ligt;
 
-    invoke-virtual {v0}, Ligv;->b()V
+    invoke-super {p0}, Ligx;->navigableKeySet()Ljava/util/NavigableSet;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ligt;->a(Ljava/util/Set;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-super {p0, v0}, Ligx;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
 
     :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-super {p0, p1, p2}, Ligx;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-direct {p0}, Ligw;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public final putAll(Ljava/util/Map;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Ligx;->putAll(Ljava/util/Map;)V
+
+    :cond_0
+    invoke-direct {p0}, Ligw;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
     return-void
 .end method

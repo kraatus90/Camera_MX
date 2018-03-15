@@ -1,66 +1,45 @@
-.class final Lgeu;
-.super Lggu;
-.source "PG"
+.class final synthetic Lgeu;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/Choreographer$FrameCallback;
 
 
 # instance fields
-.field private synthetic a:Lges;
+.field private final a:Lket;
 
 
 # direct methods
-.method constructor <init>(Lges;)V
+.method constructor <init>(Lget;Lket;)V
     .locals 0
 
-    iput-object p1, p0, Lgeu;->a:Lges;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lggu;-><init>()V
+    iput-object p2, p0, Lgeu;->a:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liic;)V
+.method public final doFrame(J)V
     .locals 4
 
-    iget-object v0, p0, Lgeu;->a:Lges;
+    iget-object v0, p0, Lgeu;->a:Lket;
 
-    iget-object v1, v0, Lges;->a:Ljava/lang/Object;
+    new-instance v1, Lgfe;
 
-    monitor-enter v1
+    invoke-direct {v1}, Lgfe;-><init>()V
 
-    :try_start_0
-    iget-object v0, p0, Lgeu;->a:Lges;
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    invoke-interface {p1}, Liic;->d()J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lges;->c:J
+    iput-wide v2, v1, Lgfe;->a:J
 
-    iget-object v0, p0, Lgeu;->a:Lges;
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, v0, Lges;->b:Z
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Lgeu;->a:Lges;
-
-    invoke-virtual {v0, p1}, Lges;->a(Liic;)V
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
 .end method

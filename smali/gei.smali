@@ -3,62 +3,64 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgei;->a:Ljxn;
+    iput-object p1, p0, Lgei;->a:Lkgv;
 
-    iput-object p2, p0, Lgei;->b:Ljxn;
+    iput-object p2, p0, Lgei;->b:Lkgv;
+
+    iput-object p3, p0, Lgei;->c:Lkgv;
 
     return-void
-.end method
-
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lgei;
-
-    invoke-direct {v0, p0, p1}, Lgei;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
-    new-instance v2, Lgeh;
+    new-instance v3, Lgee;
 
-    iget-object v0, p0, Lgei;->a:Ljxn;
+    iget-object v0, p0, Lgei;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liag;
+    check-cast v0, Lgew;
 
-    iget-object v1, p0, Lgei;->b:Ljxn;
+    iget-object v1, p0, Lgei;->b:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Liau;
+    check-cast v1, Liay;
 
-    invoke-direct {v2, v0, v1}, Lgeh;-><init>(Liag;Liau;)V
+    iget-object v2, p0, Lgei;->c:Lkgv;
 
-    return-object v2
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lick;
+
+    invoke-direct {v3, v0, v1, v2}, Lgee;-><init>(Lgew;Liay;Lick;)V
+
+    return-object v3
 .end method

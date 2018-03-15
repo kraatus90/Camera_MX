@@ -2,114 +2,145 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Lctx;
+.field private final a:Lkgv;
 
-.field public b:Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;
+.field private final b:Lkgv;
 
-.field public c:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
+.field private final c:Lkgv;
 
-.field public d:Lcom/google/android/apps/camera/legacy/app/ui/CountDownView;
+.field private final d:Lkgv;
 
-.field public final e:Lewd;
+.field private final e:Lkgv;
 
-.field private f:Landroid/view/LayoutInflater;
+.field private final f:Lkgv;
 
-.field private g:Landroid/view/View;
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "CaptureModuleUI"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/LayoutInflater;Landroid/view/View;Lctx;)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lctw;
+    iput-object p1, p0, Lctv;->a:Lkgv;
 
-    invoke-direct {v0, p0}, Lctw;-><init>(Lctv;)V
+    iput-object p2, p0, Lctv;->b:Lkgv;
 
-    iput-object v0, p0, Lctv;->e:Lewd;
+    iput-object p3, p0, Lctv;->c:Lkgv;
 
-    iput-object p3, p0, Lctv;->a:Lctx;
+    iput-object p4, p0, Lctv;->d:Lkgv;
 
-    iput-object p1, p0, Lctv;->f:Landroid/view/LayoutInflater;
+    iput-object p5, p0, Lctv;->e:Lkgv;
 
-    iput-object p2, p0, Lctv;->g:Landroid/view/View;
+    iput-object p6, p0, Lctv;->f:Lkgv;
 
-    invoke-virtual {p0}, Lctv;->a()V
+    iput-object p7, p0, Lctv;->g:Lkgv;
+
+    iput-object p8, p0, Lctv;->h:Lkgv;
+
+    iput-object p9, p0, Lctv;->i:Lkgv;
+
+    iput-object p10, p0, Lctv;->j:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 11
 
-    iget-object v0, p0, Lctv;->g:Landroid/view/View;
+    new-instance v0, Lcts;
 
-    invoke-static {v0}, Lhaz;->a(Landroid/view/View;)Lhaz;
+    iget-object v1, p0, Lctv;->a:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    const v0, 0x7f0e00e1
+    check-cast v1, Laws;
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    iget-object v2, p0, Lctv;->b:Lkgv;
 
-    move-result-object v0
+    invoke-static {v2}, Lkgo;->b(Lkgv;)Lkgm;
 
-    check-cast v0, Landroid/view/ViewGroup;
+    move-result-object v2
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
+    iget-object v3, p0, Lctv;->c:Lkgv;
 
-    iget-object v2, p0, Lctv;->f:Landroid/view/LayoutInflater;
+    invoke-static {v3}, Lkgo;->b(Lkgv;)Lkgm;
 
-    const v3, 0x7f040028
+    move-result-object v3
 
-    const/4 v4, 0x1
+    iget-object v4, p0, Lctv;->d:Lkgv;
 
-    invoke-virtual {v2, v3, v0, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    const v0, 0x7f0e00f0
+    move-result-object v4
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    check-cast v4, Lket;
 
-    move-result-object v0
+    iget-object v5, p0, Lctv;->e:Lkgv;
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    iput-object v0, p0, Lctv;->b:Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;
+    move-result-object v5
 
-    const v0, 0x7f0e010f
+    check-cast v5, Lkeh;
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    iget-object v6, p0, Lctv;->f:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
+    move-result-object v6
 
-    iput-object v0, p0, Lctv;->c:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
+    check-cast v6, Lgxg;
 
-    const v0, 0x7f0e0111
+    iget-object v7, p0, Lctv;->g:Lkgv;
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v7
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/ui/CountDownView;
+    check-cast v7, Liay;
 
-    iput-object v0, p0, Lctv;->d:Lcom/google/android/apps/camera/legacy/app/ui/CountDownView;
+    iget-object v8, p0, Lctv;->h:Lkgv;
 
-    return-void
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/util/concurrent/Executor;
+
+    iget-object v9, p0, Lctv;->i:Lkgv;
+
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lihs;
+
+    iget-object v10, p0, Lctv;->j:Lkgv;
+
+    invoke-interface {v10}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lhbh;
+
+    invoke-direct/range {v0 .. v10}, Lcts;-><init>(Laws;Lkgm;Lkgm;Lket;Lkeh;Lgxg;Liay;Ljava/util/concurrent/Executor;Lihs;Lhbh;)V
+
+    return-object v0
 .end method

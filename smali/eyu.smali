@@ -1,89 +1,52 @@
-.class public Leyu;
-.super Lgvh;
+.class public final Leyu;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final a:Ljava/lang/String;
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public b:Landroid/view/Window;
-
-.field public c:Lffs;
-
-.field public d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public e:I
-
-.field public f:Lclm;
-
-.field public g:Lguc;
-
-.field private h:Laxo;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>(Lkgv;)V
+    .locals 0
 
-    const-string v0, "CameraUiStatechart"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Leyu;->a:Ljava/lang/String;
+    iput-object p1, p0, Leyu;->a:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public static a(Lkgv;)Leyu;
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Leyu;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([I)V
+    invoke-direct {v0, p0}, Leyu;-><init>(Lkgv;)V
 
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    invoke-super {p0}, Lgvh;->a()V
+    new-instance v1, Leyt;
 
-    iget-object v0, p0, Leyu;->h:Laxo;
+    iget-object v0, p0, Leyu;->a:Lkgv;
 
-    invoke-virtual {v0}, Laxo;->a()V
-
-    return-void
-.end method
-
-.method public a(Landroid/view/Window;Laxo;Ljxn;Lffs;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lclm;Lguc;)V
-    .locals 1
-
-    iput-object p1, p0, Leyu;->b:Landroid/view/Window;
-
-    iput-object p2, p0, Leyu;->h:Laxo;
-
-    iput-object p4, p0, Leyu;->c:Lffs;
-
-    iput-object p5, p0, Leyu;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
+    check-cast v0, Lihn;
 
-    iput v0, p0, Leyu;->e:I
+    invoke-direct {v1, v0}, Leyt;-><init>(Lihn;)V
 
-    iput-object p6, p0, Leyu;->f:Lclm;
-
-    iput-object p7, p0, Leyu;->g:Lguc;
-
-    return-void
+    return-object v1
 .end method

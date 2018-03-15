@@ -1,31 +1,30 @@
-.class final Lhex;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lhex;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Lhev;
+# interfaces
+.implements Lion;
 
 
 # direct methods
-.method constructor <init>(Lhev;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lhex;->a:Lhev;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public final a(Livg;Lits;)V
+    .locals 2
 
-    iget-object v0, p0, Lhex;->a:Lhev;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    invoke-virtual {v0}, Lhev;->af()V
+    const-string v1, "Should never be activated!"
 
-    return-void
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

@@ -1,45 +1,90 @@
-.class final Lclw;
-.super Lclo;
+.class public final Lclw;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lclu;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lclu;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lclw;->a:Lclu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lclo;-><init>()V
+    iput-object p1, p0, Lclw;->a:Lkgv;
+
+    iput-object p2, p0, Lclw;->b:Lkgv;
+
+    iput-object p3, p0, Lclw;->c:Lkgv;
+
+    iput-object p4, p0, Lclw;->d:Lkgv;
+
+    iput-object p5, p0, Lclw;->e:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final k()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Lclw;->a:Lclu;
+    new-instance v0, Lclo;
 
-    iget-object v0, v0, Lclu;->b:Lgvj;
+    iget-object v1, p0, Lclw;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lclo;->k()V
+    move-result-object v1
 
-    iget-object v0, p0, Lclw;->a:Lclu;
+    check-cast v1, Landroid/app/Activity;
 
-    iget-object v0, v0, Lclu;->b:Lgvj;
+    iget-object v2, p0, Lclw;->b:Lkgv;
 
-    iget-object v1, p0, Lclw;->a:Lclu;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v1, Lclu;->d:Lgvl;
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    check-cast v2, Landroid/view/LayoutInflater;
 
-    return-void
+    iget-object v3, p0, Lclw;->c:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/res/Resources;
+
+    iget-object v4, p0, Lclw;->d:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcnq;
+
+    iget-object v5, p0, Lclw;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lgjq;
+
+    invoke-direct/range {v0 .. v5}, Lclo;-><init>(Landroid/app/Activity;Landroid/view/LayoutInflater;Landroid/content/res/Resources;Lcnq;Lgjq;)V
+
+    return-object v0
 .end method

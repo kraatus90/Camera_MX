@@ -3,18 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Ldga;
+.implements Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
 
 # direct methods
-.method constructor <init>(Ldga;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ldgc;->a:Ldga;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,47 +17,32 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final onAudioFocusChange(I)V
+    .locals 3
 
-    iget-object v0, p0, Ldgc;->a:Ldga;
+    sget-object v0, Ldgb;->a:Ljava/lang/String;
 
-    iget-object v0, v0, Ldga;->c:Lbav;
+    const/16 v1, 0x1f
 
-    if-eqz v0, :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Ldgc;->a:Ldga;
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, v0, Ldga;->e:Lijk;
+    const-string v1, "onAudioFocusChange: "
 
-    invoke-interface {v0}, Lijk;->a()J
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-wide v0
+    move-result-object v1
 
-    iget-object v2, p0, Ldgc;->a:Ldga;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v2, v2, Ldga;->c:Lbav;
+    move-result-object v1
 
-    invoke-interface {v2}, Lbav;->c()J
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-wide v2
+    move-result-object v1
 
-    sub-long v2, v0, v2
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Ldgc;->a:Ldga;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
-
-    move-result-object v0
-
-    check-cast v0, Ldhc;
-
-    iget-object v0, v0, Ldhc;->b:Ldei;
-
-    iget-object v0, v0, Ldei;->c:Lbjc;
-
-    invoke-virtual {v0, v2, v3}, Lbjc;->a(J)V
-
-    :cond_0
     return-void
 .end method

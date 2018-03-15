@@ -1,20 +1,226 @@
-.class public interface abstract Liiq;
+.class public final Liiq;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
+
+# instance fields
+.field private final a:Ljava/util/concurrent/ScheduledExecutorService;
+
+.field private final b:Ljava/lang/Object;
+
+.field private c:Liaw;
+
+.field private d:Liad;
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Liiq;->b:Ljava/lang/Object;
+
+    iput-object p1, p0, Liiq;->a:Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v0, Liaw;
+
+    invoke-direct {v0}, Liaw;-><init>()V
+
+    iput-object v0, p0, Liiq;->c:Liaw;
+
+    iget-object v0, p0, Liiq;->c:Liaw;
+
+    invoke-direct {p0, v0}, Liiq;->a(Liaw;)Liad;
+
+    move-result-object v0
+
+    iput-object v0, p0, Liiq;->d:Liad;
+
+    return-void
+.end method
+
+.method private final a(Liaw;)Liad;
+    .locals 9
+
+    iget-object v1, p0, Liiq;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    new-instance v0, Liad;
+
+    sget-object v2, Lken;->a:Lken;
+
+    new-instance v3, Libl;
+
+    new-instance v4, Libk;
+
+    iget-object v5, p0, Liiq;->a:Ljava/util/concurrent/ScheduledExecutorService;
+
+    const-wide/16 v6, 0x3e8
+
+    sget-object v8, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-direct {v4, v5, v6, v7, v8}, Libk;-><init>(Ljava/util/concurrent/ScheduledExecutorService;JLjava/util/concurrent/TimeUnit;)V
+
+    invoke-direct {v3, v4}, Libl;-><init>(Libk;)V
+
+    invoke-direct {v0, p1, v2, v3}, Liad;-><init>(Lihb;Ljava/util/concurrent/Executor;Libl;)V
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
 
 
 # virtual methods
-.method public abstract a()I
+.method public final a()Lihb;
+    .locals 2
+
+    iget-object v1, p0, Liiq;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Liiq;->d:Liad;
+
+    invoke-virtual {v0}, Liad;->a()Lihb;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Liaw;
+
+    invoke-direct {v0}, Liaw;-><init>()V
+
+    iput-object v0, p0, Liiq;->c:Liaw;
+
+    iget-object v0, p0, Liiq;->c:Liaw;
+
+    invoke-direct {p0, v0}, Liiq;->a(Liaw;)Liad;
+
+    move-result-object v0
+
+    iput-object v0, p0, Liiq;->d:Liad;
+
+    iget-object v0, p0, Liiq;->d:Liad;
+
+    invoke-virtual {v0}, Liad;->a()Lihb;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public abstract a(J)Liih;
+.method public final a(Lihb;)Lihb;
+    .locals 2
+
+    iget-object v1, p0, Liiq;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Liiq;->c:Liaw;
+
+    invoke-virtual {v0, p1}, Liaw;->a(Lihb;)Lihb;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public abstract a(Liih;)V
+.method public final b()Z
+    .locals 2
+
+    iget-object v1, p0, Liiq;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Liiq;->c:Liaw;
+
+    invoke-virtual {v0}, Liaw;->a()Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public abstract a(Liis;Landroid/os/Handler;)V
+.method public final c()Liaw;
+    .locals 2
+
+    iget-object v1, p0, Liiq;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Liiq;->c:Liaw;
+
+    invoke-virtual {v0}, Liaw;->g()Liaw;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

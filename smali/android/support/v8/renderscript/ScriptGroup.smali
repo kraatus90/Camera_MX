@@ -63,27 +63,6 @@
 
     iput-object v1, p0, Landroid/support/v8/renderscript/ScriptGroup;->mNodes:Ljava/util/ArrayList;
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x17
-
-    if-ge v1, v2, :cond_0
-
-    invoke-virtual {p1}, Landroid/support/v8/renderscript/RenderScript;->isUseNative()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    new-instance v0, Landroid/support/v8/renderscript/RSRuntimeException;
-
-    const-string v1, "ScriptGroup2 not supported in this API level"
-
-    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
     iput-object p2, p0, Landroid/support/v8/renderscript/ScriptGroup;->mName:Ljava/lang/String;
 
     iput-object p3, p0, Landroid/support/v8/renderscript/ScriptGroup;->mClosures:Ljava/util/List;
@@ -103,7 +82,7 @@
     :goto_0
     array-length v0, v2
 
-    if-ge v1, v0, :cond_1
+    if-ge v1, v0, :cond_0
 
     invoke-interface {p3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -123,7 +102,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_0
     invoke-virtual {p1}, Landroid/support/v8/renderscript/RenderScript;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0

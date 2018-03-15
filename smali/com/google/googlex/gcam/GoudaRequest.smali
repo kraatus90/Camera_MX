@@ -108,6 +108,30 @@
     return-void
 .end method
 
+.method public getDebug_images_verbosity()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/GoudaRequest;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaRequest_debug_images_verbosity_get(JLcom/google/googlex/gcam/GoudaRequest;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getEmbed_gdepth_metadata()Z
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/GoudaRequest;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaRequest_embed_gdepth_metadata_get(JLcom/google/googlex/gcam/GoudaRequest;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getFaces()Lcom/google/googlex/gcam/PixelRectVector;
     .locals 4
 
@@ -304,6 +328,26 @@
     invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/StaticMetadata;-><init>(JZ)V
 
     goto :goto_0
+.end method
+
+.method public setDebug_images_verbosity(I)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/GoudaRequest;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaRequest_debug_images_verbosity_set(JLcom/google/googlex/gcam/GoudaRequest;I)V
+
+    return-void
+.end method
+
+.method public setEmbed_gdepth_metadata(Z)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/GoudaRequest;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaRequest_embed_gdepth_metadata_set(JLcom/google/googlex/gcam/GoudaRequest;Z)V
+
+    return-void
 .end method
 
 .method public setFaces(Lcom/google/googlex/gcam/PixelRectVector;)V

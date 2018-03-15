@@ -10,20 +10,20 @@
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
-.field private b:Ljava/lang/String;
+.field private final b:Ljava/lang/String;
 
-.field private c:Ljava/lang/String;
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhys;
+    new-instance v0, Lhzr;
 
-    invoke-direct {v0}, Lhys;-><init>()V
+    invoke-direct {v0}, Lhzr;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/wearable/internal/zzu;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -35,7 +35,7 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/zza;-><init>()V
 
-    invoke-static {p1}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/wearable/internal/zzu;->a:Ljava/lang/String;
 
-    invoke-static {p2}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -51,7 +51,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/wearable/internal/zzu;->b:Ljava/lang/String;
 
-    invoke-static {p3}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -103,7 +103,7 @@
 
     iget-object v3, p0, Lcom/google/android/gms/wearable/internal/zzu;->b:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -113,7 +113,7 @@
 
     iget-object v3, p0, Lcom/google/android/gms/wearable/internal/zzu;->c:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -228,7 +228,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -236,21 +236,21 @@
 
     iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzu;->a:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzu;->b:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x4
 
     iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzu;->c:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

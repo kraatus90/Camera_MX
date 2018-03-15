@@ -1,465 +1,267 @@
-.class public Lfvj;
-.super Ljava/lang/Object;
+.class public final enum Lfvj;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
-# instance fields
-.field private a:Lici;
+# static fields
+.field public static final enum a:Lfvj;
 
-.field public final b:J
+.field public static final enum b:Lfvj;
 
-.field public final c:Ljava/lang/String;
+.field public static final enum c:Lfvj;
 
-.field public final d:Ljava/lang/String;
+.field public static final enum d:Lfvj;
 
-.field public final e:Ljava/util/Date;
+.field public static final enum e:Lfvj;
 
-.field public final f:Ljava/util/Date;
+.field public static final enum f:Lfvj;
 
-.field public final g:Ljava/lang/String;
+.field public static final enum g:Lfvj;
 
-.field public final h:Landroid/net/Uri;
+.field public static final enum h:Lfvj;
 
-.field public final i:Z
+.field public static final enum i:Lfvj;
 
-.field public final j:J
+.field public static final enum j:Lfvj;
 
-.field public final k:I
+.field public static final enum k:Lfvj;
 
-.field public final l:Lfvl;
+.field public static final enum l:Lfvj;
 
-.field public final m:Z
+.field public static final enum m:Lfvj;
+
+.field private static final synthetic n:[Lfvj;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;Ljava/lang/String;Landroid/net/Uri;ZLjht;JILfvl;Z)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v7, 0x4
 
-    iput-wide p1, p0, Lfvj;->b:J
+    const/4 v6, 0x3
 
-    iput-object p3, p0, Lfvj;->c:Ljava/lang/String;
+    const/4 v5, 0x2
 
-    iput-object p4, p0, Lfvj;->d:Ljava/lang/String;
+    const/4 v4, 0x1
 
-    iput-object p5, p0, Lfvj;->e:Ljava/util/Date;
+    const/4 v3, 0x0
 
-    iput-object p6, p0, Lfvj;->f:Ljava/util/Date;
+    new-instance v0, Lfvj;
 
-    iput-object p7, p0, Lfvj;->g:Ljava/lang/String;
+    const-string v1, "TIMER"
 
-    iput-object p8, p0, Lfvj;->h:Landroid/net/Uri;
+    invoke-direct {v0, v1, v3}, Lfvj;-><init>(Ljava/lang/String;I)V
 
-    iput-boolean p9, p0, Lfvj;->i:Z
+    sput-object v0, Lfvj;->a:Lfvj;
 
-    invoke-virtual {p10}, Ljht;->c()Ljava/lang/Object;
+    new-instance v0, Lfvj;
 
-    move-result-object v1
+    const-string v1, "HDR"
 
-    check-cast v1, Lici;
+    invoke-direct {v0, v1, v4}, Lfvj;-><init>(Ljava/lang/String;I)V
 
-    iput-object v1, p0, Lfvj;->a:Lici;
+    sput-object v0, Lfvj;->b:Lfvj;
 
-    iput-wide p11, p0, Lfvj;->j:J
+    new-instance v0, Lfvj;
 
-    move/from16 v0, p13
+    const-string v1, "RAW_OUTPUT"
 
-    iput v0, p0, Lfvj;->k:I
+    invoke-direct {v0, v1, v5}, Lfvj;-><init>(Ljava/lang/String;I)V
 
-    move-object/from16 v0, p14
+    sput-object v0, Lfvj;->c:Lfvj;
 
-    iput-object v0, p0, Lfvj;->l:Lfvl;
+    new-instance v0, Lfvj;
 
-    move/from16 v0, p15
+    const-string v1, "PHOTO_FLASH"
 
-    iput-boolean v0, p0, Lfvj;->m:Z
+    invoke-direct {v0, v1, v6}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->d:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "VIDEO_FLASH"
+
+    invoke-direct {v0, v1, v7}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->e:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "MICROVIDEO"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->f:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "WHITE_BALANCE"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->g:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "FPS"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->h:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "VESPER"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->i:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "PANORAMA_HORIZONTAL"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->j:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "PANORAMA_VERTICAL"
+
+    const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->k:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "PANORAMA_WIDE"
+
+    const/16 v2, 0xb
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->l:Lfvj;
+
+    new-instance v0, Lfvj;
+
+    const-string v1, "PANORAMA_FISHEYE"
+
+    const/16 v2, 0xc
+
+    invoke-direct {v0, v1, v2}, Lfvj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfvj;->m:Lfvj;
+
+    const/16 v0, 0xd
+
+    new-array v0, v0, [Lfvj;
+
+    sget-object v1, Lfvj;->a:Lfvj;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lfvj;->b:Lfvj;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lfvj;->c:Lfvj;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lfvj;->d:Lfvj;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Lfvj;->e:Lfvj;
+
+    aput-object v1, v0, v7
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lfvj;->f:Lfvj;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Lfvj;->g:Lfvj;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Lfvj;->h:Lfvj;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    sget-object v2, Lfvj;->i:Lfvj;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    sget-object v2, Lfvj;->j:Lfvj;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    sget-object v2, Lfvj;->k:Lfvj;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    sget-object v2, Lfvj;->l:Lfvj;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xc
+
+    sget-object v2, Lfvj;->m:Lfvj;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lfvj;->n:[Lfvj;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public a()Landroid/net/Uri;
-    .locals 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    sget-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lfvj;->f()Ljkv;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Ljkv;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method public a(Ljava/util/Set;)Z
+.method public static values()[Lfvj;
     .locals 1
 
-    iget-object v0, p0, Lfvj;->h:Landroid/net/Uri;
+    sget-object v0, Lfvj;->n:[Lfvj;
 
-    invoke-interface {p1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public f()Ljkv;
-    .locals 2
-
-    iget-wide v0, p0, Lfvj;->b:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0}, [Lfvj;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljkv;->a(Ljava/lang/Object;)Ljkv;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final g()Lici;
-    .locals 7
-
-    const/4 v2, 0x0
-
-    const/4 v6, 0x0
-
-    iget-object v0, p0, Lfvj;->a:Lici;
-
-    if-nez v0, :cond_1
-
-    iget-object v3, p0, Lfvj;->g:Ljava/lang/String;
-
-    new-instance v0, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    invoke-static {v3, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    if-lez v1, :cond_2
-
-    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    if-lez v1, :cond_2
-
-    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    iget v0, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    :cond_0
-    new-instance v2, Lici;
-
-    invoke-direct {v2, v1, v0}, Lici;-><init>(II)V
-
-    move-object v0, v2
-
-    :goto_0
-    iput-object v0, p0, Lfvj;->a:Lici;
-
-    iget-object v0, p0, Lfvj;->a:Lici;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Lici;
-
-    invoke-direct {v0, v6, v6}, Lici;-><init>(II)V
-
-    iput-object v0, p0, Lfvj;->a:Lici;
-
-    :cond_1
-    iget-object v0, p0, Lfvj;->a:Lici;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    return-object v0
-
-    :cond_2
-    const-string v1, "FilmstripItemData"
-
-    const-string v4, "Dimension decode failed for "
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-eqz v5, :cond_3
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-static {v1, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v3}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    if-nez v0, :cond_4
-
-    const-string v0, "FilmstripItemData"
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x24
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "PhotoData skipped. Decoding "
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, " failed."
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_4
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v0
-
-    if-eqz v1, :cond_5
-
-    if-nez v0, :cond_0
-
-    :cond_5
-    const-string v1, "FilmstripItemData"
-
-    const-string v4, "PhotoData skipped. Bitmap size 0 for "
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_2
-    invoke-static {v1, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object v0, v2
-
-    goto/16 :goto_0
-
-    :cond_6
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_2
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "FilmstripItemData {"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "id:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v2, p0, Lfvj;->b:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ",title:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",mimeType:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",creationDate:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->e:Ljava/util/Date;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",lastModifiedDate:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->f:Ljava/util/Date;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",filePath:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->g:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",uri:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->h:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",inProgress:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lfvj;->i:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ",dimensions:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->a:Lici;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",sizeInBytes:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v2, p0, Lfvj;->j:J
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ",orientation:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lfvj;->k:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ",location:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfvj;->l:Lfvl;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ",cancellable:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lfvj;->m:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    check-cast v0, [Lfvj;
 
     return-object v0
 .end method

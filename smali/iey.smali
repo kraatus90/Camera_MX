@@ -1,204 +1,54 @@
-.class final Liey;
-.super Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
+.class public final Liey;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lihu;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lihu;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liey;->a:Lihu;
+    iput-object p1, p0, Liey;->a:Lkgv;
+
+    iput-object p2, p0, Liey;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCaptureBufferLost(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Liey;->a:Lihu;
-
-    new-instance v1, Lifb;
-
-    invoke-direct {v1, p2}, Lifb;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
-
-    invoke-interface {v0, v1, p3, p4, p5}, Lihu;->a(Liib;Landroid/view/Surface;J)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {v0}, Liad;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method public final onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 3
 
-    :try_start_0
-    iget-object v0, p0, Liey;->a:Lihu;
+    new-instance v2, Liex;
 
-    new-instance v1, Lifb;
+    iget-object v0, p0, Liey;->a:Lkgv;
 
-    invoke-direct {v1, p2}, Lifb;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v2, Lifq;
+    move-result-object v0
 
-    invoke-direct {v2, p3}, Lifq;-><init>(Landroid/hardware/camera2/TotalCaptureResult;)V
+    check-cast v0, Limm;
 
-    invoke-interface {v0, v1, v2}, Lihu;->a(Liib;Liic;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object v1, p0, Liey;->b:Lkgv;
 
-    :goto_0
-    return-void
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    :catch_0
-    move-exception v0
+    move-result-object v1
 
-    invoke-static {v0}, Liad;->b(Ljava/lang/Throwable;)V
+    check-cast v1, Lieq;
 
-    goto :goto_0
-.end method
+    invoke-direct {v2, v0, v1}, Liex;-><init>(Limm;Lieq;)V
 
-.method public final onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
-    .locals 3
-
-    :try_start_0
-    iget-object v0, p0, Liey;->a:Lihu;
-
-    new-instance v1, Lifb;
-
-    invoke-direct {v1, p2}, Lifb;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
-
-    new-instance v2, Lihz;
-
-    invoke-direct {v2, p3}, Lihz;-><init>(Landroid/hardware/camera2/CaptureFailure;)V
-
-    invoke-interface {v0, v1, v2}, Lihu;->a(Liib;Lihz;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {v0}, Liad;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method public final onCaptureProgressed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V
-    .locals 3
-
-    :try_start_0
-    iget-object v0, p0, Liey;->a:Lihu;
-
-    new-instance v1, Lifb;
-
-    invoke-direct {v1, p2}, Lifb;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
-
-    new-instance v2, Lifc;
-
-    invoke-direct {v2, p3}, Lifc;-><init>(Landroid/hardware/camera2/CaptureResult;)V
-
-    invoke-interface {v0, v1, v2}, Lihu;->b(Liib;Liic;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {v0}, Liad;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method public final onCaptureSequenceAborted(Landroid/hardware/camera2/CameraCaptureSession;I)V
-    .locals 1
-
-    :try_start_0
-    iget-object v0, p0, Liey;->a:Lihu;
-
-    invoke-interface {v0, p2}, Lihu;->a(I)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {v0}, Liad;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method public final onCaptureSequenceCompleted(Landroid/hardware/camera2/CameraCaptureSession;IJ)V
-    .locals 1
-
-    :try_start_0
-    iget-object v0, p0, Liey;->a:Lihu;
-
-    invoke-interface {v0, p2, p3, p4}, Lihu;->a(IJ)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {v0}, Liad;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-.end method
-
-.method public final onCaptureStarted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;JJ)V
-    .locals 7
-
-    :try_start_0
-    iget-object v0, p0, Liey;->a:Lihu;
-
-    new-instance v1, Lifb;
-
-    invoke-direct {v1, p2}, Lifb;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
-
-    move-wide v2, p3
-
-    move-wide v4, p5
-
-    invoke-interface/range {v0 .. v5}, Lihu;->a(Liib;JJ)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {v0}, Liad;->b(Ljava/lang/Throwable;)V
-
-    goto :goto_0
+    return-object v2
 .end method

@@ -1,72 +1,121 @@
 .class public final Lfff;
-.super Ljava/lang/Object;
+.super Lidl;
 .source "PG"
-
-# interfaces
-.implements Ljug;
 
 
 # instance fields
-.field private synthetic a:Lffe;
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>(Lffe;)V
-    .locals 0
+.method public constructor <init>(Lick;Lick;Libw;Lfdv;)V
+    .locals 2
 
-    iput-object p1, p0, Lfff;->a:Lffe;
+    const/4 v0, 0x3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-array v0, v0, [Lick;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    const/4 v1, 0x2
+
+    aput-object p3, v0, v1
+
+    invoke-static {v0}, Licl;->b([Lick;)Lick;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lidl;-><init>(Lick;)V
+
+    invoke-interface {p4}, Lfdv;->h()I
+
+    move-result v0
+
+    iput v0, p0, Lfff;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    check-cast p1, Ljava/lang/Boolean;
+    const/4 v5, 0x1
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    const/4 v4, 0x2
+
+    check-cast p1, Ljava/util/List;
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lilc;
+
+    invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lgdj;
+
+    sget-object v3, Lgdj;->b:Lgdj;
+
+    if-eq v2, v3, :cond_2
+
+    iget v2, p0, Lfff;->b:I
+
+    sget v3, Lep;->bR:I
+
+    if-ne v2, v3, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lffe;->a:Ljava/lang/String;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const-string v1, "PassiveFocusScanAnimation: completed"
-
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lfff;->a:Lffe;
-
-    iget-object v0, v0, Lffe;->q:Lass;
-
-    invoke-interface {v0}, Lass;->c()Lgzp;
+    move-result-object v0
 
     :goto_0
-    return-void
+    return-object v0
 
     :cond_0
-    sget-object v0, Lffe;->a:Ljava/lang/String;
+    sget-object v0, Lilc;->a:Lilc;
 
-    const-string v1, "PassiveFocusScanAnimation: cancelled"
+    if-eq v1, v0, :cond_1
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    sget-object v0, Lilc;->b:Lilc;
+
+    if-ne v1, v0, :cond_2
+
+    :cond_1
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
 
     goto :goto_0
-.end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    :cond_2
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    sget-object v0, Lffe;->a:Ljava/lang/String;
+    move-result-object v0
 
-    const-string v1, "PassiveFocusScanAnimation: not started"
-
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+    goto :goto_0
 .end method

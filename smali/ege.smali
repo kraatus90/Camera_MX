@@ -1,102 +1,73 @@
-.class public final Lege;
-.super Ljava/lang/Object;
+.class Lege;
+.super Lglb;
 .source "PG"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# instance fields
+.field private final synthetic a:Lega;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+# direct methods
+.method constructor <init>(Lega;)V
+    .locals 1
+
+    iput-object p1, p0, Lege;->a:Lega;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>([[[B)V
 
     return-void
 .end method
 
-.method public static a(Liic;)Z
-    .locals 4
 
-    const/4 v2, 0x0
+# virtual methods
+.method public I()V
+    .locals 0
 
-    if-nez p0, :cond_0
+    return-void
+.end method
 
-    move v0, v2
+.method public J()V
+    .locals 2
 
-    :goto_0
-    return v0
+    iget-object v0, p0, Lege;->a:Lega;
 
-    :cond_0
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, v0, Lega;->g:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-interface {p0, v0}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startPanoramaCalibration()V
 
-    move-result-object v0
+    iget-object v0, p0, Lege;->a:Lega;
 
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v0, v0, Lega;->h:Lgvc;
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lgue;->i:Lgue;
 
-    invoke-interface {p0, v1}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    move-result-object v1
+    return-void
+.end method
 
-    check-cast v1, Ljava/lang/Integer;
+.method public final a()V
+    .locals 2
 
-    if-eqz v0, :cond_1
+    sget-object v0, Lega;->f:Ljava/lang/String;
 
-    if-nez v1, :cond_2
+    const-string v1, "enter resetting state."
 
-    :cond_1
-    move v0, v2
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
+.end method
 
-    :cond_2
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+.method public final b()V
+    .locals 2
 
-    move-result-object v3
+    sget-object v0, Lega;->f:Ljava/lang/String;
 
-    invoke-static {v3, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const-string v1, "exit resetting state."
 
-    move-result v3
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v3, :cond_3
-
-    const/4 v3, 0x5
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-static {v3, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    :cond_3
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_4
-    const/4 v0, 0x3
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_5
-    const/4 v0, 0x1
-
-    goto :goto_0
+    return-void
 .end method

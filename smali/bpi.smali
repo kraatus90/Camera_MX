@@ -1,31 +1,39 @@
 .class final Lbpi;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
 # instance fields
-.field public final a:Lbrq;
-
-.field public final b:Landroid/hardware/SensorDirectChannel;
-
-.field public final c:Landroid/hardware/Sensor;
-
-.field public final d:Lbpj;
+.field private final synthetic a:Lbpf;
 
 
 # direct methods
-.method public constructor <init>(Lbrq;Landroid/hardware/SensorDirectChannel;Landroid/hardware/Sensor;Lbpj;)V
+.method constructor <init>(Lbpf;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbpi;->a:Lbpf;
 
-    iput-object p1, p0, Lbpi;->a:Lbrq;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    iput-object p2, p0, Lbpi;->b:Landroid/hardware/SensorDirectChannel;
+    return-void
+.end method
 
-    iput-object p3, p0, Lbpi;->c:Landroid/hardware/Sensor;
 
-    iput-object p4, p0, Lbpi;->d:Lbpj;
+# virtual methods
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 4
+
+    iget-object v0, p0, Lbpi;->a:Lbpf;
+
+    iget-object v0, v0, Lbpf;->d:Landroid/os/Handler;
+
+    iget-object v1, p0, Lbpi;->a:Lbpf;
+
+    iget-object v1, v1, Lbpf;->i:Ljava/lang/Runnable;
+
+    const-wide/16 v2, 0x3e8
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method

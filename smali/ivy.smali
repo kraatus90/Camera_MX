@@ -1,108 +1,140 @@
-.class final Livy;
+.class public Livy;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Liwb;
+
+
+# instance fields
+.field public final a:Livt;
+
+.field public final b:Lkeh;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/media/MediaFormat;Liwy;Liwf;Landroid/os/Handler;ZLandroid/view/Surface;)V
+    .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance v5, Lixx;
+
+    invoke-direct {v5, p1}, Lixx;-><init>(Landroid/media/MediaFormat;)V
+
+    iput-object p4, v5, Lixx;->c:Landroid/os/Handler;
+
+    iget-object v0, v5, Lixx;->a:Landroid/media/MediaFormat;
+
+    const-string v1, "mime"
+
+    invoke-virtual {v0, v1}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v0, Lixt;
+
+    iget-boolean v2, v5, Lixx;->b:Z
+
+    if-eqz v2, :cond_0
+
+    invoke-static {v1}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
+
+    move-result-object v1
+
+    :goto_0
+    iget-object v2, v5, Lixx;->a:Landroid/media/MediaFormat;
+
+    iget-object v3, v5, Lixx;->e:Ljqv;
+
+    iget-boolean v4, v5, Lixx;->d:Z
+
+    iget-object v5, v5, Lixx;->c:Landroid/os/Handler;
+
+    invoke-direct/range {v0 .. v5}, Lixt;-><init>(Landroid/media/MediaCodec;Landroid/media/MediaFormat;Ljqv;ZLandroid/os/Handler;)V
+
+    iput-object v0, p0, Livy;->a:Livt;
+
+    iget-object v0, p0, Livy;->a:Livt;
+
+    invoke-interface {v0, p3}, Livt;->a(Liwf;)Livt;
+
+    new-instance v0, Lixk;
+
+    invoke-direct {v0, p2}, Lixk;-><init>(Liwy;)V
+
+    iget-object v1, p0, Livy;->a:Livt;
+
+    invoke-interface {v1, v0}, Livt;->a(Lixg;)Livt;
+
+    invoke-interface {v0}, Lixg;->a()Lkeh;
+
+    move-result-object v0
+
+    iput-object v0, p0, Livy;->b:Lkeh;
+
     return-void
+
+    :cond_0
+    invoke-static {v1}, Landroid/media/MediaCodec;->createDecoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
+
+    move-result-object v1
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 7
+.method public a()V
+    .locals 1
 
-    const/4 v6, 0x2
+    iget-object v0, p0, Livy;->a:Livt;
 
-    const/4 v5, 0x1
+    invoke-interface {v0}, Livt;->a()V
 
-    const/4 v4, 0x0
+    return-void
+.end method
 
-    const-class v0, Ljee;
+.method public b()Lkeh;
+    .locals 1
 
-    const-string v1, "default"
+    iget-object v0, p0, Livy;->a:Livt;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Livt;->b()Lkeh;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public c()Livu;
+    .locals 1
+
+    iget-object v0, p0, Livy;->a:Livt;
+
+    invoke-interface {v0}, Livt;->c()Livu;
 
     move-result-object v0
 
-    check-cast v0, Ljee;
+    return-object v0
+.end method
 
-    const/4 v1, 0x6
+.method public d()Livu;
+    .locals 1
 
-    new-array v2, v1, [Ljbc;
+    iget-object v0, p0, Livy;->a:Livt;
 
-    const-class v1, Ljbc;
-
-    const-string v3, "face_detector"
-
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljbc;
-
-    aput-object v1, v2, v4
-
-    new-instance v1, Ljbt;
-
-    invoke-direct {v1, v0, v5}, Ljbt;-><init>(Ljee;I)V
-
-    aput-object v1, v2, v5
-
-    const-class v1, Ljbc;
-
-    const-string v3, "face_quality_filter"
-
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljbc;
-
-    aput-object v1, v2, v6
-
-    const/4 v1, 0x3
-
-    new-instance v3, Ljbl;
-
-    invoke-direct {v3, v0, v4}, Ljbl;-><init>(Ljee;B)V
-
-    aput-object v3, v2, v1
-
-    const/4 v1, 0x4
-
-    new-instance v3, Ljbx;
-
-    new-instance v4, Ljar;
-
-    sget-object v5, Ljds;->e:Ljea;
-
-    invoke-direct {v4, v0, v5}, Ljar;-><init>(Ljee;Ljea;)V
-
-    invoke-direct {v3, v4}, Ljbx;-><init>(Ljan;)V
-
-    aput-object v3, v2, v1
-
-    const/4 v0, 0x5
-
-    new-instance v1, Ljcg;
-
-    invoke-direct {v1, v6}, Ljcg;-><init>(I)V
-
-    aput-object v1, v2, v0
-
-    invoke-static {v2}, Ljax;->a([Ljbc;)Ljax;
+    invoke-interface {v0}, Livt;->d()Livu;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public e()Lkeh;
+    .locals 1
+
+    iget-object v0, p0, Livy;->b:Lkeh;
 
     return-object v0
 .end method

@@ -1,46 +1,25 @@
 .class final Lakg;
-.super Ljava/lang/Object;
+.super Laru;
 .source "PG"
-
-# interfaces
-.implements Lakf;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(J)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Laru;-><init>(J)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
-
-    const-class v0, Ljava/io/InputStream;
-
-    return-object v0
-.end method
-
-.method public final synthetic a(Ljava/io/File;)Ljava/lang/Object;
-    .locals 1
-
-    new-instance v0, Ljava/io/FileInputStream;
-
-    invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    return-object v0
-.end method
-
-.method public final synthetic a(Ljava/lang/Object;)V
+.method protected final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    check-cast p1, Ljava/io/InputStream;
+    check-cast p1, Lakh;
 
-    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
+    invoke-virtual {p1}, Lakh;->a()V
 
     return-void
 .end method

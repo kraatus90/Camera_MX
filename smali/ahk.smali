@@ -1,13 +1,13 @@
-.class final Lahk;
+.class public final Lahk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/os/Handler$Callback;
+.implements Lahc;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,28 +17,36 @@
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)Z
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)I
+    .locals 1
 
-    const/4 v1, 0x1
+    check-cast p1, [I
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    array-length v0, p1
 
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Lahg;
-
-    invoke-interface {v0}, Lahg;->d()V
-
-    move v0, v1
-
-    :goto_0
     return v0
+.end method
 
-    :cond_0
-    const/4 v0, 0x0
+.method public final synthetic a(I)Ljava/lang/Object;
+    .locals 1
 
-    goto :goto_0
+    new-array v0, p1, [I
+
+    return-object v0
+.end method
+
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "IntegerArrayPool"
+
+    return-object v0
+.end method
+
+.method public final b()I
+    .locals 1
+
+    const/4 v0, 0x4
+
+    return v0
 .end method

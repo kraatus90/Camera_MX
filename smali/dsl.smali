@@ -1,243 +1,430 @@
-.class public Ldsl;
+.class public final Ldsl;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ldso;
+
+
+# static fields
+.field private static final a:Ljava/lang/String;
+
 
 # instance fields
-.field public a:Ldse;
+.field private final b:I
 
-.field public b:Ljxn;
+.field private c:I
 
-.field public c:Ljxn;
+.field private final d:Lgem;
 
-.field public d:Ljxn;
-
-.field public e:Ljxn;
-
-.field public f:Ljxn;
-
-.field public g:Ljxn;
-
-.field public h:Ljxn;
-
-.field public i:Ljxn;
-
-.field public j:Ljxn;
-
-.field public k:Ljxn;
-
-.field public l:Ljxn;
-
-.field public m:Ljxn;
-
-.field public n:Ljxn;
+.field private e:F
 
 
 # direct methods
-.method constructor <init>(Ldsj;)V
-    .locals 5
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "BrightnessMtrMetric"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Ldsl;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILgem;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Ldsj;->a:Ldse;
+    const/high16 v0, -0x40800000    # -1.0f
 
-    iput-object v0, p0, Ldsl;->a:Ldse;
+    iput v0, p0, Ldsl;->e:F
 
-    iget-object v0, p1, Ldsj;->b:Ldsm;
+    iput p1, p0, Ldsl;->b:I
 
-    new-instance v1, Ldsn;
-
-    invoke-direct {v1, v0}, Ldsn;-><init>(Ldsm;)V
-
-    iput-object v1, p0, Ldsl;->b:Ljxn;
-
-    iget-object v0, p1, Ldsj;->a:Ldse;
-
-    new-instance v1, Ldsf;
-
-    invoke-direct {v1, v0}, Ldsf;-><init>(Ldse;)V
-
-    invoke-static {v1}, Ljxg;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->c:Ljxn;
-
-    iget-object v0, p1, Ldsj;->c:Lbhv;
-
-    new-instance v0, Lbhw;
-
-    invoke-direct {v0}, Lbhw;-><init>()V
-
-    invoke-static {v0}, Ljxk;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->d:Ljxn;
-
-    iget-object v0, p0, Ldsl;->d:Ljxn;
-
-    new-instance v1, Ldsk;
-
-    invoke-direct {v1, v0}, Ldsk;-><init>(Ljxn;)V
-
-    iput-object v1, p0, Ldsl;->e:Ljxn;
-
-    iget-object v0, p0, Ldsl;->e:Ljxn;
-
-    invoke-static {v0}, Lict;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->f:Ljxn;
-
-    iget-object v0, p1, Ldsj;->c:Lbhv;
-
-    iget-object v1, p0, Ldsl;->f:Ljxn;
-
-    invoke-static {v0, v1}, Lbhx;->a(Lbhv;Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->g:Ljxn;
-
-    iget-object v0, p1, Ldsj;->d:Lawu;
-
-    new-instance v0, Lawy;
-
-    invoke-direct {v0}, Lawy;-><init>()V
-
-    invoke-static {v0}, Ljxk;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->h:Ljxn;
-
-    iget-object v0, p0, Ldsl;->g:Ljxn;
-
-    iget-object v1, p0, Ldsl;->h:Ljxn;
-
-    new-instance v2, Lghq;
-
-    invoke-direct {v2, v0, v1}, Lghq;-><init>(Ljxn;Ljxn;)V
-
-    invoke-static {v2}, Ljxk;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->i:Ljxn;
-
-    iget-object v0, p0, Ldsl;->b:Ljxn;
-
-    iget-object v1, p0, Ldsl;->c:Ljxn;
-
-    iget-object v2, p0, Ldsl;->i:Ljxn;
-
-    new-instance v3, Ldsd;
-
-    invoke-direct {v3, v0, v1, v2}, Ldsd;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    invoke-static {v3}, Ljxg;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->j:Ljxn;
-
-    iget-object v0, p0, Ldsl;->b:Ljxn;
-
-    iget-object v1, p0, Ldsl;->c:Ljxn;
-
-    iget-object v2, p0, Ldsl;->j:Ljxn;
-
-    new-instance v3, Ldrx;
-
-    invoke-direct {v3, v0, v1, v2}, Ldrx;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    invoke-static {v3}, Ljxg;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->k:Ljxn;
-
-    iget-object v0, p0, Ldsl;->b:Ljxn;
-
-    iget-object v1, p0, Ldsl;->c:Ljxn;
-
-    iget-object v2, p0, Ldsl;->j:Ljxn;
-
-    new-instance v3, Ldru;
-
-    invoke-direct {v3, v0, v1, v2}, Ldru;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    invoke-static {v3}, Ljxg;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->l:Ljxn;
-
-    iget-object v0, p1, Ldsj;->b:Ldsm;
-
-    new-instance v1, Ldso;
-
-    invoke-direct {v1, v0}, Ldso;-><init>(Ldsm;)V
-
-    iput-object v1, p0, Ldsl;->m:Ljxn;
-
-    iget-object v0, p1, Ldsj;->e:Ldro;
-
-    iget-object v1, p0, Ldsl;->k:Ljxn;
-
-    iget-object v2, p0, Ldsl;->l:Ljxn;
-
-    iget-object v3, p0, Ldsl;->m:Ljxn;
-
-    new-instance v4, Ldrp;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Ldrp;-><init>(Ldro;Ljxn;Ljxn;Ljxn;)V
-
-    invoke-static {v4}, Ljxg;->a(Ljxn;)Ljxn;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldsl;->n:Ljxn;
+    iput-object p2, p0, Ldsl;->d:Lgem;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroid/view/Surface;
-    .locals 2
+.method public final a(Lind;)F
+    .locals 8
 
-    iget-object v0, p0, Ldsl;->a:Ldse;
+    :try_start_0
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iget-object v0, v0, Ldse;->a:Liin;
-
-    invoke-interface {v0}, Liin;->e()Landroid/view/Surface;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/Surface;
+    check-cast v0, Ljava/lang/Integer;
 
-    return-object v0
-.end method
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-.method public b()Lghg;
-    .locals 1
+    move-result v0
 
-    iget-object v0, p0, Ldsl;->n:Ljxn;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v1, 0x5
+
+    if-eq v0, v1, :cond_0
+
+    iget-object v0, p0, Ldsl;->d:Lgem;
+
+    iget-object v0, v0, Lgem;->c:Lket;
+
+    invoke-interface {v0}, Lkeh;->isDone()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    iget v0, p0, Ldsl;->e:F
+
+    :goto_0
+    return v0
+
+    :cond_1
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lghg;
+    check-cast v0, Ljava/lang/Long;
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    const/4 v2, 0x0
+
+    :try_start_1
+    iget-object v1, p0, Ldsl;->d:Lgem;
+
+    iget-object v1, v1, Lgem;->c:Lket;
+
+    invoke-interface {v1}, Lkeh;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgfe;
+
+    iget-wide v4, v1, Lgfe;->a:J
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_0
+
+    move-result-object v1
+
+    :try_start_2
+    iget v2, p0, Ldsl;->c:I
+
+    int-to-float v2, v2
+
+    const/high16 v3, 0x41a00000    # 20.0f
+
+    cmpl-float v2, v2, v3
+
+    if-ltz v2, :cond_4
+
+    sget-object v2, Ldsl;->a:Ljava/lang/String;
+
+    iget v3, p0, Ldsl;->c:I
+
+    const/16 v4, 0x29
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Timeout after skipping "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " frames"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v2, p0, Ldsl;->d:Lgem;
+
+    iget-object v2, v2, Lgem;->c:Lket;
+
+    const/4 v3, 0x0
+
+    invoke-interface {v2, v3}, Lkeh;->cancel(Z)Z
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/lang/NullPointerException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :cond_2
+    :goto_1
+    :try_start_3
+    iget v2, p0, Ldsl;->c:I
+
+    if-lez v2, :cond_3
+
+    sget-object v2, Ldsl;->a:Ljava/lang/String;
+
+    iget v3, p0, Ldsl;->c:I
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x3c
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "skipped "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", selfie flash off time: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, ", current time: "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_3
+    const/4 v0, 0x0
+
+    iput v0, p0, Ldsl;->c:I
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    long-to-float v1, v0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    int-to-float v2, v0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_POST_RAW_SENSITIVITY_BOOST:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const/high16 v3, 0x42c80000    # 100.0f
+
+    div-float/2addr v0, v3
+
+    mul-float/2addr v2, v0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_APERTURE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    const v3, 0x4ed693a5    # 1.80000013E9f
+
+    iget v4, p0, Ldsl;->b:I
+
+    int-to-float v4, v4
+
+    mul-float/2addr v3, v4
+
+    mul-float/2addr v3, v0
+
+    mul-float/2addr v0, v3
+
+    mul-float/2addr v1, v2
+
+    div-float/2addr v0, v1
+
+    iput v0, p0, Ldsl;->e:F
+    :try_end_3
+    .catch Ljava/lang/NullPointerException; {:try_start_3 .. :try_end_3} :catch_0
+
+    goto/16 :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const/high16 v0, -0x40800000    # -1.0f
+
+    goto/16 :goto_0
+
+    :cond_4
+    if-eqz v0, :cond_2
+
+    :try_start_4
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    const-wide/32 v6, 0x1dcd6500
+
+    add-long/2addr v4, v6
+
+    cmp-long v2, v2, v4
+
+    if-gez v2, :cond_2
+
+    iget v2, p0, Ldsl;->c:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, p0, Ldsl;->c:I
+
+    iget v0, p0, Ldsl;->e:F
+    :try_end_4
+    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_4 .. :try_end_4} :catch_3
+    .catch Ljava/lang/NullPointerException; {:try_start_4 .. :try_end_4} :catch_0
+
+    goto/16 :goto_0
+
+    :catch_1
+    move-exception v1
+
+    move-object v1, v2
+
+    :goto_2
+    :try_start_5
+    sget-object v2, Ldsl;->a:Ljava/lang/String;
+
+    const-string v3, "Selfie flash off future interrupted, continuing to compute BMM"
+
+    invoke-static {v2, v3}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_1
+
+    :catch_2
+    move-exception v1
+
+    move-object v1, v2
+
+    :goto_3
+    sget-object v2, Ldsl;->a:Ljava/lang/String;
+
+    const-string v3, "Selfie flash off future interrupted, continuing to compute BMM"
+
+    invoke-static {v2, v3}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_5
+    .catch Ljava/lang/NullPointerException; {:try_start_5 .. :try_end_5} :catch_0
+
+    goto/16 :goto_1
+
+    :catch_3
+    move-exception v2
+
+    goto :goto_3
+
+    :catch_4
+    move-exception v2
+
+    goto :goto_2
 .end method

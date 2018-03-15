@@ -1,138 +1,151 @@
-.class public final Lhph;
-.super Ljava/lang/Object;
+.class final Lhph;
+.super Lhpn;
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# instance fields
+.field private final synthetic a:Landroid/os/Bundle;
+
+.field private final synthetic b:J
+
+.field private final synthetic c:Lcom/google/android/gms/googlehelp/GoogleHelp;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method constructor <init>(Lhlm;Landroid/os/Bundle;JLcom/google/android/gms/googlehelp/GoogleHelp;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lhph;->a:Landroid/os/Bundle;
+
+    iput-wide p3, p0, Lhph;->b:J
+
+    iput-object p5, p0, Lhph;->c:Lcom/google/android/gms/googlehelp/GoogleHelp;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lhpn;-><init>(Lhlm;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method protected final a(Lhpp;)V
     .locals 7
+
+    :try_start_0
+    iget-object v0, p0, Lhph;->a:Landroid/os/Bundle;
+
+    iget-wide v2, p0, Lhph;->b:J
+
+    iget-object v1, p0, Lhph;->c:Lcom/google/android/gms/googlehelp/GoogleHelp;
+
+    new-instance v4, Lhpi;
+
+    invoke-direct {v4, p0}, Lhpi;-><init>(Lhph;)V
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v5
+
+    :try_start_1
+    const-string v6, "com.google.android.gms.googlehelp.internal.common.IGoogleHelpService"
+
+    invoke-virtual {v5, v6}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    if-eqz v0, :cond_0
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v5, v6}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v0, v5, v6}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
+
+    :goto_0
+    invoke-virtual {v5, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
+
+    if-eqz v1, :cond_1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v5, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     const/4 v0, 0x0
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    invoke-virtual {v1, v5, v0}, Lcom/google/android/gms/googlehelp/GoogleHelp;->writeToParcel(Landroid/os/Parcel;I)V
 
-    move-result v4
-
-    move-object v1, v0
-
-    move-object v2, v0
-
-    move-object v3, v0
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v5
-
-    if-ge v5, v4, :cond_0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v5
-
-    const v6, 0xffff
-
-    and-int/2addr v6, v5
-
-    packed-switch v6, :pswitch_data_0
-
-    invoke-static {p1, v5}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v5}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v5}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {p1, v5}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+    :goto_1
+    invoke-interface {v4}, Lhpc;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {v5, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    :pswitch_3
-    invoke-static {p1, v5}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+    iget-object v0, p1, Lhpp;->a:Landroid/os/IBinder;
 
-    move-result-object v1
+    const/16 v1, 0x8
 
-    goto :goto_0
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-interface {v0, v1, v5, v2, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-virtual {v5}, Landroid/os/Parcel;->recycle()V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    :goto_2
+    return-void
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    const/4 v0, 0x0
 
-    move-result v5
+    :try_start_3
+    invoke-virtual {v5, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    if-eq v5, v4, :cond_1
+    goto :goto_0
 
-    new-instance v0, Ladf;
+    :catchall_0
+    move-exception v0
 
-    const/16 v1, 0x25
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    :try_start_4
+    invoke-virtual {v5}, Landroid/os/Parcel;->recycle()V
 
     throw v0
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "gH_GoogleHelpApiImpl"
+
+    const-string v2, "Requesting to save the async help psd failed!"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    sget-object v0, Lhpe;->a:Lcom/google/android/gms/common/api/Status;
+
+    invoke-virtual {p0, v0}, Lhph;->c(Lcom/google/android/gms/common/api/Status;)V
+
+    goto :goto_2
 
     :cond_1
-    new-instance v4, Lcom/google/android/gms/googlehelp/OfflineSuggestion;
+    const/4 v0, 0x0
 
-    invoke-direct {v4, v3, v2, v1, v0}, Lcom/google/android/gms/googlehelp/OfflineSuggestion;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_start_5
+    invoke-virtual {v5, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    return-object v4
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    new-array v0, p1, [Lcom/google/android/gms/googlehelp/OfflineSuggestion;
-
-    return-object v0
+    goto :goto_1
 .end method

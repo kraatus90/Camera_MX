@@ -3,42 +3,60 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/io/FileFilter;
+.implements Lgzo;
+
+
+# instance fields
+.field private final a:Lhgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lhgv;Lkgv;Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhaa;->a:Lhgv;
+
+    iput-object p2, p0, Lhaa;->b:Lkgv;
+
+    iput-object p3, p0, Lhaa;->c:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/io/File;)Z
-    .locals 2
+.method public final a()V
+    .locals 3
 
-    const-string v0, "cpu[0-9]+"
+    iget-object v0, p0, Lhaa;->b:Lkgv;
 
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+    check-cast v0, Lgxn;
 
-    move-result v0
+    iget-object v0, v0, Lgxn;->g:Lhcf;
 
-    if-eqz v0, :cond_0
+    const v1, 0x7f0e0100
 
-    const/4 v0, 0x1
+    invoke-virtual {v0, v1}, Lhcf;->a(I)Ljava/lang/Object;
 
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_0
-    const/4 v0, 0x0
+    check-cast v0, Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-    goto :goto_0
+    iget-object v1, p0, Lhaa;->a:Lhgv;
+
+    iget-object v2, p0, Lhaa;->c:Landroid/content/Context;
+
+    invoke-interface {v1, v0, v2}, Lhgv;->a(Lcom/google/android/apps/camera/zoomui/ZoomUi;Landroid/content/Context;)V
+
+    return-void
 .end method

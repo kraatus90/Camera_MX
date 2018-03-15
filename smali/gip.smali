@@ -1,93 +1,122 @@
-.class public final Lgip;
+.class final Lgip;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Leoz;
+
 
 # instance fields
-.field public a:Licf;
+.field private final synthetic a:Ljava/io/File;
 
-.field private b:Liil;
+.field private final synthetic b:Lioj;
 
-.field private c:Ljuw;
+.field private final synthetic c:Lghm;
 
-.field private d:Ljava/util/Map;
+.field private final synthetic d:Lgil;
 
 
 # direct methods
-.method constructor <init>(Liil;Ljuw;)V
-    .locals 1
+.method constructor <init>(Lgil;Ljava/io/File;Lioj;Lghm;)V
+    .locals 0
+
+    iput-object p1, p0, Lgip;->d:Lgil;
+
+    iput-object p2, p0, Lgip;->a:Ljava/io/File;
+
+    iput-object p3, p0, Lgip;->b:Lioj;
+
+    iput-object p4, p0, Lgip;->c:Lghm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Licf;->a:Licf;
-
-    iput-object v0, p0, Lgip;->a:Licf;
-
-    iput-object p1, p0, Lgip;->b:Liil;
-
-    iput-object p2, p0, Lgip;->c:Ljuw;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lgip;->d:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgio;
-    .locals 5
+.method public final a()Ljava/io/File;
+    .locals 1
 
-    new-instance v0, Lgio;
-
-    iget-object v1, p0, Lgip;->b:Liil;
-
-    iget-object v2, p0, Lgip;->c:Ljuw;
-
-    iget-object v3, p0, Lgip;->a:Licf;
-
-    iget-object v4, p0, Lgip;->d:Ljava/util/Map;
-
-    invoke-interface {v4}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v4
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lgio;-><init>(Liil;Ljuw;Licf;Ljava/util/Collection;)V
+    iget-object v0, p0, Lgip;->a:Ljava/io/File;
 
     return-object v0
 .end method
 
-.method public final a(Ljava/util/Collection;)Lgip;
-    .locals 4
+.method public final b()Lioj;
+    .locals 1
 
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lgip;->b:Lioj;
+
+    return-object v0
+.end method
+
+.method public final c()Ligz;
+    .locals 2
+
+    iget-object v0, p0, Lgip;->c:Lghm;
+
+    iget-object v0, v0, Lghm;->c:Ljrf;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljrf;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lggl;
+    check-cast v0, Ljava/lang/Integer;
 
-    iget-object v2, p0, Lgip;->d:Ljava/util/Map;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v3, v0, Lggl;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+    move-result v0
 
-    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ligz;->a(I)Ligz;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_0
-    return-object p0
+    return-object v0
+.end method
+
+.method public final d()Lihc;
+    .locals 3
+
+    new-instance v0, Lihc;
+
+    iget-object v1, p0, Lgip;->c:Lghm;
+
+    iget-object v1, v1, Lghm;->a:Lihc;
+
+    iget v1, v1, Lihc;->a:I
+
+    iget-object v2, p0, Lgip;->c:Lghm;
+
+    iget-object v2, v2, Lghm;->a:Lihc;
+
+    iget v2, v2, Lihc;->b:I
+
+    invoke-direct {v0, v1, v2}, Lihc;-><init>(II)V
+
+    return-object v0
+.end method
+
+.method public final e()Ljrf;
+    .locals 1
+
+    iget-object v0, p0, Lgip;->d:Lgil;
+
+    iget-object v0, v0, Lgil;->v:Ljrf;
+
+    return-object v0
+.end method
+
+.method public final f()Ljrf;
+    .locals 1
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    return-object v0
 .end method

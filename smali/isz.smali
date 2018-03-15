@@ -1,62 +1,33 @@
-.class final Lisz;
-.super Ljava/lang/Object;
+.class public final Lisz;
+.super Lisw;
 .source "PG"
-
-# interfaces
-.implements Liuh;
-
-
-# instance fields
-.field private synthetic a:I
-
-.field private synthetic b:Ljava/util/EnumSet;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/EnumSet;)V
+.method constructor <init>()V
     .locals 1
 
-    const/16 v0, 0xa
+    const/4 v0, 0x0
 
-    iput v0, p0, Lisz;->a:I
-
-    iput-object p1, p0, Lisz;->b:Ljava/util/EnumSet;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lisw;-><init>(B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 7
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    const/high16 v6, 0x41f00000    # 30.0f
+    const-string v0, "Int64"
 
-    iget v0, p0, Lisz;->a:I
+    return-object v0
+.end method
 
-    iget-object v1, p0, Lisz;->b:Ljava/util/EnumSet;
+.method public final c()I
+    .locals 1
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    const/16 v0, 0x40
 
-    int-to-long v4, v0
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v2, v4, v5, v0}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
-
-    move-result-wide v2
-
-    long-to-float v0, v2
-
-    mul-float/2addr v0, v6
-
-    float-to-int v0, v0
-
-    new-instance v2, Lirr;
-
-    invoke-direct {v2, v1, v0, v6}, Lirr;-><init>(Ljava/util/EnumSet;IF)V
-
-    return-object v2
+    return v0
 .end method

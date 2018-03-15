@@ -1,99 +1,113 @@
-.class public Lacf;
+.class public final Lacf;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field public a:Lack;
+# static fields
+.field private static final a:I
 
-.field private b:Landroid/os/Handler;
+
+# instance fields
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lack;Landroid/os/Handler;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0xe
 
-    new-instance v0, Lacg;
-
-    invoke-direct {v0}, Lacg;-><init>()V
-
-    iput-object v0, p0, Lacf;->a:Lack;
-
-    iput-object p2, p0, Lacf;->b:Landroid/os/Handler;
-
-    iput-object p1, p0, Lacf;->a:Lack;
+    sput v0, Lacf;->a:I
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Handler;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lacg;
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    invoke-direct {v0}, Lacg;-><init>()V
+    move-result v0
 
-    iput-object v0, p0, Lacf;->a:Lack;
+    sget v1, Lacf;->a:I
 
-    iput-object p1, p0, Lacf;->b:Landroid/os/Handler;
+    sub-int/2addr v0, v1
+
+    if-lez v0, :cond_0
+
+    sget-object v1, Lace;->a:Lacf;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Tag "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " is "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " chars longer than limit."
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lace;->e(Lacf;Ljava/lang/String;)V
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "CAM2PORT_"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    if-lez v0, :cond_1
+
+    const/4 v0, 0x0
+
+    sget v2, Lacf;->a:I
+
+    invoke-virtual {p1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    :cond_1
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lacf;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lacf;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lacf;->b:Ljava/lang/String;
 
-    new-instance v1, Lach;
-
-    invoke-direct {v1, p0, p1}, Lach;-><init>(Lacf;I)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/RuntimeException;)V
-    .locals 2
-
-    iget-object v0, p0, Lacf;->b:Landroid/os/Handler;
-
-    new-instance v1, Lacj;
-
-    invoke-direct {v1, p0, p1}, Lacj;-><init>(Lacf;Ljava/lang/RuntimeException;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public a(Ljava/lang/RuntimeException;Ljava/lang/String;II)V
-    .locals 7
-
-    iget-object v6, p0, Lacf;->b:Landroid/os/Handler;
-
-    new-instance v0, Laci;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    invoke-direct/range {v0 .. v5}, Laci;-><init>(Lacf;Ljava/lang/RuntimeException;Ljava/lang/String;II)V
-
-    invoke-virtual {v6, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+    return-object v0
 .end method

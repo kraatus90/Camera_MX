@@ -3,185 +3,192 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/io/Closeable;
-
-
-# static fields
-.field private static a:Ljpd;
+.implements Ljoz;
 
 
 # instance fields
-.field private b:Ljpd;
-
-.field private c:Ljava/util/Deque;
-
-.field private d:Ljava/lang/Throwable;
+.field private final synthetic a:Ljnq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljnq;)V
+    .locals 0
 
-    sget-object v0, Ljpc;->b:Ljava/lang/reflect/Method;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    sget-object v0, Ljpc;->a:Ljpc;
-
-    :goto_1
-    sput-object v0, Ljpa;->a:Ljpd;
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v0, Ljpb;->a:Ljpb;
-
-    goto :goto_1
-.end method
-
-.method private constructor <init>(Ljpd;)V
-    .locals 2
+    iput-object p1, p0, Ljpa;->a:Ljnq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayDeque;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayDeque;-><init>(I)V
-
-    iput-object v0, p0, Ljpa;->c:Ljava/util/Deque;
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljpd;
-
-    iput-object v0, p0, Ljpa;->b:Ljpd;
-
     return-void
-.end method
-
-.method public static a()Ljpa;
-    .locals 2
-
-    new-instance v0, Ljpa;
-
-    sget-object v1, Ljpa;->a:Ljpd;
-
-    invoke-direct {v0, v1}, Ljpa;-><init>(Ljpd;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/io/Closeable;)Ljava/io/Closeable;
-    .locals 1
+.method public final a(Ljava/io/Writer;)V
+    .locals 8
 
-    if-eqz p1, :cond_0
+    iget-object v1, p0, Ljpa;->a:Ljnq;
 
-    iget-object v0, p0, Ljpa;->c:Ljava/util/Deque;
+    invoke-static {v1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, p1}, Ljava/util/Deque;->addFirst(Ljava/lang/Object;)V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    return-object p1
-.end method
+    const/4 v0, 0x0
 
-.method public final a(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-    .locals 1
+    invoke-virtual {v1}, Ljnq;->a()Ljava/util/List;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v1
 
-    iput-object p1, p0, Ljpa;->d:Ljava/lang/Throwable;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    const-class v0, Ljava/io/IOException;
+    move-result-object v3
 
-    invoke-static {p1, v0}, Ljik;->a(Ljava/lang/Throwable;Ljava/lang/Class;)V
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-.end method
-
-.method public final close()V
-    .locals 4
-
-    iget-object v0, p0, Ljpa;->d:Ljava/lang/Throwable;
-
-    move-object v1, v0
+    move v1, v0
 
     :goto_0
-    iget-object v0, p0, Ljpa;->c:Ljava/util/Deque;
-
-    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_1
 
-    iget-object v0, p0, Ljpa;->c:Ljava/util/Deque;
-
-    invoke-interface {v0}, Ljava/util/Deque;->removeFirst()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/io/Closeable;
+    check-cast v0, Ljne;
 
-    :try_start_0
-    invoke-interface {v0}, Ljava/io/Closeable;->close()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    add-int/lit8 v2, v1, 0x1
 
-    goto :goto_0
+    const/16 v4, 0x1f
 
-    :catch_0
-    move-exception v2
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    if-nez v1, :cond_0
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-object v1, v2
+    const-string v4, "== Metadata Record "
 
-    goto :goto_0
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v4, "\n"
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    iget-object v1, v0, Ljne;->w:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_1
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljnm;
+
+    invoke-virtual {v0, v1}, Ljne;->a(Ljnm;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/lit8 v6, v6, 0x7
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    add-int/2addr v6, v7
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "= "
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v6, " -> "
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v5, "\n"
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    goto :goto_1
 
     :cond_0
-    iget-object v3, p0, Ljpa;->b:Ljpd;
+    const-string v0, "==================\n\n"
 
-    invoke-interface {v3, v0, v1, v2}, Ljpd;->a(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    goto :goto_0
+    move v1, v2
+
+    goto/16 :goto_0
 
     :cond_1
-    iget-object v0, p0, Ljpa;->d:Ljava/lang/Throwable;
-
-    if-nez v0, :cond_2
-
-    if-eqz v1, :cond_2
-
-    const-class v0, Ljava/io/IOException;
-
-    invoke-static {v1, v0}, Ljik;->a(Ljava/lang/Throwable;Ljava/lang/Class;)V
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
-
-    :cond_2
     return-void
 .end method

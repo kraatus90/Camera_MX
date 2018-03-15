@@ -3,64 +3,52 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:I
+.field private final a:Lkgv;
 
-.field private synthetic b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;I)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgsw;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iput p2, p0, Lgsw;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgsw;->a:Lkgv;
+
+    iput-object p2, p0, Lgsw;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    new-instance v2, Lgsv;
+
+    iget-object v0, p0, Lgsw;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
+    check-cast v0, Lgta;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    iget-object v1, p0, Lgsw;->b:Lkgv;
 
-    move-result v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, p0, Lgsw;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    move-result-object v1
 
-    iget-object v2, p0, Lgsw;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    check-cast v1, Lgtf;
 
-    iget v2, v2, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->videoButtonRadius:I
+    invoke-direct {v2, v0, v1}, Lgsv;-><init>(Lgta;Lgtf;)V
 
-    iget v3, p0, Lgsw;->a:I
-
-    int-to-float v3, v3
-
-    mul-float/2addr v0, v3
-
-    float-to-int v0, v0
-
-    add-int/2addr v0, v2
-
-    invoke-static {v1, v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$902(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;I)I
-
-    iget-object v0, p0, Lgsw;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidate()V
-
-    return-void
+    return-object v2
 .end method

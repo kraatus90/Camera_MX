@@ -12,14 +12,14 @@
     return-void
 .end method
 
-.method public static extractXMPData(Ljava/io/File;)Lxb;
+.method public static extractXMPData(Ljava/io/File;)Lwk;
     .locals 1
 
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Licy;->c(Ljava/lang/String;)Lxb;
+    invoke-static {v0}, Lihr;->c(Ljava/lang/String;)Lwk;
 
     move-result-object v0
 
@@ -29,7 +29,7 @@
 .method public static openVideoStream(Ljava/io/File;)Ljava/io/InputStream;
     .locals 4
 
-    invoke-static {p0}, Lcom/google/android/libraries/microvideo/MicrovideoFiles;->extractXMPData(Ljava/io/File;)Lxb;
+    invoke-static {p0}, Lcom/google/android/libraries/microvideo/MicrovideoFiles;->extractXMPData(Ljava/io/File;)Lwk;
 
     move-result-object v0
 
@@ -37,19 +37,19 @@
 
     const-string v2, "MicroVideoOffset"
 
-    invoke-interface {v0, v1, v2}, Lxb;->f(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-interface {v0, v1, v2}, Lwk;->f(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lwz;
+    new-instance v0, Lwi;
 
     const-string v1, "Property value missing"
 
     const/4 v2, 0x5
 
-    invoke-direct {v0, v1, v2}, Lwz;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Lwi;-><init>(Ljava/lang/String;I)V
 
     throw v0
 

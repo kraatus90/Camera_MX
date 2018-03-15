@@ -1,95 +1,64 @@
-.class public interface abstract Lfmd;
+.class public final Lfmd;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+
+# direct methods
+.method private constructor <init>(Lkgv;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfmd;->a:Lkgv;
+
+    return-void
+.end method
+
+.method public static a(Lkgv;)Lfmd;
+    .locals 1
+
+    new-instance v0, Lfmd;
+
+    invoke-direct {v0, p0}, Lfmd;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public abstract a(Landroid/net/Uri;)I
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract a(Lcgh;)I
-.end method
+    iget-object v0, p0, Lfmd;->a:Lkgv;
 
-.method public abstract a(I)Landroid/os/AsyncTask;
-.end method
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-.method public abstract a(Landroid/view/View;Lcgh;Lcfa;)Landroid/view/View;
-.end method
+    move-result-object v0
 
-.method public abstract a(Ljava/util/List;)Ljava/util/List;
-.end method
+    check-cast v0, Lfic;
 
-.method public abstract a()Ljuw;
-.end method
+    const/4 v1, 0x0
 
-.method public abstract a(II)V
-.end method
+    new-array v1, v1, [Lfic;
 
-.method public abstract a(Lcff;)V
-.end method
+    invoke-interface {v0, v1}, Lfic;->a([Lfic;)Lfia;
 
-.method public abstract a(Lcfr;)V
-.end method
+    move-result-object v0
 
-.method public abstract a(Lcgh;Lfvf;)V
-.end method
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-.method public abstract a(Lcjx;)V
-.end method
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public abstract a(Libu;)V
-.end method
+    move-result-object v0
 
-.method public abstract a(Lfvf;)Z
-.end method
+    check-cast v0, Lfia;
 
-.method public abstract b(Landroid/net/Uri;)Lcgh;
-.end method
-
-.method public abstract b(II)Ljava/util/List;
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract b(Lcgh;)V
-.end method
-
-.method public abstract b(Ljava/util/List;)V
-.end method
-
-.method public abstract b(I)Z
-.end method
-
-.method public abstract c()I
-.end method
-
-.method public abstract c(I)I
-.end method
-
-.method public abstract c(Landroid/net/Uri;)V
-.end method
-
-.method public abstract d(I)Lcgh;
-.end method
-
-.method public abstract d(Landroid/net/Uri;)V
-.end method
-
-.method public abstract d()Z
-.end method
-
-.method public abstract e(I)Lfvf;
-.end method
-
-.method public abstract e()Z
-.end method
-
-.method public abstract f(I)Lcgh;
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()I
+    return-object v0
 .end method

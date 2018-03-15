@@ -1,37 +1,50 @@
-.class public final Lbhy;
-.super Lico;
+.class final Lbhy;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkds;
+
+
+# instance fields
+.field private final synthetic a:Lbhx;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method constructor <init>(Lbhx;)V
+    .locals 0
 
-    const-string v0, "CAM_"
+    iput-object p1, p0, Lbhy;->a:Lbhx;
 
-    invoke-direct {p0, v0}, Lico;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Ljava/lang/String;)Licp;
-    .locals 1
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 0
 
-    new-instance v0, Licp;
-
-    invoke-direct {v0, p1, p0}, Licp;-><init>(Ljava/lang/String;Lico;)V
-
-    return-object v0
+    return-void
 .end method
 
-.method public final a(Ljava/lang/String;I)Z
-    .locals 1
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 3
 
-    invoke-static {p1, p2}, Lbhz;->a(Ljava/lang/String;I)Z
+    check-cast p1, Laud;
 
-    move-result v0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return v0
+    iget-object v0, p0, Lbhy;->a:Lbhx;
+
+    iget-object v1, v0, Lbhx;->b:Libk;
+
+    new-instance v2, Lbib;
+
+    invoke-direct {v2, v0}, Lbib;-><init>(Lbhx;)V
+
+    invoke-virtual {v1, v2}, Libk;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

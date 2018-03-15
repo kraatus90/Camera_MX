@@ -1,20 +1,14 @@
-.class public final Ljfb;
+.class final Ljfb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
-
-
-# instance fields
-.field private synthetic a:Ljfq;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljfq;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljfb;->a:Ljfq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,16 +17,80 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 6
 
-    check-cast p1, Ljan;
+    const/4 v2, 0x0
 
-    new-instance v0, Ljfk;
+    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    iget-object v1, p0, Ljfb;->a:Ljfq;
+    const-string v1, "default"
 
-    invoke-direct {v0, p1, p2, v1}, Ljfk;-><init>(Ljan;Ljava/lang/String;Ljfq;)V
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    const-class v1, Ljhk;
+
+    const-string v3, "default"
+
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljhk;
+
+    invoke-virtual {v1}, Ljhk;->d()Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
+
+    :goto_0
+    invoke-static {v1}, Ljii;->a(Z)V
+
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-static {v0, v4, v5, v2, v3}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;->createFrom(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;JJ)Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;
+
+    move-result-object v0
 
     return-object v0
+
+    :cond_0
+    move v1, v2
+
+    goto :goto_0
 .end method

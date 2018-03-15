@@ -1,300 +1,129 @@
-.class abstract Ljtk;
-.super Ljtf;
+.class public final Ljtk;
+.super Ljth;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final b:Ljtk;
 
-# instance fields
-.field private e:Ljuw;
-
-.field private f:Ljava/lang/Object;
+.field public static final serialVersionUID:J
 
 
 # direct methods
-.method constructor <init>(Ljuw;Ljava/lang/Object;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljtf;-><init>()V
+    new-instance v0, Ljtk;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0}, Ljtk;-><init>()V
 
-    move-result-object v0
-
-    check-cast v0, Ljuw;
-
-    iput-object v0, p0, Ljtk;->e:Ljuw;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljtk;->f:Ljava/lang/Object;
+    sput-object v0, Ljtk;->b:Ljtk;
 
     return-void
 .end method
 
-.method static a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
-    .locals 2
+.method private constructor <init>()V
+    .locals 1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    new-instance v0, Ljtm;
+    invoke-direct {p0, v0}, Ljth;-><init>(Ljava/lang/Comparable;)V
 
-    invoke-direct {v0, p0, p1}, Ljtm;-><init>(Ljuw;Ljhj;)V
-
-    invoke-static {p2, v0}, Ljwd;->a(Ljava/util/concurrent/Executor;Ljsw;)Ljava/util/concurrent/Executor;
-
-    move-result-object v1
-
-    invoke-interface {p0, v0, v1}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    return-object v0
+    return-void
 .end method
 
-.method static a(Ljuw;Ljtu;Ljava/util/concurrent/Executor;)Ljuw;
-    .locals 2
+.method private final readResolve()Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v0, Ljtl;
-
-    invoke-direct {v0, p0, p1}, Ljtl;-><init>(Ljuw;Ljtu;)V
-
-    invoke-static {p2, v0}, Ljwd;->a(Ljava/util/concurrent/Executor;Ljsw;)Ljava/util/concurrent/Executor;
-
-    move-result-object v1
-
-    invoke-interface {p0, v0, v1}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    sget-object v0, Ljtk;->b:Ljtk;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method abstract a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-.end method
+.method public final a(Ljth;)I
+    .locals 1
 
-.method protected final a()Ljava/lang/String;
-    .locals 4
+    if-ne p1, p0, :cond_0
 
-    iget-object v0, p0, Ljtk;->e:Ljuw;
-
-    iget-object v1, p0, Ljtk;->f:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1b
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "inputFuture=["
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "], function=["
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     :goto_0
-    return-object v0
+    return v0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
     goto :goto_0
 .end method
 
-.method protected final b()V
+.method final a()Ljava/lang/Comparable;
     .locals 2
 
-    const/4 v1, 0x0
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    iget-object v0, p0, Ljtk;->e:Ljuw;
+    const-string v1, "range unbounded on this side"
 
-    invoke-virtual {p0, v0}, Ljtk;->a(Ljava/util/concurrent/Future;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iput-object v1, p0, Ljtk;->e:Ljuw;
+    throw v0
+.end method
 
-    iput-object v1, p0, Ljtk;->f:Ljava/lang/Object;
+.method final a(Ljava/lang/StringBuilder;)V
+    .locals 1
+
+    const-string v0, "(-\u221e"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     return-void
 .end method
 
-.method abstract b(Ljava/lang/Object;)V
-.end method
-
-.method public final run()V
-    .locals 7
-
-    const/4 v6, 0x0
+.method final a(Ljava/lang/Comparable;)Z
+    .locals 1
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    return v0
+.end method
 
-    iget-object v3, p0, Ljtk;->e:Ljuw;
+.method final b(Ljava/lang/StringBuilder;)V
+    .locals 1
 
-    iget-object v4, p0, Ljtk;->f:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-virtual {p0}, Ljsw;->isCancelled()Z
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    move-result v5
+    throw v0
+.end method
 
-    if-nez v3, :cond_0
+.method public final synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
 
-    move v2, v0
+    check-cast p1, Ljth;
 
-    :goto_0
-    or-int/2addr v2, v5
+    invoke-virtual {p0, p1}, Ljtk;->a(Ljth;)I
 
-    if-nez v4, :cond_1
+    move-result v0
 
-    :goto_1
-    or-int/2addr v0, v2
+    return v0
+.end method
 
-    if-eqz v0, :cond_2
+.method public final hashCode()I
+    .locals 1
 
-    :goto_2
-    return-void
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    :cond_0
-    move v2, v1
+    move-result v0
 
-    goto :goto_0
+    return v0
+.end method
 
-    :cond_1
-    move v0, v1
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    goto :goto_1
+    const-string v0, "-\u221e"
 
-    :cond_2
-    iput-object v6, p0, Ljtk;->e:Ljuw;
-
-    iput-object v6, p0, Ljtk;->f:Ljava/lang/Object;
-
-    :try_start_0
-    invoke-static {v3}, Ljuh;->a(Ljava/util/concurrent/Future;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_3
-
-    move-result-object v0
-
-    :try_start_1
-    invoke-virtual {p0, v4, v0}, Ljtk;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catch Ljava/lang/reflect/UndeclaredThrowableException; {:try_start_1 .. :try_end_1} :catch_4
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_5
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljtk;->b(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {p0, v1}, Ljsw;->cancel(Z)Z
-
-    goto :goto_2
-
-    :catch_1
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljtk;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_2
-
-    :catch_2
-    move-exception v0
-
-    invoke-virtual {p0, v0}, Ljtk;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_2
-
-    :catch_3
-    move-exception v0
-
-    invoke-virtual {p0, v0}, Ljtk;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_2
-
-    :catch_4
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/reflect/UndeclaredThrowableException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljtk;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_2
-
-    :catch_5
-    move-exception v0
-
-    invoke-virtual {p0, v0}, Ljtk;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_2
+    return-object v0
 .end method

@@ -1,20 +1,14 @@
-.class public final Layg;
+.class final Layg;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+.implements Ljqv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Layg;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,10 +17,33 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    check-cast p1, Ljava/util/List;
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_1
+    sget-object v0, Ljvq;->a:Ljvq;
+
+    invoke-virtual {v0, p1}, Ljvr;->a(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -36,11 +53,13 @@
 
     move-result v0
 
-    iget-object v1, p0, Layg;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
-    iget-object v1, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    move-result v0
 
-    invoke-virtual {v1, v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setAlpha(I)V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-void
+    move-result-object v0
+
+    goto :goto_0
 .end method

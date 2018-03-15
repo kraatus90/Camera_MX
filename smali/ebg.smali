@@ -1,46 +1,91 @@
-.class public final Lebg;
-.super Ljava/lang/Object;
+.class Lebg;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lebf;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method constructor <init>(Lebf;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lebg;->a:Lebf;
 
-    iput-object p1, p0, Lebg;->a:Ljxn;
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>([I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a()V
+    .locals 3
 
-    iget-object v0, p0, Lebg;->a:Ljxn;
+    const/4 v2, 0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Lebf;->a:Ljava/lang/String;
 
-    move-result-object v0
+    const-string v1, "Capture state enter"
 
-    check-cast v0, Ledp;
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lebg;->a:Lebf;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Lebf;->c:Lhfx;
 
-    move-result-object v0
+    sget v1, Lep;->bJ:I
 
-    check-cast v0, Leai;
+    iput v1, v0, Lhfx;->a:I
 
-    return-object v0
+    iget-object v0, p0, Lebg;->a:Lebf;
+
+    iget-object v0, v0, Lebf;->g:Lgvc;
+
+    invoke-virtual {v0, v2}, Lgvc;->b(Z)V
+
+    iget-object v0, p0, Lebg;->a:Lebf;
+
+    iget-object v0, v0, Lebf;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    sget-object v0, Lebf;->a:Ljava/lang/String;
+
+    const-string v1, "Capture state exit"
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lebg;->a:Lebf;
+
+    iget-object v0, v0, Lebf;->c:Lhfx;
+
+    sget v1, Lep;->bL:I
+
+    iput v1, v0, Lhfx;->a:I
+
+    iget-object v0, p0, Lebg;->a:Lebf;
+
+    iget-object v0, v0, Lebf;->g:Lgvc;
+
+    invoke-virtual {v0, v2}, Lgvc;->b(Z)V
+
+    iget-object v0, p0, Lebg;->a:Lebf;
+
+    iget-object v0, v0, Lebf;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+
+    return-void
 .end method

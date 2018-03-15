@@ -1,58 +1,48 @@
 .class final Ljeb;
-.super Ljea;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljea;-><init>(Ljava/lang/String;B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 4
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
+    new-instance v2, Liyr;
 
-    move-result-wide v0
+    const-class v0, Ljko;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const-string v1, "Collage_Action"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljko;
 
-.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
-    .locals 2
+    const-class v1, Liyq;
 
-    instance-of v0, p1, Ljava/lang/Long;
+    const-string v3, "action_collage_artifact_renderer"
 
-    if-nez v0, :cond_0
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v0, Ljava/io/IOException;
+    move-result-object v1
 
-    const-string v1, "Incorrect type for serialization"
+    check-cast v1, Liyq;
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v0, v1}, Liyr;-><init>(Ljko;Liyq;)V
 
-    throw v0
-
-    :cond_0
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-virtual {p2, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
-
-    return-void
+    return-object v2
 .end method

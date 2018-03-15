@@ -1,400 +1,158 @@
-.class final Lbgv;
-.super Ljava/lang/Thread;
+.class public final Lbgv;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lihb;
 
 
 # instance fields
-.field private synthetic a:Lbgu;
+.field public final a:Lbhc;
+
+.field public final b:Lbhl;
+
+.field public final c:Landroid/view/Surface;
+
+.field public final d:Lbhv;
+
+.field public final e:Ljava/lang/Object;
+
+.field public f:Z
+
+.field private final g:Landroid/view/Surface;
+
+.field private final h:Lbgx;
 
 
 # direct methods
-.method constructor <init>(Lbgu;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lbhc;Lbhl;Landroid/view/Surface;Landroid/view/Surface;Lbgx;Lbhv;)V
+    .locals 1
 
-    iput-object p1, p0, Lbgv;->a:Lbgu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lbgv;->e:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lbgv;->f:Z
+
+    iput-object p1, p0, Lbgv;->a:Lbhc;
+
+    iput-object p2, p0, Lbgv;->b:Lbhl;
+
+    iput-object p3, p0, Lbgv;->g:Landroid/view/Surface;
+
+    iput-object p4, p0, Lbgv;->c:Landroid/view/Surface;
+
+    iput-object p5, p0, Lbgv;->h:Lbgx;
+
+    iput-object p6, p0, Lbgv;->d:Lbhv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 10
+.method public final a(Lasz;)Laue;
+    .locals 8
 
-    const/4 v1, 0x0
+    iget-object v7, p0, Lbgv;->e:Ljava/lang/Object;
 
-    const-string v0, "AudioEncoder"
+    monitor-enter v7
 
-    const-string v2, "starting"
+    :try_start_0
+    iget-boolean v0, p0, Lbgv;->f:Z
 
-    invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    iget-object v2, p0, Lbgv;->a:Lbgu;
-
-    new-instance v0, Landroid/media/MediaCodec$BufferInfo;
-
-    invoke-direct {v0}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
-
-    sget-boolean v3, Lbgu;->a:Z
-
-    if-eqz v3, :cond_1
-
-    const-string v3, "AudioEncoder"
-
-    const-string v4, "writeToMuxer"
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    iget-object v3, v2, Lbgu;->d:Landroid/media/MediaCodec;
-
-    const-wide/16 v4, 0x2710
-
-    invoke-virtual {v3, v0, v4, v5}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
-
-    move-result v3
-
-    const/4 v4, -0x1
-
-    if-eq v3, v4, :cond_c
-
-    const/4 v4, -0x2
-
-    if-ne v3, v4, :cond_7
-
-    iget-object v0, v2, Lbgu;->e:Lbgn;
-
-    invoke-virtual {v0}, Lbgn;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "format changed twice"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    :cond_2
-    iget-object v0, v2, Lbgu;->d:Landroid/media/MediaCodec;
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
-
-    move-result-object v0
-
-    sget-boolean v3, Lbgu;->a:Z
-
-    if-eqz v3, :cond_3
-
-    const-string v3, "AudioEncoder"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/lit8 v5, v5, 0x25
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v5, "Audio encoder output format changed: "
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_3
-    iget-object v3, v2, Lbgu;->e:Lbgn;
-
-    iget-object v4, v3, Lbgn;->b:Ljava/lang/Object;
-
-    monitor-enter v4
-
-    :try_start_0
-    iget-object v5, v3, Lbgn;->d:Lbhb;
-
-    sget-object v6, Lbhb;->a:Lbhb;
-
-    if-eq v5, v6, :cond_4
-
-    const-string v5, "MediaMuxerProc"
-
-    const-string v6, "already started, cannot add audio track."
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_4
-    iget-object v5, v3, Lbgn;->e:Lbgo;
-
-    iget-boolean v5, v5, Lbgo;->a:Z
-
-    if-nez v5, :cond_5
-
-    const-string v5, "MediaMuxerProc"
-
-    const-string v6, "Audio track is not supported"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_5
-    iget-object v5, v3, Lbgn;->e:Lbgo;
-
-    iget-object v6, v3, Lbgn;->a:Landroid/media/MediaMuxer;
-
-    invoke-virtual {v6, v0}, Landroid/media/MediaMuxer;->addTrack(Landroid/media/MediaFormat;)I
-
-    move-result v0
-
-    invoke-virtual {v5, v0}, Lbgo;->a(I)V
-
-    const-string v0, "MediaMuxerProc"
-
-    iget-object v3, v3, Lbgn;->e:Lbgo;
-
-    invoke-virtual {v3}, Lbgo;->a()I
-
-    move-result v3
-
-    const/16 v5, 0x23
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v5, "Audio track getIndex(): "
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    monitor-exit v4
+    monitor-exit v7
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, v2, Lbgu;->e:Lbgn;
+    throw v0
 
-    invoke-virtual {v0}, Lbgn;->a()V
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lbgv;->h:Lbgx;
 
-    move v0, v1
+    iget-object v1, p0, Lbgv;->a:Lbhc;
 
-    :cond_6
-    :goto_0
-    if-eqz v0, :cond_0
+    iget-object v2, p0, Lbgv;->b:Lbhl;
 
-    const-string v0, "AudioEncoder"
+    const/4 v3, 0x1
 
-    const-string v1, "stopping"
+    const/4 v4, 0x2
 
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v4, v4, [Landroid/view/Surface;
+
+    const/4 v5, 0x0
+
+    iget-object v6, p0, Lbgv;->g:Landroid/view/Surface;
+
+    aput-object v6, v4, v5
+
+    const/4 v5, 0x1
+
+    iget-object v6, p0, Lbgv;->c:Landroid/view/Surface;
+
+    aput-object v6, v4, v5
+
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v5
+
+    new-instance v6, Lbgw;
+
+    invoke-direct {v6, p0}, Lbgw;-><init>(Lbgv;)V
+
+    move-object v4, p1
+
+    invoke-interface/range {v0 .. v6}, Lbgx;->a(Lbhc;Lbhl;ZLasz;Ljava/util/List;Ljava/lang/Runnable;)Laue;
+
+    move-result-object v0
+
+    monitor-exit v7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 2
+
+    iget-object v1, p0, Lbgv;->e:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    const/4 v0, 0x1
+
+    :try_start_0
+    iput-boolean v0, p0, Lbgv;->f:Z
+
+    monitor-exit v1
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    :try_start_1
-    monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-
-    :cond_7
-    const/4 v4, -0x3
-
-    if-eq v3, v4, :cond_c
-
-    iget v4, v0, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v4, v4, 0x2
-
-    if-eqz v4, :cond_9
-
-    sget-boolean v4, Lbgu;->a:Z
-
-    if-eqz v4, :cond_8
-
-    const-string v4, "AudioEncoder"
-
-    iget v5, v0, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    const/16 v6, 0x3b
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v6, "ignoring BUFFER_FLAG_CODEC_CONFIG, buffer size: "
-
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_8
-    iput v1, v0, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    :cond_9
-    iget v4, v0, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    if-eqz v4, :cond_b
-
-    iget-object v4, v2, Lbgu;->e:Lbgn;
-
-    invoke-virtual {v4}, Lbgn;->c()Z
-
-    move-result v4
-
-    if-nez v4, :cond_a
-
-    iget-object v4, v2, Lbgu;->e:Lbgn;
-
-    const-wide/16 v6, 0x7d0
-
-    invoke-virtual {v4, v6, v7}, Lbgn;->a(J)V
-
-    :cond_a
-    iget-object v4, v2, Lbgu;->d:Landroid/media/MediaCodec;
-
-    invoke-virtual {v4, v3}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v4
-
-    iget v5, v0, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    invoke-virtual {v4, v5}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget v5, v0, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    iget v6, v0, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    add-int/2addr v5, v6
-
-    invoke-virtual {v4, v5}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    iget-object v5, v2, Lbgu;->e:Lbgn;
-
-    invoke-virtual {v5, v4, v0}, Lbgn;->b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    sget-boolean v4, Lbgu;->a:Z
-
-    if-eqz v4, :cond_b
-
-    const-string v4, "AudioEncoder"
-
-    iget v5, v0, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    iget-wide v6, v0, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    const/16 v8, 0x49
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9, v8}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v8, "Audio sent "
-
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v8, " bytes to MediaMuxer with pts: "
-
-    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_b
-    iget-object v4, v2, Lbgu;->d:Landroid/media/MediaCodec;
-
-    invoke-virtual {v4, v3, v1}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
-
-    iget v0, v0, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v0, v0, 0x4
-
-    if-eqz v0, :cond_c
-
-    const/4 v0, 0x1
-
-    iget-object v2, v2, Lbgu;->g:Ljvi;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    sget-boolean v2, Lbgu;->a:Z
-
-    if-eqz v2, :cond_6
-
-    const-string v2, "AudioEncoder"
-
-    const-string v3, "Audio End of Stream reached"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_0
-
-    :cond_c
-    move v0, v1
-
-    goto/16 :goto_0
 .end method

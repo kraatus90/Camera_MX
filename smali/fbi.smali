@@ -1,45 +1,39 @@
-.class final Lfbi;
-.super Lfdk;
+.class public abstract Lfbi;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lfbh;
-
-
 # direct methods
-.method constructor <init>(Lfbh;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lfbi;->a:Lfbh;
-
-    invoke-direct {p0, p1}, Lfdk;-><init>(Lfdj;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final D()V
+.method public static a()Lfbj;
     .locals 2
 
-    iget-object v0, p0, Lfbi;->a:Lfbh;
+    new-instance v0, Lfbj;
 
-    iget-object v0, v0, Lfbh;->a:Lgvj;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-direct {v0, v1}, Lfbj;-><init>(B)V
 
-    invoke-super {p0}, Lfdk;->D()V
+    const/4 v1, -0x1
 
-    iget-object v0, p0, Lfbi;->a:Lfbh;
+    invoke-virtual {v0, v1}, Lfbj;->a(I)Lfbj;
 
-    iget-object v0, v0, Lfbh;->a:Lgvj;
+    move-result-object v0
 
-    iget-object v1, p0, Lfbi;->a:Lfbh;
+    return-object v0
+.end method
 
-    iget-object v1, v1, Lfbh;->c:Lgvl;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+# virtual methods
+.method public abstract b()Landroid/graphics/PointF;
+.end method
 
-    return-void
+.method public abstract c()I
 .end method

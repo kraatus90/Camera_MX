@@ -1,433 +1,115 @@
-.class public final Lbip;
+.class final Lbip;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final c:Lblb;
-
-.field public static final d:Lblb;
-
-.field public static final e:Lblb;
-
-.field public static final f:Lbku;
-
-.field public static final g:Lbku;
-
-.field public static final h:Lbku;
-
-.field public static final i:Lbku;
-
-.field public static final j:Lbku;
-
-.field public static final k:Lbku;
-
-.field public static final l:Lblf;
-
-.field public static final m:Lbku;
-
-.field public static final n:Lbku;
-
-.field public static final o:Lbku;
-
-.field public static final p:Lbku;
-
-.field public static final q:Lbku;
-
-.field public static final r:Lbku;
-
-.field public static final s:Lbku;
-
-.field public static final t:Lbku;
-
-.field private static y:Lbku;
+# interfaces
+.implements Landroid/media/MediaRecorder$OnInfoListener;
 
 
 # instance fields
-.field public final a:Lbli;
+.field private a:Z
 
-.field public b:Lgzz;
+.field private b:Z
 
-.field public final u:Lbku;
-
-.field public final v:Lbku;
-
-.field public final w:Lble;
-
-.field public final x:Lbku;
-
-.field private z:Lbmy;
+.field private final synthetic c:Lifj;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method constructor <init>(Lifj;)V
+    .locals 0
 
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lblb;
-
-    const-string v1, "camera.onscreen_log"
-
-    invoke-direct {v0, v1}, Lblb;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lbip;->c:Lblb;
-
-    new-instance v0, Lblb;
-
-    const-string v1, "camera.onscreen_logcat"
-
-    invoke-direct {v0, v1}, Lblb;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lbip;->d:Lblb;
-
-    new-instance v0, Lblb;
-
-    const-string v1, "camera.syshealth_info"
-
-    invoke-direct {v0, v1}, Lblb;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lbip;->e:Lblb;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.faceboxes"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->f:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.use_local_logger"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->g:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.use_perf_logger"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->h:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.af.debug.show"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->i:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.af.ring.hide"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->y:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.op.nes"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->j:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.flash.ind"
-
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->k:Lbku;
-
-    new-instance v0, Lblf;
-
-    const-string v1, "camera.enable_hwhdr"
-
-    invoke-direct {v0, v1}, Lblf;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lbip;->l:Lblf;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.enable_pd"
-
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->m:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.enable_pd_blur"
-
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->n:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "cameraprogress_overlay"
-
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->o:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.enable_micro_he"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->p:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.micro_no_trim"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->q:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.micro_audio"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->r:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.micro_trimtoast"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->s:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.optbar.hdr"
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    sput-object v0, Lbip;->t:Lbku;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lbli;Lgzz;Lbmy;Ljht;)V
-    .locals 3
+    iput-object p1, p0, Lbip;->c:Lifj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbip;->a:Lbli;
-
-    iput-object p2, p0, Lbip;->b:Lgzz;
-
-    iput-object p3, p0, Lbip;->z:Lbmy;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.use_photos"
-
-    invoke-virtual {p2}, Lgzz;->c()Z
-
-    move-result v2
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    iput-object v0, p0, Lbip;->u:Lbku;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.diet_burst"
-
-    invoke-virtual {p2}, Lgzz;->c()Z
-
-    move-result v2
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    iput-object v0, p0, Lbip;->v:Lbku;
-
-    sget-object v0, Lbrm;->a:Lble;
-
-    invoke-virtual {p4, v0}, Ljht;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lble;
-
-    iput-object v0, p0, Lbip;->w:Lble;
-
-    new-instance v0, Lbku;
-
-    const-string v1, "camera.enable_micro"
-
-    invoke-virtual {p2}, Lgzz;->g()Z
-
-    move-result v2
-
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
-
-    iput-object v0, p0, Lbip;->x:Lbku;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 2
+.method public final onInfo(Landroid/media/MediaRecorder;II)V
+    .locals 3
 
-    iget-object v0, p0, Lbip;->z:Lbmy;
+    const/4 v2, 0x1
 
-    invoke-virtual {v0}, Lbmy;->a()Z
+    const/16 v0, 0x321
 
-    move-result v0
+    if-ne p2, v0, :cond_1
 
-    if-eqz v0, :cond_0
+    sget-object v0, Lbio;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Lbip;->a:Lbli;
+    const-string v1, "MEDIA_RECORDER_INFO_MAX_FILESIZE_REACHED"
 
-    iget-object v1, p0, Lbip;->u:Lbku;
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
+    iget-boolean v0, p0, Lbip;->b:Z
 
-    move-result v0
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_0
+    iput-boolean v2, p0, Lbip;->b:Z
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lbip;->c:Lifj;
 
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final b()Z
-    .locals 2
-
-    iget-object v0, p0, Lbip;->a:Lbli;
-
-    iget-object v1, p0, Lbip;->v:Lbku;
-
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c()Z
-    .locals 2
-
-    iget-object v0, p0, Lbip;->a:Lbli;
-
-    sget-object v1, Lbip;->f:Lbku;
-
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 2
-
-    iget-object v0, p0, Lbip;->a:Lbli;
-
-    sget-object v1, Lbip;->y:Lbku;
-
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final e()Z
-    .locals 2
-
-    iget-object v0, p0, Lbip;->a:Lbli;
-
-    sget-object v1, Lbip;->j:Lbku;
-
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final f()Z
-    .locals 2
-
-    iget-object v0, p0, Lbip;->b:Lgzz;
-
-    invoke-virtual {v0}, Lgzz;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lbip;->a:Lbli;
-
-    iget-object v1, p0, Lbip;->x:Lbku;
-
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
+    invoke-interface {v0}, Lifj;->f()V
 
     :cond_0
-    const/4 v0, 0x0
+    :goto_0
+    return-void
+
+    :cond_1
+    const/16 v0, 0x320
+
+    if-ne p2, v0, :cond_2
+
+    sget-object v0, Lbio;->a:Ljava/lang/String;
+
+    const-string v1, "MEDIA_RECORDER_INFO_MAX_DURATION_REACHED"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-boolean v0, p0, Lbip;->a:Z
+
+    if-nez v0, :cond_0
+
+    iput-boolean v2, p0, Lbip;->a:Z
+
+    iget-object v0, p0, Lbip;->c:Lifj;
+
+    invoke-interface {v0}, Lifj;->c()V
 
     goto :goto_0
-.end method
 
-.method public final g()Z
-    .locals 2
+    :cond_2
+    const/16 v0, 0x322
 
-    iget-object v0, p0, Lbip;->a:Lbli;
+    if-ne p2, v0, :cond_3
 
-    sget-object v1, Lbip;->q:Lbku;
+    sget-object v0, Lbio;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
+    const-string v1, "MEDIA_RECORDER_INFO_MAX_FILESIZE_APPROACHING"
 
-    move-result v0
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    return v0
-.end method
+    iget-object v0, p0, Lbip;->c:Lifj;
 
-.method public final h()Z
-    .locals 2
+    invoke-interface {v0}, Lifj;->d()V
 
-    iget-object v0, p0, Lbip;->a:Lbli;
+    goto :goto_0
 
-    sget-object v1, Lbip;->m:Lbku;
+    :cond_3
+    const/16 v0, 0x323
 
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
+    if-ne p2, v0, :cond_0
 
-    move-result v0
+    sget-object v0, Lbio;->a:Ljava/lang/String;
 
-    return v0
+    const-string v1, "MEDIA_RECORDER_INFO_NEXT_OUTPUT_FILE_STARTED"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lbip;->c:Lifj;
+
+    invoke-interface {v0}, Lifj;->e()V
+
+    goto :goto_0
 .end method

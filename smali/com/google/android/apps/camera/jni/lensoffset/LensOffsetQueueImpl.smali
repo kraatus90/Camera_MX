@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lbrs;
+.implements Lbxd;
 .implements Ljava/lang/AutoCloseable;
 
 
 # static fields
-.field private static a:Ljava/lang/String;
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private b:I
+.field private final b:I
 
-.field private c:J
+.field private final c:J
 
 .field private d:Z
 
@@ -25,7 +25,7 @@
 
     const-string v0, "LensOffsetQueueImpl"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -38,16 +38,16 @@
     return-void
 .end method
 
-.method public constructor <init>(ILici;)V
+.method public constructor <init>(ILihc;)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p1, p0, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueImpl;->b:I
 
-    iget v0, p2, Lici;->a:I
+    iget v0, p2, Lihc;->a:I
 
-    iget v1, p2, Lici;->b:I
+    iget v1, p2, Lihc;->b:I
 
     invoke-static {p1, v0, v1}, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueImpl;->createHandle(III)J
 
@@ -185,7 +185,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -277,7 +277,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -351,7 +351,7 @@
 
     move-result-object v8
 
-    invoke-static {v7, v8}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_3
     const/4 v7, 0x0

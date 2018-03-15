@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract setFeatureTable(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+.method public abstract a(Ljava/io/OutputStream;)Lipd;
 .end method

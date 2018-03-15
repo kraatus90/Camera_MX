@@ -1,357 +1,80 @@
-.class public final Ljge;
+.class final Ljge;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/concurrent/BlockingQueue;
-
-
-# instance fields
-.field private a:Ljava/util/concurrent/BlockingDeque;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/LinkedBlockingDeque;
-
-    invoke-direct {v0}, Ljava/util/concurrent/LinkedBlockingDeque;-><init>()V
-
-    iput-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)Z
-    .locals 1
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
+    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->addLast(Ljava/lang/Object;)V
+    const-string v1, "default"
 
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final addAll(Ljava/util/Collection;)Z
-    .locals 2
-
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    move-result v1
+    new-instance v1, Ljmr;
 
-    if-eqz v1, :cond_0
+    sget-object v2, Ljpe;->f:Ljpe;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v1, v2}, Ljmr;-><init>(Ljpe;)V
+
+    new-instance v2, Ljmr;
+
+    sget-object v3, Ljpe;->g:Ljpe;
+
+    invoke-direct {v2, v3}, Ljmr;-><init>(Ljpe;)V
+
+    new-instance v3, Ljmw;
+
+    invoke-direct {v3}, Ljmw;-><init>()V
+
+    sget-object v4, Ljpe;->f:Ljpe;
+
+    const v5, 0x3ecccccd    # 0.4f
+
+    invoke-virtual {v3, v4, v1, v5}, Ljmw;->a(Ljpe;Ljms;F)V
+
+    sget-object v1, Ljpe;->g:Ljpe;
+
+    const v4, 0x3f19999a    # 0.6f
+
+    invoke-virtual {v3, v1, v2, v4}, Ljmw;->a(Ljpe;Ljms;F)V
+
+    invoke-virtual {v3}, Ljmw;->a()Ljmv;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Ljge;->add(Ljava/lang/Object;)Z
+    new-instance v2, Ljmp;
 
-    goto :goto_0
+    const/16 v3, 0x9c4
 
-    :cond_0
-    const/4 v0, 0x1
+    invoke-direct {v2, v1, v3}, Ljmp;-><init>(Ljmt;I)V
 
-    return v0
-.end method
+    new-instance v1, Ljke;
 
-.method public final clear()V
-    .locals 1
+    new-instance v3, Ljmu;
 
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
+    invoke-direct {v3, v2, v0}, Ljmu;-><init>(Ljmt;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
 
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->clear()V
+    invoke-direct {v1, v3}, Ljke;-><init>(Ljmu;)V
 
-    return-void
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final containsAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->containsAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final drainTo(Ljava/util/Collection;)I
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->drainTo(Ljava/util/Collection;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final drainTo(Ljava/util/Collection;I)I
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/concurrent/BlockingDeque;->drainTo(Ljava/util/Collection;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final element()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    const-string v1, "Calling element on empty queue!"
-
-    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->pollLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final isEmpty()Z
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->descendingIterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final offer(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->offerLast(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final offer(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z
-    .locals 2
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/concurrent/BlockingDeque;->offerLast(Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final peek()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->peekLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final poll()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->pollLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final poll(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1, p2, p3}, Ljava/util/concurrent/BlockingDeque;->pollLast(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final put(Ljava/lang/Object;)V
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->putLast(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final remainingCapacity()I
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->remainingCapacity()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final remove()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->removeLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->remove(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->removeAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->retainAll(Ljava/util/Collection;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final take()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->takeLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final toArray()[Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingDeque;->toArray()[Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljge;->a:Ljava/util/concurrent/BlockingDeque;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingDeque;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v1
 .end method

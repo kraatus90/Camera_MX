@@ -1,20 +1,14 @@
-.class public final Ljdm;
+.class final Ljdm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljfn;
-
-
-# instance fields
-.field private synthetic a:Ljdl;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljdl;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljdm;->a:Ljdl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,74 +17,78 @@
 
 
 # virtual methods
-.method public final a(Ljava/io/Writer;)V
-    .locals 7
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Ljdm;->a:Ljdl;
+    const v4, 0x3d4ccccd    # 0.05f
 
-    iget-object v0, v0, Ljdl;->a:Ljava/util/Map;
+    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    const-string v1, "default"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    new-instance v1, Ljkb;
+
+    invoke-direct {v1}, Ljkb;-><init>()V
+
+    sget-object v2, Ljpe;->d:Ljpe;
+
+    const/high16 v3, 0x3f400000    # 0.75f
+
+    invoke-virtual {v1, v0, v2, v3}, Ljkb;->a(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;F)Ljkb;
 
     move-result-object v1
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    sget-object v2, Ljpe;->b:Ljpe;
 
-    move-result v0
+    invoke-virtual {v1, v0, v2, v4}, Ljkb;->a(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;F)Ljkb;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    sget-object v2, Ljpe;->i:Ljpe;
 
-    move-result-object v0
+    invoke-virtual {v1, v0, v2, v4}, Ljkb;->a(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;F)Ljkb;
 
-    check-cast v0, Landroid/util/Pair;
+    move-result-object v1
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v2, Ljpe;->j:Ljpe;
 
-    const-string v3, "%d,%d,%f%n"
+    invoke-virtual {v1, v0, v2, v4}, Ljkb;->a(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;F)Ljkb;
 
-    const/4 v4, 0x3
+    move-result-object v1
 
-    new-array v4, v4, [Ljava/lang/Object;
+    sget-object v2, Ljpe;->h:Ljpe;
 
-    const/4 v5, 0x0
+    const v3, 0x3dcccccd    # 0.1f
 
-    iget-object v6, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+    invoke-virtual {v1, v0, v2, v3}, Ljkb;->a(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;F)Ljkb;
 
-    aput-object v6, v4, v5
+    move-result-object v1
 
-    const/4 v5, 0x1
+    const-class v0, Ljjz;
 
-    iget-object v6, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+    const-string v2, "camera_motion_score"
 
-    aput-object v6, v4, v5
-
-    const/4 v5, 0x2
-
-    iget-object v6, p0, Ljdm;->a:Ljdl;
-
-    iget-object v6, v6, Ljdl;->a:Ljava/util/Map;
-
-    invoke-interface {v6, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    aput-object v0, v4, v5
+    check-cast v0, Ljjz;
 
-    invoke-static {v2, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Ljkb;->a(Ljjz;F)Ljkb;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljkb;->a()Ljka;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_0
-    return-void
+    return-object v0
 .end method

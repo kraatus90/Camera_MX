@@ -1,114 +1,78 @@
-.class public final Lfch;
+.class final Lfch;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfcd;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lfcd;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
+.field private final synthetic b:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lfcd;Ljava/lang/Integer;)V
     .locals 0
 
+    iput-object p1, p0, Lfch;->a:Lfcd;
+
+    iput-object p2, p0, Lfch;->b:Ljava/lang/Integer;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfch;->a:Ljxn;
-
-    iput-object p2, p0, Lfch;->b:Ljxn;
-
-    iput-object p3, p0, Lfch;->c:Ljxn;
-
-    iput-object p4, p0, Lfch;->d:Ljxn;
-
-    iput-object p5, p0, Lfch;->e:Ljxn;
-
-    iput-object p6, p0, Lfch;->f:Ljxn;
-
-    iput-object p7, p0, Lfch;->g:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 8
+.method public final a()J
+    .locals 2
 
-    new-instance v0, Lfcg;
+    iget-object v0, p0, Lfch;->a:Lfcd;
 
-    iget-object v1, p0, Lfch;->a:Ljxn;
+    invoke-interface {v0}, Lfcd;->a()J
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final a(Lfhg;)Lfhg;
+    .locals 3
+
+    new-instance v0, Lfhi;
+
+    iget-object v1, p0, Lfch;->a:Lfcd;
+
+    invoke-interface {v1, p1}, Lfcd;->a(Lfhg;)Lfhg;
 
     move-result-object v1
 
-    check-cast v1, Lfdz;
+    invoke-direct {v0, v1}, Lfhi;-><init>(Lfhg;)V
 
-    iget-object v2, p0, Lfch;->b:Ljxn;
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Lfch;->b:Ljava/lang/Integer;
 
-    move-result-object v2
+    invoke-virtual {v0, v1, v2}, Lfhi;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lfhi;
 
-    check-cast v2, Lfar;
+    move-result-object v0
 
-    iget-object v3, p0, Lfch;->c:Ljxn;
+    invoke-virtual {v0}, Lfhi;->c()Lfhg;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lfde;
-
-    iget-object v4, p0, Lfch;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v5, p0, Lfch;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lguc;
-
-    iget-object v6, p0, Lfch;->f:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lhem;
-
-    iget-object v7, p0, Lfch;->g:Ljxn;
-
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lfge;
-
-    invoke-direct/range {v0 .. v7}, Lfcg;-><init>(Lfdz;Lfar;Lfde;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Lfge;)V
+    move-result-object v0
 
     return-object v0
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Lfch;->a:Lfcd;
+
+    invoke-interface {v0}, Lfcd;->close()V
+
+    return-void
 .end method

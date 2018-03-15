@@ -1,14 +1,19 @@
-.class public interface abstract Lapd;
+.class public final Lapd;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract b()V
-.end method
+# instance fields
+.field public final a:Lapp;
 
-.method public abstract c()V
-.end method
 
-.method public abstract d()V
+# direct methods
+.method public constructor <init>(Lapp;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lapd;->a:Lapp;
+
+    return-void
 .end method

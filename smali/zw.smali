@@ -3,22 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Z
-
-.field private synthetic b:Lzv;
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method constructor <init>(Lzv;Z)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lzw;->b:Lzv;
-
-    iput-boolean p2, p0, Lzw;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,20 +17,38 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 4
 
-    iget-object v0, p0, Lzw;->b:Lzv;
+    const/4 v3, 0x1
 
-    iget-object v0, v0, Lzv;->a:Laat;
+    const/4 v2, 0x0
 
-    iget-boolean v1, p0, Lzw;->a:Z
+    check-cast p1, [I
 
-    iget-object v2, p0, Lzw;->b:Lzv;
+    check-cast p2, [I
 
-    iget-object v2, v2, Lzv;->b:Lzr;
+    aget v0, p1, v2
 
-    invoke-interface {v0, v1, v2}, Laat;->a(ZLabe;)V
+    aget v1, p2, v2
 
-    return-void
+    if-ne v0, v1, :cond_0
+
+    aget v0, p1, v3
+
+    aget v1, p2, v3
+
+    sub-int/2addr v0, v1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    aget v0, p1, v2
+
+    aget v1, p2, v2
+
+    sub-int/2addr v0, v1
+
+    goto :goto_0
 .end method

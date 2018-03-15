@@ -3,50 +3,54 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldxl;->a:Ljxn;
+    iput-object p1, p0, Ldxl;->a:Lkgv;
 
     return-void
-.end method
-
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldxl;
-
-    invoke-direct {v0, p0}, Ldxl;-><init>(Ljxn;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    .locals 4
 
-    new-instance v1, Ldxh;
+    iget-object v0, p0, Ldxl;->a:Lkgv;
 
-    iget-object v0, p0, Ldxl;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Set;
+    check-cast v0, Lgjp;
 
-    invoke-direct {v1, v0}, Ldxh;-><init>(Ljava/util/Set;)V
+    const-string v1, "default_scope"
 
-    return-object v1
+    const-string v2, "pref_camera_rect_key"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v2, v3}, Lgjp;->a(Ljava/lang/String;Ljava/lang/String;Z)Lick;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
+
+    return-object v0
 .end method

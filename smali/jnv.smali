@@ -1,71 +1,355 @@
-.class abstract Ljnv;
+.class public final Ljnv;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/util/Iterator;
 
+# static fields
+.field private static final a:Ljoc;
 
-# instance fields
-.field private a:Ljava/util/Iterator;
+.field private static final b:Ljoc;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Iterator;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljny;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Ljob;->a()Ljoa;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/util/Iterator;
+    invoke-direct {v0, v1}, Ljny;-><init>(Ljoa;)V
 
-    iput-object v0, p0, Ljnv;->a:Ljava/util/Iterator;
+    sput-object v0, Ljnv;->a:Ljoc;
+
+    new-instance v0, Ljny;
+
+    invoke-static {}, Ljob;->b()Ljoa;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljny;-><init>(Ljoa;)V
+
+    sput-object v0, Ljnv;->b:Ljoc;
 
     return-void
 .end method
 
+.method public static a(IJLjava/lang/String;ZZ)Ljava/lang/String;
+    .locals 9
 
-# virtual methods
-.method abstract a(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
+    const/4 v7, 0x0
 
-.method public final hasNext()Z
-    .locals 1
+    const-string v8, "yyyyMMddHHmmss"
 
-    iget-object v0, p0, Ljnv;->a:Ljava/util/Iterator;
+    move v1, p0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move-wide v2, p1
 
-    move-result v0
+    move-object v4, p3
 
-    return v0
-.end method
+    move v5, p4
 
-.method public final next()Ljava/lang/Object;
-    .locals 1
+    move v6, p5
 
-    iget-object v0, p0, Ljnv;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljnv;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {v1 .. v8}, Ljnv;->a(IJLjava/lang/String;ZZZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final remove()V
+.method public static a(IJLjava/lang/String;ZZZLjava/lang/String;)Ljava/lang/String;
+    .locals 7
+
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    invoke-direct {v0, p7}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez p5, :cond_3
+
+    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    const-string v3, "%05d%s%s_%05d_BURST%s%s"
+
+    const/4 v0, 0x6
+
+    new-array v4, v0, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v0
+
+    const/4 v0, 0x1
+
+    if-eqz p3, :cond_0
+
+    :goto_0
+    aput-object p3, v4, v0
+
+    const/4 v5, 0x2
+
+    if-eqz p6, :cond_1
+
+    const-string v0, "PORTRAIT"
+
+    :goto_1
+    aput-object v0, v4, v5
+
+    const/4 v0, 0x3
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v4, v0
+
+    const/4 v0, 0x4
+
+    aput-object v1, v4, v0
+
+    const/4 v1, 0x5
+
+    if-eqz p4, :cond_2
+
+    const-string v0, "_COVER"
+
+    :goto_2
+    aput-object v0, v4, v1
+
+    invoke-static {v2, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_3
+    return-object v0
+
+    :cond_0
+    const-string p3, ""
+
+    goto :goto_0
+
+    :cond_1
+    const-string v0, "IMG"
+
+    goto :goto_1
+
+    :cond_2
+    const-string v0, ""
+
+    goto :goto_2
+
+    :cond_3
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    const-string v2, "%05d%s_%05d_BURST%s"
+
+    const/4 v3, 0x4
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    const-string v5, "XTR"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x2
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x3
+
+    aput-object v1, v3, v4
+
+    invoke-static {v0, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_3
+.end method
+
+.method public static a(J)Ljava/lang/String;
+    .locals 2
+
+    const/16 v0, 0x1e
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "frame-"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ".jpg"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a()Ljoc;
+    .locals 3
+
+    new-instance v0, Ljnu;
+
+    sget-object v1, Ljnv;->b:Ljoc;
+
+    sget-object v2, Ljnv;->a:Ljoc;
+
+    invoke-direct {v0, v1, v2}, Ljnu;-><init>(Ljoc;Ljoc;)V
+
+    return-object v0
+.end method
+
+.method public static a(Ljnq;)Ljoc;
+    .locals 6
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p0}, Ljnq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljne;
+
+    sget-object v3, Ljne;->a:Ljnm;
+
+    invoke-virtual {v0, v3}, Ljne;->a(Ljnm;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljof;
+
+    invoke-static {}, Ljnv;->a()Ljoc;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2, v1}, Ljof;-><init>(Ljoc;Ljava/util/List;)V
+
+    return-object v0
+.end method
+
+.method public static b(J)Ljava/lang/String;
+    .locals 2
+
+    const/16 v0, 0x26
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "med-res-frame-"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ".jpg"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static b()Ljoc;
+    .locals 2
+
+    new-instance v0, Ljny;
+
+    invoke-static {}, Ljob;->c()Ljoa;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljny;-><init>(Ljoa;)V
+
+    return-object v0
+.end method
+
+.method public static c()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Ljnv;->a:Ljava/util/Iterator;
+    const-string v0, "sb_video_temp.mp4"
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    return-void
+    return-object v0
 .end method

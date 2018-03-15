@@ -11,11 +11,7 @@
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    const-string v0, "gcam"
-
-    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-
-    const-string v0, "gcam_swig_jni"
+    const-string v0, "gcam_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
@@ -37,9 +33,9 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->width()I
 
@@ -54,7 +50,7 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     invoke-virtual {p0}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->height()I
 
@@ -69,7 +65,7 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     invoke-virtual {p0}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->num_channels()I
 
@@ -82,7 +78,7 @@
     if-ne v0, v3, :cond_2
 
     :goto_2
-    invoke-static {v1}, Liya;->a(Z)V
+    invoke-static {v1}, Ljii;->a(Z)V
 
     invoke-static {p0}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedReadViewU8;)J
 
@@ -130,9 +126,9 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->num_channels()I
 
@@ -147,7 +143,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     invoke-static {p0}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedReadViewU8;)J
 

@@ -1,52 +1,82 @@
-.class final Lbcd;
+.class public Lbcd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lhzl;
+.implements Lbax;
 
 
 # instance fields
-.field private synthetic a:Lich;
+.field private final a:Lbax;
 
 
 # direct methods
-.method constructor <init>(Lich;)V
+.method public constructor <init>(Lbax;)V
     .locals 0
 
-    iput-object p1, p0, Lbcd;->a:Lich;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbcd;->a:Lbax;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public a()Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Liic;
+    iget-object v0, p0, Lbcd;->a:Lbax;
 
-    check-cast p2, Liic;
+    invoke-interface {v0}, Lbax;->a()Ljava/lang/Object;
 
-    sget-object v0, Lbcc;->a:Ljava/lang/String;
+    move-result-object v0
 
-    const-string v1, "converge and generate partial PointMeteringResult"
+    return-object v0
+.end method
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+.method public b()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lbcd;->a:Lich;
+    iget-object v0, p0, Lbcd;->a:Lbax;
 
-    invoke-interface {v0}, Lich;->close()V
+    invoke-interface {v0}, Lbax;->b()Ljava/lang/Object;
 
-    invoke-interface {p2}, Liic;->d()J
+    move-result-object v0
 
-    invoke-interface {p1}, Liic;->d()J
+    return-object v0
+.end method
 
-    new-instance v0, Lgff;
+.method public final c()Z
+    .locals 1
 
-    invoke-direct {v0}, Lgff;-><init>()V
+    iget-object v0, p0, Lbcd;->a:Lbax;
+
+    invoke-interface {v0}, Lbax;->c()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public close()V
+    .locals 1
+
+    iget-object v0, p0, Lbcd;->a:Lbax;
+
+    invoke-interface {v0}, Lbax;->close()V
+
+    return-void
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lbcd;->a:Lbax;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -1,101 +1,79 @@
-.class final synthetic Lgbl;
+.class final Lgbl;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private a:Lgbk;
-
-.field private b:Lgbu;
+.source "PG"
 
 
 # direct methods
-.method constructor <init>(Lgbk;Lgbu;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "LSScorer"
 
-    iput-object p1, p0, Lgbl;->a:Lgbk;
-
-    iput-object p2, p0, Lgbl;->b:Lgbu;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static a(Lgay;)D
+    .locals 9
 
-# virtual methods
-.method public final run()V
-    .locals 5
+    iget-object v1, p0, Lgay;->b:Link;
 
-    iget-object v0, p0, Lgbl;->a:Lgbk;
-
-    iget-object v1, p0, Lgbl;->b:Lgbu;
-
-    iget-object v0, v0, Lgbk;->a:Lgbj;
-
-    iget-object v0, v0, Lgbj;->b:Landroid/content/Context;
-
-    iget-object v2, v1, Lgbu;->a:Ljava/lang/String;
-
-    iget-object v1, v1, Lgbu;->b:Ljava/lang/String;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x12
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Started: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", ended: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-interface {v1}, Link;->e()Ljava/util/List;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+    const/4 v2, 0x0
 
-    return-void
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Linl;
+
+    invoke-interface {v1}, Link;->c()I
+
+    move-result v0
+
+    invoke-interface {v1}, Link;->d()I
+
+    move-result v1
+
+    invoke-interface {v4}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    invoke-interface {v4}, Linl;->b()I
+
+    move-result v3
+
+    invoke-interface {v4}, Linl;->a()I
+
+    move-result v4
+
+    iget-object v5, p0, Lgay;->f:Landroid/graphics/Rect;
+
+    iget v5, v5, Landroid/graphics/Rect;->left:I
+
+    iget-object v6, p0, Lgay;->f:Landroid/graphics/Rect;
+
+    iget v6, v6, Landroid/graphics/Rect;->top:I
+
+    iget-object v7, p0, Lgay;->f:Landroid/graphics/Rect;
+
+    iget v7, v7, Landroid/graphics/Rect;->right:I
+
+    iget-object v8, p0, Lgay;->f:Landroid/graphics/Rect;
+
+    iget v8, v8, Landroid/graphics/Rect;->bottom:I
+
+    invoke-static/range {v0 .. v8}, Lcom/google/android/apps/camera/processing/imagebackend/ImgUtilNative;->a(IILjava/nio/ByteBuffer;IIIIII)F
+
+    move-result v0
+
+    float-to-double v0, v0
+
+    return-wide v0
 .end method

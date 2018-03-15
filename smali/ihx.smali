@@ -1,19 +1,17 @@
-.class public final Lihx;
+.class public interface abstract Lihx;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field public final synthetic a:Ljvi;
+# virtual methods
+.method public abstract a()V
+.end method
 
+.method public abstract a(I)V
+.end method
 
-# direct methods
-.method public constructor <init>(Ljvi;)V
-    .locals 0
+.method public abstract a(Limz;)V
+.end method
 
-    iput-object p1, p0, Lihx;->a:Ljvi;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+.method public abstract b()V
 .end method

@@ -1,152 +1,51 @@
-.class public final Lgvo;
+.class final synthetic Lgvo;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/util/HashMap;
+.field private final a:Lgvv;
 
-.field private b:Lgvg;
+.field private final b:Lgvm;
 
-.field private c:Z
+.field private final c:Lgvx;
 
 
 # direct methods
-.method public constructor <init>(Lgvg;Ljava/util/Set;)V
-    .locals 4
+.method constructor <init>(Lgvv;Lgvm;Lgvx;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgvo;->b:Lgvg;
+    iput-object p1, p0, Lgvo;->a:Lgvv;
 
-    new-instance v0, Ljava/util/HashMap;
+    iput-object p2, p0, Lgvo;->b:Lgvm;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    iput-object p3, p0, Lgvo;->c:Lgvx;
 
-    iput-object v0, p0, Lgvo;->a:Ljava/util/HashMap;
-
-    invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Class;
-
-    iget-object v2, p0, Lgvo;->a:Ljava/util/HashMap;
-
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Class;Z)V
-    .locals 4
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Lgvo;->a:Ljava/util/HashMap;
+    iget-object v0, p0, Lgvo;->a:Lgvv;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lgvo;->b:Lgvm;
 
-    move-result v0
+    iget-object v2, p0, Lgvo;->c:Lgvx;
 
-    invoke-virtual {p1}, Ljava/lang/Class;->toString()Ljava/lang/String;
+    iget-object v3, v0, Lgvv;->g:Landroid/os/Handler;
 
-    move-result-object v1
+    new-instance v4, Lgvs;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v4, v0, v1, v2}, Lgvs;-><init>(Lgvv;Lgvm;Lgvx;)V
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x32
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "active state "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " must be one of the predicate states."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Liya;->a(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lgvo;->a:Ljava/util/HashMap;
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
-.end method
-
-.method public final a(Z)V
-    .locals 1
-
-    iget-boolean v0, p0, Lgvo;->c:Z
-
-    if-ne p1, v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iput-boolean p1, p0, Lgvo;->c:Z
-
-    iget-boolean v0, p0, Lgvo;->c:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgvo;->b:Lgvg;
-
-    invoke-interface {v0}, Lgvg;->a()V
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lgvo;->b:Lgvg;
-
-    invoke-interface {v0}, Lgvg;->b()V
-
-    goto :goto_0
 .end method

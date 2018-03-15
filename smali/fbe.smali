@@ -1,112 +1,157 @@
-.class public final Lfbe;
-.super Lgvh;
+.class final Lfbe;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgvk;
+.implements Lfcu;
+
+
+# static fields
+.field private static final a:Ljuo;
 
 
 # instance fields
-.field private a:Lgvj;
+.field private final b:Lfdi;
 
-.field private b:Lgvl;
+.field private final c:Lket;
 
 
 # direct methods
-.method public constructor <init>(Lfdj;Lexp;Lexu;)V
-    .locals 5
+.method static constructor <clinit>()V
+    .locals 4
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-direct {p0, v1}, Lgvh;-><init>([[C)V
+    move-result-object v0
 
-    new-instance v0, Lgvh;
+    const/4 v1, 0x4
 
-    invoke-direct {v0, v1}, Lgvh;-><init>([[I)V
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    new-instance v1, Lgvl;
+    move-result-object v1
 
-    const/4 v2, 0x3
+    const/4 v2, 0x2
 
-    new-array v2, v2, [Lgvg;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object p1, v2, v4
+    move-result-object v2
 
-    const/4 v3, 0x1
+    const/4 v3, 0x3
 
-    aput-object p2, v2, v3
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v3, 0x2
+    move-result-object v3
 
-    aput-object p3, v2, v3
+    invoke-static {v0, v1, v2, v3}, Ljuo;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljuo;
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    move-result-object v0
 
-    iput-object v1, p0, Lfbe;->b:Lgvl;
+    sput-object v0, Lfbe;->a:Ljuo;
 
-    new-instance v0, Lgvj;
+    return-void
+.end method
 
-    iget-object v1, p0, Lfbe;->b:Lgvl;
+.method public constructor <init>()V
+    .locals 4
 
-    invoke-direct {v0, v1, v4}, Lgvj;-><init>(Lgvl;Z)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lfbe;->a:Lgvj;
+    new-instance v0, Lfdi;
 
-    iget-object v0, p0, Lfbe;->a:Lgvj;
+    const/4 v1, 0x1
 
-    sget v1, Leh;->bo:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iput v1, v0, Lgvj;->a:I
+    move-result-object v1
+
+    sget-object v2, Lfbe;->a:Ljuo;
+
+    const/16 v3, 0x3c
+
+    invoke-direct {v0, v1, v2, v3}, Lfdi;-><init>(Ljava/lang/Integer;Ljava/util/Set;I)V
+
+    iput-object v0, p0, Lfbe;->b:Lfdi;
+
+    new-instance v0, Lket;
+
+    invoke-direct {v0}, Lket;-><init>()V
+
+    iput-object v0, p0, Lfbe;->c:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a()Lind;
+    .locals 2
 
-    invoke-super {p0}, Lgvh;->a()V
+    :try_start_0
+    iget-object v0, p0, Lfbe;->c:Lket;
 
-    iget-object v0, p0, Lfbe;->a:Lgvj;
+    invoke-virtual {v0}, Lkch;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->c()V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lind;
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
 .end method
 
-.method public final b()V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 6
 
-    invoke-super {p0}, Lgvh;->b()V
+    check-cast p1, Lind;
 
-    iget-object v0, p0, Lfbe;->a:Lgvj;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-virtual {v0}, Lgvj;->d()V
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final i()V
-    .locals 0
+    check-cast v0, Ljava/lang/Integer;
 
-    invoke-interface {p0}, Lgvk;->j()V
+    iget-object v2, p0, Lfbe;->b:Lfdi;
 
-    return-void
-.end method
+    invoke-interface {p1}, Lind;->c()J
 
-.method public final j()V
-    .locals 1
+    move-result-wide v4
 
-    iget-object v0, p0, Lfbe;->a:Lgvj;
+    invoke-interface {p1}, Lind;->b()Linc;
 
-    invoke-virtual {v0}, Lgvj;->e()V
+    move-result-object v1
 
-    iget-object v0, p0, Lfbe;->b:Lgvl;
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_PRECAPTURE_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-virtual {v0}, Lgvl;->j()V
+    invoke-interface {v1, v3}, Linc;->a(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;
 
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v2, v4, v5, v1, v0}, Lfdi;->a(JLjava/lang/Integer;Ljava/lang/Integer;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfbe;->c:Lket;
+
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    :cond_0
     return-void
 .end method

@@ -26,15 +26,15 @@
 
 .field public g:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-.field public h:Lcli;
+.field public h:Lcnn;
 
-.field public i:Lcli;
+.field public i:Lcnn;
 
 .field public j:Z
 
-.field public k:Lclj;
+.field public k:Lcno;
 
-.field public l:Lcld;
+.field public l:Lcni;
 
 
 # direct methods
@@ -43,7 +43,7 @@
 
     const-string v0, "FSTransLayout"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -69,9 +69,9 @@
 
     iput-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->e:Z
 
-    iput-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->h:Lcli;
+    iput-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->h:Lcnn;
 
-    iput-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->i:Lcli;
+    iput-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->i:Lcnn;
 
     const/4 v0, 0x1
 
@@ -111,17 +111,17 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->b:Landroid/animation/ValueAnimator;
 
-    new-instance v2, Lcle;
+    new-instance v2, Lcnj;
 
-    invoke-direct {v2, p0}, Lcle;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
+    invoke-direct {v2, p0}, Lcnj;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->b:Landroid/animation/ValueAnimator;
 
-    new-instance v2, Lclf;
+    new-instance v2, Lcnk;
 
-    invoke-direct {v2, p0}, Lclf;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
+    invoke-direct {v2, p0}, Lcnk;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -145,17 +145,17 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->c:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lclg;
+    new-instance v1, Lcnl;
 
-    invoke-direct {v1, p0}, Lclg;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
+    invoke-direct {v1, p0}, Lcnl;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->c:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lclh;
+    new-instance v1, Lcnm;
 
-    invoke-direct {v1, p0}, Lclh;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
+    invoke-direct {v1, p0}, Lcnm;-><init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -178,12 +178,12 @@
 
 
 # virtual methods
-.method public final a()Lclk;
+.method public final a()Lcnp;
     .locals 9
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->g:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Landroid/util/SizeF;
 
@@ -233,13 +233,13 @@
 
     iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->g:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-static {v3}, Lgkt;->a(Landroid/view/View;)I
+    invoke-static {v3}, Lhas;->a(Landroid/view/View;)I
 
     move-result v3
 
     iget-object v4, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->g:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-static {v4}, Lgkt;->b(Landroid/view/View;)I
+    invoke-static {v4}, Lhas;->b(Landroid/view/View;)I
 
     move-result v4
 
@@ -265,9 +265,9 @@
 
     invoke-direct {v6, v7, v8, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    new-instance v3, Lclk;
+    new-instance v3, Lcnp;
 
-    invoke-direct {v3, v0, v1, v6, v2}, Lclk;-><init>(Landroid/util/SizeF;Landroid/util/SizeF;Landroid/graphics/RectF;F)V
+    invoke-direct {v3, v0, v1, v6, v2}, Lcnp;-><init>(Landroid/util/SizeF;Landroid/util/SizeF;Landroid/graphics/RectF;F)V
 
     return-object v3
 .end method
@@ -349,36 +349,36 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a()Lclk;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a()Lcnp;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lclk;->a()Lclj;
+    invoke-virtual {v0}, Lcnp;->a()Lcno;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
     :cond_0
     return-void
 .end method
 
-.method public final a(Landroid/graphics/Bitmap;Lcli;)V
+.method public final a(Landroid/graphics/Bitmap;Lcnn;)V
     .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a(Landroid/graphics/Bitmap;)V
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->h:Lcli;
+    iput-object p2, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->h:Lcnn;
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a()Lclk;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lclk;->a()Lclj;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a()Lcnp;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    invoke-virtual {v0}, Lcnp;->a()Lcno;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->d()V
 
@@ -388,7 +388,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->l:Lcld;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->l:Lcni;
 
     return-void
 .end method
@@ -396,7 +396,7 @@
 .method public final a(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)V
     .locals 0
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->g:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
@@ -406,15 +406,15 @@
 .method public final b()V
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a()Lclk;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a()Lcnp;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lclk;->a()Lclj;
+    invoke-virtual {v0}, Lcnp;->a()Lcno;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->c()V
 
@@ -426,9 +426,9 @@
 
     const/4 v3, 0x0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->a(F)F
+    invoke-virtual {v0, v3}, Lcno;->a(F)F
 
     move-result v0
 
@@ -440,9 +440,9 @@
 
     invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionThumbnailView;->setScaleY(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->b(F)Landroid/graphics/PointF;
+    invoke-virtual {v0, v3}, Lcno;->b(F)Landroid/graphics/PointF;
 
     move-result-object v0
 
@@ -458,9 +458,9 @@
 
     invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionThumbnailView;->setTranslationY(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->c(F)F
+    invoke-virtual {v0, v3}, Lcno;->c(F)F
 
     move-result v0
 
@@ -468,9 +468,9 @@
 
     invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionThumbnailView;->a(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->d(F)F
+    invoke-virtual {v0, v3}, Lcno;->d(F)F
 
     move-result v0
 
@@ -484,9 +484,9 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->a(F)F
+    invoke-virtual {v0, v3}, Lcno;->a(F)F
 
     move-result v0
 
@@ -498,9 +498,9 @@
 
     invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionThumbnailView;->setScaleY(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->b(F)Landroid/graphics/PointF;
+    invoke-virtual {v0, v3}, Lcno;->b(F)Landroid/graphics/PointF;
 
     move-result-object v0
 
@@ -516,9 +516,9 @@
 
     invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionThumbnailView;->setTranslationY(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->c(F)F
+    invoke-virtual {v0, v3}, Lcno;->c(F)F
 
     move-result v0
 
@@ -526,9 +526,9 @@
 
     invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionThumbnailView;->a(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lclj;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->k:Lcno;
 
-    invoke-virtual {v0, v3}, Lclj;->d(F)F
+    invoke-virtual {v0, v3}, Lcno;->d(F)F
 
     move-result v0
 
@@ -542,7 +542,7 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f0e010a
+    const v0, 0x7f0e0114
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->findViewById(I)Landroid/view/View;
 

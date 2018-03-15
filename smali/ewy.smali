@@ -1,94 +1,47 @@
-.class public final Lewy;
+.class final synthetic Lewy;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lexc;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private final a:Leww;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Leww;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lewy;->a:Ljxn;
-
-    iput-object p2, p0, Lewy;->b:Ljxn;
-
-    iput-object p3, p0, Lewy;->c:Ljxn;
-
-    iput-object p4, p0, Lewy;->d:Ljxn;
-
-    iput-object p5, p0, Lewy;->e:Ljxn;
+    iput-object p1, p0, Lewy;->a:Leww;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a(Lbui;)V
     .locals 6
 
-    new-instance v0, Lewu;
+    iget-object v0, p0, Lewy;->a:Leww;
 
-    iget-object v1, p0, Lewy;->a:Ljxn;
+    iget-object v0, v0, Leww;->b:Lbwz;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget v1, p1, Lbui;->f:F
 
-    move-result-object v1
+    iget v2, p1, Lbui;->g:F
 
-    check-cast v1, Lfid;
+    neg-float v2, v2
 
-    iget-object v2, p0, Lewy;->b:Ljxn;
+    iget v3, p1, Lbui;->h:F
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    neg-float v3, v3
 
-    move-result-object v2
+    iget-wide v4, p1, Lbui;->e:J
 
-    check-cast v2, Ljava/lang/Boolean;
+    invoke-interface/range {v0 .. v5}, Lbwz;->a(FFFJ)Z
 
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    iget-object v3, p0, Lewy;->c:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lhap;
-
-    iget-object v4, p0, Lewy;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Leth;
-
-    iget-object v5, p0, Lewy;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lhzt;
-
-    invoke-direct/range {v0 .. v5}, Lewu;-><init>(Lfid;ZLhap;Leth;Lhzt;)V
-
-    return-object v0
+    return-void
 .end method

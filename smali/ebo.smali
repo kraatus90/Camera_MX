@@ -1,46 +1,67 @@
-.class public final Lebo;
-.super Ljava/lang/Object;
+.class public Lebo;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public a:Lgrz;
+
+.field public b:Lick;
+
+.field public c:Lbns;
+
+.field public d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field public e:Lgvc;
+
+.field public f:Lgqc;
+
+.field public g:Z
+
+.field public h:Lfwg;
+
+.field public i:Lgwk;
+
+.field public j:Lick;
+
+.field public k:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lebo;->a:Ljxn;
+    invoke-direct {p0, v0}, Lglb;-><init>([F)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public a(Lick;Lbns;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lgrz;Lfwg;Lgwk;Lick;Landroid/content/Context;)V
+    .locals 0
 
-    iget-object v0, p0, Lebo;->a:Ljxn;
+    iput-object p6, p0, Lebo;->a:Lgrz;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iput-object p1, p0, Lebo;->b:Lick;
 
-    move-result-object v0
+    iput-object p2, p0, Lebo;->c:Lbns;
 
-    check-cast v0, Ledp;
+    iput-object p3, p0, Lebo;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iput-object p4, p0, Lebo;->e:Lgvc;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-object p5, p0, Lebo;->f:Lgqc;
 
-    move-result-object v0
+    iput-object p7, p0, Lebo;->h:Lfwg;
 
-    check-cast v0, Leak;
+    iput-object p8, p0, Lebo;->i:Lgwk;
 
-    return-object v0
+    iput-object p9, p0, Lebo;->j:Lick;
+
+    iput-object p10, p0, Lebo;->k:Landroid/content/Context;
+
+    return-void
 .end method

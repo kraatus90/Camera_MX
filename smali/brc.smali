@@ -1,50 +1,68 @@
-.class public final Lbrc;
+.class final Lbrc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lbra;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lbra;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbrc;->a:Lbra;
 
-    iput-object p1, p0, Lbrc;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-    iget-object v0, p0, Lbrc;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbqu;
+    check-cast v0, Ljava/lang/Float;
 
-    invoke-static {v0}, Lbjh;->b(Lbqu;)Landroid/app/NotificationManager;
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    move-result-object v0
+    move-result v1
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lbrc;->a:Lbra;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v2, v0, Lbra;->e:Lbqp;
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    cmpl-float v0, v1, v0
 
-    return-object v0
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iput v1, v2, Lbqp;->b:F
+
+    iget-object v0, p0, Lbrc;->a:Lbra;
+
+    iget-object v0, v0, Lbra;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->invalidate()V
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

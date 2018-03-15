@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Lcxp;
 
 
 # instance fields
-.field private synthetic a:Lcyf;
+.field public final synthetic a:Lcyk;
 
 
 # direct methods
-.method constructor <init>(Lcyf;)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
-    iput-object p1, p0, Lcyq;->a:Lcyf;
+    iput-object p1, p0, Lcyq;->a:Lcyk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,66 +23,26 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 2
 
-    check-cast p1, Lcvh;
+    iget-object v0, p0, Lcyq;->a:Lcyk;
 
-    iget v0, p1, Lcvh;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    :cond_0
-    :goto_0
-    const/4 v0, 0x0
-
-    :goto_1
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p1, Lcvh;->b:Landroid/view/KeyEvent;
-
-    invoke-virtual {v0}, Landroid/view/KeyEvent;->getRepeatCount()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v2, p0, Lcyq;->a:Lcyf;
-
-    iget-object v0, v2, Lcyf;->d:Ljht;
-
-    invoke-virtual {v0}, Ljht;->a()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, v2, Lcyf;->f:Z
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v1, Lcys;
-
-    iget-object v0, v2, Lcyf;->d:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, [B
+    check-cast v0, Lcxo;
 
-    invoke-direct {v1, v2, v0}, Lcys;-><init>(Lcwi;[B)V
+    iget-object v0, v0, Lcxo;->c:Liay;
 
-    move-object v0, v1
+    new-instance v1, Lcyr;
 
-    goto :goto_1
+    invoke-direct {v1, p0}, Lcyr;-><init>(Lcyq;)V
 
-    :pswitch_data_0
-    .packed-switch 0x17
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

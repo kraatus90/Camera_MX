@@ -3,18 +3,26 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcyt;
+.field private final synthetic a:[B
+
+.field private final synthetic b:I
+
+.field private final synthetic c:Lcyv;
 
 
 # direct methods
-.method constructor <init>(Lcyt;)V
+.method constructor <init>(Lcyv;[BI)V
     .locals 0
 
-    iput-object p1, p0, Lcyx;->a:Lcyt;
+    iput-object p1, p0, Lcyx;->c:Lcyv;
+
+    iput-object p2, p0, Lcyx;->a:[B
+
+    iput p3, p0, Lcyx;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,20 +31,24 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    sget-object v0, Lcyt;->c:Ljava/lang/String;
+    iget-object v0, p0, Lcyx;->c:Lcyv;
 
-    const-string v1, "processOnPreviewSetupFailed"
+    iget-object v0, v0, Lcyv;->a:Lcyk;
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v0, Lbrv;->a:Lbrw;
 
-    new-instance v0, Lcwl;
+    new-instance v1, Lcwv;
 
-    iget-object v1, p0, Lcyx;->a:Lcyt;
+    iget-object v2, p0, Lcyx;->a:[B
 
-    invoke-direct {v0, v1}, Lcwl;-><init>(Lcwi;)V
+    iget v3, p0, Lcyx;->b:I
 
-    return-object v0
+    invoke-direct {v1, v2, v3}, Lcwv;-><init>([BI)V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    return-void
 .end method

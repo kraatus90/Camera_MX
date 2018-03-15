@@ -1,31 +1,45 @@
-.class public final Ljwk;
+.class public interface abstract Ljwk;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:Ljava/lang/Class;
-
-.field public final b:I
+# interfaces
+.implements Ljava/lang/Iterable;
+.implements Ljvh;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    new-instance v0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
+.method public abstract a()Ljava/util/NavigableSet;
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public abstract a(Ljava/lang/Object;Ljss;)Ljwk;
+.end method
 
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+.method public abstract a(Ljava/lang/Object;Ljss;Ljava/lang/Object;Ljss;)Ljwk;
+.end method
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+.method public abstract b(Ljava/lang/Object;Ljss;)Ljwk;
+.end method
 
-    throw v0
+.method public abstract e()Ljava/util/Set;
+.end method
+
+.method public abstract h()Ljava/util/Comparator;
+.end method
+
+.method public abstract i()Ljvi;
+.end method
+
+.method public abstract iterator()Ljava/util/Iterator;
+.end method
+
+.method public abstract j()Ljvi;
+.end method
+
+.method public abstract k()Ljvi;
+.end method
+
+.method public abstract l()Ljvi;
+.end method
+
+.method public abstract n()Ljwk;
 .end method

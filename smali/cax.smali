@@ -1,34 +1,17 @@
-.class final Lcax;
+.class interface abstract Lcax;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Lcaq;
-
-
-# direct methods
-.method constructor <init>(Lcaq;)V
-    .locals 0
-
-    iput-object p1, p0, Lcax;->a:Lcaq;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Ljava/lang/AutoCloseable;
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public abstract a()Ljme;
+.end method
 
-    iget-object v0, p0, Lcax;->a:Lcaq;
+.method public abstract a(Lkeh;Ldog;)V
+.end method
 
-    invoke-virtual {v0}, Lcaq;->dismiss()V
-
-    return-void
+.method public abstract close()V
 .end method

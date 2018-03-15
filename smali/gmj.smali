@@ -1,59 +1,53 @@
 .class public final Lgmj;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lcom/google/android/apps/camera/stats/InstrumentationSession;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Landroid/view/View;
-
-.field private synthetic b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+.field public a:J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Landroid/view/View;)V
-    .locals 0
+.method public constructor <init>(Liom;)V
+    .locals 1
 
-    iput-object p1, p0, Lgmj;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    const-string v0, "ModeSwitch"
 
-    iput-object p2, p0, Lgmj;->a:Landroid/view/View;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/stats/InstrumentationSession;-><init>(Liom;Ljava/lang/String;)V
 
     return-void
 .end method
 
+.method public static a()Lkgv;
+    .locals 1
+
+    new-instance v0, Lgmk;
+
+    invoke-direct {v0}, Lgmk;-><init>()V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+.method public final b()V
+    .locals 6
 
-    const/4 v2, 0x0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    iget-object v0, p0, Lgmj;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    move-result-wide v0
 
-    const/4 v1, 0x0
+    iput-wide v0, p0, Lgmj;->a:J
 
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->l:Z
+    const-string v1, "Mode Switch"
 
-    iget-object v1, p0, Lgmj;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    iget-wide v2, p0, Lcom/google/android/apps/camera/stats/InstrumentationSession;->k:J
 
-    iget-object v0, p0, Lgmj;->a:Landroid/view/View;
+    iget-wide v4, p0, Lgmj;->a:J
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v0, p0
 
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->removeView(Landroid/view/View;)V
-
-    iget-object v0, p0, Lgmj;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-
-    iput-object v2, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->j:Landroid/animation/Animator;
-
-    iget-object v0, p0, Lgmj;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-
-    iput-object v2, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Lgli;
+    invoke-virtual/range {v0 .. v5}, Lgmj;->a(Ljava/lang/String;JJ)V
 
     return-void
 .end method

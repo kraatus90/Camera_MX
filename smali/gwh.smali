@@ -6,20 +6,24 @@
 
 
 # instance fields
-.field private a:Lgwg;
+.field private final a:Lgwc;
 
-.field private b:Lgwj;
+.field private final b:Landroid/app/Activity;
+
+.field private final c:Landroid/transition/Transition;
 
 
 # direct methods
-.method constructor <init>(Lgwg;Lgwj;)V
+.method constructor <init>(Lgwc;Landroid/app/Activity;Landroid/transition/Transition;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgwh;->a:Lgwg;
+    iput-object p1, p0, Lgwh;->a:Lgwc;
 
-    iput-object p2, p0, Lgwh;->b:Lgwj;
+    iput-object p2, p0, Lgwh;->b:Landroid/app/Activity;
+
+    iput-object p3, p0, Lgwh;->c:Landroid/transition/Transition;
 
     return-void
 .end method
@@ -27,27 +31,60 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 8
 
-    iget-object v0, p0, Lgwh;->a:Lgwg;
+    iget-object v0, p0, Lgwh;->a:Lgwc;
 
-    iget-object v1, p0, Lgwh;->b:Lgwj;
+    iget-object v1, p0, Lgwh;->b:Landroid/app/Activity;
 
-    iget-object v2, v0, Lgwg;->a:Lgwo;
+    iget-object v2, p0, Lgwh;->c:Landroid/transition/Transition;
 
-    const/4 v3, 0x0
+    iget-object v3, v0, Lgwc;->n:Ljava/lang/Object;
 
-    invoke-interface {v2, v3}, Lgwo;->a(Z)Ljuw;
+    monitor-enter v3
 
-    move-result-object v2
+    :try_start_0
+    iget-object v4, v0, Lgwc;->e:Landroid/widget/PopupWindow;
 
-    new-instance v3, Lgwi;
+    iget-boolean v0, v0, Lgwc;->m:Z
 
-    invoke-direct {v3, v0, v1}, Lgwi;-><init>(Lgwg;Lgwj;)V
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Lgwg;->b:Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-virtual {v1}, Landroid/app/Activity;->isFinishing()Z
 
-    invoke-static {v2, v3, v0}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    if-eqz v4, :cond_0
+
+    new-instance v0, Landroid/transition/Fade;
+
+    invoke-direct {v0}, Landroid/transition/Fade;-><init>()V
+
+    const-wide/16 v6, 0x12c
+
+    invoke-virtual {v2, v6, v7}, Landroid/transition/Transition;->setDuration(J)Landroid/transition/Transition;
+
+    new-instance v1, Ljs;
+
+    invoke-direct {v1}, Ljs;-><init>()V
+
+    invoke-virtual {v2, v1}, Landroid/transition/Transition;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/transition/Transition;
+
+    invoke-virtual {v4, v0}, Landroid/widget/PopupWindow;->setExitTransition(Landroid/transition/Transition;)V
+
+    :cond_0
+    monitor-exit v3
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

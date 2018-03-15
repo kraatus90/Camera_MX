@@ -3,120 +3,84 @@
 .source "PG"
 
 # interfaces
-.implements Lgfp;
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Licu;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Licv;)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "SimpleTorchSwitch"
+    iput-object p1, p0, Ldkq;->a:Lkgv;
 
-    invoke-interface {p1, v0}, Licv;->a(Ljava/lang/String;)Licu;
+    iput-object p2, p0, Ldkq;->b:Lkgv;
 
-    move-result-object v0
+    iput-object p3, p0, Ldkq;->c:Lkgv;
 
-    iput-object v0, p0, Ldkq;->a:Licu;
+    iput-object p4, p0, Ldkq;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lggn;Lggk;)Lgfq;
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    new-instance v1, Ldks;
+    iget-object v0, p0, Ldkq;->a:Lkgv;
 
-    new-instance v0, Lggm;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v0, p2}, Lggm;-><init>(Lggk;)V
+    move-result-object v0
 
-    invoke-direct {v1, p0, p1, v0}, Ldks;-><init>(Ldkq;Lggn;Lggm;)V
+    check-cast v0, Lbjy;
 
-    :try_start_0
-    new-instance v0, Ldkr;
+    iget-object v1, p0, Ldkq;->b:Lkgv;
 
-    const/4 v2, 0x3
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v0, v2}, Ldkr;-><init>(I)V
+    move-result-object v1
 
-    new-instance v2, Lggm;
+    check-cast v1, Lbll;
 
-    iget-object v3, v1, Ldks;->b:Lggm;
+    iget-object v2, p0, Ldkq;->c:Lkgv;
 
-    invoke-direct {v2, v3}, Lggm;-><init>(Lggm;)V
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    move-result-object v2
 
-    const/4 v4, 0x1
+    check-cast v2, Lhbh;
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v3, p0, Ldkq;->d:Lkgv;
 
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Lggm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lggm;
-
-    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->FLASH_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Lggm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lggm;
-
-    invoke-static {v0}, Lfsp;->b(Licn;)Lggu;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lggm;->a(Lggu;)Lggm;
+    check-cast v3, Lihs;
 
-    invoke-virtual {v2}, Lggm;->c()Lggk;
+    invoke-static {v0, v1, v2, v3}, Ldko;->a(Lbjy;Lbll;Lhbh;Lihs;)Lffv;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, v1, Ldks;->a:Lggn;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    const/4 v4, 0x1
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-array v4, v4, [Lggk;
+    move-result-object v0
 
-    const/4 v5, 0x0
+    check-cast v0, Lffv;
 
-    aput-object v2, v4, v5
-
-    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    sget-object v4, Lggt;->a:Lggt;
-
-    invoke-interface {v3, v2, v4}, Lggn;->a(Ljava/util/List;Lggt;)V
-
-    invoke-virtual {v0}, Ldkr;->a()Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v1}, Ldks;->close()V
-
-    throw v0
-.end method
-
-.method public final a()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

@@ -1,45 +1,64 @@
-.class final Lfbb;
-.super Lfdi;
+.class public final Lfbb;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfaz;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfaz;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfbb;->a:Lfaz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfdi;-><init>(Lfdg;)V
+    iput-object p1, p0, Lfbb;->a:Lkgv;
+
+    iput-object p2, p0, Lfbb;->b:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;)Lfbb;
+    .locals 1
+
+    new-instance v0, Lfbb;
+
+    invoke-direct {v0, p0, p1}, Lfbb;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final C()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lfbb;->a:Lfaz;
+    new-instance v2, Lfba;
 
-    iget-object v0, v0, Lfaz;->a:Lgvj;
+    iget-object v0, p0, Lfbb;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lfdi;->C()V
+    move-result-object v0
 
-    iget-object v0, p0, Lfbb;->a:Lfaz;
+    check-cast v0, Libw;
 
-    iget-object v0, v0, Lfaz;->a:Lgvj;
+    iget-object v1, p0, Lfbb;->b:Lkgv;
 
-    iget-object v1, p0, Lfbb;->a:Lfaz;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v1, Lfaz;->b:Lgvl;
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    check-cast v1, Lick;
 
-    return-void
+    invoke-direct {v2, v0, v1}, Lfba;-><init>(Libw;Lick;)V
+
+    return-object v2
 .end method

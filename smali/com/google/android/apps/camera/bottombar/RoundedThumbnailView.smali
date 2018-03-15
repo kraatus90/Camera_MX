@@ -1,5 +1,5 @@
 .class public Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-.super Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;
+.super Lhan;
 .source "PG"
 
 
@@ -52,7 +52,7 @@
 
 .field public burstFlashAnimator:Landroid/animation/ValueAnimator;
 
-.field public callback:Ljht;
+.field public callback:Ljrf;
 
 .field public currentHitStateCircleOpacity:F
 
@@ -76,7 +76,7 @@
 
 .field public final onClickListener:Landroid/view/View$OnClickListener;
 
-.field public optionalOnClickListener:Ljht;
+.field public optionalOnClickListener:Ljrf;
 
 .field public pendingRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
@@ -117,7 +117,7 @@
 
     const-string v0, "RoundedThumbnail"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -129,7 +129,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lhan;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     const/4 v0, 0x0
 
@@ -154,10 +154,10 @@
     return p1
 .end method
 
-.method static synthetic access$100(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljht;
+.method static synthetic access$100(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljrf;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->callback:Ljht;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->callback:Ljrf;
 
     return-object v0
 .end method
@@ -218,10 +218,10 @@
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljht;
+.method static synthetic access$200(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljrf;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->optionalOnClickListener:Ljht;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->optionalOnClickListener:Ljrf;
 
     return-object v0
 .end method
@@ -380,19 +380,19 @@
 
     const/4 v7, 0x1
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    sget-object v0, Ljqu;->a:Ljqu;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->callback:Ljht;
+    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->callback:Ljrf;
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    sget-object v0, Ljqu;->a:Ljqu;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->optionalOnClickListener:Ljht;
+    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->optionalOnClickListener:Ljrf;
 
     invoke-virtual {p0, v7}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setClickable(Z)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->onClickListener:Landroid/view/View$OnClickListener;
 
-    invoke-super {p0, v0}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-super {p0, v0}, Lhan;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getResources()Landroid/content/res/Resources;
 
@@ -654,9 +654,9 @@
 
     invoke-virtual {p0, v8}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setEnabled(Z)V
 
-    sget-object v0, Lgzj;->a:Lgzj;
+    sget-object v0, Lhao;->a:Lhao;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getDefaultThumbnail(Lgzj;)Landroid/graphics/Bitmap;
+    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getDefaultThumbnail(Lhao;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -703,7 +703,7 @@
 
     const-string v1, "runPendingFlashAnimation"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->foregroundRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
@@ -820,11 +820,11 @@
 
     const-string v3, "runPendingRequestAnimation"
 
-    invoke-static {v0, v3}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->pendingRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -884,7 +884,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->foregroundRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -899,7 +899,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->foregroundRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1071,7 +1071,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->foregroundRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1095,11 +1095,11 @@
 
     const-string v1, "setThumbnail"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->pendingRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
@@ -1143,7 +1143,7 @@
 
     const-string v1, "runPendingFlashAnimation"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->burstFlashAnimator:Landroid/animation/ValueAnimator;
 
@@ -1199,16 +1199,16 @@
 
     const-string v1, "flashThumbnail"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->runBurstFlashAnimation()V
 
     return-void
 .end method
 
-.method public getDefaultThumbnail(Lgzj;)Landroid/graphics/Bitmap;
+.method public getDefaultThumbnail(Lhao;)Landroid/graphics/Bitmap;
     .locals 6
 
     const/4 v0, 0x0
@@ -1217,7 +1217,7 @@
 
     const-string v2, "showDefaultThumbnail"
 
-    invoke-static {v1, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget v1, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->thumbnailShrinkDiameterEnd:F
 
@@ -1237,7 +1237,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    invoke-virtual {p1}, Lgzj;->ordinal()I
+    invoke-virtual {p1}, Lhao;->ordinal()I
 
     move-result v3
 
@@ -1383,7 +1383,7 @@
 
     const/high16 v6, 0x40000000    # 2.0f
 
-    invoke-super {p0, p1}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Lhan;->onDraw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getWidth()I
 
@@ -1509,7 +1509,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->foregroundRequest:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$RevealRequest;
 
-    invoke-static {v0}, Liui;->d(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1622,11 +1622,11 @@
 .method public setCallback(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$Callback;)V
     .locals 1
 
-    invoke-static {p1}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    invoke-static {p1}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->callback:Ljht;
+    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->callback:Ljrf;
 
     return-void
 .end method
@@ -1634,11 +1634,11 @@
 .method public setOnClickListener(Landroid/view/View$OnClickListener;)V
     .locals 1
 
-    invoke-static {p1}, Ljht;->c(Ljava/lang/Object;)Ljht;
+    invoke-static {p1}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->optionalOnClickListener:Ljht;
+    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->optionalOnClickListener:Ljrf;
 
     return-void
 .end method
@@ -1662,7 +1662,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p1}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;->setVisibility(I)V
+    invoke-super {p0, p1}, Lhan;->setVisibility(I)V
 
     :cond_0
     return-void
@@ -1675,9 +1675,9 @@
 
     const-string v1, "startRevealThumbnailAnimation"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getMeasuredWidth()I
 
@@ -1701,9 +1701,9 @@
 
     const-string v1, "stopFlashThumbnail"
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->stopBurstFlashAnimation()V
 

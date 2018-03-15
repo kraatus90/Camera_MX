@@ -15,7 +15,7 @@
 
 .field public final d:Ljava/lang/String;
 
-.field private e:I
+.field private final e:I
 
 
 # direct methods
@@ -30,9 +30,9 @@
 
     sput-object v0, Lcom/google/android/gms/common/ConnectionResult;->a:Lcom/google/android/gms/common/ConnectionResult;
 
-    new-instance v0, Lhms;
+    new-instance v0, Lhnq;
 
-    invoke-direct {v0}, Lhms;-><init>()V
+    invoke-direct {v0}, Lhnq;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/ConnectionResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -351,7 +351,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/common/ConnectionResult;->c:Landroid/app/PendingIntent;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -361,7 +361,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/common/ConnectionResult;->d:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -412,7 +412,7 @@
 .method public final toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Lhjg;->a(Ljava/lang/Object;)Lhld;
+    invoke-static {p0}, Lhmr;->a(Ljava/lang/Object;)Lhmb;
 
     move-result-object v0
 
@@ -424,7 +424,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lhld;->a(Ljava/lang/String;Ljava/lang/Object;)Lhld;
+    invoke-virtual {v0, v1, v2}, Lhmb;->a(Ljava/lang/String;Ljava/lang/Object;)Lhmb;
 
     move-result-object v0
 
@@ -432,7 +432,7 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->c:Landroid/app/PendingIntent;
 
-    invoke-virtual {v0, v1, v2}, Lhld;->a(Ljava/lang/String;Ljava/lang/Object;)Lhld;
+    invoke-virtual {v0, v1, v2}, Lhmb;->a(Ljava/lang/String;Ljava/lang/Object;)Lhmb;
 
     move-result-object v0
 
@@ -440,11 +440,11 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->d:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Lhld;->a(Ljava/lang/String;Ljava/lang/Object;)Lhld;
+    invoke-virtual {v0, v1, v2}, Lhmb;->a(Ljava/lang/String;Ljava/lang/Object;)Lhmb;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lhld;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lhmb;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -456,7 +456,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -464,27 +464,27 @@
 
     iget v2, p0, Lcom/google/android/gms/common/ConnectionResult;->e:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
     iget v2, p0, Lcom/google/android/gms/common/ConnectionResult;->b:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->c:Landroid/app/PendingIntent;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v1, 0x4
 
     iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->d:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

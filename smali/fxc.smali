@@ -1,35 +1,36 @@
-.class public interface abstract Lfxc;
+.class public final Lfxc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfsf;
+.implements Lhai;
+
+
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)V
+    .locals 0
+
+    iput-object p1, p0, Lfxc;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final setColor(I)V
+    .locals 1
 
-.method public abstract a(Landroid/view/View;)V
-.end method
+    iget-object v0, p0, Lfxc;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-.method public abstract a(Lfxd;)V
-.end method
+    iget-object v0, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lfvc;
 
-.method public abstract a(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
-.end method
+    invoke-virtual {v0, p1}, Lfvc;->setBackgroundColor(I)V
 
-.method public abstract b()V
-.end method
-
-.method public abstract c()Lfxd;
-.end method
-
-.method public abstract d()Z
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()Lfxa;
+    return-void
 .end method

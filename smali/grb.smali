@@ -1,45 +1,235 @@
-.class final synthetic Lgrb;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Lgrb;
+.super Lgqz;
+.source "PG"
 
 
 # instance fields
-.field private a:Lgra;
+.field private final j:[F
 
 
 # direct methods
-.method constructor <init>(Lgra;)V
-    .locals 0
+.method public constructor <init>([FZZ)V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lgrb;->a:Lgra;
+    invoke-direct {p0, v1, p2, p3}, Lgqz;-><init>(ZZZ)V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [F
+
+    iput-object v0, p0, Lgrb;->j:[F
+
+    if-nez p2, :cond_0
+
+    array-length v0, p1
+
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_1
+
+    :cond_0
+    array-length v0, p1
+
+    const/4 v2, 0x3
+
+    if-ne v0, v2, :cond_2
+
+    :cond_1
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->b(Z)V
 
     return-void
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a(Landroid/graphics/RectF;)V
+    .locals 5
 
-    iget-object v0, p0, Lgrb;->a:Lgra;
+    const/4 v4, 0x2
 
-    iget-object v1, v0, Lgra;->b:Lgrr;
+    const/4 v3, 0x1
 
-    invoke-interface {v1}, Lgrr;->b()Ljuw;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    iget-boolean v0, p0, Lgrb;->h:Z
 
-    new-instance v2, Lgrd;
+    if-nez v0, :cond_0
 
-    invoke-direct {v2, v0}, Lgrd;-><init>(Lgra;)V
+    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
 
-    sget-object v0, Ljvc;->a:Ljvc;
+    move-result v0
 
-    invoke-static {v1, v2, v0}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    iget-object v1, p0, Lgrb;->j:[F
 
+    aget v1, v1, v2
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->a:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v3
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->b:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v2
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->c:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v3
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->d:I
+
+    :goto_0
     return-void
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v2
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->a:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v3
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->e:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v4
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->b:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v2
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->c:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v3
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->f:I
+
+    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
+
+    move-result v0
+
+    iget-object v1, p0, Lgrb;->j:[F
+
+    aget v1, v1, v4
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lgrb;->d:I
+
+    goto :goto_0
 .end method

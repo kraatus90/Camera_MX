@@ -1,49 +1,37 @@
 .class final Lbz;
-.super Ljava/lang/Object;
+.super Lct;
 .source "PG"
 
 
-# static fields
-.field private static a:Lcc;
+# instance fields
+.field private final synthetic a:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Landroid/view/View;)V
+    .locals 0
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput-object p1, p0, Lbz;->a:Landroid/view/View;
 
-    const/16 v1, 0x15
+    invoke-direct {p0}, Lct;-><init>()V
 
-    if-lt v0, v1, :cond_0
-
-    new-instance v0, Lcb;
-
-    invoke-direct {v0}, Lcb;-><init>()V
-
-    sput-object v0, Lbz;->a:Lcc;
-
-    :goto_0
     return-void
-
-    :cond_0
-    new-instance v0, Lca;
-
-    invoke-direct {v0}, Lca;-><init>()V
-
-    sput-object v0, Lbz;->a:Lcc;
-
-    goto :goto_0
 .end method
 
-.method static a(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
-    .locals 1
 
-    sget-object v0, Lbz;->a:Lcc;
+# virtual methods
+.method public final a(Lcn;)V
+    .locals 2
 
-    invoke-interface {v0, p0, p1, p2}, Lcc;->a(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    iget-object v0, p0, Lbz;->a:Landroid/view/View;
 
-    move-result-object v0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    return-object v0
+    invoke-static {v0, v1}, Ldk;->a(Landroid/view/View;F)V
+
+    invoke-static {}, Ldk;->b()V
+
+    invoke-virtual {p1, p0}, Lcn;->b(Lcs;)Lcn;
+
+    return-void
 .end method

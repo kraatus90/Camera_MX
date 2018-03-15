@@ -1,235 +1,53 @@
 .class public final Lbpe;
-.super Lbpc;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private j:[F
+.field public final a:Lcom/google/android/apps/camera/faceboxes/FaceView;
 
 
 # direct methods
-.method public constructor <init>([FZZ)V
-    .locals 3
+.method public constructor <init>(Lcom/google/android/apps/camera/faceboxes/FaceView;)V
+    .locals 0
 
-    const/4 v1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v1, p2, p3}, Lbpc;-><init>(ZZZ)V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [F
-
-    iput-object v0, p0, Lbpe;->j:[F
-
-    if-nez p2, :cond_0
-
-    array-length v0, p1
-
-    const/4 v2, 0x2
-
-    if-eq v0, v2, :cond_1
-
-    :cond_0
-    array-length v0, p1
-
-    const/4 v2, 0x3
-
-    if-ne v0, v2, :cond_2
-
-    :cond_1
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-static {v0}, Liya;->b(Z)V
+    iput-object p1, p0, Lbpe;->a:Lcom/google/android/apps/camera/faceboxes/FaceView;
 
     return-void
-
-    :cond_2
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/RectF;)V
-    .locals 5
+.method public final a()V
+    .locals 2
 
-    const/4 v4, 0x2
+    iget-object v0, p0, Lbpe;->a:Lcom/google/android/apps/camera/faceboxes/FaceView;
 
-    const/4 v3, 0x1
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/faceboxes/FaceView;->b()V
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lbpe;->a:Lcom/google/android/apps/camera/faceboxes/FaceView;
 
-    iget-boolean v0, p0, Lbpe;->h:Z
+    const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/faceboxes/FaceView;->setVisibility(I)V
 
-    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v2
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->a:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v3
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->b:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v2
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->c:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v3
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->d:I
-
-    :goto_0
     return-void
+.end method
 
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
+.method public final b()V
+    .locals 2
 
-    move-result v0
+    iget-object v0, p0, Lbpe;->a:Lcom/google/android/apps/camera/faceboxes/FaceView;
 
-    iget-object v1, p0, Lbpe;->j:[F
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/faceboxes/FaceView;->b()V
 
-    aget v1, v1, v2
+    iget-object v0, p0, Lbpe;->a:Lcom/google/android/apps/camera/faceboxes/FaceView;
 
-    mul-float/2addr v0, v1
+    const/4 v1, 0x4
 
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/faceboxes/FaceView;->setVisibility(I)V
 
-    move-result v0
-
-    iput v0, p0, Lbpe;->a:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v3
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->e:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v4
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->b:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v2
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->c:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v3
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->f:I
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->height()F
-
-    move-result v0
-
-    iget-object v1, p0, Lbpe;->j:[F
-
-    aget v1, v1, v4
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    iput v0, p0, Lbpe;->d:I
-
-    goto :goto_0
+    return-void
 .end method

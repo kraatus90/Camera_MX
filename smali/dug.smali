@@ -2,67 +2,74 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ldub;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x15
+.end annotation
+
 
 # instance fields
-.field public final a:J
-
-.field public final b:[B
-
-.field public final c:I
-
-.field public final d:Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-.field public final e:Lici;
-
-.field public final f:Z
+.field private final a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
 
 # direct methods
-.method private constructor <init>(J[BLici;ILcom/google/android/libraries/camera/exif/ExifInterface;Lhab;Z)V
-    .locals 1
+.method constructor <init>(Lcom/google/android/apps/camera/stats/ViewfinderJankSession;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Ldug;->a:J
-
-    iput-object p3, p0, Ldug;->b:[B
-
-    iput p5, p0, Ldug;->c:I
-
-    iput-object p4, p0, Ldug;->e:Lici;
-
-    if-eqz p7, :cond_0
-
-    invoke-static {}, Lgzz;->f()Z
-
-    :cond_0
-    iput-object p6, p0, Ldug;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-    iput-boolean p8, p0, Ldug;->f:Z
+    iput-object p1, p0, Ldug;->a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
     return-void
 .end method
 
-.method public static a(J[BLici;ILcom/google/android/libraries/camera/exif/ExifInterface;Lhab;Z)Ldug;
-    .locals 10
 
-    new-instance v1, Ldug;
+# virtual methods
+.method public final a(Lind;DD)V
+    .locals 4
 
-    move-wide v2, p0
+    iget-object v0, p0, Ldug;->a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
-    move-object v4, p2
+    iget-object v1, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a:Ljava/lang/Object;
 
-    move-object v5, p3
+    monitor-enter v1
 
-    move v6, p4
+    :try_start_0
+    iget-object v2, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->b:Ljava/util/List;
 
-    move-object v7, p5
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-object/from16 v8, p6
+    move-result v2
 
-    move/from16 v9, p7
+    const/16 v3, 0x1e
 
-    invoke-direct/range {v1 .. v9}, Ldug;-><init>(J[BLici;ILcom/google/android/libraries/camera/exif/ExifInterface;Lhab;Z)V
+    if-ge v2, v3, :cond_0
 
-    return-object v1
+    invoke-static {p1, p2, p3, p4, p5}, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a(Lind;DD)Ljzr;
+
+    move-result-object v2
+
+    iget-object v3, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->b:Ljava/util/List;
+
+    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a(Ljzr;)V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

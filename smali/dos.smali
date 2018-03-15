@@ -1,70 +1,89 @@
-.class public final Ldos;
+.class final synthetic Ldos;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Ldor;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Ldor;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldos;->a:Ljxn;
+    iput-object p1, p0, Ldos;->a:Ldor;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldos;
-
-    invoke-direct {v0, p0}, Ldos;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Ldos;->a:Ljxn;
+    iget-object v1, p0, Ldos;->a:Ldor;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v1, Ldor;->d:Lihn;
 
-    move-result-object v0
+    const-string v2, "Closing one camera."
 
-    check-cast v0, Ljuw;
+    invoke-interface {v0, v2}, Lihn;->d(Ljava/lang/String;)V
 
-    new-instance v1, Ldop;
+    iget-object v0, v1, Ldor;->b:Libq;
 
-    invoke-direct {v1}, Ldop;-><init>()V
+    iget-object v2, v1, Ldor;->a:Liaw;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    const-string v3, "OneCameraLifetime"
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
+    invoke-static {v0, v2, v3}, Libr;->a(Libq;Lihb;Ljava/lang/String;)V
 
-    move-result-object v0
+    monitor-enter v1
 
-    new-instance v1, Ldou;
+    :try_start_0
+    iget-object v0, v1, Ldor;->e:Lkeh;
 
-    invoke-direct {v1, v0}, Ldou;-><init>(Ljuw;)V
+    if-eqz v0, :cond_0
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, v1, Ldor;->e:Lkeh;
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    invoke-interface {v0, v2}, Lkeh;->cancel(Z)Z
 
-    check-cast v0, Ldol;
+    :cond_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
+    iget-object v0, v1, Ldor;->c:Lkeh;
+
+    new-instance v2, Ldrh;
+
+    invoke-direct {v2, v1}, Ldrh;-><init>(Ldor;)V
+
+    sget-object v3, Lken;->a:Lken;
+
+    invoke-static {v0, v2, v3}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    iget-object v0, v1, Ldor;->d:Lihn;
+
+    const-string v1, "OneCamera closed."
+
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

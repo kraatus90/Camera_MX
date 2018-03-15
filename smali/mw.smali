@@ -1,108 +1,143 @@
 .class final Lmw;
-.super Ljava/lang/Object;
+.super Landroid/support/v7/widget/ContentFrameLayout;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lmt;
+.field private final synthetic i:Lmn;
 
 
 # direct methods
-.method constructor <init>(Lmt;)V
+.method public constructor <init>(Lmn;Landroid/content/Context;)V
     .locals 0
 
-    iput-object p1, p0, Lmw;->a:Lmt;
+    iput-object p1, p0, Lmw;->i:Lmn;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroid/support/v7/widget/ContentFrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    .locals 1
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    iget-object v0, p0, Lmw;->i:Lmn;
 
-    const/4 v3, 0x0
-
-    iget-object v0, p0, Lmw;->a:Lmt;
-
-    iget-object v0, v0, Lmt;->r:Landroid/widget/PopupWindow;
-
-    iget-object v1, p0, Lmw;->a:Lmt;
-
-    iget-object v1, v1, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
-
-    const/16 v2, 0x37
-
-    invoke-virtual {v0, v1, v2, v3, v3}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
-
-    iget-object v0, p0, Lmw;->a:Lmt;
-
-    invoke-virtual {v0}, Lmt;->p()V
-
-    iget-object v0, p0, Lmw;->a:Lmt;
-
-    invoke-virtual {v0}, Lmt;->o()Z
+    invoke-virtual {v0, p1}, Lmn;->a(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lmw;->a:Lmt;
+    invoke-super {p0, p1}, Landroid/support/v7/widget/ContentFrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
+    move-result v0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
-
-    iget-object v0, p0, Lmw;->a:Lmt;
-
-    iget-object v1, p0, Lmw;->a:Lmt;
-
-    iget-object v1, v1, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-static {v1}, Lid;->b(Landroid/view/View;)Lji;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v4}, Lji;->a(F)Lji;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lmt;->t:Lji;
-
-    iget-object v0, p0, Lmw;->a:Lmt;
-
-    iget-object v0, v0, Lmt;->t:Lji;
-
-    new-instance v1, Lmx;
-
-    invoke-direct {v1, p0}, Lmx;-><init>(Lmw;)V
-
-    invoke-virtual {v0, v1}, Lji;->a(Ljm;)Lji;
-
-    :goto_0
-    return-void
+    if-eqz v0, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lmw;->a:Lmt;
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
+    :goto_0
+    return v0
 
-    invoke-virtual {v0, v4}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
-
-    iget-object v0, p0, Lmw;->a:Lmt;
-
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0, v3}, Lpz;->setVisibility(I)V
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 5
+
+    const/4 v2, 0x0
+
+    const/4 v4, -0x5
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v3
+
+    float-to-int v3, v3
+
+    if-lt v1, v4, :cond_0
+
+    if-lt v3, v4, :cond_0
+
+    invoke-virtual {p0}, Lmw;->getWidth()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x5
+
+    if-gt v1, v4, :cond_0
+
+    invoke-virtual {p0}, Lmw;->getHeight()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x5
+
+    if-le v3, v1, :cond_1
+
+    :cond_0
+    move v1, v0
+
+    :goto_0
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lmw;->i:Lmn;
+
+    invoke-virtual {v1, v2}, Lmn;->g(I)Lmx;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2, v0}, Lmn;->a(Lmx;Z)V
+
+    :goto_1
+    return v0
+
+    :cond_1
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-super {p0, p1}, Landroid/support/v7/widget/ContentFrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    goto :goto_1
+.end method
+
+.method public final setBackgroundResource(I)V
+    .locals 1
+
+    invoke-virtual {p0}, Lmw;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lnn;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lmw;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
 .end method

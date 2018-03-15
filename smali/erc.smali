@@ -1,485 +1,304 @@
-.class public final Lerc;
+.class final synthetic Lerc;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field private static a:Ljava/lang/String;
+# instance fields
+.field private final a:Leqt;
 
-.field private static b:Ljava/util/EnumMap;
+.field private final b:J
+
+.field private final c:Ljava/io/File;
+
+.field private final d:I
+
+.field private final e:Landroid/net/Uri;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Leqt;JLjava/io/File;ILandroid/net/Uri;)V
+    .locals 0
 
-    const-string v0, "SettingsUtil"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lerc;->a:Leqt;
 
-    move-result-object v0
+    iput-wide p2, p0, Lerc;->b:J
 
-    sput-object v0, Lerc;->a:Ljava/lang/String;
+    iput-object p4, p0, Lerc;->c:Ljava/io/File;
 
-    new-instance v0, Ljava/util/EnumMap;
+    iput p5, p0, Lerc;->d:I
 
-    const-class v1, Lige;
-
-    invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
-
-    sput-object v0, Lerc;->b:Ljava/util/EnumMap;
-
-    new-instance v0, Landroid/util/SparseArray;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Landroid/util/SparseArray;-><init>(I)V
+    iput-object p6, p0, Lerc;->e:Landroid/net/Uri;
 
     return-void
 .end method
 
-.method private static a(Ljava/util/List;I)I
-    .locals 5
 
-    const/4 v0, 0x0
+# virtual methods
+.method public final run()V
+    .locals 22
 
-    const v1, 0x7fffffff
+    move-object/from16 v0, p0
 
-    move v2, v1
+    iget-object v0, v0, Lerc;->a:Leqt;
 
-    move v3, v0
+    move-object/from16 v18, v0
 
-    move v1, v0
+    move-object/from16 v0, p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    iget-wide v10, v0, Lerc;->b:J
 
-    move-result v0
+    move-object/from16 v0, p0
 
-    if-ge v1, v0, :cond_1
+    iget-object v0, v0, Lerc;->c:Ljava/io/File;
 
-    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-object/from16 v19, v0
 
-    move-result-object v0
+    move-object/from16 v0, p0
 
-    check-cast v0, Lici;
+    iget v15, v0, Lerc;->d:I
 
-    iget v4, v0, Lici;->a:I
+    move-object/from16 v0, p0
 
-    iget v0, v0, Lici;->b:I
+    iget-object v0, v0, Lerc;->e:Landroid/net/Uri;
 
-    mul-int/2addr v0, v4
+    move-object/from16 v20, v0
 
-    sub-int/2addr v0, p1
+    move-object/from16 v0, v18
 
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
+    iget-object v14, v0, Leqt;->i:Lers;
 
-    move-result v0
+    if-eqz v14, :cond_1
 
-    if-ge v0, v2, :cond_0
+    iget-object v2, v14, Lers;->b:Lexd;
 
-    move v2, v0
+    if-eqz v2, :cond_0
 
-    move v3, v1
+    iget-object v2, v14, Lers;->b:Lexd;
 
-    :cond_0
-    add-int/lit8 v0, v1, 0x1
+    iget-object v3, v2, Lexd;->c:Lews;
 
-    move v1, v0
+    iget-wide v4, v2, Lexd;->d:J
 
-    goto :goto_0
-
-    :cond_1
-    return v3
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/util/List;Lige;)Lici;
-    .locals 13
-
-    const/4 v12, 0x1
-
-    const/4 v11, 0x2
-
-    const/4 v10, 0x0
-
-    const-string v0, "1836x3264"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Leqx;->a:Lici;
-
-    :goto_0
-    return-object v0
+    invoke-virtual {v3, v4, v5}, Lews;->a(J)V
 
     :cond_0
-    new-instance v2, Ljava/util/LinkedList;
+    move-object/from16 v0, v18
 
-    invoke-direct {v2, p1}, Ljava/util/LinkedList;-><init>(Ljava/util/Collection;)V
+    iget-object v0, v0, Leqt;->g:Ljava/lang/Object;
 
-    sget-object v0, Lerc;->b:Ljava/util/EnumMap;
+    move-object/from16 v21, v0
 
-    invoke-virtual {v0, p2}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    monitor-enter v21
 
-    move-result-object v0
+    :try_start_0
+    move-object/from16 v0, v18
 
-    if-eqz v0, :cond_1
+    iget-object v2, v0, Leqt;->l:Ljava/util/List;
 
-    sget-object v0, Lerc;->b:Ljava/util/EnumMap;
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {v0, p2}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v0
+    invoke-interface {v2, v3}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    check-cast v0, Lere;
+    new-instance v2, Leqw;
 
-    :goto_1
-    const-string v1, "large"
+    move-object/from16 v0, v18
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-direct {v2, v0}, Leqw;-><init>(Leqt;)V
 
-    move-result v1
+    sget-object v2, Leqt;->a:Ljava/lang/String;
 
-    if-nez v1, :cond_b
+    invoke-static/range {v19 .. v19}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v1, "medium"
+    move-result-object v3
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v1
+    move-result-object v4
 
-    if-eqz v1, :cond_9
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    iget-object v0, v0, Lere;->b:Lici;
+    move-result v4
 
-    goto :goto_0
+    add-int/lit8 v4, v4, 0x22
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Attempting to take microvideo for "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v12, v14, Lers;->e:Lexs;
+
+    sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v2, v10, v11, v3}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+
+    move-result-wide v4
+
+    move-object/from16 v0, v18
+
+    iget-object v7, v0, Leqt;->h:Leyc;
+
+    new-instance v2, Lexp;
+
+    iget-object v3, v12, Lexs;->a:Levy;
+
+    iget-object v6, v12, Lexs;->b:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/util/List;
+
+    iget-object v8, v12, Lexs;->d:Ljava/util/concurrent/Executor;
+
+    iget-object v9, v12, Lexs;->c:Lbkx;
+
+    invoke-direct/range {v2 .. v9}, Lexp;-><init>(Levy;JLjava/util/List;Leyc;Ljava/util/concurrent/Executor;Lbkx;)V
+
+    iget-object v3, v12, Lexs;->c:Lbkx;
+
+    iget-object v3, v3, Lbkx;->a:Lbqc;
+
+    invoke-interface {v2}, Lexn;->a()J
+
+    move-result-wide v7
+
+    new-instance v12, Letq;
+
+    invoke-direct {v12}, Letq;-><init>()V
+
+    new-instance v13, Lket;
+
+    invoke-direct {v13}, Lket;-><init>()V
+
+    new-instance v4, Leqx;
+
+    move-object/from16 v5, v18
+
+    move-object/from16 v6, v19
+
+    move v9, v15
+
+    invoke-direct/range {v4 .. v14}, Leqx;-><init>(Leqt;Ljava/io/File;JIJLetq;Lket;Lers;)V
+
+    new-instance v3, Leqy;
+
+    invoke-direct {v3, v7, v8}, Leqy;-><init>(J)V
+
+    iget-object v6, v14, Lers;->a:Leta;
+
+    const-wide/16 v14, 0x0
+
+    invoke-static {v14, v15, v7, v8}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v8
+
+    move-object v7, v4
+
+    invoke-interface/range {v6 .. v11}, Leta;->a(Ljrm;JJ)Letb;
+
+    move-result-object v10
+
+    iget-object v3, v10, Letb;->g:Lket;
+
+    invoke-virtual {v3, v13}, Lket;->a(Lkeh;)Z
+
+    new-instance v9, Lerj;
+
+    move-object/from16 v0, v18
+
+    iget-wide v13, v0, Leqt;->j:J
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v15
+
+    move-object/from16 v0, v18
+
+    iget-object v0, v0, Leqt;->h:Leyc;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v11, v19
+
+    invoke-direct/range {v9 .. v17}, Lerj;-><init>(Letb;Ljava/io/File;Letq;JJLeyc;)V
+
+    move-object/from16 v0, v18
+
+    iget-object v3, v0, Leqt;->f:Ljava/util/Map;
+
+    move-object/from16 v0, v20
+
+    invoke-interface {v3, v0, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-object/from16 v0, v18
+
+    iget-wide v4, v0, Leqt;->j:J
+
+    const-wide/32 v6, 0x16e360
+
+    add-long/2addr v4, v6
+
+    move-object/from16 v0, v18
+
+    iput-wide v4, v0, Leqt;->k:J
+
+    new-instance v3, Leyj;
+
+    move-object/from16 v0, v19
+
+    invoke-direct {v3, v0, v10}, Leyj;-><init>(Ljava/io/File;Lexo;)V
+
+    invoke-interface {v2, v3}, Lexn;->a(Lexo;)V
+
+    monitor-exit v21
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v2, v10, Letb;->e:Lket;
+
+    sget-object v3, Leqz;->a:Ljava/lang/Runnable;
+
+    move-object/from16 v0, v18
+
+    iget-object v4, v0, Leqt;->b:Ljava/util/concurrent/Executor;
+
+    invoke-interface {v2, v3, v4}, Lkeh;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
     :cond_1
-    new-instance v4, Lere;
+    return-void
 
-    invoke-direct {v4}, Lere;-><init>()V
+    :catchall_0
+    move-exception v2
 
-    new-instance v0, Lerd;
+    :try_start_1
+    monitor-exit v21
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-direct {v0}, Lerd;-><init>()V
-
-    invoke-static {v2, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    invoke-interface {v2, v10}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iput-object v0, v4, Lere;->a:Lici;
-
-    iget-object v0, v4, Lere;->a:Lici;
-
-    iget v0, v0, Lici;->a:I
-
-    int-to-float v0, v0
-
-    iget-object v1, v4, Lere;->a:Lici;
-
-    iget v1, v1, Lici;->b:I
-
-    int-to-float v1, v1
-
-    div-float v3, v0, v1
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :cond_2
-    :goto_2
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iget v6, v0, Lici;->a:I
-
-    int-to-float v6, v6
-
-    iget v7, v0, Lici;->b:I
-
-    int-to-float v7, v7
-
-    div-float/2addr v6, v7
-
-    sub-float/2addr v6, v3
-
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
-
-    move-result v6
-
-    float-to-double v6, v6
-
-    const-wide v8, 0x3f847ae147ae147bL    # 0.01
-
-    cmpg-double v6, v6, v8
-
-    if-gez v6, :cond_2
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-lt v0, v11, :cond_4
-
-    :goto_3
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    sget-object v0, Lerc;->a:Ljava/lang/String;
-
-    const-string v1, "Only one supported resolution."
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, v4, Lere;->a:Lici;
-
-    iput-object v0, v4, Lere;->b:Lici;
-
-    iget-object v0, v4, Lere;->a:Lici;
-
-    iput-object v0, v4, Lere;->c:Lici;
-
-    :goto_4
-    sget-object v0, Lerc;->b:Ljava/util/EnumMap;
-
-    invoke-virtual {v0, p2, v4}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-object v0, v4
-
-    goto/16 :goto_1
-
-    :cond_4
-    move-object v1, v2
-
-    goto :goto_3
-
-    :cond_5
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-ne v0, v12, :cond_6
-
-    sget-object v0, Lerc;->a:Ljava/lang/String;
-
-    const-string v2, "Only two supported resolutions."
-
-    invoke-static {v0, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v1, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iput-object v0, v4, Lere;->b:Lici;
-
-    invoke-interface {v1, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iput-object v0, v4, Lere;->c:Lici;
-
-    goto :goto_4
-
-    :cond_6
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-ne v0, v11, :cond_7
-
-    sget-object v0, Lerc;->a:Ljava/lang/String;
-
-    const-string v2, "Exactly three supported resolutions."
-
-    invoke-static {v0, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v1, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iput-object v0, v4, Lere;->b:Lici;
-
-    invoke-interface {v1, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iput-object v0, v4, Lere;->c:Lici;
-
-    goto :goto_4
-
-    :cond_7
-    iget-object v0, v4, Lere;->a:Lici;
-
-    iget v0, v0, Lici;->a:I
-
-    iget-object v2, v4, Lere;->a:Lici;
-
-    iget v2, v2, Lici;->b:I
-
-    mul-int/2addr v0, v2
-
-    int-to-float v2, v0
-
-    const/high16 v3, 0x3f000000    # 0.5f
-
-    mul-float/2addr v2, v3
-
-    float-to-int v2, v2
-
-    int-to-float v0, v0
-
-    const/high16 v3, 0x3e800000    # 0.25f
-
-    mul-float/2addr v0, v3
-
-    float-to-int v0, v0
-
-    invoke-static {v1, v2}, Lerc;->a(Ljava/util/List;I)I
-
-    move-result v3
-
-    invoke-static {v1, v0}, Lerc;->a(Ljava/util/List;I)I
-
-    move-result v2
-
-    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v5}, Lici;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    if-ge v2, v0, :cond_8
-
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
-
-    move v0, v3
-
-    :goto_5
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iput-object v0, v4, Lere;->b:Lici;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iput-object v0, v4, Lere;->c:Lici;
-
-    goto/16 :goto_4
-
-    :cond_8
-    add-int/lit8 v0, v3, -0x1
-
-    goto :goto_5
-
-    :cond_9
-    const-string v1, "small"
-
-    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_a
-
-    iget-object v0, v0, Lere;->c:Lici;
-
-    goto/16 :goto_0
-
-    :cond_a
-    if-eqz p0, :cond_b
-
-    const-string v1, "x"
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    array-length v1, v1
-
-    if-ne v1, v11, :cond_b
-
-    invoke-static {p0}, Licj;->a(Ljava/lang/String;)Lici;
-
-    move-result-object v1
-
-    invoke-interface {p1, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_b
-
-    move-object v0, v1
-
-    goto/16 :goto_0
-
-    :cond_b
-    iget-object v0, v0, Lere;->a:Lici;
-
-    goto/16 :goto_0
-
-    :cond_c
-    move v0, v3
-
-    goto :goto_5
+    throw v2
 .end method

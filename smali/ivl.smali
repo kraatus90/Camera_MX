@@ -1,36 +1,101 @@
-.class final Livl;
-.super Ljava/lang/Object;
+.class public final Livl;
+.super Livk;
 .source "PG"
-
-# interfaces
-.implements Liuh;
 
 
 # instance fields
-.field private synthetic a:Landroid/content/Context;
+.field private final synthetic d:I
+
+.field private final synthetic e:[F
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
-    .locals 0
+.method public constructor <init>(ILisq;[F)V
+    .locals 1
 
-    iput-object p1, p0, Livl;->a:Landroid/content/Context;
+    const/4 v0, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput v0, p0, Livl;->d:I
+
+    iput-object p3, p0, Livl;->e:[F
+
+    invoke-direct {p0, p1, p2, v0}, Livk;-><init>(ILisq;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 2
+.method public final a(ILjava/nio/ByteBuffer;)V
+    .locals 3
 
-    iget-object v0, p0, Livl;->a:Landroid/content/Context;
+    const/4 v0, 0x0
 
-    const v1, 0x7f090007
+    :goto_0
+    iget v1, p0, Livl;->d:I
 
-    invoke-static {v0, v1}, Liui;->a(Landroid/content/Context;I)Ljava/nio/ByteBuffer;
+    if-ge v0, v1, :cond_0
+
+    iget-object v1, p0, Livl;->e:[F
+
+    iget v2, p0, Livl;->d:I
+
+    mul-int/2addr v2, p1
+
+    add-int/2addr v2, v0
+
+    aget v1, v1, v2
+
+    invoke-virtual {p2, v1}, Ljava/nio/ByteBuffer;->putFloat(F)Ljava/nio/ByteBuffer;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    iget v0, p0, Livk;->a:I
+
+    iget v1, p0, Livl;->d:I
+
+    const/16 v2, 0x40
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "GLVertexData{vertexCount="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, ", type="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "D float32}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

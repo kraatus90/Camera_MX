@@ -1,132 +1,68 @@
 .class public final Ljbt;
-.super Ljbe;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:Ljee;
-
-.field private b:I
+# interfaces
+.implements Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
 
 
 # direct methods
-.method public constructor <init>(Ljee;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Ljbt;-><init>(Ljee;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljee;I)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljbe;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Ljbt;->a:Ljee;
-
-    iput p2, p0, Ljbt;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Ljaz;
-    .locals 8
+.method public final create(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+    .locals 5
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;
 
-    new-instance v3, Ljava/util/ArrayList;
+    invoke-direct {v0, p1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)V
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    const-string v1, "videoProvider"
 
-    iget-object v0, p1, Ljaz;->a:Ljava/util/List;
+    const/4 v2, 0x0
 
-    invoke-static {v0}, Ljkv;->a(Ljava/util/Collection;)Ljkv;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addVariable(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    new-instance v1, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/video/VideoProviderSource;
+
+    const-string v2, "camera"
+
+    invoke-direct {v1, p1, v2}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/video/VideoProviderSource;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+
+    const-string v2, "videoProvider"
+
+    const-string v3, "camera"
+
+    const-string v4, "provider"
+
+    invoke-virtual {v0, v2, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignVariableToFilterInput(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    new-instance v2, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;
+
+    const-string v3, "frameConsumer"
+
+    invoke-direct {v2, p1, v3}, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+
+    const-string v3, "video"
+
+    const-string v4, "frame"
+
+    invoke-virtual {v0, v1, v3, v2, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->build()Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
 
     move-result-object v0
-
-    check-cast v0, Ljkv;
-
-    invoke-virtual {v0}, Ljkv;->size()I
-
-    move-result v4
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :cond_0
-    :goto_0
-    if-ge v2, v4, :cond_1
-
-    invoke-virtual {v0, v2}, Ljkv;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    add-int/lit8 v2, v2, 0x1
-
-    check-cast v1, Ljava/lang/Long;
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    iget-object v1, p0, Ljbt;->a:Ljee;
-
-    invoke-virtual {v1, v6, v7}, Ljee;->a(J)Ljds;
-
-    move-result-object v1
-
-    sget-object v5, Ljds;->c:Ljea;
-
-    invoke-virtual {v1, v5}, Ljds;->b(Ljea;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    sget-object v5, Ljds;->c:Ljea;
-
-    invoke-virtual {v1, v5}, Ljds;->a(Ljea;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    iget v5, p0, Ljbt;->b:I
-
-    if-lt v1, v5, :cond_0
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljaz;
-
-    invoke-direct {v0, v3}, Ljaz;-><init>(Ljava/util/Collection;)V
-
-    return-object v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "MinFaceCountSegmentFilter"
 
     return-object v0
 .end method

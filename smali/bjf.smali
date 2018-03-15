@@ -1,91 +1,97 @@
-.class public final Lbjf;
+.class final Lbjf;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public a:Lbjj;
+.field private final synthetic a:Lket;
 
-.field public final b:Lbjn;
-
-.field public c:Lbka;
+.field private final synthetic b:Lbje;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Lbje;Lket;)V
+    .locals 0
+
+    iput-object p1, p0, Lbjf;->b:Lbje;
+
+    iput-object p2, p0, Lbjf;->a:Lket;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lbjw;
-
-    invoke-direct {v0}, Lbjw;-><init>()V
-
-    iput-object v0, p0, Lbjf;->b:Lbjn;
-
-    new-instance v0, Lbjs;
-
-    iget-object v1, p0, Lbjf;->b:Lbjn;
-
-    invoke-direct {v0, v1}, Lbjs;-><init>(Lbjn;)V
-
-    iput-object v0, p0, Lbjf;->a:Lbjj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(IIF)V
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lbjf;->a:Lbjj;
+    :try_start_0
+    iget-object v0, p0, Lbjf;->b:Lbje;
 
-    invoke-virtual {v0, p1, p2, p3}, Lgvh;->a(IIF)V
+    iget-object v0, v0, Lbje;->b:Lbin;
 
+    invoke-interface {v0}, Lbin;->g()V
+
+    iget-object v0, p0, Lbjf;->a:Lket;
+
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ligl; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     return-void
-.end method
 
-.method public final a(Landroid/view/View$OnClickListener;)V
-    .locals 3
+    :catch_0
+    move-exception v0
 
-    iget-object v0, p0, Lbjf;->c:Lbka;
+    sget-object v1, Lbje;->a:Ljava/lang/String;
 
-    const-string v1, "EvCompViewController must be first initialized"
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-static {v0, v1, v2}, Liui;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lbka;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Lbka;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    move-result-object v2
 
-    return-void
-.end method
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-.method public final a(Z)V
-    .locals 3
+    move-result v2
 
-    iget-object v0, p0, Lbjf;->c:Lbka;
+    add-int/lit8 v2, v2, 0x25
 
-    const-string v1, "EvCompViewController must be first initialized"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x0
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const-string v2, "Failed when call MediaRecorder#stop: "
 
-    invoke-static {v0, v1, v2}, Liui;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lbka;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Lbka;->a(Z)V
+    move-result-object v0
 
-    return-void
+    invoke-static {v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lbjf;->a:Lket;
+
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    goto :goto_0
 .end method

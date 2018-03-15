@@ -1,46 +1,123 @@
-.class final synthetic Ljhg;
+.class public final Ljhg;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Ljgs;
 
 
 # instance fields
-.field private a:Ljhf;
+.field private final a:Lahf;
 
 
 # direct methods
-.method constructor <init>(Ljhf;)V
+.method public constructor <init>()V
+    .locals 4
+
+    new-instance v0, Lahn;
+
+    const-wide/32 v2, 0x3200000
+
+    invoke-direct {v0, v2, v3}, Lahn;-><init>(J)V
+
+    invoke-direct {p0, v0}, Ljhg;-><init>(Lahf;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lahf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljhg;->a:Ljhf;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljhg;->a:Lahf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method public final a(Ljava/lang/String;IILandroid/graphics/Bitmap$Config;)Ljgv;
     .locals 3
 
-    iget-object v1, p0, Ljhg;->a:Ljhf;
+    iget-object v0, p0, Ljhg;->a:Lahf;
 
-    invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
+    invoke-interface {v0, p2, p3, p4}, Lahf;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    check-cast v0, Ljhb;
+    if-nez v0, :cond_0
 
-    iget-object v2, v1, Ljhf;->a:Ljhh;
+    invoke-static {p2, p3, p4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    if-eqz v2, :cond_0
-
-    iget-object v1, v1, Ljhf;->a:Ljhh;
-
-    invoke-interface {v1, v0}, Ljhh;->a(Ljhb;)V
+    move-result-object v0
 
     :cond_0
-    return-void
+    new-instance v1, Ljhh;
+
+    iget-object v2, p0, Ljhg;->a:Lahf;
+
+    invoke-direct {v1, v0, v2}, Ljhh;-><init>(Landroid/graphics/Bitmap;Lahf;)V
+
+    return-object v1
+.end method
+
+.method public final a(Ljava/lang/String;Landroid/graphics/Bitmap;)Ljgv;
+    .locals 2
+
+    new-instance v0, Ljhh;
+
+    iget-object v1, p0, Ljhg;->a:Lahf;
+
+    invoke-direct {v0, p2, v1}, Ljhh;-><init>(Landroid/graphics/Bitmap;Lahf;)V
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Ljhg;->a:Lahf;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1a
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "PoolBitmapAllocator[pool="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

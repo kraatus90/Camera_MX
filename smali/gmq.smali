@@ -1,75 +1,38 @@
-.class public final enum Lgmq;
-.super Ljava/lang/Enum;
+.class final Lgmq;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final enum a:Lgmq;
 
-.field public static final enum b:Lgmq;
-
-.field private static synthetic c:[Lgmq;
+# instance fields
+.field private final synthetic a:Lgmn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lgmq;
-
-    const-string v1, "FPS_30"
-
-    invoke-direct {v0, v1, v2}, Lgmq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lgmq;->a:Lgmq;
-
-    new-instance v0, Lgmq;
-
-    const-string v1, "FPS_60"
-
-    invoke-direct {v0, v1, v3}, Lgmq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lgmq;->b:Lgmq;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lgmq;
-
-    sget-object v1, Lgmq;->a:Lgmq;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lgmq;->b:Lgmq;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lgmq;->c:[Lgmq;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>(Lgmn;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lgmq;->a:Lgmn;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lgmq;
+
+# virtual methods
+.method public final run()V
     .locals 1
 
-    sget-object v0, Lgmq;->c:[Lgmq;
+    iget-object v0, p0, Lgmq;->a:Lgmn;
 
-    invoke-virtual {v0}, [Lgmq;->clone()Ljava/lang/Object;
+    invoke-static {v0}, Lgmn;->a(Lgmn;)Leqp;
 
     move-result-object v0
 
-    check-cast v0, [Lgmq;
+    invoke-virtual {v0}, Leqp;->c()V
 
-    return-object v0
+    return-void
 .end method

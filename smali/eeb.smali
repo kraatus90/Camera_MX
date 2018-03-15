@@ -1,67 +1,90 @@
-.class public final synthetic Leeb;
+.class public final Leeb;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Licu;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Licu;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leeb;->a:Licu;
+    iput-object p1, p0, Leeb;->a:Lkgv;
+
+    iput-object p2, p0, Leeb;->b:Lkgv;
+
+    iput-object p3, p0, Leeb;->c:Lkgv;
+
+    iput-object p4, p0, Leeb;->d:Lkgv;
+
+    iput-object p5, p0, Leeb;->e:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Leeb;->a:Licu;
+    new-instance v0, Leea;
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v1, p0, Leeb;->a:Lkgv;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v1, Lefx;
+
+    iget-object v2, p0, Leeb;->b:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    check-cast v2, Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    move-result v2
+    iget-object v3, p0, Leeb;->c:Lkgv;
 
-    add-int/lit8 v2, v2, 0x23
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    check-cast v3, Lgvc;
 
-    const-string v2, "ImageCaptureCommand Availability = "
+    iget-object v4, p0, Leeb;->d:Lkgv;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v4, Lgqc;
 
-    move-result-object v1
+    iget-object v5, p0, Leeb;->e:Lkgv;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-interface {v0, v1}, Licu;->b(Ljava/lang/String;)V
+    check-cast v5, Lfwg;
 
-    return-void
+    invoke-direct/range {v0 .. v5}, Leea;-><init>(Lefx;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgqc;Lfwg;)V
+
+    return-object v0
 .end method

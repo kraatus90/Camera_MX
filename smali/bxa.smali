@@ -1,68 +1,44 @@
-.class final Lbxa;
+.class public final Lbxa;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Lici;
+# static fields
+.field public static final a:Lbxa;
 
 
 # direct methods
-.method public constructor <init>(Lici;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lbxa;
+
+    invoke-direct {v0}, Lbxa;-><init>()V
+
+    sput-object v0, Lbxa;->a:Lbxa;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbxa;->a:Lici;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lici;
+    new-instance v0, Lcom/google/android/apps/camera/jni/gyro/GyroQueueImpl;
 
-    check-cast p2, Lici;
+    invoke-direct {v0}, Lcom/google/android/apps/camera/jni/gyro/GyroQueueImpl;-><init>()V
 
-    invoke-virtual {p1}, Lici;->b()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, Lbxa;->a:Lici;
-
-    invoke-virtual {v2}, Lici;->b()J
-
-    move-result-wide v2
-
-    sub-long/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v0
-
-    invoke-virtual {p2}, Lici;->b()J
-
-    move-result-wide v2
-
-    iget-object v4, p0, Lbxa;->a:Lici;
-
-    invoke-virtual {v4}, Lici;->b()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v2
-
-    cmp-long v0, v0, v2
-
-    return v0
+    return-object v0
 .end method

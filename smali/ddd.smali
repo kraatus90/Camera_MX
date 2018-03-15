@@ -1,17 +1,23 @@
-.class public interface abstract Lddd;
+.class public final Lddd;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# instance fields
+.field public final a:Lkgv;
 
-.method public abstract b()V
-.end method
+.field public final b:Lbqc;
 
-.method public abstract c()V
-.end method
 
-.method public abstract d()V
+# direct methods
+.method public constructor <init>(Lkgv;Lbqc;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lddd;->a:Lkgv;
+
+    iput-object p2, p0, Lddd;->b:Lbqc;
+
+    return-void
 .end method

@@ -12,11 +12,11 @@
 # instance fields
 .field public a:Ljava/io/File;
 
-.field private b:I
+.field private final b:I
 
 .field private c:Landroid/os/ParcelFileDescriptor;
 
-.field private d:I
+.field private final d:I
 
 .field private e:Landroid/graphics/Bitmap;
 
@@ -25,9 +25,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhla;
+    new-instance v0, Lhly;
 
-    invoke-direct {v0}, Lhla;-><init>()V
+    invoke-direct {v0}, Lhly;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/data/BitmapTeleporter;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -230,7 +230,7 @@
 
     const/16 v1, 0x4f45
 
-    invoke-static {p1, v1}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -238,21 +238,21 @@
 
     iget v3, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->b:I
 
-    invoke-static {p1, v2, v3}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v3}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v2, 0x2
 
     iget-object v3, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->c:Landroid/os/ParcelFileDescriptor;
 
-    invoke-static {p1, v2, v3, v0}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v2, v3, v0}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v0, 0x3
 
     iget v2, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->d:I
 
-    invoke-static {p1, v0, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v0, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v1}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v1}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     iput-object v4, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->c:Landroid/os/ParcelFileDescriptor;
 

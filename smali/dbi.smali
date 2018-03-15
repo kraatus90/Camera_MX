@@ -1,123 +1,55 @@
-.class public final enum Ldbi;
-.super Ljava/lang/Enum;
+.class final Ldbi;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lihg;
 
-# static fields
-.field public static final enum a:Ldbi;
 
-.field public static final enum b:Ldbi;
-
-.field public static final enum c:Ldbi;
-
-.field public static final enum d:Ldbi;
-
-.field public static final enum e:Ldbi;
-
-.field private static synthetic f:[Ldbi;
+# instance fields
+.field public final synthetic a:Ldal;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    const/4 v6, 0x4
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Ldbi;
-
-    const-string v1, "UNINITED"
-
-    invoke-direct {v0, v1, v2}, Ldbi;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldbi;->a:Ldbi;
-
-    new-instance v0, Ldbi;
-
-    const-string v1, "BACKGROUND"
-
-    invoke-direct {v0, v1, v3}, Ldbi;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldbi;->b:Ldbi;
-
-    new-instance v0, Ldbi;
-
-    const-string v1, "OPENING_CAMCORDER"
-
-    invoke-direct {v0, v1, v4}, Ldbi;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldbi;->c:Ldbi;
-
-    new-instance v0, Ldbi;
-
-    const-string v1, "CAMCORDER_OPENED"
-
-    invoke-direct {v0, v1, v5}, Ldbi;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldbi;->d:Ldbi;
-
-    new-instance v0, Ldbi;
-
-    const-string v1, "ERROR"
-
-    invoke-direct {v0, v1, v6}, Ldbi;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldbi;->e:Ldbi;
-
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Ldbi;
-
-    sget-object v1, Ldbi;->a:Ldbi;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Ldbi;->b:Ldbi;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Ldbi;->c:Ldbi;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Ldbi;->d:Ldbi;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Ldbi;->e:Ldbi;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Ldbi;->f:[Ldbi;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Ldbi;->a:Ldal;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Ldbi;
-    .locals 1
 
-    sget-object v0, Ldbi;->f:[Ldbi;
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {v0}, [Ldbi;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Ldbi;->a:Ldal;
 
-    move-result-object v0
+    iget v0, v0, Ldal;->s:I
 
-    check-cast v0, [Ldbi;
+    const/4 v1, 0x1
 
-    return-object v0
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Ldbi;->a:Ldal;
+
+    iget v0, v0, Ldal;->Q:I
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ldbi;->a:Ldal;
+
+    iget-object v0, v0, Ldal;->F:Landroid/os/Handler;
+
+    new-instance v1, Ldbj;
+
+    invoke-direct {v1, p0}, Ldbj;-><init>(Ldbi;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :cond_0
+    return-void
 .end method

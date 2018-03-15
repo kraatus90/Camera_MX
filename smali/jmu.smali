@@ -1,85 +1,49 @@
-.class final Ljmu;
-.super Ljkv;
+.class public Ljmu;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Ljmt;
+.field private final a:Ljmt;
+
+.field private final b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
 
 # direct methods
-.method constructor <init>(Ljmt;)V
+.method public constructor <init>(Ljmt;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
     .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Ljmu;->a:Ljmt;
 
-    invoke-direct {p0}, Ljkv;-><init>()V
+    iput-object p2, p0, Ljmu;->b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Z
-    .locals 1
+.method public final a(JJ)F
+    .locals 3
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ljmu;->b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    return v0
-.end method
+    invoke-interface {v0, p1, p2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowForTimestamp(J)Ljay;
 
-.method public final synthetic get(I)Ljava/lang/Object;
-    .locals 4
+    move-result-object v0
 
-    iget-object v0, p0, Ljmu;->a:Ljmt;
+    iget-object v1, p0, Ljmu;->b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    iget v0, v0, Ljmt;->c:I
+    invoke-interface {v1, p3, p4}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowForTimestamp(J)Ljay;
 
-    invoke-static {p1, v0}, Liya;->a(II)I
-
-    iget-object v0, p0, Ljmu;->a:Ljmt;
-
-    iget-object v0, v0, Ljmt;->a:[Ljava/lang/Object;
-
-    mul-int/lit8 v1, p1, 0x2
+    move-result-object v1
 
     iget-object v2, p0, Ljmu;->a:Ljmt;
 
-    iget v2, v2, Ljmt;->b:I
+    invoke-interface {v2, v0, v1}, Ljmt;->a(Ljay;Ljay;)F
 
-    add-int/2addr v1, v2
-
-    aget-object v0, v0, v1
-
-    iget-object v1, p0, Ljmu;->a:Ljmt;
-
-    iget-object v1, v1, Ljmt;->a:[Ljava/lang/Object;
-
-    mul-int/lit8 v2, p1, 0x2
-
-    iget-object v3, p0, Ljmu;->a:Ljmt;
-
-    iget v3, v3, Ljmt;->b:I
-
-    xor-int/lit8 v3, v3, 0x1
-
-    add-int/2addr v2, v3
-
-    aget-object v1, v1, v2
-
-    new-instance v2, Ljava/util/AbstractMap$SimpleImmutableEntry;
-
-    invoke-direct {v2, v0, v1}, Ljava/util/AbstractMap$SimpleImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-object v2
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Ljmu;->a:Ljmt;
-
-    iget v0, v0, Ljmt;->c:I
+    move-result v0
 
     return v0
 .end method

@@ -1,72 +1,43 @@
 .class final Ljnd;
-.super Ljim;
+.super Ljava/io/ByteArrayOutputStream;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljava/util/Iterator;
-
-.field private synthetic b:Ljnc;
+.field private final synthetic a:Ljnc;
 
 
 # direct methods
 .method constructor <init>(Ljnc;)V
-    .locals 1
+    .locals 0
 
-    iput-object p1, p0, Ljnd;->b:Ljnc;
+    iput-object p1, p0, Ljnd;->a:Ljnc;
 
-    invoke-direct {p0}, Ljim;-><init>()V
-
-    iget-object v0, p0, Ljnd;->b:Ljnc;
-
-    iget-object v0, v0, Ljnc;->a:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljnd;->a:Ljava/util/Iterator;
+    invoke-direct {p0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Ljava/lang/Object;
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    :cond_0
-    iget-object v0, p0, Ljnd;->a:Ljava/util/Iterator;
+    invoke-super {p0}, Ljava/io/ByteArrayOutputStream;->close()V
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Ljnd;->a:Ljnc;
 
-    move-result v0
+    iget-object v0, v0, Ljnc;->a:Lket;
 
-    if-eqz v0, :cond_1
+    new-instance v1, Ljava/io/ByteArrayInputStream;
 
-    iget-object v0, p0, Ljnd;->a:Ljava/util/Iterator;
+    invoke-virtual {p0}, Ljnd;->toByteArray()[B
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-direct {v1, v2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    iget-object v1, p0, Ljnd;->b:Ljnc;
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
-    iget-object v1, v1, Ljnc;->b:Ljava/util/Set;
-
-    invoke-interface {v1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    :goto_0
-    return-object v0
-
-    :cond_1
-    invoke-virtual {p0}, Ljnd;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    goto :goto_0
+    return-void
 .end method

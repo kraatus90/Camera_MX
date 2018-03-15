@@ -3,18 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/io/FilenameFilter;
-
-
-# instance fields
-.field private synthetic a:Ljava/util/regex/Pattern;
+.implements Lajc;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/regex/Pattern;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lajb;->a:Ljava/util/regex/Pattern;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,18 +17,20 @@
 
 
 # virtual methods
-.method public final accept(Ljava/io/File;Ljava/lang/String;)Z
+.method public final a()Ljava/lang/Class;
     .locals 1
 
-    iget-object v0, p0, Lajb;->a:Ljava/util/regex/Pattern;
+    const-class v0, Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v0, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    return-object v0
+.end method
+
+.method public final synthetic a([B)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

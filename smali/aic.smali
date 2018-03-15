@@ -1,23 +1,23 @@
-.class interface abstract Laic;
+.class public final Laic;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a()Landroid/graphics/Bitmap;
-.end method
+# instance fields
+.field public final synthetic a:Landroid/content/Context;
 
-.method public abstract a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-.end method
+.field public final synthetic b:Ljava/lang/String;
 
-.method public abstract a(Landroid/graphics/Bitmap;)V
-.end method
 
-.method public abstract b(IILandroid/graphics/Bitmap$Config;)Ljava/lang/String;
-.end method
+# direct methods
+.method constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 0
 
-.method public abstract b(Landroid/graphics/Bitmap;)Ljava/lang/String;
-.end method
+    iput-object p1, p0, Laic;->a:Landroid/content/Context;
 
-.method public abstract c(Landroid/graphics/Bitmap;)I
+    iput-object p2, p0, Laic;->b:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

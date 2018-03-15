@@ -3,120 +3,396 @@
 .source "PG"
 
 # interfaces
-.implements Lfua;
+.implements Lenl;
+
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private synthetic a:Ljava/io/File;
+.field private final b:Lkgv;
 
-.field private synthetic b:Lgvw;
+.field private c:Landroid/location/LocationManager;
 
-.field private synthetic c:Lgrz;
+.field private d:Z
 
-.field private synthetic d:Lenb;
+.field private e:[Lenk;
 
 
 # direct methods
-.method constructor <init>(Lenb;Ljava/io/File;Lgvw;Lgrz;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lenj;->d:Lenb;
+    const-string v0, "LcyLocProvider"
 
-    iput-object p2, p0, Lenj;->a:Ljava/io/File;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p3, p0, Lenj;->b:Lgvw;
+    move-result-object v0
 
-    iput-object p4, p0, Lenj;->c:Lgrz;
+    sput-object v0, Lenj;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method constructor <init>(Lkgv;)V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lenk;
+
+    const/4 v1, 0x0
+
+    new-instance v2, Lenk;
+
+    const-string v3, "gps"
+
+    invoke-direct {v2, v3}, Lenk;-><init>(Ljava/lang/String;)V
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    new-instance v2, Lenk;
+
+    const-string v3, "network"
+
+    invoke-direct {v2, v3}, Lenk;-><init>(Ljava/lang/String;)V
+
+    aput-object v2, v0, v1
+
+    iput-object v0, p0, Lenj;->e:[Lenk;
+
+    iput-object p1, p0, Lenj;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/io/File;
-    .locals 1
+.method public final a(Z)Lkeh;
+    .locals 7
 
-    iget-object v0, p0, Lenj;->a:Ljava/io/File;
+    const/4 v0, 0x0
+
+    iget-boolean v1, p0, Lenj;->d:Z
+
+    if-eq v1, p1, :cond_1
+
+    iput-boolean p1, p0, Lenj;->d:Z
+
+    if-eqz p1, :cond_4
+
+    sget-object v0, Lenj;->a:Ljava/lang/String;
+
+    const-string v1, "starting location updates"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lenj;->c:Landroid/location/LocationManager;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lenj;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/location/LocationManager;
+
+    iput-object v0, p0, Lenj;->c:Landroid/location/LocationManager;
+
+    :cond_0
+    iget-object v0, p0, Lenj;->c:Landroid/location/LocationManager;
+
+    if-eqz v0, :cond_1
+
+    :try_start_0
+    iget-object v0, p0, Lenj;->c:Landroid/location/LocationManager;
+
+    const-string v1, "network"
+
+    const-wide/16 v2, 0x3e8
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lenj;->e:[Lenk;
+
+    const/4 v6, 0x1
+
+    aget-object v5, v5, v6
+
+    invoke-virtual/range {v0 .. v5}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
+    :try_start_1
+    iget-object v0, p0, Lenj;->c:Landroid/location/LocationManager;
+
+    const-string v1, "gps"
+
+    const-wide/16 v2, 0x3e8
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lenj;->e:[Lenk;
+
+    const/4 v6, 0x0
+
+    aget-object v5, v5, v6
+
+    invoke-virtual/range {v0 .. v5}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+    :try_end_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_3
+
+    :goto_1
+    sget-object v0, Lenj;->a:Ljava/lang/String;
+
+    const-string v1, "startReceivingLocationUpdates"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1
+    :goto_2
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
+
+    move-result-object v0
 
     return-object v0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lenj;->a:Ljava/lang/String;
+
+    const-string v2, "fail to request location update, ignore"
+
+    invoke-static {v1, v2, v0}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    sget-object v1, Lenj;->a:Ljava/lang/String;
+
+    const-string v2, "provider does not exist "
+
+    invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_3
+    invoke-static {v1, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_3
+
+    :catch_2
+    move-exception v0
+
+    sget-object v1, Lenj;->a:Ljava/lang/String;
+
+    const-string v2, "fail to request location update, ignore"
+
+    invoke-static {v1, v2, v0}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :catch_3
+    move-exception v0
+
+    sget-object v1, Lenj;->a:Ljava/lang/String;
+
+    const-string v2, "provider does not exist "
+
+    invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_4
+    invoke-static {v1, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_3
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_4
+
+    :cond_4
+    sget-object v1, Lenj;->a:Ljava/lang/String;
+
+    const-string v2, "stopping location updates"
+
+    invoke-static {v1, v2}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Lenj;->c:Landroid/location/LocationManager;
+
+    if-eqz v1, :cond_1
+
+    :goto_5
+    iget-object v1, p0, Lenj;->e:[Lenk;
+
+    array-length v1, v1
+
+    if-ge v0, v1, :cond_5
+
+    :try_start_2
+    iget-object v1, p0, Lenj;->c:Landroid/location/LocationManager;
+
+    iget-object v2, p0, Lenj;->e:[Lenk;
+
+    aget-object v2, v2, v0
+
+    invoke-virtual {v1, v2}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
+
+    :goto_6
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_5
+
+    :catch_4
+    move-exception v1
+
+    sget-object v2, Lenj;->a:Ljava/lang/String;
+
+    const-string v3, "fail to remove location listners, ignore"
+
+    invoke-static {v2, v3, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_6
+
+    :cond_5
+    sget-object v0, Lenj;->a:Ljava/lang/String;
+
+    const-string v1, "stopReceivingLocationUpdates"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_2
 .end method
 
-.method public final b()Lgvw;
-    .locals 1
-
-    iget-object v0, p0, Lenj;->b:Lgvw;
-
-    return-object v0
-.end method
-
-.method public final c()Licf;
-    .locals 2
-
-    iget-object v0, p0, Lenj;->c:Lgrz;
-
-    iget-object v0, v0, Lgrz;->c:Ljht;
+.method public final b()Landroid/location/Location;
+    .locals 4
 
     const/4 v1, 0x0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-boolean v0, p0, Lenj;->d:Z
 
-    move-result-object v1
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v1}, Ljht;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v0, v1
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v0}, Licf;->a(I)Licf;
-
-    move-result-object v0
-
+    :goto_0
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_1
+    iget-object v2, p0, Lenj;->e:[Lenk;
+
+    array-length v2, v2
+
+    if-ge v0, v2, :cond_3
+
+    iget-object v2, p0, Lenj;->e:[Lenk;
+
+    aget-object v2, v2, v0
+
+    iget-boolean v3, v2, Lenk;->b:Z
+
+    if-eqz v3, :cond_1
+
+    iget-object v2, v2, Lenk;->a:Landroid/location/Location;
+
+    :goto_2
+    if-eqz v2, :cond_2
+
+    move-object v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    move-object v2, v1
+
+    goto :goto_2
+
+    :cond_2
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    sget-object v0, Lenj;->a:Ljava/lang/String;
+
+    const-string v2, "No location received yet."
+
+    invoke-static {v0, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object v0, v1
+
+    goto :goto_0
 .end method
 
-.method public final d()Lici;
-    .locals 3
+.method public final d()V
+    .locals 2
 
-    new-instance v0, Lici;
+    sget-object v0, Lenj;->a:Ljava/lang/String;
 
-    iget-object v1, p0, Lenj;->c:Lgrz;
+    const-string v1, "disconnect"
 
-    iget-object v1, v1, Lgrz;->a:Lici;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget v1, v1, Lici;->a:I
-
-    iget-object v2, p0, Lenj;->c:Lgrz;
-
-    iget-object v2, v2, Lgrz;->a:Lici;
-
-    iget v2, v2, Lici;->b:I
-
-    invoke-direct {v0, v1, v2}, Lici;-><init>(II)V
-
-    return-object v0
-.end method
-
-.method public final e()Ljht;
-    .locals 1
-
-    iget-object v0, p0, Lenj;->d:Lenb;
-
-    iget-object v0, v0, Lenb;->h:Ljht;
-
-    return-object v0
-.end method
-
-.method public final f()Ljht;
-    .locals 1
-
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    return-object v0
+    return-void
 .end method

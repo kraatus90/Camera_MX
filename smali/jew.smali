@@ -1,20 +1,14 @@
-.class public final Ljew;
+.class final Ljew;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
-
-
-# instance fields
-.field private synthetic a:Ljava/io/Writer;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/Writer;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljew;->a:Ljava/io/Writer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,25 +17,46 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 7
 
-    check-cast p1, Ljbc;
+    new-instance v0, Ljaj;
 
-    instance-of v0, p1, Ljax;
+    const-string v1, "GIF_Summary"
 
-    if-eqz v0, :cond_0
+    const/4 v2, 0x1
 
-    check-cast p1, Ljax;
+    const-class v3, Ljnq;
 
-    new-instance v0, Ljbb;
+    const-string v4, "default"
 
-    iget-object v1, p0, Ljew;->a:Ljava/io/Writer;
+    invoke-virtual {p1, v3, v4}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-direct {v0, p1, p2, v1}, Ljbb;-><init>(Ljax;Ljava/lang/String;Ljava/io/Writer;)V
+    move-result-object v3
 
-    move-object p1, v0
+    check-cast v3, Ljnq;
 
-    :cond_0
-    return-object p1
+    const-class v4, Lizf;
+
+    const-string v5, "default"
+
+    invoke-virtual {p1, v4, v5}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lizf;
+
+    const-class v5, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;
+
+    const-string v6, "default"
+
+    invoke-virtual {p1, v5, v6}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;
+
+    invoke-direct/range {v0 .. v5}, Ljaj;-><init>(Ljava/lang/String;ILjnq;Lizf;Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;)V
+
+    return-object v0
 .end method

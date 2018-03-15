@@ -1,36 +1,59 @@
-.class final Lcbi;
+.class public final Lcbi;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
 
 # instance fields
-.field private synthetic a:Lcbf;
+.field public final a:J
+
+.field public final b:Lkeh;
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method constructor <init>(Lcbf;)V
-    .locals 0
+.method public constructor <init>(JLkeh;II)V
+    .locals 3
 
-    iput-object p1, p0, Lcbi;->a:Lcbf;
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    if-lez p4, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    if-lez p5, :cond_1
+
+    :goto_1
+    invoke-static {v1}, Ljii;->a(Z)V
+
+    iput-wide p1, p0, Lcbi;->a:J
+
+    iput-object p3, p0, Lcbi;->b:Lkeh;
+
+    iput p4, p0, Lcbi;->c:I
+
+    iput p5, p0, Lcbi;->d:I
+
     return-void
-.end method
 
+    :cond_0
+    move v0, v2
 
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+    goto :goto_0
 
-    iget-object v0, p0, Lcbi;->a:Lcbf;
+    :cond_1
+    move v1, v2
 
-    iget-object v0, v0, Lcbf;->b:Lcbk;
-
-    invoke-interface {v0}, Lcbk;->c()V
-
-    return-void
+    goto :goto_1
 .end method

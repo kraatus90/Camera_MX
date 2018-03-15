@@ -2,53 +2,111 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:F
 
-.field private b:Ljxn;
+.field public final b:F
+
+.field public final c:F
+
+.field private final d:F
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(FF)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgsn;->a:Ljxn;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    iput-object p2, p0, Lgsn;->b:Ljxn;
+    iput v0, p0, Lgsn;->a:F
+
+    iput p1, p0, Lgsn;->b:F
+
+    iput p2, p0, Lgsn;->d:F
+
+    iget v0, p0, Lgsn;->d:F
+
+    iget v1, p0, Lgsn;->b:F
+
+    sub-float/2addr v0, v1
+
+    iget v1, p0, Lgsn;->a:F
+
+    div-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x0
+
+    :cond_0
+    iput v0, p0, Lgsn;->c:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    new-instance v2, Lgsl;
+    iget v0, p0, Lgsn;->a:F
 
-    iget-object v0, p0, Lgsn;->a:Ljxn;
+    iget v1, p0, Lgsn;->b:F
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget v2, p0, Lgsn;->d:F
+
+    const/16 v3, 0x71
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "LinearScale{mDomainA=0.0, mDomainB="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lgsm;
+    const-string v3, ", mRangeA="
 
-    iget-object v1, p0, Lgsn;->b:Ljxn;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    check-cast v1, Licv;
+    move-result-object v0
 
-    invoke-direct {v2, v0, v1}, Lgsl;-><init>(Lgsm;Licv;)V
+    const-string v1, ", mRangeB="
 
-    return-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

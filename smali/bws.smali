@@ -1,45 +1,42 @@
-.class public final Lbws;
+.class final synthetic Lbws;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ligs;
 
 
 # instance fields
-.field public final a:Lbwd;
-
-.field public final b:Leaz;
-
-.field public final c:Ldlv;
-
-.field public final d:Lbzj;
-
-.field public final e:Liee;
+.field private final a:Laue;
 
 
 # direct methods
-.method public constructor <init>(Lbwd;Leaz;Ldlv;Lbzj;Liee;)V
+.method constructor <init>(Laue;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Lbws;->a:Laue;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
+.end method
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p4}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-static {p5}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lbws;->a:Laue;
 
-    iput-object p1, p0, Lbws;->a:Lbwd;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iput-object p2, p0, Lbws;->b:Leaz;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iput-object p3, p0, Lbws;->c:Ldlv;
+    move-result v1
 
-    iput-object p4, p0, Lbws;->d:Lbzj;
+    if-eqz v1, :cond_0
 
-    iput-object p5, p0, Lbws;->e:Liee;
+    invoke-interface {v0}, Laue;->c()V
 
+    :cond_0
     return-void
 .end method

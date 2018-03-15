@@ -1,98 +1,99 @@
 .class public final Lcnm;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcnk;
+.field private final synthetic a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
 
 # direct methods
-.method public constructor <init>(Lcnk;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lcnm;->a:Lcnk;
+    iput-object p1, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    const/4 v5, 0x0
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    iget-object v0, p0, Lcnm;->a:Lcnk;
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->i:Lcnn;
 
-    iget-object v0, v0, Lcnk;->f:Ljavax/microedition/khronos/egl/EGL10;
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcnm;->a:Lcnk;
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    iget-object v1, v1, Lcnk;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->i:Lcnn;
 
-    iget-object v2, p0, Lcnm;->a:Lcnk;
+    invoke-interface {v0}, Lcnn;->b()V
 
-    iget-object v2, v2, Lcnk;->e:Ljavax/microedition/khronos/egl/EGLSurface;
+    :cond_0
+    return-void
+.end method
 
-    invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 3
 
-    iget-object v0, p0, Lcnm;->a:Lcnk;
+    const/4 v2, 0x0
 
-    iget-object v0, v0, Lcnk;->f:Ljavax/microedition/khronos/egl/EGL10;
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    iget-object v1, p0, Lcnm;->a:Lcnk;
+    const/4 v1, 0x4
 
-    iget-object v1, v1, Lcnk;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->setVisibility(I)V
 
-    iget-object v2, p0, Lcnm;->a:Lcnk;
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    iget-object v2, v2, Lcnk;->d:Ljavax/microedition/khronos/egl/EGLContext;
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->g:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcnm;->a:Lcnk;
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    iget-object v0, v0, Lcnk;->f:Ljavax/microedition/khronos/egl/EGL10;
+    iget-boolean v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->e:Z
 
-    iget-object v1, p0, Lcnm;->a:Lcnk;
+    if-eqz v0, :cond_1
 
-    iget-object v1, v1, Lcnk;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    sget-object v2, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE:Ljavax/microedition/khronos/egl/EGLSurface;
+    iput-boolean v2, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->e:Z
 
-    sget-object v3, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE:Ljavax/microedition/khronos/egl/EGLSurface;
+    :cond_0
+    :goto_0
+    return-void
 
-    sget-object v4, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_CONTEXT:Ljavax/microedition/khronos/egl/EGLContext;
+    :cond_1
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    invoke-interface {v0, v1, v2, v3, v4}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->i:Lcnn;
 
-    iget-object v0, p0, Lcnm;->a:Lcnk;
+    if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lcnk;->f:Ljavax/microedition/khronos/egl/EGL10;
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    iget-object v1, p0, Lcnm;->a:Lcnk;
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->i:Lcnn;
 
-    iget-object v1, v1, Lcnk;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+    invoke-interface {v0}, Lcnn;->c()V
 
-    invoke-interface {v0, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglTerminate(Ljavax/microedition/khronos/egl/EGLDisplay;)Z
+    goto :goto_0
+.end method
 
-    iget-object v0, p0, Lcnm;->a:Lcnk;
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-    iput-object v5, v0, Lcnk;->e:Ljavax/microedition/khronos/egl/EGLSurface;
+    iget-object v0, p0, Lcnm;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
 
-    iget-object v0, p0, Lcnm;->a:Lcnk;
+    const/4 v1, 0x0
 
-    iput-object v5, v0, Lcnk;->d:Ljavax/microedition/khronos/egl/EGLContext;
-
-    iget-object v0, p0, Lcnm;->a:Lcnk;
-
-    iput-object v5, v0, Lcnk;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->setVisibility(I)V
 
     return-void
 .end method

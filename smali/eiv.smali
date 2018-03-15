@@ -1,56 +1,38 @@
-.class public final Leiv;
+.class final Leiv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Laba;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Leiu;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Leiu;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leiv;->a:Leiu;
 
-    iput-object p1, p0, Leiv;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leiv;
-
-    invoke-direct {v0, p0}, Leiv;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Leiv;->a:Ljxn;
+    iget-object v0, p0, Leiv;->a:Leiu;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Leiu;->a:Lein;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    check-cast v0, Lihe;
+    iput-boolean v1, v0, Lein;->u:Z
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lihe;
-
-    return-object v0
+    return-void
 .end method

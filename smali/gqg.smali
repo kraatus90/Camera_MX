@@ -1,85 +1,167 @@
-.class final Lgqg;
-.super Landroid/content/BroadcastReceiver;
+.class public final Lgqg;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lgqf;
+.field public a:J
+
+.field public b:Landroid/content/res/Resources;
+
+.field public c:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Lgqf;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lgqg;->a:Lgqf;
-
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public final a()V
     .locals 4
 
-    iget-object v0, p0, Lgqg;->a:Lgqf;
+    const-wide/16 v0, 0x0
 
-    iget-boolean v0, v0, Lgqf;->c:Z
+    invoke-virtual {p0, v0, v1}, Lgqg;->a(J)V
 
-    if-nez v0, :cond_0
+    invoke-virtual {p0}, Lgqg;->b()V
 
-    iget-object v0, p0, Lgqg;->a:Lgqf;
+    iget-object v0, p0, Lgqg;->c:Landroid/widget/TextView;
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    new-instance v1, Lgqh;
+
+    invoke-direct {v1, p0}, Lgqh;-><init>(Lgqg;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    return-void
+.end method
+
+.method public final a(J)V
+    .locals 5
+
+    iput-wide p1, p0, Lgqg;->a:J
+
+    iget-object v0, p0, Lgqg;->c:Landroid/widget/TextView;
+
+    iget-wide v2, p0, Lgqg;->a:J
+
+    invoke-static {v2, v3}, Lhcc;->a(J)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v2
+    return-void
+.end method
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+.method public final a(Landroid/widget/TextView;)V
+    .locals 3
 
-    move-result v2
+    new-instance v0, Lhcc;
 
-    add-int/lit8 v2, v2, 0x2b
+    invoke-direct {v0}, Lhcc;-><init>()V
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    move-result-object v0
 
-    const-string v2, "Received ScreenOff broadcast after onStop: "
+    iput-object v0, p0, Lgqg;->b:Landroid/content/res/Resources;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lgqg;->c:Landroid/widget/TextView;
 
-    move-result-object v2
+    iget-object v0, p0, Lgqg;->c:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lgqg;->b:Landroid/content/res/Resources;
 
-    move-result-object v1
+    const v2, 0x7f0d00de
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v0}, Lgqf;->e()V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    iget-object v0, v0, Lgqf;->a:Lham;
+    return-void
+.end method
 
-    invoke-virtual {v0, v1}, Lham;->a(Ljava/lang/String;)V
+.method public final a(Z)V
+    .locals 4
+
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lgqg;->c:Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    new-instance v1, Lgqi;
+
+    invoke-direct {v1, p0}, Lgqi;-><init>(Lgqg;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v0, p0, Lgqg;->a:Lgqf;
+    iget-object v0, p0, Lgqg;->c:Landroid/widget/TextView;
 
-    iget-object v0, v0, Lgqf;->b:Licu;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    const-string v1, "Ignoring ScreenOff shutdown behavior, the activity is still started."
+    iget-object v0, p0, Lgqg;->c:Landroid/widget/TextView;
 
-    invoke-interface {v0, v1}, Licu;->d(Ljava/lang/String;)V
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    iget-object v0, p0, Lgqg;->c:Landroid/widget/TextView;
+
+    const v1, 0x7f0200f4
+
+    invoke-virtual {v0, v1, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+    return-void
 .end method

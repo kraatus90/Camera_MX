@@ -1,82 +1,48 @@
-.class final Liwd;
-.super Ljava/lang/Object;
+.class public final Liwd;
+.super Liwe;
 .source "PG"
 
-# interfaces
-.implements Liuh;
+
+# instance fields
+.field private final b:Ljava/lang/AutoCloseable;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Liwf;Ljava/lang/AutoCloseable;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Liwe;-><init>(Liwf;)V
+
+    iput-object p2, p0, Liwd;->b:Ljava/lang/AutoCloseable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 6
+.method public final a(I)V
+    .locals 3
 
-    const-class v0, Ljan;
+    :try_start_0
+    iget-object v0, p0, Liwd;->b:Ljava/lang/AutoCloseable;
 
-    const-string v1, "post_proc_quality_metric"
+    invoke-interface {v0}, Ljava/lang/AutoCloseable;->close()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    :goto_0
+    invoke-super {p0, p1}, Liwe;->a(I)V
 
-    move-result-object v0
+    return-void
 
-    check-cast v0, Ljan;
+    :catch_0
+    move-exception v0
 
-    const-class v1, Ljan;
+    const-string v1, "CloseOnStopListener"
 
-    const-string v2, "video_presentation_time"
+    const-string v2, "Exception while trying to close object."
 
-    invoke-virtual {p1, v1, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-result-object v1
-
-    check-cast v1, Ljan;
-
-    const/4 v2, 0x3
-
-    new-array v3, v2, [Ljbc;
-
-    const/4 v4, 0x0
-
-    const-class v2, Ljbc;
-
-    const-string v5, "continuous_action"
-
-    invoke-virtual {p1, v2, v5}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljbc;
-
-    aput-object v2, v3, v4
-
-    const/4 v2, 0x1
-
-    new-instance v4, Ljch;
-
-    invoke-direct {v4, v1}, Ljch;-><init>(Ljan;)V
-
-    aput-object v4, v3, v2
-
-    const/4 v1, 0x2
-
-    new-instance v2, Ljaw;
-
-    invoke-direct {v2, v0}, Ljaw;-><init>(Ljan;)V
-
-    aput-object v2, v3, v1
-
-    invoke-static {v3}, Ljax;->a([Ljbc;)Ljax;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 .end method

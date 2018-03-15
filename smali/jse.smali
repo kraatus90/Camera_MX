@@ -1,32 +1,153 @@
 .class final Ljse;
-.super Ljava/lang/Object;
+.super Ljsc;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ljava/util/ListIterator;
+
+
+# instance fields
+.field private final synthetic b:Ljsd;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljsd;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljse;->b:Ljsd;
+
+    invoke-direct {p0, p1}, Ljsc;-><init>(Ljsb;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>(Ljsd;I)V
     .locals 1
 
-    check-cast p1, Ljava/lang/reflect/Type;
+    iput-object p1, p0, Ljse;->b:Ljsd;
 
-    sget-object v0, Ljsk;->c:Ljsk;
+    iget-object v0, p1, Ljsb;->b:Ljava/util/Collection;
 
-    invoke-virtual {v0, p1}, Ljsk;->c(Ljava/lang/reflect/Type;)Ljava/lang/String;
+    check-cast v0, Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Ljsc;-><init>(Ljsb;Ljava/util/Iterator;)V
+
+    return-void
+.end method
+
+.method private final b()Ljava/util/ListIterator;
+    .locals 1
+
+    invoke-virtual {p0}, Ljsc;->a()V
+
+    iget-object v0, p0, Ljsc;->a:Ljava/util/Iterator;
+
+    check-cast v0, Ljava/util/ListIterator;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final add(Ljava/lang/Object;)V
+    .locals 2
+
+    iget-object v0, p0, Ljse;->b:Ljsd;
+
+    invoke-virtual {v0}, Ljsd;->isEmpty()Z
+
+    move-result v0
+
+    invoke-direct {p0}, Ljse;->b()Ljava/util/ListIterator;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ljse;->b:Ljsd;
+
+    iget-object v1, v1, Ljsd;->d:Ljru;
+
+    invoke-static {v1}, Ljru;->b(Ljru;)I
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljse;->b:Ljsd;
+
+    invoke-virtual {v0}, Ljsd;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final hasPrevious()Z
+    .locals 1
+
+    invoke-direct {p0}, Ljse;->b()Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final nextIndex()I
+    .locals 1
+
+    invoke-direct {p0}, Ljse;->b()Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 1
+
+    invoke-direct {p0}, Ljse;->b()Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final previousIndex()I
+    .locals 1
+
+    invoke-direct {p0}, Ljse;->b()Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljse;->b()Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/ListIterator;->set(Ljava/lang/Object;)V
+
+    return-void
 .end method

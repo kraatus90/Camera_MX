@@ -2,16 +2,19 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
 
 # instance fields
-.field public final synthetic a:Landroid/support/design/widget/FloatingActionButton;
+.field private final synthetic a:Landroid/support/design/widget/CoordinatorLayout;
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/design/widget/FloatingActionButton;)V
+.method public constructor <init>(Landroid/support/design/widget/CoordinatorLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lah;->a:Landroid/support/design/widget/FloatingActionButton;
+    iput-object p1, p0, Lah;->a:Landroid/support/design/widget/CoordinatorLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,30 +23,16 @@
 
 
 # virtual methods
-.method public final a()F
+.method public final onPreDraw()Z
     .locals 2
 
-    iget-object v0, p0, Lah;->a:Landroid/support/design/widget/FloatingActionButton;
+    iget-object v0, p0, Lah;->a:Landroid/support/design/widget/CoordinatorLayout;
 
-    invoke-virtual {v0}, Landroid/support/design/widget/FloatingActionButton;->c()I
+    const/4 v1, 0x0
 
-    move-result v0
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/CoordinatorLayout;->a(I)V
 
-    int-to-float v0, v0
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v1
+    const/4 v0, 0x1
 
     return v0
-.end method
-
-.method public final a(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
-
-    iget-object v0, p0, Lah;->a:Landroid/support/design/widget/FloatingActionButton;
-
-    invoke-static {v0, p1}, Landroid/support/design/widget/FloatingActionButton;->a(Landroid/support/design/widget/FloatingActionButton;Landroid/graphics/drawable/Drawable;)V
-
-    return-void
 .end method

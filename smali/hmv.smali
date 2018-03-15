@@ -1,400 +1,174 @@
-.class abstract Lhmv;
-.super Lhmj;
+.class public abstract Lhmv;
+.super Lhmf;
+
+# interfaces
+.implements Lhlk;
+.implements Lhmx;
 
 
 # instance fields
-.field private a:I
+.field private final g:Ljava/util/Set;
+
+.field private final h:Landroid/accounts/Account;
 
 
 # direct methods
-.method protected constructor <init>([B)V
-    .locals 13
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ILhmq;Lhln;Lhlo;)V
+    .locals 9
 
-    const/16 v12, 0x19
-
-    const/4 v2, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0}, Lhmj;-><init>()V
-
-    array-length v0, p1
-
-    if-eq v0, v12, :cond_2
-
-    const-string v7, "GoogleCertificates"
-
-    array-length v8, p1
-
-    array-length v4, p1
-
-    if-eqz p1, :cond_0
-
-    array-length v0, p1
-
-    if-eqz v0, :cond_0
-
-    if-lez v4, :cond_0
-
-    array-length v0, p1
-
-    if-le v4, v0, :cond_3
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1}, Lhmy;->a(Landroid/content/Context;)Lhmy;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    sget-object v4, Lhky;->a:Lhky;
 
-    move-result v3
+    invoke-static {p5}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    add-int/lit8 v3, v3, 0x33
+    move-result-object v7
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    check-cast v7, Lhln;
 
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-static {p6}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "Cert hash data has incorrect length ("
+    move-result-object v8
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v8, Lhlo;
 
-    move-result-object v3
+    move-object v0, p0
 
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-object v1, p1
 
-    move-result-object v3
+    move-object v2, p2
 
-    const-string v4, "):\n"
+    move v5, p3
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object v6, p4
 
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v3, Ljava/lang/Exception;
-
-    invoke-direct {v3}, Ljava/lang/Exception;-><init>()V
-
-    invoke-static {v7, v0, v3}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    invoke-static {p1, v1, v12}, Ljava/util/Arrays;->copyOfRange([BII)[B
-
-    move-result-object p1
-
-    array-length v0, p1
-
-    if-ne v0, v12, :cond_1
-
-    move v1, v2
-
-    :cond_1
-    array-length v0, p1
-
-    const/16 v2, 0x37
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "cert hash data has incorrect length. length="
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lhjg;->b(ZLjava/lang/Object;)V
-
-    :cond_2
-    invoke-static {p1}, Ljava/util/Arrays;->hashCode([B)I
-
-    move-result v0
-
-    iput v0, p0, Lhmv;->a:I
+    invoke-direct/range {v0 .. v8}, Lhmv;-><init>(Landroid/content/Context;Landroid/os/Looper;Lhmy;Lhky;ILhmq;Lhln;Lhlo;)V
 
     return-void
+.end method
 
-    :cond_3
-    add-int/lit8 v0, v4, 0x10
+.method private constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lhmy;Lhky;ILhmq;Lhln;Lhlo;)V
+    .locals 10
 
-    add-int/lit8 v0, v0, -0x1
+    if-nez p7, :cond_1
 
-    div-int/lit8 v0, v0, 0x10
+    const/4 v7, 0x0
 
-    mul-int/lit8 v0, v0, 0x39
+    :goto_0
+    if-nez p8, :cond_2
 
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9, v0}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    move v3, v1
-
-    move v0, v4
-
-    move v6, v1
+    const/4 v8, 0x0
 
     :goto_1
-    if-lez v0, :cond_9
+    move-object/from16 v0, p6
 
-    if-nez v6, :cond_8
+    iget-object v9, v0, Lhmq;->f:Ljava/lang/String;
 
-    const/high16 v5, 0x10000
+    move-object v1, p0
 
-    if-ge v4, v5, :cond_7
+    move-object v2, p1
 
-    const-string v5, "%04X:"
+    move-object v3, p2
 
-    new-array v10, v2, [Ljava/lang/Object;
+    move-object v4, p3
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-object v5, p4
 
-    move-result-object v11
+    move v6, p5
 
-    aput-object v11, v10, v1
+    invoke-direct/range {v1 .. v9}, Lhmf;-><init>(Landroid/content/Context;Landroid/os/Looper;Lhmy;Lhla;ILhmh;Lhmi;Ljava/lang/String;)V
 
-    invoke-static {v5, v10}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-object/from16 v0, p6
 
-    move-result-object v5
+    iget-object v1, v0, Lhmq;->a:Landroid/accounts/Account;
 
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v1, p0, Lhmv;->h:Landroid/accounts/Account;
 
-    :cond_4
-    :goto_2
-    const-string v5, " %02X"
+    move-object/from16 v0, p6
 
-    new-array v10, v2, [Ljava/lang/Object;
+    iget-object v2, v0, Lhmq;->c:Ljava/util/Set;
 
-    aget-byte v11, p1, v3
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    and-int/lit16 v11, v11, 0xff
+    move-result-object v3
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result-object v11
+    move-result v1
 
-    aput-object v11, v10, v1
+    if-eqz v1, :cond_3
 
-    invoke-static {v5, v10}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v1, Lcom/google/android/gms/common/api/Scope;
 
-    add-int/lit8 v5, v0, -0x1
+    invoke-interface {v2, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    add-int/lit8 v0, v6, 0x1
+    move-result v1
 
-    const/16 v6, 0x10
+    if-nez v1, :cond_0
 
-    if-eq v0, v6, :cond_5
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    if-nez v5, :cond_6
+    const-string v2, "Expanding scopes is not permitted, use implied scopes instead"
 
-    :cond_5
-    const/16 v0, 0xa
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    throw v1
 
-    move v0, v1
+    :cond_1
+    new-instance v7, Lhmh;
 
-    :cond_6
-    add-int/lit8 v3, v3, 0x1
+    move-object/from16 v0, p7
 
-    move v6, v0
+    invoke-direct {v7, v0}, Lhmh;-><init>(Lhln;)V
 
-    move v0, v5
+    goto :goto_0
+
+    :cond_2
+    new-instance v8, Lhmi;
+
+    move-object/from16 v0, p8
+
+    invoke-direct {v8, v0}, Lhmi;-><init>(Lhlo;)V
 
     goto :goto_1
 
-    :cond_7
-    const-string v5, "%08X:"
+    :cond_3
+    iput-object v2, p0, Lhmv;->g:Ljava/util/Set;
 
-    new-array v10, v2, [Ljava/lang/Object;
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v11
-
-    aput-object v11, v10, v1
-
-    invoke-static {v5, v10}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :cond_8
-    const/16 v5, 0x8
-
-    if-ne v6, v5, :cond_4
-
-    const-string v5, " -"
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :cond_9
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_0
-.end method
-
-.method protected static a(Ljava/lang/String;)[B
-    .locals 2
-
-    :try_start_0
-    const-string v0, "ISO-8859-1"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhnb;
-    .locals 2
-
-    invoke-virtual {p0}, Lhmv;->c()[B
-
-    move-result-object v0
-
-    new-instance v1, Lhne;
-
-    invoke-direct {v1, v0}, Lhne;-><init>(Ljava/lang/Object;)V
-
-    return-object v1
-.end method
-
-.method public final b()I
+.method public final k()Landroid/accounts/Account;
     .locals 1
 
-    invoke-virtual {p0}, Lhmv;->hashCode()I
+    iget-object v0, p0, Lhmv;->h:Landroid/accounts/Account;
 
-    move-result v0
-
-    return v0
+    return-object v0
 .end method
 
-.method abstract c()[B
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_0
-
-    instance-of v0, p1, Lhmi;
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    :try_start_0
-    check-cast p1, Lhmi;
-
-    invoke-interface {p1}, Lhmi;->b()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lhmv;->hashCode()I
-
-    move-result v2
-
-    if-eq v0, v2, :cond_2
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-interface {p1}, Lhmi;->a()Lhnb;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lhne;->a(Lhnb;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [B
-
-    invoke-virtual {p0}, Lhmv;->c()[B
-
-    move-result-object v2
-
-    invoke-static {v2, v0}, Ljava/util/Arrays;->equals([B[B)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    const-string v2, "GoogleCertificates"
-
-    const-string v3, "Failed to get Google certificates from remote"
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method public hashCode()I
+.method public final l()[Lcom/google/android/gms/common/zzc;
     .locals 1
 
-    iget v0, p0, Lhmv;->a:I
+    const/4 v0, 0x0
 
-    return v0
+    new-array v0, v0, [Lcom/google/android/gms/common/zzc;
+
+    return-object v0
+.end method
+
+.method protected final q()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Lhmv;->g:Ljava/util/Set;
+
+    return-object v0
 .end method

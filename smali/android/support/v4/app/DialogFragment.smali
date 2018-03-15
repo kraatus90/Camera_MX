@@ -115,24 +115,11 @@
 
     iput-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShownByMe:Z
 
-    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    :cond_1
     iput-boolean v2, p0, Landroid/support/v4/app/DialogFragment;->mViewDestroyed:Z
 
     iget v0, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
 
-    if-ltz v0, :cond_2
+    if-ltz v0, :cond_1
 
     invoke-virtual {p0}, Landroid/support/v4/app/DialogFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
@@ -148,7 +135,7 @@
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     invoke-virtual {p0}, Landroid/support/v4/app/DialogFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
@@ -159,13 +146,13 @@
 
     invoke-virtual {v0, p0}, Landroid/support/v4/app/FragmentTransaction;->remove(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commitAllowingStateLoss()I
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
 
     goto :goto_0
@@ -777,6 +764,28 @@
     invoke-virtual {v0, p0, p2}, Landroid/support/v4/app/FragmentTransaction;->add(Landroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
+
+    return-void
+.end method
+
+.method public showNow(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mDismissed:Z
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShownByMe:Z
+
+    invoke-virtual {p1}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p2}, Landroid/support/v4/app/FragmentTransaction;->add(Landroid/support/v4/app/Fragment;Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
+
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commitNow()V
 
     return-void
 .end method

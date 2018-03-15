@@ -1,31 +1,68 @@
-.class final Lifv;
+.class public final synthetic Lifv;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Lihj;
-
-.field public final b:Lihk;
-
-.field public final c:Licz;
-
-.field public final d:Licu;
+.field private final a:Lifi;
 
 
 # direct methods
-.method constructor <init>(Lihj;Lihk;Licz;Licu;)V
+.method public constructor <init>(Lifi;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lifv;->a:Lihj;
+    iput-object p1, p0, Lifv;->a:Lifi;
 
-    iput-object p2, p0, Lifv;->b:Lihk;
+    return-void
+.end method
 
-    iput-object p3, p0, Lifv;->c:Licz;
 
-    iput-object p4, p0, Lifv;->d:Licu;
+# virtual methods
+.method public final run()V
+    .locals 3
 
+    iget-object v1, p0, Lifv;->a:Lifi;
+
+    iget-boolean v0, v1, Lifi;->j:Z
+
+    if-nez v0, :cond_1
+
+    iget-object v0, v1, Lifi;->d:Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lifj;
+
+    invoke-interface {v0}, Lifj;->f()V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, v1, Lifi;->j:Z
+
+    :cond_1
     return-void
 .end method

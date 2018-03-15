@@ -1,90 +1,59 @@
 .class public final Lbdl;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbdl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/util/List;)Ljht;
-    .locals 5
 
-    new-instance v2, Ljava/util/LinkedList;
+# virtual methods
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 3
 
-    invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
+    const/4 v2, 0x0
 
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lbdl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    move-result-object v3
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/burstchip/BurstChip;->setVisibility(I)V
 
-    :cond_0
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lbdl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    move-result v0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/burstchip/BurstChip;->setAlpha(F)V
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p0, Lbdl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    check-cast v0, Landroid/util/Range;
+    invoke-virtual {v0, v2}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setAlpha(I)V
 
-    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+    iget-object v0, p0, Lbdl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    move-result-object v1
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    check-cast v1, Ljava/lang/Integer;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+    invoke-virtual {v0, v2, v1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setVisible(ZZ)Z
 
-    move-result-object v4
+    iget-object v0, p0, Lbdl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    invoke-virtual {v1, v4}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
 
-    move-result v1
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    if-nez v1, :cond_0
-
-    invoke-virtual {v2, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v2}, Ljava/util/LinkedList;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    :goto_1
-    return-object v0
-
-    :cond_2
-    new-instance v0, Lbdm;
-
-    invoke-direct {v0}, Lbdm;-><init>()V
-
-    invoke-static {v2, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    invoke-virtual {v2}, Ljava/util/LinkedList;->getLast()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Range;
-
-    invoke-static {v0}, Ljht;->b(Ljava/lang/Object;)Ljht;
-
-    move-result-object v0
-
-    goto :goto_1
+    return-void
 .end method

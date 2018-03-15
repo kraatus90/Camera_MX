@@ -1,39 +1,82 @@
-.class final synthetic Lfjc;
+.class final Lfjc;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lfin;
 
 
 # instance fields
-.field private a:Lfiw;
+.field private final synthetic a:Lfin;
+
+.field private final synthetic b:Lfjd;
 
 
 # direct methods
-.method constructor <init>(Lfiw;)V
+.method constructor <init>(Lfin;Lfjd;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfjc;->a:Lfin;
 
-    iput-object p1, p0, Lfjc;->a:Lfiw;
+    iput-object p2, p0, Lfjc;->b:Lfjd;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a(Lfjg;)Lkeh;
+    .locals 7
 
-    iget-object v0, p0, Lfjc;->a:Lfiw;
+    iget-object v0, p0, Lfjc;->a:Lfin;
 
-    iget-object v1, v0, Lfiw;->a:Lhzt;
+    new-instance v1, Lfjg;
 
-    new-instance v2, Lfiz;
+    iget-object v2, p0, Lfjc;->b:Lfjd;
 
-    invoke-direct {v2, v0}, Lfiz;-><init>(Lfiw;)V
+    invoke-virtual {p1}, Lfjg;->f()J
 
-    invoke-virtual {v1, v2}, Lhzt;->a(Ljava/lang/Runnable;)V
+    move-result-wide v4
 
-    return-void
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lfjd;->a(Ljava/lang/Long;)Lket;
+
+    move-result-object v3
+
+    new-instance v6, Lfje;
+
+    invoke-direct {v6, v2, v4, v5}, Lfje;-><init>(Lfjd;J)V
+
+    sget-object v2, Lken;->a:Lken;
+
+    invoke-static {v3, v6, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    new-instance v2, Lial;
+
+    invoke-direct {v2, v3}, Lial;-><init>(Lkeh;)V
+
+    invoke-direct {v1, p1, v2}, Lfjg;-><init>(Link;Lkeh;)V
+
+    invoke-interface {v0, v1}, Lfin;->a(Lfjg;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a()Z
+    .locals 1
+
+    iget-object v0, p0, Lfjc;->a:Lfin;
+
+    invoke-interface {v0}, Lfin;->a()Z
+
+    move-result v0
+
+    return v0
 .end method

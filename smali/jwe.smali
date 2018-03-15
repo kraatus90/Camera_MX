@@ -1,133 +1,128 @@
-.class public final Ljwe;
-.super Ljava/lang/Object;
+.class final Ljwe;
+.super Ljwh;
 .source "PG"
 
 
 # instance fields
-.field public a:Ljava/lang/Object;
+.field public final synthetic a:Ljava/util/Set;
+
+.field public final synthetic b:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljava/util/Set;Ljava/util/Set;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljwe;->a:Ljava/util/Set;
+
+    iput-object p2, p0, Ljwe;->b:Ljava/util/Set;
+
+    invoke-direct {p0}, Ljwh;-><init>()V
 
     return-void
-.end method
-
-.method public static a(J)Ljava/lang/String;
-    .locals 12
-
-    const/16 v0, 0x3f
-
-    const/4 v2, 0x1
-
-    const-wide/16 v10, 0xa
-
-    const-wide/16 v8, 0x0
-
-    const/16 v5, 0xa
-
-    const-string v1, "radix (%s) must be between Character.MIN_RADIX and Character.MAX_RADIX"
-
-    invoke-static {v2, v1, v5}, Liya;->a(ZLjava/lang/String;I)V
-
-    cmp-long v1, p0, v8
-
-    if-nez v1, :cond_0
-
-    const-string v0, "0"
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    cmp-long v1, p0, v8
-
-    if-lez v1, :cond_1
-
-    invoke-static {p0, p1, v5}, Ljava/lang/Long;->toString(JI)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    const/16 v1, 0x40
-
-    new-array v4, v1, [C
-
-    ushr-long v2, p0, v2
-
-    const-wide/16 v6, 0x5
-
-    div-long/2addr v2, v6
-
-    mul-long v6, v2, v10
-
-    sub-long v6, p0, v6
-
-    long-to-int v1, v6
-
-    invoke-static {v1, v5}, Ljava/lang/Character;->forDigit(II)C
-
-    move-result v1
-
-    aput-char v1, v4, v0
-
-    move v1, v0
-
-    :goto_1
-    cmp-long v0, v2, v8
-
-    if-lez v0, :cond_2
-
-    add-int/lit8 v0, v1, -0x1
-
-    rem-long v6, v2, v10
-
-    long-to-int v1, v6
-
-    invoke-static {v1, v5}, Ljava/lang/Character;->forDigit(II)C
-
-    move-result v1
-
-    aput-char v1, v4, v0
-
-    div-long/2addr v2, v10
-
-    move v1, v0
-
-    goto :goto_1
-
-    :cond_2
-    new-instance v0, Ljava/lang/String;
-
-    rsub-int/lit8 v2, v1, 0x40
-
-    invoke-direct {v0, v4, v1, v2}, Ljava/lang/String;-><init>([CII)V
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final a()Ljxk;
     .locals 1
 
-    iget-object v0, p0, Ljwe;->a:Ljava/lang/Object;
+    new-instance v0, Ljwf;
 
-    if-eq v0, p1, :cond_0
+    invoke-direct {v0, p0}, Ljwf;-><init>(Ljwe;)V
 
-    new-instance v0, Ljava/util/ConcurrentModificationException;
+    return-object v0
+.end method
 
-    invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
 
-    throw v0
+    iget-object v0, p0, Ljwe;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljwe;->b:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
 
     :cond_0
-    iput-object p2, p0, Ljwe;->a:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    return-void
+    goto :goto_0
+.end method
+
+.method public final isEmpty()Z
+    .locals 2
+
+    iget-object v0, p0, Ljwe;->b:Ljava/util/Set;
+
+    iget-object v1, p0, Ljwe;->a:Ljava/util/Set;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final synthetic iterator()Ljava/util/Iterator;
+    .locals 1
+
+    invoke-virtual {p0}, Ljwe;->a()Ljxk;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final size()I
+    .locals 4
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Ljwe;->a:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    iget-object v3, p0, Ljwe;->b:Ljava/util/Set;
+
+    invoke-interface {v3, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v0
 .end method

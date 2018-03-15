@@ -1,31 +1,33 @@
-.class public final Lcdr;
+.class final synthetic Lcdr;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Lcdw;
 
 
 # instance fields
-.field public final a:Lxb;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/UUID;Z)V
-    .locals 2
+.method constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Lbnv;->e:Lbnv;
+    iput-object p1, p0, Lcdr;->a:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lbnv;->name()Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v0
 
-    const/4 v1, 0x1
+# virtual methods
+.method public final a(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    .locals 1
 
-    invoke-static {p1, p2, v0, v1}, Lccv;->a(Ljava/util/UUID;ZLjava/lang/String;Z)Lxb;
+    iget-object v0, p0, Lcdr;->a:Ljava/lang/String;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcdr;->a:Lxb;
+    invoke-static {v0, p1}, Lcdj;->a(Ljava/lang/String;Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     return-void
 .end method

@@ -1,57 +1,204 @@
 .class final Lddq;
-.super Ljava/lang/Object;
+.super Ldfj;
 .source "PG"
-
-# interfaces
-.implements Licn;
 
 
 # instance fields
-.field private synthetic a:Lddp;
+.field private final a:Landroid/net/Uri;
+
+.field private final b:Leov;
+
+.field private final c:Lket;
 
 
 # direct methods
-.method constructor <init>(Lddp;)V
-    .locals 0
+.method constructor <init>(Landroid/net/Uri;Leov;Lket;)V
+    .locals 2
 
-    iput-object p1, p0, Lddq;->a:Lddp;
+    invoke-direct {p0}, Ldfj;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Null uri"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iput-object p1, p0, Lddq;->a:Landroid/net/Uri;
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Null mediaStoreRecord"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iput-object p2, p0, Lddq;->b:Leov;
+
+    iput-object p3, p0, Lddq;->c:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method final a()Landroid/net/Uri;
+    .locals 1
+
+    iget-object v0, p0, Lddq;->a:Landroid/net/Uri;
+
+    return-object v0
+.end method
+
+.method final b()Leov;
+    .locals 1
+
+    iget-object v0, p0, Lddq;->b:Leov;
+
+    return-object v0
+.end method
+
+.method final c()Lket;
+    .locals 1
+
+    iget-object v0, p0, Lddq;->c:Lket;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-ne p1, p0, :cond_1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    instance-of v2, p1, Ldfj;
+
+    if-eqz v2, :cond_3
+
+    check-cast p1, Ldfj;
+
+    iget-object v2, p0, Lddq;->a:Landroid/net/Uri;
+
+    invoke-virtual {p1}, Ldfj;->a()Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lddq;->b:Leov;
+
+    invoke-virtual {p1}, Ldfj;->b()Leov;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lddq;->c:Lket;
+
+    invoke-virtual {p1}, Ldfj;->c()Lket;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const v2, 0xf4243
+
+    iget-object v0, p0, Lddq;->a:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
+
+    move-result v0
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v2
+
+    iget-object v1, p0, Lddq;->b:Leov;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v2
+
+    iget-object v1, p0, Lddq;->c:Lket;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .locals 5
 
-    iget-object v0, p0, Lddq;->a:Lddp;
+    iget-object v0, p0, Lddq;->a:Landroid/net/Uri;
 
-    iget-object v2, v0, Lddp;->k:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    monitor-enter v2
+    move-result-object v0
 
-    :try_start_0
-    iget-object v0, p0, Lddq;->a:Lddp;
-
-    iget-object v0, v0, Lddp;->n:Ldbi;
-
-    sget-object v1, Ldbi;->d:Ldbi;
-
-    if-eq v0, v1, :cond_0
-
-    sget-object v0, Lddp;->c:Ljava/lang/String;
-
-    iget-object v1, p0, Lddq;->a:Lddp;
-
-    iget-object v1, v1, Lddp;->n:Ldbi;
+    iget-object v1, p0, Lddq;->b:Leov;
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v2, p0, Lddq;->c:Lket;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -59,84 +206,71 @@
 
     move-result v3
 
-    add-int/lit8 v3, v3, 0x27
+    add-int/lit8 v3, v3, 0x46
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
 
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v3, "Do nothing on FpsOption update. mState="
+    const-string v3, "ProcessingVideo{uri="
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    monitor-exit v2
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lddq;->a:Lddp;
-
-    iget-object v0, v0, Lddp;->e:Liag;
-
-    invoke-virtual {v0}, Liag;->b()Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lbbw;
+    const-string v3, ", mediaStoreRecord="
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v3, Lbbw;->a:Lbbw;
+    move-result-object v0
 
-    if-ne v0, v3, :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lbbw;->b:Lbbw;
+    move-result-object v0
 
-    :goto_1
-    iget-object v1, p0, Lddq;->a:Lddp;
+    const-string v1, ", processingVideoRecordResult="
 
-    invoke-virtual {v1, v0}, Lddp;->a(Lbbw;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    monitor-exit v2
+    move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :catchall_0
-    move-exception v0
+    move-result-object v0
 
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v1, "}"
 
-    throw v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    :try_start_1
-    sget-object v3, Lbbw;->b:Lbbw;
+    move-result-object v0
 
-    if-ne v0, v3, :cond_2
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sget-object v0, Lbbw;->a:Lbbw;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result-object v0
 
-    goto :goto_1
-
-    :cond_2
-    move-object v0, v1
-
-    goto :goto_1
+    return-object v0
 .end method

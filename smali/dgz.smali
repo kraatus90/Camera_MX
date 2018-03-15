@@ -1,52 +1,69 @@
 .class final Ldgz;
-.super Ljava/lang/Object;
+.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Ldgy;
+.field private final synthetic a:Ldgx;
 
 
 # direct methods
-.method constructor <init>(Ldgy;)V
+.method constructor <init>(Ldgx;)V
     .locals 0
 
-    iput-object p1, p0, Ldgz;->a:Ldgy;
+    iput-object p1, p0, Ldgz;->a:Ldgx;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final onCameraSwitch(I)V
+    .locals 2
 
-    iget-object v0, p0, Ldgz;->a:Ldgy;
+    iget-object v0, p0, Ldgz;->a:Ldgx;
 
-    iget-object v0, v0, Ldgy;->a:Ldgv;
+    iget-object v0, v0, Ldgx;->d:Lbrw;
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    new-instance v1, Lcxe;
 
-    move-result-object v0
+    invoke-direct {v1}, Lcxe;-><init>()V
 
-    check-cast v0, Ldhc;
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Ldhc;->b:Ldei;
+    return-void
+.end method
 
-    invoke-static {}, Lhzt;->a()V
+.method public final onRetakeButtonPressed()V
+    .locals 2
 
-    invoke-static {}, Leug;->k()V
+    iget-object v0, p0, Ldgz;->a:Ldgx;
 
-    iget-object v0, v0, Ldei;->a:Leug;
+    iget-object v0, v0, Ldgx;->d:Lbrw;
 
-    invoke-virtual {v0}, Leug;->l()V
+    new-instance v1, Ldho;
 
-    invoke-static {}, Leug;->p()V
+    invoke-direct {v1}, Ldho;-><init>()V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final onReviewPlayButtonPressed()V
+    .locals 2
+
+    iget-object v0, p0, Ldgz;->a:Ldgx;
+
+    iget-object v0, v0, Ldgx;->d:Lbrw;
+
+    new-instance v1, Ldhp;
+
+    invoke-direct {v1}, Ldhp;-><init>()V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
 
     return-void
 .end method

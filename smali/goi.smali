@@ -1,50 +1,29 @@
-.class public final Lgoi;
-.super Ljava/lang/Object;
+.class final Lgoi;
+.super Landroid/util/LruCache;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Ljxn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v0, 0x1400000
 
-    iput-object p1, p0, Lgoi;->a:Ljxn;
+    invoke-direct {p0, v0}, Landroid/util/LruCache;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method protected final synthetic sizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
 
-    iget-object v0, p0, Lgoi;->a:Ljxn;
+    check-cast p2, Lany;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p2}, Lany;->c()I
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lbhn;
-
-    invoke-static {v0}, Lgog;->a(Lbhn;)Lgkl;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgkl;
-
-    return-object v0
+    return v0
 .end method

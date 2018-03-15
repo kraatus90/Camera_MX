@@ -1,56 +1,57 @@
-.class public final Lgje;
-.super Ljava/lang/Object;
+.class final Lgje;
+.super Lgjm;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Lgjc;
 
 
 # direct methods
-.method private constructor <init>(Lgjc;)V
+.method constructor <init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgje;->a:Lgjc;
+    invoke-direct {p0, p1, p2, p3}, Lgjm;-><init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static a(Lgjc;)Ljxn;
-    .locals 1
 
-    new-instance v0, Lgje;
+# virtual methods
+.method protected final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    invoke-direct {v0, p0}, Lgje;-><init>(Lgjc;)V
+    iget-object v0, p0, Lgje;->a:Lgjq;
+
+    iget-object v1, p0, Lgje;->b:Ljava/lang/String;
+
+    iget-object v2, p0, Lgje;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 4
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lgje;->a:Lgjc;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lgjg;
+    iget-object v0, p0, Lgje;->a:Lgjq;
 
-    iget-object v0, v0, Lgjc;->a:Liag;
+    iget-object v1, p0, Lgje;->b:Ljava/lang/String;
 
-    invoke-direct {v1, v0}, Lgjg;-><init>(Licn;)V
+    iget-object v2, p0, Lgje;->c:Ljava/lang/String;
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result v3
 
-    move-result-object v0
+    invoke-virtual {v0, v1, v2, v3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    check-cast v0, Lgjg;
-
-    return-object v0
+    return-void
 .end method

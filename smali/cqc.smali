@@ -2,18 +2,59 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final synthetic a:Lcqe;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcqe;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcqc;->a:Lcqe;
+    new-instance v0, Lcqc;
+
+    invoke-direct {v0}, Lcqc;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static b()Lbpm;
+    .locals 2
+
+    sget-object v0, Lcpm;->b:Lbpp;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbpm;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    sget-object v0, Lcpm;->b:Lbpp;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbpm;
+
+    return-object v0
 .end method

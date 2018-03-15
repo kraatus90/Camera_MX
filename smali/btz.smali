@@ -1,54 +1,191 @@
-.class public final Lbtz;
+.class final Lbtz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lbug;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Ljava/util/List;
 
-.field private b:Ljxn;
+.field private b:Z
+
+.field private final synthetic c:Lbty;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lbty;)V
+    .locals 2
+
+    iput-object p1, p0, Lbtz;->c:Lbty;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbtz;->a:Ljxn;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lbtz;->b:Ljxn;
+    const/16 v1, 0x64
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lbtz;->a:Ljava/util/List;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lbtz;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final declared-synchronized a(JJLbuh;)V
+    .locals 9
 
-    new-instance v2, Lbty;
+    monitor-enter p0
 
-    iget-object v0, p0, Lbtz;->a:Ljxn;
+    :try_start_0
+    iget-boolean v0, p0, Lbtz;->b:Z
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-nez v0, :cond_0
+
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Lgds;
+    invoke-interface {p5, v0}, Lbuh;->a(Ljava/util/List;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    iget-object v1, p0, Lbtz;->b:Ljxn;
+    :goto_0
+    monitor-exit p0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    return-void
 
-    move-result-object v1
+    :cond_0
+    :try_start_1
+    iget-object v7, p0, Lbtz;->c:Lbty;
 
-    check-cast v1, Licz;
+    monitor-enter v7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    invoke-direct {v2, v0, v1}, Lbty;-><init>(Lgds;Licz;)V
+    :try_start_2
+    iget-object v0, p0, Lbtz;->c:Lbty;
 
-    return-object v2
+    iget-object v0, v0, Lbty;->a:Lbua;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lbtz;->c:Lbty;
+
+    iget-object v0, v0, Lbty;->a:Lbua;
+
+    iget-object v1, v0, Lbua;->d:Lbub;
+
+    iget-object v6, p0, Lbtz;->a:Ljava/util/List;
+
+    move-wide v2, p1
+
+    move-wide v4, p3
+
+    invoke-virtual/range {v1 .. v6}, Lbub;->a(JJLjava/util/List;)V
+
+    :cond_1
+    monitor-exit v7
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    :try_start_3
+    iget-object v0, p0, Lbtz;->a:Ljava/util/List;
+
+    invoke-interface {p5, v0}, Lbuh;->a(Ljava/util/List;)V
+
+    iget-object v1, p0, Lbtz;->c:Lbty;
+
+    monitor-enter v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :try_start_4
+    iget-object v0, p0, Lbtz;->c:Lbty;
+
+    iget-object v0, v0, Lbty;->a:Lbua;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lbtz;->c:Lbty;
+
+    iget-object v0, v0, Lbty;->a:Lbua;
+
+    iget-object v0, v0, Lbua;->d:Lbub;
+
+    iget-object v2, p0, Lbtz;->a:Ljava/util/List;
+
+    invoke-virtual {v0, v2}, Lbub;->a(Ljava/util/List;)V
+
+    :cond_2
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    :try_start_5
+    throw v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :catchall_2
+    move-exception v0
+
+    :try_start_6
+    monitor-exit v7
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+
+    :try_start_7
+    throw v0
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+.end method
+
+.method public final declared-synchronized close()V
+    .locals 1
+
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    iput-boolean v0, p0, Lbtz;->b:Z
+
+    iget-object v0, p0, Lbtz;->c:Lbty;
+
+    invoke-virtual {v0, p0}, Lbty;->a(Lbug;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

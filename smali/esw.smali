@@ -1,22 +1,21 @@
-.class final Lesw;
+.class final synthetic Lesw;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lesv;
+.field private final a:Lesv;
 
 
 # direct methods
 .method constructor <init>(Lesv;)V
     .locals 0
 
-    iput-object p1, p0, Lesw;->a:Lesv;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lesw;->a:Lesv;
 
     return-void
 .end method
@@ -24,13 +23,33 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lesw;->a:Lesv;
 
-    iget-object v0, v0, Lesv;->a:Landroid/app/AlertDialog;
+    iget-object v0, v0, Lesv;->d:Ljava/util/List;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Letr;
+
+    invoke-interface {v0}, Letr;->close()V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

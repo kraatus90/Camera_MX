@@ -1,42 +1,43 @@
-.class final Lewx;
+.class final synthetic Lewx;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lexc;
 
 
 # instance fields
-.field private synthetic a:Lewt;
-
-.field private synthetic b:Lewu;
+.field private final a:Leww;
 
 
 # direct methods
-.method constructor <init>(Lewu;Lewt;)V
+.method constructor <init>(Leww;)V
     .locals 0
 
-    iput-object p1, p0, Lewx;->b:Lewu;
-
-    iput-object p2, p0, Lewx;->a:Lewt;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lewx;->a:Leww;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final a(Lbui;)V
+    .locals 6
 
-    iget-object v0, p0, Lewx;->b:Lewu;
+    iget-object v0, p0, Lewx;->a:Leww;
 
-    iget-object v0, v0, Lewu;->b:Ljava/util/List;
+    iget-object v0, v0, Leww;->b:Lbwz;
 
-    iget-object v1, p0, Lewx;->a:Lewt;
+    iget v1, p1, Lbui;->f:F
 
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    iget v2, p1, Lbui;->g:F
+
+    iget v3, p1, Lbui;->h:F
+
+    iget-wide v4, p1, Lbui;->e:J
+
+    invoke-interface/range {v0 .. v5}, Lbwz;->a(FFFJ)Z
 
     return-void
 .end method

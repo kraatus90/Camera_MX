@@ -1,66 +1,78 @@
-.class final Lcct;
-.super Likn;
+.class public final Lcct;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Leou;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lccs;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lccs;Leou;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcct;->b:Lccs;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcct;->a:Leou;
+    iput-object p1, p0, Lcct;->a:Lkgv;
 
-    invoke-direct {p0}, Likn;-><init>()V
+    iput-object p2, p0, Lcct;->b:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lccg;Lkgv;Lkgv;)Lcct;
+    .locals 1
+
+    new-instance v0, Lcct;
+
+    invoke-direct {v0, p1, p2}, Lcct;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Lany;
+    iget-object v0, p0, Lcct;->a:Lkgv;
 
-    sget-object v0, Lgry;->j:Lgry;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, p0, Lcct;->b:Lccs;
+    move-result-object v0
 
-    iget-object v1, v1, Lccs;->a:Lipm;
+    check-cast v0, Linu;
 
-    iget-object v1, v1, Lipm;->a:Ljava/lang/String;
+    iget-object v1, p0, Lcct;->b:Lkgv;
 
-    const-string v2, "Video_VFR"
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v1
+    check-cast v1, Liho;
 
-    if-eqz v1, :cond_0
+    const-string v2, "Burst"
 
-    sget-object v0, Lgry;->l:Lgry;
+    invoke-interface {v1, v2}, Liho;->a(Ljava/lang/String;)Lihn;
 
-    :cond_0
-    iget-object v1, p0, Lcct;->a:Leou;
+    move-result-object v1
 
-    const v2, 0x7f110074
+    new-instance v2, Linx;
 
-    const/4 v3, 0x0
+    invoke-direct {v2, v0, v1}, Linx;-><init>(Liny;Lihn;)V
 
-    new-array v3, v3, [Ljava/lang/Object;
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v2, v3}, Lesn;->a(I[Ljava/lang/Object;)Lgyr;
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v1, p1, v2, v0}, Leou;->a(Lany;Lgyr;Lgry;)V
+    check-cast v0, Liny;
 
-    return-void
+    return-object v0
 .end method

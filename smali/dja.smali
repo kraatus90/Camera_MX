@@ -1,14 +1,20 @@
-.class public final Ldja;
+.class final Ldja;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Ldiz;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ldiz;)V
     .locals 0
+
+    iput-object p1, p0, Ldja;->a:Ldiz;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,16 +23,52 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    check-cast p1, Lgqb;
+    iget-object v0, p0, Ldja;->a:Ldiz;
 
-    iget v0, p1, Lgqb;->e:I
+    iget-object v0, v0, Ldiz;->a:Ldiv;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Ldjx;
+
+    iget-object v0, v0, Ldjx;->y:Legs;
+
+    invoke-virtual {v0}, Legs;->s_()V
+
+    iget-object v0, p0, Ldja;->a:Ldiz;
+
+    iget-object v0, v0, Ldiz;->a:Ldiv;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Ldjx;
+
+    iget-object v0, v0, Ldjx;->b:Ldhf;
+
+    invoke-virtual {v0}, Ldhf;->a()V
+
+    iget-object v0, p0, Ldja;->a:Ldiz;
+
+    iget-object v0, v0, Ldiz;->a:Ldiv;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Ldjx;
+
+    iget-object v0, v0, Ldjx;->b:Ldhf;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ldhf;->a(Z)V
+
+    return-void
 .end method

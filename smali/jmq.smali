@@ -1,205 +1,133 @@
-.class public final Ljmq;
-.super Ljkm;
+.class final Ljmq;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field public static final a:Ljmq;
-
-
 # instance fields
-.field private transient b:[I
+.field private final a:J
 
-.field private transient c:[Ljava/lang/Object;
+.field private final b:J
 
-.field private transient d:I
+.field private final c:I
 
-.field private transient e:I
-
-.field private transient f:Ljmq;
+.field private final synthetic d:Ljmp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljmp;Ljay;Ljay;)V
+    .locals 6
 
-    new-instance v0, Ljmq;
+    const/16 v4, 0x20
 
-    invoke-direct {v0}, Ljmq;-><init>()V
+    iput-object p1, p0, Ljmq;->d:Ljmp;
 
-    sput-object v0, Ljmq;->a:Ljmq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    invoke-virtual {p2}, Ljay;->b()J
 
-.method private constructor <init>()V
-    .locals 2
+    move-result-wide v0
 
-    const/4 v1, 0x0
+    iput-wide v0, p0, Ljmq;->a:J
 
-    invoke-direct {p0}, Ljkm;-><init>()V
+    invoke-virtual {p3}, Ljay;->b()J
 
-    const/4 v0, 0x0
+    move-result-wide v0
 
-    iput-object v0, p0, Ljmq;->b:[I
+    iput-wide v0, p0, Ljmq;->b:J
 
-    new-array v0, v1, [Ljava/lang/Object;
+    iget-wide v0, p0, Ljmq;->a:J
 
-    iput-object v0, p0, Ljmq;->c:[Ljava/lang/Object;
+    ushr-long v2, v0, v4
 
-    iput v1, p0, Ljmq;->d:I
+    xor-long/2addr v0, v2
 
-    iput v1, p0, Ljmq;->e:I
+    long-to-int v0, v0
 
-    iput-object p0, p0, Ljmq;->f:Ljmq;
+    iget-wide v2, p0, Ljmq;->b:J
 
-    return-void
-.end method
+    ushr-long v4, v2, v4
 
-.method private constructor <init>([I[Ljava/lang/Object;ILjmq;)V
-    .locals 1
+    xor-long/2addr v2, v4
 
-    invoke-direct {p0}, Ljkm;-><init>()V
+    long-to-int v1, v2
 
-    iput-object p1, p0, Ljmq;->b:[I
+    xor-int/2addr v0, v1
 
-    iput-object p2, p0, Ljmq;->c:[Ljava/lang/Object;
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Ljmq;->d:I
-
-    iput p3, p0, Ljmq;->e:I
-
-    iput-object p4, p0, Ljmq;->f:Ljmq;
+    iput v0, p0, Ljmq;->c:I
 
     return-void
-.end method
-
-.method public constructor <init>([Ljava/lang/Object;I)V
-    .locals 2
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0}, Ljkm;-><init>()V
-
-    iput-object p1, p0, Ljmq;->c:[Ljava/lang/Object;
-
-    iput p2, p0, Ljmq;->e:I
-
-    iput v1, p0, Ljmq;->d:I
-
-    const/4 v0, 0x2
-
-    if-lt p2, v0, :cond_0
-
-    invoke-static {p2}, Ljle;->a(I)I
-
-    move-result v0
-
-    :goto_0
-    invoke-static {p1, p2, v0, v1}, Ljms;->a([Ljava/lang/Object;III)[I
-
-    move-result-object v1
-
-    iput-object v1, p0, Ljmq;->b:[I
-
-    const/4 v1, 0x1
-
-    invoke-static {p1, p2, v0, v1}, Ljms;->a([Ljava/lang/Object;III)[I
-
-    move-result-object v0
-
-    new-instance v1, Ljmq;
-
-    invoke-direct {v1, v0, p1, p2, p0}, Ljmq;-><init>([I[Ljava/lang/Object;ILjmq;)V
-
-    iput-object v1, p0, Ljmq;->f:Ljmq;
-
-    return-void
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljjq;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 12
+
+    const/4 v0, 0x0
+
+    instance-of v1, p1, Ljmq;
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Ljmq;
+
+    iget-wide v8, p0, Ljmq;->a:J
+
+    iget-wide v6, p0, Ljmq;->b:J
+
+    iget-wide v2, p1, Ljmq;->a:J
+
+    iget-wide v4, p1, Ljmq;->b:J
+
+    iget-object v1, p0, Ljmq;->d:Ljmp;
+
+    iget-boolean v1, v1, Ljmp;->a:Z
+
+    if-eqz v1, :cond_2
+
+    cmp-long v1, v8, v6
+
+    if-lez v1, :cond_0
+
+    move-wide v10, v8
+
+    move-wide v8, v6
+
+    move-wide v6, v10
+
+    :cond_0
+    cmp-long v1, v2, v4
+
+    if-lez v1, :cond_2
+
+    :goto_0
+    cmp-long v1, v8, v4
+
+    if-nez v1, :cond_1
+
+    cmp-long v1, v6, v2
+
+    if-nez v1, :cond_1
+
+    const/4 v0, 0x1
+
+    :cond_1
+    return v0
+
+    :cond_2
+    move-wide v10, v4
+
+    move-wide v4, v2
+
+    move-wide v2, v10
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
     .locals 1
 
-    iget-object v0, p0, Ljmq;->f:Ljmq;
-
-    return-object v0
-.end method
-
-.method public final b()Ljkm;
-    .locals 1
-
-    iget-object v0, p0, Ljmq;->f:Ljmq;
-
-    return-object v0
-.end method
-
-.method final f()Ljle;
-    .locals 4
-
-    new-instance v0, Ljmt;
-
-    iget-object v1, p0, Ljmq;->c:[Ljava/lang/Object;
-
-    iget v2, p0, Ljmq;->d:I
-
-    iget v3, p0, Ljmq;->e:I
-
-    invoke-direct {v0, p0, v1, v2, v3}, Ljmt;-><init>(Ljlb;[Ljava/lang/Object;II)V
-
-    return-object v0
-.end method
-
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    iget-object v0, p0, Ljmq;->b:[I
-
-    iget-object v1, p0, Ljmq;->c:[Ljava/lang/Object;
-
-    iget v2, p0, Ljmq;->e:I
-
-    iget v3, p0, Ljmq;->d:I
-
-    invoke-static {v0, v1, v2, v3, p1}, Ljms;->a([I[Ljava/lang/Object;IILjava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method final h()Ljle;
-    .locals 4
-
-    new-instance v0, Ljmw;
-
-    iget-object v1, p0, Ljmq;->c:[Ljava/lang/Object;
-
-    iget v2, p0, Ljmq;->d:I
-
-    iget v3, p0, Ljmq;->e:I
-
-    invoke-direct {v0, v1, v2, v3}, Ljmw;-><init>([Ljava/lang/Object;II)V
-
-    new-instance v1, Ljmv;
-
-    invoke-direct {v1, p0, v0}, Ljmv;-><init>(Ljlb;Ljkv;)V
-
-    return-object v1
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget v0, p0, Ljmq;->e:I
+    iget v0, p0, Ljmq;->c:I
 
     return v0
 .end method

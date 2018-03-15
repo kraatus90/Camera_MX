@@ -4,11 +4,11 @@
 
 
 # virtual methods
-.method public abstract onCreateLoader(ILandroid/os/Bundle;)Ldw;
+.method public abstract onCreateLoader(ILandroid/os/Bundle;)Led;
 .end method
 
-.method public abstract onLoadFinished(Ldw;Ljava/lang/Object;)V
+.method public abstract onLoadFinished(Led;Ljava/lang/Object;)V
 .end method
 
-.method public abstract onLoaderReset(Ldw;)V
+.method public abstract onLoaderReset(Led;)V
 .end method

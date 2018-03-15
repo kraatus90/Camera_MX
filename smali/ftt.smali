@@ -3,48 +3,73 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lful;
 
 
-# static fields
-.field public static final a:Lftt;
+# instance fields
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private final b:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lftt;
-
-    invoke-direct {v0}, Lftt;-><init>()V
-
-    sput-object v0, Lftt;->a:Lftt;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lftt;->b:Ljava/util/List;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lftt;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final close()V
     .locals 2
 
-    sget-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
+    iget-object v0, p0, Lftt;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lftt;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/net/Uri;
+    check-cast v0, Lful;
 
-    return-object v0
+    invoke-interface {v0}, Lful;->close()V
+
+    goto :goto_0
 .end method

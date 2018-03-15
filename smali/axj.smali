@@ -1,172 +1,129 @@
-.class final Laxj;
+.class public final Laxj;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
+
+# static fields
+.field public static final a:Ljava/lang/String;
+
+.field public static final b:Landroid/net/Uri;
+
+.field public static final c:Landroid/net/Uri;
+
+.field public static final d:Landroid/net/Uri;
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final e:Ljava/lang/String;
 
-.field private synthetic b:Laxh;
+.field public final f:Landroid/content/Context;
+
+.field public final g:Landroid/app/Activity;
 
 
 # direct methods
-.method constructor <init>(Laxh;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Laxj;->b:Laxh;
+    const-string v0, "GoogleHelpHelper"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Laxj;->a:Ljava/lang/String;
+
+    const-string v0, "https://support.google.com/nexus/topic/6012822"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Laxj;->b:Landroid/net/Uri;
+
+    const-string v0, "http://www.google.com/policies/privacy/"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Laxj;->c:Landroid/net/Uri;
+
+    const-string v0, "http://www.google.com/policies/terms/"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    sput-object v0, Laxj;->d:Landroid/net/Uri;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/app/Activity;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Laxj;->g:Landroid/app/Activity;
 
-    const/4 v1, 0x0
+    invoke-virtual {p1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    move-result-object v0
 
-    iput-object v0, p0, Laxj;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Laxj;->f:Landroid/content/Context;
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Laxj;->e:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 6
+.method public final a(ILjava/lang/Exception;)V
+    .locals 3
 
-    const/4 v0, 0x0
+    sget-object v0, Laxj;->a:Ljava/lang/String;
 
-    const/4 v1, 0x1
+    const-string v1, "Attempting to connect to Google API client to begin feedback flow"
 
-    iget-object v2, p0, Laxj;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    new-instance v0, Lhbl;
 
-    move-result v2
+    new-instance v1, Lhrk;
 
-    if-nez v2, :cond_1
+    iget-object v2, p0, Laxj;->f:Landroid/content/Context;
 
-    iget-object v2, p0, Laxj;->b:Laxh;
+    invoke-direct {v1, v2}, Lhrk;-><init>(Landroid/content/Context;)V
 
-    iget-object v3, v2, Laxh;->d:Ljava/lang/Object;
+    sget-object v2, Lhoh;->a:Lhlf;
 
-    monitor-enter v3
+    invoke-virtual {v1, v2}, Lhrk;->a(Lhlf;)Lhrk;
 
-    :try_start_0
-    iget-object v2, p0, Laxj;->b:Laxh;
+    move-result-object v1
 
-    iget v4, v2, Laxh;->b:I
+    invoke-virtual {v1}, Lhrk;->b()Lhlm;
 
-    add-int/lit8 v4, v4, -0x1
+    move-result-object v1
 
-    iput v4, v2, Laxh;->b:I
+    invoke-direct {v0, v1}, Lhbl;-><init>(Lhlm;)V
 
-    iget-object v2, p0, Laxj;->b:Laxh;
+    invoke-virtual {v0}, Lhbl;->a()Lkeh;
 
-    iget v2, v2, Laxh;->b:I
+    move-result-object v0
 
-    if-ltz v2, :cond_2
+    new-instance v1, Laxk;
 
-    move v2, v1
+    invoke-direct {v1, p0, p1, p2}, Laxk;-><init>(Laxj;ILjava/lang/Exception;)V
 
-    :goto_0
-    const-string v4, "The number of handles should never be negative."
+    sget-object v2, Lken;->a:Lken;
 
-    invoke-static {v2, v4}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
 
-    iget-object v2, p0, Laxj;->b:Laxh;
-
-    iget-object v4, v2, Laxh;->d:Ljava/lang/Object;
-
-    monitor-enter v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    iget-boolean v5, v2, Laxh;->f:Z
-
-    if-eqz v5, :cond_3
-
-    monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :cond_0
-    :goto_1
-    :try_start_2
-    monitor-exit v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :cond_1
     return-void
-
-    :cond_2
-    move v2, v0
-
-    goto :goto_0
-
-    :cond_3
-    :try_start_3
-    iget v5, v2, Laxh;->b:I
-
-    if-nez v5, :cond_4
-
-    iget-object v5, v2, Laxh;->c:Laxs;
-
-    if-eqz v5, :cond_5
-
-    iget-object v1, v2, Laxh;->c:Laxs;
-
-    iget-object v5, v2, Laxh;->e:Ljava/lang/Runnable;
-
-    invoke-virtual {v1, v5}, Laxs;->a(Ljava/lang/Runnable;)V
-
-    :cond_4
-    :goto_2
-    monitor-exit v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    if-eqz v0, :cond_0
-
-    :try_start_4
-    iget-object v0, v2, Laxh;->a:Lich;
-
-    invoke-interface {v0}, Lich;->close()V
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v3
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    throw v0
-
-    :cond_5
-    const/4 v0, 0x1
-
-    :try_start_5
-    iput-boolean v0, v2, Laxh;->f:Z
-
-    move v0, v1
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v0
-
-    monitor-exit v4
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
-
-    :try_start_6
-    throw v0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 .end method

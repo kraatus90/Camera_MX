@@ -1,84 +1,70 @@
-.class public Liik;
-.super Ljava/lang/Object;
+.class final Liik;
+.super Line;
 .source "PG"
-
-# interfaces
-.implements Liiq;
 
 
 # instance fields
-.field private a:Liiq;
+.field private final a:Liij;
+
+.field private b:Z
 
 
 # direct methods
-.method public constructor <init>(Liiq;)V
+.method constructor <init>(Limz;Liij;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Line;-><init>(Limz;)V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    iput-boolean v0, p0, Liik;->b:Z
 
-    check-cast v0, Liiq;
-
-    iput-object v0, p0, Liik;->a:Liiq;
+    iput-object p2, p0, Liik;->a:Liij;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final close()V
     .locals 1
 
-    iget-object v0, p0, Liik;->a:Liiq;
+    monitor-enter p0
 
-    invoke-interface {v0}, Liiq;->a()I
+    :try_start_0
+    iget-boolean v0, p0, Liik;->b:Z
 
-    move-result v0
+    if-eqz v0, :cond_0
 
-    return v0
-.end method
+    monitor-exit p0
 
-.method public a(J)Liih;
-    .locals 1
-
-    iget-object v0, p0, Liik;->a:Liiq;
-
-    invoke-interface {v0, p1, p2}, Liiq;->a(J)Liih;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a(Liih;)V
-    .locals 1
-
-    iget-object v0, p0, Liik;->a:Liiq;
-
-    invoke-interface {v0, p1}, Liiq;->a(Liih;)V
-
+    :goto_0
     return-void
-.end method
 
-.method public a(Liis;Landroid/os/Handler;)V
-    .locals 1
+    :cond_0
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Liik;->a:Liiq;
+    iput-boolean v0, p0, Liik;->b:Z
 
-    invoke-interface {v0, p1, p2}, Liiq;->a(Liis;Landroid/os/Handler;)V
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
-.end method
+    iget-object v0, p0, Liik;->a:Liij;
 
-.method public close()V
-    .locals 1
+    invoke-virtual {v0}, Liij;->close()V
 
-    iget-object v0, p0, Liik;->a:Liiq;
+    invoke-super {p0}, Line;->close()V
 
-    invoke-interface {v0}, Liiq;->close()V
+    goto :goto_0
 
-    return-void
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

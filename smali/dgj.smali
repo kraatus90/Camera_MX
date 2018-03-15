@@ -1,82 +1,60 @@
-.class final Ldgj;
+.class public final Ldgj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldga;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldga;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldgj;->a:Ldga;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldgj;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
+.method public final synthetic a()Ljava/lang/Object;
     .locals 4
 
-    iget-object v1, p0, Ldgj;->a:Ldga;
+    iget-object v0, p0, Ldgj;->a:Lkgv;
 
-    new-instance v2, Landroid/os/Handler;
-
-    invoke-virtual {v1}, Lcng;->d()Lich;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldhc;
+    check-cast v0, Landroid/content/res/Resources;
 
-    iget-object v0, v0, Ldhc;->d:Landroid/content/Context;
+    const v1, 0x7f0f000d
 
-    invoke-virtual {v0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    const-string v1, "VideoModule"
+
+    new-instance v2, Lcsc;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, v1, v3}, Lcsc;-><init>(ILjava/lang/String;Z)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v0, Ldgb;
-
-    invoke-direct {v0, v1}, Ldgb;-><init>(Ldga;)V
-
-    invoke-virtual {v2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    iget-object v0, v1, Ldga;->c:Lbav;
-
-    invoke-interface {v0}, Lbav;->b()Ljuw;
-
-    move-result-object v0
-
-    new-instance v3, Ldgk;
-
-    invoke-direct {v3, v1, v2}, Ldgk;-><init>(Ldga;Landroid/os/Handler;)V
-
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v3, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    iget-object v0, v1, Ldga;->g:Ldcz;
-
-    invoke-virtual {v0}, Ldcz;->b()V
-
-    iget-object v0, v1, Ldga;->d:Lddd;
-
-    invoke-interface {v0}, Lddd;->b()V
-
-    iget-object v0, v1, Ldga;->d:Lddd;
-
-    invoke-interface {v0}, Lddd;->d()V
-
-    const/4 v0, 0x0
+    check-cast v0, Lcsc;
 
     return-object v0
 .end method

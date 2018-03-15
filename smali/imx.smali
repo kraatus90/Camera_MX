@@ -1,48 +1,262 @@
-.class final Limx;
+.class public final Limx;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Limu;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x17
+.end annotation
 
 
 # instance fields
-.field private synthetic a:Landroid/media/MediaCodec;
-
-.field private synthetic b:Landroid/media/MediaCodec$CodecException;
-
-.field private synthetic c:Limu;
+.field private final a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
 
 
 # direct methods
-.method constructor <init>(Limu;Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
+.method public constructor <init>(Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;)V
     .locals 0
 
-    iput-object p1, p0, Limx;->c:Limu;
-
-    iput-object p2, p0, Limx;->a:Landroid/media/MediaCodec;
-
-    iput-object p3, p0, Limx;->b:Landroid/media/MediaCodec$CodecException;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a(Ljava/util/List;Limv;Landroid/os/Handler;)I
     .locals 3
 
-    iget-object v0, p0, Limx;->c:Limu;
+    :try_start_0
+    iget-object v0, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
 
-    iget-object v0, v0, Limu;->a:Landroid/media/MediaCodec$Callback;
+    invoke-static {p1}, Lihr;->a(Ljava/util/List;)Ljava/util/List;
 
-    iget-object v1, p0, Limx;->a:Landroid/media/MediaCodec;
+    move-result-object v1
 
-    iget-object v2, p0, Limx;->b:Landroid/media/MediaCodec$CodecException;
+    new-instance v2, Lijx;
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaCodec$Callback;->onError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
+    invoke-direct {v2, p2}, Lijx;-><init>(Limv;)V
+
+    invoke-virtual {v0, v1, v2, p3}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->captureBurst(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Limt;
+
+    invoke-direct {v1, v0}, Limt;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final a(Linc;)Ljava/util/List;
+    .locals 5
+
+    :try_start_0
+    iget-object v1, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-static {p1}, Lihr;->a(Lims;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/camera2/CaptureRequest;
+
+    invoke-virtual {v1, v0}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->createHighSpeedRequestList(Landroid/hardware/camera2/CaptureRequest;)Ljava/util/List;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_0
+
+    new-instance v4, Lika;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/camera2/CaptureRequest;
+
+    invoke-direct {v4, v0}, Lika;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Limt;
+
+    invoke-direct {v1, v0}, Limt;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :cond_0
+    return-object v3
+.end method
+
+.method public final a()V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-virtual {v0}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->abortCaptures()V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Limt;
+
+    invoke-direct {v1, v0}, Limt;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final a(Ljava/util/List;)V
+    .locals 2
+
+    iget-object v0, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-static {p1}, Lihr;->a(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lhjs;->a(Landroid/hardware/camera2/CameraCaptureSession;Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final b(Ljava/util/List;Limv;Landroid/os/Handler;)I
+    .locals 3
+
+    :try_start_0
+    iget-object v0, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-static {p1}, Lihr;->a(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v1
+
+    new-instance v2, Lijx;
+
+    invoke-direct {v2, p2}, Lijx;-><init>(Limv;)V
+
+    invoke-virtual {v0, v1, v2, p3}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->setRepeatingBurst(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Limt;
+
+    invoke-direct {v1, v0}, Limt;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final b()Limz;
+    .locals 3
+
+    new-instance v0, Lijy;
+
+    iget-object v1, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-virtual {v1}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->getDevice()Landroid/hardware/camera2/CameraDevice;
+
+    move-result-object v1
+
+    new-instance v2, Likd;
+
+    invoke-direct {v2}, Likd;-><init>()V
+
+    invoke-direct {v0, v1}, Lijy;-><init>(Landroid/hardware/camera2/CameraDevice;)V
+
+    return-object v0
+.end method
+
+.method public final c()V
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-virtual {v0}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->stopRepeating()V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Limt;
+
+    invoke-direct {v1, v0}, Limt;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-virtual {v0}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->close()V
+
+    return-void
+.end method
+
+.method public final d()Landroid/view/Surface;
+    .locals 1
+
+    iget-object v0, p0, Limx;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+
+    invoke-virtual {v0}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->getInputSurface()Landroid/view/Surface;
+
+    move-result-object v0
+
+    return-object v0
 .end method

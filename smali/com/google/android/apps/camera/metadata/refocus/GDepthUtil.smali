@@ -34,15 +34,15 @@
     .locals 3
 
     :try_start_0
-    sget-object v0, Lxc;->a:Lxe;
+    sget-object v0, Lwl;->a:Lwn;
 
     const-string v1, "http://ns.google.com/photos/1.0/depthmap/"
 
     const-string v2, "GDepth"
 
-    invoke-virtual {v0, v1, v2}, Lxe;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Lwn;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
-    .catch Lwz; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
     return-void
@@ -50,14 +50,14 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Ljvs;->a:Ljvt;
+    sget-object v1, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v1, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
 
-.method public static isPresent(Lxb;)Z
+.method public static isPresent(Lwk;)Z
     .locals 8
 
     const-wide/16 v6, 0x0
@@ -72,11 +72,11 @@
     return v0
 
     :cond_0
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lxb;
+    check-cast v0, Lwk;
 
     invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/GDepthUtil;->initialize()V
 
@@ -85,7 +85,7 @@
 
     const-string v3, "Format"
 
-    invoke-interface {v0, v2, v3}, Lxb;->j(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v2, v3}, Lwk;->j(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -114,7 +114,7 @@
 
     const-string v3, "Mime"
 
-    invoke-interface {v0, v2, v3}, Lxb;->j(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v2, v3}, Lwk;->j(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -143,7 +143,7 @@
 
     const-string v3, "Near"
 
-    invoke-interface {v0, v2, v3}, Lxb;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
+    invoke-interface {v0, v2, v3}, Lwk;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
 
     move-result-object v2
 
@@ -155,7 +155,7 @@
 
     const-string v5, "Far"
 
-    invoke-interface {v0, v4, v5}, Lxb;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
+    invoke-interface {v0, v4, v5}, Lwk;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Double;
 
     move-result-object v0
 

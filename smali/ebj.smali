@@ -1,116 +1,137 @@
-.class public final Lebj;
-.super Ljava/lang/Object;
+.class public Lebj;
+.super Lglb;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final b:Legw;
 
-.field private b:Ljxn;
+.field public c:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+.field public d:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
+
+.field public e:Landroid/view/Window;
+
+.field public f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field public g:Lgvc;
+
+.field public h:I
+
+.field public i:Lhgv;
+
+.field public j:Lgqc;
+
+.field public final k:Z
+
+.field private final l:Lick;
+
+.field private m:Lick;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "CaptureStatechart"
 
-    iput-object p1, p0, Lebj;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lebj;->b:Ljxn;
+    move-result-object v0
+
+    sput-object v0, Lebj;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Legw;Lick;Z)V
+    .locals 1
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 15
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lebj;->a:Ljxn;
+    invoke-direct {p0, v0}, Lglb;-><init>([Z)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iput-object p1, p0, Lebj;->b:Legw;
 
-    move-result-object v0
+    iput-object p2, p0, Lebj;->l:Lick;
 
-    move-object v13, v0
+    iput-boolean p3, p0, Lebj;->k:Z
 
-    check-cast v13, Leby;
+    return-void
+.end method
 
-    iget-object v0, p0, Lebj;->b:Ljxn;
+.method static synthetic a(Lebj;)Lick;
+    .locals 1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v11, v0
-
-    check-cast v11, Ledk;
-
-    invoke-static {}, Lfsp;->d()Lggq;
-
-    move-result-object v0
-
-    iget-object v1, v11, Ledk;->e:Ljuw;
-
-    new-instance v2, Ledl;
-
-    invoke-direct {v2, v0}, Ledl;-><init>(Lggq;)V
-
-    sget-object v0, Ljvc;->a:Ljvc;
-
-    invoke-static {v1, v2, v0}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v7
-
-    new-instance v14, Ledq;
-
-    new-instance v0, Leco;
-
-    iget-object v1, v11, Ledk;->a:Licz;
-
-    iget-object v2, v11, Ledk;->b:Licv;
-
-    iget-object v3, v11, Ledk;->i:Leam;
-
-    iget-object v4, v11, Ledk;->c:Lghe;
-
-    iget-object v5, v11, Ledk;->d:Ldol;
-
-    iget-object v6, v11, Ledk;->e:Ljuw;
-
-    iget-object v8, v11, Ledk;->f:Ldjo;
-
-    iget-object v9, v11, Ledk;->g:Ldjm;
-
-    iget-object v10, v11, Ledk;->h:Ldvc;
-
-    iget-object v11, v11, Ledk;->j:Lgez;
-
-    const/4 v12, 0x1
-
-    invoke-direct/range {v0 .. v12}, Leco;-><init>(Licz;Licv;Leam;Lghe;Ldol;Ljuw;Ljuw;Ldjo;Ldjm;Ldvc;Lgfp;I)V
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
-
-    invoke-direct {v14, v0, v1, v2}, Ledq;-><init>(Leai;IZ)V
-
-    invoke-virtual {v13, v14}, Leby;->a(Leai;)Leai;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Leai;
+    iget-object v0, p0, Lebj;->m:Lick;
 
     return-object v0
+.end method
+
+.method static synthetic b(Lebj;)Lick;
+    .locals 1
+
+    iget-object v0, p0, Lebj;->l:Lick;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public a(Lkgv;Landroid/view/Window;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lhgv;Lgqc;Lfax;Lick;)V
+    .locals 2
+
+    invoke-interface {p1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgxn;
+
+    iget-object v1, v0, Lgxn;->g:Lhcf;
+
+    const v0, 0x7f0e00fd
+
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    iput-object v0, p0, Lebj;->c:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    const v0, 0x7f0e00ee
+
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
+
+    iput-object v0, p0, Lebj;->d:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
+
+    iput-object p2, p0, Lebj;->e:Landroid/view/Window;
+
+    iput-object p3, p0, Lebj;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iput-object p4, p0, Lebj;->g:Lgvc;
+
+    invoke-virtual {p2}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
+
+    iput v0, p0, Lebj;->h:I
+
+    iput-object p5, p0, Lebj;->i:Lhgv;
+
+    iput-object p6, p0, Lebj;->j:Lgqc;
+
+    iput-object p8, p0, Lebj;->m:Lick;
+
+    return-void
 .end method

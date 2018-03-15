@@ -1,21 +1,13 @@
 .class public final Lhzs;
 .super Ljava/lang/Object;
-.source "PG"
 
-
-# instance fields
-.field private a:J
-
-.field private synthetic b:J
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
-
-    const-wide/32 v0, 0x3f940aa
-
-    iput-wide v0, p0, Lhzs;->b:J
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,66 +16,93 @@
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .locals 2
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 4
 
-    monitor-enter p0
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
-    :try_start_0
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    move-result v1
 
-    move-result-wide v0
+    const/4 v0, 0x0
 
-    iput-wide v0, p0, Lhzs;->a:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    monitor-exit p0
+    move-result v2
 
-    return-void
+    if-ge v2, v1, :cond_0
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    monitor-exit p0
+    move-result v2
+
+    const v3, 0xffff
+
+    and-int/2addr v3, v2
+
+    packed-switch v3, :pswitch_data_0
+
+    invoke-static {p1, v2}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v2
+
+    if-eq v2, v1, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v2, 0x25
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Overread allowed size end="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
 
     throw v0
+
+    :cond_1
+    new-instance v1, Lcom/google/android/gms/wearable/internal/zzy;
+
+    invoke-direct {v1, v0}, Lcom/google/android/gms/wearable/internal/zzy;-><init>(I)V
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final declared-synchronized b()J
-    .locals 6
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
 
-    monitor-enter p0
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzy;
 
-    :try_start_0
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lhzs;->a:J
-
-    sub-long/2addr v0, v2
-
-    const-wide/16 v2, 0x0
-
-    iget-wide v4, p0, Lhzs;->b:J
-
-    sub-long v0, v4, v0
-
-    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-wide v0
-
-    monitor-exit p0
-
-    return-wide v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return-object v0
 .end method

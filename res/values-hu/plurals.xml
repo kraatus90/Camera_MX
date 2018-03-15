@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Sorozatfelvétel (%1$d fotó)</item>
+        <item quantity="one">Sorozatfelvétel (%1$d fotó)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d fotó elmentve</item>
         <item quantity="one">%1$d fotó elmentve</item>

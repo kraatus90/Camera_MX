@@ -3,70 +3,144 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfri;
 
 
 # static fields
-.field public static final a:Ldmo;
+.field public static final a:Ljava/lang/String;
+
+
+# instance fields
+.field public final b:Ljava/util/concurrent/Executor;
+
+.field public final c:Landroid/graphics/Rect;
+
+.field private final d:Laxn;
+
+.field private final e:Lgab;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Ldmo;
+    const-string v0, "JpegImgBESaver"
 
-    invoke-direct {v0}, Ldmo;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    sput-object v0, Ldmo;->a:Ldmo;
+    move-result-object v0
+
+    sput-object v0, Ldmo;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+.method constructor <init>(Laxn;Lgab;Lfut;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldmo;->d:Laxn;
+
+    iput-object p2, p0, Ldmo;->e:Lgab;
+
+    const-string v0, "BckndJpegEx"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lhwt;->d(Ljava/lang/String;I)Ljava/util/concurrent/ThreadFactory;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldmo;->b:Ljava/util/concurrent/Executor;
+
+    iget-object v0, p3, Lfut;->e:Landroid/graphics/Rect;
+
+    iput-object v0, p0, Ldmo;->c:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(Lfsm;)Lfrj;
+    .locals 7
 
-    sget-object v0, Lhit;->o:Landroid/hardware/camera2/CaptureRequest$Key;
+    iget-object v0, p0, Ldmo;->d:Laxn;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Laxn;->a()Ligz;
 
-    sget-object v0, Lhit;->o:Landroid/hardware/camera2/CaptureRequest$Key;
+    move-result-object v3
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Ldmo;->e:Lgab;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, v0, Lgab;->f:Lgaq;
 
-    move-result-object v1
+    new-instance v5, Ldmq;
 
-    invoke-static {v0, v1}, Lfsp;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lggq;
+    iget-object v0, p1, Lfsm;->b:Lgfr;
+
+    iget-object v1, p1, Lfsm;->a:Lfaq;
+
+    iget-object v1, v1, Lfaq;->c:Lfas;
+
+    invoke-direct {v5, v0, v1}, Ldmq;-><init>(Lgfr;Lfas;)V
+
+    new-instance v6, Ldmv;
+
+    new-instance v0, Ldmp;
+
+    iget-object v2, p1, Lfsm;->b:Lgfr;
+
+    iget-object v4, p0, Ldmo;->e:Lgab;
+
+    move-object v1, p0
+
+    invoke-direct/range {v0 .. v5}, Ldmp;-><init>(Ldmo;Lgfr;Ligz;Lgab;Lgap;)V
+
+    invoke-direct {v6, v0}, Ldmv;-><init>(Lfns;)V
+
+    return-object v6
+.end method
+
+.method public final a()Lick;
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Licl;->a(Ljava/lang/Object;)Lick;
 
     move-result-object v0
-
-    check-cast v0, Lggq;
 
     return-object v0
+.end method
 
-    :cond_0
-    invoke-static {}, Lfsp;->d()Lggq;
+.method public final b(Lfsm;)Lfrj;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Ldmo;->a(Lfsm;)Lfrj;
 
     move-result-object v0
 
-    goto :goto_0
+    return-object v0
+.end method
+
+.method public final b()Lfrk;
+    .locals 2
+
+    new-instance v0, Lfrk;
+
+    sget v1, Lep;->ay:I
+
+    invoke-direct {v0, v1}, Lfrk;-><init>(I)V
+
+    return-object v0
 .end method

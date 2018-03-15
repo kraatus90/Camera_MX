@@ -1,134 +1,209 @@
 .class public final Ljbp;
-.super Ljbe;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljbo;
 
 
 # instance fields
-.field private a:Ljct;
+.field private final a:Ljava/util/Queue;
+
+.field private final b:Ljava/util/concurrent/Executor;
+
+.field private volatile c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljct;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljbe;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Ljava/util/LinkedList;
 
-    iput-object p1, p0, Ljbp;->a:Ljct;
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Ljbp;->a:Ljava/util/Queue;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ljbp;->c:Z
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljbp;->b:Ljava/util/concurrent/Executor;
+
+    return-void
+.end method
+
+.method private final b(Ljava/lang/Runnable;)V
+    .locals 2
+
+    iget-object v0, p0, Ljbp;->b:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Ljbq;
+
+    invoke-direct {v1, p0, p1}, Ljbq;-><init>(Ljbp;Ljava/lang/Runnable;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Ljaz;
-    .locals 6
+.method public final declared-synchronized a()V
+    .locals 1
 
-    new-instance v1, Ljava/util/ArrayList;
+    monitor-enter p0
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Ljaz;->iterator()Ljava/util/Iterator;
+    :try_start_0
+    iput-boolean v0, p0, Ljbp;->c:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v2
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method final declared-synchronized a(Ljava/lang/Runnable;)Z
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Ljbp;->c:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    monitor-exit p0
+
+    return v0
 
     :cond_0
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    :try_start_1
+    iget-object v0, p0, Ljbp;->a:Ljava/util/Queue;
+
+    invoke-interface {v0, p1}, Ljava/util/Queue;->remove(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    move-result-object v0
+    const-string v1, "Task not in queue of submitted tasks."
 
-    check-cast v0, Ljava/lang/Long;
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-wide v4
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, p0, Ljbp;->a:Ljct;
+    monitor-exit p0
 
-    invoke-interface {v0, v4, v5}, Ljct;->a(J)Z
+    throw v0
+
+    :cond_1
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 2
+
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    iput-boolean v0, p0, Ljbp;->c:Z
+
+    iget-object v0, p0, Ljbp;->a:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    check-cast v0, Ljava/lang/Runnable;
+
+    invoke-direct {p0, v0}, Ljbp;->b(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_1
-    new-instance v0, Ljaz;
+    :catchall_0
+    move-exception v0
 
-    iget-object v2, p1, Ljaz;->b:Ljava/util/Set;
+    monitor-exit p0
 
-    invoke-direct {v0, v1, v2}, Ljaz;-><init>(Ljava/util/Collection;Ljava/util/Set;)V
+    throw v0
 
-    return-object v0
+    :cond_0
+    monitor-exit p0
+
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final declared-synchronized execute(Ljava/lang/Runnable;)V
+    .locals 1
 
-    const-string v0, "FrameFilterSegmentFilter[filter="
+    monitor-enter p0
 
-    iget-object v1, p0, Ljbp;->a:Ljct;
+    :try_start_0
+    iget-object v0, p0, Ljbp;->a:Ljava/util/Queue;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    iget-boolean v0, p0, Ljbp;->c:Z
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    move-result-object v2
+    invoke-direct {p0, p1}, Ljbp;->b(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    :cond_0
+    monitor-exit p0
 
-    move-result v2
+    return-void
 
-    add-int/lit8 v2, v2, 0x1
+    :catchall_0
+    move-exception v0
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    monitor-exit p0
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method

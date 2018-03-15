@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.GoogleCamera" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.GoogleCamera" platformBuildVersionCode="27" platformBuildVersionName="P">
     <original-package android:name="com.android.camera2"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -77,6 +77,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.VOICE"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="com.google.android.GoogleCamera" android:path="/still-image" android:scheme="launch-camera"/>
+            </intent-filter>
             <meta-data android:name="com.android.keyguard.layout" android:resource="@layout/keyguard_widget"/>
         </activity-alias>
         <activity-alias android:name="com.android.camera.CameraVideoShortcutActivity" android:targetActivity="com.google.android.apps.camera.legacy.app.activity.CameraImageActivity">
@@ -103,16 +109,16 @@
             <meta-data android:name="android.media.still_image_camera_preview_service" android:value="com.google.android.apps.camera.legacy.app.prewarm.NoOpPrewarmService"/>
         </activity-alias>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/mode_settings" android:name="com.google.android.apps.camera.legacy.app.settings.CameraSettingsActivity" android:theme="@style/Theme.CameraSettings"/>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:icon="@drawable/ic_refocus_editor" android:label="@string/refocus_editor_name" android:name="com.google.android.apps.refocus.ViewerActivity" android:resizeableActivity="false" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:icon="@drawable/ic_refocus_editor" android:label="@string/refocus_editor_name" android:name="com.google.android.apps.camera.legacy.app.refocus.ViewerActivity" android:resizeableActivity="false" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
         <activity android:name="com.google.android.apps.camera.legacy.app.activity.TrampolineActivity" android:theme="@android:style/Theme.NoDisplay"/>
         <service android:exported="false" android:name="com.google.android.apps.camera.legacy.app.processing.ProcessingService"/>
-        <service android:exported="true" android:name="com.google.android.apps.camera.legacy.app.prewarm.NoOpPrewarmService"/>
-        <service android:exported="true" android:name="com.google.android.apps.camera.legacy.app.prewarm.ProcessingBoostService"/>
+        <service android:exported="true" android:name="com.google.android.apps.camera.prewarm.NoOpPrewarmService"/>
+        <service android:exported="true" android:name="com.google.android.apps.camera.prewarm.ProcessingBoostService"/>
         <service android:exported="false" android:name="com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService" android:process=":crash_report"/>
         <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIAtBj1ElOYwhIB-X9XDJr91_j0tTe8PPt6pZmnw"/>
-        <meta-data android:name="com.android.device.restriction" android:value="           brand=google, deviceName=bullhead;           brand=google, deviceName=angler;           brand=google, deviceName=marlin;           brand=google, deviceName=sailfish;           brand=google, deviceName=walleye;           brand=google, deviceName=taimen"/>
+        <meta-data android:name="com.android.device.restriction" android:value="           brand=google, deviceName=marlin;           brand=google, deviceName=sailfish;           brand=google, deviceName=walleye;           brand=google, deviceName=taimen"/>
         <provider android:authorities="com.google.android.apps.camera.specialtypes.SpecialTypesProvider" android:exported="true" android:name="com.google.android.apps.camera.contentprovider.CameraContentProvider" android:syncable="false"/>
-        <activity android:label="VideoPlayer" android:launchMode="standard" android:name="com.google.android.apps.camera.videoplayer.VideoPlayerActivity" android:theme="@style/Theme.SecureVideoPlayer"/>
+        <activity android:label="VideoPlayer" android:launchMode="standard" android:name="com.google.android.apps.camera.videoplayer.VideoPlayerActivity" android:showWhenLocked="true" android:theme="@style/Theme.SecureVideoPlayer"/>
         <activity android:exported="true" android:label="@string/preferences_license_title" android:name="com.google.android.libraries.social.licenses.LicenseMenuActivity" android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:exported="false" android:label="@string/preferences_license_title" android:name="com.google.android.libraries.social.licenses.LicenseActivity" android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>

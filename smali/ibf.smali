@@ -1,72 +1,90 @@
-.class final Libf;
+.class public final Libf;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liau;
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Object;
+.field private a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field private final synthetic b:I
+
+.field private final synthetic c:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(ILjava/lang/String;)V
+    .locals 2
 
-    iput-object p1, p0, Libf;->a:Ljava/lang/Object;
+    iput p1, p0, Libf;->b:I
+
+    iput-object p2, p0, Libf;->c:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, Libf;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Licn;Ljava/util/concurrent/Executor;)Lich;
-    .locals 2
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 6
 
-    new-instance v0, Libg;
+    iget-object v0, p0, Libf;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iget-object v1, p0, Libf;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    invoke-direct {v0, p1, v1}, Libg;-><init>(Licn;Ljava/lang/Object;)V
+    move-result v0
 
-    invoke-interface {p2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    new-instance v1, Liab;
 
-    sget-object v0, Liav;->a:Lich;
+    iget v2, p0, Libf;->b:I
 
-    return-object v0
-.end method
+    iget-object v3, p0, Libf;->c:Ljava/lang/String;
 
-.method public final b()Ljava/lang/Object;
-    .locals 1
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, p0, Libf;->a:Ljava/lang/Object;
+    move-result-object v4
 
-    return-object v0
-.end method
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    move-result v4
 
-    const-string v0, "Obs.of"
+    add-int/lit8 v4, v4, 0xc
 
-    invoke-static {v0}, Liui;->c(Ljava/lang/String;)Ljhq;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v1, p0, Libf;->a:Ljava/lang/Object;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljhq;->a()Ljhr;
+    move-result-object v3
 
-    move-result-object v2
+    const-string v4, "-"
 
-    iput-object v1, v2, Ljhr;->b:Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v2, p1, v0}, Liab;-><init>(ILjava/lang/Runnable;Ljava/lang/String;)V
+
+    return-object v1
 .end method

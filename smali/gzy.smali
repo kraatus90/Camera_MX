@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lhfr;
 
 
 # instance fields
-.field private synthetic a:Lgzq;
+.field private final synthetic a:Lhfr;
 
 
 # direct methods
-.method constructor <init>(Lgzq;)V
+.method constructor <init>(Lhfr;)V
     .locals 0
 
-    iput-object p1, p0, Lgzy;->a:Lgzq;
+    iput-object p1, p0, Lgzy;->a:Lhfr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,26 +23,14 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final a(Landroid/graphics/PointF;)Z
     .locals 1
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lgzy;->a:Lhfr;
 
-    iget-object v0, p0, Lgzy;->a:Lgzq;
+    invoke-interface {v0, p1}, Lhfr;->a(Landroid/graphics/PointF;)Z
 
-    invoke-static {p1}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Lgzq;->a()V
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
+    return v0
 .end method

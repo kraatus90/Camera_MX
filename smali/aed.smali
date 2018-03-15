@@ -1,123 +1,124 @@
-.class public final enum Laed;
-.super Ljava/lang/Enum;
+.class public abstract Laed;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Laef;
 
-# static fields
-.field public static final enum a:Laed;
 
-.field public static final enum b:Laed;
+# instance fields
+.field private final a:Ljava/lang/String;
 
-.field public static final enum c:Laed;
+.field private final b:Landroid/content/res/AssetManager;
 
-.field public static final enum d:Laed;
-
-.field public static final enum e:Laed;
-
-.field private static synthetic f:[Laed;
+.field private c:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    const/4 v6, 0x4
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Laed;
-
-    const-string v1, "LOCAL"
-
-    invoke-direct {v0, v1, v2}, Laed;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Laed;->a:Laed;
-
-    new-instance v0, Laed;
-
-    const-string v1, "REMOTE"
-
-    invoke-direct {v0, v1, v3}, Laed;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Laed;->b:Laed;
-
-    new-instance v0, Laed;
-
-    const-string v1, "DATA_DISK_CACHE"
-
-    invoke-direct {v0, v1, v4}, Laed;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Laed;->c:Laed;
-
-    new-instance v0, Laed;
-
-    const-string v1, "RESOURCE_DISK_CACHE"
-
-    invoke-direct {v0, v1, v5}, Laed;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Laed;->d:Laed;
-
-    new-instance v0, Laed;
-
-    const-string v1, "MEMORY_CACHE"
-
-    invoke-direct {v0, v1, v6}, Laed;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Laed;->e:Laed;
-
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Laed;
-
-    sget-object v1, Laed;->a:Laed;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Laed;->b:Laed;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Laed;->c:Laed;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Laed;->d:Laed;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Laed;->e:Laed;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Laed;->f:[Laed;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Laed;->b:Landroid/content/res/AssetManager;
+
+    iput-object p2, p0, Laed;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static values()[Laed;
-    .locals 1
 
-    sget-object v0, Laed;->f:[Laed;
+# virtual methods
+.method protected abstract a(Landroid/content/res/AssetManager;Ljava/lang/String;)Ljava/lang/Object;
+.end method
 
-    invoke-virtual {v0}, [Laed;->clone()Ljava/lang/Object;
+.method public final a(Lacn;Laeg;)V
+    .locals 3
+
+    :try_start_0
+    iget-object v0, p0, Laed;->b:Landroid/content/res/AssetManager;
+
+    iget-object v1, p0, Laed;->a:Ljava/lang/String;
+
+    invoke-virtual {p0, v0, v1}, Laed;->a(Landroid/content/res/AssetManager;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Laed;
+    iput-object v0, p0, Laed;->c:Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    iget-object v0, p0, Laed;->c:Ljava/lang/Object;
+
+    invoke-interface {p2, v0}, Laeg;->a(Ljava/lang/Object;)V
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "AssetPathFetcher"
+
+    const/4 v2, 0x3
+
+    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "AssetPathFetcher"
+
+    const-string v2, "Failed to load data from asset manager"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_0
+    invoke-interface {p2, v0}, Laeg;->a(Ljava/lang/Exception;)V
+
+    goto :goto_0
+.end method
+
+.method protected abstract a(Ljava/lang/Object;)V
+.end method
+
+.method public final b()V
+    .locals 1
+
+    iget-object v0, p0, Laed;->c:Ljava/lang/Object;
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Laed;->c:Ljava/lang/Object;
+
+    invoke-virtual {p0, v0}, Laed;->a(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()Ladm;
+    .locals 1
+
+    sget-object v0, Ladm;->a:Ladm;
 
     return-object v0
 .end method

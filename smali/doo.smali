@@ -3,79 +3,54 @@
 .source "PG"
 
 # interfaces
-.implements Ldom;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Z
-
-.field private b:Lgki;
-
-.field private synthetic c:Ldon;
+.field private final a:Ldom;
 
 
 # direct methods
-.method constructor <init>(Ldon;Lgki;)V
-    .locals 1
-
-    iput-object p1, p0, Ldoo;->c:Ldon;
+.method private constructor <init>(Ldom;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ldoo;->b:Lgki;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ldoo;->a:Z
+    iput-object p1, p0, Ldoo;->a:Ldom;
 
     return-void
+.end method
+
+.method public static a(Ldom;)Ldoo;
+    .locals 1
+
+    new-instance v0, Ldoo;
+
+    invoke-direct {v0, p0}, Ldoo;-><init>(Ldom;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;Lggt;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-boolean v0, p0, Ldoo;->a:Z
+    iget-object v0, p0, Ldoo;->a:Ldom;
 
-    if-nez v0, :cond_0
+    new-instance v1, Ldoq;
 
-    const/4 v0, 0x1
+    iget-object v0, v0, Ldom;->a:Libw;
 
-    :goto_0
-    const-string v1, "submitRequest() cannot be used after the Session is closed"
+    invoke-direct {v1, v0}, Ldoq;-><init>(Lihg;)V
 
-    invoke-static {v0, v1}, Liya;->b(ZLjava/lang/Object;)V
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Ldoo;->c:Ldon;
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Ldon;->a:Lggn;
+    move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Lggn;->a(Ljava/util/List;Lggt;)V
+    check-cast v0, Ldoq;
 
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-boolean v0, p0, Ldoo;->a:Z
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ldoo;->a:Z
-
-    iget-object v0, p0, Ldoo;->b:Lgki;
-
-    invoke-interface {v0}, Lgki;->close()V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

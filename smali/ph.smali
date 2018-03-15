@@ -1,64 +1,34 @@
 .class final Lph;
-.super Lop;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/view/MenuItem$OnActionExpandListener;
+.implements Landroid/widget/PopupWindow$OnDismissListener;
 
 
 # instance fields
-.field private synthetic a:Lpe;
+.field private final synthetic a:Lpg;
 
 
 # direct methods
-.method constructor <init>(Lpe;Landroid/view/MenuItem$OnActionExpandListener;)V
+.method constructor <init>(Lpg;)V
     .locals 0
 
-    iput-object p1, p0, Lph;->a:Lpe;
+    iput-object p1, p0, Lph;->a:Lpg;
 
-    invoke-direct {p0, p2}, Lop;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
-    .locals 2
+.method public final onDismiss()V
+    .locals 1
 
-    iget-object v0, p0, Lph;->d:Ljava/lang/Object;
+    iget-object v0, p0, Lph;->a:Lpg;
 
-    check-cast v0, Landroid/view/MenuItem$OnActionExpandListener;
+    invoke-virtual {v0}, Lpg;->d()V
 
-    iget-object v1, p0, Lph;->a:Lpe;
-
-    invoke-virtual {v1, p1}, Lpe;->a(Landroid/view/MenuItem;)Landroid/view/MenuItem;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/view/MenuItem$OnActionExpandListener;->onMenuItemActionCollapse(Landroid/view/MenuItem;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final onMenuItemActionExpand(Landroid/view/MenuItem;)Z
-    .locals 2
-
-    iget-object v0, p0, Lph;->d:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/MenuItem$OnActionExpandListener;
-
-    iget-object v1, p0, Lph;->a:Lpe;
-
-    invoke-virtual {v1, p1}, Lpe;->a(Landroid/view/MenuItem;)Landroid/view/MenuItem;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Landroid/view/MenuItem$OnActionExpandListener;->onMenuItemActionExpand(Landroid/view/MenuItem;)Z
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

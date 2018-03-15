@@ -1,122 +1,273 @@
-.class final Lchr;
+.class public final Lchr;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljug;
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x17
+.end annotation
 
 
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;
-
-.field private synthetic b:Lchq;
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lchq;Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lchr;->b:Lchq;
+    const-string v0, "BurstExif"
 
-    iput-object p2, p0, Lchr;->a:Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
+
+    sput-object v0, Lchr;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static a(Lcom/google/android/libraries/camera/exif/ExifInterface;)Landroid/location/Location;
+    .locals 12
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 5
+    const-wide/16 v10, 0x0
 
-    check-cast p1, Liic;
+    const/4 v0, 0x0
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v8, 0x3
 
-    invoke-interface {p1, v0}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    const/4 v7, 0x1
 
-    move-result-object v0
+    const/4 v6, 0x0
 
-    check-cast v0, Ljava/lang/Long;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    sget v1, Lcom/google/android/libraries/camera/exif/ExifInterface;->E:I
 
-    move-result-wide v0
+    invoke-virtual {p0, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->e(I)[Liha;
 
-    iget-object v2, p0, Lchr;->b:Lchq;
+    move-result-object v2
 
-    iget-object v2, v2, Lchq;->b:Lchl;
+    sget v1, Lcom/google/android/libraries/camera/exif/ExifInterface;->D:I
 
-    iget-object v2, v2, Lchl;->i:Lijc;
-
-    invoke-interface {v2, p1}, Lijc;->a(Liic;)F
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Float;->isNaN(F)Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    iget-object v3, p0, Lchr;->b:Lchq;
-
-    iget-object v3, v3, Lchq;->b:Lchl;
-
-    iget-object v3, v3, Lchl;->j:Lijh;
-
-    invoke-virtual {v3, v2, v0, v1}, Lijh;->a(FJ)V
-
-    :goto_0
-    iget-object v0, p0, Lchr;->a:Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/BurstSessionStatistics;->i()V
-
-    return-void
-
-    :cond_0
-    const-string v2, "BurstController"
-
-    const/16 v3, 0x26
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Score for "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->getTagStringValue(I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    sget v1, Lcom/google/android/libraries/camera/exif/ExifInterface;->G:I
 
-    move-result-object v0
+    invoke-virtual {p0, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->e(I)[Liha;
 
-    const-string v1, " is NaN!"
+    move-result-object v4
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget v1, Lcom/google/android/libraries/camera/exif/ExifInterface;->F:I
 
-    move-result-object v0
+    invoke-virtual {p0, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->getTagStringValue(I)Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v0
+    if-eqz v2, :cond_0
 
-    invoke-static {v2, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    if-eqz v4, :cond_0
+
+    if-eqz v3, :cond_0
+
+    if-eqz v5, :cond_0
+
+    array-length v1, v2
+
+    if-lt v1, v8, :cond_0
+
+    array-length v1, v4
+
+    if-ge v1, v8, :cond_3
+
+    :cond_0
+    move-object v1, v0
+
+    :goto_0
+    if-eqz v1, :cond_2
+
+    new-instance v0, Landroid/location/Location;
+
+    const-string v2, "exif-provider"
+
+    invoke-direct {v0, v2}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
+
+    aget-wide v2, v1, v6
+
+    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setLatitude(D)V
+
+    aget-wide v2, v1, v7
+
+    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setLongitude(D)V
+
+    invoke-virtual {v0}, Landroid/location/Location;->getTime()J
+
+    move-result-wide v2
+
+    cmp-long v1, v2, v10
+
+    if-nez v1, :cond_1
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setTime(J)V
+
+    :cond_1
+    invoke-virtual {v0}, Landroid/location/Location;->getElapsedRealtimeNanos()J
+
+    move-result-wide v2
+
+    cmp-long v1, v2, v10
+
+    if-nez v1, :cond_2
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Landroid/location/Location;->setElapsedRealtimeNanos(J)V
+
+    :cond_2
+    return-object v0
+
+    :cond_3
+    const/4 v1, 0x2
+
+    new-array v1, v1, [D
+
+    invoke-static {v2, v3}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a([Liha;Ljava/lang/String;)D
+
+    move-result-wide v2
+
+    aput-wide v2, v1, v6
+
+    invoke-static {v4, v5}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a([Liha;Ljava/lang/String;)D
+
+    move-result-wide v2
+
+    aput-wide v2, v1, v7
 
     goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+.method static a(Ljava/io/File;)Lcom/google/android/libraries/camera/exif/ExifInterface;
+    .locals 4
 
-    const-string v0, "BurstController"
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v1, "Could not score a frame because metadata is missing!"
+    :try_start_0
+    new-instance v2, Ljava/io/BufferedInputStream;
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v0, Ljava/io/FileInputStream;
 
-    return-void
+    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    invoke-direct {v2, v0}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    const/4 v1, 0x0
+
+    :try_start_1
+    new-instance v0, Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    invoke-direct {v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;-><init>()V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(Ljava/io/InputStream;)V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :try_start_2
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_3
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :catchall_0
+    move-exception v1
+
+    move-object v3, v1
+
+    move-object v1, v0
+
+    move-object v0, v3
+
+    :goto_0
+    if-eqz v1, :cond_0
+
+    :try_start_4
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+
+    :goto_1
+    :try_start_5
+    throw v0
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
+
+    :catch_1
+    move-exception v0
+
+    new-instance v1, Lcht;
+
+    invoke-direct {v1, v0}, Lcht;-><init>(Ljava/lang/Exception;)V
+
+    throw v1
+
+    :catch_2
+    move-exception v2
+
+    :try_start_6
+    invoke-static {v1, v2}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public static a(Liyp;Ljava/io/File;Ljava/util/concurrent/Executor;)Liqz;
+    .locals 1
+
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v0, Lchs;
+
+    invoke-direct {v0, p1}, Lchs;-><init>(Ljava/io/File;)V
+
+    invoke-static {p2, v0}, Lihr;->a(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Callable;)Liqz;
+
+    move-result-object v0
+
+    return-object v0
 .end method

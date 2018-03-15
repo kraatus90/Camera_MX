@@ -1,42 +1,146 @@
 .class final Lawp;
-.super Ljava/lang/Object;
+.super Landroid/app/KeyguardManager$KeyguardDismissCallback;
 .source "PG"
-
-# interfaces
-.implements Lawn;
 
 
 # instance fields
-.field private a:Lawn;
+.field private final synthetic a:Landroid/content/Intent;
 
-.field private synthetic b:Lawo;
+.field private final synthetic b:Z
+
+.field private final synthetic c:I
+
+.field private final synthetic d:Lawo;
 
 
 # direct methods
-.method constructor <init>(Lawo;Lawn;)V
+.method constructor <init>(Lawo;Landroid/content/Intent;ZI)V
     .locals 0
 
-    iput-object p1, p0, Lawp;->b:Lawo;
+    iput-object p1, p0, Lawp;->d:Lawo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lawp;->a:Landroid/content/Intent;
 
-    iput-object p2, p0, Lawp;->a:Lawn;
+    iput-boolean p3, p0, Lawp;->b:Z
+
+    iput p4, p0, Lawp;->c:I
+
+    invoke-direct {p0}, Landroid/app/KeyguardManager$KeyguardDismissCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 1
+.method public final onDismissCancelled()V
+    .locals 2
 
-    iget-object v0, p0, Lawp;->a:Lawn;
+    iget-object v0, p0, Lawp;->d:Lawo;
 
-    invoke-interface {v0, p1}, Lawn;->a(Ljava/lang/Object;)V
+    iget-object v0, v0, Lawo;->d:Lkgv;
 
-    iget-object v0, p0, Lawp;->b:Lawo;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lawo;->d()V
+    move-result-object v0
+
+    check-cast v0, Lhfx;
+
+    iget v1, p0, Lawp;->c:I
+
+    iput v1, v0, Lhfx;->a:I
+
+    return-void
+.end method
+
+.method public final onDismissError()V
+    .locals 2
+
+    iget-object v0, p0, Lawp;->d:Lawo;
+
+    iget-object v0, v0, Lawo;->d:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhfx;
+
+    iget v1, p0, Lawp;->c:I
+
+    iput v1, v0, Lhfx;->a:I
+
+    return-void
+.end method
+
+.method public final onDismissSucceeded()V
+    .locals 6
+
+    iget-object v0, p0, Lawp;->d:Lawo;
+
+    iget-object v1, p0, Lawp;->d:Lawo;
+
+    iget-object v1, v1, Lawo;->b:Landroid/content/Context;
+
+    iget-object v2, p0, Lawp;->a:Landroid/content/Intent;
+
+    iget-boolean v3, p0, Lawp;->b:Z
+
+    sget-object v4, Lawo;->a:Ljava/lang/String;
+
+    const-string v5, "Device unlocked, firing target intent."
+
+    invoke-static {v4, v5}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v4, Landroid/content/Intent;
+
+    iget-object v0, v0, Lawo;->c:Ljava/lang/Class;
+
+    invoke-direct {v4, v1, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {v4}, Landroid/content/Intent;->getFlags()I
+
+    move-result v0
+
+    const/high16 v5, 0x4000000
+
+    or-int/2addr v0, v5
+
+    invoke-virtual {v4, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    move-result-object v0
+
+    const-string v5, "android.intent.action.MAIN"
+
+    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-static {v1}, Landroid/app/TaskStackBuilder;->create(Landroid/content/Context;)Landroid/app/TaskStackBuilder;
+
+    move-result-object v0
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v0, v4}, Landroid/app/TaskStackBuilder;->addNextIntent(Landroid/content/Intent;)Landroid/app/TaskStackBuilder;
+
+    :cond_0
+    invoke-virtual {v0, v2}, Landroid/app/TaskStackBuilder;->addNextIntent(Landroid/content/Intent;)Landroid/app/TaskStackBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/TaskStackBuilder;->startActivities()V
+
+    iget-object v0, p0, Lawp;->d:Lawo;
+
+    iget-object v0, v0, Lawo;->d:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhfx;
+
+    iget v1, p0, Lawp;->c:I
+
+    iput v1, v0, Lhfx;->a:I
 
     return-void
 .end method

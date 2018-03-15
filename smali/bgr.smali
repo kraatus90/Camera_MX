@@ -1,87 +1,52 @@
-.class public final Lbgr;
+.class final Lbgr;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Liap;
+
 
 # instance fields
-.field public final a:Ljuy;
-
-.field public final b:Licz;
-
-.field public c:Lbdw;
-
-.field public d:Lbea;
-
-.field public e:Lbgj;
-
-.field public f:Lfte;
-
-.field public g:F
-
-.field public h:F
-
-.field public i:Landroid/os/Handler;
-
-.field public j:I
-
-.field public k:J
-
-.field public l:I
-
-.field public m:Ljava/lang/String;
-
-.field public n:Ljava/io/FileDescriptor;
-
-.field public o:Lftf;
+.field private final synthetic a:Lihb;
 
 
 # direct methods
-.method public constructor <init>(Ljuy;Licz;)V
-    .locals 3
+.method constructor <init>(Lihb;)V
+    .locals 0
 
-    const/4 v2, 0x0
-
-    const/4 v1, 0x0
+    iput-object p1, p0, Lbgr;->a:Lihb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Lbgj;->a:Lbgj;
-
-    iput-object v0, p0, Lbgr;->e:Lbgj;
-
-    sget-object v0, Lfte;->a:Lfte;
-
-    iput-object v0, p0, Lbgr;->f:Lfte;
-
-    iput v1, p0, Lbgr;->g:F
-
-    iput v1, p0, Lbgr;->h:F
-
-    iput v2, p0, Lbgr;->j:I
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lbgr;->k:J
-
-    iput v2, p0, Lbgr;->l:I
-
-    new-instance v0, Lbgh;
-
-    invoke-direct {v0}, Lbgh;-><init>()V
-
-    new-instance v0, Lftf;
-
-    invoke-direct {v0}, Lftf;-><init>()V
-
-    iput-object v0, p0, Lbgr;->o:Lftf;
-
-    new-instance v0, Lbgm;
-
-    invoke-direct {v0}, Lbgm;-><init>()V
-
-    iput-object p1, p0, Lbgr;->a:Ljuy;
-
-    iput-object p2, p0, Lbgr;->b:Licz;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    check-cast p1, Lind;
+
+    check-cast p2, Lind;
+
+    sget-object v0, Lbgq;->a:Ljava/lang/String;
+
+    const-string v1, "converge and generate partial PointMeteringResult"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lbgr;->a:Lihb;
+
+    invoke-interface {v0}, Lihb;->close()V
+
+    invoke-interface {p2}, Lind;->c()J
+
+    invoke-interface {p1}, Lind;->c()J
+
+    new-instance v0, Laud;
+
+    invoke-direct {v0}, Laud;-><init>()V
+
+    return-object v0
 .end method

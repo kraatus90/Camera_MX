@@ -3,100 +3,422 @@
 .source "PG"
 
 # interfaces
-.implements Liol;
+.implements Liny;
 
 
 # instance fields
-.field private a:Liol;
+.field public final a:Ljava/util/NavigableMap;
+
+.field public final b:Ljava/util/HashSet;
+
+.field private final c:I
 
 
 # direct methods
-.method private constructor <init>(Liol;)V
-    .locals 0
+.method public constructor <init>(Ligt;)V
+    .locals 3
+
+    const/16 v2, 0x8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Linu;->a:Liol;
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Linu;->b:Ljava/util/HashSet;
+
+    iput v2, p0, Linu;->c:I
+
+    new-instance v0, Ljava/util/TreeMap;
+
+    invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
+
+    new-instance v1, Linv;
+
+    invoke-direct {v1, p0, p1}, Linv;-><init>(Linu;Ligt;)V
+
+    invoke-static {v0, v2, v1}, Lihl;->a(Ljava/util/NavigableMap;ILigt;)Ljava/util/NavigableMap;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Ljwo;->a(Ljava/util/NavigableMap;Ljava/lang/Object;)Ljava/util/NavigableMap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
 
     return-void
 .end method
 
-.method public static a(Liol;)Linu;
-    .locals 1
+.method private final h()Ljava/util/List;
+    .locals 3
 
-    new-instance v0, Linu;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v0, p0}, Linu;-><init>(Liol;)V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v2, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    monitor-enter v2
+
+    :goto_0
+    :try_start_0
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->pollFirstEntry()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihb;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-object v1
+.end method
+
+.method private final i()Ljava/util/Set;
+    .locals 3
+
+    iget-object v1, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->navigableKeySet()Ljava/util/NavigableSet;
+
+    move-result-object v0
+
+    iget-object v2, p0, Linu;->b:Ljava/util/HashSet;
+
+    invoke-static {v0, v2}, Ljwo;->a(Ljava/util/Set;Ljava/util/Set;)Ljwh;
+
+    move-result-object v0
+
+    monitor-exit v1
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 7
+.method public final a(Ligt;)Lihb;
+    .locals 5
 
-    new-instance v1, Landroid/media/MediaCodec$BufferInfo;
+    iget-object v1, p0, Linu;->a:Ljava/util/NavigableMap;
 
-    invoke-direct {v1}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
+    monitor-enter v1
 
-    const/4 v2, 0x0
-
-    iget v3, p2, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    iget-wide v4, p2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    iget v6, p2, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    invoke-virtual/range {v1 .. v6}, Landroid/media/MediaCodec$BufferInfo;->set(IIJI)V
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
+    :try_start_0
+    invoke-direct {p0}, Linu;->i()Ljava/util/Set;
 
     move-result-object v0
 
-    iget v2, p2, Landroid/media/MediaCodec$BufferInfo;->offset:I
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    move-result v2
 
-    iget v2, p2, Landroid/media/MediaCodec$BufferInfo;->size:I
+    if-eqz v2, :cond_0
 
-    iget v3, p2, Landroid/media/MediaCodec$BufferInfo;->offset:I
+    const/4 v0, 0x0
 
-    add-int/2addr v2, v3
+    monitor-exit v1
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+    :goto_0
+    return-object v0
 
-    iget v2, p2, Landroid/media/MediaCodec$BufferInfo;->size:I
+    :cond_0
+    invoke-interface {p1, v0}, Ligt;->a(Ljava/util/Set;)Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    iget-object v0, p0, Linu;->b:Ljava/util/HashSet;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+    invoke-interface {v0, v2}, Ljava/util/NavigableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+    move-result-object v0
 
-    new-instance v0, Lioe;
+    check-cast v0, Lihb;
 
-    invoke-direct {v0, v2, v1}, Lioe;-><init>(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    monitor-exit v1
 
-    iget-object v1, p0, Linu;->a:Liol;
+    goto :goto_0
 
-    iget-object v2, v0, Lioe;->a:Ljava/nio/ByteBuffer;
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, v0, Lioe;->b:Landroid/media/MediaCodec$BufferInfo;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v1, v2, v0}, Liol;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    throw v0
+.end method
 
+.method final synthetic a(Ligt;Ljava/util/Set;)Ljava/lang/Long;
+    .locals 2
+
+    iget-object v1, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Linu;->b:Ljava/util/HashSet;
+
+    invoke-static {p2, v0}, Ljwo;->a(Ljava/util/Set;Ljava/util/Set;)Ljwh;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Ligt;->a(Ljava/util/Set;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final synthetic a(J)Ljava/lang/Object;
+    .locals 3
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/NavigableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihb;
+
+    return-object v0
+.end method
+
+.method public final a()Ljava/util/List;
+    .locals 1
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljwo;->d(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final synthetic a(JLjava/lang/Object;)V
+    .locals 3
+
+    check-cast p3, Lihb;
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p3}, Ljava/util/NavigableMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihb;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Lihb;->close()V
+
+    :cond_0
     return-void
 .end method
 
-.method public final close()V
+.method public final a(I)Z
     .locals 1
 
-    iget-object v0, p0, Linu;->a:Liol;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Liol;->close()V
+    return v0
+.end method
 
-    return-void
+.method public final b()I
+    .locals 1
+
+    iget v0, p0, Linu;->c:I
+
+    return v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final synthetic d()Ljava/util/Collection;
+    .locals 1
+
+    invoke-direct {p0}, Linu;->h()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final synthetic e()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->pollFirstEntry()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihb;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final synthetic f()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->lastEntry()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihb;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final synthetic g()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Linu;->a:Ljava/util/NavigableMap;
+
+    invoke-interface {v0}, Ljava/util/NavigableMap;->firstEntry()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihb;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

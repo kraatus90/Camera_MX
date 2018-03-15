@@ -1,117 +1,110 @@
-.class final Lar;
-.super Landroid/graphics/drawable/Drawable$ConstantState;
+.class abstract Lar;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Landroid/graphics/drawable/Drawable$ConstantState;
+.field private a:Z
+
+.field private b:F
+
+.field private c:F
+
+.field private final synthetic d:Lal;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable$ConstantState;)V
+.method private constructor <init>(Lal;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
+    iput-object p1, p0, Lar;->d:Lal;
 
-    iput-object p1, p0, Lar;->a:Landroid/graphics/drawable/Drawable$ConstantState;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lal;B)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lar;-><init>(Lal;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final canApplyTheme()Z
-    .locals 1
+.method protected abstract a()F
+.end method
 
-    iget-object v0, p0, Lar;->a:Landroid/graphics/drawable/Drawable$ConstantState;
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->canApplyTheme()Z
+    iget-object v0, p0, Lar;->d:Lal;
+
+    iget-object v0, v0, Lal;->d:Lav;
+
+    iget v1, p0, Lar;->c:F
+
+    invoke-virtual {v0, v1}, Lav;->a(F)V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lar;->a:Z
+
+    return-void
+.end method
+
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 4
+
+    iget-boolean v0, p0, Lar;->a:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lar;->d:Lal;
+
+    iget-object v0, v0, Lal;->d:Lav;
+
+    iget v0, v0, Lav;->a:F
+
+    iput v0, p0, Lar;->b:F
+
+    invoke-virtual {p0}, Lar;->a()F
 
     move-result v0
 
-    return v0
-.end method
+    iput v0, p0, Lar;->c:F
 
-.method public final getChangingConfigurations()I
-    .locals 1
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lar;->a:Landroid/graphics/drawable/Drawable$ConstantState;
+    iput-boolean v0, p0, Lar;->a:Z
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
+    :cond_0
+    iget-object v0, p0, Lar;->d:Lal;
 
-    move-result v0
+    iget-object v0, v0, Lal;->d:Lav;
 
-    return v0
-.end method
+    iget v1, p0, Lar;->b:F
 
-.method public final newDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 3
+    iget v2, p0, Lar;->c:F
 
-    new-instance v0, Lao;
+    iget v3, p0, Lar;->b:F
 
-    invoke-direct {v0}, Lao;-><init>()V
+    sub-float/2addr v2, v3
 
-    iget-object v1, p0, Lar;->a:Landroid/graphics/drawable/Drawable$ConstantState;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
+    move-result v3
 
-    move-result-object v1
+    mul-float/2addr v2, v3
 
-    iput-object v1, v0, Lao;->b:Landroid/graphics/drawable/Drawable;
+    add-float/2addr v1, v2
 
-    iget-object v1, v0, Lao;->b:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v1}, Lav;->a(F)V
 
-    iget-object v2, v0, Lao;->a:Landroid/graphics/drawable/Drawable$Callback;
-
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    return-object v0
-.end method
-
-.method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 3
-
-    new-instance v0, Lao;
-
-    invoke-direct {v0}, Lao;-><init>()V
-
-    iget-object v1, p0, Lar;->a:Landroid/graphics/drawable/Drawable$ConstantState;
-
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lao;->b:Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, v0, Lao;->b:Landroid/graphics/drawable/Drawable;
-
-    iget-object v2, v0, Lao;->a:Landroid/graphics/drawable/Drawable$Callback;
-
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    return-object v0
-.end method
-
-.method public final newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .locals 3
-
-    new-instance v0, Lao;
-
-    invoke-direct {v0}, Lao;-><init>()V
-
-    iget-object v1, p0, Lar;->a:Landroid/graphics/drawable/Drawable$ConstantState;
-
-    invoke-virtual {v1, p1, p2}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lao;->b:Landroid/graphics/drawable/Drawable;
-
-    iget-object v1, v0, Lao;->b:Landroid/graphics/drawable/Drawable;
-
-    iget-object v2, v0, Lao;->a:Landroid/graphics/drawable/Drawable$Callback;
-
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    return-object v0
+    return-void
 .end method

@@ -1,185 +1,131 @@
-.class final Lbtm;
+.class final synthetic Lbtm;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ldlu;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x17
-.end annotation
-
-
-# static fields
-.field private static a:Ljava/lang/String;
+.implements Landroid/content/ContentProvider$PipeDataWriter;
 
 
 # instance fields
-.field private b:Ldsg;
+.field private final a:Lbtl;
 
-.field private c:Ldol;
+.field private final b:Ljava/lang/String;
 
-.field private d:Ljuw;
-
-.field private e:Lfkn;
+.field private final c:Ljava/io/ByteArrayOutputStream;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "AdviceFrmRtrivlCmd"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lbtm;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lauh;Ldsg;Ldol;Ljuw;Lfkn;)V
+.method constructor <init>(Lbtl;Ljava/lang/String;Ljava/io/ByteArrayOutputStream;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lbtm;->b:Ldsg;
+    iput-object p1, p0, Lbtm;->a:Lbtl;
 
-    iput-object p3, p0, Lbtm;->c:Ldol;
+    iput-object p2, p0, Lbtm;->b:Ljava/lang/String;
 
-    iput-object p4, p0, Lbtm;->d:Ljuw;
-
-    iput-object p5, p0, Lbtm;->e:Lfkn;
+    iput-object p3, p0, Lbtm;->c:Ljava/io/ByteArrayOutputStream;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 8
+.method public final writeDataToPipe(Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;)V
+    .locals 9
 
-    const/4 v2, 0x0
+    iget-object v1, p0, Lbtm;->a:Lbtl;
 
-    :try_start_0
-    iget-object v0, p0, Lbtm;->b:Ldsg;
+    iget-object v0, p0, Lbtm;->b:Ljava/lang/String;
 
-    const/4 v1, 0x1
+    iget-object v2, p0, Lbtm;->c:Ljava/io/ByteArrayOutputStream;
 
-    invoke-virtual {v0, v1}, Ldsg;->a(I)Lgig;
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Lief; {:try_start_0 .. :try_end_0} :catch_5
+    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object v3
 
-    :try_start_1
-    iget-object v0, p0, Lbtm;->c:Ldol;
+    iget-object v4, v1, Lbtl;->a:Lihs;
 
-    invoke-interface {v0}, Ldol;->a()Ldom;
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+    sget-object v5, Lbrz;->a:Ljava/lang/String;
 
-    move-result-object v4
-
-    :try_start_2
-    iget-object v0, p0, Lbtm;->d:Ljuw;
-
-    invoke-static {v0}, Lief;->a(Ljuw;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldmh;
-
-    new-instance v1, Lggm;
-
-    invoke-virtual {v0}, Ldmh;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lggk;
-
-    invoke-direct {v1, v0}, Lggm;-><init>(Lggk;)V
-
-    invoke-virtual {v1, v3}, Lggm;->a(Lgga;)Lggm;
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Lggk;
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v1}, Lggm;->c()Lggk;
-
-    move-result-object v1
-
-    aput-object v1, v0, v5
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sget-object v1, Lggt;->b:Lggt;
-
-    invoke-interface {v4, v0, v1}, Ldom;->a(Ljava/util/List;Lggt;)V
-
-    invoke-interface {v4}, Ldom;->close()V
-
-    invoke-interface {v3}, Lgig;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgih;
-
-    new-instance v5, Lgpa;
-
-    iget-object v1, p0, Lbtm;->e:Lfkn;
-
-    invoke-virtual {v1}, Lfkn;->b()Liau;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Liau;->b()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v1}, Licf;->a(I)Licf;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lgih;->h()Ljuw;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-direct {v5, v0, v1, v6}, Lgpa;-><init>(Liil;Licf;Ljuw;)V
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_3
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-eqz v4, :cond_0
+    move-result-object v7
 
-    :try_start_3
-    invoke-interface {v4}, Ldom;->close()V
-    :try_end_3
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
-    :cond_0
-    :try_start_4
-    invoke-interface {v3}, Lgig;->close()V
-    :try_end_4
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_2
-    .catch Lief; {:try_start_4 .. :try_end_4} :catch_5
+    move-result v7
+
+    add-int/lit8 v7, v7, 0x21
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    add-int/2addr v7, v8
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    add-int/2addr v7, v8
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v5, "ByteArrayOutputStream.writeTo#fd="
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v4, v0}, Lihs;->a(Ljava/lang/String;)V
+
+    new-instance v0, Ljava/io/BufferedOutputStream;
+
+    new-instance v4, Ljava/io/FileOutputStream;
+
+    invoke-direct {v4, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
+
+    invoke-direct {v0, v4}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    :try_start_0
+    invoke-virtual {v2, v0}, Ljava/io/ByteArrayOutputStream;->writeTo(Ljava/io/OutputStream;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, v1, Lbtl;->a:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
 
     :goto_0
     return-void
@@ -187,129 +133,27 @@
     :catch_0
     move-exception v0
 
-    :try_start_5
-    throw v0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_start_1
+    sget-object v2, Lbrz;->a:Ljava/lang/String;
 
-    :catchall_0
-    move-exception v1
+    const-string v3, "Error when writeTo the ParcelFileDescriptor"
 
-    move-object v7, v1
+    invoke-static {v2, v3, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-object v1, v0
+    iget-object v0, v1, Lbtl;->a:Lihs;
 
-    move-object v0, v7
-
-    :goto_1
-    if-eqz v4, :cond_1
-
-    if-eqz v1, :cond_2
-
-    :try_start_6
-    invoke-interface {v4}, Ldom;->close()V
-    :try_end_6
-    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_3
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
-
-    :cond_1
-    :goto_2
-    :try_start_7
-    throw v0
-    :try_end_7
-    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_1
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    :catch_1
-    move-exception v0
-
-    :try_start_8
-    throw v0
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
-
-    :catchall_1
-    move-exception v1
-
-    move-object v2, v0
-
-    move-object v0, v1
-
-    :goto_3
-    if-eqz v2, :cond_3
-
-    :try_start_9
-    invoke-interface {v3}, Lgig;->close()V
-    :try_end_9
-    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_4
-    .catch Ljava/lang/InterruptedException; {:try_start_9 .. :try_end_9} :catch_2
-    .catch Lief; {:try_start_9 .. :try_end_9} :catch_5
-
-    :goto_4
-    :try_start_a
-    throw v0
-    :try_end_a
-    .catch Ljava/lang/InterruptedException; {:try_start_a .. :try_end_a} :catch_2
-    .catch Lief; {:try_start_a .. :try_end_a} :catch_5
-
-    :catch_2
-    move-exception v0
-
-    :goto_5
-    sget-object v1, Lbtm;->a:Ljava/lang/String;
-
-    const-string v2, "unable to retrieve frame"
-
-    invoke-static {v1, v2, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v0}, Lihs;->a()V
 
     goto :goto_0
 
-    :catch_3
-    move-exception v4
-
-    :try_start_b
-    invoke-static {v1, v4}, Ljvs;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    :catchall_2
+    :catchall_0
     move-exception v0
 
-    goto :goto_3
+    iget-object v1, v1, Lbtl;->a:Lihs;
 
-    :cond_2
-    invoke-interface {v4}, Ldom;->close()V
-    :try_end_b
-    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_1
-    .catchall {:try_start_b .. :try_end_b} :catchall_2
+    invoke-interface {v1}, Lihs;->a()V
 
-    goto :goto_2
-
-    :catch_4
-    move-exception v1
-
-    :try_start_c
-    invoke-static {v2, v1}, Ljvs;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    goto :goto_4
-
-    :catch_5
-    move-exception v0
-
-    goto :goto_5
-
-    :cond_3
-    invoke-interface {v3}, Lgig;->close()V
-    :try_end_c
-    .catch Ljava/lang/InterruptedException; {:try_start_c .. :try_end_c} :catch_2
-    .catch Lief; {:try_start_c .. :try_end_c} :catch_5
-
-    goto :goto_4
-
-    :catchall_3
-    move-exception v0
-
-    move-object v1, v2
-
-    goto :goto_1
+    throw v0
 .end method

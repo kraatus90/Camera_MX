@@ -1,50 +1,130 @@
-.class final Lcsg;
+.class public final Lcsg;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Libu;
-
-
-# instance fields
-.field private synthetic a:Lcsf;
-
 
 # direct methods
-.method constructor <init>(Lcsf;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lcsg;->a:Lcsf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public static a([BI)Landroid/graphics/Bitmap;
+    .locals 7
 
-# virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lcsg;->a:Lcsf;
+    new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
-    iget-object v0, v0, Lcsf;->g:Licz;
+    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    const-string v1, "CameraActivityUi#inflate"
+    const/4 v2, 0x4
 
-    invoke-interface {v0, v1}, Licz;->a(Ljava/lang/String;)V
+    iput v2, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    iget-object v0, p0, Lcsg;->a:Lcsf;
+    array-length v2, p0
 
-    iget-object v0, v0, Lcsf;->e:Ljxe;
+    invoke-static {p0, v1, v2, v0}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    invoke-interface {v0}, Ljxe;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    iget-object v0, p0, Lcsg;->a:Lcsf;
+    if-nez p1, :cond_0
 
-    iget-object v0, v0, Lcsf;->g:Licz;
+    :goto_0
+    return-object v0
 
-    invoke-interface {v0}, Licz;->a()V
+    :cond_0
+    new-instance v5, Landroid/graphics/Matrix;
 
-    return-void
+    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
+
+    if-eqz p1, :cond_1
+
+    int-to-float v2, p1
+
+    invoke-virtual {v5, v2}, Landroid/graphics/Matrix;->preRotate(F)Z
+
+    :cond_1
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v4
+
+    move v2, v1
+
+    move v6, v1
+
+    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public static a(Lepu;Leqd;)Z
+    .locals 5
+
+    new-instance v1, Ljava/io/File;
+
+    invoke-interface {p1}, Leqd;->f()Leqh;
+
+    move-result-object v0
+
+    iget-object v0, v0, Leqh;->g:Ljava/lang/String;
+
+    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {}, Ljnv;->a()Ljoc;
+
+    move-result-object v0
+
+    invoke-interface {v0, v1}, Ljoc;->d(Ljava/io/File;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v2
+
+    array-length v3, v2
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v3, :cond_0
+
+    aget-object v0, v2, v1
+
+    invoke-static {}, Ljnv;->a()Ljoc;
+
+    move-result-object v4
+
+    invoke-interface {v4, v0}, Ljoc;->d(Ljava/io/File;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    iput-boolean v0, p0, Lepu;->n:Z
+
+    return v0
 .end method

@@ -1,23 +1,19 @@
-.class final Lcau;
-.super Likn;
+.class public final Lcau;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# instance fields
+.field public final synthetic a:Landroid/view/View;
+
+
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0}, Likn;-><init>()V
+    iput-object p1, p0, Lcau;->a:Landroid/view/View;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Lilh;
-
-    throw p1
 .end method

@@ -84,13 +84,13 @@
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    invoke-static {p0}, Lhaz;->a(Landroid/view/View;)Lhaz;
+    invoke-static {p0}, Lhcf;->a(Landroid/view/View;)Lhcf;
 
     move-result-object v1
 
-    const v0, 0x7f0e0131
+    const v0, 0x7f0e0139
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -98,9 +98,9 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;->a:Landroid/view/View;
 
-    const v0, 0x7f0e0132
+    const v0, 0x7f0e013a
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1,174 +1,72 @@
-.class public final Ldve;
+.class final Ldve;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldvc;
-
-
-# static fields
-.field public static a:I
+.implements Laaz;
 
 
 # instance fields
-.field public final b:Licu;
-
-.field public final c:Ljava/util/Set;
-
-.field public final d:Ldtm;
-
-.field public final e:Lfkn;
-
-.field public final f:Ldxc;
-
-.field public final g:I
-
-.field public final h:Lhab;
-
-.field public final i:Ljht;
-
-.field public final j:Liau;
-
-.field private k:Ldwr;
-
-.field private l:Ljxn;
+.field private final synthetic a:Ldux;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Ldux;)V
+    .locals 0
 
-    const/16 v0, 0x3e8
-
-    sput v0, Ldve;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Licv;Lijl;Ldtm;Ljxn;Ldwr;Lfkn;Ljava/util/Set;Ldxc;Lhab;Ljht;Liau;)V
-    .locals 1
+    iput-object p1, p0, Ldve;->a:Ldux;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p3, p0, Ldve;->d:Ldtm;
-
-    iput-object p7, p0, Ldve;->c:Ljava/util/Set;
-
-    iput-object p5, p0, Ldve;->k:Ldwr;
-
-    iput-object p6, p0, Ldve;->e:Lfkn;
-
-    iput-object p4, p0, Ldve;->l:Ljxn;
-
-    iput-object p8, p0, Ldve;->f:Ldxc;
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Ldve;->g:I
-
-    iput-object p9, p0, Ldve;->h:Lhab;
-
-    const-string v0, "FsnRprcssngIS"
-
-    invoke-interface {p1, v0}, Licv;->a(Ljava/lang/String;)Licu;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldve;->b:Licu;
-
-    iput-object p10, p0, Ldve;->i:Ljht;
-
-    iput-object p11, p0, Ldve;->j:Liau;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Leaq;)Ldvd;
-    .locals 7
+.method public final a()V
+    .locals 4
 
-    new-instance v0, Ldvf;
+    iget-object v0, p0, Ldve;->a:Ldux;
 
-    iget-object v2, p0, Ldve;->k:Ldwr;
+    iget-object v0, v0, Ldux;->e:Lgkf;
 
-    iget-object v1, p0, Ldve;->l:Ljxn;
+    const v1, 0x7f09000c
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lgkf;->a(I)V
 
-    iget-object v3, p1, Leaq;->d:Lear;
+    iget-object v0, p0, Ldve;->a:Ldux;
 
-    iget-object v1, p1, Leaq;->b:Leou;
+    iget-object v0, v0, Ldux;->s:Lhia;
 
-    invoke-interface {v1}, Lgou;->n()Lavl;
+    iget-object v1, v0, Lhia;->a:Landroid/view/View;
 
-    move-result-object v4
+    const/4 v2, 0x0
 
-    iget-object v5, p1, Leaq;->a:Ldhj;
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    const/4 v6, 0x0
+    iget-object v1, v0, Lhia;->a:Landroid/view/View;
 
-    move-object v1, p0
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
-    invoke-direct/range {v0 .. v6}, Ldvf;-><init>(Ldve;Ldwr;Lear;Lavl;Ldhj;B)V
+    move-result-object v1
 
-    return-object v0
-.end method
+    const/4 v2, 0x0
 
-.method public final a()Liau;
-    .locals 1
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const-wide/16 v2, 0x12c
 
-    move-result-object v0
+    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
+    move-result-object v1
 
-    move-result-object v0
+    new-instance v2, Lhib;
 
-    return-object v0
-.end method
+    invoke-direct {v2, v0}, Lhib;-><init>(Lhia;)V
 
-.method public final b(Leaq;)Ldvd;
-    .locals 7
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    new-instance v0, Ldvf;
-
-    iget-object v2, p0, Ldve;->k:Ldwr;
-
-    iget-object v1, p0, Ldve;->l:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    iget-object v3, p1, Leaq;->d:Lear;
-
-    iget-object v1, p1, Leaq;->b:Leou;
-
-    invoke-interface {v1}, Lgou;->n()Lavl;
-
-    move-result-object v4
-
-    iget-object v5, p1, Leaq;->a:Ldhj;
-
-    const/4 v6, 0x0
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v6}, Ldvf;-><init>(Ldve;Ldwr;Lear;Lavl;Ldhj;B)V
-
-    return-object v0
-.end method
-
-.method public final b()Ldzs;
-    .locals 2
-
-    new-instance v0, Ldzs;
-
-    sget v1, Leh;->Z:I
-
-    invoke-direct {v0, v1}, Ldzs;-><init>(I)V
-
-    return-object v0
+    return-void
 .end method

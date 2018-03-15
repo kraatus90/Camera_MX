@@ -1,34 +1,129 @@
-.class final Lcpm;
+.class public final Lcpm;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
+
+# static fields
+.field public static final a:Lbpq;
+
+.field public static final b:Lbpp;
+
+.field public static final c:Lbpp;
+
+.field public static final d:Lbpp;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;
+.field public final e:Lbjy;
+
+.field public final f:Lhbh;
+
+.field public final g:Limq;
+
+.field public final h:Lbjw;
+
+.field private i:Lbkx;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lcpm;->a:Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;
+    new-instance v0, Lbpq;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "camera.raisr"
+
+    invoke-direct {v0, v1}, Lbpq;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcpm;->a:Lbpq;
+
+    new-instance v0, Lbpp;
+
+    const-string v1, "camera.p3"
+
+    invoke-direct {v0, v1}, Lbpp;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcpm;->b:Lbpp;
+
+    new-instance v0, Lbpp;
+
+    const-string v1, "camera.slowraw.RESTART"
+
+    invoke-direct {v0, v1}, Lbpp;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcpm;->c:Lbpp;
+
+    new-instance v0, Lbpp;
+
+    const-string v1, "camera.tbinning.RESTART"
+
+    invoke-direct {v0, v1}, Lbpp;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcpm;->d:Lbpp;
 
     return-void
 .end method
 
+.method constructor <init>(Lbjy;Lhbh;Limq;Lbkx;Lbqc;Lbjw;)V
+    .locals 0
 
-# virtual methods
-.method public final close()V
-    .locals 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lcpm;->a:Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;
+    iput-object p1, p0, Lcpm;->e:Lbjy;
 
-    invoke-static {v0}, Lcom/google/googlex/gcam/GcamModule;->delete_uint8_array(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)V
+    iput-object p2, p0, Lcpm;->f:Lhbh;
+
+    iput-object p3, p0, Lcpm;->g:Limq;
+
+    iput-object p4, p0, Lcpm;->i:Lbkx;
+
+    iput-object p6, p0, Lcpm;->h:Lbjw;
 
     return-void
+.end method
+
+.method public static a()I
+    .locals 1
+
+    const/4 v0, 0x3
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public final b()I
+    .locals 4
+
+    iget-object v0, p0, Lcpm;->e:Lbjy;
+
+    invoke-virtual {v0}, Lbjy;->f()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x2
+
+    iget-object v0, v0, Lbjy;->a:Landroid/content/ContentResolver;
+
+    const-string v2, "camera:hdr_plus_zsl_buffer_count"
+
+    invoke-static {v0, v2, v1}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    iget-object v2, p0, Lcpm;->g:Limq;
+
+    const-string v3, "persist.gcam.zsl_buffer_size"
+
+    invoke-virtual {v2, v3, v0}, Limq;->a(Ljava/lang/String;I)I
+
+    move-result v0
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    return v0
 .end method

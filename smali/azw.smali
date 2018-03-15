@@ -1,13 +1,14 @@
-.class public final Lazw;
+.class public interface abstract Lazw;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# virtual methods
+.method public abstract a(I)F
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract a()J
+.end method
 
-    return-void
+.method public abstract a(F)V
 .end method

@@ -1,133 +1,33 @@
 .class final Lce;
-.super Landroid/util/Property;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private a:Landroid/util/Property;
-
-.field private b:Landroid/graphics/PathMeasure;
-
-.field private c:F
-
-.field private d:[F
-
-.field private e:Landroid/graphics/PointF;
-
-.field private f:F
+# static fields
+.field private static final a:Lch;
 
 
 # direct methods
-.method constructor <init>(Landroid/util/Property;Landroid/graphics/Path;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    const-class v0, Ljava/lang/Float;
+    new-instance v0, Lcg;
 
-    invoke-virtual {p1}, Landroid/util/Property;->getName()Ljava/lang/String;
+    invoke-direct {v0}, Lcg;-><init>()V
 
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [F
-
-    iput-object v0, p0, Lce;->d:[F
-
-    new-instance v0, Landroid/graphics/PointF;
-
-    invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
-
-    iput-object v0, p0, Lce;->e:Landroid/graphics/PointF;
-
-    iput-object p1, p0, Lce;->a:Landroid/util/Property;
-
-    new-instance v0, Landroid/graphics/PathMeasure;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p2, v1}, Landroid/graphics/PathMeasure;-><init>(Landroid/graphics/Path;Z)V
-
-    iput-object v0, p0, Lce;->b:Landroid/graphics/PathMeasure;
-
-    iget-object v0, p0, Lce;->b:Landroid/graphics/PathMeasure;
-
-    invoke-virtual {v0}, Landroid/graphics/PathMeasure;->getLength()F
-
-    move-result v0
-
-    iput v0, p0, Lce;->c:F
+    sput-object v0, Lce;->a:Lch;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+.method static a(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
     .locals 1
 
-    iget v0, p0, Lce;->f:F
+    sget-object v0, Lce;->a:Lch;
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-interface {v0, p0, p1, p2}, Lch;->a(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 4
-
-    check-cast p2, Ljava/lang/Float;
-
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    iput v0, p0, Lce;->f:F
-
-    iget-object v0, p0, Lce;->b:Landroid/graphics/PathMeasure;
-
-    iget v1, p0, Lce;->c:F
-
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v2
-
-    mul-float/2addr v1, v2
-
-    iget-object v2, p0, Lce;->d:[F
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z
-
-    iget-object v0, p0, Lce;->e:Landroid/graphics/PointF;
-
-    iget-object v1, p0, Lce;->d:[F
-
-    const/4 v2, 0x0
-
-    aget v1, v1, v2
-
-    iput v1, v0, Landroid/graphics/PointF;->x:F
-
-    iget-object v0, p0, Lce;->e:Landroid/graphics/PointF;
-
-    iget-object v1, p0, Lce;->d:[F
-
-    const/4 v2, 0x1
-
-    aget v1, v1, v2
-
-    iput v1, v0, Landroid/graphics/PointF;->y:F
-
-    iget-object v0, p0, Lce;->a:Landroid/util/Property;
-
-    iget-object v1, p0, Lce;->e:Landroid/graphics/PointF;
-
-    invoke-virtual {v0, p1, v1}, Landroid/util/Property;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-void
 .end method

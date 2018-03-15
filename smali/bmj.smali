@@ -3,18 +3,22 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Lbmd;
+.field private final synthetic a:Lbmg;
+
+.field private final synthetic b:Lfjg;
 
 
 # direct methods
-.method constructor <init>(Lbmd;)V
+.method constructor <init>(Lbmg;Lfjg;)V
     .locals 0
 
-    iput-object p1, p0, Lbmj;->a:Lbmd;
+    iput-object p1, p0, Lbmj;->a:Lbmg;
+
+    iput-object p2, p0, Lbmj;->b:Lfjg;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,30 +27,46 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 5
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    iget-object v1, p0, Lbmj;->a:Lbmg;
+
+    iget-object v2, p0, Lbmj;->b:Lfjg;
+
+    sget-object v0, Lfji;->d:Lfjh;
+
+    invoke-virtual {v2, v0}, Lfjg;->a(Lfjh;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
+    check-cast v0, Ljava/util/UUID;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v2}, Lfjg;->f()J
 
-    move-result v0
+    move-result-wide v2
 
-    iget-object v1, p0, Lbmj;->a:Lbmd;
+    new-instance v4, Ljava/io/IOException;
 
-    iget-object v1, v1, Lbmd;->d:Lbls;
+    invoke-direct {v4, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-virtual {v1, v0}, Lbls;->d(F)V
+    invoke-interface {v1, v0, v2, v3, v4}, Lbmg;->a(Ljava/util/UUID;JLjava/io/IOException;)V
 
-    iget-object v0, p0, Lbmj;->a:Lbmd;
+    return-void
+.end method
 
-    iget-object v0, v0, Lbmd;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 4
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->invalidate()V
+    check-cast p1, Lfnp;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lbmj;->a:Lbmg;
+
+    iget-wide v2, p1, Lfnp;->a:J
+
+    invoke-interface {v0, v2, v3}, Lbmg;->a(J)V
 
     return-void
 .end method

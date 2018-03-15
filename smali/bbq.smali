@@ -1,49 +1,42 @@
-.class final synthetic Lbbq;
+.class final Lbbq;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljtu;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lbbp;
+.field private final synthetic a:Ljava/lang/Runnable;
 
-.field private b:Lbcv;
-
-.field private c:Landroid/view/Surface;
+.field private final synthetic b:Lbbp;
 
 
 # direct methods
-.method constructor <init>(Lbbp;Lbcv;Landroid/view/Surface;)V
+.method constructor <init>(Lbbp;Ljava/lang/Runnable;)V
     .locals 0
 
+    iput-object p1, p0, Lbbq;->b:Lbbp;
+
+    iput-object p2, p0, Lbbq;->a:Ljava/lang/Runnable;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbbq;->a:Lbbp;
-
-    iput-object p2, p0, Lbbq;->b:Lbcv;
-
-    iput-object p3, p0, Lbbq;->c:Landroid/view/Surface;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljuw;
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lbbq;->a:Lbbp;
+    iget-object v0, p0, Lbbq;->b:Lbbp;
 
-    iget-object v1, p0, Lbbq;->b:Lbcv;
+    iget-object v0, v0, Lbbp;->a:Ljava/util/concurrent/Executor;
 
-    iget-object v2, p0, Lbbq;->c:Landroid/view/Surface;
+    iget-object v1, p0, Lbbq;->a:Ljava/lang/Runnable;
 
-    check-cast p1, Liht;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0, v1, v2, p1}, Lbbp;->a(Lbcv;Landroid/view/Surface;Liht;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

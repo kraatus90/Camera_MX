@@ -1,33 +1,52 @@
-.class final Lfro;
+.class public final Lfro;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfrr;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>()V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lfro;->a:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;)Lfro;
+    .locals 1
+
+    new-instance v0, Lfro;
+
+    invoke-direct {v0, p0}, Lfro;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lfsf;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    instance-of v0, p1, Lfsd;
+    new-instance v1, Lfrm;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lfro;->a:Lkgv;
 
-    check-cast p1, Lfsd;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {p1}, Lfsd;->c()V
+    move-result-object v0
 
-    :cond_0
-    return-void
+    check-cast v0, Ljava/util/Set;
+
+    invoke-direct {v1, v0}, Lfrm;-><init>(Ljava/util/Set;)V
+
+    return-object v1
 .end method

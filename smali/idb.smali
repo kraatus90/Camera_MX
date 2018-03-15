@@ -1,151 +1,86 @@
-.class final Lidb;
-.super Landroid/hardware/camera2/CameraDevice$StateCallback;
+.class public final Lidb;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
+# interfaces
+.implements Lick;
 
 
 # instance fields
-.field private a:Lide;
+.field public final a:Libw;
 
-.field private b:Ljava/lang/String;
+.field private final b:Ljrm;
+
+.field private final c:Lick;
 
 
 # direct methods
-.method constructor <init>(Lide;Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Ljrm;)V
+    .locals 2
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraDevice$StateCallback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Lidb;->b:Ljrm;
+
+    new-instance v0, Libw;
+
+    invoke-interface {p1}, Ljrm;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lidb;->a:Libw;
+
+    iget-object v0, p0, Lidb;->a:Libw;
+
+    invoke-static {v0}, Licl;->b(Lick;)Lick;
 
     move-result-object v0
 
-    check-cast v0, Lide;
-
-    iput-object v0, p0, Lidb;->a:Lide;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    iput-object v0, p0, Lidb;->b:Ljava/lang/String;
+    iput-object v0, p0, Lidb;->c:Lick;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClosed(Landroid/hardware/camera2/CameraDevice;)V
-    .locals 2
+.method public final a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+    .locals 1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lidb;->c:Lick;
 
-    invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->getId()Ljava/lang/String;
+    invoke-interface {v0, p1, p2}, Lick;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
 
     move-result-object v0
 
-    iget-object v1, p0, Lidb;->b:Ljava/lang/String;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+.method public final a()V
+    .locals 2
 
-    move-result v0
+    iget-object v0, p0, Lidb;->a:Libw;
 
-    invoke-static {v0}, Liya;->a(Z)V
+    iget-object v1, p0, Lidb;->b:Ljrm;
 
-    iget-object v0, p0, Lidb;->a:Lide;
+    invoke-interface {v1}, Ljrm;->a()Ljava/lang/Object;
 
-    invoke-interface {v0}, Lide;->b()V
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
-    .locals 2
+.method public final c()Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lidb;->a:Libw;
 
-    invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->getId()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lidb;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Liya;->a(Z)V
-
-    iget-object v0, p0, Lidb;->a:Lide;
-
-    invoke-interface {v0}, Lide;->a()V
-
-    invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->close()V
-
-    return-void
-.end method
-
-.method public final onError(Landroid/hardware/camera2/CameraDevice;I)V
-    .locals 2
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->getId()Ljava/lang/String;
+    invoke-virtual {v0}, Libw;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lidb;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Liya;->a(Z)V
-
-    iget-object v0, p0, Lidb;->a:Lide;
-
-    invoke-interface {v0, p2}, Lide;->a(I)V
-
-    invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->close()V
-
-    return-void
-.end method
-
-.method public final onOpened(Landroid/hardware/camera2/CameraDevice;)V
-    .locals 3
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->getId()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lidb;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Liya;->a(Z)V
-
-    iget-object v0, p0, Lidb;->a:Lide;
-
-    new-instance v1, Lifa;
-
-    new-instance v2, Life;
-
-    invoke-direct {v2}, Life;-><init>()V
-
-    invoke-direct {v1, p1}, Lifa;-><init>(Landroid/hardware/camera2/CameraDevice;)V
-
-    invoke-interface {v0, v1}, Lide;->a(Lihy;)V
-
-    return-void
+    return-object v0
 .end method

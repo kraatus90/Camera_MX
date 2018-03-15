@@ -2,83 +2,96 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# static fields
+.field public static final a:[F
 
-# instance fields
-.field private a:Ljxn;
+.field public static final b:[F
 
-.field private b:Ljxn;
+.field public static final c:[F
+
+.field public static final d:[F
+
+.field public static final e:[F
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x4
 
-    iput-object p1, p0, Lehs;->a:Ljxn;
+    new-array v0, v1, [F
 
-    iput-object p2, p0, Lehs;->b:Ljxn;
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lehs;->a:[F
+
+    new-array v0, v1, [F
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lehs;->b:[F
+
+    new-array v0, v1, [F
+
+    fill-array-data v0, :array_2
+
+    sput-object v0, Lehs;->c:[F
+
+    new-array v0, v1, [F
+
+    fill-array-data v0, :array_3
+
+    sput-object v0, Lehs;->d:[F
+
+    new-array v0, v1, [F
+
+    fill-array-data v0, :array_4
+
+    sput-object v0, Lehs;->e:[F
 
     return-void
-.end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
+    nop
 
-    new-instance v0, Lehs;
+    :array_0
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 
-    invoke-direct {v0, p0, p1}, Lehs;-><init>(Ljxn;Ljxn;)V
+    :array_1
+    .array-data 4
+        0x3e4ccccd    # 0.2f
+        0x3f35c28f    # 0.71f
+        0x3f65e354    # 0.898f
+        0x3f800000    # 1.0f
+    .end array-data
 
-    return-object v0
-.end method
+    :array_2
+    .array-data 4
+        0x3df5c28f    # 0.12f
+        0x3df5c28f    # 0.12f
+        0x3df5c28f    # 0.12f
+        0x3f800000    # 1.0f
+    .end array-data
 
+    :array_3
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+    .end array-data
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
-
-    iget-object v0, p0, Lehs;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgdq;
-
-    iget-object v1, p0, Lehs;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgra;
-
-    new-instance v2, Legd;
-
-    sget-object v3, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_WHITE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-interface {v0, v3}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-direct {v2, v0, v1}, Legd;-><init>(ILgra;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Legj;
-
-    return-object v0
+    :array_4
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3dcccccd    # 0.1f
+    .end array-data
 .end method

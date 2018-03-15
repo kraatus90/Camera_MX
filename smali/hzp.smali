@@ -1,76 +1,120 @@
 .class public final Lhzp;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lich;
-
-
-# instance fields
-.field private a:Landroid/os/HandlerThread;
-
-.field private b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/HandlerThread;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhzp;->a:Landroid/os/HandlerThread;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lhzp;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 6
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lhzp;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x1
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    move-result v2
 
-    move-result v0
-
-    if-eqz v0, :cond_0
+    move-object v1, v0
 
     :goto_0
-    return-void
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    :cond_0
-    new-instance v0, Landroid/os/Handler;
+    move-result v3
 
-    iget-object v1, p0, Lhzp;->a:Landroid/os/HandlerThread;
+    if-ge v3, v2, :cond_0
 
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    const v4, 0xffff
+
+    and-int/2addr v4, v3
+
+    packed-switch v4, :pswitch_data_0
+
+    invoke-static {p1, v3}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v3}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    goto :goto_0
 
-    iget-object v1, p0, Lhzp;->a:Landroid/os/HandlerThread;
+    :pswitch_1
+    sget-object v0, Lcom/google/android/gms/wearable/internal/zzcc;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1, v3, v0}, Lhmr;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
-    new-instance v2, Lhzq;
-
-    invoke-direct {v2, v1}, Lhzq;-><init>(Landroid/os/HandlerThread;)V
-
-    const-wide/16 v4, 0x1388
-
-    invoke-virtual {v0, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    move-result-object v0
 
     goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v3
+
+    if-eq v3, v2, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v2, Lcom/google/android/gms/wearable/internal/zzo;
+
+    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzo;-><init>(Ljava/lang/String;Ljava/util/List;)V
+
+    return-object v2
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzo;
+
+    return-object v0
 .end method

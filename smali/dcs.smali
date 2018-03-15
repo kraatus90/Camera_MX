@@ -1,40 +1,48 @@
-.class final Ldcs;
+.class final synthetic Ldcs;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Ldcr;
+.field private final a:Ldcm;
 
 
 # direct methods
-.method constructor <init>(Ldcr;)V
+.method constructor <init>(Ldcm;)V
     .locals 0
 
-    iput-object p1, p0, Ldcs;->a:Ldcr;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldcs;->a:Ldcm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Ldcs;->a:Ldcr;
+    iget-object v0, p0, Ldcs;->a:Ldcm;
 
-    iget-object v0, v0, Lhbo;->g:Leug;
+    iget-object v1, v0, Ldcm;->B:Lcsj;
 
-    const/4 v1, 0x1
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0, v1}, Leug;->c(Z)V
+    iget-object v1, v0, Ldcm;->p:Leaa;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    iget-object v2, v0, Ldcm;->B:Lcsj;
 
+    iget-object v2, v2, Lcsj;->c:Lfdv;
+
+    iget-object v0, v0, Ldcm;->B:Lcsj;
+
+    iget-object v0, v0, Lcsj;->a:Liaw;
+
+    invoke-virtual {v1, v2, v0}, Lglb;->a(Lfdv;Liaa;)V
+
+    :cond_0
     return-void
 .end method

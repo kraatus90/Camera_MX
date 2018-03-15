@@ -1,35 +1,99 @@
-.class public final Lmb;
-.super Landroid/widget/ArrayAdapter;
+.class public abstract Lmb;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# static fields
+.field public static a:I
+
+
 # direct methods
-.method public constructor <init>(Landroid/content/Context;I)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    const v0, 0x1020014
+    const/4 v0, -0x1
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p1, p2, v0, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II[Ljava/lang/Object;)V
+    sput v0, Lmb;->a:I
 
     return-void
 .end method
 
+.method constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final getItemId(I)J
-    .locals 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    int-to-long v0, p1
-
-    return-wide v0
+    return-void
 .end method
 
-.method public final hasStableIds()Z
+.method static a(Landroid/content/Context;Landroid/view/Window;Lma;)Lmb;
     .locals 1
 
-    const/4 v0, 0x1
+    new-instance v0, Lme;
 
-    return v0
+    invoke-direct {v0, p0, p1, p2}, Lme;-><init>(Landroid/content/Context;Landroid/view/Window;Lma;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public abstract a(I)Landroid/view/View;
+.end method
+
+.method public abstract a()Llp;
+.end method
+
+.method public abstract a(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract a(Landroid/view/View;)V
+.end method
+
+.method public abstract a(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+.end method
+
+.method public abstract a(Ljava/lang/CharSequence;)V
+.end method
+
+.method public abstract b()Landroid/view/MenuInflater;
+.end method
+
+.method public abstract b(I)V
+.end method
+
+.method public abstract b(Landroid/os/Bundle;)V
+.end method
+
+.method public abstract b(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+.end method
+
+.method public abstract c()V
+.end method
+
+.method public abstract c(I)Z
+.end method
+
+.method public abstract d()V
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract f()V
+.end method
+
+.method public abstract g()V
+.end method
+
+.method public abstract h()V
+.end method
+
+.method public abstract i()V
+.end method
+
+.method public abstract j()V
+.end method
+
+.method public abstract k()Z
 .end method

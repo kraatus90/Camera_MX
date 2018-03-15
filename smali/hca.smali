@@ -1,45 +1,42 @@
-.class final Lhca;
-.super Lhci;
+.class public final Lhca;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lhby;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lhby;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lhca;->a:Lhby;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lhci;-><init>()V
+    iput-object p1, p0, Lhca;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final V()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lhca;->a:Lhby;
+    new-instance v1, Lhbz;
 
-    iget-object v0, v0, Lhby;->a:Lgvj;
+    iget-object v0, p0, Lhca;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lhci;->V()V
+    move-result-object v0
 
-    iget-object v0, p0, Lhca;->a:Lhby;
+    check-cast v0, Landroid/content/Context;
 
-    iget-object v0, v0, Lhby;->a:Lgvj;
+    invoke-direct {v1, v0}, Lhbz;-><init>(Landroid/content/Context;)V
 
-    iget-object v1, p0, Lhca;->a:Lhby;
-
-    iget-object v1, v1, Lhby;->b:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v1
 .end method

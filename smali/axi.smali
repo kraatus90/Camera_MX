@@ -1,88 +1,173 @@
-.class final Laxi;
+.class public final Laxi;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field private synthetic a:Laxh;
+# static fields
+.field private static final a:I
 
 
 # direct methods
-.method constructor <init>(Laxh;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Laxi;->a:Laxh;
+    const v0, 0x7f11002d
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput v0, Laxi;->a:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final run()V
+.method public static a(Landroid/content/Context;)Ljrf;
     .locals 4
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    iget-object v2, p0, Laxi;->a:Laxh;
+    const-string v1, "com.google.android.apps.photos"
 
-    iget-object v2, v2, Laxh;->d:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    monitor-enter v2
+    move-result-object v0
 
-    :try_start_0
-    iget-object v3, p0, Laxi;->a:Laxh;
+    invoke-static {v0}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
-    iget-boolean v3, v3, Laxh;->f:Z
+    move-result-object v1
 
-    if-nez v3, :cond_1
+    invoke-virtual {v1}, Ljrf;->a()Z
 
-    iget-object v3, p0, Laxi;->a:Laxh;
+    move-result v0
 
-    iget v3, v3, Laxh;->b:I
+    if-nez v0, :cond_0
 
-    if-nez v3, :cond_1
-
-    iget-object v1, p0, Laxi;->a:Laxh;
-
-    const/4 v3, 0x1
-
-    iput-boolean v3, v1, Laxh;->f:Z
+    sget-object v0, Ljqu;->a:Ljqu;
 
     :goto_0
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Laxi;->a:Laxh;
-
-    iget-object v0, v0, Laxh;->a:Lich;
-
-    invoke-interface {v0}, Lich;->close()V
+    return-object v0
 
     :cond_0
-    return-void
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    :catchall_0
-    move-exception v0
+    move-result-object v2
 
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {v1}, Ljrf;->b()Ljava/lang/Object;
 
-    throw v0
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Intent;
+
+    const/high16 v3, 0x10000
+
+    invoke-virtual {v2, v0, v3}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    goto :goto_0
 
     :cond_1
-    move v0, v1
+    move-object v0, v1
+
+    goto :goto_0
+.end method
+
+.method public static a(Landroid/content/Context;Landroid/view/Menu;Ljrf;)Ljrf;
+    .locals 3
+
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p2}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {p2}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Intent;
+
+    invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    const-string v1, "com.google.android.apps.photos"
+
+    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Laxi;->a:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_1
+    if-nez v0, :cond_2
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    invoke-interface {p1, v0}, Landroid/view/Menu;->add(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+
+    move-result-object v1
+
+    const/4 v0, 0x2
+
+    invoke-interface {v1, v0}, Landroid/view/MenuItem;->setShowAsAction(I)V
+
+    invoke-virtual {p2}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Intent;
+
+    const/high16 v2, 0x10000
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    invoke-interface {v1, v0}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+
+    invoke-static {v1}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
 
     goto :goto_0
 .end method

@@ -1,11 +1,44 @@
-.class public interface abstract Ljug;
+.class final Ljug;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/io/Serializable;
 
-# virtual methods
-.method public abstract a(Ljava/lang/Object;)V
+
+# static fields
+.field public static final serialVersionUID:J
+
+
+# instance fields
+.field private final a:Ljava/util/EnumSet;
+
+
+# direct methods
+.method constructor <init>(Ljava/util/EnumSet;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljug;->a:Ljava/util/EnumSet;
+
+    return-void
 .end method
 
-.method public abstract a(Ljava/lang/Throwable;)V
+
+# virtual methods
+.method final readResolve()Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Ljuf;
+
+    iget-object v1, p0, Ljug;->a:Ljava/util/EnumSet;
+
+    invoke-virtual {v1}, Ljava/util/EnumSet;->clone()Ljava/util/EnumSet;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljuf;-><init>(Ljava/util/EnumSet;)V
+
+    return-object v0
 .end method

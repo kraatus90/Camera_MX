@@ -1,56 +1,102 @@
-.class final Lfng;
+.class public final Lfng;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfmi;
+.field private final a:Lfne;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmi;)V
+.method private constructor <init>(Lfne;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfng;->a:Lfmi;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfng;->a:Lfne;
+
+    iput-object p2, p0, Lfng;->b:Lkgv;
+
+    iput-object p3, p0, Lfng;->c:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final run()V
+.method public static a(Lfne;Lkgv;Lkgv;)Lfng;
     .locals 1
 
-    iget-object v0, p0, Lfng;->a:Lfmi;
+    new-instance v0, Lfng;
 
-    iget-object v0, v0, Lfmi;->M:Landroid/app/AlertDialog;
+    invoke-direct {v0, p0, p1, p2}, Lfng;-><init>(Lfne;Lkgv;Lkgv;)V
 
-    if-eqz v0, :cond_0
+    return-object v0
+.end method
 
-    iget-object v0, p0, Lfng;->a:Lfmi;
 
-    iget-object v0, v0, Lfmi;->M:Landroid/app/AlertDialog;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    const/4 v5, 0x3
 
-    :cond_0
-    iget-object v0, p0, Lfng;->a:Lfmi;
+    iget-object v2, p0, Lfng;->a:Lfne;
 
-    iget-object v0, v0, Lfmi;->N:Landroid/app/AlertDialog;
+    iget-object v0, p0, Lfng;->b:Lkgv;
 
-    if-eqz v0, :cond_1
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lfng;->a:Lfmi;
+    move-result-object v0
 
-    iget-object v0, v0, Lfmi;->N:Landroid/app/AlertDialog;
+    check-cast v0, Lkeh;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    iget-object v1, p0, Lfng;->c:Lkgv;
 
-    :cond_1
-    return-void
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lflv;
+
+    new-instance v3, Lfnf;
+
+    invoke-direct {v3}, Lfnf;-><init>()V
+
+    sget-object v4, Lken;->a:Lken;
+
+    invoke-static {v0, v3, v4}, Lkcv;->a(Lkeh;Ljqv;Ljava/util/concurrent/Executor;)Lkeh;
+
+    move-result-object v0
+
+    iget-object v2, v2, Lfne;->b:Linq;
+
+    new-instance v3, Lflw;
+
+    invoke-direct {v3, v1, v2, v5}, Lflw;-><init>(Lflv;Linq;I)V
+
+    sget-object v1, Lken;->a:Lken;
+
+    invoke-static {v0, v3, v1}, Lkcv;->a(Lkeh;Ljqv;Ljava/util/concurrent/Executor;)Lkeh;
+
+    move-result-object v0
+
+    new-instance v1, Lflo;
+
+    invoke-direct {v1, v0, v5}, Lflo;-><init>(Lkeh;I)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfls;
+
+    return-object v0
 .end method

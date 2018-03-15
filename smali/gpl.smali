@@ -1,154 +1,72 @@
-.class public final Lgpl;
+.class final Lgpl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgpk;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Lgpv;
-
-.field private b:Lgpp;
+.field private final synthetic a:Lgpi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Lgpi;)V
+    .locals 0
+
+    iput-object p1, p0, Lgpl;->a:Lgpi;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lgpe;
-
-    invoke-direct {v0}, Lgpe;-><init>()V
-
-    iput-object v0, p0, Lgpl;->b:Lgpp;
-
-    new-instance v0, Lgph;
-
-    iget-object v1, p0, Lgpl;->b:Lgpp;
-
-    invoke-direct {v0, v1}, Lgph;-><init>(Lgpo;)V
-
-    iput-object v0, p0, Lgpl;->a:Lgpv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
-
-    iget-object v0, p0, Lgpl;->b:Lgpp;
-
-    invoke-virtual {v0}, Lgpp;->e()V
-
-    const-string v0, "ProgressCont"
-
-    iget-object v1, p0, Lgpl;->a:Lgpv;
-
-    iget-boolean v1, v1, Lgpv;->e:Z
-
-    iget-object v2, p0, Lgpl;->b:Lgpp;
-
-    iget-boolean v2, v2, Lgpp;->e:Z
-
-    const/16 v3, 0x1c
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "enabled="
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, ", visible="
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;)V
+.method public final a(Ljava/lang/Throwable;)V
     .locals 2
 
-    iget-object v0, p0, Lgpl;->a:Lgpv;
+    sget-object v0, Lgpi;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Lgpv;->a(Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;)V
+    const-string v1, "exception retrieving cached indicator Bitmap"
 
-    iget-object v0, p0, Lgpl;->b:Lgpp;
-
-    iget-object v1, p0, Lgpl;->a:Lgpv;
-
-    invoke-virtual {v0, v1, p1}, Lgpp;->a(Lgpv;Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;)V
-
-    iget-object v0, p0, Lgpl;->a:Lgpv;
-
-    invoke-virtual {v0}, Lgpv;->a()V
+    invoke-static {v0, v1, p1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public final b()V
-    .locals 5
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Lgpl;->b:Lgpp;
+    check-cast p1, Lgni;
 
-    invoke-virtual {v0}, Lgpp;->y_()V
+    sget-object v0, Lgpi;->a:Ljava/lang/String;
 
-    const-string v0, "ProgressCont"
-
-    iget-object v1, p0, Lgpl;->a:Lgpv;
-
-    iget-boolean v1, v1, Lgpv;->e:Z
-
-    iget-object v2, p0, Lgpl;->b:Lgpp;
-
-    iget-boolean v2, v2, Lgpp;->e:Z
-
-    const/16 v3, 0x1c
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "enabled="
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v3, ", visible="
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1c
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "retrieved indicator Bitmap: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -156,111 +74,26 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    return-void
-.end method
+    if-eqz p1, :cond_0
 
-.method public final c()V
-    .locals 5
+    sget-object v0, Lgpi;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Lgpl;->a:Lgpv;
+    const-string v1, "updating indicator Bitmap from cache"
 
-    invoke-virtual {v0}, Lgpv;->d()V
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v0, "ProgressCont"
+    iget-object v0, p0, Lgpl;->a:Lgpi;
 
-    iget-object v1, p0, Lgpl;->a:Lgpv;
+    iget-object v1, p1, Lgni;->a:Landroid/graphics/Bitmap;
 
-    iget-boolean v1, v1, Lgpv;->e:Z
+    iget-object v2, p1, Lgni;->b:Ligz;
 
-    iget-object v2, p0, Lgpl;->b:Lgpp;
+    iget v2, v2, Ligz;->e:I
 
-    iget-boolean v2, v2, Lgpp;->e:Z
+    invoke-virtual {v0, v1, v2}, Lgpi;->a(Landroid/graphics/Bitmap;I)V
 
-    const/16 v3, 0x1c
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "enabled="
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, ", visible="
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 5
-
-    iget-object v0, p0, Lgpl;->a:Lgpv;
-
-    invoke-virtual {v0}, Lgpv;->O()V
-
-    const-string v0, "ProgressCont"
-
-    iget-object v1, p0, Lgpl;->a:Lgpv;
-
-    iget-boolean v1, v1, Lgpv;->e:Z
-
-    iget-object v2, p0, Lgpl;->b:Lgpp;
-
-    iget-boolean v2, v2, Lgpp;->e:Z
-
-    const/16 v3, 0x1c
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "enabled="
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, ", visible="
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
+    :cond_0
     return-void
 .end method

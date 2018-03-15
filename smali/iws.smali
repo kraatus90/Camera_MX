@@ -1,80 +1,195 @@
-.class final Liws;
+.class final synthetic Liws;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Liwr;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Liwr;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liws;->a:Liwr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 6
+.method public final run()V
+    .locals 7
 
-    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    iget-object v2, p0, Liws;->a:Liwr;
 
-    const-string v1, "default"
+    iget-object v0, v2, Liwr;->c:Lkeh;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    check-cast v0, Ljava/lang/Integer;
 
-    new-instance v1, Ljdf;
+    invoke-static {v0}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
-    sget-object v2, Ljfs;->f:Ljfs;
+    move-result-object v3
 
-    invoke-direct {v1, v2}, Ljdf;-><init>(Ljfs;)V
+    iget-object v0, v2, Liwr;->d:Lkeh;
 
-    new-instance v2, Ljdf;
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    sget-object v3, Ljfs;->g:Ljfs;
+    move-result-object v0
 
-    invoke-direct {v2, v3}, Ljdf;-><init>(Ljfs;)V
+    check-cast v0, Ljava/lang/Float;
 
-    new-instance v3, Ljdk;
+    invoke-static {v0}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
-    invoke-direct {v3}, Ljdk;-><init>()V
+    move-result-object v4
 
-    sget-object v4, Ljfs;->f:Ljfs;
+    iget-object v0, v2, Liwr;->e:Lkeh;
 
-    const v5, 0x3ecccccd    # 0.4f
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    invoke-virtual {v3, v4, v1, v5}, Ljdk;->a(Ljfs;Ljdg;F)V
+    move-result-object v0
 
-    sget-object v1, Ljfs;->g:Ljfs;
+    check-cast v0, Ljava/lang/Float;
 
-    const v4, 0x3f19999a    # 0.6f
+    invoke-static {v0}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
-    invoke-virtual {v3, v1, v2, v4}, Ljdk;->a(Ljfs;Ljdg;F)V
+    move-result-object v5
 
-    invoke-virtual {v3}, Ljdk;->a()Ljdj;
+    iget-object v0, v2, Liwr;->b:Lkeh;
 
-    move-result-object v1
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    new-instance v2, Ljdd;
+    move-result-object v0
 
-    const/16 v3, 0x9c4
+    check-cast v0, Liwo;
 
-    invoke-direct {v2, v1, v3}, Ljdd;-><init>(Ljdh;I)V
+    :try_start_0
+    iget-object v1, v0, Liwo;->a:Ljrf;
 
-    new-instance v1, Ljas;
+    invoke-virtual {v1}, Ljrf;->a()Z
 
-    new-instance v3, Ljdi;
+    move-result v1
 
-    invoke-direct {v3, v2, v0}, Ljdi;-><init>(Ljdh;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+    if-eqz v1, :cond_2
 
-    invoke-direct {v1, v3}, Ljas;-><init>(Ljdi;)V
+    new-instance v1, Landroid/media/MediaMuxer;
 
-    return-object v1
+    iget-object v0, v0, Liwo;->a:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    const/4 v6, 0x0
+
+    invoke-direct {v1, v0, v6}, Landroid/media/MediaMuxer;-><init>(Ljava/lang/String;I)V
+
+    :goto_0
+    invoke-virtual {v3}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v3}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Landroid/media/MediaMuxer;->setOrientationHint(I)V
+
+    :cond_0
+    invoke-virtual {v4}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v5}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v4}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v3
+
+    invoke-virtual {v5}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    invoke-virtual {v1, v3, v0}, Landroid/media/MediaMuxer;->setLocation(FF)V
+
+    :cond_1
+    iget-object v0, v2, Liwr;->f:Lket;
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+
+    :cond_2
+    new-instance v1, Landroid/media/MediaMuxer;
+
+    iget-object v0, v0, Liwo;->b:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/io/FileDescriptor;
+
+    const/4 v6, 0x0
+
+    invoke-direct {v1, v0, v6}, Landroid/media/MediaMuxer;-><init>(Ljava/io/FileDescriptor;I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "MuxerImpl"
+
+    const-string v3, "Error trying to construct MediaMuxer."
+
+    invoke-static {v1, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    iget-object v1, v2, Liwr;->f:Lket;
+
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
 .end method

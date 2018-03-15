@@ -1,148 +1,172 @@
-.class public final Lgcm;
+.class public Lgcm;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field private static a:Ljava/lang/String;
+# instance fields
+.field private a:I
+
+.field private final b:Ljava/util/concurrent/locks/ReentrantLock;
+
+.field private c:Ljava/util/concurrent/locks/Condition;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
-    const-string v0, "TimedFutures"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    sput-object v0, Lgcm;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static a(Ljuw;Landroid/os/Handler;)Ljuw;
-    .locals 6
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v1, Ljvi;
-
-    invoke-direct {v1}, Ljvi;-><init>()V
-
-    new-instance v2, Lgcn;
-
-    invoke-direct {v2, v0, v1, p0}, Lgcn;-><init>(Ljava/lang/Object;Ljvi;Ljuw;)V
-
-    const-wide/16 v4, 0x2710
-
-    invoke-virtual {p1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    new-instance v2, Lgco;
-
-    invoke-direct {v2, v0, v1, p0}, Lgco;-><init>(Ljava/lang/Object;Ljvi;Ljuw;)V
-
-    new-instance v0, Lhzn;
-
-    invoke-direct {v0, p1}, Lhzn;-><init>(Landroid/os/Handler;)V
-
-    invoke-interface {p0, v2, v0}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    return-object v1
-.end method
-
-.method static final synthetic a(Ljava/lang/Object;Ljvi;Ljuw;)V
-    .locals 3
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-virtual {p1}, Ljsw;->isDone()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lgcm;->a:Ljava/lang/String;
-
-    const-string v1, "Value arriving for future timed out previously"
-
-    new-instance v2, Ljava/lang/Throwable;
-
-    invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
-
-    invoke-static {v0, v1, v2}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    monitor-exit p0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-virtual {p1, p2}, Ljvi;->a(Ljuw;)Z
-
-    monitor-exit p0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method static final synthetic b(Ljava/lang/Object;Ljvi;Ljuw;)V
-    .locals 3
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-virtual {p1}, Ljsw;->isDone()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lgcm;->a:Ljava/lang/String;
-
-    const-string v1, "Timed out future"
-
-    new-instance v2, Ljava/lang/Throwable;
-
-    invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
-
-    invoke-static {v0, v1, v2}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    new-instance v0, Lbih;
-
-    const-string v1, "Future timed out"
-
-    invoke-direct {v0, v1}, Lbih;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, v0}, Ljsw;->a(Ljava/lang/Throwable;)Z
+    iput-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
 
     const/4 v0, 0x0
 
-    invoke-interface {p2, v0}, Ljuw;->cancel(Z)Z
+    iput v0, p0, Lgcm;->a:I
 
-    :cond_0
-    monitor-exit p0
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->newCondition()Ljava/util/concurrent/locks/Condition;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lgcm;->c:Ljava/util/concurrent/locks/Condition;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 2
+
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    iget v0, p0, Lgcm;->a:I
+
+    iget-object v1, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return v0
+.end method
+
+.method public final a(I)Lgcm;
+    .locals 1
+
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    iput p1, p0, Lgcm;->a:I
+
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return-object p0
+.end method
+
+.method public final b(I)I
+    .locals 2
+
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    :try_start_0
+    iget v0, p0, Lgcm;->a:I
+
+    add-int/2addr v0, p1
+
+    iput v0, p0, Lgcm;->a:I
+
+    iget v0, p0, Lgcm;->a:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v1, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return v0
 
     :catchall_0
     move-exception v0
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     throw v0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    :goto_0
+    :try_start_0
+    iget v0, p0, Lgcm;->a:I
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgcm;->c:Ljava/util/concurrent/locks/Condition;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->await()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    iget-object v0, p0, Lgcm;->c:Ljava/util/concurrent/locks/Condition;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
+
+    iget-object v0, p0, Lgcm;->b:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return-void
 .end method

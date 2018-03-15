@@ -1,207 +1,72 @@
-.class Lgrq;
-.super Lgvh;
+.class public final Lgrq;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Lgrk;
+.field private final synthetic a:Lgql;
 
 
 # direct methods
-.method constructor <init>(Lgrk;)V
-    .locals 1
+.method public constructor <init>(Lgql;)V
+    .locals 0
 
-    iput-object p1, p0, Lgrq;->a:Lgrk;
+    iput-object p1, p0, Lgrq;->a:Lgql;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public P()V
-    .locals 0
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
+
+    sget-object v0, Lgql;->a:Ljava/lang/String;
+
+    const-string v1, "PassiveFocusScanAnimation: not started"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public Q()V
-    .locals 3
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lgrq;->a:Lgrk;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lgrk;->j:Lidm;
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x1
-
-    invoke-interface {v0, v1, v2}, Lidm;->a(IZ)V
-
-    return-void
-.end method
-
-.method public final a()V
-    .locals 4
-
-    const/4 v3, 0x1
-
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v1, v0, Lgrk;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v1, v3}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setSelfieFlashState(Z)V
-
-    iget-object v1, v0, Lgrk;->k:Liau;
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Liau;->a(Ljava/lang/Object;)V
-
-    iget-object v1, v0, Lgrk;->g:Lgzm;
-
-    invoke-virtual {v1}, Lgzm;->a()V
-
-    iget-object v0, v0, Lgrk;->i:Lgwr;
-
-    const/16 v1, 0x704
-
-    invoke-interface {v0, v1}, Lgwr;->a(I)V
-
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v0, v0, Lgrk;->h:Lgrt;
-
-    iget-object v1, v0, Lgrt;->k:Lgyz;
-
-    iget v2, v0, Lgrt;->c:I
-
-    invoke-interface {v1, v2}, Lgyz;->setColor(I)V
-
-    iget-object v1, v0, Lgrt;->n:Landroid/view/View;
-
-    iget v2, v0, Lgrt;->a:I
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
-
-    iget-object v1, v0, Lgrt;->l:Lgyz;
-
-    iget v2, v0, Lgrt;->g:I
-
-    invoke-interface {v1, v2}, Lgyz;->setColor(I)V
-
-    iget-object v1, v0, Lgrt;->m:Lgyz;
-
-    iget v2, v0, Lgrt;->e:I
-
-    invoke-interface {v1, v2}, Lgyz;->setColor(I)V
-
-    iget-object v1, v0, Lgrt;->o:Landroid/view/Window;
-
-    iget v0, v0, Lgrt;->j:I
-
-    invoke-virtual {v1, v0}, Landroid/view/Window;->setNavigationBarColor(I)V
-
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v0, v0, Lgrk;->j:Lidm;
-
-    invoke-interface {v0, v3, v3}, Lidm;->a(IZ)V
-
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v0, v0, Lgrk;->l:Ljht;
-
-    invoke-virtual {v0}, Ljht;->a()Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lgrq;->a:Lgrk;
+    sget-object v0, Lgql;->a:Ljava/lang/String;
 
-    iget-object v0, v0, Lgrk;->l:Ljht;
+    const-string v1, "PassiveFocusScanAnimation: completed"
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    iget-object v0, p0, Lgrq;->a:Lgql;
 
-    check-cast v0, Lgdm;
+    iget-object v0, v0, Lgql;->q:Late;
 
-    invoke-interface {v0}, Lgdm;->c()V
+    invoke-interface {v0}, Late;->c()Lhaw;
+
+    :goto_0
+    return-void
 
     :cond_0
-    return-void
-.end method
+    sget-object v0, Lgql;->a:Ljava/lang/String;
 
-.method public final b()V
-    .locals 4
+    const-string v1, "PassiveFocusScanAnimation: cancelled"
 
-    const/4 v3, 0x0
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v1, v0, Lgrk;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v1, v3}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setSelfieFlashState(Z)V
-
-    iget-object v1, v0, Lgrk;->g:Lgzm;
-
-    invoke-virtual {v1}, Lgzm;->b()V
-
-    iget-object v1, v0, Lgrk;->h:Lgrt;
-
-    invoke-virtual {v1}, Lgrt;->a()V
-
-    iget-object v1, v0, Lgrk;->k:Liau;
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Liau;->a(Ljava/lang/Object;)V
-
-    iget-object v0, v0, Lgrk;->i:Lgwr;
-
-    const/16 v1, 0x705
-
-    invoke-interface {v0, v1}, Lgwr;->a(I)V
-
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v0, v0, Lgrk;->j:Lidm;
-
-    const/4 v1, 0x2
-
-    invoke-interface {v0, v1, v3}, Lidm;->a(IZ)V
-
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v0, v0, Lgrk;->l:Ljht;
-
-    invoke-virtual {v0}, Ljht;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lgrq;->a:Lgrk;
-
-    iget-object v0, v0, Lgrk;->l:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgdm;
-
-    invoke-interface {v0}, Lgdm;->d()V
-
-    :cond_0
-    return-void
+    goto :goto_0
 .end method

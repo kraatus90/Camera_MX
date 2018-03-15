@@ -1,137 +1,59 @@
-.class public interface abstract Lify;
+.class public final synthetic Lify;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:[I
-
-.field public static final b:[F
-
-.field public static final c:[Landroid/util/Size;
-
-.field public static final d:[B
+# instance fields
+.field private final a:Lifi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lifi;)V
+    .locals 0
 
-    const/4 v1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v1, [I
-
-    sput-object v0, Lify;->a:[I
-
-    new-array v0, v1, [F
-
-    sput-object v0, Lify;->b:[F
-
-    new-array v0, v1, [Landroid/util/Size;
-
-    sput-object v0, Lify;->c:[Landroid/util/Size;
-
-    new-array v0, v1, [B
-
-    sput-object v0, Lify;->d:[B
+    iput-object p1, p0, Lify;->a:Lifi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(ILici;)J
-.end method
+.method public final run()V
+    .locals 2
 
-.method public abstract a()Ligc;
-.end method
+    iget-object v0, p0, Lify;->a:Lifi;
 
-.method public abstract a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-.end method
+    iget-object v0, v0, Lifi;->d:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-.method public abstract a(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
-.end method
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
 
-.method public abstract a(I)Ljava/util/List;
-.end method
+    move-result-object v0
 
-.method public abstract a_(Lici;)Ljava/util/List;
-.end method
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-.method public abstract b()Lige;
-.end method
+    move-result-object v1
 
-.method public abstract b(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-.end method
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-.method public abstract b(I)Ljava/util/List;
-.end method
+    move-result v0
 
-.method public abstract c()Ljava/util/List;
-.end method
+    if-eqz v0, :cond_0
 
-.method public abstract d()I
-.end method
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.method public abstract e()Landroid/graphics/Rect;
-.end method
+    move-result-object v0
 
-.method public abstract f()Z
-.end method
+    check-cast v0, Lifj;
 
-.method public abstract g()Z
-.end method
+    invoke-interface {v0}, Lifj;->e()V
 
-.method public abstract h()I
-.end method
+    goto :goto_0
 
-.method public abstract i()Ligd;
-.end method
-
-.method public abstract j()Ljava/util/List;
-.end method
-
-.method public abstract k()Z
-.end method
-
-.method public abstract l()I
-.end method
-
-.method public abstract m()I
-.end method
-
-.method public abstract n()F
-.end method
-
-.method public abstract o()F
-.end method
-
-.method public abstract p()Z
-.end method
-
-.method public abstract q()Z
-.end method
-
-.method public abstract r()Z
-.end method
-
-.method public abstract s()Ljava/util/List;
-.end method
-
-.method public abstract t()Ljava/util/List;
-.end method
-
-.method public abstract u()Ljava/util/List;
-.end method
-
-.method public abstract v()Z
-.end method
-
-.method public abstract w()[B
-.end method
-
-.method public abstract x()Z
-.end method
-
-.method public abstract y()Z
+    :cond_0
+    return-void
 .end method

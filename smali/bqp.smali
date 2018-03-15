@@ -1,27 +1,39 @@
-.class public Lbqp;
+.class public final Lbqp;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final a:Landroid/app/Application;
+.field public final a:Landroid/graphics/drawable/ShapeDrawable;
 
-.field public final b:Landroid/content/Context;
+.field public b:F
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Application;Landroid/content/Context;)V
+.method public constructor <init>(Landroid/graphics/drawable/ShapeDrawable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Lbqp;->a:Landroid/graphics/drawable/ShapeDrawable;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
+.end method
 
-    iput-object p1, p0, Lbqp;->a:Landroid/app/Application;
 
-    iput-object p2, p0, Lbqp;->b:Landroid/content/Context;
+# virtual methods
+.method public final a(F)V
+    .locals 2
+
+    const/high16 v0, 0x437f0000    # 255.0f
+
+    mul-float/2addr v0, p1
+
+    float-to-int v0, v0
+
+    iget-object v1, p0, Lbqp;->a:Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-virtual {v1, v0}, Landroid/graphics/drawable/ShapeDrawable;->setAlpha(I)V
 
     return-void
 .end method

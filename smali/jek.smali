@@ -3,28 +3,10 @@
 .source "PG"
 
 # interfaces
-.implements Ljeo;
-
-
-# static fields
-.field private static a:Ljava/util/regex/Pattern;
+.implements Ljdt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "([a-zA-Z0-9]+)_([0-9]+)_BURST(\\d+)(_COVER)?(_[0-9])?\\.(JPG|jpg)"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Ljek;->a:Ljava/util/regex/Pattern;
-
-    return-void
-.end method
-
 .method constructor <init>()V
     .locals 0
 
@@ -35,107 +17,154 @@
 
 
 # virtual methods
-.method public final a(Ljava/util/regex/Matcher;)J
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    new-instance v0, Ljes;
+    const/16 v4, 0x8
 
-    const-string v1, "timestamp"
+    const-class v0, Ljnq;
 
-    invoke-direct {v0, v1}, Ljes;-><init>(Ljava/lang/String;)V
+    const-string v1, "default"
 
-    throw v0
-.end method
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final a()Ljava/util/regex/Pattern;
-    .locals 1
+    move-result-object v0
 
-    sget-object v0, Ljek;->a:Ljava/util/regex/Pattern;
+    check-cast v0, Ljnq;
+
+    new-instance v2, Ljkc;
+
+    invoke-direct {v2, v0}, Ljkc;-><init>(Ljnq;)V
+
+    const-class v0, Ljjz;
+
+    const-string v1, "facemaximumeyeopen"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljjz;
+
+    const-class v1, Ljjz;
+
+    const-string v3, "faceaverageeyeopen"
+
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljjz;
+
+    invoke-static {v2}, Ljjm;->a(Ljjp;)Ljjn;
+
+    move-result-object v2
+
+    const v3, -0x42844d01    # -0.06145f
+
+    iput v3, v2, Ljjn;->e:F
+
+    new-array v3, v4, [F
+
+    fill-array-data v3, :array_0
+
+    iput-object v3, v2, Ljjn;->c:[F
+
+    new-array v3, v4, [F
+
+    fill-array-data v3, :array_1
+
+    iput-object v3, v2, Ljjn;->d:[F
+
+    new-array v3, v4, [F
+
+    fill-array-data v3, :array_2
+
+    iput-object v3, v2, Ljjn;->b:[F
+
+    sget-object v3, Ljne;->t:Ljnm;
+
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljnm;)Ljjn;
+
+    move-result-object v2
+
+    sget-object v3, Ljne;->u:Ljnm;
+
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljnm;)Ljjn;
+
+    move-result-object v2
+
+    sget-object v3, Ljne;->r:Ljnm;
+
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljnm;)Ljjn;
+
+    move-result-object v2
+
+    sget-object v3, Ljne;->e:Ljnm;
+
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljnm;)Ljjn;
+
+    move-result-object v2
+
+    sget-object v3, Ljne;->o:Ljnm;
+
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljnm;)Ljjn;
+
+    move-result-object v2
+
+    sget-object v3, Ljne;->m:Ljnm;
+
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljnm;)Ljjn;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljjn;->a(Ljjz;)Ljjn;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjz;)Ljjn;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljjn;->a()Ljjm;
+
+    move-result-object v0
 
     return-object v0
-.end method
 
-.method public final b(Ljava/util/regex/Matcher;)I
-    .locals 2
+    :array_0
+    .array-data 4
+        0x3f361f3a
+        0x3f4a8c48
+        0x3e82b607
+        0x3cede332    # 0.029039f
+        0x3ca84be4    # 0.020544f
+        0x3c075d57    # 0.008262f
+        0x3d0bc59c
+        0x3cf544bb    # 0.02994f
+    .end array-data
 
-    const/4 v0, 0x2
+    :array_1
+    .array-data 4
+        0x3dcbd3c3
+        0x3d9c84b6
+        0x3e17c06e
+        0x3e037e2c
+        0x3e047b24
+        0x3e282dbe
+        0x3e24c7b0
+        0x3e249f51
+    .end array-data
 
-    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljes;
-
-    const-string v1, "timestamp"
-
-    invoke-direct {v0, v1}, Ljes;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c(Ljava/util/regex/Matcher;)Z
-    .locals 1
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final d(Ljava/util/regex/Matcher;)Z
-    .locals 2
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "XTR"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final e(Ljava/util/regex/Matcher;)Z
-    .locals 2
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "PORTRAIT"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
+    :array_2
+    .array-data 4
+        0x3f63def8
+        -0x424be404    # -0.087944f
+        0x3eb23316
+        0x3e8b5393
+        -0x42e03d57
+        0x3cceb789    # 0.025234f
+        0x3d266fd6
+        -0x4302e87d    # -0.030895f
+    .end array-data
 .end method

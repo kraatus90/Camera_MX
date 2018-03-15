@@ -1,39 +1,27 @@
-.class Lexr;
-.super Lgvh;
+.class public final Lexr;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final synthetic a:Lexp;
+.field public volatile a:Ljava/lang/String;
+
+.field public volatile b:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lexp;)V
+.method public constructor <init>()V
     .locals 1
 
-    iput-object p1, p0, Lexr;->a:Lexp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    const-string v0, "unknown"
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([C)V
+    iput-object v0, p0, Lexr;->a:Ljava/lang/String;
 
-    return-void
-.end method
+    const-string v0, "unknown"
 
-
-# virtual methods
-.method public a(Lgdq;Lhzb;)V
-    .locals 1
-
-    iget-object v0, p0, Lexr;->a:Lexp;
-
-    iput-object p1, v0, Lexp;->b:Lgdq;
-
-    new-instance v0, Lexs;
-
-    invoke-direct {v0, p0}, Lexs;-><init>(Lexr;)V
-
-    invoke-interface {p2, v0}, Lhzb;->a(Lich;)Lich;
+    iput-object v0, p0, Lexr;->b:Ljava/lang/String;
 
     return-void
 .end method

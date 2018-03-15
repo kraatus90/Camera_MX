@@ -1,335 +1,191 @@
-.class final Laqu;
-.super Ljava/lang/Object;
+.class public abstract Laqu;
+.super Laqz;
 .source "PG"
+
+# interfaces
+.implements Lari;
 
 
 # instance fields
-.field public final a:Landroid/view/View;
-
-.field public final b:Ljava/util/List;
-
-.field public c:Laqv;
+.field private b:Landroid/graphics/drawable/Animatable;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;)V
-    .locals 1
+.method public constructor <init>(Landroid/widget/ImageView;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Laqu;->b:Ljava/util/List;
-
-    iput-object p1, p0, Laqu;->a:Landroid/view/View;
+    invoke-direct {p0, p1}, Laqz;-><init>(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method private static a(III)I
-    .locals 2
+.method private final b(Ljava/lang/Object;)V
+    .locals 0
 
-    sub-int v0, p0, p2
+    invoke-virtual {p0, p1}, Laqu;->a(Ljava/lang/Object;)V
 
-    const/4 v1, -0x2
+    invoke-direct {p0, p1}, Laqu;->c(Ljava/lang/Object;)V
 
-    if-ne p1, v1, :cond_1
-
-    const/high16 v0, -0x80000000
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    if-lez p1, :cond_2
-
-    sub-int v0, p1, p2
-
-    goto :goto_0
-
-    :cond_2
-    if-gtz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method
 
-.method private final b(II)Z
-    .locals 2
+.method private final c(Ljava/lang/Object;)V
+    .locals 1
 
-    const/4 v0, 0x1
+    instance-of v0, p1, Landroid/graphics/drawable/Animatable;
 
-    if-lez p1, :cond_1
+    if-eqz v0, :cond_0
 
-    if-lez p2, :cond_1
+    check-cast p1, Landroid/graphics/drawable/Animatable;
+
+    iput-object p1, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
+
+    iget-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
+
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
+
+    :goto_0
+    return-void
 
     :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    const/high16 v1, -0x80000000
-
-    if-eq p2, v1, :cond_0
-
-    const/4 v1, -0x1
-
-    if-ne p1, v1, :cond_2
-
-    if-gtz p2, :cond_0
-
-    :cond_2
-    if-lez p2, :cond_3
-
-    iget-object v1, p0, Laqu;->a:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->isLayoutRequested()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    :cond_3
     const/4 v0, 0x0
+
+    iput-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
 
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method final a()V
-    .locals 6
+.method public final a(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
 
-    iget-object v0, p0, Laqu;->b:Ljava/util/List;
+    invoke-super {p0, p1}, Laqz;->a(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    invoke-virtual {p0}, Laqu;->d()I
-
-    move-result v3
-
-    invoke-virtual {p0}, Laqu;->c()I
-
-    move-result v4
-
-    invoke-virtual {p0, v3, v4}, Laqu;->a(II)Z
-
-    move-result v0
+    iget-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
 
-    iget-object v1, p0, Laqu;->b:Ljava/util/List;
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->stop()V
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    :cond_0
+    const/4 v0, 0x0
 
-    check-cast v0, Ljava/util/ArrayList;
+    invoke-direct {p0, v0}, Laqu;->b(Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p0, p1}, Laqu;->d(Landroid/graphics/drawable/Drawable;)V
 
-    move-result v5
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :goto_1
-    if-ge v2, v5, :cond_2
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    add-int/lit8 v2, v2, 0x1
-
-    check-cast v1, Laqr;
-
-    invoke-interface {v1, v3, v4}, Laqr;->a(II)V
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p0}, Laqu;->b()V
-
-    goto :goto_0
+    return-void
 .end method
 
-.method final a(II)Z
-    .locals 3
+.method protected abstract a(Ljava/lang/Object;)V
+.end method
 
-    const/4 v1, 0x0
+.method public final a(Ljava/lang/Object;Larh;)V
+    .locals 1
 
-    iget-object v0, p0, Laqu;->a:Landroid/view/View;
+    if-eqz p2, :cond_0
 
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-interface {p2, p1, p0}, Larh;->a(Ljava/lang/Object;Lari;)Z
 
-    move-result-object v0
+    move-result v0
 
     if-nez v0, :cond_1
 
-    move v0, v1
-
-    move v2, v1
+    :cond_0
+    invoke-direct {p0, p1}, Laqu;->b(Ljava/lang/Object;)V
 
     :goto_0
-    invoke-direct {p0, v2, p1}, Laqu;->b(II)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-direct {p0, v0, p2}, Laqu;->b(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    :cond_0
-    return v1
+    return-void
 
     :cond_1
-    iget v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    invoke-direct {p0, p1}, Laqu;->c(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
 
-.method final b()V
-    .locals 2
+.method public final b()V
+    .locals 1
 
-    iget-object v0, p0, Laqu;->a:Landroid/view/View;
+    iget-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
 
-    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
 
-    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Laqu;->c:Laqv;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
 
     :cond_0
+    return-void
+.end method
+
+.method public final b(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Laqr;->b(Landroid/graphics/drawable/Drawable;)V
+
     const/4 v0, 0x0
 
-    iput-object v0, p0, Laqu;->c:Laqv;
+    invoke-direct {p0, v0}, Laqu;->b(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Laqu;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    invoke-virtual {p0, p1}, Laqu;->d(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
 
-.method final c()I
-    .locals 3
+.method public final c()V
+    .locals 1
 
-    iget-object v0, p0, Laqu;->a:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
-
-    move-result v0
-
-    iget-object v1, p0, Laqu;->a:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getPaddingBottom()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    iget-object v0, p0, Laqu;->a:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
+    iget-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
 
     if-eqz v0, :cond_0
 
-    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget-object v0, p0, Laqu;->b:Landroid/graphics/drawable/Animatable;
 
-    :goto_0
-    iget-object v2, p0, Laqu;->a:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
-
-    move-result v2
-
-    invoke-static {v2, v0, v1}, Laqu;->a(III)I
-
-    move-result v0
-
-    return v0
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->stop()V
 
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method
 
-.method final d()I
-    .locals 3
+.method public final c(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Laqz;->c(Landroid/graphics/drawable/Drawable;)V
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Laqu;->b(Ljava/lang/Object;)V
+
+    invoke-virtual {p0, p1}, Laqu;->d(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method public final d(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
 
     iget-object v0, p0, Laqu;->a:Landroid/view/View;
 
-    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
+    check-cast v0, Landroid/widget/ImageView;
 
-    move-result v0
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v1, p0, Laqu;->a:Landroid/view/View;
+    return-void
+.end method
 
-    invoke-virtual {v1}, Landroid/view/View;->getPaddingRight()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
+.method public final e()Landroid/graphics/drawable/Drawable;
+    .locals 1
 
     iget-object v0, p0, Laqu;->a:Landroid/view/View;
 
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    check-cast v0, Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
-
-    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    :goto_0
-    iget-object v2, p0, Laqu;->a:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    move-result v2
-
-    invoke-static {v2, v0, v1}, Laqu;->a(III)I
-
-    move-result v0
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-object v0
 .end method

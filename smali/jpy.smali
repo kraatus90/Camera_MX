@@ -1,331 +1,187 @@
 .class public final Ljpy;
-.super Ljwj;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x13
+.end annotation
+
+
+# static fields
+.field public static final a:Ljpy;
+
+
 # instance fields
-.field public a:Ljpo;
+.field private final b:Ljava/util/List;
 
-.field public b:J
-
-.field public c:J
-
-.field public d:Ljqb;
+.field private final c:Ljava/lang/ref/ReferenceQueue;
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ljpy;
+
+    invoke-direct {v0}, Ljpy;-><init>()V
+
+    sput-object v0, Ljpy;->a:Ljpy;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
-    .locals 4
+    .locals 1
 
-    const-wide/16 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Ljpy;->a:Ljpo;
+    iput-object v0, p0, Ljpy;->b:Ljava/util/List;
 
-    iput-wide v2, p0, Ljpy;->b:J
+    new-instance v0, Ljava/lang/ref/ReferenceQueue;
 
-    iput-wide v2, p0, Ljpy;->c:J
+    invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
 
-    iput-object v0, p0, Ljpy;->d:Ljqb;
-
-    iput-object v0, p0, Ljpy;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljpy;->cachedSize:I
+    iput-object v0, p0, Ljpy;->c:Ljava/lang/ref/ReferenceQueue;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 6
+.method public final declared-synchronized a(Ljava/lang/Object;)V
+    .locals 3
 
-    const-wide/16 v4, 0x0
+    monitor-enter p0
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
-
-    move-result v0
-
-    iget-object v1, p0, Ljpy;->a:Ljpo;
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Ljpy;->a:Ljpo;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget-wide v2, p0, Ljpy;->b:J
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-wide v2, p0, Ljpy;->b:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    iget-wide v2, p0, Ljpy;->c:J
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_2
-
-    const/4 v1, 0x3
-
-    iget-wide v2, p0, Ljpy;->c:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    iget-object v1, p0, Ljpy;->d:Ljqb;
-
-    if-eqz v1, :cond_3
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Ljpy;->d:Ljqb;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_3
-    return v0
-.end method
-
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 11
-
-    const-wide/16 v2, 0x0
-
-    const/16 v10, 0x40
-
-    const/4 v5, 0x0
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    :try_start_0
+    invoke-static {}, Ljbr;->c()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    :sswitch_0
-    return-object p0
+    :goto_0
+    monitor-exit p0
 
-    :sswitch_1
-    iget-object v0, p0, Ljpy;->a:Ljpo;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Ljpo;
-
-    invoke-direct {v0}, Ljpo;-><init>()V
-
-    iput-object v0, p0, Ljpy;->a:Ljpo;
-
-    :cond_1
-    iget-object v0, p0, Ljpy;->a:Ljpo;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    :sswitch_2
-    move-wide v0, v2
-
-    move v4, v5
-
-    :goto_1
-    if-ge v4, v10, :cond_3
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v6
-
-    and-int/lit8 v7, v6, 0x7f
-
-    int-to-long v8, v7
-
-    shl-long/2addr v8, v4
-
-    or-long/2addr v0, v8
-
-    and-int/lit16 v6, v6, 0x80
-
-    if-nez v6, :cond_2
-
-    iput-wide v0, p0, Ljpy;->b:J
-
-    goto :goto_0
-
-    :cond_2
-    add-int/lit8 v4, v4, 0x7
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {}, Ljwo;->c()Ljwo;
-
-    move-result-object v0
-
-    throw v0
-
-    :sswitch_3
-    move-wide v0, v2
-
-    move v4, v5
-
-    :goto_2
-    if-ge v4, v10, :cond_5
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v6
-
-    and-int/lit8 v7, v6, 0x7f
-
-    int-to-long v8, v7
-
-    shl-long/2addr v8, v4
-
-    or-long/2addr v0, v8
-
-    and-int/lit16 v6, v6, 0x80
-
-    if-nez v6, :cond_4
-
-    iput-wide v0, p0, Ljpy;->c:J
-
-    goto :goto_0
-
-    :cond_4
-    add-int/lit8 v4, v4, 0x7
-
-    goto :goto_2
-
-    :cond_5
-    invoke-static {}, Ljwo;->c()Ljwo;
-
-    move-result-object v0
-
-    throw v0
-
-    :sswitch_4
-    iget-object v0, p0, Ljpy;->d:Ljqb;
-
-    if-nez v0, :cond_6
-
-    new-instance v0, Ljqb;
-
-    invoke-direct {v0}, Ljqb;-><init>()V
-
-    iput-object v0, p0, Ljpy;->d:Ljqb;
-
-    :cond_6
-    iget-object v0, p0, Ljpy;->d:Ljqb;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xa -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x18 -> :sswitch_3
-        0x22 -> :sswitch_4
-    .end sparse-switch
-.end method
-
-.method public final writeTo(Ljwi;)V
-    .locals 6
-
-    const-wide/16 v4, 0x0
-
-    iget-object v0, p0, Ljpy;->a:Ljpo;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iget-object v1, p0, Ljpy;->a:Ljpo;
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    return-void
 
     :cond_0
-    iget-wide v0, p0, Ljpy;->b:J
+    :try_start_1
+    iget-object v0, p0, Ljpy;->b:Ljava/util/List;
 
-    cmp-long v0, v0, v4
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x2
-
-    iget-wide v2, p0, Ljpy;->b:J
-
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    move-result-object v1
 
     :cond_1
-    iget-wide v0, p0, Ljpy;->c:J
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    cmp-long v0, v0, v4
+    move-result v0
 
     if-eqz v0, :cond_2
 
-    const/4 v0, 0x3
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-wide v2, p0, Ljpy;->c:J
+    move-result-object v0
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    check-cast v0, Ljpz;
+
+    invoke-virtual {v0}, Ljpz;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-ne v0, p1, :cond_1
+
+    goto :goto_0
 
     :cond_2
-    iget-object v0, p0, Ljpy;->d:Ljqb;
+    iget-object v0, p0, Ljpy;->b:Ljava/util/List;
 
-    if-eqz v0, :cond_3
+    new-instance v1, Ljpz;
 
-    const/4 v0, 0x4
+    iget-object v2, p0, Ljpy;->c:Ljava/lang/ref/ReferenceQueue;
 
-    iget-object v1, p0, Ljpy;->d:Ljqb;
+    invoke-direct {v1, p1, v2}, Ljpz;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_3
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b(Ljava/lang/Object;)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-static {}, Ljbr;->c()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    monitor-exit p0
 
     return-void
+
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Ljpy;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_2
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljpz;
+
+    invoke-virtual {v0}, Ljpz;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-ne v0, p1, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

@@ -1,57 +1,48 @@
-.class Lfgw;
-.super Lgvh;
+.class final Lfgw;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lfgt;
 
 
 # instance fields
-.field private synthetic a:Lfgu;
+.field private final a:Lfgu;
 
 
 # direct methods
-.method constructor <init>(Lfgu;)V
-    .locals 1
+.method constructor <init>(Ljava/util/Set;Lfhq;)V
+    .locals 2
 
-    iput-object p1, p0, Lfgw;->a:Lfgu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    invoke-static {p1}, Ljuo;->a(Ljava/util/Collection;)Ljuo;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[S)V
+    move-result-object v0
+
+    new-instance v1, Lfgx;
+
+    invoke-direct {v1, v0, p2}, Lfgx;-><init>(Ljava/util/Set;Lfhq;)V
+
+    iput-object v1, p0, Lfgw;->a:Lfgu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public L()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a()V
+.method public final a()Lfgu;
     .locals 1
 
     iget-object v0, p0, Lfgw;->a:Lfgu;
 
-    iget-object v0, v0, Lfgu;->f:Lfgz;
-
-    iget-object v0, v0, Lfgz;->a:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final b()V
+.method public final b()Lfgu;
     .locals 1
 
     iget-object v0, p0, Lfgw;->a:Lfgu;
 
-    iget-object v0, v0, Lfgu;->f:Lfgz;
-
-    iget-object v0, v0, Lfgz;->b:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    return-void
+    return-object v0
 .end method

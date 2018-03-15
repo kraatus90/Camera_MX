@@ -1,21 +1,22 @@
-.class final synthetic Lcso;
+.class final Lcso;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
 .implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lcsk;
+.field private final synthetic a:Lcsl;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
+.method constructor <init>(Lcsl;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcso;->a:Lcsl;
 
-    iput-object p1, p0, Lcso;->a:Lcsk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -23,25 +24,44 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lcso;->a:Lcsk;
+    iget-object v0, p0, Lcso;->a:Lcsl;
 
-    sget-object v1, Lbwt;->e:Lbwt;
+    iget-boolean v0, v0, Lcsl;->e:Z
 
-    const/4 v2, 0x1
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v1, v2}, Lcsk;->a(Lbwt;Z)Ljuw;
+    iget-object v0, p0, Lcso;->a:Lcsl;
 
-    iget-object v1, v0, Lcsk;->o:Lest;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lcsk;->ae:Landroid/content/DialogInterface$OnClickListener;
+    iput-boolean v1, v0, Lcsl;->e:Z
 
-    invoke-interface {v1, v0}, Lest;->e(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+    iget-object v0, p0, Lcso;->a:Lcsl;
 
-    move-result-object v0
+    iget-object v0, v0, Lcsl;->c:Lihb;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
+    invoke-interface {v0}, Lihb;->close()V
 
+    iget-object v0, p0, Lcso;->a:Lcsl;
+
+    iget-object v0, v0, Lcsl;->d:Lihb;
+
+    invoke-interface {v0}, Lihb;->close()V
+
+    iget-object v0, p0, Lcso;->a:Lcsl;
+
+    iget-object v0, v0, Lcsl;->a:Libw;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
+
+    :cond_0
     return-void
 .end method

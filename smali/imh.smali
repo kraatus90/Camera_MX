@@ -1,31 +1,38 @@
-.class final Limh;
-.super Likn;
+.class public final Limh;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljqv;
 
 
 # instance fields
-.field private a:Lilv;
+.field private final synthetic a:Linf;
 
 
 # direct methods
-.method public constructor <init>(Lilv;)V
+.method public constructor <init>(Linf;)V
     .locals 0
 
-    invoke-direct {p0}, Likn;-><init>()V
+    iput-object p1, p0, Limh;->a:Linf;
 
-    iput-object p1, p0, Limh;->a:Lilv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a_(Ljava/lang/Object;)V
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Limh;->a:Lilv;
+    check-cast p1, Landroid/view/Surface;
 
-    invoke-virtual {v0, p1}, Lilv;->a(Ljava/lang/Object;)Z
+    iget-object v0, p0, Limh;->a:Linf;
 
-    return-void
+    invoke-virtual {v0, p1}, Linf;->a(Landroid/view/Surface;)V
+
+    iget-object v0, p0, Limh;->a:Linf;
+
+    return-object v0
 .end method

@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lgoy;
+.implements Lfzz;
 
 
 # static fields
@@ -15,7 +15,7 @@
 # instance fields
 .field public callback:Lcom/google/android/apps/refocus/processing/ProgressCallback;
 
-.field public final captureSessionListener:Lgrv;
+.field public final captureSessionListener:Lggm;
 
 .field public final contentResolver:Landroid/content/ContentResolver;
 
@@ -29,7 +29,7 @@
 
 .field public rgbz:Lcom/google/android/apps/refocus/image/RGBZ;
 
-.field public session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+.field public session:Lgil;
 
 .field public final uri:Landroid/net/Uri;
 
@@ -40,7 +40,7 @@
 
     const-string v0, "RenderingTask"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -57,7 +57,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/net/Uri;Lcom/google/android/apps/refocus/processing/FocusSettings;Lcom/google/android/apps/refocus/image/RGBZ;Ljava/lang/String;Landroid/location/Location;Lgrw;Lcom/google/android/apps/refocus/processing/FaceDetector;Landroid/content/ContentResolver;)V
+.method public constructor <init>(Landroid/net/Uri;Lcom/google/android/apps/refocus/processing/FocusSettings;Lcom/google/android/apps/refocus/image/RGBZ;Ljava/lang/String;Landroid/location/Location;Lggn;Lcom/google/android/apps/refocus/processing/FaceDetector;Landroid/content/ContentResolver;)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
     invoke-direct {v0, p0}, Lcom/google/android/apps/refocus/processing/RenderingTask$1;-><init>(Lcom/google/android/apps/refocus/processing/RenderingTask;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->captureSessionListener:Lgrv;
+    iput-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->captureSessionListener:Lggm;
 
     iput-object p1, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->uri:Landroid/net/Uri;
 
@@ -76,7 +76,7 @@
 
     const-string v1, "No focus settings supplied, using default"
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
 
@@ -111,11 +111,11 @@
 
     iput-object p8, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->contentResolver:Landroid/content/ContentResolver;
 
-    invoke-direct {p0, p6}, Lcom/google/android/apps/refocus/processing/RenderingTask;->createCaptureSession$51666RRD5TJMURR7DHIIUOBECHP6UQB45TGN0S3J5THM2RB5E9GIUR35CTGM6U9FC5O70BRJCLPN6QBFDONK6OBGEHQN4PAJCLPN6QBFDP6M2RJ1CTIN4EP99HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0(Lgrw;)Leou;
+    invoke-direct {p0, p6}, Lcom/google/android/apps/refocus/processing/RenderingTask;->createCaptureSession$51666RRD5TJMURR7DHIIUOBECHP6UQB45TGN0S3J5THM2RB5E9GIUSR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE9LGMSOB7CLP3MAACCDNMQBR7DTNMER355TGMSP3IDTKM8BR1E1O76BR3C5MMASJ15TPMASRJD5NMSBQICLJ6UORLED1M2S3KELP6AKR5EDPMIRRE7C______0(Lggn;)Lgil;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+    iput-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->session:Lgil;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -139,7 +139,7 @@
     return-object v0
 .end method
 
-.method private createCaptureSession$51666RRD5TJMURR7DHIIUOBECHP6UQB45TGN0S3J5THM2RB5E9GIUR35CTGM6U9FC5O70BRJCLPN6QBFDONK6OBGEHQN4PAJCLPN6QBFDP6M2RJ1CTIN4EP99HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0(Lgrw;)Leou;
+.method private createCaptureSession$51666RRD5TJMURR7DHIIUOBECHP6UQB45TGN0S3J5THM2RB5E9GIUSR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE9LGMSOB7CLP3MAACCDNMQBR7DTNMER355TGMSP3IDTKM8BR1E1O76BR3C5MMASJ15TPMASRJD5NMSBQICLJ6UORLED1M2S3KELP6AKR5EDPMIRRE7C______0(Lggn;)Lgil;
     .locals 4
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -154,22 +154,22 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Ljht;->c(Ljava/lang/Object;)Ljht;
+    invoke-static {v3}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
     move-result-object v3
 
-    invoke-interface {p1, v2, v0, v1, v3}, Lgrw;->a(Ljava/lang/String;JLjht;)Leou;
+    invoke-interface {p1, v2, v0, v1, v3}, Lggn;->a(Ljava/lang/String;JLjrf;)Lgil;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->captureSessionListener:Lgrv;
+    iget-object v1, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->captureSessionListener:Lggm;
 
-    invoke-interface {v0, v1}, Leou;->a(Lgrv;)V
+    invoke-virtual {v0, v1}, Lgil;->a(Lggm;)V
 
     return-object v0
 .end method
 
-.method private processInternal$51662RJ4E9NMIP1FCDNMST35DPQ2UGRFDPQ6AU3K7D666RRD5TJMURR7DHIIUOBECHP6UQB45TGN0S3J5THM2RB5E9GIUR35CTGM6U9FC5O70BRJCLPN6QBFDONK6OBGEHQN4PAJCLPN6QBFDOTIILG_0(Landroid/content/Context;Leou;)V
+.method private processInternal(Landroid/content/Context;Lgil;)V
     .locals 6
 
     const/4 v4, 0x0
@@ -229,7 +229,7 @@
     move-result-object v0
 
     :goto_1
-    invoke-static {v1, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -243,21 +243,21 @@
     :cond_2
     iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->uri:Landroid/net/Uri;
 
-    const v1, 0x7f1102b4
+    const v1, 0x7f1101af
 
     new-array v2, v4, [Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Lesn;->a(I[Ljava/lang/Object;)Lgyr;
+    invoke-static {v1, v2}, Lgtj;->a(I[Ljava/lang/Object;)Lgwx;
 
     move-result-object v1
 
-    sget-object v2, Lgry;->i:Lgry;
+    sget-object v2, Lghj;->i:Lghj;
 
-    invoke-interface {p2, v0, v1, v2}, Leou;->a(Landroid/net/Uri;Lgyr;Lgry;)V
+    invoke-virtual {p2, v0, v1, v2}, Lgil;->a(Landroid/net/Uri;Lgwx;Lghj;)V
 
     new-instance v0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;
 
-    invoke-direct {v0, p2}, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;-><init>(Leou;)V
+    invoke-direct {v0, p2}, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;-><init>(Lgfr;)V
 
     iput-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->callback:Lcom/google/android/apps/refocus/processing/ProgressCallback;
 
@@ -269,7 +269,7 @@
 
     if-nez v0, :cond_3
 
-    invoke-interface {p2}, Leou;->h()V
+    invoke-virtual {p2}, Lgil;->h()V
 
     goto :goto_0
 
@@ -296,15 +296,15 @@
 
     if-eqz v1, :cond_4
 
-    new-instance v1, Lieu;
+    new-instance v1, Lijs;
 
     iget-object v2, v0, Lcom/google/android/apps/refocus/image/RGBZ$Data;->exif:Lcom/google/android/libraries/camera/exif/ExifInterface;
 
-    invoke-direct {v1, v2}, Lieu;-><init>(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
+    invoke-direct {v1, v2}, Lijs;-><init>(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
 
     iget-object v2, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->location:Landroid/location/Location;
 
-    invoke-virtual {v1, v2}, Lieu;->a(Landroid/location/Location;)V
+    invoke-virtual {v1, v2}, Lijs;->a(Landroid/location/Location;)V
 
     :cond_4
     iget-object v1, v0, Lcom/google/android/apps/refocus/image/RGBZ$Data;->fileData:[B
@@ -325,7 +325,7 @@
 
     move-object v0, p2
 
-    invoke-static/range {v0 .. v5}, Ldym;->a(Lgou;[BIIILcom/google/android/libraries/camera/exif/ExifInterface;)Ljuw;
+    invoke-static/range {v0 .. v5}, Lghk;->a(Lfzv;[BIIILcom/google/android/libraries/camera/exif/ExifInterface;)Lkeh;
 
     goto :goto_0
 .end method
@@ -400,10 +400,10 @@
 
 
 # virtual methods
-.method public addFinishedCallback(Libu;)V
+.method public addFinishedCallback(Ligs;)V
     .locals 1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->finishedCallback:Ljava/util/List;
 
@@ -428,10 +428,10 @@
     return-object v0
 .end method
 
-.method public getSession()Lgou;
+.method public getSession()Lfzv;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->session:Lgil;
 
     return-object v0
 .end method
@@ -439,19 +439,19 @@
 .method public process(Landroid/content/Context;)V
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->session:Lgil;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/refocus/processing/RenderingTask;->processInternal$51662RJ4E9NMIP1FCDNMST35DPQ2UGRFDPQ6AU3K7D666RRD5TJMURR7DHIIUOBECHP6UQB45TGN0S3J5THM2RB5E9GIUR35CTGM6U9FC5O70BRJCLPN6QBFDONK6OBGEHQN4PAJCLPN6QBFDOTIILG_0(Landroid/content/Context;Leou;)V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/refocus/processing/RenderingTask;->processInternal(Landroid/content/Context;Lgil;)V
 
     iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->finishedCallback:Ljava/util/List;
 
-    invoke-static {v0}, Ljkv;->a(Ljava/util/Collection;)Ljkv;
+    invoke-static {v0}, Ljuh;->a(Ljava/util/Collection;)Ljuh;
 
     move-result-object v0
 
-    check-cast v0, Ljkv;
+    check-cast v0, Ljuh;
 
-    invoke-virtual {v0}, Ljkv;->size()I
+    invoke-virtual {v0}, Ljuh;->size()I
 
     move-result v3
 
@@ -462,15 +462,15 @@
     :goto_0
     if-ge v2, v3, :cond_0
 
-    invoke-virtual {v0, v2}, Ljkv;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljuh;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     add-int/lit8 v2, v2, 0x1
 
-    check-cast v1, Libu;
+    check-cast v1, Ligs;
 
-    invoke-interface {v1, p0}, Libu;->a(Ljava/lang/Object;)V
+    invoke-interface {v1, p0}, Ligs;->a(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -488,10 +488,10 @@
     return-void
 .end method
 
-.method public removeFinishedCallback(Libu;)V
+.method public removeFinishedCallback(Ligs;)V
     .locals 1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/apps/refocus/processing/RenderingTask;->finishedCallback:Ljava/util/List;
 

@@ -1,553 +1,180 @@
-.class public final Lesn;
+.class final synthetic Lesn;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x17
-.end annotation
+# instance fields
+.field private final a:Lesm;
+
+.field private final b:Lkeh;
+
+.field private final c:Liwy;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lesm;Lkeh;Liwy;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lesn;->a:Lesm;
+
+    iput-object p2, p0, Lesn;->b:Lkeh;
+
+    iput-object p3, p0, Lesn;->c:Liwy;
+
     return-void
 .end method
 
-.method public static a(Landroid/content/pm/PackageManager;Landroid/content/Context;)Landroid/content/pm/PackageInfo;
-    .locals 3
 
-    :try_start_0
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+# virtual methods
+.method public final run()V
+    .locals 12
 
-    move-result-object v0
+    const-wide/16 v10, 0x0
 
-    const/4 v1, 0x0
+    iget-object v4, p0, Lesn;->a:Lesm;
 
-    invoke-virtual {p0, v0, v1}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object v0, p0, Lesn;->b:Lkeh;
 
-    move-result-object v0
+    iget-object v5, p0, Lesn;->c:Liwy;
 
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "getPackageInfo for getPackageName should always succeed."
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method public static a(Ljava/io/FileDescriptor;I)Landroid/graphics/Bitmap;
-    .locals 6
-
-    const/4 v1, 0x0
-
-    new-instance v2, Landroid/media/MediaMetadataRetriever;
-
-    invoke-direct {v2}, Landroid/media/MediaMetadataRetriever;-><init>()V
-
-    :try_start_0
-    invoke-virtual {v2, p0}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/io/FileDescriptor;)V
-
-    const-wide/16 v4, -0x1
-
-    invoke-virtual {v2, v4, v5}, Landroid/media/MediaMetadataRetriever;->getFrameAtTime(J)Landroid/graphics/Bitmap;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_2
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :try_start_1
-    invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_4
+    check-cast v0, Ljava/util/List;
 
-    :goto_0
-    if-nez v0, :cond_1
+    const-wide/16 v2, -0x1
 
-    move-object v0, v1
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
 
     :cond_0
-    :goto_1
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    :try_start_2
-    invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
-    :try_end_2
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_1
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :catch_2
-    move-exception v0
-
-    :try_start_3
-    invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
-    :try_end_3
-    .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_3
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :catch_3
-    move-exception v0
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_4
-    invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
-    :try_end_4
-    .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_5
-
-    :goto_2
-    throw v0
-
-    :cond_1
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v2
-
-    if-le v1, p1, :cond_0
-
-    int-to-float v3, p1
-
-    int-to-float v4, v1
-
-    div-float/2addr v3, v4
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v3
-
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
-
-    move-result v1
-
-    int-to-float v2, v2
-
-    mul-float/2addr v2, v3
-
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    invoke-static {v0, v1, v2, v3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :catch_4
-    move-exception v2
-
-    goto :goto_0
-
-    :catch_5
-    move-exception v1
-
-    goto :goto_2
-.end method
-
-.method public static varargs a(I[Ljava/lang/Object;)Lgyr;
-    .locals 1
-
-    if-gez p0, :cond_0
-
-    sget-object v0, Lewl;->a:Lgyr;
-
     :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lewn;
-
-    invoke-direct {v0, p0, p1}, Lewn;-><init>(I[Ljava/lang/Object;)V
-
-    goto :goto_0
-.end method
-
-.method public static a(Landroid/content/Context;I)Ljava/lang/String;
-    .locals 2
-
-    sparse-switch p1, :sswitch_data_0
-
-    const/16 v0, 0x16
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v0, "Unknown key"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :sswitch_0
-    const v0, 0x7f11031f
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_1
-    const v0, 0x7f1100c2
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_2
-    const v0, 0x7f110312
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_3
-    const v0, 0x7f110174
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_4
-    const v0, 0x7f1101b5
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_5
-    const v0, 0x7f110351
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_6
-    const v0, 0x7f11015a
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_7
-    const v0, 0x7f1101a0
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_8
-    const v0, 0x7f1100d2
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_9
-    const v0, 0x7f110186
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_a
-    const v0, 0x7f11011d
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_b
-    const v0, 0x7f110177
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_c
-    const v0, 0x7f11019a
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_d
-    const v0, 0x7f110122
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_e
-    const v0, 0x7f110059
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_f
-    const v0, 0x7f110129
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :sswitch_10
-    const v0, 0x7f110349
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_0
-
-    :sswitch_11
-    const v0, 0x7f11010f
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_0
-
-    :sswitch_12
-    const v0, 0x7f11016d
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_0
-        0x2 -> :sswitch_1
-        0x3 -> :sswitch_2
-        0x4 -> :sswitch_3
-        0x5 -> :sswitch_5
-        0x6 -> :sswitch_6
-        0x7 -> :sswitch_7
-        0x8 -> :sswitch_8
-        0x9 -> :sswitch_9
-        0xa -> :sswitch_a
-        0x64 -> :sswitch_b
-        0x65 -> :sswitch_c
-        0x66 -> :sswitch_d
-        0x67 -> :sswitch_f
-        0x68 -> :sswitch_10
-        0x69 -> :sswitch_e
-        0x6b -> :sswitch_11
-        0x6c -> :sswitch_12
-        0xc8 -> :sswitch_4
-    .end sparse-switch
-.end method
-
-.method public static a(Lgyr;)Z
-    .locals 1
-
-    sget-object v0, Lewl;->a:Lgyr;
-
-    if-ne p0, v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static a(Ljava/util/List;)[Ljre;
-    .locals 6
-
-    if-nez p0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    new-array v3, v0, [Ljre;
+    if-eqz v0, :cond_2
 
-    const/4 v0, 0x0
-
-    move v2, v0
-
-    :goto_1
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-ge v2, v0, :cond_1
-
-    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;
+    check-cast v0, Ljava/lang/Long;
 
-    new-instance v4, Ljre;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v4}, Ljre;-><init>()V
+    cmp-long v1, v2, v10
 
-    iget v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->d:I
+    if-ltz v1, :cond_1
 
-    iput v1, v4, Ljre;->e:I
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    iget v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->e:I
+    move-result-wide v8
 
-    iput v1, v4, Ljre;->f:I
+    cmp-long v1, v8, v2
 
-    iget v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->f:I
-
-    iput v1, v4, Ljre;->g:I
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->c:Ljava/util/List;
-
-    iget-object v5, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->c:Ljava/util/List;
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v5
-
-    new-array v5, v5, [Ljqj;
-
-    invoke-interface {v1, v5}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [Ljqj;
-
-    iput-object v1, v4, Ljre;->d:[Ljqj;
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->b:Ljava/util/List;
-
-    iget-object v5, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->b:Ljava/util/List;
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v5
-
-    new-array v5, v5, [Ljqj;
-
-    invoke-interface {v1, v5}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [Ljqj;
-
-    iput-object v1, v4, Ljre;->c:[Ljqj;
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->g:Ljqj;
-
-    iput-object v1, v4, Ljre;->a:Ljqj;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;->h:Ljqj;
-
-    iput-object v0, v4, Ljre;->b:Ljqj;
-
-    aput-object v4, v3, v2
-
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
-
-    goto :goto_1
+    if-gez v1, :cond_4
 
     :cond_1
-    move-object v0, v3
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    :goto_1
+    move-wide v2, v0
 
     goto :goto_0
+
+    :cond_2
+    invoke-static {v2, v3, v10, v11}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v0
+
+    iget-object v2, v4, Lesm;->b:Lket;
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lkch;->a(Ljava/lang/Object;)Z
+
+    iget-wide v2, v4, Lesm;->a:J
+
+    cmp-long v2, v2, v0
+
+    if-gez v2, :cond_3
+
+    const-string v2, "AddMetaTrackMuxer"
+
+    const-string v3, "A shutter timestamp (%d) with value less than the starting timestamp (%d) was selected. Overwriting timestamp with starting timestamp."
+
+    const/4 v6, 0x2
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    const/4 v7, 0x0
+
+    iget-wide v8, v4, Lesm;->a:J
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v8
+
+    aput-object v8, v6, v7
+
+    const/4 v7, 0x1
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v8
+
+    aput-object v8, v6, v7
+
+    invoke-static {v3, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
+    iget-wide v2, v4, Lesm;->a:J
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v2
+
+    invoke-static {v0, v1, v2, v3}, Lesm;->a(JJ)[B
+
+    move-result-object v0
+
+    new-instance v1, Landroid/media/MediaCodec$BufferInfo;
+
+    invoke-direct {v1}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
+
+    array-length v4, v0
+
+    iput v4, v1, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    iput-wide v2, v1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-interface {v5, v0, v1}, Liwy;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+
+    invoke-interface {v5}, Liwy;->close()V
+
+    return-void
+
+    :cond_4
+    move-wide v0, v2
+
+    goto :goto_1
 .end method

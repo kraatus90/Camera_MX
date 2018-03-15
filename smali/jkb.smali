@@ -1,61 +1,75 @@
-.class final Ljkb;
-.super Ljmi;
+.class public final Ljkb;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Ljka;
+.field private final a:Ljava/util/HashMap;
 
 
 # direct methods
-.method constructor <init>(Ljka;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Ljkb;->a:Ljka;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljmi;-><init>()V
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Ljkb;->a:Ljava/util/HashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()Ljmd;
-    .locals 1
+.method public final a()Ljka;
+    .locals 2
 
-    iget-object v0, p0, Ljkb;->a:Ljka;
+    new-instance v0, Ljka;
 
-    return-object v0
-.end method
+    iget-object v1, p0, Ljkb;->a:Ljava/util/HashMap;
 
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-
-    iget-object v0, p0, Ljkb;->a:Ljka;
-
-    invoke-virtual {v0}, Ljka;->k()Ljava/util/Iterator;
-
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljka;-><init>(Ljava/util/Map;)V
 
     return-object v0
 .end method
 
-.method public final size()I
-    .locals 1
+.method public final a(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;F)Ljkb;
+    .locals 3
 
-    iget-object v0, p0, Ljkb;->a:Ljka;
+    iget-object v0, p0, Ljkb;->a:Ljava/util/HashMap;
 
-    invoke-virtual {v0}, Ljka;->d()Ljnj;
+    new-instance v1, Ljkg;
+
+    invoke-direct {v1, p1, p2}, Ljkg;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;)V
+
+    invoke-static {p3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public final a(Ljjz;F)Ljkb;
+    .locals 3
+
+    iget-object v1, p0, Ljkb;->a:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljnj;->e()Ljava/util/Set;
+    check-cast v0, Ljjz;
 
-    move-result-object v0
+    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-interface {v0}, Ljava/util/Set;->size()I
+    move-result-object v2
 
-    move-result v0
+    invoke-virtual {v1, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    return v0
+    return-object p0
 .end method

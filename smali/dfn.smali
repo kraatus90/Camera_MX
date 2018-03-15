@@ -1,78 +1,48 @@
-.class final Ldfn;
+.class public final Ldfn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lfft;
 
 
 # instance fields
-.field public final synthetic a:Ldfh;
+.field public final a:Z
 
 
 # direct methods
-.method constructor <init>(Ldfh;)V
+.method constructor <init>(Z)V
     .locals 0
 
-    iput-object p1, p0, Ldfn;->a:Ldfh;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Ldfn;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final a()Z
+    .locals 1
 
-    check-cast p1, Lazv;
+    const/4 v0, 0x0
 
-    new-instance v1, Landroid/os/Handler;
-
-    iget-object v0, p0, Ldfn;->a:Ldfh;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
-
-    move-result-object v0
-
-    check-cast v0, Ldhc;
-
-    iget-object v0, v0, Ldhc;->d:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v0, Ldfo;
-
-    invoke-direct {v0, p0, p1}, Ldfo;-><init>(Ldfn;Lazv;)V
-
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+    return v0
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+.method public final b()Z
+    .locals 1
 
-    sget-object v0, Ldfh;->c:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    const-string v1, "Failed to open camera: "
+    return v0
+.end method
 
-    invoke-static {v0, v1, p1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+.method public final c()Z
+    .locals 1
 
-    iget-object v0, p0, Ldfn;->a:Ldfh;
+    iget-boolean v0, p0, Ldfn;->a:Z
 
-    iget-object v0, v0, Lcng;->a:Lcnh;
-
-    new-instance v1, Lcvi;
-
-    invoke-direct {v1}, Lcvi;-><init>()V
-
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
-
-    return-void
+    return v0
 .end method

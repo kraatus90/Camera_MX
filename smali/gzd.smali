@@ -1,42 +1,39 @@
-.class public abstract Lgzd;
-.super Landroid/widget/FrameLayout;
-.source "PG"
+.class final synthetic Lgzd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Lgza;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method constructor <init>(Lgza;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    iput-object p1, p0, Lgzd;->a:Lgza;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lgzl;)V
+.method public final run()V
+    .locals 3
+
+    iget-object v0, p0, Lgzd;->a:Lgza;
+
+    iget-object v1, v0, Lgza;->a:Liay;
+
+    new-instance v2, Lgzc;
+
+    invoke-direct {v2, v0}, Lgzc;-><init>(Lgza;)V
+
+    invoke-virtual {v1, v2}, Liay;->a(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

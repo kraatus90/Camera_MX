@@ -1,72 +1,103 @@
-.class public final Lefw;
-.super Ljava/lang/Object;
+.class Lefw;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lefu;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lefu;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lefw;->a:Lefu;
 
-    iput-object p1, p0, Lefw;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lefw;->b:Ljxn;
+    invoke-direct {p0, v0}, Lglb;-><init>([[Z)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lefw;
-
-    invoke-direct {v0, p0, p1}, Lefw;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public D()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a()V
     .locals 3
 
-    iget-object v0, p0, Lefw;->a:Ljxn;
+    iget-object v0, p0, Lefw;->a:Lefu;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lefu;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToPhotoIntentReview()V
 
-    check-cast v0, Ldlv;
+    iget-object v0, p0, Lefw;->a:Lefu;
 
-    iget-object v1, p0, Lefw;->b:Ljxn;
+    iget-object v0, v0, Lefu;->e:Lgvc;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, v0, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    move-result-object v1
+    const/4 v2, 0x1
 
-    check-cast v1, Lefs;
+    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setEnabled(Z)V
 
-    new-instance v2, Ldmf;
+    sget-object v1, Lgue;->j:Lgue;
 
-    invoke-direct {v2, v0, v1}, Ldmf;-><init>(Ldlv;Ldlu;)V
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lefw;->a:Lefu;
 
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Lefu;->g:Lfwg;
 
-    move-result-object v0
+    iget-object v0, v0, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-    check-cast v0, Ljava/lang/Runnable;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b()V
 
-    return-object v0
+    iget-object v0, p0, Lefw;->a:Lefu;
+
+    iget-object v0, v0, Lefu;->g:Lfwg;
+
+    invoke-virtual {v0}, Lfwg;->b()V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lefw;->a:Lefu;
+
+    iget-object v0, v0, Lefu;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->returnToPhotoIntent()V
+
+    iget-object v0, p0, Lefw;->a:Lefu;
+
+    iget-object v0, v0, Lefu;->e:Lgvc;
+
+    sget-object v1, Lgue;->a:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    iget-object v0, p0, Lefw;->a:Lefu;
+
+    iget-object v0, v0, Lefu;->g:Lfwg;
+
+    invoke-virtual {v0}, Lfwg;->a()V
+
+    iget-object v0, p0, Lefw;->a:Lefu;
+
+    iget-object v0, v0, Lefu;->g:Lfwg;
+
+    iget-object v0, v0, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c()V
+
+    return-void
 .end method

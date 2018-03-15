@@ -1,72 +1,63 @@
-.class final Lgwu;
+.class public abstract Lgwu;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnSystemUiVisibilityChangeListener;
-
 
 # instance fields
-.field private synthetic a:Lgws;
+.field private final a:I
+
+.field private final b:Lgwv;
+
+.field public final c:Landroid/content/Context;
+
+.field public final d:Lgpe;
+
+.field public e:Lgww;
+
+.field public f:Landroid/view/LayoutInflater;
+
+.field public g:Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;
+
+.field public h:Z
 
 
 # direct methods
-.method constructor <init>(Lgws;)V
-    .locals 0
-
-    iput-object p1, p0, Lgwu;->a:Lgws;
+.method public constructor <init>(Landroid/content/Context;ILgwv;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgwu;->c:Landroid/content/Context;
+
+    iput p2, p0, Lgwu;->a:I
+
+    iput-object p3, p0, Lgwu;->b:Lgwv;
+
+    new-instance v1, Lgpe;
+
+    const-string v0, "accessibility"
+
+    invoke-static {p1, v0}, Lbxe;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/accessibility/AccessibilityManager;
+
+    invoke-direct {v1, v0}, Lgpe;-><init>(Landroid/view/accessibility/AccessibilityManager;)V
+
+    iput-object v1, p0, Lgwu;->d:Lgpe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSystemUiVisibilityChange(I)V
+.method public final a()V
     .locals 3
 
-    sget-object v0, Lgws;->a:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    const/16 v1, 0x28
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "onSystemUiVisibilityChange() "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lgwu;->a:Lgws;
-
-    iget-object v0, v0, Lgws;->b:Landroid/view/Window;
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getSystemUiVisibility()I
-
-    move-result v0
-
-    iget-object v1, p0, Lgwu;->a:Lgws;
-
-    iget v1, v1, Lgws;->d:I
-
-    xor-int/2addr v0, v1
+    iget-boolean v0, p0, Lgwu;->h:Z
 
     if-nez v0, :cond_1
 
@@ -75,15 +66,123 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lgwu;->a:Lgws;
+    iget-object v0, p0, Lgwu;->g:Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;
 
-    iget-boolean v0, v0, Lgws;->c:Z
+    if-eqz v0, :cond_0
 
-    if-nez v0, :cond_0
+    iget-object v0, p0, Lgwu;->f:Landroid/view/LayoutInflater;
 
-    iget-object v0, p0, Lgwu;->a:Lgws;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lgws;->a()V
+    iget-object v0, p0, Lgwu;->g:Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;
+
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;
+
+    iget-object v1, p0, Lgwu;->f:Landroid/view/LayoutInflater;
+
+    invoke-static {v1}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/LayoutInflater;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;->removeAllViews()V
+
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;->setVisibility(I)V
+
+    iput v2, v0, Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;->a:I
+
+    const v2, 0x7f04006e
+
+    invoke-virtual {v1, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    const v2, 0x7f0e017f
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iget v2, p0, Lgwu;->a:I
+
+    invoke-virtual {v1, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lgwu;->a(Landroid/view/View;)V
 
     goto :goto_0
+.end method
+
+.method public abstract a(Landroid/view/View;)V
+.end method
+
+.method public b()V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    iget-object v0, p0, Lgwu;->g:Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgwu;->g:Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/tutorialoverlay/TutorialOverlayWrapper;->a()V
+
+    :cond_0
+    iput-boolean v2, p0, Lgwu;->h:Z
+
+    iget-object v0, p0, Lgwu;->e:Lgww;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lgwu;->e:Lgww;
+
+    iget-object v1, v0, Lgww;->a:Ldzh;
+
+    iget-object v1, v1, Ldzh;->P:Lens;
+
+    invoke-virtual {v1, v2}, Lens;->a(I)V
+
+    iget-object v1, v0, Lgww;->a:Ldzh;
+
+    iget-object v1, v1, Ldzh;->g:Lgqc;
+
+    invoke-virtual {v1}, Lgqc;->g()V
+
+    iget-object v0, v0, Lgww;->a:Ldzh;
+
+    invoke-virtual {v0}, Ldzh;->r()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lgwu;->e:Lgww;
+
+    :cond_1
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    invoke-virtual {p0}, Lgwu;->b()V
+
+    iget-object v0, p0, Lgwu;->b:Lgwv;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgwu;->b:Lgwv;
+
+    invoke-interface {v0}, Lgwv;->a()V
+
+    :cond_0
+    return-void
 .end method

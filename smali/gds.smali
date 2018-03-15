@@ -1,136 +1,85 @@
-.class public final Lgds;
-.super Ljava/lang/Object;
+.class final Lgds;
+.super Landroid/content/BroadcastReceiver;
 .source "PG"
-
-# interfaces
-.implements Lifz;
 
 
 # instance fields
-.field private a:Lifz;
-
-.field private b:Lgzz;
+.field private final synthetic a:Lgdr;
 
 
 # direct methods
-.method private constructor <init>(Lifz;)V
+.method constructor <init>(Lgdr;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgds;->a:Lgdr;
 
-    iput-object p1, p0, Lgds;->a:Lifz;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lifz;Lgzz;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lgds;-><init>(Lifz;)V
-
-    iput-object p2, p0, Lgds;->b:Lgzz;
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ligc;)Lgdq;
-    .locals 3
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 4
 
-    new-instance v0, Lgdr;
+    iget-object v0, p0, Lgds;->a:Lgdr;
 
-    invoke-virtual {p0, p1}, Lgds;->b(Ligc;)Lify;
+    iget-boolean v0, v0, Lgdr;->c:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lgds;->a:Lgdr;
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lgds;->b:Lgzz;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2}, Lgdr;-><init>(Lify;Lgzz;)V
+    move-result-object v2
 
-    return-object v0
-.end method
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-.method public final a()Ligc;
-    .locals 1
+    move-result v2
 
-    iget-object v0, p0, Lgds;->a:Lifz;
+    add-int/lit8 v2, v2, 0x2b
 
-    invoke-interface {v0}, Lifz;->a()Ligc;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    return-object v0
-.end method
+    const-string v2, "Received ScreenOff broadcast after onStop: "
 
-.method public final a(Lige;)Z
-    .locals 1
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lgds;->a:Lifz;
+    move-result-object v2
 
-    invoke-interface {v0, p1}, Lifz;->a(Lige;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v0
+    move-result-object v1
 
-    return v0
-.end method
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public final b(Ligc;)Lify;
-    .locals 1
+    move-result-object v1
 
-    iget-object v0, p0, Lgds;->a:Lifz;
+    invoke-virtual {v0}, Lgdr;->b()V
 
-    invoke-interface {v0, p1}, Lifz;->b(Ligc;)Lify;
+    iget-object v0, v0, Lgdr;->a:Lawi;
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lawi;->a(Ljava/lang/String;)V
 
-    return-object v0
-.end method
+    :goto_0
+    return-void
 
-.method public final b(Lige;)Ligc;
-    .locals 1
+    :cond_0
+    iget-object v0, p0, Lgds;->a:Lgdr;
 
-    iget-object v0, p0, Lgds;->a:Lifz;
+    iget-object v0, v0, Lgdr;->b:Lihn;
 
-    invoke-interface {v0, p1}, Lifz;->b(Lige;)Ligc;
+    const-string v1, "Ignoring ScreenOff shutdown behavior, the activity is still started."
 
-    move-result-object v0
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
 
-    return-object v0
-.end method
-
-.method public final b()Ljava/util/List;
-    .locals 1
-
-    iget-object v0, p0, Lgds;->a:Lifz;
-
-    invoke-interface {v0}, Lifz;->b()Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    iget-object v0, p0, Lgds;->a:Lifz;
-
-    invoke-interface {v0}, Lifz;->c()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    iget-object v0, p0, Lgds;->a:Lifz;
-
-    invoke-interface {v0}, Lifz;->d()Z
-
-    move-result v0
-
-    return v0
+    goto :goto_0
 .end method

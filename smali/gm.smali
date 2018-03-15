@@ -1,167 +1,118 @@
-.class public Lgm;
-.super Lhd;
+.class public final Lgm;
+.super Ljava/io/Writer;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/Map;
 
 
 # instance fields
-.field private c:Lh;
+.field private final a:Ljava/lang/String;
+
+.field private b:Ljava/lang/StringBuilder;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 2
 
-    invoke-direct {p0}, Lhd;-><init>()V
+    invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.method public constructor <init>(I)V
-    .locals 0
+    const/16 v1, 0x80
 
-    invoke-direct {p0, p1}, Lhd;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    return-void
-.end method
+    iput-object v0, p0, Lgm;->b:Ljava/lang/StringBuilder;
 
-.method public constructor <init>(Lhd;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lhd;-><init>(Lhd;)V
+    iput-object p1, p0, Lgm;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private final a()Lh;
-    .locals 1
+.method private final a()V
+    .locals 3
 
-    iget-object v0, p0, Lgm;->c:Lh;
+    iget-object v0, p0, Lgm;->b:Ljava/lang/StringBuilder;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
-    new-instance v0, Lgn;
+    move-result v0
 
-    invoke-direct {v0, p0}, Lgn;-><init>(Lgm;)V
+    if-lez v0, :cond_0
 
-    iput-object v0, p0, Lgm;->c:Lh;
+    iget-object v0, p0, Lgm;->a:Ljava/lang/String;
+
+    iget-object v1, p0, Lgm;->b:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lgm;->b:Ljava/lang/StringBuilder;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lgm;->b:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
     :cond_0
-    iget-object v0, p0, Lgm;->c:Lh;
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public entrySet()Ljava/util/Set;
-    .locals 2
+.method public final close()V
+    .locals 0
 
-    invoke-direct {p0}, Lgm;->a()Lh;
+    invoke-direct {p0}, Lgm;->a()V
 
-    move-result-object v0
-
-    iget-object v1, v0, Lh;->a:Lgv;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Lgv;
-
-    invoke-direct {v1, v0}, Lgv;-><init>(Lh;)V
-
-    iput-object v1, v0, Lh;->a:Lgv;
-
-    :cond_0
-    iget-object v0, v0, Lh;->a:Lgv;
-
-    return-object v0
+    return-void
 .end method
 
-.method public keySet()Ljava/util/Set;
-    .locals 1
+.method public final flush()V
+    .locals 0
 
-    invoke-direct {p0}, Lgm;->a()Lh;
+    invoke-direct {p0}, Lgm;->a()V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lh;->a()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method public putAll(Ljava/util/Map;)V
+.method public final write([CII)V
     .locals 3
 
-    iget v0, p0, Lgm;->b:I
-
-    invoke-interface {p1}, Ljava/util/Map;->size()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    invoke-virtual {p0, v0}, Lgm;->a(I)V
-
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v0, p3, :cond_1
 
-    move-result v0
+    add-int v1, p2, v0
 
-    if-eqz v0, :cond_0
+    aget-char v1, p1, v1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/16 v2, 0xa
 
-    move-result-object v0
+    if-ne v1, v2, :cond_0
 
-    check-cast v0, Ljava/util/Map$Entry;
+    invoke-direct {p0}, Lgm;->a()V
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v2, v0}, Lgm;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
+    iget-object v2, p0, Lgm;->b:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_1
     return-void
-.end method
-
-.method public values()Ljava/util/Collection;
-    .locals 2
-
-    invoke-direct {p0}, Lgm;->a()Lh;
-
-    move-result-object v0
-
-    iget-object v1, v0, Lh;->b:Lgy;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Lgy;
-
-    invoke-direct {v1, v0}, Lgy;-><init>(Lh;)V
-
-    iput-object v1, v0, Lh;->b:Lgy;
-
-    :cond_0
-    iget-object v0, v0, Lh;->b:Lgy;
-
-    return-object v0
 .end method

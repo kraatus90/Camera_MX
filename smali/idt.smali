@@ -1,34 +1,23 @@
-.class final Lidt;
+.class public final Lidt;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lidu;
-
 
 # instance fields
-.field private a:Lihy;
+.field public final a:Lhbh;
+
+.field public final b:Ldfy;
 
 
 # direct methods
-.method constructor <init>(Lihy;)V
+.method public constructor <init>(Lhbh;Ldfy;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lidt;->a:Lihy;
+    iput-object p1, p0, Lidt;->a:Lhbh;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lide;)V
-    .locals 1
-
-    iget-object v0, p0, Lidt;->a:Lihy;
-
-    invoke-interface {p1, v0}, Lide;->a(Lihy;)V
+    iput-object p2, p0, Lidt;->b:Ldfy;
 
     return-void
 .end method

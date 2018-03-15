@@ -17,7 +17,7 @@
 .method public final a()Landroid/widget/LinearLayout;
     .locals 1
 
-    const v0, 0x7f0e01e7
+    const v0, 0x7f0e0193
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->findViewById(I)Landroid/view/View;
 
@@ -31,7 +31,7 @@
 .method public final b()Landroid/widget/SeekBar;
     .locals 1
 
-    const v0, 0x7f0e01e9
+    const v0, 0x7f0e0195
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->findViewById(I)Landroid/view/View;
 
@@ -45,7 +45,7 @@
 .method public final c()Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
     .locals 1
 
-    const v0, 0x7f0e01e6
+    const v0, 0x7f0e0192
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->findViewById(I)Landroid/view/View;
 
@@ -73,7 +73,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040086
+    const v1, 0x7f040076
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

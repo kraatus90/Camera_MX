@@ -1,33 +1,107 @@
-.class public final Lfpe;
-.super Ljava/lang/Object;
+.class public final enum Lfpe;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
-# instance fields
-.field public a:J
+# static fields
+.field public static final enum a:Lfpe;
 
-.field public final synthetic b:Ljava/io/File;
+.field public static final enum b:Lfpe;
 
-.field public final synthetic c:Lfph;
+.field public static final enum c:Lfpe;
 
-.field private synthetic d:J
+.field public static final enum d:Lfpe;
+
+.field private static final synthetic e:[Lfpe;
 
 
 # direct methods
-.method public constructor <init>(Lfph;JLjava/io/File;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 6
 
-    iput-object p1, p0, Lfpe;->c:Lfph;
+    const/4 v5, 0x3
 
-    iput-wide p2, p0, Lfpe;->d:J
+    const/4 v4, 0x2
 
-    iput-object p4, p0, Lfpe;->b:Ljava/io/File;
+    const/4 v3, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    iget-wide v0, p0, Lfpe;->d:J
+    new-instance v0, Lfpe;
 
-    iput-wide v0, p0, Lfpe;->a:J
+    const-string v1, "HW_JPEG"
+
+    invoke-direct {v0, v1, v2}, Lfpe;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfpe;->a:Lfpe;
+
+    new-instance v0, Lfpe;
+
+    const-string v1, "SW_JPEG"
+
+    invoke-direct {v0, v1, v3}, Lfpe;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfpe;->b:Lfpe;
+
+    new-instance v0, Lfpe;
+
+    const-string v1, "NPF_REPROCESSING"
+
+    invoke-direct {v0, v1, v4}, Lfpe;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfpe;->c:Lfpe;
+
+    new-instance v0, Lfpe;
+
+    const-string v1, "REPROCESSING"
+
+    invoke-direct {v0, v1, v5}, Lfpe;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfpe;->d:Lfpe;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lfpe;
+
+    sget-object v1, Lfpe;->a:Lfpe;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lfpe;->b:Lfpe;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lfpe;->c:Lfpe;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lfpe;->d:Lfpe;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Lfpe;->e:[Lfpe;
 
     return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Lfpe;
+    .locals 1
+
+    sget-object v0, Lfpe;->e:[Lfpe;
+
+    invoke-virtual {v0}, [Lfpe;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lfpe;
+
+    return-object v0
 .end method

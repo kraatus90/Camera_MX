@@ -1,150 +1,114 @@
-.class final Lghu;
+.class public final Lghu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljtu;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lgfz;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lghr;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
+
+.field private final l:Lkgv;
+
+.field private final m:Lkgv;
+
+.field private final n:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lghr;Lgfz;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lghu;->b:Lghr;
-
-    iput-object p2, p0, Lghu;->a:Lgfz;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lghu;->a:Lkgv;
+
+    iput-object p2, p0, Lghu;->b:Lkgv;
+
+    iput-object p3, p0, Lghu;->c:Lkgv;
+
+    iput-object p4, p0, Lghu;->d:Lkgv;
+
+    iput-object p5, p0, Lghu;->e:Lkgv;
+
+    iput-object p6, p0, Lghu;->f:Lkgv;
+
+    iput-object p7, p0, Lghu;->g:Lkgv;
+
+    iput-object p8, p0, Lghu;->h:Lkgv;
+
+    iput-object p9, p0, Lghu;->i:Lkgv;
+
+    iput-object p10, p0, Lghu;->j:Lkgv;
+
+    iput-object p11, p0, Lghu;->k:Lkgv;
+
+    iput-object p12, p0, Lghu;->l:Lkgv;
+
+    iput-object p13, p0, Lghu;->m:Lkgv;
+
+    iput-object p14, p0, Lghu;->n:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljuw;
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 15
 
-    iget-object v0, p0, Lghu;->b:Lghr;
+    new-instance v0, Lght;
 
-    iget-object v1, p0, Lghu;->a:Lgfz;
+    iget-object v1, p0, Lghu;->a:Lkgv;
 
-    iget-object v2, v0, Lghr;->b:Licu;
+    iget-object v2, p0, Lghu;->b:Lkgv;
 
-    iget-object v3, v0, Lghr;->a:Liin;
+    iget-object v3, p0, Lghu;->c:Lkgv;
 
-    invoke-interface {v3}, Liin;->c()I
+    iget-object v4, p0, Lghu;->d:Lkgv;
 
-    move-result v3
+    iget-object v5, p0, Lghu;->e:Lkgv;
 
-    invoke-static {v3}, Licy;->a(I)Ljava/lang/String;
+    iget-object v6, p0, Lghu;->f:Lkgv;
 
-    move-result-object v3
+    iget-object v7, p0, Lghu;->g:Lkgv;
 
-    iget-object v0, v0, Lghr;->a:Liin;
+    iget-object v8, p0, Lghu;->h:Lkgv;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iget-object v9, p0, Lghu;->i:Lkgv;
 
-    move-result v0
+    iget-object v10, p0, Lghu;->j:Lkgv;
 
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    iget-object v11, p0, Lghu;->k:Lkgv;
 
-    move-result-object v0
+    iget-object v12, p0, Lghu;->l:Lkgv;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v13, p0, Lghu;->m:Lkgv;
 
-    move-result-object v1
+    iget-object v14, p0, Lghu;->n:Lkgv;
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/lit8 v4, v4, 0x23
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/2addr v4, v5
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    add-int/2addr v4, v5
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v4, "Missing ImageId from "
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "ImageReader@"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, "! "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v2, v0}, Licu;->f(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lghu;->b:Lghr;
-
-    new-instance v1, Ligi;
-
-    iget-object v2, p0, Lghu;->a:Lgfz;
-
-    iget-wide v2, v2, Lgfz;->a:J
-
-    invoke-direct {v1, v2, v3}, Ligi;-><init>(J)V
-
-    iget-object v2, p0, Lghu;->a:Lgfz;
-
-    invoke-virtual {v0, v1, v2}, Lghr;->a(Liil;Lgfz;)Ljuw;
-
-    move-result-object v0
+    invoke-direct/range {v0 .. v14}, Lght;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
 
     return-object v0
 .end method

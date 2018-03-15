@@ -1,61 +1,161 @@
-.class final Lcbj;
+.class public final Lcbj;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/widget/Toolbar$OnMenuItemClickListener;
 
+# static fields
+.field private static a:Ljava/lang/Object;
 
-# instance fields
-.field private synthetic a:Lcbf;
+.field private static b:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
-.method constructor <init>(Lcbf;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcbj;->a:Lcbf;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lcbj;->a:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    sput-object v0, Lcbj;->b:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method
 
+.method public static a(Landroid/os/HandlerThread;)Lias;
+    .locals 3
 
-# virtual methods
-.method public final onMenuItemClick(Landroid/view/MenuItem;)Z
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v0, Lias;
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-virtual {p0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    invoke-direct {v0, v1}, Lias;-><init>(Landroid/os/Handler;)V
+
+    return-object v0
+.end method
+
+.method public static a()Ljava/util/concurrent/ExecutorService;
+    .locals 1
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lcbj;->a(I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static a(I)Ljava/util/concurrent/ExecutorService;
+    .locals 9
+
+    new-instance v8, Lcek;
+
+    invoke-direct {v8}, Lcek;-><init>()V
+
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    const-wide/16 v4, 0x0
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v7, Ljpq;
+
+    invoke-direct {v7}, Ljpq;-><init>()V
+
+    move v2, p0
+
+    move v3, p0
+
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+
+    return-object v1
+.end method
+
+.method public static b()Ljava/util/concurrent/Executor;
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lcbj;->a(I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static c()Ljava/util/concurrent/Executor;
+    .locals 1
+
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lcbj;->a(I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static d()Ljava/util/concurrent/ExecutorService;
     .locals 2
 
-    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+    sget-object v1, Lcbj;->a:Ljava/lang/Object;
 
-    move-result v0
+    monitor-enter v1
 
-    const v1, 0x7f0e01ed
+    :try_start_0
+    sget-object v0, Lcbj;->b:Ljava/util/concurrent/ExecutorService;
 
-    if-ne v0, v1, :cond_1
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcbj;->a:Lcbf;
+    const/4 v0, 0x2
 
-    iget-object v0, v0, Lcbf;->b:Lcbk;
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
 
-    invoke-interface {v0}, Lcbk;->e()V
+    move-result-object v0
+
+    sput-object v0, Lcbj;->b:Ljava/util/concurrent/ExecutorService;
 
     :cond_0
-    :goto_0
-    const/4 v0, 0x0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return v0
+    sget-object v0, Lcbj;->b:Ljava/util/concurrent/ExecutorService;
 
-    :cond_1
-    const v1, 0x7f0e01ee
+    return-object v0
 
-    if-ne v0, v1, :cond_0
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, p0, Lcbj;->a:Lcbf;
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object v0, v0, Lcbf;->b:Lcbk;
+    throw v0
+.end method
 
-    invoke-interface {v0}, Lcbk;->d()V
+.method public static e()Ljava/util/concurrent/ExecutorService;
+    .locals 1
 
-    goto :goto_0
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Ligs;
 
 
 # instance fields
-.field private synthetic a:Lbzr;
+.field private final synthetic a:Lbzb;
 
 
 # direct methods
-.method constructor <init>(Lbzr;)V
+.method constructor <init>(Lbzb;)V
     .locals 0
 
-    iput-object p1, p0, Lbzt;->a:Lbzr;
+    iput-object p1, p0, Lbzt;->a:Lbzb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,27 +26,20 @@
 .method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p0, Lbzt;->a:Lbzr;
+    iget-object v0, p0, Lbzt;->a:Lbzb;
 
-    iget-object v0, v0, Lbzr;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-boolean v1, v0, Lbzb;->w:Z
 
-    sget-object v1, Lbwt;->a:Lbwt;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    iget-object v1, v0, Lbzb;->c:Lbaa;
 
-    return-void
-.end method
+    iget-object v1, v1, Lbaa;->a:Lggn;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    iget-object v0, v0, Lbzb;->ac:Lghb;
 
-    iget-object v0, p0, Lbzt;->a:Lbzr;
+    invoke-interface {v1, v0}, Lggn;->c(Lghb;)V
 
-    iget-object v0, v0, Lbzr;->a:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v1, Lbwt;->a:Lbwt;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
+    :cond_0
     return-void
 .end method

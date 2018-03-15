@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lipf;
+.implements Liyi;
 
 
 # static fields
@@ -53,14 +53,14 @@
     return-void
 .end method
 
-.method private writeFeature(JLjfs;F)V
+.method private writeFeature(JLjpe;F)V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->mFeatureTable:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
     new-instance v1, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    invoke-direct {v1, p3, p4}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;F)V
+    invoke-direct {v1, p3, p4}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;F)V
 
     invoke-interface {v0, p1, p2, v1}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->setFeatureValue(JLcom/google/android/libraries/smartburst/utils/Feature;)Z
 
@@ -282,69 +282,69 @@
 
     move-result-object v0
 
-    sget-object v1, Ljfs;->a:Ljfs;
+    sget-object v1, Ljpe;->a:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getPerceptualSharpness()F
 
     move-result v2
 
-    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
-    sget-object v1, Ljfs;->o:Ljfs;
+    sget-object v1, Ljpe;->o:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getMaxBlockPerceptualSharpness()F
 
     move-result v2
 
-    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
-    sget-object v1, Ljfs;->p:Ljfs;
+    sget-object v1, Ljpe;->p:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getMeanGray()F
 
     move-result v2
 
-    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
-    sget-object v1, Ljfs;->q:Ljfs;
+    sget-object v1, Ljpe;->q:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getVarianceGray()F
 
     move-result v2
 
-    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
-    sget-object v1, Ljfs;->r:Ljfs;
+    sget-object v1, Ljpe;->r:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getMaxBlockMeanGray()F
 
     move-result v2
 
-    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
-    sget-object v1, Ljfs;->s:Ljfs;
+    sget-object v1, Ljpe;->s:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getMinBlockMeanGray()F
 
     move-result v2
 
-    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
-    sget-object v1, Ljfs;->t:Ljfs;
+    sget-object v1, Ljpe;->t:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getMaxBlockVarianceGray()F
 
     move-result v2
 
-    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
-    sget-object v1, Ljfs;->u:Ljfs;
+    sget-object v1, Ljpe;->u:Ljpe;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatistics;->getMinBlockVarianceGray()F
 
     move-result v0
 
-    invoke-direct {p0, v4, v5, v1, v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjfs;F)V
+    invoke-direct {p0, v4, v5, v1, v0}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageStatisticsFilter;->writeFeature(JLjpe;F)V
 
     goto :goto_0
 .end method

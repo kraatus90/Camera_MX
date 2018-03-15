@@ -1,88 +1,107 @@
-.class public final Ldmy;
-.super Ljava/lang/Object;
+.class public final enum Ldmy;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# static fields
+.field public static final enum a:Ldmy;
 
-# instance fields
-.field private a:Ljxn;
+.field public static final enum b:Ldmy;
 
-.field private b:Ljxn;
+.field public static final enum c:Ldmy;
 
-.field private c:Ljxn;
+.field public static final enum d:Ldmy;
 
-.field private d:Ljxn;
+.field private static final synthetic e:[Ldmy;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v5, 0x3
 
-    iput-object p1, p0, Ldmy;->a:Ljxn;
+    const/4 v4, 0x2
 
-    iput-object p2, p0, Ldmy;->b:Ljxn;
+    const/4 v3, 0x1
 
-    iput-object p3, p0, Ldmy;->c:Ljxn;
+    const/4 v2, 0x0
 
-    iput-object p4, p0, Ldmy;->d:Ljxn;
+    new-instance v0, Ldmy;
+
+    const-string v1, "ORIGINAL"
+
+    invoke-direct {v0, v1, v2}, Ldmy;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldmy;->a:Ldmy;
+
+    new-instance v0, Ldmy;
+
+    const-string v1, "PRIMARY"
+
+    invoke-direct {v0, v1, v3}, Ldmy;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldmy;->b:Ldmy;
+
+    new-instance v0, Ldmy;
+
+    const-string v1, "SECONDARY"
+
+    invoke-direct {v0, v1, v4}, Ldmy;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldmy;->c:Ldmy;
+
+    new-instance v0, Ldmy;
+
+    const-string v1, "DEBUG"
+
+    invoke-direct {v0, v1, v5}, Ldmy;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldmy;->d:Ldmy;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Ldmy;
+
+    sget-object v1, Ldmy;->a:Ldmy;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Ldmy;->b:Ldmy;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Ldmy;->c:Ldmy;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Ldmy;->d:Ldmy;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Ldmy;->e:[Ldmy;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    new-instance v0, Ldmy;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, p0, p1, p2, p3}, Ldmy;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
+    return-void
 .end method
 
+.method public static values()[Ldmy;
+    .locals 1
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+    sget-object v0, Ldmy;->e:[Ldmy;
 
-    new-instance v4, Ldmx;
-
-    iget-object v0, p0, Ldmy;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ldmy;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liau;
+    check-cast v0, [Ldmy;
 
-    iget-object v1, p0, Ldmy;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Liau;
-
-    iget-object v2, p0, Ldmy;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Liag;
-
-    iget-object v3, p0, Ldmy;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lgdq;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Ldmx;-><init>(Liau;Liau;Liag;Lgdq;)V
-
-    return-object v4
+    return-object v0
 .end method

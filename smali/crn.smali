@@ -1,56 +1,131 @@
-.class public final Lcrn;
-.super Ljava/lang/Object;
+.class final Lcrn;
+.super Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private a:Lcom/google/googlex/gcam/LockedBitmap;
 
-.field private b:Ljxn;
+.field private final synthetic b:Landroid/util/DisplayMetrics;
+
+.field private final synthetic c:Lcrm;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lcrm;Landroid/util/DisplayMetrics;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcrn;->c:Lcrm;
 
-    iput-object p1, p0, Lcrn;->a:Ljxn;
+    iput-object p2, p0, Lcrn;->b:Landroid/util/DisplayMetrics;
 
-    iput-object p2, p0, Lcrn;->b:Ljxn;
+    invoke-direct {p0}, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final Allocate(III)Lcom/google/googlex/gcam/InterleavedU8Allocation;
+    .locals 4
 
-    iget-object v0, p0, Lcrn;->a:Ljxn;
+    const/4 v0, 0x4
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-ne p3, v0, :cond_0
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    check-cast v0, Lcqp;
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    iget-object v1, p0, Lcrn;->b:Ljxn;
+    new-instance v0, Lcom/google/googlex/gcam/InterleavedU8Allocation;
 
-    new-instance v2, Lcqv;
+    invoke-direct {v0}, Lcom/google/googlex/gcam/InterleavedU8Allocation;-><init>()V
 
-    invoke-direct {v2, v0, v1}, Lcqv;-><init>(Lcqp;Ljxn;)V
+    iget-object v1, p0, Lcrn;->c:Lcrm;
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v2, p0, Lcrn;->b:Landroid/util/DisplayMetrics;
 
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    sget-object v3, Lcpk;->a:Landroid/graphics/Bitmap$Config;
 
-    move-result-object v0
+    invoke-static {v2, p1, p2, v3}, Landroid/graphics/Bitmap;->createBitmap(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    check-cast v0, Lcqo;
+    move-result-object v2
+
+    iput-object v2, v1, Lcrm;->q:Landroid/graphics/Bitmap;
+
+    iget-object v1, p0, Lcrn;->c:Lcrm;
+
+    iget-object v1, v1, Lcrm;->q:Landroid/graphics/Bitmap;
+
+    invoke-static {v1}, Lcom/google/googlex/gcam/LockedBitmap;->acquire(Landroid/graphics/Bitmap;)Lcom/google/googlex/gcam/LockedBitmap;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcrn;->a:Lcom/google/googlex/gcam/LockedBitmap;
+
+    const-wide/16 v2, 0x0
+
+    invoke-virtual {v0, v2, v3}, Lcom/google/googlex/gcam/InterleavedU8Allocation;->setImage_id(J)V
+
+    iget-object v1, p0, Lcrn;->a:Lcom/google/googlex/gcam/LockedBitmap;
+
+    invoke-virtual {v1}, Lcom/google/googlex/gcam/LockedBitmap;->view()Lcom/google/googlex/gcam/InterleavedWriteViewU8;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/InterleavedU8Allocation;->setView(Lcom/google/googlex/gcam/InterleavedWriteViewU8;)V
 
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final Release(J)V
+    .locals 7
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v0, p1, v4
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iget-object v0, p0, Lcrn;->a:Lcom/google/googlex/gcam/LockedBitmap;
+
+    if-eqz v0, :cond_1
+
+    :goto_1
+    invoke-static {v1}, Ljii;->b(Z)V
+
+    iget-object v0, p0, Lcrn;->a:Lcom/google/googlex/gcam/LockedBitmap;
+
+    invoke-virtual {v0}, Lcom/google/googlex/gcam/LockedBitmap;->close()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcrn;->a:Lcom/google/googlex/gcam/LockedBitmap;
+
+    return-void
+
+    :cond_0
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v1, v2
+
+    goto :goto_1
 .end method

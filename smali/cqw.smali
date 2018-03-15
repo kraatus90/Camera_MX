@@ -1,120 +1,81 @@
-.class public final Lcqw;
-.super Ljava/lang/Object;
+.class final Lcqw;
+.super Lcom/google/googlex/gcam/MemoryStateCallback;
 .source "PG"
-
-# interfaces
-.implements Ldhi;
 
 
 # instance fields
-.field public final a:Lhzr;
-
-.field public final b:Lcqr;
-
-.field public final c:Lgdq;
-
-.field private d:Ldhi;
+.field private final synthetic a:Lcqv;
 
 
 # direct methods
-.method public constructor <init>(Ldhi;Lhzr;Lcqr;Lgdq;)V
+.method constructor <init>(Lcqv;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcqw;->a:Lcqv;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p4}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lcqw;->d:Ldhi;
-
-    iput-object p2, p0, Lcqw;->a:Lhzr;
-
-    iput-object p3, p0, Lcqw;->b:Lcqr;
-
-    iput-object p4, p0, Lcqw;->c:Lgdq;
+    invoke-direct {p0}, Lcom/google/googlex/gcam/MemoryStateCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lasn;)Late;
-    .locals 1
+.method public final Run(JJ)V
+    .locals 3
 
-    iget-object v0, p0, Lcqw;->d:Ldhi;
+    sget-object v0, Lcqv;->a:Ljava/lang/String;
 
-    invoke-interface {v0, p1}, Ldhi;->a(Lasn;)Late;
+    const/16 v1, 0x69
 
-    move-result-object v0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    return-object v0
-.end method
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public final a()Liau;
-    .locals 1
+    const-string v1, "MemoryStateCallback: peakMemoryBytes="
 
-    iget-object v0, p0, Lcqw;->d:Ldhi;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ldhi;->b()Ldhv;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Ldhv;->a:Liau;
+    move-result-object v1
 
-    return-object v0
-.end method
+    const-string v2, " peakMemoryWithNewShotBytes="
 
-.method public final a(Ldhj;Leou;)Ljuw;
-    .locals 1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcqw;->d:Ldhi;
+    move-result-object v1
 
-    invoke-interface {v0, p1, p2}, Ldhi;->a(Ldhj;Leou;)Ljuw;
+    invoke-virtual {v1, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
-.end method
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public final b()Ldhv;
-    .locals 1
+    move-result-object v1
 
-    iget-object v0, p0, Lcqw;->d:Ldhi;
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ldhi;->b()Ldhv;
+    iget-object v0, p0, Lcqw;->a:Lcqv;
 
-    move-result-object v0
+    iget-object v0, v0, Lcqv;->f:Libw;
 
-    return-object v0
-.end method
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-.method public final c()Ljuw;
-    .locals 1
+    move-result-object v1
 
-    iget-object v0, p0, Lcqw;->d:Ldhi;
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
 
-    invoke-interface {v0}, Ldhi;->c()Ljuw;
+    iget-object v0, p0, Lcqw;->a:Lcqv;
 
-    move-result-object v0
+    iget-object v0, v0, Lcqv;->g:Libw;
 
-    return-object v0
-.end method
+    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-.method public final close()V
-    .locals 1
+    move-result-object v1
 
-    iget-object v0, p0, Lcqw;->d:Ldhi;
-
-    invoke-interface {v0}, Ldhi;->close()V
-
-    iget-object v0, p0, Lcqw;->a:Lhzr;
-
-    invoke-virtual {v0}, Lhzr;->close()V
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -1,87 +1,88 @@
-.class final synthetic Lflx;
+.class public final Lflx;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lflt;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lflt;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lflx;->a:Lflt;
+    iput-object p1, p0, Lflx;->a:Lkgv;
+
+    iput-object p2, p0, Lflx;->b:Lkgv;
+
+    iput-object p3, p0, Lflx;->c:Lkgv;
+
+    iput-object p4, p0, Lflx;->d:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;)Lflx;
+    .locals 1
+
+    new-instance v0, Lflx;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lflx;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 5
 
-    iget-object v1, p0, Lflx;->a:Lflt;
+    new-instance v4, Lflv;
 
-    new-instance v2, Landroid/content/Intent;
+    iget-object v0, p0, Lflx;->a:Lkgv;
 
-    const-string v0, "android.settings.APPLICATION_DETAILS_SETTINGS"
-
-    invoke-direct {v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string v0, "android.intent.category.DEFAULT"
-
-    invoke-virtual {v2, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v3, "package:"
-
-    iget-object v0, v1, Lflt;->a:Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v0, Liat;
 
-    move-result-object v0
+    iget-object v1, p0, Lflx;->b:Lkgv;
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v4
+    move-result-object v1
 
-    if-eqz v4, :cond_0
+    check-cast v1, Liaw;
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v2, p0, Lflx;->c:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    :goto_0
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v2
 
-    move-result-object v0
+    check-cast v2, Liho;
 
-    invoke-virtual {v2, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    iget-object v3, p0, Lflx;->d:Lkgv;
 
-    iget-object v0, v1, Lflt;->d:Lhap;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Lhap;->a(Landroid/content/Intent;)V
+    move-result-object v3
 
-    iget-object v0, v1, Lflt;->b:Lham;
+    check-cast v3, Lilg;
 
-    const-string v1, "Closing until required permissions are granted."
+    invoke-direct {v4, v0, v1, v2, v3}, Lflv;-><init>(Liat;Liaw;Liho;Lilg;)V
 
-    invoke-virtual {v0, v1}, Lham;->a(Ljava/lang/String;)V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
+    return-object v4
 .end method

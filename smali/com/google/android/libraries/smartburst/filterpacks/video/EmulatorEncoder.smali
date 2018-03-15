@@ -543,19 +543,19 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-lez p2, :cond_0
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     if-lez p3, :cond_1
 
     :goto_1
-    invoke-static {v1}, Liya;->a(Z)V
+    invoke-static {v1}, Ljii;->a(Z)V
 
     iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EmulatorEncoder;->mOutputFile:Ljava/lang/String;
 

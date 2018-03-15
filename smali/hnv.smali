@@ -1,55 +1,84 @@
-.class public final Lhnv;
-.super Ljava/lang/Object;
+.class abstract Lhnv;
+.super Lhnt;
 
-# interfaces
-.implements Ljava/util/concurrent/Callable;
+
+# static fields
+.field private static final b:Ljava/lang/ref/WeakReference;
 
 
 # instance fields
-.field private synthetic a:Landroid/content/SharedPreferences;
-
-.field private synthetic b:Ljava/lang/String;
-
-.field private synthetic c:Ljava/lang/Boolean;
+.field private a:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Boolean;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lhnv;->a:Landroid/content/SharedPreferences;
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    iput-object p2, p0, Lhnv;->b:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lhnv;->c:Ljava/lang/Boolean;
+    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lhnv;->b:Ljava/lang/ref/WeakReference;
+
+    return-void
+.end method
+
+.method constructor <init>([B)V
+    .locals 1
+
+    invoke-direct {p0, p1}, Lhnt;-><init>([B)V
+
+    sget-object v0, Lhnv;->b:Ljava/lang/ref/WeakReference;
+
+    iput-object v0, p0, Lhnv;->a:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 3
+.method final c()[B
+    .locals 2
 
-    iget-object v0, p0, Lhnv;->a:Landroid/content/SharedPreferences;
+    monitor-enter p0
 
-    iget-object v1, p0, Lhnv;->b:Ljava/lang/String;
+    :try_start_0
+    iget-object v0, p0, Lhnv;->a:Ljava/lang/ref/WeakReference;
 
-    iget-object v2, p0, Lhnv;->c:Ljava/lang/Boolean;
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, [B
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lhnv;->d()[B
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v1, p0, Lhnv;->a:Ljava/lang/ref/WeakReference;
+
+    :cond_0
+    monitor-exit p0
+
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method protected abstract d()[B
 .end method

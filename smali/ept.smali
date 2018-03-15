@@ -2,51 +2,38 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final a:Lept;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public b:Lepu;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lepu;
 
-    iput-object p1, p0, Lept;->a:Ljxn;
+    invoke-direct {v0}, Lepu;-><init>()V
+
+    invoke-virtual {v0}, Lepu;->a()Lept;
+
+    move-result-object v0
+
+    sput-object v0, Lept;->a:Lept;
 
     return-void
 .end method
 
+.method public constructor <init>(Lepu;)V
+    .locals 0
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lept;->a:Ljxn;
+    iput-object p1, p0, Lept;->b:Lepu;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    new-instance v0, Liag;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liau;
-
-    return-object v0
+    return-void
 .end method

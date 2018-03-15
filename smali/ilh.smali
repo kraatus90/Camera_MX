@@ -1,41 +1,98 @@
 .class public final Lilh;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Link;
+
+
+# instance fields
+.field private final a:J
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/Throwable;)V
+.method public constructor <init>(J)V
     .locals 1
 
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lilh;->setStackTrace([Ljava/lang/StackTraceElement;)V
+    iput-wide p1, p0, Lilh;->a:J
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/Throwable;)Lilh;
+
+# virtual methods
+.method public final a()Landroid/graphics/Rect;
     .locals 1
 
-    instance-of v0, p0, Lilh;
+    new-instance v0, Landroid/graphics/Rect;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    check-cast p0, Lilh;
+    return-object v0
+.end method
 
-    :goto_0
-    return-object p0
+.method public final a(Landroid/graphics/Rect;)V
+    .locals 0
 
-    :cond_0
-    new-instance v0, Lilh;
+    return-void
+.end method
 
-    invoke-direct {v0, p0}, Lilh;-><init>(Ljava/lang/Throwable;)V
+.method public final b()I
+    .locals 1
 
-    move-object p0, v0
+    const/4 v0, -0x1
 
-    goto :goto_0
+    return v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    const/4 v0, -0x1
+
+    return v0
+.end method
+
+.method public final close()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()I
+    .locals 1
+
+    const/4 v0, -0x1
+
+    return v0
+.end method
+
+.method public final e()Ljava/util/List;
+    .locals 1
+
+    invoke-static {}, Ljuh;->d()Ljuh;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final f()J
+    .locals 2
+
+    iget-wide v0, p0, Lilh;->a:J
+
+    return-wide v0
+.end method
+
+.method public final g()Likn;
+    .locals 1
+
+    invoke-static {}, Likn;->a()Likn;
+
+    move-result-object v0
+
+    return-object v0
 .end method

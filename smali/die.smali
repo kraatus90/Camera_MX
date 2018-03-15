@@ -1,46 +1,72 @@
-.class public final Ldie;
+.class final Ldie;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ldjy;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldic;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Ldic;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldie;->a:Ldic;
 
-    iput-object p1, p0, Ldie;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 3
 
-    iget-object v0, p0, Ldie;->a:Ljxn;
+    const/4 v2, 0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    iget-object v0, p0, Ldie;->a:Ldic;
 
-    check-cast v0, Ldih;
+    iget-object v0, v0, Ldic;->j:Lkeh;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    if-eqz v0, :cond_0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Ldie;->a:Ldic;
 
-    move-result-object v0
+    iget-object v0, v0, Ldic;->j:Lkeh;
 
-    check-cast v0, Ldih;
+    invoke-interface {v0, v2}, Lkeh;->cancel(Z)Z
 
-    return-object v0
+    iget-object v0, p0, Ldie;->a:Ldic;
+
+    iput-object v1, v0, Ldic;->j:Lkeh;
+
+    :cond_0
+    iget-object v0, p0, Ldie;->a:Ldic;
+
+    iget-object v0, v0, Ldic;->k:Lbey;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Ldie;->a:Ldic;
+
+    iget-object v0, v0, Ldic;->k:Lbey;
+
+    invoke-interface {v0}, Lbey;->close()V
+
+    iget-object v0, p0, Ldie;->a:Ldic;
+
+    iput-object v1, v0, Ldic;->k:Lbey;
+
+    :cond_1
+    iget-object v0, p0, Ldie;->a:Ldic;
+
+    iput-boolean v2, v0, Ldic;->g:Z
+
+    return-object v1
 .end method

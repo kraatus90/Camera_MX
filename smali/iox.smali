@@ -3,352 +3,501 @@
 .source "PG"
 
 # interfaces
-.implements Lcom/google/android/libraries/smartburst/filterfw/VideoFrameConsumer;
-.implements Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+.implements Ljava/util/concurrent/Callable;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x17
+.end annotation
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field private final a:Lipg;
 
-.field public final b:Ljava/util/Map;
+.field private final b:Lipg;
 
-.field public final c:Ljava/util/Map;
+.field private final c:Lipg;
 
-.field public final d:Ljava/util/Map;
+.field private final d:Lipg;
 
-.field public volatile e:J
+.field private final e:Lipg;
 
-.field private f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+.field private final f:I
 
-.field private g:Z
+.field private final g:J
+
+.field private final h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;)V
-    .locals 2
+.method constructor <init>(Lipg;Lipg;Lipg;Lipg;Lipg;IJ)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/TreeSet;
+    iput-object p1, p0, Liox;->a:Lipg;
 
-    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+    iput-object p2, p0, Liox;->b:Lipg;
 
-    iput-object v0, p0, Liox;->a:Ljava/util/Set;
+    iput-object p3, p0, Liox;->c:Lipg;
 
-    new-instance v0, Ljava/util/HashMap;
+    iput-object p4, p0, Liox;->d:Lipg;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    iput-object p5, p0, Liox;->e:Lipg;
 
-    iput-object v0, p0, Liox;->b:Ljava/util/Map;
+    iput p6, p0, Liox;->f:I
 
-    new-instance v0, Ljava/util/HashMap;
+    iput-wide p7, p0, Liox;->g:J
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object v0, p0, Liox;->c:Ljava/util/Map;
+    const/4 v1, 0x0
 
-    new-instance v0, Ljava/util/HashMap;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Liox;->d:Ljava/util/Map;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Liox;->g:Z
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Liox;->e:J
-
-    iput-object p1, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+    iput-object v0, p0, Liox;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
+.method private final a()Ljava/lang/Void;
+    .locals 15
 
-# virtual methods
-.method public final addVideoFrameConsumer(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameConsumer;)V
-    .locals 1
+    const/4 v1, 0x1
 
-    monitor-enter p0
+    const/4 v4, 0x0
 
-    :try_start_0
-    iget-boolean v0, p0, Liox;->g:Z
+    iget-object v0, p0, Liox;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    iget-object v0, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+    move-result v0
 
-    invoke-interface {v0, p0}, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;->addVideoFrameConsumer(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameConsumer;)V
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    iput-boolean v0, p0, Liox;->g:Z
+    const-string v1, "Executed command more than once. This is unexpected"
 
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
-
-    invoke-interface {v0, p1}, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;->addVideoFrameConsumer(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameConsumer;)V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
 
-.method public final close()V
-    .locals 1
+    :cond_0
+    iget-object v0, p0, Liox;->d:Lipg;
 
-    iget-object v0, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;->close()V
-
-    return-void
-.end method
-
-.method public final grabVideoFrame(Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;Lcom/google/android/libraries/smartburst/filterfw/FrameValue;Lcom/google/android/libraries/smartburst/filterfw/geometry/Scaler;)Z
-    .locals 5
-
-    iget-object v0, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
-
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;->grabVideoFrame(Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;Lcom/google/android/libraries/smartburst/filterfw/FrameValue;Lcom/google/android/libraries/smartburst/filterfw/geometry/Scaler;)Z
-
-    move-result v1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Liox;->b:Ljava/util/Map;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lipg;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/List;
+    check-cast v0, Lwk;
 
-    if-nez v0, :cond_0
+    iget-object v1, p0, Liox;->c:Lipg;
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-virtual {v1}, Lipg;->a()Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v1
 
-    iget-object v2, p0, Liox;->b:Ljava/util/Map;
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result-object v3
+    move-result v5
 
-    invoke-interface {v2, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v6, p0, Liox;->a:Lipg;
 
-    :cond_0
-    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;->getTimestamp()J
+    :try_start_0
+    iget-object v7, p0, Liox;->b:Lipg;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_4
+    .catchall {:try_start_0 .. :try_end_0} :catchall_5
 
-    move-result-wide v2
+    :try_start_1
+    iget-object v8, p0, Liox;->e:Lipg;
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_3
+    .catchall {:try_start_1 .. :try_end_1} :catchall_6
+
+    :try_start_2
+    iget-object v9, p0, Liox;->d:Lipg;
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_7
+
+    :try_start_3
+    iget-object v10, p0, Liox;->c:Lipg;
+    :try_end_3
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_8
+
+    :try_start_4
+    iget v1, p0, Liox;->f:I
+
+    iget-wide v2, p0, Liox;->g:J
+
+    sget-object v11, Lwl;->a:Lwn;
+
+    const-string v12, "http://ns.google.com/photos/1.0/camera/"
+
+    const-string v13, "GCamera"
+
+    invoke-virtual {v11, v12, v13}, Lwn;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    const-string v11, "http://ns.google.com/photos/1.0/camera/"
+
+    const-string v12, "MicroVideo"
+
+    const/4 v13, 0x1
+
+    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    invoke-interface {v0, v11, v12, v13}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    const-string v11, "http://ns.google.com/photos/1.0/camera/"
+
+    const-string v12, "MicroVideoVersion"
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v11, v12, v1}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    const-string v1, "http://ns.google.com/photos/1.0/camera/"
+
+    const-string v11, "MicroVideoOffset"
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-interface {v0, v1, v11, v12}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    const-string v1, "http://ns.google.com/photos/1.0/camera/"
+
+    const-string v11, "MicroVideoPresentationTimestampUs"
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1, v11, v2}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
-    iget-object v0, p0, Liox;->d:Ljava/util/Map;
+    iget-object v1, p0, Liox;->b:Lipg;
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    invoke-virtual {v1}, Lipg;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/io/InputStream;
+
+    iget-object v2, p0, Liox;->a:Lipg;
+
+    invoke-virtual {v2}, Lipg;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;->getWidth()I
+    check-cast v2, Ljava/io/InputStream;
 
-    move-result v3
+    iget-object v3, p0, Liox;->e:Lipg;
 
-    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;->getHeight()I
-
-    move-result v4
-
-    invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v3}, Lipg;->a()Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v3, Ljava/io/OutputStream;
 
-    monitor-exit p0
-
-    return v1
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final onVideoFrameAvailable(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;J)V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Liox;->a:Ljava/util/Set;
-
-    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-interface {p1}, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;->skipVideoFrame()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final onVideoStreamError(Ljava/lang/Exception;)V
-    .locals 2
-
-    const-string v0, "LoggingVideoStreamProvider"
-
-    const-string v1, "Video stream error!"
-
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
-.end method
-
-.method public final onVideoStreamStarted()V
-    .locals 2
-
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Liox;->e:J
-
-    return-void
-.end method
-
-.method public final onVideoStreamStopped()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final removeVideoFrameConsumer(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameConsumer;)V
-    .locals 1
-
-    iget-object v0, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
-
-    invoke-interface {v0, p1}, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;->removeVideoFrameConsumer(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameConsumer;)V
-
-    return-void
-.end method
-
-.method public final skipVideoFrame()V
-    .locals 3
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Liox;->c:Ljava/util/Map;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    iget-object v1, p0, Liox;->c:Ljava/util/Map;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {v2, v3, v0}, Lihr;->a(Ljava/io/InputStream;Ljava/io/OutputStream;Lwk;)Z
 
     move-result v0
 
-    add-int/lit8 v0, v0, 0x1
+    if-nez v0, :cond_6
+
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "Could not embed xmp into JPEG stream."
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_9
+
+    :catch_0
+    move-exception v0
+
+    :try_start_5
+    throw v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :catchall_0
+    move-exception v1
+
+    move-object v14, v1
+
+    move-object v1, v0
+
+    move-object v0, v14
 
     :goto_0
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-eqz v10, :cond_1
+
+    :try_start_6
+    invoke-static {v1, v10}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+
+    :cond_1
+    throw v0
+    :try_end_6
+    .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_1
+    .catchall {:try_start_6 .. :try_end_6} :catchall_8
+
+    :catch_1
+    move-exception v0
+
+    :try_start_7
+    throw v0
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+
+    :catchall_1
+    move-exception v1
+
+    move-object v14, v1
+
+    move-object v1, v0
+
+    move-object v0, v14
+
+    :goto_1
+    if-eqz v9, :cond_2
+
+    :try_start_8
+    invoke-static {v1, v9}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+
+    :cond_2
+    throw v0
+    :try_end_8
+    .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_2
+    .catchall {:try_start_8 .. :try_end_8} :catchall_7
+
+    :catch_2
+    move-exception v0
+
+    :try_start_9
+    throw v0
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_2
+
+    :catchall_2
+    move-exception v1
+
+    move-object v14, v1
+
+    move-object v1, v0
+
+    move-object v0, v14
+
+    :goto_2
+    if-eqz v8, :cond_3
+
+    :try_start_a
+    invoke-static {v1, v8}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+
+    :cond_3
+    throw v0
+    :try_end_a
+    .catch Ljava/lang/Throwable; {:try_start_a .. :try_end_a} :catch_3
+    .catchall {:try_start_a .. :try_end_a} :catchall_6
+
+    :catch_3
+    move-exception v0
+
+    :try_start_b
+    throw v0
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_3
+
+    :catchall_3
+    move-exception v1
+
+    move-object v14, v1
+
+    move-object v1, v0
+
+    move-object v0, v14
+
+    :goto_3
+    if-eqz v7, :cond_4
+
+    :try_start_c
+    invoke-static {v1, v7}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+
+    :cond_4
+    throw v0
+    :try_end_c
+    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_4
+    .catchall {:try_start_c .. :try_end_c} :catchall_5
+
+    :catch_4
+    move-exception v0
+
+    :try_start_d
+    throw v0
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
+
+    :catchall_4
+    move-exception v1
+
+    move-object v4, v0
+
+    move-object v0, v1
+
+    :goto_4
+    if-eqz v6, :cond_5
+
+    invoke-static {v4, v6}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+
+    :cond_5
+    throw v0
+
+    :cond_6
+    int-to-long v12, v5
+
+    :try_start_e
+    invoke-static {v1, v12, v13}, Lcom/google/common/io/ByteStreams;->limit(Ljava/io/InputStream;J)Ljava/io/InputStream;
 
     move-result-object v0
 
-    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v3}, Lcom/google/common/io/ByteStreams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
 
-    monitor-exit p0
+    invoke-virtual {v3}, Ljava/io/OutputStream;->flush()V
+    :try_end_e
+    .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_0
+    .catchall {:try_start_e .. :try_end_e} :catchall_9
+
+    if-eqz v10, :cond_7
+
+    const/4 v0, 0x0
+
+    :try_start_f
+    invoke-static {v0, v10}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    :try_end_f
+    .catch Ljava/lang/Throwable; {:try_start_f .. :try_end_f} :catch_1
+    .catchall {:try_start_f .. :try_end_f} :catchall_8
+
+    :cond_7
+    if-eqz v9, :cond_8
+
+    const/4 v0, 0x0
+
+    :try_start_10
+    invoke-static {v0, v9}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    :try_end_10
+    .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_10} :catch_2
+    .catchall {:try_start_10 .. :try_end_10} :catchall_7
+
+    :cond_8
+    if-eqz v8, :cond_9
+
+    const/4 v0, 0x0
+
+    :try_start_11
+    invoke-static {v0, v8}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    :try_end_11
+    .catch Ljava/lang/Throwable; {:try_start_11 .. :try_end_11} :catch_3
+    .catchall {:try_start_11 .. :try_end_11} :catchall_6
+
+    :cond_9
+    if-eqz v7, :cond_a
+
+    const/4 v0, 0x0
+
+    :try_start_12
+    invoke-static {v0, v7}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    :try_end_12
+    .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_4
+    .catchall {:try_start_12 .. :try_end_12} :catchall_5
+
+    :cond_a
+    if-eqz v6, :cond_b
+
+    invoke-static {v4, v6}, Liox;->a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+
+    :cond_b
+    return-object v4
+
+    :catchall_5
+    move-exception v0
+
+    goto :goto_4
+
+    :catchall_6
+    move-exception v0
+
+    move-object v1, v4
+
+    goto :goto_3
+
+    :catchall_7
+    move-exception v0
+
+    move-object v1, v4
+
+    goto :goto_2
+
+    :catchall_8
+    move-exception v0
+
+    move-object v1, v4
+
+    goto :goto_1
+
+    :catchall_9
+    move-exception v0
+
+    move-object v1, v4
+
+    goto :goto_0
+.end method
+
+.method private static synthetic a(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    :try_start_0
+    invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v0, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;->skipVideoFrame()V
-
+    :goto_0
     return-void
 
-    :cond_0
-    const/4 v0, 0x1
+    :catch_0
+    move-exception v0
+
+    invoke-static {p0, v0}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    goto :goto_0
 .end method
 
-.method public final toString()Ljava/lang/String;
+
+# virtual methods
+.method public final synthetic call()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Liox;->f:Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-direct {p0}, Liox;->a()Ljava/lang/Void;
 
     move-result-object v0
 

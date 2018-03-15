@@ -1,46 +1,43 @@
 .class public final Lbqq;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Lbqp;
+.field private final synthetic a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
 
 # direct methods
-.method public constructor <init>(Lbqp;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbqq;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    iput-object p1, p0, Lbqq;->a:Lbqp;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-object v0, p0, Lbqq;->a:Lbqp;
+    iget-object v0, p0, Lbqq;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    iget-object v0, v0, Lbqp;->a:Landroid/app/Application;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Landroid/app/Application;->getContentResolver()Landroid/content/ContentResolver;
+    iput-object v1, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
 
-    move-result-object v0
+    return-void
+.end method
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Lbqq;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    move-result-object v0
+    iput-object p1, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
 
-    check-cast v0, Landroid/content/ContentResolver;
-
-    return-object v0
+    return-void
 .end method

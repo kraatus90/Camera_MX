@@ -1,80 +1,90 @@
 .class final Lbzo;
-.super Lgih;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Lgih;
+.field private final synthetic a:Landroid/graphics/Bitmap;
 
-.field private c:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final synthetic b:I
 
-.field private d:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final synthetic c:Lbzb;
 
 
 # direct methods
-.method public constructor <init>(Lgih;Ljava/util/concurrent/atomic/AtomicInteger;)V
-    .locals 2
+.method constructor <init>(Lbzb;Landroid/graphics/Bitmap;I)V
+    .locals 0
 
-    invoke-virtual {p1}, Lgih;->h()Ljuw;
+    iput-object p1, p0, Lbzo;->c:Lbzb;
 
-    move-result-object v0
+    iput-object p2, p0, Lbzo;->a:Landroid/graphics/Bitmap;
 
-    invoke-direct {p0, p1, v0}, Lgih;-><init>(Liil;Ljuw;)V
+    iput p3, p0, Lbzo;->b:I
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lbzo;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p1, p0, Lbzo;->a:Lgih;
-
-    iput-object p2, p0, Lbzo;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    iget-object v0, p0, Lbzo;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lbzo;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lbzo;->c:Lbzb;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lbzb;->x:Lgpg;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    iget-object v1, p0, Lbzo;->c:Lbzb;
 
-    move-result v0
+    iget-object v1, v1, Lbzb;->F:Lcrz;
 
-    if-nez v0, :cond_0
+    invoke-interface {v1}, Lcrz;->k()Ljava/lang/String;
 
-    iget-object v0, p0, Lbzo;->a:Lgih;
+    move-result-object v1
 
-    invoke-virtual {v0}, Lgih;->close()V
+    invoke-interface {v0, v1}, Lgpg;->a(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lbzo;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v0, p0, Lbzo;->c:Lbzb;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    iget-object v0, v0, Lbzb;->x:Lgpg;
 
-    move-result v0
+    iget-object v1, p0, Lbzo;->a:Landroid/graphics/Bitmap;
 
-    if-gez v0, :cond_0
+    iget v2, p0, Lbzo;->b:I
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    invoke-interface {v0, v1, v2}, Lgpg;->a(Landroid/graphics/Bitmap;I)V
 
-    const-string v1, "Image count negative."
+    iget-object v0, p0, Lbzo;->c:Lbzb;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget-object v0, v0, Lbzb;->s:Lgnj;
 
-    throw v0
+    new-instance v1, Lgni;
 
-    :cond_0
+    iget-object v2, p0, Lbzo;->a:Landroid/graphics/Bitmap;
+
+    iget v3, p0, Lbzo;->b:I
+
+    invoke-static {v3}, Ligz;->a(I)Ligz;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Lgni;-><init>(Landroid/graphics/Bitmap;Ligz;)V
+
+    invoke-virtual {v0, v1}, Lgnj;->a(Ljava/lang/Object;)Lkeh;
+
+    move-result-object v0
+
+    new-instance v1, Lbzp;
+
+    invoke-direct {v1}, Lbzp;-><init>()V
+
+    sget-object v2, Lken;->a:Lken;
+
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
     return-void
 .end method

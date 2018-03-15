@@ -11,7 +11,7 @@
 .method public constructor <init>()V
     .locals 3
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_PackedReadWriteViewRaw10__SWIG_2()J
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_PackedReadWriteViewRaw10__SWIG_0()J
 
     move-result-wide v0
 
@@ -61,7 +61,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_PackedReadWriteViewRaw10__SWIG_0(JLcom/google/googlex/gcam/PackedReadWriteViewRaw10;)J
+    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_PackedReadWriteViewRaw10__SWIG_2(JLcom/google/googlex/gcam/PackedReadWriteViewRaw10;)J
 
     move-result-wide v0
 

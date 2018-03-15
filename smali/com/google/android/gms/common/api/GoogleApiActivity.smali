@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Lhtm;->a(Landroid/content/Context;)Lhtm;
+    invoke-static {p0}, Lhum;->a(Landroid/content/Context;)Lhum;
 
     move-result-object v0
 
@@ -84,15 +84,15 @@
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2}, Lhtm;->a(Lcom/google/android/gms/common/ConnectionResult;I)Z
+    invoke-virtual {v0, v1, v2}, Lhum;->a(Lcom/google/android/gms/common/ConnectionResult;I)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    iget-object v3, v0, Lhtm;->h:Landroid/os/Handler;
+    iget-object v3, v0, Lhum;->h:Landroid/os/Handler;
 
-    iget-object v0, v0, Lhtm;->h:Landroid/os/Handler;
+    iget-object v0, v0, Lhum;->h:Landroid/os/Handler;
 
     const/4 v4, 0x5
 
@@ -105,7 +105,7 @@
     goto :goto_0
 
     :pswitch_1
-    invoke-virtual {v0}, Lhtm;->a()V
+    invoke-virtual {v0}, Lhum;->a()V
 
     goto :goto_0
 
@@ -260,7 +260,7 @@
     goto :goto_0
 
     :cond_4
-    sget-object v0, Lhjv;->a:Lhjv;
+    sget-object v0, Lhky;->a:Lhky;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -268,7 +268,7 @@
 
     const/4 v2, 0x2
 
-    invoke-virtual {v0, p0, v1, v2, p0}, Lhjv;->b(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
+    invoke-virtual {v0, p0, v1, v2, p0}, Lhky;->b(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
 
     iput v3, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
 

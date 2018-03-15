@@ -1,50 +1,62 @@
-.class final Lcsh;
+.class public final Lcsh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Libu;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcsf;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcsf;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcsh;->a:Lcsf;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcsh;->a:Lkgv;
+
+    iput-object p2, p0, Lcsh;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lcsh;->a:Lcsf;
+    iget-object v0, p0, Lcsh;->a:Lkgv;
 
-    iget-object v0, v0, Lcsf;->g:Licz;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    const-string v1, "CameraActivityController#create"
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Licz;->a(Ljava/lang/String;)V
+    check-cast v0, Lfxx;
 
-    iget-object v0, p0, Lcsh;->a:Lcsf;
+    iget-object v1, p0, Lcsh;->b:Lkgv;
 
-    iget-object v0, v0, Lcsf;->f:Ljxe;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljxe;->a()Ljava/lang/Object;
+    move-result-object v1
 
-    iget-object v0, p0, Lcsh;->a:Lcsf;
+    check-cast v1, Lgro;
 
-    iget-object v0, v0, Lcsf;->g:Licz;
+    new-instance v2, Lcsf;
 
-    invoke-interface {v0}, Licz;->a()V
+    invoke-direct {v2, v0, v1}, Lcsf;-><init>(Lfxx;Lgro;)V
 
-    return-void
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcsf;
+
+    return-object v0
 .end method

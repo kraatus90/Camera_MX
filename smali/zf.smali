@@ -1,74 +1,80 @@
 .class final Lzf;
-.super Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/hardware/Camera$AutoFocusCallback;
 
 
 # instance fields
-.field private synthetic a:Lzb;
+.field public final synthetic a:Laad;
+
+.field public final synthetic b:Lzb;
+
+.field private final synthetic c:Landroid/os/Handler;
 
 
 # direct methods
-.method constructor <init>(Lzb;)V
+.method constructor <init>(Lzb;Landroid/os/Handler;Laad;)V
     .locals 0
 
-    iput-object p1, p0, Lzf;->a:Lzb;
+    iput-object p1, p0, Lzf;->b:Lzb;
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;-><init>()V
+    iput-object p2, p0, Lzf;->c:Landroid/os/Handler;
+
+    iput-object p3, p0, Lzf;->a:Laad;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
+.method public final onAutoFocus(ZLandroid/hardware/Camera;)V
     .locals 2
 
-    iget-object v0, p0, Lzf;->a:Lzb;
+    iget-object v0, p0, Lzf;->b:Lzb;
 
-    iget-object v0, v0, Lzb;->k:Labq;
+    iget-object v0, v0, Lzb;->a:Lyv;
 
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lyv;->e:Labx;
 
-    iget-object v0, p0, Lzf;->a:Lzb;
+    invoke-virtual {v0}, Labx;->a()I
 
-    iget-object v0, v0, Lzb;->k:Labq;
+    move-result v0
 
-    invoke-interface {v0}, Labq;->a()V
+    const/16 v1, 0x10
 
-    iget-object v0, p0, Lzf;->a:Lzb;
+    if-eq v0, v1, :cond_0
 
-    const/4 v1, 0x0
+    sget-object v0, Lyv;->a:Lacf;
 
-    iput-object v1, v0, Lzb;->k:Labq;
+    const-string v1, "onAutoFocus callback returning when not focusing"
+
+    invoke-static {v0, v1}, Lace;->e(Lacf;Ljava/lang/String;)V
+
+    :goto_0
+    iget-object v0, p0, Lzf;->c:Landroid/os/Handler;
+
+    new-instance v1, Lzg;
+
+    invoke-direct {v1, p0, p1}, Lzg;-><init>(Lzf;Z)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
 
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Lzf;->b:Lzb;
 
-.method public final onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .locals 2
+    iget-object v0, v0, Lzb;->a:Lyv;
 
-    sget-object v0, Lyn;->a:Lacv;
+    iget-object v0, v0, Lyv;->e:Labx;
 
-    const-string v1, "Failed to configure the camera for capture"
+    const/4 v1, 0x2
 
-    invoke-static {v0, v1}, Lacu;->b(Lacv;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Labx;->a(I)V
 
-    return-void
-.end method
-
-.method public final onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .locals 2
-
-    iget-object v0, p0, Lzf;->a:Lzb;
-
-    iput-object p1, v0, Lzb;->i:Landroid/hardware/camera2/CameraCaptureSession;
-
-    iget-object v0, p0, Lzf;->a:Lzb;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lzb;->a(I)V
-
-    return-void
+    goto :goto_0
 .end method

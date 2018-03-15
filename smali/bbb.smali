@@ -1,38 +1,23 @@
-.class final Lbbb;
+.class public interface abstract Lbbb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljtu;
-
-
-# instance fields
-.field private synthetic a:Lbax;
-
-
-# direct methods
-.method constructor <init>(Lbax;)V
-    .locals 0
-
-    iput-object p1, p0, Lbbb;->a:Lbax;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lihb;
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljuw;
-    .locals 1
+.method public abstract a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+.end method
 
-    iget-object v0, p0, Lbbb;->a:Lbax;
+.method public abstract a()Z
+.end method
 
-    iget-object v0, v0, Lbax;->c:Lbbn;
+.method public abstract b()Lihb;
+.end method
 
-    invoke-interface {v0}, Lbbn;->b()Ljuw;
+.method public abstract c()Ljava/lang/Throwable;
+.end method
 
-    move-result-object v0
-
-    return-object v0
+.method public abstract close()V
 .end method

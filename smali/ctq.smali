@@ -1,13 +1,29 @@
-.class final Lctq;
+.class public final Lctq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lewe;
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lctq;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lctq;
+
+    invoke-direct {v0}, Lctq;-><init>()V
+
+    sput-object v0, Lctq;->a:Lctq;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,90 +33,20 @@
 
 
 # virtual methods
-.method public final A_()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    new-instance v0, Lket;
 
-.method public final B_()Z
-    .locals 1
+    invoke-direct {v0}, Lket;-><init>()V
 
-    const/4 v0, 0x1
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return v0
-.end method
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final b()V
-    .locals 0
+    move-result-object v0
 
-    return-void
-.end method
-
-.method public final c()Landroid/view/GestureDetector$OnGestureListener;
-    .locals 1
-
-    new-instance v0, Landroid/view/GestureDetector$SimpleOnGestureListener;
-
-    invoke-direct {v0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
+    check-cast v0, Lket;
 
     return-object v0
-.end method
-
-.method public final d()Landroid/view/View$OnTouchListener;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final surfaceRedrawNeeded(Landroid/view/SurfaceHolder;)V
-    .locals 0
-
-    return-void
 .end method

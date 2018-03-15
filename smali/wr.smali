@@ -1,184 +1,77 @@
-.class final Lwr;
-.super Ljava/lang/Object;
+.class public final Lwr;
+.super Ljava/io/OutputStream;
 .source "PG"
 
 
 # instance fields
 .field public a:I
 
-.field private b:I
-
-.field private c:I
-
-.field private d:I
-
-.field private e:I
+.field private final b:Ljava/io/OutputStream;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Ljava/io/OutputStream;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
     const/4 v0, 0x0
 
     iput v0, p0, Lwr;->a:I
 
+    iput-object p1, p0, Lwr;->b:Ljava/io/OutputStream;
+
     return-void
-.end method
-
-.method private static a(II)I
-    .locals 1
-
-    if-le p0, p1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    if-ne p0, p1, :cond_1
-
-    const/4 v0, 0x2
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x4
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method final a(I)V
+.method public final write(I)V
     .locals 1
+
+    iget-object v0, p0, Lwr;->b:Ljava/io/OutputStream;
+
+    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
     iget v0, p0, Lwr;->a:I
 
-    or-int/2addr v0, p1
+    add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lwr;->a:I
 
     return-void
 .end method
 
-.method final a(IIII)V
-    .locals 0
+.method public final write([B)V
+    .locals 2
 
-    iput p1, p0, Lwr;->b:I
+    iget-object v0, p0, Lwr;->b:Ljava/io/OutputStream;
 
-    iput p2, p0, Lwr;->c:I
+    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write([B)V
 
-    iput p3, p0, Lwr;->d:I
+    iget v0, p0, Lwr;->a:I
 
-    iput p4, p0, Lwr;->e:I
+    array-length v1, p1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lwr;->a:I
 
     return-void
 .end method
 
-.method final a()Z
-    .locals 4
+.method public final write([BII)V
+    .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lwr;->b:Ljava/io/OutputStream;
 
-    iget v1, p0, Lwr;->a:I
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
-    and-int/lit8 v1, v1, 0x7
+    iget v0, p0, Lwr;->a:I
 
-    if-eqz v1, :cond_1
+    add-int/2addr v0, p3
 
-    iget v1, p0, Lwr;->a:I
+    iput v0, p0, Lwr;->a:I
 
-    iget v2, p0, Lwr;->d:I
-
-    iget v3, p0, Lwr;->b:I
-
-    invoke-static {v2, v3}, Lwr;->a(II)I
-
-    move-result v2
-
-    and-int/2addr v1, v2
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    iget v1, p0, Lwr;->a:I
-
-    and-int/lit8 v1, v1, 0x70
-
-    if-eqz v1, :cond_2
-
-    iget v1, p0, Lwr;->a:I
-
-    iget v2, p0, Lwr;->d:I
-
-    iget v3, p0, Lwr;->c:I
-
-    invoke-static {v2, v3}, Lwr;->a(II)I
-
-    move-result v2
-
-    shl-int/lit8 v2, v2, 0x4
-
-    and-int/2addr v1, v2
-
-    if-eqz v1, :cond_0
-
-    :cond_2
-    iget v1, p0, Lwr;->a:I
-
-    and-int/lit16 v1, v1, 0x700
-
-    if-eqz v1, :cond_3
-
-    iget v1, p0, Lwr;->a:I
-
-    iget v2, p0, Lwr;->e:I
-
-    iget v3, p0, Lwr;->b:I
-
-    invoke-static {v2, v3}, Lwr;->a(II)I
-
-    move-result v2
-
-    shl-int/lit8 v2, v2, 0x8
-
-    and-int/2addr v1, v2
-
-    if-eqz v1, :cond_0
-
-    :cond_3
-    iget v1, p0, Lwr;->a:I
-
-    and-int/lit16 v1, v1, 0x7000
-
-    if-eqz v1, :cond_4
-
-    iget v1, p0, Lwr;->a:I
-
-    iget v2, p0, Lwr;->e:I
-
-    iget v3, p0, Lwr;->c:I
-
-    invoke-static {v2, v3}, Lwr;->a(II)I
-
-    move-result v2
-
-    shl-int/lit8 v2, v2, 0xc
-
-    and-int/2addr v1, v2
-
-    if-eqz v1, :cond_0
-
-    :cond_4
-    const/4 v0, 0x1
-
-    goto :goto_0
+    return-void
 .end method

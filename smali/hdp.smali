@@ -1,99 +1,51 @@
-.class final Lhdp;
-.super Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;
+.class public final Lhdp;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lhdn;
+.field public final a:Lhdy;
+
+.field public final b:Landroid/widget/VideoView;
+
+.field public final c:Ljava/lang/Runnable;
+
+.field public d:Z
 
 
 # direct methods
-.method constructor <init>(Lhdn;)V
-    .locals 0
+.method public constructor <init>(Lhdy;)V
+    .locals 1
 
-    iput-object p1, p0, Lhdp;->a:Lhdn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;-><init>()V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
+    check-cast v0, Lhdy;
 
-# virtual methods
-.method public final onScale(Landroid/view/ScaleGestureDetector;)Z
-    .locals 4
+    iput-object v0, p0, Lhdp;->a:Lhdy;
 
-    iget-object v0, p0, Lhdp;->a:Lhdn;
+    iget-object v0, p1, Lhdy;->g:Landroid/widget/VideoView;
 
-    iget-object v0, v0, Lhdn;->h:Lhdk;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
+    move-result-object v0
 
-    move-result v1
+    check-cast v0, Landroid/widget/VideoView;
 
-    sget-object v2, Lfjt;->a:Ljava/lang/String;
+    iput-object v0, p0, Lhdp;->b:Landroid/widget/VideoView;
 
-    const-string v3, "ScaleListener zoomUi onScale"
+    const/4 v0, 0x0
 
-    invoke-static {v2, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    iput-boolean v0, p0, Lhdp;->d:Z
 
-    iget-object v0, v0, Lhdk;->a:Lhem;
+    new-instance v0, Lhdq;
 
-    invoke-interface {v0, v1}, Lhem;->a(F)V
+    invoke-direct {v0, p0}, Lhdq;-><init>(Lhdp;)V
 
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
-    .locals 4
-
-    const/4 v3, 0x1
-
-    iget-object v0, p0, Lhdp;->a:Lhdn;
-
-    iput-boolean v3, v0, Lhdn;->k:Z
-
-    iget-object v0, p0, Lhdp;->a:Lhdn;
-
-    iget-object v0, v0, Lhdn;->h:Lhdk;
-
-    sget-object v1, Lfjt;->a:Ljava/lang/String;
-
-    const-string v2, "ScaleListener zoomUi onScaleBegin"
-
-    invoke-static {v1, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, v0, Lhdk;->a:Lhem;
-
-    invoke-interface {v0}, Lhem;->a()V
-
-    iget-object v0, p0, Lhdp;->a:Lhdn;
-
-    iget-object v0, v0, Lhdn;->f:Lhdj;
-
-    invoke-interface {v0}, Lhdj;->d()V
-
-    return v3
-.end method
-
-.method public final onScaleEnd(Landroid/view/ScaleGestureDetector;)V
-    .locals 3
-
-    iget-object v0, p0, Lhdp;->a:Lhdn;
-
-    iget-object v0, v0, Lhdn;->h:Lhdk;
-
-    sget-object v1, Lfjt;->a:Ljava/lang/String;
-
-    const-string v2, "ScaleListener zoomUi onScaleEnd"
-
-    invoke-static {v1, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, v0, Lhdk;->a:Lhem;
-
-    invoke-interface {v0}, Lhem;->b()V
+    iput-object v0, p0, Lhdp;->c:Ljava/lang/Runnable;
 
     return-void
 .end method

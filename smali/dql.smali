@@ -4,24 +4,16 @@
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Lici;
-
-.field public final c:I
+.field public final a:Lbkx;
 
 
 # direct methods
-.method public constructor <init>(ILici;I)V
+.method public constructor <init>(Leyv;Lbkx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ldql;->a:I
-
-    iput-object p2, p0, Ldql;->b:Lici;
-
-    iput p3, p0, Ldql;->c:I
+    iput-object p2, p0, Ldql;->a:Lbkx;
 
     return-void
 .end method

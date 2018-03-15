@@ -1,41 +1,65 @@
-.class final enum Ljob;
-.super Ljoa;
+.class final Ljob;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# static fields
+.field private static final a:Ljava/util/regex/Pattern;
+
+
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, 0x0
+    const-string v0, "Burst_stack_([0-9]{5,20})(_([0-9]{1,4}))?\\.jpg"
 
-    invoke-direct {p0, p1, v0}, Ljoa;-><init>(Ljava/lang/String;I)V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Ljob;->a:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
+.method public static a()Ljoa;
+    .locals 3
 
-# virtual methods
-.method final a(Ljod;)I
-    .locals 1
+    new-instance v0, Ljnx;
 
-    iget v0, p1, Ljod;->b:I
+    sget-object v1, Ljob;->a:Ljava/util/regex/Pattern;
 
-    return v0
+    const/4 v2, 0x3
+
+    invoke-direct {v0, v1, v2}, Ljnx;-><init>(Ljava/util/regex/Pattern;I)V
+
+    return-object v0
 .end method
 
-.method final b(Ljod;)J
-    .locals 2
+.method public static b()Ljoa;
+    .locals 1
 
-    if-nez p1, :cond_0
+    new-instance v0, Ljnw;
 
-    const-wide/16 v0, 0x0
+    invoke-direct {v0}, Ljnw;-><init>()V
 
-    :goto_0
-    return-wide v0
+    return-object v0
+.end method
 
-    :cond_0
-    iget-wide v0, p1, Ljod;->d:J
+.method public static c()Ljoa;
+    .locals 3
 
-    goto :goto_0
+    new-instance v0, Ljnx;
+
+    const-string v1, "med-res-frame-([0-9]+)\\.jpg"
+
+    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v1
+
+    const/4 v2, -0x1
+
+    invoke-direct {v0, v1, v2}, Ljnx;-><init>(Ljava/util/regex/Pattern;I)V
+
+    return-object v0
 .end method

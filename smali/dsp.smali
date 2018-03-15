@@ -1,80 +1,84 @@
-.class final Ldsp;
-.super Ljava/lang/Object;
+.class public final Ldsp;
+.super Lfhq;
 .source "PG"
-
-# interfaces
-.implements Ldsr;
 
 
 # instance fields
-.field private a:Lgkl;
+.field public final a:Libw;
 
-.field private b:Liio;
+.field private final b:Ldso;
+
+.field private c:J
 
 
 # direct methods
-.method constructor <init>(Lgkl;Liio;)V
-    .locals 0
+.method public constructor <init>(Ldso;Ldsm;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lfhq;-><init>()V
 
-    iput-object p1, p0, Ldsp;->a:Lgkl;
+    iput-object p1, p0, Ldsp;->b:Ldso;
 
-    iput-object p2, p0, Ldsp;->b:Liio;
+    new-instance v0, Libw;
+
+    const/high16 v1, -0x40800000    # -1.0f
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Ldsp;->a:Libw;
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Ldsp;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhzr;Lici;II)Ldsl;
-    .locals 3
+.method public final a_(Lind;)V
+    .locals 4
 
-    iget-object v0, p0, Ldsp;->b:Liio;
+    invoke-interface {p1}, Lind;->c()J
 
-    iget v1, p2, Lici;->a:I
+    move-result-wide v0
 
-    iget v2, p2, Lici;->b:I
+    iget-wide v2, p0, Ldsp;->c:J
 
-    invoke-interface {v0, v1, v2, p3, p4}, Liio;->a(IIII)Liin;
+    cmp-long v0, v0, v2
 
-    move-result-object v0
+    if-lez v0, :cond_0
 
-    invoke-virtual {p1, v0}, Lhzr;->a(Lich;)Lich;
+    invoke-static {p1}, Ldsm;->a(Lind;)Z
 
-    new-instance v1, Ldsj;
+    move-result v0
 
-    invoke-direct {v1}, Ldsj;-><init>()V
+    if-eqz v0, :cond_0
 
-    new-instance v2, Ldse;
+    iget-object v0, p0, Ldsp;->b:Ldso;
 
-    invoke-direct {v2, v0}, Ldse;-><init>(Liin;)V
+    invoke-interface {v0, p1}, Ldso;->a(Lind;)F
 
-    invoke-virtual {v1, v2}, Ldsj;->a(Ldse;)Ldsj;
+    move-result v0
 
-    move-result-object v0
+    iget-object v1, p0, Ldsp;->a:Libw;
 
-    new-instance v1, Ldsm;
-
-    iget-object v2, p0, Ldsp;->a:Lgkl;
-
-    invoke-direct {v1, p1, v2}, Ldsm;-><init>(Lhzr;Lgkl;)V
-
-    invoke-virtual {v0, v1}, Ldsj;->a(Ldsm;)Ldsj;
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    new-instance v1, Ldro;
+    invoke-virtual {v1, v0}, Libw;->a(Ljava/lang/Object;)V
 
-    invoke-direct {v1}, Ldro;-><init>()V
+    invoke-interface {p1}, Lind;->c()J
 
-    invoke-virtual {v0, v1}, Ldsj;->a(Ldro;)Ldsj;
+    move-result-wide v0
 
-    move-result-object v0
+    iput-wide v0, p0, Ldsp;->c:J
 
-    invoke-virtual {v0}, Ldsj;->a()Ldsl;
-
-    move-result-object v0
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

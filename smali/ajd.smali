@@ -1,73 +1,76 @@
 .class final Lajd;
-.super Ljava/lang/Thread;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Laef;
 
 
 # instance fields
-.field private synthetic a:Lajc;
+.field private final a:[B
+
+.field private final b:Lajc;
 
 
 # direct methods
-.method constructor <init>(Lajc;Ljava/lang/Runnable;Ljava/lang/String;)V
+.method constructor <init>([BLajc;)V
     .locals 0
 
-    iput-object p1, p0, Lajd;->a:Lajc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2, p3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+    iput-object p1, p0, Lajd;->a:[B
+
+    iput-object p2, p0, Lajd;->b:Lajc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a()Ljava/lang/Class;
+    .locals 1
+
+    iget-object v0, p0, Lajd;->b:Lajc;
+
+    invoke-interface {v0}, Lajc;->a()Ljava/lang/Class;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Lacn;Laeg;)V
     .locals 2
 
-    const/16 v0, 0x9
+    iget-object v0, p0, Lajd;->b:Lajc;
 
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+    iget-object v1, p0, Lajd;->a:[B
 
-    iget-object v0, p0, Lajd;->a:Lajc;
-
-    iget-boolean v0, v0, Lajc;->b:Z
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Landroid/os/StrictMode$ThreadPolicy$Builder;
-
-    invoke-direct {v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;-><init>()V
-
-    invoke-virtual {v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->detectNetwork()Landroid/os/StrictMode$ThreadPolicy$Builder;
+    invoke-interface {v0, v1}, Lajc;->a([B)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->penaltyDeath()Landroid/os/StrictMode$ThreadPolicy$Builder;
+    invoke-interface {p2, v0}, Laeg;->a(Ljava/lang/Object;)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/StrictMode$ThreadPolicy$Builder;->build()Landroid/os/StrictMode$ThreadPolicy;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
-
-    :cond_0
-    :try_start_0
-    invoke-super {p0}, Ljava/lang/Thread;->run()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method public final b()V
+    .locals 0
 
-    iget-object v1, p0, Lajd;->a:Lajc;
+    return-void
+.end method
 
-    iget-object v1, v1, Lajc;->a:Laje;
+.method public final c()V
+    .locals 0
 
-    invoke-virtual {v1, v0}, Laje;->a(Ljava/lang/Throwable;)V
+    return-void
+.end method
 
-    goto :goto_0
+.method public final d()Ladm;
+    .locals 1
+
+    sget-object v0, Ladm;->a:Ladm;
+
+    return-object v0
 .end method

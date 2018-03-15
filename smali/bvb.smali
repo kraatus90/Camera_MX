@@ -1,24 +1,40 @@
-.class final Lbvb;
+.class public final Lbvb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbva;
+.field private final a:Lbuz;
 
 
 # direct methods
-.method constructor <init>(Lbva;)V
+.method public constructor <init>(Lbuz;)V
     .locals 0
-
-    iput-object p1, p0, Lbvb;->a:Lbva;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lbvb;->a:Lbuz;
+
     return-void
+.end method
+
+.method public static a(Lbuz;)Landroid/content/Context;
+    .locals 2
+
+    iget-object v0, p0, Lbuz;->b:Landroid/content/Context;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    return-object v0
 .end method
 
 
@@ -26,11 +42,17 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Lazu;
+    iget-object v0, p0, Lbvb;->a:Lbuz;
 
-    iget-object v1, p0, Lbvb;->a:Lbva;
+    iget-object v0, v0, Lbuz;->b:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Lazu;-><init>(Lbva;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
 
     return-object v0
 .end method

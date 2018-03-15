@@ -3,22 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lemk;
 
 
 # instance fields
-.field private synthetic a:Lgrx;
-
-.field private synthetic b:Lemi;
+.field private final synthetic a:Landroid/os/Bundle;
 
 
 # direct methods
-.method constructor <init>(Lemi;Lgrx;)V
+.method constructor <init>(Lemf;Landroid/os/Bundle;)V
     .locals 0
 
-    iput-object p1, p0, Lemj;->b:Lemi;
-
-    iput-object p2, p0, Lemj;->a:Lgrx;
+    iput-object p2, p0, Lemj;->a:Landroid/os/Bundle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,105 +23,37 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public final a(Lemz;)V
+    .locals 3
 
-    iget-object v0, p0, Lemj;->b:Lemi;
-
-    iget-object v1, v0, Lemi;->a:Ljava/util/Map;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lemj;->b:Lemi;
-
-    iget-object v0, v0, Lemi;->a:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
+    instance-of v0, p1, Lemw;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    move-object v0, p1
+
+    check-cast v0, Lemw;
+
+    invoke-interface {v0}, Lemw;->a()V
+
+    invoke-static {p1}, Lemf;->b(Lemz;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    iget-object v3, p0, Lemj;->b:Lemi;
+    iget-object v2, p0, Lemj;->a:Landroid/os/Bundle;
 
-    iget-object v3, v3, Lemi;->a:Ljava/util/Map;
-
-    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Leou;
-
-    iget-object v3, p0, Lemj;->a:Lgrx;
-
-    invoke-interface {v0}, Leou;->k()Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-interface {v0}, Leou;->o()Lgry;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    invoke-interface {v3, v4, v5, v6}, Lgrx;->a(Landroid/net/Uri;Lgry;Lftv;)V
-
-    iget-object v3, p0, Lemj;->a:Lgrx;
-
-    invoke-interface {v0}, Leou;->k()Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-interface {v0}, Leou;->c()I
-
-    move-result v5
-
-    invoke-interface {v3, v4, v5}, Lgrx;->a(Landroid/net/Uri;I)V
-
-    iget-object v3, p0, Lemj;->a:Lgrx;
-
-    invoke-interface {v0}, Leou;->k()Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-interface {v0}, Leou;->d()Lgyr;
-
-    move-result-object v0
-
-    invoke-interface {v3, v4, v0}, Lgrx;->a(Landroid/net/Uri;Lgyr;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    invoke-virtual {v2, v0, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_0
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
     return-void
 .end method

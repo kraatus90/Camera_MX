@@ -1,142 +1,255 @@
 .class public final Lhws;
-.super Ljava/lang/Object;
+.super Lhwn;
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Lhwr;
+
+.field public c:Z
+
+.field public d:Ljava/lang/Exception;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lhwn;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lhws;->a:Ljava/lang/Object;
+
+    new-instance v0, Lhwr;
+
+    invoke-direct {v0}, Lhwr;-><init>()V
+
+    iput-object v0, p0, Lhws;->b:Lhwr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
+.method public final a(Ljava/util/concurrent/Executor;Lhwm;)Lhwn;
+    .locals 4
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lhws;->b:Lhwr;
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    new-instance v1, Lhwq;
 
-    move-result v4
+    invoke-direct {v1, p1, p2}, Lhwq;-><init>(Ljava/util/concurrent/Executor;Lhwm;)V
 
-    move-object v1, v0
+    iget-object v2, v0, Lhwr;->a:Ljava/lang/Object;
 
-    move-object v2, v0
+    monitor-enter v2
 
-    move-object v3, v0
+    :try_start_0
+    iget-object v3, v0, Lhwr;->b:Ljava/util/Queue;
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    if-nez v3, :cond_0
 
-    move-result v0
+    new-instance v3, Ljava/util/ArrayDeque;
 
-    if-ge v0, v4, :cond_0
+    invoke-direct {v3}, Ljava/util/ArrayDeque;-><init>()V
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    const v5, 0xffff
-
-    and-int/2addr v5, v0
-
-    packed-switch v5, :pswitch_data_0
-
-    :pswitch_0
-    invoke-static {p1, v0}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_1
-    sget-object v3, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v0, v3}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/Uri;
-
-    move-object v3, v0
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {p1, v0}, Lhjg;->i(Landroid/os/Parcel;I)Landroid/os/Bundle;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-static {p1, v0}, Lhjg;->j(Landroid/os/Parcel;I)[B
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto :goto_0
+    iput-object v3, v0, Lhwr;->b:Ljava/util/Queue;
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    iget-object v0, v0, Lhwr;->b:Ljava/util/Queue;
 
-    move-result v0
+    invoke-interface {v0, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    if-eq v0, v4, :cond_1
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v0, Ladf;
+    iget-object v1, p0, Lhws;->a:Ljava/lang/Object;
 
-    const/16 v1, 0x25
+    monitor-enter v1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    :try_start_1
+    iget-boolean v0, p0, Lhws;->c:Z
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    if-nez v0, :cond_1
 
-    const-string v1, "Overread allowed size end="
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_0
+    return-object p0
 
-    move-result-object v1
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 
     :cond_1
-    new-instance v0, Lcom/google/android/gms/wearable/internal/zzao;
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    invoke-direct {v0, v3, v2, v1}, Lcom/google/android/gms/wearable/internal/zzao;-><init>(Landroid/net/Uri;Landroid/os/Bundle;[B)V
+    iget-object v0, p0, Lhws;->b:Lhwr;
 
-    return-object v0
+    invoke-virtual {v0, p0}, Lhwr;->a(Lhwn;)V
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
+    goto :goto_0
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_4
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    throw v0
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+.method public final a()Z
+    .locals 2
 
-    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzao;
+    iget-object v1, p0, Lhws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Lhws;->c:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lhws;->d:Ljava/lang/Exception;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    monitor-exit v1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final a(Ljava/lang/Exception;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    const-string v1, "Exception must not be null"
+
+    invoke-static {p1, v1}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v1, p0, Lhws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v2, p0, Lhws;->c:Z
+
+    if-eqz v2, :cond_0
+
+    const/4 v0, 0x0
+
+    monitor-exit v1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Lhws;->c:Z
+
+    iput-object p1, p0, Lhws;->d:Ljava/lang/Exception;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v1, p0, Lhws;->b:Lhwr;
+
+    invoke-virtual {v1, p0}, Lhwr;->a(Lhwn;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public final b()Ljava/lang/Exception;
+    .locals 2
+
+    iget-object v1, p0, Lhws;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lhws;->d:Ljava/lang/Exception;
+
+    monitor-exit v1
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-boolean v0, p0, Lhws;->c:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    const-string v1, "Task is already complete"
+
+    invoke-static {v0, v1}, Lhmr;->a(ZLjava/lang/Object;)V
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

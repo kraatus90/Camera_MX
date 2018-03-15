@@ -468,22 +468,22 @@
     return-void
 .end method
 
-.method public restoreLoaderNonConfig(Lhd;)V
+.method public restoreLoaderNonConfig(Lgz;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentHostCallback;->restoreLoaderNonConfig(Lhd;)V
+    invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentHostCallback;->restoreLoaderNonConfig(Lgz;)V
 
     return-void
 .end method
 
-.method public retainLoaderNonConfig()Lhd;
+.method public retainLoaderNonConfig()Lgz;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
 
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentHostCallback;->retainLoaderNonConfig()Lhd;
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentHostCallback;->retainLoaderNonConfig()Lgz;
 
     move-result-object v0
 

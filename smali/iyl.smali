@@ -1,47 +1,32 @@
-.class final Liyl;
-.super Liyp;
+.class public final Liyl;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Liye;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Liyp;-><init>(B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/vision/face/Face;)Ljava/lang/Float;
-    .locals 1
+.method public final a(Liyc;)Liyc;
+    .locals 0
 
-    invoke-virtual {p1}, Lcom/google/android/vision/face/Face;->getIsRightEyeOpenScore()F
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
     .locals 1
 
-    check-cast p1, Lcom/google/android/vision/face/Face;
-
-    invoke-virtual {p1}, Lcom/google/android/vision/face/Face;->getIsRightEyeOpenScore()F
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
+    const-string v0, "IdentityFeatureExtractionGraphTransformer"
 
     return-object v0
 .end method

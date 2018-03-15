@@ -1,93 +1,119 @@
 .class public final Lwd;
-.super Lhg;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-
-
 # instance fields
-.field public a:I
-
-.field public d:Z
+.field public final synthetic a:Landroid/support/v7/widget/RecyclerView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lwe;
-
-    invoke-direct {v0}, Lwe;-><init>()V
-
-    sput-object v0, Lwd;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Lhg;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lwd;->a:I
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, p0, Lwd;->d:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public constructor <init>(Landroid/os/Parcelable;)V
+.method public constructor <init>(Landroid/support/v7/widget/RecyclerView;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lhg;-><init>(Landroid/os/Parcelable;)V
+    iput-object p1, p0, Lwd;->a:Landroid/support/v7/widget/RecyclerView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
+.method public final a(Lve;)V
+    .locals 5
 
-    invoke-super {p0, p1, p2}, Lhg;->writeToParcel(Landroid/os/Parcel;I)V
+    iget-object v0, p0, Lwd;->a:Landroid/support/v7/widget/RecyclerView;
 
-    iget v0, p0, Lwd;->a:I
+    iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->k:Lun;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object v1, p1, Lve;->a:Landroid/view/View;
 
-    iget-boolean v0, p0, Lwd;->d:Z
+    iget-object v2, p0, Lwd;->a:Landroid/support/v7/widget/RecyclerView;
 
-    if-eqz v0, :cond_0
+    iget-object v2, v2, Landroid/support/v7/widget/RecyclerView;->d:Luw;
 
-    const/4 v0, 0x1
+    iget-object v0, v0, Lun;->f:Lrv;
 
-    :goto_0
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object v3, v0, Lrv;->a:Lrx;
 
-    return-void
+    invoke-virtual {v3, v1}, Lrx;->a(Landroid/view/View;)I
+
+    move-result v3
+
+    if-ltz v3, :cond_1
+
+    iget-object v4, v0, Lrv;->b:Lrw;
+
+    invoke-virtual {v4, v3}, Lrw;->d(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v0, v1}, Lrv;->b(Landroid/view/View;)Z
 
     :cond_0
-    const/4 v0, 0x0
+    iget-object v0, v0, Lrv;->a:Lrx;
 
-    goto :goto_0
+    invoke-virtual {v0, v3}, Lrx;->a(I)V
+
+    :cond_1
+    invoke-virtual {v2, v1}, Luw;->a(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public final a(Lve;Lul;Lul;)V
+    .locals 2
+
+    iget-object v0, p0, Lwd;->a:Landroid/support/v7/widget/RecyclerView;
+
+    iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->d:Luw;
+
+    invoke-virtual {v0, p1}, Luw;->b(Lve;)V
+
+    iget-object v0, p0, Lwd;->a:Landroid/support/v7/widget/RecyclerView;
+
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->a(Lve;)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v1}, Lve;->a(Z)V
+
+    iget-object v1, v0, Landroid/support/v7/widget/RecyclerView;->x:Lui;
+
+    invoke-virtual {v1, p1, p2, p3}, Lui;->a(Lve;Lul;Lul;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->k()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b(Lve;Lul;Lul;)V
+    .locals 2
+
+    iget-object v0, p0, Lwd;->a:Landroid/support/v7/widget/RecyclerView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v1}, Lve;->a(Z)V
+
+    iget-object v1, v0, Landroid/support/v7/widget/RecyclerView;->x:Lui;
+
+    invoke-virtual {v1, p1, p2, p3}, Lui;->b(Lve;Lul;Lul;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->k()V
+
+    :cond_0
+    return-void
 .end method

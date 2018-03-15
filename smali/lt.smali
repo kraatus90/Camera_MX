@@ -1,130 +1,55 @@
-.class public abstract Llt;
+.class public final Llt;
 .super Ljava/lang/Object;
 .source "PG"
 
 
+# instance fields
+.field public final a:Landroid/content/Context;
+
+.field public final b:Landroid/view/LayoutInflater;
+
+.field public c:Landroid/graphics/drawable/Drawable;
+
+.field public d:Ljava/lang/CharSequence;
+
+.field public e:Landroid/view/View;
+
+.field public f:Z
+
+.field public g:Landroid/content/DialogInterface$OnKeyListener;
+
+.field public h:Landroid/widget/ListAdapter;
+
+.field public i:Landroid/content/DialogInterface$OnClickListener;
+
+.field public j:I
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    const/4 v0, -0x1
 
+    iput v0, p0, Llt;->j:I
 
-# virtual methods
-.method public a(Lny;)Lnx;
-    .locals 1
+    iput-object p1, p0, Llt;->a:Landroid/content/Context;
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    return-object v0
-.end method
+    iput-boolean v0, p0, Llt;->f:Z
 
-.method public abstract a()V
-.end method
+    const-string v0, "layout_inflater"
 
-.method public abstract a(Ljava/lang/CharSequence;)V
-.end method
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-.method public abstract a(Z)V
-.end method
+    move-result-object v0
 
-.method public a(ILandroid/view/KeyEvent;)Z
-    .locals 1
+    check-cast v0, Landroid/view/LayoutInflater;
 
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public b(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public b(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public abstract c()I
-.end method
-
-.method public c(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d()Landroid/content/Context;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public d(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public e()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public f()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public g()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public h()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public i()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public j()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method k()V
-    .locals 0
+    iput-object v0, p0, Llt;->b:Landroid/view/LayoutInflater;
 
     return-void
 .end method

@@ -1,179 +1,173 @@
-.class public final Lacb;
-.super Ljava/lang/Object;
+.class Lacb;
+.super Landroid/os/Handler;
 .source "PG"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# instance fields
+.field public final r:Ljava/util/LinkedList;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+# direct methods
+.method constructor <init>(Landroid/os/Looper;)V
+    .locals 2
+
+    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lacb;->r:Ljava/util/LinkedList;
+
+    iget-object v0, p0, Lacb;->r:Ljava/util/LinkedList;
+
+    const/4 v1, -0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->offerLast(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
 
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+# virtual methods
+.method final b(I)Ljava/lang/String;
+    .locals 4
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/String;
 
-    move-result-object v0
+    const-string v1, "HIST"
 
-    const-string v1, "_"
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "-"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static b(Ljava/lang/String;)Labz;
-    .locals 2
-
-    const/4 v1, 0x0
-
-    if-nez p0, :cond_0
-
-    invoke-static {}, Labz;->values()[Labz;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    aget-object v0, v0, v1
+    const-string v1, "_ID"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lacb;->r:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    move-object v1, v0
 
     :goto_0
-    return-object v0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const/16 v3, 0x5f
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    goto :goto_0
 
     :cond_0
-    :try_start_0
-    invoke-static {p0}, Lacb;->e(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-static {v0}, Labz;->a(Ljava/lang/String;)Labz;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    const-string v1, "_HEND"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Labz;->values()[Labz;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    aget-object v0, v0, v1
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public static c(Ljava/lang/String;)Laby;
+.method public handleMessage(Landroid/os/Message;)V
     .locals 2
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lacb;->r:Ljava/util/LinkedList;
 
-    if-nez p0, :cond_0
+    iget v1, p1, Landroid/os/Message;->what:I
 
-    invoke-static {}, Laby;->values()[Laby;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    aget-object v0, v0, v1
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    :try_start_0
-    invoke-static {p0}, Lacb;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Laby;->a(Ljava/lang/String;)Laby;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Laby;->values()[Laby;
-
-    move-result-object v0
-
-    aget-object v0, v0, v1
-
-    goto :goto_0
-.end method
-
-.method public static d(Ljava/lang/String;)Laca;
-    .locals 2
-
-    const/4 v1, 0x0
-
-    if-nez p0, :cond_0
-
-    invoke-static {}, Laca;->values()[Laca;
-
-    move-result-object v0
-
-    aget-object v0, v0, v1
+    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->offerLast(Ljava/lang/Object;)Z
 
     :goto_0
-    return-object v0
+    iget-object v0, p0, Lacb;->r:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+
+    move-result v0
+
+    const/16 v1, 0x190
+
+    if-le v0, v1, :cond_0
+
+    iget-object v0, p0, Lacb;->r:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->pollFirst()Ljava/lang/Object;
+
+    goto :goto_0
 
     :cond_0
-    :try_start_0
-    invoke-static {p0}, Lacb;->e(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Laca;->a(Ljava/lang/String;)Laca;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {}, Laca;->values()[Laca;
-
-    move-result-object v0
-
-    aget-object v0, v0, v1
-
-    goto :goto_0
-.end method
-
-.method private static e(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "-"
-
-    const-string v2, "_"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

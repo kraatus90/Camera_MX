@@ -2,148 +2,173 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static b:Ljava/lang/String;
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public a:Ljava/util/LinkedList;
+.field private final a:Lkgv;
 
-.field private c:Lidm;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    const-string v0, "GcamUsageStats"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lavp;->a:Lkgv;
 
-    move-result-object v0
+    iput-object p2, p0, Lavp;->b:Lkgv;
 
-    sput-object v0, Lavp;->b:Ljava/lang/String;
+    iput-object p3, p0, Lavp;->c:Lkgv;
+
+    iput-object p4, p0, Lavp;->d:Lkgv;
+
+    iput-object p5, p0, Lavp;->e:Lkgv;
+
+    iput-object p6, p0, Lavp;->f:Lkgv;
+
+    iput-object p7, p0, Lavp;->g:Lkgv;
+
+    iput-object p8, p0, Lavp;->h:Lkgv;
+
+    iput-object p9, p0, Lavp;->i:Lkgv;
+
+    iput-object p10, p0, Lavp;->j:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>(Lidm;)V
-    .locals 1
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Lavp;
+    .locals 11
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lavp;
 
-    new-instance v0, Ljava/util/LinkedList;
+    move-object v1, p0
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    move-object v2, p1
 
-    iput-object v0, p0, Lavp;->a:Ljava/util/LinkedList;
+    move-object v3, p2
 
-    iput-object p1, p0, Lavp;->c:Lidm;
+    move-object v4, p3
 
-    return-void
+    move-object v5, p4
+
+    move-object/from16 v6, p5
+
+    move-object/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    move-object/from16 v9, p8
+
+    move-object/from16 v10, p9
+
+    invoke-direct/range {v0 .. v10}, Lavp;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Lavq;
-    .locals 8
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 11
 
-    :goto_0
-    iget-object v0, p0, Lavp;->a:Ljava/util/LinkedList;
+    new-instance v0, Lavj;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
+    iget-object v1, p0, Lavp;->a:Lkgv;
 
-    move-result v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    if-nez v0, :cond_1
+    move-result-object v1
 
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    check-cast v1, Liaw;
 
-    move-result-wide v2
+    iget-object v2, p0, Lavp;->b:Lkgv;
 
-    iget-object v0, p0, Lavp;->a:Ljava/util/LinkedList;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v0
+    check-cast v2, Libw;
 
-    check-cast v0, Lfta;
+    iget-object v3, p0, Lavp;->c:Lkgv;
 
-    iget-wide v4, v0, Lfta;->a:J
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    sub-long v4, v2, v4
+    move-result-object v3
 
-    const-wide/32 v6, 0xea60
+    check-cast v3, Lfdv;
 
-    cmp-long v1, v4, v6
+    iget-object v4, p0, Lavp;->d:Lkgv;
 
-    if-lez v1, :cond_0
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    sget-object v0, Lavp;->b:Ljava/lang/String;
+    move-result-object v4
 
-    const-string v1, "Flushing old Gcam capture time"
+    check-cast v4, Lfcv;
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v5, p0, Lavp;->e:Lkgv;
 
-    goto :goto_0
+    iget-object v6, p0, Lavp;->f:Lkgv;
 
-    :cond_0
-    new-instance v1, Lavq;
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v1}, Lavq;-><init>()V
+    move-result-object v6
 
-    iget v4, v0, Lfta;->b:I
+    check-cast v6, Lfdy;
 
-    iput v4, v1, Lavq;->b:I
+    iget-object v7, p0, Lavp;->g:Lkgv;
 
-    iget-wide v4, v0, Lfta;->a:J
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
-    sub-long/2addr v2, v4
+    move-result-object v7
 
-    iput-wide v2, v1, Lavq;->a:J
+    check-cast v7, Libw;
 
-    move-object v0, v1
+    iget-object v8, p0, Lavp;->h:Lkgv;
 
-    :goto_1
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Libk;
+
+    iget-object v9, p0, Lavp;->i:Lkgv;
+
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lfax;
+
+    iget-object v10, p0, Lavp;->j:Lkgv;
+
+    invoke-interface {v10}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lbnr;
+
+    invoke-direct/range {v0 .. v10}, Lavj;-><init>(Liaw;Libw;Lfdv;Lfcv;Lkgv;Lfdy;Libw;Libk;Lfax;Lbnr;)V
+
     return-object v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_1
-.end method
-
-.method public final a(Lavl;)V
-    .locals 6
-
-    const/4 v3, 0x0
-
-    iget-object v0, p0, Lavp;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
-
-    move-result v0
-
-    iget-object v1, p0, Lavp;->a:Ljava/util/LinkedList;
-
-    new-instance v2, Lfta;
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v4
-
-    invoke-direct {v2, v4, v5, v0}, Lfta;-><init>(JI)V
-
-    invoke-virtual {v1, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lavp;->c:Lidm;
-
-    const/4 v1, 0x7
-
-    invoke-interface {v0, v1, v3, v3, v3}, Lidm;->a(ILjra;Ljqm;Ljri;)V
-
-    invoke-interface {p1}, Lavl;->a()V
-
-    return-void
 .end method

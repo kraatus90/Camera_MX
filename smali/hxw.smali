@@ -19,7 +19,7 @@
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 5
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
     move-result v2
 
@@ -44,25 +44,25 @@
 
     packed-switch v4, :pswitch_data_0
 
-    invoke-static {p1, v3}, Lhjg;->b(Landroid/os/Parcel;I)V
+    invoke-static {p1, v3}, Lhmr;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v3}, Lhjg;->e(Landroid/os/Parcel;I)I
+    invoke-static {p1, v3}, Lhmr;->e(Landroid/os/Parcel;I)I
 
     move-result v1
 
     goto :goto_0
 
     :pswitch_1
-    sget-object v0, Lcom/google/android/gms/wearable/internal/zzu;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object v0, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v3, v0}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v3, v0}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/gms/wearable/internal/zzu;
+    check-cast v0, Landroid/os/ParcelFileDescriptor;
 
     goto :goto_0
 
@@ -73,7 +73,7 @@
 
     if-eq v3, v2, :cond_1
 
-    new-instance v0, Ladf;
+    new-instance v0, Lacp;
 
     const/16 v1, 0x25
 
@@ -95,14 +95,14 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
 
     throw v0
 
     :cond_1
-    new-instance v2, Lcom/google/android/gms/wearable/internal/zzce;
+    new-instance v2, Lcom/google/android/gms/wearable/internal/zzaz;
 
-    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzce;-><init>(ILcom/google/android/gms/wearable/internal/zzu;)V
+    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzaz;-><init>(ILandroid/os/ParcelFileDescriptor;)V
 
     return-object v2
 
@@ -116,7 +116,7 @@
 .method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzce;
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzaz;
 
     return-object v0
 .end method

@@ -1,102 +1,81 @@
-.class final Lgny;
-.super Lcom/google/googlex/gcam/GoudaImageCallback;
+.class public final Lgny;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lgom;
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lgom;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lgny;->a:Lgom;
+    const-string v0, "FileNamerModule"
 
-    invoke-direct {p0}, Lcom/google/googlex/gcam/GoudaImageCallback;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lgny;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static a(Lgnw;Lgnn;)Lgnv;
+    .locals 5
 
-# virtual methods
-.method public final RgbReady(JLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;)V
-    .locals 7
+    :try_start_0
+    invoke-virtual {p0, p1}, Lgnw;->a(Lgnn;)Lgnv;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v0, Lgnq;->a:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-static {p5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    return-object v0
 
-    move-result-object v1
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    sget-object v1, Lgny;->a:Ljava/lang/String;
 
-    move-result v1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    add-int/lit8 v1, v1, 0x41
+    move-result-object v2
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    move-result-object v3
 
-    const-string v1, "Gouda debug image (rgb): id = "
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v3
 
-    move-result-object v1
+    add-int/lit8 v3, v3, 0x19
 
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v2, " description = "
+    const-string v3, "Unable to get FileNamer: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lgny;->a:Lgom;
+    new-instance v1, Ljava/lang/AssertionError;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lgny;->a:Lgom;
-
-    iget-object v0, v1, Lgom;->b:Ldut;
-
-    iget-object v0, v0, Ldut;->b:Lhah;
-
-    invoke-virtual {v0}, Lhah;->a()Lhai;
-
-    move-result-object v6
-
-    iget-object v0, v1, Lgom;->b:Ldut;
-
-    iget-object v1, v1, Lgom;->b:Ldut;
-
-    invoke-static {v1}, Ldut;->a(Ldut;)I
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    sget-object v4, Ldus;->d:Ldus;
-
-    move-object v1, p3
-
-    move-object v5, p5
-
-    invoke-static/range {v0 .. v6}, Ldut;->a(Ldut;Lcom/google/googlex/gcam/InterleavedImageU8;IZLdus;Ljava/lang/String;Lhai;)V
-
-    :cond_0
-    return-void
+    throw v1
 .end method

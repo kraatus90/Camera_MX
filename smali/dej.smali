@@ -1,50 +1,35 @@
-.class final Ldej;
+.class public interface abstract Ldej;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lewd;
-
-
-# instance fields
-.field private synthetic a:Ldei;
-
-
-# direct methods
-.method constructor <init>(Ldei;)V
-    .locals 0
-
-    iput-object p1, p0, Ldej;->a:Ldei;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lihb;
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
-
-    return-void
+.method public abstract a()V
 .end method
 
-.method public final a(F)V
-    .locals 2
+.method public abstract a(Lhcu;Z)V
+.end method
 
-    iget-object v0, p0, Ldej;->a:Ldei;
+.method public abstract a(Z)V
+.end method
 
-    iget-object v0, v0, Ldei;->e:Ldek;
+.method public abstract b()V
+.end method
 
-    iget-object v0, v0, Ldek;->a:Ldea;
+.method public abstract b(Z)V
+.end method
 
-    iget-object v0, v0, Ldea;->c:Lcnh;
+.method public abstract c()Z
+.end method
 
-    new-instance v1, Lcvy;
+.method public abstract close()V
+.end method
 
-    invoke-direct {v1, p1}, Lcvy;-><init>(F)V
+.method public abstract d()Z
+.end method
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
-
-    return-void
+.method public abstract e()V
 .end method

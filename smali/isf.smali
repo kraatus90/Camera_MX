@@ -7,20 +7,32 @@
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Runnable;
+.field private final a:Ljava/lang/Object;
 
-.field private synthetic b:Lise;
+.field private final b:Ljava/util/concurrent/Executor;
+
+.field private final c:Liru;
+
+.field private final d:Lire;
+
+.field private final e:Lism;
 
 
 # direct methods
-.method constructor <init>(Lise;Ljava/lang/Runnable;)V
+.method public constructor <init>(Ljava/lang/Object;Lire;Ljava/util/concurrent/Executor;Liru;Lism;)V
     .locals 0
 
-    iput-object p1, p0, Lisf;->b:Lise;
-
-    iput-object p2, p0, Lisf;->a:Ljava/lang/Runnable;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lisf;->a:Ljava/lang/Object;
+
+    iput-object p3, p0, Lisf;->b:Ljava/util/concurrent/Executor;
+
+    iput-object p4, p0, Lisf;->c:Liru;
+
+    iput-object p2, p0, Lisf;->d:Lire;
+
+    iput-object p5, p0, Lisf;->e:Lism;
 
     return-void
 .end method
@@ -28,22 +40,31 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 5
 
-    iget-object v0, p0, Lisf;->b:Lise;
+    iget-object v0, p0, Lisf;->a:Ljava/lang/Object;
 
-    iget-object v1, p0, Lisf;->a:Ljava/lang/Runnable;
+    iget-object v1, p0, Lisf;->d:Lire;
 
-    invoke-virtual {v0, v1}, Lise;->a(Ljava/lang/Runnable;)Z
+    iget-object v2, p0, Lisf;->b:Ljava/util/concurrent/Executor;
 
-    move-result v0
+    iget-object v3, p0, Lisf;->c:Liru;
 
-    if-eqz v0, :cond_0
+    iget-object v4, p0, Lisf;->e:Lism;
 
-    iget-object v0, p0, Lisf;->a:Ljava/lang/Runnable;
+    invoke-static {v0, v1, v2, v3, v4}, Liru;->a(Ljava/lang/Object;Lire;Ljava/util/concurrent/Executor;Liru;Lism;)V
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    :cond_0
     return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lisf;->d:Lire;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

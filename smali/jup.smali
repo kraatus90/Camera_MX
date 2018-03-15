@@ -1,138 +1,142 @@
-.class final enum Ljup;
-.super Ljava/lang/Enum;
+.class public final Ljup;
+.super Ljuc;
 .source "PG"
-
-# interfaces
-.implements Ljun;
-
-
-# static fields
-.field public static final enum a:Ljup;
-
-.field private static b:Ljava/util/Set;
-
-.field private static synthetic c:[Ljup;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Ljup;
-
-    const-string v1, "INSTANCE"
-
-    invoke-direct {v0, v1}, Ljup;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Ljup;->a:Ljup;
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljup;
-
-    const/4 v1, 0x0
-
-    sget-object v2, Ljup;->a:Ljup;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Ljup;->c:[Ljup;
-
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
-
-    sput-object v0, Ljup;->b:Ljava/util/Set;
+    invoke-direct {p0}, Ljuc;-><init>()V
 
     return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Ljup;
-    .locals 1
-
-    sget-object v0, Ljup;->c:[Ljup;
-
-    invoke-virtual {v0}, [Ljup;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ljup;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Class;)V
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Ljuc;
+    .locals 1
 
-    sget-object v0, Ljup;->b:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ljup;->c(Ljava/lang/Object;)Ljup;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/ref/WeakReference;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Iterable;)Ljud;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Ljup;->b(Ljava/lang/Iterable;)Ljup;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljava/util/Iterator;)Ljud;
+    .locals 1
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    :goto_0
-    return-void
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :cond_1
-    invoke-static {p1}, Ljul;->a(Ljava/lang/Class;)V
+    move-result-object v0
 
-    sget-object v0, Ljup;->b:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->size()I
-
-    move-result v0
-
-    const/16 v1, 0x3e8
-
-    if-le v0, v1, :cond_2
-
-    sget-object v0, Ljup;->b:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
-
-    :cond_2
-    sget-object v0, Ljup;->b:Ljava/util/Set;
-
-    new-instance v1, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v1, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Ljup;->c(Ljava/lang/Object;)Ljup;
 
     goto :goto_0
+
+    :cond_0
+    return-object p0
+.end method
+
+.method public final a()Ljuo;
+    .locals 2
+
+    iget v0, p0, Ljup;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget v0, p0, Ljup;->b:I
+
+    iget-object v1, p0, Ljup;->a:[Ljava/lang/Object;
+
+    invoke-static {v0, v1}, Ljuo;->a(I[Ljava/lang/Object;)Ljuo;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljuo;->size()I
+
+    move-result v1
+
+    iput v1, p0, Ljup;->b:I
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Ljup;->c:Z
+
+    :goto_0
+    return-object v0
+
+    :pswitch_0
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v0, p0, Ljup;->a:[Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public final synthetic b(Ljava/lang/Object;)Ljud;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Ljup;->c(Ljava/lang/Object;)Ljup;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/Iterable;)Ljup;
+    .locals 0
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-super {p0, p1}, Ljuc;->a(Ljava/lang/Iterable;)Ljud;
+
+    return-object p0
+.end method
+
+.method public final c(Ljava/lang/Object;)Ljup;
+    .locals 0
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-super {p0, p1}, Ljuc;->a(Ljava/lang/Object;)Ljuc;
+
+    return-object p0
 .end method

@@ -1,42 +1,54 @@
-.class final Lgpq;
-.super Landroid/graphics/drawable/Animatable2$AnimationCallback;
+.class public final Lgpq;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lgpp;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgpp;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgpq;->a:Lgpp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Animatable2$AnimationCallback;-><init>()V
+    iput-object p1, p0, Lgpq;->a:Lkgv;
+
+    iput-object p2, p0, Lgpq;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    invoke-super {p0, p1}, Landroid/graphics/drawable/Animatable2$AnimationCallback;->onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
+    new-instance v2, Lgpn;
 
-    iget-object v0, p0, Lgpq;->a:Lgpp;
+    iget-object v0, p0, Lgpq;->a:Lkgv;
 
-    iget-boolean v0, v0, Lgpp;->e:Z
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Lgpq;->a:Lgpp;
+    check-cast v0, Lgxo;
 
-    iget-object v0, v0, Lgpp;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    iget-object v1, p0, Lgpq;->b:Lkgv;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    move-result-object v1
+
+    check-cast v1, Lawk;
+
+    invoke-direct {v2, v0, v1}, Lgpn;-><init>(Lgxo;Lawk;)V
+
+    return-object v2
 .end method

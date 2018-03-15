@@ -3,18 +3,26 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcmu;
+.field private final synthetic a:I
+
+.field private final synthetic b:Lckw;
+
+.field private final synthetic c:Lcmt;
 
 
 # direct methods
-.method constructor <init>(Lcmu;)V
+.method constructor <init>(Lcmt;ILckw;)V
     .locals 0
 
-    iput-object p1, p0, Lcmw;->a:Lcmu;
+    iput-object p1, p0, Lcmw;->c:Lcmt;
+
+    iput p2, p0, Lcmw;->a:I
+
+    iput-object p3, p0, Lcmw;->b:Lckw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,22 +31,18 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v1, p0, Lcmw;->a:Lcmu;
+    iget-object v0, p0, Lcmw;->c:Lcmt;
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    iget-object v0, v0, Lcmt;->a:Lcmb;
 
-    move-result-object v0
+    iget v1, p0, Lcmw;->a:I
 
-    check-cast v0, Ljava/lang/Float;
+    iget-object v2, p0, Lcmw;->b:Lckw;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Lcmu;->a(F)V
+    invoke-interface {v0, v1, v2}, Lcmb;->a(ILckw;)V
 
     return-void
 .end method

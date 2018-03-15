@@ -1,83 +1,132 @@
-.class final Lbam;
+.class public abstract Lbam;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ljava/lang/Thread$UncaughtExceptionHandler;
+
+
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private synthetic a:Lbaj;
+.field private final b:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+.field private final c:Liay;
 
 
 # direct methods
-.method constructor <init>(Lbaj;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbam;->a:Lbaj;
+    const-string v0, "UncaughtExHndlrBase"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lbam;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private final a(Ljava/util/concurrent/CancellationException;)Lihy;
-    .locals 3
+.method public constructor <init>(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    .locals 1
 
-    sget-object v0, Lbaj;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "openCamcorder canceled."
+    new-instance v0, Liay;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0}, Liay;-><init>()V
 
-    iget-object v0, p0, Lbam;->a:Lbaj;
+    iput-object v0, p0, Lbam;->c:Liay;
 
-    iget-object v1, v0, Lbaj;->f:Ljava/lang/Object;
+    iput-object p1, p0, Lbam;->b:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lbam;->a:Lbaj;
-
-    iget-object v0, v0, Lbaj;->g:Lbas;
-
-    sget-object v2, Lbas;->c:Lbas;
-
-    invoke-virtual {v0, v2}, Lbas;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lbam;->a:Lbaj;
-
-    sget-object v2, Lbas;->b:Lbas;
-
-    iput-object v2, v0, Lbaj;->g:Lbas;
-
-    :cond_0
-    throw p1
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method final a(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 1
 
-    check-cast p1, Ljava/util/concurrent/CancellationException;
+    iget-object v0, p0, Lbam;->b:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    invoke-direct {p0, p1}, Lbam;->a(Ljava/util/concurrent/CancellationException;)Lihy;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Lbam;->b:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    return-object v0
+    invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected abstract a(Ljava/lang/Throwable;)V
+.end method
+
+.method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+    .locals 4
+
+    invoke-virtual {p0, p2}, Lbam;->a(Ljava/lang/Throwable;)V
+
+    invoke-static {}, Liay;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lbam;->a:Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x28
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Uncaught exception in background thread "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, p2}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lbam;->c:Liay;
+
+    new-instance v1, Lban;
+
+    invoke-direct {v1, p0, p1, p2}, Lban;-><init>(Lbam;Ljava/lang/Thread;Ljava/lang/Throwable;)V
+
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lbam;->a(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+
+    goto :goto_0
 .end method

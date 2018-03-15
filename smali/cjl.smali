@@ -2,84 +2,147 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final synthetic a:Lbua;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lbua;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcjl;->a:Lbua;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcjl;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 14
 
-    invoke-virtual {p0}, Lcjl;->b()Lcgh;
+    const-wide/16 v8, -0x1
+
+    const/4 v13, 0x3
+
+    const/4 v12, 0x1
+
+    const/4 v7, 0x0
+
+    iget-object v0, p0, Lcjl;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v1, Lcgh;->c:Lcgh;
+    move-object v6, v0
 
-    if-ne v0, v1, :cond_0
+    check-cast v6, Lclg;
 
-    sget-object v0, Lbua;->a:Ljava/lang/String;
+    const-string v3, "_data LIKE ?"
 
-    const-string v1, "Cannot edit INVALID node."
+    new-array v4, v12, [Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v6, Lclg;->a:Ljava/lang/String;
 
-    :goto_0
-    return-void
+    aput-object v0, v4, v7
 
-    :cond_0
-    invoke-interface {v0}, Lcgh;->c()Lfvf;
+    iget-object v0, v6, Lclg;->b:Landroid/content/ContentResolver;
 
-    move-result-object v1
+    sget-object v1, Lckc;->a:Landroid/net/Uri;
 
-    iget-object v2, p0, Lcjl;->a:Lbua;
+    sget-object v2, Lckc;->b:[Ljava/lang/String;
 
-    invoke-static {v2}, Lbua;->a(Lbua;)Lidm;
+    const-string v5, "datetaken DESC"
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v2
 
-    invoke-static {v0}, Lbua;->b(Lcgh;)Ljava/lang/String;
+    if-eqz v2, :cond_3
 
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    invoke-static {v0}, Lbua;->c(Lcgh;)F
+    invoke-interface {v2}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
-    invoke-interface {v2, v3, v4, v0}, Lidm;->a(Ljava/lang/String;IF)V
+    if-lez v0, :cond_3
 
-    iget-object v0, p0, Lcjl;->a:Lbua;
+    invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
 
-    invoke-static {v0, v1}, Lbua;->a(Lbua;Lfvf;)V
+    invoke-interface {v2, v13}, Landroid/database/Cursor;->getLong(I)J
 
-    goto :goto_0
-.end method
+    move-result-wide v0
 
-.method public final b()Lcgh;
-    .locals 1
+    move-wide v10, v0
 
-    iget-object v0, p0, Lcjl;->a:Lbua;
+    :goto_0
+    if-eqz v2, :cond_0
 
-    iget-object v0, v0, Lbua;->B:Lckk;
+    invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    invoke-interface {v0}, Lckk;->a()Lcgh;
+    :cond_0
+    const-string v3, "_data LIKE ?"
+
+    new-array v4, v12, [Ljava/lang/String;
+
+    iget-object v0, v6, Lclg;->a:Ljava/lang/String;
+
+    aput-object v0, v4, v7
+
+    iget-object v0, v6, Lclg;->b:Landroid/content/ContentResolver;
+
+    sget-object v1, Lckj;->a:Landroid/net/Uri;
+
+    sget-object v2, Lckj;->b:[Ljava/lang/String;
+
+    const-string v5, "datetaken DESC"
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v2}, Landroid/database/Cursor;->getCount()I
+
+    move-result v0
+
+    if-lez v0, :cond_2
+
+    invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
+
+    invoke-interface {v2, v13}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v0
+
+    :goto_1
+    if-eqz v2, :cond_1
+
+    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+
+    :cond_1
+    invoke-static {v10, v11, v0, v1}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
     return-object v0
+
+    :cond_2
+    move-wide v0, v8
+
+    goto :goto_1
+
+    :cond_3
+    move-wide v10, v8
+
+    goto :goto_0
 .end method

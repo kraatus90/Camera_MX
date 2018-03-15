@@ -60,34 +60,46 @@
 
 
 # virtual methods
-.method public Run(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/InterleavedImageU8;I)V
-    .locals 13
+.method public RgbReady(ILcom/google/googlex/gcam/InterleavedReadViewU8;I)V
+    .locals 8
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PostviewCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
+    invoke-static {p2}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedReadViewU8;)J
 
-    move-result-wide v3
-
-    invoke-static {p2}, Lcom/google/googlex/gcam/YuvImage;->getCPtr(Lcom/google/googlex/gcam/YuvImage;)J
-
-    move-result-wide v6
-
-    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/InterleavedImageU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedImageU8;)J
-
-    move-result-wide v9
+    move-result-wide v4
 
     move-object v2, p0
 
-    move-object v5, p1
+    move v3, p1
 
-    move-object v8, p2
+    move-object v6, p2
 
-    move-object/from16 v11, p3
+    move v7, p3
 
-    move/from16 v12, p4
+    invoke-static/range {v0 .. v7}, Lcom/google/googlex/gcam/GcamModuleJNI;->PostviewCallback_RgbReady(JLcom/google/googlex/gcam/PostviewCallback;IJLcom/google/googlex/gcam/InterleavedReadViewU8;I)V
 
-    invoke-static/range {v0 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->PostviewCallback_Run(JLcom/google/googlex/gcam/PostviewCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/YuvImage;JLcom/google/googlex/gcam/InterleavedImageU8;I)V
+    return-void
+.end method
+
+.method public YuvReady(ILcom/google/googlex/gcam/YuvReadView;I)V
+    .locals 8
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/PostviewCallback;->swigCPtr:J
+
+    invoke-static {p2}, Lcom/google/googlex/gcam/YuvReadView;->getCPtr(Lcom/google/googlex/gcam/YuvReadView;)J
+
+    move-result-wide v4
+
+    move-object v2, p0
+
+    move v3, p1
+
+    move-object v6, p2
+
+    move v7, p3
+
+    invoke-static/range {v0 .. v7}, Lcom/google/googlex/gcam/GcamModuleJNI;->PostviewCallback_YuvReady(JLcom/google/googlex/gcam/PostviewCallback;IJLcom/google/googlex/gcam/YuvReadView;I)V
 
     return-void
 .end method

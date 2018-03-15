@@ -1,110 +1,70 @@
-.class abstract Laa;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public Laa;
+.super Landroid/widget/FrameLayout;
 .source "PG"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private a:Z
-
-.field private b:F
-
-.field private c:F
-
-.field private synthetic d:Lv;
 
 
 # direct methods
-.method private constructor <init>(Lv;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    iput-object p1, p0, Laa;->d:Lv;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p1, v0}, Laa;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lv;B)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 3
 
-    invoke-direct {p0, p1}, Laa;-><init>(Lv;)V
+    invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    sget-object v0, Lau;->o:[I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+
+    move-result-object v0
+
+    sget v1, Lau;->p:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget v1, Lau;->p:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-static {p0, v1}, Lhz;->a(Landroid/view/View;F)V
+
+    :cond_0
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Laa;->setClickable(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a()F
-.end method
+.method protected onAttachedToWindow()V
+    .locals 1
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    iget-object v0, p0, Laa;->d:Lv;
+    sget-object v0, Lhz;->a:Lii;
 
-    iget-object v0, v0, Lv;->b:Lad;
-
-    iget v1, p0, Laa;->c:F
-
-    invoke-virtual {v0, v1}, Lad;->a(F)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Laa;->a:Z
-
-    return-void
-.end method
-
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
-
-    iget-boolean v0, p0, Laa;->a:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Laa;->d:Lv;
-
-    iget-object v0, v0, Lv;->b:Lad;
-
-    iget v0, v0, Lad;->a:F
-
-    iput v0, p0, Laa;->b:F
-
-    invoke-virtual {p0}, Laa;->a()F
-
-    move-result v0
-
-    iput v0, p0, Laa;->c:F
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Laa;->a:Z
-
-    :cond_0
-    iget-object v0, p0, Laa;->d:Lv;
-
-    iget-object v0, v0, Lv;->b:Lad;
-
-    iget v1, p0, Laa;->b:F
-
-    iget v2, p0, Laa;->c:F
-
-    iget v3, p0, Laa;->b:F
-
-    sub-float/2addr v2, v3
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
-
-    move-result v3
-
-    mul-float/2addr v2, v3
-
-    add-float/2addr v1, v2
-
-    invoke-virtual {v0, v1}, Lad;->a(F)V
+    invoke-virtual {v0, p0}, Lii;->h(Landroid/view/View;)V
 
     return-void
 .end method

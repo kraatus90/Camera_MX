@@ -1,134 +1,71 @@
-.class final Ledi;
+.class public final Ledi;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljhj;
-
 
 # instance fields
-.field private synthetic a:Z
+.field public final a:Lebs;
 
-.field private synthetic b:Ledh;
+.field public final b:Leea;
+
+.field public final c:Leer;
+
+.field public final d:Lgsv;
+
+.field public final e:Lkgv;
+
+.field public final f:Lgwk;
+
+.field public final g:Lfax;
+
+.field public final h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field public final i:Lgvc;
+
+.field public final j:Lgew;
+
+.field public final k:Lhgv;
+
+.field public final l:Ljrf;
+
+.field public final m:Lbqc;
+
+.field public final n:Lgqc;
 
 
 # direct methods
-.method constructor <init>(Ledh;Z)V
+.method public constructor <init>(Lebs;Leea;Leer;Lgsv;Lkgv;Lgwk;Lfax;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lgew;Lhgv;Ljrf;Lbqc;Lgqc;)V
     .locals 0
-
-    iput-object p1, p0, Ledi;->b:Ledh;
-
-    iput-boolean p2, p0, Ledi;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ledi;->a:Lebs;
+
+    iput-object p2, p0, Ledi;->b:Leea;
+
+    iput-object p3, p0, Ledi;->c:Leer;
+
+    iput-object p4, p0, Ledi;->d:Lgsv;
+
+    iput-object p5, p0, Ledi;->e:Lkgv;
+
+    iput-object p6, p0, Ledi;->f:Lgwk;
+
+    iput-object p7, p0, Ledi;->g:Lfax;
+
+    iput-object p8, p0, Ledi;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iput-object p9, p0, Ledi;->i:Lgvc;
+
+    iput-object p10, p0, Ledi;->j:Lgew;
+
+    iput-object p11, p0, Ledi;->k:Lhgv;
+
+    iput-object p12, p0, Ledi;->l:Ljrf;
+
+    iput-object p13, p0, Ledi;->m:Lbqc;
+
+    iput-object p14, p0, Ledi;->n:Lgqc;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    check-cast p1, Ldmh;
-
-    new-array v0, v5, [Lggq;
-
-    new-array v1, v5, [Lggl;
-
-    new-instance v2, Lggl;
-
-    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_CAPTURE_INTENT:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, v4}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v2, v1, v6
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lfsp;->a(Ljava/util/List;)Lggq;
-
-    move-result-object v1
-
-    aput-object v1, v0, v6
-
-    invoke-virtual {p1, v0}, Ldmh;->a([Lggq;)Ldmh;
-
-    move-result-object v1
-
-    iget-boolean v0, p0, Ledi;->a:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ledi;->b:Ledh;
-
-    iget-object v0, v0, Ledh;->a:Lgdq;
-
-    invoke-interface {v0}, Lgdq;->x_()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    move-object v0, v1
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-boolean v0, p0, Ledi;->a:Z
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x5
-
-    :goto_1
-    new-array v2, v5, [Lggq;
-
-    new-array v3, v5, [Lggl;
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-direct {v4, v5, v0}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v3, v6
-
-    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lfsp;->a(Ljava/util/List;)Lggq;
-
-    move-result-object v0
-
-    aput-object v0, v2, v6
-
-    invoke-virtual {v1, v2}, Ldmh;->a([Lggq;)Ldmh;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x3
-
-    goto :goto_1
 .end method

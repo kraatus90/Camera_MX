@@ -3,26 +3,36 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldsq;->a:Ljxn;
+    iput-object p1, p0, Ldsq;->a:Lkgv;
 
-    iput-object p2, p0, Ldsq;->b:Ljxn;
+    iput-object p2, p0, Ldsq;->b:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;)Ldsq;
+    .locals 1
+
+    new-instance v0, Ldsq;
+
+    invoke-direct {v0, p0, p1}, Ldsq;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
@@ -32,23 +42,23 @@
 
     new-instance v2, Ldsp;
 
-    iget-object v0, p0, Ldsq;->a:Ljxn;
+    iget-object v0, p0, Ldsq;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgkl;
+    check-cast v0, Ldso;
 
-    iget-object v1, p0, Ldsq;->b:Ljxn;
+    iget-object v1, p0, Ldsq;->b:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Liio;
+    check-cast v1, Ldsm;
 
-    invoke-direct {v2, v0, v1}, Ldsp;-><init>(Lgkl;Liio;)V
+    invoke-direct {v2, v0, v1}, Ldsp;-><init>(Ldso;Ldsm;)V
 
     return-object v2
 .end method

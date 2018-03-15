@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private a:Landroid/net/Uri;
+.field private final a:Landroid/net/Uri;
 
-.field private b:Ljava/util/Map;
+.field private final b:Ljava/util/Map;
 
 .field private c:[B
 
@@ -18,9 +18,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhws;
+    new-instance v0, Lhxr;
 
-    invoke-direct {v0}, Lhws;-><init>()V
+    invoke-direct {v0}, Lhxr;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/wearable/internal/zzao;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -354,7 +354,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v2
 
@@ -362,7 +362,7 @@
 
     iget-object v1, p0, Lcom/google/android/gms/wearable/internal/zzao;->a:Landroid/net/Uri;
 
-    invoke-static {p1, v0, v1, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v0, v1, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v3, 0x4
 
@@ -413,24 +413,24 @@
 
     move-result-object v0
 
-    check-cast v0, Lhwb;
+    check-cast v0, Lhxa;
 
-    invoke-direct {v6, v0}, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;-><init>(Lhwb;)V
+    invoke-direct {v6, v0}, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;-><init>(Lhxa;)V
 
     invoke-virtual {v4, v1, v6}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1, v3, v4}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
+    invoke-static {p1, v3, v4}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
 
     const/4 v0, 0x5
 
     iget-object v1, p0, Lcom/google/android/gms/wearable/internal/zzao;->c:[B
 
-    invoke-static {p1, v0, v1}, Lhjg;->a(Landroid/os/Parcel;I[B)V
+    invoke-static {p1, v0, v1}, Lhmr;->a(Landroid/os/Parcel;I[B)V
 
-    invoke-static {p1, v2}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v2}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

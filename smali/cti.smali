@@ -7,14 +7,18 @@
 
 
 # instance fields
-.field private synthetic a:Lcth;
+.field private final synthetic a:Lket;
+
+.field private final synthetic b:Lctf;
 
 
 # direct methods
-.method constructor <init>(Lcth;)V
+.method constructor <init>(Lctf;Lket;)V
     .locals 0
 
-    iput-object p1, p0, Lcti;->a:Lcth;
+    iput-object p1, p0, Lcti;->b:Lctf;
+
+    iput-object p2, p0, Lcti;->a:Lket;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,44 +28,35 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lcti;->a:Lcth;
+    iget-object v0, p0, Lcti;->b:Lctf;
 
-    iget-object v0, v0, Lcth;->a:Lcsk;
+    iget-object v0, v0, Lctf;->b:Lihs;
 
-    iget-object v0, v0, Lcsk;->A:Ldhi;
+    const-string v1, "OneCameraCreator#get"
 
-    if-eqz v0, :cond_0
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcti;->a:Lcth;
+    iget-object v1, p0, Lcti;->a:Lket;
 
-    iget-object v0, v0, Lcth;->a:Lcsk;
+    iget-object v0, p0, Lcti;->b:Lctf;
 
-    iget-object v0, v0, Lcsk;->A:Ldhi;
+    iget-object v0, v0, Lctf;->f:Lkgm;
 
-    invoke-interface {v0}, Ldhi;->b()Ldhv;
-
-    move-result-object v0
-
-    iget-object v0, v0, Ldhv;->d:Liau;
-
-    iget-object v1, p0, Lcti;->a:Lcth;
-
-    iget-object v1, v1, Lcth;->a:Lcsk;
-
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgm;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lefy;
+    check-cast v0, Lcvj;
 
-    iget-boolean v2, v1, Lcsk;->S:Z
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Object;)Z
 
-    if-eqz v2, :cond_0
+    iget-object v0, p0, Lcti;->b:Lctf;
 
-    invoke-virtual {v1, v0}, Lcsk;->a(Lefy;)V
+    iget-object v0, v0, Lctf;->b:Lihs;
 
-    :cond_0
+    invoke-interface {v0}, Lihs;->a()V
+
     return-void
 .end method

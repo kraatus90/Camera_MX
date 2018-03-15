@@ -240,12 +240,24 @@
     goto :goto_0
 .end method
 
-.method public getIcc_profile()I
+.method public getGeometric_correction()I
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/RawFinishParams;->swigCPtr:J
 
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishParams_icc_profile_get(JLcom/google/googlex/gcam/RawFinishParams;)I
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishParams_geometric_correction_get(JLcom/google/googlex/gcam/RawFinishParams;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public getIcc_output_profile()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/RawFinishParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishParams_icc_output_profile_get(JLcom/google/googlex/gcam/RawFinishParams;)I
 
     move-result v0
 
@@ -500,12 +512,22 @@
     return-void
 .end method
 
-.method public setIcc_profile(I)V
+.method public setGeometric_correction(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/RawFinishParams;->swigCPtr:J
 
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishParams_icc_profile_set(JLcom/google/googlex/gcam/RawFinishParams;I)V
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishParams_geometric_correction_set(JLcom/google/googlex/gcam/RawFinishParams;I)V
+
+    return-void
+.end method
+
+.method public setIcc_output_profile(I)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/RawFinishParams;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishParams_icc_output_profile_set(JLcom/google/googlex/gcam/RawFinishParams;I)V
 
     return-void
 .end method

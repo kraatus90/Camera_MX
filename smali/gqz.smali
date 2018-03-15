@@ -1,50 +1,44 @@
-.class public final Lgqz;
+.class public abstract Lgqz;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public final g:Z
+
+.field public final h:Z
+
+.field public final i:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(ZZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgqz;->a:Ljxn;
+    iput-boolean p1, p0, Lgqz;->g:Z
+
+    iput-boolean p2, p0, Lgqz;->h:Z
+
+    iput-boolean p3, p0, Lgqz;->i:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lgqz;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lidm;
-
-    new-instance v1, Lgqn;
-
-    invoke-direct {v1, v0}, Lgqn;-><init>(Lidm;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgrk;
-
-    return-object v0
+.method public abstract a(Landroid/graphics/RectF;)V
 .end method

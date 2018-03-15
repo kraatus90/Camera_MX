@@ -1,72 +1,75 @@
 .class public final Lamh;
-.super Ljava/lang/Object;
+.super Lamf;
 .source "PG"
 
-# interfaces
-.implements Lahg;
 
-
-# instance fields
-.field private a:Ljava/lang/Object;
+# static fields
+.field private static final b:[B
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Lamh;-><init>(Ljava/lang/Object;)V
+    const-string v0, "com.bumptech.glide.load.resource.bitmap.CenterCrop"
+
+    sget-object v1, Lamh;->a:Ljava/nio/charset/Charset;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v0
+
+    sput-object v0, Lamh;->b:[B
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/Object;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v0, "Argument must not be null"
-
-    invoke-static {p1, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lamh;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Lamf;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
+.method protected final a(Lahf;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .locals 1
 
-    iget-object v0, p0, Lamh;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1, p2, p3, p4}, Lanj;->a(Lahf;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b()Ljava/lang/Object;
+.method public final a(Ljava/security/MessageDigest;)V
     .locals 1
 
-    iget-object v0, p0, Lamh;->a:Ljava/lang/Object;
+    sget-object v0, Lamh;->b:[B
 
-    return-object v0
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+
+    return-void
 .end method
 
-.method public final c()I
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    const/4 v0, 0x1
+    instance-of v0, p1, Lamh;
 
     return v0
 .end method
 
-.method public final d()V
-    .locals 0
+.method public final hashCode()I
+    .locals 1
 
-    return-void
+    const-string v0, "com.bumptech.glide.load.resource.bitmap.CenterCrop"
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

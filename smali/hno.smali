@@ -1,197 +1,169 @@
 .class public final Lhno;
-.super Lhnn;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xe
-.end annotation
+.super Ljava/util/AbstractSet;
 
 
 # instance fields
-.field public final d:Landroid/app/ApplicationErrorReport;
-
-.field public e:Ljava/lang/String;
+.field private final a:Lgh;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
-    invoke-direct {p0}, Lhnn;-><init>()V
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
-    new-instance v0, Landroid/app/ApplicationErrorReport;
+    new-instance v0, Lgh;
 
-    invoke-direct {v0}, Landroid/app/ApplicationErrorReport;-><init>()V
+    invoke-direct {v0}, Lgh;-><init>()V
 
-    iput-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    new-instance v1, Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    invoke-direct {v1}, Landroid/app/ApplicationErrorReport$CrashInfo;-><init>()V
-
-    iput-object v1, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    const/4 v1, -0x1
-
-    iput v1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
+    iput-object v0, p0, Lhno;->a:Lgh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcom/google/android/gms/feedback/FeedbackOptions;
-    .locals 2
+.method public final add(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v0, p0, Lhno;->a:Lgh;
 
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
-
-    invoke-static {v0}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwClassName:Ljava/lang/String;
-
-    invoke-static {v0}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwMethodName:Ljava/lang/String;
-
-    invoke-static {v0}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
-
-    invoke-static {v0}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, p1}, Lgh;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    const-string v1, "unknown"
-
-    iput-object v1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
+    :goto_0
+    return v0
 
     :cond_0
-    invoke-super {p0}, Lhnn;->a()Lcom/google/android/gms/feedback/FeedbackOptions;
+    iget-object v0, p0, Lhno;->a:Lgh;
+
+    invoke-virtual {v0, p1, p1}, Lgh;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 3
+
+    instance-of v0, p1, Lhno;
+
+    if-eqz v0, :cond_1
+
+    check-cast p1, Lhno;
+
+    invoke-virtual {p0}, Lhno;->size()I
+
+    move-result v0
+
+    iget-object v1, p0, Lhno;->a:Lgh;
+
+    iget-object v2, p1, Lhno;->a:Lgh;
+
+    invoke-virtual {v1, v2}, Lgh;->a(Lgz;)V
+
+    invoke-virtual {p0}, Lhno;->size()I
+
+    move-result v1
+
+    if-le v1, v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    invoke-super {p0, p1}, Ljava/util/AbstractSet;->addAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public final clear()V
+    .locals 1
+
+    iget-object v0, p0, Lhno;->a:Lgh;
+
+    invoke-virtual {v0}, Lgh;->clear()V
+
+    return-void
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget-object v0, p0, Lhno;->a:Lgh;
+
+    invoke-virtual {v0, p1}, Lgh;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+
+    iget-object v0, p0, Lhno;->a:Lgh;
+
+    invoke-virtual {v0}, Lgh;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    iget-object v1, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v1, v1, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/feedback/FeedbackOptions;->a(Lcom/google/android/gms/feedback/FeedbackOptions;Landroid/app/ApplicationErrorReport$CrashInfo;)Lcom/google/android/gms/feedback/FeedbackOptions;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhno;->e:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/feedback/FeedbackOptions;->c(Lcom/google/android/gms/feedback/FeedbackOptions;Ljava/lang/String;)Lcom/google/android/gms/feedback/FeedbackOptions;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(I)Lhno;
+.method public final remove(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v0, p0, Lhno;->a:Lgh;
 
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    invoke-virtual {v0, p1}, Lgh;->containsKey(Ljava/lang/Object;)Z
 
-    iput p1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
+    move-result v0
 
-    return-object p0
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Lhno;->a:Lgh;
+
+    invoke-virtual {v0, p1}, Lgh;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/String;)Lhno;
+.method public final size()I
     .locals 1
 
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v0, p0, Lhno;->a:Lgh;
 
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    invoke-virtual {v0}, Lgh;->size()I
 
-    iput-object p1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
+    move-result v0
 
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/String;)Lhno;
-    .locals 1
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iput-object p1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final c(Ljava/lang/String;)Lhno;
-    .locals 1
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iput-object p1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwClassName:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final d(Ljava/lang/String;)Lhno;
-    .locals 1
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iput-object p1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->throwMethodName:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final e(Ljava/lang/String;)Lhno;
-    .locals 1
-
-    iget-object v0, p0, Lhno;->d:Landroid/app/ApplicationErrorReport;
-
-    iget-object v0, v0, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
-
-    iput-object p1, v0, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
-
-    return-object p0
+    return v0
 .end method

@@ -1,47 +1,69 @@
-.class final Lcdo;
+.class final synthetic Lcdo;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Lcdw;
 
 
 # instance fields
-.field public final a:J
+.field private final a:Lcdj;
 
-.field public final b:F
-
-.field public final c:Leov;
-
-.field public final d:Lilf;
-
-.field public final e:Z
-
-.field public final f:Z
-
-.field public final g:Ljht;
-
-.field public final h:Ljava/io/File;
+.field private final b:Lgwx;
 
 
 # direct methods
-.method public constructor <init>(JFLeov;Lilf;ZZLjht;Ljava/io/File;)V
-    .locals 1
+.method constructor <init>(Lcdj;Lgwx;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lcdo;->a:J
+    iput-object p1, p0, Lcdo;->a:Lcdj;
 
-    iput p3, p0, Lcdo;->b:F
+    iput-object p2, p0, Lcdo;->b:Lgwx;
 
-    iput-object p4, p0, Lcdo;->c:Leov;
+    return-void
+.end method
 
-    iput-object p5, p0, Lcdo;->d:Lilf;
 
-    iput-boolean p6, p0, Lcdo;->e:Z
+# virtual methods
+.method public final a(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    .locals 4
 
-    iput-boolean p7, p0, Lcdo;->f:Z
+    iget-object v1, p0, Lcdo;->a:Lcdj;
 
-    iput-object p8, p0, Lcdo;->g:Ljht;
+    iget-object v0, p0, Lcdo;->b:Lgwx;
 
-    iput-object p9, p0, Lcdo;->h:Ljava/io/File;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/burstchip/BurstChip;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Lgwx;->a(Landroid/content/res/Resources;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v0, v1, Lcdj;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    new-instance v3, Lcdr;
+
+    invoke-direct {v3, v2}, Lcdr;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v3}, Lcdj;->a(Lcdw;)V
+
+    new-instance v1, Lcds;
+
+    invoke-direct {v1, v0}, Lcds;-><init>(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

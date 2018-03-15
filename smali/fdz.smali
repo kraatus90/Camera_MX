@@ -1,113 +1,143 @@
-.class public Lfdz;
-.super Lgvh;
+.class final Lfdz;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final d:Ljava/lang/String;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Liau;
+.field private final a:Lfdx;
 
-.field private b:Liau;
-
-.field public final e:Lfem;
-
-.field public f:Lfge;
-
-.field public g:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public h:Lguc;
-
-.field public i:Lhem;
-
-.field public j:Z
+.field private final synthetic b:Lfdy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lfdy;Lfdx;)V
+    .locals 0
 
-    const-string v0, "PhotoVideoChart"
+    iput-object p1, p0, Lfdz;->b:Lfdy;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    sput-object v0, Lfdz;->d:Ljava/lang/String;
+    iput-object p2, p0, Lfdz;->a:Lfdx;
 
     return-void
-.end method
-
-.method public constructor <init>(Lfem;Liau;Liau;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[B)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lfdz;->j:Z
-
-    iput-object p1, p0, Lfdz;->e:Lfem;
-
-    iput-object p2, p0, Lfdz;->a:Liau;
-
-    iput-object p3, p0, Lfdz;->b:Liau;
-
-    return-void
-.end method
-
-.method static synthetic a(Lfdz;)Liau;
-    .locals 1
-
-    iget-object v0, p0, Lfdz;->b:Liau;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Lfdz;)Liau;
-    .locals 1
-
-    iget-object v0, p0, Lfdz;->a:Liau;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    const/4 v0, 0x1
+    :try_start_0
+    iget-object v0, p0, Lfdz;->b:Lfdy;
 
-    iput-boolean v0, p0, Lfdz;->j:Z
+    iget-object v0, v0, Lfdy;->a:Lihs;
 
+    iget-object v1, p0, Lfdz;->a:Lfdx;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x8
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Command#"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lfdz;->a:Lfdx;
+
+    invoke-interface {v0}, Lfdx;->a()V
+    :try_end_0
+    .catch Lijd; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lfdz;->b:Lfdy;
+
+    iget-object v0, v0, Lfdy;->a:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    :goto_0
     return-void
-.end method
 
-.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Lfge;)V
-    .locals 0
+    :catch_0
+    move-exception v0
 
-    iput-object p4, p0, Lfdz;->f:Lfge;
+    :goto_1
+    iget-object v0, p0, Lfdz;->b:Lfdy;
 
-    iput-object p1, p0, Lfdz;->g:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iget-object v0, v0, Lfdy;->a:Lihs;
 
-    iput-object p2, p0, Lfdz;->h:Lguc;
+    invoke-interface {v0}, Lihs;->a()V
 
-    iput-object p3, p0, Lfdz;->i:Lhem;
+    goto :goto_0
 
-    return-void
-.end method
+    :catch_1
+    move-exception v0
 
-.method public b()V
-    .locals 1
+    :try_start_1
+    iget-object v1, p0, Lfdz;->b:Lfdy;
 
-    const/4 v0, 0x0
+    iget-object v1, v1, Lfdy;->b:Liay;
 
-    iput-boolean v0, p0, Lfdz;->j:Z
+    new-instance v2, Lfea;
 
-    return-void
+    invoke-direct {v2, v0}, Lfea;-><init>(Ljava/lang/Exception;)V
+
+    invoke-virtual {v1, v2}, Liay;->execute(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object v0, p0, Lfdz;->b:Lfdy;
+
+    iget-object v0, v0, Lfdy;->a:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lfdz;->b:Lfdy;
+
+    iget-object v1, v1, Lfdy;->a:Lihs;
+
+    invoke-interface {v1}, Lihs;->a()V
+
+    throw v0
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_1
 .end method

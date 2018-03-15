@@ -1,152 +1,74 @@
 .class public final Lbka;
-.super Landroid/widget/ImageView;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public a:Lbkb;
+.field private final a:Lkgv;
 
-.field public b:Z
+.field private final b:Lkgv;
 
-.field private c:Landroid/graphics/drawable/Drawable;
-
-.field private d:Landroid/graphics/drawable/Drawable;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 4
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    const/4 v3, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, 0x0
+    iput-object p1, p0, Lbka;->a:Lkgv;
 
-    invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    iput-object p2, p0, Lbka;->b:Lkgv;
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f020099
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbka;->c:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f020098
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbka;->d:Landroid/graphics/drawable/Drawable;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lbka;->b:Z
-
-    invoke-virtual {p0}, Lbka;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0d00ca
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p0, v0, v0, v0, v2}, Lbka;->setPadding(IIII)V
-
-    invoke-virtual {p0, v2}, Lbka;->a(Z)V
+    iput-object p3, p0, Lbka;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Z)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    if-eqz p1, :cond_1
+    iget-object v0, p0, Lbka;->a:Lkgv;
 
-    iget-object v0, p0, Lbka;->d:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, v0}, Lbka;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {p0}, Lbka;->getResources()Landroid/content/res/Resources;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    const v1, 0x7f110175
+    check-cast v0, Landroid/content/ContentResolver;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    iget-object v1, p0, Lbka;->b:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Lbka;->setContentDescription(Ljava/lang/CharSequence;)V
+    move-result-object v1
 
-    :goto_0
-    iget-object v0, p0, Lbka;->a:Lbkb;
+    check-cast v1, Lhbh;
 
-    if-eqz v0, :cond_0
+    iget-object v2, p0, Lbka;->c:Lkgv;
 
-    iget-object v0, p0, Lbka;->a:Lbkb;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lbkb;->a:Lbjf;
+    move-result-object v2
 
-    if-eqz p1, :cond_0
+    check-cast v2, Landroid/content/SharedPreferences;
 
-    iget-object v0, v0, Lbjf;->b:Lbjn;
+    new-instance v3, Lbjy;
 
-    invoke-virtual {v0}, Lgvh;->g()V
+    invoke-direct {v3, v0, v1, v2}, Lbjy;-><init>(Landroid/content/ContentResolver;Lhbh;Landroid/content/SharedPreferences;)V
 
-    :cond_0
-    return-void
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    :cond_1
-    iget-object v0, p0, Lbka;->c:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, v0}, Lbka;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {p0}, Lbka;->getResources()Landroid/content/res/Resources;
+    invoke-static {v3, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const v1, 0x7f110176
+    check-cast v0, Lbjy;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lbka;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    goto :goto_0
-.end method
-
-.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lbka;->b:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v0
-
-    goto :goto_0
+    return-object v0
 .end method

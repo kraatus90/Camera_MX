@@ -1,33 +1,47 @@
 .class final Lchf;
-.super Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
+.super Lcgx;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final p:Landroid/widget/TextView;
+
+.field public final q:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;)V
-    .locals 0
+.method public constructor <init>(Landroid/widget/FrameLayout;)V
+    .locals 1
 
-    iput-object p1, p0, Lchf;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {p0, p1}, Lcgx;-><init>(Landroid/widget/FrameLayout;)V
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
+    const v0, 0x7f0e00e4
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lchf;->p:Landroid/widget/TextView;
+
+    const v0, 0x7f0e00e5
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lchf;->q:Landroid/widget/TextView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraAvailable(Ljava/lang/String;)V
-    .locals 2
-
-    iget-object v0, p0, Lchf;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+.method public final b(Z)V
+    .locals 0
 
     return-void
 .end method

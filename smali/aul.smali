@@ -3,30 +3,32 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# static fields
-.field public static final a:Laul;
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Laul;
-
-    invoke-direct {v0}, Laul;-><init>()V
-
-    sput-object v0, Laul;->a:Laul;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Laul;->a:Lkgv;
+
+    iput-object p2, p0, Laul;->b:Lkgv;
+
+    iput-object p3, p0, Laul;->c:Lkgv;
+
+    iput-object p4, p0, Laul;->d:Lkgv;
 
     return-void
 .end method
@@ -34,11 +36,43 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+    .locals 5
 
-    new-instance v0, Lauk;
+    new-instance v4, Lauj;
 
-    invoke-direct {v0}, Lauk;-><init>()V
+    iget-object v0, p0, Laul;->a:Lkgv;
 
-    return-object v0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbnr;
+
+    iget-object v1, p0, Laul;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lick;
+
+    iget-object v2, p0, Laul;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Limk;
+
+    iget-object v3, p0, Laul;->d:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lhcd;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lauj;-><init>(Lbnr;Lick;Limk;Lhcd;)V
+
+    return-object v4
 .end method

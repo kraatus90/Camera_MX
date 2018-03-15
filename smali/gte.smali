@@ -1,45 +1,35 @@
-.class public final Lgte;
-.super Landroid/animation/AnimatorListenerAdapter;
-.source "PG"
+.class final synthetic Lgte;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final a:Lgtd;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method constructor <init>(Lgtd;)V
     .locals 0
 
-    iput-object p1, p0, Lgte;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lgte;->a:Lgtd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lgte;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v0, p0, Lgte;->a:Lgtd;
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Lgtd;->a:Lgta;
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$1502(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    iget-object v0, p0, Lgte;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$1502(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    invoke-virtual {v0}, Lglb;->V()V
 
     return-void
 .end method

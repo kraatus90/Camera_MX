@@ -3,54 +3,100 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.implements Lgry;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lgtj;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public static varargs a(II[Ljava/lang/Object;)Lgwx;
+    .locals 1
+
+    if-gez p0, :cond_0
+
+    sget-object v0, Lgwz;->a:Lgwx;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lgxa;
+
+    invoke-direct {v0, p0, p1, p2}, Lgxa;-><init>(II[Ljava/lang/Object;)V
+
+    goto :goto_0
+.end method
+
+.method public static varargs a(I[Ljava/lang/Object;)Lgwx;
+    .locals 1
+
+    if-gez p0, :cond_0
+
+    sget-object v0, Lgwz;->a:Lgwx;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lgxb;
+
+    invoke-direct {v0, p0, p1}, Lgxb;-><init>(I[Ljava/lang/Object;)V
+
+    goto :goto_0
+.end method
+
+.method public static a(Lgwx;)Z
+    .locals 1
+
+    sget-object v0, Lgwz;->a:Lgwx;
+
+    if-ne p0, v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public final f(Z)V
+    .locals 0
 
-    iget-object v1, p0, Lgtj;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+.method public final g(Z)V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Ljava/lang/Float;
+.method public final s()V
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    return-void
+.end method
 
-    move-result v0
+.method public final t()V
+    .locals 0
 
-    invoke-static {v1, v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$3102(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;F)F
+    return-void
+.end method
 
-    iget-object v0, p0, Lgtj;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$3200(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
-
-    iget-object v0, p0, Lgtj;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidateOutline()V
-
-    iget-object v0, p0, Lgtj;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidate()V
+.method public final u()V
+    .locals 0
 
     return-void
 .end method

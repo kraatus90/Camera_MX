@@ -1,33 +1,46 @@
-.class final Lbkt;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lbkt;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbkq;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbkq;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbkt;->a:Lbkq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lbkt;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lbkt;->a:Lbkq;
+    iget-object v0, p0, Lbkt;->a:Lkgv;
 
-    iget-object v0, v0, Lbkq;->g:Landroid/animation/ValueAnimator;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
+    invoke-static {}, Lbqu;->b()Lbpr;
 
-    return-void
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbpr;
+
+    return-object v0
 .end method

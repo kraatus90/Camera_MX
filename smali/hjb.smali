@@ -1,294 +1,451 @@
 .class public final Lhjb;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lhkc;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
-
-.field private static b:Lhkh;
-
-.field private static c:Lhkf;
+.super Landroid/support/v8/renderscript/Script$FieldBase;
+.source "PG"
 
 
 # instance fields
-.field private d:Ljava/lang/String;
+.field private a:[Lhjc;
 
-.field private e:I
-
-.field private f:Ljava/lang/String;
-
-.field private g:I
-
-.field private h:Ljava/lang/String;
-
-.field private i:Lhjh;
-
-.field private j:Lhmp;
-
-.field private k:Lhjg;
-
-.field private l:Lhje;
+.field private b:Landroid/support/v8/renderscript/FieldPacker;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 2
 
-    new-instance v0, Lhkh;
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lhkh;-><init>(B)V
-
-    sput-object v0, Lhjb;->b:Lhkh;
-
-    new-instance v0, Lhjc;
-
-    invoke-direct {v0}, Lhjc;-><init>()V
-
-    sput-object v0, Lhjb;->c:Lhkf;
-
-    new-instance v0, Lhkc;
-
-    const-string v1, "ClearcutLogger.API"
-
-    sget-object v2, Lhjb;->c:Lhkf;
-
-    sget-object v3, Lhjb;->b:Lhkh;
-
-    invoke-direct {v0, v1, v2, v3}, Lhkc;-><init>(Ljava/lang/String;Lhkf;Lhkh;)V
-
-    sput-object v0, Lhjb;->a:Lhkc;
+    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 6
+.method public constructor <init>(Landroid/support/v8/renderscript/RenderScript;I)V
+    .locals 3
 
-    new-instance v3, Lhji;
+    const/4 v0, 0x0
 
-    invoke-direct {v3, p1}, Lhji;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Landroid/support/v8/renderscript/Script$FieldBase;-><init>()V
 
-    sget-object v4, Lhmr;->a:Lhmr;
+    iput-object v0, p0, Lhjb;->a:[Lhjc;
 
-    new-instance v5, Lhjp;
+    iput-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
 
-    invoke-direct {v5, p1}, Lhjp;-><init>(Landroid/content/Context;)V
+    new-instance v0, Landroid/support/v8/renderscript/Element$Builder;
 
-    move-object v0, p0
+    invoke-direct {v0, p1}, Landroid/support/v8/renderscript/Element$Builder;-><init>(Landroid/support/v8/renderscript/RenderScript;)V
 
-    move-object v1, p1
+    invoke-static {p1}, Landroid/support/v8/renderscript/Element;->I32(Landroid/support/v8/renderscript/RenderScript;)Landroid/support/v8/renderscript/Element;
 
-    move-object v2, p2
+    move-result-object v1
 
-    invoke-direct/range {v0 .. v5}, Lhjb;-><init>(Landroid/content/Context;Ljava/lang/String;Lhjh;Lhmp;Lhje;)V
+    const-string v2, "offset"
 
-    return-void
-.end method
+    invoke-virtual {v0, v1, v2}, Landroid/support/v8/renderscript/Element$Builder;->add(Landroid/support/v8/renderscript/Element;Ljava/lang/String;)Landroid/support/v8/renderscript/Element$Builder;
 
-.method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Lhjh;Lhmp;Lhje;)V
-    .locals 2
+    invoke-static {p1}, Landroid/support/v8/renderscript/Element;->I32(Landroid/support/v8/renderscript/RenderScript;)Landroid/support/v8/renderscript/Element;
 
-    const/4 v1, -0x1
+    move-result-object v1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v2, "radius_x"
 
-    iput v1, p0, Lhjb;->g:I
+    invoke-virtual {v0, v1, v2}, Landroid/support/v8/renderscript/Element$Builder;->add(Landroid/support/v8/renderscript/Element;Ljava/lang/String;)Landroid/support/v8/renderscript/Element$Builder;
 
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    invoke-static {p1}, Landroid/support/v8/renderscript/Element;->I32(Landroid/support/v8/renderscript/RenderScript;)Landroid/support/v8/renderscript/Element;
+
+    move-result-object v1
+
+    const-string v2, "radius_y"
+
+    invoke-virtual {v0, v1, v2}, Landroid/support/v8/renderscript/Element$Builder;->add(Landroid/support/v8/renderscript/Element;Ljava/lang/String;)Landroid/support/v8/renderscript/Element$Builder;
+
+    invoke-virtual {v0}, Landroid/support/v8/renderscript/Element$Builder;->create()Landroid/support/v8/renderscript/Element;
 
     move-result-object v0
 
-    iput-object v0, p0, Lhjb;->d:Ljava/lang/String;
+    iput-object v0, p0, Lhjb;->mElement:Landroid/support/v8/renderscript/Element;
 
-    invoke-static {p1}, Lhjb;->a(Landroid/content/Context;)I
-
-    move-result v0
-
-    iput v0, p0, Lhjb;->e:I
-
-    iput v1, p0, Lhjb;->g:I
-
-    iput-object p2, p0, Lhjb;->f:Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lhjb;->h:Ljava/lang/String;
-
-    iput-object p3, p0, Lhjb;->i:Lhjh;
-
-    iput-object p4, p0, Lhjb;->j:Lhmp;
-
-    new-instance v0, Lhjg;
-
-    invoke-direct {v0}, Lhjg;-><init>()V
-
-    iput-object v0, p0, Lhjb;->k:Lhjg;
-
-    iput-object p5, p0, Lhjb;->l:Lhje;
+    invoke-virtual {p0, p1, p2}, Lhjb;->init(Landroid/support/v8/renderscript/RenderScript;I)V
 
     return-void
 .end method
 
-.method private static a(Landroid/content/Context;)I
-    .locals 4
+
+# virtual methods
+.method public final declared-synchronized a(I)I
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
+    :goto_0
+    monitor-exit p0
+
+    return v0
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    aget-object v0, v0, p1
+
+    iget v0, v0, Lhjc;->a:I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized a(II)V
+    .locals 3
+
+    monitor-enter p0
+
     :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
 
-    move-result-object v1
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    new-instance v0, Landroid/support/v8/renderscript/FieldPacker;
+
+    iget-object v1, p0, Lhjb;->mElement:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v1}, Landroid/support/v8/renderscript/Element;->getBytesSize()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Lhjb;->getType()Landroid/support/v8/renderscript/Type;
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    invoke-virtual {v2}, Landroid/support/v8/renderscript/Type;->getX()I
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    move-result v2
 
-    move-result-object v1
+    mul-int/2addr v1, v2
 
-    iget v0, v1, Landroid/content/pm/PackageInfo;->versionCode:I
+    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;-><init>(I)V
+
+    iput-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
+
+    :cond_0
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lhjb;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/support/v8/renderscript/Type;->getX()I
+
+    move-result v0
+
+    new-array v0, v0, [Lhjc;
+
+    iput-object v0, p0, Lhjb;->a:[Lhjc;
+
+    :cond_1
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    aget-object v0, v0, p1
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    new-instance v1, Lhjc;
+
+    invoke-direct {v1}, Lhjc;-><init>()V
+
+    aput-object v1, v0, p1
+
+    :cond_2
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    aget-object v0, v0, p1
+
+    iput p2, v0, Lhjc;->a:I
+
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
+
+    iget-object v1, p0, Lhjb;->mElement:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v1}, Landroid/support/v8/renderscript/Element;->getBytesSize()I
+
+    move-result v1
+
+    mul-int/2addr v1, p1
+
+    invoke-virtual {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;->reset(I)V
+
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
+
+    invoke-virtual {v0, p2}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
+
+    new-instance v0, Landroid/support/v8/renderscript/FieldPacker;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;-><init>(I)V
+
+    invoke-virtual {v0, p2}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
+
+    iget-object v1, p0, Lhjb;->mAllocation:Landroid/support/v8/renderscript/Allocation;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p1, v2, v0}, Landroid/support/v8/renderscript/Allocation;->setFromFieldPacker(IILandroid/support/v8/renderscript/FieldPacker;)V
     :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_0
-    return v0
+    monitor-exit p0
 
-    :catch_0
-    move-exception v1
+    return-void
 
-    const-string v1, "ClearcutLogger"
+    :catchall_0
+    move-exception v0
 
-    const-string v2, "This can\'t happen."
+    monitor-exit p0
 
-    invoke-static {v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
+    throw v0
 .end method
 
-.method static synthetic a(Lhjb;)I
-    .locals 1
+.method public final declared-synchronized b(II)V
+    .locals 3
 
-    iget v0, p0, Lhjb;->g:I
+    monitor-enter p0
 
-    return v0
+    :try_start_0
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroid/support/v8/renderscript/FieldPacker;
+
+    iget-object v1, p0, Lhjb;->mElement:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v1}, Landroid/support/v8/renderscript/Element;->getBytesSize()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Lhjb;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/support/v8/renderscript/Type;->getX()I
+
+    move-result v2
+
+    mul-int/2addr v1, v2
+
+    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;-><init>(I)V
+
+    iput-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
+
+    :cond_0
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lhjb;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/support/v8/renderscript/Type;->getX()I
+
+    move-result v0
+
+    new-array v0, v0, [Lhjc;
+
+    iput-object v0, p0, Lhjb;->a:[Lhjc;
+
+    :cond_1
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    aget-object v0, v0, p1
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
+
+    new-instance v1, Lhjc;
+
+    invoke-direct {v1}, Lhjc;-><init>()V
+
+    aput-object v1, v0, p1
+
+    :cond_2
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
+
+    iget-object v1, p0, Lhjb;->mElement:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v1}, Landroid/support/v8/renderscript/Element;->getBytesSize()I
+
+    move-result v1
+
+    mul-int/2addr v1, p1
+
+    add-int/lit8 v1, v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;->reset(I)V
+
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
+
+    invoke-virtual {v0, p2}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
+
+    new-instance v0, Landroid/support/v8/renderscript/FieldPacker;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;-><init>(I)V
+
+    invoke-virtual {v0, p2}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
+
+    iget-object v1, p0, Lhjb;->mAllocation:Landroid/support/v8/renderscript/Allocation;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, p1, v2, v0}, Landroid/support/v8/renderscript/Allocation;->setFromFieldPacker(IILandroid/support/v8/renderscript/FieldPacker;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method static synthetic a()Ljava/lang/String;
-    .locals 1
+.method public final declared-synchronized c(II)V
+    .locals 3
 
-    const/4 v0, 0x0
+    monitor-enter p0
 
-    return-object v0
-.end method
+    :try_start_0
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
 
-.method static synthetic b()I
-    .locals 1
+    if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    new-instance v0, Landroid/support/v8/renderscript/FieldPacker;
 
-    return v0
-.end method
+    iget-object v1, p0, Lhjb;->mElement:Landroid/support/v8/renderscript/Element;
 
-.method static synthetic b(Lhjb;)Ljava/lang/String;
-    .locals 1
+    invoke-virtual {v1}, Landroid/support/v8/renderscript/Element;->getBytesSize()I
 
-    iget-object v0, p0, Lhjb;->f:Ljava/lang/String;
+    move-result v1
 
-    return-object v0
-.end method
+    invoke-virtual {p0}, Lhjb;->getType()Landroid/support/v8/renderscript/Type;
 
-.method static synthetic c(Lhjb;)Ljava/lang/String;
-    .locals 1
+    move-result-object v2
 
-    const/4 v0, 0x0
+    invoke-virtual {v2}, Landroid/support/v8/renderscript/Type;->getX()I
 
-    return-object v0
-.end method
+    move-result v2
 
-.method public static synthetic c()Z
-    .locals 1
+    mul-int/2addr v1, v2
 
-    const/4 v0, 0x0
+    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;-><init>(I)V
 
-    return v0
-.end method
+    iput-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
 
-.method static synthetic d(Lhjb;)Lhmp;
-    .locals 1
+    :cond_0
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
 
-    iget-object v0, p0, Lhjb;->j:Lhmp;
+    if-nez v0, :cond_1
 
-    return-object v0
-.end method
+    invoke-virtual {p0}, Lhjb;->getType()Landroid/support/v8/renderscript/Type;
 
-.method public static synthetic d()[I
-    .locals 1
+    move-result-object v0
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Landroid/support/v8/renderscript/Type;->getX()I
 
-    return-object v0
-.end method
+    move-result v0
 
-.method static synthetic e(Lhjb;)Lhjg;
-    .locals 1
+    new-array v0, v0, [Lhjc;
 
-    iget-object v0, p0, Lhjb;->k:Lhjg;
+    iput-object v0, p0, Lhjb;->a:[Lhjc;
 
-    return-object v0
-.end method
+    :cond_1
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
 
-.method public static synthetic e()[Ljava/lang/String;
-    .locals 1
+    aget-object v0, v0, p1
 
-    const/4 v0, 0x0
+    if-nez v0, :cond_2
 
-    return-object v0
-.end method
+    iget-object v0, p0, Lhjb;->a:[Lhjc;
 
-.method public static synthetic f(Lhjb;)Ljava/lang/String;
-    .locals 1
+    new-instance v1, Lhjc;
 
-    iget-object v0, p0, Lhjb;->d:Ljava/lang/String;
+    invoke-direct {v1}, Lhjc;-><init>()V
 
-    return-object v0
-.end method
+    aput-object v1, v0, p1
 
-.method public static synthetic f()[[B
-    .locals 1
+    :cond_2
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
 
-    const/4 v0, 0x0
+    iget-object v1, p0, Lhjb;->mElement:Landroid/support/v8/renderscript/Element;
 
-    return-object v0
-.end method
+    invoke-virtual {v1}, Landroid/support/v8/renderscript/Element;->getBytesSize()I
 
-.method public static synthetic g(Lhjb;)I
-    .locals 1
+    move-result v1
 
-    iget v0, p0, Lhjb;->e:I
+    mul-int/2addr v1, p1
 
-    return v0
-.end method
+    add-int/lit8 v1, v1, 0x8
 
-.method public static synthetic h(Lhjb;)Lhje;
-    .locals 1
+    invoke-virtual {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;->reset(I)V
 
-    iget-object v0, p0, Lhjb;->l:Lhje;
+    iget-object v0, p0, Lhjb;->b:Landroid/support/v8/renderscript/FieldPacker;
 
-    return-object v0
-.end method
+    invoke-virtual {v0, p2}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
 
-.method public static synthetic i(Lhjb;)Lhjh;
-    .locals 1
+    new-instance v0, Landroid/support/v8/renderscript/FieldPacker;
 
-    iget-object v0, p0, Lhjb;->i:Lhjh;
+    const/4 v1, 0x4
 
-    return-object v0
+    invoke-direct {v0, v1}, Landroid/support/v8/renderscript/FieldPacker;-><init>(I)V
+
+    invoke-virtual {v0, p2}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
+
+    iget-object v1, p0, Lhjb;->mAllocation:Landroid/support/v8/renderscript/Allocation;
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v1, p1, v2, v0}, Landroid/support/v8/renderscript/Allocation;->setFromFieldPacker(IILandroid/support/v8/renderscript/FieldPacker;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

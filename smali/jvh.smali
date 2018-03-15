@@ -1,54 +1,53 @@
-.class final Ljvh;
-.super Ljsw;
+.class public interface abstract Ljvh;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private e:Ljava/lang/Runnable;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/Runnable;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljsw;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Runnable;
-
-    iput-object v0, p0, Ljvh;->e:Ljava/lang/Runnable;
-
-    return-void
-.end method
+.implements Ljava/util/Collection;
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public abstract F_()Ljava/util/Set;
+.end method
 
-    :try_start_0
-    iget-object v0, p0, Ljvh;->e:Ljava/lang/Runnable;
+.method public abstract a(Ljava/lang/Object;)I
+.end method
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+.method public abstract a(Ljava/lang/Object;I)I
+.end method
 
-    return-void
+.method public abstract a(Ljava/lang/Object;II)Z
+.end method
 
-    :catch_0
-    move-exception v0
+.method public abstract add(Ljava/lang/Object;)Z
+.end method
 
-    invoke-virtual {p0, v0}, Ljvh;->a(Ljava/lang/Throwable;)Z
+.method public abstract b(Ljava/lang/Object;I)I
+.end method
 
-    invoke-static {v0}, Ljik;->b(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+.method public abstract c(Ljava/lang/Object;I)I
+.end method
 
-    move-result-object v0
+.method public abstract contains(Ljava/lang/Object;)Z
+.end method
 
-    throw v0
+.method public abstract containsAll(Ljava/util/Collection;)Z
+.end method
+
+.method public abstract e()Ljava/util/Set;
+.end method
+
+.method public abstract equals(Ljava/lang/Object;)Z
+.end method
+
+.method public abstract hashCode()I
+.end method
+
+.method public abstract iterator()Ljava/util/Iterator;
+.end method
+
+.method public abstract remove(Ljava/lang/Object;)Z
+.end method
+
+.method public abstract size()I
 .end method

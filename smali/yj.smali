@@ -1,32 +1,24 @@
-.class public final Lyj;
+.class final Lyj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lyi;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/String;
+.field private final synthetic a:[B
 
-.field public final synthetic b:Ljava/lang/String;
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field public final synthetic d:Lxt;
+.field private final synthetic b:Lyh;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lxt;)V
+.method constructor <init>(Lyh;[B)V
     .locals 0
 
-    iput-object p1, p0, Lyj;->a:Ljava/lang/String;
+    iput-object p1, p0, Lyj;->b:Lyh;
 
-    iput-object p2, p0, Lyj;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Lyj;->c:Ljava/lang/Object;
-
-    iput-object p4, p0, Lyj;->d:Lxt;
+    iput-object p2, p0, Lyj;->a:[B
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,10 +27,16 @@
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lyj;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lyj;->b:Lyh;
 
-    return-object v0
+    iget-object v0, v0, Lyh;->b:Laam;
+
+    iget-object v1, p0, Lyj;->a:[B
+
+    invoke-interface {v0, v1}, Laam;->a([B)V
+
+    return-void
 .end method

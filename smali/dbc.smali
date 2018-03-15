@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lbew;
+.implements Lekq;
 
 
 # instance fields
-.field private synthetic a:Ldba;
+.field private final synthetic a:Ldal;
 
 
 # direct methods
-.method constructor <init>(Ldba;)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
-    iput-object p1, p0, Ldbc;->a:Ldba;
+    iput-object p1, p0, Ldbc;->a:Ldal;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,62 +23,61 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Ldbc;->a:Ldba;
-
-    invoke-virtual {v0}, Ldba;->m()V
-
-    iget-object v0, p0, Ldbc;->a:Ldba;
-
-    invoke-static {v0}, Ldba;->a(Ldba;)Liee;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Liee;->b()V
-
-    return-void
-.end method
-
-.method public final a_(Z)V
-    .locals 3
-
-    iget-object v0, p0, Ldbc;->a:Ldba;
-
-    iget-object v1, v0, Ldba;->f:Lhzt;
-
-    new-instance v2, Ldbb;
-
-    invoke-direct {v2, v0, p1}, Ldbb;-><init>(Ldba;Z)V
-
-    invoke-virtual {v1, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final b()V
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
-    sget-object v0, Ldba;->d:Ljava/lang/String;
+    :try_start_0
+    iget-object v0, p0, Ldbc;->a:Ldal;
 
-    const-string v1, "onCameraError"
+    iget-object v0, v0, Ldal;->z:Ljava/lang/Thread;
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljava/lang/Thread;->join()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v0, p0, Ldbc;->a:Ldba;
+    :goto_0
+    iget-object v0, p0, Ldbc;->a:Ldal;
 
-    invoke-virtual {v0}, Ldba;->m()V
+    iget-object v0, v0, Ldal;->p:Lekb;
 
-    iget-object v0, p0, Ldbc;->a:Ldba;
+    iget-object v0, v0, Lekb;->b:Lgfr;
 
-    invoke-static {v0}, Ldba;->a(Ldba;)Liee;
+    iget-object v1, p0, Ldbc;->a:Ldal;
+
+    invoke-static {v1}, Ldal;->a(Ldal;)Lbyy;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lbyy;->s()Lhbx;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lhbx;->d()Landroid/location/Location;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lgfr;->a(Landroid/location/Location;)V
+
+    iget-object v0, p0, Ldbc;->a:Ldal;
+
+    iget-object v0, v0, Ldal;->F:Landroid/os/Handler;
+
+    const/16 v1, 0x68
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Ldal;->c:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/InterruptedException;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-static {v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v0, v1}, Liee;->a(Ljava/lang/Throwable;)V
-
-    return-void
+    goto :goto_0
 .end method

@@ -1,24 +1,13 @@
-.class final Lelc;
+.class public interface abstract Lelc;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Libu;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
+.method public abstract a()V
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "MissingSuperCall"
+        }
+    .end annotation
 .end method

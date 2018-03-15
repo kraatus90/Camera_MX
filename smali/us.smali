@@ -1,19 +1,14 @@
-.class public final Lus;
+.class public interface abstract Lus;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field public final synthetic a:Landroid/support/v7/widget/RecyclerView;
+# virtual methods
+.method public abstract a()V
+.end method
 
+.method public abstract a(Landroid/view/MotionEvent;)Z
+.end method
 
-# direct methods
-.method public constructor <init>(Landroid/support/v7/widget/RecyclerView;)V
-    .locals 0
-
-    iput-object p1, p0, Lus;->a:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+.method public abstract b(Landroid/view/MotionEvent;)V
 .end method

@@ -1,30 +1,33 @@
 .class final Lgfa;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
-# interfaces
-.implements Lgfq;
+
+# instance fields
+.field private final synthetic a:Lgez;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lgez;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgfa;->a:Lgez;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lggk;)Lggk;
-    .locals 0
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    return-object p1
-.end method
+    iget-object v0, p0, Lgfa;->a:Lgez;
 
-.method public final close()V
-    .locals 0
+    iget-object v0, v0, Lgez;->a:Lgew;
+
+    invoke-virtual {v0}, Lglb;->A_()V
 
     return-void
 .end method

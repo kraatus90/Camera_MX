@@ -1,44 +1,56 @@
-.class final Ldcd;
+.class public final Ldcd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldby;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldby;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldcd;->a:Ldby;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldcd;->a:Lkgv;
+
+    iput-object p2, p0, Ldcd;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Ldcd;->a:Ldby;
+    iget-object v0, p0, Ldcd;->a:Lkgv;
 
-    iget-object v0, v0, Ldby;->h:Lhbo;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lhbo;->e(Z)V
+    check-cast v0, Lcsc;
 
-    return-void
-.end method
+    iget-object v1, p0, Ldcd;->b:Lkgv;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+    new-instance v2, Lcsi;
 
-    return-void
+    invoke-direct {v2, v0, v1}, Lcsi;-><init>(Lcsc;Lkgv;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcsb;
+
+    return-object v0
 .end method

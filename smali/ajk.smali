@@ -3,45 +3,58 @@
 .source "PG"
 
 # interfaces
-.implements Lajj;
-.implements Lakx;
+.implements Laki;
 
 
 # instance fields
-.field private a:Landroid/content/res/AssetManager;
+.field private final a:Lajl;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/AssetManager;)V
+.method public constructor <init>(Lajl;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lajk;->a:Landroid/content/res/AssetManager;
+    iput-object p1, p0, Lajk;->a:Lajl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/res/AssetManager;Ljava/lang/String;)Laet;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lakj;
+    .locals 4
 
-    new-instance v0, Lafb;
+    check-cast p1, Ljava/lang/String;
 
-    invoke-direct {v0, p1, p2}, Lafb;-><init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
+    new-instance v0, Lakj;
+
+    new-instance v1, Larm;
+
+    invoke-direct {v1, p1}, Larm;-><init>(Ljava/lang/Object;)V
+
+    new-instance v2, Lajm;
+
+    iget-object v3, p0, Lajk;->a:Lajl;
+
+    invoke-direct {v2, p1, v3}, Lajm;-><init>(Ljava/lang/String;Lajl;)V
+
+    invoke-direct {v0, v1, v2}, Lakj;-><init>(Ladu;Laef;)V
 
     return-object v0
 .end method
 
-.method public final a(Lald;)Lakv;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Z
+    .locals 1
 
-    new-instance v0, Laji;
+    check-cast p1, Ljava/lang/String;
 
-    iget-object v1, p0, Lajk;->a:Landroid/content/res/AssetManager;
+    const-string v0, "data:image"
 
-    invoke-direct {v0, v1, p0}, Laji;-><init>(Landroid/content/res/AssetManager;Lajj;)V
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    return-object v0
+    move-result v0
+
+    return v0
 .end method

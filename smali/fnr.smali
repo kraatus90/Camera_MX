@@ -1,153 +1,114 @@
-.class final Lfnr;
-.super Landroid/os/Handler;
+.class public final Lfnr;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lfnq;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x17
+.end annotation
 
 
 # instance fields
-.field private synthetic a:Lfmi;
+.field private final a:Lfnq;
+
+.field private final b:Ljava/util/Collection;
 
 
 # direct methods
-.method public constructor <init>(Lfmi;Landroid/os/Looper;)V
+.method private constructor <init>(Lfnq;)V
     .locals 0
 
-    iput-object p1, p0, Lfnr;->a:Lfmi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    iput-object p1, p0, Lfnr;->a:Lfnq;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lfnq;Ljava/util/Collection;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lfnr;-><init>(Lfnq;)V
+
+    iput-object p2, p0, Lfnr;->b:Ljava/util/Collection;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 6
+.method public final a()Lick;
+    .locals 1
 
-    const/4 v5, 0x0
+    iget-object v0, p0, Lfnr;->a:Lfnq;
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    invoke-interface {v0}, Lfnq;->a()Lick;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/Object;)Lkeh;
+    .locals 3
+
+    iget-object v1, p0, Lfnr;->a:Lfnq;
+
+    check-cast p1, Lgay;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p1, Lgay;->b:Link;
+
+    invoke-interface {v0}, Link;->b()I
+
+    move-result v0
+
+    const/16 v2, 0x23
+
+    if-ne v0, v2, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    const-string v2, "Invalid image format."
+
+    invoke-static {v0, v2}, Ljii;->a(ZLjava/lang/Object;)V
+
+    iget-object v0, p1, Lgay;->b:Link;
+
+    iget-object v2, p1, Lgay;->d:Lkeh;
+
+    invoke-static {v0, v2}, Lfnu;->a(Link;Lkeh;)Lfnv;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lfnr;->b:Ljava/util/Collection;
+
+    invoke-virtual {v0, v2}, Lfnv;->a(Ljava/util/Collection;)Lfnv;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lgay;->c:Ligz;
+
+    iput-object v2, v0, Lfnv;->a:Ligz;
+
+    invoke-virtual {v0}, Lfnv;->a()Lfnu;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Lfnq;->a(Ljava/lang/Object;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
 
     :cond_0
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->u:Lfow;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->u:Lfow;
-
-    invoke-virtual {v0, v5, v5}, Lfow;->onSurfaceCreated(Ljavax/microedition/khronos/opengles/GL10;Ljavax/microedition/khronos/egl/EGLConfig;)V
+    const/4 v0, 0x0
 
     goto :goto_0
-
-    :pswitch_1
-    sget-object v0, Lfmi;->c:Ljava/lang/String;
-
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    iget v2, p1, Landroid/os/Message;->arg2:I
-
-    const/16 v3, 0x2c
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "MSG_RESIZE_RENDERER: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, "x"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->u:Lfow;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->w:Lfom;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->u:Lfow;
-
-    iget v1, p1, Landroid/os/Message;->arg1:I
-
-    iget v2, p1, Landroid/os/Message;->arg2:I
-
-    invoke-virtual {v0, v5, v1, v2}, Lfow;->onSurfaceChanged(Ljavax/microedition/khronos/opengles/GL10;II)V
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->u:Lfow;
-
-    invoke-virtual {v0}, Lfow;->a()V
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->w:Lfom;
-
-    invoke-virtual {v0}, Lfom;->b()V
-
-    goto :goto_0
-
-    :pswitch_2
-    sget-object v0, Lfmi;->c:Ljava/lang/String;
-
-    const-string v1, "MSG_UPDATE_ORIENTATION"
-
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->u:Lfow;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfnr;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->u:Lfow;
-
-    invoke-virtual {v0}, Lfow;->a()V
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
 .end method

@@ -1,35 +1,42 @@
-.class final synthetic Lgof;
+.class final Lgof;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field private a:Lgoe;
+.field private final synthetic a:Lgoc;
 
 
 # direct methods
-.method constructor <init>(Lgoe;)V
+.method constructor <init>(Lgoc;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgof;->a:Lgoc;
 
-    iput-object p1, p0, Lgof;->a:Lgoe;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
-    iget-object v0, p0, Lgof;->a:Lgoe;
+    new-instance v0, Landroid/content/Intent;
 
-    iget-object v0, v0, Lgoe;->c:Lgoj;
+    const-string v1, "android.os.storage.action.MANAGE_STORAGE"
 
-    invoke-interface {v0}, Lgoj;->c()V
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lgof;->a:Lgoc;
+
+    iget-object v1, v1, Lgoc;->b:Landroid/content/Context;
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method

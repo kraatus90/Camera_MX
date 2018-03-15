@@ -1,46 +1,128 @@
-.class final Lhnl;
-.super Lhnm;
+.class public final Lhnl;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field private synthetic a:Lcom/google/android/gms/feedback/FeedbackOptions;
+# static fields
+.field private static a:Ljava/lang/Object;
+
+.field private static b:Z
+
+.field private static c:I
 
 
 # direct methods
-.method constructor <init>(Lhkl;Lcom/google/android/gms/feedback/FeedbackOptions;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p2, p0, Lhnl;->a:Lcom/google/android/gms/feedback/FeedbackOptions;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Lhnm;-><init>(Lhkl;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lhnl;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
+.method public static a(Landroid/content/Context;)I
+    .locals 4
 
-# virtual methods
-.method protected final synthetic a(Lhkg;)V
-    .locals 2
+    sget-object v1, Lhnl;->a:Ljava/lang/Object;
 
-    check-cast p1, Lhpw;
+    monitor-enter v1
 
-    iget-object v1, p0, Lhnl;->a:Lcom/google/android/gms/feedback/FeedbackOptions;
+    :try_start_0
+    sget-boolean v0, Lhnl;->b:Z
 
-    invoke-virtual {p1}, Lhpw;->n()Landroid/os/IInterface;
+    if-eqz v0, :cond_0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    sget v0, Lhnl;->c:I
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :try_start_1
+    sput-boolean v0, Lhnl;->b:Z
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lhpx;
+    sget-object v2, Lhqu;->a:Lhqu;
 
-    invoke-virtual {p1, v1}, Lhpw;->a(Lcom/google/android/gms/feedback/FeedbackOptions;)Lcom/google/android/gms/feedback/ErrorReport;
+    invoke-virtual {v2, p0}, Lhqu;->a(Landroid/content/Context;)Lhqt;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Lhpx;->b(Lcom/google/android/gms/feedback/ErrorReport;)Z
+    const/16 v3, 0x80
 
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
+    :try_start_2
+    invoke-virtual {v2, v0, v3}, Lhqt;->a(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
-    invoke-virtual {p0, v0}, Lhnl;->a(Lhks;)V
+    move-result-object v0
 
-    return-void
+    iget-object v0, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+    :try_end_2
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-nez v0, :cond_1
+
+    :try_start_3
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :try_start_4
+    const-string v2, "com.google.app.id"
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    const-string v2, "com.google.android.gms.version"
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lhnl;->c:I
+    :try_end_4
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    :goto_1
+    :try_start_5
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v2, "MetadataValueReader"
+
+    const-string v3, "This should never happen."
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    goto :goto_1
 .end method

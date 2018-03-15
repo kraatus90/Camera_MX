@@ -2,26 +2,47 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lgwx;
+
 
 # instance fields
-.field public volatile a:Ljava/lang/String;
+.field private final a:I
 
-.field public volatile b:Landroid/graphics/drawable/Drawable;
+.field private final b:I
 
-.field public final c:Ljava/lang/StringBuilder;
+.field private final c:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public varargs constructor <init>(II[Ljava/lang/Object;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput p1, p0, Lgxa;->a:I
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iput p2, p0, Lgxa;->b:I
 
-    iput-object v0, p0, Lgxa;->c:Ljava/lang/StringBuilder;
+    iput-object p3, p0, Lgxa;->c:[Ljava/lang/Object;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/content/res/Resources;)Ljava/lang/String;
+    .locals 3
+
+    iget v0, p0, Lgxa;->a:I
+
+    iget v1, p0, Lgxa;->b:I
+
+    iget-object v2, p0, Lgxa;->c:[Ljava/lang/Object;
+
+    invoke-virtual {p1, v0, v1, v2}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

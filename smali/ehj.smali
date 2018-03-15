@@ -2,125 +2,77 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:Landroid/view/View;
 
-.field private b:Ljxn;
+.field public b:Landroid/widget/Button;
 
-.field private c:Ljxn;
+.field public c:Lcas;
 
-.field private d:Ljxn;
+.field public final d:Z
+
+.field private e:Landroid/view/View$OnClickListener;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "A11yController"
 
-    iput-object p1, p0, Lehj;->a:Ljxn;
-
-    iput-object p2, p0, Lehj;->b:Ljxn;
-
-    iput-object p3, p0, Lehj;->c:Ljxn;
-
-    iput-object p4, p0, Lehj;->d:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Legu;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
+.method public constructor <init>(Landroid/view/View;Lbjy;)V
+    .locals 2
 
-    new-instance v0, Lehj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p1, p2, p3, p4}, Lehj;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+    new-instance v0, Lehk;
 
-    return-object v0
-.end method
+    invoke-direct {v0, p0}, Lehk;-><init>(Lehj;)V
 
+    iput-object v0, p0, Lehj;->e:Landroid/view/View$OnClickListener;
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+    invoke-static {}, Liay;->a()V
 
-    const/4 v4, 0x1
+    iput-object p1, p0, Lehj;->a:Landroid/view/View;
 
-    iget-object v0, p0, Lehj;->a:Ljxn;
+    const v0, 0x7f0e00ba
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Lhzr;
+    check-cast v0, Landroid/widget/Button;
 
-    iget-object v1, p0, Lehj;->b:Ljxn;
+    iput-object v0, p0, Lehj;->b:Landroid/widget/Button;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lehj;->b:Landroid/widget/Button;
 
-    move-result-object v1
+    iget-object v1, p0, Lehj;->e:Landroid/view/View$OnClickListener;
 
-    check-cast v1, Lcop;
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v2, p0, Lehj;->c:Ljxn;
+    invoke-virtual {p2}, Lbjy;->b()Z
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v2
+    iput-boolean v0, p0, Lehj;->d:Z
 
-    check-cast v2, Ljava/util/concurrent/ScheduledExecutorService;
+    iget-boolean v0, p0, Lehj;->d:Z
 
-    iget-object v3, p0, Lehj;->d:Ljxn;
+    if-nez v0, :cond_0
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lehj;->b:Landroid/widget/Button;
 
-    move-result-object v3
+    const/16 v1, 0x8
 
-    check-cast v3, Lgdq;
-
-    sget-object v5, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-interface {v3, v5}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    if-ne v3, v4, :cond_0
-
-    const/4 v3, 0x0
-
-    :goto_0
-    new-instance v4, Legf;
-
-    invoke-direct {v4, v1, v3, v2}, Legf;-><init>(Lcop;ILjava/util/concurrent/ExecutorService;)V
-
-    invoke-virtual {v0, v4}, Lhzr;->a(Lich;)Lich;
-
-    move-result-object v0
-
-    check-cast v0, Legf;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Legf;
-
-    return-object v0
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setVisibility(I)V
 
     :cond_0
-    move v3, v4
-
-    goto :goto_0
+    return-void
 .end method

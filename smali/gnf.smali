@@ -1,52 +1,56 @@
-.class final Lgnf;
+.class public interface abstract Lgnf;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic a:Licn;
-
-.field private synthetic b:Ljava/util/concurrent/Executor;
-
-.field private synthetic c:Lgnc;
-
-
-# direct methods
-.method constructor <init>(Lgnc;Ljava/util/concurrent/Executor;Licn;)V
-    .locals 0
-
-    iput-object p1, p0, Lgnf;->c:Lgnc;
-
-    iput-object p2, p0, Lgnf;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p3, p0, Lgnf;->a:Licn;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public abstract a(Landroid/content/Context;Ljava/lang/String;)Landroid/net/Uri;
+.end method
 
-    iget-object v0, p0, Lgnf;->c:Lgnc;
+.method public abstract a(Landroid/net/Uri;Landroid/content/ContentResolver;Ljava/lang/String;JLjrf;ILjrf;Ljava/io/InputStream;IILioj;)Landroid/net/Uri;
+.end method
 
-    iget-object v0, v0, Lgnc;->a:Lgmv;
+.method public abstract a(Landroid/net/Uri;Landroid/content/ContentResolver;Ljava/lang/String;JLjrf;JLjava/io/InputStream;IILioj;)Landroid/net/Uri;
+.end method
 
-    iget-object v0, v0, Lgmv;->e:Licf;
+.method public abstract a(Lany;J)Landroid/net/Uri;
+.end method
 
-    iget-object v1, p0, Lgnf;->b:Ljava/util/concurrent/Executor;
+.method public abstract a(Lihc;J)Landroid/net/Uri;
+.end method
 
-    new-instance v2, Lgng;
+.method public abstract a()Lgng;
+.end method
 
-    invoke-direct {v2, p0, v0}, Lgng;-><init>(Lgnf;Licf;)V
+.method public abstract a(Landroid/net/Uri;)V
+.end method
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+.method public abstract a(Landroid/net/Uri;Landroid/net/Uri;)V
+.end method
 
-    return-void
+.method public abstract a(Landroid/net/Uri;Lany;)V
+.end method
+
+.method public abstract b()Landroid/net/Uri;
+.end method
+
+.method public abstract b(Landroid/net/Uri;)Ljrf;
+.end method
+
+.method public abstract c(Landroid/net/Uri;)Z
+.end method
+
+.method public abstract d(Landroid/net/Uri;)Landroid/graphics/Point;
+.end method
+
+.method public abstract e(Landroid/net/Uri;)J
+.end method
+
+.method public abstract f(Landroid/net/Uri;)Landroid/net/Uri;
+.end method
+
+.method public abstract g(Landroid/net/Uri;)Landroid/net/Uri;
+.end method
+
+.method public abstract h(Landroid/net/Uri;)Z
 .end method

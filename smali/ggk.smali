@@ -1,173 +1,240 @@
-.class public final Lggk;
+.class final Lggk;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:I
-
-.field public final b:Ljava/util/Set;
-
-.field public final c:Ljava/util/Set;
-
-.field public final d:Ljava/util/Set;
-
-.field public final e:Ljht;
+.field private final synthetic a:Lggh;
 
 
 # direct methods
-.method public constructor <init>(ILjava/util/Set;Ljava/util/Set;Ljava/util/Set;Ljht;)V
-    .locals 1
+.method constructor <init>(Lggh;)V
+    .locals 0
+
+    iput-object p1, p0, Lggk;->a:Lggh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lggk;->a:I
-
-    invoke-static {p2}, Ljle;->a(Ljava/util/Collection;)Ljle;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lggk;->b:Ljava/util/Set;
-
-    invoke-static {p3}, Ljle;->a(Ljava/util/Collection;)Ljle;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lggk;->c:Ljava/util/Set;
-
-    invoke-static {p4}, Ljle;->a(Ljava/util/Collection;)Ljle;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lggk;->d:Ljava/util/Set;
-
-    iput-object p5, p0, Lggk;->e:Ljht;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public final run()V
+    .locals 5
 
-    if-eqz p1, :cond_0
+    :try_start_0
+    iget-object v0, p0, Lggk;->a:Lggh;
 
-    instance-of v0, p1, Lggk;
+    iget-object v1, v0, Lggh;->c:Lgnb;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lggk;->a:Lggh;
 
-    iget v0, p0, Lggk;->a:I
+    iget-object v0, v0, Lggh;->b:Lgjd;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    move-object v0, p1
-
-    check-cast v0, Lggk;
-
-    iget v0, v0, Lggk;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0}, Lgjd;->c()Ljava/io/File;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, Ljava/io/File;
 
-    iget-object v1, p0, Lggk;->b:Ljava/util/Set;
+    invoke-interface {v1, v0}, Lgnb;->c(Ljava/io/File;)[B
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v0, p1
+    move-result-object v0
 
-    check-cast v0, Lggk;
+    new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
-    iget-object v0, v0, Lggk;->b:Ljava/util/Set;
+    new-instance v2, Ljava/io/ByteArrayInputStream;
 
-    invoke-static {v1, v0}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v2, v0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    move-result v0
+    invoke-direct {v1, v2}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Ljava/io/InputStream;)V
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v1}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
-    iget-object v1, p0, Lggk;->d:Ljava/util/Set;
+    move-result-object v0
 
-    move-object v0, p1
+    if-nez v0, :cond_1
 
-    check-cast v0, Lggk;
+    iget-object v1, p0, Lggk;->a:Lggh;
 
-    iget-object v0, v0, Lggk;->d:Ljava/util/Set;
+    const-string v2, "Could not decode preview file: "
 
-    invoke-static {v1, v0}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v0, p0, Lggk;->a:Lggh;
 
-    move-result v0
+    iget-object v0, v0, Lggh;->b:Lgjd;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Lgjd;->c()Ljava/io/File;
 
-    iget-object v0, p0, Lggk;->c:Ljava/util/Set;
+    move-result-object v0
 
-    check-cast p1, Lggk;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p1, Lggk;->c:Ljava/util/Set;
+    move-result-object v0
 
-    invoke-static {v0, v1}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    check-cast v0, Ljava/io/File;
 
-    move-result v0
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     :goto_0
-    return v0
+    invoke-virtual {v1, v0}, Lggh;->b(Ljava/lang/String;)V
+
+    :goto_1
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    move-object v1, v0
+
+    iget-object v2, p0, Lggk;->a:Lggh;
+
+    iget-object v0, p0, Lggk;->a:Lggh;
+
+    iget-object v0, v0, Lggh;->b:Lgjd;
+
+    invoke-virtual {v0}, Lgjd;->c()Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1e
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Could not read preview file: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, " "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Lggh;->b(Ljava/lang/String;)V
+
+    goto :goto_1
 
     :cond_0
-    const/4 v0, 0x0
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     goto :goto_0
-.end method
 
-.method public final hashCode()I
-    .locals 3
+    :cond_1
+    iget-object v0, p0, Lggk;->a:Lggh;
 
-    const/4 v0, 0x4
+    iget-object v2, v0, Lggh;->e:Lgid;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    iget-object v0, p0, Lggk;->a:Lggh;
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Lggh;->f:Lgie;
 
-    iget v2, p0, Lggk;->a:I
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v0
 
-    move-result-object v2
+    check-cast v0, Lgie;
 
-    aput-object v2, v0, v1
+    new-instance v3, Lamc;
 
-    const/4 v1, 0x1
+    new-instance v4, Lahg;
 
-    iget-object v2, p0, Lggk;->b:Ljava/util/Set;
+    invoke-direct {v4}, Lahg;-><init>()V
 
-    aput-object v2, v0, v1
+    invoke-direct {v3, v1, v4}, Lamc;-><init>(Landroid/graphics/drawable/BitmapDrawable;Lahf;)V
 
-    const/4 v1, 0x2
+    invoke-virtual {v2, v0, v3}, Lgid;->a(Lgie;Lany;)V
 
-    iget-object v2, p0, Lggk;->d:Ljava/util/Set;
+    iget-object v0, p0, Lggk;->a:Lggh;
 
-    aput-object v2, v0, v1
+    iget-object v1, v0, Lggh;->d:Lgit;
 
-    const/4 v1, 0x3
+    iget-object v0, p0, Lggk;->a:Lggh;
 
-    iget-object v2, p0, Lggk;->c:Ljava/util/Set;
+    iget-object v0, v0, Lggh;->g:Landroid/net/Uri;
 
-    aput-object v2, v0, v1
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    move-result-object v0
 
-    move-result v0
+    check-cast v0, Landroid/net/Uri;
 
-    return v0
+    invoke-virtual {v1, v0}, Lgit;->c(Landroid/net/Uri;)V
+
+    goto/16 :goto_1
 .end method

@@ -1,13 +1,13 @@
-.class public final Ljdn;
+.class final Ljdn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljdg;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -15,142 +15,254 @@
     return-void
 .end method
 
-.method private static a(Lcom/google/android/libraries/smartburst/utils/Feature;)F
-    .locals 5
-
-    invoke-virtual {p0}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValues()[F
-
-    move-result-object v2
-
-    const/4 v1, 0x0
-
-    array-length v3, v2
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v3, :cond_0
-
-    aget v4, v2, v0
-
-    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
-
-    move-result v4
-
-    add-float/2addr v1, v4
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return v1
-.end method
-
 
 # virtual methods
-.method public final a(Lcom/google/android/libraries/smartburst/utils/Feature;Lcom/google/android/libraries/smartburst/utils/Feature;)F
-    .locals 8
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 9
 
-    const/4 v1, 0x0
+    const/16 v8, 0x8
 
-    const v7, 0x33d6bf95    # 1.0E-7f
+    const/4 v7, 0x6
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/4 v6, 0x3
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v5, 0x4
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v4, 0x1
 
-    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/utils/Feature;->getType()Ljfs;
+    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    const-string v1, "default"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {p2}, Lcom/google/android/libraries/smartburst/utils/Feature;->getType()Ljfs;
+    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    move-result-object v3
+    new-instance v2, Ljjq;
 
-    if-ne v0, v3, :cond_0
+    invoke-direct {v2, v0}, Ljjq;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
 
-    const/4 v0, 0x1
+    const-class v0, Ljjz;
 
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    const-string v1, "combined_eyes"
 
-    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValues()[F
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {p2}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValues()[F
+    check-cast v0, Ljjz;
 
-    move-result-object v5
+    const-class v1, Ljjz;
 
-    invoke-static {p1}, Ljdn;->a(Lcom/google/android/libraries/smartburst/utils/Feature;)F
+    const-string v3, "camera_motion_score"
 
-    move-result v0
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-static {p2}, Ljdn;->a(Lcom/google/android/libraries/smartburst/utils/Feature;)F
+    move-result-object v1
 
-    move-result v6
+    check-cast v1, Ljjz;
 
-    cmpl-float v3, v0, v7
+    invoke-static {v2}, Ljjm;->a(Ljjp;)Ljjn;
 
-    if-lez v3, :cond_3
+    move-result-object v2
 
-    div-float v0, v2, v0
+    const v3, 0x3c1d883c    # 0.009615f
 
-    move v3, v0
+    iput v3, v2, Ljjn;->e:F
 
-    :goto_1
-    cmpl-float v0, v6, v7
+    new-array v3, v8, [F
 
-    if-lez v0, :cond_2
+    fill-array-data v3, :array_0
 
-    div-float v0, v2, v6
+    iput-object v3, v2, Ljjn;->c:[F
 
-    :goto_2
-    const/4 v2, 0x0
+    new-array v3, v8, [F
 
-    :goto_3
-    array-length v6, v4
+    fill-array-data v3, :array_1
 
-    if-ge v1, v6, :cond_1
+    iput-object v3, v2, Ljjn;->d:[F
 
-    aget v6, v5, v1
+    const/16 v3, 0x10
 
-    mul-float/2addr v6, v0
+    new-array v3, v3, [F
 
-    aget v7, v4, v1
+    fill-array-data v3, :array_2
 
-    mul-float/2addr v7, v3
+    iput-object v3, v2, Ljjn;->b:[F
 
-    sub-float/2addr v6, v7
+    sget-object v3, Ljpe;->b:Ljpe;
 
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljpe;)Ljjn;
 
-    move-result v6
+    move-result-object v2
 
-    add-float/2addr v2, v6
+    sget-object v3, Ljpe;->k:Ljpe;
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljpe;)Ljjn;
 
-    goto :goto_3
+    move-result-object v2
 
-    :cond_0
-    move v0, v1
+    sget-object v3, Ljpe;->h:Ljpe;
 
-    goto :goto_0
+    invoke-virtual {v2, v3}, Ljjn;->a(Ljpe;)Ljjn;
 
-    :cond_1
-    return v2
+    move-result-object v2
 
-    :cond_2
-    move v0, v2
+    invoke-virtual {v2, v0}, Ljjn;->a(Ljjz;)Ljjn;
 
-    goto :goto_2
+    move-result-object v0
 
-    :cond_3
-    move v3, v2
+    sget-object v2, Ljpe;->d:Ljpe;
 
-    goto :goto_1
+    invoke-virtual {v0, v2}, Ljjn;->a(Ljpe;)Ljjn;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjz;)Ljjn;
+
+    move-result-object v0
+
+    sget-object v1, Ljpe;->a:Ljpe;
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljpe;)Ljjn;
+
+    move-result-object v0
+
+    sget-object v1, Ljpe;->o:Ljpe;
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljpe;)Ljjn;
+
+    move-result-object v0
+
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Ljjs;->a(I)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v5, v7, v1}, Ljjs;->a(IIZ)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    invoke-static {v5}, Ljjs;->a(I)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    invoke-static {v6, v4, v4}, Ljjs;->a(IIZ)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    invoke-static {v6, v5, v4}, Ljjs;->a(IIZ)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    const v1, 0x3f774092
+
+    const v2, 0x4098ade4
+
+    invoke-static {v7, v1, v2}, Ljjs;->a(IFF)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    const/4 v1, 0x7
+
+    invoke-static {v1}, Ljjs;->a(I)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    const v1, 0x3f13d007
+
+    const v2, 0x3f9da190
+
+    invoke-static {v4, v1, v2}, Ljjs;->a(IFF)Ljjs;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljjs;)Ljjn;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljjn;->a()Ljjm;
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x3e3c660a
+        0x3dbd10b2    # 0.092317f
+        0x3d1903a7
+        0x3e2fb58d
+        0x3e5e770c
+        0x3d28b19a    # 0.041185f
+        0x3f29eb64
+        0x3f43d439
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x3ee3e5b8
+        0x3e598245
+        0x3e15fb2f
+        0x3ee1f87f    # 0.441349f
+        0x3e51b329
+        0x3e28537e
+        0x3e286402    # 0.164444f
+        0x3deea20a    # 0.11652f
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x3d2f4278
+        -0x41b82d38    # -0.19514f
+        0x3c69d0ea    # 0.014271f
+        0x3d7c99af    # 0.06167f
+        0x3d9d53ce    # 0.07682f
+        -0x4100e5a3
+        0x3eeb6934
+        0x3d5efa61
+        0x3f07d673
+        0x3cf2a38c    # 0.029619f
+        -0x427eb181    # -0.063138f
+        -0x42fdd767
+        -0x42ef7a0b
+        -0x41d00f77
+        -0x42f354c1    # -0.034343f
+        0x3ed1fa12
+    .end array-data
 .end method

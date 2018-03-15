@@ -1,58 +1,42 @@
-.class public final Labt;
+.class final Labt;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Ljava/lang/Runnable;
+.field private final synthetic a:Ljava/lang/RuntimeException;
 
-.field public final b:Ljava/lang/Object;
+.field private final synthetic b:Labp;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method constructor <init>(Labp;Ljava/lang/RuntimeException;)V
+    .locals 0
+
+    iput-object p1, p0, Labt;->b:Labp;
+
+    iput-object p2, p0, Labt;->a:Ljava/lang/RuntimeException;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Labt;->b:Ljava/lang/Object;
-
-    new-instance v0, Labu;
-
-    invoke-direct {v0, p0}, Labu;-><init>(Labt;)V
-
-    iput-object v0, p0, Labt;->a:Ljava/lang/Runnable;
 
     return-void
 .end method
 
-.method static a(Landroid/os/Message;)V
-    .locals 1
 
-    if-nez p0, :cond_1
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    :cond_0
-    :goto_0
+    iget-object v0, p0, Labt;->b:Labp;
+
+    iget-object v0, v0, Labp;->a:Labu;
+
+    iget-object v1, p0, Labt;->a:Ljava/lang/RuntimeException;
+
+    invoke-interface {v0, v1}, Labu;->a(Ljava/lang/RuntimeException;)V
+
     return-void
-
-    :cond_1
-    iget-object v0, p0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    instance-of v0, v0, Labt;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Labt;
-
-    iget-object v0, v0, Labt;->a:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    goto :goto_0
 .end method

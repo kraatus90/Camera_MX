@@ -1,56 +1,26 @@
-.class final Lgkf;
+.class public interface abstract Lgkf;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Lgkk;
-
-
-# direct methods
-.method constructor <init>(Lgkk;)V
-    .locals 0
-
-    iput-object p1, p0, Lgkf;->a:Lgkk;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public abstract a()V
+.end method
 
-    iget-object v0, p0, Lgkf;->a:Lgkk;
+.method public abstract a(I)V
+.end method
 
-    iget-object v1, v0, Lgkk;->a:Ljava/lang/Object;
+.method public abstract b()V
+.end method
 
-    monitor-enter v1
+.method public abstract c()V
+.end method
 
-    :try_start_0
-    iget-object v0, p0, Lgkf;->a:Lgkk;
+.method public abstract d()V
+.end method
 
-    iget v2, v0, Lgkk;->d:I
+.method public abstract e()V
+.end method
 
-    add-int/lit8 v2, v2, -0x1
-
-    iput v2, v0, Lgkk;->d:I
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+.method public abstract f()V
 .end method

@@ -1,5 +1,5 @@
 .class public Lcom/google/android/gms/flags/impl/FlagProviderImpl;
-.super Lhpz;
+.super Lhqy;
 
 
 # annotations
@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lhpz;-><init>()V
+    invoke-direct {p0}, Lhqy;-><init>()V
 
     const/4 v0, 0x0
 
@@ -45,11 +45,11 @@
 
     move-result-object v1
 
-    new-instance v2, Lhnv;
+    new-instance v2, Lhot;
 
-    invoke-direct {v2, v0, p1, v1}, Lhnv;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Boolean;)V
+    invoke-direct {v2, v0, p1, v1}, Lhot;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    invoke-static {v2}, Lhjg;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+    invoke-static {v2}, Lhmr;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -79,11 +79,11 @@
 
     move-result-object v1
 
-    new-instance v2, Lhnw;
+    new-instance v2, Lhou;
 
-    invoke-direct {v2, v0, p1, v1}, Lhnw;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Integer;)V
+    invoke-direct {v2, v0, p1, v1}, Lhou;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Integer;)V
 
-    invoke-static {v2}, Lhjg;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+    invoke-static {v2}, Lhmr;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -113,11 +113,11 @@
 
     move-result-object v1
 
-    new-instance v2, Lhnx;
+    new-instance v2, Lhov;
 
-    invoke-direct {v2, v0, p1, v1}, Lhnx;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Long;)V
+    invoke-direct {v2, v0, p1, v1}, Lhov;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/Long;)V
 
-    invoke-static {v2}, Lhjg;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+    invoke-static {v2}, Lhmr;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -143,11 +143,11 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/gms/flags/impl/FlagProviderImpl;->b:Landroid/content/SharedPreferences;
 
-    new-instance v1, Lhny;
+    new-instance v1, Lhow;
 
-    invoke-direct {v1, v0, p1, p2}, Lhny;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v0, p1, p2}, Lhow;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v1}, Lhjg;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+    invoke-static {v1}, Lhmr;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -158,10 +158,10 @@
     goto :goto_0
 .end method
 
-.method public init(Lhnb;)V
+.method public init(Lhnz;)V
     .locals 3
 
-    invoke-static {p1}, Lhne;->a(Lhnb;)Ljava/lang/Object;
+    invoke-static {p1}, Lhoc;->a(Lhnz;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -184,7 +184,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lhnz;->a(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lhox;->a(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 

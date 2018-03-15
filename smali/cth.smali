@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkds;
 
 
 # instance fields
-.field public final synthetic a:Lcsk;
+.field private final synthetic a:Lctf;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
+.method constructor <init>(Lctf;)V
     .locals 0
 
-    iput-object p1, p0, Lcth;->a:Lcsk;
+    iput-object p1, p0, Lcth;->a:Lctf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,43 +23,34 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final a(Ljava/lang/Throwable;)V
     .locals 2
 
-    check-cast p1, Leal;
+    sget-object v0, Lctf;->a:Ljava/lang/String;
 
-    iget-object v1, p0, Lcth;->a:Lcsk;
+    const-string v1, "Failed to start a OneCamera during initialization: "
 
-    sget-object v0, Leal;->b:Leal;
+    invoke-static {v0, v1, p1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    if-ne p1, v0, :cond_1
+    iget-object v0, p0, Lcth;->a:Lctf;
 
-    const/4 v0, 0x1
+    iget-object v0, v0, Lctf;->e:Lket;
 
-    :goto_0
-    iput-boolean v0, v1, Lcsk;->T:Z
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    iget-object v0, p0, Lcth;->a:Lcsk;
-
-    iget-boolean v0, v0, Lcsk;->T:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcth;->a:Lcsk;
-
-    iget-object v0, v0, Lcsk;->U:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lcti;
-
-    invoke-direct {v1, p0}, Lcti;-><init>(Lcth;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :cond_0
     return-void
+.end method
 
-    :cond_1
-    const/4 v0, 0x0
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 1
 
-    goto :goto_0
+    check-cast p1, Lfap;
+
+    iget-object v0, p0, Lcth;->a:Lctf;
+
+    iget-object v0, v0, Lctf;->e:Lket;
+
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
 .end method

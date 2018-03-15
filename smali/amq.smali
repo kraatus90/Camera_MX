@@ -1,60 +1,79 @@
-.class public final Lamq;
-.super Ljava/lang/Object;
+.class final Lamq;
+.super Lamo;
 .source "PG"
-
-# interfaces
-.implements Laep;
-
-
-# instance fields
-.field private a:Lanf;
 
 
 # direct methods
-.method public constructor <init>(Lanf;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lamq;->a:Lanf;
+    invoke-direct {p0}, Lamo;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;IILaeo;)Lahg;
-    .locals 6
+.method public final a(IIII)F
+    .locals 4
 
-    check-cast p1, Ljava/nio/ByteBuffer;
+    const/4 v0, 0x1
 
-    invoke-static {p1}, Larh;->b(Ljava/nio/ByteBuffer;)Ljava/io/InputStream;
+    int-to-float v1, p2
 
-    move-result-object v1
+    int-to-float v2, p4
 
-    iget-object v0, p0, Lamq;->a:Lanf;
+    div-float/2addr v1, v2
 
-    sget-object v5, Lanf;->d:Lanh;
+    int-to-float v2, p1
 
-    move v2, p2
+    int-to-float v3, p3
 
-    move v3, p3
+    div-float/2addr v2, v3
 
-    move-object v4, p4
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
 
-    invoke-virtual/range {v0 .. v5}, Lanf;->a(Ljava/io/InputStream;IILaeo;Lanh;)Lahg;
+    move-result v1
 
-    move-result-object v0
+    float-to-double v2, v1
 
-    return-object v0
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v2
+
+    double-to-int v1, v2
+
+    invoke-static {v1}, Ljava/lang/Integer;->highestOneBit(I)I
+
+    move-result v2
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    if-ge v2, v1, :cond_0
+
+    :goto_0
+    shl-int v0, v2, v0
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    int-to-float v0, v0
+
+    div-float v0, v1, v0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;Laeo;)Z
+.method public final a()I
     .locals 1
 
-    invoke-static {}, Lanf;->b()Z
-
-    move-result v0
+    sget v0, Lep;->g:I
 
     return v0
 .end method

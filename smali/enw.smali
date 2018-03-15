@@ -1,170 +1,177 @@
-.class public final Lenw;
-.super Ljava/lang/Object;
+.class public final enum Lenw;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
-# instance fields
-.field public final a:Ljxn;
+# static fields
+.field public static final enum a:Lenw;
 
-.field public final b:Ljxn;
+.field public static final enum b:Lenw;
 
-.field public final c:Ljxn;
+.field public static final enum c:Lenw;
 
-.field public final d:Ljxn;
+.field public static final enum d:Lenw;
 
-.field public final e:Ljxn;
+.field public static final enum e:Lenw;
 
-.field public final f:Ljxn;
+.field public static final enum f:Lenw;
 
-.field public final g:Ljxn;
+.field public static final enum g:Lenw;
 
-.field public final h:Ljxn;
+.field public static final enum h:Lenw;
 
-.field public final i:Ljxn;
-
-.field public final j:Ljxn;
+.field private static final synthetic i:[Lenw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v7, 0x4
 
-    const/4 v0, 0x1
+    const/4 v6, 0x3
 
-    invoke-static {p1, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    const/4 v5, 0x2
 
-    move-result-object v0
+    const/4 v4, 0x1
 
-    check-cast v0, Ljxn;
+    const/4 v3, 0x0
 
-    iput-object v0, p0, Lenw;->a:Ljxn;
+    new-instance v0, Lenw;
 
-    const/4 v0, 0x2
+    const-string v1, "INIT"
 
-    invoke-static {p2, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-direct {v0, v1, v3}, Lenw;-><init>(Ljava/lang/String;I)V
 
-    move-result-object v0
+    sput-object v0, Lenw;->a:Lenw;
 
-    check-cast v0, Ljxn;
+    new-instance v0, Lenw;
 
-    iput-object v0, p0, Lenw;->b:Ljxn;
+    const-string v1, "CREATED"
 
-    const/4 v0, 0x3
+    invoke-direct {v0, v1, v4}, Lenw;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {p3, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    sput-object v0, Lenw;->b:Lenw;
 
-    move-result-object v0
+    new-instance v0, Lenw;
 
-    check-cast v0, Ljxn;
+    const-string v1, "STARTED"
 
-    iput-object v0, p0, Lenw;->c:Ljxn;
+    invoke-direct {v0, v1, v5}, Lenw;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x4
+    sput-object v0, Lenw;->c:Lenw;
 
-    invoke-static {p4, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    new-instance v0, Lenw;
 
-    move-result-object v0
+    const-string v1, "STOPPED"
 
-    check-cast v0, Ljxn;
+    invoke-direct {v0, v1, v6}, Lenw;-><init>(Ljava/lang/String;I)V
 
-    iput-object v0, p0, Lenw;->d:Ljxn;
+    sput-object v0, Lenw;->d:Lenw;
 
-    const/4 v0, 0x5
+    new-instance v0, Lenw;
 
-    invoke-static {p5, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    const-string v1, "SHUTTER_BUTTON_DRAWN"
 
-    move-result-object v0
+    invoke-direct {v0, v1, v7}, Lenw;-><init>(Ljava/lang/String;I)V
 
-    check-cast v0, Ljxn;
+    sput-object v0, Lenw;->e:Lenw;
 
-    iput-object v0, p0, Lenw;->e:Ljxn;
+    new-instance v0, Lenw;
 
-    const/4 v0, 0x6
+    const-string v1, "SHUTTER_BUTTON_ENABLED"
 
-    invoke-static {p6, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    const/4 v2, 0x5
 
-    move-result-object v0
+    invoke-direct {v0, v1, v2}, Lenw;-><init>(Ljava/lang/String;I)V
 
-    check-cast v0, Ljxn;
+    sput-object v0, Lenw;->f:Lenw;
 
-    iput-object v0, p0, Lenw;->f:Ljxn;
+    new-instance v0, Lenw;
 
-    const/4 v0, 0x7
+    const-string v1, "ANY"
 
-    invoke-static {p7, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    const/4 v2, 0x6
 
-    move-result-object v0
+    invoke-direct {v0, v1, v2}, Lenw;-><init>(Ljava/lang/String;I)V
 
-    check-cast v0, Ljxn;
+    sput-object v0, Lenw;->g:Lenw;
 
-    iput-object v0, p0, Lenw;->g:Ljxn;
+    new-instance v0, Lenw;
+
+    const-string v1, "INVALID"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lenw;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lenw;->h:Lenw;
 
     const/16 v0, 0x8
 
-    invoke-static {p8, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    new-array v0, v0, [Lenw;
 
-    move-result-object v0
+    sget-object v1, Lenw;->a:Lenw;
 
-    check-cast v0, Ljxn;
+    aput-object v1, v0, v3
 
-    iput-object v0, p0, Lenw;->h:Ljxn;
+    sget-object v1, Lenw;->b:Lenw;
 
-    const/16 v0, 0x9
+    aput-object v1, v0, v4
 
-    invoke-static {p9, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    sget-object v1, Lenw;->c:Lenw;
 
-    move-result-object v0
+    aput-object v1, v0, v5
 
-    check-cast v0, Ljxn;
+    sget-object v1, Lenw;->d:Lenw;
 
-    iput-object v0, p0, Lenw;->i:Ljxn;
+    aput-object v1, v0, v6
 
-    const/16 v0, 0xa
+    sget-object v1, Lenw;->e:Lenw;
 
-    invoke-static {p10, v0}, Lenw;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    aput-object v1, v0, v7
 
-    move-result-object v0
+    const/4 v1, 0x5
 
-    check-cast v0, Ljxn;
+    sget-object v2, Lenw;->f:Lenw;
 
-    iput-object v0, p0, Lenw;->j:Ljxn;
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Lenw;->g:Lenw;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    sget-object v2, Lenw;->h:Lenw;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lenw;->i:[Lenw;
 
     return-void
 .end method
 
-.method static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    if-nez p0, :cond_0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    return-void
+.end method
 
-    const/16 v1, 0x5d
+.method public static values()[Lenw;
+    .locals 1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    sget-object v0, Lenw;->i:[Lenw;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-virtual {v0}, [Lenw;->clone()Ljava/lang/Object;
 
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
+    move-result-object v0
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, [Lenw;
 
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    return-object p0
+    return-object v0
 .end method

@@ -1,46 +1,33 @@
 .class public final Lbah;
-.super Ljava/lang/Object;
+.super Lbam;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/Thread$UncaughtExceptionHandler;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lbam;-><init>(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
-    iput-object p1, p0, Lbah;->a:Ljxn;
+    iput-object p1, p0, Lbah;->a:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method protected final a(Ljava/lang/Throwable;)V
     .locals 2
 
-    iget-object v0, p0, Lbah;->a:Ljxn;
+    iget-object v0, p0, Lbah;->a:Landroid/content/Context;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "com.google.android.apps.camera.legacy.app.silentfeedback.SILENT_FEEDBACK"
 
-    move-result-object v0
+    invoke-static {v0, p1, v1}, Lbaj;->a(Landroid/content/Context;Ljava/lang/Throwable;Ljava/lang/String;)V
 
-    check-cast v0, Lbdl;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbdl;
-
-    return-object v0
+    return-void
 .end method

@@ -1,44 +1,46 @@
-.class public final Lgfk;
+.class final Lgfk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/util/concurrent/Executor;
 
 
-# static fields
-.field public static final a:Lgfk;
+# instance fields
+.field public final a:Ljava/util/concurrent/Executor;
+
+.field private final b:Lidf;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
     .locals 1
 
-    new-instance v0, Lgfk;
-
-    invoke-direct {v0}, Lgfk;-><init>()V
-
-    sput-object v0, Lgfk;->a:Lgfk;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lidf;
+
+    invoke-direct {v0}, Lidf;-><init>()V
+
+    iput-object v0, p0, Lgfk;->b:Lidf;
+
+    iput-object p1, p0, Lgfk;->a:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
 
-    new-instance v0, Lgfj;
+    iget-object v0, p0, Lgfk;->b:Lidf;
 
-    invoke-direct {v0}, Lgfj;-><init>()V
+    new-instance v1, Lgfl;
 
-    return-object v0
+    invoke-direct {v1, p0, p1}, Lgfl;-><init>(Lgfk;Ljava/lang/Runnable;)V
+
+    invoke-virtual {v0, v1}, Lidf;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

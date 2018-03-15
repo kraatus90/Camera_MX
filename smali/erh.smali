@@ -1,61 +1,69 @@
-.class public final Lerh;
-.super Libn;
-.source "PG"
+.class final synthetic Lerh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljqv;
+
+
+# instance fields
+.field private final a:Leqt;
+
+.field private final b:Lgly;
+
+.field private final c:Lerj;
+
+.field private final d:Ljava/io/File;
+
+.field private final e:Ljava/io/File;
+
+.field private final f:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Liau;)V
+.method constructor <init>(Leqt;Lgly;Lerj;Ljava/io/File;Ljava/io/File;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Libn;-><init>(Liau;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lerh;->a:Leqt;
+
+    iput-object p2, p0, Lerh;->b:Lgly;
+
+    iput-object p3, p0, Lerh;->c:Lerj;
+
+    iput-object p4, p0, Lerh;->d:Ljava/io/File;
+
+    iput-object p5, p0, Lerh;->e:Ljava/io/File;
+
+    iput-object p6, p0, Lerh;->f:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
-    check-cast p1, Lgmq;
+    iget-object v0, p0, Lerh;->a:Leqt;
 
-    sget-object v0, Lgmq;->b:Lgmq;
+    iget-object v1, p0, Lerh;->b:Lgly;
 
-    if-ne p1, v0, :cond_0
+    iget-object v2, p0, Lerh;->c:Lerj;
 
-    const/4 v0, 0x1
+    iget-object v3, p0, Lerh;->d:Ljava/io/File;
 
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v4, p0, Lerh;->e:Ljava/io/File;
+
+    iget-object v5, p0, Lerh;->f:Ljava/lang/String;
+
+    move-object v6, p1
+
+    check-cast v6, Ljava/lang/Throwable;
+
+    invoke-virtual/range {v0 .. v6}, Leqt;->a(Lgly;Lerj;Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/io/File;
 
     move-result-object v0
 
     return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lgmq;->b:Lgmq;
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    sget-object v0, Lgmq;->a:Lgmq;
-
-    goto :goto_0
 .end method

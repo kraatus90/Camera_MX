@@ -1,52 +1,64 @@
-.class public final Lilr;
-.super Ljava/lang/Object;
+.class final Lilr;
+.super Linh;
 .source "PG"
-
-# interfaces
-.implements Lilj;
 
 
 # instance fields
-.field private synthetic a:Likg;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private final synthetic b:Lilp;
 
 
 # direct methods
-.method public constructor <init>(Likg;)V
-    .locals 0
+.method constructor <init>(Lilp;Link;)V
+    .locals 2
 
-    iput-object p1, p0, Lilr;->a:Likg;
+    iput-object p1, p0, Lilr;->b:Lilp;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Linh;-><init>(Link;)V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lilr;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lilf;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    check-cast p1, Ljava/lang/Iterable;
+    iget-object v0, p0, Lilr;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Lilr;->a:Likg;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    invoke-static {p1, p2, v0}, Licy;->b(Ljava/lang/Iterable;Ljava/util/concurrent/Executor;Likg;)Lilf;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    return-object v0
+    invoke-super {p0}, Linh;->close()V
+
+    iget-object v0, p0, Lilr;->b:Lilp;
+
+    invoke-virtual {v0}, Lilp;->i()V
+
+    :cond_0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final finalize()V
+    .locals 0
 
-    iget-object v0, p0, Lilr;->a:Likg;
+    invoke-virtual {p0}, Lilr;->close()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

@@ -1,60 +1,64 @@
-.class final Ldtp;
+.class public final Ldtp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldtm;
+.field private final a:Lkgv;
 
-.field private synthetic b:Ldtm;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldtm;Ldtm;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldtp;->a:Ldtm;
-
-    iput-object p2, p0, Ldtp;->b:Ldtm;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldtp;->a:Lkgv;
+
+    iput-object p2, p0, Ldtp;->b:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Lkgv;Lkgv;)Ldtp;
     .locals 1
 
-    check-cast p1, Ljava/lang/Integer;
+    new-instance v0, Ldtp;
 
-    if-eqz p1, :cond_0
+    invoke-direct {v0, p0, p1}, Ldtp;-><init>(Lkgv;Lkgv;)V
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    iget-object v0, p0, Ldtp;->a:Ldtm;
-
-    invoke-interface {v0}, Ldtm;->a()Liau;
-
-    move-result-object v0
-
-    :goto_0
     return-object v0
+.end method
 
-    :cond_0
-    iget-object v0, p0, Ldtp;->b:Ldtm;
 
-    invoke-interface {v0}, Ldtm;->a()Liau;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
+
+    new-instance v2, Ldtn;
+
+    iget-object v0, p0, Ldtp;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Liih;
+
+    iget-object v1, p0, Ldtp;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liay;
+
+    invoke-direct {v2, v0, v1}, Ldtn;-><init>(Liih;Liay;)V
+
+    return-object v2
 .end method

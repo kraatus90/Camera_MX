@@ -1,58 +1,124 @@
 .class final Ljnx;
-.super Ljmf;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljoa;
 
 
 # instance fields
-.field private synthetic a:Ljod;
+.field private final a:Ljava/util/regex/Pattern;
 
-.field private synthetic b:Ljnw;
+.field private final b:I
+
+.field private final c:I
 
 
 # direct methods
-.method constructor <init>(Ljnw;Ljod;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/regex/Pattern;I)V
+    .locals 1
 
-    iput-object p1, p0, Ljnx;->b:Ljnw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljnx;->a:Ljod;
+    iput-object p1, p0, Ljnx;->a:Ljava/util/regex/Pattern;
 
-    invoke-direct {p0}, Ljmf;-><init>()V
+    const/4 v0, 0x1
+
+    iput v0, p0, Ljnx;->b:I
+
+    iput p2, p0, Ljnx;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
+.method public final a(Ljava/util/regex/Matcher;)J
+    .locals 2
+
+    iget v0, p0, Ljnx;->b:I
+
+    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final a()Ljava/util/regex/Pattern;
     .locals 1
 
-    iget-object v0, p0, Ljnx;->a:Ljod;
-
-    iget-object v0, v0, Ljod;->a:Ljava/lang/Object;
+    iget-object v0, p0, Ljnx;->a:Ljava/util/regex/Pattern;
 
     return-object v0
 .end method
 
-.method public final b()I
+.method public final b(Ljava/util/regex/Matcher;)I
     .locals 2
 
-    iget-object v0, p0, Ljnx;->a:Ljod;
+    iget v0, p0, Ljnx;->c:I
 
-    iget v0, v0, Ljod;->b:I
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_1
+
+    iget v0, p0, Ljnx;->c:I
+
+    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    move-result-object v0
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Ljnx;->b:Ljnw;
+    new-instance v0, Ljoe;
 
-    iget-object v1, p0, Ljnx;->a:Ljod;
+    const-string v1, "timestamp"
 
-    iget-object v1, v1, Ljod;->a:Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljoe;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljnw;->a(Ljava/lang/Object;)I
+    throw v0
+
+    :cond_0
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    :cond_0
+    return v0
+
+    :cond_1
+    new-instance v0, Ljoe;
+
+    const-string v1, "timestamp"
+
+    invoke-direct {v0, v1}, Ljoe;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final c(Ljava/util/regex/Matcher;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final d(Ljava/util/regex/Matcher;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final e(Ljava/util/regex/Matcher;)Z
+    .locals 1
+
+    const/4 v0, 0x0
+
     return v0
 .end method

@@ -1,8 +1,15 @@
-.class public interface abstract Lbpp;
-.super Ljava/lang/Object;
+.class public final Lbpp;
+.super Lbpm;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a(Ljava/util/List;)V
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lbpm;-><init>(Ljava/lang/String;Z)V
+
+    return-void
 .end method

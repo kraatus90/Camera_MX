@@ -6,9 +6,9 @@
 # instance fields
 .field public a:F
 
-.field public b:Lhsn;
+.field public b:Lhjn;
 
-.field public c:Lhin;
+.field public c:Lhjo;
 
 
 # direct methods
@@ -23,9 +23,9 @@
 
     iput v0, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a:F
 
-    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhsn;
+    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhjn;
 
-    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhin;
+    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhjo;
 
     invoke-direct {p0}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b()V
 
@@ -43,9 +43,9 @@
 
     iput v0, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a:F
 
-    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhsn;
+    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhjn;
 
-    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhin;
+    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhjo;
 
     invoke-direct {p0}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b()V
 
@@ -63,9 +63,9 @@
 
     iput v0, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->a:F
 
-    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhsn;
+    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b:Lhjn;
 
-    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhin;
+    iput-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhjo;
 
     invoke-direct {p0}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->b()V
 
@@ -75,9 +75,9 @@
 .method private final b()V
     .locals 1
 
-    new-instance v0, Lhim;
+    new-instance v0, Lhjm;
 
-    invoke-direct {v0, p0}, Lhim;-><init>(Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;)V
+    invoke-direct {v0, p0}, Lhjm;-><init>(Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;)V
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
@@ -102,7 +102,7 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhin;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhjo;
 
     if-eqz v0, :cond_0
 
@@ -136,9 +136,9 @@
 
     add-int/2addr v0, v1
 
-    iget-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhin;
+    iget-object v1, p0, Lcom/google/android/apps/refocus/viewer/RefocusBokehSeekBar;->c:Lhjo;
 
-    invoke-interface {v1, v0}, Lhin;->a(I)V
+    invoke-interface {v1, v0}, Lhjo;->a(I)V
 
     goto :goto_0
 .end method

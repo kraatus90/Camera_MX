@@ -1,20 +1,14 @@
-.class public final Ljfc;
+.class final Ljfc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
-
-
-# instance fields
-.field private synthetic a:Ljava/io/StringWriter;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/StringWriter;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljfc;->a:Ljava/io/StringWriter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,23 +17,12 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Ljcs;
+    const/4 v0, 0x0
 
-    instance-of v0, p1, Ljcq;
+    new-array v0, v0, [Liyr;
 
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljcx;
-
-    iget-object v1, p0, Ljfc;->a:Ljava/io/StringWriter;
-
-    invoke-direct {v0, p1, v1}, Ljcx;-><init>(Ljcs;Ljava/io/Writer;)V
-
-    move-object p1, v0
-
-    :cond_0
-    return-object p1
+    return-object v0
 .end method

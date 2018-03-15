@@ -1,56 +1,48 @@
-.class Ldc;
+.class final Ldc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcx;
+.implements Ldd;
 
 
 # instance fields
-.field public a:Ldd;
+.field private final a:Landroid/view/ViewGroupOverlay;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/view/View;)V
+.method constructor <init>(Landroid/view/ViewGroup;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ldd;
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getOverlay()Landroid/view/ViewGroupOverlay;
 
-    invoke-direct {v0, p1, p2, p3, p0}, Ldd;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/view/View;Ldc;)V
+    move-result-object v0
 
-    iput-object v0, p0, Ldc;->a:Ldd;
-
-    return-void
-.end method
-
-.method constructor <init>(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/view/View;B)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Ldc;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/view/View;)V
+    iput-object v0, p0, Ldc;->a:Landroid/view/ViewGroupOverlay;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/View;)V
+.method public final a(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Ldc;->a:Ldd;
+    iget-object v0, p0, Ldc;->a:Landroid/view/ViewGroupOverlay;
 
-    invoke-virtual {v0, p1}, Ldd;->a(Landroid/view/View;)V
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroupOverlay;->add(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public b(Landroid/view/View;)V
+.method public final b(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Ldc;->a:Ldd;
+    iget-object v0, p0, Ldc;->a:Landroid/view/ViewGroupOverlay;
 
-    invoke-virtual {v0, p1}, Ldd;->b(Landroid/view/View;)V
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroupOverlay;->remove(Landroid/view/View;)V
 
     return-void
 .end method

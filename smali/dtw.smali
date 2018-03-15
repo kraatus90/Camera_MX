@@ -3,54 +3,134 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Limu;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Limu;
+
+.field private final b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method public constructor <init>(Limu;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldtw;->a:Ljxn;
+    iput-object p1, p0, Ldtw;->a:Limu;
+
+    iput-object p2, p0, Ldtw;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
+
+# virtual methods
+.method public final a(Ljava/util/List;Limv;Landroid/os/Handler;)I
+    .locals 3
+
+    iget-object v0, p0, Ldtw;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;->b()V
+
+    iget-object v0, p0, Ldtw;->a:Limu;
+
+    new-instance v1, Ldtx;
+
+    iget-object v2, p0, Ldtw;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
+
+    invoke-direct {v1, p2, v2}, Ldtx;-><init>(Limv;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
+
+    invoke-interface {v0, p1, v1, p3}, Limu;->a(Ljava/util/List;Limv;Landroid/os/Handler;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final a()V
     .locals 1
 
-    new-instance v0, Ldtw;
+    iget-object v0, p0, Ldtw;->a:Limu;
 
-    invoke-direct {v0, p0}, Ldtw;-><init>(Ljxn;)V
+    invoke-interface {v0}, Limu;->a()V
+
+    return-void
+.end method
+
+.method public final a(Ljava/util/List;)V
+    .locals 1
+
+    iget-object v0, p0, Ldtw;->a:Limu;
+
+    invoke-interface {v0, p1}, Limu;->a(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final b(Ljava/util/List;Limv;Landroid/os/Handler;)I
+    .locals 3
+
+    iget-object v0, p0, Ldtw;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;->b()V
+
+    iget-object v0, p0, Ldtw;->a:Limu;
+
+    new-instance v1, Ldtx;
+
+    iget-object v2, p0, Ldtw;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
+
+    invoke-direct {v1, p2, v2}, Ldtx;-><init>(Limv;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
+
+    invoke-interface {v0, p1, v1, p3}, Limu;->b(Ljava/util/List;Limv;Landroid/os/Handler;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b()Limz;
+    .locals 1
+
+    iget-object v0, p0, Ldtw;->a:Limu;
+
+    invoke-interface {v0}, Limu;->b()Limz;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
+.method public final c()V
+    .locals 1
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    iget-object v0, p0, Ldtw;->a:Limu;
 
-    iget-object v0, p0, Ldtw;->a:Ljxn;
+    invoke-interface {v0}, Limu;->c()V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return-void
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Ldtw;->a:Limu;
+
+    invoke-interface {v0}, Limu;->close()V
+
+    return-void
+.end method
+
+.method public final d()Landroid/view/Surface;
+    .locals 1
+
+    iget-object v0, p0, Ldtw;->a:Limu;
+
+    invoke-interface {v0}, Limu;->d()Landroid/view/Surface;
 
     move-result-object v0
-
-    check-cast v0, Ldvc;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldvc;
 
     return-object v0
 .end method

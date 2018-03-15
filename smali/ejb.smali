@@ -2,65 +2,100 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:F
 
-.field private b:Ljxn;
+.field public b:D
+
+.field public c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lejb;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lejb;->b:Ljxn;
+    iput v0, p0, Lejb;->a:F
+
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+
+    iput-wide v0, p0, Lejb;->b:D
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lejb;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method final a()V
+    .locals 6
 
-    iget-object v0, p0, Lejb;->a:Ljxn;
+    const v0, 0x3e23d70b    # 0.16000001f
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-wide v2, p0, Lejb;->b:D
 
-    move-result-object v0
+    const-wide/16 v4, 0x0
 
-    check-cast v0, Licv;
+    cmpl-double v1, v2, v4
 
-    iget-object v1, p0, Lejb;->b:Ljxn;
+    if-lez v1, :cond_0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-wide v2, p0, Lejb;->b:D
 
-    move-result-object v1
+    const-wide v4, 0x3f9999999999999aL    # 0.025
 
-    check-cast v1, Landroid/content/Context;
+    cmpl-double v1, v2, v4
 
-    new-instance v2, Leiz;
+    if-lez v1, :cond_1
 
-    invoke-direct {v2, v1}, Leiz;-><init>(Landroid/content/Context;)V
+    const v0, 0x3b23d70b    # 0.0025000002f
 
-    new-instance v1, Lgow;
+    :cond_0
+    :goto_0
+    iget v1, p0, Lejb;->a:F
 
-    invoke-direct {v1, v0, v2}, Lgow;-><init>(Licv;Ljava/lang/Runnable;)V
+    cmpl-float v0, v1, v0
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    if-lez v0, :cond_3
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    :goto_1
+    invoke-static {v0}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->a(Z)V
 
-    check-cast v0, Lgow;
+    return-void
 
-    return-object v0
+    :cond_1
+    iget-wide v2, p0, Lejb;->b:D
+
+    const-wide v4, 0x3f847ae147ae147bL    # 0.01
+
+    cmpg-double v1, v2, v4
+
+    if-gez v1, :cond_0
+
+    iget-boolean v0, p0, Lejb;->c:Z
+
+    if-eqz v0, :cond_2
+
+    const v0, 0x3c23d70b    # 0.010000001f
+
+    goto :goto_0
+
+    :cond_2
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_1
 .end method

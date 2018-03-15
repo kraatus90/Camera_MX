@@ -1,61 +1,39 @@
-.class final Lccj;
-.super Luq;
-.source "PG"
+.class final synthetic Lccj;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcce;
+.field private final a:Lblt;
 
-.field private synthetic b:Lcbd;
-
-.field private synthetic c:Lcci;
+.field private final b:Lblv;
 
 
 # direct methods
-.method constructor <init>(Lcci;Lcce;Lcbd;)V
+.method constructor <init>(Lblt;Lblv;)V
     .locals 0
 
-    iput-object p1, p0, Lccj;->c:Lcci;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lccj;->a:Lcce;
+    iput-object p1, p0, Lccj;->a:Lblt;
 
-    iput-object p3, p0, Lccj;->b:Lcbd;
-
-    invoke-direct {p0}, Luq;-><init>()V
+    iput-object p2, p0, Lccj;->b:Lblv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v1, p0, Lccj;->a:Lcce;
+    iget-object v0, p0, Lccj;->a:Lblt;
 
-    iget-object v0, p0, Lccj;->b:Lcbd;
+    iget-object v1, p0, Lccj;->b:Lblv;
 
-    iget-object v0, v0, Lcbd;->a:Lcdw;
-
-    iget-object v2, p0, Lccj;->c:Lcci;
-
-    iget-object v2, v2, Lcci;->d:Ljig;
-
-    invoke-interface {v2}, Ljig;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-ne v0, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {v1, v0}, Lcce;->c(Z)V
+    iput-object v1, v0, Lblt;->a:Lbls;
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

@@ -1,80 +1,128 @@
 .class final Ljec;
-.super Ljea;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljea;-><init>(Ljava/lang/String;B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
-    .locals 5
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 9
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readFloat()F
+    const/4 v8, 0x3
 
-    move-result v0
+    const/4 v7, 0x0
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readFloat()F
+    const-class v0, Ljnq;
 
-    move-result v1
+    const-string v1, "default"
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readFloat()F
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readFloat()F
+    check-cast v0, Ljnq;
 
-    move-result v3
+    const-class v1, Ljmu;
 
-    new-instance v4, Landroid/graphics/RectF;
+    const-string v2, "chroma_histogram_frame_distance_metric"
 
-    invoke-direct {v4, v0, v1, v2, v3}, Landroid/graphics/RectF;-><init>(FFFF)V
+    invoke-virtual {p1, v1, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-object v4
-.end method
+    move-result-object v1
 
-.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
-    .locals 2
+    check-cast v1, Ljmu;
 
-    instance-of v0, p1, Landroid/graphics/RectF;
+    const-class v2, Ljjz;
 
-    if-nez v0, :cond_0
+    const-string v3, "post_proc_quality_metric"
 
-    new-instance v0, Ljava/io/IOException;
+    invoke-virtual {p1, v2, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v1, "Incorrect type for serialization"
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    check-cast v2, Ljjz;
 
-    throw v0
+    const/4 v3, 0x6
 
-    :cond_0
-    check-cast p1, Landroid/graphics/RectF;
+    new-array v4, v3, [Ljko;
 
-    iget v0, p1, Landroid/graphics/RectF;->left:F
+    const-class v3, Ljko;
 
-    invoke-virtual {p2, v0}, Ljava/io/DataOutputStream;->writeFloat(F)V
+    const-string v5, "continuous_action"
 
-    iget v0, p1, Landroid/graphics/RectF;->top:F
+    invoke-virtual {p1, v3, v5}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {p2, v0}, Ljava/io/DataOutputStream;->writeFloat(F)V
+    move-result-object v3
 
-    iget v0, p1, Landroid/graphics/RectF;->right:F
+    check-cast v3, Ljko;
 
-    invoke-virtual {p2, v0}, Ljava/io/DataOutputStream;->writeFloat(F)V
+    aput-object v3, v4, v7
 
-    iget v0, p1, Landroid/graphics/RectF;->bottom:F
+    const/4 v3, 0x1
 
-    invoke-virtual {p2, v0}, Ljava/io/DataOutputStream;->writeFloat(F)V
+    new-instance v5, Ljki;
 
-    return-void
+    invoke-direct {v5, v2}, Ljki;-><init>(Ljjz;)V
+
+    aput-object v5, v4, v3
+
+    const/4 v5, 0x2
+
+    const-class v3, Ljko;
+
+    const-string v6, "image_sharpness_filter"
+
+    invoke-virtual {p1, v3, v6}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljko;
+
+    aput-object v3, v4, v5
+
+    const-class v3, Ljko;
+
+    const-string v5, "face_quality_filter"
+
+    invoke-virtual {p1, v3, v5}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljko;
+
+    aput-object v3, v4, v8
+
+    const/4 v3, 0x4
+
+    new-instance v5, Ljky;
+
+    invoke-direct {v5, v0, v2, v1, v7}, Ljky;-><init>(Ljnq;Ljjz;Ljmu;B)V
+
+    aput-object v5, v4, v3
+
+    const/4 v0, 0x5
+
+    new-instance v1, Ljls;
+
+    invoke-direct {v1, v8}, Ljls;-><init>(I)V
+
+    aput-object v1, v4, v0
+
+    invoke-static {v4}, Ljkj;->a([Ljko;)Ljkj;
+
+    move-result-object v0
+
+    return-object v0
 .end method

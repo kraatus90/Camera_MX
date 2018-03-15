@@ -1,242 +1,398 @@
 .class public final Ljbv;
-.super Ljbe;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
 
 
 # instance fields
-.field private a:Ljan;
-
-.field private b:F
+.field private final a:Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
 
 
 # direct methods
-.method public constructor <init>(Ljan;F)V
+.method public constructor <init>(Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;)V
     .locals 0
 
-    invoke-direct {p0}, Ljbe;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Ljbv;->a:Ljan;
-
-    iput p2, p0, Ljbv;->b:F
+    iput-object p1, p0, Ljbv;->a:Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Ljaz;
-    .locals 13
+.method public final create(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+    .locals 22
 
-    const-wide/16 v4, -0x1
+    new-instance v3, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;
 
-    iget-object v0, p0, Ljbv;->a:Ljan;
+    move-object/from16 v0, p1
 
-    invoke-interface {v0}, Ljan;->a()V
+    invoke-direct {v3, v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)V
 
-    invoke-virtual {p1}, Ljaz;->iterator()Ljava/util/Iterator;
+    new-instance v4, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphInputSource;
 
-    move-result-object v1
+    const-string v5, "grayImage"
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    move-object/from16 v0, p1
 
-    move-result v0
+    invoke-direct {v4, v0, v5}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphInputSource;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    new-instance v5, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphInputSource;
 
-    move-result-object v0
+    const-string v6, "rgbImage"
 
-    check-cast v0, Ljava/lang/Long;
+    move-object/from16 v0, p1
 
-    iget-object v2, p0, Ljbv;->a:Ljan;
+    invoke-direct {v5, v0, v6}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphInputSource;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v3, v5}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    move-result-wide v6
+    new-instance v6, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
 
-    invoke-interface {v2, v6, v7}, Ljan;->b(J)V
+    const-string v7, "faceCountOutput"
 
-    goto :goto_0
+    move-object/from16 v0, p1
 
-    :cond_0
-    invoke-static {p1}, Liui;->d(Ljava/lang/Iterable;)Ljava/util/HashSet;
+    invoke-direct {v6, v0, v7}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    move-result-object v8
+    invoke-virtual {v3, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    :cond_1
-    :goto_1
-    invoke-virtual {v8}, Ljava/util/HashSet;->size()I
+    new-instance v7, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
 
-    move-result v0
+    const-string v8, "faceIsSmilingOutput"
 
-    if-lez v0, :cond_3
+    move-object/from16 v0, p1
 
-    const v0, 0x7f7fffff    # Float.MAX_VALUE
+    invoke-direct {v7, v0, v8}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-virtual {v8}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v3, v7}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    move-result-object v9
+    new-instance v8, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
 
-    move-wide v2, v4
+    const-string v9, "faceIsLeftEyeOpenOutput"
 
-    move v1, v0
+    move-object/from16 v0, p1
 
-    :goto_2
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v8, v0, v9}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    move-result v0
+    invoke-virtual {v3, v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    if-eqz v0, :cond_2
+    new-instance v9, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
 
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const-string v10, "faceIsRightEyeOpenOutput"
 
-    move-result-object v0
+    move-object/from16 v0, p1
 
-    check-cast v0, Ljava/lang/Long;
+    invoke-direct {v9, v0, v10}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v3, v9}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    move-result-wide v6
+    new-instance v10, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
 
-    iget-object v0, p0, Ljbv;->a:Ljan;
+    const-string v11, "faceSharpnessOutput"
 
-    invoke-interface {v0, v6, v7}, Ljan;->a(J)Ljfx;
+    move-object/from16 v0, p1
 
-    move-result-object v0
+    invoke-direct {v10, v0, v11}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljfx;->a()F
+    invoke-virtual {v3, v10}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    move-result v0
+    new-instance v11, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;
 
-    cmpg-float v10, v0, v1
+    const-string v12, "faceCountFeatureFilter"
 
-    if-gez v10, :cond_4
+    move-object/from16 v0, p1
 
-    move v2, v0
+    invoke-direct {v11, v0, v12}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    move-wide v0, v6
+    invoke-virtual {v3, v11}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    :goto_3
-    move-wide v11, v0
+    const-string v12, "FACE_COUNT"
 
-    move v1, v2
+    const-string v13, "faceCountFeatureFilter"
 
-    move-wide v2, v11
+    const-string v14, "featureType"
 
-    goto :goto_2
+    invoke-virtual {v3, v12, v13, v14}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
 
-    :cond_2
-    iget v0, p0, Ljbv;->b:F
+    new-instance v12, Lcom/google/android/libraries/smartburst/filterpacks/base/ArrayLengthFilter;
 
-    cmpl-float v0, v1, v0
+    const-string v13, "faceCountFilter"
 
-    if-gez v0, :cond_3
+    move-object/from16 v0, p1
 
-    cmp-long v0, v2, v4
+    invoke-direct {v12, v0, v13}, Lcom/google/android/libraries/smartburst/filterpacks/base/ArrayLengthFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v3, v12}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    new-instance v13, Lcom/google/android/libraries/smartburst/filterpacks/face/PittPattFaceDetectorFilter;
 
-    move-result-object v0
+    const-string v14, "pittPattFaceDetector"
 
-    invoke-virtual {v8, v0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+    move-object/from16 v0, p1
 
-    iget-object v0, p0, Ljbv;->a:Ljan;
+    invoke-direct {v13, v0, v14}, Lcom/google/android/libraries/smartburst/filterpacks/face/PittPattFaceDetectorFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-interface {v0, v2, v3}, Ljan;->c(J)V
+    invoke-virtual {v3, v13}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    goto :goto_1
+    new-instance v14, Lcom/google/android/libraries/smartburst/filterpacks/face/PittPattFaceFeaturesFilter;
 
-    :cond_3
-    new-instance v0, Ljaz;
+    const-string v15, "pittpattFaceFeatures"
 
-    invoke-static {v8}, Liui;->b(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+    move-object/from16 v0, p1
 
-    move-result-object v1
+    invoke-direct {v14, v0, v15}, Lcom/google/android/libraries/smartburst/filterpacks/face/PittPattFaceFeaturesFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljaz;-><init>(Ljava/util/Collection;)V
+    invoke-virtual {v3, v14}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    return-object v0
+    new-instance v15, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;
 
-    :cond_4
-    move-wide v11, v2
+    const-string v16, "faceIsSmilingFeatureFilter"
 
-    move v2, v1
+    move-object/from16 v0, p1
 
-    move-wide v0, v11
+    move-object/from16 v1, v16
 
-    goto :goto_3
-.end method
+    invoke-direct {v15, v0, v1}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-.method public final toString()Ljava/lang/String;
-    .locals 5
+    invoke-virtual {v3, v15}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
 
-    const-string v0, "ScoreThresholdSegmentFilter[scorer="
+    const-string v16, "FACE_IS_SMILING_AGGREGATE_SCORE"
 
-    iget-object v1, p0, Ljbv;->a:Ljan;
+    const-string v17, "faceIsSmilingFeatureFilter"
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const-string v18, "featureType"
 
-    move-result-object v1
+    move-object/from16 v0, v16
 
-    iget v2, p0, Ljbv;->b:F
+    move-object/from16 v1, v17
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-object/from16 v2, v18
+
+    invoke-virtual {v3, v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    new-instance v16, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;
+
+    const-string v17, "faceIsLeftEyeOpenFeatureFilter"
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v17
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v3, v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+
+    const-string v17, "FACE_IS_LEFT_EYE_OPEN_AGGREGATE_SCORE"
+
+    const-string v18, "faceIsLeftEyeOpenFeatureFilter"
+
+    const-string v19, "featureType"
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v18
+
+    move-object/from16 v2, v19
+
+    invoke-virtual {v3, v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    new-instance v17, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;
+
+    const-string v18, "faceIsRightEyeOpenFeatureFilter"
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v18
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v3, v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+
+    const-string v18, "FACE_IS_RIGHT_EYE_OPEN_AGGREGATE_SCORE"
+
+    const-string v19, "faceIsRightEyeOpenFeatureFilter"
+
+    const-string v20, "featureType"
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, v19
+
+    move-object/from16 v2, v20
+
+    invoke-virtual {v3, v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    new-instance v18, Lcom/google/android/libraries/smartburst/filterpacks/face/PittPattFaceSharpnessFilter;
+
+    const-string v19, "faceSharpnessFilter"
+
+    move-object/from16 v0, v18
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v19
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterpacks/face/PittPattFaceSharpnessFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v3, v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+
+    new-instance v19, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/BranchFilter;
+
+    const-string v20, "facesBranch"
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v20
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/BranchFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v3, v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+
+    const-string v20, "frame"
+
+    const-string v21, "grayScaleImage"
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v21
+
+    invoke-virtual {v3, v4, v0, v13, v1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "faces"
+
+    const-string v20, "input"
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v20
+
+    invoke-virtual {v3, v13, v4, v0, v1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "toFaceCount"
+
+    const-string v13, "array"
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v3, v0, v4, v12, v13}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "arrayLength"
+
+    const-string v13, "featureValue"
+
+    invoke-virtual {v3, v12, v4, v11, v13}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "feature"
+
+    const-string v12, "frame"
+
+    invoke-virtual {v3, v11, v4, v6, v12}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "toFaceFeatures"
+
+    const-string v6, "faces"
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v3, v0, v4, v14, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "smilingAggregateScore"
+
+    const-string v6, "featureValue"
+
+    invoke-virtual {v3, v14, v4, v15, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "feature"
+
+    const-string v6, "frame"
+
+    invoke-virtual {v3, v15, v4, v7, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "leftEyeOpenAggregateScore"
+
+    const-string v6, "featureValue"
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v3, v14, v4, v0, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "feature"
+
+    const-string v6, "frame"
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v3, v0, v4, v8, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "rightEyeOpenAggregateScore"
+
+    const-string v6, "featureValue"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v3, v14, v4, v0, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "feature"
+
+    const-string v6, "frame"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v3, v0, v4, v9, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "toPittPattFaceSharpness"
+
+    const-string v6, "faces"
+
+    move-object/from16 v0, v19
+
+    move-object/from16 v1, v18
+
+    invoke-virtual {v3, v0, v4, v1, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "frame"
+
+    const-string v6, "image"
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v3, v5, v4, v0, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    const-string v4, "faceSharpness"
+
+    const-string v5, "frame"
+
+    move-object/from16 v0, v18
+
+    invoke-virtual {v3, v0, v4, v10, v5}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Ljbv;->a:Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+
+    invoke-virtual {v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->buildSubGraph(Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x2d
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", threshold="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", min=0]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v3
 .end method

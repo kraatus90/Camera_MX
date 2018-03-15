@@ -1,120 +1,157 @@
 .class public final Lapf;
-.super Landroid/app/Fragment;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lapc;
 
 
 # instance fields
-.field public final a:Laov;
+.field public final a:Lapd;
 
-.field public final b:Lapj;
+.field public b:Z
 
-.field public c:Ladj;
+.field private final c:Landroid/content/Context;
 
-.field public d:Landroid/app/Fragment;
+.field private d:Z
 
-.field private e:Ljava/util/HashSet;
-
-.field private f:Lapf;
+.field private final e:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/content/Context;Lapd;)V
     .locals 1
 
-    new-instance v0, Laov;
-
-    invoke-direct {v0}, Laov;-><init>()V
-
-    invoke-direct {p0, v0}, Lapf;-><init>(Laov;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Laov;)V
-    .locals 1
-    .annotation build Landroid/annotation/SuppressLint;
-        value = {
-            "ValidFragment"
-        }
-    .end annotation
-
-    invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lapg;
 
     invoke-direct {v0, p0}, Lapg;-><init>(Lapf;)V
 
-    iput-object v0, p0, Lapf;->b:Lapj;
+    iput-object v0, p0, Lapf;->e:Landroid/content/BroadcastReceiver;
 
-    new-instance v0, Ljava/util/HashSet;
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    move-result-object v0
 
-    iput-object v0, p0, Lapf;->e:Ljava/util/HashSet;
+    iput-object v0, p0, Lapf;->c:Landroid/content/Context;
 
-    iput-object p1, p0, Lapf;->a:Laov;
+    iput-object p2, p0, Lapf;->a:Lapd;
 
     return-void
 .end method
 
-.method private final a()V
-    .locals 1
+.method static a(Landroid/content/Context;)Z
+    .locals 4
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "MissingPermission"
+        }
+    .end annotation
 
-    iget-object v0, p0, Lapf;->f:Lapf;
+    const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    const-string v0, "connectivity"
 
-    iget-object v0, p0, Lapf;->f:Lapf;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lapf;->e:Ljava/util/HashSet;
+    move-result-object v0
 
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+    check-cast v0, Landroid/net/ConnectivityManager;
 
-    const/4 v0, 0x0
+    const-string v2, "Argument must not be null"
 
-    iput-object v0, p0, Lapf;->f:Lapf;
+    invoke-static {v0, v2}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/ConnectivityManager;
+
+    :try_start_0
+    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    const-string v2, "ConnectivityMonitor"
+
+    const/4 v3, 0x5
+
+    invoke-static {v2, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const-string v2, "ConnectivityMonitor"
+
+    const-string v3, "Failed to determine connectivity status when connectivity changed"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
-    return-void
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final onAttach(Landroid/app/Activity;)V
-    .locals 3
+.method public final b()V
+    .locals 4
 
-    invoke-super {p0, p1}, Landroid/app/Fragment;->onAttach(Landroid/app/Activity;)V
+    iget-boolean v0, p0, Lapf;->d:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lapf;->c:Landroid/content/Context;
+
+    invoke-static {v0}, Lapf;->a(Landroid/content/Context;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lapf;->b:Z
 
     :try_start_0
-    invoke-direct {p0}, Lapf;->a()V
+    iget-object v0, p0, Lapf;->c:Landroid/content/Context;
 
-    invoke-static {p1}, Lacz;->a(Landroid/content/Context;)Lacz;
+    iget-object v1, p0, Lapf;->e:Landroid/content/BroadcastReceiver;
 
-    move-result-object v0
+    new-instance v2, Landroid/content/IntentFilter;
 
-    iget-object v0, v0, Lacz;->f:Laph;
+    const-string v3, "android.net.conn.CONNECTIVITY_CHANGE"
 
-    invoke-virtual {p1}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
+    invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    move-result-object v1
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    invoke-virtual {v0, v1}, Laph;->a(Landroid/app/FragmentManager;)Lapf;
+    const/4 v0, 0x1
 
-    move-result-object v0
-
-    iput-object v0, p0, Lapf;->f:Lapf;
-
-    iget-object v0, p0, Lapf;->f:Lapf;
-
-    if-eq v0, p0, :cond_0
-
-    iget-object v0, p0, Lapf;->f:Lapf;
-
-    iget-object v0, v0, Lapf;->e:Ljava/util/HashSet;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    iput-boolean v0, p0, Lapf;->d:Z
     :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_0
     :goto_0
@@ -123,7 +160,7 @@
     :catch_0
     move-exception v0
 
-    const-string v1, "RMFragment"
+    const-string v1, "ConnectivityMonitor"
 
     const/4 v2, 0x5
 
@@ -133,147 +170,38 @@
 
     if-eqz v1, :cond_0
 
-    const-string v1, "RMFragment"
+    const-string v1, "ConnectivityMonitor"
 
-    const-string v2, "Unable to register fragment with root"
+    const-string v2, "Failed to register"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
 
-.method public final onDestroy()V
-    .locals 1
+.method public final c()V
+    .locals 2
 
-    invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
+    iget-boolean v0, p0, Lapf;->d:Z
 
-    iget-object v0, p0, Lapf;->a:Laov;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Laov;->c()V
+    iget-object v0, p0, Lapf;->c:Landroid/content/Context;
 
-    invoke-direct {p0}, Lapf;->a()V
+    iget-object v1, p0, Lapf;->e:Landroid/content/BroadcastReceiver;
 
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-.method public final onDetach()V
-    .locals 0
+    const/4 v0, 0x0
 
-    invoke-super {p0}, Landroid/app/Fragment;->onDetach()V
-
-    invoke-direct {p0}, Lapf;->a()V
-
-    return-void
-.end method
-
-.method public final onStart()V
-    .locals 1
-
-    invoke-super {p0}, Landroid/app/Fragment;->onStart()V
-
-    iget-object v0, p0, Lapf;->a:Laov;
-
-    invoke-virtual {v0}, Laov;->a()V
-
-    return-void
-.end method
-
-.method public final onStop()V
-    .locals 1
-
-    invoke-super {p0}, Landroid/app/Fragment;->onStop()V
-
-    iget-object v0, p0, Lapf;->a:Laov;
-
-    invoke-virtual {v0}, Laov;->b()V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    const/4 v1, 0x0
-
-    invoke-super {p0}, Landroid/app/Fragment;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x11
-
-    if-lt v0, v3, :cond_0
-
-    invoke-virtual {p0}, Lapf;->getParentFragment()Landroid/app/Fragment;
-
-    move-result-object v0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    :goto_1
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x9
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v1, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "{parent="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    iput-boolean v0, p0, Lapf;->d:Z
 
     :cond_0
-    move-object v0, v1
+    return-void
+.end method
 
-    goto :goto_0
+.method public final d()V
+    .locals 0
 
-    :cond_1
-    move-object v0, v1
-
-    goto :goto_1
+    return-void
 .end method

@@ -1,49 +1,46 @@
-.class final Lgzu;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lgzu;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ljvi;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgzu;->a:Ljvi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lgzu;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
+    iget-object v0, p0, Lgzu;->a:Lkgv;
 
-    iget-object v0, p0, Lgzu;->a:Ljvi;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
+    check-cast v0, Lgza;
 
-    return-void
-.end method
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
+    move-result-object v0
 
-    iget-object v0, p0, Lgzu;->a:Ljvi;
+    check-cast v0, Lgzo;
 
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    return-void
+    return-object v0
 .end method

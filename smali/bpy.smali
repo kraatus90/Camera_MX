@@ -1,46 +1,23 @@
 .class public final Lbpy;
-.super Ljava/lang/Object;
+.super Lbpm;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Ljxn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Lbpy;->a:Ljxn;
+    invoke-direct {p0, p1, v0}, Lbpm;-><init>(Ljava/lang/String;Z)V
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;Z)V
+    .locals 0
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    invoke-direct {p0, p1, p2}, Lbpm;-><init>(Ljava/lang/String;Z)V
 
-    iget-object v0, p0, Lbpy;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    invoke-static {}, Lbpx;->a()Ljht;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljht;
-
-    return-object v0
+    return-void
 .end method

@@ -1,46 +1,35 @@
-.class final Llw;
-.super Ljava/lang/Object;
+.class public final Llw;
+.super Landroid/widget/ArrayAdapter;
 .source "PG"
-
-# interfaces
-.implements Landroid/widget/AbsListView$OnScrollListener;
-
-
-# instance fields
-.field private synthetic a:Landroid/view/View;
-
-.field private synthetic b:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;Landroid/view/View;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;I)V
+    .locals 2
 
-    iput-object p1, p0, Llw;->a:Landroid/view/View;
+    const v0, 0x1020014
 
-    iput-object p2, p0, Llw;->b:Landroid/view/View;
+    const/4 v1, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, v0, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II[Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScroll(Landroid/widget/AbsListView;III)V
+.method public final getItemId(I)J
     .locals 2
 
-    iget-object v0, p0, Llw;->a:Landroid/view/View;
+    int-to-long v0, p1
 
-    iget-object v1, p0, Llw;->b:Landroid/view/View;
-
-    invoke-static {p1, v0, v1}, Landroid/support/v7/app/AlertController;->a(Landroid/view/View;Landroid/view/View;Landroid/view/View;)V
-
-    return-void
+    return-wide v0
 .end method
 
-.method public final onScrollStateChanged(Landroid/widget/AbsListView;I)V
-    .locals 0
+.method public final hasStableIds()Z
+    .locals 1
 
-    return-void
+    const/4 v0, 0x1
+
+    return v0
 .end method

@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public mFeatureId:Ljfs;
+.field public mFeatureId:Ljpe;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljfs;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljpe;
 
     return-void
 .end method
@@ -99,9 +99,9 @@
 
     move-result-object v1
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljpe;
 
-    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljfs;
+    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljpe;
 
     if-nez v2, :cond_0
 
@@ -111,11 +111,11 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v0}, Ljfs;->a(Ljava/lang/String;)Ljfs;
+    invoke-static {v0}, Ljpe;->a(Ljava/lang/String;)Ljpe;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljfs;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;->mFeatureId:Ljpe;
 
     :cond_0
     move-object v1, v0
@@ -164,7 +164,7 @@
 
     new-instance v2, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    invoke-direct {v2, v1, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;[F)V
+    invoke-direct {v2, v1, v0}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
 
     invoke-virtual {v4, v2}, Lcom/google/android/libraries/smartburst/filterfw/FrameValue;->setValue(Ljava/lang/Object;)V
 

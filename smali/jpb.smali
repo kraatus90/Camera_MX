@@ -1,30 +1,20 @@
-.class final Ljpb;
+.class public final Ljpb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljpd;
+.implements Ljoz;
 
 
-# static fields
-.field public static final a:Ljpb;
+# instance fields
+.field private final synthetic a:Ljho;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljpb;
-
-    invoke-direct {v0}, Ljpb;-><init>()V
-
-    sput-object v0, Ljpb;->a:Ljpb;
-
-    return-void
-.end method
-
-.method constructor <init>()V
+.method public constructor <init>(Ljho;)V
     .locals 0
+
+    iput-object p1, p0, Ljpb;->a:Ljho;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,52 +23,76 @@
 
 
 # virtual methods
-.method public final a(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 7
+.method public final a(Ljava/io/Writer;)V
+    .locals 8
 
-    sget-object v0, Ljoz;->a:Ljava/util/logging/Logger;
+    const/4 v2, 0x0
 
-    sget-object v1, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
+    iget-object v0, p0, Ljpb;->a:Ljho;
 
-    const-string v2, "com.google.common.io.Closer$LoggingSuppressor"
+    invoke-virtual {v0}, Ljho;->a()Ljhk;
 
-    const-string v3, "suppress"
+    move-result-object v0
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljhk;->d()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v2
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    const-string v0, "%d,%d%n"
+
+    const/4 v6, 0x2
+
+    new-array v6, v6, [Ljava/lang/Object;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    aput-object v7, v6, v2
+
+    const/4 v7, 0x1
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v4
 
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v4, v6, v7
 
-    move-result-object v5
+    invoke-static {v0, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    move-result-object v0
 
-    move-result v5
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    add-int/lit8 v5, v5, 0x2a
+    add-int/lit8 v0, v1, 0x1
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    move v1, v0
 
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+    goto :goto_0
 
-    const-string v5, "Suppressing exception thrown when closing "
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    move-object v5, p3
-
-    invoke-virtual/range {v0 .. v5}, Ljava/util/logging/Logger;->logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
+    :cond_0
     return-void
 .end method

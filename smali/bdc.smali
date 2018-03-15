@@ -1,36 +1,20 @@
-.class final Lbdc;
+.class public final Lbdc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public final synthetic a:Liht;
-
-.field public final synthetic b:Ljvi;
-
-.field private synthetic c:Landroid/view/Surface;
-
-.field private synthetic d:Lbcv;
-
-.field private synthetic e:Lbdb;
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
 
 # direct methods
-.method constructor <init>(Lbdb;Liht;Landroid/view/Surface;Lbcv;Ljvi;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
     .locals 0
 
-    iput-object p1, p0, Lbdc;->e:Lbdb;
-
-    iput-object p2, p0, Lbdc;->a:Liht;
-
-    iput-object p3, p0, Lbdc;->c:Landroid/view/Surface;
-
-    iput-object p4, p0, Lbdc;->d:Lbcv;
-
-    iput-object p5, p0, Lbdc;->b:Ljvi;
+    iput-object p1, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,115 +23,70 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 4
 
-    iget-object v0, p0, Lbdc;->e:Lbdb;
+    const/4 v3, 0x0
 
-    iget-object v1, v0, Lbdb;->d:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    monitor-enter v1
+    move-result-object v0
 
-    :try_start_0
-    iget-object v0, p0, Lbdc;->e:Lbdb;
+    check-cast v0, Ljava/lang/Float;
 
-    iget-boolean v0, v0, Lbdb;->e:Z
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    if-eqz v0, :cond_0
+    move-result v0
 
-    monitor-exit v1
+    iget-object v1, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    :goto_0
+    iget v1, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->e:F
+
+    mul-float/2addr v1, v0
+
+    add-float/2addr v1, v3
+
+    iget-object v2, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget-object v2, v2, Lcom/google/android/apps/camera/burstchip/BurstChip;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v2, v1}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
+
+    iget-object v1, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget-object v2, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget v2, v2, Lcom/google/android/apps/camera/burstchip/BurstChip;->c:F
+
+    mul-float/2addr v2, v0
+
+    add-float/2addr v2, v3
+
+    invoke-static {v2}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    iput v2, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->j:I
+
+    iget-object v1, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget-object v2, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget v2, v2, Lcom/google/android/apps/camera/burstchip/BurstChip;->d:F
+
+    mul-float/2addr v0, v2
+
+    add-float/2addr v0, v3
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->k:I
+
+    iget-object v0, p0, Lbdc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/burstchip/BurstChip;->requestLayout()V
+
     return-void
-
-    :cond_0
-    sget-object v0, Lbdb;->a:Ljava/lang/String;
-
-    const-string v2, "Send preview command"
-
-    invoke-static {v0, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    iget-object v0, p0, Lbdc;->e:Lbdb;
-
-    iget-object v0, v0, Lbdb;->b:Lbco;
-
-    iget-object v2, p0, Lbdc;->a:Liht;
-
-    invoke-virtual {v0, v2}, Lbco;->a(Liht;)Liia;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lbdc;->c:Landroid/view/Surface;
-
-    invoke-virtual {v0, v2}, Liia;->a(Landroid/view/Surface;)V
-
-    iget-object v2, p0, Lbdc;->e:Lbdb;
-
-    iget-object v2, v2, Lbdb;->c:Lbcx;
-
-    iget-object v3, p0, Lbdc;->a:Liht;
-
-    invoke-interface {v2, v3, v0}, Lbcx;->a(Liht;Liia;)Ljava/util/List;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lbdc;->a:Liht;
-
-    iget-object v3, p0, Lbdc;->d:Lbcv;
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v0, v3, v4}, Liht;->b(Ljava/util/List;Lihu;Landroid/os/Handler;)I
-
-    iget-object v0, p0, Lbdc;->d:Lbcv;
-
-    iget-object v0, v0, Lbcv;->a:Ljvi;
-
-    new-instance v2, Lbdd;
-
-    invoke-direct {v2, p0}, Lbdd;-><init>(Lbdc;)V
-
-    sget-object v3, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v2, v3}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-    :try_end_1
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Lief; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :goto_1
-    :try_start_2
-    monitor-exit v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v0
-
-    :catch_0
-    move-exception v0
-
-    :goto_2
-    :try_start_3
-    iget-object v2, p0, Lbdc;->b:Ljvi;
-
-    invoke-virtual {v2, v0}, Ljsw;->a(Ljava/lang/Throwable;)Z
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_2
 .end method

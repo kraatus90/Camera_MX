@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcxp;
 
 
 # instance fields
-.field private synthetic a:Lcyb;
+.field private final synthetic a:Lcya;
 
 
 # direct methods
-.method constructor <init>(Lcyb;)V
+.method constructor <init>(Lcya;)V
     .locals 0
 
-    iput-object p1, p0, Lcyc;->a:Lcyb;
+    iput-object p1, p0, Lcyc;->a:Lcya;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,22 +23,16 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 2
 
-    iget-object v0, p0, Lcyc;->a:Lcyb;
+    iget-object v0, p0, Lcyc;->a:Lcya;
 
-    iget-object v0, v0, Lcyb;->a:Lcxc;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    iput-boolean v1, v0, Lcya;->h:Z
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    check-cast v0, Lcwg;
-
-    iget-object v0, v0, Lcwg;->x:Lfdj;
-
-    invoke-virtual {v0}, Lgvh;->D()V
-
-    return-void
+    return-object v0
 .end method

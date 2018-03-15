@@ -1,20 +1,20 @@
-.class final Lipq;
+.class public final Lipq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lipn;
 
 
 # instance fields
-.field private synthetic a:Ljava/util/Comparator;
+.field private final synthetic a:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Comparator;)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
-    iput-object p1, p0, Lipq;->a:Ljava/util/Comparator;
+    iput-object p1, p0, Lipq;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,29 +23,10 @@
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lipm;
+    iget-object v0, p0, Lipq;->a:Ljava/lang/Object;
 
-    check-cast p2, Lipm;
-
-    iget v0, p2, Lipm;->b:I
-
-    iget v1, p1, Lipm;->b:I
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lipq;->a:Ljava/util/Comparator;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v0
-
-    :cond_0
-    return v0
+    return-object v0
 .end method

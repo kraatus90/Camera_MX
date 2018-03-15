@@ -1,71 +1,58 @@
 .class final Lagf;
-.super Lage;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lasd;
+
+
+# instance fields
+.field private final synthetic a:Lage;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lage;)V
     .locals 0
 
-    invoke-direct {p0}, Lage;-><init>()V
+    iput-object p1, p0, Lagf;->a:Lage;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    const/4 v0, 0x1
+    new-instance v0, Lagh;
 
-    return v0
-.end method
+    iget-object v1, p0, Lagf;->a:Lage;
 
-.method public final a(Laed;)Z
-    .locals 1
+    iget-object v1, v1, Lage;->a:Lain;
 
-    sget-object v0, Laed;->b:Laed;
+    iget-object v2, p0, Lagf;->a:Lage;
 
-    if-ne p1, v0, :cond_0
+    iget-object v2, v2, Lage;->b:Lain;
 
-    const/4 v0, 0x1
+    iget-object v3, p0, Lagf;->a:Lage;
 
-    :goto_0
-    return v0
+    iget-object v3, v3, Lage;->c:Lain;
 
-    :cond_0
-    const/4 v0, 0x0
+    iget-object v4, p0, Lagf;->a:Lage;
 
-    goto :goto_0
-.end method
+    iget-object v4, v4, Lage;->d:Lain;
 
-.method public final a(ZLaed;Laef;)Z
-    .locals 1
+    iget-object v5, p0, Lagf;->a:Lage;
 
-    sget-object v0, Laed;->d:Laed;
+    iget-object v5, v5, Lage;->e:Lagk;
 
-    if-eq p2, v0, :cond_0
+    iget-object v6, p0, Lagf;->a:Lage;
 
-    sget-object v0, Laed;->e:Laed;
+    iget-object v6, v6, Lage;->f:Lgw;
 
-    if-eq p2, v0, :cond_0
+    invoke-direct/range {v0 .. v6}, Lagh;-><init>(Lain;Lain;Lain;Lain;Lagk;Lgw;)V
 
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
+    return-object v0
 .end method

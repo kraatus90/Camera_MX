@@ -1,42 +1,29 @@
-.class public final Lhzx;
-.super Ljava/lang/Object;
+.class final Lhzx;
+.super Landroid/database/ContentObserver;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
-
-
-# instance fields
-.field public final a:Lhzt;
-
-.field private b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lhzt;Ljava/util/concurrent/Executor;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lhzx;->a:Lhzt;
-
-    iput-object p2, p0, Lhzx;->b:Ljava/util/concurrent/Executor;
+    invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
+.method public final onChange(Z)V
     .locals 2
 
-    iget-object v0, p0, Lhzx;->b:Ljava/util/concurrent/Executor;
+    sget-object v0, Lhzw;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    new-instance v1, Lhzy;
+    const/4 v1, 0x1
 
-    invoke-direct {v1, p0, p1}, Lhzy;-><init>(Lhzx;Ljava/lang/Runnable;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     return-void
 .end method

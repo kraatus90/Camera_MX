@@ -1,40 +1,46 @@
-.class final Lctp;
+.class public final Lctp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lewt;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcsk;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lctp;->a:Lcsk;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lctp;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lctp;->a:Lcsk;
+    iget-object v0, p0, Lctp;->a:Lkgv;
 
-    invoke-virtual {v0}, Lcsk;->s()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lctp;->a:Lcsk;
+    move-result-object v0
 
-    const/4 v1, 0x0
+    check-cast v0, Lket;
 
-    iput-boolean v1, v0, Lcsk;->V:Z
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkeh;
+
+    return-object v0
 .end method

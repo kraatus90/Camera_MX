@@ -3,277 +3,248 @@
 .source "PG"
 
 # interfaces
-.implements Lixk;
+.implements Ljava/lang/Iterable;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field private c:Ljava/io/File;
+.field public final a:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;)V
-    .locals 2
+.method private constructor <init>([I)V
+    .locals 7
+
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lixr;->c:Ljava/io/File;
+    array-length v0, p1
 
-    new-instance v0, Landroid/graphics/BitmapFactory$Options;
+    if-nez v0, :cond_1
 
-    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+    new-array v0, v1, [I
 
-    const/4 v1, 0x1
+    iput-object v0, p0, Lixr;->a:[I
 
-    iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+    :cond_0
+    return-void
 
-    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    :cond_1
+    invoke-static {p1}, Ljava/util/Arrays;->sort([I)V
+
+    aget v0, p1, v1
+
+    add-int/lit8 v0, v0, 0x1
+
+    array-length v5, p1
+
+    move v2, v1
+
+    move v4, v1
+
+    :goto_0
+    if-ge v2, v5, :cond_3
+
+    aget v3, p1, v2
+
+    if-ne v0, v3, :cond_2
+
+    move v0, v1
+
+    :goto_1
+    add-int/2addr v4, v0
+
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    move v0, v3
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    new-array v0, v4, [I
+
+    iput-object v0, p0, Lixr;->a:[I
+
+    iget-object v4, p0, Lixr;->a:[I
+
+    aget v0, p1, v1
+
+    add-int/lit8 v0, v0, 0x1
+
+    array-length v5, p1
+
+    move v3, v1
+
+    :goto_2
+    if-ge v3, v5, :cond_0
+
+    aget v2, p1, v3
+
+    if-eq v0, v2, :cond_4
+
+    add-int/lit8 v0, v1, 0x1
+
+    aput v2, v4, v1
+
+    move v1, v2
+
+    :goto_3
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
+
+    move v6, v0
+
+    move v0, v1
+
+    move v1, v6
+
+    goto :goto_2
+
+    :cond_4
+    move v6, v1
+
+    move v1, v0
+
+    move v0, v6
+
+    goto :goto_3
+.end method
+
+.method public static varargs a([I)Lixr;
+    .locals 2
+
+    new-instance v0, Lixr;
+
+    array-length v1, p0
+
+    invoke-static {p0, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
     move-result-object v1
 
-    invoke-static {v1, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    invoke-direct {v0, v1}, Lixr;-><init>([I)V
 
-    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    if-lez v1, :cond_0
-
-    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    if-gtz v1, :cond_1
-
-    :cond_0
-    new-instance v0, Lixs;
-
-    invoke-direct {v0}, Lixs;-><init>()V
-
-    throw v0
-
-    :cond_1
-    iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
-
-    iput v1, p0, Lixr;->a:I
-
-    iget v0, v0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
-
-    iput v0, p0, Lixr;->b:I
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final a(I)Z
     .locals 1
 
-    iget v0, p0, Lixr;->a:I
+    iget-object v0, p0, Lixr;->a:[I
 
-    return v0
-.end method
+    invoke-static {v0, p1}, Ljava/util/Arrays;->binarySearch([II)I
 
-.method public final a(IILixg;)Lixj;
-    .locals 4
+    move-result v0
 
-    const/4 v2, 0x0
+    if-ltz v0, :cond_0
 
-    const/4 v1, 0x1
-
-    if-lez p1, :cond_2
-
-    move v0, v1
+    const/4 v0, 0x1
 
     :goto_0
-    const-string v3, "width must be > 0."
-
-    invoke-static {v0, v3}, Liya;->a(ZLjava/lang/Object;)V
-
-    if-lez p2, :cond_0
-
-    move v2, v1
-
-    :cond_0
-    const-string v0, "height must be > 0."
-
-    invoke-static {v2, v0}, Liya;->a(ZLjava/lang/Object;)V
-
-    iget v0, p0, Lixr;->a:I
-
-    iget v2, p0, Lixr;->b:I
-
-    if-gt v2, p2, :cond_1
-
-    if-le v0, p1, :cond_3
-
-    :cond_1
-    div-int/lit8 v2, v2, 0x2
-
-    div-int/lit8 v0, v0, 0x2
-
-    :goto_1
-    div-int v3, v2, v1
-
-    if-le v3, p2, :cond_3
-
-    div-int v3, v0, v1
-
-    if-le v3, p1, :cond_3
-
-    shl-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v0, Landroid/graphics/BitmapFactory$Options;
-
-    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    iput v1, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
-
-    iget-object v1, p0, Lixr;->c:Ljava/io/File;
-
-    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p3, v1, v0}, Lixh;->a(Lixg;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Lixj;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lixj;->a()I
-
-    move-result v0
-
-    if-ne v0, p1, :cond_4
-
-    invoke-interface {v1}, Lixj;->b()I
-
-    move-result v0
-
-    if-eq v0, p2, :cond_5
-
-    :cond_4
-    const-string v2, "jpeg"
-
-    invoke-interface {v1}, Lixj;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-static {p3, v2, v0, p1, p2}, Lixh;->a(Lixg;Ljava/lang/String;Landroid/graphics/Bitmap;II)Lixj;
-
-    move-result-object v0
-
-    invoke-interface {v1}, Lixj;->close()V
-
-    :goto_2
-    return-object v0
-
-    :cond_5
-    move-object v0, v1
-
-    goto :goto_2
-.end method
-
-.method public final a(Landroid/graphics/Rect;Lixg;)Lixj;
-    .locals 3
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    :goto_1
-    invoke-static {v1}, Liya;->a(Z)V
-
-    iget-object v0, p0, Lixr;->c:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p2, v0, p1}, Lixh;->a(Lixg;Ljava/lang/String;Landroid/graphics/Rect;)Lixj;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    goto :goto_1
-.end method
-
-.method public final a(Lixg;)Lixj;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lixr;->b(Lixg;)Lixj;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()I
-    .locals 1
-
-    iget v0, p0, Lixr;->b:I
-
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final b(Lixg;)Lixj;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    iget-object v0, p0, Lixr;->c:Ljava/io/File;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    :goto_0
+    return v0
 
-    new-instance v1, Landroid/graphics/BitmapFactory$Options;
+    :cond_0
+    instance-of v0, p1, Lixr;
 
-    invoke-direct {v1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+    if-nez v0, :cond_1
 
-    invoke-static {p1, v0, v1}, Lixh;->a(Lixg;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Lixj;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lixr;
+
+    iget-object v0, p0, Lixr;->a:[I
+
+    iget-object v1, p1, Lixr;->a:[I
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->equals([I[I)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lixr;->a:[I
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+
+    new-instance v0, Lixs;
+
+    invoke-direct {v0, p0}, Lixs;-><init>(Lixr;)V
 
     return-object v0
 .end method
 
-.method public final close()V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    return-void
+    iget-object v0, p0, Lixr;->a:[I
+
+    array-length v0, v0
+
+    const/16 v1, 0x13
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "IntSet["
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

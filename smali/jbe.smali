@@ -1,14 +1,28 @@
-.class public abstract Ljbe;
+.class final Ljbe;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljbc;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:J
+
+.field private final synthetic b:Lcom/google/android/libraries/smartburst/utils/Feature;
+
+.field private final synthetic c:Ljbd;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljbd;JLcom/google/android/libraries/smartburst/utils/Feature;)V
     .locals 0
+
+    iput-object p1, p0, Ljbe;->c:Ljbd;
+
+    iput-wide p2, p0, Ljbe;->a:J
+
+    iput-object p4, p0, Ljbe;->b:Lcom/google/android/libraries/smartburst/utils/Feature;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,49 +31,73 @@
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)Ljava/util/List;
-    .locals 3
+.method public final run()V
+    .locals 6
 
-    new-instance v1, Ljava/util/ArrayList;
+    :try_start_0
+    iget-object v0, p0, Ljbe;->c:Ljbd;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    iget-object v0, v0, Ljbd;->a:Ljava/io/Writer;
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const-string v1, "%d,%d,%s%n"
 
-    move-result-object v2
+    const/4 v2, 0x3
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    iget-wide v4, p0, Ljbe;->a:J
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x2
+
+    iget-object v4, p0, Ljbe;->b:Lcom/google/android/libraries/smartburst/utils/Feature;
+
+    invoke-virtual {v4}, Lcom/google/android/libraries/smartburst/utils/Feature;->getType()Ljpe;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljpe;->name()Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    return-void
 
-    move-result v0
+    :catch_0
+    move-exception v0
 
-    if-eqz v0, :cond_0
+    sget-object v1, Lkfd;->a:Lkfe;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljaz;
-
-    invoke-virtual {p0, v0}, Ljbe;->a(Ljaz;)Ljaz;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto :goto_0
-
-    :cond_0
-    return-object v1
-.end method
-
-.method public abstract a(Ljaz;)Ljaz;
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "SegmentFilter"
-
-    return-object v0
 .end method

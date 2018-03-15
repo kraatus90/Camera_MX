@@ -1,20 +1,20 @@
-.class public final Ljey;
+.class final Ljey;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
+.implements Ljdt;
 
 
 # instance fields
-.field private synthetic a:Ljava/io/Writer;
+.field private final synthetic a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/Writer;)V
+.method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    iput-object p1, p0, Ljey;->a:Ljava/io/Writer;
+    iput-object p1, p0, Ljey;->a:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,16 +23,16 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 2
 
-    check-cast p1, Lizl;
+    iget-object v0, p0, Ljey;->a:Landroid/content/Context;
 
-    new-instance v0, Lizn;
+    const v1, 0x7f09000f
 
-    iget-object v1, p0, Ljey;->a:Ljava/io/Writer;
+    invoke-static {v0, v1}, Ljdu;->a(Landroid/content/Context;I)Ljava/nio/ByteBuffer;
 
-    invoke-direct {v0, p1, p2, v1}, Lizn;-><init>(Lizl;Ljava/lang/String;Ljava/io/Writer;)V
+    move-result-object v0
 
     return-object v0
 .end method

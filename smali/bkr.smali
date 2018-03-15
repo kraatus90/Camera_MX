@@ -1,61 +1,56 @@
-.class final synthetic Lbkr;
+.class public final Lbkr;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private a:Lbkq;
+.implements Lbkp;
 
 
 # direct methods
-.method constructor <init>(Lbkq;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbkr;->a:Lbkq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 3
+.method public final a(Ljava/lang/String;)V
+    .locals 0
 
-    iget-object v1, p0, Lbkr;->a:Lbkq;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+.method public final a(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Ljava/lang/Float;
+.method public final b(Ljava/lang/String;)V
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    return-void
+.end method
 
-    move-result v0
+.method public final b()Z
+    .locals 1
 
-    iget-object v2, v1, Lbkq;->c:Lhag;
+    const/4 v0, 0x0
 
-    iget v2, v2, Lhag;->a:F
+    return v0
+.end method
 
-    mul-float/2addr v0, v2
+.method public final c(Ljava/lang/String;)V
+    .locals 0
 
-    iput v0, v1, Lbkq;->d:F
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
-
-    move-result v0
-
-    const/high16 v2, 0x434c0000    # 204.0f
-
-    mul-float/2addr v0, v2
-
-    float-to-int v0, v0
-
-    iput v0, v1, Lbkq;->e:I
+.method public final d(Ljava/lang/String;)V
+    .locals 0
 
     return-void
 .end method

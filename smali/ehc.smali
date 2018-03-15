@@ -1,56 +1,252 @@
-.class public final Lehc;
-.super Ljava/lang/Object;
+.class Lehc;
+.super Legz;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Leha;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Leha;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lehc;->a:Leha;
 
-    iput-object p1, p0, Lehc;->a:Ljxn;
+    invoke-direct {p0}, Legz;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lehc;
-
-    invoke-direct {v0, p0}, Lehc;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public B()V
+    .locals 0
 
-    iget-object v0, p0, Lehc;->a:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+.method public final a()V
+    .locals 4
 
-    move-result-object v0
+    const/4 v3, 0x0
 
-    check-cast v0, Liau;
+    const/4 v2, 0x0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    const-string v0, "videoChart"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const-string v1, "enter VideoRecording"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    check-cast v0, Liau;
+    iget-object v0, p0, Lehc;->a:Leha;
 
-    return-object v0
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Leha;->m:Z
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->i:Lfwg;
+
+    iget-object v0, v0, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b()V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->j:Lgwk;
+
+    iget-object v0, v0, Lgwk;->a:Lke;
+
+    invoke-virtual {v0}, Lke;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->i:Lfwg;
+
+    iget-object v0, v0, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    iget-boolean v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Z
+
+    if-nez v1, :cond_0
+
+    iget-object v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isStarted()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    :cond_0
+    iget-object v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
+
+    iget-object v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->h:Landroid/widget/FrameLayout;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->h:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setAlpha(F)V
+
+    :cond_1
+    invoke-virtual {v0, v3}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setAlpha(F)V
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setVisibility(I)V
+
+    iput-boolean v2, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->i:Z
+
+    :cond_2
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->g:Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;->a(Z)V
+
+    :goto_0
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startRecording()V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->e:Lgvc;
+
+    sget-object v1, Lgue;->k:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->h:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->h()V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->f:Lgqc;
+
+    invoke-virtual {v0, v2}, Lgqc;->a(Z)Z
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->k:Landroid/content/Context;
+
+    iget-object v1, p0, Lehc;->a:Leha;
+
+    iget-object v1, v1, Leha;->l:Lick;
+
+    invoke-static {v0, v1}, Lhft;->a(Landroid/content/Context;Lick;)Z
+
+    return-void
+
+    :cond_3
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->i:Lfwg;
+
+    invoke-virtual {v0}, Lfwg;->b()V
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 3
+
+    const/4 v2, 0x1
+
+    const-string v0, "videoChart"
+
+    const-string v1, "exit VideoRecording"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Leha;->m:Z
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->i:Lfwg;
+
+    invoke-virtual {v0}, Lfwg;->a()V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->i:Lfwg;
+
+    iget-object v0, v0, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c()V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->g:Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
+
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;->a(Z)V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopRecording()V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->e:Lgvc;
+
+    sget-object v1, Lgue;->f:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    iget-object v0, v0, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->animateToScale(F)V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->h:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->i()V
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->f:Lgqc;
+
+    invoke-virtual {v0, v2}, Lgqc;->a(Z)Z
+
+    iget-object v0, p0, Lehc;->a:Leha;
+
+    iget-object v0, v0, Leha;->k:Landroid/content/Context;
+
+    iget-object v1, p0, Lehc;->a:Leha;
+
+    iget-object v1, v1, Leha;->l:Lick;
+
+    invoke-static {v0, v1}, Lhft;->b(Landroid/content/Context;Lick;)Z
+
+    return-void
 .end method

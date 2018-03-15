@@ -1,125 +1,77 @@
-.class final Lguv;
+.class public final synthetic Lguv;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Landroid/media/SoundPool$OnLoadCompleteListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private synthetic a:Lguu;
+.field private final a:Lgug;
+
+.field private final b:Lgvi;
 
 
 # direct methods
-.method constructor <init>(Lguu;)V
+.method public constructor <init>(Lgug;Lgvi;)V
     .locals 0
 
-    iput-object p1, p0, Lguv;->a:Lguu;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lguv;->a:Lgug;
+
+    iput-object p2, p0, Lguv;->b:Lgvi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLoadComplete(Landroid/media/SoundPool;II)V
-    .locals 7
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 5
 
-    iget-object v0, p0, Lguv;->a:Lguu;
+    iget-object v0, p0, Lguv;->a:Lgug;
 
-    iget-object v1, v0, Lguu;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lguv;->b:Lgvi;
 
-    monitor-enter v1
+    iget-object v2, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    :try_start_0
-    iget-object v0, p0, Lguv;->a:Lguu;
+    iget-object v2, v2, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Lgvj;
 
-    iget-boolean v0, v0, Lguu;->c:Z
+    iget-object v3, v0, Lgug;->t:Landroid/animation/ArgbEvaluator;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    monitor-exit v1
+    move-result v4
 
-    :goto_0
-    return-void
+    iget-object v0, v0, Lgug;->c:Lgvi;
 
-    :cond_0
-    iget-object v0, p0, Lguv;->a:Lguu;
+    invoke-virtual {v0}, Lgvi;->n()I
 
-    invoke-virtual {v0, p2}, Lguu;->e(I)Lguy;
+    move-result v0
 
-    move-result-object v2
-
-    sget-object v0, Lguu;->a:Ljava/lang/String;
-
-    iget v3, v2, Lguy;->a:I
-
-    iget v4, v2, Lguy;->b:I
-
-    const/16 v5, 0x3a
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v5, "Finished Loading Sound: "
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, ", sampleId: "
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez p3, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_1
-    iget-object v1, v2, Lguy;->c:Ljvi;
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lgvi;->n()I
 
-    goto :goto_0
+    move-result v1
 
-    :catchall_0
-    move-exception v0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result-object v1
 
-    throw v0
+    invoke-virtual {v3, v4, v0, v1}, Landroid/animation/ArgbEvaluator;->evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    const/4 v0, 0x0
+    move-result-object v0
 
-    goto :goto_1
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v2, v0}, Lgvj;->l(I)Lgvj;
+
+    return-void
 .end method

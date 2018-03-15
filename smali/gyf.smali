@@ -1,46 +1,58 @@
-.class final synthetic Lgyf;
+.class public final Lgyf;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Lich;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Lgyd;
-
-.field private b:Landroid/view/ViewTreeObserver;
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
 
 # direct methods
-.method constructor <init>(Lgyd;Landroid/view/ViewTreeObserver;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;)V
     .locals 0
 
+    iput-object p1, p0, Lgyf;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgyf;->a:Lgyd;
-
-    iput-object p2, p0, Lgyf;->b:Landroid/view/ViewTreeObserver;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
 
-    iget-object v0, p0, Lgyf;->a:Lgyd;
+    iget-object v1, p0, Lgyf;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
-    iget-object v1, p0, Lgyf;->b:Landroid/view/ViewTreeObserver;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    invoke-virtual {v1}, Landroid/view/ViewTreeObserver;->isAlive()Z
+    move-result-object v0
 
-    move-result v2
+    check-cast v0, Ljava/lang/Float;
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    move-result v0
 
-    :cond_0
+    iput v0, v1, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->h:F
+
+    iget-object v0, p0, Lgyf;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->d:Landroid/graphics/Paint;
+
+    iget-object v1, p0, Lgyf;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
+    iget v1, v1, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->h:F
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    iget-object v0, p0, Lgyf;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->invalidate()V
+
     return-void
 .end method

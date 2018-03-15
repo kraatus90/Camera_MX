@@ -1,74 +1,33 @@
-.class public abstract Lewg;
+.class public final synthetic Lewg;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lewe;
+.implements Lino;
+
+
+# instance fields
+.field private final a:Lewd;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lewd;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lewg;->a:Lewd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final B_()Z
+.method public final a()V
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lewg;->a:Lewd;
 
-    return v0
-.end method
+    invoke-interface {v0}, Levx;->b()V
 
-.method public surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Module does NOT support Surface-backed Preview."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Module does NOT support Surface-backed Preview."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Module does NOT support Surface-backed Preview."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public surfaceRedrawNeeded(Landroid/view/SurfaceHolder;)V
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Module does NOT support Surface-backed Preview."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method

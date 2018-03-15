@@ -1,114 +1,104 @@
-.class Lext;
-.super Lgvh;
+.class public final Lext;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lhzr;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lexp;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lexp;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    iput-object p1, p0, Lext;->b:Lexp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lext;->a:Lkgv;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([C)V
+    iput-object p2, p0, Lext;->b:Lkgv;
+
+    iput-object p3, p0, Lext;->c:Lkgv;
+
+    iput-object p4, p0, Lext;->d:Lkgv;
+
+    iput-object p5, p0, Lext;->e:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Lext;
+    .locals 6
+
+    new-instance v0, Lext;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lext;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    new-instance v0, Lhzr;
+    new-instance v0, Lexs;
 
-    invoke-direct {v0}, Lhzr;-><init>()V
+    iget-object v1, p0, Lext;->a:Lkgv;
 
-    iput-object v0, p0, Lext;->a:Lhzr;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lext;->b:Lexp;
+    move-result-object v1
 
-    iget-object v0, v0, Lexp;->c:Ldiv;
+    check-cast v1, Levy;
 
-    invoke-virtual {v0}, Ldiv;->a()V
+    iget-object v2, p0, Lext;->b:Lkgv;
 
-    iget-object v0, p0, Lext;->b:Lexp;
+    iget-object v3, p0, Lext;->c:Lkgv;
 
-    iget-object v0, v0, Lexp;->b:Lgdq;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0}, Lgdq;->k()Z
+    move-result-object v3
 
-    move-result v0
+    check-cast v3, Lbkx;
 
-    if-eqz v0, :cond_0
+    iget-object v4, p0, Lext;->d:Lkgv;
 
-    iget-object v0, p0, Lext;->b:Lexp;
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lexp;->d:Lbjf;
+    move-result-object v4
 
-    iget-object v1, p0, Lext;->b:Lexp;
+    check-cast v4, Ljava/util/concurrent/Executor;
 
-    iget-object v1, v1, Lexp;->b:Lgdq;
+    iget-object v5, p0, Lext;->e:Lkgv;
 
-    invoke-interface {v1}, Lgdq;->l()I
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v5
 
-    iget-object v2, p0, Lext;->b:Lexp;
+    check-cast v5, Landroid/content/Context;
 
-    iget-object v2, v2, Lexp;->b:Lgdq;
+    invoke-direct/range {v0 .. v5}, Lexs;-><init>(Levy;Lkgv;Lbkx;Ljava/util/concurrent/Executor;Landroid/content/Context;)V
 
-    invoke-interface {v2}, Lgdq;->m()I
-
-    move-result v2
-
-    iget-object v3, p0, Lext;->b:Lexp;
-
-    iget-object v3, v3, Lexp;->b:Lgdq;
-
-    invoke-interface {v3}, Lgdq;->n()F
-
-    move-result v3
-
-    invoke-virtual {v0, v1, v2, v3}, Lbjf;->a(IIF)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lext;->b:Lexp;
-
-    iget-object v0, v0, Lexp;->d:Lbjf;
-
-    iget-object v0, v0, Lbjf;->a:Lbjj;
-
-    invoke-virtual {v0}, Lgvh;->d()V
-
-    iget-object v0, p0, Lext;->a:Lhzr;
-
-    invoke-virtual {v0}, Lhzr;->close()V
-
-    iget-object v0, p0, Lext;->b:Lexp;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lexp;->b:Lgdq;
-
-    return-void
-.end method
-
-.method public n()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

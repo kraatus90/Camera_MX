@@ -1,64 +1,140 @@
-.class public abstract Lhmg;
-.super Landroid/os/Binder;
+.class abstract Lhmg;
+.super Lhmk;
 
-# interfaces
-.implements Lhmf;
+
+# instance fields
+.field private final c:I
+
+.field private final d:Landroid/os/Bundle;
+
+.field private final synthetic e:Lhmf;
 
 
 # direct methods
-.method public static a(Landroid/os/IBinder;)Lhmf;
-    .locals 2
+.method protected constructor <init>(Lhmf;ILandroid/os/Bundle;)V
+    .locals 1
 
-    if-nez p0, :cond_0
+    iput-object p1, p0, Lhmg;->e:Lhmf;
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.common.internal.IAccountAccessor"
-
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    invoke-direct {p0, p1, v0}, Lhmk;-><init>(Lhmf;Ljava/lang/Object;)V
 
-    instance-of v1, v0, Lhmf;
+    iput p2, p0, Lhmg;->c:I
 
-    if-eqz v1, :cond_1
+    iput-object p3, p0, Lhmg;->d:Landroid/os/Bundle;
 
-    check-cast v0, Lhmf;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Lhmh;
-
-    invoke-direct {v0, p0}, Lhmh;-><init>(Landroid/os/IBinder;)V
-
-    goto :goto_0
+    return-void
 .end method
 
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
-    .locals 1
-
-    new-instance v0, Ljava/lang/NoSuchMethodError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
-
-    throw v0
+.method protected abstract a(Lcom/google/android/gms/common/ConnectionResult;)V
 .end method
 
-.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 1
+.method protected final synthetic a(Ljava/lang/Object;)V
+    .locals 3
 
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    const/4 v2, 0x1
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    if-nez p1, :cond_1
+
+    iget-object v0, p0, Lhmg;->e:Lhmf;
+
+    invoke-static {v0, v2}, Lhmf;->a(Lhmf;I)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget v1, p0, Lhmg;->c:I
+
+    sparse-switch v1, :sswitch_data_0
+
+    iget-object v1, p0, Lhmg;->e:Lhmf;
+
+    invoke-static {v1, v2}, Lhmf;->a(Lhmf;I)V
+
+    iget-object v1, p0, Lhmg;->d:Landroid/os/Bundle;
+
+    if-eqz v1, :cond_2
+
+    iget-object v0, p0, Lhmg;->d:Landroid/os/Bundle;
+
+    const-string v1, "pendingIntent"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/PendingIntent;
+
+    :cond_2
+    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
+
+    iget v2, p0, Lhmg;->c:I
+
+    invoke-direct {v1, v2, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-virtual {p0, v1}, Lhmg;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+
+    goto :goto_0
+
+    :sswitch_0
+    invoke-virtual {p0}, Lhmg;->a()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lhmg;->e:Lhmf;
+
+    invoke-static {v1, v2}, Lhmf;->a(Lhmf;I)V
+
+    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
+
+    const/16 v2, 0x8
+
+    invoke-direct {v1, v2, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-virtual {p0, v1}, Lhmg;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+
+    goto :goto_0
+
+    :sswitch_1
+    iget-object v0, p0, Lhmg;->e:Lhmf;
+
+    invoke-static {v0, v2}, Lhmf;->a(Lhmf;I)V
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "A fatal developer error has occurred. Check the logs for further information."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0xa -> :sswitch_1
+    .end sparse-switch
+.end method
+
+.method protected abstract a()Z
+.end method
+
+.method protected final b()V
+    .locals 0
+
+    return-void
 .end method

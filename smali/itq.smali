@@ -1,92 +1,65 @@
-.class final Litq;
-.super Ljava/lang/Object;
+.class public final Litq;
+.super Liua;
 .source "PG"
-
-# interfaces
-.implements Liuh;
 
 
 # direct methods
-.method constructor <init>()V
+.method protected constructor <init>(Litv;Liqz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Liua;-><init>(Litv;Liqz;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 6
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    const v5, 0x3dcccccd    # 0.1f
-
-    new-instance v3, Ljcn;
-
-    const-class v0, Ljan;
-
-    const-string v1, "auc_motion_saliency"
-
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0}, Litq;->c()Liuy;
 
     move-result-object v0
 
-    check-cast v0, Ljan;
+    check-cast v0, Lius;
 
-    const-class v1, Ljan;
+    invoke-virtual {v0}, Lius;->toString()Ljava/lang/String;
 
-    const-string v2, "auc_quality"
+    move-result-object v0
 
-    invoke-virtual {p1, v1, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Ljan;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    const-class v2, Ljan;
+    move-result v1
 
-    const-string v4, "auc_sharpness"
+    add-int/lit8 v1, v1, 0xa
 
-    invoke-virtual {p1, v2, v4}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    check-cast v2, Ljan;
+    const-string v1, "GLBuffer{"
 
-    invoke-direct {v3, v0, v1, v2}, Ljcn;-><init>(Ljan;Ljan;Ljan;)V
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v0, 0x3f8ccccd    # 1.1f
+    move-result-object v1
 
-    iput v0, v3, Ljcn;->d:F
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const v0, 0x3e4ccccd    # 0.2f
+    move-result-object v0
 
-    iput v0, v3, Ljcn;->e:F
+    const/16 v1, 0x7d
 
-    const v0, 0x3c23d70a    # 0.01f
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    iput v0, v3, Ljcn;->f:F
+    move-result-object v0
 
-    const/high16 v0, 0x437a0000    # 250.0f
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput v0, v3, Ljcn;->g:F
-
-    const/high16 v0, 0x43fa0000    # 500.0f
-
-    iput v0, v3, Ljcn;->h:F
-
-    iput v5, v3, Ljcn;->i:F
-
-    const v0, 0x3e99999a    # 0.3f
-
-    iput v0, v3, Ljcn;->j:F
-
-    iput v5, v3, Ljcn;->k:F
-
-    new-instance v0, Ljcl;
-
-    invoke-direct {v0, v3}, Ljcl;-><init>(Ljcn;)V
+    move-result-object v0
 
     return-object v0
 .end method

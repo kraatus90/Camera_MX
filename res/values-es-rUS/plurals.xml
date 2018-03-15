@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Ráfaga (%1$d fotos)</item>
+        <item quantity="one">Ráfaga (%1$d foto)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Se guardaron %1$d fotos</item>
         <item quantity="one">Se guardó %1$d foto</item>

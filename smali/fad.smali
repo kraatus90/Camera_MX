@@ -1,45 +1,66 @@
 .class final Lfad;
-.super Leyw;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lfab;
+.field public final synthetic a:Lezx;
 
 
 # direct methods
-.method constructor <init>(Lfab;)V
+.method constructor <init>(Lezx;)V
     .locals 0
 
-    iput-object p1, p0, Lfad;->a:Lfab;
+    iput-object p1, p0, Lfad;->a:Lezx;
 
-    invoke-direct {p0, p1}, Leyw;-><init>(Leyu;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final x()V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lfad;->a:Lfab;
+    sget-object v1, Lezx;->a:Ljava/lang/Object;
 
-    iget-object v0, v0, Lfab;->h:Lgvj;
+    monitor-enter v1
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    :try_start_0
+    iget-object v0, p0, Lfad;->a:Lezx;
 
-    invoke-super {p0}, Lgvh;->x()V
+    iget-object v0, v0, Lezx;->e:Lfak;
 
-    iget-object v0, p0, Lfad;->a:Lfab;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, v0, Lfab;->h:Lgvj;
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lfad;->a:Lfab;
+    iget-object v0, p0, Lfad;->a:Lezx;
 
-    iget-object v1, v1, Lfab;->i:Lgvl;
+    iget-object v0, v0, Lezx;->b:Liay;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    new-instance v1, Lfae;
 
+    invoke-direct {v1, p0}, Lfae;-><init>(Lfad;)V
+
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    :cond_0
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

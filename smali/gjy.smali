@@ -1,66 +1,61 @@
-.class final Lgjy;
-.super Laxf;
+.class public final Lgjy;
+.super Lido;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lgka;
-
-.field private synthetic b:Lgjv;
-
-
 # direct methods
-.method constructor <init>(Lgjv;Lawd;Lgka;)V
+.method public constructor <init>(Lick;)V
     .locals 0
 
-    iput-object p1, p0, Lgjy;->b:Lgjv;
-
-    iput-object p3, p0, Lgjy;->a:Lgka;
-
-    invoke-direct {p0, p2}, Laxf;-><init>(Lawd;)V
+    invoke-direct {p0, p1}, Lido;-><init>(Lick;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    invoke-super {p0}, Laxf;->close()V
+    check-cast p1, Lgjk;
 
-    iget-object v0, p0, Lgjy;->b:Lgjv;
+    sget-object v0, Lgjk;->b:Lgjk;
 
-    iget-object v1, v0, Lgjv;->a:Ljava/lang/Object;
+    if-ne p1, v0, :cond_0
 
-    monitor-enter v1
+    const/4 v0, 0x1
 
-    :try_start_0
-    iget-object v0, p0, Lgjy;->b:Lgjv;
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lgjv;->c:Ljava/util/ArrayDeque;
+    move-result-object v0
 
-    iget-object v2, p0, Lgjy;->a:Lgka;
+    return-object v0
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayDeque;->remove(Ljava/lang/Object;)Z
+    :cond_0
+    const/4 v0, 0x0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_0
+.end method
 
-    iget-object v0, p0, Lgjy;->b:Lgjv;
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {v0}, Lgjv;->f()V
+    check-cast p1, Ljava/lang/Boolean;
 
-    return-void
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    :catchall_0
-    move-exception v0
+    move-result v0
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-eqz v0, :cond_0
 
-    throw v0
+    sget-object v0, Lgjk;->b:Lgjk;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lgjk;->a:Lgjk;
+
+    goto :goto_0
 .end method

@@ -1,20 +1,20 @@
-.class final Ldfv;
+.class public final Ldfv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lbaw;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # instance fields
-.field private synthetic a:Ldfu;
+.field private final synthetic a:Lhcu;
 
 
 # direct methods
-.method constructor <init>(Ldfu;)V
+.method public constructor <init>(Lhcu;)V
     .locals 0
 
-    iput-object p1, p0, Ldfv;->a:Ldfu;
+    iput-object p1, p0, Ldfv;->a:Lhcu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,42 +23,14 @@
 
 
 # virtual methods
-.method public final a()V
+.method public final onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
 
-    iget-object v0, p0, Ldfv;->a:Ldfu;
+    iget-object v0, p0, Ldfv;->a:Lhcu;
 
-    iget-object v0, v0, Ldfu;->a:Ldft;
+    const/4 v1, 0x0
 
-    iget-object v0, v0, Ldft;->a:Ldfq;
-
-    iget-object v0, v0, Lcng;->a:Lcnh;
-
-    new-instance v1, Ldeo;
-
-    invoke-direct {v1}, Ldeo;-><init>()V
-
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Ldfv;->a:Ldfu;
-
-    iget-object v0, v0, Ldfu;->a:Ldft;
-
-    iget-object v0, v0, Ldft;->a:Ldfq;
-
-    iget-object v0, v0, Lcng;->a:Lcnh;
-
-    new-instance v1, Ldeo;
-
-    invoke-direct {v1}, Ldeo;-><init>()V
-
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    iput-object v1, v0, Lhcu;->h:Landroid/app/AlertDialog;
 
     return-void
 .end method

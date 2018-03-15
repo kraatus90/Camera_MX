@@ -1,49 +1,56 @@
 .class public final Lgub;
-.super Landroid/view/ViewOutlineProvider;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
     .locals 0
 
-    iput-object p1, p0, Lgub;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iput-object p1, p0, Lgub;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    new-instance v0, Landroid/graphics/Rect;
+    iget-object v1, p0, Lgub;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    iget-object v1, p0, Lgub;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    move-result-object v0
 
-    invoke-static {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$000(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/graphics/RectF;
+    check-cast v0, Ljava/lang/Float;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    invoke-virtual {v1, v0}, Landroid/graphics/RectF;->round(Landroid/graphics/Rect;)V
+    move-result v0
 
-    iget-object v1, p0, Lgub;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iput v0, v1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentScaleFactor:F
 
-    invoke-static {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$3700(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)I
+    iget-object v0, p0, Lgub;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    move-result v1
+    invoke-static {v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->access$600(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
 
-    int-to-float v1, v1
+    iget-object v0, p0, Lgub;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-virtual {p2, v0, v1}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->invalidateOutline()V
+
+    iget-object v0, p0, Lgub;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->invalidate()V
 
     return-void
 .end method

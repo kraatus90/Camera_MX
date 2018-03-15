@@ -1,32 +1,53 @@
-.class public interface abstract Lbav;
+.class final synthetic Lbav;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lase;
+.implements Ljqv;
+
+
+# static fields
+.field public static final a:Ljqv;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lbav;
+
+    invoke-direct {v0}, Lbav;-><init>()V
+
+    sput-object v0, Lbav;->a:Ljqv;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljuw;
-.end method
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-.method public abstract b()Ljuw;
-.end method
+    if-eqz p1, :cond_0
 
-.method public abstract c()J
-.end method
+    const/4 v0, 0x1
 
-.method public abstract d()J
-.end method
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-.method public abstract e()Lbfw;
-.end method
+    move-result-object v0
 
-.method public abstract f()V
-.end method
+    return-object v0
 
-.method public abstract g()V
-.end method
+    :cond_0
+    const/4 v0, 0x0
 
-.method public abstract h()I
+    goto :goto_0
 .end method

@@ -1,66 +1,56 @@
-.class final Lcpj;
-.super Lcom/google/googlex/gcam/BackgroundAeResultsCallback;
+.class public final Lcpj;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Lcpb;
+.field private final synthetic a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
 
 
 # direct methods
-.method constructor <init>(Lcpb;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lcpj;->a:Lcpb;
+    iput-object p1, p0, Lcpj;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
 
-    invoke-direct {p0}, Lcom/google/googlex/gcam/BackgroundAeResultsCallback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Run(Lcom/google/googlex/gcam/AeResults;)V
+.method public final a(Ljava/lang/Throwable;)V
     .locals 2
 
-    if-eqz p1, :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/AeResults;->getValid()Z
+    const-string v1, "getImageViewFuture should not throw an exception."
 
-    move-result v0
+    invoke-direct {v0, v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    if-eqz v0, :cond_0
+    throw v0
+.end method
 
-    new-instance v0, Lcom/google/googlex/gcam/AeResults;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-direct {v0, p1}, Lcom/google/googlex/gcam/AeResults;-><init>(Lcom/google/googlex/gcam/AeResults;)V
+    check-cast p1, Landroid/widget/ImageView;
 
-    iget-object v1, p0, Lcpj;->a:Lcpb;
+    invoke-static {p1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a(Landroid/widget/ImageView;)Landroid/graphics/Bitmap;
 
-    iget-object v1, v1, Lcpb;->j:Liag;
+    move-result-object v0
 
-    invoke-virtual {v1, v0}, Liag;->a(Ljava/lang/Object;)V
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_0
+    iget-object v1, p0, Lcpj;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a(Landroid/graphics/Bitmap;)V
+
     return-void
-
-    :cond_0
-    if-nez p1, :cond_1
-
-    sget-object v0, Lcpb;->a:Ljava/lang/String;
-
-    const-string v1, "AeResults from GcamWrapper is null!"
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v0, Lcpb;->a:Ljava/lang/String;
-
-    const-string v1, "AeResults from GcamWrapper is invalid."
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
 .end method

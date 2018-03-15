@@ -1,106 +1,201 @@
-.class public final Lisl;
+.class final Lisl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
+.implements Lkeh;
+
+
+# instance fields
+.field private final a:Liru;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Liru;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lisl;->a:Liru;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
-    .locals 6
+.method public final a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    .locals 3
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lisl;->a:Liru;
 
-    new-instance v0, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;
+    invoke-virtual {v0}, Liru;->b()Z
 
-    invoke-direct {v0, p1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)V
+    move-result v0
 
-    const-string v1, "videoProvider"
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addVariable(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    invoke-interface {p2, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    const-string v1, "cropRect"
+    :goto_0
+    return-void
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addVariable(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    :cond_0
+    iget-object v1, p0, Lisl;->a:Liru;
 
-    new-instance v1, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/video/VideoProviderSource;
+    monitor-enter v1
 
-    const-string v2, "camera"
+    :try_start_0
+    iget-object v0, p0, Lisl;->a:Liru;
 
-    invoke-direct {v1, p1, v2}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/video/VideoProviderSource;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    invoke-virtual {v0}, Liru;->b()Z
 
-    invoke-virtual {v0, v1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    move-result v0
 
-    const-string v2, "videoProvider"
+    if-nez v0, :cond_1
 
-    const-string v3, "camera"
+    sget-object v0, Lisn;->a:Lism;
 
-    const-string v4, "provider"
+    iget-object v2, p0, Lisl;->a:Liru;
 
-    invoke-virtual {v0, v2, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignVariableToFilterInput(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    invoke-virtual {v2, p2, p1, v0}, Liru;->a(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Lism;)V
 
-    const/16 v2, 0xf0
+    monitor-exit v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    goto :goto_0
 
-    move-result-object v2
+    :catchall_0
+    move-exception v0
 
-    const-string v3, "camera"
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v4, "minDimension"
+    throw v0
 
-    invoke-virtual {v0, v2, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    :cond_1
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    new-instance v2, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/transform/CropFilter;
+    invoke-interface {p2, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    const-string v3, "cropper"
+    goto :goto_0
+.end method
 
-    invoke-direct {v2, p1, v3}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/transform/CropFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+.method public final cancel(Z)Z
+    .locals 1
 
-    invoke-virtual {v0, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    const/4 v0, 0x0
 
-    const-string v3, "cropRect"
+    return v0
+.end method
 
-    const-string v4, "cropper"
+.method public final get()Ljava/lang/Object;
+    .locals 2
 
-    const-string v5, "cropRect"
+    :try_start_0
+    iget-object v0, p0, Lisl;->a:Liru;
 
-    invoke-virtual {v0, v3, v4, v5}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignVariableToFilterInput(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
-
-    new-instance v3, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;
-
-    const-string v4, "frameConsumer"
-
-    invoke-direct {v3, p1, v4}, Lcom/google/android/libraries/smartburst/filterpacks/storage/FrameConsumerFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v3}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
-
-    const-string v4, "video"
-
-    const-string v5, "image"
-
-    invoke-virtual {v0, v1, v4, v2, v5}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
-
-    const-string v1, "image"
-
-    const-string v4, "frame"
-
-    invoke-virtual {v0, v2, v1, v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->build()Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+    invoke-virtual {v0}, Liru;->c()Ljava/lang/Object;
+    :try_end_0
+    .catch Lirb; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
     return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/util/concurrent/ExecutionException;
+
+    invoke-direct {v1, v0}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .locals 3
+
+    iget-object v1, p0, Lisl;->a:Liru;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Lisl;->isDone()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lisl;->a:Liru;
+
+    invoke-virtual {p3, v0, p1, p2}, Ljava/util/concurrent/TimeUnit;->timedWait(Ljava/lang/Object;J)V
+
+    invoke-virtual {p0}, Lisl;->isDone()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/concurrent/TimeoutException;
+
+    invoke-direct {v0}, Ljava/util/concurrent/TimeoutException;-><init>()V
+
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lisl;->a:Liru;
+
+    iget-object v0, v0, Liru;->a:Ljava/lang/Object;
+
+    if-eqz v0, :cond_1
+
+    monitor-exit v1
+
+    return-object v0
+
+    :cond_1
+    new-instance v0, Ljava/util/concurrent/ExecutionException;
+
+    iget-object v2, p0, Lisl;->a:Liru;
+
+    iget-object v2, v2, Liru;->b:Lirb;
+
+    invoke-direct {v0, v2}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+.end method
+
+.method public final isCancelled()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final isDone()Z
+    .locals 1
+
+    iget-object v0, p0, Lisl;->a:Liru;
+
+    invoke-virtual {v0}, Liru;->b()Z
+
+    move-result v0
+
+    return v0
 .end method

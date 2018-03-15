@@ -1,184 +1,61 @@
 .class public final Leig;
-.super Ljava/lang/Object;
+.super Leif;
 .source "PG"
-
-# interfaces
-.implements Lihy;
 
 
 # instance fields
-.field private a:Lihy;
+.field private e:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lihy;Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Leif;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "precision mediump float;                            \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  gl_FragColor = texture2D( sTexture, vTexCoord );  \n}                                                   \n"
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object v0, p0, Leig;->e:Ljava/lang/String;
 
-    iput-object p1, p0, Leig;->a:Lihy;
+    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
 
-    return-void
-.end method
+    iget-object v1, p0, Leig;->e:Ljava/lang/String;
 
+    invoke-static {v0, v1}, Leig;->a(Ljava/lang/String;Ljava/lang/String;)I
 
-# virtual methods
-.method public final a(I)Liia;
-    .locals 1
+    move-result v0
 
-    iget-object v0, p0, Leig;->a:Lihy;
+    iput v0, p0, Leig;->d:I
 
-    invoke-interface {v0, p1}, Lihy;->a(I)Liia;
+    iget v0, p0, Leig;->d:I
 
-    move-result-object v0
+    const-string v1, "aPosition"
 
-    return-object v0
-.end method
+    invoke-static {v0, v1}, Leig;->a(ILjava/lang/String;)I
 
-.method public final a(Liic;)Liia;
-    .locals 1
+    move-result v0
 
-    iget-object v0, p0, Leig;->a:Lihy;
+    iput v0, p0, Leig;->a:I
 
-    invoke-interface {v0, p1}, Lihy;->a(Liic;)Liia;
+    iget v0, p0, Leig;->d:I
 
-    move-result-object v0
+    const-string v1, "aTextureCoord"
 
-    return-object v0
-.end method
+    invoke-static {v0, v1}, Leig;->a(ILjava/lang/String;)I
 
-.method public final a(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Lihv;Landroid/os/Handler;)V
-    .locals 3
+    move-result v0
 
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->instance()Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
+    iput v0, p0, Leig;->b:I
 
-    move-result-object v0
+    iget v0, p0, Leig;->d:I
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->captureSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
+    const-string v1, "uMvpMatrix"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Leig;->b(ILjava/lang/String;)I
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->create()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
+    move-result v0
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    iget-object v1, p0, Leig;->a:Lihy;
-
-    new-instance v2, Leih;
-
-    invoke-direct {v2, p3, v0}, Leih;-><init>(Lihv;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-
-    invoke-interface {v1, p1, p2, v2, p4}, Lihy;->a(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Lihv;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public final a(Ljava/util/List;Lihv;Landroid/os/Handler;)V
-    .locals 3
-
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->instance()Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->captureSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->create()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    iget-object v1, p0, Leig;->a:Lihy;
-
-    new-instance v2, Leih;
-
-    invoke-direct {v2, p2, v0}, Leih;-><init>(Lihv;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-
-    invoke-interface {v1, p1, v2, p3}, Lihy;->a(Ljava/util/List;Lihv;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public final a(Ljava/util/List;Lihx;Landroid/os/Handler;)V
-    .locals 1
-
-    iget-object v0, p0, Leig;->a:Lihy;
-
-    invoke-interface {v0, p1, p2, p3}, Lihy;->a(Ljava/util/List;Lihx;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public final b(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Lihv;Landroid/os/Handler;)V
-    .locals 3
-
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->instance()Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->captureSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->create()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    iget-object v1, p0, Leig;->a:Lihy;
-
-    new-instance v2, Leih;
-
-    invoke-direct {v2, p3, v0}, Leih;-><init>(Lihv;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-
-    invoke-interface {v1, p1, p2, v2, p4}, Lihy;->b(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Lihv;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public final b(Ljava/util/List;Lihv;Landroid/os/Handler;)V
-    .locals 3
-
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->instance()Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->captureSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->create()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    iget-object v1, p0, Leig;->a:Lihy;
-
-    new-instance v2, Leih;
-
-    invoke-direct {v2, p2, v0}, Leih;-><init>(Lihv;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-
-    invoke-interface {v1, p1, v2, p3}, Lihy;->b(Ljava/util/List;Lihv;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Leig;->a:Lihy;
-
-    invoke-interface {v0}, Lihy;->close()V
+    iput v0, p0, Leig;->c:I
 
     return-void
 .end method

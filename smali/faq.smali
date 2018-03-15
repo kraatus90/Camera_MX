@@ -1,45 +1,51 @@
-.class final Lfaq;
-.super Lezf;
+.class public final Lfaq;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lfao;
+.field public final a:I
+
+.field public final b:Lfar;
+
+.field public final c:Lfas;
+
+.field public final d:I
+
+.field public final e:Lild;
+
+.field public final f:[B
+
+.field public final g:Liaw;
+
+.field public final h:Lick;
 
 
 # direct methods
-.method constructor <init>(Lfao;)V
-    .locals 0
+.method public constructor <init>(ILfar;Lfas;ILild;[BLick;)V
+    .locals 1
 
-    iput-object p1, p0, Lfaq;->a:Lfao;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lezf;-><init>()V
+    iput p1, p0, Lfaq;->a:I
 
-    return-void
-.end method
+    iput-object p2, p0, Lfaq;->b:Lfar;
 
+    iput-object p3, p0, Lfaq;->c:Lfas;
 
-# virtual methods
-.method public final w()V
-    .locals 2
+    iput p4, p0, Lfaq;->d:I
 
-    iget-object v0, p0, Lfaq;->a:Lfao;
+    iput-object p5, p0, Lfaq;->e:Lild;
 
-    iget-object v0, v0, Lfao;->i:Lgvj;
+    iput-object p6, p0, Lfaq;->f:[B
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    new-instance v0, Liaw;
 
-    invoke-super {p0}, Lezf;->w()V
+    invoke-direct {v0}, Liaw;-><init>()V
 
-    iget-object v0, p0, Lfaq;->a:Lfao;
+    iput-object v0, p0, Lfaq;->g:Liaw;
 
-    iget-object v0, v0, Lfao;->i:Lgvj;
-
-    iget-object v1, p0, Lfaq;->a:Lfao;
-
-    iget-object v1, v1, Lfao;->j:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    iput-object p7, p0, Lfaq;->h:Lick;
 
     return-void
 .end method

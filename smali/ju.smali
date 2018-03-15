@@ -1,62 +1,121 @@
-.class public final Lju;
+.class Lju;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/view/animation/Interpolator;
+
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field private final a:[F
+
+.field private final b:F
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>([F)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput-object p1, p0, Lju;->a:[F
 
-    const/16 v1, 0x13
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    if-lt v0, v1, :cond_0
+    iget-object v1, p0, Lju;->a:[F
 
-    new-instance v0, Ljw;
+    array-length v1, v1
 
-    invoke-direct {v0, p0}, Ljw;-><init>(Lju;)V
+    add-int/lit8 v1, v1, -0x1
 
-    iput-object v0, p0, Lju;->a:Ljava/lang/Object;
+    int-to-float v1, v1
+
+    div-float/2addr v0, v1
+
+    iput v0, p0, Lju;->b:F
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getInterpolation(F)F
+    .locals 5
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    const/4 v1, 0x0
+
+    cmpl-float v2, p1, v0
+
+    if-ltz v2, :cond_0
 
     :goto_0
-    return-void
+    return v0
 
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    cmpg-float v0, p1, v1
 
-    const/16 v1, 0x10
+    if-gtz v0, :cond_1
 
-    if-lt v0, v1, :cond_1
-
-    new-instance v0, Ljv;
-
-    invoke-direct {v0}, Ljv;-><init>()V
-
-    iput-object v0, p0, Lju;->a:Ljava/lang/Object;
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x0
+    iget-object v0, p0, Lju;->a:[F
 
-    iput-object v0, p0, Lju;->a:Ljava/lang/Object;
+    array-length v0, v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, p1
+
+    float-to-int v0, v0
+
+    iget-object v1, p0, Lju;->a:[F
+
+    array-length v1, v1
+
+    add-int/lit8 v1, v1, -0x2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    int-to-float v1, v0
+
+    iget v2, p0, Lju;->b:F
+
+    mul-float/2addr v1, v2
+
+    sub-float v1, p1, v1
+
+    iget v2, p0, Lju;->b:F
+
+    div-float/2addr v1, v2
+
+    iget-object v2, p0, Lju;->a:[F
+
+    aget v2, v2, v0
+
+    iget-object v3, p0, Lju;->a:[F
+
+    add-int/lit8 v4, v0, 0x1
+
+    aget v3, v3, v4
+
+    iget-object v4, p0, Lju;->a:[F
+
+    aget v0, v4, v0
+
+    sub-float v0, v3, v0
+
+    mul-float/2addr v0, v1
+
+    add-float/2addr v0, v2
 
     goto :goto_0
-.end method
-
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lju;->a:Ljava/lang/Object;
-
-    return-void
 .end method

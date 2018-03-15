@@ -1,51 +1,91 @@
-.class public Lhfj;
-.super Lhfi;
+.class public final enum Lhfj;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
-# instance fields
-.field public d:Lcom/google/android/apps/camera/zoomui/ZoomUi;
+# static fields
+.field public static final enum a:Lhfj;
 
-.field public e:Landroid/widget/LinearLayout;
+.field public static final enum b:Lhfj;
 
-.field public f:Landroid/widget/SeekBar;
+.field public static final enum c:Lhfj;
 
-.field public g:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
+.field private static final synthetic d:[Lhfj;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Lhfi;-><init>()V
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Lhfj;
+
+    const-string v1, "ZOOM"
+
+    invoke-direct {v0, v1, v2}, Lhfj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lhfj;->a:Lhfj;
+
+    new-instance v0, Lhfj;
+
+    const-string v1, "SWITCH_CAMERA"
+
+    invoke-direct {v0, v1, v3}, Lhfj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lhfj;->b:Lhfj;
+
+    new-instance v0, Lhfj;
+
+    const-string v1, "NONE"
+
+    invoke-direct {v0, v1, v4}, Lhfj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lhfj;->c:Lhfj;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lhfj;
+
+    sget-object v1, Lhfj;->a:Lhfj;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lhfj;->b:Lhfj;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lhfj;->c:Lhfj;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lhfj;->d:[Lhfj;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public a(Lcom/google/android/apps/camera/zoomui/ZoomUi;)V
-    .locals 1
-
-    iput-object p1, p0, Lhfj;->d:Lcom/google/android/apps/camera/zoomui/ZoomUi;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->a()Landroid/widget/LinearLayout;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lhfj;->e:Landroid/widget/LinearLayout;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->c()Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lhfj;->g:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->b()Landroid/widget/SeekBar;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lhfj;->f:Landroid/widget/SeekBar;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static values()[Lhfj;
+    .locals 1
+
+    sget-object v0, Lhfj;->d:[Lhfj;
+
+    invoke-virtual {v0}, [Lhfj;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhfj;
+
+    return-object v0
 .end method

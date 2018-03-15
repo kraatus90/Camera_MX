@@ -1,95 +1,114 @@
 .class public final Lees;
-.super Libk;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liau;
+.implements Lkgv;
 
 
 # instance fields
-.field private b:Leai;
+.field private final a:Lkgv;
 
-.field private c:Leai;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Liau;Liau;Leai;Leai;)V
-    .locals 2
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Liau;
+    iput-object p1, p0, Lees;->a:Lkgv;
 
-    const/4 v1, 0x0
+    iput-object p2, p0, Lees;->b:Lkgv;
 
-    aput-object p1, v0, v1
+    iput-object p3, p0, Lees;->c:Lkgv;
 
-    const/4 v1, 0x1
+    iput-object p4, p0, Lees;->d:Lkgv;
 
-    aput-object p2, v0, v1
+    iput-object p5, p0, Lees;->e:Lkgv;
 
-    invoke-static {v0}, Liav;->b([Liau;)Liau;
+    iput-object p6, p0, Lees;->f:Lkgv;
 
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Libk;-><init>(Liau;)V
-
-    iput-object p3, p0, Lees;->b:Leai;
-
-    iput-object p4, p0, Lees;->c:Leai;
+    iput-object p7, p0, Lees;->g:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 8
 
-    check-cast p1, Ljava/util/List;
+    new-instance v0, Leer;
 
-    const/4 v0, 0x0
+    iget-object v1, p0, Lees;->a:Lkgv;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgdv;
-
-    const/4 v1, 0x1
-
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/Boolean;
+    check-cast v1, Legj;
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v2, p0, Lees;->b:Lkgv;
 
-    move-result v1
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    sget-object v2, Lgdv;->c:Lgdv;
+    move-result-object v2
 
-    if-ne v0, v2, :cond_0
+    check-cast v2, Ledc;
 
-    iget-object v0, p0, Lees;->b:Leai;
+    iget-object v3, p0, Lees;->c:Lkgv;
 
-    :goto_0
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lefp;
+
+    iget-object v4, p0, Lees;->d:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iget-object v5, p0, Lees;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lgvc;
+
+    iget-object v6, p0, Lees;->f:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lhgv;
+
+    iget-object v7, p0, Lees;->g:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lgrz;
+
+    invoke-direct/range {v0 .. v7}, Leer;-><init>(Legj;Ledc;Lefp;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lhgv;Lgrz;)V
+
     return-object v0
-
-    :cond_0
-    sget-object v2, Lgdv;->a:Lgdv;
-
-    if-ne v0, v2, :cond_1
-
-    if-eqz v1, :cond_1
-
-    iget-object v0, p0, Lees;->b:Leai;
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lees;->c:Leai;
-
-    goto :goto_0
 .end method

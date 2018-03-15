@@ -1,370 +1,183 @@
 .class public final Lgdr;
-.super Ligf;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgdq;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
+.implements Lekw;
+.implements Lemn;
+.implements Lemq;
+.implements Lemx;
+.implements Lemy;
+.implements Lemz;
 
 
 # instance fields
-.field private e:Lgzz;
+.field public final a:Lawi;
+
+.field public final b:Lihn;
+
+.field public c:Z
+
+.field private final d:Landroid/content/Context;
+
+.field private e:Z
+
+.field private final f:Landroid/content/BroadcastReceiver;
+
+.field private final g:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
-.method public constructor <init>(Lify;Lgzz;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lawi;Liho;)V
+    .locals 2
 
-    invoke-direct {p0, p1}, Ligf;-><init>(Lify;)V
+    const/4 v1, 0x0
 
-    iput-object p2, p0, Lgdr;->e:Lgzz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean v1, p0, Lgdr;->c:Z
+
+    new-instance v0, Lgds;
+
+    invoke-direct {v0, p0}, Lgds;-><init>(Lgdr;)V
+
+    iput-object v0, p0, Lgdr;->f:Landroid/content/BroadcastReceiver;
+
+    new-instance v0, Lgdt;
+
+    invoke-direct {v0, p0}, Lgdt;-><init>(Lgdr;)V
+
+    iput-object v0, p0, Lgdr;->g:Landroid/content/BroadcastReceiver;
+
+    iput-object p1, p0, Lgdr;->d:Landroid/content/Context;
+
+    iput-object p2, p0, Lgdr;->a:Lawi;
+
+    const-string v0, "ActivityCloseSec"
+
+    invoke-interface {p3, v0}, Liho;->a(Ljava/lang/String;)Lihn;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lgdr;->b:Lihn;
+
+    iput-boolean v1, p0, Lgdr;->e:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lici;)Ljava/util/List;
-    .locals 1
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->c:Lihj;
-
-    iget-boolean v0, v0, Lihj;->c:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, p1}, Lgdr;->a_(Lici;)Ljava/util/List;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    if-ne p0, p1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_2
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_2
-    check-cast p1, Lgdr;
-
-    invoke-virtual {p0}, Lgdr;->a()Ligc;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lgdr;->a()Ligc;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
+.method public final L()V
     .locals 3
 
+    iget-boolean v0, p0, Lgdr;->e:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lgdr;->b:Lihn;
+
+    const-string v1, "Attaching secure activity shutdown receivers."
+
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
+
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string v1, "android.intent.action.SCREEN_OFF"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lgdr;->d:Landroid/content/Context;
+
+    iget-object v2, p0, Lgdr;->f:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string v1, "android.intent.action.USER_PRESENT"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lgdr;->d:Landroid/content/Context;
+
+    iget-object v2, p0, Lgdr;->g:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
     const/4 v0, 0x1
 
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, Lgdr;->a()Ligc;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final u_()Ljava/util/List;
-    .locals 4
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->c:Lihj;
-
-    iget-boolean v0, v0, Lihj;->c:Z
-
-    if-eqz v0, :cond_2
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {p0}, Lgdr;->s()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
+    iput-boolean v0, p0, Lgdr;->e:Z
 
     :cond_0
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    return-void
+.end method
 
-    move-result v0
+.method public final a()V
+    .locals 0
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p0}, Lgdr;->b()V
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v0
+.method final b()V
+    .locals 2
 
-    check-cast v0, Lici;
-
-    sget-object v3, Libp;->i:Ljava/util/Map;
-
-    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Libp;
+    iget-boolean v0, p0, Lgdr;->e:Z
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lgdr;->b:Lihn;
 
-    goto :goto_0
+    const-string v1, "Detaching secure activity shutdown receivers."
 
-    :cond_1
-    move-object v0, v1
+    invoke-interface {v0, v1}, Lihn;->b(Ljava/lang/String;)V
 
-    :goto_1
-    return-object v0
+    iget-object v0, p0, Lgdr;->d:Landroid/content/Context;
 
-    :cond_2
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    iget-object v1, p0, Lgdr;->f:Landroid/content/BroadcastReceiver;
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    goto :goto_1
-.end method
+    iget-object v0, p0, Lgdr;->d:Landroid/content/Context;
 
-.method public final v_()Z
-    .locals 2
+    iget-object v1, p0, Lgdr;->g:Landroid/content/BroadcastReceiver;
 
-    iget-object v0, p0, Lgdr;->e:Lgzz;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->b:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->d:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->f:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->g:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    invoke-virtual {v0}, Lgzz;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->c:Z
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lgdr;->b()Lige;
-
-    move-result-object v0
-
-    sget-object v1, Lige;->b:Lige;
-
-    if-ne v0, v1, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
-
-.method public final w_()Z
-    .locals 2
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->b:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->d:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->f:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->g:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    invoke-virtual {v0}, Lgzz;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->c:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lgdr;->b()Lige;
-
-    move-result-object v0
-
-    sget-object v1, Lige;->b:Lige;
-
-    if-eq v0, v1, :cond_1
+    iput-boolean v0, p0, Lgdr;->e:Z
 
     :cond_0
-    iget-object v0, p0, Lgdr;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->a:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lgdr;->b()Lige;
-
-    move-result-object v0
-
-    sget-object v1, Lige;->b:Lige;
-
-    if-ne v0, v1, :cond_2
-
-    :cond_1
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method
 
-.method public final x_()Z
-    .locals 2
+.method public final f()V
+    .locals 1
 
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_AVAILABLE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    const/4 v0, 0x1
 
-    sget-object v1, Lgdr;->a:[I
+    iput-boolean v0, p0, Lgdr;->c:Z
 
-    invoke-virtual {p0, v0, v1}, Lgdr;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final i()V
+    .locals 1
 
-    check-cast v0, [I
+    const/4 v0, 0x0
 
-    const/4 v1, 0x5
+    iput-boolean v0, p0, Lgdr;->c:Z
 
-    invoke-static {v0, v1}, Ljwd;->a([II)Z
+    return-void
+.end method
 
-    move-result v0
+.method public final j()V
+    .locals 0
 
-    return v0
+    invoke-virtual {p0}, Lgdr;->b()V
+
+    return-void
 .end method

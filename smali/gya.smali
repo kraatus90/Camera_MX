@@ -1,23 +1,45 @@
-.class public interface abstract Lgya;
-.super Ljava/lang/Object;
+.class public final Lgya;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
+    .locals 0
+
+    iput-object p1, p0, Lgya;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Lgya;
-.end method
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-.method public abstract a(Ljig;)Lgya;
-.end method
+    iget-object v0, p0, Lgya;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-.method public abstract b()Lgya;
-.end method
+    const/4 v1, 0x0
 
-.method public abstract c()Lgya;
-.end method
+    iput-object v1, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->e:Landroid/animation/AnimatorSet;
 
-.method public abstract d()Lgya;
-.end method
+    iget-object v0, p0, Lgya;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-.method public abstract e()Lich;
+    sget v1, Lep;->bv:I
+
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->a(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;I)I
+
+    iget-object v0, p0, Lgya;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->setVisibility(I)V
+
+    return-void
 .end method

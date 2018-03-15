@@ -1,54 +1,108 @@
-.class public abstract Lhxn;
-.super Landroid/os/Binder;
+.class public final Lhxn;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhxm;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public static a(Landroid/os/IBinder;)Lhxm;
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    if-nez p0, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.wearable.internal.IWearableService"
-
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    instance-of v1, v0, Lhxm;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lhxm;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Lhxo;
-
-    invoke-direct {v0, p0}, Lhxo;-><init>(Landroid/os/IBinder;)V
-
-    goto :goto_0
+    return-void
 .end method
 
 
 # virtual methods
-.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 1
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 4
 
-    new-instance v0, Ljava/lang/NoSuchMethodError;
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
-    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+    move-result v1
+
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v2
+
+    if-ge v2, v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    const v3, 0xffff
+
+    and-int/2addr v3, v2
+
+    packed-switch v3, :pswitch_data_0
+
+    invoke-static {p1, v2}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v2
+
+    if-eq v2, v1, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v2, 0x25
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Overread allowed size end="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
 
     throw v0
+
+    :cond_1
+    new-instance v1, Lcom/google/android/gms/wearable/internal/zzaa;
+
+    invoke-direct {v1, v0}, Lcom/google/android/gms/wearable/internal/zzaa;-><init>(I)V
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzaa;
+
+    return-object v0
 .end method

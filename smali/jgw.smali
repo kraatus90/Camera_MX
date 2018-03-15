@@ -3,9 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljgp;
+.implements Ljha;
 
 
 # virtual methods
-.method public abstract close()V
+.method public abstract a(IILjgs;)Ljgv;
+.end method
+
+.method public abstract a(Landroid/graphics/Rect;Ljgs;)Ljgv;
+.end method
+
+.method public abstract a(Ljgs;)Ljgv;
+.end method
+
+.method public abstract b(Ljgs;)Ljgv;
 .end method

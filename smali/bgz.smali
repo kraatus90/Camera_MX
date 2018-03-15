@@ -1,64 +1,88 @@
-.class public final synthetic Lbgz;
+.class final Lbgz;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Lbgn;
+.field private final synthetic a:Lket;
+
+.field private final synthetic b:Ljava/lang/Runnable;
+
+.field private final synthetic c:Lbgy;
 
 
 # direct methods
-.method public constructor <init>(Lbgn;)V
+.method constructor <init>(Lbgy;Lket;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbgz;->c:Lbgy;
 
-    iput-object p1, p0, Lbgz;->a:Lbgn;
+    iput-object p2, p0, Lbgz;->a:Lket;
+
+    iput-object p3, p0, Lbgz;->b:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 4
 
-    iget-object v1, p0, Lbgz;->a:Lbgn;
+    iget-object v0, p0, Lbgz;->c:Lbgy;
 
-    iget-boolean v0, v1, Lbgn;->h:Z
+    iget-object v1, p0, Lbgz;->b:Ljava/lang/Runnable;
 
-    if-nez v0, :cond_1
+    sget-object v2, Lbgy;->a:Ljava/lang/String;
 
-    iget-object v0, v1, Lbgn;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    const-string v3, "Execute AF reset runnable"
 
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->iterator()Ljava/util/Iterator;
+    invoke-static {v2, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v2, v0, Lbgy;->c:Lihg;
+
+    invoke-static {}, Lfcm;->a()Lfco;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Lihg;->a(Ljava/lang/Object;)V
+
+    iget-object v0, v0, Lbgy;->d:Lihg;
+
+    invoke-static {}, Lfcm;->a()Lfco;
 
     move-result-object v2
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0, v2}, Lihg;->a(Ljava/lang/Object;)V
 
-    move-result v0
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    if-eqz v0, :cond_0
+    return-void
+.end method
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 3
 
-    move-result-object v0
+    check-cast p1, Laud;
 
-    check-cast v0, Lbfb;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Lbfb;->f()V
+    iget-object v0, p0, Lbgz;->c:Lbgy;
 
-    goto :goto_0
+    iget-object v0, v0, Lbgy;->b:Libk;
 
-    :cond_0
-    const/4 v0, 0x1
+    new-instance v1, Lbha;
 
-    iput-boolean v0, v1, Lbgn;->h:Z
+    iget-object v2, p0, Lbgz;->a:Lket;
 
-    :cond_1
+    invoke-direct {v1, v2}, Lbha;-><init>(Lket;)V
+
+    invoke-virtual {v0, v1}, Libk;->execute(Ljava/lang/Runnable;)V
+
     return-void
 .end method

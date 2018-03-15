@@ -1,13 +1,13 @@
-.class public final Ljdc;
+.class final Ljdc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljdg;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,62 +17,76 @@
 
 
 # virtual methods
-.method public final a(Lcom/google/android/libraries/smartburst/utils/Feature;Lcom/google/android/libraries/smartburst/utils/Feature;)F
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 6
 
-    const/4 v1, 0x0
+    const v5, 0x3dcccccd    # 0.1f
 
-    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/utils/Feature;->getType()Ljfs;
+    new-instance v3, Ljlz;
+
+    const-class v0, Ljjz;
+
+    const-string v1, "auc_motion_saliency"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {p2}, Lcom/google/android/libraries/smartburst/utils/Feature;->getType()Ljfs;
+    check-cast v0, Ljjz;
+
+    const-class v1, Ljjz;
+
+    const-string v2, "auc_quality"
+
+    invoke-virtual {p1, v1, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljjz;
+
+    const-class v2, Ljjz;
+
+    const-string v4, "auc_sharpness"
+
+    invoke-virtual {p1, v2, v4}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
-    if-ne v0, v2, :cond_0
+    check-cast v2, Ljjz;
 
-    const/4 v0, 0x1
+    invoke-direct {v3, v0, v1, v2}, Ljlz;-><init>(Ljjz;Ljjz;Ljjz;)V
 
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    const v0, 0x3f8ccccd    # 1.1f
 
-    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValues()[F
+    iput v0, v3, Ljlz;->d:F
 
-    move-result-object v2
+    const v0, 0x3e4ccccd    # 0.2f
 
-    invoke-virtual {p2}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValues()[F
+    iput v0, v3, Ljlz;->e:F
 
-    move-result-object v3
+    const v0, 0x3c23d70a    # 0.01f
 
-    const/4 v0, 0x0
+    iput v0, v3, Ljlz;->f:F
 
-    :goto_1
-    array-length v4, v2
+    const/high16 v0, 0x437a0000    # 250.0f
 
-    if-ge v1, v4, :cond_1
+    iput v0, v3, Ljlz;->g:F
 
-    aget v4, v3, v1
+    const/high16 v0, 0x43fa0000    # 500.0f
 
-    aget v5, v2, v1
+    iput v0, v3, Ljlz;->h:F
 
-    sub-float/2addr v4, v5
+    iput v5, v3, Ljlz;->i:F
 
-    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
+    const v0, 0x3e99999a    # 0.3f
 
-    move-result v4
+    iput v0, v3, Ljlz;->j:F
 
-    add-float/2addr v0, v4
+    iput v5, v3, Ljlz;->k:F
 
-    add-int/lit8 v1, v1, 0x1
+    new-instance v0, Ljlx;
 
-    goto :goto_1
+    invoke-direct {v0, v3}, Ljlx;-><init>(Ljlz;)V
 
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    return v0
+    return-object v0
 .end method

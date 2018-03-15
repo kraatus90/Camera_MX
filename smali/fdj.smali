@@ -1,121 +1,123 @@
-.class public Lfdj;
-.super Lgvh;
+.class public final enum Lfdj;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
-# instance fields
-.field private a:Liau;
+# static fields
+.field public static final enum a:Lfdj;
 
-.field private b:Lhem;
+.field public static final enum b:Lfdj;
 
-.field public d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+.field public static final enum c:Lfdj;
 
-.field public e:Lguc;
+.field public static final enum d:Lfdj;
 
-.field public f:Levh;
+.field public static final enum e:Lfdj;
 
-.field public g:Ljht;
+.field private static final synthetic f:[Lfdj;
 
 
 # direct methods
-.method public constructor <init>(Liau;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 7
 
-    const/4 v0, 0x0
+    const/4 v6, 0x4
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[Z)V
+    const/4 v5, 0x3
 
-    iput-object p1, p0, Lfdj;->a:Liau;
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Lfdj;
+
+    const-string v1, "AUTO"
+
+    invoke-direct {v0, v1, v2}, Lfdj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfdj;->a:Lfdj;
+
+    new-instance v0, Lfdj;
+
+    const-string v1, "CLOUDY"
+
+    invoke-direct {v0, v1, v3}, Lfdj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfdj;->b:Lfdj;
+
+    new-instance v0, Lfdj;
+
+    const-string v1, "SUNNY"
+
+    invoke-direct {v0, v1, v4}, Lfdj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfdj;->c:Lfdj;
+
+    new-instance v0, Lfdj;
+
+    const-string v1, "INCANDESCENT"
+
+    invoke-direct {v0, v1, v5}, Lfdj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfdj;->d:Lfdj;
+
+    new-instance v0, Lfdj;
+
+    const-string v1, "FLUORESCENT"
+
+    invoke-direct {v0, v1, v6}, Lfdj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lfdj;->e:Lfdj;
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Lfdj;
+
+    sget-object v1, Lfdj;->a:Lfdj;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lfdj;->b:Lfdj;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lfdj;->c:Lfdj;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lfdj;->d:Lfdj;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lfdj;->e:Lfdj;
+
+    aput-object v1, v0, v6
+
+    sput-object v0, Lfdj;->f:[Lfdj;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public a()V
-    .locals 1
-
-    iget-object v0, p0, Lfdj;->b:Lhem;
-
-    invoke-interface {v0}, Lhem;->e()V
-
-    iget-object v0, p0, Lfdj;->b:Lhem;
-
-    invoke-interface {v0}, Lhem;->f()V
-
-    iget-object v0, p0, Lfdj;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->disablePhotoVideoSwitch()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Landroid/view/Window;Levh;Laxo;Ljht;)V
-    .locals 3
+.method public static values()[Lfdj;
+    .locals 1
 
-    iput-object p1, p0, Lfdj;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    sget-object v0, Lfdj;->f:[Lfdj;
 
-    iput-object p2, p0, Lfdj;->e:Lguc;
-
-    iput-object p5, p0, Lfdj;->f:Levh;
-
-    iget-object v0, p0, Lfdj;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToPhotoIntent()V
-
-    iget-object v0, p0, Lfdj;->e:Lguc;
-
-    iget-object v1, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    sget-object v2, Lgua;->a:Lgua;
-
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setMode(Lgua;)V
-
-    iget-object v0, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setVisibility(I)V
-
-    iput-object p3, p0, Lfdj;->b:Lhem;
-
-    iput-object p7, p0, Lfdj;->g:Ljht;
-
-    invoke-virtual {p6}, Laxo;->a()V
-
-    iget-object v0, p0, Lfdj;->a:Liau;
-
-    sget-object v1, Lgys;->i:Lgys;
-
-    invoke-interface {v0, v1}, Liau;->a(Ljava/lang/Object;)V
-
-    invoke-virtual {p4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual {v0}, [Lfdj;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    const/4 v1, 0x3
+    check-cast v0, [Lfdj;
 
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
-
-    invoke-virtual {p4, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    return-void
-.end method
-
-.method public b()V
-    .locals 1
-
-    iget-object v0, p0, Lfdj;->b:Lhem;
-
-    invoke-interface {v0}, Lhem;->d()V
-
-    iget-object v0, p0, Lfdj;->b:Lhem;
-
-    invoke-interface {v0}, Lhem;->f()V
-
-    iget-object v0, p0, Lfdj;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->enablePhotoVideoSwitch()V
-
-    return-void
+    return-object v0
 .end method

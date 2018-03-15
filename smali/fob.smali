@@ -1,122 +1,137 @@
-.class public abstract Lfob;
+.class final Lfob;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public a:Ljava/nio/FloatBuffer;
+.field public final a:Lfnu;
 
-.field public b:Ljava/nio/FloatBuffer;
+.field public final b:Lkeh;
 
-.field public c:Ljava/nio/ShortBuffer;
+.field public final c:Lket;
 
-.field public d:Ljava/util/Vector;
+.field public final d:Lfsz;
 
-.field public e:Lfoe;
-
-.field private f:[F
-
-.field private g:[F
+.field public final synthetic e:Lfnw;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method constructor <init>(Lfnw;Lfnu;)V
+    .locals 1
 
-    const/16 v2, 0x10
-
-    const/4 v1, 0x0
+    iput-object p1, p0, Lfob;->e:Lfnw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lfob;->a:Ljava/nio/FloatBuffer;
+    iput-object p2, p0, Lfob;->a:Lfnu;
 
-    iput-object v1, p0, Lfob;->b:Ljava/nio/FloatBuffer;
+    iget-object v0, p2, Lfnu;->d:Lkeh;
 
-    iput-object v1, p0, Lfob;->c:Ljava/nio/ShortBuffer;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Ljava/util/Vector;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    check-cast v0, Lkeh;
 
-    iput-object v0, p0, Lfob;->d:Ljava/util/Vector;
+    iput-object v0, p0, Lfob;->b:Lkeh;
 
-    new-array v0, v2, [F
+    new-instance v0, Lket;
 
-    iput-object v0, p0, Lfob;->f:[F
+    invoke-direct {v0}, Lket;-><init>()V
 
-    new-array v0, v2, [F
+    iput-object v0, p0, Lfob;->c:Lket;
 
-    iput-object v0, p0, Lfob;->g:[F
+    new-instance v0, Lfsz;
 
-    iput-object v1, p0, Lfob;->e:Lfoe;
+    invoke-direct {v0}, Lfsz;-><init>()V
 
-    iget-object v0, p0, Lfob;->f:[F
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    iput-object v0, p0, Lfob;->d:Lfsz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final a()J
+    .locals 2
 
-    return-void
+    iget-object v0, p0, Lfob;->e:Lfnw;
+
+    iget-object v1, p0, Lfob;->b:Lkeh;
+
+    invoke-virtual {v0, v1}, Lfnw;->a(Lkeh;)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
-.method public final a(IFF)V
-    .locals 4
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    mul-int/lit8 v0, p1, 0x3
+    iget-object v0, p0, Lfob;->c:Lket;
 
-    iget-object v1, p0, Lfob;->a:Ljava/nio/FloatBuffer;
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    add-int/lit8 v2, v0, 0x1
+    move-result v0
 
-    invoke-virtual {v1, v0, p2}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lfob;->a:Ljava/nio/FloatBuffer;
+    iget-object v0, p0, Lfob;->c:Lket;
 
-    add-int/lit8 v1, v2, 0x1
+    invoke-virtual {v0}, Lkch;->isCancelled()Z
 
-    const v3, -0x40266666    # -1.7f
+    move-result v0
 
-    invoke-virtual {v0, v2, v3}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
+    if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lfob;->a:Ljava/nio/FloatBuffer;
+    :cond_0
+    iget-object v0, p0, Lfob;->e:Lfnw;
 
-    invoke-virtual {v0, v1, p3}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
+    iget-object v1, v0, Lfnw;->a:Ljava/lang/Object;
 
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lfob;->e:Lfnw;
+
+    iget-object v0, v0, Lfnw;->j:Ljava/util/Deque;
+
+    invoke-interface {v0, p0}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfob;->e:Lfnw;
+
+    iget-object v0, v0, Lfnw;->k:Ljava/util/Deque;
+
+    invoke-interface {v0, p0}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfob;->e:Lfnw;
+
+    iget-object v0, v0, Lfnw;->l:Ljava/util/List;
+
+    invoke-interface {v0, p0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfob;->e:Lfnw;
+
+    iget-object v0, v0, Lfnw;->g:Lidb;
+
+    invoke-virtual {v0}, Lidb;->a()V
+
+    iget-object v0, p0, Lfob;->e:Lfnw;
+
+    invoke-virtual {v0}, Lfnw;->c()V
+
+    monitor-exit v1
+
+    :cond_1
     return-void
-.end method
 
-.method public a([F)V
-    .locals 6
+    :catchall_0
+    move-exception v0
 
-    const/4 v1, 0x0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lfob;->g:[F
-
-    iget-object v4, p0, Lfob;->f:[F
-
-    move-object v2, p1
-
-    move v3, v1
-
-    move v5, v1
-
-    invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
-
-    iget-object v0, p0, Lfob;->g:[F
-
-    invoke-virtual {p0, v0}, Lfob;->b([F)V
-
-    return-void
-.end method
-
-.method public abstract b([F)V
+    throw v0
 .end method

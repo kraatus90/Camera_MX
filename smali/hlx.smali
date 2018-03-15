@@ -1,174 +1,146 @@
-.class public abstract Lhlx;
-.super Lhlh;
+.class public final Lhlx;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhkj;
-.implements Lhlz;
-
-
-# instance fields
-.field private g:Ljava/util/Set;
-
-.field private h:Landroid/accounts/Account;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ILhls;Lhkn;Lhko;)V
-    .locals 9
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-static {p1}, Lhma;->a(Landroid/content/Context;)Lhma;
-
-    move-result-object v3
-
-    sget-object v4, Lhjv;->a:Lhjv;
-
-    invoke-static {p5}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lhkn;
-
-    invoke-static {p6}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lhko;
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move v5, p3
-
-    move-object v6, p4
-
-    invoke-direct/range {v0 .. v8}, Lhlx;-><init>(Landroid/content/Context;Landroid/os/Looper;Lhma;Lhjv;ILhls;Lhkn;Lhko;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lhma;Lhjv;ILhls;Lhkn;Lhko;)V
-    .locals 10
-
-    if-nez p7, :cond_1
-
-    const/4 v7, 0x0
-
-    :goto_0
-    if-nez p8, :cond_2
-
-    const/4 v8, 0x0
-
-    :goto_1
-    move-object/from16 v0, p6
-
-    iget-object v9, v0, Lhls;->f:Ljava/lang/String;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move v6, p5
-
-    invoke-direct/range {v1 .. v9}, Lhlh;-><init>(Landroid/content/Context;Landroid/os/Looper;Lhma;Lhjx;ILhlj;Lhlk;Ljava/lang/String;)V
-
-    move-object/from16 v0, p6
-
-    iget-object v1, v0, Lhls;->a:Landroid/accounts/Account;
-
-    iput-object v1, p0, Lhlx;->h:Landroid/accounts/Account;
-
-    move-object/from16 v0, p6
-
-    iget-object v2, v0, Lhls;->c:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/api/Scope;
-
-    invoke-interface {v2, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "Expanding scopes is not permitted, use implied scopes instead"
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_1
-    new-instance v7, Lhlj;
-
-    move-object/from16 v0, p7
-
-    invoke-direct {v7, v0}, Lhlj;-><init>(Lhkn;)V
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v8, Lhlk;
-
-    move-object/from16 v0, p8
-
-    invoke-direct {v8, v0}, Lhlk;-><init>(Lhko;)V
-
-    goto :goto_1
-
-    :cond_3
-    iput-object v2, p0, Lhlx;->g:Ljava/util/Set;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final j()Landroid/accounts/Account;
-    .locals 1
-
-    iget-object v0, p0, Lhlx;->h:Landroid/accounts/Account;
-
-    return-object v0
-.end method
-
-.method public final k()[Lcom/google/android/gms/common/zzc;
-    .locals 1
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 7
 
     const/4 v0, 0x0
 
-    new-array v0, v0, [Lcom/google/android/gms/common/zzc;
+    const/4 v1, 0x0
 
-    return-object v0
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
+
+    move-result v4
+
+    move v2, v1
+
+    move v3, v1
+
+    move-object v1, v0
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v5
+
+    if-ge v5, v4, :cond_0
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v5
+
+    const v6, 0xffff
+
+    and-int/2addr v6, v5
+
+    sparse-switch v6, :sswitch_data_0
+
+    invoke-static {p1, v5}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :sswitch_0
+    invoke-static {p1, v5}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v2
+
+    goto :goto_0
+
+    :sswitch_1
+    invoke-static {p1, v5}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :sswitch_2
+    sget-object v0, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v5, v0}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/PendingIntent;
+
+    goto :goto_0
+
+    :sswitch_3
+    invoke-static {p1, v5}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v5
+
+    if-eq v5, v4, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v4, Lcom/google/android/gms/common/api/Status;
+
+    invoke-direct {v4, v3, v2, v1, v0}, Lcom/google/android/gms/common/api/Status;-><init>(IILjava/lang/String;Landroid/app/PendingIntent;)V
+
+    return-object v4
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x2 -> :sswitch_1
+        0x3 -> :sswitch_2
+        0x3e8 -> :sswitch_3
+    .end sparse-switch
 .end method
 
-.method protected final o()Ljava/util/Set;
+.method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lhlx;->g:Ljava/util/Set;
+    new-array v0, p1, [Lcom/google/android/gms/common/api/Status;
 
     return-object v0
 .end method

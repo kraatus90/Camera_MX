@@ -1,17 +1,18 @@
 .class public final Lhiy;
 .super Ljava/lang/Object;
+.source "PG"
 
 
 # static fields
-.field private static a:Ljava/util/concurrent/locks/Lock;
+.field public static final a:Ljava/util/concurrent/locks/ReentrantLock;
 
-.field private static b:Lhiy;
+.field private static b:Landroid/support/v8/renderscript/RenderScript;
 
+.field private static c:Ljava/lang/String;
 
-# instance fields
-.field private c:Ljava/util/concurrent/locks/Lock;
+.field private static d:Ljava/lang/String;
 
-.field private d:Landroid/content/SharedPreferences;
+.field private static final e:Ljava/lang/String;
 
 
 # direct methods
@@ -22,258 +23,147 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    sput-object v0, Lhiy;->a:Ljava/util/concurrent/locks/Lock;
+    sput-object v0, Lhiy;->a:Ljava/util/concurrent/locks/ReentrantLock;
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method private constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    sput-object v0, Lhiy;->b:Landroid/support/v8/renderscript/RenderScript;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "camera.renderscript"
 
-    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
+    sput-object v0, Lhiy;->c:Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+    const-string v0, "1"
 
-    iput-object v0, p0, Lhiy;->c:Ljava/util/concurrent/locks/Lock;
+    sput-object v0, Lhiy;->d:Ljava/lang/String;
 
-    const-string v0, "com.google.android.gms.signin"
+    const-string v0, "RenderScriptPool"
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lhiy;->d:Landroid/content/SharedPreferences;
+    sput-object v0, Lhiy;->e:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Lhiy;
-    .locals 2
+.method public static a(Landroid/content/Context;)Landroid/support/v8/renderscript/RenderScript;
+    .locals 5
 
-    invoke-static {p0}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    sget-object v0, Lhiy;->a:Ljava/util/concurrent/locks/Lock;
+    new-instance v2, Lbjy;
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    :try_start_0
-    sget-object v0, Lhiy;->b:Lhiy;
+    move-result-object v1
 
-    if-nez v0, :cond_0
+    invoke-static {}, Lhbh;->a()Lhbh;
 
-    new-instance v0, Lhiy;
+    move-result-object v3
+
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v4
+
+    invoke-direct {v2, v1, v3, v4}, Lbjy;-><init>(Landroid/content/ContentResolver;Lhbh;Landroid/content/SharedPreferences;)V
+
+    sget-object v1, Limr;->a:Limq;
+
+    sget-object v3, Lhiy;->c:Ljava/lang/String;
+
+    invoke-virtual {v1, v3}, Limq;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljrh;->a(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
+
+    :goto_0
+    if-eqz v1, :cond_1
+
+    sget-object v1, Lhiy;->d:Ljava/lang/String;
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    :goto_1
+    if-nez v1, :cond_2
+
+    sget-object v1, Lhiy;->e:Ljava/lang/String;
+
+    const-string v2, "RenderScript not configured"
+
+    invoke-static {v1, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_2
+    return-object v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v1, v2, Lbjy;->a:Landroid/content/ContentResolver;
+
+    const-string v3, "camera:use_renderscript"
+
+    sget-boolean v4, Lhbh;->a:Z
+
+    invoke-virtual {v2, v1, v3, v4}, Lbjy;->a(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    goto :goto_1
+
+    :cond_2
+    sget-object v1, Lhiy;->a:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->tryLock()Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    sget-object v1, Lhiy;->e:Ljava/lang/String;
+
+    const-string v2, "RenderScript already used"
+
+    invoke-static {v1, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_2
+
+    :cond_3
+    sget-object v0, Lhiy;->b:Landroid/support/v8/renderscript/RenderScript;
+
+    if-nez v0, :cond_4
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Lhiy;-><init>(Landroid/content/Context;)V
-
-    sput-object v0, Lhiy;->b:Lhiy;
-
-    :cond_0
-    sget-object v0, Lhiy;->b:Lhiy;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    sget-object v1, Lhiy;->a:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    sget-object v1, Lhiy;->a:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    throw v0
-.end method
-
-.method private static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-
-    const-string v0, ":"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Landroid/support/v8/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/support/v8/renderscript/RenderScript;
 
     move-result-object v0
 
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    sput-object v0, Lhiy;->b:Landroid/support/v8/renderscript/RenderScript;
 
-    move-result-object v1
+    :cond_4
+    sget-object v0, Lhiy;->e:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    const-string v1, "RenderScript acquired"
 
-    move-result v1
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    sget-object v0, Lhiy;->b:Landroid/support/v8/renderscript/RenderScript;
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-    .locals 2
-
-    const/4 v0, 0x0
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    :goto_0
-    return-object v0
-
-    :cond_1
-    const-string v1, "googleSignInAccount"
-
-    invoke-static {v1, p1}, Lhiy;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lhiy;->c(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    :try_start_0
-    invoke-static {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->a(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method public final b(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
-    .locals 2
-
-    const/4 v0, 0x0
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    :goto_0
-    return-object v0
-
-    :cond_1
-    const-string v1, "googleSignInOptions"
-
-    invoke-static {v1, p1}, Lhiy;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lhiy;->c(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    :try_start_0
-    invoke-static {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->a(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-.end method
-
-.method public final c(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-
-    iget-object v0, p0, Lhiy;->c:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
-
-    :try_start_0
-    iget-object v0, p0, Lhiy;->d:Landroid/content/SharedPreferences;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhiy;->c:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lhiy;->c:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    throw v0
+    goto :goto_2
 .end method

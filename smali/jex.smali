@@ -1,20 +1,20 @@
-.class public final Ljex;
+.class final Ljex;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
+.implements Ljdt;
 
 
 # instance fields
-.field private synthetic a:Ljfl;
+.field private final synthetic a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljfl;)V
+.method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    iput-object p1, p0, Ljex;->a:Ljfl;
+    iput-object p1, p0, Ljex;->a:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,36 +23,16 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 4
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Ljdh;
+    iget-object v0, p0, Ljex;->a:Landroid/content/Context;
 
-    new-instance v0, Ljdl;
+    const v1, 0x7f090007
 
-    invoke-direct {v0, p1}, Ljdl;-><init>(Ljdh;)V
+    invoke-static {v0, v1}, Ljdu;->a(Landroid/content/Context;I)Ljava/nio/ByteBuffer;
 
-    const-string v1, "row_distance_%s.csv"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p2, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ljex;->a:Ljfl;
-
-    new-instance v3, Ljdm;
-
-    invoke-direct {v3, v0}, Ljdm;-><init>(Ljdl;)V
-
-    invoke-virtual {v2, v1, v3}, Ljfl;->a(Ljava/lang/String;Ljfn;)V
+    move-result-object v0
 
     return-object v0
 .end method

@@ -2,44 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljtu;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lctz;
-
-.field private b:Lcqr;
+.field private final a:Lctw;
 
 
 # direct methods
-.method constructor <init>(Lctz;Lcqr;)V
+.method constructor <init>(Lctw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcua;->a:Lctz;
-
-    iput-object p2, p0, Lcua;->b:Lcqr;
+    iput-object p1, p0, Lcua;->a:Lctw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljuw;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lcua;->a:Lctz;
+    iget-object v0, p0, Lcua;->a:Lctw;
 
-    iget-object v1, p0, Lcua;->b:Lcqr;
+    sget-object v1, Lcbm;->e:Lcbm;
 
-    check-cast p1, Lfhs;
+    const/4 v2, 0x1
 
-    iget-object v1, v1, Lcqr;->d:Lfhu;
+    invoke-virtual {v0, v1, v2}, Lctw;->a(Lcbm;Z)Lkeh;
 
-    invoke-virtual {v0, v1, p1}, Lctz;->a(Lfhu;Lfhs;)Ljuw;
+    iget-object v1, v0, Lctw;->n:Lgob;
+
+    iget-object v0, v0, Lctw;->ag:Landroid/content/DialogInterface$OnClickListener;
+
+    invoke-interface {v1, v0}, Lgob;->e(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
+
+    return-void
 .end method

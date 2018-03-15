@@ -1,69 +1,66 @@
-.class Lbjl;
-.super Lgvh;
+.class public final Lbjl;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbjj;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbjj;)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    iput-object p1, p0, Lbjl;->a:Lbjj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lbjl;->a:Lkgv;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>(B)V
+    iput-object p2, p0, Lbjl;->b:Lkgv;
+
+    iput-object p3, p0, Lbjl;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lbjl;->a:Lbjj;
+    new-instance v3, Lbjk;
 
-    iget-object v0, v0, Lbjj;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    iget-object v0, p0, Lbjl;->a:Lkgv;
 
-    const/4 v1, 0x0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->b(Z)V
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Linn;
 
-.method public final b()V
-    .locals 2
+    iget-object v1, p0, Lbjl;->b:Lkgv;
 
-    iget-object v0, p0, Lbjl;->a:Lbjj;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lbjj;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    move-result-object v1
 
-    const/4 v1, 0x0
+    check-cast v1, Lgnv;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setVisibility(I)V
+    iget-object v2, p0, Lbjl;->c:Lkgv;
 
-    return-void
-.end method
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-.method public c()V
-    .locals 1
+    move-result-object v2
 
-    iget-object v0, p0, Lbjl;->a:Lbjj;
+    check-cast v2, Lgmy;
 
-    iget-object v0, v0, Lbjj;->c:Landroid/animation/ObjectAnimator;
+    invoke-direct {v3, v0, v1, v2}, Lbjk;-><init>(Linn;Lgnv;Lgmy;)V
 
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
+    return-object v3
 .end method

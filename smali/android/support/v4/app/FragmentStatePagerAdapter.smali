@@ -1,5 +1,5 @@
 .class public abstract Landroid/support/v4/app/FragmentStatePagerAdapter;
-.super Lib;
+.super Lhx;
 .source "PG"
 
 
@@ -27,7 +27,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0}, Lib;-><init>()V
+    invoke-direct {p0}, Lhx;-><init>()V
 
     iput-object v1, p0, Landroid/support/v4/app/FragmentStatePagerAdapter;->mCurTransaction:Landroid/support/v4/app/FragmentTransaction;
 

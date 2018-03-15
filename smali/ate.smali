@@ -2,16 +2,28 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lihg;
+
 
 # virtual methods
-.method public abstract a()Ljuw;
+.method public abstract a(Landroid/graphics/PointF;)Lhaw;
 .end method
 
-.method public abstract b()Ljuw;
+.method public abstract a(Ljrf;)Lhaw;
 .end method
 
-.method public abstract c()V
+.method public abstract a()V
 .end method
 
-.method public abstract d()V
+.method public abstract a(Z)V
+.end method
+
+.method public abstract b()Lhaw;
+.end method
+
+.method public abstract b(Z)V
+.end method
+
+.method public abstract c()Lhaw;
 .end method

@@ -1,56 +1,117 @@
 .class public final Lejs;
-.super Ljava/lang/Object;
+.super Landroid/os/HandlerThread;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private a:Landroid/os/Handler;
+
+.field private final synthetic b:I
+
+.field private final synthetic c:Lejr;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lejr;Ljava/lang/String;I)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lejs;->c:Lejr;
 
-    iput-object p1, p0, Lejs;->a:Ljxn;
+    iput p3, p0, Lejs;->b:I
+
+    invoke-direct {p0, p2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lejs;->a:Landroid/os/Handler;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lejs;
-
-    invoke-direct {v0, p0}, Lejs;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method protected final onLooperPrepared()V
+    .locals 5
 
-    iget-object v0, p0, Lejs;->a:Ljxn;
+    const/4 v4, 0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v0, Landroid/os/Handler;
 
-    move-result-object v0
+    invoke-virtual {p0}, Lejs;->getLooper()Landroid/os/Looper;
 
-    check-cast v0, Lekk;
+    move-result-object v1
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-object v0, p0, Lejs;->a:Landroid/os/Handler;
 
-    move-result-object v0
+    iget-object v0, p0, Lejs;->c:Lejr;
 
-    check-cast v0, Lejp;
+    iget-object v0, v0, Lejr;->d:Landroid/hardware/SensorManager;
 
-    return-object v0
+    iget-object v1, p0, Lejs;->c:Lejr;
+
+    iget-object v1, v1, Lejr;->t:Landroid/hardware/SensorEventListener;
+
+    iget-object v2, p0, Lejs;->c:Lejr;
+
+    iget-object v2, v2, Lejr;->d:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v2, v4}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lejs;->a:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1, v2, v4, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+
+    iget-object v0, p0, Lejs;->c:Lejr;
+
+    iget-object v0, v0, Lejr;->d:Landroid/hardware/SensorManager;
+
+    iget-object v1, p0, Lejs;->c:Lejr;
+
+    iget-object v1, v1, Lejr;->t:Landroid/hardware/SensorEventListener;
+
+    iget-object v2, p0, Lejs;->c:Lejr;
+
+    iget-object v2, v2, Lejr;->d:Landroid/hardware/SensorManager;
+
+    const/4 v3, 0x4
+
+    invoke-virtual {v2, v3}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object v2
+
+    iget v3, p0, Lejs;->b:I
+
+    iget-object v4, p0, Lejs;->a:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+
+    iget-object v0, p0, Lejs;->c:Lejr;
+
+    iget-object v0, v0, Lejr;->d:Landroid/hardware/SensorManager;
+
+    iget-object v1, p0, Lejs;->c:Lejr;
+
+    iget-object v1, v1, Lejr;->t:Landroid/hardware/SensorEventListener;
+
+    iget-object v2, p0, Lejs;->c:Lejr;
+
+    iget-object v2, v2, Lejr;->d:Landroid/hardware/SensorManager;
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v2, v3}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object v2
+
+    const/4 v3, 0x3
+
+    iget-object v4, p0, Lejs;->a:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+
+    return-void
 .end method

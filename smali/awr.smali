@@ -1,42 +1,88 @@
-.class final Lawr;
+.class public Lawr;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Runnable;
-
-.field private synthetic b:Lawq;
+.field public final a:Landroid/app/Activity;
 
 
 # direct methods
-.method constructor <init>(Lawq;Ljava/lang/Runnable;)V
+.method public constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
-    iput-object p1, p0, Lawr;->b:Lawq;
-
-    iput-object p2, p0, Lawr;->a:Ljava/lang/Runnable;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lawr;->a:Landroid/app/Activity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public a()Landroid/content/Intent;
+    .locals 1
 
-    iget-object v0, p0, Lawr;->b:Lawq;
+    iget-object v0, p0, Lawr;->a:Landroid/app/Activity;
 
-    iget-object v0, v0, Lawq;->a:Ljava/util/concurrent/Executor;
+    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    iget-object v1, p0, Lawr;->a:Ljava/lang/Runnable;
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    return-object v0
+.end method
+
+.method public a(ILandroid/content/Intent;)V
+    .locals 1
+
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lawr;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0, p1, p2}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public a(Landroid/content/Intent;)V
+    .locals 1
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lawr;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    return-void
+.end method
+
+.method public a(Landroid/content/Intent;II)V
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lawr;->a(Landroid/content/Intent;)V
+
+    iget-object v0, p0, Lawr;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0, p2, p3}, Landroid/app/Activity;->overridePendingTransition(II)V
+
+    return-void
+.end method
+
+.method public b(Landroid/content/Intent;)V
+    .locals 1
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lawr;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V
 
     return-void
 .end method

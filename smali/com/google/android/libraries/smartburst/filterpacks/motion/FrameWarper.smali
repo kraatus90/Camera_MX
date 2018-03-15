@@ -42,12 +42,12 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     if-lez p2, :cond_1
 
     :goto_1
-    invoke-static {v1}, Liya;->a(Z)V
+    invoke-static {v1}, Ljii;->a(Z)V
 
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/motion/FrameWarper;->mContextBuffer:Ljava/nio/ByteBuffer;
 

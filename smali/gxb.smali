@@ -1,43 +1,42 @@
-.class final synthetic Lgxb;
+.class public final Lgxb;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lgwx;
 
 
 # instance fields
-.field private a:Lgwz;
+.field private final a:I
 
-.field private b:Landroid/os/Handler;
+.field private final b:[Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Lgwz;Landroid/os/Handler;)V
+.method public varargs constructor <init>(I[Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxb;->a:Lgwz;
+    iput p1, p0, Lgxb;->a:I
 
-    iput-object p2, p0, Lgxb;->b:Landroid/os/Handler;
+    iput-object p2, p0, Lgxb;->b:[Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final a(Landroid/content/res/Resources;)Ljava/lang/String;
+    .locals 2
 
-    iget-object v0, p0, Lgxb;->a:Lgwz;
+    iget v0, p0, Lgxb;->a:I
 
-    iget-object v1, p0, Lgxb;->b:Landroid/os/Handler;
+    iget-object v1, p0, Lgxb;->b:[Ljava/lang/Object;
 
-    new-instance v2, Lgxc;
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v2, v0}, Lgxc;-><init>(Lgwz;)V
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+    return-object v0
 .end method

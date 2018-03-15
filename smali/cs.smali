@@ -1,33 +1,17 @@
-.class final Lcs;
-.super Lcn;
+.class public interface abstract Lcs;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lch;
-
-
-# direct methods
-.method constructor <init>(Lch;)V
-    .locals 0
-
-    iput-object p1, p0, Lcs;->a:Lch;
-
-    invoke-direct {p0}, Lcn;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a()V
 .end method
 
+.method public abstract a(Lcn;)V
+.end method
 
-# virtual methods
-.method public final a(Lch;)V
-    .locals 1
+.method public abstract b()V
+.end method
 
-    iget-object v0, p0, Lcs;->a:Lch;
-
-    invoke-virtual {v0}, Lch;->b()V
-
-    invoke-virtual {p1, p0}, Lch;->b(Lcm;)Lch;
-
-    return-void
+.method public abstract c()V
 .end method

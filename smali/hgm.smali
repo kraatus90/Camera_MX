@@ -1,81 +1,69 @@
 .class final Lhgm;
-.super Ljava/lang/Object;
+.super Lhhk;
 .source "PG"
-
-# interfaces
-.implements Laau;
 
 
 # instance fields
-.field private synthetic a:Lhfp;
+.field private final synthetic a:Lhgl;
 
 
 # direct methods
-.method constructor <init>(Lhfp;)V
+.method constructor <init>(Lhgl;)V
     .locals 0
 
-    iput-object p1, p0, Lhgm;->a:Lhfp;
+    iput-object p1, p0, Lhgm;->a:Lhgl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lhhk;-><init>(Lhhe;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ZLabe;)V
-    .locals 4
+.method public final an()V
+    .locals 2
 
-    iget-object v0, p0, Lhgm;->a:Lhfp;
+    iget-object v0, p0, Lhgm;->a:Lhgl;
 
-    iget-object v0, v0, Lhfp;->q:Lffe;
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    iget-boolean v1, v0, Lffe;->f:Z
+    invoke-virtual {v0}, Lgld;->a()V
 
-    if-eqz v1, :cond_0
+    invoke-super {p0}, Lhhk;->an()V
 
-    iget v1, v0, Lffe;->e:I
+    iget-object v0, p0, Lhgm;->a:Lhgl;
 
-    if-nez v1, :cond_0
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    if-eqz p1, :cond_1
+    iget-object v1, p0, Lhgm;->a:Lhgl;
 
-    iget-boolean v1, v0, Lffe;->p:Z
+    iget-object v1, v1, Lhgl;->e:Lglf;
 
-    if-nez v1, :cond_1
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    iget-object v1, v0, Lffe;->q:Lass;
-
-    sget-object v2, Ljhi;->a:Ljhi;
-
-    invoke-interface {v1, v2}, Lass;->a(Ljht;)Lgzp;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lgzp;->a()Ljuw;
-
-    move-result-object v1
-
-    new-instance v2, Lfff;
-
-    invoke-direct {v2, v0}, Lfff;-><init>(Lffe;)V
-
-    invoke-static {}, Lhjg;->c()Ljava/util/concurrent/Executor;
-
-    move-result-object v3
-
-    invoke-static {v1, v2, v3}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    :goto_0
-    iput-boolean p1, v0, Lffe;->p:Z
-
-    :cond_0
     return-void
+.end method
 
-    :cond_1
-    iget-object v1, v0, Lffe;->q:Lass;
+.method public final e()V
+    .locals 2
 
-    invoke-interface {v1}, Lass;->a()V
+    iget-object v0, p0, Lhgm;->a:Lhgl;
 
-    goto :goto_0
+    iget-object v0, v0, Lhgl;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lhhk;->e()V
+
+    iget-object v0, p0, Lhgm;->a:Lhgl;
+
+    iget-object v0, v0, Lhgl;->a:Lgld;
+
+    iget-object v1, p0, Lhgm;->a:Lhgl;
+
+    iget-object v1, v1, Lhgl;->d:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

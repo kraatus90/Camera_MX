@@ -264,9 +264,9 @@
 
     :goto_1
     :try_start_2
-    sget-object v2, Ljvs;->a:Ljvt;
+    sget-object v2, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v2, v1}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v1}, Lkfe;->b(Ljava/lang/Throwable;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 

@@ -2,373 +2,519 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lejt;
-
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final a:Leia;
 
-.field public final b:Ljava/util/HashMap;
+.field private final b:Leia;
+
+.field private final c:Leia;
+
+.field private final d:Leia;
+
+.field private final e:Leia;
+
+.field private final f:Lehx;
+
+.field private final g:Lehx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "IProxyListener"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v0, Leia;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Leia;-><init>()V
 
-    iput-object v0, p0, Leju;->a:Ljava/util/List;
+    iput-object v0, p0, Leju;->b:Leia;
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Leia;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Leia;-><init>()V
 
-    iput-object v0, p0, Leju;->b:Ljava/util/HashMap;
+    iput-object v0, p0, Leju;->c:Leia;
+
+    new-instance v0, Leia;
+
+    invoke-direct {v0}, Leia;-><init>()V
+
+    iput-object v0, p0, Leju;->d:Leia;
+
+    new-instance v0, Leia;
+
+    invoke-direct {v0}, Leia;-><init>()V
+
+    iput-object v0, p0, Leju;->e:Leia;
+
+    new-instance v0, Lehx;
+
+    invoke-direct {v0}, Lehx;-><init>()V
+
+    iput-object v0, p0, Leju;->f:Lehx;
+
+    new-instance v0, Lehx;
+
+    invoke-direct {v0}, Lehx;-><init>()V
+
+    iput-object v0, p0, Leju;->g:Lehx;
+
+    new-instance v0, Leia;
+
+    invoke-direct {v0}, Leia;-><init>()V
+
+    iput-object v0, p0, Leju;->a:Leia;
 
     return-void
 .end method
 
-.method private final a(J)Ljava/util/List;
-    .locals 7
+.method public static a(Leia;Lehx;)V
+    .locals 18
 
-    new-instance v2, Ljava/util/ArrayList;
+    move-object/from16 v0, p0
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    move-object/from16 v1, p0
 
-    iget-object v0, p0, Leju;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_0
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lejt;
-
-    iget-object v1, p0, Leju;->b:Ljava/util/HashMap;
-
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Leju;->b:Ljava/util/HashMap;
-
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Long;
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    invoke-static {v0, v1}, Leia;->a(Leia;Leia;)D
 
     move-result-wide v4
 
-    cmp-long v1, v4, p1
+    invoke-static {v4, v5}, Ljava/lang/Math;->sqrt(D)D
 
-    if-nez v1, :cond_0
+    move-result-wide v2
+
+    const-wide v6, 0x3e45798ee2308c3aL    # 1.0E-8
+
+    cmpg-double v6, v4, v6
+
+    if-gez v6, :cond_0
+
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    const-wide v6, 0x3fc5555560000000L    # 0.1666666716337204
+
+    mul-double/2addr v4, v6
+
+    sub-double v4, v2, v4
+
+    const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
+
+    :goto_0
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Leia;->a:D
+
+    move-object/from16 v0, p0
+
+    iget-wide v8, v0, Leia;->a:D
+
+    mul-double/2addr v6, v8
+
+    move-object/from16 v0, p0
+
+    iget-wide v8, v0, Leia;->b:D
+
+    move-object/from16 v0, p0
+
+    iget-wide v10, v0, Leia;->b:D
+
+    mul-double/2addr v8, v10
+
+    move-object/from16 v0, p0
+
+    iget-wide v10, v0, Leia;->c:D
+
+    move-object/from16 v0, p0
+
+    iget-wide v12, v0, Leia;->c:D
+
+    mul-double/2addr v10, v12
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const-wide/high16 v14, 0x3ff0000000000000L    # 1.0
+
+    add-double v16, v8, v10
+
+    mul-double v16, v16, v2
+
+    sub-double v14, v14, v16
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v12, v13, v14, v15}, Lehx;->a(IID)V
+
+    const/4 v12, 0x1
+
+    const/4 v13, 0x1
+
+    const-wide/high16 v14, 0x3ff0000000000000L    # 1.0
+
+    add-double/2addr v10, v6
+
+    mul-double/2addr v10, v2
+
+    sub-double v10, v14, v10
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v12, v13, v10, v11}, Lehx;->a(IID)V
+
+    const/4 v10, 0x2
+
+    const/4 v11, 0x2
+
+    const-wide/high16 v12, 0x3ff0000000000000L    # 1.0
+
+    add-double/2addr v6, v8
+
+    mul-double/2addr v6, v2
+
+    sub-double v6, v12, v6
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v10, v11, v6, v7}, Lehx;->a(IID)V
+
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Leia;->c:D
+
+    mul-double/2addr v6, v4
+
+    move-object/from16 v0, p0
+
+    iget-wide v8, v0, Leia;->a:D
+
+    move-object/from16 v0, p0
+
+    iget-wide v10, v0, Leia;->b:D
+
+    mul-double/2addr v8, v10
+
+    mul-double/2addr v8, v2
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x1
+
+    sub-double v12, v8, v6
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v10, v11, v12, v13}, Lehx;->a(IID)V
+
+    const/4 v10, 0x1
+
+    const/4 v11, 0x0
+
+    add-double/2addr v6, v8
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v10, v11, v6, v7}, Lehx;->a(IID)V
+
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Leia;->b:D
+
+    mul-double/2addr v6, v4
+
+    move-object/from16 v0, p0
+
+    iget-wide v8, v0, Leia;->a:D
+
+    move-object/from16 v0, p0
+
+    iget-wide v10, v0, Leia;->c:D
+
+    mul-double/2addr v8, v10
+
+    mul-double/2addr v8, v2
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x2
+
+    add-double v12, v8, v6
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v10, v11, v12, v13}, Lehx;->a(IID)V
+
+    const/4 v10, 0x2
+
+    const/4 v11, 0x0
+
+    sub-double v6, v8, v6
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v10, v11, v6, v7}, Lehx;->a(IID)V
+
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Leia;->a:D
+
+    mul-double/2addr v4, v6
+
+    move-object/from16 v0, p0
+
+    iget-wide v6, v0, Leia;->b:D
+
+    move-object/from16 v0, p0
+
+    iget-wide v8, v0, Leia;->c:D
+
+    mul-double/2addr v6, v8
+
+    mul-double/2addr v2, v6
+
+    const/4 v6, 0x1
+
+    const/4 v7, 0x2
+
+    sub-double v8, v2, v4
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v6, v7, v8, v9}, Lehx;->a(IID)V
+
+    const/4 v6, 0x2
+
+    const/4 v7, 0x1
+
+    add-double/2addr v2, v4
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v6, v7, v2, v3}, Lehx;->a(IID)V
+
+    return-void
+
+    :cond_0
+    const-wide v6, 0x3eb0c6f7a0b5ed8dL    # 1.0E-6
+
+    cmpg-double v6, v4, v6
+
+    if-gez v6, :cond_1
+
+    const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
+
+    const-wide v6, 0x3fa5555560000000L    # 0.0416666679084301
+
+    mul-double/2addr v6, v4
+
+    sub-double/2addr v2, v6
+
+    const-wide/high16 v6, 0x3ff0000000000000L    # 1.0
+
+    const-wide v8, 0x3fc5555560000000L    # 0.1666666716337204
+
+    mul-double/2addr v8, v4
+
+    const-wide/high16 v10, 0x3ff0000000000000L    # 1.0
+
+    const-wide v12, 0x3fc5555560000000L    # 0.1666666716337204
+
+    mul-double/2addr v4, v12
+
+    sub-double v4, v10, v4
+
+    mul-double/2addr v4, v8
+
+    sub-double v4, v6, v4
+
+    goto/16 :goto_0
 
     :cond_1
-    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
 
-    goto :goto_0
+    div-double v6, v4, v2
 
-    :cond_2
-    return-object v2
+    invoke-static {v2, v3}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v4
+
+    mul-double/2addr v4, v6
+
+    const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v2
+
+    sub-double v2, v8, v2
+
+    mul-double/2addr v6, v6
+
+    mul-double/2addr v2, v6
+
+    goto/16 :goto_0
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 2
+.method public final a(Leia;Leia;Lehx;)V
+    .locals 12
 
-    iget-object v1, p0, Leju;->a:Ljava/util/List;
+    const/4 v11, 0x5
 
-    monitor-enter v1
+    const/4 v10, 0x3
 
-    :try_start_0
-    iget-object v0, p0, Leju;->b:Ljava/util/HashMap;
+    const/4 v4, 0x0
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+    const/4 v9, 0x2
 
-    move-result v0
+    const/4 v8, 0x1
 
-    monitor-exit v1
+    invoke-virtual {p3}, Lehx;->b()V
 
-    return v0
+    iget-object v0, p0, Leju;->c:Leia;
 
-    :catchall_0
-    move-exception v0
+    invoke-static {p1, p2, v0}, Leia;->a(Leia;Leia;Leia;)V
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Leju;->c:Leia;
 
-    throw v0
-.end method
+    invoke-virtual {v0}, Leia;->c()D
 
-.method public final a(Lekx;)V
-    .locals 4
+    move-result-wide v0
 
-    iget-object v1, p0, Leju;->a:Ljava/util/List;
+    const-wide/16 v2, 0x0
 
-    monitor-enter v1
+    cmpl-double v0, v0, v2
 
-    :try_start_0
-    iget-wide v2, p1, Lekx;->b:J
-
-    invoke-direct {p0, v2, v3}, Leju;->a(J)Ljava/util/List;
-
-    move-result-object v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    if-nez v0, :cond_0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lejt;
-
-    invoke-interface {v0, p1}, Lejt;->a(Lekx;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-void
 
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Leju;->d:Leia;
 
-.method public final a(Lekx;Landroid/net/Uri;)V
-    .locals 4
+    invoke-virtual {v0, p1}, Leia;->a(Leia;)V
 
-    iget-object v1, p0, Leju;->a:Ljava/util/List;
+    iget-object v0, p0, Leju;->e:Leia;
 
-    monitor-enter v1
+    invoke-virtual {v0, p2}, Leia;->a(Leia;)V
 
-    :try_start_0
-    iget-wide v2, p1, Lekx;->b:J
+    iget-object v0, p0, Leju;->c:Leia;
 
-    invoke-direct {p0, v2, v3}, Leju;->a(J)Ljava/util/List;
+    invoke-virtual {v0}, Leia;->b()V
 
-    move-result-object v0
+    iget-object v0, p0, Leju;->d:Leia;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0}, Leia;->b()V
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Leju;->e:Leia;
 
-    move-result-object v1
+    invoke-virtual {v0}, Leia;->b()V
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Leju;->f:Lehx;
 
-    move-result v0
+    iget-object v1, p0, Leju;->d:Leia;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v4, v1}, Lehx;->a(ILeia;)V
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v1, p0, Leju;->c:Leia;
 
-    move-result-object v0
+    invoke-virtual {v0, v8, v1}, Lehx;->a(ILeia;)V
 
-    check-cast v0, Lejt;
+    iget-object v1, p0, Leju;->c:Leia;
 
-    invoke-interface {v0, p1, p2}, Lejt;->a(Lekx;Landroid/net/Uri;)V
+    iget-object v2, p0, Leju;->d:Leia;
 
-    goto :goto_0
+    iget-object v3, p0, Leju;->b:Leia;
 
-    :catchall_0
-    move-exception v0
+    invoke-static {v1, v2, v3}, Leia;->a(Leia;Leia;Leia;)V
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v1, p0, Leju;->b:Leia;
 
-    throw v0
+    invoke-virtual {v0, v9, v1}, Lehx;->a(ILeia;)V
 
-    :cond_0
-    return-void
-.end method
+    iget-object v1, p0, Leju;->g:Lehx;
 
-.method public final a(Lekx;Lekv;)V
-    .locals 4
+    iget-object v2, p0, Leju;->e:Leia;
 
-    iget-object v1, p0, Leju;->a:Ljava/util/List;
+    invoke-virtual {v1, v4, v2}, Lehx;->a(ILeia;)V
 
-    monitor-enter v1
+    iget-object v2, p0, Leju;->c:Leia;
 
-    :try_start_0
-    iget-wide v2, p1, Lekx;->b:J
+    invoke-virtual {v1, v8, v2}, Lehx;->a(ILeia;)V
 
-    invoke-direct {p0, v2, v3}, Leju;->a(J)Ljava/util/List;
+    iget-object v2, p0, Leju;->c:Leia;
 
-    move-result-object v0
+    iget-object v3, p0, Leju;->e:Leia;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v4, p0, Leju;->b:Leia;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-static {v2, v3, v4}, Leia;->a(Leia;Leia;Leia;)V
 
-    move-result-object v1
+    iget-object v2, p0, Leju;->b:Leia;
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v1, v9, v2}, Lehx;->a(ILeia;)V
 
-    move-result v0
+    iget-object v2, v0, Lehx;->a:[D
 
-    if-eqz v0, :cond_0
+    aget-wide v2, v2, v8
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v4, v0, Lehx;->a:[D
 
-    move-result-object v0
+    iget-object v5, v0, Lehx;->a:[D
 
-    check-cast v0, Lejt;
+    aget-wide v6, v5, v10
 
-    invoke-interface {v0, p1, p2}, Lejt;->a(Lekx;Lekv;)V
+    aput-wide v6, v4, v8
 
-    goto :goto_0
+    iget-object v4, v0, Lehx;->a:[D
 
-    :catchall_0
-    move-exception v0
+    aput-wide v2, v4, v10
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v2, v0, Lehx;->a:[D
 
-    throw v0
+    aget-wide v2, v2, v9
 
-    :cond_0
-    return-void
-.end method
+    iget-object v4, v0, Lehx;->a:[D
 
-.method public final a(Lekx;Leky;)V
-    .locals 4
+    iget-object v5, v0, Lehx;->a:[D
 
-    iget-object v1, p0, Leju;->a:Ljava/util/List;
+    const/4 v6, 0x6
 
-    monitor-enter v1
+    aget-wide v6, v5, v6
 
-    :try_start_0
-    iget-wide v2, p1, Lekx;->b:J
+    aput-wide v6, v4, v9
 
-    invoke-direct {p0, v2, v3}, Leju;->a(J)Ljava/util/List;
+    iget-object v4, v0, Lehx;->a:[D
 
-    move-result-object v0
+    const/4 v5, 0x6
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    aput-wide v2, v4, v5
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v2, v0, Lehx;->a:[D
 
-    move-result-object v1
+    aget-wide v2, v2, v11
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v4, v0, Lehx;->a:[D
 
-    move-result v0
+    iget-object v5, v0, Lehx;->a:[D
 
-    if-eqz v0, :cond_0
+    const/4 v6, 0x7
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    aget-wide v6, v5, v6
 
-    move-result-object v0
+    aput-wide v6, v4, v11
 
-    check-cast v0, Lejt;
+    iget-object v4, v0, Lehx;->a:[D
 
-    invoke-interface {v0, p1, p2}, Lejt;->a(Lekx;Leky;)V
+    const/4 v5, 0x7
 
-    goto :goto_0
+    aput-wide v2, v4, v5
 
-    :catchall_0
-    move-exception v0
+    invoke-static {v1, v0, p3}, Lehx;->a(Lehx;Lehx;Lehx;)V
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b()I
-    .locals 2
-
-    iget-object v1, p0, Leju;->a:Ljava/util/List;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Leju;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    monitor-exit v1
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    goto/16 :goto_0
 .end method

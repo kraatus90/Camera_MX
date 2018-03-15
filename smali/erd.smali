@@ -1,42 +1,93 @@
-.class final Lerd;
+.class final synthetic Lerd;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Leqt;
+
+.field private final b:Lerj;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Leqt;Lerj;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lerd;->a:Leqt;
+
+    iput-object p2, p0, Lerd;->b:Lerj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 3
+.method public final run()V
+    .locals 5
 
-    check-cast p1, Lici;
+    iget-object v0, p0, Lerd;->a:Leqt;
 
-    check-cast p2, Lici;
+    iget-object v1, p0, Lerd;->b:Lerj;
 
-    iget v0, p1, Lici;->a:I
+    if-eqz v1, :cond_0
 
-    iget v1, p1, Lici;->b:I
+    :try_start_0
+    iget-object v0, v0, Leqt;->d:Lgnb;
 
-    mul-int/2addr v0, v1
+    iget-object v2, v1, Lerj;->b:Ljava/io/File;
 
-    iget v1, p2, Lici;->a:I
+    invoke-interface {v0, v2}, Lgnb;->b(Ljava/io/File;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget v2, p2, Lici;->b:I
+    :cond_0
+    :goto_0
+    return-void
 
-    mul-int/2addr v1, v2
+    :catch_0
+    move-exception v0
 
-    sub-int v0, v1, v0
+    sget-object v2, Leqt;->a:Ljava/lang/String;
 
-    return v0
+    iget-object v1, v1, Lerj;->b:Ljava/io/File;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x39
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Couldn\'t delete temp microvideo file after cancellation: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
 .end method

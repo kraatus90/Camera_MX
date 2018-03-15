@@ -4,52 +4,46 @@
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Llt;
 
-.field public final b:Landroid/view/LayoutInflater;
-
-.field public c:Landroid/graphics/drawable/Drawable;
-
-.field public d:Ljava/lang/CharSequence;
-
-.field public e:Landroid/view/View;
-
-.field public f:Z
-
-.field public g:Landroid/content/DialogInterface$OnKeyListener;
-
-.field public h:Landroid/widget/ListAdapter;
-
-.field public i:Landroid/content/DialogInterface$OnClickListener;
-
-.field public j:I
+.field public final b:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Llx;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    invoke-direct {p0, p1, v0}, Lly;-><init>(Landroid/content/Context;I)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;I)V
+    .locals 3
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
+    new-instance v0, Llt;
 
-    iput v0, p0, Lly;->j:I
+    new-instance v1, Landroid/view/ContextThemeWrapper;
 
-    iput-object p1, p0, Lly;->a:Landroid/content/Context;
+    invoke-static {p1, p2}, Llx;->a(Landroid/content/Context;I)I
 
-    const/4 v0, 0x1
+    move-result v2
 
-    iput-boolean v0, p0, Lly;->f:Z
+    invoke-direct {v1, p1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    const-string v0, "layout_inflater"
+    invoke-direct {v0, v1}, Llt;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    iput-object v0, p0, Lly;->a:Llt;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/view/LayoutInflater;
-
-    iput-object v0, p0, Lly;->b:Landroid/view/LayoutInflater;
+    iput p2, p0, Lly;->b:I
 
     return-void
 .end method

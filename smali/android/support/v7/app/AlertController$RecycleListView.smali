@@ -27,13 +27,13 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object v0, Lnr;->bR:[I
+    sget-object v0, Lnm;->bP:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    sget v1, Lnr;->bS:I
+    sget v1, Lnm;->bQ:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
@@ -41,7 +41,7 @@
 
     iput v1, p0, Landroid/support/v7/app/AlertController$RecycleListView;->b:I
 
-    sget v1, Lnr;->bT:I
+    sget v1, Lnm;->bR:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 

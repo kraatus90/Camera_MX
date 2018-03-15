@@ -1,29 +1,13 @@
-.class public final Ldyn;
+.class final Ldyn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
-
-
-# static fields
-.field public static final a:Ldyn;
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldyn;
-
-    invoke-direct {v0}, Ldyn;-><init>()V
-
-    sput-object v0, Ldyn;->a:Ldyn;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,12 +17,28 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 3
 
-    new-instance v0, Ldym;
+    check-cast p1, Lihc;
 
-    invoke-direct {v0}, Ldym;-><init>()V
+    check-cast p2, Lihc;
 
-    return-object v0
+    iget v0, p2, Lihc;->a:I
+
+    iget v1, p2, Lihc;->b:I
+
+    mul-int/2addr v0, v1
+
+    iget v1, p1, Lihc;->a:I
+
+    iget v2, p1, Lihc;->b:I
+
+    mul-int/2addr v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
+
+    move-result v0
+
+    return v0
 .end method

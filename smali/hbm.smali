@@ -1,54 +1,51 @@
-.class public final Lhbm;
-.super Ljava/lang/Object;
+.class final Lhbm;
+.super Ljava/util/TimerTask;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic a:Lhbl;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lhbl;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhbm;->a:Lhbl;
 
-    iput-object p1, p0, Lhbm;->a:Ljxn;
-
-    iput-object p2, p0, Lhbm;->b:Ljxn;
-
-    iput-object p3, p0, Lhbm;->c:Ljxn;
-
-    iput-object p4, p0, Lhbm;->d:Ljxn;
+    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final run()V
+    .locals 3
 
-    new-instance v0, Lhbl;
+    const-string v0, "CAM_GApiClientPxy"
 
-    iget-object v1, p0, Lhbm;->a:Ljxn;
+    const-string v1, "Timeout connecting to GoogleApiClient"
 
-    iget-object v2, p0, Lhbm;->b:Ljxn;
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v3, p0, Lhbm;->c:Ljxn;
+    iget-object v0, p0, Lhbm;->a:Lhbl;
 
-    iget-object v4, p0, Lhbm;->d:Ljxn;
+    iget-object v0, v0, Lhbl;->b:Lket;
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lhbl;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object v0
+
+    check-cast v0, Lket;
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "Fail to connect, timeout"
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Throwable;)Z
+
+    return-void
 .end method

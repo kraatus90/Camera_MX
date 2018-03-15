@@ -1,146 +1,134 @@
-.class Lhcp;
-.super Lgvh;
+.class public final Lhcp;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkds;
 
 
 # instance fields
-.field public final synthetic a:Lhcl;
+.field private final synthetic a:Lhcj;
 
 
 # direct methods
-.method constructor <init>(Lhcl;)V
-    .locals 1
+.method public constructor <init>(Lhcj;)V
+    .locals 0
 
-    iput-object p1, p0, Lhcp;->a:Lhcl;
+    iput-object p1, p0, Lhcp;->a:Lhcj;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[[B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public W()V
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 4
 
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    sget-object v0, Lhcj;->a:Ljava/lang/String;
 
-    iget-object v0, v0, Lhcl;->e:Lhcs;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v1, p0, Lhcp;->a:Lhcl;
+    move-result-object v1
 
-    iget-object v1, v1, Lhcl;->f:Landroid/widget/VideoView;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1}, Landroid/widget/VideoView;->getDuration()I
+    move-result-object v2
 
-    move-result v1
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0, v1}, Lhcs;->a(I)V
+    move-result v2
 
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    add-int/lit8 v2, v2, 0x24
 
-    iget-object v0, v0, Lhcl;->f:Landroid/widget/VideoView;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lhcp;->a:Lhcl;
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget v1, v1, Lhcl;->i:I
+    const-string v2, "CamcorderSnapshot is not available: "
 
-    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->seekTo(I)V
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    move-result-object v2
 
-    iget-object v0, v0, Lhcl;->e:Lhcs;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lhcp;->a:Lhcl;
+    move-result-object v1
 
-    iget v1, v1, Lhcl;->i:I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lhcs;->b(I)V
+    move-result-object v1
 
-    return-void
-.end method
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-.method public X()V
-    .locals 2
+    iget-object v0, p0, Lhcp;->a:Lhcj;
 
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    iget-object v0, v0, Lhcj;->e:Lhcu;
 
-    iget-object v0, v0, Lhcl;->e:Lhcs;
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lhcp;->a:Lhcl;
-
-    iget-object v1, v1, Lhcl;->f:Landroid/widget/VideoView;
-
-    invoke-virtual {v1}, Landroid/widget/VideoView;->getDuration()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lhcs;->a(I)V
-
-    iget-object v0, p0, Lhcp;->a:Lhcl;
-
-    iget-object v0, v0, Lhcl;->f:Landroid/widget/VideoView;
-
-    iget-object v1, p0, Lhcp;->a:Lhcl;
-
-    iget v1, v1, Lhcl;->i:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->seekTo(I)V
-
-    iget-object v0, p0, Lhcp;->a:Lhcl;
-
-    iget-object v0, v0, Lhcl;->e:Lhcs;
-
-    iget-object v1, p0, Lhcp;->a:Lhcl;
-
-    iget v1, v1, Lhcl;->i:I
-
-    invoke-virtual {v0, v1}, Lhcs;->b(I)V
+    invoke-virtual {v0, v1}, Lhcu;->b(Z)V
 
     return-void
 .end method
 
-.method public final a()V
-    .locals 2
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    check-cast p1, Lbjh;
 
-    iget-object v0, v0, Lhcl;->h:Landroid/net/Uri;
+    sget-object v0, Lhcj;->a:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p1, Lbjh;->b:Ljava/io/File;
 
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, v0, Lhcl;->f:Landroid/widget/VideoView;
+    move-result-object v1
 
-    iget-object v1, p0, Lhcp;->a:Lhcl;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v1, v1, Lhcl;->h:Landroid/net/Uri;
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setVideoURI(Landroid/net/Uri;)V
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    :cond_0
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    move-result v2
 
-    iget-object v0, v0, Lhcl;->f:Landroid/widget/VideoView;
+    add-int/lit8 v2, v2, 0x25
 
-    new-instance v1, Lhcq;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, p0}, Lhcq;-><init>(Lhcp;)V
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
+    const-string v2, "CamcorderSnapshot is available: file="
 
-    iget-object v0, p0, Lhcp;->a:Lhcl;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lhcl;->f:Landroid/widget/VideoView;
+    move-result-object v2
 
-    new-instance v1, Lhcr;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, p0}, Lhcr;-><init>(Lhcp;)V
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lhcp;->a:Lhcj;
+
+    iget-object v0, v0, Lhcj;->g:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lhcp;->a:Lhcj;
+
+    iget-object v0, v0, Lhcj;->e:Lhcu;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lhcu;->b(Z)V
 
     return-void
 .end method

@@ -1,80 +1,64 @@
-.class final Lgbk;
+.class public final Lgbk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgbr;
+.implements Lkgv;
 
 
 # instance fields
-.field public final synthetic a:Lgbj;
-
-.field private synthetic b:Lgbr;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgbj;Lgbr;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
-
-    iput-object p1, p0, Lgbk;->a:Lgbj;
-
-    iput-object p2, p0, Lgbk;->b:Lgbr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lgbk;->a:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;)Lgbk;
+    .locals 1
+
+    new-instance v0, Lgbk;
+
+    invoke-direct {v0, p0}, Lgbk;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Lgbk;->a:Lgbj;
+    iget-object v0, p0, Lgbk;->a:Lkgv;
 
-    iget-object v0, v0, Lgbj;->a:Lgbs;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lgbs;->b:Lgbu;
+    move-result-object v0
 
-    new-instance v1, Lhzt;
+    check-cast v0, Lihs;
 
-    invoke-direct {v1}, Lhzt;-><init>()V
+    new-instance v1, Lgbh;
 
-    new-instance v2, Lgbm;
+    new-instance v2, Liom;
 
-    invoke-direct {v2, p0, v0}, Lgbm;-><init>(Lgbk;Lgbu;)V
+    invoke-direct {v2}, Liom;-><init>()V
 
-    invoke-virtual {v1, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    invoke-direct {v1, v0, v2}, Lgbh;-><init>(Lihs;Liom;)V
 
-    iget-object v0, p0, Lgbk;->b:Lgbr;
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-interface {v0}, Lgbr;->a()V
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final a(J)V
-    .locals 3
+    check-cast v0, Lgbf;
 
-    iget-object v0, p0, Lgbk;->a:Lgbj;
-
-    iget-object v0, v0, Lgbj;->a:Lgbs;
-
-    iget-object v0, v0, Lgbs;->b:Lgbu;
-
-    new-instance v1, Lhzt;
-
-    invoke-direct {v1}, Lhzt;-><init>()V
-
-    new-instance v2, Lgbl;
-
-    invoke-direct {v2, p0, v0}, Lgbl;-><init>(Lgbk;Lgbu;)V
-
-    invoke-virtual {v1, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    iget-object v0, p0, Lgbk;->b:Lgbr;
-
-    invoke-interface {v0, p1, p2}, Lgbr;->a(J)V
-
-    return-void
+    return-object v0
 .end method

@@ -1,277 +1,227 @@
-.class final Lbbd;
+.class public final Lbbd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljtu;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lbax;
+.field private final synthetic a:Ljava/util/List;
+
+.field private final synthetic b:Lbcj;
 
 
 # direct methods
-.method constructor <init>(Lbax;)V
+.method public constructor <init>(Ljava/util/List;Lbcj;)V
     .locals 0
 
-    iput-object p1, p0, Lbbd;->a:Lbax;
+    iput-object p1, p0, Lbbd;->a:Ljava/util/List;
+
+    iput-object p2, p0, Lbbd;->b:Lbcj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private final a(Ljava/lang/Boolean;)Ljuw;
-    .locals 8
 
-    iget-object v0, p0, Lbbd;->a:Lbax;
+# virtual methods
+.method public final run()V
+    .locals 7
 
-    iget-object v1, v0, Lbax;->m:Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    monitor-enter v1
+    const/4 v4, 0x1
 
-    :try_start_0
-    iget-object v0, p0, Lbbd;->a:Lbax;
+    iget-object v0, p0, Lbbd;->a:Ljava/util/List;
 
-    iget-object v0, v0, Lbax;->q:Lbbe;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    sget-object v2, Lbbe;->d:Lbbe;
+    move-result-object v5
 
-    invoke-virtual {v0, v2}, Lbbe;->equals(Ljava/lang/Object;)Z
+    move v1, v2
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    iget-object v2, p0, Lbbd;->a:Lbax;
-
-    iget-object v2, v2, Lbax;->q:Lbbe;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x24
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "CamcorderRecordingSessionImpl state="
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Throwable;)Ljuw;
-
-    move-result-object v0
-
-    monitor-exit v1
+    move v3, v4
 
     :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lbbd;->a:Lbax;
-
-    sget-object v2, Lbbe;->a:Lbbe;
-
-    iput-object v2, v0, Lbax;->q:Lbbe;
-
-    iget-object v0, p0, Lbbd;->a:Lbax;
-
-    iget-object v0, v0, Lbax;->l:Lhax;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iget-object v0, p0, Lbbd;->a:Lbax;
-
-    iget-object v0, v0, Lbax;->n:Lhzr;
-
-    invoke-virtual {v0}, Lhzr;->close()V
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lbbd;->a:Lbax;
-
-    iget-object v0, v0, Lbax;->e:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->length()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x0
-
-    cmp-long v0, v4, v6
-
-    if-lez v0, :cond_3
-
-    :cond_1
-    iget-object v0, p0, Lbbd;->a:Lbax;
-
-    iget-object v4, p0, Lbbd;->a:Lbax;
-
-    iget-object v4, v4, Lbax;->e:Ljava/io/File;
-
-    invoke-virtual {v0, v4, v2, v3}, Lbax;->a(Ljava/io/File;J)V
-
-    :cond_2
-    :goto_1
-    iget-object v0, p0, Lbbd;->a:Lbax;
-
-    iget-object v0, v0, Lbax;->o:Ljava/util/LinkedList;
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    monitor-exit v1
+    check-cast v0, Lbbb;
+
+    invoke-interface {v0}, Lbbb;->a()Z
+
+    move-result v6
+
+    and-int/2addr v3, v6
+
+    invoke-interface {v0}, Lbbb;->a()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_8
+
+    invoke-interface {v0}, Lbbb;->c()Ljava/lang/Throwable;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_8
+
+    iget-object v1, p0, Lbbd;->b:Lbcj;
+
+    invoke-interface {v0}, Lbbb;->c()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lbcj;->a(Ljava/lang/Throwable;)Z
+
+    move v0, v4
+
+    :goto_1
+    move v1, v0
 
     goto :goto_0
+
+    :cond_0
+    if-nez v1, :cond_1
+
+    iget-object v0, p0, Lbbd;->b:Lbcj;
+
+    invoke-virtual {v0}, Lbcj;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    iget-object v0, p0, Lbbd;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbbb;
+
+    invoke-interface {v0}, Lbbb;->close()V
+
+    goto :goto_2
+
+    :cond_2
+    if-nez v3, :cond_4
+
+    :cond_3
+    :goto_3
+    return-void
+
+    :cond_4
+    new-instance v3, Lbbi;
+
+    invoke-direct {v3}, Lbbi;-><init>()V
+
+    :try_start_0
+    iget-object v0, p0, Lbbd;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :goto_4
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbbb;
+
+    invoke-interface {v0}, Lbbb;->a()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljii;->b(Z)V
+
+    invoke-interface {v0}, Lbbb;->c()Ljava/lang/Throwable;
+
+    move-result-object v1
+
+    if-nez v1, :cond_5
+
+    move v1, v4
+
+    :goto_5
+    invoke-static {v1}, Ljii;->b(Z)V
+
+    invoke-interface {v0}, Lbbb;->b()Lihb;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_6
+
+    invoke-virtual {v3, v1}, Lbbi;->add(Ljava/lang/Object;)Z
+
+    :goto_6
+    invoke-interface {v0}, Lbbb;->close()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_4
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lbbd;->b:Lbcj;
+
+    invoke-virtual {v1, v3}, Lbcj;->a(Lihb;)Z
 
     throw v0
 
-    :cond_3
+    :cond_5
+    move v1, v2
+
+    goto :goto_5
+
+    :cond_6
     :try_start_1
-    sget-object v0, Lbax;->a:Ljava/lang/String;
+    iget-object v1, p0, Lbbd;->b:Lbcj;
 
-    iget-object v2, p0, Lbbd;->a:Lbax;
-
-    iget-object v2, v2, Lbax;->e:Ljava/io/File;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x17
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Delete recording file: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lbbd;->a:Lbax;
-
-    iget-object v0, v0, Lbax;->e:Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    sget-object v0, Lbax;->a:Ljava/lang/String;
-
-    iget-object v2, p0, Lbbd;->a:Lbax;
-
-    iget-object v2, v2, Lbax;->e:Ljava/io/File;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x21
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Failed to delete recording file: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1}, Lbcj;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    goto :goto_6
+
+    :cond_7
+    iget-object v0, p0, Lbbd;->b:Lbcj;
+
+    invoke-virtual {v0, v3}, Lbcj;->a(Lihb;)Z
+
+    goto :goto_3
+
+    :cond_8
+    move v0, v1
+
     goto :goto_1
-.end method
-
-
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljuw;
-    .locals 1
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-direct {p0, p1}, Lbbd;->a(Ljava/lang/Boolean;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
 .end method

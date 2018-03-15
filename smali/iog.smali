@@ -1,165 +1,201 @@
-.class final synthetic Liog;
+.class public final Liog;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lioc;
 
 
 # instance fields
-.field private a:Liof;
+.field private final a:Liod;
+
+.field private final b:Ljava/lang/Object;
+
+.field private final c:[F
 
 
 # direct methods
-.method constructor <init>(Liof;)V
-    .locals 0
+.method public constructor <init>(Liod;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liog;->a:Liof;
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Liog;->b:Ljava/lang/Object;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Liog;->c:[F
+
+    iput-object p1, p0, Liog;->a:Liod;
 
     return-void
 .end method
 
+.method private final b(Lind;)F
+    .locals 6
 
-# virtual methods
-.method public final run()V
-    .locals 7
+    const/high16 v1, 0x7fc00000    # NaNf
 
-    iget-object v2, p0, Liog;->a:Liof;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iget-object v0, v2, Liof;->b:Ljuw;
-
-    invoke-static {v0}, Ljuh;->b(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/io/File;
+    check-cast v0, Ljava/lang/Long;
 
-    iget-object v1, v2, Liof;->c:Ljuw;
+    if-nez v0, :cond_0
 
-    invoke-static {v1}, Ljuh;->b(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    move v0, v1
 
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-static {v1}, Ljht;->c(Ljava/lang/Object;)Ljht;
-
-    move-result-object v3
-
-    iget-object v1, v2, Liof;->d:Ljuw;
-
-    invoke-static {v1}, Ljuh;->b(Ljava/util/concurrent/Future;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-static {v1}, Ljht;->c(Ljava/lang/Object;)Ljht;
-
-    move-result-object v4
-
-    iget-object v1, v2, Liof;->e:Ljuw;
-
-    invoke-static {v1}, Ljuh;->b(Ljava/util/concurrent/Future;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-static {v1}, Ljht;->c(Ljava/lang/Object;)Ljht;
-
-    move-result-object v1
-
-    :try_start_0
-    new-instance v5, Landroid/media/MediaMuxer;
-
-    invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v6, 0x0
-
-    invoke-direct {v5, v0, v6}, Landroid/media/MediaMuxer;-><init>(Ljava/lang/String;I)V
-
-    invoke-virtual {v3}, Ljht;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v3}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {v5, v0}, Landroid/media/MediaMuxer;->setOrientationHint(I)V
+    :goto_0
+    return v0
 
     :cond_0
-    invoke-virtual {v4}, Ljht;->a()Z
+    iget-object v2, p0, Liog;->b:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v3, p0, Liog;->a:Liod;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    iget-object v0, p0, Liog;->c:[F
+
+    invoke-virtual {v3, v4, v5, v0}, Liod;->a(J[F)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
 
-    invoke-virtual {v1}, Ljht;->a()Z
+    monitor-exit v2
 
-    move-result v0
+    move v0, v1
 
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v4}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Float;
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v3
-
-    invoke-virtual {v1}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Float;
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    invoke-virtual {v5, v3, v0}, Landroid/media/MediaMuxer;->setLocation(FF)V
+    goto :goto_0
 
     :cond_1
-    iget-object v0, v2, Liof;->f:Ljvi;
+    iget-object v0, p0, Liog;->c:[F
 
-    invoke-virtual {v0, v5}, Ljsw;->a(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v1, 0x0
 
-    return-void
+    aget v0, v0, v1
 
-    :catch_0
+    iget-object v1, p0, Liog;->c:[F
+
+    const/4 v3, 0x0
+
+    aget v1, v1, v3
+
+    mul-float/2addr v0, v1
+
+    iget-object v1, p0, Liog;->c:[F
+
+    const/4 v3, 0x1
+
+    aget v1, v1, v3
+
+    iget-object v3, p0, Liog;->c:[F
+
+    const/4 v4, 0x1
+
+    aget v3, v3, v4
+
+    mul-float/2addr v1, v3
+
+    add-float/2addr v0, v1
+
+    iget-object v1, p0, Liog;->c:[F
+
+    const/4 v3, 0x2
+
+    aget v1, v1, v3
+
+    iget-object v3, p0, Liog;->c:[F
+
+    const/4 v4, 0x2
+
+    aget v3, v3, v4
+
+    mul-float/2addr v1, v3
+
+    add-float/2addr v0, v1
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    monitor-exit v2
+
+    goto :goto_0
+
+    :catchall_0
     move-exception v0
 
-    const-string v1, "MuxerImpl"
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v3, "Error trying to construct MediaMuxer."
+    throw v0
+.end method
 
-    invoke-static {v1, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    iget-object v1, v2, Liof;->f:Ljvi;
+# virtual methods
+.method public final a(Lind;)F
+    .locals 4
 
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Throwable;)Z
+    const v1, -0x4af9c843    # -5.0E-7f
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    throw v1
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    if-nez v0, :cond_0
+
+    const/high16 v0, 0x7fc00000    # NaNf
+
+    :goto_0
+    mul-float/2addr v0, v1
+
+    invoke-direct {p0, p1}, Liog;->b(Lind;)F
+
+    move-result v1
+
+    mul-float/2addr v0, v1
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->exp(D)D
+
+    move-result-wide v0
+
+    double-to-float v0, v0
+
+    return v0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    long-to-float v0, v2
+
+    goto :goto_0
 .end method

@@ -1,125 +1,75 @@
-.class public Luz;
-.super Landroid/view/ViewGroup$MarginLayoutParams;
+.class public final Luz;
+.super Lhc;
 .source "PG"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+
+
 # instance fields
-.field public c:Lvm;
-
-.field public final d:Landroid/graphics/Rect;
-
-.field public e:Z
-
-.field public f:Z
+.field public a:Landroid/os/Parcelable;
 
 
 # direct methods
-.method public constructor <init>(II)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
+    new-instance v0, Lva;
 
-    new-instance v0, Landroid/graphics/Rect;
+    invoke-direct {v0}, Lva;-><init>()V
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Luz;->d:Landroid/graphics/Rect;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Luz;->e:Z
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Luz;->f:Z
+    sput-object v0, Luz;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.method constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
     .locals 1
 
-    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lhc;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    new-instance v0, Landroid/graphics/Rect;
+    if-eqz p2, :cond_0
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    :goto_0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
-    iput-object v0, p0, Luz;->d:Landroid/graphics/Rect;
+    move-result-object v0
 
-    const/4 v0, 0x1
+    iput-object v0, p0, Luz;->a:Landroid/os/Parcelable;
 
-    iput-boolean v0, p0, Luz;->e:Z
+    return-void
 
-    const/4 v0, 0x0
+    :cond_0
+    const-class v0, Lun;
 
-    iput-boolean v0, p0, Luz;->f:Z
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object p2
+
+    goto :goto_0
+.end method
+
+.method public constructor <init>(Landroid/os/Parcelable;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lhc;-><init>(Landroid/os/Parcelable;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
-    .locals 1
 
-    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+# virtual methods
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    new-instance v0, Landroid/graphics/Rect;
+    invoke-super {p0, p1, p2}, Lhc;->writeToParcel(Landroid/os/Parcel;I)V
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    iget-object v0, p0, Luz;->a:Landroid/os/Parcelable;
 
-    iput-object v0, p0, Luz;->d:Landroid/graphics/Rect;
+    const/4 v1, 0x0
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Luz;->e:Z
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Luz;->f:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Luz;->d:Landroid/graphics/Rect;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Luz;->e:Z
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Luz;->f:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Luz;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Luz;->d:Landroid/graphics/Rect;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Luz;->e:Z
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Luz;->f:Z
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     return-void
 .end method

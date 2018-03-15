@@ -1,86 +1,72 @@
-.class final Lfon;
+.class public final Lfon;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfqf;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfom;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfom;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfon;->a:Lfom;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfon;->a:Lkgv;
+
+    iput-object p2, p0, Lfon;->b:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;)Lfon;
+    .locals 1
+
+    new-instance v0, Lfon;
+
+    invoke-direct {v0, p0, p1}, Lfon;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Ljava/lang/Float;
+    iget-object v0, p0, Lfon;->a:Lkgv;
 
-    iget-object v0, p0, Lfon;->a:Lfom;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lfom;->I:Lfpa;
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    check-cast v0, Lfoi;
 
-    move-result v1
+    iget-object v1, p0, Lfon;->b:Lkgv;
 
-    iput v1, v0, Lfpa;->a:F
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lfpa;->a()V
+    move-result-object v1
 
-    iget-object v0, p0, Lfon;->a:Lfom;
+    check-cast v1, Lfqo;
 
-    iget-object v0, v0, Lfom;->w:Lcnk;
+    new-instance v2, Lfoo;
 
-    if-eqz v0, :cond_1
+    invoke-direct {v2, v1, v0}, Lfoo;-><init>(Lfqo;Lfom;)V
 
-    iget-object v0, p0, Lfon;->a:Lfom;
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, v0, Lfom;->w:Lcnk;
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v1, v0, Lcnk;->k:Ljava/lang/Object;
+    move-result-object v0
 
-    monitor-enter v1
+    check-cast v0, Lfom;
 
-    :try_start_0
-    iget-boolean v2, v0, Lcnk;->h:Z
-
-    if-nez v2, :cond_0
-
-    iget-object v2, v0, Lcnk;->i:Landroid/os/Handler;
-
-    iget-object v3, v0, Lcnk;->l:Ljava/lang/Runnable;
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, v0, Lcnk;->h:Z
-
-    :cond_0
-    monitor-exit v1
-
-    :cond_1
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-object v0
 .end method

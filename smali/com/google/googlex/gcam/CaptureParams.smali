@@ -66,12 +66,12 @@
     return v0
 .end method
 
-.method public SetDefaults(Z)V
+.method public SetDefaults()V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/CaptureParams;->swigCPtr:J
 
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->CaptureParams_SetDefaults(JLcom/google/googlex/gcam/CaptureParams;Z)V
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->CaptureParams_SetDefaults(JLcom/google/googlex/gcam/CaptureParams;)V
 
     return-void
 .end method
@@ -136,18 +136,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/CaptureParams;->swigCPtr:J
 
     invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->CaptureParams_allow_digital_gain_at_sensor_get(JLcom/google/googlex/gcam/CaptureParams;)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getCapture_true_long_exposure()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/CaptureParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->CaptureParams_capture_true_long_exposure_get(JLcom/google/googlex/gcam/CaptureParams;)Z
 
     move-result v0
 
@@ -220,16 +208,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/CaptureParams;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->CaptureParams_allow_digital_gain_at_sensor_set(JLcom/google/googlex/gcam/CaptureParams;F)V
-
-    return-void
-.end method
-
-.method public setCapture_true_long_exposure(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/CaptureParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->CaptureParams_capture_true_long_exposure_set(JLcom/google/googlex/gcam/CaptureParams;Z)V
 
     return-void
 .end method

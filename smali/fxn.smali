@@ -3,96 +3,92 @@
 .source "PG"
 
 # interfaces
-.implements Liod;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Liod;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Liod;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfxn;->a:Liod;
+    iput-object p1, p0, Lfxn;->a:Lkgv;
+
+    iput-object p2, p0, Lfxn;->b:Lkgv;
+
+    iput-object p3, p0, Lfxn;->c:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;)Lfxn;
+    .locals 1
+
+    new-instance v0, Lfxn;
+
+    invoke-direct {v0, p0, p1, p2}, Lfxn;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lioj;)Liol;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lfxn;->a:Liod;
+    iget-object v0, p0, Lfxn;->a:Lkgv;
 
-    invoke-interface {v0, p1}, Liod;->a(Lioj;)Liol;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p1, Lioj;->b:Landroid/media/MediaFormat;
+    check-cast v0, Liho;
 
-    const-string v2, "mime"
+    iget-object v1, p0, Lfxn;->b:Lkgv;
 
-    invoke-virtual {v1, v2}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    const-string v2, "video/"
+    check-cast v1, Liaw;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    iget-object v2, p0, Lfxn;->c:Lkgv;
 
-    move-result v2
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    if-nez v2, :cond_0
+    move-result-object v2
 
-    const-string v2, "audio/"
+    check-cast v2, Lfsx;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    const-string v3, "ImgCptrCmdReady"
 
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    :cond_0
-    const/4 v1, 0x1
-
-    :goto_0
-    if-eqz v1, :cond_1
-
-    invoke-static {v0}, Linu;->a(Liol;)Linu;
+    invoke-interface {v0, v3}, Liho;->a(Ljava/lang/String;)Lihn;
 
     move-result-object v0
 
-    :cond_1
-    return-object v0
+    new-instance v3, Lftc;
 
-    :cond_2
-    const/4 v1, 0x0
+    invoke-direct {v3, v1, v2, v0}, Lftc;-><init>(Liaw;Lfsx;Lihn;)V
 
-    goto :goto_0
-.end method
-
-.method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Lfxn;->a:Liod;
-
-    invoke-interface {v0}, Liod;->a()V
-
-    return-void
-.end method
-
-.method public final b()Ljuw;
-    .locals 1
-
-    iget-object v0, p0, Lfxn;->a:Liod;
-
-    invoke-interface {v0}, Liod;->b()Ljuw;
+    invoke-static {v3}, Lbas;->a(Ljava/lang/Runnable;)Liac;
 
     move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liac;
 
     return-object v0
 .end method

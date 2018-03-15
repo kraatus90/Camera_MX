@@ -1,43 +1,38 @@
 .class final Ljdr;
-.super Ljava/io/ByteArrayOutputStream;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Ljdq;
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method constructor <init>(Ljdq;)V
+.method constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Ljdr;->a:Ljdq;
-
-    invoke-direct {p0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 3
 
-    invoke-super {p0}, Ljava/io/ByteArrayOutputStream;->close()V
+    new-instance v1, Ljmd;
 
-    iget-object v0, p0, Ljdr;->a:Ljdq;
+    const-class v0, Ljlx;
 
-    iget-object v0, v0, Ljdq;->a:Ljvi;
+    const-string v2, "default"
 
-    new-instance v1, Ljava/io/ByteArrayInputStream;
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {p0}, Ljdr;->toByteArray()[B
+    move-result-object v0
 
-    move-result-object v2
+    check-cast v0, Ljme;
 
-    invoke-direct {v1, v2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    invoke-direct {v1, v0}, Ljmd;-><init>(Ljme;)V
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    return-void
+    return-object v1
 .end method

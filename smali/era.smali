@@ -1,44 +1,41 @@
-.class final Lera;
+.class final synthetic Lera;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljrm;
+
+
+# instance fields
+.field private final a:Ljava/io/File;
+
+.field private final b:J
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/io/File;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lera;->a:Ljava/io/File;
+
+    iput-wide p2, p0, Lera;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 3
+.method public final a()Ljava/lang/Object;
+    .locals 4
 
-    check-cast p1, Lici;
+    iget-object v0, p0, Lera;->a:Ljava/io/File;
 
-    check-cast p2, Lici;
+    iget-wide v2, p0, Lera;->b:J
 
-    iget v0, p2, Lici;->a:I
+    invoke-static {v0, v2, v3}, Leqt;->a(Ljava/io/File;J)Ljava/lang/String;
 
-    iget v1, p2, Lici;->b:I
+    move-result-object v0
 
-    mul-int/2addr v0, v1
-
-    iget v1, p1, Lici;->a:I
-
-    iget v2, p1, Lici;->b:I
-
-    mul-int/2addr v1, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

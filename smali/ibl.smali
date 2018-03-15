@@ -1,180 +1,140 @@
-.class final Libl;
+.class public final Libl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liau;
+.implements Lihb;
 
 
 # instance fields
-.field public final synthetic a:Libk;
+.field public final a:Ljava/lang/Object;
 
-.field private synthetic b:Liau;
+.field public b:Ljava/lang/Runnable;
+
+.field private final c:Libk;
+
+.field private final d:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Libk;Liau;)V
-    .locals 0
-
-    iput-object p1, p0, Libl;->a:Libk;
-
-    iput-object p2, p0, Libl;->b:Liau;
+.method public constructor <init>(Libk;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Libl;->c:Libk;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Libl;->a:Ljava/lang/Object;
+
+    new-instance v0, Libm;
+
+    invoke-direct {v0, p0}, Libm;-><init>(Libl;)V
+
+    iput-object v0, p0, Libl;->d:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Licn;Ljava/util/concurrent/Executor;)Lich;
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Libl;->b:Liau;
+    iget-object v1, p0, Libl;->a:Ljava/lang/Object;
 
-    new-instance v1, Libm;
+    monitor-enter v1
 
-    invoke-direct {v1, p0, p1}, Libm;-><init>(Libl;Licn;)V
+    const/4 v0, 0x0
 
-    invoke-interface {v0, v1, p2}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    :try_start_0
+    iput-object v0, p0, Libl;->b:Ljava/lang/Runnable;
 
-    move-result-object v0
+    iget-object v0, p0, Libl;->c:Libk;
 
-    return-object v0
+    invoke-virtual {v0}, Libk;->a()V
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public final b()Ljava/lang/Object;
-    .locals 5
+.method public final a(Ljava/lang/Runnable;)V
+    .locals 3
 
-    iget-object v0, p0, Libl;->a:Libk;
+    iget-object v1, p0, Libl;->a:Ljava/lang/Object;
 
-    iget-object v1, p0, Libl;->b:Liau;
+    monitor-enter v1
 
-    invoke-interface {v1}, Liau;->b()Ljava/lang/Object;
+    :try_start_0
+    iput-object p1, p0, Libl;->b:Ljava/lang/Runnable;
 
-    move-result-object v1
+    iget-object v0, p0, Libl;->c:Libk;
 
-    if-nez v1, :cond_0
+    iget-object v2, p0, Libl;->d:Ljava/lang/Runnable;
 
-    new-instance v1, Ljava/lang/NullPointerException;
+    invoke-virtual {v0, v2}, Libk;->execute(Ljava/lang/Runnable;)V
 
-    iget-object v0, v0, Libk;->a:Liau;
+    monitor-exit v1
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    return-void
 
-    move-result-object v0
+    :catchall_0
+    move-exception v0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v2
+    throw v0
+.end method
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+.method public final close()V
+    .locals 2
 
-    move-result v2
+    iget-object v1, p0, Libl;->a:Ljava/lang/Object;
 
-    add-int/lit8 v2, v2, 0x1d
+    monitor-enter v1
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v0, p0, Libl;->b:Ljava/lang/Runnable;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    if-eqz v0, :cond_0
 
-    const-string v2, "Input: "
+    const/4 v0, 0x0
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " returned a null value"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    iput-object v0, p0, Libl;->b:Ljava/lang/Runnable;
 
     :cond_0
-    invoke-virtual {v0, v1}, Libk;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v2
+    iget-object v0, p0, Libl;->c:Libk;
 
-    if-nez v2, :cond_1
+    invoke-virtual {v0}, Libk;->close()V
 
-    new-instance v2, Ljava/lang/NullPointerException;
+    return-void
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v1
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x3a
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Transforming input value: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, " resulted in a null output for: "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    :cond_1
-    return-object v2
+    throw v0
 .end method

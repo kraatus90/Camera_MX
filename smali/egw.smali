@@ -1,56 +1,101 @@
-.class public final Legw;
-.super Ljava/lang/Object;
+.class public Legw;
+.super Lglb;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final b:Ldzy;
+
+.field private final c:Lglh;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "VideoModesChart"
 
-    iput-object p1, p0, Legw;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Legw;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
+.method public constructor <init>(Ldzy;)V
+    .locals 4
 
-    new-instance v0, Legw;
+    invoke-direct {p0}, Lglb;-><init>()V
 
-    invoke-direct {v0, p0}, Legw;-><init>(Ljxn;)V
+    iput-object p1, p0, Legw;->b:Ldzy;
 
-    return-object v0
+    new-instance v0, Lglh;
+
+    const-class v1, Legl;
+
+    const-class v2, Lebn;
+
+    const-class v3, Legq;
+
+    invoke-static {v1, v2, v3}, Ljuo;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljuo;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Lglh;-><init>(Lgla;Ljava/util/Set;)V
+
+    iput-object v0, p0, Legw;->c:Lglh;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(Ljava/lang/Class;)V
+    .locals 3
 
-    iget-object v0, p0, Legw;->a:Ljxn;
+    iget-object v0, p0, Legw;->c:Lglh;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, v0, Lglh;->a:Lgli;
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    check-cast v0, Lefz;
+    invoke-virtual {v1, p1, v2}, Lgli;->a(Ljava/lang/Class;Z)V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v1, v0, Lglh;->a:Lgli;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lglh;->a()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Liau;
+    invoke-virtual {v1, v0}, Lgli;->a(Z)V
 
-    return-object v0
+    return-void
+.end method
+
+.method public final b(Ljava/lang/Class;)V
+    .locals 3
+
+    iget-object v0, p0, Legw;->c:Lglh;
+
+    iget-object v1, v0, Lglh;->a:Lgli;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p1, v2}, Lgli;->a(Ljava/lang/Class;Z)V
+
+    iget-object v1, v0, Lglh;->a:Lgli;
+
+    invoke-virtual {v0}, Lglh;->a()Z
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Lgli;->a(Z)V
+
+    return-void
 .end method

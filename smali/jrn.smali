@@ -1,193 +1,137 @@
 .class public final Ljrn;
-.super Ljwj;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/io/Serializable;
+.implements Ljrm;
+
+
+# static fields
+.field public static final serialVersionUID:J
 
 
 # instance fields
-.field public a:I
+.field private final a:Ljrm;
 
-.field public b:I
+.field private volatile transient b:Z
 
-.field public c:I
+.field private transient c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljrm;)V
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput v0, p0, Ljrn;->a:I
+    move-result-object v0
 
-    iput v0, p0, Ljrn;->b:I
+    check-cast v0, Ljrm;
 
-    iput v0, p0, Ljrn;->c:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljrn;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljrn;->cachedSize:I
+    iput-object v0, p0, Ljrn;->a:Ljrm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 3
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    iget-boolean v0, p0, Ljrn;->b:Z
 
-    move-result v0
+    if-nez v0, :cond_1
 
-    iget v1, p0, Ljrn;->a:I
+    monitor-enter p0
 
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget v2, p0, Ljrn;->a:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget v1, p0, Ljrn;->b:I
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget v2, p0, Ljrn;->b:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    iget v1, p0, Ljrn;->c:I
-
-    if-eqz v1, :cond_2
-
-    const/4 v1, 0x3
-
-    iget v2, p0, Ljrn;->c:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    return v0
-.end method
-
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 1
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
+    :try_start_0
+    iget-boolean v0, p0, Ljrn;->b:Z
 
     if-nez v0, :cond_0
 
-    :sswitch_0
-    return-object p0
+    iget-object v0, p0, Ljrn;->a:Ljrm;
 
-    :sswitch_1
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-interface {v0}, Ljrm;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v0
 
-    iput v0, p0, Ljrn;->a:I
+    iput-object v0, p0, Ljrn;->c:Ljava/lang/Object;
 
-    goto :goto_0
+    const/4 v1, 0x1
 
-    :sswitch_2
-    invoke-virtual {p1}, Ljwh;->d()I
+    iput-boolean v1, p0, Ljrn;->b:Z
 
-    move-result v0
+    monitor-exit p0
 
-    iput v0, p0, Ljrn;->b:I
-
-    goto :goto_0
-
-    :sswitch_3
-    invoke-virtual {p1}, Ljwh;->d()I
-
-    move-result v0
-
-    iput v0, p0, Ljrn;->c:I
-
-    goto :goto_0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x18 -> :sswitch_3
-    .end sparse-switch
-.end method
-
-.method public final writeTo(Ljwi;)V
-    .locals 2
-
-    iget v0, p0, Ljrn;->a:I
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iget v1, p0, Ljrn;->a:I
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    :goto_0
+    return-object v0
 
     :cond_0
-    iget v0, p0, Ljrn;->b:I
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x2
-
-    iget v1, p0, Ljrn;->b:I
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_1
-    iget v0, p0, Ljrn;->c:I
+    iget-object v0, p0, Ljrn;->c:Ljava/lang/Object;
 
-    if-eqz v0, :cond_2
+    goto :goto_0
 
-    const/4 v0, 0x3
+    :catchall_0
+    move-exception v0
 
-    iget v1, p0, Ljrn;->c:I
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    throw v0
+.end method
 
-    :cond_2
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    return-void
+    iget-object v0, p0, Ljrn;->a:Ljrm;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x13
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Suppliers.memoize("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

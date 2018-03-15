@@ -1,92 +1,75 @@
-.class public abstract Lhma;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field private static a:Ljava/lang/Object;
-
-.field private static b:Lhma;
+.class public final Lhma;
+.super Lhne;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static a(Lhnd;)Landroid/accounts/Account;
+    .locals 5
 
-    new-instance v0, Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    if-eqz p0, :cond_0
 
-    sput-object v0, Lhma;->a:Ljava/lang/Object;
+    invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static a(Landroid/content/Context;)Lhma;
-    .locals 3
-
-    sget-object v1, Lhma;->a:Ljava/lang/Object;
-
-    monitor-enter v1
+    move-result-wide v2
 
     :try_start_0
-    sget-object v0, Lhma;->b:Lhma;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lhmc;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Lhmc;-><init>(Landroid/content/Context;)V
-
-    sput-object v0, Lhma;->b:Lhma;
-
-    :cond_0
-    monitor-exit v1
+    invoke-interface {p0}, Lhnd;->a()Landroid/accounts/Account;
     :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v0, Lhma;->b:Lhma;
+    move-result-object v0
 
+    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    :cond_0
+    :goto_0
     return-object v0
+
+    :catch_0
+    move-exception v1
+
+    :try_start_1
+    const-string v1, "AccountAccessor"
+
+    const-string v4, "Remote account accessor probably died"
+
+    invoke-static {v1, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
+
+    goto :goto_0
 
     :catchall_0
     move-exception v0
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     throw v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;Landroid/content/ServiceConnection;)V
+.method public final a()Landroid/accounts/Account;
     .locals 1
 
-    new-instance v0, Lhmb;
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    invoke-direct {v0, p1, p2}, Lhmb;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    invoke-virtual {p0, v0, p3}, Lhma;->b(Lhmb;Landroid/content/ServiceConnection;)V
-
-    return-void
+    throw v0
 .end method
 
-.method protected abstract a(Lhmb;Landroid/content/ServiceConnection;)Z
-.end method
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-.method protected abstract b(Lhmb;Landroid/content/ServiceConnection;)V
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
 .end method

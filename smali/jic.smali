@@ -1,33 +1,41 @@
-.class final enum Ljic;
-.super Ljia;
+.class abstract Ljic;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lipn;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method private constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Ljia;-><init>(Ljava/lang/String;I)V
+    return-void
+.end method
+
+.method synthetic constructor <init>(B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljic;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract a(Lcom/google/android/vision/face/Face;)Ljava/lang/Float;
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "Predicates.alwaysFalse()"
+    check-cast p1, Lcom/google/android/vision/face/Face;
+
+    invoke-virtual {p0, p1}, Ljic;->a(Lcom/google/android/vision/face/Face;)Ljava/lang/Float;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -1,82 +1,257 @@
-.class public final enum Ljvc;
-.super Ljava/lang/Enum;
+.class abstract Ljvc;
+.super Ljwg;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
-
-
-# static fields
-.field public static final enum a:Ljvc;
-
-.field private static synthetic b:[Ljvc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>()V
+    .locals 0
 
-    new-instance v0, Ljvc;
-
-    const-string v1, "INSTANCE"
-
-    invoke-direct {v0, v1}, Ljvc;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Ljvc;->a:Ljvc;
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljvc;
-
-    const/4 v1, 0x0
-
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Ljvc;->b:[Ljvc;
+    invoke-direct {p0}, Ljwg;-><init>()V
 
     return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Ljvc;
-    .locals 1
-
-    sget-object v0, Ljvc;->b:[Ljvc;
-
-    invoke-virtual {v0}, [Ljvc;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ljvc;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 0
+.method abstract a()Ljava/util/Map;
+.end method
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+.method public clear()V
+    .locals 1
+
+    invoke-virtual {p0}, Ljvc;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
 
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public contains(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    instance-of v1, p1, Ljava/util/Map$Entry;
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Ljvc;->a()Ljava/util/Map;
+
+    move-result-object v2
+
+    invoke-static {v2, v1}, Ljwo;->a(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Ljre;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {p0}, Ljvc;->a()Ljava/util/Map;
+
+    move-result-object v2
+
+    invoke-interface {v2, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :cond_1
+    return v0
+.end method
+
+.method public isEmpty()Z
     .locals 1
 
-    const-string v0, "MoreExecutors.directExecutor()"
+    invoke-virtual {p0}, Ljvc;->a()Ljava/util/Map;
 
-    return-object v0
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public remove(Ljava/lang/Object;)Z
+    .locals 2
+
+    invoke-virtual {p0, p1}, Ljvc;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-virtual {p0}, Ljvc;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    :try_start_0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    invoke-super {p0, v0}, Ljwg;->removeAll(Ljava/util/Collection;)Z
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Ljwo;->a(Ljava/util/Set;Ljava/util/Iterator;)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+    .locals 4
+
+    :try_start_0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    invoke-super {p0, v0}, Ljwg;->retainAll(Ljava/util/Collection;)Z
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljwo;->a(I)Ljava/util/HashSet;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljvc;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ljvc;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->retainAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public size()I
+    .locals 1
+
+    invoke-virtual {p0}, Ljvc;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
+    return v0
 .end method

@@ -3,26 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lihg;
 
 
 # instance fields
-.field private synthetic a:[B
-
-.field private synthetic b:I
-
-.field private synthetic c:Lcyn;
+.field private final synthetic a:Lcyk;
 
 
 # direct methods
-.method constructor <init>(Lcyn;[BI)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
-    iput-object p1, p0, Lcyo;->c:Lcyn;
-
-    iput-object p2, p0, Lcyo;->a:[B
-
-    iput p3, p0, Lcyo;->b:I
+    iput-object p1, p0, Lcyo;->a:Lcyk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,30 +23,40 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lcyo;->a:[B
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget v1, p0, Lcyo;->b:I
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {v0, v1}, Lccv;->a([BI)Landroid/graphics/Bitmap;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcyo;->c:Lcyn;
+    iget-object v0, p0, Lcyo;->a:Lcyk;
 
-    iget-object v1, v1, Lcyn;->a:Lcyf;
+    iget-object v0, v0, Lbrv;->a:Lbrw;
 
-    iget-object v1, v1, Lcng;->a:Lcnh;
+    new-instance v1, Lcwn;
 
-    new-instance v2, Lcvo;
+    invoke-direct {v1}, Lcwn;-><init>()V
 
-    iget-object v3, p0, Lcyo;->a:[B
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
 
-    invoke-direct {v2, v0, v3}, Lcvo;-><init>(Landroid/graphics/Bitmap;[B)V
-
-    invoke-interface {v1, v2}, Lcnh;->a(Ljava/lang/Object;)V
-
+    :goto_0
     return-void
+
+    :cond_0
+    iget-object v0, p0, Lcyo;->a:Lcyk;
+
+    iget-object v0, v0, Lbrv;->a:Lbrw;
+
+    new-instance v1, Lcwl;
+
+    invoke-direct {v1}, Lcwl;-><init>()V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    goto :goto_0
 .end method

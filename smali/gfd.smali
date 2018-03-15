@@ -1,19 +1,17 @@
-.class public final Lgfd;
+.class public interface abstract Lgfd;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field public final a:I
+# virtual methods
+.method public abstract a()Lkeh;
+.end method
 
+.method public abstract a(Lfdv;)V
+.end method
 
-# direct methods
-.method public constructor <init>(I)V
-    .locals 0
+.method public abstract a(Liaa;Lcom/google/android/apps/camera/uiutils/ReplaceableView;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgff;Lhat;Lgoy;Lick;Lick;Lick;Ljrf;)V
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lgfd;->a:I
-
-    return-void
+.method public abstract b()Lkeh;
 .end method

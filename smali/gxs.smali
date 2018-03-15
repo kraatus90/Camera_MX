@@ -1,51 +1,80 @@
-.class final synthetic Lgxs;
+.class public final Lgxs;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lgxr;
+.field private final a:Lgxq;
 
-.field private b:Lgxp;
+.field private final b:Lkgv;
 
-.field private c:Lgyc;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgxr;Lgxp;Lgyc;)V
+.method public constructor <init>(Lgxq;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxs;->a:Lgxr;
+    iput-object p1, p0, Lgxs;->a:Lgxq;
 
-    iput-object p2, p0, Lgxs;->b:Lgxp;
+    iput-object p2, p0, Lgxs;->b:Lkgv;
 
-    iput-object p3, p0, Lgxs;->c:Lgyc;
+    iput-object p3, p0, Lgxs;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 5
 
-    iget-object v0, p0, Lgxs;->a:Lgxr;
+    iget-object v2, p0, Lgxs;->a:Lgxq;
 
-    iget-object v1, p0, Lgxs;->b:Lgxp;
+    iget-object v0, p0, Lgxs;->b:Lkgv;
 
-    iget-object v2, p0, Lgxs;->c:Lgyc;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v3, v0, Lgxr;->d:Landroid/os/Handler;
+    move-result-object v0
 
-    new-instance v4, Lgxw;
+    check-cast v0, Liay;
 
-    invoke-direct {v4, v0, v1, v2}, Lgxw;-><init>(Lgxr;Lgxp;Lgyc;)V
+    iget-object v1, p0, Lgxs;->c:Lkgv;
 
-    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v1
+
+    check-cast v1, Lihs;
+
+    new-instance v3, Lket;
+
+    invoke-direct {v3}, Lket;-><init>()V
+
+    new-instance v4, Lgxr;
+
+    invoke-direct {v4, v2, v1, v3}, Lgxr;-><init>(Lgxq;Lihs;Lket;)V
+
+    invoke-virtual {v0, v4}, Liay;->a(Ljava/lang/Runnable;)V
+
+    invoke-static {v3}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgxn;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgxn;
+
+    return-object v0
 .end method

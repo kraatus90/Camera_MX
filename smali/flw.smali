@@ -1,40 +1,78 @@
-.class final synthetic Lflw;
+.class public final Lflw;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
+.implements Ljqv;
 
 
 # instance fields
-.field private a:Lflt;
+.field private final synthetic a:I
+
+.field private final synthetic b:Lflv;
 
 
 # direct methods
-.method constructor <init>(Lflt;)V
+.method public constructor <init>(Lflv;Linq;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lflw;->b:Lflv;
 
-    iput-object p1, p0, Lflw;->a:Lflt;
+    iput p3, p0, Lflw;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lflw;->a:Lflt;
+    check-cast p1, Landroid/view/Surface;
 
-    const/4 v1, 0x4
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne p2, v1, :cond_0
+    iget v0, p0, Lflw;->a:I
 
-    invoke-virtual {v0}, Lflt;->b()V
+    new-instance v1, Likl;
 
-    :cond_0
-    const/4 v0, 0x1
+    invoke-static {p1, v0}, Landroid/media/ImageWriter;->newInstance(Landroid/view/Surface;I)Landroid/media/ImageWriter;
 
-    return v0
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Likl;-><init>(Landroid/media/ImageWriter;)V
+
+    new-instance v0, Lilx;
+
+    new-instance v2, Lflq;
+
+    iget-object v3, p0, Lflw;->b:Lflv;
+
+    iget-object v3, v3, Lflv;->b:Liho;
+
+    invoke-direct {v2, v1, v3}, Lflq;-><init>(Linp;Liho;)V
+
+    invoke-direct {v0, v2}, Lilx;-><init>(Linp;)V
+
+    iget-object v1, p0, Lflw;->b:Lflv;
+
+    iget-object v1, v1, Lflv;->a:Liaw;
+
+    invoke-virtual {v1, v0}, Liaw;->a(Lihb;)Lihb;
+
+    new-instance v1, Lflk;
+
+    iget-object v2, p0, Lflw;->b:Lflv;
+
+    iget-object v2, v2, Lflv;->a:Liaw;
+
+    iget-object v3, p0, Lflw;->b:Lflv;
+
+    iget-object v3, v3, Lflv;->c:Lilg;
+
+    invoke-direct {v1, v0, v2, v3}, Lflk;-><init>(Linp;Liaw;Lilg;)V
+
+    return-object v1
 .end method

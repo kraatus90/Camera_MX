@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public final a:Lbls;
+.field public final a:Lbqo;
 
-.field public final b:Lblt;
+.field public final b:Lbqp;
 
 .field private c:Landroid/graphics/PointF;
 
-.field private d:Lgzl;
+.field private d:Lhaq;
 
 .field private e:Landroid/view/WindowManager;
 
@@ -23,17 +23,17 @@
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance v0, Lblr;
+    new-instance v0, Lbqn;
 
-    invoke-direct {v0}, Lblr;-><init>()V
+    invoke-direct {v0}, Lbqn;-><init>()V
 
-    new-instance v1, Lbls;
+    new-instance v1, Lbqo;
 
-    invoke-direct {v1, v0}, Lbls;-><init>(Lblr;)V
+    invoke-direct {v1, v0}, Lbqo;-><init>(Lbqn;)V
 
-    iput-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbls;
+    iput-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbqo;
 
-    new-instance v0, Lblt;
+    new-instance v0, Lbqp;
 
     new-instance v1, Landroid/graphics/drawable/shapes/OvalShape;
 
@@ -59,9 +59,9 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    invoke-direct {v0, v2}, Lblt;-><init>(Landroid/graphics/drawable/ShapeDrawable;)V
+    invoke-direct {v0, v2}, Lbqp;-><init>(Landroid/graphics/drawable/ShapeDrawable;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lblt;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lbqp;
 
     const-string v0, "window"
 
@@ -76,14 +76,14 @@
     return-void
 .end method
 
-.method constructor <init>(Landroid/content/Context;Lbls;Lblt;)V
+.method constructor <init>(Landroid/content/Context;Lbqo;Lbqp;)V
     .locals 1
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbls;
+    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbqo;
 
-    iput-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lblt;
+    iput-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lbqp;
 
     const-string v0, "window"
 
@@ -98,10 +98,10 @@
     return-void
 .end method
 
-.method private static a(Lgzl;)I
+.method private static a(Lhaq;)I
     .locals 1
 
-    invoke-virtual {p0}, Lgzl;->ordinal()I
+    invoke-virtual {p0}, Lhaq;->ordinal()I
 
     move-result v0
 
@@ -188,42 +188,42 @@
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbls;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbqo;
 
-    iget-object v1, v0, Lbls;->a:Landroid/graphics/drawable/GradientDrawable;
+    iget-object v1, v0, Lbqo;->a:Landroid/graphics/drawable/GradientDrawable;
 
     if-eqz v1, :cond_0
 
-    iget v1, v0, Lbls;->b:F
+    iget v1, v0, Lbqo;->b:F
 
     cmpl-float v1, v1, v2
 
     if-lez v1, :cond_0
 
-    iget-object v1, v0, Lbls;->a:Landroid/graphics/drawable/GradientDrawable;
+    iget-object v1, v0, Lbqo;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    iget v0, v0, Lbls;->b:F
+    iget v0, v0, Lbqo;->b:F
 
-    invoke-static {p1, v1, v0}, Lblr;->a(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;F)V
+    invoke-static {p1, v1, v0}, Lbqn;->a(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;F)V
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lblt;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lbqp;
 
-    iget-object v1, v0, Lblt;->a:Landroid/graphics/drawable/ShapeDrawable;
+    iget-object v1, v0, Lbqp;->a:Landroid/graphics/drawable/ShapeDrawable;
 
     if-eqz v1, :cond_1
 
-    iget v1, v0, Lblt;->b:F
+    iget v1, v0, Lbqp;->b:F
 
     cmpl-float v1, v1, v2
 
     if-lez v1, :cond_1
 
-    iget-object v1, v0, Lblt;->a:Landroid/graphics/drawable/ShapeDrawable;
+    iget-object v1, v0, Lbqp;->a:Landroid/graphics/drawable/ShapeDrawable;
 
-    iget v0, v0, Lblt;->b:F
+    iget v0, v0, Lbqp;->b:F
 
-    invoke-static {p1, v1, v0}, Lblr;->a(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;F)V
+    invoke-static {p1, v1, v0}, Lbqn;->a(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;F)V
 
     :cond_1
     return-void
@@ -240,7 +240,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:Lgzl;
+    iget-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:Lhaq;
 
     iget-object v2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->e:Landroid/view/WindowManager;
 
@@ -260,17 +260,17 @@
 
     move-result v5
 
-    invoke-static {v2, v3, v4, v5}, Lgzl;->a(Landroid/view/Display;Landroid/content/Context;II)Lgzl;
+    invoke-static {v2, v3, v4, v5}, Lhaq;->a(Landroid/view/Display;Landroid/content/Context;II)Lhaq;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:Lgzl;
+    iput-object v2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:Lhaq;
 
     iget-boolean v2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->f:Z
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:Lgzl;
+    iget-object v2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:Lhaq;
 
     iget-object v3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->c:Landroid/graphics/PointF;
 
@@ -282,11 +282,11 @@
 
     move-result v5
 
-    invoke-static {v2}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Lgzl;)I
+    invoke-static {v2}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Lhaq;)I
 
     move-result v0
 
-    invoke-static {v1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Lgzl;)I
+    invoke-static {v1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Lhaq;)I
 
     move-result v1
 
@@ -301,7 +301,7 @@
     throw v0
 
     :sswitch_0
-    sget-object v0, Licf;->b:Licf;
+    sget-object v0, Ligz;->b:Ligz;
 
     :goto_0
     if-eqz v3, :cond_0
@@ -310,7 +310,7 @@
 
     invoke-direct {v1}, Landroid/graphics/PointF;-><init>()V
 
-    invoke-virtual {v0}, Licf;->ordinal()I
+    invoke-virtual {v0}, Ligz;->ordinal()I
 
     move-result v0
 
@@ -333,17 +333,17 @@
     return-void
 
     :sswitch_1
-    sget-object v0, Licf;->d:Licf;
+    sget-object v0, Ligz;->d:Ligz;
 
     goto :goto_0
 
     :sswitch_2
-    sget-object v0, Licf;->c:Licf;
+    sget-object v0, Ligz;->c:Ligz;
 
     goto :goto_0
 
     :sswitch_3
-    sget-object v0, Licf;->a:Licf;
+    sget-object v0, Ligz;->a:Ligz;
 
     goto :goto_0
 
@@ -416,15 +416,15 @@
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbls;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbqo;
 
-    iget-object v0, v0, Lbls;->a:Landroid/graphics/drawable/GradientDrawable;
+    iget-object v0, v0, Lbqo;->a:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v0, v1, v1, p1, p2}, Landroid/graphics/drawable/GradientDrawable;->setBounds(IIII)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lblt;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lbqp;
 
-    iget-object v0, v0, Lblt;->a:Landroid/graphics/drawable/ShapeDrawable;
+    iget-object v0, v0, Lbqp;->a:Landroid/graphics/drawable/ShapeDrawable;
 
     invoke-virtual {v0, v1, v1, p1, p2}, Landroid/graphics/drawable/ShapeDrawable;->setBounds(IIII)V
 

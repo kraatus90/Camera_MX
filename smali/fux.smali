@@ -2,145 +2,117 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# static fields
-.field private static a:Ljava/lang/String;
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "VidRotDataLoader"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lfux;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lfux;->a:Lkgv;
+
+    iput-object p2, p0, Lfux;->b:Lkgv;
+
+    iput-object p3, p0, Lfux;->c:Lkgv;
+
+    iput-object p4, p0, Lfux;->d:Lkgv;
+
+    iput-object p5, p0, Lfux;->e:Lkgv;
+
     return-void
 .end method
 
-.method public static a(Lfuw;Ljava/lang/String;)Z
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Lfux;
+    .locals 6
+
+    new-instance v0, Lfux;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lfux;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
     .locals 5
 
-    new-instance v0, Landroid/media/MediaMetadataRetriever;
+    iget-object v0, p0, Lfux;->a:Lkgv;
 
-    invoke-direct {v0}, Landroid/media/MediaMetadataRetriever;-><init>()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    :try_start_0
-    invoke-virtual {v0, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
+    move-result-object v0
 
-    const/16 v1, 0x18
+    check-cast v0, Lfdy;
 
-    invoke-virtual {v0, v1}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
+    iget-object v1, p0, Lfux;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    const/16 v2, 0x12
+    check-cast v1, Liaw;
 
-    invoke-virtual {v0, v2}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
+    iget-object v2, p0, Lfux;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    const/16 v3, 0x13
+    check-cast v2, Liho;
 
-    invoke-virtual {v0, v3}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
+    iget-object v3, p0, Lfux;->d:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v3
 
-    const/16 v4, 0x19
+    check-cast v3, Lfsx;
 
-    invoke-virtual {v0, v4}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
+    iget-object v4, p0, Lfux;->e:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v2, :cond_0
+    move-result-object v4
 
-    if-eqz v3, :cond_0
+    check-cast v4, Libw;
 
-    if-eqz v1, :cond_0
-
-    iput-object v1, p0, Lfuw;->b:Ljava/lang/String;
-
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    iput v1, p0, Lfuw;->c:I
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    iput v1, p0, Lfuw;->d:I
-
-    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    move-result-wide v0
-
-    double-to-int v0, v0
-
-    iput v0, p0, Lfuw;->e:I
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    sget-object v1, Lfux;->a:Ljava/lang/String;
-
-    const-string v2, "Metadata does not exist for the video at "
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1, v2, v3, v4}, Lfjq;->a(Lfdy;Liaw;Liho;Lfsx;Libw;)Lfsk;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_1
-    invoke-static {v1, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    check-cast v0, Lfsk;
 
-    :goto_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Lfux;->a:Ljava/lang/String;
-
-    const-string v2, "VideoRotationMetadataLoader.loadRotationMetadata() failed!"
-
-    invoke-static {v1, v2, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_2
+    return-object v0
 .end method

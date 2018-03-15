@@ -1,189 +1,128 @@
-.class final Lens;
+.class public final Lens;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lenq;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lenn;
+.field private final b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field private c:Landroid/widget/FrameLayout;
 
 
 # direct methods
-.method constructor <init>(Lenn;Ljvi;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lens;->b:Lenn;
-
-    iput-object p2, p0, Lens;->a:Ljvi;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private final a()V
-    .locals 4
+.method public constructor <init>(Lkgv;Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    .locals 0
 
-    iget-object v0, p0, Lens;->b:Lenn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, v0, Lenn;->t:Lejz;
+    iput-object p1, p0, Lens;->a:Lkgv;
 
-    if-eqz v0, :cond_0
+    iput-object p2, p0, Lens;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v0, p0, Lens;->b:Lenn;
-
-    iget-object v0, v0, Lenn;->t:Lejz;
-
-    invoke-virtual {v0}, Lejz;->a()V
-
-    sget-object v0, Lenn;->a:Ljava/lang/String;
-
-    iget-object v1, p0, Lens;->b:Lenn;
-
-    iget-object v1, v1, Lenn;->t:Lejz;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1b
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Unblocked file saving task "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 4
+.method public final a(I)V
+    .locals 1
 
-    check-cast p1, Landroid/net/Uri;
+    iget-object v0, p0, Lens;->c:Landroid/widget/FrameLayout;
 
-    iget-object v0, p0, Lens;->b:Lenn;
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Lenn;->p:Landroid/net/Uri;
+    iget-object v0, p0, Lens;->a:Lkgv;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v1, p0, Lens;->b:Lenn;
-
-    iget-object v1, v1, Lenn;->l:Lgvx;
-
-    invoke-interface {v1, p1, v0}, Lgvx;->a(Landroid/net/Uri;Landroid/net/Uri;)V
-
-    iget-object v1, p0, Lens;->b:Lenn;
-
-    iget-object v2, v1, Lenn;->f:Lemy;
-
-    iget v3, v1, Lenn;->q:I
-
-    iget v1, v1, Lenn;->r:I
-
-    invoke-virtual {v2, v3, v1}, Lemy;->onCapturePersisted(II)V
-
-    iget-object v1, p0, Lens;->b:Lenn;
-
-    iget-object v1, v1, Lenn;->b:Lavl;
-
-    invoke-interface {v1}, Lavl;->b()V
-
-    iget-object v1, p0, Lens;->b:Lenn;
-
-    iget-object v1, v1, Lenn;->e:Leon;
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {v1, v0, v2}, Leon;->a(Landroid/net/Uri;Ljava/util/List;)V
-
-    iget-object v1, p0, Lens;->b:Lenn;
-
-    const-string v2, "capturePersisted"
-
-    invoke-virtual {v1, v2}, Lenn;->a(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lens;->b:Lenn;
-
-    iget-object v1, v1, Lenn;->s:Lbvw;
-
-    invoke-virtual {v1, p1}, Lbvw;->a(Landroid/net/Uri;)V
-
-    invoke-direct {p0}, Lens;->a()V
-
-    iget-object v1, p0, Lens;->a:Ljvi;
-
-    invoke-static {v0}, Ljht;->c(Ljava/lang/Object;)Ljht;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Object;)Z
+    check-cast v0, Lgxn;
+
+    iget-object v0, v0, Lgxn;->a:Landroid/widget/FrameLayout;
+
+    iput-object v0, p0, Lens;->c:Landroid/widget/FrameLayout;
+
+    :cond_0
+    iget-object v0, p0, Lens;->c:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
+
+    iget-object v0, p0, Lens;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setImportantForAccessibility(I)V
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
+.method public final a(Lcom/google/common/logging/nano/eventprotos$CameraEvent;)V
     .locals 4
 
-    iget-object v0, p0, Lens;->b:Lenn;
+    invoke-static {p1}, Lcom/google/common/logging/nano/eventprotos$CameraEvent;->toByteArray(Lkfx;)[B
 
-    invoke-virtual {v0}, Lenn;->q()V
+    move-result-object v0
 
-    iget-object v0, p0, Lens;->b:Lenn;
+    new-instance v1, Ljava/io/File;
 
-    const-string v1, "captureFailed"
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
-    invoke-virtual {v0, v1}, Lenn;->a(Ljava/lang/String;)V
+    move-result-object v2
 
-    iget-object v0, p0, Lens;->b:Lenn;
+    const-string v3, "camera_events"
 
-    sget-object v1, Lewl;->a:Lgyr;
+    invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    const/4 v2, 0x1
+    new-instance v2, Ljava/io/File;
 
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    const-string v3, "session.pb"
 
-    move-result-object v3
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2, v3}, Lenn;->a(Lgyr;ZLjava/lang/String;)V
+    :try_start_0
+    invoke-static {v2}, Ljym;->c(Ljava/io/File;)V
 
-    invoke-direct {p0}, Lens;->a()V
+    new-instance v1, Ljava/io/FileOutputStream;
 
-    iget-object v0, p0, Lens;->a:Ljvi;
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Throwable;)Z
+    invoke-direct {v1, v2, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
 
+    invoke-virtual {v1, v0}, Ljava/io/FileOutputStream;->write([B)V
+
+    const-string v0, "\n\n\n"
+
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/io/FileOutputStream;->write([B)V
+
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_0
 .end method

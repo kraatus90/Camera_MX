@@ -1,195 +1,93 @@
-.class public final Ljjo;
-.super Ljjp;
+.class final Ljjo;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final serialVersionUID:J
+# interfaces
+.implements Ljrm;
 
 
 # instance fields
-.field private transient c:I
+.field private final synthetic a:Ljava/lang/String;
+
+.field private final synthetic b:Ljjn;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    invoke-direct {p0, v0}, Ljjp;-><init>(Ljava/util/Map;)V
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Ljjo;->c:I
-
-    return-void
-.end method
-
-.method private final readObject(Ljava/io/ObjectInputStream;)V
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Ljjo;->c:I
-
-    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
-
-    move-result v0
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    invoke-virtual {p0, v1}, Ljjo;->a(Ljava/util/Map;)V
-
-    invoke-static {p0, p1, v0}, Liui;->a(Ljmc;Ljava/io/ObjectInputStream;I)V
-
-    return-void
-.end method
-
-.method private final writeObject(Ljava/io/ObjectOutputStream;)V
+.method constructor <init>(Ljjn;Ljava/lang/String;)V
     .locals 0
 
-    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+    iput-object p1, p0, Ljjo;->b:Ljjn;
 
-    invoke-static {p0, p1}, Liui;->a(Ljmc;Ljava/io/ObjectOutputStream;)V
+    iput-object p2, p0, Ljjo;->a:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()Ljava/util/List;
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v0, p0, Ljjo;->b:Ljjn;
 
-    iget v1, p0, Ljjo;->c:I
+    iget-object v0, v0, Ljjn;->a:Ljjp;
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    iget-object v1, p0, Ljjo;->a:Ljava/lang/String;
 
-    return-object v0
-.end method
-
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/util/List;
-    .locals 1
-
-    invoke-super {p0, p1}, Ljjp;->a(Ljava/lang/Object;)Ljava/util/List;
+    invoke-interface {v0, v1}, Ljjp;->a(Ljava/lang/String;)Ljjz;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    if-nez v0, :cond_0
 
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
+    const-string v0, "ExplicitNonlinearScorer"
 
-    invoke-super {p0, p1, p2}, Ljio;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v1, p0, Ljjo;->a:Ljava/lang/String;
 
-    move-result v0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    return v0
-.end method
+    move-result-object v2
 
-.method final synthetic b()Ljava/util/Collection;
-    .locals 1
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {p0}, Ljjo;->a()Ljava/util/List;
+    move-result v2
 
-    move-result-object v0
+    add-int/lit8 v2, v2, 0x24
 
-    return-object v0
-.end method
+    new-instance v3, Ljava/lang/StringBuilder;
 
-.method public final bridge synthetic b(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-super {p0, p1, p2}, Ljjp;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const-string v2, "Feature "
 
-    move-result v0
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return v0
-.end method
+    move-result-object v2
 
-.method public final bridge synthetic c()I
-    .locals 1
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-super {p0}, Ljjp;->c()I
+    move-result-object v1
 
-    move-result v0
+    const-string v2, " not found. Defaulting to 0."
 
-    return v0
-.end method
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final bridge synthetic d()V
-    .locals 0
+    move-result-object v1
 
-    invoke-super {p0}, Ljjp;->d()V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final bridge synthetic equals(Ljava/lang/Object;)Z
-    .locals 1
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-super {p0, p1}, Ljjh;->equals(Ljava/lang/Object;)Z
+    new-instance v0, Ljjl;
 
-    move-result v0
+    const/4 v1, 0x0
 
-    return v0
-.end method
+    invoke-direct {v0, v1}, Ljjl;-><init>(F)V
 
-.method public final bridge synthetic g()Z
-    .locals 1
-
-    invoke-super {p0}, Ljjp;->g()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final bridge synthetic h()Ljava/util/Set;
-    .locals 1
-
-    invoke-super {p0}, Ljjp;->h()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic hashCode()I
-    .locals 1
-
-    invoke-super {p0}, Ljjp;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final bridge synthetic i()Ljava/util/Map;
-    .locals 1
-
-    invoke-super {p0}, Ljjh;->i()Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-super {p0}, Ljjp;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
+    :cond_0
     return-object v0
 .end method

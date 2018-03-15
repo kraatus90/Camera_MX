@@ -2,70 +2,352 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:Landroid/content/Context;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbqu;->a:Landroid/content/Context;
-
     return-void
 .end method
 
+.method public static a(Landroid/net/Uri;)J
+    .locals 2
 
-# virtual methods
-.method public final a(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 4
-
-    :try_start_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    iget-object v0, p0, Lbqu;->a:Landroid/content/Context;
-
-    invoke-virtual {v0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v0
 
+    invoke-static {v0}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static a([BI)J
+    .locals 4
+
+    add-int/lit8 v0, p1, 0xc
+
+    invoke-static {p0, v0}, Lbqu;->c([BI)I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    const-wide v2, 0xffffffffL
+
+    and-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public static synthetic a(Lbpd;Lgay;)Lgay;
+    .locals 6
+
+    :try_start_0
+    iget-object v0, p1, Lgay;->h:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lgay;->h:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    sget v1, Lcom/google/android/libraries/camera/exif/ExifInterface;->TAG_SOFTWARE:I
+
+    invoke-virtual {v0, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->getTagStringValue(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p1, Lgay;->h:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    iget-object v2, p1, Lgay;->h:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    sget v3, Lcom/google/android/libraries/camera/exif/ExifInterface;->TAG_SOFTWARE:I
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x1
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/16 v4, 0x62
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v3, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(ILjava/lang/Object;)Lijq;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(Lijq;)Lijq;
+
+    :cond_0
+    invoke-virtual {p0, p1}, Lbpd;->a(Lgay;)Lkeh;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lkeh;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgay;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
     return-object v0
 
     :catch_0
     move-exception v0
 
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "Unable to create or provide "
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_0
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :goto_1
+    move-object v0, p1
 
     goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
+.end method
+
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Lihb;
+    .locals 1
+
+    new-instance v0, Lbkl;
+
+    invoke-direct {v0, p0, p1}, Lbkl;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static a(Lihn;Lkeh;Ljava/lang/String;Ljava/lang/String;)Lkeh;
+    .locals 2
+
+    new-instance v0, Lbsp;
+
+    invoke-direct {v0, p0, p2, p3}, Lbsp;-><init>(Lihn;Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v1, Lken;->a:Lken;
+
+    invoke-static {p1, v0, v1}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    return-object p1
+.end method
+
+.method public static b([BI)J
+    .locals 6
+
+    add-int/lit8 v0, p1, 0x10
+
+    aget-byte v1, p0, v0
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-long v2, v1
+
+    add-int/lit8 v1, v0, 0x1
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-long v4, v1
+
+    const/16 v1, 0x8
+
+    shl-long/2addr v4, v1
+
+    add-long/2addr v2, v4
+
+    add-int/lit8 v1, v0, 0x2
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-long v4, v1
+
+    const/16 v1, 0x10
+
+    shl-long/2addr v4, v1
+
+    add-long/2addr v2, v4
+
+    add-int/lit8 v1, v0, 0x3
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-long v4, v1
+
+    const/16 v1, 0x18
+
+    shl-long/2addr v4, v1
+
+    add-long/2addr v2, v4
+
+    add-int/lit8 v1, v0, 0x4
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-long v4, v1
+
+    const/16 v1, 0x20
+
+    shl-long/2addr v4, v1
+
+    add-long/2addr v2, v4
+
+    add-int/lit8 v1, v0, 0x5
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-long v4, v1
+
+    const/16 v1, 0x28
+
+    shl-long/2addr v4, v1
+
+    add-long/2addr v2, v4
+
+    add-int/lit8 v1, v0, 0x6
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-long v4, v1
+
+    const/16 v1, 0x30
+
+    shl-long/2addr v4, v1
+
+    add-long/2addr v2, v4
+
+    add-int/lit8 v0, v0, 0x7
+
+    aget-byte v0, p0, v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    int-to-long v0, v0
+
+    const/16 v4, 0x38
+
+    shl-long/2addr v0, v4
+
+    add-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public static b()Lbpr;
+    .locals 2
+
+    new-instance v0, Lbpr;
+
+    const-string v1, "camera.shot_tracking"
+
+    invoke-direct {v0, v1}, Lbpr;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static c([BI)I
+    .locals 2
+
+    aget-byte v0, p0, p1
+
+    and-int/lit16 v0, v0, 0xff
+
+    add-int/lit8 v1, p1, 0x1
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x8
+
+    or-int/2addr v0, v1
+
+    add-int/lit8 v1, p1, 0x2
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x10
+
+    or-int/2addr v0, v1
+
+    add-int/lit8 v1, p1, 0x3
+
+    aget-byte v1, p0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    shl-int/lit8 v1, v1, 0x18
+
+    or-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public static d([BI)F
+    .locals 1
+
+    invoke-static {p0, p1}, Lbqu;->c([BI)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result v0
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
 .end method

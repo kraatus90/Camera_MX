@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lekq;
 
 
 # instance fields
-.field private synthetic a:Ldbn;
+.field public final synthetic a:Ldal;
 
 
 # direct methods
-.method constructor <init>(Ldbn;)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
-    iput-object p1, p0, Ldbq;->a:Ldbn;
+    iput-object p1, p0, Ldbq;->a:Ldal;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,14 +23,18 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Ldbq;->a:Ldbn;
+    iget-object v0, p0, Ldbq;->a:Ldal;
 
-    iget-object v0, v0, Ldbn;->r:Lfec;
+    iget-object v0, v0, Ldal;->F:Landroid/os/Handler;
 
-    invoke-virtual {v0}, Lgvh;->J()V
+    new-instance v1, Ldbr;
+
+    invoke-direct {v1, p0}, Ldbr;-><init>(Ldbq;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

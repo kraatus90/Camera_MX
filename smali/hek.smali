@@ -1,45 +1,34 @@
-.class final Lhek;
-.super Lhfk;
+.class public abstract Lhek;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lhej;
-
-
 # direct methods
-.method constructor <init>(Lhej;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lhek;->a:Lhej;
-
-    invoke-direct {p0, p1}, Lhfk;-><init>(Lhfj;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public static a(Lhem;Lhel;Lhen;)Lhek;
+    .locals 1
+
+    new-instance v0, Lheg;
+
+    invoke-direct {v0, p0, p1, p2}, Lheg;-><init>(Lhem;Lhel;Lhen;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final ad()V
-    .locals 2
+.method public abstract a()Lhem;
+.end method
 
-    iget-object v0, p0, Lhek;->a:Lhej;
+.method public abstract b()Lhel;
+.end method
 
-    iget-object v0, v0, Lhej;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhfk;->ad()V
-
-    iget-object v0, p0, Lhek;->a:Lhej;
-
-    iget-object v0, v0, Lhej;->a:Lgvj;
-
-    iget-object v1, p0, Lhek;->a:Lhej;
-
-    iget-object v1, v1, Lhej;->c:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+.method public abstract c()Lhen;
 .end method

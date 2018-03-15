@@ -1,23 +1,11 @@
-.class public final Lapi;
+.class public interface abstract Lapi;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a(Lapj;)V
 .end method
 
-.method public static a(Lacz;Lapc;Lapj;)Ladj;
-    .locals 1
-
-    new-instance v0, Ladj;
-
-    invoke-direct {v0, p0, p1, p2}, Ladj;-><init>(Lacz;Lapc;Lapj;)V
-
-    return-object v0
+.method public abstract b(Lapj;)V
 .end method

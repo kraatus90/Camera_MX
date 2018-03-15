@@ -1,93 +1,147 @@
-.class public final Lhua;
-.super Ljava/lang/Object;
+.class final Lhua;
+.super Lhuj;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
+.field private final synthetic b:Lhts;
 
-.field private b:Ljava/lang/String;
+.field private final synthetic c:Lcom/google/android/gms/internal/zzbgq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/String;)V
+.method constructor <init>(Lhuh;Lhts;Lcom/google/android/gms/internal/zzbgq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lhua;->b:Lhts;
 
-    iput-object p1, p0, Lhua;->a:Ljava/lang/Object;
+    iput-object p3, p0, Lhua;->c:Lcom/google/android/gms/internal/zzbgq;
 
-    iput-object p2, p0, Lhua;->b:Ljava/lang/String;
+    invoke-direct {p0, p1}, Lhuj;-><init>(Lhuh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a()V
+    .locals 6
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lhua;->b:Lhts;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lhua;->c:Lcom/google/android/gms/internal/zzbgq;
 
-    if-ne p0, p1, :cond_1
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Lhts;->b(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, v1, Lcom/google/android/gms/internal/zzbgq;->a:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-virtual {v2}, Lcom/google/android/gms/common/ConnectionResult;->b()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    iget-object v1, v1, Lcom/google/android/gms/internal/zzbgq;->b:Lcom/google/android/gms/common/internal/zzaf;
+
+    iget-object v2, v1, Lcom/google/android/gms/common/internal/zzaf;->b:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-virtual {v2}, Lcom/google/android/gms/common/ConnectionResult;->b()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    const-string v1, "GoogleApiClientConnecting"
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x30
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Sign-in succeeded with resolve account failure: "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/Exception;
+
+    invoke-direct {v4}, Ljava/lang/Exception;-><init>()V
+
+    invoke-static {v1, v3, v4}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    invoke-virtual {v0, v2}, Lhts;->b(Lcom/google/android/gms/common/ConnectionResult;)V
 
     :cond_0
     :goto_0
-    return v0
+    return-void
 
     :cond_1
-    instance-of v2, p1, Lhua;
+    const/4 v2, 0x1
 
-    if-nez v2, :cond_2
+    iput-boolean v2, v0, Lhts;->f:Z
 
-    move v0, v1
+    iget-object v2, v1, Lcom/google/android/gms/common/internal/zzaf;->a:Landroid/os/IBinder;
+
+    invoke-static {v2}, Lhne;->a(Landroid/os/IBinder;)Lhnd;
+
+    move-result-object v2
+
+    iput-object v2, v0, Lhts;->g:Lhnd;
+
+    iget-boolean v2, v1, Lcom/google/android/gms/common/internal/zzaf;->c:Z
+
+    iput-boolean v2, v0, Lhts;->h:Z
+
+    iget-boolean v1, v1, Lcom/google/android/gms/common/internal/zzaf;->d:Z
+
+    iput-boolean v1, v0, Lhts;->i:Z
+
+    invoke-virtual {v0}, Lhts;->e()V
 
     goto :goto_0
 
     :cond_2
-    check-cast p1, Lhua;
-
-    iget-object v2, p0, Lhua;->a:Ljava/lang/Object;
-
-    iget-object v3, p1, Lhua;->a:Ljava/lang/Object;
-
-    if-ne v2, v3, :cond_3
-
-    iget-object v2, p0, Lhua;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lhua;->b:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :cond_3
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lhua;->a:Ljava/lang/Object;
-
-    invoke-static {v0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lhua;->b:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v0, v2}, Lhts;->a(Lcom/google/android/gms/common/ConnectionResult;)Z
 
     move-result v1
 
-    add-int/2addr v0, v1
+    if-eqz v1, :cond_3
 
-    return v0
+    invoke-virtual {v0}, Lhts;->f()V
+
+    invoke-virtual {v0}, Lhts;->e()V
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {v0, v2}, Lhts;->b(Lcom/google/android/gms/common/ConnectionResult;)V
+
+    goto :goto_0
 .end method

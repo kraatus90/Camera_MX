@@ -1,56 +1,122 @@
-.class public final Leic;
+.class public abstract Leic;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:Ljava/nio/FloatBuffer;
+
+.field public b:Ljava/nio/FloatBuffer;
+
+.field public c:Ljava/nio/ShortBuffer;
+
+.field public d:Ljava/util/Vector;
+
+.field public e:Leif;
+
+.field private f:[F
+
+.field private g:[F
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
+
+    const/16 v2, 0x10
+
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leic;->a:Ljxn;
+    iput-object v1, p0, Leic;->a:Ljava/nio/FloatBuffer;
+
+    iput-object v1, p0, Leic;->b:Ljava/nio/FloatBuffer;
+
+    iput-object v1, p0, Leic;->c:Ljava/nio/ShortBuffer;
+
+    new-instance v0, Ljava/util/Vector;
+
+    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+
+    iput-object v0, p0, Leic;->d:Ljava/util/Vector;
+
+    new-array v0, v2, [F
+
+    iput-object v0, p0, Leic;->f:[F
+
+    new-array v0, v2, [F
+
+    iput-object v0, p0, Leic;->g:[F
+
+    iput-object v1, p0, Leic;->e:Leif;
+
+    iget-object v0, p0, Leic;->f:[F
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leic;
-
-    invoke-direct {v0, p0}, Leic;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public a()V
+    .locals 0
 
-    iget-object v0, p0, Leic;->a:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+.method public final a(IFF)V
+    .locals 4
 
-    move-result-object v0
+    mul-int/lit8 v0, p1, 0x3
 
-    check-cast v0, Leim;
+    iget-object v1, p0, Leic;->a:Ljava/nio/FloatBuffer;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    add-int/lit8 v2, v0, 0x1
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v0, p2}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
 
-    move-result-object v0
+    iget-object v0, p0, Leic;->a:Ljava/nio/FloatBuffer;
 
-    check-cast v0, Leij;
+    add-int/lit8 v1, v2, 0x1
 
-    return-object v0
+    const v3, -0x40266666    # -1.7f
+
+    invoke-virtual {v0, v2, v3}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
+
+    iget-object v0, p0, Leic;->a:Ljava/nio/FloatBuffer;
+
+    invoke-virtual {v0, v1, p3}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
+
+    return-void
+.end method
+
+.method public a([F)V
+    .locals 6
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Leic;->g:[F
+
+    iget-object v4, p0, Leic;->f:[F
+
+    move-object v2, p1
+
+    move v3, v1
+
+    move v5, v1
+
+    invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
+
+    iget-object v0, p0, Leic;->g:[F
+
+    invoke-virtual {p0, v0}, Leic;->b([F)V
+
+    return-void
+.end method
+
+.method public abstract b([F)V
 .end method

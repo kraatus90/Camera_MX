@@ -1,24 +1,24 @@
 .class public final Landroid/support/v7/widget/SearchView;
-.super Ltl;
+.super Ltf;
 .source "PG"
 
 # interfaces
-.implements Lnz;
+.implements Lnt;
 
 
 # static fields
-.field public static final a:Lvr;
+.field public static final a:Lvj;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lvr;
+    new-instance v0, Lvj;
 
-    invoke-direct {v0}, Lvr;-><init>()V
+    invoke-direct {v0}, Lvj;-><init>()V
 
-    sput-object v0, Landroid/support/v7/widget/SearchView;->a:Lvr;
+    sput-object v0, Landroid/support/v7/widget/SearchView;->a:Lvj;
 
     return-void
 .end method

@@ -1,84 +1,146 @@
 .class public final Lhzv;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
-
-
-# instance fields
-.field private a:Lhzt;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Lhzt;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhzv;->a:Lhzt;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 3
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 8
 
-    invoke-static {}, Lhzt;->b()Z
+    const/4 v3, 0x0
+
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
+
+    move-result v6
+
+    const-wide/16 v4, 0x0
+
+    move-object v2, v3
+
+    move-object v1, v3
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-ge v0, v6, :cond_0
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    :goto_0
-    return-void
+    move-result v0
 
-    :cond_0
-    new-instance v0, Ljvi;
+    const v7, 0xffff
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+    and-int/2addr v7, v0
 
-    iget-object v1, p0, Lhzv;->a:Lhzt;
+    packed-switch v7, :pswitch_data_0
 
-    new-instance v2, Lhzw;
-
-    invoke-direct {v2, p1, v0}, Lhzw;-><init>(Ljava/lang/Runnable;Ljvi;)V
-
-    invoke-virtual {v1, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    :try_start_0
-    invoke-virtual {v0}, Ljsw;->get()Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    :pswitch_0
+    invoke-static {p1, v0}, Lhmr;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
+    :pswitch_1
+    sget-object v1, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    invoke-static {p1, v0, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/Uri;
+
+    move-object v1, v0
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-static {p1, v0}, Lhmr;->i(Landroid/os/Parcel;I)Landroid/os/Bundle;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :pswitch_3
+    invoke-static {p1, v0}, Lhmr;->j(Landroid/os/Parcel;I)[B
+
+    move-result-object v3
+
+    goto :goto_0
+
+    :pswitch_4
+    invoke-static {p1, v0}, Lhmr;->f(Landroid/os/Parcel;I)J
+
+    move-result-wide v4
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    if-eq v0, v6, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    move-result-object v1
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    throw v1
+    move-result-object v1
 
-    :catch_1
-    move-exception v0
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    throw v0
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/wearable/PutDataRequest;
 
-    throw v1
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/wearable/PutDataRequest;-><init>(Landroid/net/Uri;Landroid/os/Bundle;[BJ)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/wearable/PutDataRequest;
+
+    return-object v0
 .end method

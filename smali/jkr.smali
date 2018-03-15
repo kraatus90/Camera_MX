@@ -2,9 +2,12 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljko;
+
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -12,116 +15,54 @@
     return-void
 .end method
 
-.method static a(II)I
-    .locals 2
-
-    if-gez p1, :cond_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    const-string v1, "cannot store more than MAX_VALUE elements"
-
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
-
-    :cond_0
-    shr-int/lit8 v0, p0, 0x1
-
-    add-int/2addr v0, p0
-
-    add-int/lit8 v0, v0, 0x1
-
-    if-ge v0, p1, :cond_1
-
-    add-int/lit8 v0, p1, -0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->highestOneBit(I)I
-
-    move-result v0
-
-    shl-int/lit8 v0, v0, 0x1
-
-    :cond_1
-    if-gez v0, :cond_2
-
-    const v0, 0x7fffffff
-
-    :cond_2
-    return v0
-.end method
-
 
 # virtual methods
-.method public a(Ljava/lang/Iterable;)Ljkr;
-    .locals 2
+.method public final a(Ljava/util/List;)Ljava/util/List;
+    .locals 4
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    new-instance v1, Ljava/util/ArrayList;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Ljkr;->b(Ljava/lang/Object;)Ljkr;
-
-    goto :goto_0
+    move-result-object v2
 
     :cond_0
-    return-object p0
-.end method
-
-.method public a(Ljava/util/Iterator;)Ljkr;
-    .locals 1
-
     :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Ljkr;->b(Ljava/lang/Object;)Ljkr;
+    check-cast v0, Ljkl;
+
+    invoke-virtual {p0, v0}, Ljkr;->a(Ljkl;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :cond_0
-    return-object p0
+    :cond_1
+    return-object v1
 .end method
 
-.method public varargs a([Ljava/lang/Object;)Ljkr;
-    .locals 3
-
-    array-length v1, p1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    aget-object v2, p1, v0
-
-    invoke-virtual {p0, v2}, Ljkr;->b(Ljava/lang/Object;)Ljkr;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object p0
+.method public abstract a(Ljkl;)Z
 .end method
 
-.method public abstract b(Ljava/lang/Object;)Ljkr;
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "SegmentSelector"
+
+    return-object v0
 .end method

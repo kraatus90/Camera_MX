@@ -1,55 +1,45 @@
-.class public final synthetic Lcoa;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljhj;
+.class final Lcoa;
+.super Lcns;
+.source "PG"
 
 
-# static fields
-.field public static final a:Ljhj;
+# instance fields
+.field private final synthetic a:Lcnz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcoa;
-
-    invoke-direct {v0}, Lcoa;-><init>()V
-
-    sput-object v0, Lcoa;->a:Ljhj;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method constructor <init>(Lcnz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcoa;->a:Lcnz;
+
+    invoke-direct {p0}, Lcns;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final e_()V
+    .locals 2
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lcoa;->a:Lcnz;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v0, v0, Lcnz;->b:Lgld;
 
-    move-result v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    if-eqz v0, :cond_0
+    invoke-super {p0}, Lcns;->e_()V
 
-    sget-object v0, Lcnv;->c:Lcnv;
+    iget-object v0, p0, Lcoa;->a:Lcnz;
 
-    :goto_0
-    return-object v0
+    iget-object v0, v0, Lcnz;->b:Lgld;
 
-    :cond_0
-    sget-object v0, Lcnv;->b:Lcnv;
+    iget-object v1, p0, Lcoa;->a:Lcnz;
 
-    goto :goto_0
+    iget-object v1, v1, Lcnz;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

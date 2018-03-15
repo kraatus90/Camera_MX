@@ -1,60 +1,44 @@
-.class public final Lczi;
+.class final Lczi;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lczh;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lczh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lczi;->a:Lczh;
 
-    iput-object p1, p0, Lczi;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lczi;->a:Ljxn;
+    iget-object v0, p0, Lczi;->a:Lczh;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lczh;->a:Lcyk;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/content/res/Resources;
-
-    const v1, 0x7f0f000d
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    const-string v1, "PanoramaModule"
-
-    new-instance v2, Lcqp;
-
-    const/4 v3, 0x1
-
-    invoke-direct {v2, v0, v1, v3}, Lcqp;-><init>(ILjava/lang/String;Z)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Lcqp;
+    check-cast v0, Lcxo;
 
-    return-object v0
+    iget-object v0, v0, Lcxo;->w:Lefu;
+
+    invoke-virtual {v0}, Lglb;->C()V
+
+    return-void
 .end method

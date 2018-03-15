@@ -950,7 +950,7 @@
 
     iget v0, v0, Lcom/google/android/libraries/smartburst/filterfw/MffContext$State;->current:I
 
-    if-eq v0, v2, :cond_2
+    if-eq v0, v2, :cond_1
 
     iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterfw/MffContext;->mCameraStreamer:Lcom/google/android/libraries/smartburst/filterfw/CameraStreamer;
 
@@ -965,15 +965,8 @@
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterfw/CameraStreamer;->tearDown()V
 
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0xb
-
-    if-lt v0, v2, :cond_1
-
     invoke-direct {p0}, Lcom/google/android/libraries/smartburst/filterfw/MffContext;->maybeDestroyRenderScript()V
 
-    :cond_1
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/android/libraries/smartburst/filterfw/MffContext;->stopRunners(Z)V
@@ -988,7 +981,7 @@
 
     iput v2, v0, Lcom/google/android/libraries/smartburst/filterfw/MffContext$State;->current:I
 
-    :cond_2
+    :cond_1
     monitor-exit v1
 
     return-void

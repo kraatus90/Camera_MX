@@ -2,166 +2,135 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field private a:Ligc;
+.field private final a:Lkgv;
 
-.field private b:Lgdw;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ligc;Lgdw;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lctr;->a:Ligc;
+    iput-object p1, p0, Lctr;->a:Lkgv;
 
-    iput-object p2, p0, Lctr;->b:Lgdw;
+    iput-object p2, p0, Lctr;->b:Lkgv;
+
+    iput-object p3, p0, Lctr;->c:Lkgv;
+
+    iput-object p4, p0, Lctr;->d:Lkgv;
+
+    iput-object p5, p0, Lctr;->e:Lkgv;
+
+    iput-object p6, p0, Lctr;->f:Lkgv;
+
+    iput-object p7, p0, Lctr;->g:Lkgv;
+
+    iput-object p8, p0, Lctr;->h:Lkgv;
+
+    iput-object p9, p0, Lctr;->i:Lkgv;
 
     return-void
 .end method
 
-.method public static a(Lcqr;Ldhh;Z)Lctr;
-    .locals 3
-
-    new-instance v1, Lctr;
-
-    iget-object v2, p0, Lcqr;->a:Ligc;
-
-    if-eqz p2, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-direct {v1, v2, v0}, Lctr;-><init>(Ligc;Lgdw;)V
-
-    return-object v1
-
-    :cond_0
-    invoke-virtual {p1}, Ldhh;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgdw;
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 10
 
-    const/4 v0, 0x1
+    new-instance v0, Lctf;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lctr;->a:Lkgv;
 
-    if-ne p0, p1, :cond_1
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    :cond_0
-    :goto_0
-    return v0
+    move-result-object v1
 
-    :cond_1
-    if-eqz p1, :cond_2
+    check-cast v1, Lihw;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v2, p0, Lctr;->b:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast v2, Ljava/util/concurrent/Executor;
+
+    iget-object v3, p0, Lctr;->c:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_3
+    check-cast v3, Lbxt;
 
-    :cond_2
-    move v0, v1
+    iget-object v4, p0, Lctr;->d:Lkgv;
 
-    goto :goto_0
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    :cond_3
-    check-cast p1, Lctr;
+    move-result-object v4
 
-    iget-object v2, p0, Lctr;->a:Ligc;
+    check-cast v4, Lcse;
 
-    iget-object v3, p1, Lctr;->a:Ligc;
+    iget-object v5, p0, Lctr;->e:Lkgv;
 
-    invoke-static {v2, v3}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v5
 
-    if-eqz v2, :cond_4
+    check-cast v5, Lkeh;
 
-    iget-object v2, p0, Lctr;->b:Lgdw;
+    iget-object v6, p0, Lctr;->f:Lkgv;
 
-    iget-object v3, p1, Lctr;->b:Lgdw;
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Ljhs;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result-object v6
 
-    move-result v2
+    check-cast v6, Lket;
 
-    if-nez v2, :cond_0
+    iget-object v7, p0, Lctr;->g:Lkgv;
 
-    :cond_4
-    move v0, v1
+    invoke-static {v7}, Lkgo;->b(Lkgv;)Lkgm;
 
-    goto :goto_0
-.end method
+    move-result-object v7
 
-.method public final hashCode()I
-    .locals 3
+    iget-object v8, p0, Lctr;->h:Lkgv;
 
-    const/4 v0, 0x2
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    move-result-object v8
 
-    const/4 v1, 0x0
+    check-cast v8, Lihs;
 
-    iget-object v2, p0, Lctr;->a:Ligc;
+    iget-object v9, p0, Lctr;->i:Lkgv;
 
-    aput-object v2, v0, v1
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move-result-object v9
 
-    iget-object v2, p0, Lctr;->b:Lgdw;
+    check-cast v9, Lgem;
 
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    invoke-static {p0}, Liui;->a(Ljava/lang/Object;)Ljhq;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lctr;->a:Ligc;
-
-    invoke-virtual {v0}, Ljhq;->a()Ljhr;
-
-    move-result-object v2
-
-    iput-object v1, v2, Ljhr;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lctr;->b:Lgdw;
-
-    invoke-virtual {v0}, Ljhq;->a()Ljhr;
-
-    move-result-object v2
-
-    iput-object v1, v2, Ljhr;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct/range {v0 .. v9}, Lctf;-><init>(Lihw;Ljava/util/concurrent/Executor;Lbxt;Lcse;Lkeh;Lket;Lkgm;Lihs;Lgem;)V
 
     return-object v0
 .end method

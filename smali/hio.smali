@@ -2,83 +2,129 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field public final a:Lhiq;
+.field public a:Lhie;
 
-.field private b:Landroid/content/Context;
+.field public b:J
 
-.field private c:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+.field private c:J
 
-.field private d:Lcom/google/android/apps/refocus/processing/ProgressCallback;
-
-.field private e:Landroid/graphics/Bitmap;
-
-.field private f:Landroid/os/Handler;
+.field private d:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;Lhiq;Lcom/google/android/apps/refocus/processing/ProgressCallback;Landroid/graphics/Bitmap;)V
+.method public constructor <init>()V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhio;->b:Landroid/content/Context;
+    new-instance v0, Lhie;
 
-    iput-object p2, p0, Lhio;->c:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+    const v1, 0x3f666666    # 0.9f
 
-    new-instance v0, Landroid/os/Handler;
+    invoke-direct {v0, v1}, Lhie;-><init>(F)V
 
-    invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+    iput-object v0, p0, Lhio;->a:Lhie;
 
-    move-result-object v1
+    invoke-virtual {p0}, Lhio;->b()V
 
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    iget-object v0, p0, Lhio;->a:Lhie;
 
-    iput-object v0, p0, Lhio;->f:Landroid/os/Handler;
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lhio;->a:Lhiq;
-
-    iput-object p4, p0, Lhio;->d:Lcom/google/android/apps/refocus/processing/ProgressCallback;
-
-    iput-object p5, p0, Lhio;->e:Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1}, Lhie;->a(F)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a()F
     .locals 4
 
-    new-instance v0, Lcom/google/android/apps/refocus/processing/Renderer;
+    iget-wide v0, p0, Lhio;->d:J
 
-    iget-object v1, p0, Lhio;->b:Landroid/content/Context;
+    iget-wide v2, p0, Lhio;->c:J
 
-    sget-object v2, Lcom/google/android/apps/refocus/processing/Renderer$Priority;->NORMAL:Lcom/google/android/apps/refocus/processing/Renderer$Priority;
+    sub-long/2addr v0, v2
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/apps/refocus/processing/Renderer;-><init>(Landroid/content/Context;Lcom/google/android/apps/refocus/processing/Renderer$Priority;)V
+    long-to-float v0, v0
 
-    iget-object v1, p0, Lhio;->c:Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
+    const v1, 0x4e6e6b28    # 1.0E9f
 
-    iget-object v2, p0, Lhio;->d:Lcom/google/android/apps/refocus/processing/ProgressCallback;
+    div-float/2addr v0, v1
 
-    iget-object v3, p0, Lhio;->e:Landroid/graphics/Bitmap;
+    return v0
+.end method
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/refocus/processing/Renderer;->render(Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;Lcom/google/android/apps/refocus/processing/ProgressCallback;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+.method public final a(J)V
+    .locals 9
 
-    move-result-object v0
+    const-wide/16 v6, 0x1
 
-    iget-object v1, p0, Lhio;->f:Landroid/os/Handler;
+    const v0, 0x4e6e6b28    # 1.0E9f
 
-    new-instance v2, Lhip;
+    iget-wide v2, p0, Lhio;->d:J
 
-    invoke-direct {v2, p0, v0}, Lhip;-><init>(Lhio;Landroid/graphics/Bitmap;)V
+    sub-long v2, p1, v2
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    long-to-float v1, v2
+
+    div-float/2addr v0, v1
+
+    iget-wide v2, p0, Lhio;->b:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v1, v2, v4
+
+    if-nez v1, :cond_0
+
+    iput-wide p1, p0, Lhio;->c:J
+
+    :goto_0
+    iput-wide p1, p0, Lhio;->d:J
+
+    iget-wide v0, p0, Lhio;->b:J
+
+    add-long/2addr v0, v6
+
+    iput-wide v0, p0, Lhio;->b:J
+
+    return-void
+
+    :cond_0
+    iget-wide v2, p0, Lhio;->b:J
+
+    cmp-long v1, v2, v6
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Lhio;->a:Lhie;
+
+    invoke-virtual {v1, v0}, Lhie;->a(F)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v1, p0, Lhio;->a:Lhie;
+
+    invoke-virtual {v1, v0}, Lhie;->b(F)V
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lhio;->b:J
+
+    iput-wide v0, p0, Lhio;->c:J
+
+    iput-wide v0, p0, Lhio;->d:J
 
     return-void
 .end method

@@ -1,110 +1,230 @@
 .class public final Lije;
-.super Ljava/lang/Object;
+.super Ljava/io/FilterInputStream;
 .source "PG"
-
-# interfaces
-.implements Lijc;
 
 
 # instance fields
-.field private a:Ljava/lang/Object;
+.field public a:I
 
-.field private b:Ljava/util/Map;
+.field public final b:Ljava/nio/ByteBuffer;
+
+.field private final c:[B
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Map;)V
+.method protected constructor <init>(Ljava/io/InputStream;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    new-instance v0, Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput v0, p0, Lije;->a:I
 
-    iput-object v0, p0, Lije;->a:Ljava/lang/Object;
+    const/16 v0, 0x8
 
-    iput-object p1, p0, Lije;->b:Ljava/util/Map;
+    new-array v0, v0, [B
+
+    iput-object v0, p0, Lije;->c:[B
+
+    iget-object v0, p0, Lije;->c:[B
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lije;->b:Ljava/nio/ByteBuffer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liic;)F
-    .locals 5
+.method public final a()S
+    .locals 2
 
-    iget-object v3, p0, Lije;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lije;->c:[B
 
-    monitor-enter v3
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, v1}, Lije;->a([BI)V
+
+    iget-object v0, p0, Lije;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+
+    iget-object v0, p0, Lije;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final a(Ljava/nio/ByteOrder;)V
+    .locals 1
+
+    iget-object v0, p0, Lije;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    return-void
+.end method
+
+.method public final a([BI)V
+    .locals 1
 
     const/4 v0, 0x0
 
-    :try_start_0
-    iget-object v1, p0, Lije;->b:Ljava/util/Map;
-
-    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    move v2, v0
-
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p0, p1, v0, p2}, Lije;->read([BII)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eq v0, p2, :cond_0
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    new-instance v0, Ljava/io/EOFException;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
 
-    check-cast v0, Ljava/util/Map$Entry;
+    throw v0
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    :cond_0
+    return-void
+.end method
 
-    move-result-object v1
+.method public final b()I
+    .locals 2
 
-    check-cast v1, Lijc;
+    iget-object v0, p0, Lije;->c:[B
 
-    invoke-interface {v1, p1}, Lijc;->a(Liic;)F
+    const/4 v1, 0x4
+
+    invoke-virtual {p0, v0, v1}, Lije;->a([BI)V
+
+    iget-object v0, p0, Lije;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+
+    iget-object v0, p0, Lije;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final c()J
+    .locals 4
+
+    invoke-virtual {p0}, Lije;->b()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    const-wide v2, 0xffffffffL
+
+    and-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public final read()I
+    .locals 3
+
+    iget-object v0, p0, Lije;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     move-result v1
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    iget v2, p0, Lije;->a:I
 
-    move-result-object v0
+    if-ltz v1, :cond_0
 
-    check-cast v0, Ljava/lang/Float;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    :goto_0
+    add-int/2addr v0, v2
+
+    iput v0, p0, Lije;->a:I
+
+    return v1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final read([B)I
+    .locals 3
+
+    iget-object v0, p0, Lije;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
 
     move-result v0
 
-    mul-float/2addr v0, v1
+    iget v1, p0, Lije;->a:I
 
-    add-float/2addr v0, v2
+    const/4 v2, 0x0
 
-    move v2, v0
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
 
-    goto :goto_0
+    move-result v2
 
-    :cond_0
-    monitor-exit v3
+    add-int/2addr v1, v2
 
-    return v2
+    iput v1, p0, Lije;->a:I
 
-    :catchall_0
-    move-exception v0
+    return v0
+.end method
 
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public final read([BII)I
+    .locals 3
 
-    throw v0
+    iget-object v0, p0, Lije;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
+
+    move-result v0
+
+    iget v1, p0, Lije;->a:I
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, Lije;->a:I
+
+    return v0
+.end method
+
+.method public final skip(J)J
+    .locals 5
+
+    iget-object v0, p0, Lije;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
+
+    move-result-wide v0
+
+    iget v2, p0, Lije;->a:I
+
+    int-to-long v2, v2
+
+    add-long/2addr v2, v0
+
+    long-to-int v2, v2
+
+    iput v2, p0, Lije;->a:I
+
+    return-wide v0
 .end method

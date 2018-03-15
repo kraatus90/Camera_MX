@@ -1,179 +1,197 @@
 .class public final Ljpu;
-.super Ljwj;
+.super Ljava/util/AbstractList;
 .source "PG"
 
 
 # instance fields
-.field public a:I
+.field private final synthetic a:Landroid/util/LongSparseArray;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/util/LongSparseArray;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    iput-object p1, p0, Ljpu;->a:Landroid/util/LongSparseArray;
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Ljpu;->a:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljpu;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljpu;->cachedSize:I
+    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
     return-void
 .end method
 
-.method private final a(Ljwh;)Ljpu;
-    .locals 6
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    invoke-virtual {p1}, Ljwh;->i()I
-
-    move-result v1
-
-    :try_start_0
-    invoke-virtual {p1}, Ljwh;->d()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_0
-
-    new-instance v3, Ljava/lang/IllegalArgumentException;
-
-    const/16 v4, 0x29
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v4, " is not a valid enum EventType"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v3, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    move-exception v2
-
-    invoke-virtual {p1, v1}, Ljwh;->e(I)V
-
-    invoke-virtual {p0, p1, v0}, Ljpu;->storeUnknownField(Ljwh;I)Z
-
-    goto :goto_0
-
-    :pswitch_0
-    :try_start_1
-    iput v2, p0, Ljpu;->a:I
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
-.end method
-
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 3
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-virtual {p0, p1}, Ljpu;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
-    iget v1, p0, Ljpu;->a:I
+    if-ltz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
-    iget v2, p0, Ljpu;->a:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
+    :goto_0
+    return v0
 
     :cond_0
-    return v0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 1
+.method public final synthetic get(I)Ljava/lang/Object;
+    .locals 2
 
-    invoke-direct {p0, p1}, Ljpu;->a(Ljwh;)Ljpu;
+    iget-object v0, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v0, p1}, Landroid/util/LongSparseArray;->keyAt(I)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
+.method public final indexOf(Ljava/lang/Object;)I
+    .locals 4
+
+    instance-of v0, p1, Ljava/lang/Long;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, -0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/LongSparseArray;->indexOfKey(J)I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public final synthetic remove(I)Ljava/lang/Object;
+    .locals 4
+
+    if-ltz p1, :cond_0
+
+    iget-object v0, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v0}, Landroid/util/LongSparseArray;->size()I
+
+    move-result v0
+
+    if-le p1, v0, :cond_1
+
+    :cond_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    iget-object v1, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v1}, Landroid/util/LongSparseArray;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    const/16 v2, 0x2f
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " is not in the range [0,"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "]"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iget-object v0, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v0, p1}, Landroid/util/LongSparseArray;->keyAt(I)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v1, p1}, Landroid/util/LongSparseArray;->removeAt(I)V
+
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
     .locals 2
 
-    iget v0, p0, Ljpu;->a:I
+    invoke-virtual {p0, p1}, Ljpu;->indexOf(Ljava/lang/Object;)I
 
-    if-eqz v0, :cond_0
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    iget-object v1, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v1, v0}, Landroid/util/LongSparseArray;->removeAt(I)V
 
     const/4 v0, 0x1
 
-    iget v1, p0, Ljpu;->a:I
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    :goto_0
+    return v0
 
     :cond_0
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    const/4 v0, 0x0
 
-    return-void
+    goto :goto_0
+.end method
+
+.method public final size()I
+    .locals 1
+
+    iget-object v0, p0, Ljpu;->a:Landroid/util/LongSparseArray;
+
+    invoke-virtual {v0}, Landroid/util/LongSparseArray;->size()I
+
+    move-result v0
+
+    return v0
 .end method

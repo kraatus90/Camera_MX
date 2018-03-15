@@ -31,9 +31,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhvi;
+    new-instance v0, Lhwh;
 
-    invoke-direct {v0}, Lhvi;-><init>()V
+    invoke-direct {v0}, Lhwh;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/location/LocationRequest;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -513,7 +513,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -521,41 +521,41 @@
 
     iget v2, p0, Lcom/google/android/gms/location/LocationRequest;->a:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
     iget-wide v2, p0, Lcom/google/android/gms/location/LocationRequest;->b:J
 
-    invoke-static {p1, v1, v2, v3}, Lhjg;->a(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lhmr;->a(Landroid/os/Parcel;IJ)V
 
     const/4 v1, 0x3
 
     iget-wide v2, p0, Lcom/google/android/gms/location/LocationRequest;->c:J
 
-    invoke-static {p1, v1, v2, v3}, Lhjg;->a(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lhmr;->a(Landroid/os/Parcel;IJ)V
 
     iget-boolean v1, p0, Lcom/google/android/gms/location/LocationRequest;->d:Z
 
-    invoke-static {p1, v4, v1}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v4, v1}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     const/4 v1, 0x5
 
     iget-wide v2, p0, Lcom/google/android/gms/location/LocationRequest;->e:J
 
-    invoke-static {p1, v1, v2, v3}, Lhjg;->a(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lhmr;->a(Landroid/os/Parcel;IJ)V
 
     const/4 v1, 0x6
 
     iget v2, p0, Lcom/google/android/gms/location/LocationRequest;->f:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     iget v1, p0, Lcom/google/android/gms/location/LocationRequest;->g:F
 
     const/4 v2, 0x7
 
-    invoke-static {p1, v2, v4}, Lhjg;->b(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v4}, Lhmr;->b(Landroid/os/Parcel;II)V
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeFloat(F)V
 
@@ -563,9 +563,9 @@
 
     iget-wide v2, p0, Lcom/google/android/gms/location/LocationRequest;->h:J
 
-    invoke-static {p1, v1, v2, v3}, Lhjg;->a(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lhmr;->a(Landroid/os/Parcel;IJ)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

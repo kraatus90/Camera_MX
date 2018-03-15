@@ -1,20 +1,14 @@
-.class public final Ljeu;
+.class final Ljeu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
-
-
-# instance fields
-.field private synthetic a:Ljfl;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljfl;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljeu;->a:Ljfl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,34 +17,32 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 4
 
-    check-cast p1, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+    new-instance v2, Liyr;
 
-    new-instance v0, Liox;
+    const-class v0, Ljko;
 
-    invoke-direct {v0, p1}, Liox;-><init>(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;)V
+    const-string v1, "GIF_Summary"
 
-    iget-object v1, p0, Ljeu;->a:Ljfl;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v2, "frame_grabs.csv"
+    move-result-object v0
 
-    new-instance v3, Lioz;
+    check-cast v0, Ljko;
 
-    invoke-direct {v3, v0}, Lioz;-><init>(Liox;)V
+    const-class v1, Liyq;
 
-    invoke-virtual {v1, v2, v3}, Ljfl;->a(Ljava/lang/String;Ljfn;)V
+    const-string v3, "summary_gif_artifact_renderer"
 
-    iget-object v1, p0, Ljeu;->a:Ljfl;
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v2, "decoder_stats.txt"
+    move-result-object v1
 
-    new-instance v3, Lioy;
+    check-cast v1, Liyq;
 
-    invoke-direct {v3, v0}, Lioy;-><init>(Liox;)V
+    invoke-direct {v2, v0, v1}, Liyr;-><init>(Ljko;Liyq;)V
 
-    invoke-virtual {v1, v2, v3}, Ljfl;->a(Ljava/lang/String;Ljfn;)V
-
-    return-object v0
+    return-object v2
 .end method

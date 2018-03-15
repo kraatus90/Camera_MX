@@ -1,235 +1,296 @@
-.class public final Leiu;
+.class final Leiu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Laam;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field public final synthetic a:Lein;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lein;)V
     .locals 0
 
+    iput-object p1, p0, Leiu;->a:Lein;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leiu;->a:Ljxn;
-
-    iput-object p2, p0, Leiu;->b:Ljxn;
-
-    iput-object p3, p0, Leiu;->c:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leiu;
-
-    invoke-direct {v0, p0, p1, p2}, Leiu;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 8
+.method public final a([B)V
+    .locals 10
 
-    const-wide/16 v6, 0x0
+    const/4 v9, 0x0
 
-    iget-object v0, p0, Leiu;->a:Ljxn;
+    const/4 v4, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iput-boolean v4, v0, Lein;->s:Z
+
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v0, v0, Lein;->c:Leht;
+
+    iget-object v1, p0, Leiu;->a:Lein;
+
+    invoke-static {v1}, Lein;->a(Lein;)Lbvw;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lbvw;->b()Landroid/view/WindowManager;
+
+    move-result-object v1
+
+    iget-object v2, p0, Leiu;->a:Lein;
+
+    iget-object v2, v2, Lein;->q:Landroid/content/Context;
+
+    iget-object v3, p0, Leiu;->a:Lein;
+
+    iget-object v3, v3, Lein;->K:Laan;
+
+    move v5, v4
+
+    invoke-virtual/range {v0 .. v5}, Leht;->a(Landroid/view/WindowManager;Landroid/content/Context;Laan;ZI)Lacd;
 
     move-result-object v0
 
-    check-cast v0, Ljuw;
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Leiu;->b:Ljxn;
+    iget-object v0, p0, Leiu;->a:Lein;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lein;->a()V
 
-    move-result-object v1
+    iget-object v0, p0, Leiu;->a:Lein;
 
-    check-cast v1, Lici;
+    iput-boolean v4, v0, Lein;->u:Z
 
-    iget-object v2, p0, Leiu;->c:Ljxn;
+    iget-object v0, p0, Leiu;->a:Lein;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lein;->c:Leht;
 
-    move-result-object v2
+    iget-object v0, v0, Leht;->b:Laao;
 
-    check-cast v2, Lgzz;
+    iget-object v1, p0, Leiu;->a:Lein;
 
-    invoke-virtual {v1}, Lici;->b()J
+    iget-object v1, v1, Lein;->J:Landroid/os/Handler;
 
-    move-result-wide v4
+    new-instance v2, Leiv;
 
-    cmp-long v3, v4, v6
+    invoke-direct {v2, p0}, Leiv;-><init>(Leiu;)V
 
-    if-gtz v3, :cond_0
-
-    const-string v2, "ViewfinderModule"
-
-    invoke-static {v2}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x36
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Preview size is invalid ("
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, "). using non-deferred config."
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lihe;->a(Ljuw;)Lihe;
-
-    move-result-object v0
-
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lihe;
-
-    return-object v0
+    invoke-virtual {v0, v1, v2}, Laao;->a(Landroid/os/Handler;Laba;)V
 
     :cond_0
-    iget-object v3, v2, Lgzz;->b:Lihk;
+    iget-object v3, p0, Leiu;->a:Lein;
 
-    iget-boolean v3, v3, Lihk;->c:Z
+    iget-object v0, p0, Leiu;->a:Lein;
 
-    if-nez v3, :cond_1
+    iget-object v0, v0, Lein;->h:Lejr;
 
-    iget-object v2, v2, Lgzz;->b:Lihk;
-
-    iget-boolean v2, v2, Lihk;->e:Z
-
-    if-eqz v2, :cond_2
-
-    :cond_1
-    const-string v1, "ViewfinderModule"
-
-    invoke-static {v1}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "Forcing Nexus 6 / Pixel C to use non-deferred config."
-
-    invoke-static {v1, v2}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0}, Lihe;->a(Ljuw;)Lihe;
+    invoke-virtual {v0}, Lejr;->d()[F
 
     move-result-object v0
 
-    goto :goto_0
+    invoke-static {v0}, Lejr;->a([F)[F
 
-    :cond_2
-    const-class v3, Landroid/graphics/SurfaceTexture;
+    move-result-object v5
 
-    invoke-virtual {v1}, Lici;->b()J
+    new-instance v1, Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-direct {v1}, Ljava/lang/String;-><init>()V
 
-    cmp-long v2, v4, v6
+    const/4 v0, 0x0
 
-    if-lez v2, :cond_3
+    move-object v2, v1
 
-    const/4 v2, 0x1
+    move v1, v0
 
-    :goto_1
-    const-string v4, "Cannot create a deferred configuration if the size is null."
+    move v0, v4
 
-    invoke-static {v2, v4}, Liya;->a(ZLjava/lang/Object;)V
+    :goto_0
+    const/16 v6, 0x9
 
-    invoke-static {v1}, Licj;->b(Lici;)Landroid/util/Size;
+    if-ge v0, v6, :cond_1
 
-    move-result-object v1
+    aget v6, v5, v0
 
-    invoke-static {v1, v3}, Lhir;->a(Landroid/util/Size;Ljava/lang/Class;)Landroid/hardware/camera2/params/OutputConfiguration;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v7
 
-    if-eqz v1, :cond_4
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
-    new-instance v2, Liie;
+    move-result v7
 
-    invoke-direct {v2, v1}, Liie;-><init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
+    add-int/lit8 v7, v7, 0x10
 
-    new-instance v1, Lihf;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2}, Lihf;-><init>(Liie;)V
+    invoke-direct {v8, v7}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    sget-object v3, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v1, v3}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v1
-
-    new-instance v0, Lihe;
-
-    invoke-static {v2}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-direct {v0, v2, v1}, Lihe;-><init>(Ljuw;Ljuw;)V
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v6, " "
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    aget v6, v5, v0
+
+    add-float/2addr v1, v6
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
+    :cond_1
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, 0x10
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :try_start_0
+    iget-object v1, v3, Lein;->p:Ljava/io/FileWriter;
+
+    invoke-virtual {v1, v0}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+
+    iget-object v0, v3, Lein;->p:Ljava/io/FileWriter;
+
+    invoke-virtual {v0}, Ljava/io/FileWriter;->flush()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v1, v0, Lein;->A:Landroid/os/Handler;
+
+    new-instance v2, Leiw;
+
+    invoke-direct {v2, v0, p1}, Leiw;-><init>(Lein;[B)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    invoke-static {}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->q()I
+
+    move-result v0
+
+    invoke-static {}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->p()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_2
+
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v0, v0, Lein;->b:Leix;
+
+    iput-boolean v4, v0, Leix;->s:Z
+
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v0, v0, Lein;->z:Lekq;
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->p()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_4
+
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v0, v0, Lein;->z:Lekq;
+
+    invoke-interface {v0, v9}, Lekq;->a(Ljava/lang/Object;)V
+
+    :cond_2
+    :goto_2
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v0, v0, Lein;->D:Lekq;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v0, v0, Lein;->D:Lekq;
+
+    invoke-interface {v0, v9}, Lekq;->a(Ljava/lang/Object;)V
+
     :cond_3
-    const/4 v2, 0x0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto :goto_1
 
     :cond_4
-    invoke-static {v0}, Lihe;->a(Ljuw;)Lihe;
+    iget-object v0, p0, Leiu;->a:Lein;
 
-    move-result-object v0
+    iget-object v0, v0, Lein;->y:Lekq;
 
-    goto :goto_0
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Leiu;->a:Lein;
+
+    iget-object v0, v0, Lein;->y:Lekq;
+
+    invoke-interface {v0, v9}, Lekq;->a(Ljava/lang/Object;)V
+
+    goto :goto_2
 .end method

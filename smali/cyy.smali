@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcyt;
+.field private final synthetic a:Lcyk;
 
 
 # direct methods
-.method constructor <init>(Lcyt;)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
-    iput-object p1, p0, Lcyy;->a:Lcyt;
+    iput-object p1, p0, Lcyy;->a:Lcyk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,34 +23,44 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lcyy;->a:Lcyt;
+    iget-object v0, p0, Lcyy;->a:Lcyk;
 
-    iget-object v0, v0, Lcng;->a:Lcnh;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-    new-instance v1, Lcvl;
+    move-result-object v0
 
-    invoke-direct {v1}, Lcvl;-><init>()V
+    check-cast v0, Lcxo;
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    iget-object v0, v0, Lcxo;->b:Lcwf;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Lcwf;->a()V
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    iget-object v0, p0, Lcyy;->a:Lcyk;
 
-    iget-object v0, p0, Lcyy;->a:Lcyt;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-    iget-object v0, v0, Lcng;->a:Lcnh;
+    move-result-object v0
 
-    new-instance v1, Lcvk;
+    check-cast v0, Lcxo;
 
-    invoke-direct {v1}, Lcvk;-><init>()V
+    iget-object v0, v0, Lcxo;->b:Lcwf;
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0}, Lcwf;->b()V
+
+    iget-object v0, p0, Lcyy;->a:Lcyk;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->B:Lebo;
+
+    invoke-virtual {v0}, Lglb;->u()V
 
     return-void
 .end method

@@ -2,64 +2,65 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field private final a:Lkgv;
 
-.field public b:Ljava/util/List;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Ljava/util/List;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldyj;->a:Ljava/lang/String;
+    iput-object p1, p0, Ldyj;->a:Lkgv;
 
-    iput-object p2, p0, Ldyj;->b:Ljava/util/List;
+    iput-object p2, p0, Ldyj;->b:Lkgv;
+
+    iput-object p3, p0, Ldyj;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    const-string v0, "ValidationResult"
+    new-instance v3, Ldyi;
 
-    invoke-static {v0}, Liui;->c(Ljava/lang/String;)Ljhq;
+    iget-object v0, p0, Ldyj;->a:Lkgv;
 
-    move-result-object v0
-
-    const-string v1, "strategy"
-
-    iget-object v2, p0, Ldyj;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "valid"
+    check-cast v0, Lgjq;
 
-    const-string v2, "false"
+    iget-object v1, p0, Ldyj;->b:Lkgv;
 
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "failed constraints"
+    check-cast v1, Lfat;
 
-    iget-object v2, p0, Ldyj;->b:Ljava/util/List;
+    iget-object v2, p0, Ldyj;->c:Lkgv;
 
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;Ljava/lang/Object;)Ljhq;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
+    check-cast v2, Lbjy;
 
-    move-result-object v0
+    invoke-direct {v3, v0, v1, v2}, Ldyi;-><init>(Lgjq;Lfat;Lbjy;)V
 
-    return-object v0
+    return-object v3
 .end method

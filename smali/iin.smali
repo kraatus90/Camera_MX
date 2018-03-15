@@ -1,38 +1,34 @@
-.class public interface abstract Liin;
+.class final Liin;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lich;
+.implements Liip;
+
+
+# instance fields
+.field private final a:I
+
+
+# direct methods
+.method constructor <init>(I)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Liin;->a:I
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final a(Lihx;)V
+    .locals 1
 
-.method public abstract a(Liip;Landroid/os/Handler;)V
-.end method
+    iget v0, p0, Liin;->a:I
 
-.method public abstract b()I
-.end method
+    invoke-interface {p1, v0}, Lihx;->a(I)V
 
-.method public abstract c()I
-.end method
-
-.method public abstract close()V
-.end method
-
-.method public abstract d()I
-.end method
-
-.method public abstract e()Landroid/view/Surface;
-.end method
-
-.method public abstract f()Liil;
-.end method
-
-.method public abstract g()Liil;
-.end method
-
-.method public abstract h()V
+    return-void
 .end method

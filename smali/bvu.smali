@@ -1,87 +1,50 @@
-.class final Lbvu;
+.class public final Lbvu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbvt;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbvt;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbvu;->a:Lbvt;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbvu;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbvu;->a:Lbvt;
+    iget-object v0, p0, Lbvu;->a:Lkgv;
 
-    iget-object v0, v0, Lbvt;->b:Lflj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Lbvu;->a:Lbvt;
+    check-cast v0, Lbvg;
 
-    iget-object v0, v0, Lbvt;->b:Lflj;
+    invoke-static {v0}, Lbvi;->c(Lbvg;)Landroid/view/WindowManager;
 
-    invoke-interface {v0}, Lflj;->g()Z
+    move-result-object v0
 
-    move-result v0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    if-nez v0, :cond_1
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lbvu;->a:Lbvt;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lbvt;->b()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    check-cast v0, Landroid/view/WindowManager;
 
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    iget-object v1, p0, Lbvu;->a:Lbvt;
-
-    iget-object v1, v1, Lbvt;->c:Ljvi;
-
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v0, Lbvt;->a:Ljava/lang/String;
-
-    const-string v1, "Pre-initialization failed, the activity is not in the foreground."
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lbvu;->a:Lbvt;
-
-    iget-object v0, v0, Lbvt;->c:Ljvi;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    goto :goto_0
+    return-object v0
 .end method

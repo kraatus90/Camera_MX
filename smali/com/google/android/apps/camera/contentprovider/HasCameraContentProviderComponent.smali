@@ -9,7 +9,7 @@
 
 
 # virtual methods
-.method public abstract cameraContentProviderComponent(Lbrf;)Lbhs;
+.method public abstract cameraContentProviderComponent(Lbvv;)Lbkd;
     .annotation build Lcom/google/android/apps/common/proguard/UsedByReflection;
     .end annotation
 .end method

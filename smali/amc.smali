@@ -1,36 +1,84 @@
 .class public final Lamc;
-.super Ljava/lang/Object;
+.super Lany;
 .source "PG"
 
 # interfaces
-.implements Lakx;
+.implements Lagr;
 
 
 # instance fields
-.field private a:Landroid/content/Context;
+.field private final b:Lahf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/graphics/drawable/BitmapDrawable;Lahf;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lany;-><init>(Landroid/graphics/drawable/Drawable;)V
 
-    iput-object p1, p0, Lamc;->a:Landroid/content/Context;
+    iput-object p2, p0, Lamc;->b:Lahf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lald;)Lakv;
-    .locals 2
+.method public final a()Ljava/lang/Class;
+    .locals 1
 
-    new-instance v0, Lamb;
-
-    iget-object v1, p0, Lamc;->a:Landroid/content/Context;
-
-    invoke-direct {v0, v1}, Lamb;-><init>(Landroid/content/Context;)V
+    const-class v0, Landroid/graphics/drawable/BitmapDrawable;
 
     return-object v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    iget-object v0, p0, Lamc;->a:Landroid/graphics/drawable/Drawable;
+
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-static {v0}, Larx;->a(Landroid/graphics/Bitmap;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d()V
+    .locals 2
+
+    iget-object v1, p0, Lamc;->b:Lahf;
+
+    iget-object v0, p0, Lamc;->a:Landroid/graphics/drawable/Drawable;
+
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Lahf;->a(Landroid/graphics/Bitmap;)V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget-object v0, p0, Lamc;->a:Landroid/graphics/drawable/Drawable;
+
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->prepareToDraw()V
+
+    return-void
 .end method

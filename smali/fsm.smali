@@ -1,77 +1,31 @@
-.class public Lfsm;
-.super Landroid/app/Application;
+.class public final Lfsm;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final e:Lfrb;
+.field public final a:Lfaq;
+
+.field public final b:Lgfr;
+
+.field public final c:Lfsl;
+
+.field public final d:Lfsn;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lfaq;Lgfr;Lfsl;Lfsn;)V
+    .locals 0
 
-    invoke-direct {p0}, Landroid/app/Application;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lfrb;
+    iput-object p1, p0, Lfsm;->a:Lfaq;
 
-    invoke-direct {v0}, Lfrb;-><init>()V
+    iput-object p2, p0, Lfsm;->b:Lgfr;
 
-    iput-object v0, p0, Lfsm;->e:Lfrb;
+    iput-object p3, p0, Lfsm;->c:Lfsl;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public onCreate()V
-    .locals 2
-
-    iget-object v0, p0, Lfsm;->e:Lfrb;
-
-    new-instance v1, Lfrc;
-
-    invoke-direct {v1}, Lfrc;-><init>()V
-
-    invoke-virtual {v0, v1}, Lfrb;->a(Lfrr;)Lfrr;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lfrb;->b:Lfrr;
-
-    invoke-super {p0}, Landroid/app/Application;->onCreate()V
-
-    return-void
-.end method
-
-.method public onTerminate()V
-    .locals 2
-
-    iget-object v0, p0, Lfsm;->e:Lfrb;
-
-    iget-object v1, v0, Lfrb;->b:Lfrr;
-
-    invoke-virtual {v0, v1}, Lfrb;->b(Lfrr;)V
-
-    iget-object v0, v0, Lfrb;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-super {p0}, Landroid/app/Application;->onTerminate()V
+    iput-object p4, p0, Lfsm;->d:Lfsn;
 
     return-void
 .end method

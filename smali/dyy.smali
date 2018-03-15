@@ -1,103 +1,56 @@
-.class public final Ldyy;
+.class final Ldyy;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
+
 
 # instance fields
-.field public a:Ldyo;
-
-.field public b:Ldyo;
-
-.field public c:Ldza;
-
-.field public final d:Ljava/lang/Object;
-
-.field public final e:Ljava/util/Map;
+.field private final synthetic a:Ldyu;
 
 
 # direct methods
-.method constructor <init>(Ldyo;Ldyo;Ldza;)V
-    .locals 1
+.method constructor <init>(Ldyu;)V
+    .locals 0
+
+    iput-object p1, p0, Ldyy;->a:Ldyu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldyy;->a:Ldyo;
-
-    iput-object p2, p0, Ldyy;->b:Ldyo;
-
-    iput-object p3, p0, Ldyy;->c:Ldza;
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Ldyy;->d:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Ldyy;->e:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)Ldyx;
-    .locals 3
+.method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    .locals 4
 
-    iget-object v1, p0, Ldyy;->d:Ljava/lang/Object;
+    iget-object v0, p0, Ldyy;->a:Ldyu;
 
-    monitor-enter v1
+    int-to-double v2, p2
 
-    :try_start_0
-    iget-object v0, p0, Ldyy;->e:Ljava/util/Map;
+    invoke-static {v2, v3}, Ljava/lang/Math;->toRadians(D)D
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-wide v2
 
-    move-result-object v2
+    double-to-float v1, v2
 
-    invoke-interface {v0, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    iput v1, v0, Ldyu;->d:F
 
-    move-result v0
+    invoke-virtual {v0}, Ldyu;->b()V
 
-    if-nez v0, :cond_0
+    return-void
+.end method
 
-    new-instance v0, Ldyx;
+.method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
 
-    const-string v2, ""
+    return-void
+.end method
 
-    invoke-direct {v0, v2}, Ldyx;-><init>(Ljava/lang/String;)V
+.method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
 
-    monitor-exit v1
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Ldyy;->e:Ljava/util/Map;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldyx;
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-void
 .end method

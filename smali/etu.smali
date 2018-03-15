@@ -1,54 +1,43 @@
-.class final Letu;
+.class public final Letu;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
-
 
 # instance fields
-.field private synthetic a:Letr;
+.field private final a:Lesv;
+
+.field private final b:Letr;
 
 
 # direct methods
-.method constructor <init>(Letr;)V
+.method constructor <init>(Lesv;Letr;)V
     .locals 0
 
-    iput-object p1, p0, Letu;->a:Letr;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Letu;->a:Lesv;
+
+    iput-object p2, p0, Letu;->b:Letr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .locals 3
+.method public final a()V
+    .locals 4
 
-    iget-object v0, p0, Letu;->a:Letr;
+    iget-object v0, p0, Letu;->a:Lesv;
 
-    int-to-float v1, p2
+    iget-object v1, p0, Letu;->b:Letr;
 
-    const/high16 v2, 0x447a0000    # 1000.0f
+    iget-object v2, v0, Lesv;->c:Ljava/util/concurrent/Executor;
 
-    div-float/2addr v1, v2
+    new-instance v3, Lesx;
 
-    iput v1, v0, Letr;->c:F
+    invoke-direct {v3, v0, v1}, Lesx;-><init>(Lesv;Letr;)V
 
-    invoke-virtual {v0}, Letr;->b()V
-
-    return-void
-.end method
-
-.method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .locals 0
+    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

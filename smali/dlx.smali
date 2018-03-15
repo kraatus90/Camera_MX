@@ -1,36 +1,35 @@
-.class final Ldlx;
+.class final synthetic Ldlx;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljrm;
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Exception;
+.field private final a:Ldlw;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Exception;)V
+.method constructor <init>(Ldlw;)V
     .locals 0
 
-    iput-object p1, p0, Ldlx;->a:Ljava/lang/Exception;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldlx;->a:Ldlw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Ljava/lang/RuntimeException;
+    iget-object v0, p0, Ldlx;->a:Ldlw;
 
-    iget-object v1, p0, Ldlx;->a:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ldlw;->b()Ljava/lang/Integer;
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object v0
 
-    throw v0
+    return-object v0
 .end method

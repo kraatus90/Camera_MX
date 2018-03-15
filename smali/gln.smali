@@ -1,33 +1,52 @@
-.class final Lgln;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lgln;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Landroid/view/View;
+
+# static fields
+.field public static final a:Lgln;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lgln;
+
+    invoke-direct {v0}, Lgln;-><init>()V
+
+    sput-object v0, Lgln;->a:Lgln;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lgln;->a:Landroid/view/View;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lgln;->a:Landroid/view/View;
+    invoke-static {}, Lcom/google/android/apps/camera/stats/Instrumentation;->instance()Lcom/google/android/apps/camera/stats/Instrumentation;
 
-    const/4 v1, 0x4
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/stats/Instrumentation;
+
+    return-object v0
 .end method

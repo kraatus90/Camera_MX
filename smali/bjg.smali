@@ -1,81 +1,50 @@
-.class public final synthetic Lbjg;
+.class final Lbjg;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lkds;
 
 
 # instance fields
-.field private a:F
-
-.field private b:F
-
-.field private c:Lcom/google/android/apps/camera/evcomp/EvCompView;
+.field private final synthetic a:Lbje;
 
 
 # direct methods
-.method public constructor <init>(FFLcom/google/android/apps/camera/evcomp/EvCompView;)V
+.method constructor <init>(Lbje;)V
     .locals 0
 
+    iput-object p1, p0, Lbjg;->a:Lbje;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lbjg;->a:F
-
-    iput p2, p0, Lbjg;->b:F
-
-    iput-object p3, p0, Lbjg;->c:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
-
-    iget v0, p0, Lbjg;->a:F
-
-    iget v1, p0, Lbjg;->b:F
-
-    iget-object v2, p0, Lbjg;->c:Lcom/google/android/apps/camera/evcomp/EvCompView;
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
-
-    move-result v3
-
-    sub-float/2addr v1, v0
-
-    mul-float/2addr v1, v3
-
-    add-float/2addr v0, v1
-
-    iput v0, v2, Lcom/google/android/apps/camera/evcomp/EvCompView;->c:F
-
-    invoke-virtual {v2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->invalidate()V
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
-
-    move-result v1
-
-    const/4 v0, 0x0
-
-    cmpl-float v0, v1, v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    iput-boolean v0, v2, Lcom/google/android/apps/camera/evcomp/EvCompView;->f:Z
-
-    iput v1, v2, Lcom/google/android/apps/camera/evcomp/EvCompView;->d:F
-
-    invoke-virtual {v2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->invalidate()V
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_0
-    const/4 v0, 0x0
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 4
 
-    goto :goto_0
+    iget-object v0, p0, Lbjg;->a:Lbje;
+
+    iget-object v0, v0, Lbje;->c:Lbhq;
+
+    iget-object v1, v0, Lbhq;->a:Lbhr;
+
+    iget-object v2, v0, Lbhq;->b:Lbhc;
+
+    iget-object v3, v0, Lbhq;->c:Landroid/view/Surface;
+
+    iget-object v0, v0, Lbhq;->d:Lbhl;
+
+    invoke-virtual {v1, v2, v3, v0}, Lbhr;->a(Lbhc;Landroid/view/Surface;Lbhl;)Lkeh;
+
+    return-void
 .end method

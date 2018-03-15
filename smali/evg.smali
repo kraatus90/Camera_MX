@@ -1,77 +1,51 @@
-.class public final Levg;
-.super Landroid/animation/AnimatorListenerAdapter;
-.source "PG"
+.class public final synthetic Levg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfrs;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
+.field private final a:Lihs;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;)V
+.method public constructor <init>(Lihs;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Levg;->a:Lihs;
+
+    iput-object p2, p0, Levg;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
+    iget-object v1, p0, Levg;->a:Lihs;
 
-    sget v1, Leh;->av:I
+    iget-object v0, p0, Levg;->b:Lkgv;
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;->a(Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;I)I
+    const-string v2, "MICRO_GyroModule#stopGyroCapture"
 
-    iget-object v0, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
+    invoke-interface {v1, v2}, Lihs;->a(Ljava/lang/String;)V
 
-    const/4 v1, 0x4
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;->setVisibility(I)V
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Lewu;
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    invoke-virtual {v0}, Lewu;->c()V
 
-    iget-object v0, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
-
-    sget v1, Leh;->av:I
-
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;->a(Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;I)I
-
-    iget-object v0, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
-
-    iget-object v0, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
-
-    iget-object v1, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
-
-    iget v1, v1, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;->b:I
-
-    iput v1, v0, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;->g:I
-
-    iget-object v0, p0, Levg;->a:Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;
-
-    sget v1, Leh;->ax:I
-
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;->a(Lcom/google/android/apps/camera/legacy/app/ui/DeterministicProgressOverlay;I)I
+    invoke-interface {v1}, Lihs;->a()V
 
     return-void
 .end method

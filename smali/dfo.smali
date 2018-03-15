@@ -1,48 +1,53 @@
-.class final Ldfo;
-.super Ljava/lang/Object;
+.class public final Ldfo;
+.super Lhcu;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Lazv;
-
-.field private synthetic b:Ldfn;
 
 
 # direct methods
-.method constructor <init>(Ldfn;Lazv;)V
+.method public constructor <init>(Lgpg;Landroid/view/View;Landroid/content/res/Resources;Landroid/view/LayoutInflater;Lgob;Legy;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgqg;Lhgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldfo;->b:Ldfn;
-
-    iput-object p2, p0, Ldfo;->a:Lazv;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p9}, Lhcu;-><init>(Lgpg;Landroid/view/View;Landroid/content/res/Resources;Landroid/view/LayoutInflater;Lgob;Legy;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgqg;Lhgv;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method protected final a()Landroid/content/DialogInterface$OnClickListener;
+    .locals 1
 
-    iget-object v0, p0, Ldfo;->b:Ldfn;
+    new-instance v0, Ldfp;
 
-    iget-object v0, v0, Ldfn;->a:Ldfh;
+    invoke-direct {v0, p0}, Ldfp;-><init>(Ldfo;)V
 
-    iget-object v0, v0, Lcng;->a:Lcnh;
+    return-object v0
+.end method
 
-    new-instance v1, Ldeq;
+.method protected final a(Z)V
+    .locals 0
 
-    iget-object v2, p0, Ldfo;->a:Lazv;
+    return-void
+.end method
 
-    invoke-direct {v1, v2}, Ldeq;-><init>(Lazv;)V
+.method protected final b()Landroid/content/DialogInterface$OnClickListener;
+    .locals 1
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    new-instance v0, Ldfq;
+
+    invoke-direct {v0, p0}, Ldfq;-><init>(Ldfo;)V
+
+    return-object v0
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Lhcu;->g:Ldzh;
+
+    sget-object v1, Laxf;->f:Laxf;
+
+    invoke-virtual {v0, v1}, Ldzh;->a(Laxf;)V
 
     return-void
 .end method

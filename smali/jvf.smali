@@ -1,124 +1,77 @@
-.class public final Ljvf;
-.super Ljve;
+.class abstract Ljvf;
+.super Ljava/util/AbstractMap;
 .source "PG"
-
-# interfaces
-.implements Ljuz;
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/ScheduledExecutorService;
+.field private transient a:Ljava/util/Set;
+
+.field private transient b:Ljava/util/Set;
+
+.field private transient c:Ljava/util/Collection;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0, p1}, Ljve;-><init>(Ljava/util/concurrent/ExecutorService;)V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
-
-    iput-object v0, p0, Ljvf;->a:Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 4
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Ljvn;->a(Ljava/lang/Runnable;Ljava/lang/Object;)Ljvn;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ljvf;->a:Ljava/util/concurrent/ScheduledExecutorService;
-
-    invoke-interface {v1, v0, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object v1
-
-    new-instance v2, Ljvg;
-
-    invoke-direct {v2, v0, v1}, Ljvg;-><init>(Ljuw;Ljava/util/concurrent/ScheduledFuture;)V
-
-    return-object v2
+.method abstract a()Ljava/util/Set;
 .end method
 
-.method public final synthetic schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 4
+.method public entrySet()Ljava/util/Set;
+    .locals 1
 
-    invoke-static {p1}, Ljvn;->a(Ljava/util/concurrent/Callable;)Ljvn;
+    iget-object v0, p0, Ljvf;->a:Ljava/util/Set;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Ljvf;->a()Ljava/util/Set;
 
     move-result-object v0
 
-    iget-object v1, p0, Ljvf;->a:Ljava/util/concurrent/ScheduledExecutorService;
+    iput-object v0, p0, Ljvf;->a:Ljava/util/Set;
 
-    invoke-interface {v1, v0, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object v1
-
-    new-instance v2, Ljvg;
-
-    invoke-direct {v2, v0, v1}, Ljvg;-><init>(Ljuw;Ljava/util/concurrent/ScheduledFuture;)V
-
-    return-object v2
+    :cond_0
+    return-object v0
 .end method
 
-.method public final synthetic scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 8
+.method public keySet()Ljava/util/Set;
+    .locals 1
 
-    new-instance v1, Ljvh;
+    iget-object v0, p0, Ljvf;->b:Ljava/util/Set;
 
-    invoke-direct {v1, p1}, Ljvh;-><init>(Ljava/lang/Runnable;)V
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Ljvf;->a:Ljava/util/concurrent/ScheduledExecutorService;
+    new-instance v0, Ljvd;
 
-    move-wide v2, p2
+    invoke-direct {v0, p0}, Ljvd;-><init>(Ljava/util/Map;)V
 
-    move-wide v4, p4
+    iput-object v0, p0, Ljvf;->b:Ljava/util/Set;
 
-    move-object v6, p6
-
-    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object v0
-
-    new-instance v2, Ljvg;
-
-    invoke-direct {v2, v1, v0}, Ljvg;-><init>(Ljuw;Ljava/util/concurrent/ScheduledFuture;)V
-
-    return-object v2
+    :cond_0
+    return-object v0
 .end method
 
-.method public final synthetic scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 8
+.method public values()Ljava/util/Collection;
+    .locals 1
 
-    new-instance v1, Ljvh;
+    iget-object v0, p0, Ljvf;->c:Ljava/util/Collection;
 
-    invoke-direct {v1, p1}, Ljvh;-><init>(Ljava/lang/Runnable;)V
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Ljvf;->a:Ljava/util/concurrent/ScheduledExecutorService;
+    new-instance v0, Ljve;
 
-    move-wide v2, p2
+    invoke-direct {v0, p0}, Ljve;-><init>(Ljava/util/Map;)V
 
-    move-wide v4, p4
+    iput-object v0, p0, Ljvf;->c:Ljava/util/Collection;
 
-    move-object v6, p6
-
-    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object v0
-
-    new-instance v2, Ljvg;
-
-    invoke-direct {v2, v1, v0}, Ljvg;-><init>(Ljuw;Ljava/util/concurrent/ScheduledFuture;)V
-
-    return-object v2
+    :cond_0
+    return-object v0
 .end method

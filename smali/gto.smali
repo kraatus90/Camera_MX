@@ -1,48 +1,44 @@
-.class public final Lgto;
+.class public interface abstract Lgto;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
-    .locals 0
-
-    iput-object p1, p0, Lgto;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public abstract a()V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    iget-object v1, p0, Lgto;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.method public abstract a(F)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+.method public abstract a(Landroid/graphics/Matrix;)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    move-result-object v0
+.method public abstract a(Landroid/view/View$OnLayoutChangeListener;)V
+.end method
 
-    check-cast v0, Ljava/lang/Integer;
+.method public abstract a(Lgtn;)V
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+.method public abstract b()V
+.end method
 
-    move-result v0
+.method public abstract b(Lgtn;)V
+.end method
 
-    invoke-static {v1, v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$1902(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;I)I
+.method public abstract c()I
+.end method
 
-    iget-object v0, p0, Lgto;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.method public abstract d()I
+.end method
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidate()V
+.method public abstract e()Lkeh;
+.end method
 
-    return-void
+.method public abstract f()Lkeh;
 .end method

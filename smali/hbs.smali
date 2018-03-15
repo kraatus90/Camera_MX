@@ -1,35 +1,52 @@
-.class public Lhbs;
-.super Lgvh;
+.class public final Lhbs;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public a:Lhcs;
+
+# static fields
+.field public static final a:Lhbs;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Lhbs;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[Z)V
+    invoke-direct {v0}, Lhbs;-><init>()V
+
+    sput-object v0, Lhbs;->a:Lhbs;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lhcs;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Lhbh;->a()Lhbh;
 
     move-result-object v0
 
-    check-cast v0, Lhcs;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iput-object v0, p0, Lhbs;->a:Lhcs;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Lhbh;
+
+    return-object v0
 .end method

@@ -1,23 +1,31 @@
-.class public final Ldqf;
-.super Ljava/lang/Object;
+.class final Ldqf;
+.super Lghl;
 .source "PG"
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Lici;
+.field private final synthetic a:Lcqu;
 
 
 # direct methods
-.method public constructor <init>(ILici;)V
+.method constructor <init>(Lcqu;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldqf;->a:Lcqu;
 
-    iput p1, p0, Ldqf;->a:I
+    invoke-direct {p0}, Lghl;-><init>()V
 
-    iput-object p2, p0, Ldqf;->b:Lici;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onCaptureDeleted()V
+    .locals 1
+
+    iget-object v0, p0, Ldqf;->a:Lcqu;
+
+    invoke-virtual {v0}, Lcqu;->d()Z
 
     return-void
 .end method

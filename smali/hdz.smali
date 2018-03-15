@@ -1,28 +1,20 @@
-.class final Lhdz;
+.class public final Lhdz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:Lhwh;
-
-.field public final synthetic b:Ljava/lang/Runnable;
-
-.field private synthetic c:Lhdt;
+.field private final synthetic a:Lhdy;
 
 
 # direct methods
-.method constructor <init>(Lhdt;Lhwh;Ljava/lang/Runnable;)V
+.method public constructor <init>(Lhdy;)V
     .locals 0
 
-    iput-object p1, p0, Lhdz;->c:Lhdt;
-
-    iput-object p2, p0, Lhdz;->a:Lhwh;
-
-    iput-object p3, p0, Lhdz;->b:Ljava/lang/Runnable;
+    iput-object p1, p0, Lhdz;->a:Lhdy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,36 +23,20 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
 
-    iget-object v0, p0, Lhdz;->c:Lhdt;
+    iget-object v0, p0, Lhdz;->a:Lhdy;
 
-    iget-object v0, v0, Lhdt;->c:Ljuw;
+    iget-object v0, v0, Lhdy;->a:Lhdr;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Lglb;->ac()V
 
-    sget-object v0, Lhdt;->a:Ljava/lang/String;
+    iget-object v0, p0, Lhdz;->a:Lhdy;
 
-    const-string v1, "Could not set data item. API is null"
+    iget-object v0, v0, Lhdy;->b:Lhcy;
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0}, Lglb;->X()V
 
-    :goto_0
     return-void
-
-    :cond_0
-    iget-object v0, p0, Lhdz;->c:Lhdt;
-
-    iget-object v0, v0, Lhdt;->c:Ljuw;
-
-    new-instance v1, Lhea;
-
-    invoke-direct {v1, p0}, Lhea;-><init>(Lhdz;)V
-
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    goto :goto_0
 .end method

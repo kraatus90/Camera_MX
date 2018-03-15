@@ -1,29 +1,14 @@
-.class final Leta;
-.super Landroid/util/LruCache;
+.class public interface abstract Leta;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 1
-
-    const/high16 v0, 0x1400000
-
-    invoke-direct {p0, v0}, Landroid/util/LruCache;-><init>(I)V
-
-    return-void
+# virtual methods
+.method public abstract a(Ljrm;JJ)Letb;
 .end method
 
+.method public abstract a(J)V
+.end method
 
-# virtual methods
-.method protected final synthetic sizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-
-    check-cast p2, Lany;
-
-    invoke-virtual {p2}, Lany;->c()I
-
-    move-result v0
-
-    return v0
+.method public abstract b()V
 .end method

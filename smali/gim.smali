@@ -1,68 +1,72 @@
-.class final Lgim;
+.class final synthetic Lgim;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final a:Lgil;
 
-.field private synthetic b:Lgki;
+.field private final b:Lgwx;
 
-.field private synthetic c:Lgik;
+.field private final c:Lghj;
 
 
 # direct methods
-.method constructor <init>(Lgik;Ljvi;Lgki;)V
+.method constructor <init>(Lgil;Lgwx;Lghj;)V
     .locals 0
 
-    iput-object p1, p0, Lgim;->c:Lgik;
-
-    iput-object p2, p0, Lgim;->a:Ljvi;
-
-    iput-object p3, p0, Lgim;->b:Lgki;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgim;->a:Lgil;
+
+    iput-object p2, p0, Lgim;->b:Lgwx;
+
+    iput-object p3, p0, Lgim;->c:Lghj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lgim;->a:Ljvi;
+    iget-object v1, p0, Lgim;->a:Lgil;
 
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Object;)Z
+    iget-object v2, p0, Lgim;->b:Lgwx;
 
-    iget-object v0, p0, Lgim;->b:Lgki;
+    iget-object v3, p0, Lgim;->c:Lghj;
 
-    invoke-interface {v0}, Lgki;->close()V
+    iget-object v0, v1, Lgil;->z:Lkeh;
 
-    iget-object v0, p0, Lgim;->c:Lgik;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgik;->a()V
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Ljava/util/concurrent/Future;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 1
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lgim;->a:Ljvi;
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Throwable;)Z
+    check-cast v0, Leox;
 
-    iget-object v0, p0, Lgim;->b:Lgki;
+    invoke-virtual {v1, v2, v3, v0}, Lgil;->a(Lgwx;Lghj;Leox;)V
 
-    invoke-interface {v0}, Lgki;->close()V
+    invoke-virtual {v1}, Lgil;->k()Landroid/net/Uri;
 
-    iget-object v0, p0, Lgim;->c:Lgik;
+    move-result-object v2
 
-    invoke-virtual {v0}, Lgik;->a()V
+    invoke-virtual {v1, v2}, Lgil;->a(Landroid/net/Uri;)V
 
+    iget-object v2, v1, Lgil;->d:Leox;
+
+    if-nez v2, :cond_0
+
+    iput-object v0, v1, Lgil;->d:Leox;
+
+    :cond_0
     return-void
 .end method

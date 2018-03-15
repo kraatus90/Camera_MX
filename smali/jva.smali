@@ -1,66 +1,27 @@
-.class public final Ljva;
-.super Ljava/lang/Object;
+.class final Ljva;
+.super Ljwz;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
-
-
-# instance fields
-.field public volatile a:Z
-
-.field private synthetic b:Ljava/util/concurrent/Executor;
-
-.field private synthetic c:Ljsw;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Ljsw;)V
-    .locals 1
+.method constructor <init>(Ljava/util/Iterator;)V
+    .locals 0
 
-    iput-object p1, p0, Ljva;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p2, p0, Ljva;->c:Ljsw;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ljva;->a:Z
+    invoke-direct {p0, p1}, Ljwz;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 2
+.method final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    :try_start_0
-    iget-object v0, p0, Ljva;->b:Ljava/util/concurrent/Executor;
+    check-cast p1, Ljava/util/Map$Entry;
 
-    new-instance v1, Ljvb;
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-direct {v1, p0, p1}, Ljvb;-><init>(Ljva;Ljava/lang/Runnable;)V
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    iget-boolean v1, p0, Ljva;->a:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Ljva;->c:Ljsw;
-
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_0
+    return-object v0
 .end method

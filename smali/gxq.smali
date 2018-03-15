@@ -4,32 +4,24 @@
 
 
 # instance fields
-.field public final a:Lgsp;
+.field public final a:Landroid/app/ActionBar;
 
-.field public final b:Ljava/util/Set;
+.field public final b:Lgxo;
 
-.field public volatile c:Lgmv;
+.field public final c:Landroid/view/LayoutInflater;
 
 
 # direct methods
-.method public constructor <init>(Lgsp;Lgmv;)V
-    .locals 1
+.method public constructor <init>(Landroid/app/ActionBar;Landroid/view/LayoutInflater;Lgxo;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashSet;
+    iput-object p1, p0, Lgxq;->a:Landroid/app/ActionBar;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    iput-object p2, p0, Lgxq;->c:Landroid/view/LayoutInflater;
 
-    invoke-static {v0}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lgxq;->b:Ljava/util/Set;
-
-    iput-object p1, p0, Lgxq;->a:Lgsp;
-
-    iput-object p2, p0, Lgxq;->c:Lgmv;
+    iput-object p3, p0, Lgxq;->b:Lgxo;
 
     return-void
 .end method

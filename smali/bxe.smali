@@ -1,145 +1,89 @@
-.class final Lbxe;
+.class public final Lbxe;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbxc;
+.field public final a:Landroid/content/Context;
 
 
 # direct methods
-.method constructor <init>(Lbxc;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-
-    iput-object p1, p0, Lbxe;->a:Lbxc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lbxe;->a:Landroid/content/Context;
+
     return-void
+.end method
+
+.method public static a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
+    .locals 1
+
+    :try_start_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lbxe;->a:Lbxc;
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    iget-object v0, v0, Lbxc;->t:Lerp;
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    iget-object v1, v0, Lerp;->b:Ljri;
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lerp;->c()V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    new-instance v1, Ljri;
-
-    invoke-direct {v1}, Ljri;-><init>()V
-
-    iput-object v1, v0, Lerp;->b:Ljri;
-
-    iget-object v0, v0, Lerp;->b:Ljri;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Ljri;->a:Z
-
-    goto :goto_0
+    throw v0
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 5
+.method public final b()Landroid/app/ActivityManager;
+    .locals 2
 
-    iget-object v1, p0, Lbxe;->a:Lbxc;
+    iget-object v0, p0, Lbxe;->a:Landroid/content/Context;
 
-    iget-object v0, p0, Lbxe;->a:Lbxc;
+    const-string v1, "activity"
 
-    iget-object v0, v0, Lbxc;->e:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-static {v0, v1}, Lbxe;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbym;
+    check-cast v0, Landroid/app/ActivityManager;
 
-    sget-object v2, Lbxc;->a:Ljava/lang/String;
+    return-object v0
+.end method
 
-    const-string v3, "Exception while running the burst"
+.method public final c()Landroid/hardware/SensorManager;
+    .locals 2
 
-    invoke-static {v2, v3, p1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-object v0, p0, Lbxe;->a:Landroid/content/Context;
 
-    iget-object v2, v1, Lbxc;->t:Lerp;
+    const-string v1, "sensor"
 
-    iget-object v3, v2, Lerp;->b:Ljri;
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v2}, Lerp;->c()V
-
-    :goto_0
-    new-instance v2, Landroid/os/Handler;
-
-    iget-object v3, v1, Lbxc;->b:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v3, Lbxi;
-
-    invoke-direct {v3, v0}, Lbxi;-><init>(Lbym;)V
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    iget-object v0, v1, Lbxc;->n:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lbxe;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Leou;
+    check-cast v0, Landroid/hardware/SensorManager;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Leou;->f()V
-
-    :cond_0
-    invoke-virtual {v1}, Lbxc;->c()V
-
-    return-void
-
-    :cond_1
-    new-instance v3, Ljri;
-
-    invoke-direct {v3}, Ljri;-><init>()V
-
-    iput-object v3, v2, Lerp;->b:Ljri;
-
-    iget-object v3, v2, Lerp;->b:Ljri;
-
-    const/4 v4, 0x0
-
-    iput-boolean v4, v3, Ljri;->a:Z
-
-    iget-object v3, v2, Lerp;->b:Ljri;
-
-    const/4 v4, 0x1
-
-    iput-boolean v4, v3, Ljri;->d:Z
-
-    invoke-virtual {v2}, Lerp;->b()V
-
-    goto :goto_0
+    return-object v0
 .end method

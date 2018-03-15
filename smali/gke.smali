@@ -1,77 +1,54 @@
-.class final synthetic Lgke;
+.class public final Lgke;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Lkgv;
 
 
-# static fields
-.field public static final a:Ljhj;
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lgke;
-
-    invoke-direct {v0}, Lgke;-><init>()V
-
-    sput-object v0, Lgke;->a:Ljhj;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgke;->a:Lkgv;
+
+    iput-object p2, p0, Lgke;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final synthetic a()Ljava/lang/Object;
     .locals 3
 
-    check-cast p1, Ljava/util/List;
+    new-instance v2, Lgkd;
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lgke;->a:Lkgv;
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    move v1, v0
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lgkf;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    iget-object v1, p0, Lgke;->b:Lkgv;
 
-    move-result v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    add-int/2addr v0, v1
+    move-result-object v1
 
-    move v1, v0
+    check-cast v1, Lihs;
 
-    goto :goto_0
+    invoke-direct {v2, v0, v1}, Lgkd;-><init>(Lgkf;Lihs;)V
 
-    :cond_0
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v2
 .end method

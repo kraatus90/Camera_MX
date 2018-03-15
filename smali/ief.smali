@@ -1,51 +1,44 @@
-.class public Lief;
-.super Ljava/lang/Exception;
+.class public final Lief;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lief;
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lief;
+
+    invoke-direct {v0}, Lief;-><init>()V
+
+    sput-object v0, Lief;->a:Lief;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    return-void
-.end method
+    new-instance v0, Liee;
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public static a(Ljuw;)Ljava/lang/Object;
-    .locals 2
-
-    :try_start_0
-    invoke-interface {p0}, Ljuw;->get()Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
+    invoke-direct {v0}, Liee;-><init>()V
 
     return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Lief;
-
-    invoke-direct {v1, v0}, Lief;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
 .end method

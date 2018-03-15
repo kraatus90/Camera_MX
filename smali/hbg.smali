@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Lhbd;
+.field private final synthetic a:Lhax;
 
 
 # direct methods
-.method constructor <init>(Lhbd;)V
+.method constructor <init>(Lhax;)V
     .locals 0
 
-    iput-object p1, p0, Lhbg;->a:Lhbd;
+    iput-object p1, p0, Lhbg;->a:Lhax;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,18 +23,26 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
 
-    iget-object v0, p0, Lhbg;->a:Lhbd;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    iget-object v0, v0, Lhbd;->c:Lhzt;
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    iget-object v1, p0, Lhbg;->a:Lhbd;
+    throw v0
+.end method
 
-    iget-object v1, v1, Lhbd;->i:Ljava/lang/Runnable;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 1
 
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    check-cast p1, Ljava/lang/Boolean;
+
+    iget-object v0, p0, Lhbg;->a:Lhax;
+
+    invoke-static {p1}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    invoke-interface {v0}, Lhax;->a()V
 
     return-void
 .end method

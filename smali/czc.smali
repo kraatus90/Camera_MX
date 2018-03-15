@@ -1,50 +1,53 @@
-.class public final Lczc;
+.class final Lczc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lcxp;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lcyk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lczc;->a:Lcyk;
 
-    iput-object p1, p0, Lczc;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
     .locals 2
 
-    iget-object v0, p0, Lczc;->a:Ljxn;
+    check-cast p1, Lcxf;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lczc;->a:Lcyk;
 
-    move-result-object v0
+    iget-boolean v0, v0, Lcyk;->e:Z
 
-    check-cast v0, Lhfp;
+    if-eqz v0, :cond_0
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    iget-object v0, p0, Lczc;->a:Lcyk;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iput-boolean v1, v0, Lcyk;->e:Z
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Lczc;->a:Lcyk;
 
-    move-result-object v0
+    iget-object v1, p1, Lcxf;->a:Lcxi;
 
-    check-cast v0, Ljuw;
+    invoke-virtual {v0, v1}, Lcyk;->a(Lcxi;)V
+
+    :cond_0
+    const/4 v0, 0x0
 
     return-object v0
 .end method

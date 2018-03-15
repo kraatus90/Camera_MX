@@ -1,65 +1,64 @@
 .class public final Lbgl;
-.super Ljava/io/IOException;
+.super Lfhq;
 .source "PG"
 
 
+# instance fields
+.field private final a:Lfbd;
+
+.field private final b:Lfbo;
+
+.field private c:Z
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const-string v0, "AaaReqCalbak"
 
-    move-result-object v0
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    return-void
+.end method
 
-    move-result v0
+.method public constructor <init>(Lfbd;Lfbo;)V
+    .locals 1
 
-    add-int/lit8 v0, v0, 0x27
+    invoke-direct {p0}, Lfhq;-><init>()V
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object v1
+    iput-boolean v0, p0, Lbgl;->c:Z
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    iput-object p1, p0, Lbgl;->a:Lfbd;
 
-    move-result v1
+    iput-object p2, p0, Lbgl;->b:Lfbo;
 
-    add-int/2addr v0, v1
+    return-void
+.end method
 
-    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+# virtual methods
+.method public final a_(Lind;)V
+    .locals 1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lbgl;->b:Lfbo;
 
-    move-result-object v0
+    invoke-virtual {v0, p1}, Lfbo;->a(Lind;)V
 
-    const-string v1, " with file path "
+    iget-boolean v0, p0, Lbgl;->c:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Lbgl;->a:Lfbd;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Lfbd;->a(Lind;)V
 
-    move-result-object v0
+    :cond_0
+    const/4 v0, 0x1
 
-    const-string v1, " and format "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, p4}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iput-boolean v0, p0, Lbgl;->c:Z
 
     return-void
 .end method

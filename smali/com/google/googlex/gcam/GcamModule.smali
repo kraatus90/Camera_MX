@@ -71,37 +71,7 @@
 
     move-object v7, p3
 
-    invoke-static/range {v0 .. v7}, Lcom/google/googlex/gcam/GcamModuleJNI;->ApplyBlsAndSgm__SWIG_0(JLcom/google/googlex/gcam/SpatialGainMap;[FIJLcom/google/googlex/gcam/InterleavedWriteViewU16;)V
-
-    return-void
-.end method
-
-.method public static ApplyBlsAndSgm(Lcom/google/googlex/gcam/SpatialGainMap;[FILcom/google/googlex/gcam/InterleavedWriteViewU16;Lcom/google/googlex/gcam/InterleavedWriteViewU16;)V
-    .locals 11
-
-    invoke-static {p0}, Lcom/google/googlex/gcam/SpatialGainMap;->getCPtr(Lcom/google/googlex/gcam/SpatialGainMap;)J
-
-    move-result-wide v0
-
-    invoke-static {p3}, Lcom/google/googlex/gcam/InterleavedWriteViewU16;->getCPtr(Lcom/google/googlex/gcam/InterleavedWriteViewU16;)J
-
-    move-result-wide v5
-
-    invoke-static {p4}, Lcom/google/googlex/gcam/InterleavedWriteViewU16;->getCPtr(Lcom/google/googlex/gcam/InterleavedWriteViewU16;)J
-
-    move-result-wide v8
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    move v4, p2
-
-    move-object v7, p3
-
-    move-object v10, p4
-
-    invoke-static/range {v0 .. v10}, Lcom/google/googlex/gcam/GcamModuleJNI;->ApplyBlsAndSgm__SWIG_1(JLcom/google/googlex/gcam/SpatialGainMap;[FIJLcom/google/googlex/gcam/InterleavedWriteViewU16;JLcom/google/googlex/gcam/InterleavedWriteViewU16;)V
+    invoke-static/range {v0 .. v7}, Lcom/google/googlex/gcam/GcamModuleJNI;->ApplyBlsAndSgm(JLcom/google/googlex/gcam/SpatialGainMap;[FIJLcom/google/googlex/gcam/InterleavedWriteViewU16;)V
 
     return-void
 .end method
@@ -126,38 +96,6 @@
     move-object v5, p1
 
     invoke-static/range {v0 .. v7}, Lcom/google/googlex/gcam/GcamModuleJNI;->ApplyColorSaturation(JLcom/google/googlex/gcam/InterleavedWriteViewU8;JLcom/google/googlex/gcam/ColorSatParams;J)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static AverageSnrFromFrame(Lcom/google/googlex/gcam/RawReadView;IFFLcom/google/googlex/gcam/RawNoiseModel;Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__Context;)F
-    .locals 11
-
-    invoke-static {p0}, Lcom/google/googlex/gcam/RawReadView;->getCPtr(Lcom/google/googlex/gcam/RawReadView;)J
-
-    move-result-wide v0
-
-    invoke-static {p4}, Lcom/google/googlex/gcam/RawNoiseModel;->getCPtr(Lcom/google/googlex/gcam/RawNoiseModel;)J
-
-    move-result-wide v6
-
-    invoke-static/range {p5 .. p5}, Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__Context;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__Context;)J
-
-    move-result-wide v9
-
-    move-object v2, p0
-
-    move v3, p1
-
-    move v4, p2
-
-    move v5, p3
-
-    move-object v8, p4
-
-    invoke-static/range {v0 .. v10}, Lcom/google/googlex/gcam/GcamModuleJNI;->AverageSnrFromFrame(JLcom/google/googlex/gcam/RawReadView;IFFJLcom/google/googlex/gcam/RawNoiseModel;J)F
 
     move-result v0
 
@@ -228,6 +166,76 @@
     move v7, p2
 
     invoke-static/range {v1 .. v9}, Lcom/google/googlex/gcam/GcamModuleJNI;->CheckMetadataTuningConsistency(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/Tuning;ZJ)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static ConvertBurstMetadataToString(Lcom/google/googlex/gcam/SWIGTYPE_p_std__vectorT_gcam__FrameMetadata_t;)Ljava/lang/String;
+    .locals 2
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__vectorT_gcam__FrameMetadata_t;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_std__vectorT_gcam__FrameMetadata_t;)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ConvertBurstMetadataToString(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static ConvertStaticMetadataToString(Lcom/google/googlex/gcam/StaticMetadata;)Ljava/lang/String;
+    .locals 2
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/StaticMetadata;->getCPtr(Lcom/google/googlex/gcam/StaticMetadata;)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ConvertStaticMetadataToString(JLcom/google/googlex/gcam/StaticMetadata;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static CropFaceInfo(Lcom/google/googlex/gcam/FaceInfo;Lcom/google/googlex/gcam/PixelRect;II)Lcom/google/googlex/gcam/FaceInfo;
+    .locals 9
+
+    new-instance v8, Lcom/google/googlex/gcam/FaceInfo;
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/FaceInfo;->getCPtr(Lcom/google/googlex/gcam/FaceInfo;)J
+
+    move-result-wide v0
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/PixelRect;->getCPtr(Lcom/google/googlex/gcam/PixelRect;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    move v6, p2
+
+    move v7, p3
+
+    invoke-static/range {v0 .. v7}, Lcom/google/googlex/gcam/GcamModuleJNI;->CropFaceInfo(JLcom/google/googlex/gcam/FaceInfo;JLcom/google/googlex/gcam/PixelRect;II)J
+
+    move-result-wide v0
+
+    const/4 v2, 0x1
+
+    invoke-direct {v8, v0, v1, v2}, Lcom/google/googlex/gcam/FaceInfo;-><init>(JZ)V
+
+    return-object v8
+.end method
+
+.method public static CropInDngMetadata(I)Z
+    .locals 1
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->CropInDngMetadata(I)Z
 
     move-result v0
 
@@ -332,8 +340,8 @@
     return v0
 .end method
 
-.method public static DeserializeBurstMetadata(Lcom/google/googlex/gcam/SWIGTYPE_p_p_char;Lcom/google/googlex/gcam/SWIGTYPE_p_std__vectorT_gcam__FrameMetadata_t;Lcom/google/googlex/gcam/SWIGTYPE_p_bool;)Z
-    .locals 6
+.method public static DeserializeBurstMetadata(Lcom/google/googlex/gcam/SWIGTYPE_p_p_char;Lcom/google/googlex/gcam/SWIGTYPE_p_std__vectorT_gcam__FrameMetadata_t;)Z
+    .locals 4
 
     invoke-static {p0}, Lcom/google/googlex/gcam/SWIGTYPE_p_p_char;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_p_char;)J
 
@@ -343,11 +351,7 @@
 
     move-result-wide v2
 
-    invoke-static {p2}, Lcom/google/googlex/gcam/SWIGTYPE_p_bool;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_bool;)J
-
-    move-result-wide v4
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->DeserializeBurstMetadata(JJJ)Z
+    invoke-static {v0, v1, v2, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->DeserializeBurstMetadata(JJ)Z
 
     move-result v0
 
@@ -402,18 +406,62 @@
     return-void
 .end method
 
-.method public static EstimateSnrFromFrameMetadata(Lcom/google/googlex/gcam/FrameMetadata;)F
-    .locals 2
+.method public static FaceInfoToNormalizedRect(Lcom/google/googlex/gcam/FaceInfo;IIZ)Lcom/google/googlex/gcam/NormalizedRect;
+    .locals 7
 
-    invoke-static {p0}, Lcom/google/googlex/gcam/FrameMetadata;->getCPtr(Lcom/google/googlex/gcam/FrameMetadata;)J
+    new-instance v6, Lcom/google/googlex/gcam/NormalizedRect;
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/FaceInfo;->getCPtr(Lcom/google/googlex/gcam/FaceInfo;)J
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->EstimateSnrFromFrameMetadata(JLcom/google/googlex/gcam/FrameMetadata;)F
+    move-object v2, p0
 
-    move-result v0
+    move v3, p1
 
-    return v0
+    move v4, p2
+
+    move v5, p3
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->FaceInfoToNormalizedRect__SWIG_1(JLcom/google/googlex/gcam/FaceInfo;IIZ)J
+
+    move-result-wide v0
+
+    const/4 v2, 0x1
+
+    invoke-direct {v6, v0, v1, v2}, Lcom/google/googlex/gcam/NormalizedRect;-><init>(JZ)V
+
+    return-object v6
+.end method
+
+.method public static FaceInfoToNormalizedRect(Lcom/google/googlex/gcam/FaceInfo;IIZI)Lcom/google/googlex/gcam/NormalizedRect;
+    .locals 8
+
+    new-instance v7, Lcom/google/googlex/gcam/NormalizedRect;
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/FaceInfo;->getCPtr(Lcom/google/googlex/gcam/FaceInfo;)J
+
+    move-result-wide v0
+
+    move-object v2, p0
+
+    move v3, p1
+
+    move v4, p2
+
+    move v5, p3
+
+    move v6, p4
+
+    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->FaceInfoToNormalizedRect__SWIG_0(JLcom/google/googlex/gcam/FaceInfo;IIZI)J
+
+    move-result-wide v0
+
+    const/4 v2, 0x1
+
+    invoke-direct {v7, v0, v1, v2}, Lcom/google/googlex/gcam/NormalizedRect;-><init>(JZ)V
+
+    return-object v7
 .end method
 
 .method public static FaceInfoToPixelRect(Lcom/google/googlex/gcam/FaceInfo;IIZ)Lcom/google/googlex/gcam/PixelRect;
@@ -532,54 +580,6 @@
     return-void
 .end method
 
-.method public static GenGcamNexus5TonemapFloat()Lcom/google/googlex/gcam/TonemapFloat;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/TonemapFloat;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenGcamNexus5TonemapFloat()J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/TonemapFloat;-><init>(JZ)V
-
-    return-object v0
-.end method
-
-.method public static GenGcamTonemap()Lcom/google/googlex/gcam/Tonemap;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/Tonemap;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenGcamTonemap()J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/Tonemap;-><init>(JZ)V
-
-    return-object v0
-.end method
-
-.method public static GenGlassIncorrectTonemap1()Lcom/google/googlex/gcam/Tonemap;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/Tonemap;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenGlassIncorrectTonemap1()J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/Tonemap;-><init>(JZ)V
-
-    return-object v0
-.end method
-
 .method public static GenParameterizedSpatialGainMap(IIFFF)Lcom/google/googlex/gcam/SpatialGainMap;
     .locals 4
 
@@ -612,44 +612,12 @@
     return-object v0
 .end method
 
-.method public static GenSpatialGainMap_GalaxyNexus()Lcom/google/googlex/gcam/SpatialGainMap;
+.method public static GenSpatialGainMap_N5_N6()Lcom/google/googlex/gcam/SpatialGainMap;
     .locals 4
 
     new-instance v0, Lcom/google/googlex/gcam/SpatialGainMap;
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenSpatialGainMap_GalaxyNexus()J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SpatialGainMap;-><init>(JZ)V
-
-    return-object v0
-.end method
-
-.method public static GenSpatialGainMap_Glass()Lcom/google/googlex/gcam/SpatialGainMap;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/SpatialGainMap;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenSpatialGainMap_Glass()J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SpatialGainMap;-><init>(JZ)V
-
-    return-object v0
-.end method
-
-.method public static GenSpatialGainMap_Glass_ReducedLSC()Lcom/google/googlex/gcam/SpatialGainMap;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/SpatialGainMap;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenSpatialGainMap_Glass_ReducedLSC()J
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenSpatialGainMap_N5_N6()J
 
     move-result-wide v2
 
@@ -672,22 +640,6 @@
     const/4 v1, 0x1
 
     invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SpatialGainMap;-><init>(JZ)V
-
-    return-object v0
-.end method
-
-.method public static GenStockGalaxyNexusTonemap()Lcom/google/googlex/gcam/Tonemap;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/Tonemap;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GenStockGalaxyNexusTonemap()J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/Tonemap;-><init>(JZ)V
 
     return-object v0
 .end method
@@ -750,48 +702,42 @@
     goto :goto_0
 .end method
 
-.method public static GetDirtyLensProbability(Lcom/google/googlex/gcam/InterleavedReadViewU8;[F[F)Z
+.method public static GetDirtyLensRawScore(Lcom/google/googlex/gcam/InterleavedReadViewU8;[F)Z
     .locals 2
 
     invoke-static {p0}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedReadViewU8;)J
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetDirtyLensProbability__SWIG_0(JLcom/google/googlex/gcam/InterleavedReadViewU8;[F[F)Z
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetDirtyLensRawScore__SWIG_0(JLcom/google/googlex/gcam/InterleavedReadViewU8;[F)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public static GetDirtyLensProbability(Lcom/google/googlex/gcam/YuvReadView;[F[F)Z
+.method public static GetDirtyLensRawScore(Lcom/google/googlex/gcam/YuvReadView;[F)Z
     .locals 2
 
     invoke-static {p0}, Lcom/google/googlex/gcam/YuvReadView;->getCPtr(Lcom/google/googlex/gcam/YuvReadView;)J
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetDirtyLensProbability__SWIG_1(JLcom/google/googlex/gcam/YuvReadView;[F[F)Z
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetDirtyLensRawScore__SWIG_1(JLcom/google/googlex/gcam/YuvReadView;[F)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public static GetDirtyLensProbabilityFromJpegInMemory(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;J[F[F)Z
-    .locals 7
+.method public static GetDirtyLensRawScoreFromJpegInMemory(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;J[F)Z
+    .locals 3
 
     invoke-static {p0}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)J
 
     move-result-wide v0
 
-    move-wide v2, p1
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetDirtyLensProbabilityFromJpegInMemory(JJ[F[F)Z
+    invoke-static {v0, v1, p1, p2, p3}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetDirtyLensRawScoreFromJpegInMemory(JJ[F)Z
 
     move-result v0
 
@@ -882,6 +828,22 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static GetRandomFaceInfo()Lcom/google/googlex/gcam/FaceInfo;
+    .locals 4
+
+    new-instance v0, Lcom/google/googlex/gcam/FaceInfo;
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetRandomFaceInfo()J
+
+    move-result-wide v2
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/FaceInfo;-><init>(JZ)V
+
+    return-object v0
 .end method
 
 .method public static GetRandomFrameMetadata()Lcom/google/googlex/gcam/FrameMetadata;
@@ -1006,6 +968,28 @@
     invoke-static/range {v1 .. v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetRawBufferBounds(IJJJJJ)V
 
     return-void
+.end method
+
+.method public static GetRawCropping(Lcom/google/googlex/gcam/ShotParams;Lcom/google/googlex/gcam/ShotCallbacks;)I
+    .locals 6
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/ShotParams;->getCPtr(Lcom/google/googlex/gcam/ShotParams;)J
+
+    move-result-wide v0
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/ShotCallbacks;->getCPtr(Lcom/google/googlex/gcam/ShotCallbacks;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->GetRawCropping(JLcom/google/googlex/gcam/ShotParams;JLcom/google/googlex/gcam/ShotCallbacks;)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static GetRotatedImageSize(IIILcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;)V
@@ -1148,6 +1132,16 @@
     return-object v6
 .end method
 
+.method public static IsMergedRawFullSized(I)Z
+    .locals 1
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->IsMergedRawFullSized(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static IsPlanar(I)Z
     .locals 1
 
@@ -1208,10 +1202,58 @@
     return-object v7
 .end method
 
-.method public static MakeSharpenCurve(FFF)Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;
+.method public static MakeRandomChromaticAberrationParams()Lcom/google/googlex/gcam/ChromaticAberrationParams;
     .locals 4
 
-    new-instance v0, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;
+    new-instance v0, Lcom/google/googlex/gcam/ChromaticAberrationParams;
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->MakeRandomChromaticAberrationParams()J
+
+    move-result-wide v2
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/ChromaticAberrationParams;-><init>(JZ)V
+
+    return-object v0
+.end method
+
+.method public static MakeRandomDenoiseParams()Lcom/google/googlex/gcam/DenoiseParams;
+    .locals 4
+
+    new-instance v0, Lcom/google/googlex/gcam/DenoiseParams;
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->MakeRandomDenoiseParams()J
+
+    move-result-wide v2
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/DenoiseParams;-><init>(JZ)V
+
+    return-object v0
+.end method
+
+.method public static MakeRandomSharpenParams()Lcom/google/googlex/gcam/RawSharpenParams;
+    .locals 4
+
+    new-instance v0, Lcom/google/googlex/gcam/RawSharpenParams;
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->MakeRandomSharpenParams()J
+
+    move-result-wide v2
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/RawSharpenParams;-><init>(JZ)V
+
+    return-object v0
+.end method
+
+.method public static MakeSharpenCurve(FFF)Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;
+    .locals 4
+
+    new-instance v0, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;
 
     invoke-static {p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->MakeSharpenCurve(FFF)J
 
@@ -1219,7 +1261,7 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_kRawSharpenCurveSize_t;-><init>(JZ)V
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawSharpenParams__Point_4_t;-><init>(JZ)V
 
     return-object v0
 .end method
@@ -1238,26 +1280,6 @@
     invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/TetWaypoint;-><init>(JZ)V
 
     return-object v0
-.end method
-
-.method public static PdNoiseModelFromRawNoiseModel(Lcom/google/googlex/gcam/RawNoiseModel;ILcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawNoiseModel_2_t;)V
-    .locals 6
-
-    invoke-static {p0}, Lcom/google/googlex/gcam/RawNoiseModel;->getCPtr(Lcom/google/googlex/gcam/RawNoiseModel;)J
-
-    move-result-wide v0
-
-    invoke-static {p2}, Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawNoiseModel_2_t;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_std__arrayT_gcam__RawNoiseModel_2_t;)J
-
-    move-result-wide v4
-
-    move-object v2, p0
-
-    move v3, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->PdNoiseModelFromRawNoiseModel(JLcom/google/googlex/gcam/RawNoiseModel;IJ)V
-
-    return-void
 .end method
 
 .method public static PixelRectToFaceInfo(Lcom/google/googlex/gcam/PixelRect;FII)Lcom/google/googlex/gcam/FaceInfo;
@@ -1330,26 +1352,182 @@
     return-void
 .end method
 
-.method public static RawNoiseModelFromDngNoiseModel([Lcom/google/googlex/gcam/DngNoiseModel;[FFLcom/google/googlex/gcam/RawNoiseModel;)V
+.method public static RawFinishPreview(Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/FrameMetadata;Lcom/google/googlex/gcam/SpatialGainMap;Lcom/google/googlex/gcam/StaticMetadata;Lcom/google/googlex/gcam/NormalizedRect;IIILcom/google/googlex/gcam/NormalizedRect;Lcom/google/googlex/gcam/WeightedNormalizedRectVector;F)Lcom/google/googlex/gcam/InterleavedImageU8;
+    .locals 28
+
+    new-instance v27, Lcom/google/googlex/gcam/InterleavedImageU8;
+
+    invoke-static/range {p0 .. p0}, Lcom/google/googlex/gcam/RawReadView;->getCPtr(Lcom/google/googlex/gcam/RawReadView;)J
+
+    move-result-wide v2
+
+    invoke-static/range {p1 .. p1}, Lcom/google/googlex/gcam/FrameMetadata;->getCPtr(Lcom/google/googlex/gcam/FrameMetadata;)J
+
+    move-result-wide v5
+
+    invoke-static/range {p2 .. p2}, Lcom/google/googlex/gcam/SpatialGainMap;->getCPtr(Lcom/google/googlex/gcam/SpatialGainMap;)J
+
+    move-result-wide v8
+
+    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/StaticMetadata;->getCPtr(Lcom/google/googlex/gcam/StaticMetadata;)J
+
+    move-result-wide v11
+
+    invoke-static/range {p4 .. p4}, Lcom/google/googlex/gcam/NormalizedRect;->getCPtr(Lcom/google/googlex/gcam/NormalizedRect;)J
+
+    move-result-wide v14
+
+    invoke-static/range {p8 .. p8}, Lcom/google/googlex/gcam/NormalizedRect;->getCPtr(Lcom/google/googlex/gcam/NormalizedRect;)J
+
+    move-result-wide v20
+
+    invoke-static/range {p9 .. p9}, Lcom/google/googlex/gcam/WeightedNormalizedRectVector;->getCPtr(Lcom/google/googlex/gcam/WeightedNormalizedRectVector;)J
+
+    move-result-wide v23
+
+    move-object/from16 v4, p0
+
+    move-object/from16 v7, p1
+
+    move-object/from16 v10, p2
+
+    move-object/from16 v13, p3
+
+    move-object/from16 v16, p4
+
+    move/from16 v17, p5
+
+    move/from16 v18, p6
+
+    move/from16 v19, p7
+
+    move-object/from16 v22, p8
+
+    move-object/from16 v25, p9
+
+    move/from16 v26, p10
+
+    invoke-static/range {v2 .. v26}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishPreview__SWIG_1(JLcom/google/googlex/gcam/RawReadView;JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/SpatialGainMap;JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/NormalizedRect;IIIJLcom/google/googlex/gcam/NormalizedRect;JLcom/google/googlex/gcam/WeightedNormalizedRectVector;F)J
+
+    move-result-wide v2
+
+    const/4 v4, 0x1
+
+    move-object/from16 v0, v27
+
+    invoke-direct {v0, v2, v3, v4}, Lcom/google/googlex/gcam/InterleavedImageU8;-><init>(JZ)V
+
+    return-object v27
+.end method
+
+.method public static RawFinishPreview(Ljava/lang/String;Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/FrameMetadata;Lcom/google/googlex/gcam/SpatialGainMap;Lcom/google/googlex/gcam/StaticMetadata;Lcom/google/googlex/gcam/NormalizedRect;IIILcom/google/googlex/gcam/Tuning;FFFLcom/google/googlex/gcam/SWIGTYPE_p_gcam__Context;Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__SaveInfo;)Lcom/google/googlex/gcam/InterleavedImageU8;
+    .locals 30
+
+    new-instance v0, Lcom/google/googlex/gcam/InterleavedImageU8;
+
+    invoke-static/range {p1 .. p1}, Lcom/google/googlex/gcam/RawReadView;->getCPtr(Lcom/google/googlex/gcam/RawReadView;)J
+
+    move-result-wide v2
+
+    invoke-static/range {p2 .. p2}, Lcom/google/googlex/gcam/FrameMetadata;->getCPtr(Lcom/google/googlex/gcam/FrameMetadata;)J
+
+    move-result-wide v5
+
+    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/SpatialGainMap;->getCPtr(Lcom/google/googlex/gcam/SpatialGainMap;)J
+
+    move-result-wide v8
+
+    invoke-static/range {p4 .. p4}, Lcom/google/googlex/gcam/StaticMetadata;->getCPtr(Lcom/google/googlex/gcam/StaticMetadata;)J
+
+    move-result-wide v11
+
+    invoke-static/range {p5 .. p5}, Lcom/google/googlex/gcam/NormalizedRect;->getCPtr(Lcom/google/googlex/gcam/NormalizedRect;)J
+
+    move-result-wide v14
+
+    invoke-static/range {p9 .. p9}, Lcom/google/googlex/gcam/Tuning;->getCPtr(Lcom/google/googlex/gcam/Tuning;)J
+
+    move-result-wide v20
+
+    invoke-static/range {p13 .. p13}, Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__Context;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__Context;)J
+
+    move-result-wide v26
+
+    invoke-static/range {p14 .. p14}, Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__SaveInfo;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__SaveInfo;)J
+
+    move-result-wide v28
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v4, p1
+
+    move-object/from16 v7, p2
+
+    move-object/from16 v10, p3
+
+    move-object/from16 v13, p4
+
+    move-object/from16 v16, p5
+
+    move/from16 v17, p6
+
+    move/from16 v18, p7
+
+    move/from16 v19, p8
+
+    move-object/from16 v22, p9
+
+    move/from16 v23, p10
+
+    move/from16 v24, p11
+
+    move/from16 v25, p12
+
+    invoke-static/range {v1 .. v29}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawFinishPreview__SWIG_0(Ljava/lang/String;JLcom/google/googlex/gcam/RawReadView;JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/SpatialGainMap;JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/NormalizedRect;IIIJLcom/google/googlex/gcam/Tuning;FFFJJ)J
+
+    move-result-wide v2
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/InterleavedImageU8;-><init>(JZ)V
+
+    return-object v0
+.end method
+
+.method public static ReadDngMetadata(Ljava/lang/String;Lcom/google/googlex/gcam/ExifMetadata;)Z
+    .locals 2
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
+
+    move-result-wide v0
+
+    invoke-static {p0, v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ReadDngMetadata(Ljava/lang/String;JLcom/google/googlex/gcam/ExifMetadata;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static ReadDngMetadataFromMemory(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;JLcom/google/googlex/gcam/ExifMetadata;)Z
     .locals 7
 
-    invoke-static {p0}, Lcom/google/googlex/gcam/DngNoiseModel;->cArrayUnwrap([Lcom/google/googlex/gcam/DngNoiseModel;)[J
+    invoke-static {p0}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)J
 
-    move-result-object v1
+    move-result-wide v0
 
-    invoke-static {p3}, Lcom/google/googlex/gcam/RawNoiseModel;->getCPtr(Lcom/google/googlex/gcam/RawNoiseModel;)J
+    invoke-static {p3}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
 
     move-result-wide v4
 
-    move-object v2, p1
-
-    move v3, p2
+    move-wide v2, p1
 
     move-object v6, p3
 
-    invoke-static/range {v1 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawNoiseModelFromDngNoiseModel([J[FFJLcom/google/googlex/gcam/RawNoiseModel;)V
+    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->ReadDngMetadataFromMemory(JJJLcom/google/googlex/gcam/ExifMetadata;)Z
 
-    return-void
+    move-result v0
+
+    return v0
 .end method
 
 .method public static ReverseRotation(I)I
@@ -1360,26 +1538,6 @@
     move-result v0
 
     return v0
-.end method
-
-.method public static ReverseTonemapCurve(Lcom/google/googlex/gcam/Tonemap;)Lcom/google/googlex/gcam/RevTonemap;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/RevTonemap;
-
-    invoke-static {p0}, Lcom/google/googlex/gcam/Tonemap;->getCPtr(Lcom/google/googlex/gcam/Tonemap;)J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ReverseTonemapCurve(JLcom/google/googlex/gcam/Tonemap;)J
-
-    move-result-wide v2
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/RevTonemap;-><init>(JZ)V
-
-    return-object v0
 .end method
 
 .method public static RggbPositions(ILcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;Lcom/google/googlex/gcam/SWIGTYPE_p_int;)V
@@ -1450,6 +1608,28 @@
     return-void
 .end method
 
+.method public static RotateNormalizedCoordinates(FFILcom/google/googlex/gcam/SWIGTYPE_p_float;Lcom/google/googlex/gcam/SWIGTYPE_p_float;)V
+    .locals 8
+
+    invoke-static {p3}, Lcom/google/googlex/gcam/SWIGTYPE_p_float;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_float;)J
+
+    move-result-wide v4
+
+    invoke-static {p4}, Lcom/google/googlex/gcam/SWIGTYPE_p_float;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_float;)J
+
+    move-result-wide v6
+
+    move v1, p0
+
+    move v2, p1
+
+    move v3, p2
+
+    invoke-static/range {v1 .. v7}, Lcom/google/googlex/gcam/GcamModuleJNI;->RotateNormalizedCoordinates(FFIJJ)V
+
+    return-void
+.end method
+
 .method public static SerializeBurstMetadata(Lcom/google/googlex/gcam/SWIGTYPE_p_std__vectorT_gcam__FrameMetadata_t;Lcom/google/googlex/gcam/SWIGTYPE_p_std__string;I)V
     .locals 4
 
@@ -1466,48 +1646,14 @@
     return-void
 .end method
 
-.method public static SmoothValuesU16(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_short;IIIFZ)V
-    .locals 7
+.method public static ShouldCropBeforeMerge(I)Z
+    .locals 1
 
-    invoke-static {p0}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_short;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_short;)J
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShouldCropBeforeMerge(I)Z
 
-    move-result-wide v0
+    move-result v0
 
-    move v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    move v6, p5
-
-    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->SmoothValuesU16(JIIIFZ)V
-
-    return-void
-.end method
-
-.method public static SmoothValuesU8(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;IIIFZ)V
-    .locals 7
-
-    invoke-static {p0}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)J
-
-    move-result-wide v0
-
-    move v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    move v6, p5
-
-    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->SmoothValuesU8(JIIIFZ)V
-
-    return-void
+    return v0
 .end method
 
 .method public static SuppressRowArtifacts(Lcom/google/googlex/gcam/FloatVector;ILcom/google/googlex/gcam/SWIGTYPE_p_gcam__Context;Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__LogSaver;Lcom/google/googlex/gcam/RawWriteView;)V
@@ -1602,28 +1748,14 @@
     return-void
 .end method
 
-.method public static TenBitRevTonemap(Lcom/google/googlex/gcam/RevTonemap;[I)V
-    .locals 2
+.method public static TextToAeState(Ljava/lang/String;)I
+    .locals 1
 
-    invoke-static {p0}, Lcom/google/googlex/gcam/RevTonemap;->getCPtr(Lcom/google/googlex/gcam/RevTonemap;)J
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->TextToAeState(Ljava/lang/String;)I
 
-    move-result-wide v0
+    move-result v0
 
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->TenBitRevTonemap(JLcom/google/googlex/gcam/RevTonemap;[I)V
-
-    return-void
-.end method
-
-.method public static TenBitTonemap(Lcom/google/googlex/gcam/Tonemap;[I)V
-    .locals 2
-
-    invoke-static {p0}, Lcom/google/googlex/gcam/Tonemap;->getCPtr(Lcom/google/googlex/gcam/Tonemap;)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->TenBitTonemap(JLcom/google/googlex/gcam/Tonemap;[I)V
-
-    return-void
+    return v0
 .end method
 
 .method public static TextToAeType(Ljava/lang/String;)I
@@ -1656,6 +1788,16 @@
     return v0
 .end method
 
+.method public static TextToExecuteOn(Ljava/lang/String;)I
+    .locals 1
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->TextToExecuteOn(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static TextToFlashMetadata(Ljava/lang/String;)I
     .locals 1
 
@@ -1680,6 +1822,16 @@
     .locals 1
 
     invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->TextToGcamPixelFormat(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static TextToGeometricCorrection(Ljava/lang/String;)I
+    .locals 1
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->TextToGeometricCorrection(Ljava/lang/String;)I
 
     move-result v0
 
@@ -1720,6 +1872,16 @@
     .locals 1
 
     invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->TextToLensState(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static TextToRawCropping(Ljava/lang/String;)I
+    .locals 1
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->TextToRawCropping(Ljava/lang/String;)I
 
     move-result v0
 
@@ -2466,22 +2628,6 @@
     return v0
 .end method
 
-.method public static YuvPipelineOutputGammaPlusTonecurve()Lcom/google/googlex/gcam/Tonemap;
-    .locals 4
-
-    new-instance v0, Lcom/google/googlex/gcam/Tonemap;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvPipelineOutputGammaPlusTonecurve()J
-
-    move-result-wide v2
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/Tonemap;-><init>(JZ)V
-
-    return-object v0
-.end method
-
 .method public static copy_uint8_p(S)Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;
     .locals 4
 
@@ -2630,6 +2776,36 @@
     return-wide v0
 .end method
 
+.method public static getKBguDownsampleFactor()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kBguDownsampleFactor_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKChromaLutSizeUV()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kChromaLutSizeUV_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKChromaLutSizeY()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kChromaLutSizeY_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getKColorTempUnknown()I
     .locals 1
 
@@ -2654,6 +2830,16 @@
     .locals 1
 
     invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kDefaultFullMeteringSweepFrameCount_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKDefaultIpuCaRadius()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kDefaultIpuCaRadius_get()I
 
     move-result v0
 
@@ -2710,6 +2896,16 @@
     return v0
 .end method
 
+.method public static getKDenoiseFreqCount()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kDenoiseFreqCount_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getKInitParamsFilename()Ljava/lang/String;
     .locals 1
 
@@ -2744,6 +2940,86 @@
     .locals 1
 
     invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kInvalidShotId_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKIpuRawFinishAlignmentX()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kIpuRawFinishAlignmentX_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKIpuRawFinishAlignmentY()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kIpuRawFinishAlignmentY_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKLegacySensorIdPrimary()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kLegacySensorIdPrimary_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKLegacySensorIdSecondary()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kLegacySensorIdSecondary_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKLinearYuvPrecision()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kLinearYuvPrecision_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKLinearYuvWhiteLevel()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kLinearYuvWhiteLevel_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKLog2ChromaLutSizeUV()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kLog2ChromaLutSizeUV_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKLog2ChromaLutSizeY()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kLog2ChromaLutSizeY_get()I
 
     move-result v0
 
@@ -2820,6 +3096,36 @@
     return v0
 .end method
 
+.method public static getKMeteringBurstFrameMetadataFilename()Ljava/lang/String;
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kMeteringBurstFrameMetadataFilename_get()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static getKMeteringBurstSpecFilename()Ljava/lang/String;
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kMeteringBurstSpecFilename_get()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static getKMinDigitalZoomRatio()F
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kMinDigitalZoomRatio_get()F
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getKMinFullMeteringSweepFrames()I
     .locals 1
 
@@ -2870,10 +3176,100 @@
     return v0
 .end method
 
+.method public static getKPayloadBurstFrameMetadataFilename()Ljava/lang/String;
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kPayloadBurstFrameMetadataFilename_get()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static getKPayloadBurstSpecFilename()Ljava/lang/String;
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kPayloadBurstSpecFilename_get()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static getKPdCurrentVersion()I
     .locals 1
 
     invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kPdCurrentVersion_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKRawFinishAlignmentX()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawFinishAlignmentX_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKRawFinishAlignmentY()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawFinishAlignmentY_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKRawFinishMaxInputWhiteLevel()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawFinishMaxInputWhiteLevel_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKRawFinishMinInputWhiteLevel()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawFinishMinInputWhiteLevel_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKRawFinishPrecision()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawFinishPrecision_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKRawFinishUseBgu()Z
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawFinishUseBgu_get()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKRawFinishWhiteLevel()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawFinishWhiteLevel_get()I
 
     move-result v0
 
@@ -2890,40 +3286,20 @@
     return v0
 .end method
 
-.method public static getKRawSharpenMaxFreqCount()I
+.method public static getKRawSharpenCurveSize()I
     .locals 1
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawSharpenMaxFreqCount_get()I
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawSharpenCurveSize_get()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public static getKRevTonemapMaxValue()I
+.method public static getKRawSharpenFreqCount()I
     .locals 1
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRevTonemapMaxValue_get()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static getKSensorIdPrimary()I
-    .locals 1
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kSensorIdPrimary_get()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static getKSensorIdSecondary()I
-    .locals 1
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kSensorIdSecondary_get()I
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRawSharpenFreqCount_get()I
 
     move-result v0
 
@@ -2970,14 +3346,34 @@
     return v0
 .end method
 
-.method public static getKTonemapMaxValue()I
+.method public static getKTonemappedYuvPrecision()I
     .locals 1
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kTonemapMaxValue_get()I
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kTonemappedYuvPrecision_get()I
 
     move-result v0
 
     return v0
+.end method
+
+.method public static getKTonemappedYuvWhiteLevel()I
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kTonemappedYuvWhiteLevel_get()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getKUnusedLoggingMetadataFilename()Ljava/lang/String;
+    .locals 1
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kUnusedLoggingMetadataFilename_get()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public static new_uint8_array(I)Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;
@@ -3062,6 +3458,46 @@
     invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/SWIGTYPE_p_p_unsigned_char;-><init>(JZ)V
 
     goto :goto_0
+.end method
+
+.method public static setKMeteringBurstFrameMetadataFilename(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->kMeteringBurstFrameMetadataFilename_set(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static setKMeteringBurstSpecFilename(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->kMeteringBurstSpecFilename_set(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static setKPayloadBurstFrameMetadataFilename(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->kPayloadBurstFrameMetadataFilename_set(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static setKPayloadBurstSpecFilename(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->kPayloadBurstSpecFilename_set(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static setKUnusedLoggingMetadataFilename(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->kUnusedLoggingMetadataFilename_set(Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method public static uint8_array_getitem(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;I)S

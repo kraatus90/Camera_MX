@@ -1,50 +1,64 @@
-.class final Livw;
+.class public Livw;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Livx;
+
+
+# instance fields
+.field private a:Liwy;
+
+.field private volatile b:Z
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>(Liwy;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Livw;->b:Z
+
+    iput-object p1, p0, Livw;->a:Liwy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 5
+.method public final a()V
+    .locals 0
 
-    new-instance v2, Liqk;
+    return-void
+.end method
 
-    const-string v3, "AllSmiles"
+.method public final a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    .locals 1
 
-    const-class v0, Ljee;
+    iget-boolean v0, p0, Livw;->b:Z
 
-    const-string v1, "default"
+    iget-object v0, p0, Livw;->a:Liwy;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Liwy;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+
+    return-void
+.end method
+
+.method public final b()Lkeh;
+    .locals 1
+
+    iget-object v0, p0, Livw;->a:Liwy;
+
+    invoke-interface {v0}, Liwy;->close()V
+
+    const-class v0, Livw;
+
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
     move-result-object v0
 
-    check-cast v0, Ljee;
-
-    const-class v1, Ljava/nio/ByteBuffer;
-
-    const-string v4, "landmark_extrapolator_models"
-
-    invoke-virtual {p1, v1, v4}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/nio/ByteBuffer;
-
-    invoke-direct {v2, v3, v0, v1}, Liqk;-><init>(Ljava/lang/String;Ljee;Ljava/nio/ByteBuffer;)V
-
-    return-object v2
+    return-object v0
 .end method

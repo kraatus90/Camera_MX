@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lipf;
+.implements Liyi;
 
 
 # annotations
@@ -21,9 +21,9 @@
 # instance fields
 .field public mFeatureTable:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-.field public mFrameFilter:Ljdb;
+.field public mFrameFilter:Ljmn;
 
-.field public mFrameScorer:Ljan;
+.field public mFrameScorer:Ljjz;
 
 .field public mIsEncoderInitialized:Z
 
@@ -52,7 +52,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Ljej;->c()Ljava/lang/String;
+    invoke-static {}, Ljnv;->c()Ljava/lang/String;
 
     move-result-object v2
 
@@ -110,11 +110,11 @@
 
     invoke-direct {p0, p1, p2}, Lcom/google/android/libraries/smartburst/filterfw/Filter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p3, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mOutputFile:Ljava/io/File;
 
-    invoke-static {}, Liui;->a()Z
+    invoke-static {}, Ljhn;->a()Z
 
     move-result v0
 
@@ -148,17 +148,17 @@
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljdb;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljmn;
 
-    iget-wide v0, v0, Ljdb;->b:J
+    iget-wide v0, v0, Ljmn;->b:J
 
     :goto_0
     return-wide v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljdb;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljmn;
 
-    iget-wide v0, v0, Ljdb;->a:J
+    iget-wide v0, v0, Ljmn;->a:J
 
     goto :goto_0
 .end method
@@ -279,23 +279,23 @@
     throw v0
 
     :cond_0
-    new-instance v0, Ljau;
+    new-instance v0, Ljkg;
 
     iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFeatureTable:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    sget-object v2, Ljfs;->d:Ljfs;
+    sget-object v2, Ljpe;->d:Ljpe;
 
-    invoke-direct {v0, v1, v2}, Ljau;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljfs;)V
+    invoke-direct {v0, v1, v2}, Ljkg;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljpe;)V
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameScorer:Ljan;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameScorer:Ljjz;
 
-    new-instance v0, Ljdb;
+    new-instance v0, Ljmn;
 
-    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameScorer:Ljan;
+    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameScorer:Ljjz;
 
-    invoke-direct {v0, v1}, Ljdb;-><init>(Ljan;)V
+    invoke-direct {v0, v1}, Ljmn;-><init>(Ljjz;)V
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljdb;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljmn;
 
     return-void
 .end method
@@ -323,9 +323,9 @@
 
     move-result-wide v2
 
-    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljdb;
+    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mFrameFilter:Ljmn;
 
-    invoke-virtual {v1, v2, v3}, Ljdb;->a(J)Z
+    invoke-virtual {v1, v2, v3}, Ljmn;->a(J)Z
 
     move-result v1
 
@@ -397,7 +397,7 @@
 
     new-instance v1, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    sget-object v4, Ljfs;->v:Ljfs;
+    sget-object v4, Ljpe;->v:Ljpe;
 
     iget-wide v6, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/EncodeFrameFilter;->mPresentationTimeNs:J
 
@@ -407,7 +407,7 @@
 
     div-float/2addr v5, v6
 
-    invoke-direct {v1, v4, v5}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;F)V
+    invoke-direct {v1, v4, v5}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;F)V
 
     invoke-interface {v0, v2, v3, v1}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->setFeatureValue(JLcom/google/android/libraries/smartburst/utils/Feature;)Z
 

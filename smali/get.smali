@@ -1,77 +1,47 @@
 .class final Lget;
-.super Lggu;
+.super Landroid/view/View;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lges;
-
-
 # direct methods
-.method constructor <init>(Lges;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lgev;)V
+    .locals 1
 
-    iput-object p1, p0, Lget;->a:Lges;
+    invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0}, Lggu;-><init>()V
+    const/16 v0, 0x8
+
+    invoke-virtual {p0, v0}, Lget;->setVisibility(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liic;)V
-    .locals 6
+.method final a()Lkeh;
+    .locals 3
 
-    iget-object v0, p0, Lget;->a:Lges;
+    new-instance v0, Lket;
 
-    iget-object v1, v0, Lges;->a:Ljava/lang/Object;
+    invoke-direct {v0}, Lket;-><init>()V
 
-    monitor-enter v1
+    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
-    :try_start_0
-    iget-object v0, p0, Lget;->a:Lges;
+    move-result-object v1
 
-    iget-boolean v0, v0, Lges;->b:Z
+    new-instance v2, Lgeu;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v2, p0, v0}, Lgeu;-><init>(Lget;Lket;)V
 
-    iget-object v0, p0, Lget;->a:Lges;
+    invoke-virtual {v1, v2}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
-    iget-wide v2, v0, Lges;->c:J
+    return-object v0
+.end method
 
-    invoke-interface {p1}, Liic;->d()J
+.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    move-result-wide v4
+    const/4 v0, 0x1
 
-    cmp-long v0, v2, v4
-
-    if-lez v0, :cond_1
-
-    :cond_0
-    monitor-exit v1
-
-    :goto_0
-    return-void
-
-    :cond_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Lget;->a:Lges;
-
-    invoke-virtual {v0, p1}, Lges;->a(Liic;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return v0
 .end method

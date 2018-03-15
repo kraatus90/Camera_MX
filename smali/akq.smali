@@ -1,192 +1,447 @@
-.class final Lakq;
+.class public final Lakq;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Laet;
-
 
 # static fields
-.field private static a:[Ljava/lang/String;
+.field private static final a:Lakt;
+
+.field private static final b:Laki;
 
 
 # instance fields
-.field private b:Landroid/content/Context;
+.field private final c:Ljava/util/List;
 
-.field private c:Landroid/net/Uri;
+.field private final d:Ljava/util/Set;
+
+.field private final e:Lgw;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
-    const/4 v0, 0x1
+    new-instance v0, Lakt;
 
-    new-array v0, v0, [Ljava/lang/String;
+    invoke-direct {v0}, Lakt;-><init>()V
 
-    const/4 v1, 0x0
+    sput-object v0, Lakq;->a:Lakt;
 
-    const-string v2, "_data"
+    new-instance v0, Lakr;
 
-    aput-object v2, v0, v1
+    invoke-direct {v0}, Lakr;-><init>()V
 
-    sput-object v0, Lakq;->a:[Ljava/lang/String;
+    sput-object v0, Lakq;->b:Laki;
 
     return-void
 .end method
 
-.method constructor <init>(Landroid/content/Context;Landroid/net/Uri;)V
-    .locals 0
+.method public constructor <init>(Lgw;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lakq;-><init>(Lgw;B)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Lgw;B)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lakq;->b:Landroid/content/Context;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lakq;->c:Landroid/net/Uri;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lakq;->c:Ljava/util/List;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Lakq;->d:Ljava/util/Set;
+
+    iput-object p1, p0, Lakq;->e:Lgw;
 
     return-void
+.end method
+
+.method private final a(Laks;)Laki;
+    .locals 2
+
+    iget-object v0, p1, Laks;->b:Lakk;
+
+    invoke-interface {v0, p0}, Lakk;->a(Lakq;)Laki;
+
+    move-result-object v0
+
+    const-string v1, "Argument must not be null"
+
+    invoke-static {v0, v1}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laki;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Ladd;Laeu;)V
-    .locals 6
+.method public final declared-synchronized a(Ljava/lang/Class;Ljava/lang/Class;)Laki;
+    .locals 7
 
     const/4 v3, 0x0
 
-    iget-object v0, p0, Lakq;->b:Landroid/content/Context;
+    const/4 v2, 0x1
 
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    monitor-enter p0
+
+    :try_start_0
+    new-instance v5, Ljava/util/ArrayList;
+
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v0, p0, Lakq;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    move v4, v3
+
+    :cond_0
+    :goto_0
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lakq;->c:Landroid/net/Uri;
+    check-cast v0, Laks;
 
-    sget-object v2, Lakq;->a:[Ljava/lang/String;
+    iget-object v1, p0, Lakq;->d:Ljava/util/Set;
 
-    move-object v4, v3
+    invoke-interface {v1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-object v5, v3
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v1
+    move-result v1
 
     if-eqz v1, :cond_1
 
-    :try_start_0
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+    move v4, v2
 
-    move-result v0
+    goto :goto_0
 
-    if-eqz v0, :cond_0
+    :cond_1
+    invoke-virtual {v0, p1}, Laks;->a(Ljava/lang/Class;)Z
 
-    const-string v0, "_data"
+    move-result v1
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+    if-eqz v1, :cond_2
 
-    move-result v0
+    iget-object v1, v0, Laks;->a:Ljava/lang/Class;
 
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    move v1, v2
+
+    :goto_1
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lakq;->d:Ljava/util/Set;
+
+    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    invoke-direct {p0, v0}, Lakq;->a(Laks;)Laki;
+
+    move-result-object v1
+
+    invoke-interface {v5, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lakq;->d:Ljava/util/Set;
+
+    invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
     :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    iget-object v1, p0, Lakq;->d:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->clear()V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_2
+    move v1, v3
+
+    goto :goto_1
+
+    :cond_3
+    :try_start_2
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-le v0, v2, :cond_4
+
+    iget-object v1, p0, Lakq;->e:Lgw;
+
+    new-instance v0, Lako;
+
+    invoke-direct {v0, v5, v1}, Lako;-><init>(Ljava/util/List;Lgw;)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :goto_2
+    monitor-exit p0
+
+    return-object v0
+
+    :cond_4
+    :try_start_3
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ne v0, v2, :cond_5
+
+    const/4 v0, 0x0
+
+    invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laki;
+
+    goto :goto_2
+
+    :cond_5
+    if-eqz v4, :cond_6
+
+    sget-object v0, Lakq;->b:Laki;
+
+    goto :goto_2
+
+    :cond_6
+    new-instance v0, Lacp;
+
+    invoke-direct {v0, p1, p2}, Lacp;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
+
+    throw v0
+    :try_end_3
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+.end method
+
+.method final declared-synchronized a(Ljava/lang/Class;)Ljava/util/List;
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v0, p0, Lakq;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laks;
+
+    iget-object v3, p0, Lakq;->d:Ljava/util/Set;
+
+    invoke-interface {v3, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    invoke-virtual {v0, p1}, Laks;->a(Ljava/lang/Class;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, p0, Lakq;->d:Ljava/util/Set;
+
+    invoke-interface {v3, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    invoke-direct {p0, v0}, Lakq;->a(Laks;)Laki;
 
     move-result-object v3
 
-    :cond_0
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v3, p0, Lakq;->d:Ljava/util/Set;
+
+    invoke-interface {v3, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    iget-object v1, p0, Lakq;->d:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->clear()V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 
     :cond_1
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    monitor-exit p0
 
-    move-result v0
+    return-object v1
+.end method
 
-    if-eqz v0, :cond_2
+.method final declared-synchronized a(Ljava/lang/Class;Ljava/lang/Class;Lakk;)V
+    .locals 3
 
-    new-instance v0, Ljava/io/FileNotFoundException;
+    monitor-enter p0
 
-    iget-object v1, p0, Lakq;->c:Landroid/net/Uri;
+    :try_start_0
+    new-instance v0, Laks;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v0, p1, p2, p3}, Laks;-><init>(Ljava/lang/Class;Ljava/lang/Class;Lakk;)V
 
-    move-result-object v1
+    iget-object v1, p0, Lakq;->c:Ljava/util/List;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v2, p0, Lakq;->c:Ljava/util/List;
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    add-int/lit8 v2, v2, 0x1e
+    invoke-interface {v1, v2, v0}, Ljava/util/List;->add(ILjava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    monitor-exit p0
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Failed to find file path for: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p2, v0}, Laeu;->a(Ljava/lang/Exception;)V
-
-    :goto_0
     return-void
 
     :catchall_0
     move-exception v0
 
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method final declared-synchronized b(Ljava/lang/Class;)Ljava/util/List;
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v0, p0, Lakq;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Laks;
+
+    iget-object v3, v0, Laks;->a:Ljava/lang/Class;
+
+    invoke-interface {v1, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    invoke-virtual {v0, p1}, Laks;->a(Ljava/lang/Class;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v0, v0, Laks;->a:Ljava/lang/Class;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
 
     throw v0
 
-    :cond_2
-    new-instance v0, Ljava/io/File;
+    :cond_1
+    monitor-exit p0
 
-    invoke-direct {v0, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p2, v0}, Laeu;->a(Ljava/lang/Object;)V
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c()Laed;
-    .locals 1
-
-    sget-object v0, Laed;->a:Laed;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/Class;
-    .locals 1
-
-    const-class v0, Ljava/io/File;
-
-    return-object v0
+    return-object v1
 .end method

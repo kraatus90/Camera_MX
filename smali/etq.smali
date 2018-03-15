@@ -2,164 +2,68 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lgvz;
-
-
-# static fields
-.field private static a:Ljava/lang/String;
-
 
 # instance fields
-.field private b:Lgvz;
+.field public a:I
+
+.field public b:J
+
+.field public c:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
-    const-string v0, "OvrDetachableFolder"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Letq;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgvz;)V
-    .locals 0
+    const-wide/16 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Letq;->b:Lgvz;
+    iput-wide v0, p0, Letq;->c:J
+
+    iput-wide v0, p0, Letq;->b:J
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Letq;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Lgvz;
-    .locals 1
-
-    iget-object v0, p0, Letq;->b:Lgvz;
-
-    invoke-interface {v0, p1}, Lgvz;->a(Ljava/lang/String;)Lgvz;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a()Ljava/io/File;
-    .locals 1
-
-    iget-object v0, p0, Letq;->b:Lgvz;
-
-    invoke-interface {v0}, Lgvz;->a()Ljava/io/File;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Z
+.method public final a()Letq;
     .locals 4
 
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Letq;->b:Lgvz;
+    monitor-enter p0
 
-    invoke-interface {v0}, Lgvz;->b()Z
+    :try_start_0
+    new-instance v0, Letq;
 
-    move-result v0
+    invoke-direct {v0}, Letq;-><init>()V
 
-    if-eqz v0, :cond_1
+    iget v1, p0, Letq;->a:I
 
-    const/4 v0, 0x1
+    iput v1, v0, Letq;->a:I
 
-    return v0
+    iget-wide v2, p0, Letq;->b:J
 
-    :cond_1
-    new-instance v0, Ljava/io/File;
+    iput-wide v2, v0, Letq;->b:J
 
-    iget-object v1, p0, Letq;->b:Lgvz;
+    iget-wide v2, p0, Letq;->c:J
 
-    invoke-interface {v1}, Lgvz;->c()Ljava/lang/String;
+    iput-wide v2, v0, Letq;->c:J
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/io/File;->isFile()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Ljava/io/File;->delete()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget-object v1, Letq;->a:Ljava/lang/String;
-
-    const-string v2, "Overwriting existing file: "
-
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-static {v1, v0}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_1
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Letq;->b:Lgvz;
-
-    invoke-interface {v0}, Lgvz;->c()Ljava/lang/String;
-
-    move-result-object v0
+    monitor-exit p0
 
     return-object v0
-.end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, p0, Letq;->b:Lgvz;
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method

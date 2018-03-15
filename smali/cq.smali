@@ -1,45 +1,35 @@
 .class final Lcq;
-.super Lcn;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lgm;
+.field public a:Landroid/view/View;
 
-.field private synthetic b:Lcp;
+.field public b:Ljava/lang/String;
+
+.field public c:Lda;
+
+.field public d:Ldy;
+
+.field public e:Lcn;
 
 
 # direct methods
-.method constructor <init>(Lcp;Lgm;)V
+.method constructor <init>(Landroid/view/View;Ljava/lang/String;Lcn;Ldy;Lda;)V
     .locals 0
 
-    iput-object p1, p0, Lcq;->b:Lcp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcq;->a:Lgm;
+    iput-object p1, p0, Lcq;->a:Landroid/view/View;
 
-    invoke-direct {p0}, Lcn;-><init>()V
+    iput-object p2, p0, Lcq;->b:Ljava/lang/String;
 
-    return-void
-.end method
+    iput-object p5, p0, Lcq;->c:Lda;
 
+    iput-object p4, p0, Lcq;->d:Ldy;
 
-# virtual methods
-.method public final a(Lch;)V
-    .locals 2
-
-    iget-object v0, p0, Lcq;->a:Lgm;
-
-    iget-object v1, p0, Lcq;->b:Lcp;
-
-    iget-object v1, v1, Lcp;->a:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v1}, Lgm;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    iput-object p3, p0, Lcq;->e:Lcn;
 
     return-void
 .end method

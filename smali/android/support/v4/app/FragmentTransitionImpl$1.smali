@@ -71,7 +71,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lid;->a(Landroid/view/View;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lhz;->a(Landroid/view/View;Ljava/lang/String;)V
 
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionImpl$1;->val$sharedElementsOut:Ljava/util/ArrayList;
 
@@ -89,7 +89,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lid;->a(Landroid/view/View;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lhz;->a(Landroid/view/View;Ljava/lang/String;)V
 
     add-int/lit8 v0, v2, 0x1
 

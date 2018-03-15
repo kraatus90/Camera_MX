@@ -1,68 +1,193 @@
-.class final Lhpe;
-.super Landroid/os/AsyncTask;
+.class public final Lhpe;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lhpy;
 
 
-# instance fields
-.field public final synthetic a:Lhkl;
-
-.field public final synthetic b:Lhpg;
+# static fields
+.field public static final a:Lcom/google/android/gms/common/api/Status;
 
 
 # direct methods
-.method constructor <init>(Lhkl;Lhpg;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Status;-><init>(I)V
+
+    sput-object v0, Lhpe;->a:Lcom/google/android/gms/common/api/Status;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lhpe;->a:Lhkl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lhpe;->b:Lhpg;
+    return-void
+.end method
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+.method static synthetic a(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Lhmr;Lhmr;Ljava/io/File;J)V
+    .locals 7
+
+    if-eqz p2, :cond_0
+
+    new-instance v0, Lhpw;
+
+    invoke-direct {v0, p0, p1, p5, p6}, Lhpw;-><init>(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;J)V
+
+    invoke-static {v0}, Lhpe;->a(Ljava/lang/Runnable;)V
+
+    :cond_0
+    if-eqz p3, :cond_1
+
+    new-instance v0, Lhps;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p4
+
+    move-wide v4, p5
+
+    invoke-direct/range {v0 .. v5}, Lhps;-><init>(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Ljava/io/File;J)V
+
+    invoke-static {v0}, Lhpe;->a(Ljava/lang/Runnable;)V
+
+    new-instance v0, Lhpu;
+
+    invoke-direct {v0, p0, p1, p5, p6}, Lhpu;-><init>(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;J)V
+
+    invoke-static {v0}, Lhpe;->a(Ljava/lang/Runnable;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method private static a(Ljava/lang/Runnable;)V
+    .locals 2
+
+    new-instance v0, Ljava/lang/Thread;
+
+    invoke-direct {v0, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setPriority(I)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final a(Lhlm;Landroid/app/Activity;Landroid/content/Intent;Ljava/util/List;Ljava/io/File;)Lhlp;
+    .locals 11
 
-    iget-object v0, p0, Lhpe;->a:Lhkl;
+    new-instance v9, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v0}, Lhkl;->c()Lcom/google/android/gms/common/ConnectionResult;
+    invoke-direct {v9, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    new-instance v0, Lhpf;
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p3
+
+    move-object v7, p2
+
+    move-object v8, p4
+
+    move-object/from16 v10, p5
+
+    invoke-direct/range {v0 .. v10}, Lhpf;-><init>(Lhpe;Lhlm;Landroid/content/Intent;Landroid/graphics/Bitmap;Lhmr;Lhmr;Landroid/app/Activity;Ljava/util/List;Ljava/lang/ref/WeakReference;Ljava/io/File;)V
+
+    invoke-virtual {p1, v0}, Lhlm;->a(Lhsy;)Lhsy;
 
     move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    invoke-interface {v0}, Lhpg;->a()Lhkp;
-
-    move-result-object v0
-
-    new-instance v1, Lhpf;
-
-    invoke-direct {v1, p0}, Lhpf;-><init>(Lhpe;)V
-
-    invoke-virtual {v0, v1}, Lhkp;->a(Lhkt;)V
-
-    :goto_0
-    const/4 v0, 0x0
 
     return-object v0
+.end method
 
-    :cond_0
-    iget-object v0, p0, Lhpe;->b:Lhpg;
+.method public final a(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhlp;
+    .locals 8
 
-    invoke-interface {v0}, Lhpg;->b()V
+    new-instance v1, Lhph;
 
-    iget-object v0, p0, Lhpe;->a:Lhkl;
+    move-object v2, p1
 
-    invoke-virtual {v0}, Lhkl;->d()V
+    move-object v3, p3
 
-    goto :goto_0
+    move-wide v4, p4
+
+    move-object v6, p2
+
+    invoke-direct/range {v1 .. v6}, Lhph;-><init>(Lhlm;Landroid/os/Bundle;JLcom/google/android/gms/googlehelp/GoogleHelp;)V
+
+    invoke-virtual {p1, v1}, Lhlm;->a(Lhsy;)Lhsy;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Lcom/google/android/gms/feedback/FeedbackOptions;Landroid/os/Bundle;J)Lhlp;
+    .locals 7
+
+    new-instance v0, Lhpl;
+
+    move-object v1, p1
+
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move-wide v4, p5
+
+    move-object v6, p2
+
+    invoke-direct/range {v0 .. v6}, Lhpl;-><init>(Lhlm;Lcom/google/android/gms/feedback/FeedbackOptions;Landroid/os/Bundle;JLcom/google/android/gms/googlehelp/GoogleHelp;)V
+
+    invoke-virtual {p1, v0}, Lhlm;->a(Lhsy;)Lhsy;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhlp;
+    .locals 8
+
+    new-instance v1, Lhpj;
+
+    move-object v2, p1
+
+    move-object v3, p3
+
+    move-wide v4, p4
+
+    move-object v6, p2
+
+    invoke-direct/range {v1 .. v6}, Lhpj;-><init>(Lhlm;Landroid/os/Bundle;JLcom/google/android/gms/googlehelp/GoogleHelp;)V
+
+    invoke-virtual {p1, v1}, Lhlm;->a(Lhsy;)Lhsy;
+
+    move-result-object v0
+
+    return-object v0
 .end method

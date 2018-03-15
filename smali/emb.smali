@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract a(Lgrw;Leon;Ljava/lang/String;JLandroid/location/Location;Lavl;)Leou;
+.method public abstract c()V
 .end method

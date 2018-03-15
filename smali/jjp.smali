@@ -1,13 +1,8 @@
-.class abstract Ljjp;
-.super Ljin;
+.class public interface abstract Ljjp;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>(Ljava/util/Map;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ljin;-><init>(Ljava/util/Map;)V
-
-    return-void
+# virtual methods
+.method public abstract a(Ljava/lang/String;)Ljjz;
 .end method

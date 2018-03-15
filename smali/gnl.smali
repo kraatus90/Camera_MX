@@ -1,72 +1,65 @@
-.class public final Lgnl;
+.class final Lgnl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljqv;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Lgnj;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lgnj;)V
     .locals 0
 
+    iput-object p1, p0, Lgnl;->a:Lgnj;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgnl;->a:Ljxn;
-
-    iput-object p2, p0, Lgnl;->b:Ljxn;
-
-    iput-object p3, p0, Lgnl;->c:Ljxn;
 
     return-void
 .end method
 
+.method private final a(Lacy;)Ljava/lang/Void;
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lgnl;->a:Lgnj;
+
+    iget-object v0, v0, Lgnj;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lacy;->c(Ljava/lang/String;)Z
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v0, Lgnj;->a:Ljava/lang/String;
+
+    const-string v1, "Purge cache failed."
+
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lgnl;->a:Ljxn;
+    check-cast p1, Lacy;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfrm;
-
-    iget-object v1, p0, Lgnl;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhzt;
-
-    iget-object v2, p0, Lgnl;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgnj;
-
-    invoke-static {v1, v0, v2}, Lfsi;->a(Lhzt;Lfrm;Lfsf;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lgnl;->a(Lacy;)Ljava/lang/Void;
 
     move-result-object v0
-
-    check-cast v0, Lgni;
 
     return-object v0
 .end method

@@ -1,11 +1,42 @@
-.class public interface abstract Lbwu;
+.class final synthetic Lbwu;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ligs;
+
+
+# instance fields
+.field private final a:Laue;
+
+
+# direct methods
+.method constructor <init>(Laue;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbwu;->a:Laue;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lbwt;)Ljuw;
-.end method
+.method public final a(Ljava/lang/Object;)V
+    .locals 2
 
-.method public abstract a(Lbwt;Z)Ljuw;
+    iget-object v0, p0, Lbwu;->a:Laue;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Laue;->d()V
+
+    :cond_0
+    return-void
 .end method

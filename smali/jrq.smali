@@ -1,154 +1,281 @@
 .class public final Ljrq;
-.super Ljwj;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field public a:J
+# static fields
+.field private static final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljwj;-><init>()V
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Ljrq;->a:J
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljrq;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljrq;->cachedSize:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final computeSerializedSize()I
-    .locals 6
-
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
-
-    move-result v0
-
-    iget-wide v2, p0, Ljrq;->a:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget-wide v2, p0, Ljrq;->a:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    return v0
-.end method
-
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 6
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    const/4 v2, 0x0
-
-    const-wide/16 v0, 0x0
-
-    :goto_1
-    const/16 v3, 0x40
-
-    if-ge v2, v3, :cond_2
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v3
-
-    and-int/lit8 v4, v3, 0x7f
-
-    int-to-long v4, v4
-
-    shl-long/2addr v4, v2
-
-    or-long/2addr v0, v4
-
-    and-int/lit16 v3, v3, 0x80
-
-    if-nez v3, :cond_1
-
-    iput-wide v0, p0, Ljrq;->a:J
-
-    goto :goto_0
-
-    :cond_1
-    add-int/lit8 v2, v2, 0x7
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Ljrq;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    throw v0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-    .end sparse-switch
-.end method
-
-.method public final writeTo(Ljwi;)V
-    .locals 4
-
-    iget-wide v0, p0, Ljrq;->a:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
+    sput-object v0, Ljrq;->a:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    const-string v0, "getStackTraceElement"
 
-    iget-wide v2, p0, Ljrq;->a:J
+    const/4 v1, 0x2
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    new-array v1, v1, [Ljava/lang/Class;
+
+    const/4 v2, 0x0
+
+    const-class v3, Ljava/lang/Throwable;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v3, v1, v2
+
+    invoke-static {v0, v1}, Ljrq;->a(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     :cond_0
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    sget-object v0, Ljrq;->a:Ljava/lang/Object;
 
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Ljrq;->b()Ljava/lang/reflect/Method;
+
+    :cond_1
     return-void
+.end method
+
+.method private static a()Ljava/lang/Object;
+    .locals 4
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    const-string v1, "sun.misc.SharedSecrets"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "getJavaLangAccess"
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Class;
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    throw v0
+
+    :catch_1
+    move-exception v1
+
+    goto :goto_0
+.end method
+
+.method private static varargs a(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .locals 4
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    const-string v1, "sun.misc.JavaLangAccess"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0, p1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    :try_end_0
+    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    throw v0
+
+    :catch_1
+    move-exception v1
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/Throwable;)V
+    .locals 1
+
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    instance-of v0, p0, Ljava/lang/RuntimeException;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/lang/RuntimeException;
+
+    throw p0
+
+    :cond_0
+    instance-of v0, p0, Ljava/lang/Error;
+
+    if-eqz v0, :cond_1
+
+    check-cast p0, Ljava/lang/Error;
+
+    throw p0
+
+    :cond_1
+    return-void
+.end method
+
+.method public static a(Ljava/lang/Throwable;Ljava/lang/Class;)V
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1, p0}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Throwable;
+
+    throw v0
+
+    :cond_0
+    if-eqz p0, :cond_1
+
+    invoke-static {p0}, Ljrq;->a(Ljava/lang/Throwable;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public static b(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    invoke-static {p0}, Ljrq;->a(Ljava/lang/Throwable;)V
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method private static b()Ljava/lang/reflect/Method;
+    .locals 6
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    const-string v1, "getStackTraceDepth"
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Class;
+
+    const/4 v3, 0x0
+
+    const-class v4, Ljava/lang/Throwable;
+
+    aput-object v4, v2, v3
+
+    invoke-static {v1, v2}, Ljrq;->a(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-static {}, Ljrq;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    new-instance v5, Ljava/lang/Throwable;
+
+    invoke-direct {v5}, Ljava/lang/Throwable;-><init>()V
+
+    aput-object v5, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v1
+
+    goto :goto_0
+
+    :catch_2
+    move-exception v1
+
+    goto :goto_0
 .end method

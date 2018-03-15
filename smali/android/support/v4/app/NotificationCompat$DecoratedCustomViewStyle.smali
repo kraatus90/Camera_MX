@@ -21,11 +21,11 @@
 
     const/4 v2, 0x1
 
-    const v6, 0x7f0e0174
+    const v6, 0x7f0e0159
 
     const/4 v1, 0x0
 
-    const v0, 0x7f040054
+    const v0, 0x7f04004e
 
     invoke-virtual {p0, v2, v0, v1}, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->applyStandardTemplate(ZIZ)Landroid/widget/RemoteViews;
 
@@ -95,7 +95,7 @@
     :goto_2
     invoke-virtual {v4, v6, v0}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const v1, 0x7f0e016b
+    const v1, 0x7f0e0150
 
     invoke-virtual {v4, v1, v0}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
@@ -117,11 +117,11 @@
 .method private generateActionButton(Landroid/support/v4/app/NotificationCompat$Action;)Landroid/widget/RemoteViews;
     .locals 7
 
-    const v6, 0x7f0e0163
+    const v6, 0x7f0e0148
 
     iget-object v0, p1, Landroid/support/v4/app/NotificationCompat$Action;->actionIntent:Landroid/app/PendingIntent;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
@@ -136,14 +136,14 @@
 
     move-result-object v3
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    const v1, 0x7f04004c
+    const v1, 0x7f040046
 
     :goto_1
     invoke-direct {v2, v3, v1}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    const v1, 0x7f0e0164
+    const v1, 0x7f0e0149
 
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompat$Action;->getIcon()I
 
@@ -157,7 +157,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0c008d
+    const v5, 0x7f0c008a
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -169,7 +169,7 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
-    const v1, 0x7f0e0165
+    const v1, 0x7f0e014a
 
     iget-object v3, p1, Landroid/support/v4/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
 
@@ -182,26 +182,19 @@
     invoke-virtual {v2, v6, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
     :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0xf
-
-    if-lt v0, v1, :cond_1
-
     iget-object v0, p1, Landroid/support/v4/app/NotificationCompat$Action;->title:Ljava/lang/CharSequence;
 
     invoke-virtual {v2, v6, v0}, Landroid/widget/RemoteViews;->setContentDescription(ILjava/lang/CharSequence;)V
 
-    :cond_1
     return-object v2
 
-    :cond_2
+    :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_3
-    const v1, 0x7f04004b
+    :cond_2
+    const v1, 0x7f040045
 
     goto :goto_1
 .end method
@@ -210,12 +203,6 @@
 # virtual methods
 .method public apply(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;)V
     .locals 2
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x18
-
-    if-lt v0, v1, :cond_0
 
     invoke-interface {p1}, Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
 
@@ -227,137 +214,29 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setStyle(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;
 
-    :cond_0
     return-void
 .end method
 
 .method public makeBigContentView(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .locals 3
+    .locals 1
 
     const/4 v0, 0x0
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x18
-
-    if-lt v1, v2, :cond_1
-
-    :cond_0
-    :goto_0
     return-object v0
-
-    :cond_1
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$Builder;->getBigContentView()Landroid/widget/RemoteViews;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    :goto_1
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v1, v0}, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->createRemoteViews(Landroid/widget/RemoteViews;Z)Landroid/widget/RemoteViews;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$Builder;->getContentView()Landroid/widget/RemoteViews;
-
-    move-result-object v1
-
-    goto :goto_1
 .end method
 
 .method public makeContentView(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .locals 3
+    .locals 1
 
     const/4 v0, 0x0
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x18
-
-    if-lt v1, v2, :cond_1
-
-    :cond_0
-    :goto_0
     return-object v0
-
-    :cond_1
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$Builder;->getContentView()Landroid/widget/RemoteViews;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    invoke-virtual {v0}, Landroid/support/v4/app/NotificationCompat$Builder;->getContentView()Landroid/widget/RemoteViews;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->createRemoteViews(Landroid/widget/RemoteViews;Z)Landroid/widget/RemoteViews;
-
-    move-result-object v0
-
-    goto :goto_0
 .end method
 
 .method public makeHeadsUpContentView(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;)Landroid/widget/RemoteViews;
-    .locals 3
+    .locals 1
 
     const/4 v0, 0x0
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x18
-
-    if-lt v1, v2, :cond_1
-
-    :cond_0
-    :goto_0
     return-object v0
-
-    :cond_1
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$Builder;->getHeadsUpContentView()Landroid/widget/RemoteViews;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_2
-
-    move-object v1, v2
-
-    :goto_1
-    if-eqz v2, :cond_0
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v1, v0}, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->createRemoteViews(Landroid/widget/RemoteViews;Z)Landroid/widget/RemoteViews;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$DecoratedCustomViewStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
-
-    invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$Builder;->getContentView()Landroid/widget/RemoteViews;
-
-    move-result-object v1
-
-    goto :goto_1
 .end method

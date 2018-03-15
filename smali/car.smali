@@ -1,63 +1,46 @@
-.class final synthetic Lcar;
+.class public final Lcar;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Lcap;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lcaq;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcaq;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcar;->a:Lcaq;
+    iput-object p1, p0, Lcar;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcdc;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lcar;->a:Lcaq;
+    iget-object v0, p0, Lcar;->a:Lkgv;
 
-    iget-object v1, v0, Lcaq;->g:Lilv;
-
-    iget-object v2, v0, Lcaq;->f:Lcdn;
-
-    invoke-interface {v2, p1}, Lcdn;->a(Lcdc;)Lilf;
-
-    move-result-object v2
-
-    invoke-virtual {v0}, Lcaq;->g()V
-
-    invoke-virtual {v0}, Lcaq;->dismiss()V
-
-    invoke-static {v2, v1}, Licy;->a(Lilf;Lilf;)Lilf;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Lhzt;
+    check-cast v0, Lcal;
 
-    invoke-direct {v1}, Lhzt;-><init>()V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    new-instance v2, Lcay;
-
-    invoke-direct {v2}, Lcay;-><init>()V
-
-    invoke-interface {v0, v1, v2}, Lilf;->a(Ljava/util/concurrent/Executor;Likg;)Lilf;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v1, Likl;->a:Likl;
+    check-cast v0, Lbab;
 
-    invoke-interface {v0, v1}, Lilf;->a(Likf;)V
-
-    return-void
+    return-object v0
 .end method

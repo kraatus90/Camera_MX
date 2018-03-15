@@ -1,67 +1,88 @@
 .class final Lcrb;
-.super Ljava/lang/Object;
+.super Lcom/google/googlex/gcam/SimpleCallback;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcqy;
+.field private final synthetic a:Lcqv;
 
 
 # direct methods
-.method constructor <init>(Lcqy;)V
+.method constructor <init>(Lcqv;)V
     .locals 0
 
-    iput-object p1, p0, Lcrb;->a:Lcqy;
+    iput-object p1, p0, Lcrb;->a:Lcqv;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/googlex/gcam/SimpleCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final Run()V
+    .locals 6
 
-    iget-object v0, p0, Lcrb;->a:Lcqy;
+    iget-object v0, p0, Lcrb;->a:Lcqv;
 
-    iget-boolean v0, v0, Lcqy;->h:Z
+    iget-object v1, v0, Lcqv;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lcrb;->a:Lcqv;
+
+    iget-object v0, v0, Lcqv;->d:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
+
+    move-result v0
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcrb;->a:Lcqy;
+    sget-object v0, Lcqv;->a:Ljava/lang/String;
 
-    const/4 v1, 0x1
+    const-string v2, "HDR+ is idle, but we have %d shots in flight"
 
-    iput-boolean v1, v0, Lcqy;->h:Z
+    const/4 v3, 0x1
 
-    iget-object v0, p0, Lcrb;->a:Lcqy;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    iget-object v0, v0, Lcqy;->f:Lich;
+    const/4 v4, 0x0
 
-    invoke-interface {v0}, Lich;->close()V
+    iget-object v5, p0, Lcrb;->a:Lcqv;
 
-    iget-object v0, p0, Lcrb;->a:Lcqy;
+    iget-object v5, v5, Lcqv;->d:Ljava/util/HashMap;
 
-    iget-object v0, v0, Lcqy;->g:Lich;
+    invoke-virtual {v5}, Ljava/util/HashMap;->size()I
 
-    invoke-interface {v0}, Lich;->close()V
+    move-result v5
 
-    iget-object v0, p0, Lcrb;->a:Lcqy;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v0, v0, Lcqy;->b:Liag;
+    move-result-object v5
 
-    const/4 v1, 0x0
+    aput-object v5, v3, v4
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v4, 0x0
 
-    move-result-object v1
+    invoke-static {v4, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Liag;->a(Ljava/lang/Object;)V
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
+    monitor-exit v1
+
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

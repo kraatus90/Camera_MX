@@ -4,453 +4,368 @@
 
 
 # static fields
-.field private static a:[Ljava/lang/Class;
-
-.field private static b:[I
-
-.field private static c:[Ljava/lang/String;
-
-.field private static d:Ljava/util/Map;
+.field public static a:Lng;
 
 
 # instance fields
-.field private e:[Ljava/lang/Object;
+.field private final b:Landroid/content/Context;
+
+.field private final c:Landroid/location/LocationManager;
+
+.field private final d:Lnh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-array v0, v4, [Ljava/lang/Class;
-
-    const-class v1, Landroid/content/Context;
-
-    aput-object v1, v0, v2
-
-    const-class v1, Landroid/util/AttributeSet;
-
-    aput-object v1, v0, v3
-
-    sput-object v0, Lng;->a:[Ljava/lang/Class;
-
-    new-array v0, v3, [I
-
-    const v1, 0x101026f
-
-    aput v1, v0, v2
-
-    sput-object v0, Lng;->b:[I
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const-string v1, "android.widget."
-
-    aput-object v1, v0, v2
-
-    const-string v1, "android.view."
-
-    aput-object v1, v0, v3
-
-    const-string v1, "android.webkit."
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lng;->c:[Ljava/lang/String;
-
-    new-instance v0, Lgm;
-
-    invoke-direct {v0}, Lgm;-><init>()V
-
-    sput-object v0, Lng;->d:Ljava/util/Map;
-
-    return-void
-.end method
-
-.method constructor <init>()V
+.method constructor <init>(Landroid/content/Context;Landroid/location/LocationManager;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x2
+    new-instance v0, Lnh;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    invoke-direct {v0}, Lnh;-><init>()V
 
-    iput-object v0, p0, Lng;->e:[Ljava/lang/Object;
+    iput-object v0, p0, Lng;->d:Lnh;
+
+    iput-object p1, p0, Lng;->b:Landroid/content/Context;
+
+    iput-object p2, p0, Lng;->c:Landroid/location/LocationManager;
 
     return-void
 .end method
 
-.method static a(Landroid/content/Context;Landroid/util/AttributeSet;Z)Landroid/content/Context;
-    .locals 4
+.method private final a(Ljava/lang/String;)Landroid/location/Location;
+    .locals 3
 
-    const/4 v1, 0x0
+    :try_start_0
+    iget-object v0, p0, Lng;->c:Landroid/location/LocationManager;
 
-    sget-object v0, Lnr;->cL:[I
-
-    invoke-virtual {p0, p1, v0, v1, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object v2
-
-    if-eqz p2, :cond_3
-
-    sget v0, Lnr;->cU:I
-
-    invoke-virtual {v2, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    :goto_0
-    if-nez v0, :cond_0
-
-    sget v0, Lnr;->cV:I
-
-    invoke-virtual {v2, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, p1}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const-string v1, "AppCompatViewInflater"
+    iget-object v0, p0, Lng;->c:Landroid/location/LocationManager;
 
-    const-string v3, "app:theme is now deprecated. Please move to using android:theme instead."
-
-    invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    move v1, v0
-
-    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
-
-    if-eqz v1, :cond_2
-
-    instance-of v0, p0, Loa;
-
-    if-eqz v0, :cond_1
-
-    move-object v0, p0
-
-    check-cast v0, Loa;
-
-    iget v0, v0, Loa;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    :cond_1
-    new-instance v0, Loa;
-
-    invoke-direct {v0, p0, v1}, Loa;-><init>(Landroid/content/Context;I)V
-
-    move-object p0, v0
-
-    :cond_2
-    return-object p0
-
-    :cond_3
-    move v0, v1
-
-    goto :goto_0
-.end method
-
-.method private final a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View;
-    .locals 2
-
-    sget-object v0, Lng;->d:Ljava/util/Map;
-
-    invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/reflect/Constructor;
-
-    if-nez v0, :cond_0
-
-    :try_start_0
-    invoke-virtual {p1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v1
-
-    if-eqz p3, :cond_1
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, p1}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
     :goto_0
-    invoke-virtual {v1, v0}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-class v1, Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    sget-object v1, Lng;->a:[Ljava/lang/Class;
-
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v0
-
-    sget-object v1, Lng;->d:Ljava/util/Map;
-
-    invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
-
-    iget-object v1, p0, Lng;->e:[Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_1
     return-object v0
-
-    :cond_1
-    move-object v0, p2
-
-    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    const/4 v0, 0x0
+    const-string v1, "TwilightManager"
 
-    goto :goto_1
-.end method
+    const-string v2, "Failed to get last known location"
 
-.method static a(Landroid/view/View;Landroid/util/AttributeSet;)V
-    .locals 3
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    instance-of v1, v0, Landroid/content/ContextWrapper;
-
-    if-eqz v1, :cond_0
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0xf
-
-    if-lt v1, v2, :cond_1
-
-    sget-object v1, Lid;->a:Lim;
-
-    invoke-virtual {v1, p0}, Lim;->a(Landroid/view/View;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    sget-object v1, Lng;->b:[I
-
-    invoke-virtual {v0, p1, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    new-instance v2, Lnh;
-
-    invoke-direct {v2, p0, v1}, Lnh;-><init>(Landroid/view/View;Ljava/lang/String;)V
-
-    invoke-virtual {p0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    :cond_2
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method final a(Landroid/content/Context;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
-    .locals 5
+.method final a()Z
+    .locals 20
 
-    const/4 v4, 0x1
+    move-object/from16 v0, p0
 
-    const/4 v3, 0x0
+    iget-object v15, v0, Lng;->d:Lnh;
 
-    const/4 v1, 0x0
+    move-object/from16 v0, p0
 
-    const-string v0, "view"
+    iget-object v2, v0, Lng;->d:Lnh;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-wide v2, v2, Lnh;->b:J
 
-    move-result v0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    if-eqz v0, :cond_0
+    move-result-wide v4
 
-    const-string v0, "class"
+    cmp-long v2, v2, v4
 
-    invoke-interface {p3, v1, v0}, Landroid/util/AttributeSet;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lng;->e:[Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v0, v2
-
-    iget-object v0, p0, Lng;->e:[Ljava/lang/Object;
+    if-lez v2, :cond_0
 
     const/4 v2, 0x1
 
-    aput-object p3, v0, v2
-
-    const/4 v0, -0x1
-
-    const/16 v2, 0x2e
-
-    invoke-virtual {p2, v2}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v2
-
-    if-ne v0, v2, :cond_3
-
-    move v2, v3
-
     :goto_0
-    sget-object v0, Lng;->c:[Ljava/lang/String;
+    if-eqz v2, :cond_1
 
-    array-length v0, v0
-
-    if-ge v2, v0, :cond_2
-
-    sget-object v0, Lng;->c:[Ljava/lang/String;
-
-    aget-object v0, v0, v2
-
-    invoke-direct {p0, p1, p2, v0}, Lng;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v2, p0, Lng;->e:[Ljava/lang/Object;
-
-    aput-object v1, v2, v3
-
-    iget-object v2, p0, Lng;->e:[Ljava/lang/Object;
-
-    aput-object v1, v2, v4
+    iget-boolean v2, v15, Lnh;->a:Z
 
     :goto_1
-    return-object v0
+    return v2
 
-    :cond_1
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
+    :cond_0
+    const/4 v2, 0x0
 
     goto :goto_0
 
+    :cond_1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lng;->b:Landroid/content/Context;
+
+    const-string v5, "android.permission.ACCESS_COARSE_LOCATION"
+
+    invoke-static {v4, v5}, Lei;->a(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    const-string v2, "network"
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v2}, Lng;->a(Ljava/lang/String;)Landroid/location/Location;
+
+    move-result-object v2
+
     :cond_2
-    iget-object v0, p0, Lng;->e:[Ljava/lang/Object;
+    move-object/from16 v0, p0
 
-    aput-object v1, v0, v3
+    iget-object v4, v0, Lng;->b:Landroid/content/Context;
 
-    iget-object v0, p0, Lng;->e:[Ljava/lang/Object;
+    const-string v5, "android.permission.ACCESS_FINE_LOCATION"
 
-    aput-object v1, v0, v4
+    invoke-static {v4, v5}, Lei;->a(Landroid/content/Context;Ljava/lang/String;)I
 
-    move-object v0, v1
+    move-result v4
 
-    goto :goto_1
+    if-nez v4, :cond_3
+
+    const-string v3, "gps"
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v3}, Lng;->a(Ljava/lang/String;)Landroid/location/Location;
+
+    move-result-object v3
 
     :cond_3
-    const/4 v0, 0x0
+    if-eqz v3, :cond_7
 
-    :try_start_1
-    invoke-direct {p0, p1, p2, v0}, Lng;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-eqz v2, :cond_7
 
-    move-result-object v0
+    invoke-virtual {v3}, Landroid/location/Location;->getTime()J
 
-    iget-object v2, p0, Lng;->e:[Ljava/lang/Object;
+    move-result-wide v4
 
-    aput-object v1, v2, v3
+    invoke-virtual {v2}, Landroid/location/Location;->getTime()J
 
-    iget-object v2, p0, Lng;->e:[Ljava/lang/Object;
+    move-result-wide v6
 
-    aput-object v1, v2, v4
+    cmp-long v4, v4, v6
 
-    goto :goto_1
+    if-lez v4, :cond_6
 
-    :catch_0
-    move-exception v0
+    move-object v14, v3
 
-    iget-object v0, p0, Lng;->e:[Ljava/lang/Object;
+    :goto_2
+    if-eqz v14, :cond_d
 
-    aput-object v1, v0, v3
+    move-object/from16 v0, p0
 
-    iget-object v0, p0, Lng;->e:[Ljava/lang/Object;
+    iget-object v0, v0, Lng;->d:Lnh;
 
-    aput-object v1, v0, v4
+    move-object/from16 v16, v0
 
-    move-object v0, v1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    goto :goto_1
+    move-result-wide v18
 
-    :catchall_0
-    move-exception v0
+    sget-object v2, Lnf;->a:Lnf;
 
-    iget-object v2, p0, Lng;->e:[Ljava/lang/Object;
+    if-nez v2, :cond_4
 
-    aput-object v1, v2, v3
+    new-instance v2, Lnf;
 
-    iget-object v2, p0, Lng;->e:[Ljava/lang/Object;
+    invoke-direct {v2}, Lnf;-><init>()V
 
-    aput-object v1, v2, v4
+    sput-object v2, Lnf;->a:Lnf;
 
-    throw v0
+    :cond_4
+    sget-object v3, Lnf;->a:Lnf;
+
+    const-wide/32 v4, 0x5265c00
+
+    sub-long v4, v18, v4
+
+    invoke-virtual {v14}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v6
+
+    invoke-virtual {v14}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v8
+
+    invoke-virtual/range {v3 .. v9}, Lnf;->a(JDD)V
+
+    invoke-virtual {v14}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v6
+
+    invoke-virtual {v14}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v8
+
+    move-wide/from16 v4, v18
+
+    invoke-virtual/range {v3 .. v9}, Lnf;->a(JDD)V
+
+    iget v2, v3, Lnf;->d:I
+
+    const/4 v4, 0x1
+
+    if-ne v2, v4, :cond_9
+
+    const/4 v2, 0x1
+
+    :goto_3
+    iget-wide v12, v3, Lnf;->c:J
+
+    iget-wide v10, v3, Lnf;->b:J
+
+    const-wide/32 v4, 0x5265c00
+
+    add-long v4, v4, v18
+
+    invoke-virtual {v14}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v6
+
+    invoke-virtual {v14}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v8
+
+    invoke-virtual/range {v3 .. v9}, Lnf;->a(JDD)V
+
+    iget-wide v4, v3, Lnf;->c:J
+
+    const-wide/16 v6, -0x1
+
+    cmp-long v3, v12, v6
+
+    if-eqz v3, :cond_5
+
+    const-wide/16 v6, -0x1
+
+    cmp-long v3, v10, v6
+
+    if-nez v3, :cond_a
+
+    :cond_5
+    const-wide/32 v4, 0x2932e00
+
+    add-long v4, v4, v18
+
+    :goto_4
+    move-object/from16 v0, v16
+
+    iput-boolean v2, v0, Lnh;->a:Z
+
+    move-object/from16 v0, v16
+
+    iput-wide v4, v0, Lnh;->b:J
+
+    iget-boolean v2, v15, Lnh;->a:Z
+
+    goto/16 :goto_1
+
+    :cond_6
+    move-object v14, v2
+
+    goto :goto_2
+
+    :cond_7
+    if-eqz v3, :cond_8
+
+    move-object v14, v3
+
+    goto :goto_2
+
+    :cond_8
+    move-object v14, v2
+
+    goto :goto_2
+
+    :cond_9
+    const/4 v2, 0x0
+
+    goto :goto_3
+
+    :cond_a
+    cmp-long v3, v18, v10
+
+    if-lez v3, :cond_b
+
+    :goto_5
+    const-wide/32 v6, 0xea60
+
+    add-long/2addr v4, v6
+
+    goto :goto_4
+
+    :cond_b
+    cmp-long v3, v18, v12
+
+    if-lez v3, :cond_c
+
+    move-wide v4, v10
+
+    goto :goto_5
+
+    :cond_c
+    move-wide v4, v12
+
+    goto :goto_5
+
+    :cond_d
+    const-string v2, "TwilightManager"
+
+    const-string v3, "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values."
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v2
+
+    const/16 v3, 0xb
+
+    invoke-virtual {v2, v3}, Ljava/util/Calendar;->get(I)I
+
+    move-result v2
+
+    const/4 v3, 0x6
+
+    if-lt v2, v3, :cond_e
+
+    const/16 v3, 0x16
+
+    if-lt v2, v3, :cond_f
+
+    :cond_e
+    const/4 v2, 0x1
+
+    goto/16 :goto_1
+
+    :cond_f
+    const/4 v2, 0x0
+
+    goto/16 :goto_1
 .end method

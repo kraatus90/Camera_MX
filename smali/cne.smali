@@ -1,20 +1,20 @@
-.class public final Lcne;
+.class final Lcne;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Landroid/view/GestureDetector$OnDoubleTapListener;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+.field private final synthetic a:Lcnc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;)V
+.method constructor <init>(Lcnc;)V
     .locals 0
 
-    iput-object p1, p0, Lcne;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+    iput-object p1, p0, Lcne;->a:Lcnc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,34 +23,82 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final onDoubleTap(Landroid/view/MotionEvent;)Z
+    .locals 3
 
-    check-cast p1, Landroid/widget/ImageView;
+    iget-object v0, p0, Lcne;->a:Lcnc;
 
-    invoke-static {p1}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a(Landroid/widget/ImageView;)Landroid/graphics/Bitmap;
+    iget-object v0, v0, Lcnc;->a:Lcnb;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz p1, :cond_0
 
-    iget-object v1, p0, Lcne;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
+    iget-object v0, p0, Lcne;->a:Lcnc;
 
-    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->f:Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;
+    iget-object v0, v0, Lcnc;->a:Lcnb;
 
-    invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/transition/FilmstripTransitionLayout;->a(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    return-void
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v2
+
+    invoke-interface {v0, v1, v2}, Lcnb;->d(FF)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+.method public final onDoubleTapEvent(Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const/4 v0, 0x1
 
-    const-string v1, "getImageViewFuture should not throw an exception."
+    return v0
+.end method
 
-    invoke-direct {v0, v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+.method public final onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
+    .locals 3
 
-    throw v0
+    iget-object v0, p0, Lcne;->a:Lcnc;
+
+    iget-object v0, v0, Lcnc;->a:Lcnb;
+
+    if-eqz v0, :cond_0
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcne;->a:Lcnc;
+
+    iget-object v0, v0, Lcnc;->a:Lcnb;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v2
+
+    invoke-interface {v0, v1, v2}, Lcnb;->c(FF)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

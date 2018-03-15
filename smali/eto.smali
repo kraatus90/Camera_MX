@@ -1,256 +1,159 @@
-.class public final Leto;
+.class final Leto;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Letn;
-.implements Lhzc;
-
-
-# static fields
-.field private static a:Ljava/lang/String;
+.implements Liwy;
 
 
 # instance fields
-.field private b:Ljava/lang/ref/WeakReference;
+.field private final synthetic a:Liwy;
 
-.field private c:Lham;
+.field private final synthetic b:Liwv;
 
-.field private d:Lgvz;
-
-.field private e:Ljvi;
+.field private final synthetic c:Letn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Letn;Liwy;Liwv;)V
+    .locals 0
 
-    const-string v0, "DcimFolderStartTask"
+    iput-object p1, p0, Leto;->c:Letn;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p2, p0, Leto;->a:Liwy;
 
-    move-result-object v0
-
-    sput-object v0, Leto;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/ref/WeakReference;Lham;)V
-    .locals 2
+    iput-object p3, p0, Leto;->b:Liwv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leto;->b:Ljava/lang/ref/WeakReference;
-
-    iput-object p2, p0, Leto;->c:Lham;
-
-    new-instance v0, Letq;
-
-    invoke-static {}, Letc;->a()Lgvz;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Letq;-><init>(Lgvz;)V
-
-    iput-object v0, p0, Leto;->d:Lgvz;
-
-    new-instance v0, Ljvi;
-
-    invoke-direct {v0}, Ljvi;-><init>()V
-
-    iput-object v0, p0, Leto;->e:Ljvi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljuw;
-    .locals 5
+.method public final a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    .locals 6
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Leto;->a:Liwy;
 
-    iget-object v0, p0, Leto;->d:Lgvz;
+    invoke-interface {v0, p1, p2}, Liwy;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
 
-    invoke-interface {v0}, Lgvz;->b()Z
+    iget-object v0, p0, Leto;->b:Liwv;
+
+    iget-object v0, v0, Liwv;->b:Landroid/media/MediaFormat;
+
+    new-instance v1, Letp;
+
+    invoke-direct {v1, p2, v0}, Letp;-><init>(Landroid/media/MediaCodec$BufferInfo;Landroid/media/MediaFormat;)V
+
+    const-string v1, "mime"
+
+    invoke-virtual {v0, v1}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "video/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
-
-    sget-object v2, Leto;->a:Ljava/lang/String;
-
-    const-string v3, "Informing user camera folder doesn\'t exist and cannot be created: "
-
-    iget-object v0, p0, Leto;->d:Lgvz;
-
-    invoke-interface {v0}, Lgvz;->c()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    if-nez v0, :cond_0
 
     :goto_0
-    invoke-static {v2, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Leto;->b:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/Activity;
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    new-instance v2, Letl;
-
-    invoke-direct {v2}, Letl;-><init>()V
-
-    iget-object v3, v2, Letl;->a:Letn;
-
-    if-nez v3, :cond_1
-
-    :goto_1
-    const-string v3, "Setting listener twice!"
-
-    invoke-static {v1, v3}, Liya;->b(ZLjava/lang/Object;)V
-
-    iput-object p0, v2, Letl;->a:Letn;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object v0
-
-    const-string v1, "CameraStorageAccessFailureDialog"
-
-    invoke-virtual {v2, v0, v1}, Letl;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
-
-    :goto_2
-    iget-object v0, p0, Leto;->e:Ljvi;
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    sget-object v0, Leto;->a:Ljava/lang/String;
-
-    const-string v1, "Could not display error dialog for Camera Storage Access Failure."
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_3
-    iget-object v0, p0, Leto;->e:Ljvi;
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    goto :goto_2
-.end method
-
-.method public final b()V
-    .locals 4
-
-    iget-object v0, p0, Leto;->d:Lgvz;
-
-    invoke-interface {v0}, Lgvz;->b()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Leto;->e:Ljvi;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    iget-object v1, p0, Leto;->c:Lham;
-
-    const-string v2, "Abort startup because camera folder doesn\'t exist and cannot be created: "
-
-    iget-object v0, p0, Leto;->d:Lgvz;
-
-    invoke-interface {v0}, Lgvz;->c()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Lham;->a(Ljava/lang/String;)V
-
-    :goto_1
     return-void
 
     :cond_0
-    new-instance v0, Ljava/lang/String;
+    iget-object v0, p0, Leto;->c:Letn;
 
-    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    iget-object v1, v0, Letn;->a:Letq;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Leto;->c:Letn;
+
+    iget-object v0, v0, Letn;->a:Letq;
+
+    iget v0, v0, Letq;->a:I
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Leto;->c:Letn;
+
+    iget-object v0, v0, Letn;->a:Letq;
+
+    const-wide v2, 0x7fffffffffffffffL
+
+    iput-wide v2, v0, Letq;->b:J
+
+    :cond_1
+    iget-object v0, p0, Leto;->c:Letn;
+
+    iget-object v0, v0, Letn;->a:Letq;
+
+    iget v2, v0, Letq;->a:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, v0, Letq;->a:I
+
+    iget-object v0, p0, Leto;->c:Letn;
+
+    iget-object v0, v0, Letn;->a:Letq;
+
+    iget-wide v2, p2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    iget-object v4, p0, Leto;->c:Letn;
+
+    iget-object v4, v4, Letn;->a:Letq;
+
+    iget-wide v4, v4, Letq;->b:J
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v2
+
+    iput-wide v2, v0, Letq;->b:J
+
+    iget-object v0, p0, Leto;->c:Letn;
+
+    iget-object v0, v0, Letn;->a:Letq;
+
+    iget-wide v2, p2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+
+    iget-object v4, p0, Leto;->c:Letn;
+
+    iget-object v4, v4, Letn;->a:Letq;
+
+    iget-wide v4, v4, Letq;->c:J
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v2
+
+    iput-wide v2, v0, Letq;->c:J
+
+    monitor-exit v1
 
     goto :goto_0
 
-    :cond_1
-    iget-object v0, p0, Leto;->e:Ljvi;
+    :catchall_0
+    move-exception v0
 
-    const/4 v1, 0x1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    throw v0
+.end method
 
-    move-result-object v1
+.method public final close()V
+    .locals 1
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
+    iget-object v0, p0, Leto;->a:Liwy;
 
-    goto :goto_1
+    invoke-interface {v0}, Liwy;->close()V
+
+    return-void
 .end method

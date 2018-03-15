@@ -4,11 +4,11 @@
 
 
 # static fields
-.field public static final layout_change_fade_in:I = 0x7f06001f
+.field public static final layout_change_fade_in:I = 0x7f060021
 
-.field public static final return_to_zero_rotation_ccw:I = 0x7f060023
+.field public static final return_to_zero_rotation_ccw:I = 0x7f06002a
 
-.field public static final return_to_zero_rotation_clockwise:I = 0x7f060024
+.field public static final return_to_zero_rotation_clockwise:I = 0x7f06002b
 
 
 # direct methods

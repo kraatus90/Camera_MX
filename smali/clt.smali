@@ -1,67 +1,77 @@
-.class public final Lclt;
+.class final Lclt;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
 
 # instance fields
-.field public final a:Lclq;
-
-.field public final b:Lclm;
-
-.field public final c:Lcjv;
-
-.field public final d:Lcjk;
-
-.field public final e:Lcjh;
-
-.field public final f:Lcjz;
-
-.field public final g:Lckd;
-
-.field public final h:Lcll;
-
-.field public final i:Landroid/app/ActionBar;
-
-.field public j:Landroid/content/res/Resources;
-
-.field public k:Landroid/view/Window;
-
-.field public l:Lgwr;
-
-.field public m:Landroid/content/Context;
+.field private final synthetic a:Lclo;
 
 
 # direct methods
-.method public constructor <init>(Lclq;Lclm;Lcjv;Lcjk;Lcjh;Lcjz;Lckd;Lcll;Landroid/app/ActionBar;Landroid/content/res/Resources;Landroid/view/Window;Lgwr;Landroid/content/Context;)V
+.method constructor <init>(Lclo;)V
     .locals 0
+
+    iput-object p1, p0, Lclt;->a:Lclo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lclt;->a:Lclq;
+    return-void
+.end method
 
-    iput-object p2, p0, Lclt;->b:Lclm;
 
-    iput-object p3, p0, Lclt;->c:Lcjv;
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .locals 5
 
-    iput-object p4, p0, Lclt;->d:Lcjk;
+    iget-object v0, p0, Lclt;->a:Lclo;
 
-    iput-object p5, p0, Lclt;->e:Lcjh;
+    iget-object v0, v0, Lclo;->c:Lclp;
 
-    iput-object p6, p0, Lclt;->f:Lcjz;
+    if-eqz v0, :cond_0
 
-    iput-object p7, p0, Lclt;->g:Lckd;
+    iget-object v0, p0, Lclt;->a:Lclo;
 
-    iput-object p8, p0, Lclt;->h:Lcll;
+    iget-object v0, v0, Lclo;->c:Lclp;
 
-    iput-object p9, p0, Lclt;->i:Landroid/app/ActionBar;
+    invoke-virtual {v0}, Lclp;->b()Lckw;
 
-    iput-object p10, p0, Lclt;->j:Landroid/content/res/Resources;
+    move-result-object v1
 
-    iput-object p11, p0, Lclt;->k:Landroid/view/Window;
+    iget-object v2, v0, Lclp;->a:Lbzb;
 
-    iput-object p12, p0, Lclt;->l:Lgwr;
+    invoke-static {v2}, Lbzb;->a(Lbzb;)Liih;
 
-    iput-object p13, p0, Lclt;->m:Landroid/content/Context;
+    move-result-object v2
 
+    invoke-static {v1}, Lbzb;->b(Lckw;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x2
+
+    invoke-static {v1}, Lbzb;->c(Lckw;)F
+
+    move-result v1
+
+    invoke-interface {v2, v3, v4, v1}, Liih;->a(Ljava/lang/String;IF)V
+
+    iget-object v1, v0, Lclp;->a:Lbzb;
+
+    invoke-virtual {v0}, Lclp;->b()Lckw;
+
+    move-result-object v0
+
+    sget-object v2, Lckw;->c:Lckw;
+
+    if-eq v0, v2, :cond_0
+
+    iget-object v1, v1, Lbzb;->z:Lclz;
+
+    invoke-virtual {v1, v0}, Lclz;->a(Lckw;)V
+
+    :cond_0
     return-void
 .end method

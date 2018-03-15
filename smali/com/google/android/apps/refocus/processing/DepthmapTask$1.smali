@@ -42,11 +42,11 @@
 
     iget-object v3, p0, Lcom/google/android/apps/refocus/processing/DepthmapTask$1;->this$0:Lcom/google/android/apps/refocus/processing/DepthmapTask;
 
-    invoke-static {v3}, Lcom/google/android/apps/refocus/processing/DepthmapTask;->access$100(Lcom/google/android/apps/refocus/processing/DepthmapTask;)Lhhd;
+    invoke-static {v3}, Lcom/google/android/apps/refocus/processing/DepthmapTask;->access$100(Lcom/google/android/apps/refocus/processing/DepthmapTask;)Lhic;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lhhd;->a()Ljava/lang/String;
+    invoke-virtual {v3}, Lhic;->a()Ljava/lang/String;
 
     move-result-object v3
 

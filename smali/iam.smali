@@ -1,80 +1,108 @@
-.class final Liam;
+.class public final Liam;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liau;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Liau;
+.field private final synthetic a:Liaq;
 
 
 # direct methods
-.method constructor <init>(Liau;)V
+.method public constructor <init>(Liaq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liam;->a:Liaq;
 
-    iput-object p1, p0, Liam;->a:Liau;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Licn;Ljava/util/concurrent/Executor;)Lich;
+.method public final a(Ljava/lang/Throwable;)V
     .locals 3
 
-    iget-object v0, p0, Liam;->a:Liau;
+    iget-object v0, p0, Liam;->a:Liaq;
 
-    new-instance v1, Lian;
+    sget-object v1, Ldic;->c:Ljava/lang/String;
 
-    invoke-direct {v1, p2, p1}, Lian;-><init>(Ljava/util/concurrent/Executor;Licn;)V
+    const-string v2, "Failed to open camera: "
 
-    new-instance v2, Libh;
+    invoke-static {v1, v2, p1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-direct {v2}, Libh;-><init>()V
+    iget-object v0, v0, Liaq;->b:Ldic;
 
-    invoke-interface {v0, v1, v2}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    iget-object v0, v0, Lbrv;->a:Lbrw;
 
-    move-result-object v0
+    new-instance v1, Lcwq;
 
-    return-object v0
+    invoke-direct {v1}, Lcwq;-><init>()V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    return-void
 .end method
 
-.method public final b()Ljava/lang/Object;
-    .locals 1
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 6
 
-    iget-object v0, p0, Liam;->a:Liau;
+    check-cast p1, Ljava/util/List;
 
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    const-string v0, "filtered"
-
-    invoke-static {v0}, Liui;->c(Ljava/lang/String;)Ljhq;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Liam;->a:Liau;
+    check-cast v0, Ljava/util/List;
 
-    invoke-virtual {v0}, Ljhq;->a()Ljhr;
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    iput-object v1, v2, Ljhr;->b:Ljava/lang/Object;
+    iget-object v3, p0, Liam;->a:Liaq;
 
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
+    move-object v0, v1
 
-    move-result-object v0
+    check-cast v0, Lbey;
 
-    return-object v0
+    move-object v1, v2
+
+    check-cast v1, Limz;
+
+    new-instance v2, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v4
+
+    invoke-direct {v2, v4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iget-object v4, v3, Liaq;->b:Ldic;
+
+    const/4 v5, 0x0
+
+    iput-object v5, v4, Ldic;->j:Lkeh;
+
+    iget-object v4, v3, Liaq;->b:Ldic;
+
+    iput-object v0, v4, Ldic;->k:Lbey;
+
+    new-instance v4, Ldii;
+
+    invoke-direct {v4, v3, v0, v1}, Ldii;-><init>(Liaq;Lbey;Limz;)V
+
+    invoke-virtual {v2, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
 .end method

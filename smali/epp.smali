@@ -3,30 +3,24 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# static fields
-.field public static final a:Lepp;
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lepp;
-
-    invoke-direct {v0}, Lepp;-><init>()V
-
-    sput-object v0, Lepp;->a:Lepp;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lepp;->a:Lkgv;
+
+    iput-object p2, p0, Lepp;->b:Lkgv;
 
     return-void
 .end method
@@ -34,25 +28,27 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
-    new-instance v0, Liag;
+    new-instance v2, Lepl;
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    iget-object v0, p0, Lepp;->a:Lkgv;
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liau;
+    check-cast v0, Lepj;
 
-    return-object v0
+    iget-object v1, p0, Lepp;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/concurrent/Executor;
+
+    invoke-direct {v2, v0, v1}, Lepl;-><init>(Lepj;Ljava/util/concurrent/Executor;)V
+
+    return-object v2
 .end method

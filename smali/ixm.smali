@@ -1,56 +1,168 @@
-.class public Lixm;
+.class public abstract Lixm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lixl;
+.implements Lixn;
 
 
 # instance fields
-.field private a:Liyb;
-
-.field private b:Lixg;
+.field private final a:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method public constructor <init>(Lixg;Liyb;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object p1, p0, Lixm;->b:Lixg;
+    invoke-direct {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object p2, p0, Lixm;->a:Liyb;
+    iput-object v0, p0, Lixm;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JLandroid/graphics/Bitmap;Z)V
-    .locals 5
+.method public final a()Lirc;
+    .locals 1
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lixm;->close()V
 
-    iget-object v0, p0, Lixm;->a:Liyb;
+    invoke-static {}, Lirc;->d()Lirc;
 
-    new-instance v1, Lixp;
+    move-result-object v0
 
-    iget-object v2, p0, Lixm;->b:Lixg;
+    return-object v0
+.end method
 
-    const-string v3, "summary"
+.method public abstract a(Ljava/lang/Object;)V
+.end method
 
-    invoke-interface {v2, v3, p3}, Lixg;->a(Ljava/lang/String;Landroid/graphics/Bitmap;)Lixj;
+.method public final b()Ljava/lang/Object;
+    .locals 1
 
-    move-result-object v2
+    iget-object v0, p0, Lixm;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-direct {v1, v2}, Lixp;-><init>(Lixj;)V
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0, p1, p2, v1, p4}, Liyb;->a(JLixo;Z)V
+    move-result-object v0
 
+    if-nez v0, :cond_0
+
+    new-instance v0, Lixq;
+
+    invoke-direct {v0}, Lixq;-><init>()V
+
+    check-cast v0, Lixq;
+
+    throw v0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final c()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lixm;->d()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lixq;
+
+    invoke-direct {v0}, Lixq;-><init>()V
+
+    check-cast v0, Lixq;
+
+    throw v0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 1
+
+    invoke-virtual {p0}, Lixm;->d()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, v0}, Lixm;->a(Ljava/lang/Object;)V
+
+    :cond_0
     return-void
+.end method
+
+.method public final d()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lixm;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Lixm;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0xe
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "single-owner["
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

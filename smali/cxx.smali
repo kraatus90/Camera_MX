@@ -1,73 +1,122 @@
-.class final Lcxx;
-.super Ljava/lang/Object;
+.class public final Lcxx;
+.super Lcxq;
 .source "PG"
-
-# interfaces
-.implements Lcwh;
-
-
-# instance fields
-.field public final synthetic a:Lcxc;
 
 
 # direct methods
-.method constructor <init>(Lcxc;)V
+.method public constructor <init>(Lcxq;)V
     .locals 0
 
-    iput-object p1, p0, Lcxx;->a:Lcxc;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrv;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 4
+.method public final synthetic b()Lbrv;
+    .locals 1
 
-    check-cast p1, Lcvn;
-
-    iget-object v0, p0, Lcxx;->a:Lcxc;
-
-    iget-boolean v0, v0, Lcxc;->f:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcxx;->a:Lcxc;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lcxc;->f:Z
-
-    iget-object v0, p0, Lcxx;->a:Lcxc;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcxc;->g:Z
-
-    iget-object v1, p1, Lcvn;->a:[B
-
-    iget v2, p1, Lcvn;->b:I
-
-    iget-object v0, p0, Lcxx;->a:Lcxc;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {p0}, Lcxx;->e()Lcxq;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    return-object v0
+.end method
 
-    iget-object v0, v0, Lcwg;->n:Landroid/os/Handler;
+.method public final e()Lcxq;
+    .locals 4
 
-    new-instance v3, Lcxy;
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
 
-    invoke-direct {v3, p0, v1, v2}, Lcxy;-><init>(Lcxx;[BI)V
+    move-result-object v0
 
-    invoke-virtual {v0, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->a:Landroid/content/Intent;
+
+    invoke-static {v0}, Lawl;->a(Landroid/content/Intent;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-static {v0}, Lawl;->b(Landroid/content/Intent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lild;->a:Lild;
+
+    move-object v1, v0
+
+    :goto_0
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->h:Lfat;
+
+    invoke-virtual {v0, v1}, Lfat;->b(Lild;)Lilb;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->h:Lfat;
+
+    invoke-virtual {v0}, Lfat;->a()Lilb;
+
+    move-result-object v0
+
+    const-string v2, "No cameras on the device!!!"
+
+    invoke-static {v0, v2}, Ljii;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    const/4 v0, 0x0
+    move-object v2, v0
 
-    return-object v0
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->h:Lfat;
+
+    invoke-virtual {v0, v2}, Lfat;->a(Lilb;)Lfdv;
+
+    move-result-object v0
+
+    new-instance v3, Lcya;
+
+    invoke-direct {v3, p0, v1, v2, v0}, Lcya;-><init>(Lcxq;Lild;Lilb;Lfdv;)V
+
+    return-object v3
+
+    :cond_1
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->l:Ldxw;
+
+    invoke-virtual {v0}, Ldxw;->b()Lild;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    goto :goto_0
 .end method

@@ -1,92 +1,102 @@
-.class final Lcpo;
-.super Lcom/google/googlex/gcam/ProgressCallback;
+.class public final Lcpo;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcpb;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcpb;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcpo;->a:Lcpb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/googlex/gcam/ProgressCallback;-><init>()V
+    iput-object p1, p0, Lcpo;->a:Lkgv;
+
+    iput-object p2, p0, Lcpo;->b:Lkgv;
+
+    iput-object p3, p0, Lcpo;->c:Lkgv;
+
+    iput-object p4, p0, Lcpo;->d:Lkgv;
+
+    iput-object p5, p0, Lcpo;->e:Lkgv;
+
+    iput-object p6, p0, Lcpo;->f:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Run(Lcom/google/googlex/gcam/IShot;F)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    iget-object v0, p0, Lcpo;->a:Lcpb;
+    new-instance v0, Lcpm;
 
-    iget-object v1, v0, Lcpb;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcpo;->a:Lkgv;
 
-    monitor-enter v1
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    :try_start_0
-    iget-object v0, p0, Lcpo;->a:Lcpb;
+    move-result-object v1
 
-    iget-object v0, v0, Lcpb;->d:Ljava/util/HashMap;
+    check-cast v1, Lbjy;
 
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/IShot;->shot_id()I
+    iget-object v2, p0, Lcpo;->b:Lkgv;
 
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Lhbh;
 
-    move-result-object v0
+    iget-object v3, p0, Lcpo;->c:Lkgv;
 
-    check-cast v0, Lcps;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v3
 
-    if-eqz v0, :cond_1
+    check-cast v3, Limq;
 
-    iget-object v1, v0, Lcps;->c:Ljht;
+    iget-object v4, p0, Lcpo;->d:Lkgv;
 
-    invoke-virtual {v1}, Ljht;->a()Z
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v4
 
-    if-eqz v1, :cond_0
+    check-cast v4, Lbkx;
 
-    iget-object v1, v0, Lcps;->c:Ljht;
+    iget-object v5, p0, Lcpo;->e:Lkgv;
 
-    invoke-virtual {v1}, Ljht;->b()Ljava/lang/Object;
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    move-result-object v5
 
-    mul-float/2addr p2, v1
+    check-cast v5, Lbqc;
 
-    :cond_0
-    iget-object v0, v0, Lcps;->a:Leaq;
+    iget-object v6, p0, Lcpo;->f:Lkgv;
 
-    iget-object v0, v0, Leaq;->d:Lear;
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0, p2}, Lear;->a(F)V
+    move-result-object v6
 
-    :cond_1
-    return-void
+    check-cast v6, Lbjw;
 
-    :catchall_0
-    move-exception v0
+    invoke-direct/range {v0 .. v6}, Lcpm;-><init>(Lbjy;Lhbh;Limq;Lbkx;Lbqc;Lbjw;)V
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-object v0
 .end method

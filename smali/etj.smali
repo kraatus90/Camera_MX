@@ -3,63 +3,74 @@
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Leth;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Leth;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Letj;->a:Leth;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Letj;->a:Lkgv;
+
+    iput-object p2, p0, Letj;->b:Lkgv;
+
+    iput-object p3, p0, Letj;->c:Lkgv;
 
     return-void
 .end method
 
-.method private final a(Lado;)Ljava/lang/Void;
-    .locals 2
+.method public static a(Lkgv;Lkgv;Lkgv;)Letj;
+    .locals 1
 
-    :try_start_0
-    iget-object v0, p0, Letj;->a:Leth;
+    new-instance v0, Letj;
 
-    iget-object v0, v0, Leth;->c:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lado;->c(Ljava/lang/String;)Z
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    const/4 v0, 0x0
+    invoke-direct {v0, p0, p1, p2}, Letj;-><init>(Lkgv;Lkgv;Lkgv;)V
 
     return-object v0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v0, Leth;->a:Ljava/lang/String;
-
-    const-string v1, "Purge cache failed."
-
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    check-cast p1, Lado;
+    new-instance v3, Leti;
 
-    invoke-direct {p0, p1}, Letj;->a(Lado;)Ljava/lang/Void;
+    iget-object v0, p0, Letj;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lewd;
+
+    iget-object v1, p0, Letj;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljrf;
+
+    iget-object v2, p0, Letj;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lewu;
+
+    invoke-direct {v3, v0, v1, v2}, Leti;-><init>(Lewd;Ljrf;Lewu;)V
+
+    return-object v3
 .end method

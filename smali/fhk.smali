@@ -1,35 +1,43 @@
-.class public final synthetic Lfhk;
+.class public final Lfhk;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "PG"
 
 
 # instance fields
-.field private a:Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;
+.field public final a:Liho;
+
+.field public final b:Lihs;
+
+.field private final c:Limf;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;)V
+.method public constructor <init>(Liho;Lihs;Limf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfhk;->a:Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;
+    iput-object p1, p0, Lfhk;->a:Liho;
+
+    iput-object p2, p0, Lfhk;->b:Lihs;
+
+    iput-object p3, p0, Lfhk;->c:Limf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a(Limu;Landroid/os/Handler;)Lfhj;
+    .locals 3
 
-    iget-object v0, p0, Lfhk;->a:Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;
+    new-instance v0, Lffx;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lfhk;->c:Limf;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;->setVisibility(I)V
+    iget-object v2, p0, Lfhk;->b:Lihs;
 
-    return-void
+    invoke-direct {v0, p1, v1, p2, v2}, Lffx;-><init>(Limu;Limf;Landroid/os/Handler;Lihs;)V
+
+    return-object v0
 .end method

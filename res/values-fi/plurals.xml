@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Kuvasarja (%1$d kuvaa)</item>
+        <item quantity="one">Kuvasarja (%1$d kuva)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d valokuvaa tallennettu</item>
         <item quantity="one">%1$d valokuva tallennettu</item>

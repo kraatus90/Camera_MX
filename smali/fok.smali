@@ -1,23 +1,44 @@
-.class public final Lfok;
+.class final Lfok;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkds;
+
 
 # instance fields
-.field public final a:F
-
-.field public final b:Z
+.field private final synthetic a:Liaw;
 
 
 # direct methods
-.method public constructor <init>(FZ)V
+.method constructor <init>(Liaw;)V
     .locals 0
+
+    iput-object p1, p0, Lfok;->a:Liaw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lfok;->a:F
+    return-void
+.end method
 
-    iput-boolean p2, p0, Lfok;->b:Z
+
+# virtual methods
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
+
+    iget-object v0, p0, Lfok;->a:Liaw;
+
+    invoke-virtual {v0}, Liaw;->close()V
+
+    return-void
+.end method
+
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lfok;->a:Liaw;
+
+    invoke-virtual {v0}, Liaw;->close()V
 
     return-void
 .end method

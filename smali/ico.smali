@@ -1,62 +1,39 @@
-.class public abstract Lico;
+.class final synthetic Lico;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Lihb;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field private final a:Lket;
 
-.field public final b:I
+.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 1
-
-    const-string v0, ""
-
-    invoke-direct {p0, v0}, Lico;-><init>(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lico;-><init>(Ljava/lang/String;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;B)V
-    .locals 1
+.method constructor <init>(Lket;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lico;->a:Ljava/lang/String;
+    iput-object p1, p0, Lico;->a:Lket;
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    rsub-int/lit8 v0, v0, 0x17
-
-    iput v0, p0, Lico;->b:I
+    iput-object p2, p0, Lico;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)Licp;
-.end method
+.method public final close()V
+    .locals 2
 
-.method public a(Ljava/lang/String;I)Z
-    .locals 1
+    iget-object v0, p0, Lico;->a:Lket;
 
-    const/4 v0, 0x1
+    iget-object v1, p0, Lico;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return v0
+    invoke-static {v0, v1}, Licl;->a(Lket;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+
+    return-void
 .end method

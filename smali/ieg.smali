@@ -1,230 +1,109 @@
-.class final Lieg;
-.super Ljava/io/FilterInputStream;
+.class public final Lieg;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public a:I
+.field public final a:Lidu;
 
-.field public final b:Ljava/nio/ByteBuffer;
+.field public final b:I
 
-.field private c:[B
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method protected constructor <init>(Ljava/io/InputStream;)V
-    .locals 1
+.method public constructor <init>(Lidu;III)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lieg;->a:Lidu;
 
-    iput v0, p0, Lieg;->a:I
+    iput p2, p0, Lieg;->b:I
 
-    const/16 v0, 0x8
+    iput p3, p0, Lieg;->c:I
 
-    new-array v0, v0, [B
-
-    iput-object v0, p0, Lieg;->c:[B
-
-    iget-object v0, p0, Lieg;->c:[B
-
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lieg;->b:Ljava/nio/ByteBuffer;
+    iput p4, p0, Lieg;->d:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()S
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 6
 
-    iget-object v0, p0, Lieg;->c:[B
+    iget-object v0, p0, Lieg;->a:Lidu;
 
-    const/4 v1, 0x2
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p0, v0, v1}, Lieg;->a([BI)V
+    move-result-object v0
 
-    iget-object v0, p0, Lieg;->b:Ljava/nio/ByteBuffer;
+    iget v1, p0, Lieg;->c:I
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+    iget v2, p0, Lieg;->b:I
 
-    iget-object v0, p0, Lieg;->b:Ljava/nio/ByteBuffer;
+    iget v3, p0, Lieg;->d:I
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getShort()S
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v4
 
-    return v0
-.end method
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-.method public final a(Ljava/nio/ByteOrder;)V
-    .locals 1
+    move-result v4
 
-    iget-object v0, p0, Lieg;->b:Ljava/nio/ByteBuffer;
+    add-int/lit8 v4, v4, 0x4f
 
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public final a([BI)V
-    .locals 1
+    const-string v4, "encoder="
 
-    const/4 v0, 0x0
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, p1, v0, p2}, Lieg;->read([BII)I
+    move-result-object v4
 
-    move-result v0
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eq v0, p2, :cond_0
+    move-result-object v0
 
-    new-instance v0, Ljava/io/EOFException;
+    const-string v4, ", sampling rate="
 
-    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    throw v0
+    move-result-object v0
 
-    :cond_0
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final b()I
-    .locals 2
+    move-result-object v0
 
-    iget-object v0, p0, Lieg;->c:[B
+    const-string v1, ", bit rate="
 
-    const/4 v1, 0x4
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v0, v1}, Lieg;->a([BI)V
+    move-result-object v0
 
-    iget-object v0, p0, Lieg;->b:Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+    move-result-object v0
 
-    iget-object v0, p0, Lieg;->b:Ljava/nio/ByteBuffer;
+    const-string v1, ", channels="
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
-.end method
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final c()J
-    .locals 4
+    move-result-object v0
 
-    invoke-virtual {p0}, Lieg;->b()I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v0
+    move-result-object v0
 
-    int-to-long v0, v0
-
-    const-wide v2, 0xffffffffL
-
-    and-long/2addr v0, v2
-
-    return-wide v0
-.end method
-
-.method public final read()I
-    .locals 3
-
-    iget-object v0, p0, Lieg;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
-
-    move-result v1
-
-    iget v2, p0, Lieg;->a:I
-
-    if-ltz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    iput v0, p0, Lieg;->a:I
-
-    return v1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final read([B)I
-    .locals 3
-
-    iget-object v0, p0, Lieg;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
-
-    move-result v0
-
-    iget v1, p0, Lieg;->a:I
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lieg;->a:I
-
-    return v0
-.end method
-
-.method public final read([BII)I
-    .locals 3
-
-    iget-object v0, p0, Lieg;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
-
-    move-result v0
-
-    iget v1, p0, Lieg;->a:I
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lieg;->a:I
-
-    return v0
-.end method
-
-.method public final skip(J)J
-    .locals 5
-
-    iget-object v0, p0, Lieg;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
-
-    move-result-wide v0
-
-    iget v2, p0, Lieg;->a:I
-
-    int-to-long v2, v2
-
-    add-long/2addr v2, v0
-
-    long-to-int v2, v2
-
-    iput v2, p0, Lieg;->a:I
-
-    return-wide v0
+    return-object v0
 .end method

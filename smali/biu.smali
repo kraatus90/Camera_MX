@@ -1,125 +1,97 @@
 .class public final Lbiu;
-.super Landroid/preference/CheckBoxPreference;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lbit;
+
+
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field public a:Z
+.field private final b:Lbin;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0, p1}, Landroid/preference/CheckBoxPreference;-><init>(Landroid/content/Context;)V
+    const-string v0, "CdrMediaRecNextOutputFile"
 
-    invoke-virtual {p0, p2}, Lbiu;->setKey(Ljava/lang/String;)V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p0, p2}, Lbiu;->setTitle(Ljava/lang/CharSequence;)V
+    move-result-object v0
+
+    sput-object v0, Lbiu;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private final a(Landroid/view/View;)Landroid/widget/CheckBox;
-    .locals 3
+.method public constructor <init>(Lbin;)V
+    .locals 0
 
-    instance-of v0, p1, Landroid/widget/CheckBox;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz v0, :cond_0
+    iput-object p1, p0, Lbiu;->b:Lbin;
 
-    check-cast p1, Landroid/widget/CheckBox;
-
-    :goto_0
-    return-object p1
-
-    :cond_0
-    instance-of v0, p1, Landroid/view/ViewGroup;
-
-    if-eqz v0, :cond_2
-
-    move-object v0, p1
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v2
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_1
-    if-ge v1, v2, :cond_2
-
-    move-object v0, p1
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lbiu;->a(Landroid/view/View;)Landroid/widget/CheckBox;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    move-object p1, v0
-
-    goto :goto_0
-
-    :cond_1
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_1
-
-    :cond_2
-    const/4 p1, 0x0
-
-    goto :goto_0
+    return-void
 .end method
 
 
 # virtual methods
-.method protected final onBindView(Landroid/view/View;)V
-    .locals 2
+.method public final a(Ljava/io/File;)V
+    .locals 4
 
-    invoke-super {p0, p1}, Landroid/preference/CheckBoxPreference;->onBindView(Landroid/view/View;)V
+    :try_start_0
+    iget-object v0, p0, Lbiu;->b:Lbin;
 
-    invoke-virtual {p0}, Lbiu;->isEnabled()Z
+    invoke-interface {v0, p1}, Lbin;->a(Ljava/io/File;)V
+    :try_end_0
+    .catch Ligl; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-direct {p0, p1}, Lbiu;->a(Landroid/view/View;)Landroid/widget/CheckBox;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lbiu;->a:Z
-
-    if-eqz v1, :cond_1
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
-
-    :cond_0
     :goto_0
     return-void
 
-    :cond_1
-    if-eqz v0, :cond_0
+    :catch_0
+    move-exception v0
 
-    const/4 v1, 0x0
+    sget-object v1, Lbiu;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x3a
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Failed when call PreparedMediaRecorder#setNextOutputFile: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

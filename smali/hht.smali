@@ -1,58 +1,55 @@
-.class public final Lhht;
-.super Ljava/lang/Object;
+.class Lhht;
+.super Lhhr;
 .source "PG"
 
 
-# static fields
-.field public static final a:[F
+# instance fields
+.field private final synthetic a:Lhhs;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Lhhs;)V
+    .locals 0
 
-    const/16 v0, 0x9
+    iput-object p1, p0, Lhht;->a:Lhhs;
 
-    new-array v0, v0, [F
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lhht;->a:[F
+    invoke-direct {p0}, Lhhr;-><init>()V
 
     return-void
-
-    :array_0
-    .array-data 4
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
 .end method
 
-.method public static a([F[F)V
+
+# virtual methods
+.method public final a()V
     .locals 2
 
-    const/4 v0, 0x0
+    const/16 v1, 0x8
 
-    :goto_0
-    const/16 v1, 0x9
+    iget-object v0, p0, Lhht;->a:Lhhs;
 
-    if-ge v0, v1, :cond_0
+    iget-object v0, v0, Lhhs;->d:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-    aget v1, p0, v0
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->setVisibility(I)V
 
-    aput v1, p1, v0
+    iget-object v0, p0, Lhht;->a:Lhhs;
 
-    add-int/lit8 v0, v0, 0x1
+    iget-object v0, v0, Lhhs;->g:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->setVisibility(I)V
 
-    :cond_0
+    iget-object v0, p0, Lhht;->a:Lhhs;
+
+    iget-object v0, v0, Lhhs;->f:Landroid/widget/SeekBar;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setEnabled(Z)V
+
+    return-void
+.end method
+
+.method public ah()V
+    .locals 0
+
     return-void
 .end method

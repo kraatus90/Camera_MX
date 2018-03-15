@@ -1,267 +1,183 @@
-.class public final Lgdj;
-.super Ljava/lang/Object;
+.class public final enum Lgdj;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
+# static fields
+.field public static final enum a:Lgdj;
+
+.field public static final enum b:Lgdj;
+
+.field public static final enum c:Lgdj;
+
+.field public static final d:Ljava/util/Map;
+
+.field private static final enum f:Lgdj;
+
+.field private static final enum g:Lgdj;
+
+.field private static final enum h:Lgdj;
+
+.field private static final synthetic i:[Lgdj;
+
+
 # instance fields
-.field public final a:Lgdm;
-
-.field public final b:Lgdk;
-
-.field public final c:Landroid/os/Handler;
-
-.field public final d:Liag;
-
-.field public final e:Ljava/lang/Runnable;
-
-.field private f:Lhzt;
-
-.field private g:Lbip;
-
-.field private h:Ljava/lang/Runnable;
-
-.field private i:Ljava/lang/Object;
-
-.field private j:Lich;
+.field public final e:I
 
 
 # direct methods
-.method public constructor <init>(Lgdm;Lhzt;Lbip;Ljava/lang/String;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v8, 0x4
 
-    new-instance v0, Ljava/lang/Object;
+    const/4 v7, 0x3
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 v6, 0x2
 
-    iput-object v0, p0, Lgdj;->i:Ljava/lang/Object;
-
-    iput-object p1, p0, Lgdj;->a:Lgdm;
-
-    iput-object p2, p0, Lgdj;->f:Lhzt;
-
-    iput-object p3, p0, Lgdj;->g:Lbip;
-
-    invoke-interface {p1}, Lgdm;->f()Lgdl;
-
-    move-result-object v0
-
-    iput-object p4, v0, Lgdl;->c:Ljava/lang/String;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lgdl;->a:Z
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    iput v1, v0, Lgdl;->b:I
-
-    invoke-virtual {v0}, Lgdl;->a()Lgdk;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lgdj;->b:Lgdk;
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, Lgdj;->c:Landroid/os/Handler;
-
-    new-instance v0, Liag;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lgdj;->d:Liag;
-
-    new-instance v0, Lgcr;
-
-    invoke-direct {v0, p0}, Lgcr;-><init>(Lgdj;)V
-
-    iput-object v0, p0, Lgdj;->h:Ljava/lang/Runnable;
-
-    new-instance v0, Lgcs;
-
-    invoke-direct {v0, p0, p1}, Lgcs;-><init>(Lgdj;Lgdm;)V
-
-    iput-object v0, p0, Lgdj;->e:Ljava/lang/Runnable;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 3
-
-    iget-object v1, p0, Lgdj;->i:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lgdj;->c:Landroid/os/Handler;
-
-    iget-object v2, p0, Lgdj;->h:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-
-    iget-object v0, p0, Lgdj;->j:Lich;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lgdj;->j:Lich;
-
-    invoke-interface {v0}, Lich;->close()V
+    const/4 v5, 0x1
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lgdj;->j:Lich;
+    new-instance v1, Lgdj;
 
-    :cond_0
-    iget-object v0, p0, Lgdj;->c:Landroid/os/Handler;
+    const-string v2, "OFF"
 
-    iget-object v2, p0, Lgdj;->e:Ljava/lang/Runnable;
+    invoke-direct {v1, v2, v0, v0}, Lgdj;-><init>(Ljava/lang/String;II)V
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    sput-object v1, Lgdj;->a:Lgdj;
 
-    iget-object v0, p0, Lgdj;->f:Lhzt;
+    new-instance v1, Lgdj;
 
-    new-instance v2, Lgcu;
+    const-string v2, "AUTO"
 
-    invoke-direct {v2, p0}, Lgcu;-><init>(Lgdj;)V
+    invoke-direct {v1, v2, v5, v5}, Lgdj;-><init>(Ljava/lang/String;II)V
 
-    invoke-virtual {v0, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    sput-object v1, Lgdj;->b:Lgdj;
 
-    monitor-exit v1
+    new-instance v1, Lgdj;
 
-    return-void
+    const-string v2, "MACRO"
 
-    :catchall_0
-    move-exception v0
+    invoke-direct {v1, v2, v6, v6}, Lgdj;-><init>(Ljava/lang/String;II)V
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sput-object v1, Lgdj;->f:Lgdj;
 
-    throw v0
-.end method
+    new-instance v1, Lgdj;
 
-.method public final a(Liau;)V
-    .locals 6
+    const-string v2, "CONTINUOUS_VIDEO"
 
-    const/4 v0, 0x0
+    invoke-direct {v1, v2, v7, v7}, Lgdj;-><init>(Ljava/lang/String;II)V
 
-    iget-object v1, p0, Lgdj;->i:Ljava/lang/Object;
+    sput-object v1, Lgdj;->g:Lgdj;
 
-    monitor-enter v1
+    new-instance v1, Lgdj;
 
-    :try_start_0
-    iget-object v2, p0, Lgdj;->g:Lbip;
+    const-string v2, "CONTINUOUS_PICTURE"
 
-    iget-object v3, v2, Lbip;->b:Lgzz;
+    invoke-direct {v1, v2, v8, v8}, Lgdj;-><init>(Ljava/lang/String;II)V
 
-    invoke-virtual {v3}, Lgzz;->b()Z
+    sput-object v1, Lgdj;->c:Lgdj;
 
-    move-result v3
+    new-instance v1, Lgdj;
 
-    if-nez v3, :cond_0
+    const-string v2, "EDOF"
 
-    iget-object v3, v2, Lbip;->b:Lgzz;
+    const/4 v3, 0x5
 
-    invoke-virtual {v3}, Lgzz;->c()Z
+    const/4 v4, 0x5
 
-    move-result v3
+    invoke-direct {v1, v2, v3, v4}, Lgdj;-><init>(Ljava/lang/String;II)V
 
-    if-eqz v3, :cond_1
+    sput-object v1, Lgdj;->h:Lgdj;
 
-    :cond_0
-    iget-object v2, v2, Lbip;->a:Lbli;
+    const/4 v1, 0x6
 
-    sget-object v3, Lbip;->k:Lbku;
+    new-array v1, v1, [Lgdj;
 
-    invoke-virtual {v2, v3}, Lbli;->a(Lbku;)Z
+    sget-object v2, Lgdj;->a:Lgdj;
 
-    move-result v2
+    aput-object v2, v1, v0
 
-    if-eqz v2, :cond_1
+    sget-object v2, Lgdj;->b:Lgdj;
 
-    const/4 v0, 0x1
+    aput-object v2, v1, v5
 
-    :cond_1
-    if-nez v0, :cond_2
+    sget-object v2, Lgdj;->f:Lgdj;
 
-    monitor-exit v1
+    aput-object v2, v1, v6
+
+    sget-object v2, Lgdj;->g:Lgdj;
+
+    aput-object v2, v1, v7
+
+    sget-object v2, Lgdj;->c:Lgdj;
+
+    aput-object v2, v1, v8
+
+    const/4 v2, 0x5
+
+    sget-object v3, Lgdj;->h:Lgdj;
+
+    aput-object v3, v1, v2
+
+    sput-object v1, Lgdj;->i:[Lgdj;
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v1, Lgdj;->d:Ljava/util/Map;
+
+    invoke-static {}, Lgdj;->values()[Lgdj;
+
+    move-result-object v1
+
+    array-length v2, v1
 
     :goto_0
-    return-void
+    if-ge v0, v2, :cond_0
 
-    :cond_2
-    iget-object v0, p0, Lgdj;->d:Liag;
+    aget-object v3, v1, v0
 
-    const/4 v2, 0x0
+    sget-object v4, Lgdj;->d:Ljava/util/Map;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget v5, v3, Lgdj;->e:I
 
-    move-result-object v2
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0, v2}, Liag;->a(Ljava/lang/Object;)V
+    move-result-object v5
 
-    new-instance v0, Lgcv;
+    invoke-interface {v4, v5, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, p0, Lgdj;->d:Liag;
-
-    invoke-direct {v0, p1, v2}, Lgcv;-><init>(Liau;Liau;)V
-
-    iget-object v2, p0, Lgdj;->j:Lich;
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Lgdj;->j:Lich;
-
-    invoke-interface {v2}, Lich;->close()V
-
-    :cond_3
-    new-instance v2, Lgct;
-
-    invoke-direct {v2, p0}, Lgct;-><init>(Lgdj;)V
-
-    iget-object v3, p0, Lgdj;->f:Lhzt;
-
-    invoke-virtual {v0, v2, v3}, Lgcv;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lgdj;->j:Lich;
-
-    iget-object v0, p0, Lgdj;->c:Landroid/os/Handler;
-
-    iget-object v2, p0, Lgdj;->h:Ljava/lang/Runnable;
-
-    const-wide/16 v4, 0x3e8
-
-    invoke-virtual {v0, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    monitor-exit v1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    return-void
+.end method
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
 
-    throw v0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lgdj;->e:I
+
+    return-void
+.end method
+
+.method public static values()[Lgdj;
+    .locals 1
+
+    sget-object v0, Lgdj;->i:[Lgdj;
+
+    invoke-virtual {v0}, [Lgdj;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lgdj;
+
+    return-object v0
 .end method

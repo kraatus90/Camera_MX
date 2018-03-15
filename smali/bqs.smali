@@ -1,46 +1,55 @@
-.class public final Lbqs;
+.class public Lbqs;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Lbqp;
+.field public final a:Landroid/content/Context;
+
+.field public final b:Landroid/content/res/Resources;
+
+.field public final c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+
+.field public final d:Landroid/widget/TextView;
+
+.field public final e:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
 
 # direct methods
-.method public constructor <init>(Lbqp;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbqs;->a:Lbqp;
+    iput-object p1, p0, Lbqs;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lbqs;->e:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbqs;->b:Landroid/content/res/Resources;
+
+    const v0, 0x7f0e013d
+
+    invoke-virtual {p2, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+
+    iput-object v0, p0, Lbqs;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+
+    const v0, 0x7f0e013e
+
+    invoke-virtual {p2, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lbqs;->d:Landroid/widget/TextView;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lbqs;->a:Lbqp;
-
-    iget-object v0, v0, Lbqp;->a:Landroid/app/Application;
-
-    invoke-virtual {v0}, Landroid/app/Application;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/res/Resources;
-
-    return-object v0
 .end method

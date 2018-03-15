@@ -1,74 +1,256 @@
 .class public final Lejc;
-.super Ljava/lang/Object;
+.super Leic;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public f:I
 
-.field private b:Ljxn;
+.field public g:I
 
-.field private c:Ljxn;
+.field public h:Z
+
+.field public i:Ljava/nio/ShortBuffer;
+
+.field public j:Leif;
+
+.field public k:Ljava/util/ArrayList;
+
+.field public l:Z
+
+.field public m:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x1
 
-    iput-object p1, p0, Lejc;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lejc;->b:Ljxn;
+    invoke-direct {p0}, Leic;-><init>()V
 
-    iput-object p3, p0, Lejc;->c:Ljxn;
+    iput v0, p0, Lejc;->f:I
+
+    iput v0, p0, Lejc;->g:I
+
+    iput-boolean v0, p0, Lejc;->h:Z
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lejc;->j:Leif;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lejc;->k:Ljava/util/ArrayList;
+
+    iput-boolean v1, p0, Lejc;->l:Z
+
+    iput-boolean v1, p0, Lejc;->m:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 4
 
-    iget-object v0, p0, Lejc;->a:Ljxn;
+    iget-object v0, p0, Lejc;->k:Ljava/util/ArrayList;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_2
 
-    move-result-object v0
+    iget-object v0, p0, Lejc;->k:Ljava/util/ArrayList;
 
-    check-cast v0, Lfun;
+    check-cast v0, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lejc;->b:Ljxn;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result v3
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :cond_0
+    :goto_0
+    if-ge v2, v3, :cond_1
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lful;
+    add-int/lit8 v2, v2, 0x1
 
-    iget-object v2, p0, Lejc;->c:Ljxn;
+    check-cast v1, Leid;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    move-result-object v2
+    invoke-virtual {v1}, Leid;->a()V
 
-    check-cast v2, Lgow;
+    goto :goto_0
 
-    new-instance v3, Lgop;
+    :cond_1
+    iget-object v0, p0, Lejc;->k:Ljava/util/ArrayList;
 
-    invoke-direct {v3, v0, v1, v2}, Lgop;-><init>(Lfun;Lful;Lgow;)V
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    :cond_2
+    return-void
+.end method
 
-    invoke-static {v3, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+.method public final a(I)V
+    .locals 2
+
+    iget-object v0, p0, Lejc;->d:Ljava/util/Vector;
+
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lejc;->d:Ljava/util/Vector;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/Vector;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgoz;
+    check-cast v0, Leid;
 
-    return-object v0
+    iput p1, v0, Leid;->a:I
+
+    goto :goto_0
+.end method
+
+.method public final b([F)V
+    .locals 5
+
+    const/16 v4, 0x1403
+
+    const/4 v3, 0x0
+
+    iget-boolean v0, p0, Lejc;->h:Z
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-boolean v0, p0, Lejc;->m:Z
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lejc;->e:Leif;
+
+    iget v0, v0, Leif;->d:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
+
+    iget-object v0, p0, Lejc;->e:Leif;
+
+    iget-object v1, p0, Lejc;->a:Ljava/nio/FloatBuffer;
+
+    invoke-virtual {v0, v1}, Leif;->a(Ljava/nio/FloatBuffer;)V
+
+    iget-object v0, p0, Lejc;->e:Leif;
+
+    iget-object v1, p0, Lejc;->b:Ljava/nio/FloatBuffer;
+
+    invoke-virtual {v0, v1}, Leif;->b(Ljava/nio/FloatBuffer;)V
+
+    iget-object v0, p0, Lejc;->e:Leif;
+
+    invoke-virtual {v0, p1}, Leif;->a([F)V
+
+    iget-object v0, p0, Lejc;->d:Ljava/util/Vector;
+
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_2
+
+    iget-object v0, p0, Lejc;->d:Ljava/util/Vector;
+
+    invoke-virtual {v0, v3}, Ljava/util/Vector;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Leid;
+
+    invoke-virtual {v0}, Leid;->b()V
+
+    :cond_2
+    iget-object v0, p0, Lejc;->c:Ljava/nio/ShortBuffer;
+
+    invoke-virtual {v0, v3}, Ljava/nio/ShortBuffer;->position(I)Ljava/nio/Buffer;
+
+    const/4 v0, 0x4
+
+    iget v1, p0, Lejc;->f:I
+
+    iget-object v2, p0, Lejc;->c:Ljava/nio/ShortBuffer;
+
+    invoke-static {v0, v1, v4, v2}, Landroid/opengl/GLES20;->glDrawElements(IIILjava/nio/Buffer;)V
+
+    :cond_3
+    iget-boolean v0, p0, Lejc;->l:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lejc;->j:Leif;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lejc;->j:Leif;
+
+    iget v0, v0, Leif;->d:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
+
+    iget-object v0, p0, Lejc;->j:Leif;
+
+    iget-object v1, p0, Lejc;->a:Ljava/nio/FloatBuffer;
+
+    invoke-virtual {v0, v1}, Leif;->a(Ljava/nio/FloatBuffer;)V
+
+    iget-object v0, p0, Lejc;->j:Leif;
+
+    invoke-virtual {v0, p1}, Leif;->a([F)V
+
+    iget-object v0, p0, Lejc;->i:Ljava/nio/ShortBuffer;
+
+    invoke-virtual {v0, v3}, Ljava/nio/ShortBuffer;->position(I)Ljava/nio/Buffer;
+
+    const/high16 v0, 0x41100000    # 9.0f
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glLineWidth(F)V
+
+    const/4 v0, 0x2
+
+    iget v1, p0, Lejc;->g:I
+
+    iget-object v2, p0, Lejc;->i:Ljava/nio/ShortBuffer;
+
+    invoke-static {v0, v1, v4, v2}, Landroid/opengl/GLES20;->glDrawElements(IIILjava/nio/Buffer;)V
+
+    iget v0, p0, Lejc;->g:I
+
+    iget-object v1, p0, Lejc;->i:Ljava/nio/ShortBuffer;
+
+    invoke-static {v3, v0, v4, v1}, Landroid/opengl/GLES20;->glDrawElements(IIILjava/nio/Buffer;)V
+
+    goto :goto_0
 .end method

@@ -1,63 +1,61 @@
-.class final synthetic Lejv;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljig;
+.class public final Lejv;
+.super Leif;
+.source "PG"
 
 
 # instance fields
-.field private a:Leju;
+.field private e:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Leju;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Leif;-><init>()V
 
-    iput-object p1, p0, Lejv;->a:Leju;
+    const-string v0, "precision mediump float;                            \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  vec4 texcolor;                                    \n  texcolor = texture2D( sTexture, vTexCoord );      \n  texcolor.a = 0.85;                                \n  if (texcolor.r < .0001) texcolor.a = 0.0;         \n  gl_FragColor = texcolor;                          \n}                                                   \n"
 
-    return-void
-.end method
+    iput-object v0, p0, Lejv;->e:Ljava/lang/String;
 
+    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
 
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 3
+    iget-object v1, p0, Lejv;->e:Ljava/lang/String;
 
-    iget-object v0, p0, Lejv;->a:Leju;
-
-    iget-object v0, v0, Leju;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-static {v0, v1}, Lejv;->a(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    const/16 v1, 0x2f
+    iput v0, p0, Lejv;->d:I
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget v0, p0, Lejv;->d:I
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    const-string v1, "aPosition"
 
-    const-string v1, "There are "
+    invoke-static {v0, v1}, Lejv;->a(ILjava/lang/String;)I
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v1
+    iput v0, p0, Lejv;->a:I
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget v0, p0, Lejv;->d:I
 
-    move-result-object v0
+    const-string v1, "aTextureCoord"
 
-    const-string v1, " listeners before addition"
+    invoke-static {v0, v1}, Lejv;->a(ILjava/lang/String;)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v0
+    iput v0, p0, Lejv;->b:I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget v0, p0, Lejv;->d:I
 
-    move-result-object v0
+    const-string v1, "uMvpMatrix"
 
-    return-object v0
+    invoke-static {v0, v1}, Lejv;->b(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lejv;->c:I
+
+    return-void
 .end method

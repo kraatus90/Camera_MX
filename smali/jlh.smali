@@ -1,410 +1,232 @@
-.class public abstract Ljlh;
-.super Ljlk;
+.class public final Ljlh;
+.super Ljkq;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/NavigableSet;
-.implements Ljni;
 
 
 # instance fields
-.field public final transient a:Ljava/util/Comparator;
+.field private final a:Ljjz;
 
-.field private transient b:Ljlh;
+.field private final b:F
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Comparator;)V
+.method public constructor <init>(Ljjz;F)V
     .locals 0
 
-    invoke-direct {p0}, Ljlk;-><init>()V
+    invoke-direct {p0}, Ljkq;-><init>()V
 
-    iput-object p1, p0, Ljlh;->a:Ljava/util/Comparator;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljlh;->a:Ljjz;
+
+    iput p2, p0, Ljlh;->b:F
 
     return-void
 .end method
 
-.method static a(Ljava/util/Comparator;)Ljmy;
-    .locals 2
 
-    sget-object v0, Ljmm;->a:Ljmm;
+# virtual methods
+.method public final a(Ljkl;)Ljkl;
+    .locals 13
 
-    invoke-virtual {v0, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const-wide/16 v4, -0x1
+
+    iget-object v0, p0, Ljlh;->a:Ljjz;
+
+    invoke-interface {v0}, Ljjz;->a()V
+
+    invoke-virtual {p1}, Ljkl;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Ljmy;->b:Ljmy;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :goto_0
-    return-object v0
+    move-result-object v0
 
-    :cond_0
-    new-instance v0, Ljmy;
+    check-cast v0, Ljava/lang/Long;
 
-    sget-object v1, Ljmr;->a:Ljkv;
+    iget-object v2, p0, Ljlh;->a:Ljjz;
 
-    invoke-direct {v0, v1, p0}, Ljmy;-><init>(Ljkv;Ljava/util/Comparator;)V
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    invoke-interface {v2, v6, v7}, Ljjz;->b(J)V
 
     goto :goto_0
-.end method
 
-.method private final b(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljlh;
-    .locals 1
+    :cond_0
+    invoke-static {p1}, Ljwo;->c(Ljava/lang/Iterable;)Ljava/util/HashSet;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v8
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Ljlh;->a:Ljava/util/Comparator;
-
-    invoke-interface {v0, p1, p3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    :cond_1
+    :goto_1
+    invoke-virtual {v8}, Ljava/util/HashSet;->size()I
 
     move-result v0
 
-    if-gtz v0, :cond_0
+    if-lez v0, :cond_3
 
-    const/4 v0, 0x1
+    const v0, 0x7f7fffff    # Float.MAX_VALUE
 
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-virtual {v8}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {p0, p1, p2, p3, p4}, Ljlh;->a(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljlh;
+    move-result-object v9
 
-    move-result-object v0
+    move-wide v2, v4
 
-    return-object v0
+    move v1, v0
 
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private final c(Ljava/lang/Object;Z)Ljlh;
-    .locals 1
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0, p2}, Ljlh;->a(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private final d(Ljava/lang/Object;Z)Ljlh;
-    .locals 1
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0, p2}, Ljlh;->b(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private readObject(Ljava/io/ObjectInputStream;)V
-    .locals 2
-
-    new-instance v0, Ljava/io/InvalidObjectException;
-
-    const-string v1, "Use SerializedForm"
-
-    invoke-direct {v0, v1}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method abstract a(Ljava/lang/Object;Z)Ljlh;
-.end method
-
-.method abstract a(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljlh;
-.end method
-
-.method public abstract a()Ljoe;
-.end method
-
-.method final b(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
-
-    iget-object v0, p0, Ljlh;->a:Ljava/util/Comparator;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    :goto_2
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    return v0
-.end method
+    if-eqz v0, :cond_2
 
-.method abstract b(Ljava/lang/Object;Z)Ljlh;
-.end method
-
-.method public ceiling(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Ljlh;->d(Ljava/lang/Object;Z)Ljlh;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Liui;->a(Ljava/lang/Iterable;)Ljava/lang/Object;
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    iget-object v0, p0, Ljlh;->a:Ljjz;
+
+    invoke-interface {v0, v6, v7}, Ljjz;->a(J)Ljpj;
 
     move-result-object v0
+
+    invoke-virtual {v0}, Ljpj;->a()F
+
+    move-result v0
+
+    cmpg-float v10, v0, v1
+
+    if-gez v10, :cond_4
+
+    move v2, v0
+
+    move-wide v0, v6
+
+    :goto_3
+    move-wide v11, v0
+
+    move v1, v2
+
+    move-wide v2, v11
+
+    goto :goto_2
+
+    :cond_2
+    iget v0, p0, Ljlh;->b:F
+
+    cmpl-float v0, v1, v0
+
+    if-gez v0, :cond_3
+
+    cmp-long v0, v2, v4
+
+    if-eqz v0, :cond_1
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {v8, v0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Ljlh;->a:Ljjz;
+
+    invoke-interface {v0, v2, v3}, Ljjz;->c(J)V
+
+    goto :goto_1
+
+    :cond_3
+    new-instance v0, Ljkl;
+
+    invoke-static {v8}, Ljwo;->d(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljkl;-><init>(Ljava/util/Collection;)V
 
     return-object v0
+
+    :cond_4
+    move-wide v11, v2
+
+    move v2, v1
+
+    move-wide v0, v11
+
+    goto :goto_3
 .end method
 
-.method public comparator()Ljava/util/Comparator;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    iget-object v0, p0, Ljlh;->a:Ljava/util/Comparator;
+    iget-object v0, p0, Ljlh;->a:Ljjz;
 
-    return-object v0
-.end method
-
-.method public synthetic descendingIterator()Ljava/util/Iterator;
-    .locals 1
-
-    invoke-virtual {p0}, Ljlh;->g()Ljoe;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iget v1, p0, Ljlh;->b:F
 
-.method public synthetic descendingSet()Ljava/util/NavigableSet;
-    .locals 1
-
-    iget-object v0, p0, Ljlh;->b:Ljlh;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Ljlh;->f()Ljlh;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljlh;->b:Ljlh;
-
-    iput-object p0, v0, Ljlh;->b:Ljlh;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method abstract f()Ljlh;
-.end method
-
-.method public first()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljlh;->a()Ljoe;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljoe;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public floor(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Ljlh;->c(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljlh;->g()Ljoe;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liui;->c(Ljava/util/Iterator;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public abstract g()Ljoe;
-.end method
-
-.method public synthetic headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Ljlh;->c(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljlh;->c(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public higher(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljlh;->d(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liui;->a(Ljava/lang/Iterable;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    invoke-virtual {p0}, Ljlh;->a()Ljoe;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public last()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljlh;->g()Ljoe;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljoe;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public lower(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljlh;->c(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljlh;->g()Ljoe;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liui;->c(Ljava/util/Iterator;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final pollFirst()Ljava/lang/Object;
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final pollLast()Ljava/lang/Object;
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public synthetic subSet(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 1
-
-    invoke-direct {p0, p1, p2, p3, p4}, Ljlh;->b(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 2
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p1, v0, p2, v1}, Ljlh;->b(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Ljlh;->d(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Ljlh;->d(Ljava/lang/Object;Z)Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method writeReplace()Ljava/lang/Object;
-    .locals 3
-
-    new-instance v0, Ljlj;
-
-    iget-object v1, p0, Ljlh;->a:Ljava/util/Comparator;
-
-    invoke-virtual {p0}, Ljlh;->toArray()[Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v2}, Ljlj;-><init>(Ljava/util/Comparator;[Ljava/lang/Object;)V
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x50
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "ScoreThresholdSegmentFilter[scorer="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, ", threshold="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", min=0]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

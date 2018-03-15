@@ -4,14 +4,5 @@
 
 
 # virtual methods
-.method public abstract a(Leku;ZLjht;)Z
-.end method
-
-.method public abstract a(Lgpa;Ljava/util/concurrent/Executor;Ljava/util/Set;Lgou;Ljht;)Z
-.end method
-
-.method public abstract a(Liil;)Z
-.end method
-
-.method public abstract b()Ljava/util/Set;
+.method public abstract a(FLeji;[FII)V
 .end method

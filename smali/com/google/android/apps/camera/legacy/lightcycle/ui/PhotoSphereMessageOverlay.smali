@@ -18,22 +18,22 @@
 
 .field public f:Z
 
-.field private g:[I
+.field private final g:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const v0, 0x7f110166
+    const v0, 0x7f1100e2
 
     sput v0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->a:I
 
-    const v0, 0x7f11030f
+    const v0, 0x7f1101f4
 
     sput v0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->b:I
 
-    const v0, 0x7f110320
+    const v0, 0x7f1101ff
 
     sput v0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->c:I
 
@@ -77,9 +77,9 @@
 
     :array_0
     .array-data 4
-        0x7f0e0198
-        0x7f0e0199
-        0x7f0e019a
+        0x7f0e0160
+        0x7f0e0161
+        0x7f0e0162
     .end array-data
 .end method
 
@@ -120,9 +120,9 @@
 
     :array_0
     .array-data 4
-        0x7f0e0198
-        0x7f0e0199
-        0x7f0e019a
+        0x7f0e0160
+        0x7f0e0161
+        0x7f0e0162
     .end array-data
 .end method
 
@@ -133,9 +133,9 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->d:Landroid/os/Handler;
 
-    new-instance v1, Lfpz;
+    new-instance v1, Lekk;
 
-    invoke-direct {v1, p0}, Lfpz;-><init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;)V
+    invoke-direct {v1, p0}, Lekk;-><init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -147,9 +147,9 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->d:Landroid/os/Handler;
 
-    new-instance v1, Lfpy;
+    new-instance v1, Lekj;
 
-    invoke-direct {v1, p0, p1}, Lfpy;-><init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;I)V
+    invoke-direct {v1, p0, p1}, Lekj;-><init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;I)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -161,9 +161,9 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->d:Landroid/os/Handler;
 
-    new-instance v1, Lfqe;
+    new-instance v1, Lekp;
 
-    invoke-direct {v1, p0, p1, p2}, Lfqe;-><init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;ZI)V
+    invoke-direct {v1, p0, p1, p2}, Lekp;-><init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;ZI)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -229,7 +229,7 @@
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    const v0, 0x7f0e0198
+    const v0, 0x7f0e0160
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->findViewById(I)Landroid/view/View;
 
@@ -245,7 +245,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d01fc
+    const v3, 0x7f0d01b3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -257,7 +257,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d01fa
+    const v4, 0x7f0d01b1
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -269,7 +269,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0d01fb
+    const v5, 0x7f0d01b2
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimension(I)F
 

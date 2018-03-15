@@ -3,32 +3,43 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfgu;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private b:Ljxn;
+.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private c:Ljxn;
+.field public final synthetic c:Lful;
 
-.field private d:Ljxn;
+.field public final synthetic d:Lfjj;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lfjj;Lful;)V
+    .locals 2
+
+    const/4 v1, 0x0
+
+    iput-object p1, p0, Lfku;->d:Lfjj;
+
+    iput-object p2, p0, Lfku;->c:Lful;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfku;->a:Ljxn;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p2, p0, Lfku;->b:Ljxn;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object p3, p0, Lfku;->c:Ljxn;
+    iput-object v0, p0, Lfku;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p4, p0, Lfku;->d:Ljxn;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lfku;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
@@ -36,69 +47,93 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+    .locals 1
 
-    iget-object v0, p0, Lfku;->a:Ljxn;
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    move-result-object v1
+    throw v0
+.end method
 
-    check-cast v1, Lhao;
+.method public final b()V
+    .locals 2
 
-    iget-object v0, p0, Lfku;->b:Ljxn;
+    const/4 v1, 0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lfku;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->b(Z)V
+
+    iget-object v0, p0, Lfku;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :goto_1
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lfku;->c:Lful;
+
+    invoke-interface {v0}, Lful;->close()V
+
+    goto :goto_1
+.end method
+
+.method public final c()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Lfku;->d:Lfjj;
+
+    iget-object v0, v0, Lfjj;->a:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public final d()Lfhq;
+    .locals 3
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lfhq;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lfku;->d:Lfjj;
+
+    iget-object v2, v2, Lfjj;->b:Lfhq;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    new-instance v2, Lfjk;
+
+    invoke-direct {v2, p0}, Lfjk;-><init>(Lfku;)V
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Lffm;->a([Lfhq;)Lfhq;
 
     move-result-object v0
-
-    check-cast v0, Landroid/content/Context;
-
-    iget-object v2, p0, Lfku;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lham;
-
-    iget-object v2, p0, Lfku;->d:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lgzz;
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-class v3, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
-
-    invoke-direct {v2, v0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v3, "open_filmstrip"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v2, v3, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    new-instance v3, Landroid/content/Intent;
-
-    const-class v6, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
-
-    invoke-direct {v3, v0, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    new-instance v0, Lfkx;
-
-    invoke-direct/range {v0 .. v5}, Lfkx;-><init>(Lhao;Landroid/content/Intent;Landroid/content/Intent;Lham;Lgzz;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfkx;
 
     return-object v0
 .end method

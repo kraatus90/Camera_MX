@@ -1,124 +1,99 @@
-.class public final enum Lfxd;
-.super Ljava/lang/Enum;
+.class public final Lfxd;
+.super Lfvt;
 .source "PG"
 
 
-# static fields
-.field public static final enum a:Lfxd;
-
-.field public static final enum b:Lfxd;
-
-.field public static final enum c:Lfxd;
-
-.field private static synthetic d:[Lfxd;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lfxd;
-
-    const-string v1, "MICROVIDEO_MODE_OFF"
-
-    invoke-direct {v0, v1, v2}, Lfxd;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfxd;->a:Lfxd;
-
-    new-instance v0, Lfxd;
-
-    const-string v1, "MICROVIDEO_MODE_AUTO"
-
-    invoke-direct {v0, v1, v3}, Lfxd;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfxd;->b:Lfxd;
-
-    new-instance v0, Lfxd;
-
-    const-string v1, "MICROVIDEO_MODE_ON"
-
-    invoke-direct {v0, v1, v4}, Lfxd;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfxd;->c:Lfxd;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Lfxd;
-
-    sget-object v1, Lfxd;->a:Lfxd;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lfxd;->b:Lfxd;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lfxd;->c:Lfxd;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Lfxd;->d:[Lfxd;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Lfvt;-><init>()V
 
     return-void
-.end method
-
-.method public static values()[Lfxd;
-    .locals 1
-
-    sget-object v0, Lfxd;->d:[Lfxd;
-
-    invoke-virtual {v0}, [Lfxd;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lfxd;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final a()Lfvh;
+    .locals 13
 
-    sget-object v0, Lfxd;->c:Lfxd;
+    const v12, 0x7f1100d6
 
-    invoke-virtual {p0, v0}, Lfxd;->equals(Ljava/lang/Object;)Z
+    const v11, 0x7f1100d5
 
-    move-result v0
+    const v10, 0x7f1100d4
 
-    if-nez v0, :cond_0
+    new-instance v8, Lfvh;
 
-    sget-object v0, Lfxd;->b:Lfxd;
+    sget-object v9, Lfvj;->b:Lfvj;
 
-    invoke-virtual {p0, v0}, Lfxd;->equals(Ljava/lang/Object;)Z
+    sget-object v0, Lfvk;->g:Lfvk;
 
-    move-result v0
+    const v1, 0x7f0200cb
 
-    if-eqz v0, :cond_1
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :cond_0
-    const/4 v0, 0x1
+    move-result-object v1
 
-    :goto_0
-    return v0
+    sget-object v2, Lfvk;->e:Lfvk;
 
-    :cond_1
-    const/4 v0, 0x0
+    const v3, 0x7f0200cd
 
-    goto :goto_0
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    sget-object v4, Lfvk;->f:Lfvk;
+
+    const v5, 0x7f0200c9
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    sget-object v6, Lfvk;->h:Lfvk;
+
+    const v7, 0x7f0200c7
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-static/range {v0 .. v7}, Ljum;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljum;
+
+    move-result-object v0
+
+    const v1, 0x7f1100da
+
+    new-instance v2, Lfvi;
+
+    sget-object v3, Lfvk;->g:Lfvk;
+
+    const v4, 0x7f0200ca
+
+    invoke-direct {v2, v3, v4, v11, v11}, Lfvi;-><init>(Lfvk;III)V
+
+    new-instance v3, Lfvi;
+
+    sget-object v4, Lfvk;->e:Lfvk;
+
+    const v5, 0x7f0200cc
+
+    invoke-direct {v3, v4, v5, v12, v12}, Lfvi;-><init>(Lfvk;III)V
+
+    new-instance v4, Lfvi;
+
+    sget-object v5, Lfvk;->f:Lfvk;
+
+    const v6, 0x7f0200c8
+
+    invoke-direct {v4, v5, v6, v10, v10}, Lfvi;-><init>(Lfvk;III)V
+
+    invoke-static {v2, v3, v4}, Ljuh;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljuh;
+
+    move-result-object v2
+
+    invoke-direct {v8, v9, v0, v1, v2}, Lfvh;-><init>(Lfvj;Ljum;ILjuh;)V
+
+    return-object v8
 .end method

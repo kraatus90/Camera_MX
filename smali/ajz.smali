@@ -1,176 +1,139 @@
-.class final Lajz;
+.class public final Lajz;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Laet;
+
+# static fields
+.field private static final b:Ljava/lang/String;
+
+.field private static final c:Ljava/util/Map;
 
 
 # instance fields
-.field private a:Ljava/lang/String;
-
-.field private b:Lajy;
-
-.field private c:Ljava/lang/Object;
+.field public a:Ljava/util/Map;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lajy;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "http.agent"
 
-    iput-object p1, p0, Lajz;->a:Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lajz;->b:Lajy;
+    move-result-object v0
 
-    return-void
-.end method
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
+    move-result v1
 
-# virtual methods
-.method public final a()V
-    .locals 1
-
-    :try_start_0
-    iget-object v0, p0, Lajz;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v1, :cond_1
 
     :goto_0
-    return-void
+    sput-object v0, Lajz;->b:Ljava/lang/String;
 
-    :catch_0
-    move-exception v0
+    new-instance v0, Ljava/util/HashMap;
 
-    goto :goto_0
-.end method
+    const/4 v1, 0x2
 
-.method public final a(Ladd;Laeu;)V
-    .locals 4
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
-    :try_start_0
-    iget-object v0, p0, Lajz;->a:Ljava/lang/String;
+    sget-object v1, Lajz;->b:Ljava/lang/String;
 
-    const-string v1, "data:image"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const-string v1, "User-Agent"
 
-    const-string v1, "Not a valid image data URL."
+    new-instance v2, Laka;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    sget-object v3, Lajz;->b:Ljava/lang/String;
 
-    throw v0
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v2, v3}, Laka;-><init>(Ljava/lang/String;)V
 
-    :catch_0
-    move-exception v0
-
-    invoke-interface {p2, v0}, Laeu;->a(Ljava/lang/Exception;)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    const/16 v1, 0x2c
-
-    :try_start_1
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v1
-
-    const/4 v2, -0x1
-
-    if-ne v1, v2, :cond_1
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Missing comma in data URL."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
-    const-string v3, ";base64"
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    :cond_0
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    sput-object v0, Lajz;->c:Ljava/util/Map;
+
+    return-void
+
+    :cond_1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    if-nez v2, :cond_2
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    const-string v1, "Not a base64 image data URL."
+    move-result v1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+    :goto_1
+    if-ge v1, v2, :cond_4
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v4
+
+    const/16 v5, 0x1f
+
+    if-gt v4, v5, :cond_2
+
+    const/16 v5, 0x9
+
+    if-ne v4, v5, :cond_3
+
+    :cond_2
+    const/16 v5, 0x7f
+
+    if-ge v4, v5, :cond_3
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :goto_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    const/16 v4, 0x3f
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_2
+
+    :cond_4
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
-
-    new-instance v1, Ljava/io/ByteArrayInputStream;
-
-    invoke-direct {v1, v0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
-    iput-object v1, p0, Lajz;->c:Ljava/lang/Object;
-
-    iget-object v0, p0, Lajz;->c:Ljava/lang/Object;
-
-    invoke-interface {p2, v0}, Laeu;->a(Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 .end method
 
-.method public final b()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v0, Lajz;->c:Ljava/util/Map;
+
+    iput-object v0, p0, Lajz;->a:Ljava/util/Map;
 
     return-void
-.end method
-
-.method public final c()Laed;
-    .locals 1
-
-    sget-object v0, Laed;->a:Laed;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/Class;
-    .locals 1
-
-    const-class v0, Ljava/io/InputStream;
-
-    return-object v0
 .end method

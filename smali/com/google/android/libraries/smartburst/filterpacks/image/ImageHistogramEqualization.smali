@@ -35,9 +35,9 @@
 
     const/4 v2, 0x0
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->capacity()I
 
@@ -50,7 +50,7 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     invoke-virtual {p3}, Ljava/nio/ByteBuffer;->capacity()I
 
@@ -63,19 +63,19 @@
     move v0, v1
 
     :goto_1
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     if-lez p1, :cond_2
 
     move v0, v1
 
     :goto_2
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     if-lez p2, :cond_3
 
     :goto_3
-    invoke-static {v1}, Liya;->a(Z)V
+    invoke-static {v1}, Ljii;->a(Z)V
 
     invoke-static {p0, p1, p2, p3}, Lcom/google/android/libraries/smartburst/filterpacks/image/ImageHistogramEqualization;->doHistogramEqualization(Ljava/nio/ByteBuffer;IILjava/nio/ByteBuffer;)V
 

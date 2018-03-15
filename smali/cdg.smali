@@ -1,137 +1,159 @@
-.class final Lcdg;
+.class public final Lcdg;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Likg;
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Lcbv;
+
+.field private final synthetic b:Lcdh;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcbv;Lcdh;)V
     .locals 0
+
+    iput-object p1, p0, Lcdg;->a:Lcbv;
+
+    iput-object p2, p0, Lcdg;->b:Lcdh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private static a(Ljava/util/List;)Ljava/util/Map;
-    .locals 9
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+# virtual methods
+.method public final a()V
+    .locals 2
 
-    new-instance v2, Ljava/util/HashMap;
+    iget-object v0, p0, Lcdg;->a:Lcbv;
 
-    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+    iget-object v0, v0, Lcbv;->r:Lcom/google/android/apps/camera/stats/Instrumentation;
 
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_0
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/Instrumentation;->burstStats()Lcom/google/android/apps/camera/stats/InstrumentationSessionRecorder;
 
     move-result-object v0
 
-    check-cast v0, Lcdi;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/InstrumentationSessionRecorder;->getCurrentSession()Lcom/google/android/apps/camera/stats/InstrumentationSession;
 
-    iget-object v4, v0, Lcdi;->a:Ljgz;
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/stats/BurstSessionStatistics;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/BurstSessionStatistics;->f()V
+
+    sget-object v0, Lcbv;->a:Ljava/lang/String;
+
+    const-string v1, "onBurstPreviewAvailable"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcdg;->a:Lcbv;
+
+    iget-object v0, v0, Lcbv;->l:Lket;
 
     const/4 v1, 0x0
 
-    :try_start_0
-    iget-wide v6, v0, Lcdi;->b:J
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v5
-
-    invoke-interface {v4}, Ljgz;->d()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lixk;
-
-    invoke-interface {v2, v5, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v4}, Ljgz;->close()V
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    :try_start_1
-    throw v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    move-exception v1
-
-    move-object v8, v1
-
-    move-object v1, v0
-
-    move-object v0, v8
-
-    :goto_1
-    if-eqz v4, :cond_1
-
-    if-eqz v1, :cond_2
-
-    :try_start_2
-    invoke-interface {v4}, Ljgz;->close()V
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
-
-    :cond_1
-    :goto_2
-    throw v0
-
-    :catch_1
-    move-exception v2
-
-    invoke-static {v1, v2}, Ljvs;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    :cond_2
-    invoke-interface {v4}, Ljgz;->close()V
-
-    goto :goto_2
-
-    :cond_3
-    return-object v2
-
-    :catchall_1
-    move-exception v0
-
-    goto :goto_1
+    return-void
 .end method
 
+.method public final a(Ljava/lang/Exception;)V
+    .locals 6
 
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    const/4 v5, 0x0
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Lcdg;->a:Lcbv;
 
-    invoke-static {p1}, Lcdg;->a(Ljava/util/List;)Ljava/util/Map;
+    iget-object v0, v0, Lcbv;->m:Lihb;
+
+    invoke-interface {v0}, Lihb;->close()V
+
+    iget-object v0, p0, Lcdg;->a:Lcbv;
+
+    iget-object v0, v0, Lcbv;->l:Lket;
+
+    invoke-virtual {v0, v5}, Lkch;->a(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lcdg;->a:Lcbv;
+
+    iget-object v0, p0, Lcdg;->b:Lcdh;
+
+    sget-object v2, Lcbv;->a:Ljava/lang/String;
+
+    const-string v3, "Exception while running the burst"
+
+    invoke-static {v2, v3, p1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iget-object v2, v1, Lcbv;->t:Lglo;
+
+    iget-object v3, v2, Lglo;->b:Lkar;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v2}, Lglo;->c()V
+
+    :goto_0
+    new-instance v2, Landroid/os/Handler;
+
+    iget-object v3, v1, Lcbv;->b:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v3, Lccb;
+
+    invoke-direct {v3, v0}, Lccb;-><init>(Lcdh;)V
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    iget-object v0, v1, Lcbv;->n:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, v5}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lgfr;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Lgfr;->f()V
+
+    :cond_0
+    invoke-virtual {v1}, Lcbv;->c()V
+
+    return-void
+
+    :cond_1
+    new-instance v3, Lkar;
+
+    invoke-direct {v3}, Lkar;-><init>()V
+
+    iput-object v3, v2, Lglo;->b:Lkar;
+
+    iget-object v3, v2, Lglo;->b:Lkar;
+
+    const/4 v4, 0x0
+
+    iput-boolean v4, v3, Lkar;->a:Z
+
+    iget-object v3, v2, Lglo;->b:Lkar;
+
+    const/4 v4, 0x1
+
+    iput-boolean v4, v3, Lkar;->d:Z
+
+    invoke-virtual {v2}, Lglo;->b()V
+
+    goto :goto_0
 .end method

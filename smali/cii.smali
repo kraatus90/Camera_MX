@@ -1,44 +1,47 @@
-.class public final Lcii;
+.class final Lcii;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lcih;
-
 
 # instance fields
-.field private synthetic a:Liiu;
+.field public final a:J
 
-.field private synthetic b:Libx;
+.field public final b:F
+
+.field public final c:Lgja;
+
+.field public final d:Liqz;
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Ljrf;
+
+.field public final h:Ljava/io/File;
 
 
 # direct methods
-.method public constructor <init>(Liiu;Libx;)V
-    .locals 0
-
-    iput-object p1, p0, Lcii;->a:Liiu;
-
-    iput-object p2, p0, Lcii;->b:Libx;
+.method public constructor <init>(JFLgja;Liqz;ZZLjrf;Ljava/io/File;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-wide p1, p0, Lcii;->a:J
+
+    iput p3, p0, Lcii;->b:F
+
+    iput-object p4, p0, Lcii;->c:Lgja;
+
+    iput-object p5, p0, Lcii;->d:Liqz;
+
+    iput-boolean p6, p0, Lcii;->e:Z
+
+    iput-boolean p7, p0, Lcii;->f:Z
+
+    iput-object p8, p0, Lcii;->g:Ljrf;
+
+    iput-object p9, p0, Lcii;->h:Ljava/io/File;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lgih;
-    .locals 2
-
-    iget-object v0, p0, Lcii;->a:Liiu;
-
-    iget-object v1, p0, Lcii;->b:Libx;
-
-    invoke-virtual {v0, v1}, Liiu;->a(Libx;)Lich;
-
-    move-result-object v0
-
-    check-cast v0, Lgih;
-
-    return-object v0
 .end method

@@ -1,193 +1,62 @@
-.class abstract Ljuu;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.class final Ljuu;
+.super Ljrs;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# instance fields
+.field private final synthetic a:Ljava/util/Iterator;
 
-# static fields
-.field public static final a:Ljava/lang/Runnable;
-
-.field public static final b:Ljava/lang/Runnable;
+.field private final synthetic b:Ljri;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljuv;
-
-    invoke-direct {v0}, Ljuv;-><init>()V
-
-    sput-object v0, Ljuu;->a:Ljava/lang/Runnable;
-
-    new-instance v0, Ljuv;
-
-    invoke-direct {v0}, Ljuv;-><init>()V
-
-    sput-object v0, Ljuu;->b:Ljava/lang/Runnable;
-
-    return-void
-.end method
-
-.method constructor <init>()V
+.method constructor <init>(Ljava/util/Iterator;Ljri;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    iput-object p1, p0, Ljuu;->a:Ljava/util/Iterator;
+
+    iput-object p2, p0, Ljuu;->b:Ljri;
+
+    invoke-direct {p0}, Ljrs;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract a(Ljava/lang/Object;Ljava/lang/Throwable;)V
-.end method
-
-.method abstract a()Z
-.end method
-
-.method abstract b()Ljava/lang/Object;
-.end method
-
-.method public final run()V
-    .locals 5
-
-    const/4 v2, 0x0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v3
-
-    invoke-virtual {p0, v2, v3}, Ljuu;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
+.method protected final a()Ljava/lang/Object;
+    .locals 2
 
     :cond_0
-    :goto_0
-    return-void
+    iget-object v0, p0, Ljuu;->a:Ljava/util/Iterator;
 
-    :cond_1
-    invoke-virtual {p0}, Ljuu;->a()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ljuu;->a:Ljava/util/Iterator;
 
-    :goto_1
-    if-eqz v0, :cond_7
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :try_start_0
+    move-result-object v0
+
+    iget-object v1, p0, Ljuu;->b:Ljri;
+
+    invoke-interface {v1, v0}, Ljri;->a(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_1
     invoke-virtual {p0}, Ljuu;->b()Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v1
-
-    :goto_2
-    sget-object v4, Ljuu;->a:Ljava/lang/Runnable;
-
-    invoke-virtual {p0, v3, v4}, Ljuu;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    :goto_3
-    invoke-virtual {p0}, Ljuu;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    sget-object v4, Ljuu;->b:Ljava/lang/Runnable;
-
-    if-ne v3, v4, :cond_3
-
-    invoke-static {}, Ljava/lang/Thread;->yield()V
-
-    goto :goto_3
-
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_3
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, v1, v2}, Ljuu;->a(Ljava/lang/Object;Ljava/lang/Throwable;)V
+    move-result-object v0
 
     goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    sget-object v4, Ljuu;->a:Ljava/lang/Runnable;
-
-    invoke-virtual {p0, v3, v4}, Ljuu;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_4
-
-    :goto_4
-    invoke-virtual {p0}, Ljuu;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    sget-object v4, Ljuu;->b:Ljava/lang/Runnable;
-
-    if-ne v3, v4, :cond_4
-
-    invoke-static {}, Ljava/lang/Thread;->yield()V
-
-    goto :goto_4
-
-    :cond_4
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, v2, v1}, Ljuu;->a(Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    sget-object v4, Ljuu;->a:Ljava/lang/Runnable;
-
-    invoke-virtual {p0, v3, v4}, Ljuu;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    :goto_5
-    invoke-virtual {p0}, Ljuu;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    sget-object v4, Ljuu;->b:Ljava/lang/Runnable;
-
-    if-ne v3, v4, :cond_5
-
-    invoke-static {}, Ljava/lang/Thread;->yield()V
-
-    goto :goto_5
-
-    :cond_5
-    if-eqz v0, :cond_6
-
-    invoke-virtual {p0, v2, v2}, Ljuu;->a(Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    :cond_6
-    throw v1
-
-    :cond_7
-    move-object v1, v2
-
-    goto :goto_2
 .end method

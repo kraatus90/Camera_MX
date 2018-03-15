@@ -1,46 +1,78 @@
-.class final Lfkl;
+.class public final Lfkl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lhkt;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lhae;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lhae;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfkl;->a:Lhae;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfkl;->a:Lkgv;
+
+    iput-object p2, p0, Lfkl;->b:Lkgv;
+
+    iput-object p3, p0, Lfkl;->c:Lkgv;
+
+    iput-object p4, p0, Lfkl;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Lhks;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lfkl;->a:Lhae;
+    new-instance v4, Lfkj;
 
-    iget-object v0, v0, Lhae;->a:Lhac;
+    iget-object v0, p0, Lfkl;->a:Lkgv;
 
-    iget-object v1, v0, Lhac;->a:Lhkl;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v1, v0}, Lhkl;->b(Lhkn;)V
+    move-result-object v0
 
-    iget-object v1, v0, Lhac;->a:Lhkl;
+    check-cast v0, Liaw;
 
-    invoke-virtual {v1, v0}, Lhkl;->b(Lhko;)V
+    iget-object v1, p0, Lfkl;->b:Lkgv;
 
-    iget-object v0, v0, Lhac;->a:Lhkl;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhkl;->d()V
+    move-result-object v1
 
-    return-void
+    check-cast v1, Libq;
+
+    iget-object v2, p0, Lfkl;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Linm;
+
+    iget-object v3, p0, Lfkl;->d:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lfim;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lfkj;-><init>(Liaw;Libq;Linm;Lfim;)V
+
+    return-object v4
 .end method

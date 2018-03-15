@@ -69,7 +69,7 @@
 
     const/4 v1, 0x0
 
-    sget-object v2, Lnr;->bZ:[I
+    sget-object v2, Lnm;->bX:[I
 
     const v3, 0x1010041
 
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    sget v1, Lnr;->ce:I
+    sget v1, Lnm;->cc:I
 
     invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 

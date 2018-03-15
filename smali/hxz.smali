@@ -19,13 +19,13 @@
 .method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 5
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    const/4 v0, 0x0
+
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
     move-result v2
 
-    const/4 v1, 0x0
-
-    const/4 v0, 0x0
+    move v1, v0
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
@@ -44,21 +44,21 @@
 
     packed-switch v4, :pswitch_data_0
 
-    invoke-static {p1, v3}, Lhjg;->b(Landroid/os/Parcel;I)V
+    invoke-static {p1, v3}, Lhmr;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v3}, Lhjg;->e(Landroid/os/Parcel;I)I
+    invoke-static {p1, v3}, Lhmr;->e(Landroid/os/Parcel;I)I
 
     move-result v1
 
     goto :goto_0
 
     :pswitch_1
-    invoke-static {p1, v3}, Lhjg;->h(Landroid/os/Parcel;I)Landroid/os/IBinder;
+    invoke-static {p1, v3}, Lhmr;->c(Landroid/os/Parcel;I)Z
 
-    move-result-object v0
+    move-result v0
 
     goto :goto_0
 
@@ -69,7 +69,7 @@
 
     if-eq v3, v2, :cond_1
 
-    new-instance v0, Ladf;
+    new-instance v0, Lacp;
 
     const/16 v1, 0x25
 
@@ -91,19 +91,19 @@
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
 
     throw v0
 
     :cond_1
-    new-instance v2, Lcom/google/android/gms/wearable/internal/zzcj;
+    new-instance v2, Lcom/google/android/gms/wearable/internal/zzbg;
 
-    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzcj;-><init>(ILandroid/os/IBinder;)V
+    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzbg;-><init>(IZ)V
 
     return-object v2
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x2
         :pswitch_0
         :pswitch_1
     .end packed-switch
@@ -112,7 +112,7 @@
 .method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzcj;
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzbg;
 
     return-object v0
 .end method

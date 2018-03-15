@@ -1,107 +1,75 @@
-.class public final enum Lcbe;
-.super Ljava/lang/Enum;
+.class final Lcbe;
+.super Liqd;
 .source "PG"
 
 
-# static fields
-.field public static final enum a:Lcbe;
-
-.field public static final enum b:Lcbe;
-
-.field public static final enum c:Lcbe;
-
-.field public static final enum d:Lcbe;
-
-.field private static synthetic e:[Lcbe;
+# instance fields
+.field private final synthetic a:Lcaz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lcbe;
-
-    const-string v1, "BEST_ELEMENTS_HEADER"
-
-    invoke-direct {v0, v1, v2}, Lcbe;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcbe;->a:Lcbe;
-
-    new-instance v0, Lcbe;
-
-    const-string v1, "ALL_ELEMENTS_HEADER"
-
-    invoke-direct {v0, v1, v3}, Lcbe;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcbe;->b:Lcbe;
-
-    new-instance v0, Lcbe;
-
-    const-string v1, "BEST_ELEMENTS_THUMBNAIL"
-
-    invoke-direct {v0, v1, v4}, Lcbe;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcbe;->c:Lcbe;
-
-    new-instance v0, Lcbe;
-
-    const-string v1, "ALL_ELEMENTS_THUMBNAIL"
-
-    invoke-direct {v0, v1, v5}, Lcbe;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcbe;->d:Lcbe;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lcbe;
-
-    sget-object v1, Lcbe;->a:Lcbe;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcbe;->b:Lcbe;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lcbe;->c:Lcbe;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lcbe;->d:Lcbe;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lcbe;->e:[Lcbe;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>(Lcaz;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lcbe;->a:Lcaz;
+
+    invoke-direct {p0}, Liqd;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lcbe;
-    .locals 1
 
-    sget-object v0, Lcbe;->e:[Lcbe;
+# virtual methods
+.method public final synthetic a_(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {v0}, [Lcbe;->clone()Ljava/lang/Object;
+    check-cast p1, Lirb;
 
-    move-result-object v0
+    sget-object v0, Lcaz;->a:Ljava/lang/String;
 
-    check-cast v0, [Lcbe;
+    const-string v1, "startAnalysis : error"
 
-    return-object v0
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcbe;->a:Lcaz;
+
+    iget-object v0, v0, Lcaz;->l:Lihs;
+
+    const-string v1, "BurstControllerImpl#startAnalysis_errorHandling"
+
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    :try_start_0
+    iget-object v0, p0, Lcbe;->a:Lcaz;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lcaz;->m:Z
+
+    iget-object v0, p0, Lcbe;->a:Lcaz;
+
+    iget-object v0, v0, Lcaz;->c:Lcdg;
+
+    invoke-virtual {v0, p1}, Lcdg;->a(Ljava/lang/Exception;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lcbe;->a:Lcaz;
+
+    iget-object v0, v0, Lcaz;->l:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcbe;->a:Lcaz;
+
+    iget-object v1, v1, Lcaz;->l:Lihs;
+
+    invoke-interface {v1}, Lihs;->a()V
+
+    throw v0
 .end method

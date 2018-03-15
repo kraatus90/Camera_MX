@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public b:Lcmb;
+.field public b:Lcog;
 
 .field public final c:Ljava/util/Map;
 
@@ -19,7 +19,7 @@
 
     const-string v0, "ExtViewerButton"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -33,9 +33,9 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object v0, Lcmb;->a:Lcmb;
+    sget-object v0, Lcog;->a:Lcog;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/ExternalViewerButton;->b:Lcmb;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/ExternalViewerButton;->b:Lcog;
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -48,38 +48,38 @@
     return-void
 .end method
 
-.method public static a(Lcmb;)I
+.method public static a(Lcog;)I
     .locals 1
 
-    sget-object v0, Lcmb;->c:Lcmb;
+    sget-object v0, Lcog;->c:Lcog;
 
     if-ne p0, v0, :cond_0
 
-    const v0, 0x7f0200f4
+    const v0, 0x7f0200f5
 
     :goto_0
     return v0
 
     :cond_0
-    sget-object v0, Lcmb;->b:Lcmb;
+    sget-object v0, Lcog;->b:Lcog;
 
     if-ne p0, v0, :cond_1
 
-    const v0, 0x7f0200ef
+    const v0, 0x7f0200f0
 
     goto :goto_0
 
     :cond_1
-    sget-object v0, Lcmb;->d:Lcmb;
+    sget-object v0, Lcog;->d:Lcog;
 
     if-ne p0, v0, :cond_2
 
-    const v0, 0x7f02010b
+    const v0, 0x7f02010e
 
     goto :goto_0
 
     :cond_2
-    const v0, 0x7f0200b3
+    const v0, 0x7f0200b2
 
     goto :goto_0
 .end method
@@ -110,11 +110,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/widget/Cling;
+    check-cast v0, Lcom/google/android/apps/camera/ui/widget/Cling;
 
     const/4 v2, 0x4
 
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/legacy/app/widget/Cling;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/ui/widget/Cling;->setVisibility(I)V
 
     goto :goto_0
 
@@ -127,21 +127,21 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/ExternalViewerButton;->c:Ljava/util/Map;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/ExternalViewerButton;->b:Lcmb;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/ExternalViewerButton;->b:Lcog;
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/widget/Cling;
+    check-cast v0, Lcom/google/android/apps/camera/ui/widget/Cling;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/widget/Cling;->a()V
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/widget/Cling;->a()V
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/widget/Cling;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/widget/Cling;->setVisibility(I)V
 
     :cond_1
     return-void

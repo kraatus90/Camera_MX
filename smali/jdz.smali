@@ -1,70 +1,74 @@
 .class final Ljdz;
-.super Ljea;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljea;-><init>(Ljava/lang/String;B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 4
 
-    const/16 v3, 0x9
+    const/4 v0, 0x3
 
-    new-array v1, v3, [F
+    new-array v1, v0, [Ljko;
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    :goto_0
-    if-ge v0, v3, :cond_0
+    const-class v0, Ljko;
 
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readFloat()F
+    const-string v3, "continuous_action"
 
-    move-result v2
+    invoke-virtual {p1, v0, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    aput v2, v1, v0
+    move-result-object v0
 
-    add-int/lit8 v0, v0, 0x1
+    check-cast v0, Ljko;
 
-    goto :goto_0
+    aput-object v0, v1, v2
 
-    :cond_0
-    invoke-static {v1}, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;->createHomographyTransform([F)Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;
+    const/4 v2, 0x1
+
+    const-class v0, Ljko;
+
+    const-string v3, "image_sharpness_filter"
+
+    invoke-virtual {p1, v0, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljko;
+
+    aput-object v0, v1, v2
+
+    const/4 v2, 0x2
+
+    const-class v0, Ljko;
+
+    const-string v3, "face_quality_filter"
+
+    invoke-virtual {p1, v0, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljko;
+
+    aput-object v0, v1, v2
+
+    invoke-static {v1}, Ljkj;->a([Ljko;)Ljkj;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
-    .locals 2
-
-    instance-of v0, p1, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "Incorrect type for serialization"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    check-cast p1, Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;
-
-    invoke-static {p1, p2}, Licy;->a(Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;Ljava/io/DataOutputStream;)V
-
-    return-void
 .end method

@@ -1,35 +1,21 @@
-.class final synthetic Lfkd;
+.class public Lfkd;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "PG"
 
 
 # instance fields
-.field private a:Lfkc;
+.field public final a:Z
 
 
 # direct methods
-.method constructor <init>(Lfkc;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfkd;->a:Lfkc;
+    const/4 v0, 0x1
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 1
-
-    iget-object v0, p0, Lfkd;->a:Lfkc;
-
-    iget-object v0, v0, Lfkc;->a:Lfjy;
-
-    invoke-virtual {v0}, Lfjy;->a()V
+    iput-boolean v0, p0, Lfkd;->a:Z
 
     return-void
 .end method

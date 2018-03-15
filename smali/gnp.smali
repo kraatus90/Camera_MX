@@ -1,52 +1,138 @@
 .class public final Lgnp;
-.super Ljava/lang/Object;
+.super Landroid/app/DialogFragment;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
+# instance fields
+.field public a:Lgnr;
 
-# static fields
-.field public static final a:Lgnp;
+.field private final b:Landroid/content/DialogInterface$OnClickListener;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lgnp;
+    const-string v0, "CameraStorageAccessFailureDialog"
 
-    invoke-direct {v0}, Lgnp;-><init>()V
-
-    sput-object v0, Lgnp;->a:Lgnp;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
+
+    new-instance v0, Lgnq;
+
+    invoke-direct {v0, p0}, Lgnq;-><init>(Lgnp;)V
+
+    iput-object v0, p0, Lgnp;->b:Landroid/content/DialogInterface$OnClickListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method final a()V
+    .locals 1
 
-    new-instance v0, Lcom/google/googlex/gcam/GoudaSwigWrapper;
+    iget-object v0, p0, Lgnp;->a:Lgnr;
 
-    invoke-direct {v0}, Lcom/google/googlex/gcam/GoudaSwigWrapper;-><init>()V
+    if-eqz v0, :cond_0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lgnp;->a:Lgnr;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lgnr;->b()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onCancel(Landroid/content/DialogInterface;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lgnp;->a()V
+
+    return-void
+.end method
+
+.method public final onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
+    .locals 5
+
+    invoke-virtual {p0}, Lgnp;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/googlex/gcam/GoudaSwigWrapper;
+    new-instance v1, Landroid/util/TypedValue;
+
+    invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
+
+    invoke-virtual {p0}, Lgnp;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v2
+
+    const v3, 0x1010355
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v2, v3, v1, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    new-instance v2, Landroid/app/AlertDialog$Builder;
+
+    const v3, 0x10302d2
+
+    invoke-direct {v2, v0, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {v2, v0}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const v2, 0x7f1101f1
+
+    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const v2, 0x7f1101f0
+
+    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const v2, 0x7f1101ef
+
+    iget-object v3, p0, Lgnp;->b:Landroid/content/DialogInterface$OnClickListener;
+
+    invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    iget v1, v1, Landroid/util/TypedValue;->resourceId:I
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v0
 
     return-object v0
+.end method
+
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lgnp;->a()V
+
+    return-void
 .end method

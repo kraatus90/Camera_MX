@@ -1,31 +1,12 @@
-.class public interface abstract Lhoe;
+.class public final Lhoe;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
 
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public abstract a()V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract a(Lcom/google/android/gms/googlehelp/GoogleHelp;)V
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract c()V
-.end method
-
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
+    return-void
 .end method

@@ -1,48 +1,41 @@
-.class final Liti;
-.super Ljava/lang/Object;
+.class public final Liti;
+.super Litk;
 .source "PG"
-
-# interfaces
-.implements Liuh;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Litk;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    new-instance v2, Lixm;
+    const-string v0, "UInt64"
 
-    const-class v0, Lixg;
+    return-object v0
+.end method
 
-    const-string v1, "default"
+.method public final c()I
+    .locals 1
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    const/16 v0, 0x40
 
-    move-result-object v0
+    return v0
+.end method
 
-    check-cast v0, Lixg;
+.method public final bridge synthetic d()Z
+    .locals 1
 
-    const-class v1, Liyb;
+    invoke-super {p0}, Litk;->d()Z
 
-    const-string v3, "low-res-acquisition-pipeline"
+    move-result v0
 
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Liyb;
-
-    invoke-direct {v2, v0, v1}, Lixm;-><init>(Lixg;Liyb;)V
-
-    return-object v2
+    return v0
 .end method

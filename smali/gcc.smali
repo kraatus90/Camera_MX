@@ -1,213 +1,210 @@
-.class public final Lgcc;
-.super Ljava/lang/Object;
+.class public abstract Lgcc;
+.super Lgbw;
 .source "PG"
-
-# interfaces
-.implements Lgcd;
 
 
 # instance fields
-.field private a:J
-
-.field private b:Lgbi;
-
-.field private c:Lgbo;
-
-.field private volatile d:F
-
-.field private volatile e:F
+.field private final a:Ligs;
 
 
 # direct methods
-.method public constructor <init>(Lgbo;Lgbi;)V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "TaskJpegEnc"
 
-    iput-object p2, p0, Lgcc;->b:Lgbi;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p1, p0, Lgcc;->c:Lgbo;
+    return-void
+.end method
 
-    iget v0, p2, Lgbi;->a:I
+.method public constructor <init>(Lgay;Ljava/util/concurrent/Executor;Lgax;ILfzv;)V
+    .locals 1
 
-    int-to-double v0, v0
+    invoke-direct/range {p0 .. p5}, Lgbw;-><init>(Lgay;Ljava/util/concurrent/Executor;Lgax;ILfzv;)V
 
-    const-wide v2, 0x41cdcd6500000000L    # 1.0E9
+    sget-object v0, Lgce;->a:Ligs;
 
-    mul-double/2addr v0, v2
+    iput-object v0, p0, Lgcc;->a:Ligs;
 
-    const-wide/high16 v2, 0x403e000000000000L    # 30.0
+    return-void
+.end method
 
-    div-double/2addr v0, v2
+.method public constructor <init>(Lgbw;I)V
+    .locals 1
 
-    double-to-long v0, v0
+    invoke-direct {p0, p1, p2}, Lgbw;-><init>(Lgbw;I)V
 
-    iput-wide v0, p0, Lgcc;->a:J
+    sget-object v0, Lgcd;->a:Ligs;
 
-    const v0, 0x7f7fffff    # Float.MAX_VALUE
+    iput-object v0, p0, Lgcc;->a:Ligs;
 
-    iput v0, p0, Lgcc;->d:F
+    return-void
+.end method
 
-    iget v0, p2, Lgbi;->d:F
+.method static final synthetic a()V
+    .locals 0
 
-    iput v0, p0, Lgcc;->e:F
+    return-void
+.end method
+
+.method public static a([BII[I)[B
+    .locals 7
+
+    const/4 v6, 0x0
+
+    new-instance v0, Landroid/graphics/YuvImage;
+
+    const/16 v2, 0x11
+
+    move-object v1, p0
+
+    move v3, p1
+
+    move v4, p2
+
+    move-object v5, p3
+
+    invoke-direct/range {v0 .. v5}, Landroid/graphics/YuvImage;-><init>([BIII[I)V
+
+    new-instance v1, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    new-instance v2, Landroid/graphics/Rect;
+
+    invoke-direct {v2, v6, v6, p1, p2}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    const/4 v3, 0x2
+
+    invoke-static {v3}, Landroid/media/CameraProfile;->getJpegEncodingQualityParameter(I)I
+
+    move-result v3
+
+    invoke-virtual {v0, v2, v3, v1}, Landroid/graphics/YuvImage;->compressToJpeg(Landroid/graphics/Rect;ILjava/io/OutputStream;)Z
+
+    :try_start_0
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->flush()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v2, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v2, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+.end method
+
+.method static final synthetic b()V
+    .locals 0
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 1
+.method protected final a(Ljrf;Lgby;Lkeh;)Lcom/google/android/libraries/camera/exif/ExifInterface;
+    .locals 5
 
-    const-string v0, "adaptive distance"
-
-    return-object v0
-.end method
-
-.method public final a(Lfzw;Lfzw;)Z
-    .locals 8
-
-    iget-object v0, p0, Lgcc;->c:Lgbo;
-
-    invoke-virtual {v0, p1, p2}, Lgbo;->a(Lfzw;Lfzw;)F
-
-    move-result v1
-
-    iget-wide v2, p2, Lfzw;->a:J
-
-    iget-wide v4, p1, Lfzw;->a:J
-
-    sub-long/2addr v2, v4
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Lgcc;->a:J
-
-    cmp-long v0, v2, v4
-
-    if-gtz v0, :cond_0
-
-    iget v0, p0, Lgcc;->d:F
-
-    float-to-double v4, v1
-
-    const-wide v6, 0x41cdcd6500000000L    # 1.0E9
-
-    mul-double/2addr v4, v6
-
-    long-to-double v2, v2
-
-    div-double v2, v4, v2
-
-    double-to-float v2, v2
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(FF)F
+    invoke-virtual {p1}, Ljrf;->a()Z
 
     move-result v0
 
-    iput v0, p0, Lgcc;->d:F
+    if-eqz v0, :cond_0
 
-    iget v0, p0, Lgcc;->d:F
+    new-instance v1, Lijs;
 
-    iget-object v2, p0, Lgcc;->b:Lgbi;
+    invoke-virtual {p1}, Ljrf;->b()Ljava/lang/Object;
 
-    iget v2, v2, Lgbi;->b:F
+    move-result-object v0
 
-    cmpl-float v2, v0, v2
+    check-cast v0, Lcom/google/android/libraries/camera/exif/ExifInterface;
 
-    if-lez v2, :cond_1
-
-    const/4 v0, 0x0
+    invoke-direct {v1, v0}, Lijs;-><init>(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
 
     :goto_0
-    iput v0, p0, Lgcc;->e:F
+    invoke-static {p3}, Lhwt;->a(Lkeh;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lind;
+
+    iget v2, p2, Lgby;->c:I
+
+    iget v3, p2, Lgby;->b:I
+
+    iget-object v4, p2, Lgby;->a:Ligz;
+
+    invoke-static {v0}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v2, v3, v4, v0}, Lijs;->a(IILigz;Ljrf;)V
+
+    iget-object v0, p0, Lgcc;->a:Ligs;
+
+    invoke-interface {v0, v1}, Ligs;->a(Ljava/lang/Object;)V
+
+    iget-object v0, v1, Lijs;->a:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    return-object v0
 
     :cond_0
-    iget v0, p0, Lgcc;->e:F
+    invoke-static {}, Lijs;->a()Lijs;
 
-    cmpl-float v0, v1, v0
+    move-result-object v0
 
-    if-lez v0, :cond_4
-
-    const/4 v0, 0x1
-
-    :goto_1
-    return v0
-
-    :cond_1
-    iget-object v2, p0, Lgcc;->b:Lgbi;
-
-    iget v2, v2, Lgbi;->e:F
-
-    cmpg-float v2, v0, v2
-
-    if-gez v2, :cond_2
-
-    iget-object v0, p0, Lgcc;->b:Lgbi;
-
-    iget v0, v0, Lgbi;->c:F
+    move-object v1, v0
 
     goto :goto_0
+.end method
 
-    :cond_2
-    iget-object v2, p0, Lgcc;->b:Lgbi;
+.method public final a(JLgby;Landroid/net/Uri;I)V
+    .locals 3
 
-    iget v2, v2, Lgbi;->f:F
+    new-instance v0, Lgbz;
 
-    cmpl-float v2, v0, v2
+    invoke-direct {v0, p1, p2, p3, p5}, Lgbz;-><init>(JLgby;I)V
 
-    if-lez v2, :cond_3
+    iget-object v1, p0, Lgcc;->c:Lgax;
 
-    iget-object v0, p0, Lgcc;->b:Lgbi;
+    invoke-interface {v1}, Lgax;->a()Lgaq;
 
-    iget v0, v0, Lgbi;->d:F
+    move-result-object v1
 
-    goto :goto_0
+    invoke-interface {v1, v0, p4}, Lgap;->a(Lgbz;Landroid/net/Uri;)V
 
-    :cond_3
-    iget-object v2, p0, Lgcc;->b:Lgbi;
+    return-void
+.end method
 
-    iget v2, v2, Lgbi;->c:F
+.method public final a(JLgby;[BI)V
+    .locals 3
 
-    iget-object v3, p0, Lgcc;->b:Lgbi;
+    new-instance v0, Lgbz;
 
-    iget v3, v3, Lgbi;->e:F
+    invoke-direct {v0, p1, p2, p3, p5}, Lgbz;-><init>(JLgby;I)V
 
-    sub-float/2addr v0, v3
+    iget-object v1, p0, Lgcc;->c:Lgax;
 
-    iget-object v3, p0, Lgcc;->b:Lgbi;
+    invoke-interface {v1}, Lgax;->a()Lgaq;
 
-    iget v3, v3, Lgbi;->d:F
+    move-result-object v1
 
-    iget-object v4, p0, Lgcc;->b:Lgbi;
+    new-instance v2, Lgbx;
 
-    iget v4, v4, Lgbi;->c:F
+    invoke-direct {v2, p4}, Lgbx;-><init>([B)V
 
-    sub-float/2addr v3, v4
+    invoke-interface {v1, v0, v2}, Lgap;->a(Lgbz;Lgbx;)V
 
-    mul-float/2addr v0, v3
-
-    iget-object v3, p0, Lgcc;->b:Lgbi;
-
-    iget v3, v3, Lgbi;->f:F
-
-    iget-object v4, p0, Lgcc;->b:Lgbi;
-
-    iget v4, v4, Lgbi;->e:F
-
-    sub-float/2addr v3, v4
-
-    div-float/2addr v0, v3
-
-    add-float/2addr v0, v2
-
-    goto :goto_0
-
-    :cond_4
-    const/4 v0, 0x0
-
-    goto :goto_1
+    return-void
 .end method

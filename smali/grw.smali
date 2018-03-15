@@ -1,53 +1,52 @@
-.class public interface abstract Lgrw;
+.class final Lgrw;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+
+# instance fields
+.field private final synthetic a:Z
+
+.field private final synthetic b:Lgrz;
+
+
+# direct methods
+.method constructor <init>(Lgrz;Z)V
+    .locals 0
+
+    iput-object p1, p0, Lgrw;->b:Lgrz;
+
+    iput-boolean p2, p0, Lgrw;->a:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()Leon;
-.end method
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-.method public abstract a(Landroid/net/Uri;)Leou;
-.end method
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-.method public abstract a(Ljava/lang/String;JLandroid/location/Location;)Leou;
-.end method
+    move-result-object v0
 
-.method public abstract a(Ljava/lang/String;JLjht;)Leou;
-.end method
+    check-cast v0, Ljava/lang/Integer;
 
-.method public abstract a(Ljava/lang/String;JLjht;Lige;Ljava/util/concurrent/Executor;)Leou;
-.end method
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-.method public abstract a(Ljava/lang/String;JLjht;Ljht;Lgow;)Leou;
-.end method
+    move-result v0
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;JLjht;)Leou;
-.end method
+    iget-object v1, p0, Lgrw;->b:Lgrz;
 
-.method public abstract a(Ljava/lang/String;)Ljava/io/File;
-.end method
+    iget-object v1, v1, Lgrz;->b:Lcom/google/android/apps/camera/ui/modeswitch/ViewfinderCover;
 
-.method public abstract a(Landroid/net/Uri;Leou;)V
-.end method
+    iget-boolean v2, p0, Lgrw;->a:Z
 
-.method public abstract a(Landroid/net/Uri;Lgyr;)V
-.end method
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/apps/camera/ui/modeswitch/ViewfinderCover;->a(IZ)V
 
-.method public abstract a(Lgrx;)V
-.end method
-
-.method public abstract b(Lgrx;)V
-.end method
-
-.method public abstract b(Landroid/net/Uri;)Z
-.end method
-
-.method public abstract c(Landroid/net/Uri;)Lgyr;
-.end method
-
-.method public abstract c(Lgrx;)V
-.end method
-
-.method public abstract d(Landroid/net/Uri;)V
+    return-void
 .end method

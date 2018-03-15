@@ -1,115 +1,145 @@
-.class Lcls;
-.super Lgvh;
+.class final Lcls;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private synthetic a:Lclq;
+.field private final synthetic a:Lclo;
 
 
 # direct methods
-.method constructor <init>(Lclq;)V
-    .locals 1
+.method constructor <init>(Lclo;)V
+    .locals 0
 
-    iput-object p1, p0, Lcls;->a:Lclq;
+    iput-object p1, p0, Lcls;->a:Lclo;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lgvh;-><init>(I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final onClick(Landroid/view/View;)V
+    .locals 8
 
-    const/4 v3, 0x1
+    iget-object v0, p0, Lcls;->a:Lclo;
 
-    const/4 v2, 0x0
+    iget-object v0, v0, Lclo;->c:Lclp;
 
-    sget-object v0, Lclq;->a:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    const-string v1, "Filmstrip Ui Shown"
+    iget-object v0, p0, Lcls;->a:Lclo;
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v0, Lclo;->c:Lclp;
 
-    iget-object v0, p0, Lcls;->a:Lclq;
+    iget-object v2, v0, Lclp;->a:Lbzb;
 
-    iget-object v1, v0, Lclq;->e:Landroid/app/ActionBar;
+    iget-object v0, v0, Lclp;->a:Lbzb;
 
-    invoke-virtual {v1}, Landroid/app/ActionBar;->show()V
+    iget-object v0, v0, Lbzb;->B:Lcmp;
 
-    iget-object v1, v0, Lclq;->d:Lcll;
+    invoke-interface {v0}, Lcmp;->a()Lckw;
 
-    iget-object v1, v1, Lcll;->j:Landroid/view/View;
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+    sget-object v0, Lckw;->c:Lckw;
 
-    iget-object v1, v0, Lclq;->d:Lcll;
+    if-eq v3, v0, :cond_0
 
-    iget-object v1, v1, Lcll;->k:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;
+    invoke-interface {v3}, Lckw;->c()Leqd;
 
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;->setVisibility(I)V
+    move-result-object v0
 
-    iget-object v1, v0, Lclq;->c:Lcjh;
+    invoke-interface {v0}, Leqd;->i()Ljrf;
 
-    invoke-virtual {v1, v3}, Lcjh;->a(Z)V
+    move-result-object v0
 
-    iget-object v0, v0, Lclq;->b:Lcjk;
+    invoke-virtual {v0}, Ljrf;->a()Z
 
-    invoke-virtual {v0, v3}, Lcjk;->a(Z)V
+    move-result v1
 
-    iget-object v0, p0, Lcls;->a:Lclq;
+    if-eqz v1, :cond_0
 
-    iget-object v0, v0, Lclq;->f:Lgwr;
+    iget-object v4, v2, Lbzb;->d:Landroid/content/Context;
 
-    const/16 v1, 0x701
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Lgwr;->a(I)V
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Lcjv;
 
-.method public final b()V
-    .locals 4
+    invoke-static {v4}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    const/4 v3, 0x4
+    move-result-object v1
 
-    const/4 v2, 0x0
+    const v5, 0x7f040038
 
-    iget-object v0, p0, Lcls;->a:Lclq;
+    const/4 v6, 0x0
 
-    iget-object v1, v0, Lclq;->e:Landroid/app/ActionBar;
+    const/4 v7, 0x0
 
-    invoke-virtual {v1}, Landroid/app/ActionBar;->hide()V
+    invoke-virtual {v1, v5, v6, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    iget-object v1, v0, Lclq;->d:Lcll;
+    move-result-object v1
 
-    iget-object v1, v1, Lcll;->j:Landroid/view/View;
+    check-cast v1, Landroid/widget/ListView;
 
-    invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
+    new-instance v5, Ldzr;
 
-    iget-object v1, v0, Lclq;->d:Lcll;
+    invoke-direct {v5, v4, v0}, Ldzr;-><init>(Landroid/content/Context;Lcjv;)V
 
-    iget-object v1, v1, Lcll;->k:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;
+    invoke-virtual {v1, v5}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    invoke-virtual {v1, v3}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripShortTallBottomBarBackground;->setVisibility(I)V
+    new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    iget-object v1, v0, Lclq;->c:Lcjh;
+    const v5, 0x10302d2
 
-    invoke-virtual {v1, v2}, Lcjh;->a(Z)V
+    invoke-direct {v0, v4, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
-    iget-object v0, v0, Lclq;->b:Lcjk;
+    const v4, 0x7f110080
 
-    invoke-virtual {v0, v2}, Lcjk;->a(Z)V
+    invoke-virtual {v0, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public m()V
-    .locals 0
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
+    move-result-object v0
+
+    const v1, 0x7f110060
+
+    new-instance v4, Ldzq;
+
+    invoke-direct {v4}, Ldzq;-><init>()V
+
+    invoke-virtual {v0, v1, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+
+    iget-object v0, v2, Lbzb;->O:Liih;
+
+    invoke-static {v3}, Lbzb;->b(Lckw;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x5
+
+    invoke-static {v3}, Lbzb;->c(Lckw;)F
+
+    move-result v3
+
+    invoke-interface {v0, v1, v2, v3}, Liih;->a(Ljava/lang/String;IF)V
+
+    :cond_0
     return-void
 .end method

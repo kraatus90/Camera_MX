@@ -3,18 +3,22 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcyf;
+.field private final synthetic a:Lfap;
+
+.field private final synthetic b:Lcya;
 
 
 # direct methods
-.method constructor <init>(Lcyf;)V
+.method constructor <init>(Lcya;Lfap;)V
     .locals 0
 
-    iput-object p1, p0, Lcyi;->a:Lcyf;
+    iput-object p1, p0, Lcyi;->b:Lcya;
+
+    iput-object p2, p0, Lcyi;->a:Lfap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,16 +27,20 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
+.method public final run()V
     .locals 3
 
-    new-instance v0, Lcwq;
+    iget-object v0, p0, Lcyi;->b:Lcya;
 
-    iget-object v1, p0, Lcyi;->a:Lcyf;
+    iget-object v0, v0, Lbrv;->a:Lbrw;
 
-    sget-object v2, Ljhi;->a:Ljhi;
+    new-instance v1, Lcwr;
 
-    invoke-direct {v0, v1, v2}, Lcwq;-><init>(Lcwi;Ljht;)V
+    iget-object v2, p0, Lcyi;->a:Lfap;
 
-    return-object v0
+    invoke-direct {v1, v2}, Lcwr;-><init>(Lfap;)V
+
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
+
+    return-void
 .end method

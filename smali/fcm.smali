@@ -3,64 +3,72 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfco;
 
 
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+# static fields
+.field private static final a:[Landroid/hardware/camera2/params/MeteringRectangle;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lfcm;->a:Ljxn;
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Lfcm;->b:Ljxn;
+    new-array v6, v0, [Landroid/hardware/camera2/params/MeteringRectangle;
 
-    iput-object p3, p0, Lfcm;->c:Ljxn;
+    new-instance v0, Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move v2, v1
+
+    move v3, v1
+
+    move v4, v1
+
+    move v5, v1
+
+    invoke-direct/range {v0 .. v5}, Landroid/hardware/camera2/params/MeteringRectangle;-><init>(IIIII)V
+
+    aput-object v0, v6, v1
+
+    sput-object v6, Lfcm;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a()Lfco;
+    .locals 1
+
+    sget-object v0, Lfcn;->a:Lfcm;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final a(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
+    .locals 1
 
-    new-instance v3, Lfcl;
+    sget-object v0, Lfcm;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
 
-    iget-object v0, p0, Lfcm;->a:Ljxn;
+    return-object v0
+.end method
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+.method public final b(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
+    .locals 1
 
-    move-result-object v0
+    sget-object v0, Lfcm;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
 
-    check-cast v0, Lfec;
-
-    iget-object v1, p0, Lfcm;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbjf;
-
-    iget-object v2, p0, Lfcm;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldiv;
-
-    invoke-direct {v3, v0, v1, v2}, Lfcl;-><init>(Lfec;Lbjf;Ldiv;)V
-
-    return-object v3
+    return-object v0
 .end method

@@ -1,96 +1,117 @@
 .class final Lmy;
-.super Ljn;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lpj;
 
 
 # instance fields
-.field private synthetic a:Lmt;
+.field private final synthetic a:Lmn;
 
 
 # direct methods
-.method constructor <init>(Lmt;)V
+.method constructor <init>(Lmn;)V
     .locals 0
 
-    iput-object p1, p0, Lmy;->a:Lmt;
+    iput-object p1, p0, Lmy;->a:Lmn;
 
-    invoke-direct {p0}, Ljn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)V
-    .locals 2
+.method public final a(Lot;Z)V
+    .locals 5
 
-    iget-object v0, p0, Lmy;->a:Lmt;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
+    invoke-virtual {p1}, Lot;->k()Lot;
 
-    const/4 v1, 0x0
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Lpz;->setVisibility(I)V
+    if-eq v2, p1, :cond_2
 
-    iget-object v0, p0, Lmy;->a:Lmt;
+    move v0, v1
 
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
-
-    const/16 v1, 0x20
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
-
-    iget-object v0, p0, Lmy;->a:Lmt;
-
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    instance-of v0, v0, Landroid/view/View;
+    :goto_0
+    iget-object v3, p0, Lmy;->a:Lmn;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lmy;->a:Lmt;
+    move-object p1, v2
 
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
+    :cond_0
+    invoke-virtual {v3, p1}, Lmn;->a(Landroid/view/Menu;)Lmx;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+    move-result-object v3
+
+    if-eqz v3, :cond_1
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lmy;->a:Lmn;
+
+    iget v4, v3, Lmx;->a:I
+
+    invoke-virtual {v0, v4, v3, v2}, Lmn;->a(ILmx;Landroid/view/Menu;)V
+
+    iget-object v0, p0, Lmy;->a:Lmn;
+
+    invoke-virtual {v0, v3, v1}, Lmn;->a(Lmx;Z)V
+
+    :cond_1
+    :goto_1
+    return-void
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v0, p0, Lmy;->a:Lmn;
+
+    invoke-virtual {v0, v3, p2}, Lmn;->a(Lmx;Z)V
+
+    goto :goto_1
+.end method
+
+.method public final a(Lot;)Z
+    .locals 2
+
+    if-nez p1, :cond_0
+
+    iget-object v0, p0, Lmy;->a:Lmn;
+
+    iget-boolean v0, v0, Lmn;->g:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lmy;->a:Lmn;
+
+    iget-object v0, v0, Lmc;->c:Landroid/view/Window;
+
+    invoke-virtual {v0}, Landroid/view/Window;->getCallback()Landroid/view/Window$Callback;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/View;
+    if-eqz v0, :cond_0
 
-    sget-object v1, Lid;->a:Lim;
+    iget-object v1, p0, Lmy;->a:Lmn;
 
-    invoke-virtual {v1, v0}, Lim;->h(Landroid/view/View;)V
+    iget-boolean v1, v1, Lmc;->m:Z
+
+    if-nez v1, :cond_0
+
+    const/16 v1, 0x6c
+
+    invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
 
     :cond_0
-    return-void
-.end method
+    const/4 v0, 0x1
 
-.method public final b(Landroid/view/View;)V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    iget-object v0, p0, Lmy;->a:Lmt;
-
-    iget-object v0, v0, Lmt;->q:Landroid/support/v7/widget/ActionBarContextView;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
-
-    iget-object v0, p0, Lmy;->a:Lmt;
-
-    iget-object v0, v0, Lmt;->t:Lji;
-
-    invoke-virtual {v0, v2}, Lji;->a(Ljm;)Lji;
-
-    iget-object v0, p0, Lmy;->a:Lmt;
-
-    iput-object v2, v0, Lmt;->t:Lji;
-
-    return-void
+    return v0
 .end method

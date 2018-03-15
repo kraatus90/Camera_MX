@@ -1,85 +1,54 @@
-.class final Lgos;
+.class public final Lgos;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Libu;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lgop;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgop;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgos;->a:Lgop;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgos;->a:Lkgv;
+
+    iput-object p2, p0, Lgos;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 8
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Lgov;
+    new-instance v2, Lgor;
 
-    iget-object v1, p0, Lgos;->a:Lgop;
+    iget-object v0, p0, Lgos;->a:Lkgv;
 
-    iget-object v2, v1, Lgop;->d:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    iput-boolean v0, v1, Lgop;->e:Z
-
-    iget-object v3, v1, Lgop;->a:Liag;
-
-    iget-object v0, v1, Lgop;->a:Liag;
-
-    invoke-virtual {v0}, Liag;->b()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
+    check-cast v0, Landroid/os/storage/StorageManager;
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    iget-object v1, p0, Lgos;->b:Lkgv;
 
-    move-result-wide v4
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-wide v6, v1, Lgop;->b:J
+    move-result-object v1
 
-    sub-long/2addr v4, v6
+    check-cast v1, Liml;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-direct {v2, v0, v1}, Lgor;-><init>(Landroid/os/storage/StorageManager;Liml;)V
 
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Liag;->a(Ljava/lang/Object;)V
-
-    invoke-virtual {v1}, Lgop;->c()V
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-interface {p1, p0}, Lgov;->removeFinishedCallback(Libu;)V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-object v2
 .end method

@@ -1,42 +1,43 @@
-.class final Lgre;
+.class public final synthetic Lgre;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final a:Lgrd;
+
+.field private final b:Landroid/os/Handler;
 
 
 # direct methods
-.method constructor <init>(Ljvi;)V
+.method public constructor <init>(Lgrd;Landroid/os/Handler;)V
     .locals 0
 
-    iput-object p1, p0, Lgre;->a:Ljvi;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgre;->a:Lgrd;
+
+    iput-object p2, p0, Lgre;->b:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 3
 
-    check-cast p1, Lgrs;
+    iget-object v0, p0, Lgre;->a:Lgrd;
 
-    iget-object v0, p0, Lgre;->a:Ljvi;
+    iget-object v1, p0, Lgre;->b:Landroid/os/Handler;
 
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Object;)Z
+    new-instance v2, Lgrf;
 
-    return-void
-.end method
+    invoke-direct {v2, v0}, Lgrf;-><init>(Lgrd;)V
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

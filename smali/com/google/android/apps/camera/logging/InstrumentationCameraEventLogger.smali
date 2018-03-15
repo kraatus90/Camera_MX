@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lfsn;
+.implements Lenq;
 
 
 # annotations
@@ -12,9 +12,9 @@
 
 
 # static fields
-.field private static a:Ljava/lang/Integer;
+.field private static final a:Ljava/lang/Integer;
 
-.field private static b:Ljava/util/List;
+.field private static final b:Ljava/util/List;
 
 
 # direct methods

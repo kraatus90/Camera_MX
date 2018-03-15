@@ -1,106 +1,93 @@
 .class final Lhgr;
-.super Ljava/lang/Object;
+.super Lhhp;
 .source "PG"
-
-# interfaces
-.implements Libu;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/android/apps/refocus/ViewerActivity;
-
-.field private synthetic b:Landroid/net/Uri;
-
-.field private synthetic c:Ljvi;
-
-.field private synthetic d:Lcom/google/android/apps/refocus/processing/RenderingTask;
+.field private final synthetic a:Lhgl;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/apps/refocus/ViewerActivity;Landroid/net/Uri;Ljvi;Lcom/google/android/apps/refocus/processing/RenderingTask;)V
+.method constructor <init>(Lhgl;)V
     .locals 0
 
-    iput-object p1, p0, Lhgr;->a:Lcom/google/android/apps/refocus/ViewerActivity;
+    iput-object p1, p0, Lhgr;->a:Lhgl;
 
-    iput-object p2, p0, Lhgr;->b:Landroid/net/Uri;
-
-    iput-object p3, p0, Lhgr;->c:Ljvi;
-
-    iput-object p4, p0, Lhgr;->d:Lcom/google/android/apps/refocus/processing/RenderingTask;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lhhp;-><init>(Lhhe;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 5
+.method public final aj()V
+    .locals 2
 
-    new-instance v0, Landroid/content/Intent;
+    iget-object v0, p0, Lhgr;->a:Lhgl;
 
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    iget-object v1, p0, Lhgr;->b:Landroid/net/Uri;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    invoke-super {p0}, Lhhp;->aj()V
 
-    sget-object v1, Lcom/google/android/apps/refocus/ViewerActivity;->d:Ljava/lang/String;
+    iget-object v0, p0, Lhgr;->a:Lhgl;
 
-    iget-object v2, p0, Lhgr;->b:Landroid/net/Uri;
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v1, p0, Lhgr;->a:Lhgl;
 
-    move-result-object v2
+    iget-object v1, v1, Lhgl;->e:Lglf;
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    move-result-object v3
+    return-void
+.end method
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+.method public final b(F)V
+    .locals 2
 
-    move-result v3
+    iget-object v0, p0, Lhgr;->a:Lhgl;
 
-    add-int/lit8 v3, v3, 0xc
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-super {p0, p1}, Lhhp;->b(F)V
 
-    const-string v3, "finish with "
+    iget-object v0, p0, Lhgr;->a:Lhgl;
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    move-result-object v3
+    iget-object v1, p0, Lhgr;->a:Lhgl;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, v1, Lhgl;->g:Lglf;
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v2
+.method public final g()V
+    .locals 2
 
-    invoke-static {v1, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, p0, Lhgr;->a:Lhgl;
 
-    iget-object v1, p0, Lhgr;->c:Ljvi;
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    invoke-virtual {v1, v0}, Ljsw;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lgld;->a()V
 
-    iget-object v0, p0, Lhgr;->d:Lcom/google/android/apps/refocus/processing/RenderingTask;
+    invoke-super {p0}, Lhhp;->g()V
 
-    invoke-virtual {v0, p0}, Lcom/google/android/apps/refocus/processing/RenderingTask;->removeFinishedCallback(Libu;)V
+    iget-object v0, p0, Lhgr;->a:Lhgl;
 
-    iget-object v0, p0, Lhgr;->a:Lcom/google/android/apps/refocus/ViewerActivity;
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    iget-object v0, v0, Lcom/google/android/apps/refocus/ViewerActivity;->s:Landroid/os/Handler;
+    iget-object v1, p0, Lhgr;->a:Lhgl;
 
-    new-instance v1, Lhgs;
+    iget-object v1, v1, Lhgl;->e:Lglf;
 
-    invoke-direct {v1, p0}, Lhgs;-><init>(Lhgr;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

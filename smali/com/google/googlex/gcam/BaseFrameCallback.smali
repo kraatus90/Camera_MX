@@ -60,24 +60,20 @@
 
 
 # virtual methods
-.method public Run(Lcom/google/googlex/gcam/IShot;IJ)V
-    .locals 11
+.method public Run(IIJ)V
+    .locals 7
 
-    iget-wide v1, p0, Lcom/google/googlex/gcam/BaseFrameCallback;->swigCPtr:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/BaseFrameCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
+    move-object v2, p0
 
-    move-result-wide v4
+    move v3, p1
 
-    move-object v3, p0
+    move v4, p2
 
-    move-object v6, p1
+    move-wide v5, p3
 
-    move v7, p2
-
-    move-wide v8, p3
-
-    invoke-static/range {v1 .. v9}, Lcom/google/googlex/gcam/GcamModuleJNI;->BaseFrameCallback_Run(JLcom/google/googlex/gcam/BaseFrameCallback;JLcom/google/googlex/gcam/IShot;IJ)V
+    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->BaseFrameCallback_Run(JLcom/google/googlex/gcam/BaseFrameCallback;IIJ)V
 
     return-void
 .end method

@@ -1,30 +1,31 @@
-.class final Lbxk;
-.super Ljava/lang/Object;
+.class public final Lbxk;
+.super Landroid/content/BroadcastReceiver;
 .source "PG"
 
-# interfaces
-.implements Ljhj;
+
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbxk;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
+
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lbxk;->a:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->a(Landroid/content/Context;)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

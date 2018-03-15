@@ -2,36 +2,37 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final synthetic a:Ljava/util/List;
-
-.field private synthetic b:Ljava/util/List;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Ljava/util/List;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcjy;->a:Ljava/util/List;
-
-    iput-object p2, p0, Lcjy;->b:Ljava/util/List;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcjy;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcgh;)Z
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lcjy;->b:Ljava/util/List;
+    new-instance v0, Lcjx;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lcjy;->a:Lkgv;
 
-    move-result v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    return v0
+    invoke-direct {v0}, Lcjx;-><init>()V
+
+    return-object v0
 .end method

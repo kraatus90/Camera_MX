@@ -1,43 +1,60 @@
-.class final Lfmp;
+.class public final Lfmp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfmi;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmi;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfmp;->a:Lfmi;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfmp;->a:Lkgv;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final run()V
+.method public static a(Lkgv;)Lfmp;
     .locals 1
 
-    iget-object v0, p0, Lfmp;->a:Lfmi;
+    new-instance v0, Lfmp;
 
-    iget-boolean v0, v0, Lfmi;->n:Z
+    invoke-direct {v0, p0}, Lfmp;-><init>(Lkgv;)V
 
-    if-nez v0, :cond_0
+    return-object v0
+.end method
 
-    iget-object v0, p0, Lfmp;->a:Lfmi;
 
-    iget-object v0, v0, Lfmi;->E:Lfdq;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    invoke-virtual {v0}, Lfdq;->H()V
+    iget-object v0, p0, Lfmp;->a:Lkgv;
 
-    :cond_0
-    return-void
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfla;
+
+    invoke-virtual {v0}, Lfla;->a()Landroid/view/Surface;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/Surface;
+
+    return-object v0
 .end method

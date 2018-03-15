@@ -1,51 +1,56 @@
-.class final synthetic Lcsm;
+.class final Lcsm;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Lcif;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lcsk;
+.field private final synthetic a:Lick;
 
-.field private b:Lcif;
+.field private final synthetic b:Lcsl;
 
 
 # direct methods
-.method constructor <init>(Lcsk;Lcif;)V
+.method constructor <init>(Lcsl;Lick;)V
     .locals 0
 
+    iput-object p1, p0, Lcsm;->b:Lcsl;
+
+    iput-object p2, p0, Lcsm;->a:Lick;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcsm;->a:Lcsk;
-
-    iput-object p2, p0, Lcsm;->b:Lcif;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lcsm;->a:Lcsk;
+    iget-object v0, p0, Lcsm;->b:Lcsl;
 
-    iget-object v1, p0, Lcsm;->b:Lcif;
+    iget-boolean v0, v0, Lcsl;->e:Z
 
-    invoke-interface {v1, p1}, Lcif;->a(I)V
+    if-nez v0, :cond_0
 
-    const/16 v1, 0x3e8
+    iget-object v0, p0, Lcsm;->a:Lick;
 
-    if-lt p1, v1, :cond_0
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, v0, Lcsk;->f:Lhzt;
+    iget-object v0, p0, Lcsm;->b:Lcsl;
 
-    new-instance v2, Lcsq;
+    iget-object v0, v0, Lcsl;->c:Lihb;
 
-    invoke-direct {v2, v0}, Lcsq;-><init>(Lcsk;)V
+    invoke-interface {v0}, Lihb;->close()V
 
-    invoke-virtual {v1, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    iget-object v0, p0, Lcsm;->b:Lcsl;
+
+    iget-object v1, p0, Lcsm;->a:Lick;
+
+    invoke-virtual {v0, v1}, Lcsl;->b(Lick;)V
 
     :cond_0
     return-void

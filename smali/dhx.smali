@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;
+.field private final synthetic a:Ldhw;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;)V
+.method constructor <init>(Ldhw;)V
     .locals 0
 
-    iput-object p1, p0, Ldhx;->a:Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;
+    iput-object p1, p0, Ldhx;->a:Ldhw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,18 +23,20 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Ldhx;->a:Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;
+    iget-object v0, p0, Ldhx;->a:Ldhw;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;->c()V
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+    check-cast v0, Ldjx;
+
+    iget-object v0, v0, Ldjx;->i:Lijc;
+
+    invoke-interface {v0}, Lijc;->d()V
 
     return-void
 .end method

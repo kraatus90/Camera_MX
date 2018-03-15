@@ -1,32 +1,78 @@
-.class public interface abstract Lilf;
+.class public final Lilf;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+
+# direct methods
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lilf;->a:Lkgv;
+
+    iput-object p2, p0, Lilf;->b:Lkgv;
+
+    iput-object p3, p0, Lilf;->c:Lkgv;
+
+    iput-object p4, p0, Lilf;->d:Lkgv;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(Ljava/util/concurrent/Executor;Likg;)Lilf;
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-.method public abstract a(Ljava/util/concurrent/Executor;Likg;Likg;)Lilf;
-.end method
+    new-instance v4, Liku;
 
-.method public abstract a(Ljava/util/concurrent/Executor;Lilj;)Lilf;
-.end method
+    iget-object v0, p0, Lilf;->a:Lkgv;
 
-.method public abstract a(Ljava/util/concurrent/Executor;Lilj;Lilj;)Lilf;
-.end method
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-.method public abstract a(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Lilf;
-.end method
+    move-result-object v0
 
-.method public abstract a()Ljuw;
-.end method
+    check-cast v0, Liml;
 
-.method public abstract a(Likf;)V
-.end method
+    iget-object v1, p0, Lilf;->b:Lkgv;
 
-.method public abstract b(Ljava/util/concurrent/Executor;Likg;)Lilf;
-.end method
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-.method public abstract b()Ljava/lang/Object;
+    move-result-object v1
+
+    check-cast v1, Limm;
+
+    iget-object v2, p0, Lilf;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lihs;
+
+    iget-object v3, p0, Lilf;->d:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lihn;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Liku;-><init>(Liml;Limm;Lihs;Lihn;)V
+
+    return-object v4
 .end method

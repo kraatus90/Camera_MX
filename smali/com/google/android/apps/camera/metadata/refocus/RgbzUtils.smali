@@ -17,11 +17,11 @@
 
     const/4 v0, 0x1
 
-    invoke-static {p0, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;Z)Lxb;
+    invoke-static {p0, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;Z)Lwk;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/metadata/refocus/GDepthUtil;->isPresent(Lxb;)Z
+    invoke-static {v0}, Lcom/google/android/apps/camera/metadata/refocus/GDepthUtil;->isPresent(Lwk;)Z
 
     move-result v0
 

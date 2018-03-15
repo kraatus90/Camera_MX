@@ -1,81 +1,201 @@
-.class final Lcjr;
+.class public final Lcjr;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field private synthetic a:Lcjk;
-
 
 # direct methods
-.method constructor <init>(Lcjk;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcjr;->a:Lcjk;
+    const-string v0, "LocalDataUtil"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static a(Ljava/io/InputStream;IIIII)Landroid/graphics/Bitmap;
+    .locals 8
 
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 4
+    const v0, 0x8000
 
-    iget-object v0, p0, Lcjr;->a:Lcjk;
+    new-array v3, v0, [B
 
-    iget-object v0, v0, Lcjk;->c:Lcjl;
+    rem-int/lit16 v0, p5, 0xb4
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_8
 
-    iget-object v0, p0, Lcjr;->a:Lcjk;
+    :goto_0
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Lcjk;->c:Lcjl;
+    move v1, p1
 
-    invoke-virtual {v0}, Lcjl;->b()Lcgh;
+    move v2, p2
 
-    move-result-object v1
+    :goto_1
+    if-gt v1, p4, :cond_0
 
-    sget-object v2, Lcgh;->c:Lcgh;
+    if-gt v2, p3, :cond_0
 
-    if-ne v1, v2, :cond_1
+    const/16 v4, 0xd33
 
-    sget-object v0, Lbua;->a:Ljava/lang/String;
+    if-gt v1, v4, :cond_0
 
-    const-string v1, "onProgressErrorClicked with INVALID node"
+    const/16 v4, 0xd33
 
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    if-gt v2, v4, :cond_0
+
+    mul-int v4, v1, v2
+
+    const v5, 0x186a00
+
+    if-le v4, v5, :cond_1
 
     :cond_0
-    :goto_0
-    return-void
+    shl-int/lit8 v0, v0, 0x1
+
+    div-int v2, p2, v0
+
+    div-int v1, p1, v0
+
+    goto :goto_1
 
     :cond_1
-    invoke-interface {v1}, Lcgh;->c()Lfvf;
+    const/16 v4, 0xd33
 
-    move-result-object v1
+    if-gt p4, v4, :cond_2
 
-    iget-object v2, v0, Lcjl;->a:Lbua;
+    const/16 v4, 0xd33
 
-    iget-object v2, v2, Lbua;->c:Lbsa;
+    if-le p3, v4, :cond_3
 
-    iget-object v2, v2, Lbsa;->a:Lgrw;
+    :cond_2
+    mul-int/2addr v1, v2
 
-    invoke-interface {v1}, Lfvf;->f()Lfvj;
+    const v2, 0x61a80
 
-    move-result-object v3
+    if-ge v1, v2, :cond_3
 
-    iget-object v3, v3, Lfvj;->h:Landroid/net/Uri;
+    const/4 v1, 0x1
 
-    invoke-interface {v2, v3}, Lgrw;->d(Landroid/net/Uri;)V
+    if-le v0, v1, :cond_3
 
-    iget-object v0, v0, Lcjl;->a:Lbua;
+    shr-int/lit8 v0, v0, 0x2
 
-    invoke-static {v0, v1}, Lbua;->b(Lbua;Lfvf;)V
+    :cond_3
+    new-instance v1, Landroid/graphics/BitmapFactory$Options;
 
-    goto :goto_0
+    invoke-direct {v1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    iput v0, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+
+    iput-object v3, v1, Landroid/graphics/BitmapFactory$Options;->inTempStorage:[B
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0, v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    if-nez v0, :cond_5
+
+    const/4 v0, 0x0
+
+    :cond_4
+    :goto_2
+    return-object v0
+
+    :cond_5
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v1
+
+    const/16 v2, 0xd33
+
+    if-gt v1, v2, :cond_6
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    const/16 v2, 0xd33
+
+    if-le v1, v2, :cond_7
+
+    :cond_6
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v2
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v2
+
+    mul-int/lit16 v2, v2, 0xd33
+
+    div-int/2addr v2, v1
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v3
+
+    mul-int/lit16 v3, v3, 0xd33
+
+    div-int v1, v3, v1
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v2, v1, v3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    :cond_7
+    if-eqz p5, :cond_4
+
+    if-eqz v0, :cond_4
+
+    new-instance v5, Landroid/graphics/Matrix;
+
+    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
+
+    int-to-float v1, p5
+
+    invoke-virtual {v5, v1}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v4
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    goto :goto_2
+
+    :cond_8
+    move v7, p2
+
+    move p2, p1
+
+    move p1, v7
+
+    goto/16 :goto_0
 .end method

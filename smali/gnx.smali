@@ -1,102 +1,44 @@
-.class final Lgnx;
-.super Lcom/google/googlex/gcam/GoudaImageCallback;
+.class public final Lgnx;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Lgom;
+
+# static fields
+.field public static final a:Lgnx;
 
 
 # direct methods
-.method constructor <init>(Lgom;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lgnx;
+
+    invoke-direct {v0}, Lgnx;-><init>()V
+
+    sput-object v0, Lgnx;->a:Lgnx;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lgnx;->a:Lgom;
-
-    invoke-direct {p0}, Lcom/google/googlex/gcam/GoudaImageCallback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final RgbReady(JLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;)V
-    .locals 7
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    sget-object v0, Lgnq;->a:Ljava/lang/String;
+    new-instance v0, Lgnw;
 
-    invoke-static {p5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v0}, Lgnw;-><init>()V
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x45
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Gouda secondary image (rgb): id = "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " description = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lgnx;->a:Lgom;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lgnx;->a:Lgom;
-
-    iget-object v0, v1, Lgom;->b:Ldut;
-
-    iget-object v0, v0, Ldut;->b:Lhah;
-
-    invoke-virtual {v0}, Lhah;->a()Lhai;
-
-    move-result-object v6
-
-    iget-object v0, v1, Lgom;->b:Ldut;
-
-    iget-object v1, v1, Lgom;->b:Ldut;
-
-    invoke-static {v1}, Ldut;->a(Ldut;)I
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    sget-object v4, Ldus;->c:Ldus;
-
-    move-object v1, p3
-
-    move-object v5, p5
-
-    invoke-static/range {v0 .. v6}, Ldut;->a(Ldut;Lcom/google/googlex/gcam/InterleavedImageU8;IZLdus;Ljava/lang/String;Lhai;)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

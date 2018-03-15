@@ -2,23 +2,32 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Labc;
+
+# instance fields
+.field public a:Z
+
+.field public b:Z
+
+.field public c:Lgap;
+
+.field public d:Ljrf;
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Lfos;
 
+    invoke-direct {v0, p0}, Lfos;-><init>(Lfor;)V
 
-# virtual methods
-.method public final a([B)V
-    .locals 0
+    invoke-static {v0}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfor;->d:Ljrf;
 
     return-void
 .end method

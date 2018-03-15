@@ -1,62 +1,67 @@
-.class public final Lgwf;
+.class final synthetic Lgwf;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/widget/PopupWindow$OnDismissListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lgwc;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lgwc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgwf;->a:Ljxn;
-
-    iput-object p2, p0, Lgwf;->b:Ljxn;
+    iput-object p1, p0, Lgwf;->a:Lgwc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final onDismiss()V
+    .locals 3
 
-    iget-object v0, p0, Lgwf;->a:Ljxn;
+    iget-object v0, p0, Lgwf;->a:Lgwc;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, v0, Lgwc;->s:Ljava/util/List;
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    check-cast v0, Lgwc;
+    iget-object v0, v0, Lgwc;->s:Ljava/util/List;
 
-    iget-object v1, p0, Lgwf;->b:Ljxn;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v1
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    check-cast v1, Lgvz;
+    move-result v0
 
-    invoke-static {v0, v1}, Lgwe;->a(Lgwc;Lgvz;)Lgwb;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgwb;
+    check-cast v0, Landroid/util/Pair;
 
-    return-object v0
+    iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/concurrent/Executor;
+
+    iget-object v0, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Runnable;
+
+    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

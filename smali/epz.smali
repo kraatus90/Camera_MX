@@ -1,72 +1,148 @@
-.class public final Lepz;
+.class final Lepz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Leqc;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:[B
 
-.field private b:Ljxn;
+.field private b:I
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>([B)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lepz;->a:Ljxn;
+    iput-object p1, p0, Lepz;->a:[B
 
-    iput-object p2, p0, Lepz;->b:Ljxn;
+    const/4 v0, 0x0
+
+    iput v0, p0, Lepz;->b:I
 
     return-void
 .end method
 
+.method private final b()I
+    .locals 2
+
+    iget-object v0, p0, Lepz;->a:[B
+
+    array-length v0, v0
+
+    iget v1, p0, Lepz;->b:I
+
+    sub-int/2addr v0, v1
+
+    return v0
+.end method
+
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final a()I
+    .locals 3
 
-    iget-object v0, p0, Lepz;->a:Ljxn;
+    iget v0, p0, Lepz;->b:I
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lepz;->a:[B
+
+    array-length v1, v1
+
+    if-ge v0, v1, :cond_0
+
+    iget-object v0, p0, Lepz;->a:[B
+
+    iget v1, p0, Lepz;->b:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lepz;->b:I
+
+    aget-byte v0, v0, v1
+
+    and-int/lit16 v0, v0, 0xff
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, -0x1
+
+    goto :goto_0
+.end method
+
+.method public final a(I)Leqb;
+    .locals 2
+
+    iget-object v0, p0, Lepz;->a:[B
+
+    array-length v0, v0
+
+    iget v1, p0, Lepz;->b:I
+
+    sub-int/2addr v0, v1
+
+    invoke-virtual {p0, v0, p1}, Lepz;->a(II)Leqb;
 
     move-result-object v0
-
-    check-cast v0, Lgsl;
-
-    iget-object v1, p0, Lepz;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/content/res/Resources;
-
-    const-string v2, "default_scope"
-
-    const-string v3, "pref_volume_key_action"
-
-    const v4, 0x7f1102aa
-
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v2, v3, v1}, Lgsl;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Liau;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liau;
 
     return-object v0
+.end method
+
+.method public final a(II)Leqb;
+    .locals 4
+
+    invoke-direct {p0}, Lepz;->b()I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    new-instance v1, Leqb;
+
+    iget-object v2, p0, Lepz;->a:[B
+
+    iget v3, p0, Lepz;->b:I
+
+    invoke-direct {v1, v2, p2, v3, v0}, Leqb;-><init>([BIII)V
+
+    iget v2, p0, Lepz;->b:I
+
+    add-int/2addr v0, v2
+
+    iput v0, p0, Lepz;->b:I
+
+    return-object v1
+.end method
+
+.method public final b(I)V
+    .locals 2
+
+    iget v0, p0, Lepz;->b:I
+
+    invoke-direct {p0}, Lepz;->b()I
+
+    move-result v1
+
+    invoke-static {p1, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lepz;->b:I
+
+    return-void
+.end method
+
+.method public final close()V
+    .locals 0
+
+    return-void
 .end method

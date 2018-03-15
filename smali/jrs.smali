@@ -1,315 +1,141 @@
-.class public final Ljrs;
-.super Ljwj;
+.class public abstract Ljrs;
+.super Ljxk;
 .source "PG"
 
 
 # instance fields
-.field public a:F
+.field private a:I
 
-.field public b:F
-
-.field public c:F
-
-.field public d:F
+.field private b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method protected constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljxk;-><init>()V
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    sget v0, Lep;->bV:I
 
-    iput v0, p0, Ljrs;->a:F
-
-    iput v0, p0, Ljrs;->b:F
-
-    iput v0, p0, Ljrs;->c:F
-
-    iput v0, p0, Ljrs;->d:F
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljrs;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljrs;->cachedSize:I
+    iput v0, p0, Ljrs;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 4
-
-    const/4 v3, 0x0
-
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
-
-    move-result v0
-
-    iget v1, p0, Ljrs;->a:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_0
-
-    const/16 v1, 0x8
-
-    invoke-static {v1}, Ljwi;->d(I)I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x4
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget v1, p0, Ljrs;->b:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_1
-
-    const/16 v1, 0x10
-
-    invoke-static {v1}, Ljwi;->d(I)I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x4
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    iget v1, p0, Ljrs;->c:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_2
-
-    const/16 v1, 0x18
-
-    invoke-static {v1}, Ljwi;->d(I)I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x4
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    iget v1, p0, Ljrs;->d:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_3
-
-    const/16 v1, 0x20
-
-    invoke-static {v1}, Ljwi;->d(I)I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x4
-
-    add-int/2addr v0, v1
-
-    :cond_3
-    return v0
+.method protected abstract a()Ljava/lang/Object;
 .end method
 
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
+.method protected final b()Ljava/lang/Object;
     .locals 1
 
-    :cond_0
+    sget v0, Lep;->bW:I
+
+    iput v0, p0, Ljrs;->a:I
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final hasNext()Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    iget v0, p0, Ljrs;->a:I
+
+    sget v3, Lep;->bX:I
+
+    if-eq v0, v3, :cond_1
+
+    move v0, v1
+
     :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-static {v0}, Ljii;->b(Z)V
 
-    move-result v0
+    iget v0, p0, Ljrs;->a:I
 
-    sparse-switch v0, :sswitch_data_0
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    packed-switch v0, :pswitch_data_0
+
+    :pswitch_0
+    sget v0, Lep;->bX:I
+
+    iput v0, p0, Ljrs;->a:I
+
+    invoke-virtual {p0}, Ljrs;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljrs;->b:Ljava/lang/Object;
+
+    iget v0, p0, Ljrs;->a:I
+
+    sget v3, Lep;->bW:I
+
+    if-eq v0, v3, :cond_0
+
+    sget v0, Lep;->bU:I
+
+    iput v0, p0, Ljrs;->a:I
+
+    move v2, v1
+
+    :cond_0
+    :goto_1
+    :pswitch_1
+    return v2
+
+    :cond_1
+    move v0, v2
+
+    goto :goto_0
+
+    :pswitch_2
+    move v2, v1
+
+    goto :goto_1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 2
+
+    invoke-virtual {p0}, Ljrs;->hasNext()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    :sswitch_0
-    return-object p0
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    :sswitch_1
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v0
-
-    iput v0, p0, Ljrs;->a:F
-
-    goto :goto_0
-
-    :sswitch_2
-    invoke-virtual {p1}, Ljwh;->f()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v0
-
-    iput v0, p0, Ljrs;->b:F
-
-    goto :goto_0
-
-    :sswitch_3
-    invoke-virtual {p1}, Ljwh;->f()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v0
-
-    iput v0, p0, Ljrs;->c:F
-
-    goto :goto_0
-
-    :sswitch_4
-    invoke-virtual {p1}, Ljwh;->f()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v0
-
-    iput v0, p0, Ljrs;->d:F
-
-    goto :goto_0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xd -> :sswitch_1
-        0x15 -> :sswitch_2
-        0x1d -> :sswitch_3
-        0x25 -> :sswitch_4
-    .end sparse-switch
-.end method
-
-.method public final writeTo(Ljwi;)V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    iget v0, p0, Ljrs;->a:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    iget v1, p0, Ljrs;->a:F
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
+    throw v0
 
     :cond_0
-    iget v0, p0, Ljrs;->b:F
+    sget v0, Lep;->bV:I
 
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+    iput v0, p0, Ljrs;->a:I
 
-    move-result v0
+    iget-object v0, p0, Ljrs;->b:Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+    const/4 v1, 0x0
 
-    move-result v1
+    iput-object v1, p0, Ljrs;->b:Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v0, 0x2
-
-    iget v1, p0, Ljrs;->b:F
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
-
-    :cond_1
-    iget v0, p0, Ljrs;->c:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v0, 0x3
-
-    iget v1, p0, Ljrs;->c:F
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
-
-    :cond_2
-    iget v0, p0, Ljrs;->d:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_3
-
-    const/4 v0, 0x4
-
-    iget v1, p0, Ljrs;->d:F
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
-
-    :cond_3
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
-
-    return-void
+    return-object v0
 .end method

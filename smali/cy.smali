@@ -1,47 +1,33 @@
 .class final Lcy;
-.super Ljava/lang/Object;
+.super Lct;
 .source "PG"
 
 
-# static fields
-.field public static final a:Ldb;
+# instance fields
+.field private final synthetic a:Lcn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Lcn;)V
+    .locals 0
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput-object p1, p0, Lcy;->a:Lcn;
 
-    const/16 v1, 0x12
+    invoke-direct {p0}, Lct;-><init>()V
 
-    if-lt v0, v1, :cond_0
-
-    new-instance v0, Lda;
-
-    invoke-direct {v0}, Lda;-><init>()V
-
-    sput-object v0, Lcy;->a:Ldb;
-
-    :goto_0
     return-void
-
-    :cond_0
-    new-instance v0, Ldb;
-
-    invoke-direct {v0}, Ldb;-><init>()V
-
-    sput-object v0, Lcy;->a:Ldb;
-
-    goto :goto_0
 .end method
 
-.method static a(Landroid/view/ViewGroup;Z)V
+
+# virtual methods
+.method public final a(Lcn;)V
     .locals 1
 
-    sget-object v0, Lcy;->a:Ldb;
+    iget-object v0, p0, Lcy;->a:Lcn;
 
-    invoke-virtual {v0, p0, p1}, Ldb;->a(Landroid/view/ViewGroup;Z)V
+    invoke-virtual {v0}, Lcn;->c()V
+
+    invoke-virtual {p1, p0}, Lcn;->b(Lcs;)Lcn;
 
     return-void
 .end method

@@ -1,62 +1,44 @@
-.class public final Ldjc;
+.class final Ldjc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldjb;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Ldjb;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldjc;->a:Ldjb;
 
-    iput-object p1, p0, Ldjc;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldjc;
-
-    invoke-direct {v0, p0}, Ldjc;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Ldjc;->a:Ljxn;
+    iget-object v0, p0, Ldjc;->a:Ldjb;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldjb;->a:Ldiv;
 
-    move-result-object v0
-
-    check-cast v0, Lged;
-
-    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v1, v0}, Lfsp;->a(Landroid/hardware/camera2/CaptureRequest$Key;Liau;)Liau;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    check-cast v0, Ldjx;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Ldjx;->y:Legs;
 
-    move-result-object v0
+    invoke-virtual {v0}, Legs;->Q()V
 
-    check-cast v0, Liau;
-
-    return-object v0
+    return-void
 .end method

@@ -1,54 +1,34 @@
-.class public final Ldvo;
+.class final Ldvo;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljtu;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ldvf;
+.field private final synthetic a:Ldux;
 
 
 # direct methods
-.method public constructor <init>(Ldvf;)V
+.method constructor <init>(Ldux;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldvo;->a:Ldux;
 
-    iput-object p1, p0, Ldvo;->a:Ldvf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljuw;
-    .locals 5
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Ldvo;->a:Ldvf;
+    iget-object v0, p0, Ldvo;->a:Ldux;
 
-    check-cast p1, Lgio;
+    invoke-virtual {v0}, Ldux;->n()V
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v2
-
-    iget-object v1, v0, Ldvf;->e:Ldve;
-
-    iget-object v1, v1, Ldve;->d:Ldtm;
-
-    invoke-interface {v1, p1}, Ldtm;->a(Ljava/lang/Object;)Ljuw;
-
-    move-result-object v1
-
-    new-instance v4, Ldxm;
-
-    invoke-direct {v4, v0, p1, v2, v3}, Ldxm;-><init>(Ldvf;Lgio;J)V
-
-    sget-object v0, Ljvc;->a:Ljvc;
-
-    invoke-static {v1, v4, v0}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    return-object v1
+    return-void
 .end method

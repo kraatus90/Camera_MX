@@ -1,56 +1,44 @@
-.class public final Lczk;
+.class final Lczk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lczj;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lczj;)V
     .locals 0
 
+    iput-object p1, p0, Lczk;->a:Lczj;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lczk;->a:Ljxn;
-
-    iput-object p2, p0, Lczk;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lczk;->a:Ljxn;
+    iget-object v0, p0, Lczk;->a:Lczj;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lczj;->a:Lcyk;
 
-    move-result-object v0
-
-    check-cast v0, Lcqp;
-
-    iget-object v1, p0, Lczk;->b:Ljxn;
-
-    new-instance v2, Lcqv;
-
-    invoke-direct {v2, v0, v1}, Lcqv;-><init>(Lcqp;Ljxn;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Lcqo;
+    check-cast v0, Lcxo;
 
-    return-object v0
+    iget-object v0, v0, Lcxo;->w:Lefu;
+
+    invoke-virtual {v0}, Lglb;->C()V
+
+    return-void
 .end method

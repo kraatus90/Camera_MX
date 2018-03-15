@@ -370,7 +370,7 @@
 .end method
 
 .method public getHtmlText()Ljava/lang/String;
-    .locals 4
+    .locals 3
 
     iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
 
@@ -380,7 +380,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     invoke-virtual {p0}, Landroid/support/v4/app/ShareCompat$IntentReader;->getText()Ljava/lang/CharSequence;
 
@@ -400,13 +400,7 @@
     return-object v0
 
     :cond_0
-    if-eqz v0, :cond_2
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x10
-
-    if-lt v1, v2, :cond_1
+    if-eqz v0, :cond_1
 
     invoke-static {v0}, Landroid/text/Html;->escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
 
@@ -415,25 +409,6 @@
     goto :goto_0
 
     :cond_1
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v3
-
-    invoke-static {v1, v0, v2, v3}, Landroid/support/v4/app/ShareCompat$IntentReader;->withinStyle(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;II)V
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_2
     move-object v0, v1
 
     goto :goto_0

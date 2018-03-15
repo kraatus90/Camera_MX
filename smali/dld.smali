@@ -1,104 +1,102 @@
-.class final Ldld;
+.class public final Ldld;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Late;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldir;
+.field private final a:Lkgv;
 
-.field private synthetic b:Ljvi;
+.field private final b:Lkgv;
 
-.field private synthetic c:Ldkz;
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldkz;Ldir;Ljvi;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldld;->c:Ldkz;
-
-    iput-object p2, p0, Ldld;->a:Ldir;
-
-    iput-object p3, p0, Ldld;->b:Ljvi;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldld;->a:Lkgv;
+
+    iput-object p2, p0, Ldld;->b:Lkgv;
+
+    iput-object p3, p0, Ldld;->c:Lkgv;
+
+    iput-object p4, p0, Ldld;->d:Lkgv;
+
+    iput-object p5, p0, Ldld;->e:Lkgv;
+
+    iput-object p6, p0, Ldld;->f:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljuw;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    iget-object v0, p0, Ldld;->a:Ldir;
+    new-instance v0, Ldlb;
 
-    invoke-virtual {v0}, Ldir;->a()Ljuw;
+    iget-object v1, p0, Ldld;->a:Lkgv;
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Ljuw;
-    .locals 1
-
-    iget-object v0, p0, Ldld;->b:Ljvi;
-
-    return-object v0
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Ldld;->c:Ldkz;
-
-    iget-object v0, v0, Ldkz;->e:Ldiv;
-
-    iget-object v0, v0, Ldiv;->a:Liau;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Liau;->a(Ljava/lang/Object;)V
+    check-cast v1, Ldkw;
 
-    return-void
-.end method
+    iget-object v2, p0, Ldld;->b:Lkgv;
 
-.method public final d()V
-    .locals 3
-
-    iget-object v0, p0, Ldld;->c:Ldkz;
-
-    sget-object v1, Ldkz;->a:Ljava/lang/String;
-
-    const-string v2, "reset AF/AE."
-
-    invoke-static {v1, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, v0, Ldkz;->b:Licn;
-
-    invoke-static {}, Lgew;->a()Lgey;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {v1, v2}, Licn;->a(Ljava/lang/Object;)V
+    check-cast v2, Ldkv;
 
-    iget-object v1, v0, Ldkz;->c:Liag;
+    iget-object v3, p0, Ldld;->c:Lkgv;
 
-    sget-object v2, Lgqb;->c:Lgqb;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Liag;->a(Ljava/lang/Object;)V
+    move-result-object v3
 
-    iget-object v0, v0, Ldkz;->e:Ldiv;
+    check-cast v3, Lbjy;
 
-    invoke-virtual {v0}, Ldiv;->a()V
+    iget-object v4, p0, Ldld;->d:Lkgv;
 
-    return-void
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lhbh;
+
+    iget-object v5, p0, Ldld;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lihs;
+
+    iget-object v6, p0, Ldld;->f:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lbkx;
+
+    invoke-direct/range {v0 .. v6}, Ldlb;-><init>(Ldkw;Ldkv;Lbjy;Lhbh;Lihs;Lbkx;)V
+
+    return-object v0
 .end method

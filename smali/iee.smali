@@ -1,23 +1,13 @@
-.class public interface abstract Liee;
+.class public final Liee;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract a(Ljava/lang/Throwable;)V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract b()V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
+    return-void
 .end method

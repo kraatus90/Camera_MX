@@ -1,30 +1,20 @@
-.class public final Ldjh;
+.class final Ldjh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Ldjh;
+# instance fields
+.field private final synthetic a:Ldiv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldjh;
-
-    invoke-direct {v0}, Ldjh;-><init>()V
-
-    sput-object v0, Ldjh;->a:Ldjh;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Ldiv;)V
     .locals 0
+
+    iput-object p1, p0, Ldjh;->a:Ldiv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,24 +23,24 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final run()V
     .locals 2
 
-    new-instance v0, Liag;
+    iget-object v0, p0, Ldjh;->a:Ldiv;
 
-    invoke-static {}, Lgew;->a()Lgey;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Liag;
+    check-cast v0, Ldjx;
 
-    return-object v0
+    iget-object v0, v0, Ldjx;->c:Liay;
+
+    iget-object v1, p0, Ldjh;->a:Ldiv;
+
+    iget-object v1, v1, Ldiv;->f:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

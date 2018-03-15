@@ -3,117 +3,96 @@
 .source "PG"
 
 # interfaces
-.implements Lask;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lhzr;
+.field private final a:Lkgv;
 
-.field private b:Lasf;
+.field private final b:Lkgv;
 
-.field private c:Lhdc;
-
-.field private d:Lhda;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lasc;Lasf;Lasp;Lass;Lhdc;Lhda;Lhzt;Lase;Lgdq;Liau;Liau;)V
-    .locals 3
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lhzr;
+    iput-object p1, p0, Latz;->a:Lkgv;
 
-    invoke-direct {v0}, Lhzr;-><init>()V
+    iput-object p2, p0, Latz;->b:Lkgv;
 
-    iput-object v0, p0, Latz;->a:Lhzr;
+    iput-object p3, p0, Latz;->c:Lkgv;
 
-    invoke-interface {p9}, Lgdq;->p()Z
+    return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;)Latz;
+    .locals 1
+
+    new-instance v0, Latz;
+
+    invoke-direct {v0, p0, p1, p2}, Latz;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Latz;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfdv;
+
+    iget-object v1, p0, Latz;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    iget-object v1, p0, Latz;->c:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfbg;
+
+    invoke-interface {v0}, Lfdv;->p()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-interface {p9}, Lgdq;->q()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
+    sget-object v0, Ljwb;->a:Ljwb;
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iput-object p2, p0, Latz;->b:Lasf;
-
-    iput-object p5, p0, Latz;->c:Lhdc;
-
-    iput-object p6, p0, Latz;->d:Lhda;
-
-    invoke-virtual {p3, p8, p10, p9}, Lasp;->a(Lase;Liau;Lgdq;)Laso;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {p9}, Lgdq;->b()Lige;
+    check-cast v0, Ljava/util/Set;
 
-    move-result-object v1
+    return-object v0
 
-    new-instance v2, Lats;
+    :cond_0
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-direct {v2, p1, v0, p4, v1}, Lats;-><init>(Lasc;Laso;Lass;Lige;)V
+    invoke-static {v0, v1}, Lffm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Lick;)Lick;
 
-    invoke-virtual {p5, v2}, Lhdc;->a(Lhdl;)V
+    move-result-object v0
 
-    invoke-virtual {p2}, Lasf;->a()V
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
 
-    iget-object v0, p0, Latz;->a:Lhzr;
-
-    invoke-virtual {p2, p10}, Lasf;->a(Liau;)Lich;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lhzr;->a(Lich;)Lich;
-
-    iget-object v0, p0, Latz;->a:Lhzr;
-
-    new-instance v1, Laua;
-
-    invoke-direct {v1, p4}, Laua;-><init>(Lass;)V
-
-    invoke-interface {p11, v1, p7}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lhzr;->a(Lich;)Lich;
-
-    return-void
-
-    :cond_1
-    const/4 v0, 0x0
+    move-result-object v0
 
     goto :goto_0
-.end method
-
-
-# virtual methods
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Latz;->a:Lhzr;
-
-    invoke-virtual {v0}, Lhzr;->close()V
-
-    iget-object v0, p0, Latz;->b:Lasf;
-
-    invoke-virtual {v0}, Lasf;->a()V
-
-    iget-object v0, p0, Latz;->c:Lhdc;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lhdc;->a:Lhdl;
-
-    return-void
 .end method

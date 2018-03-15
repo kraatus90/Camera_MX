@@ -3,157 +3,104 @@
 .source "PG"
 
 # interfaces
-.implements Ljan;
-
-
-# instance fields
-.field private a:Ljan;
-
-.field private b:Ljava/lang/String;
-
-.field private c:Ljfq;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljan;Ljava/lang/String;Ljfq;)V
-    .locals 3
+.method constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljfk;->a:Ljan;
-
-    if-eqz p2, :cond_1
-
-    const-string v1, "_"
-
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    iput-object v0, p0, Ljfk;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Ljfk;->c:Ljfq;
-
     return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_1
-    const-string v0, ""
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljfx;
-    .locals 5
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 7
 
-    iget-object v0, p0, Ljfk;->a:Ljan;
+    const/4 v6, 0x2
 
-    invoke-interface {v0, p1, p2}, Ljan;->a(J)Ljfx;
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    const-class v0, Ljnq;
+
+    const-string v1, "default"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Ljfk;->c:Ljfq;
+    check-cast v0, Ljnq;
 
-    iget-object v2, p0, Ljfk;->b:Ljava/lang/String;
+    const/4 v1, 0x6
 
-    invoke-virtual {v0}, Ljfx;->a()F
+    new-array v2, v1, [Ljko;
 
-    move-result v3
+    const-class v1, Ljko;
 
-    invoke-virtual {v1, v2, p1, p2, v3}, Ljfq;->a(Ljava/lang/String;JF)V
+    const-string v3, "face_detector"
 
-    return-object v0
-.end method
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final a()V
-    .locals 1
+    move-result-object v1
 
-    iget-object v0, p0, Ljfk;->a:Ljan;
+    check-cast v1, Ljko;
 
-    invoke-interface {v0}, Ljan;->a()V
+    aput-object v1, v2, v4
 
-    return-void
-.end method
+    new-instance v1, Ljlf;
 
-.method public final b(J)V
-    .locals 1
+    invoke-direct {v1, v0, v5}, Ljlf;-><init>(Ljnq;I)V
 
-    iget-object v0, p0, Ljfk;->a:Ljan;
+    aput-object v1, v2, v5
 
-    invoke-interface {v0, p1, p2}, Ljan;->b(J)V
+    const-class v1, Ljko;
 
-    return-void
-.end method
+    const-string v3, "face_quality_filter"
 
-.method public final c(J)V
-    .locals 1
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, p0, Ljfk;->a:Ljan;
+    move-result-object v1
 
-    invoke-interface {v0, p1, p2}, Ljan;->c(J)V
+    check-cast v1, Ljko;
 
-    return-void
-.end method
+    aput-object v1, v2, v6
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    const/4 v1, 0x3
 
-    iget-object v0, p0, Ljfk;->a:Ljan;
+    new-instance v3, Ljkx;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-direct {v3, v0, v4}, Ljkx;-><init>(Ljnq;B)V
+
+    aput-object v3, v2, v1
+
+    const/4 v1, 0x4
+
+    new-instance v3, Ljlj;
+
+    new-instance v4, Ljkd;
+
+    sget-object v5, Ljne;->e:Ljnm;
+
+    invoke-direct {v4, v0, v5}, Ljkd;-><init>(Ljnq;Ljnm;)V
+
+    invoke-direct {v3, v4}, Ljlj;-><init>(Ljjz;)V
+
+    aput-object v3, v2, v1
+
+    const/4 v0, 0x5
+
+    new-instance v1, Ljls;
+
+    invoke-direct {v1, v6}, Ljls;-><init>(I)V
+
+    aput-object v1, v2, v0
+
+    invoke-static {v2}, Ljkj;->a([Ljko;)Ljkj;
 
     move-result-object v0
 

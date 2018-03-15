@@ -22,6 +22,78 @@
     return-void
 .end method
 
+.method public constructor <init>(III)V
+    .locals 3
+
+    invoke-static {p1, p2, p3}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_2(III)J
+
+    move-result-wide v0
+
+    const/4 v2, 0x1
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/googlex/gcam/RawImage;-><init>(JZ)V
+
+    return-void
+.end method
+
+.method public constructor <init>(IIILcom/google/googlex/gcam/SWIGTYPE_p_gcam__TImageSampleAllocator;)V
+    .locals 3
+
+    invoke-static {p4}, Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__TImageSampleAllocator;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__TImageSampleAllocator;)J
+
+    move-result-wide v0
+
+    invoke-static {p1, p2, p3, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_1(IIIJ)J
+
+    move-result-wide v0
+
+    const/4 v2, 0x1
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/googlex/gcam/RawImage;-><init>(JZ)V
+
+    return-void
+.end method
+
+.method public constructor <init>(IIJI)V
+    .locals 3
+
+    invoke-static {p1, p2, p3, p4, p5}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_4(IIJI)J
+
+    move-result-wide v0
+
+    const/4 v2, 0x1
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/googlex/gcam/RawImage;-><init>(JZ)V
+
+    return-void
+.end method
+
+.method public constructor <init>(IIJILcom/google/googlex/gcam/SWIGTYPE_p_gcam__TImageSampleAllocator;)V
+    .locals 7
+
+    invoke-static {p6}, Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__TImageSampleAllocator;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_gcam__TImageSampleAllocator;)J
+
+    move-result-wide v5
+
+    move v0, p1
+
+    move v1, p2
+
+    move-wide v2, p3
+
+    move v4, p5
+
+    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_3(IIJIJ)J
+
+    move-result-wide v0
+
+    const/4 v2, 0x1
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/googlex/gcam/RawImage;-><init>(JZ)V
+
+    return-void
+.end method
+
 .method protected constructor <init>(JZ)V
     .locals 3
 
@@ -43,7 +115,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_2(JLcom/google/googlex/gcam/InterleavedImageU16;)J
+    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_6(JLcom/google/googlex/gcam/InterleavedImageU16;)J
 
     move-result-wide v0
 
@@ -61,7 +133,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_3(JLcom/google/googlex/gcam/PackedImageRaw10;)J
+    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_7(JLcom/google/googlex/gcam/PackedImageRaw10;)J
 
     move-result-wide v0
 
@@ -79,7 +151,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_4(JLcom/google/googlex/gcam/PackedImageRaw12;)J
+    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_8(JLcom/google/googlex/gcam/PackedImageRaw12;)J
 
     move-result-wide v0
 
@@ -97,7 +169,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_1(JLcom/google/googlex/gcam/RawImage;)J
+    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawImage__SWIG_5(JLcom/google/googlex/gcam/RawImage;)J
 
     move-result-wide v0
 

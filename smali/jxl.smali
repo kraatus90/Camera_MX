@@ -1,319 +1,204 @@
 .class public final Ljxl;
-.super Ljava/lang/Object;
+.super Ljxk;
 .source "PG"
 
+# interfaces
+.implements Ljava/util/ListIterator;
 
-# static fields
-.field public static a:[C
+
+# instance fields
+.field private final a:I
+
+.field private b:I
+
+.field private final c:Ljuh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method protected constructor <init>()V
+    .locals 0
 
-    const/16 v0, 0x124
-
-    new-array v0, v0, [C
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Ljxl;->a:[C
+    invoke-direct {p0}, Ljxk;-><init>()V
 
     return-void
+.end method
 
-    :array_0
-    .array-data 2
-        0x0s
-        0x248s
-        0x0s
-        0x0s
-        0x400s
-        0x0s
-        0x6d6es
-        0x7472s
-        0x5247s
-        0x4220s
-        0x5859s
-        0x5a20s
-        0x7e1s
-        0x2s
-        0x8s
-        0xds
-        0x14s
-        0xas
-        0x6163s
-        0x7370s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x474fs
-        0x4f47s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        -0x92as
-        0x1s
-        0x0s
-        0x0s
-        -0x2cd3s
-        0x474fs
-        0x4f47s
-        -0x6060s
-        0x3a30s
-        0x2c18s
-        -0x7562s
-        0x2d90s
-        0xc91s
-        0x52f6s
-        0x184cs
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0xbs
-        0x6465s
-        0x7363s
-        0x0s
-        0x108s
-        0x0s
-        0x32s
-        0x6370s
-        0x7274s
-        0x0s
-        0x13cs
-        0x0s
-        0x5as
-        0x7774s
-        0x7074s
-        0x0s
-        0x198s
-        0x0s
-        0x14s
-        0x626bs
-        0x7074s
-        0x0s
-        0x1acs
-        0x0s
-        0x14s
-        0x7258s
-        0x595as
-        0x0s
-        0x1c0s
-        0x0s
-        0x14s
-        0x6758s
-        0x595as
-        0x0s
-        0x1d4s
-        0x0s
-        0x14s
-        0x6258s
-        0x595as
-        0x0s
-        0x1e8s
-        0x0s
-        0x14s
-        0x7254s
-        0x5243s
-        0x0s
-        0x1fcs
-        0x0s
-        0x20s
-        0x6368s
-        0x6164s
-        0x0s
-        0x21cs
-        0x0s
-        0x2cs
-        0x6254s
-        0x5243s
-        0x0s
-        0x1fcs
-        0x0s
-        0x20s
-        0x6754s
-        0x5243s
-        0x0s
-        0x1fcs
-        0x0s
-        0x20s
-        0x6d6cs
-        0x7563s
-        0x0s
-        0x0s
-        0x0s
-        0x1s
-        0x0s
-        0xcs
-        0x656es
-        0x5553s
-        0x0s
-        0x16s
-        0x0s
-        0x1cs
-        0x44s
-        0x69s
-        0x73s
-        0x70s
-        0x6cs
-        0x61s
-        0x79s
-        0x20s
-        0x50s
-        0x33s
-        0x0s
-        0x0s
-        0x6d6cs
-        0x7563s
-        0x0s
-        0x0s
-        0x0s
-        0x1s
-        0x0s
-        0xcs
-        0x656es
-        0x5553s
-        0x0s
-        0x3es
-        0x0s
-        0x1cs
-        0x43s
-        0x6fs
-        0x70s
-        0x79s
-        0x72s
-        0x69s
-        0x67s
-        0x68s
-        0x74s
-        0x20s
-        0x28s
-        0x63s
-        0x29s
-        0x20s
-        0x32s
-        0x30s
-        0x31s
-        0x37s
-        0x20s
-        0x47s
-        0x6fs
-        0x6fs
-        0x67s
-        0x6cs
-        0x65s
-        0x20s
-        0x49s
-        0x6es
-        0x63s
-        0x2es
-        0x0s
-        0x0s
-        0x5859s
-        0x5a20s
-        0x0s
-        0x0s
-        0x0s
-        -0xcafs
-        0x1s
-        0x0s
-        0x1s
-        0x16ccs
-        0x5859s
-        0x5a20s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x5859s
-        0x5a20s
-        0x0s
-        0x0s
-        0x0s
-        -0x7c21s
-        0x0s
-        0x3dbfs
-        -0x1s
-        -0x44s
-        0x5859s
-        0x5a20s
-        0x0s
-        0x0s
-        0x0s
-        0x4abfs
-        0x0s
-        -0x4ec9s
-        0x0s
-        0xab9s
-        0x5859s
-        0x5a20s
-        0x0s
-        0x0s
-        0x0s
-        0x2838s
-        0x0s
-        0x110bs
-        0x0s
-        -0x3747s
-        0x7061s
-        0x7261s
-        0x0s
-        0x0s
-        0x3s
-        0x0s
-        0x2s
-        0x6666s
-        0x0s
-        -0xd59s
-        0x0s
-        0xd59s
-        0x0s
-        0x13d0s
-        0x0s
-        0xa5bs
-        0x7366s
-        0x3332s
-        0x0s
-        0x0s
-        0x1s
-        0xc42s
-        0x0s
-        0x5des
-        -0x1s
-        -0xcd9s
-        0x0s
-        0x793s
-        0x0s
-        -0x270s
-        -0x1s
-        -0x45ds
-        -0x1s
-        -0x25cs
-        0x0s
-        0x3dcs
-        0x0s
-        -0x3f92s
-    .end array-data
+.method private constructor <init>(II)V
+    .locals 0
+
+    invoke-direct {p0}, Ljxl;-><init>()V
+
+    invoke-static {p2, p1}, Ljii;->b(II)I
+
+    iput p1, p0, Ljxl;->a:I
+
+    iput p2, p0, Ljxl;->b:I
+
+    return-void
+.end method
+
+.method constructor <init>(Ljuh;I)V
+    .locals 1
+
+    invoke-virtual {p1}, Ljuh;->size()I
+
+    move-result v0
+
+    invoke-direct {p0, v0, p2}, Ljxl;-><init>(II)V
+
+    iput-object p1, p0, Ljxl;->c:Ljuh;
+
+    return-void
+.end method
+
+.method private final a(I)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Ljxl;->c:Ljuh;
+
+    invoke-virtual {v0, p1}, Ljuh;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final add(Ljava/lang/Object;)V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final hasNext()Z
+    .locals 2
+
+    iget v0, p0, Ljxl;->b:I
+
+    iget v1, p0, Ljxl;->a:I
+
+    if-ge v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final hasPrevious()Z
+    .locals 1
+
+    iget v0, p0, Ljxl;->b:I
+
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 2
+
+    invoke-virtual {p0}, Ljxl;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    iget v0, p0, Ljxl;->b:I
+
+    add-int/lit8 v1, v0, 0x1
+
+    iput v1, p0, Ljxl;->b:I
+
+    invoke-direct {p0, v0}, Ljxl;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final nextIndex()I
+    .locals 1
+
+    iget v0, p0, Ljxl;->b:I
+
+    return v0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljxl;->hasPrevious()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    iget v0, p0, Ljxl;->b:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Ljxl;->b:I
+
+    invoke-direct {p0, v0}, Ljxl;->a(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final previousIndex()I
+    .locals 1
+
+    iget v0, p0, Ljxl;->b:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    return v0
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
 .end method

@@ -1,57 +1,142 @@
-.class Lfeg;
-.super Lgvh;
+.class public final Lfeg;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfef;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfef;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfeg;->a:Lfef;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lgvh;-><init>()V
+    iput-object p1, p0, Lfeg;->a:Lkgv;
+
+    iput-object p2, p0, Lfeg;->b:Lkgv;
+
+    iput-object p3, p0, Lfeg;->c:Lkgv;
+
+    iput-object p4, p0, Lfeg;->d:Lkgv;
+
+    iput-object p5, p0, Lfeg;->e:Lkgv;
+
+    iput-object p6, p0, Lfeg;->f:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Lfeg;
+    .locals 7
+
+    new-instance v0, Lfeg;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    invoke-direct/range {v0 .. v6}, Lfeg;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    iget-object v0, p0, Lfeg;->a:Lfef;
+    iget-object v0, p0, Lfeg;->a:Lkgv;
 
-    iget-object v0, v0, Lfef;->b:Liau;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    sget-object v1, Lgys;->j:Lgys;
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Liau;->a(Ljava/lang/Object;)V
+    check-cast v0, Liaw;
 
-    iget-object v0, p0, Lfeg;->a:Lfef;
+    iget-object v1, p0, Lfeg;->b:Lkgv;
 
-    iget-object v0, v0, Lfef;->a:Lfem;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    const-class v1, Lfeg;
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lfem;->a(Ljava/lang/Class;)V
+    check-cast v1, Liaw;
 
-    return-void
-.end method
+    iget-object v5, p0, Lfeg;->c:Lkgv;
 
-.method public final b()V
-    .locals 2
+    iget-object v2, p0, Lfeg;->d:Lkgv;
 
-    iget-object v0, p0, Lfeg;->a:Lfef;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lfef;->a:Lfem;
+    move-result-object v2
 
-    const-class v1, Lfeg;
+    check-cast v2, Liho;
 
-    invoke-virtual {v0, v1}, Lfem;->b(Ljava/lang/Class;)V
+    iget-object v3, p0, Lfeg;->e:Lkgv;
 
-    return-void
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lihs;
+
+    iget-object v4, p0, Lfeg;->f:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Liay;
+
+    new-instance v6, Lfdy;
+
+    invoke-direct {v6, v2, v3, v4, v5}, Lfdy;-><init>(Liho;Lihs;Liay;Lkgv;)V
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v2, Lfeb;
+
+    invoke-direct {v2, v6}, Lfeb;-><init>(Lfdy;)V
+
+    invoke-virtual {v0, v2}, Liaw;->a(Lihb;)Lihb;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Lfec;
+
+    invoke-direct {v0, v6}, Lfec;-><init>(Lfdy;)V
+
+    invoke-virtual {v1, v0}, Liaw;->a(Lihb;)Lihb;
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v6, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfdy;
+
+    return-object v0
 .end method

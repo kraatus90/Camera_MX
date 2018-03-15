@@ -1,48 +1,62 @@
-.class final Lgge;
+.class final synthetic Lgge;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lggb;
+.implements Ligs;
 
 
 # instance fields
-.field private a:Lggc;
+.field private final a:Lgft;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/Set;Lggu;)V
-    .locals 2
+.method constructor <init>(Lgft;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Ljle;->a(Ljava/util/Collection;)Ljle;
-
-    move-result-object v0
-
-    new-instance v1, Lggf;
-
-    invoke-direct {v1, v0, p2}, Lggf;-><init>(Ljava/util/Set;Lggu;)V
-
-    iput-object v1, p0, Lgge;->a:Lggc;
+    iput-object p1, p0, Lgge;->a:Lgft;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lggc;
-    .locals 1
+.method public final a(Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Lgge;->a:Lggc;
+    iget-object v0, p0, Lgge;->a:Lgft;
 
-    return-object v0
-.end method
+    check-cast p1, Leox;
 
-.method public final b()Lggc;
-    .locals 1
+    if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lgge;->a:Lggc;
+    invoke-virtual {p1}, Leox;->e()Z
 
-    return-object v0
+    move-result v1
+
+    const/16 v2, 0x21
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "rows deleted successfully : "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lgft;->a(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
 .end method

@@ -1,81 +1,49 @@
-.class public abstract Lixf;
-.super Ljgo;
+.class final Lixf;
+.super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lixj;
+
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public final b:J
+
+.field private final c:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;)V
-    .locals 1
+.method constructor <init>(Ljava/lang/Object;JJ)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Ljgo;-><init>(Ljava/lang/Object;B)V
+    iput-object p1, p0, Lixf;->a:Ljava/lang/Object;
+
+    iput-wide p2, p0, Lixf;->b:J
+
+    iput-wide p4, p0, Lixf;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a(J)Z
+    .locals 3
 
-    invoke-virtual {p0}, Lixf;->e()Ljava/lang/Object;
+    iget-wide v0, p0, Lixf;->c:J
 
-    move-result-object v0
+    cmp-long v0, p1, v0
 
-    check-cast v0, Landroid/graphics/Bitmap;
+    if-lez v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    const/4 v0, 0x1
 
-    move-result v0
-
+    :goto_0
     return v0
-.end method
 
-.method protected abstract a(Landroid/graphics/Bitmap;)V
-.end method
+    :cond_0
+    const/4 v0, 0x0
 
-.method protected bridge synthetic a(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Landroid/graphics/Bitmap;
-
-    invoke-virtual {p0, p1}, Lixf;->a(Landroid/graphics/Bitmap;)V
-
-    return-void
-.end method
-
-.method public final b()I
-    .locals 1
-
-    invoke-virtual {p0}, Lixf;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c()I
-    .locals 1
-
-    invoke-virtual {p0}, Lixf;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
-
-    move-result v0
-
-    return v0
+    goto :goto_0
 .end method

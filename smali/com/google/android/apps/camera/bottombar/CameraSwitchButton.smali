@@ -1,5 +1,5 @@
 .class public Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
-.super Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;
+.super Lhan;
 .source "PG"
 
 # interfaces
@@ -50,7 +50,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lhan;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     const/4 v0, 0x1
 
@@ -184,9 +184,9 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->fastOutSlowInAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Ljy;
+    new-instance v1, Ljs;
 
-    invoke-direct {v1}, Ljy;-><init>()V
+    invoke-direct {v1}, Ljs;-><init>()V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
@@ -249,7 +249,7 @@
 
 
 # virtual methods
-.method public getCameraSwitchColorProperty()Lgyz;
+.method public getCameraSwitchColorProperty()Lhai;
     .locals 1
 
     new-instance v0, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton$3;
@@ -278,7 +278,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    invoke-super {p0, p1}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Lhan;->onDraw(Landroid/graphics/Canvas;)V
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getWidth()I
 
@@ -390,7 +390,7 @@
 .method public setPressed(Z)V
     .locals 0
 
-    invoke-super {p0, p1}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;->setPressed(Z)V
+    invoke-super {p0, p1}, Lhan;->setPressed(Z)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->invalidate()V
 

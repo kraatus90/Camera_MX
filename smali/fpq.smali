@@ -1,111 +1,204 @@
 .class public final Lfpq;
-.super Lfoe;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lfox;
 
 
 # instance fields
-.field public e:I
-
-.field private f:I
-
-.field private g:Ljava/lang/String;
+.field private final synthetic a:Lfpi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Lfpi;)V
+    .locals 0
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    iput-object p1, p0, Lfpq;->a:Lfpi;
 
-    invoke-direct {p0}, Lfoe;-><init>()V
-
-    const-string v0, "precision mediump float;                            \nuniform float uBrightness;                          \nuniform float uAlpha;                               \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  gl_FragColor = texture2D( sTexture, vTexCoord);   \n  gl_FragColor.rgb *= uBrightness * uAlpha;         \n  gl_FragColor.a = gl_FragColor.a * uAlpha;         \n}                                                   \n"
-
-    iput-object v0, p0, Lfpq;->g:Ljava/lang/String;
-
-    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
-
-    iget-object v1, p0, Lfpq;->g:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lfpq;->a(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpq;->d:I
-
-    iget v0, p0, Lfpq;->d:I
-
-    const-string v1, "aPosition"
-
-    invoke-static {v0, v1}, Lfpq;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpq;->a:I
-
-    iget v0, p0, Lfpq;->d:I
-
-    const-string v1, "aTextureCoord"
-
-    invoke-static {v0, v1}, Lfpq;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpq;->b:I
-
-    iget v0, p0, Lfpq;->d:I
-
-    const-string v1, "uMvpMatrix"
-
-    invoke-static {v0, v1}, Lfpq;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpq;->c:I
-
-    iget v0, p0, Lfpq;->d:I
-
-    const-string v1, "uBrightness"
-
-    invoke-static {v0, v1}, Lfpq;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpq;->e:I
-
-    iget v0, p0, Lfpq;->d:I
-
-    const-string v1, "uAlpha"
-
-    invoke-static {v0, v1}, Lfpq;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpq;->f:I
-
-    iget v0, p0, Lfoe;->d:I
-
-    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
-
-    iget v0, p0, Lfpq;->e:I
-
-    invoke-static {v0, v2}, Landroid/opengl/GLES20;->glUniform1f(IF)V
-
-    iget v0, p0, Lfpq;->f:I
-
-    invoke-static {v0, v2}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)V
-    .locals 1
+.method public final a(Lfoy;)Lfpz;
+    .locals 9
 
-    iget v0, p0, Lfpq;->f:I
+    const/4 v5, 0x3
 
-    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+    const/4 v8, 0x2
 
-    return-void
+    const/4 v6, 0x0
+
+    const/4 v7, 0x1
+
+    iget-object v0, p0, Lfpq;->a:Lfpi;
+
+    invoke-virtual {v0, p1}, Lfpi;->a(Lfoy;)Lfpj;
+
+    move-result-object v0
+
+    new-instance v1, Lfqa;
+
+    const-string v2, "flash"
+
+    invoke-direct {v1, v2}, Lfqa;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "single image"
+
+    invoke-virtual {v0}, Lfpj;->a()Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "limited or full"
+
+    new-array v3, v8, [Ljava/lang/Integer;
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v6
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v7
+
+    invoke-virtual {v0, v3}, Lfpj;->a([Ljava/lang/Integer;)Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "hw jpeg, sw jpeg, reprocessing"
+
+    new-array v3, v5, [Lfpe;
+
+    sget-object v4, Lfpe;->a:Lfpe;
+
+    aput-object v4, v3, v6
+
+    sget-object v4, Lfpe;->b:Lfpe;
+
+    aput-object v4, v3, v7
+
+    sget-object v4, Lfpe;->d:Lfpe;
+
+    aput-object v4, v3, v8
+
+    invoke-virtual {v0, v3}, Lfpj;->a([Lfpe;)Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "flash fired"
+
+    iget-object v3, v0, Lfpj;->a:Lfpm;
+
+    invoke-virtual {v3}, Lfpm;->a()Lfpn;
+
+    move-result-object v3
+
+    sget-object v4, Landroid/hardware/camera2/CaptureResult;->FLASH_STATE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v4, v5}, Lfpn;->a(Landroid/hardware/camera2/CaptureResult$Key;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "edge"
+
+    invoke-virtual {v0}, Lfpj;->d()Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "noise reduction"
+
+    invoke-virtual {v0}, Lfpj;->e()Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "aberration"
+
+    sget-object v3, Landroid/hardware/camera2/CaptureResult;->COLOR_CORRECTION_ABERRATION_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Ljuo;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljuo;
+
+    move-result-object v5
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Ljuo;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljuo;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v3, v4, v5, v6}, Lfpj;->a(Landroid/hardware/camera2/CaptureResult$Key;Ljava/lang/Object;Ljava/util/Set;Ljava/util/Set;)Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "af converged"
+
+    invoke-virtual {v0}, Lfpj;->c()Z
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lfqa;->a()Lfpz;
+
+    move-result-object v0
+
+    return-object v0
 .end method

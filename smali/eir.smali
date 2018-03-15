@@ -1,14 +1,20 @@
-.class public final Leir;
+.class final Leir;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Laan;
+
+
+# instance fields
+.field private final synthetic a:Lein;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lein;)V
     .locals 0
+
+    iput-object p1, p0, Leir;->a:Lein;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,22 +23,59 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a([BLaao;)V
     .locals 2
 
-    check-cast p1, Liif;
+    iget-object v0, p0, Leir;->a:Lein;
 
-    new-instance v0, Leiw;
+    iget-boolean v0, v0, Lein;->s:Z
 
-    invoke-interface {p1}, Liif;->a()Landroid/view/Surface;
+    if-eqz v0, :cond_1
 
-    move-result-object v1
+    :cond_0
+    :goto_0
+    return-void
 
-    invoke-direct {v0, v1}, Leiw;-><init>(Landroid/view/Surface;)V
+    :cond_1
+    iget-object v0, p0, Leir;->a:Lein;
 
-    invoke-static {v0}, Lfsp;->a(Lgga;)Lggq;
+    iget-boolean v0, v0, Lein;->d:Z
 
-    move-result-object v0
+    iget-object v0, p0, Leir;->a:Lein;
 
-    return-object v0
+    iget-object v0, v0, Lein;->b:Leix;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Leix;->s:Z
+
+    iget-object v0, p0, Leir;->a:Lein;
+
+    iget-boolean v0, v0, Lein;->u:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Leir;->a:Lein;
+
+    iget-object v0, v0, Lein;->b:Leix;
+
+    iput-object p1, v0, Leix;->E:[B
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Leix;->B:Z
+
+    iget-object v0, p0, Leir;->a:Lein;
+
+    iget-object v0, v0, Lein;->c:Leht;
+
+    iget-boolean v1, v0, Leht;->d:Z
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, v0, Leht;->b:Laao;
+
+    invoke-virtual {v0, p1}, Laao;->a([B)V
+
+    goto :goto_0
 .end method

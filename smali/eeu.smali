@@ -1,74 +1,45 @@
-.class public final Leeu;
-.super Ljava/lang/Object;
+.class final Leeu;
+.super Legn;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Leet;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Leet;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leeu;->a:Leet;
 
-    iput-object p1, p0, Leeu;->a:Ljxn;
-
-    iput-object p2, p0, Leeu;->b:Ljxn;
+    invoke-direct {p0, p1}, Legn;-><init>(Legm;)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leeu;
-
-    invoke-direct {v0, p0, p1}, Leeu;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(ZLfdv;)V
+    .locals 2
 
-    iget-object v0, p0, Leeu;->a:Ljxn;
+    iget-object v0, p0, Leeu;->a:Leet;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Leet;->a:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v0, Lghb;
+    invoke-super {p0, p1, p2}, Legn;->a(ZLfdv;)V
 
-    iget-object v1, p0, Leeu;->b:Ljxn;
+    iget-object v0, p0, Leeu;->a:Leet;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Leet;->a:Lgld;
 
-    move-result-object v1
+    iget-object v1, p0, Leeu;->a:Leet;
 
-    check-cast v1, Leeq;
+    iget-object v1, v1, Leet;->c:Lglf;
 
-    invoke-static {v1}, Lfsp;->a(Licn;)Lggu;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lghb;->a(Lggu;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liau;
-
-    return-object v0
+    return-void
 .end method

@@ -3,60 +3,44 @@
 .source "PG"
 
 # interfaces
-.implements Lgzr;
+.implements Lkgv;
 
 
 # instance fields
-.field private b:Landroid/animation/Animator;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Landroid/animation/Animator;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgzt;->b:Landroid/animation/Animator;
+    iput-object p1, p0, Lgzt;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgzp;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    new-instance v0, Ljvi;
+    iget-object v0, p0, Lgzt;->a:Lkgv;
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Lgzu;
+    move-result-object v0
 
-    invoke-direct {v1, v0}, Lgzu;-><init>(Ljvi;)V
+    check-cast v0, Lgyx;
 
-    iget-object v2, p0, Lgzt;->b:Landroid/animation/Animator;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-virtual {v2, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v1, p0, Lgzt;->b:Landroid/animation/Animator;
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/animation/Animator;->start()V
+    check-cast v0, Lgzo;
 
-    new-instance v1, Lgzx;
-
-    iget-object v2, p0, Lgzt;->b:Landroid/animation/Animator;
-
-    invoke-direct {v1, v2, v0}, Lgzx;-><init>(Landroid/animation/Animator;Ljuw;)V
-
-    return-object v1
-.end method
-
-.method public final a(Landroid/animation/Animator$AnimatorListener;)V
-    .locals 1
-
-    iget-object v0, p0, Lgzt;->b:Landroid/animation/Animator;
-
-    invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    return-void
+    return-object v0
 .end method

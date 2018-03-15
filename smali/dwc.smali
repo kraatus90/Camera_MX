@@ -1,137 +1,119 @@
-.class final Ldwc;
+.class public final Ldwc;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final a:Lgio;
+.field public a:Lkgv;
 
-.field public final b:Ljuw;
+.field public final synthetic b:Lcaf;
 
-.field public final c:Ljvi;
+.field private final c:Lbxw;
 
-.field public final d:Ledx;
+.field private d:Lbxy;
 
-.field public final synthetic e:Ldvw;
+.field private e:Lkgv;
+
+.field private f:Lkgv;
+
+.field private g:Lbxx;
+
+.field private h:Lgkj;
 
 
 # direct methods
-.method constructor <init>(Ldvw;Lgio;)V
-    .locals 1
+.method public constructor <init>(Lcaf;Lbxw;Lbvr;)V
+    .locals 4
 
-    iput-object p1, p0, Ldwc;->e:Ldvw;
+    iput-object p1, p0, Ldwc;->b:Lcaf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ldwc;->a:Lgio;
-
-    iget-object v0, p2, Lgio;->d:Ljuw;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lkfn;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljuw;
+    check-cast v0, Lbxw;
 
-    iput-object v0, p0, Ldwc;->b:Ljuw;
+    iput-object v0, p0, Ldwc;->c:Lbxw;
 
-    new-instance v0, Ljvi;
+    invoke-static {p3}, Lkfn;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+    iget-object v0, p0, Ldwc;->c:Lbxw;
 
-    iput-object v0, p0, Ldwc;->c:Ljvi;
+    invoke-static {v0}, Lbxy;->a(Lbxw;)Lbxy;
 
-    new-instance v0, Ledx;
+    move-result-object v0
 
-    invoke-direct {v0}, Ledx;-><init>()V
+    iput-object v0, p0, Ldwc;->d:Lbxy;
 
-    iput-object v0, p0, Ldwc;->d:Ledx;
+    iget-object v0, p0, Ldwc;->b:Lcaf;
+
+    iget-object v0, v0, Lcaf;->f:Lbvb;
+
+    iget-object v1, p0, Ldwc;->b:Lcaf;
+
+    iget-object v1, v1, Lcaf;->ai:Lkgv;
+
+    sget-object v2, Lgku;->a:Lgku;
+
+    invoke-static {v0, v1, v2}, Lgks;->a(Lkgv;Lkgv;Lkgv;)Lgks;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldwc;->e:Lkgv;
+
+    iget-object v0, p0, Ldwc;->d:Lbxy;
+
+    iget-object v1, p0, Ldwc;->e:Lkgv;
+
+    invoke-static {v0, v1}, Lgkt;->a(Lkgv;Lkgv;)Lgkt;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldwc;->f:Lkgv;
+
+    iget-object v0, p0, Ldwc;->c:Lbxw;
+
+    invoke-static {v0}, Lbxx;->a(Lbxw;)Lbxx;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldwc;->g:Lbxx;
+
+    iget-object v0, p0, Ldwc;->f:Lkgv;
+
+    iget-object v1, p0, Ldwc;->b:Lcaf;
+
+    iget-object v1, v1, Lcaf;->r:Lkgv;
+
+    iget-object v2, p0, Ldwc;->b:Lcaf;
+
+    iget-object v2, v2, Lcaf;->n:Lkgv;
+
+    iget-object v3, p0, Ldwc;->g:Lbxx;
+
+    invoke-static {v0, v1, v2, v3}, Lgkj;->a(Lkgv;Lkgv;Lkgv;Lkgv;)Lgkj;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldwc;->h:Lgkj;
+
+    iget-object v0, p0, Ldwc;->h:Lgkj;
+
+    invoke-static {v0}, Lkgo;->a(Lkgv;)Lkgv;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldwc;->a:Lkgv;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()J
-    .locals 2
-
-    iget-object v0, p0, Ldwc;->e:Ldvw;
-
-    iget-object v1, p0, Ldwc;->b:Ljuw;
-
-    invoke-virtual {v0, v1}, Ldvw;->a(Ljuw;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
-
-    iget-object v0, p0, Ldwc;->c:Ljvi;
-
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Throwable;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Ldwc;->c:Ljvi;
-
-    invoke-virtual {v0}, Ljsw;->isCancelled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    iget-object v0, p0, Ldwc;->e:Ldvw;
-
-    iget-object v1, v0, Ldvw;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Ldwc;->e:Ldvw;
-
-    iget-object v0, v0, Ldvw;->j:Ljava/util/Deque;
-
-    invoke-interface {v0, p0}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Ldwc;->e:Ldvw;
-
-    iget-object v0, v0, Ldvw;->k:Ljava/util/Deque;
-
-    invoke-interface {v0, p0}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Ldwc;->e:Ldvw;
-
-    iget-object v0, v0, Ldvw;->l:Ljava/util/List;
-
-    invoke-interface {v0, p0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Ldwc;->e:Ldvw;
-
-    iget-object v0, v0, Ldvw;->g:Licb;
-
-    invoke-virtual {v0}, Licb;->a()V
-
-    iget-object v0, p0, Ldwc;->e:Ldvw;
-
-    invoke-virtual {v0}, Ldvw;->c()V
-
-    monitor-exit v1
-
-    :cond_1
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

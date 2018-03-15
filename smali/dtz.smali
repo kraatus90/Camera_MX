@@ -3,260 +3,140 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Limw;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Limw;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
-
-.field private j:Ljxn;
-
-.field private k:Ljxn;
-
-.field private l:Ljxn;
-
-.field private m:Ljxn;
-
-.field private n:Ljxn;
+.field private final b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method protected constructor <init>(Limw;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldtz;->a:Ljxn;
+    iput-object p1, p0, Ldtz;->a:Limw;
 
-    iput-object p2, p0, Ldtz;->b:Ljxn;
-
-    iput-object p3, p0, Ldtz;->c:Ljxn;
-
-    iput-object p4, p0, Ldtz;->d:Ljxn;
-
-    iput-object p5, p0, Ldtz;->e:Ljxn;
-
-    iput-object p6, p0, Ldtz;->f:Ljxn;
-
-    iput-object p7, p0, Ldtz;->g:Ljxn;
-
-    iput-object p8, p0, Ldtz;->h:Ljxn;
-
-    iput-object p9, p0, Ldtz;->i:Ljxn;
-
-    iput-object p10, p0, Ldtz;->j:Ljxn;
-
-    iput-object p11, p0, Ldtz;->k:Ljxn;
-
-    iput-object p12, p0, Ldtz;->l:Ljxn;
-
-    iput-object p13, p0, Ldtz;->m:Ljxn;
-
-    iput-object p14, p0, Ldtz;->n:Ljxn;
+    iput-object p2, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 15
-
-    new-instance v0, Ldtz;
-
-    move-object v1, p0
-
-    move-object/from16 v2, p1
-
-    move-object/from16 v3, p2
-
-    move-object/from16 v4, p3
-
-    move-object/from16 v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    move-object/from16 v10, p9
-
-    move-object/from16 v11, p10
-
-    move-object/from16 v12, p11
-
-    move-object/from16 v13, p12
-
-    move-object/from16 v14, p13
-
-    invoke-direct/range {v0 .. v14}, Ldtz;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 15
+.method public final a(Limu;)V
+    .locals 6
 
-    iget-object v0, p0, Ldtz;->a:Ljxn;
+    iget-object v0, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, v0, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;->m:Liom;
 
-    move-result-object v1
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    check-cast v1, Licv;
+    move-result-wide v2
 
-    iget-object v0, p0, Ldtz;->b:Ljxn;
+    iput-wide v2, v0, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;->b:J
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "Create"
 
-    iget-object v4, p0, Ldtz;->c:Ljxn;
+    iget-wide v2, v0, Lcom/google/android/apps/camera/stats/InstrumentationSession;->k:J
 
-    iget-object v0, p0, Ldtz;->d:Ljxn;
+    iget-wide v4, v0, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;->b:J
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;->a(Ljava/lang/String;JJ)V
 
-    move-result-object v3
+    iget-object v0, p0, Ldtz;->a:Limw;
 
-    check-cast v3, Ldtm;
+    new-instance v1, Ldtw;
 
-    iget-object v0, p0, Ldtz;->e:Ljxn;
+    iget-object v2, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v1, p1, v2}, Ldtw;-><init>(Limu;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
 
-    move-result-object v5
+    invoke-interface {v0, v1}, Limw;->a(Limu;)V
 
-    check-cast v5, Ldwr;
+    return-void
+.end method
 
-    iget-object v0, p0, Ldtz;->f:Ljxn;
+.method public final a(Limu;Landroid/view/Surface;)V
+    .locals 3
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Ldtz;->a:Limw;
 
-    move-result-object v6
+    new-instance v1, Ldtw;
 
-    check-cast v6, Lfkn;
+    iget-object v2, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    iget-object v0, p0, Ldtz;->g:Ljxn;
+    invoke-direct {v1, p1, v2}, Ldtw;-><init>(Limu;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0, v1, p2}, Limw;->a(Limu;Landroid/view/Surface;)V
 
-    move-result-object v8
+    return-void
+.end method
 
-    check-cast v8, Ldxc;
+.method public final b(Limu;)V
+    .locals 3
 
-    iget-object v0, p0, Ldtz;->h:Ljxn;
+    iget-object v0, p0, Ldtz;->a:Limw;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v1, Ldtw;
 
-    move-result-object v0
+    iget-object v2, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    move-object v12, v0
+    invoke-direct {v1, p1, v2}, Ldtw;-><init>(Limu;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
 
-    check-cast v12, Ldyy;
+    invoke-interface {v0, v1}, Limw;->b(Limu;)V
 
-    iget-object v0, p0, Ldtz;->i:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+.method public final c(Limu;)V
+    .locals 3
 
-    move-result-object v2
+    iget-object v0, p0, Ldtz;->a:Limw;
 
-    check-cast v2, Lijl;
+    new-instance v1, Ldtw;
 
-    iget-object v0, p0, Ldtz;->j:Ljxn;
+    iget-object v2, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v1, p1, v2}, Ldtw;-><init>(Limu;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
 
-    iget-object v0, p0, Ldtz;->k:Ljxn;
+    invoke-interface {v0, v1}, Limw;->c(Limu;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return-void
+.end method
 
-    iget-object v0, p0, Ldtz;->l:Ljxn;
+.method public final d(Limu;)V
+    .locals 3
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Ldtz;->a:Limw;
 
-    move-result-object v9
+    new-instance v1, Ldtw;
 
-    check-cast v9, Lhab;
+    iget-object v2, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    iget-object v0, p0, Ldtz;->m:Ljxn;
+    invoke-direct {v1, p1, v2}, Ldtw;-><init>(Limu;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0, v1}, Limw;->d(Limu;)V
 
-    move-result-object v10
+    return-void
+.end method
 
-    check-cast v10, Ljht;
+.method public final e(Limu;)V
+    .locals 3
 
-    iget-object v0, p0, Ldtz;->n:Ljxn;
+    iget-object v0, p0, Ldtz;->a:Limw;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v1, Ldtw;
 
-    move-result-object v11
+    iget-object v2, p0, Ldtz;->b:Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    check-cast v11, Liau;
+    invoke-direct {v1, p1, v2}, Ldtw;-><init>(Limu;Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;)V
 
-    new-instance v0, Ldve;
+    invoke-interface {v0, v1}, Limw;->e(Limu;)V
 
-    new-instance v7, Lggl;
-
-    sget-object v13, Landroid/hardware/camera2/CaptureRequest;->REPROCESS_EFFECTIVE_EXPOSURE_FACTOR:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/high16 v14, 0x3f800000    # 1.0f
-
-    invoke-static {v14}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v14
-
-    invoke-direct {v7, v13, v14}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    invoke-static {v7}, Ljle;->a(Ljava/lang/Object;)Ljle;
-
-    move-result-object v7
-
-    invoke-direct/range {v0 .. v11}, Ldve;-><init>(Licv;Lijl;Ldtm;Ljxn;Ldwr;Lfkn;Ljava/util/Set;Ldxc;Lhab;Ljht;Liau;)V
-
-    new-instance v1, Ldts;
-
-    const/16 v2, 0x23
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljle;->a(Ljava/lang/Object;)Ljle;
-
-    move-result-object v2
-
-    invoke-direct {v1, v0, v2}, Ldts;-><init>(Ldvc;Ljava/util/Set;)V
-
-    new-instance v0, Ldyp;
-
-    invoke-direct {v0, v1, v12}, Ldyp;-><init>(Ldvc;Ldyy;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldvc;
-
-    return-object v0
+    return-void
 .end method

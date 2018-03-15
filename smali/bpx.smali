@@ -2,26 +2,59 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
-    new-instance v0, Lble;
+    new-instance v0, Lbpx;
 
-    const-string v1, "camera.enable_imax"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lble;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0}, Lbpx;-><init>()V
 
     return-void
 .end method
 
-.method public static a()Ljht;
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static b()Ljava/util/Set;
+    .locals 2
+
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
 
     return-object v0
 .end method

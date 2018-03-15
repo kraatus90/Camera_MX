@@ -1,49 +1,38 @@
-.class public Ljdi;
+.class public final Ljdi;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:Ljdh;
-
-.field private b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljdh;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljdi;->a:Ljdh;
-
-    iput-object p2, p0, Ljdi;->b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JJ)F
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Ljdi;->b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    new-instance v1, Ljmb;
 
-    invoke-interface {v0, p1, p2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowForTimestamp(J)Lirs;
+    const-class v0, Ljme;
+
+    const-string v2, "FixedFPSModeFrameDropper"
+
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Ljdi;->b:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    check-cast v0, Ljme;
 
-    invoke-interface {v1, p3, p4}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowForTimestamp(J)Lirs;
+    invoke-direct {v1, v0}, Ljmb;-><init>(Ljme;)V
 
-    move-result-object v1
-
-    iget-object v2, p0, Ljdi;->a:Ljdh;
-
-    invoke-interface {v2, v0, v1}, Ljdh;->a(Lirs;Lirs;)F
-
-    move-result v0
-
-    return v0
+    return-object v1
 .end method

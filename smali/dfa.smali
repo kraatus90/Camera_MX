@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Ldez;
+.field private final synthetic a:Ldev;
 
 
 # direct methods
-.method constructor <init>(Ldez;)V
+.method constructor <init>(Ldev;)V
     .locals 0
 
-    iput-object p1, p0, Ldfa;->a:Ldez;
+    iput-object p1, p0, Ldfa;->a:Ldev;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,14 +23,22 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic b_(Ljava/lang/Object;)V
     .locals 2
 
-    new-instance v0, Ldff;
+    iget-object v0, p0, Ldfa;->a:Ldev;
 
-    iget-object v1, p0, Ldfa;->a:Ldez;
+    iget-object v0, v0, Ldev;->h:Lhcu;
 
-    invoke-direct {v0, v1}, Ldff;-><init>(Ldhe;)V
+    const/4 v1, 0x0
 
-    return-object v0
+    invoke-virtual {v0, v1}, Lhcu;->e(Z)V
+
+    return-void
 .end method

@@ -31,13 +31,13 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object v0, Lb;->z:[I
+    sget-object v0, Ls;->e:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    sget v1, Lb;->A:I
+    sget v1, Ls;->f:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -45,7 +45,7 @@
 
     iput v1, p0, Landroid/support/design/internal/SnackbarContentLayout;->c:I
 
-    sget v1, Lb;->C:I
+    sget v1, Ls;->g:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -95,33 +95,33 @@
     :cond_1
     iget-object v1, p0, Landroid/support/design/internal/SnackbarContentLayout;->a:Landroid/widget/TextView;
 
-    sget-object v0, Lid;->a:Lim;
+    sget-object v0, Lhz;->a:Lii;
 
-    invoke-virtual {v0, v1}, Lim;->o(Landroid/view/View;)Z
+    invoke-virtual {v0, v1}, Lii;->o(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    sget-object v0, Lid;->a:Lim;
+    sget-object v0, Lhz;->a:Lii;
 
-    invoke-virtual {v0, v1}, Lim;->l(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Lii;->l(Landroid/view/View;)I
 
     move-result v2
 
-    sget-object v0, Lid;->a:Lim;
+    sget-object v0, Lhz;->a:Lii;
 
-    invoke-virtual {v0, v1}, Lim;->m(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Lii;->m(Landroid/view/View;)I
 
     move-result v4
 
-    sget-object v0, Lid;->a:Lim;
+    sget-object v0, Lhz;->a:Lii;
 
     move v3, p2
 
     move v5, p3
 
-    invoke-virtual/range {v0 .. v5}, Lim;->a(Landroid/view/View;IIII)V
+    invoke-virtual/range {v0 .. v5}, Lii;->a(Landroid/view/View;IIII)V
 
     :goto_0
     move v0, v6
@@ -150,7 +150,7 @@
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0e0118
+    const v0, 0x7f0e0018
 
     invoke-virtual {p0, v0}, Landroid/support/design/internal/SnackbarContentLayout;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Landroid/support/design/internal/SnackbarContentLayout;->a:Landroid/widget/TextView;
 
-    const v0, 0x7f0e0119
+    const v0, 0x7f0e0017
 
     invoke-virtual {p0, v0}, Landroid/support/design/internal/SnackbarContentLayout;->findViewById(I)Landroid/view/View;
 
@@ -209,7 +209,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d00a9
+    const v1, 0x7f0d0091
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -219,7 +219,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f0d00a8
+    const v4, 0x7f0d0090
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

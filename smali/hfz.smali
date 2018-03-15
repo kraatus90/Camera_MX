@@ -1,113 +1,76 @@
-.class final Lhfz;
+.class public final Lhfz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/refocus/processing/DepthmapTask;
+.field private final a:Lkgv;
 
-.field private synthetic b:Landroid/content/Context;
+.field private final b:Lkgv;
 
-.field private synthetic c:Z
-
-.field private synthetic d:Lhfp;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lhfp;Lcom/google/android/apps/refocus/processing/DepthmapTask;Landroid/content/Context;Z)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lhfz;->d:Lhfp;
-
-    iput-object p2, p0, Lhfz;->a:Lcom/google/android/apps/refocus/processing/DepthmapTask;
-
-    iput-object p3, p0, Lhfz;->b:Landroid/content/Context;
-
-    iput-boolean p4, p0, Lhfz;->c:Z
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhfz;->a:Lkgv;
+
+    iput-object p2, p0, Lhfz;->b:Lkgv;
+
+    iput-object p3, p0, Lhfz;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v2, p0, Lhfz;->d:Lhfp;
+    iget-object v0, p0, Lhfz;->a:Lkgv;
 
-    iget-object v1, p0, Lhfz;->a:Lcom/google/android/apps/refocus/processing/DepthmapTask;
-
-    iget-object v3, p0, Lhfz;->b:Landroid/content/Context;
-
-    iget-boolean v4, p0, Lhfz;->c:Z
-
-    if-nez v4, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {v1, v3, v0}, Lcom/google/android/apps/refocus/processing/DepthmapTask;->startSession(Landroid/content/Context;Z)V
-
-    if-eqz v4, :cond_2
-
-    invoke-virtual {v1}, Lcom/google/android/apps/refocus/processing/DepthmapTask;->savePhotoWithoutDepth()V
-
-    :cond_0
-    :goto_1
-    iget-object v0, p0, Lhfz;->d:Lhfp;
-
-    iget-object v0, v0, Lhfp;->C:Liag;
-
-    iget-object v1, p0, Lhfz;->d:Lhfp;
-
-    iget-object v1, v1, Lhfp;->B:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Liag;->a(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, v2, Lhfp;->f:Lgow;
-
-    invoke-virtual {v0}, Lgow;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v1}, Lcom/google/android/apps/refocus/processing/DepthmapTask;->save()Lcom/google/android/apps/refocus/processing/DepthmapTask;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, Lemf;
 
-    :goto_2
-    iget-object v1, v2, Lhfp;->c:Lgoz;
+    iget-object v1, p0, Lhfz;->b:Lkgv;
 
-    invoke-interface {v1, v0}, Lgoz;->a(Lgov;)V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    goto :goto_1
+    move-result-object v1
 
-    :cond_3
-    move-object v0, v1
+    check-cast v1, Lgkb;
 
-    goto :goto_2
+    iget-object v2, p0, Lhfz;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Liay;
+
+    new-instance v3, Lhfx;
+
+    invoke-direct {v3, v1}, Lhfx;-><init>(Lgkb;)V
+
+    invoke-static {v2, v0, v3}, Ldzf;->a(Liay;Lemf;Lemz;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v3, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhfx;
+
+    return-object v0
 .end method

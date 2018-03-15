@@ -1,55 +1,51 @@
-.class public final Lhhs;
-.super Ljava/lang/Object;
+.class public Lhhs;
+.super Lhhr;
 .source "PG"
 
 
 # instance fields
-.field public a:[F
+.field public d:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-.field public b:[F
+.field public e:Landroid/widget/LinearLayout;
 
-.field public c:[F
+.field public f:Landroid/widget/SeekBar;
 
-.field public d:F
-
-.field public e:F
-
-.field public f:I
-
-.field public g:Lcom/google/android/apps/refocus/capture/TrackerStats;
+.field public g:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lhhr;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Lcom/google/android/apps/camera/zoomui/ZoomUi;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhhs;->d:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-    const/16 v0, 0x9
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->a()Landroid/widget/LinearLayout;
 
-    new-array v0, v0, [F
+    move-result-object v0
 
-    iput-object v0, p0, Lhhs;->a:[F
+    iput-object v0, p0, Lhhs;->e:Landroid/widget/LinearLayout;
 
-    const/16 v0, 0x40
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->c()Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
 
-    new-array v0, v0, [F
+    move-result-object v0
 
-    iput-object v0, p0, Lhhs;->b:[F
+    iput-object v0, p0, Lhhs;->g:Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;
 
-    const/4 v0, 0x2
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->b()Landroid/widget/SeekBar;
 
-    new-array v0, v0, [F
+    move-result-object v0
 
-    iput-object v0, p0, Lhhs;->c:[F
-
-    new-instance v0, Lcom/google/android/apps/refocus/capture/TrackerStats;
-
-    invoke-direct {v0}, Lcom/google/android/apps/refocus/capture/TrackerStats;-><init>()V
-
-    iput-object v0, p0, Lhhs;->g:Lcom/google/android/apps/refocus/capture/TrackerStats;
-
-    iput p1, p0, Lhhs;->f:I
+    iput-object v0, p0, Lhhs;->f:Landroid/widget/SeekBar;
 
     return-void
 .end method

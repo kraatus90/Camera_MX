@@ -1,56 +1,61 @@
-.class public final Legx;
-.super Ljava/lang/Object;
+.class Legx;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Legw;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Legw;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Legx;->a:Legw;
 
-    iput-object p1, p0, Legx;->a:Ljxn;
+    invoke-direct {p0}, Lglb;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Legx;
-
-    invoke-direct {v0, p0}, Legx;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Legx;->a:Ljxn;
+    sget-object v0, Legw;->a:Ljava/lang/String;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "entered a video mode"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    check-cast v0, Liau;
+    iget-object v0, p0, Legx;->a:Legw;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, v0, Legw;->b:Ldzy;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const-class v1, Legx;
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ldzy;->a(Ljava/lang/Class;)V
 
-    check-cast v0, Liau;
+    return-void
+.end method
 
-    return-object v0
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Legx;->a:Legw;
+
+    iget-object v0, v0, Legw;->b:Ldzy;
+
+    const-class v1, Legx;
+
+    invoke-virtual {v0, v1}, Ldzy;->b(Ljava/lang/Class;)V
+
+    sget-object v0, Legw;->a:Ljava/lang/String;
+
+    const-string v1, "exited a video mode"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
 .end method

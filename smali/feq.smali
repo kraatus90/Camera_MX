@@ -1,73 +1,68 @@
-.class public Lfeq;
-.super Lfep;
+.class public final Lfeq;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljqv;
 
 
 # instance fields
-.field public d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+.field private final synthetic a:Ljava/util/List;
 
-.field public e:Lguc;
-
-.field public f:Levh;
-
-.field public g:Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;
-
-.field public h:Lhem;
-
-.field public i:Ljht;
-
-.field public j:Z
+.field private final synthetic b:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/util/List;Ljava/util/Set;)V
     .locals 0
 
-    invoke-direct {p0}, Lfep;-><init>()V
+    iput-object p1, p0, Lfeq;->a:Ljava/util/List;
+
+    iput-object p2, p0, Lfeq;->b:Ljava/util/Set;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final K()Z
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget-boolean v0, p0, Lfeq;->j:Z
+    check-cast p1, Ljava/util/List;
 
-    return v0
-.end method
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-.method public a(Ljxn;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Levh;Lhem;Ljht;)V
-    .locals 2
+    move-result-object v1
 
-    invoke-interface {p1}, Ljxn;->a()Ljava/lang/Object;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lfic;
+    if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lfic;->f:Lhaz;
-
-    iput-object p2, p0, Lfeq;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iput-object p3, p0, Lfeq;->e:Lguc;
-
-    iput-object p4, p0, Lfeq;->f:Levh;
-
-    const v1, 0x7f0e00eb
-
-    invoke-virtual {v0, v1}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;
+    check-cast v0, Lfhm;
 
-    iput-object v0, p0, Lfeq;->g:Lcom/google/android/apps/camera/legacy/app/ui/toyboxmenu/ToyboxMenuButton;
+    iget-object v2, p0, Lfeq;->a:Ljava/util/List;
 
-    iput-object p5, p0, Lfeq;->h:Lhem;
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iput-object p6, p0, Lfeq;->i:Ljht;
+    goto :goto_0
 
-    return-void
+    :cond_0
+    new-instance v0, Lfep;
+
+    iget-object v1, p0, Lfeq;->a:Ljava/util/List;
+
+    iget-object v2, p0, Lfeq;->b:Ljava/util/Set;
+
+    invoke-direct {v0, v1, v2}, Lfep;-><init>(Ljava/util/Collection;Ljava/util/Collection;)V
+
+    return-object v0
 .end method

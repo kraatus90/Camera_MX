@@ -1,170 +1,152 @@
-.class final Ldra;
+.class public final Ldra;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lghh;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lghh;
+.field private final a:Lkgv;
 
-.field private b:Lgkl;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lghh;Ldqy;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldra;->a:Lghh;
+    iput-object p1, p0, Ldra;->a:Lkgv;
 
-    iget-object v0, p2, Ldqy;->a:Lgjq;
+    iput-object p2, p0, Ldra;->b:Lkgv;
 
-    iput-object v0, p0, Ldra;->b:Lgkl;
+    iput-object p3, p0, Ldra;->c:Lkgv;
+
+    iput-object p4, p0, Ldra;->d:Lkgv;
+
+    iput-object p5, p0, Ldra;->e:Lkgv;
+
+    iput-object p6, p0, Ldra;->f:Lkgv;
+
+    iput-object p7, p0, Ldra;->g:Lkgv;
+
+    iput-object p8, p0, Ldra;->h:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Ldra;
+    .locals 9
+
+    new-instance v0, Ldra;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object v7, p6
+
+    move-object/from16 v8, p7
+
+    invoke-direct/range {v0 .. v8}, Ldra;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 9
 
-    iget-object v0, p0, Ldra;->a:Lghh;
+    new-instance v0, Ldqz;
 
-    invoke-interface {v0}, Lghh;->a()Ljava/util/List;
+    iget-object v1, p0, Ldra;->a:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Ljava/util/ArrayList;
+    move-result-object v1
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    check-cast v1, Lihs;
 
-    move-result v2
+    iget-object v2, p0, Ldra;->b:Lkgv;
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v2, Liho;
 
-    move-result v0
+    iget-object v3, p0, Ldra;->c:Lkgv;
 
-    if-eqz v0, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lghd;
-
-    iget-object v3, p0, Ldra;->b:Lgkl;
-
-    invoke-interface {v3}, Lgkl;->d()Lgki;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v3
 
-    if-eqz v3, :cond_0
+    check-cast v3, Lfem;
 
-    invoke-static {v0, v3}, Ldsa;->a(Lghd;Lgki;)Lghd;
+    iget-object v4, p0, Ldra;->d:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-result-object v4
 
-    goto :goto_0
+    check-cast v4, Lfri;
 
-    :cond_0
-    invoke-interface {v0}, Lghd;->close()V
+    iget-object v5, p0, Ldra;->e:Lkgv;
 
-    goto :goto_0
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    :cond_1
-    return-object v1
-.end method
+    move-result-object v5
 
-.method public final b()Ljava/util/List;
-    .locals 4
+    check-cast v5, Ldpa;
 
-    iget-object v0, p0, Ldra;->a:Lghh;
+    iget-object v6, p0, Ldra;->f:Lkgv;
 
-    invoke-interface {v0}, Lghh;->b()Ljava/util/List;
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v6
 
-    new-instance v1, Ljava/util/ArrayList;
+    check-cast v6, Ldqa;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    iget-object v7, p0, Ldra;->g:Lkgv;
 
-    move-result v2
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    move-result-object v7
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast v7, Lffl;
 
-    move-result-object v2
+    iget-object v8, p0, Ldra;->h:Lkgv;
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v8
 
-    if-eqz v0, :cond_1
+    check-cast v8, Lfdv;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lghd;
-
-    iget-object v3, p0, Ldra;->b:Lgkl;
-
-    invoke-interface {v3}, Lgkl;->d()Lgki;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_0
-
-    invoke-static {v0, v3}, Ldsa;->b(Lghd;Lgki;)Lghd;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {v0}, Lghd;->close()V
-
-    goto :goto_0
-
-    :cond_1
-    return-object v1
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Ldra;->a:Lghh;
-
-    invoke-interface {v0}, Lghh;->close()V
-
-    return-void
-.end method
-
-.method public final e()Lggb;
-    .locals 1
-
-    iget-object v0, p0, Ldra;->a:Lghh;
-
-    invoke-interface {v0}, Lghh;->e()Lggb;
-
-    move-result-object v0
+    invoke-direct/range {v0 .. v8}, Ldqz;-><init>(Lihs;Liho;Lfem;Lfri;Ldpa;Ldqa;Lffl;Lfdv;)V
 
     return-object v0
 .end method

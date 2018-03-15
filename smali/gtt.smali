@@ -1,20 +1,14 @@
-.class public final Lgtt;
+.class public abstract Lgtt;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.implements Lgtr;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lgtt;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,62 +17,58 @@
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 4
+.method public final l_()Z
+    .locals 1
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    return v0
+.end method
 
-    check-cast v0, Ljava/lang/Float;
+.method public surfaceChanged(Landroid/view/SurfaceHolder;III)V
+    .locals 2
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    move-result v0
+    const-string v1, "Module does NOT support Surface-backed Preview."
 
-    iget-object v1, p0, Lgtt;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$800(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/graphics/Paint;
+    throw v0
+.end method
 
-    move-result-object v1
+.method public surfaceCreated(Landroid/view/SurfaceHolder;)V
+    .locals 2
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    sub-float/2addr v2, v0
+    const-string v1, "Module does NOT support Surface-backed Preview."
 
-    float-to-int v2, v2
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    mul-int/lit16 v2, v2, 0xff
+    throw v0
+.end method
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+.method public surfaceDestroyed(Landroid/view/SurfaceHolder;)V
+    .locals 2
 
-    iget-object v1, p0, Lgtt;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-static {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$1100(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/graphics/Paint;
+    const-string v1, "Module does NOT support Surface-backed Preview."
 
-    move-result-object v1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    const/high16 v2, 0x437f0000    # 255.0f
+    throw v0
+.end method
 
-    iget-object v3, p0, Lgtt;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.method public surfaceRedrawNeeded(Landroid/view/SurfaceHolder;)V
+    .locals 2
 
-    invoke-static {v3}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$1000(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/view/animation/Interpolator;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    move-result-object v3
+    const-string v1, "Module does NOT support Surface-backed Preview."
 
-    invoke-interface {v3, v0}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result v0
-
-    mul-float/2addr v0, v2
-
-    float-to-int v0, v0
-
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    iget-object v0, p0, Lgtt;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidate()V
-
-    return-void
+    throw v0
 .end method

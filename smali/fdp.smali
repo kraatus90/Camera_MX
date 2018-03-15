@@ -1,39 +1,58 @@
-.class public Lfdp;
-.super Lgvh;
+.class public final Lfdp;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    invoke-direct {p0}, Lgvh;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfdp;->a:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;)Lfdp;
+    .locals 1
+
+    new-instance v0, Lfdp;
+
+    invoke-direct {v0, p0}, Lfdp;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public G()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    iget-object v0, p0, Lfdp;->a:Lkgv;
 
-.method public H()V
-    .locals 0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public I()V
-    .locals 0
+    check-cast v0, Lilz;
 
-    return-void
-.end method
+    iget-object v0, v0, Lilz;->e:Lket;
 
-.method public o_()V
-    .locals 0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkeh;
+
+    return-object v0
 .end method

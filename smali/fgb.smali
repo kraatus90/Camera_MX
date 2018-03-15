@@ -1,52 +1,78 @@
-.class final Lfgb;
+.class public final Lfgb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lffz;
 
 
 # instance fields
-.field private synthetic a:Z
+.field public final a:Lfhj;
 
-.field private synthetic b:Lfge;
+.field private final b:Lfto;
 
 
 # direct methods
-.method constructor <init>(Lfge;Z)V
-    .locals 0
-
-    iput-object p1, p0, Lfgb;->b:Lfge;
-
-    iput-boolean p2, p0, Lfgb;->a:Z
+.method public constructor <init>(Lfhj;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfgb;->a:Lfhj;
+
+    new-instance v0, Lfto;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lfto;-><init>(I)V
+
+    iput-object v0, p0, Lfgb;->b:Lfto;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public final synthetic a()Lfga;
     .locals 3
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    iget-object v0, p0, Lfgb;->b:Lfto;
+
+    invoke-static {v0}, Lfun;->a(Lfuo;)Lbbi;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    new-instance v1, Lfgc;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    const/4 v2, 0x0
 
-    move-result v0
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    iget-object v1, p0, Lfgb;->b:Lfge;
+    move-result-object v0
 
-    iget-object v1, v1, Lfge;->c:Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;
+    check-cast v0, Lful;
 
-    iget-boolean v2, p0, Lfgb;->a:Z
+    invoke-direct {v1, p0, v0}, Lfgc;-><init>(Lfgb;Lful;)V
 
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;->a(IZ)V
+    return-object v1
+.end method
 
-    return-void
+.method public final b()Lick;
+    .locals 2
+
+    iget-object v0, p0, Lfgb;->b:Lfto;
+
+    iget-object v0, v0, Lfto;->a:Lidi;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Licl;->a(Lick;Ljava/lang/Comparable;)Lick;
+
+    move-result-object v0
+
+    return-object v0
 .end method

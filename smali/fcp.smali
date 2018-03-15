@@ -2,26 +2,33 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:Lfcl;
-
-.field public final b:Lfcv;
-
-.field public final c:Lezz;
+# interfaces
+.implements Lfdg;
 
 
 # direct methods
-.method public constructor <init>(Lfcl;Lfcv;Lezz;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfcp;->a:Lfcl;
+    return-void
+.end method
 
-    iput-object p2, p0, Lfcp;->b:Lfcv;
 
-    iput-object p3, p0, Lfcp;->c:Lezz;
+# virtual methods
+.method public final a(Lfhj;Lfhg;)Lfdh;
+    .locals 1
+
+    new-instance v0, Lfcq;
+
+    invoke-direct {v0}, Lfcq;-><init>()V
+
+    return-object v0
+.end method
+
+.method public final a()V
+    .locals 0
 
     return-void
 .end method

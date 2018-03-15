@@ -1,61 +1,49 @@
-.class final Lgux;
-.super Ljava/util/TimerTask;
+.class public final Lgux;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Ljvi;
-
-.field private synthetic b:I
-
-.field private synthetic c:F
-
-.field private synthetic d:Lguu;
+.field private final synthetic a:Lgug;
 
 
 # direct methods
-.method constructor <init>(Lguu;Ljvi;I)V
-    .locals 1
+.method public constructor <init>(Lgug;)V
+    .locals 0
 
-    iput-object p1, p0, Lgux;->d:Lguu;
+    iput-object p1, p0, Lgux;->a:Lgug;
 
-    iput-object p2, p0, Lgux;->a:Ljvi;
-
-    iput p3, p0, Lgux;->b:I
-
-    const v0, 0x3f19999a    # 0.6f
-
-    iput v0, p0, Lgux;->c:F
-
-    invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    iget-object v0, p0, Lgux;->a:Ljvi;
+    iget-object v0, p0, Lgux;->a:Lgug;
 
-    iget-object v1, p0, Lgux;->d:Lguu;
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    iget v2, p0, Lgux;->b:I
+    const/4 v1, 0x0
 
-    iget v3, p0, Lgux;->c:F
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVideoButtonAnimating(Z)V
 
-    const/4 v4, -0x1
+    return-void
+.end method
 
-    invoke-virtual {v1, v2, v3, v4}, Lguu;->a(IFI)I
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-    move-result v1
+    iget-object v0, p0, Lgux;->a:Lgug;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    move-result-object v1
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVideoButtonAnimating(Z)V
 
     return-void
 .end method

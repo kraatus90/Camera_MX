@@ -1,152 +1,148 @@
-.class public final Lcud;
+.class final Lcud;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lhfy;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
-
-.field private j:Ljxn;
-
-.field private k:Ljxn;
-
-.field private l:Ljxn;
-
-.field private m:Ljxn;
-
-.field private n:Ljxn;
-
-.field private o:Ljxn;
+.field private final synthetic a:Lctw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lctw;)V
     .locals 0
 
+    iput-object p1, p0, Lcud;->a:Lctw;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcud;->a:Ljxn;
-
-    iput-object p2, p0, Lcud;->b:Ljxn;
-
-    iput-object p3, p0, Lcud;->c:Ljxn;
-
-    iput-object p4, p0, Lcud;->d:Ljxn;
-
-    iput-object p5, p0, Lcud;->e:Ljxn;
-
-    iput-object p6, p0, Lcud;->f:Ljxn;
-
-    iput-object p7, p0, Lcud;->g:Ljxn;
-
-    iput-object p8, p0, Lcud;->h:Ljxn;
-
-    iput-object p9, p0, Lcud;->i:Ljxn;
-
-    iput-object p10, p0, Lcud;->j:Ljxn;
-
-    iput-object p11, p0, Lcud;->k:Ljxn;
-
-    iput-object p12, p0, Lcud;->l:Ljxn;
-
-    iput-object p13, p0, Lcud;->m:Ljxn;
-
-    iput-object p14, p0, Lcud;->n:Ljxn;
-
-    iput-object p15, p0, Lcud;->o:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 17
+.method public final a(Z)V
+    .locals 2
 
-    new-instance v1, Lcuc;
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lctw;->E:Lcvh;
 
-    iget-object v2, v0, Lcud;->a:Ljxn;
+    iget-object v0, v0, Lcvh;->c:Lcom/google/android/apps/camera/ui/views/CountDownView;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/CountDownView;->a()Z
 
-    iget-object v3, v0, Lcud;->b:Ljxn;
+    move-result v0
 
-    move-object/from16 v0, p0
+    if-nez v0, :cond_0
 
-    iget-object v4, v0, Lcud;->c:Ljxn;
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    move-object/from16 v0, p0
+    iget-boolean v0, v0, Lctw;->P:Z
 
-    iget-object v5, v0, Lcud;->d:Ljxn;
+    if-eqz v0, :cond_1
 
-    move-object/from16 v0, p0
+    :cond_0
+    :goto_0
+    return-void
 
-    iget-object v6, v0, Lcud;->e:Ljxn;
+    :cond_1
+    if-eqz p1, :cond_3
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    iget-object v7, v0, Lcud;->f:Ljxn;
+    iget-object v0, v0, Lctw;->i:Lcdi;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v0}, Lcdi;->a()Z
 
-    iget-object v8, v0, Lcud;->g:Ljxn;
+    :cond_2
+    :goto_1
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lctw;->p:Lgvc;
 
-    iget-object v9, v0, Lcud;->h:Ljxn;
+    invoke-virtual {v0, p1}, Lgvc;->c(Z)V
 
-    move-object/from16 v0, p0
+    goto :goto_0
 
-    iget-object v10, v0, Lcud;->i:Ljxn;
+    :cond_3
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lctw;->i:Lcdi;
 
-    iget-object v11, v0, Lcud;->j:Ljxn;
+    invoke-virtual {v0}, Lcdi;->b()Z
 
-    move-object/from16 v0, p0
+    move-result v0
 
-    iget-object v12, v0, Lcud;->k:Ljxn;
+    if-nez v0, :cond_2
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    iget-object v13, v0, Lcud;->l:Ljxn;
+    invoke-virtual {v0}, Lctw;->w()Z
 
-    move-object/from16 v0, p0
+    move-result v0
 
-    iget-object v14, v0, Lcud;->m:Ljxn;
+    if-eqz v0, :cond_2
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    iget-object v15, v0, Lcud;->n:Ljxn;
+    const/4 v1, 0x1
 
-    move-object/from16 v0, p0
+    iput-boolean v1, v0, Lctw;->N:Z
 
-    iget-object v0, v0, Lcud;->o:Ljxn;
+    iget-object v0, p0, Lcud;->a:Lctw;
 
-    move-object/from16 v16, v0
+    iget-object v0, v0, Lctw;->q:Lgvg;
 
-    invoke-direct/range {v1 .. v16}, Lcuc;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    invoke-interface {v0}, Lgvg;->onShutterButtonClick()V
 
-    return-object v1
+    goto :goto_1
+.end method
+
+.method public final b(Z)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcud;->a:Lctw;
+
+    invoke-virtual {v0}, Lctw;->w()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcud;->a:Lctw;
+
+    iget-object v0, v0, Lctw;->r:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->k()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Z)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lcud;->a:Lctw;
+
+    invoke-virtual {v0}, Lctw;->w()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcud;->a:Lctw;
+
+    iget-object v0, v0, Lctw;->r:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->j()V
+
+    :cond_0
+    return-void
 .end method

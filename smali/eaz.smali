@@ -2,104 +2,117 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field private a:Lejh;
+.field private final a:Lkgv;
 
-.field private b:Ldtm;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lejh;Ldtm;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Leaz;->a:Lkgv;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p2, p0, Leaz;->b:Lkgv;
 
-    iput-object p1, p0, Leaz;->a:Lejh;
+    iput-object p3, p0, Leaz;->c:Lkgv;
 
-    iput-object p2, p0, Leaz;->b:Ldtm;
+    iput-object p4, p0, Leaz;->d:Lkgv;
+
+    iput-object p5, p0, Leaz;->e:Lkgv;
+
+    iput-object p6, p0, Leaz;->f:Lkgv;
+
+    iput-object p7, p0, Leaz;->g:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgih;Landroid/graphics/Rect;ILgou;Ljhj;)Ljuw;
-    .locals 8
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Leaz;->a:Lkgv;
 
-    new-instance v1, Lgpa;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-static {p3}, Licf;->a(I)Licf;
+    move-result-object v1
 
-    move-result-object v0
+    check-cast v1, Legw;
 
-    invoke-virtual {p1}, Lgih;->h()Ljuw;
+    iget-object v0, p0, Leaz;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    iget-object v0, p0, Leaz;->c:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lebo;
+
+    iget-object v0, p0, Leaz;->d:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Leha;
+
+    iget-object v0, p0, Leaz;->e:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-direct {v1, p1, v0, v2, p2}, Lgpa;-><init>(Liil;Licf;Ljuw;Landroid/graphics/Rect;)V
+    check-cast v2, Lick;
 
-    new-instance v6, Ljvi;
+    iget-object v0, p0, Leaz;->f:Lkgv;
 
-    invoke-direct {v6}, Ljvi;-><init>()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v0, Ldvt;
+    move-result-object v3
 
-    new-instance v2, Ljvd;
+    check-cast v3, Lick;
 
-    invoke-direct {v2}, Ljvd;-><init>()V
+    iget-object v0, p0, Leaz;->g:Lkgv;
 
-    iget-object v3, p0, Leaz;->a:Lejh;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v5, p0, Leaz;->b:Ldtm;
+    move-result-object v4
 
-    move-object v4, p4
+    check-cast v4, Lbum;
 
-    move-object v7, p5
+    new-instance v0, Leeo;
 
-    invoke-direct/range {v0 .. v7}, Ldvt;-><init>(Lgpa;Ljava/util/concurrent/Executor;Leka;Lgou;Ldtm;Ljvi;Ljhj;)V
+    invoke-direct/range {v0 .. v6}, Leeo;-><init>(Legw;Lick;Lick;Lbum;Lebo;Leha;)V
 
-    :try_start_0
-    iget-object v2, p0, Leaz;->a:Lejh;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    const/4 v3, 0x1
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    sget-object v4, Ljhi;->a:Ljhi;
+    move-result-object v0
 
-    invoke-virtual {v2, v0, v3, v4}, Lejh;->a(Leku;ZLjht;)Z
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast v0, Legj;
 
-    :goto_0
-    return-object v6
-
-    :catch_0
-    move-exception v0
-
-    :try_start_1
-    invoke-virtual {v6, v0}, Ljsw;->a(Ljava/lang/Throwable;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    iget-object v0, v1, Lgpa;->b:Liil;
-
-    invoke-interface {v0}, Liil;->close()V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, v1, Lgpa;->b:Liil;
-
-    invoke-interface {v1}, Liil;->close()V
-
-    throw v0
+    return-object v0
 .end method

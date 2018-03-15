@@ -1,22 +1,16 @@
 .class public interface abstract Lhpy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
-
 
 # virtual methods
-.method public abstract getBooleanFlagValue(Ljava/lang/String;ZI)Z
+.method public abstract a(Lhlm;Landroid/app/Activity;Landroid/content/Intent;Ljava/util/List;Ljava/io/File;)Lhlp;
 .end method
 
-.method public abstract getIntFlagValue(Ljava/lang/String;II)I
+.method public abstract a(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhlp;
 .end method
 
-.method public abstract getLongFlagValue(Ljava/lang/String;JI)J
+.method public abstract a(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Lcom/google/android/gms/feedback/FeedbackOptions;Landroid/os/Bundle;J)Lhlp;
 .end method
 
-.method public abstract getStringFlagValue(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
-.end method
-
-.method public abstract init(Lhnb;)V
+.method public abstract b(Lhlm;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhlp;
 .end method

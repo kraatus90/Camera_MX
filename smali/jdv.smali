@@ -1,95 +1,32 @@
 .class final Ljdv;
-.super Ljea;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Ljea;-><init>(Ljava/lang/String;B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
-    .locals 4
-
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v1
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    invoke-static {p1}, Licy;->a(Ljava/io/DataInputStream;)Ljava/nio/ByteBuffer;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object v2
-.end method
-
-.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 2
 
-    instance-of v0, p1, Ljava/util/List;
+    new-instance v0, Ljji;
 
-    if-nez v0, :cond_0
+    const/4 v1, 0x0
 
-    new-instance v0, Ljava/io/IOException;
+    new-array v1, v1, [Ljjj;
 
-    const-string v1, "Incorrect type for serialization"
+    invoke-direct {v0, v1}, Ljji;-><init>([Ljjj;)V
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    check-cast p1, Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    instance-of v0, v0, Ljava/nio/ByteBuffer;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "Incorrect type for serialization"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    invoke-static {p1, p2}, Licy;->a(Ljava/util/List;Ljava/io/DataOutputStream;)V
-
-    return-void
+    return-object v0
 .end method

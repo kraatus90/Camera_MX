@@ -1,132 +1,82 @@
 .class public final Lhqo;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# static fields
+.field public static final a:Lcom/google/android/gms/common/api/Status;
+
+.field public static final b:[Lhtb;
+
+
+# instance fields
+.field public final c:Ljava/util/Set;
+
+.field private final d:Lhqp;
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
+
+    const/16 v1, 0x8
+
+    const-string v2, "The connection to Google Play services was lost"
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+
+    sput-object v0, Lhqo;->a:Lcom/google/android/gms/common/api/Status;
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Lhtb;
+
+    sput-object v0, Lhqo;->b:[Lhtb;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhqo;->c:Ljava/util/Set;
+
+    new-instance v0, Lhqp;
+
+    invoke-direct {v0, p0}, Lhqp;-><init>(Lhqo;)V
+
+    iput-object v0, p0, Lhqo;->d:Lhqp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
-
-    const/4 v1, 0x0
-
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
-
-    move-result v3
-
-    const/4 v0, 0x0
-
-    move v2, v1
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v4
-
-    if-ge v4, v3, :cond_0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    const v5, 0xffff
-
-    and-int/2addr v5, v4
-
-    packed-switch v5, :pswitch_data_0
-
-    invoke-static {p1, v4}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v4}, Lhjg;->e(Landroid/os/Parcel;I)I
-
-    move-result v2
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v4}, Lhjg;->e(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    :pswitch_2
-    sget-object v0, Landroid/content/Intent;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v4, v0}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/Intent;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v4
-
-    if-eq v4, v3, :cond_1
-
-    new-instance v0, Ladf;
-
-    const/16 v1, 0x25
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
-
-    throw v0
-
-    :cond_1
-    new-instance v3, Lcom/google/android/gms/internal/zzbge;
-
-    invoke-direct {v3, v2, v1, v0}, Lcom/google/android/gms/internal/zzbge;-><init>(IILandroid/content/Intent;)V
-
-    return-object v3
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method final a(Lhtb;)V
     .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/internal/zzbge;
+    iget-object v0, p0, Lhqo;->c:Ljava/util/Set;
 
-    return-object v0
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lhqo;->d:Lhqp;
+
+    invoke-virtual {p1, v0}, Lhtb;->a(Lhqp;)V
+
+    return-void
 .end method

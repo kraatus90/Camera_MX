@@ -3,20 +3,52 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lddm;->a:Ljxn;
+    iput-object p1, p0, Lddm;->a:Lkgv;
+
+    iput-object p2, p0, Lddm;->b:Lkgv;
+
+    iput-object p3, p0, Lddm;->c:Lkgv;
+
+    iput-object p4, p0, Lddm;->d:Lkgv;
+
+    iput-object p5, p0, Lddm;->e:Lkgv;
+
+    iput-object p6, p0, Lddm;->f:Lkgv;
+
+    iput-object p7, p0, Lddm;->g:Lkgv;
+
+    iput-object p8, p0, Lddm;->h:Lkgv;
+
+    iput-object p9, p0, Lddm;->i:Lkgv;
 
     return-void
 .end method
@@ -24,37 +56,95 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+    .locals 10
 
-    iget-object v0, p0, Lddm;->a:Ljxn;
+    iget-object v0, p0, Lddm;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/res/Resources;
-
-    const v1, 0x7f0f0011
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    const-string v1, "VideoModule"
-
-    new-instance v2, Lcqp;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v0, v1, v3}, Lcqp;-><init>(ILjava/lang/String;Z)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcqp;
+    move-object v2, v0
+
+    check-cast v2, Lgxn;
+
+    iget-object v0, p0, Lddm;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgpg;
+
+    iget-object v0, p0, Lddm;->c:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/view/LayoutInflater;
+
+    iget-object v0, p0, Lddm;->d:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/res/Resources;
+
+    iget-object v0, p0, Lddm;->e:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lgob;
+
+    iget-object v0, p0, Lddm;->f:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lefr;
+
+    iget-object v0, p0, Lddm;->g:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iget-object v0, p0, Lddm;->h:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lgqg;
+
+    iget-object v0, p0, Lddm;->i:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lhgv;
+
+    new-instance v0, Ldfo;
+
+    iget-object v2, v2, Lgxn;->a:Landroid/widget/FrameLayout;
+
+    invoke-direct/range {v0 .. v9}, Ldfo;-><init>(Lgpg;Landroid/view/View;Landroid/content/res/Resources;Landroid/view/LayoutInflater;Lgob;Legy;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgqg;Lhgv;)V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhcu;
 
     return-object v0
 .end method

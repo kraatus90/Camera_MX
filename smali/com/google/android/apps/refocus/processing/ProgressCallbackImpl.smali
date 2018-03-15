@@ -13,13 +13,13 @@
 
 .field public rangeStart:F
 
-.field public final session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+.field public final session:Lgfr;
 
 .field public wasCanceled:Z
 
 
 # direct methods
-.method public constructor <init>(Leou;)V
+.method public constructor <init>(Lgfr;)V
     .locals 2
 
     const/4 v1, 0x0
@@ -40,9 +40,9 @@
 
     iput-object v0, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->lock:Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+    iput-object p1, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session:Lgfr;
 
-    invoke-interface {p1, v1}, Leou;->a(I)V
+    invoke-interface {p1, v1}, Lgfr;->a(I)V
 
     iput-boolean v1, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->wasCanceled:Z
 
@@ -61,17 +61,17 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session:Lgfr;
 
     const/4 v2, 0x0
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-static {p1, v2}, Lesn;->a(I[Ljava/lang/Object;)Lgyr;
+    invoke-static {p1, v2}, Lgtj;->a(I[Ljava/lang/Object;)Lgwx;
 
     move-result-object v2
 
-    invoke-interface {v0, v2}, Leou;->a(Lgyr;)V
+    invoke-interface {v0, v2}, Lgfr;->a(Lgwx;)V
 
     :cond_0
     monitor-exit v1
@@ -136,7 +136,7 @@
 
     add-float/2addr v0, v2
 
-    iget-object v2, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+    iget-object v2, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session:Lgfr;
 
     const/high16 v3, 0x42c80000    # 100.0f
 
@@ -144,7 +144,7 @@
 
     float-to-int v0, v0
 
-    invoke-interface {v2, v0}, Leou;->a(I)V
+    invoke-interface {v2, v0}, Lgfr;->a(I)V
 
     :cond_0
     monitor-exit v1
@@ -173,7 +173,7 @@
     return-void
 .end method
 
-.method public setStatus(Lgyr;)V
+.method public setStatus(Lgwx;)V
     .locals 2
 
     iget-object v1, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->lock:Ljava/lang/Object;
@@ -185,9 +185,9 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NMOPB7C5HNIBR1E1O2USR5EDPMIRRE5T1M2S3KELP6AKR5EDPMIRRE7C______0:Leou;
+    iget-object v0, p0, Lcom/google/android/apps/refocus/processing/ProgressCallbackImpl;->session:Lgfr;
 
-    invoke-interface {v0, p1}, Leou;->a(Lgyr;)V
+    invoke-interface {v0, p1}, Lgfr;->a(Lgwx;)V
 
     :cond_0
     monitor-exit v1

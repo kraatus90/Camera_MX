@@ -1,87 +1,194 @@
-.class final Ldgq;
+.class public final Ldgq;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ldhd;
 
-
-# instance fields
-.field private synthetic a:Ldgn;
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Ldgn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Ldgq;->a:Ldgn;
+    const-string v0, "CdrVidSnapSizePkr"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Ldgq;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public static a(Lidx;Lidz;Ljava/util/List;)Ljrf;
+    .locals 8
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 4
+    const/4 v2, 0x0
 
-    iget-object v1, p0, Ldgq;->a:Ldgn;
+    sget-object v0, Lidz;->h:Lidz;
 
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v0, "android.intent.action.VIEW"
-
-    invoke-direct {v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    if-ne p1, v0, :cond_3
 
     const/4 v0, 0x1
 
-    invoke-virtual {v2, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    move v1, v0
 
-    iget-object v0, v1, Ldgn;->e:Ljht;
+    :goto_0
+    new-instance v0, Lihc;
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-direct {v0, v2, v2}, Lihc;-><init>(II)V
 
-    move-result-object v0
-
-    check-cast v0, Landroid/net/Uri;
-
-    iget-object v3, v1, Ldgn;->d:Lbbo;
-
-    invoke-virtual {v3}, Lbbo;->a()Lgvw;
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    iget-object v3, v3, Lgvw;->i:Ljava/lang/String;
+    move-object v2, v0
 
-    invoke-virtual {v2, v0, v3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
+    :cond_0
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    :try_start_0
-    invoke-virtual {v1}, Lcng;->d()Lich;
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldhc;
+    check-cast v0, Lihc;
 
-    iget-object v0, v0, Ldhc;->J:Lbtx;
+    sget-object v4, Ldgq;->a:Ljava/lang/String;
 
-    invoke-interface {v0, v2}, Lbtx;->a(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :goto_0
-    const/4 v0, 0x0
+    move-result-object v5
 
-    return-object v0
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :catch_0
-    move-exception v0
+    move-result-object v6
 
-    sget-object v1, Ldgn;->c:Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
 
-    const-string v2, "Couldn\'t view video"
+    move-result v6
 
-    invoke-static {v1, v2, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    add-int/lit8 v6, v6, 0x15
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "supportedImageSize = "
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0}, Ligq;->a(Lihc;)Ligq;
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Lidz;->b()Lihc;
+
+    move-result-object v5
+
+    invoke-static {v5}, Ligq;->a(Lihc;)Ligq;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ligq;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    if-nez v1, :cond_1
+
+    sget-object v4, Lidx;->b:Lidx;
+
+    if-ne p0, v4, :cond_2
+
+    :cond_1
+    invoke-virtual {v0}, Lihc;->b()J
+
+    move-result-wide v4
+
+    invoke-virtual {p1}, Lidz;->c()J
+
+    move-result-wide v6
+
+    cmp-long v4, v4, v6
+
+    if-gtz v4, :cond_0
+
+    :cond_2
+    invoke-virtual {v0}, Lihc;->b()J
+
+    move-result-wide v4
+
+    invoke-virtual {v2}, Lihc;->b()J
+
+    move-result-wide v6
+
+    cmp-long v4, v4, v6
+
+    if-lez v4, :cond_6
+
+    :goto_2
+    move-object v2, v0
+
+    goto :goto_1
+
+    :cond_3
+    move v1, v2
 
     goto :goto_0
+
+    :cond_4
+    invoke-virtual {v2}, Lihc;->b()J
+
+    move-result-wide v0
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v0, v0, v4
+
+    if-nez v0, :cond_5
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    :goto_3
+    return-object v0
+
+    :cond_5
+    invoke-static {v2}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_6
+    move-object v0, v2
+
+    goto :goto_2
 .end method

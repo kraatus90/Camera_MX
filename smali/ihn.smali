@@ -1,36 +1,32 @@
-.class public final Lihn;
+.class public interface abstract Lihn;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public abstract a(Ljava/lang/String;)Lihn;
+.end method
 
-    invoke-static {}, Lihk;->a()Lihk;
+.method public abstract a(Ljava/lang/String;Ljava/lang/Throwable;)V
+.end method
 
-    move-result-object v0
+.method public abstract b(Ljava/lang/String;)V
+.end method
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+.method public abstract b(Ljava/lang/String;Ljava/lang/Throwable;)V
+.end method
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+.method public abstract c(Ljava/lang/String;)V
+.end method
 
-    move-result-object v0
+.method public abstract c(Ljava/lang/String;Ljava/lang/Throwable;)V
+.end method
 
-    check-cast v0, Lihk;
+.method public abstract d(Ljava/lang/String;)V
+.end method
 
-    return-object v0
+.method public abstract e(Ljava/lang/String;)V
+.end method
+
+.method public abstract f(Ljava/lang/String;)V
 .end method

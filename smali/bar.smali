@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Lbaj;
+.field private final synthetic a:Lbba;
 
 
 # direct methods
-.method constructor <init>(Lbaj;)V
+.method constructor <init>(Lbba;)V
     .locals 0
 
-    iput-object p1, p0, Lbar;->a:Lbaj;
+    iput-object p1, p0, Lbar;->a:Lbba;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,87 +23,75 @@
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)V
-    .locals 0
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
 
+    iget-object v0, p0, Lbar;->a:Lbba;
+
+    iget-object v0, v0, Lbba;->d:Libn;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbar;->a:Lbba;
+
+    iget-object v0, v0, Lbba;->d:Libn;
+
+    invoke-virtual {v0, p1}, Libn;->a(Ljava/lang/Throwable;)V
+
+    :cond_0
     return-void
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 4
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
 
-    sget-object v0, Lbaj;->a:Ljava/lang/String;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lbar;->a:Lbba;
 
-    move-result-object v1
+    iget-object v0, v0, Lbba;->c:Lihn;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    move-result-object v2
+    if-eqz p1, :cond_0
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0xb
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "onFailure: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lbar;->a:Lbaj;
-
-    iget-object v1, v0, Lbaj;->f:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lbar;->a:Lbaj;
-
-    iget-object v0, v0, Lbaj;->g:Lbas;
-
-    sget-object v2, Lbas;->c:Lbas;
-
-    invoke-virtual {v0, v2}, Lbas;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lbar;->a:Lbaj;
+    iget-object v0, p0, Lbar;->a:Lbba;
 
-    sget-object v2, Lbas;->b:Lbas;
+    iget-object v0, v0, Lbba;->c:Lihn;
 
-    iput-object v2, v0, Lbaj;->g:Lbas;
+    const-string v1, "Initialization completed."
+
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
 
     :cond_0
-    monitor-exit v1
+    iget-object v0, p0, Lbar;->a:Lbba;
 
+    iget-object v0, v0, Lbba;->c:Lihn;
+
+    if-eqz v0, :cond_1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lbar;->a:Lbba;
+
+    iget-object v0, v0, Lbba;->c:Lihn;
+
+    const-string v1, "Initialization failed! One of the tasks did not succeed."
+
+    invoke-interface {v0, v1}, Lihn;->f(Ljava/lang/String;)V
+
+    :cond_1
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

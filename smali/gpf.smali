@@ -1,45 +1,42 @@
-.class final Lgpf;
-.super Lgpr;
+.class public final Lgpf;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lgpe;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgpe;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgpf;->a:Lgpe;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lgpr;-><init>()V
+    iput-object p1, p0, Lgpf;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final y_()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lgpf;->a:Lgpe;
+    new-instance v1, Lgpe;
 
-    iget-object v0, v0, Lgpe;->a:Lgvj;
+    iget-object v0, p0, Lgpf;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lgpr;->y_()V
+    move-result-object v0
 
-    iget-object v0, p0, Lgpf;->a:Lgpe;
+    check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    iget-object v0, v0, Lgpe;->a:Lgvj;
+    invoke-direct {v1, v0}, Lgpe;-><init>(Landroid/view/accessibility/AccessibilityManager;)V
 
-    iget-object v1, p0, Lgpf;->a:Lgpe;
-
-    iget-object v1, v1, Lgpe;->c:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v1
 .end method

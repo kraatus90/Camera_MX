@@ -1,130 +1,52 @@
-.class final Lcdt;
-.super Ljava/io/ByteArrayOutputStream;
-.source "PG"
+.class final synthetic Lcdt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Ljdp;
-
-.field private synthetic b:Lcds;
+.field private final a:Lcdj;
 
 
 # direct methods
-.method constructor <init>(Lcds;Ljdp;)V
+.method constructor <init>(Lcdj;)V
     .locals 0
 
-    iput-object p1, p0, Lcdt;->b:Lcds;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcdt;->a:Ljdp;
-
-    invoke-direct {p0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    iput-object p1, p0, Lcdt;->a:Lcdj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 5
+.method public final run()V
+    .locals 2
 
-    invoke-super {p0}, Ljava/io/ByteArrayOutputStream;->close()V
+    iget-object v0, p0, Lcdt;->a:Lcdj;
 
-    iget-object v0, p0, Lcdt;->b:Lcds;
+    iget-object v1, v0, Lcdj;->c:Lket;
 
-    iget-object v1, p0, Lcdt;->a:Ljdp;
+    invoke-virtual {v1}, Lkch;->isDone()Z
 
-    invoke-virtual {v0, v1}, Lcds;->a(Ljdp;)Lxb;
+    move-result v1
 
-    move-result-object v1
+    if-nez v1, :cond_0
 
-    iget-object v0, p0, Lcdt;->b:Lcds;
+    iget-object v1, v0, Lcdj;->c:Lket;
 
-    iget-object v0, v0, Lcds;->a:Ljeg;
+    iget-object v0, v0, Lcdj;->b:Landroid/view/ViewStub;
 
-    iget-object v2, p0, Lcdt;->a:Ljdp;
+    invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    invoke-interface {v0, v2}, Ljeg;->a(Ljef;)Ljava/io/OutputStream;
+    move-result-object v0
 
-    move-result-object v2
+    check-cast v0, Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    iget-object v0, p0, Lcdt;->a:Ljdp;
-
-    iget-object v3, v0, Ljef;->b:Ljava/lang/String;
-
-    const/4 v0, -0x1
-
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
-
-    move-result v4
-
-    sparse-switch v4, :sswitch_data_0
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Object;)Z
 
     :cond_0
-    :goto_0
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Unknown image type."
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :sswitch_0
-    const-string v4, "image/jpeg"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :sswitch_1
-    const-string v4, "image/gif"
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lcdt;->toByteArray()[B
-
-    move-result-object v0
-
-    invoke-static {v0, v2, v1}, Lcdv;->a([BLjava/io/OutputStream;Lxb;)V
-
-    :goto_1
     return-void
-
-    :pswitch_1
-    invoke-virtual {p0}, Lcdt;->toByteArray()[B
-
-    move-result-object v0
-
-    invoke-static {v0, v2, v1}, Lcdv;->b([BLjava/io/OutputStream;Lxb;)V
-
-    goto :goto_1
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x58a7d764 -> :sswitch_0
-        -0x34688ef0 -> :sswitch_1
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
 .end method

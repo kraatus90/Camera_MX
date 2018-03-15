@@ -2,215 +2,264 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
-
 
 # instance fields
-.field private a:Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+.field private final a:I
+
+.field private final b:[I
+
+.field private final c:[I
+
+.field private final d:Lisq;
+
+.field private final e:Z
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;)V
-    .locals 0
+.method private constructor <init>(Lisq;I[I)V
+    .locals 5
+
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liso;->a:Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+    iput p2, p0, Liso;->a:I
+
+    iput-object p3, p0, Liso;->b:[I
+
+    array-length v2, p3
+
+    new-array v2, v2, [I
+
+    iput-object v2, p0, Liso;->c:[I
+
+    iput-object p1, p0, Liso;->d:Lisq;
+
+    invoke-interface {p1}, Lisq;->c()I
+
+    move-result v2
+
+    rem-int/lit8 v2, v2, 0x8
+
+    if-nez v2, :cond_0
+
+    rem-int/lit8 v2, p2, 0x8
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    :goto_0
+    iput-boolean v0, p0, Liso;->e:Z
+
+    iget-object v0, p0, Liso;->c:[I
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
+
+    return-void
+
+    :cond_1
+    array-length v3, p3
+
+    move v2, v0
+
+    :goto_1
+    if-ge v2, v3, :cond_2
+
+    aget v4, p3, v2
+
+    rem-int/lit8 v4, v4, 0x8
+
+    if-nez v4, :cond_0
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public constructor <init>(Lisq;I[IB)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Liso;-><init>(Lisq;I[I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
-    .locals 14
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    new-instance v0, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;
+    const/4 v0, 0x1
 
-    invoke-direct {v0, p1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)V
+    const/4 v1, 0x0
 
-    new-instance v1, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphInputSource;
+    if-ne p0, p1, :cond_1
 
-    const-string v2, "image"
+    :cond_0
+    :goto_0
+    return v0
 
-    invoke-direct {v1, p1, v2}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphInputSource;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    :cond_1
+    instance-of v2, p1, Liso;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    if-nez v2, :cond_2
 
-    new-instance v2, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
+    move v0, v1
 
-    const-string v3, "motionSaliencyOutput"
+    goto :goto_0
 
-    invoke-direct {v2, p1, v3}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    :cond_2
+    check-cast p1, Liso;
 
-    invoke-virtual {v0, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    iget v2, p0, Liso;->a:I
 
-    new-instance v3, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
+    iget v3, p1, Liso;->a:I
 
-    const-string v4, "motionEstimationSaliencyOutput"
+    if-ne v2, v3, :cond_3
 
-    invoke-direct {v3, p1, v4}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    iget-boolean v2, p0, Liso;->e:Z
 
-    invoke-virtual {v0, v3}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    iget-boolean v3, p1, Liso;->e:Z
 
-    new-instance v4, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
+    if-ne v2, v3, :cond_3
 
-    const-string v5, "interFrameHomographyOutput"
+    iget-object v2, p0, Liso;->b:[I
 
-    invoke-direct {v4, p1, v5}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    iget-object v3, p1, Liso;->b:[I
 
-    invoke-virtual {v0, v4}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([I[I)Z
 
-    new-instance v5, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;
+    move-result v2
 
-    const-string v6, "cameraMotionOutput"
+    if-eqz v2, :cond_3
 
-    invoke-direct {v5, p1, v6}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/GraphOutputTarget;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    iget-object v2, p0, Liso;->c:[I
 
-    invoke-virtual {v0, v5}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    iget-object v3, p1, Liso;->c:[I
 
-    new-instance v6, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionAnalysisFilter;
+    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([I[I)Z
 
-    const-string v7, "motionAnalyzer"
+    move-result v2
 
-    invoke-direct {v6, p1, v7}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionAnalysisFilter;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    if-eqz v2, :cond_3
 
-    invoke-virtual {v0, v6}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    iget-object v2, p0, Liso;->d:Lisq;
 
-    const v7, 0x3f533333    # 0.825f
+    iget-object v3, p1, Liso;->d:Lisq;
 
-    invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v7
+    move-result v2
 
-    const-string v8, "motionAnalyzer"
+    if-nez v2, :cond_0
 
-    const-string v9, "saliencyDownsamplingRatio"
+    :cond_3
+    move v0, v1
 
-    invoke-virtual {v0, v7, v8, v9}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    goto :goto_0
+.end method
 
-    new-instance v7, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;
+.method public final hashCode()I
+    .locals 2
 
-    const-string v8, "motionSaliencyFeatureFilter"
+    iget v0, p0, Liso;->a:I
 
-    invoke-direct {v7, p1, v8}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {v0, v7}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    iget-object v1, p0, Liso;->b:[I
 
-    const-string v8, "MOTION_SALIENCY"
+    invoke-static {v1}, Ljava/util/Arrays;->hashCode([I)I
 
-    const-string v9, "motionSaliencyFeatureFilter"
+    move-result v1
 
-    const-string v10, "featureType"
+    add-int/2addr v0, v1
 
-    invoke-virtual {v0, v8, v9, v10}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    mul-int/lit8 v0, v0, 0x1f
 
-    new-instance v8, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;
+    iget-object v1, p0, Liso;->c:[I
 
-    const-string v9, "motionEstimationSaliencyFeatureFilter"
+    invoke-static {v1}, Ljava/util/Arrays;->hashCode([I)I
 
-    invoke-direct {v8, p1, v9}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    move-result v1
 
-    invoke-virtual {v0, v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    add-int/2addr v0, v1
 
-    const-string v9, "MOTION_ESTIMATION_SALIENCY"
+    mul-int/lit8 v0, v0, 0x1f
 
-    const-string v10, "motionEstimationSaliencyFeatureFilter"
+    iget-object v1, p0, Liso;->d:Lisq;
 
-    const-string v11, "featureType"
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {v0, v9, v10, v11}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    move-result v1
 
-    new-instance v9, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;
+    add-int/2addr v0, v1
 
-    const-string v10, "interFrameHomographyFeatureFilter"
+    mul-int/lit8 v1, v0, 0x1f
 
-    invoke-direct {v9, p1, v10}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    iget-boolean v0, p0, Liso;->e:Z
 
-    invoke-virtual {v0, v9}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    if-eqz v0, :cond_0
 
-    const-string v10, "INTERFRAME_HOMOGRAPHY"
+    const/4 v0, 0x1
 
-    const-string v11, "interFrameHomographyFeatureFilter"
+    :goto_0
+    add-int/2addr v0, v1
 
-    const-string v12, "featureType"
+    return v0
 
-    invoke-virtual {v0, v10, v11, v12}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    :cond_0
+    const/4 v0, 0x0
 
-    new-instance v10, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;
+    goto :goto_0
+.end method
 
-    const-string v11, "cameraMotionFeatureFilter"
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    invoke-direct {v10, p1, v11}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayFeatureBuilder;-><init>(Lcom/google/android/libraries/smartburst/filterfw/MffContext;Ljava/lang/String;)V
+    iget-object v0, p0, Liso;->d:Lisq;
 
-    invoke-virtual {v0, v10}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->addFilter(Lcom/google/android/libraries/smartburst/filterfw/Filter;)V
+    invoke-interface {v0}, Lisq;->a()Ljava/lang/String;
 
-    const-string v11, "CAMERA_MOTION"
+    move-result-object v0
 
-    const-string v12, "cameraMotionFeatureFilter"
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v13, "featureType"
+    move-result-object v1
 
-    invoke-virtual {v0, v11, v12, v13}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->assignValueToFilterInput(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    const-string v11, "frame"
+    move-result v1
 
-    const-string v12, "image"
+    add-int/lit8 v1, v1, 0x9
 
-    invoke-virtual {v0, v1, v11, v6, v12}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v1, "score"
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v11, "featureValue"
+    const-string v1, "Channel["
 
-    invoke-virtual {v0, v6, v1, v7, v11}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "feature"
+    move-result-object v1
 
-    const-string v11, "frame"
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v7, v1, v2, v11}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+    move-result-object v0
 
-    const-string v1, "saliency"
+    const-string v1, "]"
 
-    const-string v2, "featureValues"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6, v1, v8, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
+    move-result-object v0
 
-    const-string v1, "feature"
-
-    const-string v2, "frame"
-
-    invoke-virtual {v0, v8, v1, v3, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
-
-    const-string v1, "interframeTransform"
-
-    const-string v2, "featureValues"
-
-    invoke-virtual {v0, v6, v1, v9, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
-
-    const-string v1, "feature"
-
-    const-string v2, "frame"
-
-    invoke-virtual {v0, v9, v1, v4, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
-
-    const-string v1, "cameraMotion"
-
-    const-string v2, "featureValues"
-
-    invoke-virtual {v0, v6, v1, v10, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
-
-    const-string v1, "feature"
-
-    const-string v2, "frame"
-
-    invoke-virtual {v0, v10, v1, v5, v2}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->connect(Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;Lcom/google/android/libraries/smartburst/filterfw/Filter;Ljava/lang/String;)V
-
-    iget-object v1, p0, Liso;->a:Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph$Builder;->buildSubGraph(Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

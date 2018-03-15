@@ -1,14 +1,48 @@
-.class public interface abstract Lbnf;
+.class final synthetic Lbnf;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
+
+
+# instance fields
+.field private final a:Lbnd;
+
+.field private final b:Landroid/app/Activity;
+
+
+# direct methods
+.method constructor <init>(Lbnd;Landroid/app/Activity;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbnf;->a:Lbnd;
+
+    iput-object p2, p0, Lbnf;->b:Landroid/app/Activity;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljava/util/List;
-.end method
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
-.method public abstract a(J)Ljht;
-.end method
+    iget-object v0, p0, Lbnf;->a:Lbnd;
 
-.method public abstract a(Landroid/net/Uri;)Ljht;
+    iget-object v1, p0, Lbnf;->b:Landroid/app/Activity;
+
+    iget-object v0, v0, Lbnd;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v1}, Landroid/app/Activity;->finish()V
+
+    :cond_0
+    return-void
 .end method

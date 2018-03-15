@@ -1,127 +1,96 @@
-.class Loo;
-.super Lop;
+.class final Loo;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field private final synthetic a:Lop;
 
-.field public b:Ljava/util/Map;
+.field private final synthetic b:Landroid/view/MenuItem;
 
-.field public c:Ljava/util/Map;
+.field private final synthetic c:Lot;
+
+.field private final synthetic d:Lon;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Ljava/lang/Object;)V
+.method constructor <init>(Lon;Lop;Landroid/view/MenuItem;Lot;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Lop;-><init>(Ljava/lang/Object;)V
+    iput-object p1, p0, Loo;->d:Lon;
 
-    iput-object p1, p0, Loo;->a:Landroid/content/Context;
+    iput-object p2, p0, Loo;->a:Lop;
+
+    iput-object p3, p0, Loo;->b:Landroid/view/MenuItem;
+
+    iput-object p4, p0, Loo;->c:Lot;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Landroid/view/MenuItem;)Landroid/view/MenuItem;
-    .locals 3
+.method public final run()V
+    .locals 4
 
-    instance-of v0, p1, Lfl;
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_2
+    iget-object v0, p0, Loo;->a:Lop;
 
-    move-object v0, p1
+    if-eqz v0, :cond_0
 
-    check-cast v0, Lfl;
+    iget-object v0, p0, Loo;->d:Lon;
 
-    iget-object v1, p0, Loo;->b:Ljava/util/Map;
+    iget-object v0, v0, Lon;->a:Lok;
 
-    if-nez v1, :cond_0
+    const/4 v1, 0x1
 
-    new-instance v1, Lgm;
+    iput-boolean v1, v0, Lok;->f:Z
 
-    invoke-direct {v1}, Lgm;-><init>()V
+    iget-object v0, p0, Loo;->a:Lop;
 
-    iput-object v1, p0, Loo;->b:Ljava/util/Map;
+    iget-object v0, v0, Lop;->b:Lot;
 
-    :cond_0
-    iget-object v1, p0, Loo;->b:Ljava/util/Map;
+    invoke-virtual {v0, v2}, Lot;->a(Z)V
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Loo;->d:Lon;
 
-    move-result-object v1
+    iget-object v0, v0, Lon;->a:Lok;
 
-    check-cast v1, Landroid/view/MenuItem;
-
-    if-nez v1, :cond_1
-
-    iget-object v1, p0, Loo;->a:Landroid/content/Context;
-
-    invoke-static {v1, v0}, Llb;->a(Landroid/content/Context;Lfl;)Landroid/view/MenuItem;
-
-    move-result-object v1
-
-    iget-object v2, p0, Loo;->b:Ljava/util/Map;
-
-    invoke-interface {v2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    :goto_0
-    return-object v1
-
-    :cond_2
-    move-object v1, p1
-
-    goto :goto_0
-.end method
-
-.method final a(Landroid/view/SubMenu;)Landroid/view/SubMenu;
-    .locals 2
-
-    instance-of v0, p1, Lfm;
-
-    if-eqz v0, :cond_2
-
-    check-cast p1, Lfm;
-
-    iget-object v0, p0, Loo;->c:Ljava/util/Map;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lgm;
-
-    invoke-direct {v0}, Lgm;-><init>()V
-
-    iput-object v0, p0, Loo;->c:Ljava/util/Map;
+    iput-boolean v2, v0, Lok;->f:Z
 
     :cond_0
-    iget-object v0, p0, Loo;->c:Ljava/util/Map;
+    iget-object v0, p0, Loo;->b:Landroid/view/MenuItem;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Landroid/view/MenuItem;->isEnabled()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Landroid/view/SubMenu;
+    if-eqz v0, :cond_1
 
-    if-nez v0, :cond_1
+    iget-object v0, p0, Loo;->b:Landroid/view/MenuItem;
 
-    iget-object v1, p0, Loo;->a:Landroid/content/Context;
+    invoke-interface {v0}, Landroid/view/MenuItem;->hasSubMenu()Z
 
-    new-instance v0, Lpy;
+    move-result v0
 
-    invoke-direct {v0, v1, p1}, Lpy;-><init>(Landroid/content/Context;Lfm;)V
+    if-eqz v0, :cond_1
 
-    iget-object v1, p0, Loo;->c:Ljava/util/Map;
+    iget-object v0, p0, Loo;->c:Lot;
 
-    invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, p0, Loo;->b:Landroid/view/MenuItem;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x4
+
+    invoke-virtual {v0, v1, v2, v3}, Lot;->a(Landroid/view/MenuItem;Lpi;I)Z
 
     :cond_1
-    :goto_0
-    return-object v0
-
-    :cond_2
-    move-object v0, p1
-
-    goto :goto_0
+    return-void
 .end method

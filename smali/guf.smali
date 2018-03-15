@@ -1,60 +1,51 @@
-.class final Lguf;
-.super Ljava/lang/Object;
+.class public final Lguf;
+.super Landroid/view/ViewOutlineProvider;
 .source "PG"
-
-# interfaces
-.implements Lich;
 
 
 # instance fields
-.field private synthetic a:Lgug;
-
-.field private synthetic b:Lguc;
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
 
 # direct methods
-.method constructor <init>(Lguc;Lgug;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
     .locals 0
 
-    iput-object p1, p0, Lguf;->b:Lguc;
+    iput-object p1, p0, Lguf;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    iput-object p2, p0, Lguf;->a:Lgug;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .locals 2
 
-    iget-object v0, p0, Lguf;->b:Lguc;
+    new-instance v0, Landroid/graphics/Rect;
 
-    iget-object v1, v0, Lguc;->b:Ljava/lang/Object;
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    monitor-enter v1
+    iget-object v1, p0, Lguf;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    :try_start_0
-    iget-object v0, p0, Lguf;->b:Lguc;
+    invoke-static {v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->access$000(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)Landroid/graphics/RectF;
 
-    iget-object v0, v0, Lguc;->c:Ljava/util/List;
+    move-result-object v1
 
-    iget-object v2, p0, Lguf;->a:Lgug;
+    invoke-virtual {v1, v0}, Landroid/graphics/RectF;->round(Landroid/graphics/Rect;)V
 
-    invoke-interface {v0, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lguf;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    monitor-exit v1
+    iget-object v1, v1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Lgvj;
+
+    invoke-virtual {v1}, Lgvj;->j()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {p2, v0, v1}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

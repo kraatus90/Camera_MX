@@ -1,98 +1,50 @@
-.class public interface abstract Leou;
+.class public final Leou;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgou;
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Leou;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Leou;
+
+    invoke-direct {v0}, Leou;-><init>()V
+
+    sput-object v0, Leou;->a:Leou;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/String;
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract a(I)V
-.end method
+    sget-object v0, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-.method public abstract a(Landroid/graphics/Bitmap;)V
-.end method
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-.method public abstract a(Landroid/graphics/Bitmap;I)V
-.end method
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public abstract a(Landroid/location/Location;)V
-.end method
+    move-result-object v0
 
-.method public abstract a(Landroid/net/Uri;Lgyr;Lgry;)V
-.end method
+    check-cast v0, Landroid/net/Uri;
 
-.method public abstract a(Lany;)V
-.end method
-
-.method public abstract a(Lany;Lgyr;Lgry;)V
-.end method
-
-.method public abstract a(Lcht;)V
-.end method
-
-.method public abstract a(Lejz;)V
-.end method
-
-.method public abstract a(Lgrv;)V
-.end method
-
-.method public abstract a(Lgyr;)V
-.end method
-
-.method public abstract a(Lici;Lgry;)V
-.end method
-
-.method public abstract a([BLgyr;Lgry;)V
-.end method
-
-.method public abstract b()J
-.end method
-
-.method public abstract b(I)V
-.end method
-
-.method public abstract b(Lany;)V
-.end method
-
-.method public abstract c()I
-.end method
-
-.method public abstract d()Lgyr;
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
-.end method
-
-.method public abstract h()V
-.end method
-
-.method public abstract i()V
-.end method
-
-.method public abstract j()Leoy;
-.end method
-
-.method public abstract k()Landroid/net/Uri;
-.end method
-
-.method public abstract l()V
-.end method
-
-.method public abstract m()V
-.end method
-
-.method public abstract o()Lgry;
-.end method
-
-.method public abstract p()Leov;
+    return-object v0
 .end method

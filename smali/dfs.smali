@@ -1,52 +1,54 @@
-.class final Ldfs;
+.class public final Ldfs;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldfq;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldfq;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldfs;->a:Ldfq;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldfs;->a:Lkgv;
+
+    iput-object p2, p0, Ldfs;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 6
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Ldes;
+    new-instance v2, Ldfr;
 
-    new-instance v0, Ldga;
+    iget-object v0, p0, Ldfs;->a:Lkgv;
 
-    iget-object v1, p0, Ldfs;->a:Ldfq;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v2, p1, Ldes;->a:Lbav;
+    move-result-object v0
 
-    iget-object v3, p0, Ldfs;->a:Ldfq;
+    check-cast v0, Liih;
 
-    iget-object v3, v3, Ldfq;->e:Lddd;
+    iget-object v1, p0, Ldfs;->b:Lkgv;
 
-    iget-object v4, p0, Ldfs;->a:Ldfq;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v4, v4, Ldfq;->g:Lazv;
+    move-result-object v1
 
-    iget-object v5, p0, Ldfs;->a:Ldfq;
+    check-cast v1, Ldfy;
 
-    iget-object v5, v5, Ldfq;->h:Ldcz;
+    invoke-direct {v2, v0, v1}, Ldfr;-><init>(Liih;Ldfy;)V
 
-    invoke-direct/range {v0 .. v5}, Ldga;-><init>(Ldhe;Lbav;Lddd;Lazv;Ldcz;)V
-
-    return-object v0
+    return-object v2
 .end method

@@ -1,122 +1,60 @@
-.class public final Lgyy;
+.class final Lgyy;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static b:Landroid/graphics/RectF;
+# interfaces
+.implements Lihg;
 
 
 # instance fields
-.field public final a:Landroid/graphics/Matrix;
-
-.field private c:Landroid/graphics/Matrix;
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;)V
+    .locals 0
 
-    const/high16 v2, 0x447a0000    # 1000.0f
+    iput-object p1, p0, Lgyy;->a:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
-    const/high16 v1, -0x3b860000    # -1000.0f
-
-    new-instance v0, Landroid/graphics/RectF;
-
-    invoke-direct {v0, v1, v1, v2, v2}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    sput-object v0, Lgyy;->b:Landroid/graphics/RectF;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(ZILandroid/graphics/RectF;)V
-    .locals 4
 
-    const/high16 v1, 0x3f800000    # 1.0f
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 3
 
-    const/4 v2, 0x0
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lgyy;->a:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
-    invoke-virtual {p3}, Landroid/graphics/RectF;->width()F
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v0
+    move-result v1
 
-    cmpl-float v0, v0, v2
+    invoke-static {v1}, Lgra;->a(I)Lgra;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    invoke-virtual {p3}, Landroid/graphics/RectF;->height()F
+    iget-object v2, v0, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;->b:Lgrm;
 
-    move-result v0
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;->a:Ljava/util/Map;
 
-    cmpl-float v0, v0, v2
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    const/4 v0, 0x1
+    check-cast v0, Lgqz;
 
-    :goto_0
-    if-nez v0, :cond_1
+    invoke-static {v0}, Ljhn;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    move-result-object v0
 
-    const-string v1, "previewRect"
+    check-cast v0, Lgqz;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v2, Landroid/graphics/Matrix;
-
-    invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
-
-    if-eqz p1, :cond_2
-
-    const/high16 v0, -0x40800000    # -1.0f
-
-    :goto_1
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/Matrix;->setScale(FF)V
-
-    int-to-float v0, p2
-
-    invoke-virtual {v2, v0}, Landroid/graphics/Matrix;->postRotate(F)Z
-
-    new-instance v0, Landroid/graphics/Matrix;
-
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
-
-    sget-object v1, Lgyy;->b:Landroid/graphics/RectF;
-
-    sget-object v3, Landroid/graphics/Matrix$ScaleToFit;->FILL:Landroid/graphics/Matrix$ScaleToFit;
-
-    invoke-virtual {v0, v1, p3, v3}, Landroid/graphics/Matrix;->setRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/Matrix$ScaleToFit;)Z
-
-    invoke-virtual {v2, v0, v2}, Landroid/graphics/Matrix;->setConcat(Landroid/graphics/Matrix;Landroid/graphics/Matrix;)Z
-
-    iput-object v2, p0, Lgyy;->c:Landroid/graphics/Matrix;
-
-    iget-object v0, p0, Lgyy;->c:Landroid/graphics/Matrix;
-
-    new-instance v1, Landroid/graphics/Matrix;
-
-    invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
-
-    iput-object v1, p0, Lgyy;->a:Landroid/graphics/Matrix;
+    invoke-virtual {v2, v0}, Lgrm;->a(Lgqz;)V
 
     return-void
-
-    :cond_2
-    move v0, v1
-
-    goto :goto_1
 .end method

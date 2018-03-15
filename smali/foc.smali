@@ -1,207 +1,93 @@
-.class public final Lfoc;
-.super Ljava/lang/Object;
+.class final Lfoc;
+.super Linh;
 .source "PG"
 
 
 # instance fields
-.field public a:I
+.field private final synthetic a:Lfob;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Lfob;Link;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfoc;->a:Lfob;
 
-    const/4 v0, -0x1
-
-    iput v0, p0, Lfoc;->a:I
+    invoke-direct {p0, p2}, Linh;-><init>(Link;)V
 
     return-void
-.end method
-
-.method public constructor <init>(I)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lfoc;->a:I
-
-    add-int/lit8 v0, p1, -0x1
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-static {}, Lfoc;->c()I
-
-    move-result v0
-
-    iput v0, p0, Lfoc;->a:I
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    invoke-static {}, Lfoc;->c()I
-
-    move-result v0
-
-    iput v0, p0, Lfoc;->a:I
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {}, Lfoc;->d()I
-
-    move-result v0
-
-    iput v0, p0, Lfoc;->a:I
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
-
-.method public static c()I
-    .locals 6
-
-    const v5, 0x812f
-
-    const/4 v1, 0x1
-
-    const/4 v4, 0x0
-
-    const/16 v3, 0xde1
-
-    new-array v0, v1, [I
-
-    invoke-static {v1, v0, v4}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
-
-    aget v1, v0, v4
-
-    invoke-static {v3, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
-
-    const/16 v1, 0x2801
-
-    const/high16 v2, 0x46180000    # 9728.0f
-
-    invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
-
-    const/16 v1, 0x2800
-
-    const v2, 0x46180400    # 9729.0f
-
-    invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
-
-    const/16 v1, 0x2802
-
-    invoke-static {v3, v1, v5}, Landroid/opengl/GLES20;->glTexParameteri(III)V
-
-    const/16 v1, 0x2803
-
-    invoke-static {v3, v1, v5}, Landroid/opengl/GLES20;->glTexParameteri(III)V
-
-    aget v0, v0, v4
-
-    return v0
-.end method
-
-.method public static d()I
-    .locals 6
-
-    const v5, 0x812f
-
-    const/4 v1, 0x1
-
-    const/high16 v4, 0x46180000    # 9728.0f
-
-    const/4 v3, 0x0
-
-    const/16 v2, 0xde1
-
-    new-array v0, v1, [I
-
-    invoke-static {v1, v0, v3}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
-
-    aget v1, v0, v3
-
-    invoke-static {v2, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
-
-    const/16 v1, 0x2801
-
-    invoke-static {v2, v1, v4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
-
-    const/16 v1, 0x2800
-
-    invoke-static {v2, v1, v4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
-
-    const/16 v1, 0x2802
-
-    invoke-static {v2, v1, v5}, Landroid/opengl/GLES20;->glTexParameteri(III)V
-
-    const/16 v1, 0x2803
-
-    invoke-static {v2, v1, v5}, Landroid/opengl/GLES20;->glTexParameteri(III)V
-
-    aget v0, v0, v3
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final close()V
+    .locals 3
 
-    const/4 v3, 0x1
+    invoke-super {p0}, Linh;->close()V
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lfoc;->a:Lfob;
 
-    new-array v0, v3, [I
+    iget-object v0, v0, Lfob;->e:Lfnw;
 
-    iget v1, p0, Lfoc;->a:I
+    iget-object v1, v0, Lfnw;->a:Ljava/lang/Object;
 
-    aput v1, v0, v2
+    monitor-enter v1
 
-    invoke-static {v3, v0, v2}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
+    :try_start_0
+    iget-object v0, p0, Lfoc;->a:Lfob;
 
-    const/4 v0, -0x1
+    iget-object v0, v0, Lfob;->e:Lfnw;
 
-    iput v0, p0, Lfoc;->a:I
+    iget-object v0, v0, Lfnw;->j:Ljava/util/Deque;
+
+    iget-object v2, p0, Lfoc;->a:Lfob;
+
+    invoke-interface {v0, v2}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfoc;->a:Lfob;
+
+    iget-object v0, v0, Lfob;->e:Lfnw;
+
+    iget-object v0, v0, Lfnw;->k:Ljava/util/Deque;
+
+    iget-object v2, p0, Lfoc;->a:Lfob;
+
+    invoke-interface {v0, v2}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfoc;->a:Lfob;
+
+    iget-object v0, v0, Lfob;->e:Lfnw;
+
+    iget-object v0, v0, Lfnw;->l:Ljava/util/List;
+
+    iget-object v2, p0, Lfoc;->a:Lfob;
+
+    invoke-interface {v0, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfoc;->a:Lfob;
+
+    iget-object v0, v0, Lfob;->e:Lfnw;
+
+    iget-object v0, v0, Lfnw;->g:Lidb;
+
+    invoke-virtual {v0}, Lidb;->a()V
+
+    iget-object v0, p0, Lfoc;->a:Lfob;
+
+    iget-object v0, v0, Lfob;->e:Lfnw;
+
+    invoke-virtual {v0}, Lfnw;->c()V
+
+    monitor-exit v1
 
     return-void
-.end method
 
-.method public final b()V
-    .locals 2
+    :catchall_0
+    move-exception v0
 
-    iget v0, p0, Lfoc;->a:I
-
-    if-gez v0, :cond_0
-
-    new-instance v0, Lfod;
-
-    const-string v1, "Trying to bind without a loaded texture"
-
-    invoke-direct {v0, v1}, Lfod;-><init>(Ljava/lang/String;)V
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-
-    :cond_0
-    const/16 v0, 0xde1
-
-    iget v1, p0, Lfoc;->a:I
-
-    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
-
-    const-string v0, "glBindTexture"
-
-    invoke-static {v0}, Lfod;->a(Ljava/lang/String;)V
-
-    return-void
 .end method

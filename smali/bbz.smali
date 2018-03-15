@@ -3,74 +3,54 @@
 .source "PG"
 
 # interfaces
-.implements Lbby;
+.implements Lkgv;
 
 
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
-
-
-# instance fields
-.field private a:Lbea;
+# static fields
+.field public static final a:Lbbz;
 
 
 # direct methods
-.method public constructor <init>(Lbea;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lbbz;
+
+    invoke-direct {v0}, Lbbz;-><init>()V
+
+    sput-object v0, Lbbz;->a:Lbbz;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbbz;->a:Lbea;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/util/Range;
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbbz;->a:Lbea;
+    const-string v0, "IOExecutor"
 
-    iget v0, v0, Lbea;->c:I
+    const/4 v1, 0x1
 
-    const/16 v1, 0x1e
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0, v1}, Lhwt;->b(Ljava/lang/String;I)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public final b()Landroid/util/Range;
-    .locals 2
-
-    iget-object v0, p0, Lbbz;->a:Lbea;
-
-    iget v0, v0, Lbea;->c:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
-
-    move-result-object v0
+    check-cast v0, Ljava/util/concurrent/ExecutorService;
 
     return-object v0
 .end method

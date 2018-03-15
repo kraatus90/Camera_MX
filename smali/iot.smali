@@ -2,65 +2,76 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lioq;
 
-
-# instance fields
-.field private b:Liol;
-
-.field private c:Ljvi;
+# static fields
+.field private static final a:[C
 
 
 # direct methods
-.method public constructor <init>(Liol;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "0123456789ABCDEF"
 
-    iput-object p1, p0, Liot;->b:Liol;
+    invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
 
-    new-instance v0, Ljvi;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljvi;-><init>()V
-
-    iput-object v0, p0, Liot;->c:Ljvi;
+    sput-object v0, Liot;->a:[C
 
     return-void
 .end method
 
+.method public static a([B)Ljava/lang/String;
+    .locals 5
 
-# virtual methods
-.method public final a()Ljuw;
-    .locals 1
+    array-length v0, p0
 
-    iget-object v0, p0, Liot;->c:Ljvi;
+    shl-int/lit8 v0, v0, 0x1
+
+    new-array v1, v0, [C
+
+    const/4 v0, 0x0
+
+    :goto_0
+    array-length v2, p0
+
+    if-ge v0, v2, :cond_0
+
+    aget-byte v2, p0, v0
+
+    sget-object v3, Liot;->a:[C
+
+    shr-int/lit8 v4, v2, 0x4
+
+    and-int/lit8 v4, v4, 0xf
+
+    aget-char v3, v3, v4
+
+    sget-object v4, Liot;->a:[C
+
+    and-int/lit8 v2, v2, 0xf
+
+    aget-char v2, v4, v2
+
+    shl-int/lit8 v4, v0, 0x1
+
+    aput-char v3, v1, v4
+
+    shl-int/lit8 v3, v0, 0x1
+
+    add-int/lit8 v3, v3, 0x1
+
+    aput-char v2, v1, v3
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
 
     return-object v0
-.end method
-
-.method public final a(Landroid/media/MediaFormat;)V
-    .locals 1
-
-    iget-object v0, p0, Liot;->c:Ljvi;
-
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final a(Lios;)V
-    .locals 3
-
-    iget-object v0, p0, Liot;->b:Liol;
-
-    iget-object v1, p1, Lios;->a:Ljava/nio/ByteBuffer;
-
-    iget-object v2, p1, Lios;->b:Landroid/media/MediaCodec$BufferInfo;
-
-    invoke-interface {v0, v1, v2}, Liol;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    invoke-virtual {p1}, Lios;->close()V
-
-    return-void
 .end method

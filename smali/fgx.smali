@@ -1,51 +1,50 @@
-.class Lfgx;
-.super Lgvh;
+.class final Lfgx;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lfgu;
 
 
 # instance fields
-.field public final synthetic a:Lfgu;
+.field private final synthetic a:Ljava/util/Set;
+
+.field private final synthetic b:Lfhq;
 
 
 # direct methods
-.method constructor <init>(Lfgu;)V
-    .locals 1
+.method constructor <init>(Ljava/util/Set;Lfhq;)V
+    .locals 0
 
-    iput-object p1, p0, Lfgx;->a:Lfgu;
+    iput-object p1, p0, Lfgx;->a:Ljava/util/Set;
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Lfgx;->b:Lfhq;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[[S)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public L()V
+.method public final b()V
     .locals 0
 
     return-void
 .end method
 
-.method public N()V
-    .locals 0
+.method public final c()Ljava/util/Set;
+    .locals 1
 
-    return-void
+    iget-object v0, p0, Lfgx;->a:Ljava/util/Set;
+
+    return-object v0
 .end method
 
-.method public final a()V
-    .locals 2
+.method public final d()Lfhq;
+    .locals 1
 
-    iget-object v0, p0, Lfgx;->a:Lfgu;
+    iget-object v0, p0, Lfgx;->b:Lfhq;
 
-    iget-object v0, v0, Lfgu;->e:Lawq;
-
-    new-instance v1, Lfgy;
-
-    invoke-direct {v1, p0}, Lfgy;-><init>(Lfgx;)V
-
-    invoke-virtual {v0, v1}, Lawq;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object v0
 .end method

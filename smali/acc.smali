@@ -1,177 +1,77 @@
-.class public final enum Lacc;
-.super Ljava/lang/Enum;
+.class public final Lacc;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # static fields
-.field public static final enum a:Lacc;
-
-.field public static final enum b:Lacc;
-
-.field public static final enum c:Lacc;
-
-.field public static final enum d:Lacc;
-
-.field public static final enum e:Lacc;
-
-.field public static final enum f:Lacc;
-
-.field public static final enum g:Lacc;
-
-.field public static final enum h:Lacc;
-
-.field private static synthetic i:[Lacc;
+.field public static final a:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 5
 
-    const/4 v7, 0x4
+    const/4 v4, -0x1
 
-    const/4 v6, 0x3
+    :try_start_0
+    const-string v0, "android.hardware.camera2.CameraCharacteristics"
 
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    new-instance v0, Lacc;
-
-    const-string v1, "AUTO"
-
-    invoke-direct {v0, v1, v3}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->a:Lacc;
-
-    new-instance v0, Lacc;
-
-    const-string v1, "CLOUDY_DAYLIGHT"
-
-    invoke-direct {v0, v1, v4}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->b:Lacc;
-
-    new-instance v0, Lacc;
-
-    const-string v1, "DAYLIGHT"
-
-    invoke-direct {v0, v1, v5}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->c:Lacc;
-
-    new-instance v0, Lacc;
-
-    const-string v1, "FLUORESCENT"
-
-    invoke-direct {v0, v1, v6}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->d:Lacc;
-
-    new-instance v0, Lacc;
-
-    const-string v1, "INCANDESCENT"
-
-    invoke-direct {v0, v1, v7}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->e:Lacc;
-
-    new-instance v0, Lacc;
-
-    const-string v1, "SHADE"
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->f:Lacc;
-
-    new-instance v0, Lacc;
-
-    const-string v1, "TWILIGHT"
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v1, v2}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->g:Lacc;
-
-    new-instance v0, Lacc;
-
-    const-string v1, "WARM_FLUORESCENT"
-
-    const/4 v2, 0x7
-
-    invoke-direct {v0, v1, v2}, Lacc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lacc;->h:Lacc;
-
-    const/16 v0, 0x8
-
-    new-array v0, v0, [Lacc;
-
-    sget-object v1, Lacc;->a:Lacc;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lacc;->b:Lacc;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lacc;->c:Lacc;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lacc;->d:Lacc;
-
-    aput-object v1, v0, v6
-
-    sget-object v1, Lacc;->e:Lacc;
-
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lacc;->f:Lacc;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lacc;->g:Lacc;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lacc;->h:Lacc;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lacc;->i:[Lacc;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lacc;
-    .locals 1
-
-    sget-object v0, Lacc;->i:[Lacc;
-
-    invoke-virtual {v0}, [Lacc;->clone()Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    check-cast v0, [Lacc;
+    const-string v1, "CONTROL_SCENE_MODE_HDR"
 
-    return-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v0
+
+    sput v0, Lacc;->a:I
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    const-string v1, "LegacyVendorTags"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Error while reflecting on SCENE_MODE_HDR enum, HDR will not be available: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    sput v4, Lacc;->a:I
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    sput v4, Lacc;->a:I
+
+    throw v0
 .end method

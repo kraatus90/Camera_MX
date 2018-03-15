@@ -1,155 +1,159 @@
-.class final Lhsy;
-.super Lhtc;
+.class public abstract Lhsy;
+.super Lhtb;
+
+# interfaces
+.implements Lhsz;
 
 
 # instance fields
-.field private a:Ljava/util/ArrayList;
+.field public final e:Lhmr;
 
-.field private synthetic b:Lhss;
+.field public final f:Lhlf;
 
 
 # direct methods
-.method public constructor <init>(Lhss;Ljava/util/ArrayList;)V
-    .locals 0
+.method public constructor <init>(Lhlf;Lhlm;)V
+    .locals 1
 
-    iput-object p1, p0, Lhsy;->b:Lhss;
+    const-string v0, "GoogleApiClient must not be null"
 
-    invoke-direct {p0, p1}, Lhtc;-><init>(Lhss;)V
+    invoke-static {p2, v0}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p2, p0, Lhsy;->a:Ljava/util/ArrayList;
+    move-result-object v0
+
+    check-cast v0, Lhlm;
+
+    invoke-direct {p0, v0}, Lhtb;-><init>(Lhlm;)V
+
+    invoke-virtual {p1}, Lhlf;->b()Lhmr;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhsy;->e:Lhmr;
+
+    iput-object p1, p0, Lhsy;->f:Lhlf;
+
+    return-void
+.end method
+
+.method protected constructor <init>(Lhmr;Lhlm;)V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const-string v0, "GoogleApiClient must not be null"
+
+    invoke-static {p2, v0}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhlm;
+
+    invoke-direct {p0, v0}, Lhtb;-><init>(Lhlm;)V
+
+    invoke-static {p1}, Lhmr;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhmr;
+
+    iput-object v0, p0, Lhsy;->e:Lhmr;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lhsy;->f:Lhlf;
+
+    return-void
+.end method
+
+.method private final a(Landroid/os/RemoteException;)V
+    .locals 4
+
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {p1}, Landroid/os/RemoteException;->getLocalizedMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;Landroid/app/PendingIntent;)V
+
+    invoke-virtual {p0, v0}, Lhsy;->b(Lcom/google/android/gms/common/api/Status;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 8
+.method public abstract a(Lhlj;)V
+.end method
 
-    iget-object v0, p0, Lhsy;->b:Lhss;
+.method public synthetic a(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, v0, Lhss;->a:Lhti;
+    check-cast p1, Lhlr;
 
-    iget-object v2, v0, Lhti;->m:Lhte;
+    invoke-super {p0, p1}, Lhtb;->a(Lhlr;)V
 
-    iget-object v3, p0, Lhsy;->b:Lhss;
+    return-void
+.end method
 
-    iget-object v0, v3, Lhss;->j:Lhls;
+.method public final b(Lcom/google/android/gms/common/api/Status;)V
+    .locals 2
 
-    if-nez v0, :cond_0
-
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    :goto_0
-    iput-object v0, v2, Lhte;->f:Ljava/util/Set;
-
-    iget-object v0, p0, Lhsy;->a:Ljava/util/ArrayList;
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :goto_1
-    if-ge v2, v3, :cond_3
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    add-int/lit8 v2, v2, 0x1
-
-    check-cast v1, Lhkj;
-
-    iget-object v4, p0, Lhsy;->b:Lhss;
-
-    iget-object v4, v4, Lhss;->g:Lhmf;
-
-    iget-object v5, p0, Lhsy;->b:Lhss;
-
-    iget-object v5, v5, Lhss;->a:Lhti;
-
-    iget-object v5, v5, Lhti;->m:Lhte;
-
-    iget-object v5, v5, Lhte;->f:Ljava/util/Set;
-
-    invoke-interface {v1, v4, v5}, Lhkj;->a(Lhmf;Ljava/util/Set;)V
-
-    goto :goto_1
-
-    :cond_0
-    new-instance v1, Ljava/util/HashSet;
-
-    iget-object v0, v3, Lhss;->j:Lhls;
-
-    iget-object v0, v0, Lhls;->b:Ljava/util/Set;
-
-    invoke-direct {v1, v0}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    iget-object v0, v3, Lhss;->j:Lhls;
-
-    iget-object v4, v0, Lhls;->d:Ljava/util/Map;
-
-    invoke-interface {v4}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :cond_1
-    :goto_2
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->b()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    :goto_0
+    const-string v1, "Failed result must not be success"
 
-    check-cast v0, Lhkc;
+    invoke-static {v0, v1}, Lhmr;->b(ZLjava/lang/Object;)V
 
-    iget-object v6, v3, Lhss;->a:Lhti;
-
-    iget-object v6, v6, Lhti;->g:Ljava/util/Map;
-
-    invoke-virtual {v0}, Lhkc;->b()Lhkh;
-
-    move-result-object v7
-
-    invoke-interface {v6, v7}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    invoke-interface {v4, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lhsy;->a(Lcom/google/android/gms/common/api/Status;)Lhlr;
 
     move-result-object v0
 
-    check-cast v0, Lhlt;
+    invoke-virtual {p0, v0}, Lhsy;->a(Lhlr;)V
 
-    iget-object v0, v0, Lhlt;->a:Ljava/util/Set;
+    return-void
 
-    invoke-interface {v1, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
-
-    goto :goto_2
-
-    :cond_2
-    move-object v0, v1
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
 
-    :cond_3
+.method public final b(Lhlj;)V
+    .locals 1
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Lhsy;->a(Lhlj;)V
+    :try_end_0
+    .catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
     return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-direct {p0, v0}, Lhsy;->a(Landroid/os/RemoteException;)V
+
+    throw v0
+
+    :catch_1
+    move-exception v0
+
+    invoke-direct {p0, v0}, Lhsy;->a(Landroid/os/RemoteException;)V
+
+    goto :goto_0
 .end method

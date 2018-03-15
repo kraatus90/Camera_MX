@@ -1,42 +1,79 @@
-.class public final Lblm;
+.class final Lblm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lbll;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lbll;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lblm;->a:Lbll;
 
-    iput-object p1, p0, Lblm;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 5
 
-    new-instance v1, Lbli;
+    iget-object v0, p0, Lblm;->a:Lbll;
 
-    iget-object v0, p0, Lblm;->a:Ljxn;
+    invoke-virtual {v0}, Lbll;->b()Z
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    move-result v1
+
+    iget-object v0, p0, Lblm;->a:Lbll;
+
+    iget-object v2, v0, Lbll;->a:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v0, p0, Lblm;->a:Lbll;
+
+    iget-object v0, v0, Lbll;->b:Lket;
+
+    iget-object v3, p0, Lblm;->a:Lbll;
+
+    const/4 v4, 0x0
+
+    iput-object v4, v3, Lbll;->b:Lket;
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lblg;
+    check-cast v0, Lket;
 
-    invoke-direct {v1, v0}, Lbli;-><init>(Lblg;)V
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-object v1
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

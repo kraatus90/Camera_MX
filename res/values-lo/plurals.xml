@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">ຮູບຕໍ່ເນື່ອງ (%1$d ຮູບ)</item>
+        <item quantity="one">ຮູບຕໍ່ເນື່ອງ (%1$d ຮູບ)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">ບັນທຶກ %1$d ຮູບພາບແລ້ວ</item>
         <item quantity="one">ບັນທຶກ %1$d ຮູບພາບແລ້ວ</item>

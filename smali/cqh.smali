@@ -1,89 +1,126 @@
-.class public abstract Lcqh;
+.class public final Lcqh;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcqm;
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Lbsa;
+.field private final a:Lkgv;
 
-.field public final b:Lbvl;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lbsa;Lbvl;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcqh;->a:Lbsa;
+    iput-object p1, p0, Lcqh;->a:Lkgv;
 
-    iput-object p2, p0, Lcqh;->b:Lbvl;
+    iput-object p2, p0, Lcqh;->b:Lkgv;
+
+    iput-object p3, p0, Lcqh;->c:Lkgv;
+
+    iput-object p4, p0, Lcqh;->d:Lkgv;
+
+    iput-object p5, p0, Lcqh;->e:Lkgv;
+
+    iput-object p6, p0, Lcqh;->f:Lkgv;
+
+    iput-object p7, p0, Lcqh;->g:Lkgv;
+
+    iput-object p8, p0, Lcqh;->h:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public C_()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    return-void
-.end method
+    iget-object v0, p0, Lcqh;->a:Lkgv;
 
-.method public D_()V
-    .locals 0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final E_()V
-    .locals 2
+    check-cast v0, Lfat;
 
-    iget-object v0, p0, Lcqh;->b:Lbvl;
+    iget-object v1, p0, Lcqh;->b:Lkgv;
 
-    invoke-interface {v0}, Lbvl;->a()I
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v1
 
-    const/4 v1, -0x1
+    check-cast v1, Lffv;
 
-    if-eq v0, v1, :cond_0
+    iget-object v2, p0, Lcqh;->c:Lkgv;
 
-    iget-object v1, p0, Lcqh;->b:Lbvl;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v1, v0}, Lbvl;->c(I)V
+    iget-object v2, p0, Lcqh;->d:Lkgv;
 
-    :cond_0
-    return-void
-.end method
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-.method public a(I)V
-    .locals 0
+    move-result-object v2
 
-    return-void
-.end method
+    check-cast v2, Lcqv;
 
-.method public a()Z
-    .locals 1
+    iget-object v3, p0, Lcqh;->e:Lkgv;
 
-    const/4 v0, 0x0
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    return v0
-.end method
+    move-result-object v3
 
-.method public b(Z)V
-    .locals 0
+    check-cast v3, Lihs;
 
-    return-void
-.end method
+    iget-object v4, p0, Lcqh;->f:Lkgv;
 
-.method public e()Z
-    .locals 1
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move-result-object v4
 
-    return v0
+    check-cast v4, Lbvo;
+
+    iget-object v5, p0, Lcqh;->g:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    iget-object v5, p0, Lcqh;->h:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ldkv;
+
+    invoke-static/range {v0 .. v5}, Lcev;->a(Lfat;Lffv;Lcqv;Lihs;Lbvo;Ldkv;)Lcom/google/googlex/gcam/Gcam;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlex/gcam/Gcam;
+
+    return-object v0
 .end method

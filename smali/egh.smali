@@ -1,205 +1,123 @@
-.class public final Legh;
-.super Ljava/lang/Object;
+.class Legh;
+.super Legf;
 .source "PG"
 
 
 # instance fields
-.field public a:Ljava/lang/Object;
-
-.field private b:I
-
-.field private c:Ljava/util/LinkedList;
+.field private final synthetic a:Legg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Legg;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Legh;->a:Legg;
 
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Legh;->c:Ljava/util/LinkedList;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Legh;->a:Ljava/lang/Object;
-
-    const/4 v0, 0x1
-
-    const-string v1, "maxHistorySize must be >= 2."
-
-    invoke-static {v0, v1}, Liya;->a(ZLjava/lang/Object;)V
-
-    const/4 v0, 0x7
-
-    iput v0, p0, Legh;->b:I
+    invoke-direct {p0}, Legf;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+.method public G()V
+    .locals 2
 
-    const/4 v4, 0x1
+    iget-object v0, p0, Legh;->a:Legg;
 
-    const/4 v5, 0x0
+    iget-object v0, v0, Legg;->f:Lgvc;
 
-    iget-object v0, p0, Legh;->a:Ljava/lang/Object;
+    sget-object v1, Lgue;->a:Lgue;
 
-    if-nez v0, :cond_1
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    iput-object p1, p0, Legh;->a:Ljava/lang/Object;
+    iget-object v0, v0, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    iget-object v0, p0, Legh;->c:Ljava/util/LinkedList;
+    const/4 v1, 0x4
 
-    iget-object v1, p0, Legh;->a:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisibility(I)V
 
-    invoke-virtual {v0, v1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
+    return-void
+.end method
 
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Legh;->a:Ljava/lang/Object;
+.method public H()V
+    .locals 2
 
-    return-object v0
+    iget-object v0, p0, Legh;->a:Legg;
 
-    :cond_1
-    iget-object v0, p0, Legh;->c:Ljava/util/LinkedList;
+    iget-object v0, v0, Legg;->f:Lgvc;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+    sget-object v1, Lgue;->h:Lgue;
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    iget v1, p0, Legh;->b:I
+    iget-object v0, v0, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    if-ne v0, v1, :cond_2
+    const/4 v1, 0x4
 
-    iget-object v0, p0, Legh;->c:Ljava/util/LinkedList;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisibility(I)V
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->removeFirst()Ljava/lang/Object;
+    return-void
+.end method
 
-    :cond_2
-    iget-object v0, p0, Legh;->c:Ljava/util/LinkedList;
+.method public final a()V
+    .locals 2
 
-    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
+    sget-object v0, Legg;->d:Ljava/lang/String;
 
-    iget-object v1, p0, Legh;->c:Ljava/util/LinkedList;
+    const-string v1, "enter capturing state."
 
-    iget-object v0, p0, Legh;->c:Ljava/util/LinkedList;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->getFirst()Ljava/lang/Object;
+    iget-object v0, p0, Legh;->a:Legg;
 
-    move-result-object v0
+    iget-object v0, v0, Legg;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startPhotoSphereCapture()V
 
-    move-result v2
+    iget-object v0, p0, Legh;->a:Legg;
 
-    if-nez v2, :cond_4
+    iget-object v0, v0, Legg;->f:Lgvc;
 
-    invoke-static {v0}, Liui;->b(Ljava/lang/Object;)Ljhw;
+    sget-object v1, Lgue;->j:Lgue;
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
 
-    instance-of v0, v1, Ljjt;
+    iget-object v0, v0, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    if-eqz v0, :cond_3
+    const/4 v1, 0x0
 
-    move-object v0, v1
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisibility(I)V
 
-    check-cast v0, Ljjt;
+    iget-object v0, p0, Legh;->a:Legg;
 
-    new-instance v3, Ljjt;
+    iget-object v0, v0, Legg;->h:Lfwg;
 
-    iget-object v6, v0, Ljjt;->a:Ljava/util/Collection;
+    invoke-virtual {v0}, Lfwg;->b()V
 
-    iget-object v0, v0, Ljjt;->b:Ljhw;
+    return-void
+.end method
 
-    new-instance v7, Ljhx;
+.method public final b()V
+    .locals 2
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v0, Legg;->d:Ljava/lang/String;
 
-    move-result-object v0
+    const-string v1, "exit capturing state."
 
-    check-cast v0, Ljhw;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Legh;->a:Legg;
 
-    move-result-object v2
+    iget-object v0, v0, Legg;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    check-cast v2, Ljhw;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopPhotoSphereCapture()V
 
-    const/4 v8, 0x2
+    iget-object v0, p0, Legh;->a:Legg;
 
-    new-array v8, v8, [Ljhw;
+    iget-object v0, v0, Legg;->h:Lfwg;
 
-    aput-object v0, v8, v5
+    invoke-virtual {v0}, Lfwg;->a()V
 
-    aput-object v2, v8, v4
-
-    invoke-static {v8}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-direct {v7, v0}, Ljhx;-><init>(Ljava/util/List;)V
-
-    invoke-direct {v3, v6, v7}, Ljjt;-><init>(Ljava/util/Collection;Ljhw;)V
-
-    move-object v0, v3
-
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
-    move-result v0
-
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_4
-
-    move v0, v4
-
-    :goto_2
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Legh;->c:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->getFirst()Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Legh;->a:Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v3, Ljjt;
-
-    invoke-static {v1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
-
-    invoke-static {v2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljhw;
-
-    invoke-direct {v3, v0, v2}, Ljjt;-><init>(Ljava/util/Collection;Ljhw;)V
-
-    move-object v0, v3
-
-    goto :goto_1
-
-    :cond_4
-    move v0, v5
-
-    goto :goto_2
+    return-void
 .end method

@@ -1,40 +1,56 @@
-.class final Lfnk;
+.class public final Lfnk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfqf;
+.implements Lkgv;
 
 
 # instance fields
-.field public final synthetic a:Lfmi;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmi;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfnk;->a:Lfmi;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfnk;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfnk;
+    .locals 1
+
+    new-instance v0, Lfnk;
+
+    invoke-direct {v0, p0}, Lfnk;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfnk;->a:Lfmi;
+    iget-object v0, p0, Lfnk;->a:Lkgv;
 
-    iget-object v0, v0, Lfmi;->G:Landroid/os/Handler;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Lfnl;
+    move-result-object v0
 
-    invoke-direct {v1, p0}, Lfnl;-><init>(Lfnk;)V
+    check-cast v0, Lilk;
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lilg;
+
+    return-object v0
 .end method

@@ -1,46 +1,46 @@
-.class public final Lfln;
+.class final Lfln;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Linr;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lflk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lflk;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfln;->a:Lflk;
 
-    iput-object p1, p0, Lfln;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Lfln;->a:Ljxn;
+    iget-object v0, p0, Lfln;->a:Lflk;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lflk;->b:Ljava/util/concurrent/BlockingQueue;
 
-    move-result-object v0
-
-    check-cast v0, Lfll;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/concurrent/BlockingQueue;->poll()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lihi;
+    check-cast v0, Lful;
 
-    return-object v0
+    const-string v1, "ImageWriter.ImageListener#onInputImageReleased called, but there are no in-flight images!"
+
+    invoke-static {v0, v1}, Ljii;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface {v0}, Lful;->close()V
+
+    return-void
 .end method

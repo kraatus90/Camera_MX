@@ -1,96 +1,76 @@
-.class public final Lehk;
+.class final Lehk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Lehj;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lehj;)V
     .locals 0
 
+    iput-object p1, p0, Lehk;->a:Lehj;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lehk;->a:Ljxn;
-
-    iput-object p2, p0, Lehk;->b:Ljxn;
-
-    iput-object p3, p0, Lehk;->c:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Legu;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lehk;
-
-    invoke-direct {v0, p1, p2, p3}, Lehk;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final onClick(Landroid/view/View;)V
+    .locals 6
 
-    iget-object v0, p0, Lehk;->a:Ljxn;
+    iget-object v0, p0, Lehk;->a:Lehj;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lehj;->c:Lcas;
 
-    move-result-object v0
+    if-eqz v0, :cond_1
 
-    check-cast v0, Lhzr;
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Lehk;->b:Ljxn;
+    invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lehk;->a:Lehj;
 
-    iget-object v1, p0, Lehk;->c:Ljxn;
+    iget-object v0, v0, Lehj;->c:Lcas;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v1, Lcau;
 
-    move-result-object v1
+    invoke-direct {v1, p1}, Lcau;-><init>(Landroid/view/View;)V
 
-    check-cast v1, Lgdq;
+    iget v2, v0, Lcas;->b:I
 
-    sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget v3, Lep;->z:I
 
-    invoke-interface {v1, v2}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    if-ne v2, v3, :cond_0
 
-    move-result-object v1
+    iput-object v1, v0, Lcas;->e:Lcau;
 
-    check-cast v1, Ljava/lang/Integer;
+    iget-object v1, v0, Lcas;->a:Lcbn;
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    sget-object v2, Lcbm;->d:Lcbm;
 
-    new-instance v1, Legi;
+    invoke-interface {v1, v2}, Lcbn;->a(Lcbm;)Lkeh;
 
-    invoke-direct {v1}, Legi;-><init>()V
+    iget-object v1, v0, Lcas;->c:Landroid/os/Handler;
 
-    invoke-virtual {v0, v1}, Lhzr;->a(Lich;)Lich;
+    iget-object v2, v0, Lcas;->d:Ljava/lang/Runnable;
 
-    move-result-object v0
+    const-wide/16 v4, 0x1388
 
-    check-cast v0, Legi;
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    :cond_0
+    sget v1, Lep;->A:I
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput v1, v0, Lcas;->b:I
 
-    move-result-object v0
-
-    check-cast v0, Legi;
-
-    return-object v0
+    :cond_1
+    return-void
 .end method

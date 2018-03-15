@@ -97,17 +97,6 @@
     if-eqz v1, :cond_0
 
     :cond_2
-    sget-object v1, Lej;->a:Lej;
-
-    if-nez v1, :cond_3
-
-    new-instance v1, Lej;
-
-    invoke-direct {v1}, Lej;-><init>()V
-
-    sput-object v1, Lej;->a:Lej;
-
-    :cond_3
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -120,17 +109,7 @@
 
     move-result-object v0
 
-    :try_start_0
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
-    :try_end_0
-    .catch Ljava/lang/AbstractMethodError; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     goto :goto_0
 .end method

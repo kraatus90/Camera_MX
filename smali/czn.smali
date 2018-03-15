@@ -1,100 +1,213 @@
 .class public final Lczn;
-.super Ljava/lang/Object;
+.super Lcxq;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public c:Landroid/graphics/Bitmap;
 
-.field private b:Ljxn;
+.field public d:Ljrf;
 
-.field private c:Ljxn;
+.field public e:Z
 
-.field private d:Ljxn;
+.field public f:Z
+
+.field private final g:Lbci;
+
+.field private final h:Lghb;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "StateReviewPic"
 
-    iput-object p1, p0, Lczn;->a:Ljxn;
-
-    iput-object p2, p0, Lczn;->b:Ljxn;
-
-    iput-object p3, p0, Lczn;->c:Ljxn;
-
-    iput-object p4, p0, Lczn;->d:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Lcxq;Lbci;Landroid/graphics/Bitmap;Ljrf;)V
+    .locals 2
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lczn;->a:Ljxn;
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrv;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v0, Lczp;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Lczp;-><init>(Lczn;)V
 
-    check-cast v0, Leqe;
+    iput-object v0, p0, Lczn;->h:Lghb;
 
-    iget-object v1, p0, Lczn;->b:Ljxn;
+    iput-object p2, p0, Lczn;->g:Lbci;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iput-object p3, p0, Lczn;->c:Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    iput-object p4, p0, Lczn;->d:Ljrf;
 
-    check-cast v1, Lcqp;
+    invoke-virtual {p4}, Ljrf;->a()Z
 
-    iget-object v2, p0, Lczn;->c:Ljxn;
+    move-result v0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    move-result-object v2
-
-    check-cast v2, Leqd;
-
-    iget-object v3, p0, Lczn;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lbli;
-
-    sget-object v4, Lgog;->d:Lbku;
-
-    invoke-virtual {v3, v4}, Lbli;->a(Lbku;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
+    const/4 v0, 0x1
 
     :goto_0
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    iput-boolean v0, p0, Lczn;->e:Z
 
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-boolean v1, p0, Lczn;->f:Z
+
+    new-instance v0, Lczo;
+
+    invoke-direct {v0}, Lczo;-><init>()V
+
+    const-class v1, Lcwy;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Lczq;
+
+    invoke-direct {v0, p0}, Lczq;-><init>(Lczn;)V
+
+    const-class v1, Lcwz;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Lczr;
+
+    invoke-direct {v0, p0}, Lczr;-><init>(Lczn;)V
+
+    const-class v1, Lcxa;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Lczs;
+
+    invoke-direct {v0, p0}, Lczs;-><init>(Lczn;)V
+
+    const-class v1, Lcxd;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Lczt;
+
+    invoke-direct {v0, p0}, Lczt;-><init>(Lczn;)V
+
+    const-class v1, Lcxc;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Lczv;
+
+    invoke-direct {v0, p0}, Lczv;-><init>(Lczn;)V
+
+    const-class v1, Lcwv;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Lczx;
+
+    invoke-direct {v0, p0}, Lczx;-><init>(Lczn;)V
+
+    const-class v1, Lcww;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    new-instance v0, Lczy;
+
+    invoke-direct {v0, p0}, Lczy;-><init>(Lczn;)V
+
+    const-class v1, Lcwp;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    return-void
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method final a(Landroid/graphics/Bitmap;)V
+    .locals 2
+
+    iput-object p1, p0, Lczn;->c:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Leqd;
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->c:Liay;
+
+    new-instance v1, Lczz;
+
+    invoke-direct {v1, p0}, Lczz;-><init>(Lczn;)V
+
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final synthetic b()Lbrv;
+    .locals 1
+
+    invoke-virtual {p0}, Lczn;->e()Lcxq;
+
+    move-result-object v0
 
     return-object v0
+.end method
 
-    :cond_0
-    iget-object v1, v1, Lcqp;->b:Ljava/lang/String;
+.method public final c()V
+    .locals 2
 
-    invoke-virtual {v0, v1}, Leqe;->a(Ljava/lang/String;)Leqd;
+    iget-object v0, p0, Lczn;->g:Lbci;
 
-    move-result-object v2
+    iget-object v0, v0, Lbci;->a:Lihb;
 
-    goto :goto_0
+    check-cast v0, Lcxh;
+
+    invoke-interface {v0}, Lcxh;->c()Lggn;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lczn;->h:Lghb;
+
+    invoke-interface {v0, v1}, Lggn;->b(Lghb;)V
+
+    return-void
+.end method
+
+.method public final e()Lcxq;
+    .locals 2
+
+    iget-object v0, p0, Lczn;->g:Lbci;
+
+    iget-object v0, v0, Lbci;->a:Lihb;
+
+    check-cast v0, Lcxh;
+
+    invoke-interface {v0}, Lcxh;->c()Lggn;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lczn;->h:Lghb;
+
+    invoke-interface {v0, v1}, Lggn;->a(Lghb;)V
+
+    iget-object v0, p0, Lczn;->c:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p0, v0}, Lczn;->a(Landroid/graphics/Bitmap;)V
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

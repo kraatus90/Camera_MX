@@ -1,54 +1,54 @@
-.class public final Lbem;
+.class final Lbem;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lihg;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private a:Z
 
-.field private b:Ljxn;
+.field private final synthetic b:Lbeg;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lbeg;)V
+    .locals 1
+
+    iput-object p1, p0, Lbem;->b:Lbeg;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbem;->a:Ljxn;
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Lbem;->b:Ljxn;
+    iput-boolean v0, p0, Lbem;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 1
 
-    new-instance v2, Lbel;
+    iget-boolean v0, p0, Lbem;->a:Z
 
-    iget-object v0, p0, Lbem;->a:Ljxn;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    iput-boolean v0, p0, Lbem;->a:Z
 
-    check-cast v0, Lgzz;
+    :goto_0
+    return-void
 
-    iget-object v1, p0, Lbem;->b:Ljxn;
+    :cond_0
+    iget-object v0, p0, Lbem;->b:Lbeg;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lbeg;->t:Ljava/lang/Runnable;
 
-    move-result-object v1
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    check-cast v1, Lbec;
-
-    invoke-direct {v2, v0, v1}, Lbel;-><init>(Lgzz;Lbec;)V
-
-    return-object v2
+    goto :goto_0
 .end method

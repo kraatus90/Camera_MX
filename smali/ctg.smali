@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkdg;
 
 
 # instance fields
-.field private synthetic a:Lcsk;
+.field private final synthetic a:Lctf;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
+.method constructor <init>(Lctf;)V
     .locals 0
 
-    iput-object p1, p0, Lctg;->a:Lcsk;
+    iput-object p1, p0, Lctg;->a:Lctf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,19 +23,32 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Lkeh;
+    .locals 5
 
-    check-cast p1, Lefy;
+    check-cast p1, Lcvj;
 
-    iget-object v0, p0, Lctg;->a:Lcsk;
+    iget-object v0, p0, Lctg;->a:Lctf;
 
-    iget-boolean v1, v0, Lcsk;->S:Z
+    iget-object v0, v0, Lctf;->c:Lcse;
 
-    if-eqz v1, :cond_0
+    iget-object v1, p0, Lctg;->a:Lctf;
 
-    invoke-virtual {v0, p1}, Lcsk;->a(Lefy;)V
+    iget-object v1, v1, Lctf;->d:Lkeh;
 
-    :cond_0
-    return-void
+    iget-object v2, p0, Lctg;->a:Lctf;
+
+    iget-object v2, v2, Lctf;->g:Lgem;
+
+    new-instance v3, Lesd;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, v4}, Lesd;-><init>(Z)V
+
+    invoke-virtual {p1, v0, v1, v2, v3}, Lcvj;->a(Lcse;Lkeh;Lgem;Lesd;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
 .end method

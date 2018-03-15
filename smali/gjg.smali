@@ -1,54 +1,93 @@
 .class final Lgjg;
-.super Lggu;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private a:Licn;
+# static fields
+.field private static a:Ljava/util/HashMap;
 
 
 # direct methods
-.method constructor <init>(Licn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lggu;-><init>()V
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-object p1, p0, Lgjg;->a:Licn;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lgjg;->a:Ljava/util/HashMap;
 
     return-void
 .end method
 
+.method constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final a(Liic;)V
-    .locals 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_0
+    return-void
+.end method
 
-    iget-object v2, p0, Lgjg;->a:Licn;
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lgjg;->a:Ljava/util/HashMap;
 
-    invoke-interface {p1, v0}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Float;
-
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_RANGE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v1}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/util/Pair;
-
-    invoke-static {v0, v1}, Lgjh;->a(Ljava/lang/Float;Landroid/util/Pair;)Lgjh;
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v2, v0}, Licn;->a(Ljava/lang/Object;)V
+    check-cast v0, Lgjh;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
 
     :cond_0
+    iget-object v0, v0, Lgjh;->a:Ljava/lang/String;
+
+    goto :goto_0
+.end method
+
+.method public static a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
+    .locals 2
+
+    new-instance v0, Lgjh;
+
+    invoke-direct {v0, p1, p2}, Lgjh;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
+
+    sget-object v1, Lgjg;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     return-void
+.end method
+
+.method public static b(Ljava/lang/String;)[Ljava/lang/String;
+    .locals 1
+
+    sget-object v0, Lgjg;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgjh;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, v0, Lgjh;->b:[Ljava/lang/String;
+
+    goto :goto_0
 .end method

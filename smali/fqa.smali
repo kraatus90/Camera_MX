@@ -2,45 +2,55 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field private synthetic a:Landroid/widget/TextView;
+.field private final a:Ljava/lang/String;
 
-.field private synthetic b:I
+.field private final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;I)V
-    .locals 0
-
-    iput-object p1, p0, Lfqa;->a:Landroid/widget/TextView;
-
-    iput p2, p0, Lfqa;->b:I
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfqa;->a:Ljava/lang/String;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lfqa;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a()Lfpz;
+    .locals 3
 
-    iget-object v0, p0, Lfqa;->a:Landroid/widget/TextView;
+    new-instance v0, Lfpz;
 
-    iget v1, p0, Lfqa;->b:I
+    iget-object v1, p0, Lfqa;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+    iget-object v2, p0, Lfqa;->b:Ljava/util/List;
 
-    iget-object v0, p0, Lfqa;->a:Landroid/widget/TextView;
+    invoke-direct {v0, v1, v2}, Lfpz;-><init>(Ljava/lang/String;Ljava/util/List;)V
 
-    const/4 v1, 0x0
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+.method public final a(Ljava/lang/String;Z)Lfqa;
+    .locals 1
 
-    return-void
+    if-nez p2, :cond_0
+
+    iget-object v0, p0, Lfqa;->b:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    return-object p0
 .end method

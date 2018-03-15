@@ -1,33 +1,34 @@
-.class final synthetic Lfyt;
+.class final Lfyt;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private a:Lfyp;
+.field private final synthetic a:Lfys;
 
 
 # direct methods
-.method constructor <init>(Lfyp;)V
+.method constructor <init>(Lfys;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfyt;->a:Lfys;
 
-    iput-object p1, p0, Lfyt;->a:Lfyp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lfyt;->a:Lfyp;
+    iget-object v0, p0, Lfyt;->a:Lfys;
 
-    invoke-virtual {v0}, Lfyp;->a()V
+    invoke-virtual {v0}, Lfys;->c()V
 
     return-void
 .end method

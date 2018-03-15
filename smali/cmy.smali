@@ -1,54 +1,50 @@
-.class public final Lcmy;
+.class final Lcmy;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcli;
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field private synthetic a:Lclc;
+.field private a:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lclc;)V
-    .locals 0
-
-    iput-object p1, p0, Lcmy;->a:Lclc;
+.method constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Liay;
+
+    invoke-direct {v0}, Liay;-><init>()V
+
+    iput-object v0, p0, Lcmy;->a:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 1
 
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
+    invoke-static {}, Liay;->b()Z
 
-    const-string v1, "Filmstrip swipeout confirmed hide animation cancelled."
+    move-result v0
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    if-eqz v0, :cond_0
 
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    :goto_0
     return-void
-.end method
 
-.method public final b()V
-    .locals 2
+    :cond_0
+    iget-object v0, p0, Lcmy;->a:Ljava/util/concurrent/Executor;
 
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->a:Ljava/lang/String;
+    invoke-interface {v0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    const-string v1, "Filmstrip swipeout confirmed hide animation complete."
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcmy;->a:Lclc;
-
-    iget-object v0, v0, Lclc;->a:Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/PeekableFilmstripLayout;->e()V
-
-    return-void
+    goto :goto_0
 .end method

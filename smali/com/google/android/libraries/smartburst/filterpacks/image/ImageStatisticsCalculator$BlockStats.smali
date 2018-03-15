@@ -64,7 +64,7 @@
     const/4 v2, 0x1
 
     :goto_0
-    invoke-static {v2}, Liya;->a(Z)V
+    invoke-static {v2}, Ljii;->a(Z)V
 
     move-object/from16 v0, p4
 
@@ -77,7 +77,7 @@
     const/4 v2, 0x1
 
     :goto_1
-    invoke-static {v2}, Liya;->a(Z)V
+    invoke-static {v2}, Ljii;->a(Z)V
 
     const/4 v5, 0x0
 

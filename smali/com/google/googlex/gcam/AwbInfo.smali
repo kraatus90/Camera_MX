@@ -66,16 +66,6 @@
     return v0
 .end method
 
-.method public Clear()V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AwbInfo;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->AwbInfo_Clear(JLcom/google/googlex/gcam/AwbInfo;)V
-
-    return-void
-.end method
-
 .method public DeserializeFromString(Lcom/google/googlex/gcam/SWIGTYPE_p_p_char;)Z
     .locals 4
 

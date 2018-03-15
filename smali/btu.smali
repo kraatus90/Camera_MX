@@ -3,60 +3,96 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lbts;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lbts;)V
     .locals 0
 
+    iput-object p1, p0, Lbtu;->a:Lbts;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbtu;->a:Ljxn;
-
-    iput-object p2, p0, Lbtu;->b:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lbtu;
-
-    invoke-direct {v0, p0, p1, p2}, Lbtu;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 6
 
-    iget-object v0, p0, Lbtu;->a:Ljxn;
+    const/4 v5, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lbtu;->a:Lbts;
 
-    iget-object v0, p0, Lbtu;->b:Ljxn;
+    iget-object v0, v0, Lbts;->f:Ljavax/microedition/khronos/egl/EGL10;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lbtu;->a:Lbts;
 
-    sget-object v0, Ljmx;->a:Ljmx;
+    iget-object v1, v1, Lbts;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v2, p0, Lbtu;->a:Lbts;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v2, v2, Lbts;->e:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    move-result-object v0
+    invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    check-cast v0, Ljava/util/Set;
+    iget-object v0, p0, Lbtu;->a:Lbts;
 
-    return-object v0
+    iget-object v0, v0, Lbts;->f:Ljavax/microedition/khronos/egl/EGL10;
+
+    iget-object v1, p0, Lbtu;->a:Lbts;
+
+    iget-object v1, v1, Lbts;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+    iget-object v2, p0, Lbtu;->a:Lbts;
+
+    iget-object v2, v2, Lbts;->d:Ljavax/microedition/khronos/egl/EGLContext;
+
+    invoke-interface {v0, v1, v2}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
+
+    iget-object v0, p0, Lbtu;->a:Lbts;
+
+    iget-object v0, v0, Lbts;->f:Ljavax/microedition/khronos/egl/EGL10;
+
+    iget-object v1, p0, Lbtu;->a:Lbts;
+
+    iget-object v1, v1, Lbts;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+    sget-object v2, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE:Ljavax/microedition/khronos/egl/EGLSurface;
+
+    sget-object v3, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE:Ljavax/microedition/khronos/egl/EGLSurface;
+
+    sget-object v4, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_CONTEXT:Ljavax/microedition/khronos/egl/EGLContext;
+
+    invoke-interface {v0, v1, v2, v3, v4}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
+
+    iget-object v0, p0, Lbtu;->a:Lbts;
+
+    iget-object v0, v0, Lbts;->f:Ljavax/microedition/khronos/egl/EGL10;
+
+    iget-object v1, p0, Lbtu;->a:Lbts;
+
+    iget-object v1, v1, Lbts;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+    invoke-interface {v0, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglTerminate(Ljavax/microedition/khronos/egl/EGLDisplay;)Z
+
+    iget-object v0, p0, Lbtu;->a:Lbts;
+
+    iput-object v5, v0, Lbts;->e:Ljavax/microedition/khronos/egl/EGLSurface;
+
+    iget-object v0, p0, Lbtu;->a:Lbts;
+
+    iput-object v5, v0, Lbts;->d:Ljavax/microedition/khronos/egl/EGLContext;
+
+    iget-object v0, p0, Lbtu;->a:Lbts;
+
+    iput-object v5, v0, Lbts;->c:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+    return-void
 .end method

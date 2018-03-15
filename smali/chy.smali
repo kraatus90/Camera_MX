@@ -1,33 +1,35 @@
-.class final synthetic Lchy;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class final Lchy;
+.super Liqd;
+.source "PG"
 
 
 # instance fields
-.field private a:Lchx;
+.field private final synthetic a:Lchx;
 
 
 # direct methods
 .method constructor <init>(Lchx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     iput-object p1, p0, Lchy;->a:Lchx;
+
+    invoke-direct {p0}, Liqd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a_(Ljava/lang/Object;)V
     .locals 1
+
+    check-cast p1, Ljrf;
 
     iget-object v0, p0, Lchy;->a:Lchx;
 
-    invoke-virtual {v0}, Lchx;->c()V
+    iget-object v0, v0, Lchx;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -1,37 +1,23 @@
-.class final synthetic Liaq;
+.class public final Liaq;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "PG"
 
 
 # instance fields
-.field private a:Licn;
+.field public final synthetic a:Lidz;
+
+.field public final synthetic b:Ldic;
 
 
 # direct methods
-.method constructor <init>(Licn;)V
+.method public constructor <init>(Ldic;Lidz;)V
     .locals 0
 
+    iput-object p1, p0, Liaq;->b:Ldic;
+
+    iput-object p2, p0, Liaq;->a:Lidz;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liaq;->a:Licn;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 2
-
-    iget-object v0, p0, Liaq;->a:Licn;
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Licn;->a(Ljava/lang/Object;)V
 
     return-void
 .end method

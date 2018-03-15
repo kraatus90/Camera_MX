@@ -19,7 +19,7 @@
 
     const-string v0, "Renderer"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -73,11 +73,11 @@
 
     iget-object v2, v0, Lcom/google/android/apps/refocus/processing/Renderer;->context:Landroid/content/Context;
 
-    invoke-static {v2}, Lhhy;->a(Landroid/content/Context;)Landroid/support/v8/renderscript/RenderScript;
+    invoke-static {v2}, Lhiy;->a(Landroid/content/Context;)Landroid/support/v8/renderscript/RenderScript;
 
     move-result-object v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_22
 
     move-object/from16 v0, p0
 
@@ -94,15 +94,15 @@
     :goto_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v8
+    move-result-wide v10
 
-    new-instance v5, Lhhz;
+    new-instance v5, Lhiz;
 
-    invoke-direct {v5, v2}, Lhhz;-><init>(Landroid/support/v8/renderscript/RenderScript;)V
+    invoke-direct {v5, v2}, Lhiz;-><init>(Landroid/support/v8/renderscript/RenderScript;)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v10
+    move-result-wide v12
 
     move-object/from16 v0, p1
 
@@ -124,42 +124,42 @@
 
     iget v6, v0, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;->blurInfinity:F
 
-    new-instance v7, Lhhv;
+    new-instance v7, Lhit;
 
-    invoke-direct {v7}, Lhhv;-><init>()V
+    invoke-direct {v7}, Lhit;-><init>()V
 
-    const/4 v12, 0x0
+    const/4 v8, 0x0
 
-    cmpg-float v12, v2, v12
+    cmpg-float v8, v2, v8
 
-    if-gez v12, :cond_0
+    if-gez v8, :cond_0
 
     neg-float v2, v2
 
-    sget-object v12, Lhhv;->a:Ljava/lang/String;
+    sget-object v8, Lhit;->a:Ljava/lang/String;
 
-    const-string v13, "Negative depth of field"
+    const-string v9, "Negative depth of field"
 
-    invoke-static {v12, v13}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v8, v9}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
-    const/high16 v12, 0x3f800000    # 1.0f
+    const/high16 v8, 0x3f800000    # 1.0f
 
-    sub-float/2addr v12, v2
+    sub-float/2addr v8, v2
 
-    mul-float/2addr v12, v3
+    mul-float/2addr v8, v3
 
-    invoke-interface {v4, v12}, Lcom/google/android/apps/refocus/image/DepthTransform;->quantize(F)I
+    invoke-interface {v4, v8}, Lcom/google/android/apps/refocus/image/DepthTransform;->quantize(F)I
 
-    move-result v12
+    move-result v8
 
-    invoke-static {v12}, Lhhv;->c(I)I
+    invoke-static {v8}, Lhit;->c(I)I
 
-    move-result v12
+    move-result v8
 
-    const/high16 v13, 0x3f800000    # 1.0f
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    add-float/2addr v2, v13
+    add-float/2addr v2, v9
 
     mul-float/2addr v2, v3
 
@@ -167,17 +167,17 @@
 
     move-result v2
 
-    invoke-static {v2}, Lhhv;->c(I)I
+    invoke-static {v2}, Lhit;->c(I)I
 
-    move-result v13
+    move-result v9
 
     const/16 v2, 0x40
 
     new-array v2, v2, [F
 
-    iput-object v2, v7, Lhhv;->b:[F
+    iput-object v2, v7, Lhit;->b:[F
 
-    invoke-static {v12}, Lhhv;->d(I)I
+    invoke-static {v8}, Lhit;->d(I)I
 
     move-result v2
 
@@ -185,7 +185,7 @@
 
     move-result v14
 
-    invoke-static {v13}, Lhhv;->d(I)I
+    invoke-static {v9}, Lhit;->d(I)I
 
     move-result v2
 
@@ -202,7 +202,7 @@
 
     if-gt v3, v2, :cond_4
 
-    invoke-static {v3}, Lhhv;->d(I)I
+    invoke-static {v3}, Lhit;->d(I)I
 
     move-result v2
 
@@ -224,7 +224,7 @@
 
     :cond_1
     :goto_2
-    iget-object v0, v7, Lhhv;->b:[F
+    iget-object v0, v7, Lhit;->b:[F
 
     move-object/from16 v16, v0
 
@@ -269,13 +269,13 @@
     :cond_4
     const/4 v2, 0x1
 
-    invoke-virtual {v7, v2}, Lhhv;->a(I)F
+    invoke-virtual {v7, v2}, Lhit;->a(I)F
 
     move-result v2
 
     const/16 v3, 0x40
 
-    invoke-virtual {v7, v3}, Lhhv;->a(I)F
+    invoke-virtual {v7, v3}, Lhit;->a(I)F
 
     move-result v3
 
@@ -293,7 +293,7 @@
 
     new-instance v14, Ljava/util/ArrayList;
 
-    iget-object v2, v7, Lhhv;->b:[F
+    iget-object v2, v7, Lhit;->b:[F
 
     array-length v2, v2
 
@@ -301,17 +301,17 @@
 
     const/4 v2, 0x1
 
-    if-eq v13, v2, :cond_6
+    if-eq v9, v2, :cond_6
 
-    add-int/lit8 v3, v13, -0x1
+    add-int/lit8 v3, v9, -0x1
 
-    new-instance v2, Lhke;
+    new-instance v2, Lhiw;
 
-    invoke-direct {v2, v3}, Lhke;-><init>(I)V
+    invoke-direct {v2, v3}, Lhiw;-><init>(I)V
 
     invoke-virtual {v14, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v7, v3}, Lhhv;->a(I)F
+    invoke-virtual {v7, v3}, Lhit;->a(I)F
 
     move-result v2
 
@@ -330,7 +330,7 @@
 
     add-int/lit8 v4, v2, -0x1
 
-    invoke-virtual {v7, v4}, Lhhv;->a(I)F
+    invoke-virtual {v7, v4}, Lhit;->a(I)F
 
     move-result v2
 
@@ -348,22 +348,22 @@
 
     move-result-object v2
 
-    check-cast v2, Lhke;
+    check-cast v2, Lhiw;
 
-    iput v4, v2, Lhke;->b:I
+    iput v4, v2, Lhiw;->b:I
 
     move v2, v4
 
     goto :goto_3
 
     :cond_5
-    new-instance v2, Lhke;
+    new-instance v2, Lhiw;
 
-    invoke-direct {v2, v4}, Lhke;-><init>(I)V
+    invoke-direct {v2, v4}, Lhiw;-><init>(I)V
 
     invoke-virtual {v14, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v7, v4}, Lhhv;->a(I)F
+    invoke-virtual {v7, v4}, Lhit;->a(I)F
 
     move-result v2
 
@@ -376,11 +376,92 @@
     goto :goto_3
 
     :cond_6
-    invoke-virtual {v7, v12, v6}, Lhhv;->a(IF)Ljava/util/ArrayList;
+    new-instance v15, Ljava/util/ArrayList;
 
-    move-result-object v4
+    iget-object v2, v7, Lhit;->b:[F
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    array-length v2, v2
+
+    invoke-direct {v15, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    const/16 v2, 0x40
+
+    if-eq v8, v2, :cond_8
+
+    add-int/lit8 v3, v8, 0x1
+
+    new-instance v2, Lhiw;
+
+    invoke-direct {v2, v3}, Lhiw;-><init>(I)V
+
+    invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v7, v3}, Lhit;->a(I)F
+
+    move-result v2
+
+    add-float/2addr v2, v6
+
+    move/from16 v19, v2
+
+    move v2, v3
+
+    move/from16 v3, v19
+
+    :goto_4
+    const/16 v4, 0x40
+
+    if-ge v2, v4, :cond_8
+
+    add-int/lit8 v4, v2, 0x1
+
+    invoke-virtual {v7, v4}, Lhit;->a(I)F
+
+    move-result v2
+
+    cmpg-float v2, v2, v3
+
+    if-gtz v2, :cond_7
+
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-virtual {v15, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhiw;
+
+    iput v4, v2, Lhiw;->a:I
+
+    move v2, v4
+
+    goto :goto_4
+
+    :cond_7
+    new-instance v2, Lhiw;
+
+    invoke-direct {v2, v4}, Lhiw;-><init>(I)V
+
+    invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v7, v4}, Lhit;->a(I)F
+
+    move-result v2
+
+    add-float/2addr v2, v6
+
+    move v3, v2
+
+    move v2, v4
+
+    goto :goto_4
+
+    :cond_8
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -390,32 +471,32 @@
 
     move-result v3
 
-    add-int v6, v2, v3
+    add-int v4, v2, v3
 
-    new-array v2, v6, [Lhke;
+    new-array v2, v4, [Lhiw;
 
-    iput-object v2, v7, Lhhv;->c:[Lhke;
+    iput-object v2, v7, Lhit;->c:[Lhiw;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    iput v2, v7, Lhhv;->d:I
+    iput v2, v7, Lhit;->d:I
 
     const/4 v2, 0x0
 
     move v3, v2
 
-    :goto_4
-    if-ge v3, v6, :cond_9
+    :goto_5
+    if-ge v3, v4, :cond_b
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ge v3, v2, :cond_7
+    if-ge v3, v2, :cond_9
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -423,42 +504,42 @@
 
     sub-int/2addr v2, v3
 
-    iget-object v15, v7, Lhhv;->c:[Lhke;
+    iget-object v6, v7, Lhit;->c:[Lhiw;
 
-    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v15, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lhke;
+    check-cast v2, Lhiw;
 
-    aput-object v2, v15, v3
+    aput-object v2, v6, v3
 
-    :goto_5
+    :goto_6
     add-int/lit8 v2, v3, 0x1
 
     move v3, v2
 
-    goto :goto_4
+    goto :goto_5
 
-    :cond_7
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    :cond_9
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    if-ne v3, v2, :cond_8
+    if-ne v3, v2, :cond_a
 
-    iget-object v2, v7, Lhhv;->c:[Lhke;
+    iget-object v2, v7, Lhit;->c:[Lhiw;
 
-    new-instance v15, Lhke;
+    new-instance v6, Lhiw;
 
-    invoke-direct {v15, v12, v13}, Lhke;-><init>(II)V
+    invoke-direct {v6, v8, v9}, Lhiw;-><init>(II)V
 
-    aput-object v15, v2, v3
+    aput-object v6, v2, v3
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_8
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    :cond_a
+    invoke-virtual {v15}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
@@ -466,20 +547,20 @@
 
     sub-int v2, v3, v2
 
-    iget-object v15, v7, Lhhv;->c:[Lhke;
+    iget-object v6, v7, Lhit;->c:[Lhiw;
 
     invoke-virtual {v14, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lhke;
+    check-cast v2, Lhiw;
 
-    aput-object v2, v15, v3
+    aput-object v2, v6, v3
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_9
-    iput-object v7, v5, Lhhz;->b:Lhhv;
+    :cond_b
+    iput-object v7, v5, Lhiz;->b:Lhit;
 
     move-object/from16 v0, p1
 
@@ -489,65 +570,65 @@
 
     move-result-object v2
 
-    iput-object v2, v5, Lhhz;->c:Landroid/graphics/Bitmap;
+    iput-object v2, v5, Lhiz;->c:Landroid/graphics/Bitmap;
 
-    new-instance v12, Lhhx;
+    new-instance v9, Lhix;
 
-    iget-object v2, v5, Lhhz;->d:Landroid/support/v8/renderscript/RenderScript;
+    iget-object v2, v5, Lhiz;->d:Landroid/support/v8/renderscript/RenderScript;
 
     const/4 v3, 0x0
 
-    invoke-direct {v12, v2, v3}, Lhhx;-><init>(Landroid/support/v8/renderscript/RenderScript;B)V
+    invoke-direct {v9, v2, v3}, Lhix;-><init>(Landroid/support/v8/renderscript/RenderScript;B)V
 
-    iget-object v3, v5, Lhhz;->c:Landroid/graphics/Bitmap;
+    iget-object v3, v5, Lhiz;->c:Landroid/graphics/Bitmap;
 
-    iget-object v13, v5, Lhhz;->b:Lhhv;
+    iget-object v14, v5, Lhiz;->b:Lhit;
 
-    iget v2, v13, Lhhv;->d:I
+    iget v2, v14, Lhit;->d:I
 
-    iget-object v4, v13, Lhhv;->c:[Lhke;
+    iget-object v4, v14, Lhit;->c:[Lhiw;
 
     aget-object v4, v4, v2
 
-    new-instance v2, Lhia;
+    new-instance v2, Lhja;
 
-    iget-object v5, v12, Lhhx;->b:Landroid/support/v8/renderscript/RenderScript;
+    iget-object v5, v9, Lhix;->b:Landroid/support/v8/renderscript/RenderScript;
 
-    invoke-direct {v2, v5}, Lhia;-><init>(Landroid/support/v8/renderscript/RenderScript;)V
+    invoke-direct {v2, v5}, Lhja;-><init>(Landroid/support/v8/renderscript/RenderScript;)V
 
-    iput-object v2, v12, Lhhx;->c:Ljava/lang/Object;
+    iput-object v2, v9, Lhix;->c:Ljava/lang/Object;
 
-    sget v2, Lhhw;->a:I
+    sget v2, Lhiv;->a:I
 
     add-int/lit8 v5, v2, 0x1
 
-    new-instance v6, Lhuf;
+    new-instance v6, Lhiu;
 
-    iget-object v7, v12, Lhhx;->b:Landroid/support/v8/renderscript/RenderScript;
+    iget-object v7, v9, Lhix;->b:Landroid/support/v8/renderscript/RenderScript;
 
-    iget-object v2, v12, Lhhx;->c:Ljava/lang/Object;
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
 
-    check-cast v2, Lhia;
+    check-cast v2, Lhja;
 
-    invoke-direct {v6, v3, v5, v7, v2}, Lhuf;-><init>(Landroid/graphics/Bitmap;ILandroid/support/v8/renderscript/RenderScript;Lhia;)V
+    invoke-direct {v6, v3, v5, v7, v2}, Lhiu;-><init>(Landroid/graphics/Bitmap;ILandroid/support/v8/renderscript/RenderScript;Lhja;)V
 
-    iput-object v6, v12, Lhhx;->d:Lhuf;
+    iput-object v6, v9, Lhix;->e:Lhiu;
 
-    iget-object v3, v12, Lhhx;->d:Lhuf;
+    iget-object v3, v9, Lhix;->e:Lhiu;
 
-    iget-object v2, v12, Lhhx;->c:Ljava/lang/Object;
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
 
-    check-cast v2, Lhia;
+    check-cast v2, Lhja;
 
-    iget v5, v3, Lhuf;->e:I
+    iget v5, v3, Lhiu;->e:I
 
-    iget v6, v3, Lhuf;->f:I
+    iget v6, v3, Lhiu;->f:I
 
-    iget v7, v3, Lhuf;->g:I
+    iget v7, v3, Lhiu;->g:I
 
-    iget v14, v4, Lhke;->a:I
+    iget v8, v4, Lhiw;->a:I
 
-    iget v4, v4, Lhke;->b:I
+    iget v4, v4, Lhiw;->b:I
 
     new-instance v15, Landroid/support/v8/renderscript/FieldPacker;
 
@@ -561,15 +642,15 @@
 
     invoke-virtual {v15, v7}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
 
-    invoke-virtual {v15, v14}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
+    invoke-virtual {v15, v8}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
 
     invoke-virtual {v15, v4}, Landroid/support/v8/renderscript/FieldPacker;->addI32(I)V
 
     const/4 v4, 0x3
 
-    invoke-virtual {v2, v4, v15}, Lhia;->invoke(ILandroid/support/v8/renderscript/FieldPacker;)V
+    invoke-virtual {v2, v4, v15}, Lhja;->invoke(ILandroid/support/v8/renderscript/FieldPacker;)V
 
-    iget-object v4, v3, Lhuf;->c:Landroid/support/v8/renderscript/Allocation;
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
 
     invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
 
@@ -579,13 +660,13 @@
 
     move-result-object v3
 
-    iget-object v5, v2, Lhia;->a:Landroid/support/v8/renderscript/Element;
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
 
     invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
 
     move-result v3
 
-    if-nez v3, :cond_a
+    if-nez v3, :cond_c
 
     new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
 
@@ -595,7 +676,7 @@
 
     throw v2
 
-    :cond_a
+    :cond_c
     const/4 v3, 0x1
 
     const/4 v5, 0x0
@@ -604,28 +685,46 @@
 
     const/4 v7, 0x0
 
-    invoke-virtual/range {v2 .. v7}, Lhia;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
 
-    move-object/from16 v0, p2
+    iget-object v2, v14, Lhit;->c:[Lhiw;
 
-    invoke-virtual {v12, v13, v0}, Lhhx;->a(Lhhv;Lcom/google/android/apps/refocus/processing/ProgressCallback;)Z
+    array-length v2, v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    move v8, v2
+
+    :goto_7
+    iget v2, v14, Lhit;->d:I
+
+    if-lt v8, v2, :cond_15
+
+    if-eqz p2, :cond_d
+
+    invoke-interface/range {p2 .. p2}, Lcom/google/android/apps/refocus/processing/ProgressCallback;->wasCancelled()Z
 
     move-result v2
 
-    if-nez v2, :cond_b
+    if-eqz v2, :cond_d
 
     const/4 v2, 0x0
 
-    :goto_6
+    :goto_8
+    if-nez v2, :cond_16
+
+    const/4 v2, 0x0
+
+    :goto_9
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    sub-long/2addr v4, v10
+    sub-long/2addr v4, v12
 
     long-to-float v3, v4
 
-    sget-object v4, Lhhz;->a:Ljava/lang/String;
+    sget-object v4, Lhiz;->a:Ljava/lang/String;
 
     const/high16 v5, 0x447a0000    # 1000.0f
 
@@ -657,13 +756,13 @@
 
     move-result-object v3
 
-    invoke-static {v4, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    sub-long/2addr v4, v8
+    sub-long/2addr v4, v10
 
     long-to-float v3, v4
 
@@ -699,38 +798,41 @@
 
     move-result-object v3
 
-    invoke-static {v4, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v3, Lhhy;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    sget-object v3, Lhiy;->a:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    :goto_7
+    :goto_a
     return-object v2
 
-    :cond_b
-    move-object/from16 v0, p2
+    :cond_d
+    iget-object v2, v14, Lhit;->c:[Lhiw;
 
-    invoke-virtual {v12, v13, v0}, Lhhx;->b(Lhhv;Lcom/google/android/apps/refocus/processing/ProgressCallback;)Z
+    aget-object v2, v2, v8
+
+    invoke-virtual {v9, v2}, Lhix;->a(Lhiw;)V
+
+    iget v2, v2, Lhiw;->b:I
+
+    invoke-static {v2, v14}, Lhix;->a(ILhit;)I
 
     move-result v2
 
-    if-nez v2, :cond_c
+    invoke-virtual {v9, v2}, Lhix;->a(I)V
 
-    const/4 v2, 0x0
+    invoke-virtual {v9, v8, v14}, Lhix;->b(ILhit;)V
 
-    goto :goto_6
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
 
-    :cond_c
-    iget-object v2, v12, Lhhx;->c:Ljava/lang/Object;
+    check-cast v2, Lhja;
 
-    check-cast v2, Lhia;
+    iget-object v3, v9, Lhix;->e:Lhiu;
 
-    iget-object v3, v12, Lhhx;->d:Lhuf;
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
 
-    iget-object v5, v3, Lhuf;->d:Landroid/support/v8/renderscript/Allocation;
-
-    invoke-virtual {v5}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
 
     move-result-object v3
 
@@ -738,13 +840,13 @@
 
     move-result-object v3
 
-    iget-object v4, v2, Lhia;->a:Landroid/support/v8/renderscript/Element;
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
 
-    invoke-virtual {v3, v4}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
 
     move-result v3
 
-    if-nez v3, :cond_d
+    if-nez v3, :cond_e
 
     new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
 
@@ -754,7 +856,644 @@
 
     throw v2
 
-    :cond_d
+    :cond_e
+    const/4 v3, 0x2
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_f
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_f
+    const/4 v3, 0x3
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    iget-boolean v2, v9, Lhix;->d:Z
+
+    if-eqz v2, :cond_11
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Lhja;->a(I)V
+
+    new-instance v7, Landroid/support/v8/renderscript/Script$LaunchOptions;
+
+    invoke-direct {v7}, Landroid/support/v8/renderscript/Script$LaunchOptions;-><init>()V
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v7, v2, v3}, Landroid/support/v8/renderscript/Script$LaunchOptions;->setX(II)Landroid/support/v8/renderscript/Script$LaunchOptions;
+
+    const/4 v2, 0x0
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v3, v3, Lhiu;->a:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v3
+
+    invoke-virtual {v7, v2, v3}, Landroid/support/v8/renderscript/Script$LaunchOptions;->setY(II)Landroid/support/v8/renderscript/Script$LaunchOptions;
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_10
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_10
+    const/4 v3, 0x5
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    :goto_b
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_12
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_11
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Lhja;->a(I)V
+
+    goto :goto_b
+
+    :cond_12
+    const/4 v3, 0x7
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_13
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_13
+    const/16 v3, 0x9
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    if-eqz p2, :cond_14
+
+    iget-object v2, v14, Lhit;->c:[Lhiw;
+
+    array-length v2, v2
+
+    sub-int/2addr v2, v8
+
+    int-to-float v2, v2
+
+    iget-object v3, v14, Lhit;->c:[Lhiw;
+
+    array-length v3, v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v2, v3
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v2}, Lcom/google/android/apps/refocus/processing/ProgressCallback;->setProgress(F)V
+
+    :cond_14
+    add-int/lit8 v2, v8, -0x1
+
+    move v8, v2
+
+    goto/16 :goto_7
+
+    :cond_15
+    const/4 v2, 0x1
+
+    goto/16 :goto_8
+
+    :cond_16
+    const/4 v2, 0x0
+
+    move v8, v2
+
+    :goto_c
+    iget v2, v14, Lhit;->d:I
+
+    if-ge v8, v2, :cond_1e
+
+    if-eqz p2, :cond_17
+
+    invoke-interface/range {p2 .. p2}, Lcom/google/android/apps/refocus/processing/ProgressCallback;->wasCancelled()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_17
+
+    const/4 v2, 0x0
+
+    :goto_d
+    if-nez v2, :cond_20
+
+    const/4 v2, 0x0
+
+    goto/16 :goto_9
+
+    :cond_17
+    iget-object v2, v14, Lhit;->c:[Lhiw;
+
+    aget-object v2, v2, v8
+
+    invoke-virtual {v9, v2}, Lhix;->a(Lhiw;)V
+
+    iget v2, v2, Lhiw;->a:I
+
+    invoke-static {v2, v14}, Lhix;->a(ILhit;)I
+
+    move-result v2
+
+    invoke-virtual {v9, v2}, Lhix;->a(I)V
+
+    invoke-virtual {v9, v8, v14}, Lhix;->b(ILhit;)V
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_18
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_18
+    const/4 v3, 0x2
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_19
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_19
+    const/4 v3, 0x4
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    iget-boolean v2, v9, Lhix;->d:Z
+
+    if-eqz v2, :cond_1b
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Lhja;->a(I)V
+
+    new-instance v7, Landroid/support/v8/renderscript/Script$LaunchOptions;
+
+    invoke-direct {v7}, Landroid/support/v8/renderscript/Script$LaunchOptions;-><init>()V
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v7, v2, v3}, Landroid/support/v8/renderscript/Script$LaunchOptions;->setX(II)Landroid/support/v8/renderscript/Script$LaunchOptions;
+
+    const/4 v2, 0x0
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v3, v3, Lhiu;->a:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v3
+
+    invoke-virtual {v7, v2, v3}, Landroid/support/v8/renderscript/Script$LaunchOptions;->setY(II)Landroid/support/v8/renderscript/Script$LaunchOptions;
+
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1a
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_1a
+    const/4 v3, 0x6
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    :goto_e
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1c
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_1b
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Lhja;->a(I)V
+
+    goto :goto_e
+
+    :cond_1c
+    const/16 v3, 0x8
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    if-eqz p2, :cond_1d
+
+    iget-object v2, v14, Lhit;->c:[Lhiw;
+
+    array-length v2, v2
+
+    iget v3, v14, Lhit;->d:I
+
+    sub-int/2addr v2, v3
+
+    add-int/lit8 v2, v2, 0x1
+
+    add-int/2addr v2, v8
+
+    int-to-float v2, v2
+
+    iget-object v3, v14, Lhit;->c:[Lhiw;
+
+    array-length v3, v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v2, v3
+
+    move-object/from16 v0, p2
+
+    invoke-interface {v0, v2}, Lcom/google/android/apps/refocus/processing/ProgressCallback;->setProgress(F)V
+
+    :cond_1d
+    add-int/lit8 v2, v8, 0x1
+
+    move v8, v2
+
+    goto/16 :goto_c
+
+    :cond_1e
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v4, v3, Lhiu;->c:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v4}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v5, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v5}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1f
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_1f
+    const/16 v3, 0xa
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+
+    const/4 v2, 0x1
+
+    goto/16 :goto_d
+
+    :cond_20
+    iget-object v2, v9, Lhix;->c:Ljava/lang/Object;
+
+    check-cast v2, Lhja;
+
+    iget-object v3, v9, Lhix;->e:Lhiu;
+
+    iget-object v5, v3, Lhiu;->d:Landroid/support/v8/renderscript/Allocation;
+
+    invoke-virtual {v5}, Landroid/support/v8/renderscript/Allocation;->getType()Landroid/support/v8/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/support/v8/renderscript/Type;->getElement()Landroid/support/v8/renderscript/Element;
+
+    move-result-object v3
+
+    iget-object v4, v2, Lhja;->a:Landroid/support/v8/renderscript/Element;
+
+    invoke-virtual {v3, v4}, Landroid/support/v8/renderscript/Element;->isCompatible(Landroid/support/v8/renderscript/Element;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_21
+
+    new-instance v2, Landroid/support/v8/renderscript/RSRuntimeException;
+
+    const-string v3, "Type mismatch with U8_4!"
+
+    invoke-direct {v2, v3}, Landroid/support/v8/renderscript/RSRuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_21
     const/16 v3, 0xb
 
     const/4 v4, 0x0
@@ -763,35 +1502,35 @@
 
     const/4 v7, 0x0
 
-    invoke-virtual/range {v2 .. v7}, Lhia;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
+    invoke-virtual/range {v2 .. v7}, Lhja;->forEach(ILandroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/Allocation;Landroid/support/v8/renderscript/FieldPacker;Landroid/support/v8/renderscript/Script$LaunchOptions;)V
 
-    iget-object v2, v12, Lhhx;->d:Lhuf;
+    iget-object v2, v9, Lhix;->e:Lhiu;
 
-    iget-object v2, v2, Lhuf;->d:Landroid/support/v8/renderscript/Allocation;
+    iget-object v2, v2, Lhiu;->d:Landroid/support/v8/renderscript/Allocation;
 
-    iget-object v3, v12, Lhhx;->d:Lhuf;
+    iget-object v3, v9, Lhix;->e:Lhiu;
 
-    iget-object v3, v3, Lhuf;->b:Landroid/graphics/Bitmap;
+    iget-object v3, v3, Lhiu;->b:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2, v3}, Landroid/support/v8/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
 
-    iget-object v2, v12, Lhhx;->d:Lhuf;
+    iget-object v2, v9, Lhix;->e:Lhiu;
 
-    iget-object v2, v2, Lhuf;->b:Landroid/graphics/Bitmap;
+    iget-object v2, v2, Lhiu;->b:Landroid/graphics/Bitmap;
 
-    iget-object v3, v12, Lhhx;->b:Landroid/support/v8/renderscript/RenderScript;
+    iget-object v3, v9, Lhix;->b:Landroid/support/v8/renderscript/RenderScript;
 
     invoke-virtual {v3}, Landroid/support/v8/renderscript/RenderScript;->finish()V
 
-    sget-object v3, Lhhx;->a:Ljava/lang/String;
+    sget-object v3, Lhix;->a:Ljava/lang/String;
 
     const-string v4, "filterAndBlendAllLayersUsingKernel is finished"
 
-    invoke-static {v3, v4}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_6
+    goto/16 :goto_9
 
-    :cond_e
+    :cond_22
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -812,7 +1551,7 @@
 
     move-result v5
 
-    if-nez p3, :cond_f
+    if-nez p3, :cond_23
 
     sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -820,18 +1559,18 @@
 
     move-result-object p3
 
-    :cond_f
+    :cond_23
     invoke-static/range {p1 .. p3}, Lcom/google/android/apps/refocus/processing/ProcessingNative;->DepthOfField(Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;Lcom/google/android/apps/refocus/processing/ProgressCallback;Landroid/graphics/Bitmap;)Z
 
     move-result v4
 
-    if-nez v4, :cond_10
+    if-nez v4, :cond_24
 
     const/4 v2, 0x0
 
-    goto :goto_7
+    goto/16 :goto_a
 
-    :cond_10
+    :cond_24
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -872,9 +1611,9 @@
 
     move-result-object v2
 
-    invoke-static {v3, v2}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v2}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object/from16 v2, p3
 
-    goto/16 :goto_7
+    goto/16 :goto_a
 .end method

@@ -1,30 +1,35 @@
-.class abstract Ljsx;
-.super Ljava/lang/Object;
+.class final Ljsx;
+.super Ljta;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
+# instance fields
+.field private final synthetic a:Ljsv;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+# direct methods
+.method constructor <init>(Ljsv;)V
+    .locals 1
+
+    iput-object p1, p0, Ljsx;->a:Ljsv;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Ljta;-><init>(Ljsv;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract a(Ljti;Ljava/lang/Thread;)V
-.end method
+.method final synthetic a(I)Ljava/lang/Object;
+    .locals 2
 
-.method abstract a(Ljti;Ljti;)V
-.end method
+    new-instance v0, Ljtc;
 
-.method abstract a(Ljsw;Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
+    iget-object v1, p0, Ljsx;->a:Ljsv;
 
-.method abstract a(Ljsw;Ljtb;Ljtb;)Z
-.end method
+    invoke-direct {v0, v1, p1}, Ljtc;-><init>(Ljsv;I)V
 
-.method abstract a(Ljsw;Ljti;Ljti;)Z
+    return-object v0
 .end method

@@ -4,105 +4,284 @@
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final a:I
+
+.field public final b:I
+
+.field private final c:Lgjq;
+
+.field private final d:Ljava/lang/String;
+
+.field private final e:Ljava/lang/String;
+
+.field private final f:I
 
 
 # direct methods
-.method constructor <init>(Ljava/util/List;)V
-    .locals 0
+.method constructor <init>(Landroid/content/res/Resources;Lgjq;Landroid/content/pm/PackageManager;Ljava/lang/String;)V
+    .locals 6
+
+    const/4 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldxw;->a:Ljava/util/List;
+    iput-object p2, p0, Ldxw;->c:Lgjq;
 
-    return-void
-.end method
+    invoke-static {p4}, Lgjq;->c(Ljava/lang/String;)Ljava/lang/String;
 
+    move-result-object v1
 
-# virtual methods
-.method public final a(Landroid/hardware/camera2/CaptureResult$Key;Ljava/lang/Object;)Z
-    .locals 2
+    iput-object v1, p0, Ldxw;->d:Ljava/lang/String;
+
+    const-string v1, "pref_camera_id_key"
+
+    iput-object v1, p0, Ldxw;->e:Ljava/lang/String;
+
+    const v1, 0x7f110157
+
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    iput v1, p0, Ldxw;->a:I
+
+    const v1, 0x7f110159
+
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    iput v1, p0, Ldxw;->b:I
+
+    invoke-virtual {p3}, Landroid/content/pm/PackageManager;->getSystemAvailableFeatures()[Landroid/content/pm/FeatureInfo;
+
+    move-result-object v2
+
+    array-length v3, v2
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v3, :cond_0
+
+    aget-object v4, v2, v1
+
+    iget-object v5, v4, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
+
+    if-eqz v5, :cond_1
+
+    iget-object v4, v4, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
+
+    const-string v5, "org.chromium.arc"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
 
     const/4 v0, 0x1
 
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p2, v0, v1
-
-    invoke-virtual {p0, p1, v0}, Ldxw;->a(Landroid/hardware/camera2/CaptureResult$Key;[Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final varargs a(Landroid/hardware/camera2/CaptureResult$Key;[Ljava/lang/Object;)Z
-    .locals 5
-    .annotation runtime Ljava/lang/SafeVarargs;
-    .end annotation
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    array-length v0, p2
-
-    if-lez v0, :cond_1
-
-    move v0, v1
-
-    :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
-
-    new-instance v3, Ljava/util/HashSet;
-
-    invoke-static {p2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-direct {v3, v0}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    iget-object v0, p0, Ldxw;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
     :cond_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
     if-eqz v0, :cond_2
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const v0, 0x7f110155
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Liic;
-
-    invoke-interface {v0, p1}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {v3, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    iput v0, p0, Ldxw;->f:I
 
     :goto_1
-    return v2
+    return-void
 
     :cond_1
-    move v0, v2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_2
-    move v2, v1
+    const v0, 0x7f110154
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Ldxw;->f:I
 
     goto :goto_1
+.end method
+
+
+# virtual methods
+.method public final a(I)V
+    .locals 3
+
+    iget-object v0, p0, Ldxw;->c:Lgjq;
+
+    iget-object v1, p0, Ldxw;->d:Ljava/lang/String;
+
+    iget-object v2, p0, Ldxw;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2, p1}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public final a()Z
+    .locals 2
+
+    invoke-virtual {p0}, Ldxw;->b()Lild;
+
+    move-result-object v0
+
+    sget-object v1, Lild;->b:Lild;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final b()Lild;
+    .locals 4
+
+    iget-object v0, p0, Ldxw;->c:Lgjq;
+
+    iget-object v1, p0, Ldxw;->d:Ljava/lang/String;
+
+    iget-object v2, p0, Ldxw;->e:Ljava/lang/String;
+
+    const/4 v3, -0x1
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v2, v3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)I
+
+    move-result v0
+
+    iget v1, p0, Ldxw;->a:I
+
+    if-ne v0, v1, :cond_0
+
+    sget-object v0, Lild;->b:Lild;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget v1, p0, Ldxw;->b:I
+
+    if-ne v0, v1, :cond_1
+
+    sget-object v0, Lild;->a:Lild;
+
+    goto :goto_0
+
+    :cond_1
+    iget v0, p0, Ldxw;->f:I
+
+    iget v1, p0, Ldxw;->a:I
+
+    if-ne v0, v1, :cond_2
+
+    sget-object v0, Lild;->b:Lild;
+
+    goto :goto_0
+
+    :cond_2
+    sget-object v0, Lild;->a:Lild;
+
+    goto :goto_0
+.end method
+
+.method public final c()Lild;
+    .locals 5
+
+    const/4 v4, -0x1
+
+    iget-object v0, p0, Ldxw;->c:Lgjq;
+
+    const-string v1, "default_scope"
+
+    const-string v2, "pref_mode_switch_camera_id_key"
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v2, v3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)I
+
+    move-result v0
+
+    if-eq v0, v4, :cond_0
+
+    iget-object v1, p0, Ldxw;->c:Lgjq;
+
+    const-string v2, "default_scope"
+
+    const-string v3, "pref_mode_switch_camera_id_key"
+
+    invoke-virtual {v1, v2, v3}, Lgjq;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Ldxw;->c:Lgjq;
+
+    iget-object v2, p0, Ldxw;->d:Ljava/lang/String;
+
+    const-string v3, "pref_camera_id_key"
+
+    invoke-virtual {v1, v2, v3, v0}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;I)V
+
+    :cond_0
+    invoke-virtual {p0}, Ldxw;->b()Lild;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Ldxw;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "Back Camera"
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const-string v0, "Front Camera"
+
+    goto :goto_0
 .end method

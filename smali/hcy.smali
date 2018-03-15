@@ -1,35 +1,35 @@
-.class public final Lhcy;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public Lhcy;
+.super Lglb;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lhcs;
+.field public a:Lhdy;
 
 
 # direct methods
-.method public constructor <init>(Lhcs;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lhcy;->a:Lhcs;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, v0}, Lglb;-><init>([[[F)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public a(Lhdy;)V
+    .locals 1
 
-    iget-object v0, p0, Lhcy;->a:Lhcs;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lhcs;->n:Landroid/view/View;
+    move-result-object v0
 
-    const/16 v1, 0x8
+    check-cast v0, Lhdy;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    iput-object v0, p0, Lhcy;->a:Lhdy;
 
     return-void
 .end method

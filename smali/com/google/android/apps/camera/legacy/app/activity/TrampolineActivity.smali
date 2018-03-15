@@ -6,7 +6,7 @@
 # static fields
 .field public static final a:Ljava/lang/String;
 
-.field private static c:Ljava/lang/Object;
+.field private static final c:Ljava/lang/Object;
 
 .field private static e:Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;
 
@@ -14,13 +14,13 @@
 # instance fields
 .field public final b:Landroid/content/BroadcastReceiver;
 
-.field private d:Lhzr;
+.field private d:Liaw;
 
 .field private f:Landroid/content/Intent;
 
 .field private g:Z
 
-.field private h:Landroid/content/BroadcastReceiver;
+.field private final h:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     const-string v0, "TrampolineActivity"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -57,15 +57,15 @@
 
     iput-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->g:Z
 
-    new-instance v0, Lbrx;
+    new-instance v0, Lbxk;
 
-    invoke-direct {v0, p0}, Lbrx;-><init>(Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;)V
+    invoke-direct {v0, p0}, Lbxk;-><init>(Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;)V
 
     iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->b:Landroid/content/BroadcastReceiver;
 
-    new-instance v0, Lbry;
+    new-instance v0, Lbxl;
 
-    invoke-direct {v0}, Lbry;-><init>()V
+    invoke-direct {v0}, Lbxl;-><init>()V
 
     iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->h:Landroid/content/BroadcastReceiver;
 
@@ -116,7 +116,7 @@
 
     const-string v1, "Device unlocked, firing target intent."
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Landroid/content/Intent;
 
@@ -171,7 +171,7 @@
 
     const-string v1, "Trampoline onCreate"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v1, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->c:Ljava/lang/Object;
 
@@ -232,7 +232,7 @@
 
     const-string v2, "Argument must not be null"
 
-    invoke-static {v0, v2}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lazz;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     const-string v0, "push_camera"
 
@@ -264,7 +264,7 @@
 
     const-string v1, "Trampoline onDestroy"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->h:Landroid/content/BroadcastReceiver;
 
@@ -282,7 +282,7 @@
 
     const-string v1, "Trampoline onNewIntent"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
 
@@ -296,11 +296,11 @@
 
     const-string v1, "Trampoline onPause"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->d:Lhzr;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->d:Liaw;
 
-    invoke-virtual {v0}, Lhzr;->close()V
+    invoke-virtual {v0}, Liaw;->close()V
 
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
@@ -312,17 +312,17 @@
 
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    new-instance v0, Lhzr;
+    new-instance v0, Liaw;
 
-    invoke-direct {v0}, Lhzr;-><init>()V
+    invoke-direct {v0}, Liaw;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->d:Lhzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->d:Liaw;
 
     sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->a:Ljava/lang/String;
 
     const-string v1, "Trampoline onResume"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "keyguard"
 
@@ -342,7 +342,7 @@
 
     const-string v1, "Waiting for device to be unlocked"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -354,13 +354,13 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->d:Lhzr;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->d:Liaw;
 
-    new-instance v1, Lbrz;
+    new-instance v1, Lbxm;
 
-    invoke-direct {v1, p0}, Lbrz;-><init>(Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;)V
+    invoke-direct {v1, p0}, Lbxm;-><init>(Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;)V
 
-    invoke-virtual {v0, v1}, Lhzr;->a(Lich;)Lich;
+    invoke-virtual {v0, v1}, Liaw;->a(Lihb;)Lihb;
 
     :goto_0
     return-void
@@ -370,7 +370,7 @@
 
     const-string v1, "Launching target activity from onResume"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0, p0}, Lcom/google/android/apps/camera/legacy/app/activity/TrampolineActivity;->a(Landroid/content/Context;)V
 
@@ -384,7 +384,7 @@
 
     const-string v1, "Trampoline onStart"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
@@ -398,7 +398,7 @@
 
     const-string v1, "Trampoline onStop"
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 

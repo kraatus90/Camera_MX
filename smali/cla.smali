@@ -1,112 +1,106 @@
-.class final Lcla;
-.super Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;
+.class public final Lcla;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lckx;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lckx;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcla;->a:Lckx;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;-><init>()V
+    iput-object p1, p0, Lcla;->a:Lkgv;
+
+    iput-object p2, p0, Lcla;->b:Lkgv;
+
+    iput-object p3, p0, Lcla;->c:Lkgv;
+
+    iput-object p4, p0, Lcla;->d:Lkgv;
+
+    iput-object p5, p0, Lcla;->e:Lkgv;
+
+    iput-object p6, p0, Lcla;->f:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScale(Landroid/view/ScaleGestureDetector;)Z
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 9
 
-    iget-object v0, p0, Lcla;->a:Lckx;
+    new-instance v1, Lckz;
 
-    iget-object v0, v0, Lckx;->a:Lckw;
+    iget-object v0, p0, Lcla;->a:Lkgv;
 
-    if-eqz v0, :cond_0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lcla;->a:Lckx;
+    move-result-object v0
 
-    iget-object v0, v0, Lckx;->a:Lckw;
+    check-cast v0, Ljava/lang/Long;
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusX()F
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result v1
+    move-result-wide v2
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusY()F
+    iget-object v0, p0, Lcla;->b:Lkgv;
 
-    move-result v2
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
+    move-result-object v4
 
-    move-result v3
+    check-cast v4, Lcke;
 
-    invoke-interface {v0, v1, v2, v3}, Lckw;->a(FFF)Z
+    iget-object v0, p0, Lcla;->c:Lkgv;
 
-    move-result v0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    :goto_0
-    return v0
+    move-result-object v5
 
-    :cond_0
-    const/4 v0, 0x0
+    check-cast v5, Lckp;
 
-    goto :goto_0
-.end method
+    iget-object v0, p0, Lcla;->d:Lkgv;
 
-.method public final onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
-    .locals 3
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lcla;->a:Lckx;
+    move-result-object v6
 
-    iget-object v0, v0, Lckx;->a:Lckw;
+    check-cast v6, Landroid/content/ContentResolver;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lcla;->e:Lkgv;
 
-    iget-object v0, p0, Lcla;->a:Lckx;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lckx;->a:Lckw;
+    move-result-object v7
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusX()F
+    check-cast v7, Lcio;
 
-    move-result v1
+    iget-object v0, p0, Lcla;->f:Lkgv;
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusY()F
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v2
+    move-result-object v8
 
-    invoke-interface {v0, v1, v2}, Lckw;->g(FF)Z
+    check-cast v8, Lgnn;
 
-    move-result v0
+    invoke-direct/range {v1 .. v8}, Lckz;-><init>(JLcke;Lckp;Landroid/content/ContentResolver;Lcio;Lgnn;)V
 
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final onScaleEnd(Landroid/view/ScaleGestureDetector;)V
-    .locals 1
-
-    iget-object v0, p0, Lcla;->a:Lckx;
-
-    iget-object v0, v0, Lckx;->a:Lckw;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcla;->a:Lckx;
-
-    iget-object v0, v0, Lckx;->a:Lckw;
-
-    invoke-interface {v0}, Lckw;->a()V
-
-    :cond_0
-    return-void
+    return-object v1
 .end method

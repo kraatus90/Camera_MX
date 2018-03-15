@@ -1,80 +1,150 @@
-.class public final Lfit;
+.class final Lfit;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfjk;
+.implements Lkdg;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lfgk;
 
-.field private b:Lflj;
-
-.field private c:Liau;
-
-.field private d:Lhzt;
+.field private final synthetic b:Lfiq;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Lflj;Liau;Lhzt;)V
+.method constructor <init>(Lfiq;Lfgk;)V
     .locals 0
 
+    iput-object p1, p0, Lfit;->b:Lfiq;
+
+    iput-object p2, p0, Lfit;->a:Lfgk;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfit;->a:Ljxn;
-
-    iput-object p2, p0, Lfit;->b:Lflj;
-
-    iput-object p3, p0, Lfit;->c:Liau;
-
-    iput-object p4, p0, Lfit;->d:Lhzt;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final a(Ljava/lang/Object;)Lkeh;
+    .locals 6
 
-    iget-object v0, p0, Lfit;->a:Ljxn;
+    iget-object v0, p0, Lfit;->b:Lfiq;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lfit;->a:Lfgk;
+
+    iget-object v2, v0, Lfiq;->b:Lihn;
+
+    iget-object v3, v0, Lfiq;->a:Linm;
+
+    invoke-interface {v3}, Linm;->c()I
+
+    move-result v3
+
+    invoke-static {v3}, Lihr;->a(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v0, v0, Lfiq;->a:Linm;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lfic;
-
-    iget-object v0, v0, Lfic;->f:Lhaz;
-
-    const v1, 0x7f0e00e0
-
-    invoke-virtual {v0, v1}, Lhaz;->a(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/gridlines/view/GridLinesUi;
-
-    iget-object v1, p0, Lfit;->b:Lflj;
-
-    invoke-interface {v1}, Lflj;->e()Lhzb;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    iget-object v2, p0, Lfit;->c:Liau;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-instance v3, Lfiu;
+    move-result-object v4
 
-    invoke-direct {v3, v0}, Lfiu;-><init>(Lcom/google/android/apps/camera/gridlines/view/GridLinesUi;)V
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    iget-object v0, p0, Lfit;->d:Lhzt;
+    move-result v4
 
-    invoke-interface {v2, v3, v0}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    add-int/lit8 v4, v4, 0x23
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Missing ImageId from "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "ImageReader@"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-interface {v1, v0}, Lhzb;->a(Lich;)Lich;
+    const-string v3, "! "
 
-    return-void
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v2, v0}, Lihn;->f(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lfit;->b:Lfiq;
+
+    new-instance v1, Lilh;
+
+    iget-object v2, p0, Lfit;->a:Lfgk;
+
+    iget-wide v2, v2, Lfgk;->a:J
+
+    invoke-direct {v1, v2, v3}, Lilh;-><init>(J)V
+
+    iget-object v2, p0, Lfit;->a:Lfgk;
+
+    invoke-virtual {v0, v1, v2}, Lfiq;->a(Link;Lfgk;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
 .end method

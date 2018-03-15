@@ -3,414 +3,179 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ldub;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private b:D
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lcom/google/android/apps/camera/stats/ViewfinderJankSession;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldue;->a:Ljxn;
+    const-wide v0, 0x4040800000000000L    # 33.0
 
-    iput-object p2, p0, Ldue;->b:Ljxn;
+    iput-wide v0, p0, Ldue;->b:D
 
-    iput-object p3, p0, Ldue;->c:Ljxn;
+    iput-object p1, p0, Ldue;->a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldue;
-
-    invoke-direct {v0, p0, p1, p2}, Ldue;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 11
+.method public final a(Lind;DD)V
+    .locals 8
 
-    const/4 v9, 0x4
+    iget-wide v0, p0, Ldue;->b:D
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    const-wide v2, 0x4040800000000000L    # 33.0
 
-    const/4 v10, 0x0
+    cmpl-double v0, v0, v2
 
-    iget-object v0, p0, Ldue;->a:Ljxn;
+    if-lez v0, :cond_4
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-wide v0, 0x4040800000000000L    # 33.0
 
-    move-result-object v0
+    cmpl-double v0, p2, v0
 
-    check-cast v0, Ldvk;
+    if-lez v0, :cond_4
 
-    iget-object v1, p0, Ldue;->b:Ljxn;
+    iget-wide v0, p0, Ldue;->b:D
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    sub-double v0, p2, v0
 
-    iget-object v1, p0, Ldue;->c:Ljxn;
+    iget-wide v2, p0, Ldue;->b:D
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    div-double/2addr v0, v2
 
-    move-result-object v1
+    const-wide/high16 v2, 0x3fe0000000000000L    # 0.5
 
-    check-cast v1, Ljht;
+    cmpl-double v0, v0, v2
 
-    const/16 v2, 0x11
+    if-ltz v0, :cond_4
 
-    new-array v2, v2, [Lggl;
+    iget-object v0, p0, Ldue;->a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
-    new-instance v3, Lggl;
+    iget-wide v2, p0, Ldue;->b:D
 
-    sget-object v4, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_ABERRATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    sub-double v4, p2, v2
 
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    div-double/2addr v4, v2
 
-    move-result-object v5
+    iget-object v1, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a:Ljava/lang/Object;
 
-    invoke-direct {v3, v4, v5}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    monitor-enter v1
 
-    aput-object v3, v2, v10
+    const-wide/high16 v6, 0x3fe0000000000000L    # 0.5
 
-    const/4 v3, 0x1
+    cmpl-double v6, v4, v6
 
-    new-instance v4, Lggl;
+    if-ltz v6, :cond_0
 
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_GAINS:Landroid/hardware/camera2/CaptureRequest$Key;
+    :try_start_0
+    iget v6, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->d:I
 
-    new-instance v6, Landroid/hardware/camera2/params/RggbChannelVector;
+    add-int/lit8 v6, v6, 0x1
 
-    invoke-direct {v6, v8, v8, v8, v8}, Landroid/hardware/camera2/params/RggbChannelVector;-><init>(FFFF)V
+    iput v6, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->d:I
 
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    :cond_0
+    const-wide/high16 v6, 0x3ff8000000000000L    # 1.5
 
-    aput-object v4, v2, v3
+    cmpl-double v6, v4, v6
 
-    const/4 v3, 0x2
+    if-ltz v6, :cond_1
 
-    new-instance v4, Lggl;
+    iget v6, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->e:I
 
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    add-int/lit8 v6, v6, 0x1
 
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iput v6, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->e:I
 
-    move-result-object v6
+    :cond_1
+    const-wide/high16 v6, 0x4014000000000000L    # 5.0
 
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    cmpl-double v6, v4, v6
 
-    aput-object v4, v2, v3
+    if-ltz v6, :cond_2
 
-    const/4 v3, 0x3
+    iget v6, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->f:I
 
-    new-instance v4, Lggl;
+    add-int/lit8 v6, v6, 0x1
 
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_TRANSFORM:Landroid/hardware/camera2/CaptureRequest$Key;
+    iput v6, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->f:I
 
-    new-instance v6, Landroid/hardware/camera2/params/ColorSpaceTransform;
+    :cond_2
+    const-wide/high16 v6, 0x3ff8000000000000L    # 1.5
 
-    const/16 v7, 0x12
+    cmpl-double v4, v4, v6
 
-    new-array v7, v7, [I
+    if-ltz v4, :cond_3
 
-    fill-array-data v7, :array_0
-
-    invoke-direct {v6, v7}, Landroid/hardware/camera2/params/ColorSpaceTransform;-><init>([I)V
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    new-instance v3, Lggl;
-
-    sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_ANTIBANDING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-direct {v3, v4, v5}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v3, v2, v9
-
-    const/4 v3, 0x5
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x6
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x7
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x8
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_SCENE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x9
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_POST_RAW_SENSITIVITY_BOOST:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/16 v6, 0x64
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xa
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xb
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->HOT_PIXEL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xc
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xd
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->REPROCESS_EFFECTIVE_EXPOSURE_FACTOR:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xe
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->SHADING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0xf
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_CURVE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v6, Landroid/hardware/camera2/params/TonemapCurve;
-
-    new-array v7, v9, [F
-
-    fill-array-data v7, :array_1
-
-    new-array v8, v9, [F
-
-    fill-array-data v8, :array_2
-
-    new-array v9, v9, [F
-
-    fill-array-data v9, :array_3
-
-    invoke-direct {v6, v7, v8, v9}, Landroid/hardware/camera2/params/TonemapCurve;-><init>([F[F[F)V
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    const/16 v3, 0x10
-
-    new-instance v4, Lggl;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-direct {v4, v5, v6}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    aput-object v4, v2, v3
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p1, p2, p3, v2, v3}, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a(Lind;DD)Ljzr;
 
     move-result-object v2
 
-    new-instance v3, Ldtu;
+    iget-object v3, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->c:Ljava/util/List;
 
-    invoke-virtual {v1}, Ljht;->a()Z
+    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result v4
+    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a(Ljzr;)V
 
-    if-eqz v4, :cond_0
+    :cond_3
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v1}, Ljht;->b()Ljava/lang/Object;
+    :cond_4
+    const-wide v0, 0x4040800000000000L    # 33.0
 
-    move-result-object v1
+    cmpl-double v0, p2, v0
 
-    check-cast v1, Lgpb;
+    if-lez v0, :cond_5
 
+    iget-wide v0, p0, Ldue;->b:D
+
+    cmpl-double v0, p2, v0
+
+    if-lez v0, :cond_6
+
+    const-wide/high16 v0, 0x4024000000000000L    # 10.0
+
+    iget-wide v2, p0, Ldue;->b:D
+
+    mul-double/2addr v0, v2
+
+    add-double/2addr v0, p2
+
+    const-wide/high16 v2, 0x4026000000000000L    # 11.0
+
+    div-double/2addr v0, v2
+
+    iput-wide v0, p0, Ldue;->b:D
+
+    :cond_5
     :goto_0
-    invoke-direct {v3, v0, v2, v1}, Ldtu;-><init>(Ldtm;Ljava/util/Collection;Lgpb;)V
+    return-void
 
-    invoke-static {v3}, Ljht;->b(Ljava/lang/Object;)Ljht;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v0
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    throw v0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljht;
-
-    return-object v0
-
-    :cond_0
-    sget-object v1, Lgpc;->a:Lgpb;
+    :cond_6
+    iput-wide p2, p0, Ldue;->b:D
 
     goto :goto_0
-
-    :array_0
-    .array-data 4
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_3
-    .array-data 4
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-    .end array-data
 .end method

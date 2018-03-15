@@ -1,132 +1,106 @@
-.class final Ldrl;
+.class public final Ldrl;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:I
+.field private final a:Lkgv;
 
-.field public final b:Lgfz;
+.field private final b:Lkgv;
 
-.field public final c:Ljava/util/Map;
+.field private final c:Lkgv;
 
-.field public d:Lgki;
+.field private final d:Lkgv;
 
-.field public e:Ljvi;
+.field private final e:Lkgv;
 
 
 # direct methods
-.method constructor <init>(ILgfz;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ldrl;->a:I
+    iput-object p1, p0, Ldrl;->a:Lkgv;
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Ldrl;->b:Lkgv;
 
-    iput-object v0, p0, Ldrl;->d:Lgki;
+    iput-object p3, p0, Ldrl;->c:Lkgv;
 
-    iput-object p2, p0, Ldrl;->b:Lgfz;
+    iput-object p4, p0, Ldrl;->d:Lkgv;
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Ldrl;->c:Ljava/util/Map;
-
-    new-instance v0, Ljvi;
-
-    invoke-direct {v0}, Ljvi;-><init>()V
-
-    iput-object v0, p0, Ldrl;->e:Ljvi;
+    iput-object p5, p0, Ldrl;->e:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Ldrl;
+    .locals 6
+
+    new-instance v0, Ldrl;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    invoke-direct/range {v0 .. v5}, Ldrl;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Ldrl;->c:Ljava/util/Map;
+    new-instance v4, Ldrk;
 
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+    iget-object v0, p0, Ldrl;->a:Lkgv;
 
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liil;
+    check-cast v0, Lihs;
 
-    invoke-interface {v0}, Liil;->close()V
+    iget-object v1, p0, Ldrl;->b:Lkgv;
 
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Ldrl;->d:Lgki;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Ldrl;->d:Lgki;
-
-    invoke-interface {v0}, Lgki;->close()V
-
-    :cond_1
-    iget-object v0, p0, Ldrl;->e:Ljvi;
-
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method final a(ILgih;)V
-    .locals 2
-
-    iget-object v0, p0, Ldrl;->c:Ljava/util/Map;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    check-cast v1, Liho;
 
-    move-result v0
+    iget-object v2, p0, Ldrl;->c:Lkgv;
 
-    if-nez v0, :cond_0
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    move-result-object v2
 
-    :goto_0
-    invoke-static {v0}, Liya;->b(Z)V
+    check-cast v2, Lcqk;
 
-    iget-object v0, p0, Ldrl;->c:Ljava/util/Map;
+    iget-object v3, p0, Ldrl;->d:Lkgv;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v3, Lcqa;
 
-    return-void
+    iget-object v5, p0, Ldrl;->e:Lkgv;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
 
-    goto :goto_0
+    invoke-direct {v4, v0, v1, v2, v3}, Ldrk;-><init>(Lihs;Liho;Lcqk;Lcqa;)V
+
+    return-object v4
 .end method

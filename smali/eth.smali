@@ -2,181 +2,87 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x17
-.end annotation
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public final b:Ljuw;
+.field private final a:Lkgv;
 
-.field public final c:Ljava/lang/String;
+.field private final b:Lkgv;
 
-.field public final d:Ljava/util/concurrent/Executor;
+.field private final c:Lkgv;
 
-.field public final e:Letf;
-
-.field public final f:Ldym;
-
-.field public g:Ljava/lang/Object;
-
-.field public final h:Ljava/lang/Object;
+.field private final d:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    const-string v0, "SingleKeyCache"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Leth;->a:Lkgv;
 
-    move-result-object v0
+    iput-object p2, p0, Leth;->b:Lkgv;
 
-    sput-object v0, Leth;->a:Ljava/lang/String;
+    iput-object p3, p0, Leth;->c:Lkgv;
+
+    iput-object p4, p0, Leth;->d:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljuw;Ljava/lang/String;Ljava/util/concurrent/Executor;Letf;Ldym;)V
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;)Leth;
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Leth;
 
-    new-instance v0, Ljava/lang/Object;
+    invoke-direct {v0, p0, p1, p2, p3}, Leth;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Leth;->h:Ljava/lang/Object;
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Leth;->b:Ljuw;
-
-    iput-object p2, p0, Leth;->c:Ljava/lang/String;
-
-    iput-object p3, p0, Leth;->d:Ljava/util/concurrent/Executor;
-
-    iput-object p4, p0, Leth;->e:Letf;
-
-    iput-object p5, p0, Leth;->f:Ldym;
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljuw;
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v1, p0, Leth;->h:Ljava/lang/Object;
+    new-instance v4, Lete;
 
-    monitor-enter v1
+    iget-object v0, p0, Leth;->a:Lkgv;
 
-    :try_start_0
-    iget-object v0, p0, Leth;->g:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Leth;->g:Ljava/lang/Object;
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    monitor-exit v1
+    check-cast v0, Landroid/media/MediaFormat;
 
-    :goto_0
-    return-object v0
+    iget-object v1, p0, Leth;->b:Lkgv;
 
-    :cond_0
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Leth;->b:Ljuw;
-
-    new-instance v1, Leti;
-
-    invoke-direct {v1, p0}, Leti;-><init>(Leth;)V
-
-    iget-object v2, p0, Leth;->d:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljtu;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final a(Ljava/lang/Object;)Ljuw;
-    .locals 4
-
-    sget-object v0, Leth;->a:Ljava/lang/String;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v1, Leud;
+
+    iget-object v2, p0, Leth;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    check-cast v2, Lkeh;
 
-    move-result v2
+    iget-object v3, p0, Leth;->d:Lkgv;
 
-    add-int/lit8 v2, v2, 0x10
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    check-cast v3, Ljava/util/concurrent/Executor;
 
-    const-string v2, "pending update: "
+    invoke-direct {v4, v0, v1, v2, v3}, Lete;-><init>(Landroid/media/MediaFormat;Leud;Lkeh;Ljava/util/concurrent/Executor;)V
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Leth;->b:Ljuw;
-
-    new-instance v1, Letk;
-
-    invoke-direct {v1, p0, p1}, Letk;-><init>(Leth;Ljava/lang/Object;)V
-
-    iget-object v2, p0, Leth;->d:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljtu;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v4
 .end method

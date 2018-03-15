@@ -1,64 +1,54 @@
 .class final Lhtz;
-.super Landroid/os/Handler;
+.super Lhrq;
 
 
 # instance fields
-.field private synthetic a:Lhty;
+.field private final a:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>(Lhty;Landroid/os/Looper;)V
-    .locals 0
+.method constructor <init>(Lhts;)V
+    .locals 1
 
-    iput-object p1, p0, Lhtz;->a:Lhty;
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {p0, v0}, Lhrq;-><init>(B)V
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lhtz;->a:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 2
+.method public final a(Lcom/google/android/gms/internal/zzbgq;)V
+    .locals 3
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lhtz;->a:Ljava/lang/ref/WeakReference;
 
-    iget v1, p1, Landroid/os/Message;->what:I
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    if-ne v1, v0, :cond_0
+    move-result-object v0
+
+    check-cast v0, Lhts;
+
+    if-nez v0, :cond_0
 
     :goto_0
-    invoke-static {v0}, Lhjg;->b(Z)V
-
-    iget-object v1, p0, Lhtz;->a:Lhty;
-
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Lhub;
-
-    iget-object v1, v1, Lhty;->a:Ljava/lang/Object;
-
-    if-nez v1, :cond_1
-
-    :goto_1
     return-void
 
     :cond_0
-    const/4 v0, 0x0
+    iget-object v1, v0, Lhts;->a:Lhui;
+
+    new-instance v2, Lhua;
+
+    invoke-direct {v2, v0, v0, p1}, Lhua;-><init>(Lhuh;Lhts;Lcom/google/android/gms/internal/zzbgq;)V
+
+    invoke-virtual {v1, v2}, Lhui;->a(Lhuj;)V
 
     goto :goto_0
-
-    :cond_1
-    :try_start_0
-    invoke-interface {v0, v1}, Lhub;->a(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    throw v0
 .end method

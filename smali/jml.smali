@@ -1,232 +1,188 @@
-.class Ljml;
-.super Ljkf;
+.class public final Ljml;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field public static final serialVersionUID:J
+.implements Ljme;
 
 
 # instance fields
-.field private a:Ljmd;
-
-.field private transient b:Ljava/util/Set;
-
-.field private transient c:Ljava/util/Set;
+.field private final a:Ljava/util/SortedSet;
 
 
 # direct methods
-.method constructor <init>(Ljmd;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljkf;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljml;->a:Ljmd;
+    new-instance v0, Ljava/util/TreeSet;
+
+    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+
+    iput-object v0, p0, Ljml;->a:Ljava/util/SortedSet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;I)I
-    .locals 1
+.method public final declared-synchronized a()J
+    .locals 2
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    monitor-enter p0
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    :try_start_0
+    iget-object v0, p0, Ljml;->a:Ljava/util/SortedSet;
+
+    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-wide v0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method public a()Ljava/util/Set;
-    .locals 1
+.method public final declared-synchronized a(J)V
+    .locals 3
 
-    iget-object v0, p0, Ljml;->b:Ljava/util/Set;
+    monitor-enter p0
 
-    if-nez v0, :cond_0
+    :try_start_0
+    iget-object v0, p0, Ljml;->a:Ljava/util/SortedSet;
 
-    invoke-virtual {p0}, Ljml;->d()Ljava/util/Set;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v1
 
-    iput-object v0, p0, Ljml;->b:Ljava/util/Set;
+    invoke-interface {v0, v1}, Ljava/util/SortedSet;->remove(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_0
-    return-object v0
-.end method
+    monitor-exit p0
 
-.method public final a(Ljava/lang/Object;II)Z
-    .locals 1
+    return-void
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    :catchall_0
+    move-exception v0
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public add(Ljava/lang/Object;)Z
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method public addAll(Ljava/util/Collection;)Z
+.method public final declared-synchronized b()V
     .locals 1
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    monitor-enter p0
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    :try_start_0
+    iget-object v0, p0, Ljml;->a:Ljava/util/SortedSet;
+
+    invoke-interface {v0}, Ljava/util/SortedSet;->clear()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method public final b(Ljava/lang/Object;I)I
-    .locals 1
+.method public final declared-synchronized b(J)V
+    .locals 3
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    monitor-enter p0
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    :try_start_0
+    iget-object v0, p0, Ljml;->a:Ljava/util/SortedSet;
 
-    throw v0
-.end method
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-.method protected synthetic b()Ljava/util/Collection;
-    .locals 1
+    move-result-object v1
 
-    invoke-virtual {p0}, Ljml;->m()Ljmd;
+    invoke-interface {v0, v1}, Ljava/util/SortedSet;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    monitor-exit p0
 
-    return-object v0
-.end method
+    return-void
 
-.method public final c(Ljava/lang/Object;I)I
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method protected synthetic c()Ljava/lang/Object;
-    .locals 1
+.method public final declared-synchronized c()Ljava/util/Set;
+    .locals 2
 
-    invoke-virtual {p0}, Ljml;->m()Ljmd;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    new-instance v0, Ljava/util/HashSet;
 
-    return-object v0
-.end method
+    iget-object v1, p0, Ljml;->a:Ljava/util/SortedSet;
 
-.method public clear()V
-    .locals 1
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method d()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Ljml;->a:Ljmd;
-
-    invoke-interface {v0}, Ljmd;->a()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Ljml;->c:Ljava/util/Set;
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Ljml;->a:Ljmd;
-
-    invoke-interface {v0}, Ljmd;->e()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljml;->c:Ljava/util/Set;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public iterator()Ljava/util/Iterator;
-    .locals 1
-
-    iget-object v0, p0, Ljml;->a:Ljmd;
-
-    invoke-interface {v0}, Ljmd;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-static {v0}, Liui;->a(Ljava/util/Iterator;)Ljoe;
-
-    move-result-object v0
+    monitor-exit p0
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method protected m()Ljmd;
+.method public final declared-synchronized d()Ljrf;
     .locals 1
 
-    iget-object v0, p0, Ljml;->a:Ljmd;
+    monitor-enter p0
+
+    :try_start_0
+    sget-object v0, Ljqu;->a:Ljqu;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-object v0
-.end method
 
-.method public remove(Ljava/lang/Object;)Z
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public removeAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public retainAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    monitor-exit p0
 
     throw v0
 .end method

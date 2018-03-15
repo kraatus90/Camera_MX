@@ -3,28 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lfzl;
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/prewarm/NoOpPrewarmService;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lfzl;
-
-    invoke-direct {v0}, Lfzl;-><init>()V
-
-    sput-object v0, Lfzl;->a:Lfzl;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/prewarm/NoOpPrewarmService;)V
     .locals 0
+
+    iput-object p1, p0, Lfzl;->a:Lcom/google/android/apps/camera/prewarm/NoOpPrewarmService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,54 +23,20 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final run()V
+    .locals 3
 
-    new-instance v0, Ljvj;
+    iget-object v0, p0, Lfzl;->a:Lcom/google/android/apps/camera/prewarm/NoOpPrewarmService;
 
-    invoke-direct {v0}, Ljvj;-><init>()V
+    sget-object v1, Lcom/google/android/apps/camera/prewarm/NoOpPrewarmService;->a:Ljava/lang/String;
 
-    const-string v1, "mv-gyro-exec-%d"
+    const-string v2, "Prewarm timed out! This should not happen."
 
-    invoke-virtual {v0, v1}, Ljvj;->a(Ljava/lang/String;)Ljvj;
+    invoke-static {v1, v2}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/android/apps/camera/prewarm/NoOpPrewarmService;->b:Liih;
 
-    iget-object v1, v0, Ljvj;->a:Ljava/lang/String;
+    invoke-interface {v0}, Liih;->i()V
 
-    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
-
-    move-result-object v2
-
-    if-eqz v1, :cond_0
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    const-wide/16 v4, 0x0
-
-    invoke-direct {v0, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    :goto_0
-    new-instance v3, Ljvk;
-
-    invoke-direct {v3, v2, v1, v0}, Ljvk;-><init>(Ljava/util/concurrent/ThreadFactory;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
-
-    invoke-static {v3}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

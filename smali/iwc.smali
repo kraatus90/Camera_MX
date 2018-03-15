@@ -1,48 +1,113 @@
-.class final Liwc;
+.class public abstract Liwc;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Liuh;
+
+# instance fields
+.field private final a:Ljava/lang/Object;
+
+.field private b:Ljqv;
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Liwc;->a:Ljava/lang/Object;
+
+    sget-object v0, Ljqx;->a:Ljqx;
+
+    iput-object v0, p0, Liwc;->b:Ljqv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+.method public final a(Ljqv;)Liwc;
+    .locals 3
 
-    new-instance v2, Lipo;
+    iget-object v1, p0, Liwc;->a:Ljava/lang/Object;
 
-    const-class v0, Ljbc;
+    monitor-enter v1
 
-    const-string v1, "Video_VFR"
+    :try_start_0
+    iget-object v0, p0, Liwc;->b:Ljqv;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    new-instance v2, Ljqw;
+
+    invoke-direct {v2, p1, v0}, Ljqw;-><init>(Ljqv;Ljqv;)V
+
+    iput-object v2, p0, Liwc;->b:Ljqv;
+
+    monitor-exit v1
+
+    return-object p0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method protected abstract a()Ljava/lang/Object;
+.end method
+
+.method public c()Ljava/lang/Object;
+    .locals 3
+
+    :try_start_0
+    iget-object v1, p0, Liwc;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    iget-object v0, p0, Liwc;->b:Ljqv;
+
+    invoke-virtual {p0}, Liwc;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljqv;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljbc;
+    monitor-exit v1
 
-    const-class v1, Lipn;
+    return-object v0
 
-    const-string v3, "VFR_video_artifact_render"
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    :try_start_2
+    throw v0
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
 
-    check-cast v1, Lipn;
+    :catch_0
+    move-exception v0
 
-    invoke-direct {v2, v0, v1}, Lipo;-><init>(Ljbc;Lipn;)V
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    return-object v2
+    const-string v2, "Could not build instance."
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
 .end method

@@ -1,42 +1,42 @@
-.class public final Labr;
+.class final Labr;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Labq;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Labq;
+.field private final synthetic a:I
 
-.field private b:Landroid/os/Handler;
+.field private final synthetic b:Labp;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/Handler;Labq;)V
+.method constructor <init>(Labp;I)V
     .locals 0
 
+    iput-object p1, p0, Labr;->b:Labp;
+
+    iput p2, p0, Labr;->a:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Labr;->b:Landroid/os/Handler;
-
-    iput-object p2, p0, Labr;->a:Labq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Labr;->b:Landroid/os/Handler;
+    iget-object v0, p0, Labr;->b:Labp;
 
-    new-instance v1, Labs;
+    iget-object v0, v0, Labp;->a:Labu;
 
-    invoke-direct {v1, p0}, Labs;-><init>(Labr;)V
+    iget v1, p0, Labr;->a:I
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-interface {v0, v1}, Labu;->a(I)V
 
     return-void
 .end method

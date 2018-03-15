@@ -1,45 +1,42 @@
-.class final synthetic Libc;
+.class public final Libc;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ljava/util/concurrent/Executor;
 
 
-# static fields
-.field public static final a:Ljhj;
+# instance fields
+.field public final a:Liay;
+
+.field private final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Libc;
-
-    invoke-direct {v0}, Libc;-><init>()V
-
-    sput-object v0, Libc;->a:Ljhj;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Liay;Ljava/util/concurrent/Executor;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Libc;->a:Liay;
+
+    iput-object p2, p0, Libc;->b:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Libc;->b:Ljava/util/concurrent/Executor;
 
-    invoke-static {p1}, Liav;->b(Ljava/util/List;)Ljava/lang/Long;
+    new-instance v1, Libd;
 
-    move-result-object v0
+    invoke-direct {v1, p0, p1}, Libd;-><init>(Libc;Ljava/lang/Runnable;)V
 
-    return-object v0
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

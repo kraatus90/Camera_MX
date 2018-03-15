@@ -1,52 +1,57 @@
-.class public final Lath;
+.class final synthetic Lath;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lhdj;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private b:Lgdm;
+.field private final a:Latg;
 
 
 # direct methods
-.method public constructor <init>(Lgdm;)V
+.method constructor <init>(Latg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lath;->b:Lgdm;
+    iput-object p1, p0, Lath;->a:Latg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 3
 
-    iget-object v0, p0, Lath;->b:Lgdm;
+    iget-object v0, p0, Lath;->a:Latg;
 
-    invoke-interface {v0}, Lgdm;->e()V
+    iget-object v1, v0, Latg;->d:Lket;
 
-    return-void
-.end method
+    const/4 v2, 0x1
 
-.method public final b()V
-    .locals 0
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-void
-.end method
+    move-result-object v2
 
-.method public final c()V
-    .locals 0
+    invoke-virtual {v1, v2}, Lkch;->a(Ljava/lang/Object;)Z
 
-    return-void
-.end method
+    iget-object v1, v0, Latg;->a:Lbns;
 
-.method public final d()V
-    .locals 0
+    iget-object v1, v1, Lbns;->a:Lbnw;
+
+    invoke-virtual {v1}, Lglb;->e()V
+
+    iget-object v1, v0, Latg;->b:Lfam;
+
+    invoke-interface {v1}, Lfam;->b()V
+
+    iget-object v0, v0, Latg;->a:Lbns;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lbns;->a(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

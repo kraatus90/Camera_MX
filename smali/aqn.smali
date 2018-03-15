@@ -1,29 +1,11 @@
-.class public final Laqn;
-.super Laqo;
+.class public interface abstract Laqn;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method public constructor <init>(Landroid/widget/ImageView;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Laqo;-><init>(Landroid/widget/ImageView;)V
-
-    return-void
+# virtual methods
+.method public abstract a(Lagp;)V
 .end method
 
-
-# virtual methods
-.method protected final synthetic a(Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p1, Landroid/graphics/drawable/Drawable;
-
-    iget-object v0, p0, Laqn;->a:Landroid/view/View;
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
+.method public abstract a(Lagw;Ladm;)V
 .end method

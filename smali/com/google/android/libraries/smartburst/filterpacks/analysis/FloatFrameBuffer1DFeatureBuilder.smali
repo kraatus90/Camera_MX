@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public mFeatureId:Ljfs;
+.field public mFeatureId:Ljpe;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljfs;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljpe;
 
     return-void
 .end method
@@ -109,9 +109,9 @@
 
     move-result-object v1
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljpe;
 
-    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljfs;
+    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljpe;
 
     if-nez v2, :cond_0
 
@@ -121,11 +121,11 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v0}, Ljfs;->a(Ljava/lang/String;)Ljfs;
+    invoke-static {v0}, Ljpe;->a(Ljava/lang/String;)Ljpe;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljfs;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatFrameBuffer1DFeatureBuilder;->mFeatureId:Ljpe;
 
     :cond_0
     const-string v1, "frame"
@@ -142,7 +142,7 @@
 
     move-result-object v1
 
-    iget v2, v0, Ljfs;->A:I
+    iget v2, v0, Ljpe;->A:I
 
     new-array v2, v2, [F
 
@@ -186,7 +186,7 @@
 
     new-instance v4, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    invoke-direct {v4, v0, v2}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;[F)V
+    invoke-direct {v4, v0, v2}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
 
     invoke-virtual {v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FrameValue;->setValue(Ljava/lang/Object;)V
 

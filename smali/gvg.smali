@@ -4,11 +4,17 @@
 
 
 # virtual methods
-.method public abstract a()V
+.method public abstract onShutterButtonClick()V
 .end method
 
-.method public abstract b()V
+.method public abstract onShutterButtonLongPressRelease()V
 .end method
 
-.method public abstract i()V
+.method public abstract onShutterButtonLongPressed()V
+.end method
+
+.method public abstract onShutterButtonPressedStateChanged(Z)V
+.end method
+
+.method public abstract onShutterTouch$51666RRD5TJMURR7DHIIUOBECHP6UQB45TGN0S3J5THM2RB5E9GIUTB9ELQ6IR3J5TA6UTB3D11MURRICHKMSOBKCKTIILG_0(Lhjv;)V
 .end method

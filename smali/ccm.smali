@@ -2,125 +2,65 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public a:Lcnz;
-
-.field public final b:Ljava/util/List;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method private constructor <init>(Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lccm;->b:Ljava/util/List;
+    iput-object p1, p0, Lccm;->a:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lccg;Lkgv;)Lccm;
+    .locals 1
+
+    new-instance v0, Lccm;
+
+    invoke-direct {v0, p1}, Lccm;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lccm;->b:Ljava/util/List;
+    iget-object v0, p0, Lccm;->a:Lkgv;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v0
 
-    if-lez v0, :cond_0
+    check-cast v0, Lioh;
 
-    const/4 v0, 0x1
+    new-instance v1, Linu;
 
-    :goto_0
-    return v0
+    sget-object v2, Ligu;->a:Ligt;
 
-    :cond_0
-    const/4 v0, 0x0
+    new-instance v3, Lioi;
 
-    goto :goto_0
-.end method
+    invoke-direct {v3, v0, v2}, Lioi;-><init>(Lioh;Ligt;)V
 
-.method public final a(Landroid/net/Uri;)Z
-    .locals 1
+    invoke-direct {v1, v3}, Linu;-><init>(Ligt;)V
 
-    iget-object v0, p0, Lccm;->b:Ljava/util/List;
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
-.end method
+    check-cast v0, Linu;
 
-.method public final b(Landroid/net/Uri;)V
-    .locals 2
-
-    invoke-virtual {p0, p1}, Lccm;->a(Landroid/net/Uri;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lccm;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lccm;->a:Lcnz;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lccm;->a:Lcnz;
-
-    iget-object v1, p0, Lccm;->b:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    iget-object v0, v0, Lcnz;->a:Lcaq;
-
-    invoke-virtual {v0}, Lcaq;->f()V
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lccm;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lccm;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lccm;->a:Lcnz;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lccm;->a:Lcnz;
-
-    iget-object v1, p0, Lccm;->b:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    iget-object v0, v0, Lcnz;->a:Lcaq;
-
-    invoke-virtual {v0}, Lcaq;->f()V
-
-    goto :goto_0
+    return-object v0
 .end method

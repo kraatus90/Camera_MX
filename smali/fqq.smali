@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract a(ILandroid/view/KeyEvent;)Z
+.method public abstract a(Lfqn;)V
 .end method

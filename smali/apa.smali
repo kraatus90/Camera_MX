@@ -1,111 +1,191 @@
-.class public final Lapa;
-.super Landroid/content/BroadcastReceiver;
+.class final Lapa;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lapi;
 
 
 # instance fields
-.field private synthetic a:Lavd;
+.field private final a:Ljava/util/Set;
+
+.field private b:Z
+
+.field private c:Z
 
 
 # direct methods
-.method public constructor <init>(Lavd;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lapa;->a:Lavd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lapa;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+.method final a()V
+    .locals 2
 
-    iget-object v0, p0, Lapa;->a:Lavd;
+    const/4 v0, 0x1
 
-    iget-boolean v0, v0, Lavd;->b:Z
+    iput-boolean v0, p0, Lapa;->b:Z
 
-    iget-object v1, p0, Lapa;->a:Lavd;
+    iget-object v0, p0, Lapa;->a:Ljava/util/Set;
 
-    invoke-static {p1}, Lavd;->a(Landroid/content/Context;)Z
-
-    move-result v2
-
-    iput-boolean v2, v1, Lavd;->b:Z
-
-    iget-object v1, p0, Lapa;->a:Lavd;
-
-    iget-boolean v1, v1, Lavd;->b:Z
-
-    if-eq v0, v1, :cond_2
-
-    iget-object v0, p0, Lapa;->a:Lavd;
-
-    iget-object v0, v0, Lavd;->a:Laoy;
-
-    iget-object v1, p0, Lapa;->a:Lavd;
-
-    iget-boolean v1, v1, Lavd;->b:Z
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, v0, Laoy;->a:Lapk;
-
-    iget-object v0, v1, Lapk;->a:Ljava/util/Set;
-
-    invoke-static {v0}, Larq;->a(Ljava/util/Collection;)Ljava/util/List;
+    invoke-static {v0}, Larx;->a(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
-    :cond_0
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Laqb;
+    check-cast v0, Lapj;
 
-    invoke-interface {v0}, Laqb;->f()Z
+    invoke-interface {v0}, Lapj;->b()V
 
-    move-result v3
+    goto :goto_0
 
-    if-nez v3, :cond_0
+    :cond_0
+    return-void
+.end method
 
-    invoke-interface {v0}, Laqb;->h()Z
+.method public final a(Lapj;)V
+    .locals 1
 
-    move-result v3
+    iget-object v0, p0, Lapa;->a:Ljava/util/Set;
 
-    if-nez v3, :cond_0
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v0}, Laqb;->c()V
+    iget-boolean v0, p0, Lapa;->c:Z
 
-    iget-boolean v3, v1, Lapk;->c:Z
+    if-eqz v0, :cond_0
 
-    if-nez v3, :cond_1
+    invoke-interface {p1}, Lapj;->d()V
 
-    invoke-interface {v0}, Laqb;->a()V
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-boolean v0, p0, Lapa;->b:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Lapj;->b()V
 
     goto :goto_0
 
     :cond_1
-    iget-object v3, v1, Lapk;->b:Ljava/util/List;
+    invoke-interface {p1}, Lapj;->c()V
 
-    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    goto :goto_0
+.end method
+
+.method final b()V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lapa;->b:Z
+
+    iget-object v0, p0, Lapa;->a:Ljava/util/Set;
+
+    invoke-static {v0}, Larx;->a(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lapj;
+
+    invoke-interface {v0}, Lapj;->c()V
 
     goto :goto_0
 
-    :cond_2
+    :cond_0
+    return-void
+.end method
+
+.method public final b(Lapj;)V
+    .locals 1
+
+    iget-object v0, p0, Lapa;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method final c()V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lapa;->c:Z
+
+    iget-object v0, p0, Lapa;->a:Ljava/util/Set;
+
+    invoke-static {v0}, Larx;->a(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lapj;
+
+    invoke-interface {v0}, Lapj;->d()V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

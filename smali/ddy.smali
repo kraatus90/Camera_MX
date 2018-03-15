@@ -1,58 +1,46 @@
-.class public final Lddy;
+.class final synthetic Lddy;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lddx;
+
+.field private final b:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lddx;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lddy;->a:Ljxn;
+    iput-object p1, p0, Lddy;->a:Lddx;
+
+    iput-boolean p2, p0, Lddy;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lddy;->a:Ljxn;
+    iget-object v0, p0, Lddy;->a:Lddx;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-boolean v1, p0, Lddy;->b:Z
 
-    move-result-object v0
+    iget-object v2, v0, Lddx;->l:Lhcu;
 
-    check-cast v0, Landroid/content/res/Resources;
+    if-eqz v2, :cond_0
 
-    const v1, 0x7f0f0013
+    iget-object v0, v0, Lddx;->l:Lhcu;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v0, v1}, Lhcu;->e(Z)V
 
-    move-result v0
-
-    const-string v1, "VideoModule"
-
-    new-instance v2, Lcqp;
-
-    invoke-direct {v2, v0, v1}, Lcqp;-><init>(ILjava/lang/String;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcqp;
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

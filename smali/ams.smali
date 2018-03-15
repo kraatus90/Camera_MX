@@ -1,75 +1,45 @@
-.class public final Lams;
-.super Lamp;
+.class final Lams;
+.super Lamo;
 .source "PG"
 
 
-# static fields
-.field private static b:[B
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-string v0, "com.bumptech.glide.load.resource.bitmap.CenterInside"
-
-    sget-object v1, Lams;->a:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v0
-
-    sput-object v0, Lams;->b:[B
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lamp;-><init>()V
+    invoke-direct {p0}, Lamo;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lahs;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
-    .locals 1
+.method public final a(IIII)F
+    .locals 3
 
-    invoke-static {p1, p2, p3, p4}, Lanp;->c(Lahs;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    int-to-float v0, p3
 
-    move-result-object v0
+    int-to-float v1, p1
 
-    return-object v0
-.end method
+    div-float/2addr v0, v1
 
-.method public final a(Ljava/security/MessageDigest;)V
-    .locals 1
+    int-to-float v1, p4
 
-    sget-object v0, Lams;->b:[B
+    int-to-float v2, p2
 
-    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+    div-float/2addr v1, v2
 
-    return-void
-.end method
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    instance-of v0, p1, Lams;
+    move-result v0
 
     return v0
 .end method
 
-.method public final hashCode()I
+.method public final a()I
     .locals 1
 
-    const-string v0, "com.bumptech.glide.load.resource.bitmap.CenterInside"
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
+    sget v0, Lep;->h:I
 
     return v0
 .end method

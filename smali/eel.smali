@@ -1,44 +1,45 @@
 .class final Leel;
-.super Ljava/lang/Object;
+.super Legi;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lgyr;
-
-.field private synthetic b:Leeh;
+.field private final synthetic a:Leej;
 
 
 # direct methods
-.method constructor <init>(Leeh;Lgyr;)V
+.method constructor <init>(Leej;)V
     .locals 0
 
-    iput-object p1, p0, Leel;->b:Leeh;
+    iput-object p1, p0, Leel;->a:Leej;
 
-    iput-object p2, p0, Leel;->a:Lgyr;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Legi;-><init>(Legg;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final E()V
     .locals 2
 
-    iget-object v0, p0, Leel;->b:Leeh;
+    iget-object v0, p0, Leel;->a:Leej;
 
-    invoke-static {v0}, Leeh;->a(Leeh;)Leou;
+    iget-object v0, v0, Leej;->a:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    iget-object v1, p0, Leel;->a:Lgyr;
+    invoke-super {p0}, Legi;->E()V
 
-    invoke-interface {v0, v1}, Leou;->a(Lgyr;)V
+    iget-object v0, p0, Leel;->a:Leej;
+
+    iget-object v0, v0, Leej;->a:Lgld;
+
+    iget-object v1, p0, Leel;->a:Leej;
+
+    iget-object v1, v1, Leej;->b:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

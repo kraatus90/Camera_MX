@@ -1,33 +1,72 @@
-.class final Lfrd;
+.class public final Lfrd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfrr;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>()V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lfrd;->a:Lkgv;
+
+    iput-object p2, p0, Lfrd;->b:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;)Lfrd;
+    .locals 1
+
+    new-instance v0, Lfrd;
+
+    invoke-direct {v0, p0, p1}, Lfrd;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lfsf;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    instance-of v0, p1, Lfri;
+    iget-object v0, p0, Lfrd;->a:Lkgv;
 
-    if-eqz v0, :cond_0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    check-cast p1, Lfri;
+    move-result-object v0
 
-    invoke-interface {p1}, Lfri;->a()V
+    check-cast v0, Lfqj;
 
-    :cond_0
-    return-void
+    iget-object v1, p0, Lfrd;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfqt;
+
+    new-instance v2, Lfqo;
+
+    invoke-direct {v2, v0, v0, v1}, Lfqo;-><init>(Lfqe;Lfqe;Lfqq;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfqo;
+
+    return-object v0
 .end method

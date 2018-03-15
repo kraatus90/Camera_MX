@@ -1,26 +1,600 @@
 .class final Lhna;
-.super Lhmx;
+.super Lhmy;
+
+# interfaces
+.implements Landroid/os/Handler$Callback;
+
+
+# instance fields
+.field private final a:Ljava/util/HashMap;
+
+.field private final b:Landroid/content/Context;
+
+.field private final c:Landroid/os/Handler;
+
+.field private final d:Lhnm;
+
+.field private final e:J
+
+.field private final f:J
 
 
 # direct methods
-.method constructor <init>([B)V
-    .locals 0
+.method constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
-    invoke-direct {p0, p1}, Lhmx;-><init>([B)V
+    invoke-direct {p0}, Lhmy;-><init>()V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lhna;->a:Ljava/util/HashMap;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhna;->b:Landroid/content/Context;
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+
+    iput-object v0, p0, Lhna;->c:Landroid/os/Handler;
+
+    invoke-static {}, Lhnm;->a()Lhnm;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhna;->d:Lhnm;
+
+    const-wide/16 v0, 0x1388
+
+    iput-wide v0, p0, Lhna;->e:J
+
+    const-wide/32 v0, 0x493e0
+
+    iput-wide v0, p0, Lhna;->f:J
 
     return-void
 .end method
 
-
-# virtual methods
-.method protected final d()[B
+.method static synthetic a(Lhna;)Ljava/util/HashMap;
     .locals 1
 
-    const-string v0, "0\u0082\u0004\u00a80\u0082\u0003\u0090\u00a0\u0003\u0002\u0001\u0002\u0002\t\u0000\u00d5\u0085\u00b8l}\u00d3N\u00f50\r\u0006\t*\u0086H\u0086\u00f7\r\u0001\u0001\u0004\u0005\u00000\u0081\u00941\u000b0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00130\u0011\u0006\u0003U\u0004\u0008\u0013\nCalifornia1\u00160\u0014\u0006\u0003U\u0004\u0007\u0013\rMountain View1\u00100\u000e\u0006\u0003U\u0004\n\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u000b\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u0003\u0013\u0007Android1\"0 \u0006\t*\u0086H\u0086\u00f7\r\u0001\t\u0001\u0016\u0013android@android.com0\u001e\u0017\r080415233656Z\u0017\r350901233656Z0\u0081\u00941\u000b0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00130\u0011\u0006\u0003U\u0004\u0008\u0013\nCalifornia1\u00160\u0014\u0006\u0003U\u0004\u0007\u0013\rMountain View1\u00100\u000e\u0006\u0003U\u0004\n\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u000b\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u0003\u0013\u0007Android1\"0 \u0006\t*\u0086H\u0086\u00f7\r\u0001\t\u0001\u0016\u0013android@android.com0\u0082\u0001 0\r\u0006\t*\u0086H\u0086\u00f7\r\u0001\u0001\u0001\u0005\u0000\u0003\u0082\u0001\r\u00000\u0082\u0001\u0008\u0002\u0082\u0001\u0001\u0000\u00d6\u00ce.\u0008\n\u00bf\u00e21M\u00d1\u008d\u00b3\u00cf\u00d3\u0018\\\u00b4=3\u00fa\u000ct\u00e1\u00bd\u00b6\u00d1\u00db\u0089\u0013\u00f6,\\9\u00dfV\u00f8F\u0081=e\u00be\u00c0\u00f3\u00caBk\u0007\u00c5\u00a8\u00edZ9\u0090\u00c1g\u00e7k\u00c9\u0099\u00b9\'\u0089K\u008f\u000b\"\u0000\u0019\u0094\u00a9)\u0015\u00e5r\u00c5m*0\u001b\u00a3o\u00c5\u00fc\u0011:\u00d6\u00cb\u009et5\u00a1m#\u00ab}\u00fa\u00ee\u00e1e\u00e4\u00df\u001f\n\u008d\u00bd\u00a7\n\u0086\u009dQlN\u009d\u0005\u0011\u0096\u00ca|\u000cU\u007f\u0017[\u00c3u\u00f9H\u00c5j\u00ae\u0086\u0008\u009b\u00a4O\u008a\u00a6\u00a4\u00dd\u009a}\u00bf,\n5\"\u0082\u00ad\u0006\u00b8\u00cc\u0018^\u00b1Uy\u00ee\u00f8m\u0008\u000b\u001da\u0089\u00c0\u00f9\u00af\u0098\u00b1\u00c2\u00eb\u00d1\u0007\u00eaE\u00ab\u00dbh\u00a3\u00c7\u0083\u008a^T\u0088\u00c7lS\u00d4\u000b\u0012\u001d\u00e7\u00bb\u00d3\u000eb\u000c\u0018\u008a\u00e1\u00aaa\u00db\u00bc\u0087\u00dd<d_/U\u00f3\u00d4\u00c3u\u00ec@p\u00a9?qQ\u00d86p\u00c1j\u0097\u001a\u00be^\u00f2\u00d1\u0018\u0090\u00e1\u00b8\u00ae\u00f3)\u008c\u00f0f\u00bf\u009el\u00e1D\u00ac\u009a\u00e8m\u001c\u001b\u000f\u0002\u0001\u0003\u00a3\u0081\u00fc0\u0081\u00f90\u001d\u0006\u0003U\u001d\u000e\u0004\u0016\u0004\u0014\u008d\u001c\u00c5\u00be\u0095LC<a\u0086:\u0015\u00b0L\u00bc\u0003\u00f2O\u00e0\u00b20\u0081\u00c9\u0006\u0003U\u001d#\u0004\u0081\u00c10\u0081\u00be\u0080\u0014\u008d\u001c\u00c5\u00be\u0095LC<a\u0086:\u0015\u00b0L\u00bc\u0003\u00f2O\u00e0\u00b2\u00a1\u0081\u009a\u00a4\u0081\u00970\u0081\u00941\u000b0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00130\u0011\u0006\u0003U\u0004\u0008\u0013\nCalifornia1\u00160\u0014\u0006\u0003U\u0004\u0007\u0013\rMountain View1\u00100\u000e\u0006\u0003U\u0004\n\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u000b\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u0003\u0013\u0007Android1\"0 \u0006\t*\u0086H\u0086\u00f7\r\u0001\t\u0001\u0016\u0013android@android.com\u0082\t\u0000\u00d5\u0085\u00b8l}\u00d3N\u00f50\u000c\u0006\u0003U\u001d\u0013\u0004\u00050\u0003\u0001\u0001\u00ff0\r\u0006\t*\u0086H\u0086\u00f7\r\u0001\u0001\u0004\u0005\u0000\u0003\u0082\u0001\u0001\u0000\u0019\u00d3\u000c\u00f1\u0005\u00fbx\u0092?L\r}\u00d2##=@\u0096z\u00cf\u00ce\u0000\u0008\u001d[\u00d7\u00c6\u00e9\u00d6\u00ed k\u000e\u0011 \u0095\u0006Al\u00a2D\u0093\u0099\u0013\u00d2kJ\u00a0\u00e0\u00f5$\u00ca\u00d2\u00bb\\nL\u00a1\u0001j\u0015\u0091n\u00a1\u00ec]\u00c9Z^:\u0001\u00006\u00f4\u0092H\u00d5\u0010\u009b\u00bf.\u001ea\u0081\u0086g:;\u00e5m\u00af\u000bw\u00b1\u00c2)\u00e3\u00c2U\u00e3\u00e8L\u0090]#\u0087\u00ef\u00ba\t\u00cb\u00f1; +NZ\"\u00c92cHJ#\u00d2\u00fc)\u00fa\u009f\u00199u\u00973\u00af\u00d8\u00aa\u0016\u000fB\u0096\u00c2\u00d0\u0016>\u0081\u0082\u0085\u009cfC\u00e9\u00c1\u0096/\u00a0\u00c1\u008333[\u00c0\u0090\u00ff\u009ak\"\u00de\u00d1\u00adDB)\u00a59\u00a9N\u00ef\u00ad\u00ab\u00d0e\u00ce\u00d2K>Q\u00e5\u00dd{fx{\u00ef\u0012\u00fe\u0097\u00fb\u00a4\u0084\u00c4#\u00fbO\u00f8\u00ccIL\u0002\u00f0\u00f5\u0005\u0016\u0012\u00ffe)9>\u008eF\u00ea\u00c5\u00bb!\u00f2w\u00c1Q\u00aa_*\u00a6\'\u00d1\u00e8\u009d\u00a7\n\u00b6\u00035i\u00de;\u0098\u0097\u00bf\u00ff|\u00a9\u00da>\u0012C\u00f6\u000b"
+    iget-object v0, p0, Lhna;->a:Ljava/util/HashMap;
 
-    invoke-static {v0}, Lhmv;->a(Ljava/lang/String;)[B
+    return-object v0
+.end method
+
+.method static synthetic b(Lhna;)Landroid/os/Handler;
+    .locals 1
+
+    iget-object v0, p0, Lhna;->c:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lhna;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lhna;->b:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic d(Lhna;)Lhnm;
+    .locals 1
+
+    iget-object v0, p0, Lhna;->d:Lhnm;
+
+    return-object v0
+.end method
+
+.method static synthetic e(Lhna;)J
+    .locals 2
+
+    iget-wide v0, p0, Lhna;->f:J
+
+    return-wide v0
+.end method
+
+
+# virtual methods
+.method protected final a(Lhmz;Landroid/content/ServiceConnection;)Z
+    .locals 5
+
+    const-string v0, "ServiceConnection must not be null"
+
+    invoke-static {p2, v0}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v1, p0, Lhna;->a:Ljava/util/HashMap;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lhna;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lhnb;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lhnb;
+
+    invoke-direct {v0, p0, p1}, Lhnb;-><init>(Lhna;Lhmz;)V
+
+    invoke-virtual {v0, p2}, Lhnb;->a(Landroid/content/ServiceConnection;)V
+
+    invoke-virtual {v0}, Lhnb;->a()V
+
+    iget-object v2, p0, Lhna;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :goto_0
+    iget-boolean v0, v0, Lhnb;->c:Z
+
+    monitor-exit v1
+
+    return v0
+
+    :cond_0
+    iget-object v2, p0, Lhna;->c:Landroid/os/Handler;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, p2}, Lhnb;->b(Landroid/content/ServiceConnection;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x51
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Trying to bind a GmsServiceConnection that was already connected before.  config="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :try_start_1
+    invoke-virtual {v0, p2}, Lhnb;->a(Landroid/content/ServiceConnection;)V
+
+    iget v2, v0, Lhnb;->b:I
+
+    packed-switch v2, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v2, v0, Lhnb;->f:Landroid/content/ComponentName;
+
+    iget-object v3, v0, Lhnb;->d:Landroid/os/IBinder;
+
+    invoke-interface {p2, v2, v3}, Landroid/content/ServiceConnection;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+
+    goto :goto_0
+
+    :pswitch_1
+    invoke-virtual {v0}, Lhnb;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method protected final b(Lhmz;Landroid/content/ServiceConnection;)V
+    .locals 6
+
+    const-string v0, "ServiceConnection must not be null"
+
+    invoke-static {p2, v0}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v1, p0, Lhna;->a:Ljava/util/HashMap;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lhna;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhnb;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x32
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Nonexistent connection status for service config: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    invoke-virtual {v0, p2}, Lhnb;->b(Landroid/content/ServiceConnection;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x4c
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Trying to unbind a GmsServiceConnection  that was not bound before.  config="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-static {}, Lhnm;->c()V
+
+    iget-object v2, v0, Lhnb;->a:Ljava/util/Set;
+
+    invoke-interface {v2, p2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0}, Lhnb;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lhna;->c:Landroid/os/Handler;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lhna;->c:Landroid/os/Handler;
+
+    iget-wide v4, p0, Lhna;->e:J
+
+    invoke-virtual {v2, v0, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    :cond_2
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
+.end method
+
+.method public final handleMessage(Landroid/os/Message;)Z
+    .locals 8
+
+    const/4 v0, 0x0
+
+    const/4 v2, 0x1
+
+    iget v1, p1, Landroid/os/Message;->what:I
+
+    packed-switch v1, :pswitch_data_0
+
+    :goto_0
+    return v0
+
+    :pswitch_0
+    iget-object v3, p0, Lhna;->a:Ljava/util/HashMap;
+
+    monitor-enter v3
+
+    :try_start_0
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lhmz;
+
+    iget-object v1, p0, Lhna;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhnb;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Lhnb;->b()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    iget-boolean v4, v1, Lhnb;->c:Z
+
+    if-eqz v4, :cond_0
+
+    iget-object v4, v1, Lhnb;->g:Lhna;
+
+    iget-object v4, v4, Lhna;->c:Landroid/os/Handler;
+
+    const/4 v5, 0x1
+
+    iget-object v6, v1, Lhnb;->e:Lhmz;
+
+    invoke-virtual {v4, v5, v6}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
+
+    iget-object v4, v1, Lhnb;->g:Lhna;
+
+    iget-object v4, v4, Lhna;->b:Landroid/content/Context;
+
+    invoke-static {v4, v1}, Lhnm;->a(Landroid/content/Context;Landroid/content/ServiceConnection;)V
+
+    const/4 v4, 0x0
+
+    iput-boolean v4, v1, Lhnb;->c:Z
+
+    const/4 v4, 0x2
+
+    iput v4, v1, Lhnb;->b:I
+
+    :cond_0
+    iget-object v1, p0, Lhna;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    monitor-exit v3
+
+    move v0, v2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :pswitch_1
+    iget-object v4, p0, Lhna;->a:Ljava/util/HashMap;
+
+    monitor-enter v4
+
+    :try_start_1
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lhmz;
+
+    iget-object v1, p0, Lhna;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhnb;
+
+    if-eqz v1, :cond_3
+
+    iget v3, v1, Lhnb;->b:I
+
+    const/4 v5, 0x3
+
+    if-ne v3, v5, :cond_3
+
+    const-string v3, "GmsClientSupervisor"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/lit8 v6, v6, 0x2f
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "Timeout waiting for ServiceConnection callback "
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v6, Ljava/lang/Exception;
+
+    invoke-direct {v6}, Ljava/lang/Exception;-><init>()V
+
+    invoke-static {v3, v5, v6}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    iget-object v3, v1, Lhnb;->f:Landroid/content/ComponentName;
+
+    if-nez v3, :cond_2
+
+    const/4 v3, 0x0
+
+    :cond_2
+    if-nez v3, :cond_4
+
+    new-instance v3, Landroid/content/ComponentName;
+
+    iget-object v0, v0, Lhmz;->a:Ljava/lang/String;
+
+    const-string v5, "unknown"
+
+    invoke-direct {v3, v0, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object v0, v3
+
+    :goto_1
+    invoke-virtual {v1, v0}, Lhnb;->onServiceDisconnected(Landroid/content/ComponentName;)V
+
+    :cond_3
+    monitor-exit v4
+
+    move v0, v2
+
+    goto/16 :goto_0
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw v0
+
+    :cond_4
+    move-object v0, v3
+
+    goto :goto_1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

@@ -3,368 +3,183 @@
 .source "PG"
 
 # interfaces
-.implements Lhzk;
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Liau;
+.field private final synthetic a:Ljava/lang/String;
 
-.field private synthetic b:Lgdq;
+.field private final synthetic b:Lkgv;
 
-.field private synthetic c:Lbea;
-
-.field private synthetic d:Lbco;
-
-.field private synthetic e:Ligc;
-
-.field private synthetic f:Liag;
-
-.field private synthetic g:Liag;
-
-.field private synthetic h:Liag;
-
-.field private synthetic i:Lbgs;
-
-.field private synthetic j:Liau;
-
-.field private synthetic k:Liau;
-
-.field private synthetic l:Liau;
-
-.field private synthetic m:Liag;
-
-.field private synthetic n:Liau;
-
-.field private synthetic o:Liau;
-
-.field private synthetic p:Lgkv;
-
-.field private synthetic q:Lgfj;
-
-.field private synthetic r:Lbbt;
-
-.field private synthetic s:Lbaj;
+.field private final synthetic c:Lbba;
 
 
 # direct methods
-.method constructor <init>(Lbaj;Liau;Lgdq;Lbea;Lbco;Ligc;Liag;Liag;Liag;Lbgs;Liau;Liau;Liau;Liag;Liau;Liau;Liau;Lgkv;Ljht;Ljht;Lgfj;Lbbt;)V
-    .locals 1
+.method constructor <init>(Lbba;Ljava/lang/String;Lkgv;)V
+    .locals 0
 
-    iput-object p1, p0, Lbaq;->s:Lbaj;
+    iput-object p1, p0, Lbaq;->c:Lbba;
 
-    iput-object p2, p0, Lbaq;->a:Liau;
+    iput-object p2, p0, Lbaq;->a:Ljava/lang/String;
 
-    iput-object p3, p0, Lbaq;->b:Lgdq;
-
-    iput-object p4, p0, Lbaq;->c:Lbea;
-
-    iput-object p5, p0, Lbaq;->d:Lbco;
-
-    iput-object p6, p0, Lbaq;->e:Ligc;
-
-    iput-object p7, p0, Lbaq;->f:Liag;
-
-    iput-object p8, p0, Lbaq;->g:Liag;
-
-    iput-object p9, p0, Lbaq;->h:Liag;
-
-    iput-object p10, p0, Lbaq;->i:Lbgs;
-
-    iput-object p11, p0, Lbaq;->j:Liau;
-
-    iput-object p12, p0, Lbaq;->k:Liau;
-
-    iput-object p13, p0, Lbaq;->l:Liau;
-
-    iput-object p14, p0, Lbaq;->m:Liag;
-
-    move-object/from16 v0, p15
-
-    iput-object v0, p0, Lbaq;->n:Liau;
-
-    move-object/from16 v0, p16
-
-    iput-object v0, p0, Lbaq;->o:Liau;
-
-    move-object/from16 v0, p18
-
-    iput-object v0, p0, Lbaq;->p:Lgkv;
-
-    move-object/from16 v0, p21
-
-    iput-object v0, p0, Lbaq;->q:Lgfj;
-
-    move-object/from16 v0, p22
-
-    iput-object v0, p0, Lbaq;->r:Lbbt;
+    iput-object p3, p0, Lbaq;->b:Lkgv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private final a(Lihy;Lbgq;)Ljuw;
-    .locals 26
 
-    sget-object v1, Lbaj;->a:Ljava/lang/String;
+# virtual methods
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 0
 
-    const-string v2, "CameraDeviceProxy and PreparedMediaRecorder are ready."
+    return-void
+.end method
 
-    invoke-static {v1, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 4
 
-    move-object/from16 v0, p0
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v1, v0, Lbaq;->s:Lbaj;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v0, v1, Lbaj;->f:Ljava/lang/Object;
+    move-result v0
 
-    move-object/from16 v25, v0
+    if-eqz v0, :cond_1
 
-    monitor-enter v25
+    iget-object v0, p0, Lbaq;->c:Lbba;
 
-    :try_start_0
-    move-object/from16 v0, p0
+    iget-object v0, v0, Lbba;->b:Lihs;
 
-    iget-object v1, v0, Lbaq;->s:Lbaj;
+    if-eqz v0, :cond_2
 
-    iget-object v1, v1, Lbaj;->g:Lbas;
+    iget-object v0, p0, Lbaq;->c:Lbba;
 
-    sget-object v2, Lbas;->a:Lbas;
+    iget-object v0, v0, Lbba;->b:Lihs;
 
-    invoke-virtual {v1, v2}, Lbas;->equals(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lbaq;->a:Ljava/lang/String;
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "CamcorderManager has been closed."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v1}, Ljuh;->a(Ljava/lang/Throwable;)Ljuw;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    monitor-exit v25
+    const-string v2, "#get-all"
 
-    :goto_0
-    return-object v1
+    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_0
-    move-object/from16 v0, p0
+    move-result-object v1
 
-    iget-object v1, v0, Lbaq;->s:Lbaj;
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    iget-object v1, v1, Lbaj;->g:Lbas;
+    iget-object v0, p0, Lbaq;->b:Lkgv;
 
-    sget-object v2, Lbas;->c:Lbas;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Lbas;->equals(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    move-result v1
+    check-cast v0, Ljava/util/Set;
 
-    invoke-static {v1}, Liya;->a(Z)V
+    iget-object v1, p0, Lbaq;->c:Lbba;
 
-    move-object/from16 v0, p0
+    iget-object v1, v1, Lbba;->b:Lihs;
 
-    iget-object v1, v0, Lbaq;->s:Lbaj;
+    iget-object v2, p0, Lbaq;->a:Ljava/lang/String;
 
-    sget-object v2, Lbas;->b:Lbas;
-
-    iput-object v2, v1, Lbaj;->g:Lbas;
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lbaq;->a:Liau;
-
-    invoke-static {v1}, Liav;->b(Liau;)Liau;
-
-    move-result-object v19
-
-    new-instance v4, Lbcs;
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lbaq;->s:Lbaj;
-
-    iget-object v1, v1, Lbaj;->j:Lhzn;
-
-    move-object/from16 v0, p1
-
-    invoke-direct {v4, v0, v1}, Lbcs;-><init>(Lihy;Lhzn;)V
-
-    new-instance v8, Lbcz;
-
-    invoke-direct {v8}, Lbcz;-><init>()V
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lbaq;->s:Lbaj;
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lbaq;->b:Lgdq;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lbaq;->c:Lbea;
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lbaq;->d:Lbco;
-
-    move-object/from16 v0, p0
-
-    iget-object v7, v0, Lbaq;->e:Ligc;
-
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lbaq;->f:Liag;
-
-    move-object/from16 v0, p0
-
-    iget-object v10, v0, Lbaq;->g:Liag;
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lbaq;->h:Liag;
-
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Lbaq;->i:Lbgs;
-
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lbaq;->j:Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lbaq;->k:Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v15, v0, Lbaq;->l:Liau;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lbaq;->m:Liag;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lbaq;->n:Liau;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lbaq;->o:Liau;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lbaq;->p:Lgkv;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lbaq;->b:Lgdq;
-
-    move-object/from16 v21, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lbaq;->q:Lgfj;
-
-    move-object/from16 v23, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lbaq;->r:Lbbt;
-
-    move-object/from16 v24, v0
-
-    move-object/from16 v6, p1
-
-    move-object/from16 v22, p2
-
-    invoke-static/range {v1 .. v24}, Lbaj;->a(Lbaj;Lify;Lbea;Lbcp;Lbco;Lihy;Ligc;Lbcx;Liag;Liag;Liag;Lbgs;Liau;Liau;Liau;Liau;Liau;Liau;Liau;Liau;Lgdq;Lbgq;Lgfj;Lbbt;)Lbaa;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    move-object/from16 v0, p0
+    const-string v3, "#start-all"
 
-    iget-object v1, v0, Lbaq;->s:Lbaj;
+    invoke-virtual {v2, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object v1, v1, Lbaj;->h:Ljava/util/Map;
+    move-result-object v2
 
-    move-object/from16 v0, p0
+    invoke-interface {v1, v2}, Lihs;->b(Ljava/lang/String;)V
 
-    iget-object v3, v0, Lbaq;->e:Ligc;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v1, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgkv;
+
+    iget-object v2, p0, Lbaq;->c:Lbba;
+
+    iget-object v2, v2, Lbba;->a:Ljava/util/concurrent/Executor;
+
+    invoke-interface {v2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lbaq;->c:Lbba;
+
+    iget-object v0, v0, Lbba;->b:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    :cond_1
+    return-void
+
+    :cond_2
+    iget-object v0, p0, Lbaq;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    const/4 v1, 0x1
-
-    :goto_1
-    invoke-static {v1}, Liya;->a(Z)V
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lbaq;->s:Lbaj;
-
-    iget-object v1, v1, Lbaj;->h:Ljava/util/Map;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lbaq;->e:Ligc;
-
-    invoke-interface {v1, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v2}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    monitor-exit v25
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    goto/16 :goto_0
+    move-result v0
 
-    :catchall_0
-    move-exception v1
+    if-eqz v0, :cond_1
 
-    monitor-exit v25
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_1
-.end method
-
-
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljuw;
-    .locals 1
-
-    check-cast p1, Lihy;
-
-    check-cast p2, Lbgq;
-
-    invoke-direct {p0, p1, p2}, Lbaq;->a(Lihy;Lbgq;)Ljuw;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lgkv;
+
+    iget-object v2, p0, Lbaq;->c:Lbba;
+
+    iget-object v2, v2, Lbba;->a:Ljava/util/concurrent/Executor;
+
+    invoke-interface {v2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_1
 .end method

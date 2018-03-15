@@ -1,165 +1,287 @@
 .class final Lheg;
-.super Lhfe;
+.super Lhek;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lhec;
+.field private final a:Lhem;
+
+.field private final b:Lhel;
+
+.field private final c:Lhen;
 
 
 # direct methods
-.method constructor <init>(Lhec;)V
-    .locals 0
+.method constructor <init>(Lhem;Lhel;Lhen;)V
+    .locals 2
 
-    iput-object p1, p0, Lheg;->a:Lhec;
+    invoke-direct {p0}, Lhek;-><init>()V
 
-    invoke-direct {p0, p1}, Lhfe;-><init>(Lhev;)V
+    if-nez p1, :cond_0
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Null effectFactory"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    iput-object p1, p0, Lheg;->a:Lhem;
+
+    if-nez p2, :cond_1
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Null activation"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iput-object p2, p0, Lheg;->b:Lhel;
+
+    if-nez p3, :cond_2
+
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "Null order"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
+    iput-object p3, p0, Lheg;->c:Lhen;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 2
+.method public final a()Lhem;
+    .locals 1
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    iget-object v0, p0, Lheg;->a:Lhem;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0, p1}, Lhfe;->a(Z)V
-
-    iget-object v0, p0, Lheg;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lheg;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->g:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final ad()V
-    .locals 2
+.method public final b()Lhel;
+    .locals 1
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    iget-object v0, p0, Lheg;->b:Lhel;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhfe;->ad()V
-
-    iget-object v0, p0, Lheg;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lheg;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->c:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final ah()V
-    .locals 2
+.method public final c()Lhen;
+    .locals 1
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    iget-object v0, p0, Lheg;->c:Lhen;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhfe;->ah()V
-
-    iget-object v0, p0, Lheg;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lheg;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->f:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final ak()V
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    if-ne p1, p0, :cond_1
 
-    invoke-super {p0}, Lhfe;->ak()V
+    :cond_0
+    :goto_0
+    return v0
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    :cond_1
+    instance-of v2, p1, Lhek;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    if-eqz v2, :cond_3
 
-    iget-object v1, p0, Lheg;->a:Lhec;
+    check-cast p1, Lhek;
 
-    iget-object v1, v1, Lhec;->g:Lgvl;
+    iget-object v2, p0, Lheg;->a:Lhem;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    invoke-virtual {p1}, Lhek;->a()Lhem;
 
-    return-void
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lheg;->b:Lhel;
+
+    invoke-virtual {p1}, Lhek;->b()Lhel;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lheg;->c:Lhen;
+
+    invoke-virtual {p1}, Lhek;->c()Lhen;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lhen;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_0
 .end method
 
-.method public final b(Z)V
-    .locals 2
+.method public final hashCode()I
+    .locals 3
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    const v2, 0xf4243
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    iget-object v0, p0, Lheg;->a:Lhem;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-super {p0, p1}, Lhfe;->b(Z)V
+    move-result v0
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    xor-int/2addr v0, v2
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    mul-int/2addr v0, v2
 
-    iget-object v1, p0, Lheg;->a:Lhec;
+    iget-object v1, p0, Lheg;->b:Lhel;
 
-    iget-object v1, v1, Lhec;->b:Lgvl;
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    move-result v1
 
-    return-void
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v2
+
+    iget-object v1, p0, Lheg;->c:Lhen;
+
+    invoke-virtual {v1}, Lhen;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
-.method public final e()V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    iget-object v0, p0, Lheg;->a:Lhem;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lhfe;->e()V
+    iget-object v1, p0, Lheg;->b:Lhel;
 
-    iget-object v0, p0, Lheg;->a:Lhec;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    move-result-object v1
 
-    iget-object v1, p0, Lheg;->a:Lhec;
+    iget-object v2, p0, Lheg;->c:Lhen;
 
-    iget-object v1, v1, Lhec;->d:Lgvl;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    move-result-object v2
 
-    return-void
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x3c
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "ViewfinderEffectElement{effectFactory="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, ", activation="
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", order="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

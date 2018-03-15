@@ -1,98 +1,128 @@
-.class final Lgjm;
-.super Laxf;
+.class abstract Lgjm;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lick;
 
 
 # instance fields
-.field private synthetic a:Lgjl;
+.field public final a:Lgjq;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lgjl;Lawd;)V
+.method constructor <init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lgjm;->a:Lgjl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Laxf;-><init>(Lawd;)V
+    iput-object p1, p0, Lgjm;->a:Lgjq;
+
+    iput-object p2, p0, Lgjm;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lgjm;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method public final a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+    .locals 2
 
-    invoke-super {p0}, Laxf;->close()V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lgjm;->a:Lgjl;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lgjl;->e:Lgjj;
+    new-instance v0, Lgjn;
 
-    iget-object v1, v0, Lgjj;->b:Ljava/lang/Object;
+    invoke-direct {v0, p0, p1, p2}, Lgjn;-><init>(Lgjm;Lihg;Ljava/util/concurrent/Executor;)V
 
-    monitor-enter v1
+    iget-object v1, p0, Lgjm;->a:Lgjq;
 
-    :try_start_0
-    iget-object v0, p0, Lgjm;->a:Lgjl;
+    invoke-virtual {v1, v0}, Lgjq;->a(Lgjj;)V
 
-    iget-object v0, v0, Lgjl;->e:Lgjj;
+    iget-object v1, p0, Lgjm;->c:Ljava/lang/String;
 
-    iget-object v0, v0, Lgjj;->c:Ljava/util/LinkedList;
+    invoke-virtual {v0, v1}, Lgjn;->a(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lgjm;->a:Lgjl;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v2}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
+.method protected abstract a()Ljava/lang/Object;
+.end method
 
-    iget-object v0, p0, Lgjm;->a:Lgjl;
+.method public final c()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, v0, Lgjl;->e:Lgjj;
+    invoke-virtual {p0}, Lgjm;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lgjj;->d:Licj;
+    move-result-object v0
 
-    iget-object v2, p0, Lgjm;->a:Lgjl;
+    if-nez v0, :cond_0
 
-    iget-object v2, v2, Lgjl;->e:Lgjj;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-virtual {v2}, Lgjj;->b()I
+    iget-object v1, p0, Lgjm;->b:Ljava/lang/String;
 
-    move-result v2
+    iget-object v2, p0, Lgjm;->c:Ljava/lang/String;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    iput-object v2, v0, Licj;->b:Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v3
 
-    iget-object v0, p0, Lgjm;->a:Lgjl;
+    add-int/lit8 v3, v3, 0x1b
 
-    iget-object v0, v0, Lgjl;->e:Lgjj;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0}, Lgjj;->a()Z
+    move-result-object v4
 
-    iget-object v0, p0, Lgjm;->a:Lgjl;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    iget-object v0, v0, Lgjl;->e:Lgjj;
+    move-result v4
 
-    iget-object v0, v0, Lgjj;->d:Licj;
+    add-int/2addr v3, v4
 
-    iget-object v0, v0, Licj;->a:Licb;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Licb;->a()V
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    return-void
+    const-string v3, "Null value for setting: "
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, " : "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    :cond_0
+    return-object v0
 .end method

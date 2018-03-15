@@ -4,11 +4,8 @@
 
 
 # virtual methods
-.method public abstract a(Ljava/io/InputStream;Lahn;)I
+.method public abstract a(Ljava/lang/Object;)Laeh;
 .end method
 
-.method public abstract a(Ljava/io/InputStream;)Laej;
-.end method
-
-.method public abstract a(Ljava/nio/ByteBuffer;)Laej;
+.method public abstract a()Ljava/lang/Class;
 .end method

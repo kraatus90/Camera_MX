@@ -1,70 +1,50 @@
-.class public final Lbtw;
+.class final Lbtw;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Ljava/lang/Object;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
+    iput-object p1, p0, Lbtw;->a:Ljava/lang/Object;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbtw;->a:Ljxn;
-
-    iput-object p2, p0, Lbtw;->b:Ljxn;
-
-    iput-object p3, p0, Lbtw;->c:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lbtw;
-
-    invoke-direct {v0, p0, p1, p2}, Lbtw;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final run()V
+    .locals 2
 
-    new-instance v2, Lbtv;
+    iget-object v1, p0, Lbtw;->a:Ljava/lang/Object;
 
-    iget-object v0, p0, Lbtw;->a:Ljxn;
+    monitor-enter v1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    :try_start_0
+    iget-object v0, p0, Lbtw;->a:Ljava/lang/Object;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    check-cast v0, Lauh;
+    monitor-exit v1
 
-    iget-object v1, p0, Lbtw;->b:Ljxn;
+    return-void
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v1, Ldlv;
-
-    iget-object v3, p0, Lbtw;->c:Ljxn;
-
-    invoke-direct {v2, v0, v1, v3}, Lbtv;-><init>(Lauh;Ldlv;Ljxn;)V
-
-    return-object v2
+    throw v0
 .end method

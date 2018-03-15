@@ -1,88 +1,93 @@
-.class public final Lect;
-.super Ljava/lang/Object;
+.class final Lect;
+.super Lebk;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic a:Lecs;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lecs;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lect;->a:Lecs;
 
-    iput-object p1, p0, Lect;->a:Ljxn;
-
-    iput-object p2, p0, Lect;->b:Ljxn;
-
-    iput-object p3, p0, Lect;->c:Ljxn;
-
-    iput-object p4, p0, Lect;->d:Ljxn;
+    invoke-direct {p0, p1}, Lebk;-><init>(Lebj;)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lect;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lect;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final q()V
+    .locals 2
 
-    new-instance v4, Lecs;
+    iget-object v0, p0, Lect;->a:Lecs;
 
-    iget-object v0, p0, Lect;->a:Ljxn;
+    iget-object v0, v0, Lecs;->l:Lgld;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result-object v0
+    invoke-super {p0}, Lebk;->q()V
 
-    check-cast v0, Lgkl;
+    iget-object v0, p0, Lect;->a:Lecs;
 
-    iget-object v1, p0, Lect;->b:Ljxn;
+    iget-object v0, v0, Lecs;->l:Lgld;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lect;->a:Lecs;
 
-    move-result-object v1
+    iget-object v1, v1, Lecs;->o:Lglf;
 
-    check-cast v1, Licv;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    iget-object v2, p0, Lect;->c:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+.method public final r()V
+    .locals 2
 
-    move-result-object v2
+    iget-object v0, p0, Lect;->a:Lecs;
 
-    check-cast v2, Ledb;
+    iget-object v0, v0, Lecs;->l:Lgld;
 
-    iget-object v3, p0, Lect;->d:Ljxn;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-super {p0}, Lebk;->r()V
 
-    move-result-object v3
+    iget-object v0, p0, Lect;->a:Lecs;
 
-    check-cast v3, Lcnu;
+    iget-object v0, v0, Lecs;->l:Lgld;
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lecs;-><init>(Lgkl;Licv;Ledb;Lcnu;)V
+    iget-object v1, p0, Lect;->a:Lecs;
 
-    return-object v4
+    iget-object v1, v1, Lecs;->n:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final s()V
+    .locals 2
+
+    iget-object v0, p0, Lect;->a:Lecs;
+
+    iget-object v0, v0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lebk;->s()V
+
+    iget-object v0, p0, Lect;->a:Lecs;
+
+    iget-object v0, v0, Lecs;->l:Lgld;
+
+    iget-object v1, p0, Lect;->a:Lecs;
+
+    iget-object v1, v1, Lecs;->p:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

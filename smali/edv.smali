@@ -2,63 +2,50 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Licn;
-
 
 # instance fields
-.field public final a:Ldhk;
+.field public final a:Lefu;
 
-.field public final b:I
+.field public final b:Ledc;
 
-.field public final c:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public final c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field public final synthetic d:Leap;
+.field public final d:Lgvc;
 
-.field private e:Lhzt;
+.field public final e:Lhgv;
+
+.field public final f:Landroid/view/Window;
+
+.field public final g:Lgqc;
+
+.field public final h:Lbch;
+
+.field public final i:Lfwg;
 
 
 # direct methods
-.method public constructor <init>(Leap;Ldhk;Lhzt;I)V
-    .locals 2
-
-    iput-object p1, p0, Ledv;->d:Leap;
+.method public constructor <init>(Lefu;Ledc;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lhgv;Landroid/view/Window;Lgqc;Lbch;Lfwg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ledv;->a:Ldhk;
+    iput-object p1, p0, Ledv;->a:Lefu;
 
-    iput-object p3, p0, Ledv;->e:Lhzt;
+    iput-object p2, p0, Ledv;->b:Ledc;
 
-    iput p4, p0, Ledv;->b:I
+    iput-object p3, p0, Ledv;->c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p4, p0, Ledv;->d:Lgvc;
 
-    const/4 v1, 0x0
+    iput-object p5, p0, Ledv;->e:Lhgv;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    iput-object p6, p0, Ledv;->f:Landroid/view/Window;
 
-    iput-object v0, p0, Ledv;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p7, p0, Ledv;->g:Lgqc;
 
-    return-void
-.end method
+    iput-object p8, p0, Ledv;->h:Lbch;
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
-
-    iget-object v0, p0, Ledv;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
-
-    iget-object v0, p0, Ledv;->e:Lhzt;
-
-    new-instance v1, Ledw;
-
-    invoke-direct {v1, p0}, Ledw;-><init>(Ledv;)V
-
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    iput-object p9, p0, Ledv;->i:Lfwg;
 
     return-void
 .end method

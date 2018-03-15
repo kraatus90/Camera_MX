@@ -1,60 +1,57 @@
-.class public final Lefv;
-.super Ljava/lang/Object;
+.class Lefv;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljug;
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Runnable;
-
-.field private synthetic b:Lhzr;
+.field private final synthetic a:Lefu;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;Lhzr;)V
-    .locals 0
+.method constructor <init>(Lefu;)V
+    .locals 1
 
-    iput-object p1, p0, Lefv;->a:Ljava/lang/Runnable;
+    iput-object p1, p0, Lefv;->a:Lefu;
 
-    iput-object p2, p0, Lefv;->b:Lhzr;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lglb;-><init>([[Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 3
-
-    check-cast p1, Ldmh;
-
-    invoke-static {p1}, Liav;->b(Liau;)Liau;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lefv;->a:Ljava/lang/Runnable;
-
-    new-instance v2, Ljvd;
-
-    invoke-direct {v2}, Ljvd;-><init>()V
-
-    invoke-static {v0, v1, v2}, Liav;->a(Liau;Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Lich;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lefv;->b:Lhzr;
-
-    invoke-virtual {v1, v0}, Lhzr;->a(Lich;)Lich;
+.method public C()V
+    .locals 0
 
     return-void
 .end method
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+.method public final a()V
+    .locals 2
+
+    iget-object v0, p0, Lefv;->a:Lefu;
+
+    iget-object v0, v0, Lefu;->f:Lgqc;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lgqc;->a(Z)Z
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lefv;->a:Lefu;
+
+    iget-object v0, v0, Lefu;->f:Lgqc;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lgqc;->a(Z)Z
 
     return-void
 .end method

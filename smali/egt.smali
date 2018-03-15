@@ -1,36 +1,55 @@
-.class public final Legt;
-.super Ljava/lang/Object;
+.class Legt;
+.super Legr;
 .source "PG"
 
-# interfaces
-.implements Ljhj;
+
+# instance fields
+.field private final synthetic a:Legs;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Legs;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Legt;->a:Legs;
+
+    invoke-direct {p0}, Legr;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()V
     .locals 2
 
-    check-cast p1, Ljava/lang/Float;
+    iget-object v0, p0, Legt;->a:Legs;
 
-    new-instance v0, Ljqu;
+    iget-object v0, v0, Legs;->g:Lgqc;
 
-    invoke-direct {v0}, Ljqu;-><init>()V
+    const/4 v1, 0x1
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v0, v1}, Lgqc;->a(Z)Z
 
-    move-result v1
+    return-void
+.end method
 
-    iput v1, v0, Ljqu;->a:F
+.method public final b()V
+    .locals 2
 
-    return-object v0
+    iget-object v0, p0, Legt;->a:Legs;
+
+    iget-object v0, v0, Legs;->g:Lgqc;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lgqc;->a(Z)Z
+
+    return-void
+.end method
+
+.method public r_()V
+    .locals 0
+
+    return-void
 .end method

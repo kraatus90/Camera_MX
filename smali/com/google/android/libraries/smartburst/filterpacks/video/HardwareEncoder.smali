@@ -433,21 +433,21 @@
 
     const/4 v1, 0x1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-lez p2, :cond_1
 
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     if-lez p3, :cond_0
 
     move v2, v1
 
     :cond_0
-    invoke-static {v2}, Liya;->a(Z)V
+    invoke-static {v2}, Ljii;->a(Z)V
 
     iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/video/HardwareEncoder;->mOutputFile:Ljava/lang/String;
 

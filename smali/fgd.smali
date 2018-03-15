@@ -1,17 +1,30 @@
-.class public interface abstract Lfgd;
+.class public final Lfgd;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljqv;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract f(Z)V
-.end method
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-.method public abstract g(Z)V
-.end method
+    check-cast p1, Lfhj;
 
-.method public abstract s()V
-.end method
+    new-instance v0, Lfgb;
 
-.method public abstract t()V
+    invoke-direct {v0, p1}, Lfgb;-><init>(Lfhj;)V
+
+    return-object v0
 .end method

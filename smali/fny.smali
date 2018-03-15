@@ -1,101 +1,33 @@
-.class public final Lfny;
+.class final synthetic Lfny;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljrm;
 
 
 # instance fields
-.field public a:F
-
-.field public b:F
-
-.field public c:F
+.field private final a:Lfnw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const/4 v1, 0x0
-
-    new-instance v0, Lfny;
-
-    invoke-direct {v0, v1, v1, v1}, Lfny;-><init>(FFF)V
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lfnw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(FFF)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p0, p1, p2, p3}, Lfny;->a(FFF)V
+    iput-object p1, p0, Lfny;->a:Lfnw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(FFF)V
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
-    iput p1, p0, Lfny;->a:F
+    iget-object v0, p0, Lfny;->a:Lfnw;
 
-    iput p2, p0, Lfny;->b:F
-
-    iput p3, p0, Lfny;->c:F
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    iget v0, p0, Lfny;->a:F
-
-    iget v1, p0, Lfny;->b:F
-
-    iget v2, p0, Lfny;->c:F
-
-    const/16 v3, 0x31
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v3, ", "
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lfnw;->d()Ljava/lang/Integer;
 
     move-result-object v0
 

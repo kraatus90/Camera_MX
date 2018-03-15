@@ -1,149 +1,54 @@
-.class final Lcdh;
+.class public final Lcdh;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljhj;
-
 
 # instance fields
-.field private a:Ljava/io/File;
+.field public final a:Lfxx;
 
-.field private b:Lcdr;
+.field public final b:Lcdf;
 
-.field private c:Ljht;
+.field public c:Z
 
 
 # direct methods
-.method constructor <init>(Ljava/io/File;Lcdr;Ljht;Lccv;)V
-    .locals 0
+.method public constructor <init>(Lfxx;Lcdf;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-boolean v0, p0, Lcdh;->c:Z
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Lcdh;->a:Lfxx;
 
-    invoke-static {p4}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lcdh;->a:Ljava/io/File;
-
-    iput-object p2, p0, Lcdh;->b:Lcdr;
-
-    iput-object p3, p0, Lcdh;->c:Ljht;
+    iput-object p2, p0, Lcdh;->b:Lcdf;
 
     return-void
 .end method
 
-.method private final a(Ldug;)Ljgz;
-    .locals 5
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :try_start_0
-    iget-object v1, p1, Ldug;->b:[B
-
-    iget-object v2, p0, Lcdh;->a:Ljava/io/File;
-
-    iget-object v0, p1, Ldug;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-    new-instance v3, Ljava/io/FileOutputStream;
-
-    invoke-direct {v3, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    iget-object v2, p0, Lcdh;->c:Ljht;
-
-    invoke-virtual {v2}, Ljht;->a()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0}, Lieu;-><init>(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-
-    invoke-virtual {v2}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/location/Location;
-
-    invoke-virtual {v4, v0}, Lieu;->a(Landroid/location/Location;)V
-
-    iget-object v0, v4, Lieu;->a:Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-    :cond_0
-    invoke-virtual {v0, v3}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(Ljava/io/OutputStream;)Ljava/io/OutputStream;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcdh;->b:Lcdr;
-
-    iget-object v2, v2, Lcdr;->a:Lxb;
-
-    invoke-static {v1, v0, v2}, Lcdv;->a([BLjava/io/OutputStream;Lxb;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :try_start_1
-    iget-object v0, p0, Lcdh;->a:Ljava/io/File;
-
-    invoke-static {v0}, Lccv;->a(Ljava/io/File;)Lixk;
-    :try_end_1
-    .catch Lixs; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result-object v0
-
-    new-instance v1, Ljgt;
-
-    invoke-static {v0}, Liui;->a(Ljava/lang/AutoCloseable;)Ljgp;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljgt;-><init>(Ljgp;)V
-
-    invoke-static {v1}, Liui;->a(Ljha;)Ljgz;
-
-    move-result-object v0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Ljvs;->a:Ljvt;
-
-    invoke-virtual {v1, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :catch_1
-    move-exception v0
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    check-cast p1, Ldug;
+    invoke-static {}, Liay;->a()V
 
-    invoke-direct {p0, p1}, Lcdh;->a(Ldug;)Ljgz;
+    iget-boolean v0, p0, Lcdh;->c:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    return-object v0
+    iget-object v0, p0, Lcdh;->a:Lfxx;
+
+    invoke-interface {v0}, Lfxx;->b()V
+
+    iget-object v0, p0, Lcdh;->b:Lcdf;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcdf;->a(Z)V
+
+    :cond_0
+    return-void
 .end method

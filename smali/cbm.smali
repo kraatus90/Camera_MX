@@ -1,134 +1,123 @@
-.class final Lcbm;
-.super Ljava/lang/Object;
+.class public final enum Lcbm;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
+# static fields
+.field public static final enum a:Lcbm;
 
-# instance fields
-.field private a:Ljwv;
+.field public static final enum b:Lcbm;
 
-.field private b:Lcbz;
+.field public static final enum c:Lcbm;
+
+.field public static final enum d:Lcbm;
+
+.field public static final enum e:Lcbm;
+
+.field private static final synthetic f:[Lcbm;
 
 
 # direct methods
-.method public constructor <init>(Ljwv;Lcbz;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v6, 0x4
 
-    iput-object p1, p0, Lcbm;->a:Ljwv;
+    const/4 v5, 0x3
 
-    iput-object p2, p0, Lcbm;->b:Lcbz;
+    const/4 v4, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Lcbm;
+
+    const-string v1, "ABSENT"
+
+    invoke-direct {v0, v1, v2}, Lcbm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcbm;->a:Lcbm;
+
+    new-instance v0, Lcbm;
+
+    const-string v1, "SHUTTER_BUTTON"
+
+    invoke-direct {v0, v1, v3}, Lcbm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcbm;->b:Lcbm;
+
+    new-instance v0, Lcbm;
+
+    const-string v1, "VOLUME_BUTTON"
+
+    invoke-direct {v0, v1, v4}, Lcbm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcbm;->c:Lcbm;
+
+    new-instance v0, Lcbm;
+
+    const-string v1, "A11Y_BUTTON"
+
+    invoke-direct {v0, v1, v5}, Lcbm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcbm;->d:Lcbm;
+
+    new-instance v0, Lcbm;
+
+    const-string v1, "FORCE_STOP"
+
+    invoke-direct {v0, v1, v6}, Lcbm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcbm;->e:Lcbm;
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Lcbm;
+
+    sget-object v1, Lcbm;->a:Lcbm;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcbm;->b:Lcbm;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lcbm;->c:Lcbm;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcbm;->d:Lcbm;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lcbm;->e:Lcbm;
+
+    aput-object v1, v0, v6
+
+    sput-object v0, Lcbm;->f:[Lcbm;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 11
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+.method public static values()[Lcbm;
+    .locals 1
+
+    sget-object v0, Lcbm;->f:[Lcbm;
+
+    invoke-virtual {v0}, [Lcbm;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
+    check-cast v0, [Lcbm;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    iget-object v1, p0, Lcbm;->b:Lcbz;
-
-    iget-object v1, v1, Lcbz;->e:Landroid/graphics/Rect;
-
-    iget-object v2, p0, Lcbm;->b:Lcbz;
-
-    iget-object v2, v2, Lcbz;->f:Landroid/graphics/Rect;
-
-    iget-object v3, p0, Lcbm;->a:Ljwv;
-
-    new-instance v4, Landroid/graphics/Rect;
-
-    iget v5, v1, Landroid/graphics/Rect;->left:I
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v0
-
-    sub-float v6, v10, v0
-
-    iget v7, v2, Landroid/graphics/Rect;->left:I
-
-    int-to-float v7, v7
-
-    mul-float/2addr v6, v7
-
-    add-float/2addr v5, v6
-
-    float-to-int v5, v5
-
-    iget v6, v1, Landroid/graphics/Rect;->top:I
-
-    int-to-float v6, v6
-
-    mul-float/2addr v6, v0
-
-    sub-float v7, v10, v0
-
-    iget v8, v2, Landroid/graphics/Rect;->top:I
-
-    int-to-float v8, v8
-
-    mul-float/2addr v7, v8
-
-    add-float/2addr v6, v7
-
-    float-to-int v6, v6
-
-    iget v7, v1, Landroid/graphics/Rect;->right:I
-
-    int-to-float v7, v7
-
-    mul-float/2addr v7, v0
-
-    sub-float v8, v10, v0
-
-    iget v9, v2, Landroid/graphics/Rect;->right:I
-
-    int-to-float v9, v9
-
-    mul-float/2addr v8, v9
-
-    add-float/2addr v7, v8
-
-    float-to-int v7, v7
-
-    iget v1, v1, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v1, v1
-
-    mul-float/2addr v1, v0
-
-    sub-float v0, v10, v0
-
-    iget v2, v2, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v2, v2
-
-    mul-float/2addr v0, v2
-
-    add-float/2addr v0, v1
-
-    float-to-int v0, v0
-
-    invoke-direct {v4, v5, v6, v7, v0}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    invoke-virtual {v3, v4}, Ljwv;->setClipBounds(Landroid/graphics/Rect;)V
-
-    return-void
+    return-object v0
 .end method

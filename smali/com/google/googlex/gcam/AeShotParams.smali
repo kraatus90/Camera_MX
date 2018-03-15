@@ -54,16 +54,6 @@
 
 
 # virtual methods
-.method public Clear()V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeShotParams_Clear(JLcom/google/googlex/gcam/AeShotParams;)V
-
-    return-void
-.end method
-
 .method public Equals(Lcom/google/googlex/gcam/AeShotParams;)Z
     .locals 6
 
@@ -216,30 +206,6 @@
     return v0
 .end method
 
-.method public getProcess_bayer_for_metering()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeShotParams_process_bayer_for_metering_get(JLcom/google/googlex/gcam/AeShotParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getProcess_bayer_for_payload()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeShotParams_process_bayer_for_payload_get(JLcom/google/googlex/gcam/AeShotParams;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public getTarget_height()I
     .locals 2
 
@@ -348,26 +314,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeShotParams_payload_frame_orig_width_set(JLcom/google/googlex/gcam/AeShotParams;I)V
-
-    return-void
-.end method
-
-.method public setProcess_bayer_for_metering(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeShotParams_process_bayer_for_metering_set(JLcom/google/googlex/gcam/AeShotParams;Z)V
-
-    return-void
-.end method
-
-.method public setProcess_bayer_for_payload(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeShotParams_process_bayer_for_payload_set(JLcom/google/googlex/gcam/AeShotParams;Z)V
 
     return-void
 .end method

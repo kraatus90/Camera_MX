@@ -1,55 +1,51 @@
-.class public final Lggd;
+.class final synthetic Lggd;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lggb;
+# instance fields
+.field private final a:Lgft;
+
+.field private final b:Landroid/net/Uri;
+
+.field private final c:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lgft;Landroid/net/Uri;Ljava/util/List;)V
+    .locals 0
 
-    new-instance v0, Lgge;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Ljmx;->a:Ljmx;
+    iput-object p1, p0, Lggd;->a:Lgft;
 
-    invoke-static {}, Lfsp;->e()Lggu;
+    iput-object p2, p0, Lggd;->b:Landroid/net/Uri;
 
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lgge;-><init>(Ljava/util/Set;Lggu;)V
-
-    sput-object v0, Lggd;->a:Lggb;
+    iput-object p3, p0, Lggd;->c:Ljava/util/List;
 
     return-void
 .end method
 
-.method public static a(Landroid/view/Surface;)Lggb;
-    .locals 2
 
-    invoke-static {}, Lfsp;->e()Lggu;
+# virtual methods
+.method public final run()V
+    .locals 4
 
-    move-result-object v0
+    iget-object v0, p0, Lggd;->a:Lgft;
 
-    invoke-static {p0}, Ljle;->a(Ljava/lang/Object;)Ljle;
+    iget-object v1, p0, Lggd;->b:Landroid/net/Uri;
 
-    move-result-object v1
+    iget-object v2, p0, Lggd;->c:Ljava/util/List;
 
-    invoke-static {v1, v0}, Lggd;->a(Ljava/util/Set;Lggu;)Lggb;
+    iget-object v3, v0, Lgft;->s:Lgit;
 
-    move-result-object v0
+    invoke-virtual {v3, v1, v2}, Lgit;->a(Landroid/net/Uri;Ljava/util/List;)V
 
-    return-object v0
-.end method
+    const/4 v1, 0x0
 
-.method public static a(Ljava/util/Set;Lggu;)Lggb;
-    .locals 1
+    iput-object v1, v0, Lgft;->z:Lkeh;
 
-    new-instance v0, Lgge;
-
-    invoke-direct {v0, p0, p1}, Lgge;-><init>(Ljava/util/Set;Lggu;)V
-
-    return-object v0
+    return-void
 .end method

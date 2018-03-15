@@ -1,43 +1,34 @@
-.class final Lglr;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lglr;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Lgll;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgll;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lglr;->a:Lgll;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lglr;->a:Lgll;
+    new-instance v0, Lcom/google/android/apps/camera/stats/BurstSessionStatistics;
 
-    iget-object v0, v0, Lgll;->b:Lgmu;
+    new-instance v1, Liom;
 
-    const/4 v1, 0x1
+    invoke-direct {v1}, Liom;-><init>()V
 
-    iput-boolean v1, v0, Lgmu;->b:Z
+    sget-object v2, Lcom/google/android/apps/camera/stats/BurstSessionStatistics;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Lglr;->a:Lgll;
+    invoke-direct {v0, v1, v2}, Lcom/google/android/apps/camera/stats/BurstSessionStatistics;-><init>(Liom;Ljava/lang/String;)V
 
-    iget-object v0, v0, Lgll;->b:Lgmu;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lgmu;->a(F)V
-
-    return-void
+    return-object v0
 .end method

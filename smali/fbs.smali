@@ -1,69 +1,54 @@
-.class final Lfbs;
-.super Lfdr;
+.class public final Lfbs;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Lfbr;
+
+# static fields
+.field public static final a:Lfbs;
 
 
 # direct methods
-.method constructor <init>(Lfbr;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lfbs;
+
+    invoke-direct {v0}, Lfbs;-><init>()V
+
+    sput-object v0, Lfbs;->a:Lfbs;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lfbs;->a:Lfbr;
-
-    invoke-direct {p0, p1}, Lfdr;-><init>(Lfdq;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final G()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfbs;->a:Lfbr;
+    new-instance v0, Libw;
 
-    iget-object v0, v0, Lfbr;->a:Lgvj;
+    sget-object v1, Lgdj;->c:Lgdj;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
 
-    invoke-super {p0}, Lfdr;->G()V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Lfbs;->a:Lfbr;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lfbr;->a:Lgvj;
+    move-result-object v0
 
-    iget-object v1, p0, Lfbs;->a:Lfbr;
+    check-cast v0, Libw;
 
-    iget-object v1, v1, Lfbr;->e:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final o_()V
-    .locals 2
-
-    iget-object v0, p0, Lfbs;->a:Lfbr;
-
-    iget-object v0, v0, Lfbr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lfdr;->o_()V
-
-    iget-object v0, p0, Lfbs;->a:Lfbr;
-
-    iget-object v0, v0, Lfbr;->a:Lgvj;
-
-    iget-object v1, p0, Lfbs;->a:Lfbr;
-
-    iget-object v1, v1, Lfbr;->c:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

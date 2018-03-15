@@ -3,18 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Lfne;
+.implements Ljqv;
 
 
 # direct methods
-.method constructor <init>(Lfne;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lfnf;->a:Lfne;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,35 +17,14 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lfnf;->a:Lfne;
+    check-cast p1, Limu;
 
-    iget-object v0, v0, Lfne;->a:Lfmi;
+    invoke-interface {p1}, Limu;->d()Landroid/view/Surface;
 
-    iget-object v1, v0, Lfmi;->E:Lfdq;
+    move-result-object v0
 
-    invoke-virtual {v1}, Lfdq;->o_()V
-
-    iget-boolean v1, v0, Lfmi;->e:Z
-
-    if-nez v1, :cond_0
-
-    iget-object v1, v0, Lfmi;->F:Lfdw;
-
-    invoke-virtual {v1}, Lfdw;->F()V
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lfmi;->n:Z
-
-    :cond_0
-    iget-object v0, p0, Lfnf;->a:Lfne;
-
-    iget-object v0, v0, Lfne;->a:Lfmi;
-
-    invoke-virtual {v0}, Lfmi;->s()V
-
-    return-void
+    return-object v0
 .end method

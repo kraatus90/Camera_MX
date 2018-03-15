@@ -1,20 +1,29 @@
-.class public final Lbuj;
+.class public final synthetic Lbuj;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Landroid/nfc/NfcAdapter$CreateBeamUrisCallback;
+.implements Lihf;
 
 
-# instance fields
-.field private synthetic a:Lbua;
+# static fields
+.field public static final a:Lihf;
 
 
 # direct methods
-.method public constructor <init>(Lbua;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbuj;->a:Lbua;
+    new-instance v0, Lbuj;
+
+    invoke-direct {v0}, Lbuj;-><init>()V
+
+    sput-object v0, Lbuj;->a:Lihf;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,12 +32,12 @@
 
 
 # virtual methods
-.method public final createBeamUris(Landroid/nfc/NfcEvent;)[Landroid/net/Uri;
+.method public final a()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lbuj;->a:Lbua;
+    new-instance v0, Lbui;
 
-    iget-object v0, v0, Lbua;->p:[Landroid/net/Uri;
+    invoke-direct {v0}, Lbui;-><init>()V
 
     return-object v0
 .end method

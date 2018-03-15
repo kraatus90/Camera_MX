@@ -1,97 +1,281 @@
 .class public final Lars;
-.super Ljava/lang/Object;
+.super Ljava/io/InputStream;
 .source "PG"
 
 
 # static fields
-.field private static a:Larz;
+.field private static final b:Ljava/util/Queue;
+
+
+# instance fields
+.field public a:Ljava/io/IOException;
+
+.field private c:Ljava/io/InputStream;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lart;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lart;-><init>()V
+    invoke-static {v0}, Larx;->a(I)Ljava/util/Queue;
 
-    sput-object v0, Lars;->a:Larz;
+    move-result-object v0
+
+    sput-object v0, Lars;->b:Ljava/util/Queue;
 
     return-void
 .end method
 
-.method public static a()Lha;
-    .locals 3
+.method constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lhc;
+    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lhc;-><init>(I)V
-
-    new-instance v1, Laru;
-
-    invoke-direct {v1}, Laru;-><init>()V
-
-    new-instance v2, Larv;
-
-    invoke-direct {v2}, Larv;-><init>()V
-
-    invoke-static {v0, v1, v2}, Lars;->a(Lha;Larw;Larz;)Lha;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method public static a(ILarw;)Lha;
-    .locals 1
-
-    new-instance v0, Lhc;
-
-    invoke-direct {v0, p0}, Lhc;-><init>(I)V
-
-    invoke-static {v0, p1}, Lars;->a(Lha;Larw;)Lha;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static a(Larw;)Lha;
+.method public static a(Ljava/io/InputStream;)Lars;
     .locals 2
 
-    new-instance v0, Lhb;
+    sget-object v1, Lars;->b:Ljava/util/Queue;
 
-    const/16 v1, 0x96
+    monitor-enter v1
 
-    invoke-direct {v0, v1}, Lhb;-><init>(I)V
+    :try_start_0
+    sget-object v0, Lars;->b:Ljava/util/Queue;
 
-    invoke-static {v0, p0}, Lars;->a(Lha;Larw;)Lha;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static a(Lha;Larw;)Lha;
-    .locals 1
-
-    sget-object v0, Lars;->a:Larz;
-
-    invoke-static {p0, p1, v0}, Lars;->a(Lha;Larw;Larz;)Lha;
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Lars;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lars;
+
+    invoke-direct {v0}, Lars;-><init>()V
+
+    :cond_0
+    iput-object p0, v0, Lars;->c:Ljava/io/InputStream;
+
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method
 
-.method private static a(Lha;Larw;Larz;)Lha;
+
+# virtual methods
+.method public final a()V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lars;->a:Ljava/io/IOException;
+
+    iput-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    sget-object v1, Lars;->b:Ljava/util/Queue;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lars;->b:Ljava/util/Queue;
+
+    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final available()I
     .locals 1
 
-    new-instance v0, Larx;
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
 
-    invoke-direct {v0, p0, p1, p2}, Larx;-><init>(Lha;Larw;Larz;)V
+    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
 
-    return-object v0
+    move-result v0
+
+    return v0
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    return-void
+.end method
+
+.method public final mark(I)V
+    .locals 1
+
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
+
+    return-void
+.end method
+
+.method public final markSupported()Z
+    .locals 1
+
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final read()I
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    iput-object v0, p0, Lars;->a:Ljava/io/IOException;
+
+    const/4 v0, -0x1
+
+    goto :goto_0
+.end method
+
+.method public final read([B)I
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    iput-object v0, p0, Lars;->a:Ljava/io/IOException;
+
+    const/4 v0, -0x1
+
+    goto :goto_0
+.end method
+
+.method public final read([BII)I
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    iput-object v0, p0, Lars;->a:Ljava/io/IOException;
+
+    const/4 v0, -0x1
+
+    goto :goto_0
+.end method
+
+.method public final declared-synchronized reset()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final skip(J)J
+    .locals 3
+
+    :try_start_0
+    iget-object v0, p0, Lars;->c:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-wide v0
+
+    :goto_0
+    return-wide v0
+
+    :catch_0
+    move-exception v0
+
+    iput-object v0, p0, Lars;->a:Ljava/io/IOException;
+
+    const-wide/16 v0, 0x0
+
+    goto :goto_0
 .end method

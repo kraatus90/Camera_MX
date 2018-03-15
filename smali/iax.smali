@@ -1,39 +1,89 @@
-.class final synthetic Liax;
+.class public final Liax;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lich;
+.source "PG"
 
 
 # instance fields
-.field private a:Ljvi;
+.field private a:J
 
-.field private b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final synthetic b:J
 
 
 # direct methods
-.method constructor <init>(Ljvi;Ljava/util/concurrent/atomic/AtomicBoolean;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
+
+    const-wide/32 v0, 0x3f940aa
+
+    iput-wide v0, p0, Liax;->b:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liax;->a:Ljvi;
-
-    iput-object p2, p0, Liax;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final declared-synchronized a()V
     .locals 2
 
-    iget-object v0, p0, Liax;->a:Ljvi;
+    monitor-enter p0
 
-    iget-object v1, p0, Liax;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    :try_start_0
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    invoke-static {v0, v1}, Liav;->a(Ljvi;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+    move-result-wide v0
+
+    iput-wide v0, p0, Liax;->a:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()J
+    .locals 6
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Liax;->a:J
+
+    sub-long/2addr v0, v2
+
+    const-wide/16 v2, 0x0
+
+    iget-wide v4, p0, Liax;->b:J
+
+    sub-long v0, v4, v0
+
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-wide v0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

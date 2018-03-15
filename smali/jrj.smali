@@ -1,316 +1,125 @@
 .class public final Ljrj;
-.super Ljwj;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/io/Serializable;
+.implements Ljri;
+
+
+# static fields
+.field public static final serialVersionUID:J
 
 
 # instance fields
-.field public a:Ljrp;
-
-.field public b:Ljrp;
-
-.field public c:Ljrp;
-
-.field public d:Ljrp;
-
-.field public e:Ljrp;
+.field private final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljwj;-><init>()V
-
-    iput-object v0, p0, Ljrj;->a:Ljrp;
-
-    iput-object v0, p0, Ljrj;->b:Ljrp;
-
-    iput-object v0, p0, Ljrj;->c:Ljrp;
-
-    iput-object v0, p0, Ljrj;->d:Ljrp;
-
-    iput-object v0, p0, Ljrj;->e:Ljrp;
-
-    iput-object v0, p0, Ljrj;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljrj;->cachedSize:I
+    iput-object p1, p0, Ljrj;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 3
+.method public final a(Ljava/lang/Object;)Z
+    .locals 1
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    iget-object v0, p0, Ljrj;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    iget-object v1, p0, Ljrj;->a:Ljrp;
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Ljrj;->a:Ljrp;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget-object v1, p0, Ljrj;->b:Ljrp;
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-object v2, p0, Ljrj;->b:Ljrp;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    iget-object v1, p0, Ljrj;->c:Ljrp;
-
-    if-eqz v1, :cond_2
-
-    const/4 v1, 0x3
-
-    iget-object v2, p0, Ljrj;->c:Ljrp;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    iget-object v1, p0, Ljrj;->d:Ljrp;
-
-    if-eqz v1, :cond_3
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Ljrj;->d:Ljrp;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_3
-    iget-object v1, p0, Ljrj;->e:Ljrp;
-
-    if-eqz v1, :cond_4
-
-    const/4 v1, 0x5
-
-    iget-object v2, p0, Ljrj;->e:Ljrp;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_4
     return v0
 .end method
 
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 1
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    iget-object v0, p0, Ljrj;->a:Ljrp;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Ljrp;
-
-    invoke-direct {v0}, Ljrp;-><init>()V
-
-    iput-object v0, p0, Ljrj;->a:Ljrp;
-
-    :cond_1
-    iget-object v0, p0, Ljrj;->a:Ljrp;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    :sswitch_2
-    iget-object v0, p0, Ljrj;->b:Ljrp;
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Ljrp;
-
-    invoke-direct {v0}, Ljrp;-><init>()V
-
-    iput-object v0, p0, Ljrj;->b:Ljrp;
-
-    :cond_2
-    iget-object v0, p0, Ljrj;->b:Ljrp;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    :sswitch_3
-    iget-object v0, p0, Ljrj;->c:Ljrp;
-
-    if-nez v0, :cond_3
-
-    new-instance v0, Ljrp;
-
-    invoke-direct {v0}, Ljrp;-><init>()V
-
-    iput-object v0, p0, Ljrj;->c:Ljrp;
-
-    :cond_3
-    iget-object v0, p0, Ljrj;->c:Ljrp;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    :sswitch_4
-    iget-object v0, p0, Ljrj;->d:Ljrp;
-
-    if-nez v0, :cond_4
-
-    new-instance v0, Ljrp;
-
-    invoke-direct {v0}, Ljrp;-><init>()V
-
-    iput-object v0, p0, Ljrj;->d:Ljrp;
-
-    :cond_4
-    iget-object v0, p0, Ljrj;->d:Ljrp;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    :sswitch_5
-    iget-object v0, p0, Ljrj;->e:Ljrp;
-
-    if-nez v0, :cond_5
-
-    new-instance v0, Ljrp;
-
-    invoke-direct {v0}, Ljrp;-><init>()V
-
-    iput-object v0, p0, Ljrj;->e:Ljrp;
-
-    :cond_5
-    iget-object v0, p0, Ljrj;->e:Ljrp;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xa -> :sswitch_1
-        0x12 -> :sswitch_2
-        0x1a -> :sswitch_3
-        0x22 -> :sswitch_4
-        0x2a -> :sswitch_5
-    .end sparse-switch
-.end method
-
-.method public final writeTo(Ljwi;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    iget-object v0, p0, Ljrj;->a:Ljrp;
+    instance-of v0, p1, Ljrj;
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    check-cast p1, Ljrj;
 
-    iget-object v1, p0, Ljrj;->a:Ljrp;
+    iget-object v0, p0, Ljrj;->a:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    iget-object v1, p1, Ljrj;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
 
     :cond_0
-    iget-object v0, p0, Ljrj;->b:Ljrp;
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_1
+    goto :goto_0
+.end method
 
-    const/4 v0, 0x2
+.method public final hashCode()I
+    .locals 1
 
-    iget-object v1, p0, Ljrj;->b:Ljrp;
+    iget-object v0, p0, Ljrj;->a:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    :cond_1
-    iget-object v0, p0, Ljrj;->c:Ljrp;
+    move-result v0
 
-    if-eqz v0, :cond_2
+    return v0
+.end method
 
-    const/4 v0, 0x3
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    iget-object v1, p0, Ljrj;->c:Ljrp;
+    iget-object v0, p0, Ljrj;->a:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_2
-    iget-object v0, p0, Ljrj;->d:Ljrp;
+    move-result-object v0
 
-    if-eqz v0, :cond_3
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v0, 0x4
+    move-result-object v1
 
-    iget-object v1, p0, Ljrj;->d:Ljrp;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    move-result v1
 
-    :cond_3
-    iget-object v0, p0, Ljrj;->e:Ljrp;
+    add-int/lit8 v1, v1, 0x14
 
-    if-eqz v0, :cond_4
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x5
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v1, p0, Ljrj;->e:Ljrp;
+    const-string v1, "Predicates.equalTo("
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_4
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    move-result-object v1
 
-    return-void
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

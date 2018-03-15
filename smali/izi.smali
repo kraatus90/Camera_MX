@@ -1,555 +1,271 @@
-.class public final Lizi;
-.super Ljbe;
+.class final Lizi;
+.super Liqd;
 .source "PG"
 
 
 # instance fields
-.field private a:Lizj;
+.field private final a:Lizl;
 
-.field private b:F
-
-.field private c:I
-
-.field private d:I
+.field private final synthetic b:Lizh;
 
 
 # direct methods
-.method public constructor <init>(Ljan;I)V
-    .locals 1
+.method public constructor <init>(Lizh;Lizl;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lizi;->b:Lizh;
 
-    invoke-direct {p0, p1, p2, v0}, Lizi;-><init>(Ljan;IB)V
+    invoke-direct {p0}, Liqd;-><init>()V
 
-    return-void
-.end method
-
-.method private constructor <init>(Ljan;IB)V
-    .locals 2
-
-    invoke-direct {p0}, Ljbe;-><init>()V
-
-    new-instance v1, Lizj;
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljan;
-
-    invoke-direct {v1, v0}, Lizj;-><init>(Ljan;)V
-
-    iput-object v1, p0, Lizi;->a:Lizj;
-
-    const v0, 0x3f4ccccd    # 0.8f
-
-    iput v0, p0, Lizi;->b:F
-
-    iput p2, p0, Lizi;->c:I
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lizi;->d:I
+    iput-object p2, p0, Lizi;->a:Lizl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Ljaz;
-    .locals 11
+.method public final synthetic a_(Ljava/lang/Object;)V
+    .locals 17
 
-    const/4 v1, 0x0
+    check-cast p1, Ljgw;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static/range {p1 .. p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Ljaz;->d()Z
+    move-object/from16 v0, p0
 
-    move-result v0
+    iget-object v2, v0, Lizi;->b:Lizh;
 
-    if-eqz v0, :cond_0
+    iget-object v2, v2, Lizh;->b:Ljgs;
 
-    const-string v0, "ContentValueSegmentFilter"
+    move-object/from16 v0, p0
 
-    const-string v1, "Empty image set passed in! Nothing to do."
+    iget-object v3, v0, Lizi;->b:Lizh;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v3, v3, Lizh;->d:Ljpt;
 
-    new-instance v0, Ljaz;
+    const-string v4, "all-smiles canvas"
 
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-direct {v0, v1}, Ljaz;-><init>(Ljava/util/Collection;)V
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v3, p0, Lizi;->a:Lizj;
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, v3, Lizj;->a:Ljan;
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1}, Ljaz;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    sget-object v0, Ljmr;->a:Ljkv;
-
-    move-object v2, v0
-
-    :cond_1
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lizk;
-
-    iget-wide v6, v0, Lizk;->a:J
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-interface {v5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const-string v0, "ContentValueSegmentFilter"
-
-    const/16 v3, 0x25
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Including frame: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-virtual {p1}, Ljaz;->a()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x2
-
-    move v3, v0
-
-    :goto_1
-    if-ltz v3, :cond_8
-
-    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lizk;
-
-    const-string v4, "ContentValueSegmentFilter"
-
-    iget-wide v6, v0, Lizk;->a:J
-
-    const/16 v8, 0x2a
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9, v8}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v8, "considering including "
-
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    iget v6, p0, Lizi;->d:I
-
-    if-lt v4, v6, :cond_2
-
-    const-string v4, "ContentValueSegmentFilter"
-
-    iget-wide v6, v0, Lizk;->a:J
-
-    iget v8, v0, Lizk;->b:F
-
-    const/16 v9, 0x44
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10, v9}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v9, "shouldIncludeFrame "
-
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " frameValue = "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v4, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget v4, v0, Lizk;->b:F
-
-    iget v6, p0, Lizi;->b:F
-
-    cmpl-float v4, v4, v6
-
-    if-ltz v4, :cond_7
-
-    const/4 v4, 0x1
-
-    :goto_2
-    if-eqz v4, :cond_3
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    iget v6, p0, Lizi;->c:I
-
-    if-ge v4, v6, :cond_3
-
-    :cond_2
-    iget-wide v6, v0, Lizk;->a:J
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-interface {v5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_3
-    add-int/lit8 v0, v3, -0x1
-
-    move v3, v0
-
-    goto :goto_1
-
-    :cond_4
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    iget-object v0, v3, Lizj;->a:Ljan;
-
-    invoke-interface {v0}, Ljan;->a()V
-
-    invoke-virtual {p1}, Ljaz;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :goto_3
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    const-string v0, "ContentValueSegmentFilter"
-
-    const/16 v5, 0x22
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8, v5}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v5, "Adding frame: "
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3, v4}, Ljgt;->a(Ljgs;Ljpt;Ljava/lang/String;)Ljgv;
 
     move-result-object v5
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-object/from16 v0, p0
 
-    move-result-object v5
+    iget-object v2, v0, Lizi;->b:Lizh;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v2, v2, Lizh;->e:Lizg;
 
-    move-result-object v5
+    move-object/from16 v0, p0
 
-    invoke-static {v0, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v3, v0, Lizi;->b:Lizh;
 
-    iget-object v0, v3, Lizj;->a:Ljan;
+    iget-object v3, v3, Lizh;->a:Ljhk;
 
-    invoke-interface {v0, v6, v7}, Ljan;->b(J)V
+    invoke-virtual {v2, v3}, Lizg;->b(Ljhk;)F
 
-    goto :goto_3
+    move-result v2
 
-    :cond_5
-    move v0, v1
+    move-object/from16 v0, p0
 
-    :goto_4
-    invoke-virtual {p1}, Ljaz;->a()I
+    iget-object v3, v0, Lizi;->a:Lizl;
 
-    move-result v4
+    iget-object v3, v3, Lizl;->c:Ljava/util/List;
 
-    if-ge v0, v4, :cond_1
+    move-object/from16 v0, p0
 
-    invoke-virtual {v3, p1, v2}, Lizj;->a(Ljaz;Ljava/util/List;)Lizk;
+    iget-object v4, v0, Lizi;->a:Lizl;
 
-    move-result-object v4
+    iget-object v4, v4, Lizl;->b:Ljava/util/List;
 
-    if-eqz v4, :cond_6
-
-    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v5, v3, Lizj;->a:Ljan;
-
-    iget-wide v6, v4, Lizk;->a:J
-
-    invoke-interface {v5, v6, v7}, Ljan;->c(J)V
-
-    const-string v5, "ContentValueSegmentFilter"
-
-    iget-wide v6, v4, Lizk;->a:J
-
-    iget v4, v4, Lizk;->b:F
-
-    const/16 v8, 0x55
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9, v8}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v8, " Iteration: "
-
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, " Least value Frame "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4, v2}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->getCroppedFaceData(Ljava/util/List;Ljava/util/List;F)Ljava/util/List;
 
     move-result-object v6
 
-    const-string v7, " Value: "
+    new-instance v7, Landroid/graphics/Canvas;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v5, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_6
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
-
-    :cond_7
-    move v4, v1
-
-    goto/16 :goto_2
-
-    :cond_8
-    const-string v0, "ContentValueSegmentFilter"
-
-    invoke-interface {v5}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    const/16 v2, 0x2b
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Filtered to a new stack of size "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v5}, Ljgv;->e()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    check-cast v2, Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    invoke-direct {v7, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v8, Landroid/graphics/Paint;
 
-    move-result-object v1
+    invoke-direct {v8}, Landroid/graphics/Paint;-><init>()V
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-object/from16 v0, p0
 
-    new-instance v0, Ljaz;
+    iget-object v2, v0, Lizi;->a:Lizl;
 
-    iget-object v1, p1, Ljaz;->b:Ljava/util/Set;
+    iget-object v2, v2, Lizl;->b:Ljava/util/List;
 
-    invoke-direct {v0, v5, v1}, Ljaz;-><init>(Ljava/util/Collection;Ljava/util/Set;)V
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    goto/16 :goto_0
-.end method
+    move-result-object v9
 
-.method public final toString()Ljava/lang/String;
-    .locals 7
+    :cond_0
+    :goto_0
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string v0, "ContentValueSegmentFilter[scorer="
+    move-result v2
 
-    iget-object v1, p0, Lizi;->a:Lizj;
+    if-eqz v2, :cond_4
 
-    iget-object v1, v1, Lizj;->a:Ljan;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v1
+    check-cast v2, Landroid/util/Pair;
 
-    iget v2, p0, Lizi;->b:F
+    iget-object v3, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    iget v3, p0, Lizi;->c:I
+    check-cast v3, Landroid/graphics/Rect;
 
-    iget v4, p0, Lizi;->d:I
+    iget-object v2, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v2, Landroid/graphics/Rect;
 
-    move-result-object v5
+    move-object/from16 v0, p0
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    iget-object v4, v0, Lizi;->b:Lizh;
 
-    move-result v5
+    iget-object v4, v4, Lizh;->b:Ljgs;
 
-    add-int/lit8 v5, v5, 0x4a
+    move-object/from16 v0, p1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v0, v3, v4}, Ljgw;->a(Landroid/graphics/Rect;Ljgs;)Ljgv;
 
-    move-result-object v6
+    move-result-object v10
 
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
+    const/4 v4, 0x0
 
-    move-result v6
+    :try_start_0
+    invoke-interface {v10}, Ljgv;->e()Ljava/lang/Object;
 
-    add-int/2addr v5, v6
+    move-result-object v3
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    check-cast v3, Landroid/graphics/Bitmap;
 
-    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-virtual {v3}, Landroid/graphics/Bitmap;->isPremultiplied()Z
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v3
 
-    move-result-object v0
+    if-nez v3, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v10}, Ljgv;->e()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    const-string v1, ", threshold="
+    check-cast v3, Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v11, 0x1
 
-    move-result-object v0
+    invoke-virtual {v3, v11}, Landroid/graphics/Bitmap;->setPremultiplied(Z)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    :cond_1
+    invoke-interface {v10}, Ljgv;->e()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    const-string v1, ", maxFrames="
+    check-cast v3, Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v11, Landroid/graphics/Rect;
 
-    move-result-object v0
+    const/4 v12, 0x0
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 v13, 0x0
 
-    move-result-object v0
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
-    const-string v1, ", minFrames="
+    move-result v14
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
-    move-result-object v0
+    move-result v15
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v11, v12, v13, v14, v15}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    move-result-object v0
+    invoke-virtual {v7, v3, v11, v2, v8}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    const-string v1, "]"
+    if-eqz v10, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v10}, Ljgv;->close()V
 
-    move-result-object v0
+    goto :goto_0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :catch_0
+    move-exception v2
 
-    move-result-object v0
+    :try_start_1
+    throw v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    return-object v0
+    :catchall_0
+    move-exception v3
+
+    move-object/from16 v16, v3
+
+    move-object v3, v2
+
+    move-object/from16 v2, v16
+
+    :goto_1
+    if-eqz v10, :cond_2
+
+    if-eqz v3, :cond_3
+
+    :try_start_2
+    invoke-interface {v10}, Ljgv;->close()V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
+
+    :cond_2
+    :goto_2
+    throw v2
+
+    :catch_1
+    move-exception v4
+
+    invoke-static {v3, v4}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_2
+
+    :cond_3
+    invoke-interface {v10}, Ljgv;->close()V
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v2, 0x0
+
+    invoke-virtual {v7, v2}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lizi;->b:Lizh;
+
+    iget-object v2, v2, Lizh;->c:Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lizi;->a:Lizl;
+
+    iget-wide v8, v3, Lizl;->a:J
+
+    invoke-virtual {v2, v5, v6, v8, v9}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->addPhoto(Ljgv;Ljava/util/List;J)V
+
+    return-void
+
+    :catchall_1
+    move-exception v2
+
+    move-object v3, v4
+
+    goto :goto_1
 .end method

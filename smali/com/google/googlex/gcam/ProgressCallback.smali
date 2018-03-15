@@ -60,22 +60,12 @@
 
 
 # virtual methods
-.method public Run(Lcom/google/googlex/gcam/IShot;F)V
-    .locals 7
+.method public Run(IF)V
+    .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/ProgressCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    move v6, p2
-
-    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->ProgressCallback_Run(JLcom/google/googlex/gcam/ProgressCallback;JLcom/google/googlex/gcam/IShot;F)V
+    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->ProgressCallback_Run(JLcom/google/googlex/gcam/ProgressCallback;IF)V
 
     return-void
 .end method

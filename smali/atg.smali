@@ -3,82 +3,161 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Latf;
+.implements Lihb;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Lbns;
 
-.field private b:Ljxn;
+.field public final b:Lfam;
 
-.field private c:Ljxn;
+.field public final c:Lket;
 
-.field private d:Ljxn;
+.field public final d:Lket;
 
-.field private e:Ljxn;
+.field public final e:Landroid/view/View$OnClickListener;
 
-.field private f:Ljxn;
+.field private final f:Lihb;
 
-.field private g:Ljxn;
+.field private g:Z
 
-.field private h:Ljxn;
-
-.field private i:Ljxn;
+.field private final h:Landroid/view/View$OnClickListener;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lbns;Lbnr;Lfam;)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Latg;->a:Ljxn;
+    new-instance v0, Lket;
 
-    iput-object p2, p0, Latg;->b:Ljxn;
+    invoke-direct {v0}, Lket;-><init>()V
 
-    iput-object p3, p0, Latg;->c:Ljxn;
+    iput-object v0, p0, Latg;->c:Lket;
 
-    iput-object p4, p0, Latg;->d:Ljxn;
+    new-instance v0, Lket;
 
-    iput-object p5, p0, Latg;->e:Ljxn;
+    invoke-direct {v0}, Lket;-><init>()V
 
-    iput-object p6, p0, Latg;->f:Ljxn;
+    iput-object v0, p0, Latg;->d:Lket;
 
-    iput-object p7, p0, Latg;->g:Ljxn;
+    new-instance v0, Lath;
 
-    iput-object p8, p0, Latg;->h:Ljxn;
+    invoke-direct {v0, p0}, Lath;-><init>(Latg;)V
 
-    iput-object p9, p0, Latg;->i:Ljxn;
+    iput-object v0, p0, Latg;->e:Landroid/view/View$OnClickListener;
+
+    new-instance v0, Lati;
+
+    invoke-direct {v0, p0}, Lati;-><init>(Latg;)V
+
+    iput-object v0, p0, Latg;->h:Landroid/view/View$OnClickListener;
+
+    iput-object p1, p0, Latg;->a:Lbns;
+
+    iput-object p3, p0, Latg;->b:Lfam;
+
+    iget-object v0, p0, Latg;->h:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {p1, v0}, Lbns;->a(Landroid/view/View$OnClickListener;)V
+
+    iget-object v0, p2, Lbnr;->b:Lick;
+
+    new-instance v1, Latj;
+
+    invoke-direct {v1, p0}, Latj;-><init>(Latg;)V
+
+    sget-object v2, Lken;->a:Lken;
+
+    invoke-interface {v0, v1, v2}, Lick;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+
+    move-result-object v0
+
+    iput-object v0, p0, Latg;->f:Lihb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 10
+.method public final a()Lkeh;
+    .locals 1
 
-    new-instance v0, Latf;
-
-    iget-object v1, p0, Latg;->a:Ljxn;
-
-    iget-object v2, p0, Latg;->b:Ljxn;
-
-    iget-object v3, p0, Latg;->c:Ljxn;
-
-    iget-object v4, p0, Latg;->d:Ljxn;
-
-    iget-object v5, p0, Latg;->e:Ljxn;
-
-    iget-object v6, p0, Latg;->f:Ljxn;
-
-    iget-object v7, p0, Latg;->g:Ljxn;
-
-    iget-object v8, p0, Latg;->h:Ljxn;
-
-    iget-object v9, p0, Latg;->i:Ljxn;
-
-    invoke-direct/range {v0 .. v9}, Latf;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    iget-object v0, p0, Latg;->c:Lket;
 
     return-object v0
+.end method
+
+.method public final b()Lkeh;
+    .locals 1
+
+    iget-object v0, p0, Latg;->d:Lket;
+
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    iget-boolean v0, p0, Latg;->g:Z
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Latg;->g:Z
+
+    iget-object v0, p0, Latg;->f:Lihb;
+
+    invoke-interface {v0}, Lihb;->close()V
+
+    iget-object v0, p0, Latg;->a:Lbns;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lbns;->a(Landroid/view/View$OnClickListener;)V
+
+    iget-object v0, p0, Latg;->c:Lket;
+
+    invoke-virtual {v0}, Lkch;->isDone()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Latg;->c:Lket;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    :cond_2
+    iget-object v0, p0, Latg;->d:Lket;
+
+    invoke-virtual {v0}, Lkch;->isDone()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Latg;->d:Lket;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    goto :goto_0
 .end method

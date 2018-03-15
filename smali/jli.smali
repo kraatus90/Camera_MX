@@ -1,223 +1,189 @@
 .class public final Ljli;
-.super Ljlf;
+.super Ljkq;
 .source "PG"
 
 
 # instance fields
-.field private d:Ljava/util/Comparator;
+.field private final a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+.field private final b:F
+
+.field private final c:F
+
+.field private final d:F
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Comparator;)V
+.method public constructor <init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
     .locals 1
 
-    invoke-direct {p0}, Ljlf;-><init>()V
+    const v0, 0x3e99999a    # 0.3f
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0}, Ljkq;-><init>()V
 
-    move-result-object v0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/Comparator;
+    iput-object p1, p0, Ljli;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    iput-object v0, p0, Ljli;->d:Ljava/util/Comparator;
+    iput v0, p0, Ljli;->b:F
+
+    iput v0, p0, Ljli;->c:F
+
+    const/high16 v0, 0x3e800000    # 0.25f
+
+    iput v0, p0, Ljli;->d:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljkq;
-    .locals 0
+.method public final a(Ljkl;)Ljkl;
+    .locals 13
 
-    invoke-super {p0, p1}, Ljlf;->c(Ljava/lang/Object;)Ljlf;
+    const-wide/16 v10, -0x1
 
-    return-object p0
-.end method
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final synthetic a(Ljava/lang/Iterable;)Ljkr;
-    .locals 0
+    new-instance v9, Ljava/util/ArrayList;
 
-    invoke-super {p0, p1}, Ljlf;->b(Ljava/lang/Iterable;)Ljlf;
+    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    return-object p0
-.end method
+    invoke-virtual {p1}, Ljkl;->iterator()Ljava/util/Iterator;
 
-.method public final synthetic a(Ljava/util/Iterator;)Ljkr;
-    .locals 0
+    move-result-object v12
 
-    invoke-super {p0, p1}, Ljlf;->b(Ljava/util/Iterator;)Ljlf;
-
-    return-object p0
-.end method
-
-.method public final synthetic a([Ljava/lang/Object;)Ljkr;
-    .locals 0
-
-    invoke-super {p0, p1}, Ljlf;->b([Ljava/lang/Object;)Ljlf;
-
-    return-object p0
-.end method
-
-.method public final synthetic a()Ljle;
-    .locals 1
-
-    invoke-virtual {p0}, Ljli;->b()Ljlh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final synthetic b(Ljava/lang/Object;)Ljkr;
-    .locals 0
-
-    invoke-super {p0, p1}, Ljlf;->c(Ljava/lang/Object;)Ljlf;
-
-    return-object p0
-.end method
-
-.method public final synthetic b(Ljava/lang/Iterable;)Ljlf;
-    .locals 0
-
-    invoke-super {p0, p1}, Ljlf;->b(Ljava/lang/Iterable;)Ljlf;
-
-    return-object p0
-.end method
-
-.method public final synthetic b(Ljava/util/Iterator;)Ljlf;
-    .locals 0
-
-    invoke-super {p0, p1}, Ljlf;->b(Ljava/util/Iterator;)Ljlf;
-
-    return-object p0
-.end method
-
-.method public final synthetic b([Ljava/lang/Object;)Ljlf;
-    .locals 0
-
-    invoke-super {p0, p1}, Ljlf;->b([Ljava/lang/Object;)Ljlf;
-
-    return-object p0
-.end method
-
-.method public final b()Ljlh;
-    .locals 8
-
-    const/4 v4, 0x1
-
-    iget-object v2, p0, Ljli;->a:[Ljava/lang/Object;
-
-    iget-object v5, p0, Ljli;->d:Ljava/util/Comparator;
-
-    iget v6, p0, Ljli;->b:I
-
-    if-nez v6, :cond_0
-
-    invoke-static {v5}, Ljlh;->a(Ljava/util/Comparator;)Ljmy;
-
-    move-result-object v0
+    move-wide v2, v10
 
     :goto_0
-    invoke-virtual {v0}, Ljlh;->size()I
-
-    move-result v1
-
-    iput v1, p0, Ljli;->b:I
-
-    iput-boolean v4, p0, Ljli;->c:Z
-
-    return-object v0
-
-    :cond_0
-    invoke-static {v2, v6}, Liui;->b([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    invoke-static {v2, v0, v6, v5}, Ljava/util/Arrays;->sort([Ljava/lang/Object;IILjava/util/Comparator;)V
-
-    move v3, v4
-
-    move v1, v4
-
-    :goto_1
-    if-ge v3, v6, :cond_1
-
-    aget-object v7, v2, v3
-
-    add-int/lit8 v0, v1, -0x1
-
-    aget-object v0, v2, v0
-
-    invoke-interface {v5, v7, v0}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    add-int/lit8 v0, v1, 0x1
+    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    aput-object v7, v2, v1
+    move-result-object v0
 
-    :goto_2
-    add-int/lit8 v1, v3, 0x1
+    check-cast v0, Ljava/lang/Long;
 
-    move v3, v1
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move v1, v0
+    move-result-wide v4
 
-    goto :goto_1
+    new-instance v0, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;
+
+    iget v1, p0, Ljli;->b:F
+
+    iget v6, p0, Ljli;->c:F
+
+    iget v7, p0, Ljli;->d:F
+
+    invoke-direct {v0, v1, v6, v7}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;-><init>(FFF)V
+
+    cmp-long v1, v2, v10
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ljli;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    iget v6, p0, Ljli;->b:F
+
+    iget v7, p0, Ljli;->c:F
+
+    iget v8, p0, Ljli;->d:F
+
+    invoke-static/range {v1 .. v8}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;->getCumulativeMotionStatistics(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;JJFFF)Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;->isMovementTooLarge()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;->hasTooManyInvalidFrames()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {v9, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    const/4 v0, 0x0
-
-    invoke-static {v2, v1, v6, v0}, Ljava/util/Arrays;->fill([Ljava/lang/Object;IILjava/lang/Object;)V
-
-    array-length v0, v2
-
-    div-int/lit8 v0, v0, 0x2
-
-    if-ge v1, v0, :cond_2
-
-    invoke-static {v2, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    :goto_3
-    new-instance v2, Ljmy;
-
-    invoke-static {v0, v1}, Ljkv;->b([Ljava/lang/Object;I)Ljkv;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0, v5}, Ljmy;-><init>(Ljkv;Ljava/util/Comparator;)V
-
-    move-object v0, v2
+    move-wide v2, v4
 
     goto :goto_0
 
     :cond_2
-    move-object v0, v2
+    new-instance v0, Ljkl;
 
-    goto :goto_3
+    invoke-direct {v0, v9}, Ljkl;-><init>(Ljava/util/Collection;)V
 
-    :cond_3
-    move v0, v1
-
-    goto :goto_2
+    return-object v0
 .end method
 
-.method public final synthetic c(Ljava/lang/Object;)Ljlf;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    invoke-super {p0, p1}, Ljlf;->c(Ljava/lang/Object;)Ljlf;
+    iget v0, p0, Ljli;->b:F
 
-    return-object p0
-.end method
+    iget v1, p0, Ljli;->c:F
 
-.method public final varargs c([Ljava/lang/Object;)Ljli;
-    .locals 0
+    iget v2, p0, Ljli;->d:F
 
-    invoke-super {p0, p1}, Ljlf;->b([Ljava/lang/Object;)Ljlf;
+    const/16 v3, 0x83
 
-    return-object p0
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "SmallMotionSegmentFilter[maxValidMovement="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v3, ", maxFrameMovement="
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", maxInvalidFramesRatio="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

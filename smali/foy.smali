@@ -1,155 +1,159 @@
-.class final Lfoy;
-.super Ljava/lang/Thread;
+.class public final Lfoy;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lfow;
+.field public final a:Lfpe;
+
+.field public final b:Ljava/util/List;
+
+.field public final c:Ljava/util/List;
 
 
 # direct methods
-.method constructor <init>(Lfow;)V
+.method public constructor <init>(Lfpe;Ljava/util/List;Ljava/util/List;)V
     .locals 0
 
-    iput-object p1, p0, Lfoy;->a:Lfow;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    iput-object p1, p0, Lfoy;->a:Lfpe;
+
+    iput-object p2, p0, Lfoy;->b:Ljava/util/List;
+
+    iput-object p3, p0, Lfoy;->c:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    const/4 v2, 0x0
+    instance-of v0, p1, Lfoy;
 
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->c()Z
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    iget-object v1, p0, Lfoy;->a:Lfpe;
 
-    iget-object v0, v0, Lfow;->d:Lfpg;
+    move-object v0, p1
 
-    invoke-virtual {v0}, Lfpg;->b()V
+    check-cast v0, Lfoy;
 
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    iget-object v0, v0, Lfoy;->a:Lfpe;
 
-    iget-object v0, v0, Lfow;->H:Lfom;
-
-    invoke-virtual {v0}, Lfom;->f()I
+    invoke-virtual {v1, v0}, Lfpe;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    iget-object v1, p0, Lfoy;->b:Ljava/util/List;
 
-    iget-object v0, v0, Lfow;->d:Lfpg;
+    move-object v0, p1
 
-    invoke-virtual {v0}, Lfpg;->a()V
+    check-cast v0, Lfoy;
 
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    iget-object v0, v0, Lfoy;->b:Ljava/util/List;
 
-    invoke-static {v0}, Lfow;->b(Lfow;)I
-
-    move-result v0
-
-    sget v1, Leh;->aN:I
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lfoy;->a:Lfow;
-
-    invoke-static {v0}, Lfow;->b(Lfow;)I
+    invoke-interface {v1, v0}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    sget v1, Leh;->aS:I
+    if-eqz v0, :cond_0
 
-    if-ne v0, v1, :cond_1
+    iget-object v0, p0, Lfoy;->c:Ljava/util/List;
+
+    check-cast p1, Lfoy;
+
+    iget-object v1, p1, Lfoy;->c:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
 
     :cond_0
-    const/16 v0, 0x10
+    const/4 v0, 0x0
 
-    new-array v0, v0, [F
+    goto :goto_0
+.end method
 
-    invoke-static {v0, v2}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+.method public final hashCode()I
+    .locals 3
 
-    iget-object v1, p0, Lfoy;->a:Lfow;
+    const/4 v0, 0x3
 
-    iget-object v1, v1, Lfow;->d:Lfpg;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v0}, Lfpg;->a([F)V
+    const/4 v1, 0x0
 
-    :cond_1
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    iget-object v2, p0, Lfoy;->a:Lfpe;
 
-    invoke-static {v0}, Lfow;->a(Lfow;)Lfpx;
-
-    move-result-object v0
-
-    iput-boolean v2, v0, Lfpx;->h:Z
-
-    iput-boolean v2, v0, Lfpx;->i:Z
-
-    iput v2, v0, Lfpx;->g:I
-
-    iget-object v0, p0, Lfoy;->a:Lfow;
-
-    iget-object v0, v0, Lfow;->H:Lfom;
-
-    iget-object v0, v0, Lfom;->I:Lfpa;
-
-    const-wide/high16 v2, -0x4010000000000000L    # -1.0
-
-    iput-wide v2, v0, Lfpa;->b:D
-
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    aput-object v2, v0, v1
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Lfow;->p:Z
+    iget-object v2, p0, Lfoy;->b:Ljava/util/List;
 
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    aput-object v2, v0, v1
 
-    iget-boolean v0, v0, Lfow;->y:Z
+    const/4 v1, 0x2
 
-    if-nez v0, :cond_2
+    iget-object v2, p0, Lfoy;->c:Ljava/util/List;
 
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    aput-object v2, v0, v1
 
-    iget-object v0, v0, Lfow;->e:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
-    iget-object v1, p0, Lfoy;->a:Lfow;
+    move-result v0
 
-    iget v1, v1, Lfow;->z:I
+    return v0
+.end method
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->a(I)V
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    :cond_2
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    const-string v0, "ImageSaverTrace"
 
-    iget-boolean v0, v0, Lfow;->y:Z
+    invoke-static {v0}, Ljhn;->b(Ljava/lang/String;)Ljrc;
 
-    if-eqz v0, :cond_3
+    move-result-object v0
 
-    iget-object v0, p0, Lfoy;->a:Lfow;
+    const-string v1, "ProcessingMethod"
 
-    iget-object v0, v0, Lfow;->e:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+    iget-object v2, p0, Lfoy;->a:Lfpe;
 
-    iget-object v1, p0, Lfoy;->a:Lfow;
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
 
-    iget-boolean v1, v1, Lfow;->y:Z
+    move-result-object v0
 
-    iget-object v2, p0, Lfoy;->a:Lfow;
+    const-string v1, "Input Image Metadata"
 
-    iget-object v2, v2, Lfow;->H:Lfom;
+    iget-object v2, p0, Lfoy;->b:Ljava/util/List;
 
-    iget v2, v2, Lfom;->o:I
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->a(ZI)V
+    move-result-object v0
 
-    :cond_3
-    return-void
+    const-string v1, "Reprocessing Metadata"
+
+    iget-object v2, p0, Lfoy;->c:Ljava/util/List;
+
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljrc;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

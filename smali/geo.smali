@@ -1,44 +1,51 @@
-.class public final Lgeo;
+.class final synthetic Lgeo;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lgeo;
+# instance fields
+.field private final a:Lgem;
+
+.field private final b:Lket;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lgeo;
-
-    invoke-direct {v0}, Lgeo;-><init>()V
-
-    sput-object v0, Lgeo;->a:Lgeo;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lgem;Lket;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgeo;->a:Lgem;
+
+    iput-object p2, p0, Lgeo;->b:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    new-instance v0, Lgem;
+    iget-object v0, p0, Lgeo;->a:Lgem;
 
-    invoke-direct {v0}, Lgem;-><init>()V
+    iget-object v1, p0, Lgeo;->b:Lket;
 
-    return-object v0
+    iget-object v0, v0, Lgem;->b:Lgfd;
+
+    invoke-interface {v0}, Lgfd;->a()Lkeh;
+
+    move-result-object v0
+
+    new-instance v2, Lgeq;
+
+    invoke-direct {v2, v1}, Lgeq;-><init>(Lket;)V
+
+    sget-object v1, Lken;->a:Lken;
+
+    invoke-static {v0, v2, v1}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
+
+    return-void
 .end method

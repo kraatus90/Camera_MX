@@ -3,138 +3,149 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lihb;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
+.field public final a:Leuc;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Leuc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leyd;->a:Ljxn;
-
-    iput-object p2, p0, Leyd;->b:Ljxn;
-
-    iput-object p3, p0, Leyd;->c:Ljxn;
-
-    iput-object p4, p0, Leyd;->d:Ljxn;
-
-    iput-object p5, p0, Leyd;->e:Ljxn;
-
-    iput-object p6, p0, Leyd;->f:Ljxn;
-
-    iput-object p7, p0, Leyd;->g:Ljxn;
-
-    iput-object p8, p0, Leyd;->h:Ljxn;
+    iput-object p1, p0, Leyd;->a:Leuc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 9
+.method public final a()Z
+    .locals 1
 
-    iget-object v0, p0, Leyd;->a:Ljxn;
+    iget-object v0, p0, Leyd;->a:Leuc;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Leuc;->d:Lket;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lkch;->isDone()Z
 
-    check-cast v1, Lfem;
+    move-result v0
 
-    iget-object v0, p0, Leyd;->b:Ljxn;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Leyd;->a:Leuc;
 
-    move-result-object v2
+    iget-object v0, v0, Leuc;->e:Lket;
 
-    check-cast v2, Liau;
+    invoke-virtual {v0}, Lkch;->isDone()Z
 
-    iget-object v0, p0, Leyd;->c:Ljxn;
+    move-result v0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Leyd;->a:Leuc;
 
-    move-object v3, v0
+    iget-boolean v0, v0, Leuc;->g:Z
 
-    check-cast v3, Ljht;
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Leyd;->d:Ljxn;
+    const/4 v0, 0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    :goto_0
+    return v0
 
-    move-result-object v4
+    :cond_0
+    const/4 v0, 0x0
 
-    check-cast v4, Lezh;
+    goto :goto_0
+.end method
 
-    iget-object v0, p0, Leyd;->e:Ljxn;
+.method public final a(Leyd;)Z
+    .locals 6
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v5
+    iget-object v0, p1, Leyd;->a:Leuc;
 
-    check-cast v5, Lexu;
+    iget-wide v2, v0, Leuc;->c:J
 
-    iget-object v0, p0, Leyd;->f:Ljxn;
+    iget-object v0, p0, Leyd;->a:Leuc;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-wide v4, v0, Leuc;->c:J
 
-    move-result-object v8
+    cmp-long v0, v2, v4
 
-    check-cast v8, Lfdg;
+    if-lez v0, :cond_1
 
-    iget-object v0, p0, Leyd;->g:Ljxn;
+    iget-object v0, p1, Leyd;->a:Leuc;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v0, Leuc;
 
-    move-result-object v6
+    iget-object v0, v0, Leuc;->d:Lket;
 
-    check-cast v6, Lfdq;
+    invoke-virtual {v0}, Lkch;->isDone()Z
 
-    iget-object v0, p0, Leyd;->h:Ljxn;
+    move-result v0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v7
+    iget-object v0, p0, Leyd;->a:Leuc;
 
-    check-cast v7, Lfdw;
+    iget-object v0, v0, Leuc;->d:Lket;
 
-    new-instance v0, Lfah;
+    invoke-virtual {v0}, Lkch;->isDone()Z
 
-    invoke-virtual {v3}, Ljht;->a()Z
+    move-result v0
 
-    move-result v3
+    if-nez v0, :cond_0
 
-    invoke-direct/range {v0 .. v8}, Lfah;-><init>(Lfem;Liau;ZLezh;Lexu;Lfdq;Lfdw;Lfdg;)V
+    const/4 v0, 0x1
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    :goto_0
+    return v0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :cond_0
+    move v0, v1
 
-    move-result-object v0
+    goto :goto_0
 
-    check-cast v0, Leyy;
+    :cond_1
+    move v0, v1
 
-    return-object v0
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Leyd;->a:Leuc;
+
+    iget-object v0, v0, Leuc;->d:Lket;
+
+    invoke-virtual {v0, v1}, Lkch;->cancel(Z)Z
+
+    iget-object v0, p0, Leyd;->a:Leuc;
+
+    iget-object v0, v0, Leuc;->f:Lket;
+
+    invoke-virtual {v0, v1}, Lkch;->cancel(Z)Z
+
+    iget-object v0, p0, Leyd;->a:Leuc;
+
+    iget-object v0, v0, Leuc;->e:Lket;
+
+    invoke-virtual {v0, v1}, Lkch;->cancel(Z)Z
+
+    return-void
+.end method
+
+.method public final close()V
+    .locals 0
+
+    return-void
 .end method

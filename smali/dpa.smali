@@ -3,96 +3,64 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ldou;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Ljava/lang/Object;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private b:J
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldpa;->a:Ljxn;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Ldpa;->b:Ljxn;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Ldpa;->c:Ljxn;
+    iput-object v0, p0, Ldpa;->a:Ljava/lang/Object;
 
-    iput-object p4, p0, Ldpa;->d:Ljxn;
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Ldpa;->b:J
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldpa;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Ldpa;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final a(J)J
+    .locals 7
 
-    iget-object v0, p0, Ldpa;->a:Ljxn;
+    iget-object v1, p0, Ldpa;->a:Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    monitor-enter v1
 
-    move-result-object v0
+    :try_start_0
+    iget-wide v2, p0, Ldpa;->b:J
 
-    check-cast v0, Lggo;
+    iget-wide v4, p0, Ldpa;->b:J
 
-    iget-object v1, p0, Ldpa;->b:Ljxn;
+    invoke-static {v4, v5, p1, p2}, Ljava/lang/Math;->max(JJ)J
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result-wide v4
 
-    move-result-object v1
+    iput-wide v4, p0, Ldpa;->b:J
 
-    check-cast v1, Lhzr;
+    monitor-exit v1
 
-    iget-object v2, p0, Ldpa;->c:Ljxn;
+    return-wide v2
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v2
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v2, Ljuw;
-
-    iget-object v3, p0, Ldpa;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    new-instance v3, Ldox;
-
-    invoke-direct {v3, v1, v0}, Ldox;-><init>(Lhzr;Lggo;)V
-
-    sget-object v0, Ljvc;->a:Ljvc;
-
-    invoke-static {v2, v3, v0}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuw;
-
-    return-object v0
+    throw v0
 .end method

@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/String;
+.method public abstract a(Lakq;)Laki;
 .end method

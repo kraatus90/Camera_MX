@@ -1,13 +1,29 @@
-.class final Lfrp;
+.class public final Lfrp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfrr;
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lfrp;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lfrp;
+
+    invoke-direct {v0}, Lfrp;-><init>()V
+
+    sput-object v0, Lfrp;->a:Lfrp;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,17 +33,20 @@
 
 
 # virtual methods
-.method public final a(Lfsf;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    instance-of v0, p1, Lfsb;
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    check-cast p1, Lfsb;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-interface {p1}, Lfsb;->H()V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
 .end method

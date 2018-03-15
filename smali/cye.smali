@@ -1,64 +1,92 @@
-.class final Lcye;
+.class final synthetic Lcye;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lihg;
 
 
 # instance fields
-.field private synthetic a:Lcyd;
+.field private final a:Lcyd;
 
 
 # direct methods
 .method constructor <init>(Lcyd;)V
     .locals 0
 
-    iput-object p1, p0, Lcye;->a:Lcyd;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcye;->a:Lcyd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a(Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lcye;->a:Lcyd;
+    iget-object v1, p0, Lcye;->a:Lcyd;
 
-    iget-object v0, v0, Lcyd;->a:Lcxc;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    iget-object v0, v1, Lcyd;->a:Lcya;
 
-    move-result-object v0
-
-    check-cast v0, Lcwg;
-
-    iget-object v0, v0, Lcwg;->b:Lcuv;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcuv;->a(Z)V
-
-    iget-object v0, p0, Lcye;->a:Lcyd;
-
-    iget-object v0, v0, Lcyd;->a:Lcxc;
-
-    iget-object v0, v0, Lcxc;->d:Laxp;
-
-    iget-object v0, v0, Laxp;->a:Lich;
-
-    check-cast v0, Lcvz;
-
-    invoke-interface {v0}, Lcvz;->d()Lgum;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    const v1, 0x7f090006
+    check-cast v0, Lcxo;
 
-    invoke-interface {v0, v1}, Lgum;->a(I)V
+    iget-object v0, v0, Lcxo;->E:Lick;
+
+    invoke-interface {v0}, Lick;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iget-object v1, v1, Lcyd;->a:Lcya;
+
+    invoke-static {v1}, Lcya;->b(Lcya;)Lick;
+
+    move-result-object v1
+
+    const-string v2, "on"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "auto"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Lick;->a(Ljava/lang/Object;)V
 
     return-void
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

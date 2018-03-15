@@ -1,108 +1,59 @@
-.class public final Laxo;
+.class final Laxo;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljqv;
+
 
 # instance fields
-.field private a:Ljava/util/List;
+.field private final synthetic a:Laxn;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Laxn;)V
+    .locals 0
+
+    iput-object p1, p0, Laxo;->a:Laxn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Laxo;->a:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object v1, p0, Laxo;->a:Ljava/util/List;
+    check-cast p1, Ligz;
 
-    monitor-enter v1
+    iget-object v0, p0, Laxo;->a:Laxn;
 
-    :try_start_0
-    iget-object v0, p0, Laxo;->a:Ljava/util/List;
+    if-nez p1, :cond_0
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    sget-object p1, Ligz;->a:Ligz;
 
-    move-result-object v2
+    :cond_0
+    iget v1, v0, Laxn;->a:I
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    iget v2, p1, Ligz;->e:I
+
+    iget-boolean v0, v0, Laxn;->b:Z
+
+    invoke-static {v1, v2, v0}, Laxn;->a(IIZ)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0}, Ligz;->a(I)Ligz;
 
     move-result-object v0
 
-    check-cast v0, Laxl;
+    iget v0, v0, Ligz;->e:I
 
-    iget-object v3, v0, Laxl;->a:Liau;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v0, v0, Laxl;->b:Ljava/lang/Object;
+    move-result-object v0
 
-    invoke-interface {v3, v0}, Liau;->a(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_0
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-void
-.end method
-
-.method public final a(Liau;Ljava/lang/Object;)V
-    .locals 3
-
-    iget-object v1, p0, Laxo;->a:Ljava/util/List;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Laxo;->a:Ljava/util/List;
-
-    new-instance v2, Laxl;
-
-    invoke-direct {v2, p1, p2}, Laxl;-><init>(Liau;Ljava/lang/Object;)V
-
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    return-object v0
 .end method

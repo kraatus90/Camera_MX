@@ -1,72 +1,119 @@
-.class public final Ljdl;
+.class final Ljdl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljdh;
-
-
-# instance fields
-.field public a:Ljava/util/Map;
-
-.field private b:Ljdh;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljdh;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Ljdl;->a:Ljava/util/Map;
-
-    iput-object p1, p0, Ljdl;->b:Ljdh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lirs;Lirs;)F
-    .locals 6
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Ljdl;->b:Ljdh;
+    const/4 v3, 0x3
 
-    invoke-interface {v0, p1, p2}, Ljdh;->a(Lirs;Lirs;)F
+    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    move-result v0
+    const-string v1, "default"
 
-    iget-object v1, p0, Ljdl;->a:Ljava/util/Map;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v2, Landroid/util/Pair;
+    move-result-object v0
 
-    invoke-virtual {p1}, Lirs;->b()J
+    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    move-result-wide v4
+    new-instance v1, Ljjq;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-direct {v1, v0}, Ljjq;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
 
-    move-result-object v3
+    const-class v0, Ljjz;
 
-    invoke-virtual {p2}, Lirs;->b()J
+    const-string v2, "camera_motion_score"
 
-    move-result-wide v4
+    invoke-virtual {p1, v0, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v0
 
-    move-result-object v4
+    check-cast v0, Ljjz;
 
-    invoke-direct {v2, v3, v4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1}, Ljjm;->a(Ljjp;)Ljjn;
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v1
 
-    move-result-object v3
+    const v2, 0x3ce19115    # 0.027535f
 
-    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iput v2, v1, Ljjn;->e:F
 
-    return v0
+    new-array v2, v3, [F
+
+    fill-array-data v2, :array_0
+
+    iput-object v2, v1, Ljjn;->c:[F
+
+    new-array v2, v3, [F
+
+    fill-array-data v2, :array_1
+
+    iput-object v2, v1, Ljjn;->d:[F
+
+    new-array v2, v3, [F
+
+    fill-array-data v2, :array_2
+
+    iput-object v2, v1, Ljjn;->b:[F
+
+    invoke-virtual {v1, v0}, Ljjn;->a(Ljjz;)Ljjn;
+
+    move-result-object v0
+
+    sget-object v1, Ljpe;->a:Ljpe;
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljpe;)Ljjn;
+
+    move-result-object v0
+
+    sget-object v1, Ljpe;->o:Ljpe;
+
+    invoke-virtual {v0, v1}, Ljjn;->a(Ljpe;)Ljjn;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljjn;->a()Ljjm;
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x3d40d0ab
+        0x3f162ea1    # 0.586649f
+        0x3f37e8de
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x3e247c31    # 0.16063f
+        0x3e3e746d
+        0x3e0d8234
+    .end array-data
+
+    :array_2
+    .array-data 4
+        -0x441bc558    # -0.006965f
+        0x3f762b9d
+        0x3e8c7842
+    .end array-data
 .end method

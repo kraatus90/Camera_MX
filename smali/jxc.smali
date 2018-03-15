@@ -1,165 +1,166 @@
 .class final Ljxc;
-.super Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field private synthetic a:Ljwv;
+.field private a:Ljxh;
+
+.field private b:Ljvi;
+
+.field private final synthetic c:Ljxa;
 
 
 # direct methods
-.method constructor <init>(Ljwv;)V
-    .locals 0
+.method constructor <init>(Ljxa;)V
+    .locals 1
 
-    iput-object p1, p0, Ljxc;->a:Ljwv;
+    iput-object p1, p0, Ljxc;->c:Ljxa;
 
-    invoke-direct {p0}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget-object v0, p0, Ljxc;->c:Ljxa;
+
+    invoke-virtual {v0}, Ljxa;->o()Ljxh;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljxc;->a:Ljxh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScale(Landroid/view/ScaleGestureDetector;)Z
-    .locals 7
-
-    const/4 v6, 0x1
-
-    iget-object v1, p0, Ljxc;->a:Ljwv;
-
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
-
-    move-result v0
-
-    float-to-double v2, v0
-
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusX()F
-
-    move-result v4
-
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusY()F
-
-    move-result v5
-
-    invoke-static/range {v1 .. v6}, Ljwv;->a(Ljwv;DFFZ)V
-
-    return v6
-.end method
-
-.method public final onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
-    .locals 2
-
-    iget-object v0, p0, Ljxc;->a:Ljwv;
-
-    sget v1, Leh;->bR:I
-
-    iput v1, v0, Ljwv;->c:I
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final onScaleEnd(Landroid/view/ScaleGestureDetector;)V
-    .locals 6
-
-    const/4 v5, 0x1
-
-    invoke-super {p0, p1}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;->onScaleEnd(Landroid/view/ScaleGestureDetector;)V
-
-    iget-object v0, p0, Ljxc;->a:Ljwv;
-
-    sget v1, Leh;->bP:I
-
-    iput v1, v0, Ljwv;->c:I
+.method public final hasNext()Z
+    .locals 3
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    iget-object v1, p0, Ljxc;->a:Ljxh;
 
-    iget-object v1, p0, Ljxc;->a:Ljwv;
+    if-nez v1, :cond_0
 
-    iget v1, v1, Ljwv;->a:F
-
-    iget-object v3, p0, Ljxc;->a:Ljwv;
-
-    iget v3, v3, Ljwv;->e:F
-
-    cmpl-float v1, v1, v3
-
-    if-lez v1, :cond_2
-
-    iget-object v0, p0, Ljxc;->a:Ljwv;
-
-    iget v2, v0, Ljwv;->e:F
-
-    move v0, v5
+    :goto_0
+    return v0
 
     :cond_0
-    :goto_0
-    if-eqz v0, :cond_1
+    iget-object v1, p0, Ljxc;->c:Ljxa;
 
-    new-instance v0, Ljwy;
+    iget-object v1, v1, Ljxa;->a:Ljtv;
 
-    iget-object v1, p0, Ljxc;->a:Ljwv;
+    iget-object v2, p0, Ljxc;->a:Ljxh;
 
-    iget-object v3, p0, Ljxc;->a:Ljwv;
+    iget-object v2, v2, Ljxh;->a:Ljava/lang/Object;
 
-    iget v3, v3, Ljwv;->i:I
+    invoke-virtual {v1, v2}, Ljtv;->b(Ljava/lang/Object;)Z
 
-    div-int/lit8 v3, v3, 0x2
+    move-result v1
 
-    int-to-float v3, v3
+    if-eqz v1, :cond_1
 
-    iget-object v4, p0, Ljxc;->a:Ljwv;
+    const/4 v1, 0x0
 
-    iget v4, v4, Ljwv;->j:I
-
-    div-int/lit8 v4, v4, 0x2
-
-    int-to-float v4, v4
-
-    invoke-direct/range {v0 .. v5}, Ljwy;-><init>(Ljwv;FFFZ)V
-
-    iget-object v1, p0, Ljxc;->a:Ljwv;
-
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x10
-
-    if-lt v2, v3, :cond_3
-
-    invoke-virtual {v1, v0}, Ljwv;->postOnAnimation(Ljava/lang/Runnable;)V
-
-    :cond_1
-    :goto_1
-    return-void
-
-    :cond_2
-    iget-object v1, p0, Ljxc;->a:Ljwv;
-
-    iget v1, v1, Ljwv;->a:F
-
-    iget-object v3, p0, Ljxc;->a:Ljwv;
-
-    iget v3, v3, Ljwv;->d:F
-
-    cmpg-float v1, v1, v3
-
-    if-gez v1, :cond_0
-
-    iget-object v0, p0, Ljxc;->a:Ljwv;
-
-    iget v2, v0, Ljwv;->d:F
-
-    move v0, v5
+    iput-object v1, p0, Ljxc;->a:Ljxh;
 
     goto :goto_0
 
-    :cond_3
-    const-wide/16 v2, 0x10
+    :cond_1
+    const/4 v0, 0x1
 
-    invoke-virtual {v1, v0, v2, v3}, Ljwv;->postDelayed(Ljava/lang/Runnable;J)Z
+    goto :goto_0
+.end method
 
-    goto :goto_1
+.method public final synthetic next()Ljava/lang/Object;
+    .locals 3
+
+    invoke-virtual {p0}, Ljxc;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Ljxc;->c:Ljxa;
+
+    iget-object v1, p0, Ljxc;->a:Ljxh;
+
+    new-instance v2, Ljxb;
+
+    invoke-direct {v2, v0, v1}, Ljxb;-><init>(Ljxa;Ljxh;)V
+
+    iput-object v2, p0, Ljxc;->b:Ljvi;
+
+    iget-object v0, p0, Ljxc;->a:Ljxh;
+
+    iget-object v0, v0, Ljxh;->h:Ljxh;
+
+    iget-object v1, p0, Ljxc;->c:Ljxa;
+
+    iget-object v1, v1, Ljxa;->b:Ljxh;
+
+    if-ne v0, v1, :cond_1
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ljxc;->a:Ljxh;
+
+    :goto_0
+    return-object v2
+
+    :cond_1
+    iget-object v0, p0, Ljxc;->a:Ljxh;
+
+    iget-object v0, v0, Ljxh;->h:Ljxh;
+
+    iput-object v0, p0, Ljxc;->a:Ljxh;
+
+    goto :goto_0
+.end method
+
+.method public final remove()V
+    .locals 3
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Ljxc;->b:Ljvi;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    const-string v2, "no calls to next() since the last call to remove()"
+
+    invoke-static {v0, v2}, Ljii;->b(ZLjava/lang/Object;)V
+
+    iget-object v0, p0, Ljxc;->c:Ljxa;
+
+    iget-object v2, p0, Ljxc;->b:Ljvi;
+
+    invoke-interface {v2}, Ljvi;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2, v1}, Ljxa;->c(Ljava/lang/Object;I)I
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ljxc;->b:Ljvi;
+
+    return-void
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
 .end method

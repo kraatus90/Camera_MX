@@ -1,9 +1,9 @@
-.class final Liss;
+.class public abstract Liss;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Lisq;
 
 
 # direct methods
@@ -17,12 +17,28 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
+.method public final b()I
     .locals 1
 
-    new-instance v0, Lipi;
+    sget v0, Lfxq;->g:I
 
-    invoke-direct {v0}, Lipi;-><init>()V
+    return v0
+.end method
+
+.method public final d()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Liss;->a()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

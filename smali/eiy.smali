@@ -1,58 +1,71 @@
-.class public final Leiy;
+.class final Leiy;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Laad;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Leix;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Leix;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leiy;->a:Leix;
 
-    iput-object p1, p0, Leiy;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a(ZLaao;)V
+    .locals 5
 
-    iget-object v0, p0, Leiy;->a:Ljxn;
+    const/4 v4, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Leiy;->a:Leix;
 
-    move-result-object v0
+    iget-object v0, v0, Leix;->h:Lejh;
 
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
+    iget-object v1, v0, Lejh;->b:Lejr;
 
-    new-instance v1, Laxs;
+    if-eqz v1, :cond_0
 
-    new-instance v2, Laxq;
+    iget-object v1, v0, Lejh;->b:Lejr;
 
-    const-wide/16 v4, 0xa
+    invoke-virtual {v1}, Lejr;->b()V
 
-    sget-object v3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    iget-object v1, v0, Lejh;->b:Lejr;
 
-    invoke-direct {v2, v0, v4, v5, v3}, Laxq;-><init>(Ljava/util/concurrent/ScheduledExecutorService;JLjava/util/concurrent/TimeUnit;)V
+    invoke-virtual {v1}, Lejr;->c()[F
 
-    invoke-direct {v1, v2}, Laxs;-><init>(Laxq;)V
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    move-result-wide v2
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-wide v2, v0, Lejh;->c:J
 
-    move-result-object v0
+    iget-object v1, v0, Lejh;->b:Lejr;
 
-    check-cast v0, Laxs;
+    iget v1, v1, Lejr;->o:F
 
-    return-object v0
+    invoke-static {v1}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->a(F)V
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lejh;->g:Z
+
+    iput-boolean v4, v0, Lejh;->h:Z
+
+    :cond_0
+    iget-object v0, p0, Leiy;->a:Leix;
+
+    iput-boolean v4, v0, Leix;->x:Z
+
+    return-void
 .end method

@@ -1,45 +1,23 @@
-.class public final Ldhh;
-.super Libn;
+.class final Ldhh;
+.super Landroid/view/GestureDetector$SimpleOnGestureListener;
 .source "PG"
 
 
-# instance fields
-.field private a:Lgdw;
-
-
 # direct methods
-.method public constructor <init>(Liau;Lgdw;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1}, Libn;-><init>(Liau;)V
-
-    iput-object p2, p0, Ldhh;->a:Lgdw;
+    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    check-cast p1, Lgdw;
+    const/4 v0, 0x1
 
-    iget-object v0, p1, Lgdw;->d:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    check-cast p1, Ljava/lang/String;
-
-    iget-object v0, p0, Ldhh;->a:Lgdw;
-
-    invoke-static {p1, v0}, Lgdw;->a(Ljava/lang/String;Lgdw;)Lgdw;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method

@@ -3,136 +3,120 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfnm;
+
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final b:Ljava/util/concurrent/Executor;
 
-.field private b:Ljxn;
+.field private final c:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
+.field private final d:Lcom/google/googlex/gcam/GoudaRequest;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "PostProcImgSvr"
 
-    iput-object p1, p0, Lfzh;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lfzh;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Lfzh;->c:Ljxn;
-
-    iput-object p4, p0, Lfzh;->d:Ljxn;
-
-    iput-object p5, p0, Lfzh;->e:Ljxn;
-
-    iput-object p6, p0, Lfzh;->f:Ljxn;
-
-    iput-object p7, p0, Lfzh;->g:Ljxn;
-
-    iput-object p8, p0, Lfzh;->h:Ljxn;
-
-    iput-object p9, p0, Lfzh;->i:Ljxn;
+    sput-object v0, Lfzh;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 10
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/GoudaRequest;)V
+    .locals 1
 
-    new-instance v0, Lfzh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v2, p1
+    move-result-object v0
 
-    move-object v3, p2
+    check-cast v0, Ljava/util/concurrent/Executor;
 
-    move-object v4, p3
+    iput-object v0, p0, Lfzh;->b:Ljava/util/concurrent/Executor;
 
-    move-object v5, p4
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v6, p5
+    move-result-object v0
 
-    move-object/from16 v7, p6
+    check-cast v0, Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    move-object/from16 v8, p7
+    iput-object v0, p0, Lfzh;->c:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    move-object/from16 v9, p8
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v9}, Lfzh;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    move-result-object v0
 
-    return-object v0
+    check-cast v0, Lcom/google/googlex/gcam/GoudaRequest;
+
+    iput-object v0, p0, Lfzh;->d:Lcom/google/googlex/gcam/GoudaRequest;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 9
+.method public final a()Lkeh;
+    .locals 7
 
-    iget-object v0, p0, Lfzh;->a:Ljxn;
+    new-instance v2, Lket;
 
-    iget-object v1, p0, Lfzh;->b:Ljxn;
+    invoke-direct {v2}, Lket;-><init>()V
 
-    iget-object v2, p0, Lfzh;->c:Ljxn;
+    iget-object v6, p0, Lfzh;->b:Ljava/util/concurrent/Executor;
 
-    iget-object v3, p0, Lfzh;->d:Ljxn;
+    new-instance v0, Lfzi;
 
-    iget-object v4, p0, Lfzh;->e:Ljxn;
+    iget-object v1, p0, Lfzh;->c:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    iget-object v5, p0, Lfzh;->f:Ljxn;
+    iget-object v3, p0, Lfzh;->d:Lcom/google/googlex/gcam/GoudaRequest;
 
-    iget-object v6, p0, Lfzh;->g:Ljxn;
+    invoke-virtual {v3}, Lcom/google/googlex/gcam/GoudaRequest;->getOutput_width()I
 
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
+    move-result v3
 
-    move-result-object v6
+    iget-object v4, p0, Lfzh;->d:Lcom/google/googlex/gcam/GoudaRequest;
 
-    check-cast v6, Lbip;
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/GoudaRequest;->getOutput_height()I
 
-    iget-object v7, p0, Lfzh;->h:Ljxn;
+    move-result v4
 
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v5, p0, Lfzh;->d:Lcom/google/googlex/gcam/GoudaRequest;
 
-    move-result-object v7
+    invoke-virtual {v5}, Lcom/google/googlex/gcam/GoudaRequest;->getPost_resample_sharpening()F
 
-    check-cast v7, Lfxb;
+    move-result v5
 
-    iget-object v8, p0, Lfzh;->i:Ljxn;
+    invoke-direct/range {v0 .. v5}, Lfzi;-><init>(Lcom/google/googlex/gcam/InterleavedImageU8;Lket;IIF)V
 
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v6, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    move-result-object v8
+    return-object v2
+.end method
 
-    check-cast v8, Licz;
+.method public final b()Lkeh;
+    .locals 2
 
-    invoke-static/range {v0 .. v8}, Lfsp;->a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Lbip;Lfxb;Licz;)Ljava/util/Set;
+    new-instance v0, Lijd;
+
+    const-string v1, "Image couldn\'t be upsampled."
+
+    invoke-direct {v0, v1}, Lijd;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Throwable;)Lkeh;
 
     move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Set;
 
     return-object v0
 .end method

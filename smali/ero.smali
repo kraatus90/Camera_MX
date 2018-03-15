@@ -1,52 +1,47 @@
-.class public final Lero;
+.class final synthetic Lero;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lero;
+# instance fields
+.field private final a:Lerl;
+
+.field private final b:Landroid/view/View;
+
+.field private final c:Landroid/view/View$OnLayoutChangeListener;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lero;
-
-    invoke-direct {v0}, Lero;-><init>()V
-
-    sput-object v0, Lero;->a:Lero;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lerl;Landroid/view/View;Landroid/view/View$OnLayoutChangeListener;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lero;->a:Lerl;
+
+    iput-object p2, p0, Lero;->b:Landroid/view/View;
+
+    iput-object p3, p0, Lero;->c:Landroid/view/View$OnLayoutChangeListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->instance()Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
+    iget-object v0, p0, Lero;->a:Lerl;
 
-    move-result-object v0
+    iget-object v1, p0, Lero;->b:Landroid/view/View;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v2, p0, Lero;->c:Landroid/view/View$OnLayoutChangeListener;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lerl;->k()V
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
-
-    return-object v0
+    return-void
 .end method

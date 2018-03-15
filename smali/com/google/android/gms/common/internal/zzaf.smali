@@ -15,16 +15,16 @@
 
 .field public d:Z
 
-.field private e:I
+.field private final e:I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhlf;
+    new-instance v0, Lhmd;
 
-    invoke-direct {v0}, Lhlf;-><init>()V
+    invoke-direct {v0}, Lhmd;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/internal/zzaf;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -88,13 +88,13 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/internal/zzaf;->a:Landroid/os/IBinder;
 
-    invoke-static {v2}, Lhmg;->a(Landroid/os/IBinder;)Lhmf;
+    invoke-static {v2}, Lhne;->a(Landroid/os/IBinder;)Lhnd;
 
     move-result-object v2
 
     iget-object v3, p1, Lcom/google/android/gms/common/internal/zzaf;->a:Landroid/os/IBinder;
 
-    invoke-static {v3}, Lhmg;->a(Landroid/os/IBinder;)Lhmf;
+    invoke-static {v3}, Lhne;->a(Landroid/os/IBinder;)Lhnd;
 
     move-result-object v3
 
@@ -115,7 +115,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -123,33 +123,33 @@
 
     iget v2, p0, Lcom/google/android/gms/common/internal/zzaf;->e:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
     iget-object v2, p0, Lcom/google/android/gms/common/internal/zzaf;->a:Landroid/os/IBinder;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/IBinder;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/IBinder;)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/common/internal/zzaf;->b:Lcom/google/android/gms/common/ConnectionResult;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v1, 0x4
 
     iget-boolean v2, p0, Lcom/google/android/gms/common/internal/zzaf;->c:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     const/4 v1, 0x5
 
     iget-boolean v2, p0, Lcom/google/android/gms/common/internal/zzaf;->d:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

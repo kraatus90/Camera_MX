@@ -1,54 +1,60 @@
-.class public final Lgwl;
+.class final synthetic Lgwl;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lgwk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lgwk;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgwl;->a:Ljxn;
-
-    iput-object p2, p0, Lgwl;->b:Ljxn;
+    iput-object p1, p0, Lgwl;->a:Lgwk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-    new-instance v2, Lgwk;
+    iget-object v0, p0, Lgwl;->a:Lgwk;
 
-    iget-object v0, p0, Lgwl;->a:Ljxn;
+    iget-object v1, v0, Lgwk;->a:Lke;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v1}, Lke;->c()Z
 
-    move-result-object v0
+    move-result v1
 
-    check-cast v0, Landroid/os/storage/StorageManager;
+    if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lgwl;->b:Ljxn;
+    invoke-virtual {v0}, Lgwk;->a()V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    :cond_0
+    :goto_0
+    return-void
 
-    move-result-object v1
+    :cond_1
+    iget v1, v0, Lgwk;->d:I
 
-    check-cast v1, Lihj;
+    if-nez v1, :cond_0
 
-    invoke-direct {v2, v0, v1}, Lgwk;-><init>(Landroid/os/storage/StorageManager;Lihj;)V
+    iget-object v1, v0, Lgwk;->b:Lfwg;
 
-    return-object v2
+    iget-object v1, v1, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b()V
+
+    iget-object v0, v0, Lgwk;->a:Lke;
+
+    invoke-virtual {v0}, Lke;->a()V
+
+    goto :goto_0
 .end method

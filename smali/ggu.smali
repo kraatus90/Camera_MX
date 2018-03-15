@@ -1,79 +1,107 @@
-.class public Lggu;
+.class final Lggu;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Landroid/net/Uri;
+
+.field private final synthetic b:Lgwx;
+
+.field private final synthetic c:Z
+
+.field private final synthetic d:Lgit;
+
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lgit;Landroid/net/Uri;Lgwx;Z)V
     .locals 0
+
+    iput-object p1, p0, Lggu;->d:Lgit;
+
+    iput-object p2, p0, Lggu;->a:Landroid/net/Uri;
+
+    iput-object p3, p0, Lggu;->b:Lgwx;
+
+    iput-boolean p4, p0, Lggu;->c:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(B)V
-    .locals 0
-
-    invoke-direct {p0}, Lggu;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(C)V
-    .locals 0
-
-    invoke-direct {p0}, Lggu;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public a(I)V
-    .locals 0
+.method public final run()V
+    .locals 6
 
-    return-void
-.end method
+    iget-object v0, p0, Lggu;->d:Lgit;
 
-.method public a(IJ)V
-    .locals 0
+    iget-object v0, v0, Lgit;->a:Lggo;
 
-    return-void
-.end method
+    iget-object v1, v0, Lggo;->c:Ljava/util/LinkedList;
 
-.method public a(Landroid/view/Surface;J)V
-    .locals 0
+    monitor-enter v1
 
-    return-void
-.end method
+    :try_start_0
+    iget-object v0, p0, Lggu;->d:Lgit;
 
-.method public a(Lgfz;)V
-    .locals 0
+    iget-object v0, v0, Lgit;->a:Lggo;
 
-    return-void
-.end method
+    iget-object v0, v0, Lggo;->c:Ljava/util/LinkedList;
 
-.method public a(Lihz;)V
-    .locals 0
+    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
-    return-void
-.end method
+    move-result-object v2
 
-.method public a(Liic;)V
-    .locals 0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public b(Lgfz;)V
-    .locals 0
+    if-eqz v0, :cond_0
 
-    return-void
-.end method
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.method public d(Liic;)V
-    .locals 0
+    move-result-object v0
+
+    check-cast v0, Lghb;
+
+    iget-object v3, p0, Lggu;->a:Landroid/net/Uri;
+
+    iget-object v4, p0, Lggu;->b:Lgwx;
+
+    iget-boolean v5, p0, Lggu;->c:Z
+
+    invoke-interface {v0, v3, v4, v5}, Lghb;->a(Landroid/net/Uri;Lgwx;Z)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object v0, p0, Lggu;->d:Lgit;
+
+    iget-object v0, v0, Lgit;->a:Lggo;
+
+    iget-object v1, p0, Lggu;->a:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Lggo;->b(Landroid/net/Uri;)V
 
     return-void
 .end method

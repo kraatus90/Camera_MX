@@ -2,10 +2,7 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lgov;
-
 
 # virtual methods
-.method public abstract releaseRgbz()V
+.method public abstract a(I)V
 .end method

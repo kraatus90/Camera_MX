@@ -1,70 +1,107 @@
-.class public Liie;
-.super Ljava/lang/Object;
+.class final enum Liie;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Liif;
 
+# static fields
+.field public static final enum a:Liie;
 
-# instance fields
-.field private a:Liif;
+.field public static final enum b:Liie;
+
+.field public static final enum c:Liie;
+
+.field public static final enum d:Liie;
+
+.field private static final synthetic e:[Liie;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 6
 
-    new-instance v0, Lifp;
+    const/4 v5, 0x3
 
-    invoke-direct {v0, p1}, Lifp;-><init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
+    const/4 v4, 0x2
 
-    invoke-direct {p0, v0}, Liie;-><init>(Liif;)V
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Liie;
+
+    const-string v1, "CONNECTED"
+
+    invoke-direct {v0, v1, v2}, Liie;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Liie;->a:Liie;
+
+    new-instance v0, Liie;
+
+    const-string v1, "RETRY"
+
+    invoke-direct {v0, v1, v3}, Liie;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Liie;->b:Liie;
+
+    new-instance v0, Liie;
+
+    const-string v1, "ERROR"
+
+    invoke-direct {v0, v1, v4}, Liie;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Liie;->c:Liie;
+
+    new-instance v0, Liie;
+
+    const-string v1, "ERROR_TIMEOUT"
+
+    invoke-direct {v0, v1, v5}, Liie;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Liie;->d:Liie;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Liie;
+
+    sget-object v1, Liie;->a:Liie;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Liie;->b:Liie;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Liie;->c:Liie;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Liie;->d:Liie;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Liie;->e:[Liie;
 
     return-void
 .end method
 
-.method public constructor <init>(Liif;)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liie;->a:Liif;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public a()Landroid/view/Surface;
+.method public static values()[Liie;
     .locals 1
 
-    iget-object v0, p0, Liie;->a:Liif;
+    sget-object v0, Liie;->e:[Liie;
 
-    invoke-interface {v0}, Liif;->a()Landroid/view/Surface;
+    invoke-virtual {v0}, [Liie;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public a(Landroid/view/Surface;)V
-    .locals 1
-
-    iget-object v0, p0, Liie;->a:Liif;
-
-    invoke-interface {v0, p1}, Liif;->a(Landroid/view/Surface;)V
-
-    return-void
-.end method
-
-.method public final b()Lifo;
-    .locals 1
-
-    iget-object v0, p0, Liie;->a:Liif;
-
-    invoke-interface {v0}, Liif;->b()Lifo;
-
-    move-result-object v0
+    check-cast v0, [Liie;
 
     return-object v0
 .end method

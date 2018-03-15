@@ -1,31 +1,50 @@
 .class public final Ldwl;
-.super Ldvv;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# static fields
-.field public static a:I
+
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lkgv;)V
+    .locals 0
 
-    const/16 v0, 0x3e8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Ldwl;->a:I
+    iput-object p1, p0, Ldwl;->a:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>(Ldtm;Lhab;)V
-    .locals 1
 
-    new-instance v0, Ldwm;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    invoke-direct {v0, p2}, Ldwm;-><init>(Lhab;)V
+    iget-object v0, p0, Ldwl;->a:Lkgv;
 
-    invoke-direct {p0, p1, v0}, Ldvv;-><init>(Ldtm;Ljhj;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    new-instance v1, Leqp;
+
+    invoke-direct {v1, v0}, Leqp;-><init>(Landroid/content/Context;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Leqp;
+
+    return-object v0
 .end method

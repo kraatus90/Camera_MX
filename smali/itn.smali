@@ -1,53 +1,51 @@
-.class public final Litn;
-.super Ljava/lang/Object;
+.class public Litn;
+.super Litl;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Ljsb;
-
-.field private synthetic b:Ljava/lang/String;
-
-.field private synthetic c:Litk;
-
-
 # direct methods
-.method constructor <init>(Litk;Ljsb;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lisq;Liqa;)V
+    .locals 1
 
-    iput-object p1, p0, Litn;->c:Litk;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Litn;->a:Ljsb;
-
-    iput-object p3, p0, Litn;->b:Ljava/lang/String;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, v0}, Litl;-><init>(Lisq;Liqa;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liuh;)V
-    .locals 2
+.method public synthetic a(Lipz;)Lisp;
+    .locals 1
 
-    iget-object v0, p0, Litn;->a:Ljsb;
-
-    iget-object v1, p0, Litn;->b:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Litk;->a(Ljsb;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Litn;->b(Lipz;)Litn;
 
     move-result-object v0
 
-    iget-object v1, p0, Litn;->c:Litk;
+    return-object v0
+.end method
 
-    invoke-virtual {v1, v0}, Litk;->a(Ljava/lang/String;)V
+.method public b(Lipz;)Litn;
+    .locals 3
 
-    iget-object v1, p0, Litn;->c:Litk;
+    new-instance v0, Litn;
 
-    iget-object v1, v1, Litk;->a:Ljava/util/Map;
+    iget-object v1, p0, Litl;->c:Lisq;
 
-    invoke-interface {v1, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1}, Lipz;->b()Liqa;
 
-    return-void
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Litn;-><init>(Lisq;Liqa;)V
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "RGBA"
+
+    return-object v0
 .end method

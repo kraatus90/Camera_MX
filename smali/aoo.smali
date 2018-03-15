@@ -1,72 +1,69 @@
-.class public final Laoo;
+.class final Laoo;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Laor;
+.implements Landroid/os/Handler$Callback;
 
 
 # instance fields
-.field private a:Landroid/graphics/Bitmap$CompressFormat;
-
-.field private b:I
+.field private final synthetic a:Laol;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Laol;)V
+    .locals 0
 
-    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
-
-    invoke-direct {p0, v0}, Laoo;-><init>(Landroid/graphics/Bitmap$CompressFormat;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/graphics/Bitmap$CompressFormat;)V
-    .locals 1
+    iput-object p1, p0, Laoo;->a:Laol;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Laoo;->a:Landroid/graphics/Bitmap$CompressFormat;
-
-    const/16 v0, 0x64
-
-    iput v0, p0, Laoo;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lahg;)Lahg;
-    .locals 4
+.method public final handleMessage(Landroid/os/Message;)Z
+    .locals 3
 
-    new-instance v1, Ljava/io/ByteArrayOutputStream;
+    const/4 v1, 0x1
 
-    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    invoke-interface {p1}, Lahg;->b()Ljava/lang/Object;
+    if-ne v0, v1, :cond_0
 
-    move-result-object v0
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v0, Landroid/graphics/Bitmap;
+    check-cast v0, Laom;
 
-    iget-object v2, p0, Laoo;->a:Landroid/graphics/Bitmap$CompressFormat;
+    iget-object v2, p0, Laoo;->a:Laol;
 
-    iget v3, p0, Laoo;->b:I
+    invoke-virtual {v2, v0}, Laol;->a(Laom;)V
 
-    invoke-virtual {v0, v2, v3, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    move v0, v1
 
-    invoke-interface {p1}, Lahg;->d()V
+    :goto_0
+    return v0
 
-    new-instance v0, Lanx;
+    :cond_0
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+    const/4 v1, 0x2
 
-    move-result-object v1
+    if-ne v0, v1, :cond_1
 
-    invoke-direct {v0, v1}, Lanx;-><init>([B)V
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    return-object v0
+    check-cast v0, Laom;
+
+    iget-object v1, p0, Laoo;->a:Laol;
+
+    iget-object v1, v1, Laol;->c:Lact;
+
+    invoke-virtual {v1, v0}, Lact;->a(Laqy;)V
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

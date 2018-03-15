@@ -1,54 +1,124 @@
-.class public final Ldcv;
+.class final Ldcv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Ldcu;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Ldcu;)V
     .locals 0
 
+    iput-object p1, p0, Ldcv;->a:Ldcu;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcv;->a:Ljxn;
-
-    iput-object p2, p0, Ldcv;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 6
 
-    new-instance v2, Ldcu;
+    const/4 v2, 0x2
 
-    iget-object v0, p0, Ldcv;->a:Ljxn;
+    iget-object v0, p0, Ldcv;->a:Ldcu;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldcu;->a:Ldcm;
+
+    iget-object v0, v0, Ldcm;->d:Lbyy;
+
+    invoke-interface {v0}, Lbyy;->v()Ldzh;
 
     move-result-object v0
 
-    check-cast v0, Lidm;
+    iget-object v0, v0, Ldzh;->s:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-    iget-object v1, p0, Ldcv;->b:Ljxn;
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->e:Landroid/animation/AnimatorSet;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    new-array v1, v2, [F
+
+    fill-array-data v1, :array_0
+
+    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    check-cast v1, Lddb;
+    new-array v2, v2, [F
 
-    invoke-direct {v2, v0, v1}, Ldcu;-><init>(Lidm;Lddb;)V
+    fill-array-data v2, :array_1
 
-    return-object v2
+    invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+
+    move-result-object v2
+
+    const-wide/16 v4, 0x42
+
+    invoke-virtual {v1, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    const-wide/16 v4, 0xa6
+
+    invoke-virtual {v2, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->d:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->d:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    new-instance v3, Lgxz;
+
+    invoke-direct {v3, v0, v2}, Lgxz;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;Landroid/animation/ValueAnimator;)V
+
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v3, Lgya;
+
+    invoke-direct {v3, v0}, Lgya;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
+
+    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
+
+    iget-object v0, p0, Ldcv;->a:Ldcu;
+
+    iget-object v0, v0, Ldcu;->a:Ldcm;
+
+    iget-object v0, v0, Ldcm;->h:Lgkf;
+
+    const v1, 0x7f090006
+
+    invoke-interface {v0, v1}, Lgkf;->a(I)V
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x3f428f5c    # 0.76f
+        0x3f428f5c    # 0.76f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x3f428f5c    # 0.76f
+        0x0
+    .end array-data
 .end method

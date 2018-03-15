@@ -1,59 +1,39 @@
-.class public final Lcgt;
+.class final Lcgt;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field public static final a:Lbku;
+# instance fields
+.field public final a:Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;
+
+.field public final b:F
+
+.field public final c:F
+
+.field public final d:F
+
+.field public final e:Landroid/graphics/Rect;
+
+.field public final f:Landroid/graphics/Rect;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;FFFLandroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .locals 0
 
-    new-instance v0, Lbku;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "camera.debug.trace"
+    iput-object p1, p0, Lcgt;->a:Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;
 
-    const/4 v2, 0x0
+    iput p4, p0, Lcgt;->d:F
 
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
+    iput p2, p0, Lcgt;->b:F
 
-    sput-object v0, Lcgt;->a:Lbku;
+    iput p3, p0, Lcgt;->c:F
 
-    new-instance v0, Lble;
+    iput-object p5, p0, Lcgt;->e:Landroid/graphics/Rect;
 
-    const-string v1, "camera.debug.trace"
-
-    invoke-direct {v0, v1}, Lble;-><init>(Ljava/lang/String;)V
+    iput-object p6, p0, Lcgt;->f:Landroid/graphics/Rect;
 
     return-void
-.end method
-
-.method public static a(Lbli;)Licz;
-    .locals 2
-
-    sget-object v0, Lcgt;->a:Lbku;
-
-    invoke-virtual {p0, v0}, Lbli;->a(Lbku;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Licx;
-
-    const-string v1, "GCA"
-
-    invoke-direct {v0, v1}, Licx;-><init>(Ljava/lang/String;)V
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Licy;
-
-    invoke-direct {v0}, Licy;-><init>()V
-
-    goto :goto_0
 .end method

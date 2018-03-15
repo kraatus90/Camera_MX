@@ -1,13 +1,10 @@
-.class final Livo;
+.class public abstract Livo;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Liuh;
-
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,14 +14,8 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 2
+.method public abstract a()Ljava/nio/ByteBuffer;
+.end method
 
-    new-instance v0, Lcom/google/android/libraries/smartburst/artifacts/gifutils/HeckbertQuantizer;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lcom/google/android/libraries/smartburst/artifacts/gifutils/HeckbertQuantizer;-><init>(B)V
-
-    return-object v0
+.method public abstract b()J
 .end method

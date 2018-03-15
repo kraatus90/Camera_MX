@@ -1,24 +1,33 @@
-.class public final Liki;
+.class final synthetic Liki;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Likg;
+.implements Landroid/media/ImageReader$OnImageAvailableListener;
+
+
+# instance fields
+.field private final a:Lino;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lino;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liki;->a:Lino;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final onImageAvailable(Landroid/media/ImageReader;)V
+    .locals 1
 
-    return-object p1
+    iget-object v0, p0, Liki;->a:Lino;
+
+    invoke-interface {v0}, Lino;->a()V
+
+    return-void
 .end method

@@ -1,38 +1,35 @@
 .class public final Lr;
-.super Ljava/lang/Object;
+.super Lhe;
 .source "PG"
-
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
-.field private synthetic a:Landroid/support/design/widget/CoordinatorLayout;
+.field private final synthetic d:Landroid/support/design/internal/NavigationMenuItemView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/design/widget/CoordinatorLayout;)V
+.method public constructor <init>(Landroid/support/design/internal/NavigationMenuItemView;)V
     .locals 0
 
-    iput-object p1, p0, Lr;->a:Landroid/support/design/widget/CoordinatorLayout;
+    iput-object p1, p0, Lr;->d:Landroid/support/design/internal/NavigationMenuItemView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lhe;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPreDraw()Z
-    .locals 2
+.method public final a(Landroid/view/View;Ljk;)V
+    .locals 1
 
-    iget-object v0, p0, Lr;->a:Landroid/support/design/widget/CoordinatorLayout;
+    invoke-super {p0, p1, p2}, Lhe;->a(Landroid/view/View;Ljk;)V
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lr;->d:Landroid/support/design/internal/NavigationMenuItemView;
 
-    invoke-virtual {v0, v1}, Landroid/support/design/widget/CoordinatorLayout;->a(I)V
+    iget-boolean v0, v0, Landroid/support/design/internal/NavigationMenuItemView;->a:Z
 
-    const/4 v0, 0x1
+    invoke-virtual {p2, v0}, Ljk;->a(Z)V
 
-    return v0
+    return-void
 .end method

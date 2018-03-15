@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public mFeatureId:Ljfs;
+.field public mFeatureId:Ljpe;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljfs;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljpe;
 
     return-void
 .end method
@@ -85,6 +85,8 @@
 .method protected onProcess()V
     .locals 10
 
+    const/4 v3, 0x0
+
     const-string v0, "featureType"
 
     invoke-virtual {p0, v0}, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->getConnectedInputPort(Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/InputPort;
@@ -99,9 +101,9 @@
 
     move-result-object v1
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljfs;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljpe;
 
-    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljfs;
+    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljpe;
 
     if-nez v2, :cond_0
 
@@ -111,11 +113,11 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-static {v0}, Ljfs;->a(Ljava/lang/String;)Ljfs;
+    invoke-static {v0}, Ljpe;->a(Ljava/lang/String;)Ljpe;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljfs;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/FloatArrayStatisticsFeatureBuilder;->mFeatureId:Ljpe;
 
     :cond_0
     move-object v1, v0
@@ -153,7 +155,31 @@
     throw v0
 
     :cond_1
-    invoke-static {v0}, Ljgj;->a([F)Ljgj;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v4, Ljpw;
+
+    invoke-direct {v4}, Ljpw;-><init>()V
+
+    array-length v5, v0
+
+    move v2, v3
+
+    :goto_0
+    if-ge v2, v5, :cond_2
+
+    aget v6, v0, v2
+
+    float-to-double v6, v6
+
+    invoke-virtual {v4, v6, v7}, Ljpw;->a(D)Ljpw;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {v4}, Ljpw;->a()Ljpv;
 
     move-result-object v0
 
@@ -163,59 +189,57 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v2, v3}, Lcom/google/android/libraries/smartburst/filterfw/OutputPort;->fetchAvailableFrame([I)Lcom/google/android/libraries/smartburst/filterfw/Frame;
+    invoke-virtual {v2, v4}, Lcom/google/android/libraries/smartburst/filterfw/OutputPort;->fetchAvailableFrame([I)Lcom/google/android/libraries/smartburst/filterfw/Frame;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Lcom/google/android/libraries/smartburst/filterfw/Frame;->asFrameValue()Lcom/google/android/libraries/smartburst/filterfw/FrameValue;
+    invoke-virtual {v4}, Lcom/google/android/libraries/smartburst/filterfw/Frame;->asFrameValue()Lcom/google/android/libraries/smartburst/filterfw/FrameValue;
 
-    move-result-object v3
+    move-result-object v4
 
-    new-instance v4, Lcom/google/android/libraries/smartburst/utils/Feature;
+    new-instance v5, Lcom/google/android/libraries/smartburst/utils/Feature;
 
-    const/4 v5, 0x4
+    const/4 v6, 0x4
 
-    new-array v5, v5, [F
+    new-array v6, v6, [F
 
-    const/4 v6, 0x0
-
-    iget-wide v8, v0, Ljgj;->a:D
+    iget-wide v8, v0, Ljpv;->a:D
 
     double-to-float v7, v8
 
-    aput v7, v5, v6
+    aput v7, v6, v3
 
-    const/4 v6, 0x1
+    const/4 v3, 0x1
 
-    iget-wide v8, v0, Ljgj;->b:D
-
-    double-to-float v7, v8
-
-    aput v7, v5, v6
-
-    const/4 v6, 0x2
-
-    iget-wide v8, v0, Ljgj;->c:D
+    iget-wide v8, v0, Ljpv;->b:D
 
     double-to-float v7, v8
 
-    aput v7, v5, v6
+    aput v7, v6, v3
 
-    const/4 v6, 0x3
+    const/4 v3, 0x2
 
-    iget-wide v8, v0, Ljgj;->d:D
+    iget-wide v8, v0, Ljpv;->c:D
+
+    double-to-float v7, v8
+
+    aput v7, v6, v3
+
+    const/4 v3, 0x3
+
+    iget-wide v8, v0, Ljpv;->d:D
 
     double-to-float v0, v8
 
-    aput v0, v5, v6
+    aput v0, v6, v3
 
-    invoke-direct {v4, v1, v5}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljfs;[F)V
+    invoke-direct {v5, v1, v6}, Lcom/google/android/libraries/smartburst/utils/Feature;-><init>(Ljpe;[F)V
 
-    invoke-virtual {v3, v4}, Lcom/google/android/libraries/smartburst/filterfw/FrameValue;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v4, v5}, Lcom/google/android/libraries/smartburst/filterfw/FrameValue;->setValue(Ljava/lang/Object;)V
 
-    invoke-virtual {v2, v3}, Lcom/google/android/libraries/smartburst/filterfw/OutputPort;->pushFrame(Lcom/google/android/libraries/smartburst/filterfw/Frame;)V
+    invoke-virtual {v2, v4}, Lcom/google/android/libraries/smartburst/filterfw/OutputPort;->pushFrame(Lcom/google/android/libraries/smartburst/filterfw/Frame;)V
 
     return-void
 .end method

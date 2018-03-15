@@ -1,67 +1,98 @@
-.class final Lcjm;
+.class public final Lcjm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcjk;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcjk;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcjm;->a:Lcjk;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcjm;->a:Lkgv;
+
+    iput-object p2, p0, Lcjm;->b:Lkgv;
+
+    iput-object p3, p0, Lcjm;->c:Lkgv;
+
+    iput-object p4, p0, Lcjm;->d:Lkgv;
+
+    iput-object p5, p0, Lcjm;->e:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Lcjm;->a:Lcjk;
+    iget-object v0, p0, Lcjm;->a:Lkgv;
 
-    iget-boolean v0, v0, Lcjk;->i:Z
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    move-result-object v1
 
-    iget-object v0, p0, Lcjm;->a:Lcjk;
+    check-cast v1, Landroid/content/Context;
 
-    iget-object v0, v0, Lcjk;->a:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcjm;->b:Lkgv;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/ContentResolver;
+
+    iget-object v0, p0, Lcjm;->c:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcjt;
+
+    iget-object v0, p0, Lcjm;->d:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcka;
+
+    iget-object v0, p0, Lcjm;->e:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lgnf;
+
+    new-instance v0, Lcke;
+
+    invoke-direct/range {v0 .. v5}, Lcke;-><init>(Landroid/content/Context;Lcjt;Landroid/content/ContentResolver;Lcka;Lgnf;)V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/Activity;
+    check-cast v0, Lcke;
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Landroid/app/Activity;->openContextMenu(Landroid/view/View;)V
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lcjm;->a:Lcjk;
-
-    iget-object v0, v0, Lcjk;->c:Lcjl;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcjm;->a:Lcjk;
-
-    iget-object v0, v0, Lcjk;->c:Lcjl;
-
-    invoke-virtual {v0}, Lcjl;->a()V
-
-    goto :goto_0
+    return-object v0
 .end method

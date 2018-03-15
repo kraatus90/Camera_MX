@@ -3,26 +3,40 @@
 .source "PG"
 
 # interfaces
-.implements Lakx;
+.implements Lakk;
+
+
+# instance fields
+.field private final a:Lakf;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lakf;
+
+    const-wide/16 v2, 0x1f4
+
+    invoke-direct {v0, v2, v3}, Lakf;-><init>(J)V
+
+    iput-object v0, p0, Lalp;->a:Lakf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lald;)Lakv;
-    .locals 1
+.method public final a(Lakq;)Laki;
+    .locals 2
 
     new-instance v0, Lalo;
 
-    invoke-direct {v0}, Lalo;-><init>()V
+    iget-object v1, p0, Lalp;->a:Lakf;
+
+    invoke-direct {v0, v1}, Lalo;-><init>(Lakf;)V
 
     return-object v0
 .end method

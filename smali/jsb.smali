@@ -1,108 +1,314 @@
-.class public Ljsb;
-.super Ljwf;
+.class Ljsb;
+.super Ljava/util/AbstractCollection;
 .source "PG"
-
-# interfaces
-.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field private a:Ljava/lang/reflect/Type;
+.field public final a:Ljava/lang/Object;
+
+.field public b:Ljava/util/Collection;
+
+.field public final c:Ljsb;
+
+.field public final synthetic d:Ljru;
+
+.field private final e:Ljava/util/Collection;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 3
+.method constructor <init>(Ljru;Ljava/lang/Object;Ljava/util/Collection;Ljsb;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljwf;-><init>()V
+    iput-object p1, p0, Ljsb;->d:Ljru;
 
-    invoke-virtual {p0}, Ljwf;->a()Ljava/lang/reflect/Type;
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    move-result-object v0
+    iput-object p2, p0, Ljsb;->a:Ljava/lang/Object;
 
-    iput-object v0, p0, Ljsb;->a:Ljava/lang/reflect/Type;
+    iput-object p3, p0, Ljsb;->b:Ljava/util/Collection;
 
-    iget-object v0, p0, Ljsb;->a:Ljava/lang/reflect/Type;
+    iput-object p4, p0, Ljsb;->c:Ljsb;
 
-    instance-of v0, v0, Ljava/lang/reflect/TypeVariable;
+    if-nez p4, :cond_0
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     :goto_0
-    const-string v1, "Cannot construct a TypeToken for a type variable.\nYou probably meant to call new TypeToken<%s>(getClass()) that can resolve the type variable for you.\nIf you do need to create a TypeToken of a type variable, please use TypeToken.of() instead."
-
-    iget-object v2, p0, Ljsb;->a:Ljava/lang/reflect/Type;
-
-    invoke-static {v0, v1, v2}, Liya;->b(ZLjava/lang/String;Ljava/lang/Object;)V
+    iput-object v0, p0, Ljsb;->e:Ljava/util/Collection;
 
     return-void
 
     :cond_0
-    const/4 v0, 0x0
+    iget-object v0, p4, Ljsb;->b:Ljava/util/Collection;
 
     goto :goto_0
 .end method
 
-.method private constructor <init>(Ljava/lang/reflect/Type;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljwf;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/reflect/Type;
-
-    iput-object v0, p0, Ljsb;->a:Ljava/lang/reflect/Type;
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Ljava/lang/reflect/Type;B)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ljsb;-><init>(Ljava/lang/reflect/Type;)V
-
-    return-void
-.end method
-
-.method public static a(Ljava/lang/Class;)Ljsb;
-    .locals 1
-
-    new-instance v0, Ljsc;
-
-    invoke-direct {v0, p0}, Ljsc;-><init>(Ljava/lang/reflect/Type;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
+.method final a()V
     .locals 2
 
-    instance-of v0, p1, Ljsb;
+    iget-object v0, p0, Ljsb;->c:Ljsb;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Ljsb;
+    iget-object v0, p0, Ljsb;->c:Ljsb;
 
-    iget-object v0, p0, Ljsb;->a:Ljava/lang/reflect/Type;
+    invoke-virtual {v0}, Ljsb;->a()V
 
-    iget-object v1, p1, Ljsb;->a:Ljava/lang/reflect/Type;
+    iget-object v0, p0, Ljsb;->c:Ljsb;
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object v0, v0, Ljsb;->b:Ljava/util/Collection;
+
+    iget-object v1, p0, Ljsb;->e:Ljava/util/Collection;
+
+    if-eq v0, v1, :cond_1
+
+    new-instance v0, Ljava/util/ConcurrentModificationException;
+
+    invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    throw v0
+
+    :cond_0
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Ljsb;->d:Ljru;
+
+    iget-object v0, v0, Ljru;->a:Ljava/util/Map;
+
+    iget-object v1, p0, Ljsb;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_1
+
+    iput-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    :cond_1
+    return-void
+.end method
+
+.method public add(Ljava/lang/Object;)Z
+    .locals 3
+
+    invoke-virtual {p0}, Ljsb;->a()V
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    iget-object v1, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v1, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, p0, Ljsb;->d:Ljru;
+
+    invoke-static {v2}, Ljru;->b(Ljru;)I
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Ljsb;->c()V
+
+    :cond_0
+    return v1
+.end method
+
+.method public addAll(Ljava/util/Collection;)Z
+    .locals 4
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    invoke-virtual {p0}, Ljsb;->size()I
+
+    move-result v1
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v2, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v2}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    iget-object v3, p0, Ljsb;->d:Ljru;
+
+    sub-int/2addr v2, v1
+
+    invoke-static {v3, v2}, Ljru;->a(Ljru;I)I
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {p0}, Ljsb;->c()V
+
+    goto :goto_0
+.end method
+
+.method final b()V
+    .locals 2
+
+    :goto_0
+    iget-object v0, p0, Ljsb;->c:Ljsb;
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Ljsb;->c:Ljsb;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Ljsb;->d:Ljru;
+
+    iget-object v0, v0, Ljru;->a:Ljava/util/Map;
+
+    iget-object v1, p0, Ljsb;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-void
+.end method
+
+.method final c()V
+    .locals 3
+
+    :goto_0
+    iget-object v0, p0, Ljsb;->c:Ljsb;
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Ljsb;->c:Ljsb;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Ljsb;->d:Ljru;
+
+    iget-object v0, v0, Ljru;->a:Ljava/util/Map;
+
+    iget-object v1, p0, Ljsb;->a:Ljava/lang/Object;
+
+    iget-object v2, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public clear()V
+    .locals 2
+
+    invoke-virtual {p0}, Ljsb;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v1}, Ljava/util/Collection;->clear()V
+
+    iget-object v1, p0, Ljsb;->d:Ljru;
+
+    invoke-static {v1, v0}, Ljru;->b(Ljru;I)I
+
+    invoke-virtual {p0}, Ljsb;->b()V
+
+    goto :goto_0
+.end method
+
+.method public contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljsb;->a()V
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public containsAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljsb;->a()V
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-ne p1, p0, :cond_0
+
+    const/4 v0, 0x1
 
     :goto_0
     return v0
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Ljsb;->a()V
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
 
     goto :goto_0
 .end method
@@ -110,9 +316,140 @@
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Ljsb;->a:Ljava/lang/reflect/Type;
+    invoke-virtual {p0}, Ljsb;->a()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .locals 1
+
+    invoke-virtual {p0}, Ljsb;->a()V
+
+    new-instance v0, Ljsc;
+
+    invoke-direct {v0, p0}, Ljsc;-><init>(Ljsb;)V
+
+    return-object v0
+.end method
+
+.method public remove(Ljava/lang/Object;)Z
+    .locals 2
+
+    invoke-virtual {p0}, Ljsb;->a()V
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Ljsb;->d:Ljru;
+
+    invoke-static {v1}, Ljru;->a(Ljru;)I
+
+    invoke-virtual {p0}, Ljsb;->b()V
+
+    :cond_0
+    return v0
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+    .locals 4
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    invoke-virtual {p0}, Ljsb;->size()I
+
+    move-result v1
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v2, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v2}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    iget-object v3, p0, Ljsb;->d:Ljru;
+
+    sub-int v1, v2, v1
+
+    invoke-static {v3, v1}, Ljru;->a(Ljru;I)I
+
+    invoke-virtual {p0}, Ljsb;->b()V
+
+    goto :goto_0
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+    .locals 4
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0}, Ljsb;->size()I
+
+    move-result v0
+
+    iget-object v1, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v1, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v2}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    iget-object v3, p0, Ljsb;->d:Ljru;
+
+    sub-int v0, v2, v0
+
+    invoke-static {v3, v0}, Ljru;->a(Ljru;I)I
+
+    invoke-virtual {p0}, Ljsb;->b()V
+
+    :cond_0
+    return v1
+.end method
+
+.method public size()I
+    .locals 1
+
+    invoke-virtual {p0}, Ljsb;->a()V
+
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
 
     move-result v0
 
@@ -122,31 +459,13 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Ljsb;->a:Ljava/lang/reflect/Type;
+    invoke-virtual {p0}, Ljsb;->a()V
 
-    invoke-static {v0}, Ljsd;->b(Ljava/lang/reflect/Type;)Ljava/lang/String;
+    iget-object v0, p0, Ljsb;->b:Ljava/util/Collection;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method protected writeReplace()Ljava/lang/Object;
-    .locals 2
-
-    new-instance v0, Ljwg;
-
-    invoke-direct {v0}, Ljwg;-><init>()V
-
-    iget-object v1, p0, Ljsb;->a:Ljava/lang/reflect/Type;
-
-    invoke-virtual {v0, v1}, Ljwg;->a(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
-
-    move-result-object v0
-
-    new-instance v1, Ljsc;
-
-    invoke-direct {v1, v0}, Ljsc;-><init>(Ljava/lang/reflect/Type;)V
-
-    return-object v1
 .end method

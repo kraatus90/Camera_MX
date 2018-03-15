@@ -1,13 +1,13 @@
-.class public final Lbzp;
+.class final Lbzp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lbzh;
+.implements Lkds;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,36 +17,26 @@
 
 
 # virtual methods
-.method public final a()Ljht;
-    .locals 1
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    sget-object v0, Lbzb;->a:Ljava/lang/String;
 
-    return-object v0
+    const-string v1, "failure updating cached indicator Bitmap"
+
+    invoke-static {v0, v1, p1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
 .end method
 
-.method public final a(Lbzi;)V
-    .locals 1
+.method public final b_(Ljava/lang/Object;)V
+    .locals 2
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    sget-object v0, Lbzb;->a:Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const-string v1, "updated cached indicator Bitmap"
 
-    throw v0
-.end method
-
-.method public final b(Lbzi;)Ljuw;
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final close()V
-    .locals 0
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

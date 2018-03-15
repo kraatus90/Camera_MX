@@ -1,28 +1,20 @@
-.class final Leko;
+.class public final Leko;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lekw;
-
-.field private synthetic b:Lekw;
-
-.field private synthetic c:Lekn;
+.field private final synthetic a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
 
 # direct methods
-.method constructor <init>(Lekn;Lekw;Lekw;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;)V
     .locals 0
 
-    iput-object p1, p0, Leko;->c:Lekn;
-
-    iput-object p2, p0, Leko;->a:Lekw;
-
-    iput-object p3, p0, Leko;->b:Lekw;
+    iput-object p1, p0, Leko;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,41 +23,33 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 7
+.method public final run()V
+    .locals 2
 
-    check-cast p1, Ljht;
+    iget-object v0, p0, Leko;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
-    invoke-virtual {p1}, Ljht;->a()Z
-
-    move-result v0
+    iget-boolean v0, v0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->e:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Leko;->c:Lekn;
+    iget-object v0, p0, Leko;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
-    iget-object v0, p0, Leko;->c:Lekn;
+    const/4 v1, 0x0
 
-    iget-wide v2, v0, Lekn;->e:J
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->e:Z
 
-    iget-object v4, p0, Leko;->b:Lekw;
+    iget-object v0, p0, Leko;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
-    invoke-virtual {p1}, Ljht;->b()Ljava/lang/Object;
+    const v1, 0x7f0e0162
 
-    move-result-object v5
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->findViewById(I)Landroid/view/View;
 
-    check-cast v5, Landroid/net/Uri;
+    move-result-object v0
 
-    sget v6, Leh;->ap:I
+    const/4 v1, 0x4
 
-    invoke-virtual/range {v1 .. v6}, Lekn;->a(JLekw;Landroid/net/Uri;I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_0
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
-
     return-void
 .end method

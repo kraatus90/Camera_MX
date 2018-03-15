@@ -1,113 +1,40 @@
-.class public final Lacv;
+.class final Lacv;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static a:I
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private b:Ljava/lang/String;
+.field private final synthetic a:Laqy;
+
+.field private final synthetic b:Lact;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Lact;Laqy;)V
+    .locals 0
 
-    const/16 v0, 0xe
+    iput-object p1, p0, Lacv;->b:Lact;
 
-    sput v0, Lacv;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 4
+    iput-object p2, p0, Lacv;->a:Laqy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    sget v1, Lacv;->a:I
-
-    sub-int/2addr v0, v1
-
-    if-lez v0, :cond_0
-
-    sget-object v1, Lacu;->a:Lacv;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Tag "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " is "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " chars longer than limit."
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lacu;->e(Lacv;Ljava/lang/String;)V
-
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "CAM2PORT_"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    if-lez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    sget v2, Lacv;->a:I
-
-    invoke-virtual {p1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p1
-
-    :cond_1
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lacv;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lacv;->b:Ljava/lang/String;
+    iget-object v0, p0, Lacv;->b:Lact;
 
-    return-object v0
+    iget-object v1, p0, Lacv;->a:Laqy;
+
+    invoke-virtual {v0, v1}, Lact;->a(Laqy;)V
+
+    return-void
 .end method

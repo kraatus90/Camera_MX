@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">ಬರ್ಸ್ಟ್‌ (%1$d ಫೋಟೋಗಳು)</item>
+        <item quantity="one">ಬರ್ಸ್ಟ್‌ (%1$d ಫೋಟೋಗಳು)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d ಫೋಟೋಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ</item>
         <item quantity="one">%1$d ಫೋಟೋಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ</item>

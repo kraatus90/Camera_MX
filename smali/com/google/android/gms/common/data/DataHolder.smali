@@ -15,23 +15,25 @@
 
 
 # instance fields
-.field private a:I
+.field public final a:[Ljava/lang/String;
 
-.field private b:[Ljava/lang/String;
+.field public b:Landroid/os/Bundle;
 
-.field private c:Landroid/os/Bundle;
+.field public final c:[Landroid/database/CursorWindow;
 
-.field private d:[Landroid/database/CursorWindow;
+.field public d:[I
 
-.field private e:I
+.field public e:I
 
-.field private f:Landroid/os/Bundle;
+.field private final f:I
 
-.field private g:[I
+.field private final g:I
 
-.field private h:Z
+.field private final h:Landroid/os/Bundle;
 
 .field private i:Z
+
+.field private j:Z
 
 
 # direct methods
@@ -40,17 +42,17 @@
 
     const/4 v2, 0x0
 
-    new-instance v0, Lhlb;
+    new-instance v0, Lhlz;
 
-    invoke-direct {v0}, Lhlb;-><init>()V
+    invoke-direct {v0}, Lhlz;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/data/DataHolder;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    new-instance v0, Lhjg;
+    new-instance v0, Lhve;
 
     new-array v1, v2, [Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2}, Lhjg;-><init>([Ljava/lang/String;B)V
+    invoke-direct {v0, v1, v2}, Lhve;-><init>([Ljava/lang/String;B)V
 
     return-void
 .end method
@@ -62,32 +64,32 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->h:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->i:Z
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->i:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->j:Z
 
-    iput p1, p0, Lcom/google/android/gms/common/data/DataHolder;->a:I
+    iput p1, p0, Lcom/google/android/gms/common/data/DataHolder;->f:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/data/DataHolder;->b:[Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/data/DataHolder;->a:[Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
+    iput-object p3, p0, Lcom/google/android/gms/common/data/DataHolder;->c:[Landroid/database/CursorWindow;
 
-    iput p4, p0, Lcom/google/android/gms/common/data/DataHolder;->e:I
+    iput p4, p0, Lcom/google/android/gms/common/data/DataHolder;->g:I
 
-    iput-object p5, p0, Lcom/google/android/gms/common/data/DataHolder;->f:Landroid/os/Bundle;
+    iput-object p5, p0, Lcom/google/android/gms/common/data/DataHolder;->h:Landroid/os/Bundle;
 
     return-void
 .end method
 
-.method private final b()Z
+.method private final a()Z
     .locals 1
 
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->h:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->i:Z
 
     monitor-exit p0
 
@@ -105,114 +107,30 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
-
-    const/4 v1, 0x0
-
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->c:Landroid/os/Bundle;
-
-    move v0, v1
-
-    :goto_0
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->b:[Ljava/lang/String;
-
-    array-length v2, v2
-
-    if-ge v0, v2, :cond_0
-
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->c:Landroid/os/Bundle;
-
-    iget-object v3, p0, Lcom/google/android/gms/common/data/DataHolder;->b:[Ljava/lang/String;
-
-    aget-object v3, v3, v0
-
-    invoke-virtual {v2, v3, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->g:[I
-
-    move v0, v1
-
-    :goto_1
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
-
-    array-length v2, v2
-
-    if-ge v1, v2, :cond_1
-
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->g:[I
-
-    aput v0, v2, v1
-
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
-
-    aget-object v2, v2, v1
-
-    invoke-virtual {v2}, Landroid/database/CursorWindow;->getStartPosition()I
-
-    move-result v2
-
-    sub-int v2, v0, v2
-
-    iget-object v3, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
-
-    aget-object v3, v3, v1
-
-    invoke-virtual {v3}, Landroid/database/CursorWindow;->getNumRows()I
-
-    move-result v3
-
-    sub-int v2, v3, v2
-
-    add-int/2addr v0, v2
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    return-void
-.end method
-
 .method public final close()V
     .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->h:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->i:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->h:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->i:Z
 
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
+    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder;->c:[Landroid/database/CursorWindow;
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
+    iget-object v1, p0, Lcom/google/android/gms/common/data/DataHolder;->c:[Landroid/database/CursorWindow;
 
     aget-object v1, v1, v0
 
@@ -241,17 +159,17 @@
     .locals 4
 
     :try_start_0
-    iget-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->i:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/data/DataHolder;->j:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/DataHolder;->c:[Landroid/database/CursorWindow;
 
     array-length v0, v0
 
     if-lez v0, :cond_0
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/data/DataHolder;->b()Z
+    invoke-direct {p0}, Lcom/google/android/gms/common/data/DataHolder;->a()Z
 
     move-result v0
 
@@ -325,41 +243,41 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->b:[Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->a:[Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;I[Ljava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;I[Ljava/lang/String;)V
 
     const/4 v1, 0x2
 
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->d:[Landroid/database/CursorWindow;
+    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->c:[Landroid/database/CursorWindow;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;I[Landroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;I[Landroid/os/Parcelable;I)V
 
     const/4 v1, 0x3
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataHolder;->e:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataHolder;->g:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x4
 
-    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->f:Landroid/os/Bundle;
+    iget-object v2, p0, Lcom/google/android/gms/common/data/DataHolder;->h:Landroid/os/Bundle;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
 
     const/16 v1, 0x3e8
 
-    iget v2, p0, Lcom/google/android/gms/common/data/DataHolder;->a:I
+    iget v2, p0, Lcom/google/android/gms/common/data/DataHolder;->f:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

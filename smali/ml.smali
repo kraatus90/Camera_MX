@@ -1,51 +1,65 @@
-.class final Lml;
-.super Lms;
+.class Lml;
+.super Lmh;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lmk;
+.field private final w:Landroid/app/UiModeManager;
 
 
 # direct methods
-.method constructor <init>(Lmk;Landroid/view/Window$Callback;)V
-    .locals 0
+.method constructor <init>(Landroid/content/Context;Landroid/view/Window;Lma;)V
+    .locals 1
 
-    iput-object p1, p0, Lml;->a:Lmk;
+    invoke-direct {p0, p1, p2, p3}, Lmh;-><init>(Landroid/content/Context;Landroid/view/Window;Lma;)V
 
-    invoke-direct {p0, p1, p2}, Lms;-><init>(Lmr;Landroid/view/Window$Callback;)V
+    const-string v0, "uimode"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/UiModeManager;
+
+    iput-object v0, p0, Lml;->w:Landroid/app/UiModeManager;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
-    .locals 2
+.method a(Landroid/view/Window$Callback;)Landroid/view/Window$Callback;
+    .locals 1
 
-    iget-object v0, p0, Lml;->a:Lmk;
+    new-instance v0, Lmm;
 
-    const/4 v1, 0x0
+    invoke-direct {v0, p0, p1}, Lmm;-><init>(Lml;Landroid/view/Window$Callback;)V
 
-    invoke-virtual {v0, v1}, Lmk;->g(I)Lnd;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method final f(I)I
+    .locals 1
 
-    if-eqz v0, :cond_0
+    if-nez p1, :cond_0
 
-    iget-object v1, v0, Lnd;->h:Loz;
+    iget-object v0, p0, Lml;->w:Landroid/app/UiModeManager;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0}, Landroid/app/UiModeManager;->getNightMode()I
 
-    iget-object v0, v0, Lnd;->h:Loz;
+    move-result v0
 
-    invoke-super {p0, p1, v0, p3}, Lms;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+    if-nez v0, :cond_0
+
+    const/4 v0, -0x1
 
     :goto_0
-    return-void
+    return v0
 
     :cond_0
-    invoke-super {p0, p1, p2, p3}, Lms;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+    invoke-super {p0, p1}, Lmh;->f(I)I
+
+    move-result v0
 
     goto :goto_0
 .end method

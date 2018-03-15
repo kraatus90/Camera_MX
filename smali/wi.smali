@@ -1,32 +1,29 @@
-.class final Lwi;
-.super Ljava/lang/Object;
+.class public final Lwi;
+.super Ljava/lang/Exception;
 .source "PG"
 
-# interfaces
-.implements Lwk;
 
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x1a
-.end annotation
+# instance fields
+.field public a:I
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    iput p2, p0, Lwi;->a:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Landroid/view/View;Ljava/lang/CharSequence;)V
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/Throwable;)V
     .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setTooltipText(Ljava/lang/CharSequence;)V
+    invoke-direct {p0, p1, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iput p2, p0, Lwi;->a:I
 
     return-void
 .end method

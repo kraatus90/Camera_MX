@@ -1,88 +1,50 @@
-.class public Lhap;
+.class public final Lhap;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Landroid/app/Activity;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lhap;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lhap;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Landroid/content/Intent;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lhap;->a:Landroid/app/Activity;
+    iget-object v0, p0, Lhap;->a:Lkgv;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Landroid/view/Window;
+
+    new-instance v1, Lhat;
+
+    invoke-direct {v1, v0}, Lhat;-><init>(Landroid/view/Window;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhat;
+
     return-object v0
-.end method
-
-.method public a(ILandroid/content/Intent;)V
-    .locals 1
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhap;->a:Landroid/app/Activity;
-
-    invoke-virtual {v0, p1, p2}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method public a(Landroid/content/Intent;)V
-    .locals 1
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhap;->a:Landroid/app/Activity;
-
-    invoke-virtual {v0, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method public a(Landroid/content/Intent;II)V
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lhap;->a(Landroid/content/Intent;)V
-
-    iget-object v0, p0, Lhap;->a:Landroid/app/Activity;
-
-    invoke-virtual {v0, p2, p3}, Landroid/app/Activity;->overridePendingTransition(II)V
-
-    return-void
-.end method
-
-.method public b(Landroid/content/Intent;)V
-    .locals 1
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lhap;->a:Landroid/app/Activity;
-
-    invoke-virtual {v0, p1}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V
-
-    return-void
 .end method

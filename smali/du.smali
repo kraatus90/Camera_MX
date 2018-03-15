@@ -1,174 +1,209 @@
 .class final Ldu;
-.super Lec;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lbl;
+.implements Lcs;
 
 
 # instance fields
-.field public a:Z
+.field private final a:Landroid/view/View;
 
-.field private h:Ljava/util/concurrent/CountDownLatch;
+.field private final b:I
 
-.field private synthetic i:Ldt;
+.field private final c:Landroid/view/ViewGroup;
+
+.field private final d:Z
+
+.field private e:Z
+
+.field private f:Z
 
 
 # direct methods
-.method constructor <init>(Ldt;)V
+.method constructor <init>(Landroid/view/View;I)V
     .locals 2
-
-    iput-object p1, p0, Ldu;->i:Ldt;
-
-    invoke-direct {p0}, Lec;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    iput-object v0, p0, Ldu;->h:Ljava/util/concurrent/CountDownLatch;
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ldu;->f:Z
+
+    iput-object p1, p0, Ldu;->a:Landroid/view/View;
+
+    iput p2, p0, Ldu;->b:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iput-object v0, p0, Ldu;->c:Landroid/view/ViewGroup;
+
+    iput-boolean v1, p0, Ldu;->d:Z
+
+    invoke-direct {p0, v1}, Ldu;->a(Z)V
 
     return-void
 .end method
 
-.method private final varargs d()Ljava/lang/Object;
+.method private final a(Z)V
+    .locals 1
+
+    iget-boolean v0, p0, Ldu;->d:Z
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Ldu;->e:Z
+
+    if-eq v0, p1, :cond_0
+
+    iget-object v0, p0, Ldu;->c:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_0
+
+    iput-boolean p1, p0, Ldu;->e:Z
+
+    iget-object v0, p0, Ldu;->c:Landroid/view/ViewGroup;
+
+    invoke-static {v0, p1}, Lde;->a(Landroid/view/ViewGroup;Z)V
+
+    :cond_0
+    return-void
+.end method
+
+.method private final d()V
     .locals 2
 
-    :try_start_0
-    iget-object v0, p0, Ldu;->i:Ldt;
+    iget-boolean v0, p0, Ldu;->f:Z
 
-    invoke-virtual {v0}, Ldt;->d()Ljava/lang/Object;
-    :try_end_0
-    .catch Lfn; {:try_start_0 .. :try_end_0} :catch_0
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Ldu;->a:Landroid/view/View;
 
-    :goto_0
-    return-object v0
+    iget v1, p0, Ldu;->b:I
 
-    :catch_0
-    move-exception v0
+    invoke-static {v0, v1}, Ldk;->a(Landroid/view/View;I)V
 
-    iget-object v1, p0, Lec;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Ldu;->c:Landroid/view/ViewGroup;
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    if-eqz v0, :cond_0
 
-    move-result v1
+    iget-object v0, p0, Ldu;->c:Landroid/view/ViewGroup;
 
-    if-nez v1, :cond_0
-
-    throw v0
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
     const/4 v0, 0x0
 
-    goto :goto_0
+    invoke-direct {p0, v0}, Ldu;->a(Z)V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method protected final a()V
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Ldu;->i:Ldt;
-
-    invoke-virtual {v0, p0}, Ldt;->a(Ldu;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Ldu;->h:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Ldu;->h:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-
-    throw v0
-.end method
-
-.method protected final a(Ljava/lang/Object;)V
-    .locals 4
-
-    :try_start_0
-    iget-object v0, p0, Ldu;->i:Ldt;
-
-    iget-object v1, v0, Ldt;->a:Ldu;
-
-    if-eq v1, p0, :cond_1
-
-    invoke-virtual {v0, p0}, Ldt;->a(Ldu;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Ldu;->h:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-
-    return-void
-
-    :cond_1
-    :try_start_1
-    iget-boolean v1, v0, Ldw;->h:Z
-
-    if-nez v1, :cond_0
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Ldt;->b:J
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Ldt;->a:Ldu;
-
-    invoke-virtual {v0, p1}, Ldt;->a(Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Ldu;->h:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-
-    throw v0
-.end method
-
-.method protected final synthetic b()Ljava/lang/Object;
-    .locals 1
-
-    invoke-direct {p0}, Ldu;->d()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final run()V
+.method public final a()V
     .locals 1
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Ldu;->a:Z
+    invoke-direct {p0, v0}, Ldu;->a(Z)V
 
-    iget-object v0, p0, Ldu;->i:Ldt;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Ldt;->c()V
+.method public final a(Lcn;)V
+    .locals 0
+
+    invoke-direct {p0}, Ldu;->d()V
+
+    invoke-virtual {p1, p0}, Lcn;->b(Lcs;)Lcn;
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Ldu;->a(Z)V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ldu;->f:Z
+
+    return-void
+.end method
+
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 0
+
+    invoke-direct {p0}, Ldu;->d()V
+
+    return-void
+.end method
+
+.method public final onAnimationPause(Landroid/animation/Animator;)V
+    .locals 2
+
+    iget-boolean v0, p0, Ldu;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ldu;->a:Landroid/view/View;
+
+    iget v1, p0, Ldu;->b:I
+
+    invoke-static {v0, v1}, Ldk;->a(Landroid/view/View;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onAnimationResume(Landroid/animation/Animator;)V
+    .locals 2
+
+    iget-boolean v0, p0, Ldu;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ldu;->a:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Ldk;->a(Landroid/view/View;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
 
     return-void
 .end method

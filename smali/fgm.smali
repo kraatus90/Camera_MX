@@ -1,69 +1,50 @@
-.class final Lfgm;
-.super Lfgv;
+.class public final Lfgm;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljqv;
 
 
 # instance fields
-.field private synthetic a:Lfgl;
+.field private final synthetic a:Liaw;
+
+.field private final synthetic b:Lfhk;
 
 
 # direct methods
-.method constructor <init>(Lfgl;)V
+.method public constructor <init>(Liaw;Lfhk;)V
     .locals 0
 
-    iput-object p1, p0, Lfgm;->a:Lfgl;
+    iput-object p1, p0, Lfgm;->a:Liaw;
 
-    invoke-direct {p0}, Lfgv;-><init>()V
+    iput-object p2, p0, Lfgm;->b:Lfhk;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final N()V
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfgm;->a:Lfgl;
+    check-cast p1, Limu;
 
-    iget-object v0, v0, Lfgl;->a:Lgvj;
+    iget-object v0, p0, Lfgm;->a:Liaw;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    const-string v1, "CameraMetadataHandler"
 
-    invoke-super {p0}, Lfgv;->N()V
+    invoke-static {v0, v1}, Liat;->a(Liaw;Ljava/lang/String;)Landroid/os/Handler;
 
-    iget-object v0, p0, Lfgm;->a:Lfgl;
+    move-result-object v0
 
-    iget-object v0, v0, Lfgl;->a:Lgvj;
+    iget-object v1, p0, Lfgm;->b:Lfhk;
 
-    iget-object v1, p0, Lfgm;->a:Lfgl;
+    invoke-virtual {v1, p1, v0}, Lfhk;->a(Limu;Landroid/os/Handler;)Lfhj;
 
-    iget-object v1, v1, Lfgl;->c:Lgvl;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final t_()V
-    .locals 2
-
-    iget-object v0, p0, Lfgm;->a:Lfgl;
-
-    iget-object v0, v0, Lfgl;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lfgv;->t_()V
-
-    iget-object v0, p0, Lfgm;->a:Lfgl;
-
-    iget-object v0, v0, Lfgl;->a:Lgvj;
-
-    iget-object v1, p0, Lfgm;->a:Lfgl;
-
-    iget-object v1, v1, Lfgl;->d:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

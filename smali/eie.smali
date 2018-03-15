@@ -1,158 +1,164 @@
 .class public final Leie;
-.super Ljava/lang/Object;
+.super Ljava/lang/Exception;
 .source "PG"
 
-# interfaces
-.implements Liht;
 
-
-# instance fields
-.field private a:Liht;
-
-.field private b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Liht;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leie;->a:Liht;
-
-    iput-object p2, p0, Leie;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Liib;Lihu;Landroid/os/Handler;)I
-    .locals 3
-
-    iget-object v0, p0, Leie;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->b()V
-
-    iget-object v0, p0, Leie;->a:Liht;
-
-    new-instance v1, Leif;
-
-    iget-object v2, p0, Leie;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    invoke-direct {v1, p2, v2}, Leif;-><init>(Lihu;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-
-    invoke-interface {v0, p1, v1, p3}, Liht;->a(Liib;Lihu;Landroid/os/Handler;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final a(Ljava/util/List;Lihu;Landroid/os/Handler;)I
-    .locals 3
-
-    iget-object v0, p0, Leie;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->b()V
-
-    iget-object v0, p0, Leie;->a:Liht;
-
-    new-instance v1, Leif;
-
-    iget-object v2, p0, Leie;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    invoke-direct {v1, p2, v2}, Leif;-><init>(Lihu;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-
-    invoke-interface {v0, p1, v1, p3}, Liht;->a(Ljava/util/List;Lihu;Landroid/os/Handler;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final a()V
+.method static constructor <clinit>()V
     .locals 1
 
-    iget-object v0, p0, Leie;->a:Liht;
+    const-string v0, "OpenGLException"
 
-    invoke-interface {v0}, Liht;->a()V
-
-    return-void
-.end method
-
-.method public final a(Ljava/util/List;)V
-    .locals 1
-
-    iget-object v0, p0, Leie;->a:Liht;
-
-    invoke-interface {v0, p1}, Liht;->a(Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method public final b(Ljava/util/List;Lihu;Landroid/os/Handler;)I
-    .locals 3
-
-    iget-object v0, p0, Leie;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->b()V
-
-    iget-object v0, p0, Leie;->a:Liht;
-
-    new-instance v1, Leif;
-
-    iget-object v2, p0, Leie;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    invoke-direct {v1, p2, v2}, Leif;-><init>(Lihu;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-
-    invoke-interface {v0, p1, v1, p3}, Liht;->b(Ljava/util/List;Lihu;Landroid/os/Handler;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b()Lihy;
-    .locals 1
-
-    iget-object v0, p0, Leie;->a:Liht;
-
-    invoke-interface {v0}, Liht;->b()Lihy;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Leie;->a:Liht;
-
-    invoke-interface {v0}, Liht;->c()V
+    sput-object v0, Leie;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public final close()V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    iget-object v0, p0, Leie;->a:Liht;
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0}, Liht;->close()V
+    sget-object v0, Leie;->a:Ljava/lang/String;
+
+    invoke-static {v0, p1, p0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public final d()Landroid/view/Surface;
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
 
-    iget-object v0, p0, Leie;->a:Liht;
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0}, Liht;->d()Landroid/view/Surface;
+    sget-object v0, Leie;->a:Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x3
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, p0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)V
+    .locals 5
+
+    invoke-static {}, Landroid/opengl/GLES20;->glGetError()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v1, Leie;
+
+    invoke-static {v0}, Landroid/opengl/GLU;->gluErrorString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x16
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ": glError "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Leie;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_0
+    return-void
 .end method

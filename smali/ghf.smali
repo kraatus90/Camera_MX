@@ -1,18 +1,52 @@
-.class public interface abstract Lghf;
+.class public final Lghf;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lawa;
-.implements Lgga;
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lghf;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lghf;
+
+    invoke-direct {v0}, Lghf;-><init>()V
+
+    sput-object v0, Lghf;->a:Lghf;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(I)Ljuw;
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract b(I)Z
-.end method
+    new-instance v0, Lioh;
 
-.method public abstract d()I
+    invoke-direct {v0}, Lioh;-><init>()V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lioh;
+
+    return-object v0
 .end method

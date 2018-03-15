@@ -60,30 +60,26 @@
 
 
 # virtual methods
-.method public Run(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;JII)V
-    .locals 13
+.method public Run(ILcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;JII)V
+    .locals 11
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/EncodedBlobCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
     invoke-static {p2}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;->getCPtr(Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;)J
 
-    move-result-wide v6
+    move-result-wide v4
 
     move-object v2, p0
 
-    move-object v5, p1
+    move v3, p1
 
-    move-wide/from16 v8, p3
+    move-wide v6, p3
 
-    move/from16 v10, p5
+    move/from16 v8, p5
 
-    move/from16 v11, p6
+    move/from16 v9, p6
 
-    invoke-static/range {v0 .. v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->EncodedBlobCallback_Run(JLcom/google/googlex/gcam/EncodedBlobCallback;JLcom/google/googlex/gcam/IShot;JJII)V
+    invoke-static/range {v0 .. v9}, Lcom/google/googlex/gcam/GcamModuleJNI;->EncodedBlobCallback_Run(JLcom/google/googlex/gcam/EncodedBlobCallback;IJJII)V
 
     return-void
 .end method

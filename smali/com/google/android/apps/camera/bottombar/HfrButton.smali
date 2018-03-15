@@ -1,5 +1,5 @@
 .class public Lcom/google/android/apps/camera/bottombar/HfrButton;
-.super Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;
+.super Lhan;
 .source "PG"
 
 # interfaces
@@ -50,7 +50,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/apps/camera/uiutils/SmoothRotateImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lhan;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/HfrButton;->initialize()V
 

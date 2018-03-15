@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">רצף (%1$d תמונות)</item>
+        <item quantity="one">רצף (%1$d תמונה)</item>
+        <item quantity="two">רצף (%1$d תמונות)</item>
+        <item quantity="many">רצף (%1$d תמונות)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d תמונות נשמרו</item>
         <item quantity="one">%1$d תמונה נשמרה</item>

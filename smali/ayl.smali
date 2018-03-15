@@ -1,71 +1,64 @@
 .class public final Layl;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Layl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    new-instance v0, Layl;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {v0}, Layl;-><init>()V
 
     return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static b()Ljava/util/Set;
+    .locals 2
+
+    invoke-static {}, Lazz;->b()Ljava/util/Set;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Layl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    invoke-static {}, Lazz;->b()Ljava/util/Set;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
+    move-result-object v0
 
-    const/16 v1, 0xff
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 3
+    check-cast v0, Ljava/util/Set;
 
-    const/4 v2, 0x0
-
-    iget-object v0, p0, Layl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/burstchip/BurstChip;->setVisibility(I)V
-
-    iget-object v0, p0, Layl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/burstchip/BurstChip;->setAlpha(F)V
-
-    iget-object v0, p0, Layl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
-
-    invoke-virtual {v0, v2}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setAlpha(I)V
-
-    iget-object v0, p0, Layl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
-
-    invoke-virtual {v0, v2, v2}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setVisible(ZZ)Z
-
-    iget-object v0, p0, Layl;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    return-void
+    return-object v0
 .end method

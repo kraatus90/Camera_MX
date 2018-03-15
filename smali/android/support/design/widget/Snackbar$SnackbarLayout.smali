@@ -1,5 +1,5 @@
 .class public final Landroid/support/design/widget/Snackbar$SnackbarLayout;
-.super Lk;
+.super Laa;
 .source "PG"
 
 
@@ -7,7 +7,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lk;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Laa;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -15,7 +15,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lk;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Laa;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
@@ -27,7 +27,7 @@
 
     const/high16 v6, 0x40000000    # 2.0f
 
-    invoke-super {p0, p1, p2}, Lk;->onMeasure(II)V
+    invoke-super {p0, p1, p2}, Laa;->onMeasure(II)V
 
     invoke-virtual {p0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getChildCount()I
 

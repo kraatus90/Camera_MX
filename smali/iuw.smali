@@ -1,48 +1,90 @@
 .class final Liuw;
-.super Ljava/lang/Object;
+.super Lium;
 .source "PG"
 
-# interfaces
-.implements Liuh;
+
+# instance fields
+.field private final synthetic e:Liut;
+
+.field private final synthetic f:Lixn;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method constructor <init>(Livi;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;Litl;Liut;Lixn;)V
+    .locals 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object/from16 v0, p7
+
+    iput-object v0, p0, Liuw;->e:Liut;
+
+    move-object/from16 v0, p8
+
+    iput-object v0, p0, Liuw;->f:Lixn;
+
+    const/4 v7, 0x0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object v8, p6
+
+    invoke-direct/range {v1 .. v8}, Lium;-><init>(Livi;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILitl;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 4
+.method public final c()Lirc;
+    .locals 3
 
-    new-instance v2, Lipo;
+    :try_start_0
+    iget-object v0, p0, Liuw;->e:Liut;
 
-    const-class v0, Ljbc;
+    invoke-interface {v0}, Liut;->i()V
 
-    const-string v1, "Collage_Summary"
+    iget-object v0, p0, Liuw;->f:Lixn;
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lixn;->a()Lirc;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    check-cast v0, Ljbc;
+    :goto_0
+    return-object v0
 
-    const-class v1, Lipn;
+    :catch_0
+    move-exception v0
 
-    const-string v3, "summary_collage_artifact_renderer"
+    iget-object v1, p0, Liuw;->f:Lixn;
 
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v1}, Lixn;->a()Lirc;
 
     move-result-object v1
 
-    check-cast v1, Lipn;
+    sget-object v2, Lken;->a:Lken;
 
-    invoke-direct {v2, v0, v1}, Lipo;-><init>(Ljbc;Lipn;)V
+    invoke-static {v0}, Lihr;->a(Ljava/lang/Throwable;)Lipn;
 
-    return-object v2
+    move-result-object v0
+
+    invoke-virtual {v1, v2, v0}, Lirc;->a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lirc;->a(Liqz;)Lirc;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method

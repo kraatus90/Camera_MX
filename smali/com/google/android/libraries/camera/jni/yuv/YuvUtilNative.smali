@@ -14,10 +14,10 @@
     return-void
 .end method
 
-.method public static a(Liil;)Landroid/graphics/Bitmap;
+.method public static a(Link;)Landroid/graphics/Bitmap;
     .locals 14
 
-    invoke-interface {p0}, Liil;->d()Ljava/util/List;
+    invoke-interface {p0}, Link;->e()Ljava/util/List;
 
     move-result-object v1
 
@@ -29,7 +29,7 @@
 
     move-object v4, v0
 
-    check-cast v4, Liim;
+    check-cast v4, Linl;
 
     const/4 v0, 0x1
 
@@ -39,7 +39,7 @@
 
     move-object v7, v0
 
-    check-cast v7, Liim;
+    check-cast v7, Linl;
 
     const/4 v0, 0x2
 
@@ -49,25 +49,25 @@
 
     move-object v10, v0
 
-    check-cast v10, Liim;
+    check-cast v10, Linl;
 
-    invoke-interface {v4}, Liim;->c()Ljava/nio/ByteBuffer;
+    invoke-interface {v4}, Linl;->c()Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
-    invoke-interface {v7}, Liim;->c()Ljava/nio/ByteBuffer;
+    invoke-interface {v7}, Linl;->c()Ljava/nio/ByteBuffer;
 
     move-result-object v5
 
-    invoke-interface {v10}, Liim;->c()Ljava/nio/ByteBuffer;
+    invoke-interface {v10}, Linl;->c()Ljava/nio/ByteBuffer;
 
     move-result-object v8
 
-    invoke-interface {p0}, Liil;->f()I
+    invoke-interface {p0}, Link;->c()I
 
     move-result v12
 
-    invoke-interface {p0}, Liil;->c()I
+    invoke-interface {p0}, Link;->d()I
 
     move-result v13
 
@@ -75,35 +75,35 @@
 
     new-array v11, v0, [I
 
-    invoke-interface {p0}, Liil;->f()I
+    invoke-interface {p0}, Link;->c()I
 
     move-result v0
 
-    invoke-interface {p0}, Liil;->c()I
+    invoke-interface {p0}, Link;->d()I
 
     move-result v1
 
-    invoke-interface {v4}, Liim;->b()I
+    invoke-interface {v4}, Linl;->b()I
 
     move-result v3
 
-    invoke-interface {v4}, Liim;->a()I
+    invoke-interface {v4}, Linl;->a()I
 
     move-result v4
 
-    invoke-interface {v7}, Liim;->b()I
+    invoke-interface {v7}, Linl;->b()I
 
     move-result v6
 
-    invoke-interface {v7}, Liim;->a()I
+    invoke-interface {v7}, Linl;->a()I
 
     move-result v7
 
-    invoke-interface {v10}, Liim;->b()I
+    invoke-interface {v10}, Linl;->b()I
 
     move-result v9
 
-    invoke-interface {v10}, Liim;->a()I
+    invoke-interface {v10}, Linl;->a()I
 
     move-result v10
 
@@ -142,4 +142,7 @@
 .end method
 
 .method private static native copyYUV_420_888Native(IILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;III)Z
+.end method
+
+.method public static native downsampleYUV_420_888toNV21Native(IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)Z
 .end method

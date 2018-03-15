@@ -1,11 +1,13 @@
-.class public interface abstract Laew;
+.class final Laew;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a(Ljava/lang/Object;)Laev;
-.end method
+# direct methods
+.method constructor <init>()V
+    .locals 0
 
-.method public abstract a()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

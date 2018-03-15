@@ -1,42 +1,31 @@
-.class final Lexs;
+.class public final Lexs;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
-
 
 # instance fields
-.field private synthetic a:Lexr;
+.field public final a:Levy;
+
+.field public final b:Lkgv;
+
+.field public final c:Lbkx;
+
+.field public final d:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method constructor <init>(Lexr;)V
+.method public constructor <init>(Levy;Lkgv;Lbkx;Ljava/util/concurrent/Executor;Landroid/content/Context;)V
     .locals 0
-
-    iput-object p1, p0, Lexs;->a:Lexr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lexs;->a:Levy;
 
+    iput-object p2, p0, Lexs;->b:Lkgv;
 
-# virtual methods
-.method public final close()V
-    .locals 3
+    iput-object p3, p0, Lexs;->c:Lbkx;
 
-    iget-object v0, p0, Lexs;->a:Lexr;
-
-    iget-object v0, v0, Lexr;->a:Lexp;
-
-    iget-object v1, v0, Lexp;->a:Lhzt;
-
-    new-instance v2, Lexq;
-
-    invoke-direct {v2, v0}, Lexq;-><init>(Lexp;)V
-
-    invoke-virtual {v1, v2}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    iput-object p4, p0, Lexs;->d:Ljava/util/concurrent/Executor;
 
     return-void
 .end method

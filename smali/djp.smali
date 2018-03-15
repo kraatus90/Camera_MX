@@ -1,91 +1,36 @@
-.class public final enum Ldjp;
-.super Ljava/lang/Enum;
+.class final Ldjp;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ldjy;
 
-# static fields
-.field public static final enum a:Ldjp;
 
-.field public static final enum b:Ldjp;
-
-.field public static final enum c:Ldjp;
-
-.field private static synthetic d:[Ldjp;
+# instance fields
+.field private final synthetic a:Ldji;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Ldjp;
-
-    const-string v1, "ANY"
-
-    invoke-direct {v0, v1, v2}, Ldjp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldjp;->a:Ldjp;
-
-    new-instance v0, Ldjp;
-
-    const-string v1, "LOCKED"
-
-    invoke-direct {v0, v1, v3}, Ldjp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldjp;->b:Ldjp;
-
-    new-instance v0, Ldjp;
-
-    const-string v1, "CONVERGED"
-
-    invoke-direct {v0, v1, v4}, Ldjp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldjp;->c:Ldjp;
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ldjp;
-
-    sget-object v1, Ldjp;->a:Ldjp;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Ldjp;->b:Ldjp;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Ldjp;->c:Ldjp;
-
-    aput-object v1, v0, v4
-
-    sput-object v0, Ldjp;->d:[Ldjp;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method constructor <init>(Ldji;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Ldjp;->a:Ldji;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Ldjp;
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
     .locals 1
 
-    sget-object v0, Ldjp;->d:[Ldjp;
+    iget-object v0, p0, Ldjp;->a:Ldji;
 
-    invoke-virtual {v0}, [Ldjp;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ldji;->f()V
 
-    move-result-object v0
-
-    check-cast v0, [Ldjp;
+    const/4 v0, 0x0
 
     return-object v0
 .end method

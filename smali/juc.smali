@@ -1,97 +1,170 @@
-.class public final Ljuc;
-.super Ljub;
+.class Ljuc;
+.super Ljud;
 .source "PG"
 
 
 # instance fields
-.field private a:Ljuw;
+.field public a:[Ljava/lang/Object;
+
+.field public b:I
+
+.field public c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljuw;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljub;-><init>()V
+    const/4 v1, 0x4
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0}, Ljud;-><init>()V
+
+    const-string v0, "initialCapacity"
+
+    invoke-static {v1, v0}, Ljhn;->a(ILjava/lang/String;)I
+
+    new-array v0, v1, [Ljava/lang/Object;
+
+    iput-object v0, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ljuc;->b:I
+
+    return-void
+.end method
+
+.method private final a(I)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    iget-object v0, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    array-length v0, v0
+
+    if-ge v0, p1, :cond_1
+
+    iget-object v0, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    iget-object v1, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    array-length v1, v1
+
+    invoke-static {v1, p1}, Ljuc;->a(II)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljuw;
+    iput-object v0, p0, Ljuc;->a:[Ljava/lang/Object;
 
-    iput-object v0, p0, Ljuc;->a:Ljuw;
+    iput-boolean v2, p0, Ljuc;->c:Z
 
+    :cond_0
+    :goto_0
     return-void
+
+    :cond_1
+    iget-boolean v0, p0, Ljuc;->c:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ljava/lang/Object;
+
+    iput-object v0, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    iput-boolean v2, p0, Ljuc;->c:Z
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .locals 1
+.method public a(Ljava/lang/Object;)Ljuc;
+    .locals 3
 
-    iget-object v0, p0, Ljuc;->a:Ljuw;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    iget v0, p0, Ljuc;->b:I
 
-    return-void
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-direct {p0, v0}, Ljuc;->a(I)V
+
+    iget-object v0, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    iget v1, p0, Ljuc;->b:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Ljuc;->b:I
+
+    aput-object p1, v0, v1
+
+    return-object p0
 .end method
 
-.method public final cancel(Z)Z
-    .locals 1
+.method public a(Ljava/lang/Iterable;)Ljud;
+    .locals 3
 
-    iget-object v0, p0, Ljuc;->a:Ljuw;
+    instance-of v0, p1, Ljava/util/Collection;
 
-    invoke-interface {v0, p1}, Ljuw;->cancel(Z)Z
+    if-eqz v0, :cond_0
+
+    move-object v0, p1
+
+    check-cast v0, Ljava/util/Collection;
+
+    iget v1, p0, Ljuc;->b:I
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    invoke-direct {p0, v1}, Ljuc;->a(I)V
+
+    instance-of v1, v0, Ljub;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Ljub;
+
+    iget-object v1, p0, Ljuc;->a:[Ljava/lang/Object;
+
+    iget v2, p0, Ljuc;->b:I
+
+    invoke-virtual {v0, v1, v2}, Ljub;->a([Ljava/lang/Object;I)I
 
     move-result v0
 
-    return v0
+    iput v0, p0, Ljuc;->b:I
+
+    :goto_0
+    return-object p0
+
+    :cond_0
+    invoke-super {p0, p1}, Ljud;->a(Ljava/lang/Iterable;)Ljud;
+
+    goto :goto_0
 .end method
 
-.method public final get()Ljava/lang/Object;
+.method public synthetic b(Ljava/lang/Object;)Ljud;
     .locals 1
 
-    iget-object v0, p0, Ljuc;->a:Ljuw;
-
-    invoke-interface {v0}, Ljuw;->get()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ljuc;->a(Ljava/lang/Object;)Ljuc;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljuc;->a:Ljuw;
-
-    invoke-interface {v0, p1, p2, p3}, Ljuw;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final isCancelled()Z
-    .locals 1
-
-    iget-object v0, p0, Ljuc;->a:Ljuw;
-
-    invoke-interface {v0}, Ljuw;->isCancelled()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final isDone()Z
-    .locals 1
-
-    iget-object v0, p0, Ljuc;->a:Ljuw;
-
-    invoke-interface {v0}, Ljuw;->isDone()Z
-
-    move-result v0
-
-    return v0
 .end method

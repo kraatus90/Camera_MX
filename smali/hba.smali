@@ -3,36 +3,60 @@
 .source "PG"
 
 # interfaces
-.implements Lhbb;
+.implements Lhay;
 
 
 # instance fields
-.field public final a:Landroid/app/Activity;
+.field private final b:Landroid/animation/Animator;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;)V
+.method constructor <init>(Landroid/animation/Animator;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lhba;->a:Landroid/app/Activity;
+    iput-object p1, p0, Lhba;->b:Landroid/animation/Animator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)Landroid/view/View;
+.method public final a()Lhaw;
+    .locals 3
+
+    new-instance v0, Lket;
+
+    invoke-direct {v0}, Lket;-><init>()V
+
+    new-instance v1, Lhbb;
+
+    invoke-direct {v1, v0}, Lhbb;-><init>(Lket;)V
+
+    iget-object v2, p0, Lhba;->b:Landroid/animation/Animator;
+
+    invoke-virtual {v2, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    iget-object v1, p0, Lhba;->b:Landroid/animation/Animator;
+
+    invoke-virtual {v1}, Landroid/animation/Animator;->start()V
+
+    new-instance v1, Lhbf;
+
+    iget-object v2, p0, Lhba;->b:Landroid/animation/Animator;
+
+    invoke-direct {v1, v2, v0}, Lhbf;-><init>(Landroid/animation/Animator;Lkeh;)V
+
+    return-object v1
+.end method
+
+.method public final a(Landroid/animation/Animator$AnimatorListener;)V
     .locals 1
 
-    iget-object v0, p0, Lhba;->a:Landroid/app/Activity;
+    iget-object v0, p0, Lhba;->b:Landroid/animation/Animator;
 
-    invoke-virtual {v0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

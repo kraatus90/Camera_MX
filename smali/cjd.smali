@@ -1,70 +1,72 @@
 .class public final Lcjd;
-.super Ljava/lang/Object;
+.super Landroid/database/ContentObserver;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public a:Lcje;
 
-.field private b:Ljxn;
+.field public b:Z
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lcjd;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lcjd;->b:Ljxn;
+    invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    iput-object p3, p0, Lcjd;->c:Ljxn;
+    iput-boolean v1, p0, Lcjd;->c:Z
 
-    iput-object p4, p0, Lcjd;->d:Ljxn;
+    iput-boolean v1, p0, Lcjd;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(Z)V
+    .locals 1
 
-    new-instance v2, Lcjc;
+    iput-boolean p1, p0, Lcjd;->c:Z
 
-    iget-object v0, p0, Lcjd;->a:Ljxn;
+    if-nez p1, :cond_0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    iput-boolean v0, p0, Lcjd;->b:Z
 
-    check-cast v0, Landroid/content/Context;
+    :cond_0
+    return-void
+.end method
 
-    iget-object v1, p0, Lcjd;->b:Ljxn;
+.method public final onChange(Z)V
+    .locals 2
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lcjd;->a:Lcje;
 
-    iget-object v1, p0, Lcjd;->c:Ljxn;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Lbzb;->a:Ljava/lang/String;
 
-    iget-object v1, p0, Lcjd;->d:Ljxn;
+    const-string v1, "localImagesObserver foreground listener detected change."
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v1
+    :cond_0
+    iget-boolean v0, p0, Lcjd;->c:Z
 
-    check-cast v1, Licv;
+    if-eqz v0, :cond_1
 
-    invoke-direct {v2, v0, v1}, Lcjc;-><init>(Landroid/content/Context;Licv;)V
+    const/4 v0, 0x1
 
-    return-object v2
+    iput-boolean v0, p0, Lcjd;->b:Z
+
+    :cond_1
+    return-void
 .end method

@@ -3,20 +3,24 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbsy;->a:Ljxn;
+    iput-object p1, p0, Lbsy;->a:Lkgv;
+
+    iput-object p2, p0, Lbsy;->b:Lkgv;
 
     return-void
 .end method
@@ -24,23 +28,27 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Lbsy;->a:Ljxn;
+    new-instance v2, Lbsu;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lbsy;->a:Lkgv;
 
-    move-result-object v0
-
-    check-cast v0, Lguk;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgvb;
+    check-cast v0, Lbsz;
 
-    return-object v0
+    iget-object v1, p0, Lbsy;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/concurrent/Executor;
+
+    invoke-direct {v2, v0, v1}, Lbsu;-><init>(Lbsz;Ljava/util/concurrent/Executor;)V
+
+    return-object v2
 .end method

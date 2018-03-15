@@ -1,26 +1,48 @@
-.class public interface abstract Ljeq;
+.class final Ljeq;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljdt;
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(Ljava/io/File;)J
-.end method
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 4
 
-.method public abstract b(Ljava/io/File;)I
-.end method
+    new-instance v2, Liyr;
 
-.method public abstract c(Ljava/io/File;)Z
-.end method
+    const-class v0, Ljko;
 
-.method public abstract d(Ljava/io/File;)Z
-.end method
+    const-string v1, "GIF_Action"
 
-.method public abstract e(Ljava/io/File;)[Ljava/io/File;
-.end method
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public abstract f(Ljava/io/File;)Z
-.end method
+    move-result-object v0
 
-.method public abstract g(Ljava/io/File;)Z
+    check-cast v0, Ljko;
+
+    const-class v1, Liyq;
+
+    const-string v3, "action_gif_artifact_renderer"
+
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liyq;
+
+    invoke-direct {v2, v0, v1}, Liyr;-><init>(Ljko;Liyq;)V
+
+    return-object v2
 .end method

@@ -2,16 +2,7 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
-
 
 # virtual methods
-.method public abstract a()V
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract c()Landroid/view/Surface;
+.method public abstract a(Lbhc;Lbhl;ZLandroid/graphics/PointF;Ljava/util/List;)Lkeh;
 .end method

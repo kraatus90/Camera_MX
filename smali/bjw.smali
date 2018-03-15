@@ -1,244 +1,107 @@
-.class public final Lbjw;
-.super Lbjn;
+.class public final enum Lbjw;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Lgvk;
 
+# static fields
+.field public static final enum a:Lbjw;
 
-# instance fields
-.field public k:Lgvj;
+.field public static final enum b:Lbjw;
 
-.field public l:Lgvl;
+.field public static final enum c:Lbjw;
 
-.field public m:Lgvl;
+.field private static final enum d:Lbjw;
 
-.field private n:Lgvl;
+.field private static final synthetic e:[Lbjw;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 6
 
-    const/4 v3, 0x0
+    const/4 v5, 0x3
 
-    invoke-direct {p0}, Lbjn;-><init>()V
+    const/4 v4, 0x2
 
-    new-instance v0, Lbjx;
+    const/4 v3, 0x1
 
-    invoke-direct {v0, p0}, Lbjx;-><init>(Lbjw;)V
+    const/4 v2, 0x0
 
-    new-instance v1, Lgvl;
+    new-instance v0, Lbjw;
 
-    new-array v2, v3, [Lgvg;
+    const-string v1, "ENG"
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    invoke-direct {v0, v1, v2}, Lbjw;-><init>(Ljava/lang/String;I)V
 
-    iput-object v1, p0, Lbjw;->n:Lgvl;
+    sput-object v0, Lbjw;->a:Lbjw;
 
-    new-instance v0, Lbjy;
+    new-instance v0, Lbjw;
 
-    invoke-direct {v0, p0}, Lbjy;-><init>(Lbjw;)V
+    const-string v1, "FISHFOOD"
 
-    new-instance v1, Lgvl;
+    invoke-direct {v0, v1, v3}, Lbjw;-><init>(Ljava/lang/String;I)V
 
-    new-array v2, v3, [Lgvg;
+    sput-object v0, Lbjw;->b:Lbjw;
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    new-instance v0, Lbjw;
 
-    iput-object v1, p0, Lbjw;->l:Lgvl;
+    const-string v1, "DOGFOOD"
 
-    new-instance v0, Lbjz;
+    invoke-direct {v0, v1, v4}, Lbjw;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, p0}, Lbjz;-><init>(Lbjw;)V
+    sput-object v0, Lbjw;->d:Lbjw;
 
-    new-instance v1, Lgvl;
+    new-instance v0, Lbjw;
 
-    new-array v2, v3, [Lgvg;
+    const-string v1, "RELEASE"
 
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
+    invoke-direct {v0, v1, v5}, Lbjw;-><init>(Ljava/lang/String;I)V
 
-    iput-object v1, p0, Lbjw;->m:Lgvl;
+    sput-object v0, Lbjw;->c:Lbjw;
 
-    new-instance v0, Lgvj;
+    const/4 v0, 0x4
 
-    iget-object v1, p0, Lbjw;->n:Lgvl;
+    new-array v0, v0, [Lbjw;
 
-    invoke-direct {v0, v1, v3}, Lgvj;-><init>(Lgvl;Z)V
+    sget-object v1, Lbjw;->a:Lbjw;
 
-    iput-object v0, p0, Lbjw;->k:Lgvj;
+    aput-object v1, v0, v2
 
-    return-void
-.end method
+    sget-object v1, Lbjw;->b:Lbjw;
 
+    aput-object v1, v0, v3
 
-# virtual methods
-.method public final a()V
-    .locals 1
+    sget-object v1, Lbjw;->d:Lbjw;
 
-    invoke-super {p0}, Lbjn;->a()V
+    aput-object v1, v0, v4
 
-    iget-object v0, p0, Lbjw;->k:Lgvj;
+    sget-object v1, Lbjw;->c:Lbjw;
 
-    invoke-virtual {v0}, Lgvj;->c()V
+    aput-object v1, v0, v5
 
-    return-void
-.end method
-
-.method public final a(F)V
-    .locals 1
-
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0, p1}, Lgvh;->a(F)V
-
-    goto :goto_0
-.end method
-
-.method public final a(Lbjj;Lcom/google/android/apps/camera/evcomp/EvCompView;Landroid/animation/ValueAnimator;ILiau;Lbje;)V
-    .locals 2
-
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-super/range {p0 .. p6}, Lbjn;->a(Lbjj;Lcom/google/android/apps/camera/evcomp/EvCompView;Landroid/animation/ValueAnimator;ILiau;Lbje;)V
-
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    sget v1, Leh;->bo:I
-
-    iput v1, v0, Lgvj;->a:I
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 1
-
-    invoke-super {p0}, Lbjn;->b()V
-
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->d()V
+    sput-object v0, Lbjw;->e:[Lbjw;
 
     return-void
 .end method
 
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->g()V
-
-    goto :goto_0
-.end method
-
-.method public final h()V
-    .locals 1
-
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lbjw;->k:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->h()V
-
-    goto :goto_0
-.end method
-
-.method public final i()V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-interface {p0}, Lgvk;->j()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public final j()V
+.method public static values()[Lbjw;
     .locals 1
 
-    iget-object v0, p0, Lbjw;->k:Lgvj;
+    sget-object v0, Lbjw;->e:[Lbjw;
 
-    invoke-virtual {v0}, Lgvj;->e()V
+    invoke-virtual {v0}, [Lbjw;->clone()Ljava/lang/Object;
 
-    iget-object v0, p0, Lbjw;->n:Lgvl;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lgvl;->j()V
+    check-cast v0, [Lbjw;
 
-    iget-object v0, p0, Lbjw;->l:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    iget-object v0, p0, Lbjw;->m:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    return-void
+    return-object v0
 .end method

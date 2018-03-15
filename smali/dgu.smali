@@ -1,36 +1,56 @@
-.class final Ldgu;
+.class public final Ldgu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldgn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldgn;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldgu;->a:Ldgn;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldgu;->a:Lkgv;
+
+    iput-object p2, p0, Ldgu;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Ldgu;->a:Ldgn;
+    iget-object v0, p0, Ldgu;->a:Lkgv;
 
-    invoke-virtual {v0}, Ldgn;->f()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move-result-object v0
+
+    check-cast v0, Lcsc;
+
+    iget-object v1, p0, Ldgu;->b:Lkgv;
+
+    new-instance v2, Lcsi;
+
+    invoke-direct {v2, v0, v1}, Lcsi;-><init>(Lcsc;Lkgv;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcsb;
 
     return-object v0
 .end method

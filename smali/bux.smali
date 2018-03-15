@@ -1,35 +1,42 @@
-.class final Lbux;
+.class public final Lbux;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfsd;
-.implements Lfsf;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbuw;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbuw;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbux;->a:Lbuw;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbux;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lbux;->a:Lbuw;
+    new-instance v1, Lbvw;
 
-    invoke-virtual {v0}, Lbuw;->c()Z
+    iget-object v0, p0, Lbux;->a:Lkgv;
 
-    return-void
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    invoke-direct {v1, v0}, Lbvw;-><init>(Landroid/content/Context;)V
+
+    return-object v1
 .end method

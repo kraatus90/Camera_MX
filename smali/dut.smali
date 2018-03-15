@@ -3,494 +3,236 @@
 .source "PG"
 
 # interfaces
-.implements Ldvd;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Leou;
-
-.field public final b:Lhah;
-
-.field public final c:Ljrc;
-
-.field public d:Lcom/google/googlex/gcam/InterleavedImageU8;
-
-.field public e:Lcom/google/googlex/gcam/GoudaRequest;
-
-.field public f:Lcom/google/googlex/gcam/ExifMetadata;
-
-.field public g:Ljuw;
-
-.field public h:Lhzr;
-
-.field public i:J
-
-.field public j:Z
-
-.field public k:Z
-
-.field public l:Lcps;
-
-.field public final synthetic m:Ldup;
-
-.field private n:Lear;
-
-.field private o:Ljht;
-
-.field private p:Ljava/util/UUID;
-
-.field private q:Lgom;
-
-.field private r:Lcom/google/googlex/gcam/InterleavedImageU16;
-
-.field private s:I
+.field private final synthetic a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
 
 # direct methods
-.method private constructor <init>(Ldup;Leou;Lear;Ljht;Ljava/util/UUID;)V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;)V
+    .locals 0
 
-    const/4 v1, 0x0
-
-    iput-object p1, p0, Ldut;->m:Ldup;
+    iput-object p1, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lhah;
-
-    invoke-direct {v0}, Lhah;-><init>()V
-
-    iput-object v0, p0, Ldut;->b:Lhah;
-
-    iput-boolean v1, p0, Ldut;->j:Z
-
-    iput-boolean v1, p0, Ldut;->k:Z
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Ldut;->s:I
-
-    iput-object p3, p0, Ldut;->n:Lear;
-
-    iput-object p2, p0, Ldut;->a:Leou;
-
-    iput-object p4, p0, Ldut;->o:Ljht;
-
-    iput-object p5, p0, Ldut;->p:Ljava/util/UUID;
-
-    new-instance v0, Ljrc;
-
-    invoke-direct {v0}, Ljrc;-><init>()V
-
-    iput-object v0, p0, Ldut;->c:Ljrc;
-
-    new-instance v0, Lgom;
-
-    invoke-direct {v0, p0, p3}, Lgom;-><init>(Ldut;Lear;)V
-
-    iput-object v0, p0, Ldut;->q:Lgom;
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Ldup;Leou;Lear;Ljht;Ljava/util/UUID;B)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Ldut;-><init>(Ldup;Leou;Lear;Ljht;Ljava/util/UUID;)V
-
-    return-void
-.end method
-
-.method public static synthetic a(Ldut;)I
-    .locals 2
-
-    iget v0, p0, Ldut;->s:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Ldut;->s:I
-
-    return v0
-.end method
-
-.method private final a(Lcom/google/googlex/gcam/InterleavedImageU8;IZLdus;Ljava/lang/String;Lhai;)V
-    .locals 13
-
-    sget-object v1, Ldus;->a:Ldus;
-
-    move-object/from16 v0, p4
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v4, 0x1
-
-    :goto_0
-    new-instance v6, Ljvi;
-
-    invoke-direct {v6}, Ljvi;-><init>()V
-
-    iget-object v1, p0, Ldut;->m:Ldup;
-
-    iget-object v1, v1, Ldup;->c:Lgik;
-
-    new-instance v2, Lduz;
-
-    invoke-direct {v2, p0, p1, p2}, Lduz;-><init>(Ldut;Lcom/google/googlex/gcam/InterleavedImageU8;I)V
-
-    invoke-virtual {v1, v2}, Lgik;->a(Lgil;)Ljuw;
-
-    move-result-object v7
-
-    new-instance v1, Ldva;
-
-    move-object v2, p0
-
-    move v3, p2
-
-    move-object/from16 v5, p5
-
-    invoke-direct/range {v1 .. v6}, Ldva;-><init>(Ldut;IZLjava/lang/String;Ljvi;)V
-
-    iget-object v2, p0, Ldut;->m:Ldup;
-
-    iget-object v2, v2, Ldup;->f:Ljava/util/concurrent/Executor;
-
-    invoke-static {v7, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    new-instance v7, Lduy;
-
-    move-object v8, p0
-
-    move/from16 v9, p3
-
-    move-object v10, p1
-
-    move-object/from16 v11, p4
-
-    move-object/from16 v12, p6
-
-    invoke-direct/range {v7 .. v12}, Lduy;-><init>(Ldut;ZLcom/google/googlex/gcam/InterleavedImageU8;Ldus;Lhai;)V
-
-    sget-object v1, Ljvc;->a:Ljvc;
-
-    invoke-static {v6, v7, v1}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
-
-    return-void
-
-    :cond_0
-    const/4 v4, 0x0
-
-    goto :goto_0
-.end method
-
-.method private final a(Ldug;IZLjava/lang/String;Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-    .locals 18
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Ldut;->a:Leou;
-
-    move-object/from16 v17, v0
-
-    new-instance v2, Lchu;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Ldut;->a:Leou;
-
-    invoke-interface {v3}, Leou;->b()J
-
-    move-result-wide v4
-
-    move-object/from16 v0, p1
-
-    iget-wide v6, v0, Ldug;->a:J
-
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Ldut;->p:Ljava/util/UUID;
-
-    move-object/from16 v0, p1
-
-    iget v3, v0, Ldug;->c:I
-
-    invoke-static {v3}, Licf;->a(I)Licf;
-
-    move-result-object v9
-
-    move-object/from16 v0, p1
-
-    iget-object v3, v0, Ldug;->e:Lici;
-
-    iget v10, v3, Lici;->a:I
-
-    move-object/from16 v0, p1
-
-    iget-object v3, v0, Ldug;->e:Lici;
-
-    iget v11, v3, Lici;->b:I
-
-    move-object/from16 v0, p1
-
-    iget-object v12, v0, Ldug;->b:[B
-
-    if-nez p5, :cond_0
-
-    move-object/from16 v0, p1
-
-    iget-object v13, v0, Ldug;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-    :goto_0
-    sget-object v14, Lbnv;->f:Lbnv;
-
-    move/from16 v3, p2
-
-    move/from16 v15, p3
-
-    move-object/from16 v16, p4
-
-    invoke-direct/range {v2 .. v16}, Lchu;-><init>(IJJLjava/util/UUID;Licf;II[BLcom/google/android/libraries/camera/exif/ExifInterface;Lbnv;ZLjava/lang/String;)V
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v0, v2}, Leou;->a(Lcht;)V
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Ldut;->m:Ldup;
-
-    iget-object v2, v2, Ldup;->g:Lijh;
-
-    move/from16 v0, p2
-
-    int-to-float v3, v0
-
-    move-object/from16 v0, p1
-
-    iget-wide v4, v0, Ldug;->a:J
-
-    invoke-virtual {v2, v3, v4, v5}, Lijh;->a(FJ)V
-
-    return-void
-
-    :cond_0
-    move-object/from16 v13, p5
-
-    goto :goto_0
-.end method
-
-.method public static synthetic a(Ldut;Lcom/google/googlex/gcam/InterleavedImageU8;IZLdus;Ljava/lang/String;Lhai;)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p6}, Ldut;->a(Lcom/google/googlex/gcam/InterleavedImageU8;IZLdus;Ljava/lang/String;Lhai;)V
-
-    return-void
-.end method
-
-.method static synthetic a(Ldut;Ldug;IZLjava/lang/String;Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Ldut;->a(Ldug;IZLjava/lang/String;Lcom/google/android/libraries/camera/exif/ExifInterface;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final run()V
+    .locals 6
 
-    iget-boolean v0, p0, Ldut;->k:Z
+    :goto_0
+    :try_start_0
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    if-eqz v0, :cond_2
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->k:Lfzx;
 
-    iget-object v0, p0, Ldut;->b:Lhah;
+    invoke-virtual {v0}, Lfzx;->a()Lfzw;
 
-    iget-object v0, v0, Lhah;->a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Ldut;->n:Lear;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-interface {v0, v1}, Lear;->a(F)V
-
-    iget-object v0, p0, Ldut;->h:Lhzr;
-
-    invoke-virtual {v0}, Lhzr;->close()V
-
-    iget-object v0, p0, Ldut;->d:Lcom/google/googlex/gcam/InterleavedImageU8;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ldut;->d:Lcom/google/googlex/gcam/InterleavedImageU8;
-
-    invoke-static {v0}, Lcom/google/googlex/gcam/BufferUtils;->deleteNativeImage(Lcom/google/googlex/gcam/InterleavedImageU8;)V
-
-    :cond_0
-    iget-object v0, p0, Ldut;->r:Lcom/google/googlex/gcam/InterleavedImageU16;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Ldut;->r:Lcom/google/googlex/gcam/InterleavedImageU16;
-
-    invoke-static {v0}, Lcom/google/googlex/gcam/BufferUtils;->deleteNativeImage(Lcom/google/googlex/gcam/InterleavedImageU16;)V
-
-    :cond_1
-    iget-boolean v0, p0, Ldut;->j:Z
+    move-result-object v0
 
     if-eqz v0, :cond_3
 
-    sget-object v0, Ldup;->a:Ljava/lang/String;
+    iget-object v1, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    const-string v1, "Finishing the session"
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->c:Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    monitor-enter v1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    iget-object v0, p0, Ldut;->a:Leou;
+    :try_start_1
+    iget-object v2, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    invoke-interface {v0}, Lgou;->n()Lavl;
+    iput-object v0, v2, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->d:Lfzw;
 
-    move-result-object v0
+    iget-object v2, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    iget-object v1, p0, Ldut;->c:Ljrc;
+    iget-boolean v2, v2, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->e:Z
 
-    invoke-interface {v0, v1}, Lavl;->a(Ljrc;)V
+    if-eqz v2, :cond_0
 
-    iget-object v0, p0, Ldut;->a:Leou;
+    iget-object v2, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    invoke-interface {v0}, Leou;->h()V
+    iget-object v2, v2, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->d:Lfzw;
 
-    :cond_2
-    :goto_0
-    return-void
+    invoke-interface {v2}, Lfzw;->suspend()V
 
-    :cond_3
-    sget-object v0, Ldup;->a:Ljava/lang/String;
+    :cond_0
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const-string v1, "Error processing the image, cancelling the session"
+    :try_start_2
+    iget-object v1, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    if-nez v0, :cond_1
 
-    iget-object v0, p0, Ldut;->a:Leou;
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->a:Ljava/lang/String;
 
-    invoke-interface {v0}, Leou;->f()V
+    const-string v1, "Reference to ProcessingTask is null"
+
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     goto :goto_0
-.end method
 
-.method public final a(Liil;Ljuw;)V
-    .locals 0
+    :catch_0
+    move-exception v0
 
+    :try_start_3
+    iget-object v1, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
+
+    iget-object v1, v1, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->o:Liay;
+
+    new-instance v2, Lduu;
+
+    invoke-direct {v2, v0}, Lduu;-><init>(Ljava/lang/Exception;)V
+
+    invoke-virtual {v1, v2}, Liay;->execute(Ljava/lang/Runnable;)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->stopSelf()V
+
+    :goto_1
     return-void
-.end method
 
-.method public final close()V
-    .locals 6
+    :catchall_0
+    move-exception v0
 
-    sget-object v0, Ldup;->a:Ljava/lang/String;
+    :try_start_4
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    const-string v1, "Starting postprocessing"
+    :try_start_5
+    throw v0
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :catchall_1
+    move-exception v0
 
-    iget-object v0, p0, Ldut;->m:Ldup;
+    iget-object v1, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    iget-object v1, p0, Ldut;->g:Ljuw;
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->stopSelf()V
 
-    invoke-virtual {v0, v1}, Ldup;->a(Ljuw;)Lcom/google/googlex/gcam/InterleavedImageU16;
+    throw v0
 
-    move-result-object v0
+    :cond_1
+    :try_start_6
+    sget-object v2, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->a:Ljava/lang/String;
 
-    iput-object v0, p0, Ldut;->r:Lcom/google/googlex/gcam/InterleavedImageU16;
+    const-string v3, "Resetting notification"
 
-    iget-object v0, p0, Ldut;->d:Lcom/google/googlex/gcam/InterleavedImageU8;
+    invoke-static {v2, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, Ldut;->e:Lcom/google/googlex/gcam/GoudaRequest;
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->b:Landroid/app/Notification$Builder;
 
-    iget-object v2, p0, Ldut;->b:Lhah;
+    const-string v3, "\u2026"
 
-    invoke-virtual {v2}, Lhah;->a()Lhai;
+    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v2
 
-    iget-object v3, p0, Ldut;->m:Ldup;
+    const/16 v3, 0x64
 
-    iget-object v3, v3, Ldup;->d:Lgik;
+    const/4 v4, 0x0
 
-    new-instance v4, Lgon;
+    const/4 v5, 0x0
 
-    iget-object v5, p0, Ldut;->m:Ldup;
+    invoke-virtual {v2, v3, v4, v5}, Landroid/app/Notification$Builder;->setProgress(IIZ)Landroid/app/Notification$Builder;
 
-    iget-object v5, v5, Ldup;->e:Ljava/util/concurrent/Executor;
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->a()V
 
-    invoke-direct {v4, v5, v0, v1}, Lgon;-><init>(Ljava/util/concurrent/Executor;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/GoudaRequest;)V
+    invoke-interface {v0}, Lfzw;->getSession()Lfzv;
 
-    invoke-virtual {v3, v4}, Lgik;->a(Lgil;)Ljuw;
+    move-result-object v2
 
-    move-result-object v1
+    if-eqz v2, :cond_2
 
-    new-instance v3, Ldux;
+    invoke-interface {v2, v1}, Lfzv;->a(Lfzy;)V
 
-    invoke-direct {v3, p0, v2, v0}, Ldux;-><init>(Ldut;Lhai;Lcom/google/googlex/gcam/InterleavedImageU8;)V
+    :cond_2
+    invoke-static {}, Ljava/lang/System;->gc()V
 
-    sget-object v0, Ljvc;->a:Ljvc;
+    sget-object v2, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->a:Ljava/lang/String;
 
-    invoke-static {v1, v3, v0}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, p0, Ldut;->o:Ljht;
+    move-result-object v3
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v4
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    iget-object v0, p0, Ldut;->e:Lcom/google/googlex/gcam/GoudaRequest;
+    move-result v4
 
-    if-eqz v0, :cond_1
+    add-int/lit8 v4, v4, 0x11
 
-    iget-object v0, p0, Ldut;->e:Lcom/google/googlex/gcam/GoudaRequest;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lcom/google/googlex/gcam/GoudaRequest;->getFaces()Lcom/google/googlex/gcam/PixelRectVector;
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Processing start "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-interface {v0, v1}, Lfzw;->process(Landroid/content/Context;)V
+
+    sget-object v1, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v0, 0x0
+    move-result-object v2
 
-    :goto_0
-    iget-object v1, p0, Ldut;->c:Ljrc;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    iput v0, v1, Ljrc;->c:I
+    move-result v2
 
-    sget-object v1, Ldup;->a:Ljava/lang/String;
-
-    const/16 v2, 0x38
+    add-int/lit8 v2, v2, 0x10
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v2, "Sending image for postprocessing with "
+    const-string v2, "Processing done "
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " faces."
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -498,72 +240,95 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Ldut;->o:Ljht;
+    goto/16 :goto_0
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    :cond_3
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    move-result-object v0
+    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->c:Ljava/lang/Object;
 
-    check-cast v0, Lgoj;
+    monitor-enter v1
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    iget-object v1, p0, Ldut;->d:Lcom/google/googlex/gcam/InterleavedImageU8;
+    :try_start_7
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    iget-object v2, p0, Ldut;->r:Lcom/google/googlex/gcam/InterleavedImageU16;
+    const/4 v2, 0x0
 
-    iget-object v3, p0, Ldut;->e:Lcom/google/googlex/gcam/GoudaRequest;
+    iput-object v2, v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->d:Lfzw;
 
-    iget-object v4, p0, Ldut;->q:Lgom;
+    monitor-exit v1
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
-    invoke-interface {v0, v1, v2, v3, v4}, Lgoj;->a(Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/InterleavedImageU16;Lcom/google/googlex/gcam/GoudaRequest;Lgom;)Ljuw;
+    :try_start_8
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    move-result-object v0
+    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->f:Ljava/lang/Object;
 
-    :goto_1
-    new-instance v1, Lduw;
+    monitor-enter v1
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    invoke-direct {v1, p0}, Lduw;-><init>(Ldut;)V
+    :try_start_9
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    const/4 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    iput-boolean v2, v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->g:Z
 
-    return-void
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    :cond_0
-    iget-object v0, p0, Ldut;->e:Lcom/google/googlex/gcam/GoudaRequest;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lcom/google/googlex/gcam/GoudaRequest;->getFaces()Lcom/google/googlex/gcam/PixelRectVector;
+    iput-boolean v2, v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->h:Z
 
-    move-result-object v0
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    invoke-virtual {v0}, Lcom/google/googlex/gcam/PixelRectVector;->size()J
+    const/4 v2, 0x1
 
-    move-result-wide v0
+    iput-boolean v2, v0, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->i:Z
 
-    long-to-int v0, v0
+    monitor-exit v1
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
-    goto :goto_0
+    iget-object v0, p0, Ldut;->a:Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;
 
-    :cond_1
-    const-string v0, "Gouda controller not available or null GoudaRequest, no effect applied."
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->stopSelf()V
 
-    sget-object v1, Ldup;->a:Ljava/lang/String;
+    goto/16 :goto_1
 
-    invoke-static {v1, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    :catchall_2
+    move-exception v0
 
-    new-instance v1, Lief;
+    :try_start_a
+    monitor-exit v1
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_2
 
-    invoke-direct {v1, v0}, Lief;-><init>(Ljava/lang/String;)V
+    :try_start_b
+    throw v0
+    :try_end_b
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_0
+    .catchall {:try_start_b .. :try_end_b} :catchall_1
 
-    invoke-static {v1}, Ljuh;->a(Ljava/lang/Throwable;)Ljuw;
+    :catchall_3
+    move-exception v0
 
-    move-result-object v0
+    :try_start_c
+    monitor-exit v1
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_3
 
-    iget-object v1, p0, Ldut;->g:Ljuw;
-
-    invoke-static {v1}, Ldup;->b(Ljuw;)V
-
-    goto :goto_1
+    :try_start_d
+    throw v0
+    :try_end_d
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_0
+    .catchall {:try_start_d .. :try_end_d} :catchall_1
 .end method

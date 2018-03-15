@@ -3,80 +3,108 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private synthetic a:Z
-
-.field private synthetic b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.implements Lgto;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Z)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lgtq;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iput-boolean p2, p0, Lgtq;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(Lgxg;)V
+    .locals 0
+
+    invoke-direct {p0}, Lgtq;-><init>()V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public final a()V
+    .locals 0
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    return-void
+.end method
+
+.method public final a(F)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/graphics/Matrix;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/view/View$OnLayoutChangeListener;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Lgtn;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b(Lgtn;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final d()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final e()Lkeh;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+.method public final f()Lkeh;
+    .locals 1
 
-    move-result v0
+    const/4 v0, 0x0
 
-    iget-boolean v1, p0, Lgtq;->a:Z
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
-    if-eqz v1, :cond_0
+    move-result-object v0
 
-    iget-object v1, p0, Lgtq;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->isEnabled()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Lgtq;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$800(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/graphics/Paint;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/Paint;->getAlpha()I
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    iget-object v1, p0, Lgtq;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$800(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/graphics/Paint;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    :cond_1
-    iget-object v0, p0, Lgtq;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->invalidate()V
-
-    return-void
+    return-object v0
 .end method

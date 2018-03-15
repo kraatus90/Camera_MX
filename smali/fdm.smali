@@ -1,59 +1,58 @@
-.class public Lfdm;
-.super Lgvh;
+.class public final Lfdm;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final d:Ljava/lang/String;
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public f:Lguc;
-
-.field public g:Levh;
-
-.field public h:Ljht;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>(Lkgv;)V
+    .locals 0
 
-    const-string v0, "LensBlurStatechart"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lfdm;->d:Ljava/lang/String;
+    iput-object p1, p0, Lfdm;->a:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public static a(Lkgv;)Lfdm;
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Lfdm;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[F)V
+    invoke-direct {v0, p0}, Lfdm;-><init>(Lkgv;)V
 
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Levh;Ljht;)V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iput-object p1, p0, Lfdm;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iget-object v0, p0, Lfdm;->a:Lkgv;
 
-    iput-object p2, p0, Lfdm;->f:Lguc;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iput-object p3, p0, Lfdm;->g:Levh;
+    move-result-object v0
 
-    iput-object p4, p0, Lfdm;->h:Ljht;
+    check-cast v0, Lilz;
 
-    return-void
+    iget-object v0, v0, Lilz;->d:Lket;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkeh;
+
+    return-object v0
 .end method

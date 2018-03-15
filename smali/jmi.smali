@@ -1,108 +1,301 @@
-.class abstract Ljmi;
-.super Ljne;
+.class public final Ljmi;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljme;
+
+
+# instance fields
+.field private final a:Ljme;
+
+.field private final b:Ljava/util/TreeSet;
+
+.field private c:J
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljme;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljne;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/TreeSet;
+
+    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+
+    iput-object v0, p0, Ljmi;->b:Ljava/util/TreeSet;
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Ljmi;->c:J
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljmi;->a:Ljme;
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract a()Ljmd;
-.end method
+.method public final declared-synchronized a()J
+    .locals 2
 
-.method public clear()V
-    .locals 1
+    monitor-enter p0
 
-    invoke-virtual {p0}, Ljmi;->a()Ljmd;
+    :try_start_0
+    iget-object v0, p0, Ljmi;->b:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljmi;->b:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljmd;->clear()V
+    check-cast v0, Ljava/lang/Long;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.method public contains(Ljava/lang/Object;)Z
-    .locals 3
+    move-result-wide v0
 
-    const/4 v0, 0x0
+    :goto_0
+    monitor-exit p0
 
-    instance-of v1, p1, Ljme;
-
-    if-eqz v1, :cond_0
-
-    check-cast p1, Ljme;
-
-    invoke-interface {p1}, Ljme;->b()I
-
-    move-result v1
-
-    if-gtz v1, :cond_1
+    return-wide v0
 
     :cond_0
-    :goto_0
-    return v0
+    :try_start_1
+    iget-object v0, p0, Ljmi;->a:Ljme;
 
-    :cond_1
-    invoke-virtual {p0}, Ljmi;->a()Ljmd;
+    invoke-interface {v0}, Ljme;->a()J
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result-wide v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized a(J)V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Ljmi;->b:Ljava/util/TreeSet;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-interface {p1}, Ljme;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-interface {v1, v2}, Ljmd;->a(Ljava/lang/Object;)I
+    if-nez v0, :cond_0
 
-    move-result v1
+    iget-object v0, p0, Ljmi;->a:Ljme;
 
-    invoke-interface {p1}, Ljme;->b()I
+    invoke-interface {v0, p1, p2}, Ljme;->a(J)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
+    :cond_0
+    monitor-exit p0
 
-    if-ne v1, v2, :cond_0
+    return-void
 
-    const/4 v0, 0x1
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 2
+
+    monitor-enter p0
+
+    const-wide/16 v0, -0x1
+
+    :try_start_0
+    iput-wide v0, p0, Ljmi;->c:J
+
+    iget-object v0, p0, Ljmi;->b:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->clear()V
+
+    iget-object v0, p0, Ljmi;->a:Ljme;
+
+    invoke-interface {v0}, Ljme;->b()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b(J)V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Ljmi;->c:J
+
+    cmp-long v0, p1, v0
+
+    if-gez v0, :cond_0
+
+    const-string v0, "InOrderTimestampFrameDropper"
+
+    const/16 v1, 0x42
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Encountered out of order frame with timestamp:"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Ljmi;->b:Ljava/util/TreeSet;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-wide v0, p0, Ljmi;->c:J
+
+    cmp-long v0, p1, v0
+
+    if-nez v0, :cond_1
+
+    const-string v0, "InOrderTimestampFrameDropper"
+
+    const/16 v1, 0x3f
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Encountered duplicate frame with timestamp:"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Ljmi;->b:Ljava/util/TreeSet;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1
+    :try_start_2
+    iput-wide p1, p0, Ljmi;->c:J
+
+    iget-object v0, p0, Ljmi;->a:Ljme;
+
+    invoke-interface {v0, p1, p2}, Ljme;->b(J)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 .end method
 
-.method public remove(Ljava/lang/Object;)Z
-    .locals 4
+.method public final c()Ljava/util/Set;
+    .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ljmi;->a:Ljme;
 
-    instance-of v1, p1, Ljme;
+    invoke-interface {v0}, Ljme;->c()Ljava/util/Set;
 
-    if-eqz v1, :cond_0
+    move-result-object v0
 
-    check-cast p1, Ljme;
+    return-object v0
+.end method
 
-    invoke-interface {p1}, Ljme;->a()Ljava/lang/Object;
+.method public final d()Ljrf;
+    .locals 1
 
-    move-result-object v1
+    iget-object v0, p0, Ljmi;->a:Ljme;
 
-    invoke-interface {p1}, Ljme;->b()I
+    invoke-interface {v0}, Ljme;->d()Ljrf;
 
-    move-result v2
+    move-result-object v0
 
-    if-eqz v2, :cond_0
-
-    invoke-virtual {p0}, Ljmi;->a()Ljmd;
-
-    move-result-object v3
-
-    invoke-interface {v3, v1, v2, v0}, Ljmd;->a(Ljava/lang/Object;II)Z
-
-    move-result v0
-
-    :cond_0
-    return v0
+    return-object v0
 .end method

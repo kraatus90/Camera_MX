@@ -1,54 +1,106 @@
-.class final Lidp;
-.super Liid;
-.source "PG"
+.class final synthetic Lidp;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljqv;
 
 
 # instance fields
-.field private a:Lido;
-
-.field private b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Lido;
 
 
 # direct methods
-.method constructor <init>(Lihy;Lido;)V
-    .locals 2
+.method constructor <init>(Lido;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Liid;-><init>(Lihy;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lidp;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p2, p0, Lidp;->a:Lido;
+    iput-object p1, p0, Lidp;->a:Lido;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lidp;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-super {p0}, Liid;->close()V
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     iget-object v0, p0, Lidp;->a:Lido;
 
-    invoke-virtual {v0}, Lido;->close()V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, p1}, Lido;->c(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Ljava/lang/NullPointerException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x40
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Transforming input value: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " resulted in a null output value for: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v1
 
     :cond_0
-    return-void
+    return-object v1
 .end method

@@ -1,43 +1,50 @@
-.class final synthetic Lhep;
+.class public final Lhep;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Lhev;
 
 
 # instance fields
-.field private a:Lhen;
-
-.field private b:Z
+.field private final a:Ljava/util/Set;
 
 
 # direct methods
-.method constructor <init>(Lhen;Z)V
+.method public constructor <init>(Ljava/util/Set;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhep;->a:Lhen;
-
-    iput-boolean p2, p0, Lhep;->b:Z
+    iput-object p1, p0, Lhep;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
-    .locals 2
+.method public final synthetic a(Landroid/view/Surface;Landroid/util/Size;)Lheu;
+    .locals 3
 
-    iget-object v0, p0, Lhep;->a:Lhen;
+    invoke-static {p2}, Liop;->a(Landroid/util/Size;)Liop;
 
-    iget-boolean v1, p0, Lhep;->b:Z
+    move-result-object v0
 
-    iget-object v0, v0, Lhen;->b:Lhev;
+    new-instance v1, Lher;
 
-    invoke-virtual {v0, v1}, Lhev;->b(Z)V
+    iget-object v2, p0, Lhep;->a:Ljava/util/Set;
 
-    const/4 v0, 0x1
+    invoke-direct {v1, v2, v0, p1}, Lher;-><init>(Ljava/util/Set;Lioo;Landroid/view/Surface;)V
 
-    return v0
+    return-object v1
+.end method
+
+.method public final a(Landroid/content/Context;)Lhew;
+    .locals 1
+
+    new-instance v0, Lheq;
+
+    invoke-direct {v0, p1}, Lheq;-><init>(Landroid/content/Context;)V
+
+    return-object v0
 .end method

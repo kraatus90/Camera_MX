@@ -3,34 +3,34 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Liac;
+
+
+# instance fields
+.field private final a:Lawv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lawv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Laxd;->a:Lawv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a()Lkeh;
+    .locals 1
 
-    new-instance v0, Lhzt;
+    iget-object v0, p0, Laxd;->a:Lawv;
 
-    invoke-direct {v0}, Lhzt;-><init>()V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lawv;->a()Lkeh;
 
     move-result-object v0
-
-    check-cast v0, Lhzt;
 
     return-object v0
 .end method

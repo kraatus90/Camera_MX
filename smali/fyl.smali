@@ -1,159 +1,177 @@
-.class final Lfyl;
+.class final synthetic Lfyl;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Liol;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Liol;
+.field private final a:Lfyk;
 
-.field private synthetic b:Lioj;
+.field private final b:Lfzg;
 
-.field private synthetic c:Lfyk;
+.field private final c:Lket;
+
+.field private final d:J
+
+.field private final e:Lcom/google/googlex/gcam/InterleavedImageU8;
+
+.field private final f:Lcom/google/googlex/gcam/GoudaRequest;
+
+.field private final g:Lcom/google/googlex/gcam/InterleavedImageU16;
 
 
 # direct methods
-.method constructor <init>(Lfyk;Liol;Lioj;)V
+.method constructor <init>(Lfyk;Lfzg;Lket;JLcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/GoudaRequest;Lcom/google/googlex/gcam/InterleavedImageU16;)V
     .locals 0
 
-    iput-object p1, p0, Lfyl;->c:Lfyk;
-
-    iput-object p2, p0, Lfyl;->a:Liol;
-
-    iput-object p3, p0, Lfyl;->b:Lioj;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfyl;->a:Lfyk;
+
+    iput-object p2, p0, Lfyl;->b:Lfzg;
+
+    iput-object p3, p0, Lfyl;->c:Lket;
+
+    iput-wide p4, p0, Lfyl;->d:J
+
+    iput-object p6, p0, Lfyl;->e:Lcom/google/googlex/gcam/InterleavedImageU8;
+
+    iput-object p7, p0, Lfyl;->f:Lcom/google/googlex/gcam/GoudaRequest;
+
+    iput-object p8, p0, Lfyl;->g:Lcom/google/googlex/gcam/InterleavedImageU16;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 6
+.method public final run()V
+    .locals 11
 
-    iget-object v0, p0, Lfyl;->a:Liol;
+    iget-object v0, p0, Lfyl;->a:Lfyk;
 
-    invoke-interface {v0, p1, p2}, Liol;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    iget-object v1, p0, Lfyl;->b:Lfzg;
 
-    iget-object v0, p0, Lfyl;->b:Lioj;
+    iget-object v8, p0, Lfyl;->c:Lket;
 
-    iget-object v0, v0, Lioj;->b:Landroid/media/MediaFormat;
+    iget-wide v2, p0, Lfyl;->d:J
 
-    new-instance v1, Lfym;
+    iget-object v5, p0, Lfyl;->e:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    invoke-direct {v1, p2, v0}, Lfym;-><init>(Landroid/media/MediaCodec$BufferInfo;Landroid/media/MediaFormat;)V
+    iget-object v6, p0, Lfyl;->f:Lcom/google/googlex/gcam/GoudaRequest;
 
-    const-string v1, "mime"
+    iget-object v7, p0, Lfyl;->g:Lcom/google/googlex/gcam/InterleavedImageU16;
 
-    invoke-virtual {v0, v1}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
+    :try_start_0
+    iget-object v4, v0, Lfyk;->f:Lfyi;
 
-    move-result-object v0
+    iget-object v4, v4, Lfyi;->d:Lcom/google/googlex/gcam/GoudaSwigWrapper;
 
-    const-string v1, "video/"
+    if-eqz v4, :cond_2
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    new-instance v4, Lfym;
 
-    move-result v0
+    invoke-direct {v4, v1}, Lfym;-><init>(Lfzg;)V
 
-    if-nez v0, :cond_0
+    iput-object v4, v0, Lfyk;->a:Lcom/google/googlex/gcam/GoudaProgressCallback;
 
+    new-instance v4, Lfyn;
+
+    invoke-direct {v4, v8, v1}, Lfyn;-><init>(Lket;Lfzg;)V
+
+    iput-object v4, v0, Lfyk;->b:Lcom/google/googlex/gcam/GoudaCompleteCallback;
+
+    new-instance v4, Lfyo;
+
+    invoke-direct {v4, v0, v1}, Lfyo;-><init>(Lfyk;Lfzg;)V
+
+    iput-object v4, v0, Lfyk;->c:Lcom/google/googlex/gcam/GoudaImageCallback;
+
+    new-instance v4, Lcom/google/googlex/gcam/GoudaCallbacks;
+
+    invoke-direct {v4}, Lcom/google/googlex/gcam/GoudaCallbacks;-><init>()V
+
+    iget-object v9, v0, Lfyk;->a:Lcom/google/googlex/gcam/GoudaProgressCallback;
+
+    invoke-virtual {v4, v9}, Lcom/google/googlex/gcam/GoudaCallbacks;->setProgress_callback(Lcom/google/googlex/gcam/GoudaProgressCallback;)V
+
+    iget-object v9, v0, Lfyk;->b:Lcom/google/googlex/gcam/GoudaCompleteCallback;
+
+    invoke-virtual {v4, v9}, Lcom/google/googlex/gcam/GoudaCallbacks;->setComplete_callback(Lcom/google/googlex/gcam/GoudaCompleteCallback;)V
+
+    iget-object v9, v0, Lfyk;->c:Lcom/google/googlex/gcam/GoudaImageCallback;
+
+    invoke-virtual {v4, v9}, Lcom/google/googlex/gcam/GoudaCallbacks;->setImage_callback(Lcom/google/googlex/gcam/GoudaImageCallback;)V
+
+    iget-object v9, v0, Lfyk;->f:Lfyi;
+
+    iget-object v9, v9, Lfyi;->c:Lbqc;
+
+    sget-object v10, Lfza;->a:Lbqf;
+
+    invoke-virtual {v9, v10}, Lbqc;->a(Lbqf;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_0
+
+    new-instance v9, Lfyp;
+
+    invoke-direct {v9, v0, v1}, Lfyp;-><init>(Lfyk;Lfzg;)V
+
+    iput-object v9, v0, Lfyk;->d:Lcom/google/googlex/gcam/GoudaImageCallback;
+
+    iget-object v9, v0, Lfyk;->d:Lcom/google/googlex/gcam/GoudaImageCallback;
+
+    invoke-virtual {v4, v9}, Lcom/google/googlex/gcam/GoudaCallbacks;->setSecondary_image_callback(Lcom/google/googlex/gcam/GoudaImageCallback;)V
+
+    :cond_0
+    iget-object v9, v0, Lfyk;->f:Lfyi;
+
+    iget-object v9, v9, Lfyi;->c:Lbqc;
+
+    sget-object v10, Lfza;->b:Lbqf;
+
+    invoke-virtual {v9, v10}, Lbqc;->a(Lbqf;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
+
+    new-instance v9, Lfyq;
+
+    invoke-direct {v9, v0, v1}, Lfyq;-><init>(Lfyk;Lfzg;)V
+
+    iput-object v9, v0, Lfyk;->e:Lcom/google/googlex/gcam/GoudaImageCallback;
+
+    iget-object v1, v0, Lfyk;->e:Lcom/google/googlex/gcam/GoudaImageCallback;
+
+    invoke-virtual {v4, v1}, Lcom/google/googlex/gcam/GoudaCallbacks;->setDebug_image_callback(Lcom/google/googlex/gcam/GoudaImageCallback;)V
+
+    :cond_1
+    iget-object v0, v0, Lfyk;->f:Lfyi;
+
+    iget-object v1, v0, Lfyi;->d:Lcom/google/googlex/gcam/GoudaSwigWrapper;
+
+    invoke-virtual/range {v1 .. v7}, Lcom/google/googlex/gcam/GoudaSwigWrapper;->Process(JLcom/google/googlex/gcam/GoudaCallbacks;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/GoudaRequest;Lcom/google/googlex/gcam/InterleavedReadViewU16;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_2
     :goto_0
     return-void
 
-    :cond_0
-    iget-object v0, p0, Lfyl;->c:Lfyk;
-
-    iget-object v1, v0, Lfyk;->a:Lfyn;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lfyl;->c:Lfyk;
-
-    iget-object v0, v0, Lfyk;->a:Lfyn;
-
-    iget v0, v0, Lfyn;->a:I
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lfyl;->c:Lfyk;
-
-    iget-object v0, v0, Lfyk;->a:Lfyn;
-
-    const-wide v2, 0x7fffffffffffffffL
-
-    iput-wide v2, v0, Lfyn;->b:J
-
-    :cond_1
-    iget-object v0, p0, Lfyl;->c:Lfyk;
-
-    iget-object v0, v0, Lfyk;->a:Lfyn;
-
-    iget v2, v0, Lfyn;->a:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, v0, Lfyn;->a:I
-
-    iget-object v0, p0, Lfyl;->c:Lfyk;
-
-    iget-object v0, v0, Lfyk;->a:Lfyn;
-
-    iget-wide v2, p2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    iget-object v4, p0, Lfyl;->c:Lfyk;
-
-    iget-object v4, v4, Lfyk;->a:Lfyn;
-
-    iget-wide v4, v4, Lfyn;->b:J
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lfyn;->b:J
-
-    iget-object v0, p0, Lfyl;->c:Lfyk;
-
-    iget-object v0, v0, Lfyk;->a:Lfyn;
-
-    iget-wide v2, p2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    iget-object v4, p0, Lfyl;->c:Lfyk;
-
-    iget-object v4, v4, Lfyk;->a:Lfyn;
-
-    iget-wide v4, v4, Lfyn;->c:J
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lfyn;->c:J
-
-    monitor-exit v1
-
-    goto :goto_0
-
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sget-object v1, Lfyi;->a:Ljava/lang/String;
 
-    throw v0
-.end method
+    const-string v2, "Error processing the input image:"
 
-.method public final close()V
-    .locals 1
+    invoke-static {v1, v2, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iget-object v0, p0, Lfyl;->a:Liol;
+    invoke-virtual {v8, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    invoke-interface {v0}, Liol;->close()V
-
-    return-void
+    goto :goto_0
 .end method

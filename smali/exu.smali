@@ -1,153 +1,77 @@
-.class public Lexu;
-.super Lgvh;
+.class public final Lexu;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # static fields
-.field public static final a:Ljava/lang/String;
-
-
-# instance fields
-.field public final b:Lexn;
-
-.field public final c:Lgdq;
-
-.field public final d:Lgdq;
-
-.field public final e:Lgrr;
-
-.field public final f:Lgra;
-
-.field public g:Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;
-
-.field public h:Ljht;
-
-.field public i:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public j:Lhem;
-
-.field public k:Lauh;
+.field private static final a:Lexg;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "FacingChart"
+    new-instance v0, Lexg;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v0}, Lexg;-><init>()V
 
-    move-result-object v0
-
-    sput-object v0, Lexu;->a:Ljava/lang/String;
+    sput-object v0, Lexu;->a:Lexg;
 
     return-void
 .end method
 
-.method public constructor <init>(Lexn;Lgds;Lgrr;Lgra;)V
-    .locals 2
+.method public static a(Lexl;)Ljava/util/List;
+    .locals 4
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Leyb;
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v1}, Lgvh;-><init>([S)V
+    new-instance v2, Lexx;
 
-    iput-object p1, p0, Lexu;->b:Lexn;
+    invoke-direct {v2}, Lexx;-><init>()V
 
-    iput-object p3, p0, Lexu;->e:Lgrr;
+    aput-object v2, v0, v1
 
-    iput-object p4, p0, Lexu;->f:Lgra;
+    const/4 v1, 0x1
 
-    sget-object v0, Lige;->b:Lige;
+    new-instance v2, Lexy;
 
-    invoke-virtual {p2, v0}, Lgds;->b(Lige;)Ligc;
+    invoke-direct {v2}, Lexy;-><init>()V
 
-    move-result-object v0
+    aput-object v2, v0, v1
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x2
 
-    invoke-virtual {p2, v0}, Lgds;->a(Ligc;)Lgdq;
+    sget-object v2, Lexu;->a:Lexg;
 
-    move-result-object v0
+    new-instance v3, Lexz;
 
-    iput-object v0, p0, Lexu;->c:Lgdq;
+    invoke-direct {v3, p0, v2}, Lexz;-><init>(Lexl;Lexg;)V
 
-    :goto_0
-    sget-object v0, Lige;->a:Lige;
+    aput-object v3, v0, v1
 
-    invoke-virtual {p2, v0}, Lgds;->b(Lige;)Ligc;
+    const/4 v1, 0x3
 
-    move-result-object v0
+    new-instance v2, Leya;
 
-    if-eqz v0, :cond_1
+    invoke-direct {v2, p0}, Leya;-><init>(Lexl;)V
 
-    invoke-virtual {p2, v0}, Lgds;->a(Ligc;)Lgdq;
+    aput-object v2, v0, v1
 
-    move-result-object v0
+    const/4 v1, 0x4
 
-    iput-object v0, p0, Lexu;->d:Lgdq;
+    new-instance v2, Lffm;
 
-    :goto_1
-    return-void
+    invoke-direct {v2}, Lffm;-><init>()V
 
-    :cond_0
-    iput-object v1, p0, Lexu;->c:Lgdq;
+    aput-object v2, v0, v1
 
-    goto :goto_0
-
-    :cond_1
-    iput-object v1, p0, Lexu;->d:Lgdq;
-
-    goto :goto_1
-.end method
-
-
-# virtual methods
-.method public final a(Lige;)V
-    .locals 1
-
-    sget-object v0, Lige;->b:Lige;
-
-    if-ne p1, v0, :cond_0
-
-    invoke-virtual {p0}, Lgvh;->q()V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-virtual {p0}, Lgvh;->p()V
-
-    goto :goto_0
-.end method
-
-.method public a(Ljxn;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lhem;Ljht;Lauh;)V
-    .locals 2
-
-    invoke-interface {p1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Ljwo;->a([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    check-cast v0, Lfic;
-
-    iget-object v0, v0, Lfic;->f:Lhaz;
-
-    const v1, 0x7f0e01d7
-
-    invoke-virtual {v0, v1}, Lhaz;->a(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;
-
-    iput-object v0, p0, Lexu;->g:Lcom/google/android/apps/camera/legacy/app/ui/viewfinder/ViewfinderCover;
-
-    iput-object p2, p0, Lexu;->i:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iput-object p3, p0, Lexu;->j:Lhem;
-
-    iput-object p4, p0, Lexu;->h:Ljht;
-
-    iput-object p5, p0, Lexu;->k:Lauh;
-
-    return-void
+    return-object v0
 .end method

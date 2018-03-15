@@ -3,18 +3,26 @@
 .source "PG"
 
 # interfaces
-.implements Labd;
+.implements Lgap;
 
 
 # instance fields
-.field private synthetic a:Lfom;
+.field private final synthetic a:Lket;
+
+.field private final synthetic b:Ligz;
+
+.field private final synthetic c:Lket;
 
 
 # direct methods
-.method constructor <init>(Lfom;)V
+.method constructor <init>(Lket;Ligz;Lket;)V
     .locals 0
 
-    iput-object p1, p0, Lfoq;->a:Lfom;
+    iput-object p1, p0, Lfoq;->a:Lket;
+
+    iput-object p2, p0, Lfoq;->b:Ligz;
+
+    iput-object p3, p0, Lfoq;->c:Lket;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,59 +31,109 @@
 
 
 # virtual methods
-.method public final a([BLabe;)V
+.method public final a(Lgbz;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Lgbz;Landroid/net/Uri;)V
     .locals 2
 
-    iget-object v0, p0, Lfoq;->a:Lfom;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    iget-boolean v0, v0, Lfom;->t:Z
+    const-string v1, "No URI expected for thumbnail generation"
 
-    if-eqz v0, :cond_1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final a(Lgbz;Lgbx;)V
+    .locals 2
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "No compressed result expected for thumbnail generation"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final a(Lgbz;Lgca;)V
+    .locals 7
+
+    const/4 v1, 0x0
+
+    iget-object v0, p2, Lgca;->a:[I
+
+    iget-object v2, p1, Lgbz;->c:Lgby;
+
+    iget v2, v2, Lgby;->c:I
+
+    iget-object v3, p1, Lgbz;->c:Lgby;
+
+    iget v3, v3, Lgby;->b:I
+
+    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v0, v2, v3, v4}, Landroid/graphics/Bitmap;->createBitmap([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iget v2, p1, Lgbz;->a:I
+
+    sget v3, Lep;->aX:I
+
+    if-ne v2, v3, :cond_1
+
+    iget-object v1, p0, Lfoq;->a:Lket;
+
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Object;)Z
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-object v0, p0, Lfoq;->a:Lfom;
+    iget v2, p1, Lgbz;->a:I
 
-    iget-boolean v0, v0, Lfom;->d:Z
+    sget v3, Lep;->aY:I
 
-    iget-object v0, p0, Lfoq;->a:Lfom;
+    if-ne v2, v3, :cond_0
 
-    iget-object v0, v0, Lfom;->b:Lfow;
+    new-instance v5, Landroid/graphics/Matrix;
 
-    const/4 v1, 0x0
+    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-boolean v1, v0, Lfow;->s:Z
+    iget-object v2, p0, Lfoq;->b:Ligz;
 
-    iget-object v0, p0, Lfoq;->a:Lfom;
+    iget v2, v2, Ligz;->e:I
 
-    iget-boolean v0, v0, Lfom;->v:Z
+    int-to-float v2, v2
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v5, v2}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    iget-object v0, p0, Lfoq;->a:Lfom;
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    iget-object v0, v0, Lfom;->b:Lfow;
+    move-result v3
 
-    iput-object p1, v0, Lfow;->E:[B
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
-    const/4 v1, 0x1
+    move-result v4
 
-    iput-boolean v1, v0, Lfow;->B:Z
+    const/4 v6, 0x1
 
-    iget-object v0, p0, Lfoq;->a:Lfom;
+    move v2, v1
 
-    iget-object v0, v0, Lfom;->c:Lfns;
+    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
 
-    iget-boolean v1, v0, Lfns;->d:Z
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    iget-object v1, p0, Lfoq;->c:Lket;
 
-    iget-object v0, v0, Lfns;->b:Labe;
-
-    invoke-virtual {v0, p1}, Labe;->a([B)V
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method

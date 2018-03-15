@@ -19,45 +19,25 @@
 
     iput v0, p0, Landroid/support/v7/widget/ButtonBarLayout;->b:I
 
-    invoke-virtual {p0}, Landroid/support/v7/widget/ButtonBarLayout;->getResources()Landroid/content/res/Resources;
+    sget-object v0, Lnm;->ay:[I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    sget v1, Lnm;->az:I
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    iget v0, v0, Landroid/content/res/Configuration;->screenHeightDp:I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    const/16 v1, 0x140
+    move-result v1
 
-    if-lt v0, v1, :cond_0
+    iput-boolean v1, p0, Landroid/support/v7/widget/ButtonBarLayout;->a:Z
 
-    const/4 v0, 0x1
-
-    :goto_0
-    sget-object v1, Lnr;->aw:[I
-
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v1
-
-    sget v2, Lnr;->ax:I
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Landroid/support/v7/widget/ButtonBarLayout;->a:Z
-
-    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method private final a(I)I
@@ -113,7 +93,7 @@
     :goto_1
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ButtonBarLayout;->setGravity(I)V
 
-    const v0, 0x7f0e0080
+    const v0, 0x7f0e0091
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ButtonBarLayout;->findViewById(I)Landroid/view/View;
 
@@ -373,9 +353,9 @@
 
     :cond_4
     :goto_1
-    sget-object v1, Lid;->a:Lim;
+    sget-object v1, Lhz;->a:Lii;
 
-    invoke-virtual {v1, p0}, Lim;->g(Landroid/view/View;)I
+    invoke-virtual {v1, p0}, Lii;->g(Landroid/view/View;)I
 
     move-result v1
 

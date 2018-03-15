@@ -1,31 +1,31 @@
-.class public abstract Likn;
+.class public final Likn;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Likg;
+
+# instance fields
+.field public final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Likn;->a:Ljava/lang/Object;
+
     return-void
 .end method
 
+.method public static a()Likn;
+    .locals 2
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    new-instance v0, Likn;
 
-    invoke-virtual {p0, p1}, Likn;->a_(Ljava/lang/Object;)V
+    const/4 v1, 0x0
 
-    sget-object v0, Like;->a:Like;
+    invoke-direct {v0, v1}, Likn;-><init>(Ljava/lang/Object;)V
 
     return-object v0
-.end method
-
-.method public abstract a_(Ljava/lang/Object;)V
 .end method

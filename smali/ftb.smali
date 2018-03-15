@@ -2,183 +2,141 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static a:Ljava/nio/charset/Charset;
-
-.field private static b:Lftb;
+# interfaces
+.implements Lfdx;
 
 
 # instance fields
-.field private c:Ljava/security/MessageDigest;
+.field private final a:Lfsy;
 
-.field private d:Ljava/lang/Object;
+.field private final b:Lfsm;
+
+.field private final synthetic c:Lfsk;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lfsk;Lfsy;Lfsm;)V
+    .locals 0
 
-    const-string v0, "FilenameHasher"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    const-string v0, "UTF-8"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lftb;->a:Ljava/nio/charset/Charset;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/security/MessageDigest;)V
-    .locals 1
+    iput-object p1, p0, Lftb;->c:Lfsk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lftb;->c:Ljava/security/MessageDigest;
+    iput-object p2, p0, Lftb;->a:Lfsy;
 
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lftb;->d:Ljava/lang/Object;
+    iput-object p3, p0, Lftb;->b:Lfsm;
 
     return-void
-.end method
-
-.method public static a()Lftb;
-    .locals 3
-
-    sget-object v0, Lftb;->b:Lftb;
-
-    if-nez v0, :cond_0
-
-    :try_start_0
-    const-string v0, "SHA-1"
-
-    invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
-
-    move-result-object v0
-
-    new-instance v1, Lftb;
-
-    invoke-direct {v1, v0}, Lftb;-><init>(Ljava/security/MessageDigest;)V
-
-    sput-object v1, Lftb;->b:Lftb;
-    :try_end_0
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_0
-    sget-object v0, Lftb;->b:Lftb;
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "Cannot initialize file name hasher"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method private final b(Ljava/lang/String;)Ljava/lang/String;
-    .locals 7
-
-    iget-object v1, p0, Lftb;->d:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lftb;->c:Ljava/security/MessageDigest;
-
-    sget-object v2, Lftb;->a:Ljava/nio/charset/Charset;
-
-    invoke-virtual {p1, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/security/MessageDigest;->digest([B)[B
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    array-length v4, v2
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v4, :cond_0
-
-    aget-byte v5, v2, v0
-
-    and-int/lit16 v5, v5, 0xff
-
-    add-int/lit16 v5, v5, 0x100
-
-    const/16 v6, 0x10
-
-    invoke-static {v5, v6}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+.method public final a()V
+    .locals 5
 
-    invoke-direct {p0, p1}, Lftb;->b(Ljava/lang/String;)Ljava/lang/String;
+    :try_start_0
+    iget-object v0, p0, Lftb;->c:Lfsk;
 
-    move-result-object v0
+    iget-object v0, v0, Lfsk;->b:Lfsx;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lftb;->a:Lfsy;
 
-    const/16 v2, 0xa
+    iget-object v2, p0, Lftb;->b:Lfsm;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-interface {v0, v1, v2}, Lfsx;->a(Lfsy;Lfsm;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    iget-object v0, p0, Lftb;->a:Lfsy;
+
+    invoke-virtual {v0}, Lfsy;->close()V
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    iget-object v1, p0, Lftb;->c:Lfsk;
+
+    iget-object v2, v1, Lfsk;->c:Lihn;
+
+    const-string v3, "PictureTaker command failed: "
+
+    iget-object v1, p0, Lftb;->c:Lfsk;
+
+    iget-object v1, v1, Lfsk;->b:Lfsx;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v2, v1, v0}, Lihn;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lftb;->a:Lfsy;
+
+    invoke-virtual {v1}, Lfsy;->close()V
+
+    iget-object v1, p0, Lftb;->b:Lfsm;
+
+    iget-object v1, v1, Lfsm;->d:Lfsn;
+
+    invoke-interface {v1}, Lfsn;->close()V
+
+    iget-object v1, p0, Lftb;->b:Lfsm;
+
+    iget-object v1, v1, Lfsm;->c:Lfsl;
+
+    invoke-virtual {v1}, Lfsl;->b()V
+
+    iget-object v1, p0, Lftb;->b:Lfsm;
+
+    iget-object v1, v1, Lfsm;->a:Lfaq;
+
+    iget-object v1, v1, Lfaq;->g:Liaw;
+
+    invoke-virtual {v1}, Liaw;->close()V
+
+    throw v0
+
+    :cond_0
+    :try_start_2
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "PictureTakerCommand"
 
     return-object v0
 .end method

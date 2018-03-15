@@ -2,55 +2,84 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lghi;
-
 
 # instance fields
-.field private a:Landroid/hardware/camera2/CaptureResult$Key;
+.field public final a:Lihc;
 
-.field private b:Ljle;
+.field public final b:Lioj;
+
+.field public c:Ljrf;
+
+.field public d:Ljrf;
+
+.field public e:Ljrf;
+
+.field public f:Ljrf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CaptureResult$Key;Ljle;)V
-    .locals 0
+.method public constructor <init>(Lihc;Lioj;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lghm;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Ljqu;->a:Ljqu;
 
-    iput-object p2, p0, Lghm;->b:Ljle;
+    iput-object v0, p0, Lghm;->c:Ljrf;
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    iput-object v0, p0, Lghm;->d:Ljrf;
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    iput-object v0, p0, Lghm;->e:Ljrf;
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    iput-object v0, p0, Lghm;->f:Ljrf;
+
+    iput-object p1, p0, Lghm;->a:Lihc;
+
+    iput-object p2, p0, Lghm;->b:Lioj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Liic;)Z
-    .locals 2
+.method public final a(Landroid/location/Location;)Lghm;
+    .locals 1
 
-    iget-object v0, p0, Lghm;->b:Ljle;
+    invoke-static {p1}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
-    iget-object v1, p0, Lghm;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    move-result-object v0
 
-    invoke-interface {p1, v1}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iput-object v0, p0, Lghm;->f:Ljrf;
 
-    move-result-object v1
+    return-object p0
+.end method
 
-    invoke-virtual {v0, v1}, Ljle;->contains(Ljava/lang/Object;)Z
+.method public final a(Lcom/google/android/libraries/camera/exif/ExifInterface;)Lghm;
+    .locals 1
 
-    move-result v0
+    invoke-static {p1}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    const/4 v0, 0x1
+    iput-object v0, p0, Lghm;->d:Ljrf;
 
-    :goto_0
-    return v0
+    return-object p0
+.end method
 
-    :cond_0
-    const/4 v0, 0x0
+.method public final a(Ljava/lang/Integer;)Lghm;
+    .locals 1
 
-    goto :goto_0
+    invoke-static {p1}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lghm;->c:Ljrf;
+
+    return-object p0
 .end method

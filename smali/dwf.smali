@@ -1,88 +1,91 @@
 .class public final Ldwf;
-.super Ljava/lang/Object;
+.super Ljava/lang/Thread;
 .source "PG"
-
-# interfaces
-.implements Ljug;
 
 
 # instance fields
-.field private synthetic a:Ldvf;
+.field private final synthetic a:Laaz;
+
+.field private final synthetic b:Laam;
+
+.field private final synthetic c:Laam;
+
+.field private final synthetic d:Ldwd;
 
 
 # direct methods
-.method public constructor <init>(Ldvf;)V
-    .locals 0
+.method public constructor <init>(Ldwd;Laaz;Laam;)V
+    .locals 1
 
-    iput-object p1, p0, Ldwf;->a:Ldvf;
+    iput-object p1, p0, Ldwf;->d:Ldwd;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Ldwf;->a:Laaz;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ldwf;->b:Laam;
+
+    iput-object p3, p0, Ldwf;->c:Laam;
+
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 6
 
-    check-cast p1, Leas;
+    iget-object v0, p0, Ldwf;->d:Ldwd;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, v0, Ldwd;->i:Ljava/lang/Object;
 
-    iget-object v0, p0, Ldwf;->a:Ldvf;
+    monitor-enter v1
 
-    iget-object v0, v0, Ldvf;->e:Ldve;
+    :try_start_0
+    iget-object v0, p0, Ldwf;->d:Ldwd;
 
-    iget-object v0, v0, Ldve;->b:Licu;
+    const/4 v2, 0x0
 
-    const-string v1, "Setting final result"
+    iput-boolean v2, v0, Ldwd;->d:Z
 
-    invoke-interface {v0, v1}, Licu;->e(Ljava/lang/String;)V
+    iget-object v0, p0, Ldwf;->d:Ldwd;
 
-    iget-object v0, p0, Ldwf;->a:Ldvf;
+    iget-object v0, v0, Ldwd;->b:Laao;
 
-    iget-object v0, v0, Ldvf;->a:Lear;
+    const/4 v2, 0x0
 
-    invoke-interface {v0, p1}, Lear;->a(Leas;)V
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Ldwf;->a:Ldvf;
+    invoke-virtual {v0, v2, v3}, Laao;->b(Landroid/os/Handler;Laan;)V
 
-    iget-object v0, v0, Ldvf;->e:Ldve;
+    iget-object v0, p0, Ldwf;->d:Ldwd;
 
-    iget-object v0, v0, Ldve;->b:Licu;
+    iget-object v0, v0, Ldwd;->b:Laao;
 
-    const-string v1, "Done saving image"
+    iget-object v2, p0, Ldwf;->d:Ldwd;
 
-    invoke-interface {v0, v1}, Licu;->e(Ljava/lang/String;)V
+    iget-object v2, v2, Ldwd;->h:Landroid/os/Handler;
 
-    iget-object v0, p0, Ldwf;->a:Ldvf;
+    iget-object v3, p0, Ldwf;->a:Laaz;
 
-    iget-object v0, v0, Ldvf;->b:Lhzr;
+    const/4 v4, 0x0
 
-    invoke-virtual {v0}, Lhzr;->close()V
+    iget-object v5, p0, Ldwf;->c:Laam;
 
-    return-void
-.end method
+    invoke-virtual {v0, v2, v3, v4, v5}, Laao;->a(Landroid/os/Handler;Laaz;Laam;Laam;)V
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
-
-    iget-object v0, p0, Ldwf;->a:Ldvf;
-
-    iget-object v0, v0, Ldvf;->e:Ldve;
-
-    iget-object v0, v0, Ldve;->b:Licu;
-
-    const-string v1, "Failed to save image!"
-
-    invoke-interface {v0, v1, p1}, Licu;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Ldwf;->a:Ldvf;
-
-    iget-object v0, v0, Ldvf;->b:Lhzr;
-
-    invoke-virtual {v0}, Lhzr;->close()V
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

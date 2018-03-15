@@ -55,9 +55,9 @@
 
     check-cast v0, Landroid/view/View;
 
-    sget-object v1, Lid;->a:Lim;
+    sget-object v1, Lhz;->a:Lii;
 
-    invoke-virtual {v1, v0}, Lim;->t(Landroid/view/View;)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Lii;->t(Landroid/view/View;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -69,7 +69,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lid;->a(Landroid/view/View;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lhz;->a(Landroid/view/View;Ljava/lang/String;)V
 
     add-int/lit8 v0, v2, 0x1
 

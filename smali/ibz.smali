@@ -1,29 +1,24 @@
-.class public final synthetic Libz;
+.class final Libz;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Libx;
+.implements Lihb;
 
 
-# static fields
-.field public static final a:Libx;
+# instance fields
+.field private final synthetic a:Liah;
+
+.field private final synthetic b:Libw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Libz;
-
-    invoke-direct {v0}, Libz;-><init>()V
-
-    sput-object v0, Libz;->a:Libx;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method constructor <init>(Libw;Liah;)V
     .locals 0
+
+    iput-object p1, p0, Libz;->b:Libw;
+
+    iput-object p2, p0, Libz;->a:Liah;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,14 +27,16 @@
 
 
 # virtual methods
-.method public final a(Ljava/util/Set;)Ljava/lang/Object;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    invoke-static {p1}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
+    iget-object v0, p0, Libz;->b:Libw;
 
-    move-result-object v0
+    iget-object v0, v0, Libw;->b:Ljava/util/Set;
 
-    check-cast v0, Ljava/lang/Comparable;
+    iget-object v1, p0, Libz;->a:Liah;
 
-    return-object v0
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    return-void
 .end method

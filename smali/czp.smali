@@ -1,62 +1,100 @@
-.class public final Lczp;
+.class final Lczp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lghb;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lczn;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lczn;)V
     .locals 0
 
+    iput-object p1, p0, Lczp;->a:Lczn;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lczp;->a:Ljxn;
-
-    iput-object p2, p0, Lczp;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a(Landroid/graphics/Bitmap;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/graphics/Bitmap;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lghj;Leov;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lgwx;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lgwx;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Ljava/util/List;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a([BI)V
     .locals 2
 
-    iget-object v0, p0, Lczp;->a:Ljxn;
+    iget-object v0, p0, Lczp;->a:Lczn;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lbrv;->a:Lbrw;
 
-    move-result-object v0
+    new-instance v1, Lcwv;
 
-    check-cast v0, Lcuc;
+    invoke-direct {v1, p1, p2}, Lcwv;-><init>([BI)V
 
-    iget-object v1, p0, Lczp;->b:Ljxn;
+    invoke-interface {v0, v1}, Lbrw;->a(Ljava/lang/Object;)V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v1
+.method public final b(Landroid/net/Uri;)V
+    .locals 0
 
-    check-cast v1, Ldio;
+    return-void
+.end method
 
-    invoke-virtual {v0, v1}, Lcuc;->a(Ldik;)Lctz;
+.method public final c(Landroid/net/Uri;)V
+    .locals 0
 
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lctz;
-
-    return-object v0
+    return-void
 .end method

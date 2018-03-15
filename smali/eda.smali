@@ -1,58 +1,45 @@
-.class public final Leda;
-.super Ljava/lang/Object;
+.class final Leda;
+.super Lebp;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Lecz;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lecz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leda;->a:Lecz;
 
-    iput-object p1, p0, Leda;->a:Ljxn;
-
-    iput-object p2, p0, Leda;->b:Ljxn;
-
-    iput-object p3, p0, Leda;->c:Ljxn;
+    invoke-direct {p0, p1}, Lebp;-><init>(Lebo;)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leda;
-
-    invoke-direct {v0, p0, p1, p2}, Leda;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final u()V
+    .locals 2
 
-    new-instance v0, Lecz;
+    iget-object v0, p0, Leda;->a:Lecz;
 
-    iget-object v1, p0, Leda;->a:Ljxn;
+    iget-object v0, v0, Lecz;->l:Lgld;
 
-    iget-object v2, p0, Leda;->b:Ljxn;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    iget-object v3, p0, Leda;->c:Ljxn;
+    invoke-super {p0}, Lebp;->u()V
 
-    invoke-direct {v0, v1, v2, v3}, Lecz;-><init>(Ljxn;Ljxn;Ljxn;)V
+    iget-object v0, p0, Leda;->a:Lecz;
 
-    return-object v0
+    iget-object v0, v0, Lecz;->l:Lgld;
+
+    iget-object v1, p0, Leda;->a:Lecz;
+
+    iget-object v1, v1, Lecz;->n:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

@@ -1,14 +1,32 @@
-.class final Lale;
+.class public final Lale;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lakv;
+.implements Laki;
+
+
+# static fields
+.field public static final a:Lale;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lale;
+
+    invoke-direct {v0}, Lale;-><init>()V
+
+    sput-object v0, Lale;->a:Lale;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,10 +35,20 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;IILaeo;)Lakw;
-    .locals 1
+.method public final a(Ljava/lang/Object;IILady;)Lakj;
+    .locals 3
 
-    const/4 v0, 0x0
+    new-instance v0, Lakj;
+
+    new-instance v1, Larm;
+
+    invoke-direct {v1, p1}, Larm;-><init>(Ljava/lang/Object;)V
+
+    new-instance v2, Lalg;
+
+    invoke-direct {v2, p1}, Lalg;-><init>(Ljava/lang/Object;)V
+
+    invoke-direct {v0, v1, v2}, Lakj;-><init>(Ladu;Laef;)V
 
     return-object v0
 .end method
@@ -28,7 +56,7 @@
 .method public final a(Ljava/lang/Object;)Z
     .locals 1
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     return v0
 .end method

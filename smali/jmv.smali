@@ -1,99 +1,94 @@
-.class final Ljmv;
-.super Ljle;
+.class public final Ljmv;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljmt;
 
 
 # instance fields
-.field private transient a:Ljlb;
-
-.field private transient b:Ljkv;
+.field private final a:Ljava/util/Map;
 
 
 # direct methods
-.method constructor <init>(Ljlb;Ljkv;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/Map;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljle;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljmv;->a:Ljlb;
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-object p2, p0, Ljmv;->b:Ljkv;
+    invoke-direct {v0, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljmv;->a:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljoe;
-    .locals 2
+.method public final a(Ljay;Ljay;)F
+    .locals 4
 
-    iget-object v0, p0, Ljmv;->b:Ljkv;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljkv;->a(I)Ljof;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Ljkv;
-    .locals 1
-
-    iget-object v0, p0, Ljmv;->b:Ljkv;
-
-    return-object v0
-.end method
-
-.method final c()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljmv;->a:Ljlb;
-
-    invoke-virtual {v0, p1}, Ljlb;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
+    iget-object v1, p0, Ljmv;->a:Ljava/util/Map;
 
-.method public final synthetic iterator()Ljava/util/Iterator;
-    .locals 1
+    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    invoke-virtual {p0}, Ljmv;->a()Ljoe;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    return-object v0
-.end method
+    move-result-object v3
 
-.method public final size()I
-    .locals 1
+    move v2, v0
 
-    iget-object v0, p0, Ljmv;->a:Ljlb;
-
-    invoke-virtual {v0}, Ljlb;->size()I
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Float;
+
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v1
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljmt;
+
+    invoke-interface {v0, p1, p2}, Ljmt;->a(Ljay;Ljay;)F
+
+    move-result v0
+
+    mul-float/2addr v0, v1
+
+    add-float/2addr v0, v2
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    return v2
 .end method

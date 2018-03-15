@@ -2,38 +2,87 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkds;
+
 
 # instance fields
-.field public final a:Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;
-
-.field public final b:F
-
-.field public final c:F
-
-.field public final d:F
-
-.field public final e:Landroid/graphics/Rect;
-
-.field public final f:Landroid/graphics/Rect;
+.field private final synthetic a:Lcby;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;FFFLandroid/graphics/Rect;Landroid/graphics/Rect;)V
+.method constructor <init>(Lcby;)V
     .locals 0
+
+    iput-object p1, p0, Lcbz;->a:Lcby;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcbz;->a:Lcom/google/android/apps/camera/legacy/app/burst/editor/grid/BurstImageView;
+    return-void
+.end method
 
-    iput p4, p0, Lcbz;->d:F
 
-    iput p2, p0, Lcbz;->b:F
+# virtual methods
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    iput p3, p0, Lcbz;->c:F
+    iget-object v0, p0, Lcbz;->a:Lcby;
 
-    iput-object p5, p0, Lcbz;->e:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcby;->a:Lcbv;
 
-    iput-object p6, p0, Lcbz;->f:Landroid/graphics/Rect;
+    iget-object v0, v0, Lcbv;->e:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcdh;
+
+    invoke-virtual {v0}, Lcdh;->a()V
+
+    iget-object v0, p0, Lcbz;->a:Lcby;
+
+    iget-object v0, v0, Lcby;->a:Lcbv;
+
+    iget-object v0, v0, Lcbv;->t:Lglo;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lglo;->a(Z)V
+
+    return-void
+.end method
+
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
+
+    iget-object v0, p0, Lcbz;->a:Lcby;
+
+    iget-object v0, v0, Lcby;->a:Lcbv;
+
+    iget-object v0, v0, Lcbv;->e:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcdh;
+
+    invoke-virtual {v0}, Lcdh;->a()V
+
+    iget-object v0, p0, Lcbz;->a:Lcby;
+
+    iget-object v0, v0, Lcby;->a:Lcbv;
+
+    iget-object v0, v0, Lcbv;->t:Lglo;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lglo;->a(Z)V
 
     return-void
 .end method

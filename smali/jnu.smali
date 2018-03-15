@@ -1,262 +1,224 @@
-.class public Ljnu;
-.super Ljns;
+.class final Ljnu;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/SortedSet;
+.implements Ljoc;
 
 
-# static fields
-.field public static final serialVersionUID:J
+# instance fields
+.field private final a:Ljoc;
+
+.field private final b:Ljoc;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
+.method public constructor <init>(Ljoc;Ljoc;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljns;-><init>(Ljava/util/Set;Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljnu;->a:Ljoc;
+
+    iput-object p2, p0, Ljnu;->b:Ljoc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method synthetic a()Ljava/util/Collection;
-    .locals 1
-
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method synthetic b()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method c()Ljava/util/SortedSet;
-    .locals 1
-
-    invoke-super {p0}, Ljns;->d()Ljava/util/Set;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/SortedSet;
-
-    return-object v0
-.end method
-
-.method public comparator()Ljava/util/Comparator;
+.method public final a(Ljava/io/File;)J
     .locals 2
 
-    iget-object v1, p0, Ljnu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
     :try_start_0
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
+    iget-object v0, p0, Ljnu;->a:Ljoc;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Ljoc;->a(Ljava/io/File;)J
+    :try_end_0
+    .catch Ljod; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-interface {v0}, Ljava/util/SortedSet;->comparator()Ljava/util/Comparator;
+    move-result-wide v0
 
-    move-result-object v0
+    :goto_0
+    return-wide v0
 
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Ljnu;->b:Ljoc;
 
-    throw v0
+    invoke-interface {v0, p1}, Ljoc;->a(Ljava/io/File;)J
+
+    move-result-wide v0
+
+    goto :goto_0
 .end method
 
-.method synthetic d()Ljava/util/Set;
+.method public final b(Ljava/io/File;)I
     .locals 1
 
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
+    :try_start_0
+    iget-object v0, p0, Ljnu;->a:Ljoc;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Ljoc;->b(Ljava/io/File;)I
+    :try_end_0
+    .catch Ljod; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    iget-object v0, p0, Ljnu;->b:Ljoc;
+
+    invoke-interface {v0, p1}, Ljoc;->b(Ljava/io/File;)I
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
-.method public first()Ljava/lang/Object;
+.method public final c(Ljava/io/File;)Z
+    .locals 1
+
+    iget-object v0, p0, Ljnu;->a:Ljoc;
+
+    invoke-interface {v0, p1}, Ljoc;->c(Ljava/io/File;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljnu;->b:Ljoc;
+
+    invoke-interface {v0, p1}, Ljoc;->c(Ljava/io/File;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final d(Ljava/io/File;)Z
+    .locals 1
+
+    iget-object v0, p0, Ljnu;->a:Ljoc;
+
+    invoke-interface {v0, p1}, Ljoc;->d(Ljava/io/File;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljnu;->b:Ljoc;
+
+    invoke-interface {v0, p1}, Ljoc;->d(Ljava/io/File;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final e(Ljava/io/File;)[Ljava/io/File;
     .locals 2
 
-    iget-object v1, p0, Ljnu;->a:Ljava/lang/Object;
+    iget-object v0, p0, Ljnu;->a:Ljoc;
 
-    monitor-enter v1
-
-    :try_start_0
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
+    invoke-interface {v0, p1}, Ljoc;->e(Ljava/io/File;)[Ljava/io/File;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
+    array-length v1, v0
 
-    move-result-object v0
+    if-lez v1, :cond_0
 
-    monitor-exit v1
-
+    :goto_0
     return-object v0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    iget-object v0, p0, Ljnu;->b:Ljoc;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {v0, p1}, Ljoc;->e(Ljava/io/File;)[Ljava/io/File;
 
-    throw v0
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
-.method public headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 4
-
-    iget-object v1, p0, Ljnu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
+.method public final f(Ljava/io/File;)Z
+    .locals 1
 
     :try_start_0
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
+    iget-object v0, p0, Ljnu;->a:Ljoc;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Ljoc;->f(Ljava/io/File;)Z
+    :try_end_0
+    .catch Ljod; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-interface {v0, p1}, Ljava/util/SortedSet;->headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+    move-result v0
 
-    move-result-object v0
+    :goto_0
+    return v0
 
-    iget-object v2, p0, Ljnu;->a:Ljava/lang/Object;
-
-    new-instance v3, Ljnu;
-
-    invoke-direct {v3, v0, v2}, Ljnu;-><init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
-
-    monitor-exit v1
-
-    return-object v3
-
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Ljnu;->b:Ljoc;
 
-    throw v0
+    invoke-interface {v0, p1}, Ljoc;->f(Ljava/io/File;)Z
+
+    move-result v0
+
+    goto :goto_0
 .end method
 
-.method public last()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v1, p0, Ljnu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
+.method public final g(Ljava/io/File;)Z
+    .locals 1
 
     :try_start_0
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
+    iget-object v0, p0, Ljnu;->a:Ljoc;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Ljoc;->g(Ljava/io/File;)Z
+    :try_end_0
+    .catch Ljod; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-interface {v0}, Ljava/util/SortedSet;->last()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
+    :goto_0
+    return v0
 
-    monitor-exit v1
-
-    return-object v0
-
-    :catchall_0
+    :catch_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Ljnu;->b:Ljoc;
 
-    throw v0
-.end method
+    invoke-interface {v0, p1}, Ljoc;->g(Ljava/io/File;)Z
 
-.method public subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 4
+    move-result v0
 
-    iget-object v1, p0, Ljnu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/SortedSet;->subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    iget-object v2, p0, Ljnu;->a:Ljava/lang/Object;
-
-    new-instance v3, Ljnu;
-
-    invoke-direct {v3, v0, v2}, Ljnu;-><init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
-
-    monitor-exit v1
-
-    return-object v3
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 4
-
-    iget-object v1, p0, Ljnu;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    invoke-virtual {p0}, Ljnu;->c()Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/SortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-
-    move-result-object v0
-
-    iget-object v2, p0, Ljnu;->a:Ljava/lang/Object;
-
-    new-instance v3, Ljnu;
-
-    invoke-direct {v3, v0, v2}, Ljnu;-><init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
-
-    monitor-exit v1
-
-    return-object v3
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
+    goto :goto_0
 .end method

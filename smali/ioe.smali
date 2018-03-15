@@ -1,93 +1,110 @@
-.class final Lioe;
+.class public final Lioe;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lioc;
+
 
 # instance fields
-.field public final a:Ljava/nio/ByteBuffer;
+.field private final a:Ljava/lang/Object;
 
-.field public final b:Landroid/media/MediaCodec$BufferInfo;
+.field private final b:Ljava/util/Map;
 
 
 # direct methods
-.method constructor <init>(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/Map;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lioe;->a:Ljava/nio/ByteBuffer;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Lioe;->b:Landroid/media/MediaCodec$BufferInfo;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lioe;->a:Ljava/lang/Object;
+
+    iput-object p1, p0, Lioe;->b:Ljava/util/Map;
 
     return-void
 .end method
 
-.method public static a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)Lioe;
-    .locals 7
-
-    new-instance v1, Landroid/media/MediaCodec$BufferInfo;
-
-    invoke-direct {v1}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
-
-    const/4 v2, 0x0
-
-    iget v3, p1, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    iget-wide v4, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
-
-    iget v6, p1, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    invoke-virtual/range {v1 .. v6}, Landroid/media/MediaCodec$BufferInfo;->set(IIJI)V
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    iget v2, p1, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget v2, p1, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    iget v3, p1, Landroid/media/MediaCodec$BufferInfo;->offset:I
-
-    add-int/2addr v2, v3
-
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    new-instance v2, Lioe;
-
-    invoke-direct {v2, v0, v1}, Lioe;-><init>(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    return-object v2
-.end method
-
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final a(Lind;)F
+    .locals 5
 
-    iget-object v0, p0, Lioe;->b:Landroid/media/MediaCodec$BufferInfo;
+    iget-object v3, p0, Lioe;->a:Ljava/lang/Object;
 
-    iget v0, v0, Landroid/media/MediaCodec$BufferInfo;->size:I
+    monitor-enter v3
 
-    if-nez v0, :cond_0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lioe;->b:Landroid/media/MediaCodec$BufferInfo;
+    :try_start_0
+    iget-object v1, p0, Lioe;->b:Ljava/util/Map;
 
-    iget v0, v0, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    and-int/lit8 v0, v0, 0x4
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    move v2, v0
+
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_0
-    const/4 v0, 0x0
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lioc;
+
+    invoke-interface {v1, p1}, Lioc;->a(Lind;)F
+
+    move-result v1
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    mul-float/2addr v0, v1
+
+    add-float/2addr v0, v2
+
+    move v2, v0
 
     goto :goto_0
+
+    :cond_0
+    monitor-exit v3
+
+    return v2
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

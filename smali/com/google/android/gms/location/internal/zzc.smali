@@ -7,18 +7,18 @@
 
 
 # instance fields
-.field private a:I
+.field private final a:I
 
-.field private b:Ljava/lang/String;
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhum;
+    new-instance v0, Lhvl;
 
-    invoke-direct {v0}, Lhum;-><init>()V
+    invoke-direct {v0}, Lhvl;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/location/internal/zzc;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -77,7 +77,7 @@
 
     iget-object v3, p0, Lcom/google/android/gms/location/internal/zzc;->b:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -134,7 +134,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -142,15 +142,15 @@
 
     iget v2, p0, Lcom/google/android/gms/location/internal/zzc;->a:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
     iget-object v2, p0, Lcom/google/android/gms/location/internal/zzc;->b:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

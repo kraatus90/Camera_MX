@@ -1,44 +1,33 @@
-.class public interface abstract Lfwy;
-.super Ljava/lang/Object;
+.class final Lfwy;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)V
+    .locals 0
+
+    iput-object p1, p0, Lfwy;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(Landroid/net/Uri;Ljava/io/InputStream;Ljht;Ljava/lang/String;Ljava/lang/String;Lavl;)Ljuw;
-.end method
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-.method public abstract a(J)V
-.end method
+    iget-object v0, p0, Lfwy;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-.method public abstract a(Landroid/net/Uri;)V
-.end method
+    const/4 v1, 0x0
 
-.method public abstract a(Landroid/net/Uri;I)V
-.end method
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setVisibility(I)V
 
-.method public abstract a(Lfwr;)V
-.end method
-
-.method public abstract a(Lfxc;)V
-.end method
-
-.method public abstract a(Z)V
-.end method
-
-.method public abstract a()Z
-.end method
-
-.method public abstract b(J)Ljht;
-.end method
-
-.method public abstract b(Lfwr;)V
-.end method
-
-.method public abstract b(Lfxc;)V
-.end method
-
-.method public abstract b(Lgce;)V
-.end method
-
-.method public abstract b()Z
+    return-void
 .end method

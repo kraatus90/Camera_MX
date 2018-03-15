@@ -3,74 +3,42 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lihn;
 
-.field private b:Ljxn;
+.field private final synthetic b:Lgnj;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method public constructor <init>(Lihn;Lgnj;)V
     .locals 0
 
+    iput-object p1, p0, Lgpt;->a:Lihn;
+
+    iput-object p2, p0, Lgpt;->b:Lgnj;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgpt;->a:Ljxn;
-
-    iput-object p2, p0, Lgpt;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lgpt;->a:Ljxn;
+    iget-object v0, p0, Lgpt;->a:Lihn;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "pre-initializing indicator cache"
 
-    iget-object v0, p0, Lgpt;->b:Ljxn;
+    invoke-interface {v0, v1}, Lihn;->e(Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lgpt;->b:Lgnj;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgnj;->a()Lkeh;
 
-    check-cast v0, Lbip;
-
-    iget-object v0, v0, Lbip;->a:Lbli;
-
-    sget-object v1, Lbip;->o:Lbku;
-
-    invoke-virtual {v0, v1}, Lbli;->a(Lbku;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Lgpl;
-
-    invoke-direct {v0}, Lgpl;-><init>()V
-
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgpk;
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lgpn;
-
-    invoke-direct {v0}, Lgpn;-><init>()V
-
-    goto :goto_0
+    return-void
 .end method

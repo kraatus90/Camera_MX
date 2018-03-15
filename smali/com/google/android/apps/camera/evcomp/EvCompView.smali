@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final a:Lbjd;
+.field public final a:Lbnq;
 
 .field public b:F
 
@@ -35,20 +35,20 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setWillNotDraw(Z)V
 
-    new-instance v0, Lbjd;
+    new-instance v0, Lbnq;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lbjd;-><init>(Landroid/content/res/Resources;)V
+    invoke-direct {v0, v1}, Lbnq;-><init>(Landroid/content/res/Resources;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iput-object v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lbjd;)V
+.method public constructor <init>(Landroid/content/Context;Lbnq;)V
     .locals 2
 
     invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
@@ -57,13 +57,13 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setWillNotDraw(Z)V
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iput-object p2, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f0d00d4
+    const v1, 0x7f0d00ab
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -94,6 +94,14 @@
     aput-object v3, v1, v2
 
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "^[-+](0(\\.0*)?)$"
+
+    const-string v2, "$1"
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -147,7 +155,7 @@
 
     const/high16 v11, 0x40000000    # 2.0f
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
     if-nez v0, :cond_1
 
@@ -164,40 +172,40 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
-    invoke-virtual {v1, p1}, Lbjd;->a(Landroid/graphics/Canvas;)I
+    invoke-virtual {v1, p1}, Lbnq;->a(Landroid/graphics/Canvas;)I
 
     move-result v0
 
     int-to-float v2, v0
 
-    iget v0, v1, Lbjd;->s:I
+    iget v0, v1, Lbnq;->s:I
 
     div-int/lit8 v3, v0, 0x2
 
     move v0, v6
 
     :goto_1
-    iget v4, v1, Lbjd;->s:I
+    iget v4, v1, Lbnq;->s:I
 
     if-ge v0, v4, :cond_3
 
     if-eq v0, v3, :cond_2
 
-    invoke-virtual {v1, v0, p1}, Lbjd;->a(ILandroid/graphics/Canvas;)F
+    invoke-virtual {v1, v0, p1}, Lbnq;->a(ILandroid/graphics/Canvas;)F
 
     move-result v4
 
-    iget v5, v1, Lbjd;->g:F
+    iget v5, v1, Lbnq;->g:F
 
-    iget-object v7, v1, Lbjd;->a:Landroid/graphics/Paint;
+    iget-object v7, v1, Lbnq;->a:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v4, v5, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    iget v5, v1, Lbjd;->g:F
+    iget v5, v1, Lbnq;->g:F
 
-    iget-object v7, v1, Lbjd;->b:Landroid/graphics/Paint;
+    iget-object v7, v1, Lbnq;->b:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v4, v5, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
@@ -207,15 +215,15 @@
     goto :goto_1
 
     :cond_3
-    iget-object v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
-    iget-object v1, v0, Lbjd;->d:Landroid/graphics/drawable/Drawable;
+    iget-object v1, v0, Lbnq;->d:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v1
 
-    iget-object v2, v0, Lbjd;->d:Landroid/graphics/drawable/Drawable;
+    iget-object v2, v0, Lbnq;->d:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
@@ -229,7 +237,7 @@
 
     div-int/lit8 v3, v3, 0x2
 
-    invoke-virtual {v0, p1}, Lbjd;->a(Landroid/graphics/Canvas;)I
+    invoke-virtual {v0, p1}, Lbnq;->a(Landroid/graphics/Canvas;)I
 
     move-result v4
 
@@ -237,7 +245,7 @@
 
     sub-int/2addr v4, v5
 
-    iget-object v5, v0, Lbjd;->d:Landroid/graphics/drawable/Drawable;
+    iget-object v5, v0, Lbnq;->d:Landroid/graphics/drawable/Drawable;
 
     add-int/2addr v1, v4
 
@@ -245,7 +253,7 @@
 
     invoke-virtual {v5, v4, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    iget-object v0, v0, Lbjd;->d:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v0, Lbnq;->d:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -254,7 +262,7 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
     iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->b:F
 
@@ -267,7 +275,7 @@
     :goto_2
     const-string v3, "position must be in the range (0, 1)"
 
-    invoke-static {v0, v3}, Liya;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Ljii;->b(ZLjava/lang/Object;)V
 
     cmpg-float v0, v2, v12
 
@@ -278,13 +286,13 @@
     :goto_3
     const-string v3, "position must be in the range (0, 1)"
 
-    invoke-static {v0, v3}, Liya;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Ljii;->b(ZLjava/lang/Object;)V
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->getHeight()I
 
     move-result v0
 
-    invoke-virtual {v1, v0}, Lbjd;->a(I)I
+    invoke-virtual {v1, v0}, Lbnq;->a(I)I
 
     move-result v0
 
@@ -302,7 +310,7 @@
 
     int-to-float v0, v0
 
-    iget v4, v1, Lbjd;->r:F
+    iget v4, v1, Lbnq;->r:F
 
     mul-float/2addr v4, v11
 
@@ -312,33 +320,33 @@
 
     add-float/2addr v0, v3
 
-    iget v2, v1, Lbjd;->r:F
+    iget v2, v1, Lbnq;->r:F
 
     add-float/2addr v0, v2
 
-    iget v2, v1, Lbjd;->h:F
+    iget v2, v1, Lbnq;->h:F
 
     div-float/2addr v2, v11
 
     sub-float v2, v0, v2
 
-    iget v3, v1, Lbjd;->h:F
+    iget v3, v1, Lbnq;->h:F
 
     div-float/2addr v3, v11
 
     add-float/2addr v3, v0
 
-    invoke-virtual {v1, p1}, Lbjd;->a(Landroid/graphics/Canvas;)I
+    invoke-virtual {v1, p1}, Lbnq;->a(Landroid/graphics/Canvas;)I
 
     move-result v4
 
     int-to-float v4, v4
 
-    iget v5, v1, Lbjd;->j:F
+    iget v5, v1, Lbnq;->j:F
 
     sub-float/2addr v4, v5
 
-    iget v5, v1, Lbjd;->i:F
+    iget v5, v1, Lbnq;->i:F
 
     sub-float v5, v4, v5
 
@@ -356,11 +364,11 @@
 
     invoke-virtual {v7}, Landroid/graphics/Path;->close()V
 
-    iget-object v0, v1, Lbjd;->a:Landroid/graphics/Paint;
+    iget-object v0, v1, Lbnq;->a:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v7, v0}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    iget-object v0, v1, Lbjd;->b:Landroid/graphics/Paint;
+    iget-object v0, v1, Lbnq;->b:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v7, v0}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
@@ -369,7 +377,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
     iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->b:F
 
@@ -386,7 +394,7 @@
     :goto_4
     const-string v5, "position must be in the range [0, 1]"
 
-    invoke-static {v0, v5}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v5}, Ljii;->a(ZLjava/lang/Object;)V
 
     cmpg-float v0, v2, v12
 
@@ -397,7 +405,7 @@
     :goto_5
     const-string v5, "position must be in the range [0, 1]"
 
-    invoke-static {v0, v5}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v5}, Ljii;->a(ZLjava/lang/Object;)V
 
     cmpl-float v0, v3, v13
 
@@ -408,7 +416,7 @@
     :goto_6
     const-string v5, "scale must be in the range [0, 1]"
 
-    invoke-static {v0, v5}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v5}, Ljii;->a(ZLjava/lang/Object;)V
 
     cmpg-float v0, v3, v12
 
@@ -417,7 +425,7 @@
     :goto_7
     const-string v0, "scale must be in the range [0, 1]"
 
-    invoke-static {v8, v0}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v8, v0}, Ljii;->a(ZLjava/lang/Object;)V
 
     cmpl-float v0, v3, v13
 
@@ -427,7 +435,7 @@
 
     move-result v0
 
-    invoke-virtual {v1, v0}, Lbjd;->a(I)I
+    invoke-virtual {v1, v0}, Lbnq;->a(I)I
 
     move-result v0
 
@@ -441,15 +449,15 @@
 
     int-to-float v5, v5
 
-    iget v7, v1, Lbjd;->m:F
+    iget v7, v1, Lbnq;->m:F
 
     mul-float/2addr v7, v3
 
-    iget v8, v1, Lbjd;->l:F
+    iget v8, v1, Lbnq;->l:F
 
     mul-float/2addr v8, v3
 
-    iget v9, v1, Lbjd;->n:F
+    iget v9, v1, Lbnq;->n:F
 
     mul-float/2addr v9, v3
 
@@ -457,7 +465,7 @@
 
     int-to-float v0, v0
 
-    iget v10, v1, Lbjd;->r:F
+    iget v10, v1, Lbnq;->r:F
 
     mul-float/2addr v10, v11
 
@@ -467,7 +475,7 @@
 
     add-float/2addr v0, v5
 
-    iget v2, v1, Lbjd;->r:F
+    iget v2, v1, Lbnq;->r:F
 
     add-float/2addr v0, v2
 
@@ -479,9 +487,9 @@
 
     add-float/2addr v5, v0
 
-    iget v8, v1, Lbjd;->k:F
+    iget v8, v1, Lbnq;->k:F
 
-    iget v10, v1, Lbjd;->m:F
+    iget v10, v1, Lbnq;->m:F
 
     add-float/2addr v8, v10
 
@@ -497,7 +505,7 @@
 
     add-float/2addr v10, v8
 
-    iget v11, v1, Lbjd;->o:F
+    iget v11, v1, Lbnq;->o:F
 
     new-instance v12, Landroid/graphics/Path;
 
@@ -511,13 +519,13 @@
 
     invoke-virtual {v12, v13, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    iget v13, v1, Lbjd;->o:F
+    iget v13, v1, Lbnq;->o:F
 
     add-float/2addr v13, v2
 
     invoke-virtual {v12, v8, v2, v8, v13}, Landroid/graphics/Path;->quadTo(FFFF)V
 
-    iget v2, v1, Lbjd;->o:F
+    iget v2, v1, Lbnq;->o:F
 
     sub-float v2, v5, v2
 
@@ -533,11 +541,11 @@
 
     invoke-virtual {v12}, Landroid/graphics/Path;->close()V
 
-    iget-object v2, v1, Lbjd;->a:Landroid/graphics/Paint;
+    iget-object v2, v1, Lbnq;->a:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v12, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    iget-object v2, v1, Lbjd;->b:Landroid/graphics/Paint;
+    iget-object v2, v1, Lbnq;->b:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v12, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
@@ -545,9 +553,9 @@
 
     move-result-object v2
 
-    iget-object v4, v1, Lbjd;->c:Landroid/graphics/Paint;
+    iget-object v4, v1, Lbnq;->c:Landroid/graphics/Paint;
 
-    iget v5, v1, Lbjd;->p:F
+    iget v5, v1, Lbnq;->p:F
 
     mul-float/2addr v3, v5
 
@@ -557,7 +565,7 @@
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
-    iget-object v4, v1, Lbjd;->c:Landroid/graphics/Paint;
+    iget-object v4, v1, Lbnq;->c:Landroid/graphics/Paint;
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -575,16 +583,16 @@
 
     add-float/2addr v0, v3
 
-    iget-object v1, v1, Lbjd;->c:Landroid/graphics/Paint;
+    iget-object v1, v1, Lbnq;->c:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v10, v0, v1}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     goto/16 :goto_0
 
     :cond_6
-    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
-    invoke-virtual {v1, p1}, Lbjd;->a(Landroid/graphics/Canvas;)I
+    invoke-virtual {v1, p1}, Lbnq;->a(Landroid/graphics/Canvas;)I
 
     move-result v0
 
@@ -593,7 +601,7 @@
     move v0, v6
 
     :goto_8
-    iget v3, v1, Lbjd;->s:I
+    iget v3, v1, Lbnq;->s:I
 
     if-ge v0, v3, :cond_8
 
@@ -601,19 +609,19 @@
 
     if-eqz v3, :cond_7
 
-    invoke-virtual {v1, v0, p1}, Lbjd;->a(ILandroid/graphics/Canvas;)F
+    invoke-virtual {v1, v0, p1}, Lbnq;->a(ILandroid/graphics/Canvas;)F
 
     move-result v3
 
-    iget v4, v1, Lbjd;->g:F
+    iget v4, v1, Lbnq;->g:F
 
-    iget-object v5, v1, Lbjd;->a:Landroid/graphics/Paint;
+    iget-object v5, v1, Lbnq;->a:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    iget v4, v1, Lbjd;->g:F
+    iget v4, v1, Lbnq;->g:F
 
-    iget-object v5, v1, Lbjd;->b:Landroid/graphics/Paint;
+    iget-object v5, v1, Lbnq;->b:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
@@ -623,11 +631,11 @@
     goto :goto_8
 
     :cond_8
-    iget-object v9, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v9, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
     iget v10, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->c:F
 
-    invoke-virtual {v9, p1}, Lbjd;->a(Landroid/graphics/Canvas;)I
+    invoke-virtual {v9, p1}, Lbnq;->a(Landroid/graphics/Canvas;)I
 
     move-result v0
 
@@ -640,21 +648,21 @@
     move v7, v6
 
     :goto_9
-    iget v0, v9, Lbjd;->s:I
+    iget v0, v9, Lbnq;->s:I
 
     if-ge v7, v0, :cond_4
 
-    invoke-virtual {v9, v7, p1}, Lbjd;->a(ILandroid/graphics/Canvas;)F
+    invoke-virtual {v9, v7, p1}, Lbnq;->a(ILandroid/graphics/Canvas;)F
 
     move-result v0
 
-    iget v2, v9, Lbjd;->q:F
+    iget v2, v9, Lbnq;->q:F
 
     div-float/2addr v2, v11
 
     sub-float v2, v0, v2
 
-    iget v3, v9, Lbjd;->q:F
+    iget v3, v9, Lbnq;->q:F
 
     div-float/2addr v3, v11
 
@@ -662,7 +670,7 @@
 
     add-float v3, v1, v10
 
-    iget-object v5, v9, Lbjd;->a:Landroid/graphics/Paint;
+    iget-object v5, v9, Lbnq;->a:Landroid/graphics/Paint;
 
     move-object v0, p1
 
@@ -670,7 +678,7 @@
 
     add-float v3, v1, v10
 
-    iget-object v5, v9, Lbjd;->b:Landroid/graphics/Paint;
+    iget-object v5, v9, Lbnq;->b:Landroid/graphics/Paint;
 
     move-object v0, p1
 
@@ -738,19 +746,19 @@
 
     sub-int v1, p5, p3
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbjd;
+    iget-object v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompView;->a:Lbnq;
 
-    invoke-virtual {v2, v1}, Lbjd;->a(I)I
+    invoke-virtual {v2, v1}, Lbnq;->a(I)I
 
     move-result v3
 
-    iget v4, v2, Lbjd;->f:F
+    iget v4, v2, Lbnq;->f:F
 
     float-to-int v4, v4
 
     sub-int/2addr v0, v4
 
-    iget v2, v2, Lbjd;->e:F
+    iget v2, v2, Lbnq;->e:F
 
     const/high16 v4, 0x40000000    # 2.0f
 

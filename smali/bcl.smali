@@ -1,88 +1,76 @@
-.class final Lbcl;
+.class public final Lbcl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final a:Lkgv;
 
-.field private synthetic b:Ljava/lang/Runnable;
-
-.field private synthetic c:Lbck;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbck;Ljvi;Ljava/lang/Runnable;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbcl;->c:Lbck;
-
-    iput-object p2, p0, Lbcl;->a:Ljvi;
-
-    iput-object p3, p0, Lbcl;->b:Ljava/lang/Runnable;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbcl;->a:Lkgv;
+
+    iput-object p2, p0, Lbcl;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Lgff;
+    iget-object v0, p0, Lbcl;->a:Lkgv;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lbcl;->c:Lbck;
+    move-result-object v0
 
-    iget-object v0, v0, Lbck;->b:Laxq;
+    check-cast v0, Lihs;
 
-    new-instance v1, Lbcm;
+    iget-object v1, p0, Lbcl;->b:Lkgv;
 
-    iget-object v2, p0, Lbcl;->a:Ljvi;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v1, v2}, Lbcm;-><init>(Ljvi;)V
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Laxq;->execute(Ljava/lang/Runnable;)V
+    check-cast v1, Lbqc;
 
-    return-void
-.end method
+    invoke-static {v1}, Lbku;->a(Lbqc;)Z
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 4
+    move-result v1
 
-    iget-object v0, p0, Lbcl;->c:Lbck;
+    if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lbcl;->b:Ljava/lang/Runnable;
+    new-instance v1, Libv;
 
-    sget-object v2, Lbck;->a:Ljava/lang/String;
+    invoke-direct {v1, v0}, Libv;-><init>(Lihs;)V
 
-    const-string v3, "Execute AF reset runnable"
+    move-object v0, v1
 
-    invoke-static {v2, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v2, v0, Lbck;->c:Licn;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-static {}, Lgew;->a()Lgey;
+    move-result-object v0
 
-    move-result-object v3
+    check-cast v0, Libq;
 
-    invoke-interface {v2, v3}, Licn;->a(Ljava/lang/Object;)V
+    return-object v0
 
-    iget-object v0, v0, Lbck;->d:Licn;
+    :cond_0
+    sget-object v0, Libr;->a:Libq;
 
-    invoke-static {}, Lgew;->a()Lgey;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Licn;->a(Ljava/lang/Object;)V
-
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
-
-    return-void
+    goto :goto_0
 .end method

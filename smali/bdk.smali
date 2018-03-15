@@ -1,44 +1,41 @@
-.class final Lbdk;
-.super Ljava/lang/Object;
+.class public final Lbdk;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lbdh;
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
 
 # direct methods
-.method constructor <init>(Lbdh;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
     .locals 0
 
-    iput-object p1, p0, Lbdk;->a:Lbdh;
+    iput-object p1, p0, Lbdk;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    sget-object v0, Lbdh;->a:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    const-string v1, "start monitor scene change"
+    iget-object v0, p0, Lbdk;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    iget-object v0, p0, Lbdk;->a:Lbdh;
+    invoke-virtual {v0, v1, v1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setVisible(ZZ)Z
 
-    iget-object v0, v0, Lbdh;->b:Lgem;
+    iget-object v0, p0, Lbdk;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    iget-object v1, p0, Lbdk;->a:Lbdh;
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    iput-object v1, v0, Lgem;->b:Lgen;
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
     return-void
 .end method

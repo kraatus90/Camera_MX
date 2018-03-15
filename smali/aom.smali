@@ -1,50 +1,55 @@
-.class public final Laom;
-.super Ljava/lang/Object;
+.class final Laom;
+.super Laqw;
 .source "PG"
-
-# interfaces
-.implements Laep;
 
 
 # instance fields
-.field private a:Lahs;
+.field public final a:I
+
+.field public b:Landroid/graphics/Bitmap;
+
+.field private final c:Landroid/os/Handler;
+
+.field private final d:J
 
 
 # direct methods
-.method public constructor <init>(Lahs;)V
-    .locals 0
+.method constructor <init>(Landroid/os/Handler;IJ)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Laqw;-><init>()V
 
-    iput-object p1, p0, Laom;->a:Lahs;
+    iput-object p1, p0, Laom;->c:Landroid/os/Handler;
+
+    iput p2, p0, Laom;->a:I
+
+    iput-wide p3, p0, Laom;->d:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;IILaeo;)Lahg;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;Larh;)V
+    .locals 4
 
-    check-cast p1, Ladx;
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    invoke-interface {p1}, Ladx;->g()Landroid/graphics/Bitmap;
+    iput-object p1, p0, Laom;->b:Landroid/graphics/Bitmap;
+
+    iget-object v0, p0, Laom;->c:Landroid/os/Handler;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    iget-object v1, p0, Laom;->a:Lahs;
+    iget-object v1, p0, Laom;->c:Landroid/os/Handler;
 
-    invoke-static {v0, v1}, Lamo;->a(Landroid/graphics/Bitmap;Lahs;)Lamo;
+    iget-wide v2, p0, Laom;->d:J
 
-    move-result-object v0
+    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
-    return-object v0
-.end method
-
-.method public final bridge synthetic a(Ljava/lang/Object;Laeo;)Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
+    return-void
 .end method

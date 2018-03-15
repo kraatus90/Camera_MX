@@ -1,84 +1,129 @@
-.class public final Legk;
-.super Lggu;
+.class Legk;
+.super Lglb;
 .source "PG"
 
 
 # instance fields
-.field public final a:Liag;
-
-.field private b:Legj;
-
-.field private c:J
+.field private final synthetic a:Legj;
 
 
 # direct methods
-.method public constructor <init>(Legj;Lege;)V
-    .locals 2
+.method constructor <init>(Legj;)V
+    .locals 1
 
-    invoke-direct {p0}, Lggu;-><init>()V
+    iput-object p1, p0, Legk;->a:Legj;
 
-    iput-object p1, p0, Legk;->b:Legj;
+    const/4 v0, 0x0
 
-    new-instance v0, Liag;
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Legk;->a:Liag;
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Legk;->c:J
+    invoke-direct {p0, v0}, Lglb;-><init>([[[C)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liic;)V
+.method public L()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public M()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a()V
     .locals 4
 
-    invoke-interface {p1}, Liic;->d()J
+    const/4 v2, 0x1
 
-    move-result-wide v0
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    iget-wide v2, p0, Legk;->c:J
+    sget-object v0, Legj;->d:Ljava/lang/String;
 
-    cmp-long v0, v0, v2
+    const-string v1, "enter Photo state"
 
-    if-lez v0, :cond_0
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lege;->a(Liic;)Z
+    iget-object v0, p0, Legk;->a:Legj;
 
-    move-result v0
+    iget-object v0, v0, Legj;->g:Lgrz;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v2}, Lgrz;->b(Z)V
 
-    iget-object v0, p0, Legk;->b:Legj;
+    iget-object v0, p0, Legk;->a:Legj;
 
-    invoke-interface {v0, p1}, Legj;->a(Liic;)F
+    iget-object v0, v0, Legj;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    move-result v0
+    invoke-virtual {v0, v3, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setProgress(FZ)V
 
-    iget-object v1, p0, Legk;->a:Liag;
+    iget-object v0, p0, Legk;->a:Legj;
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    iget-object v0, v0, Legj;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToPhoto()V
+
+    iget-object v0, p0, Legk;->a:Legj;
+
+    iget-object v0, v0, Legj;->i:Lgvc;
+
+    sget-object v1, Lgue;->a:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    iget-object v0, v0, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisibility(I)V
+
+    iget-object v0, p0, Legk;->a:Legj;
+
+    invoke-static {v0}, Legj;->a(Legj;)Lick;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Liag;->a(Ljava/lang/Object;)V
+    sget-object v1, Lhac;->b:Lhac;
 
-    invoke-interface {p1}, Liic;->d()J
+    invoke-interface {v0, v1}, Lick;->a(Ljava/lang/Object;)V
 
-    move-result-wide v0
+    iget-object v0, p0, Legk;->a:Legj;
 
-    iput-wide v0, p0, Legk;->c:J
+    iget-object v0, v0, Legj;->f:Lbum;
 
-    :cond_0
+    sget-object v1, Lbum;->a:Ljava/lang/String;
+
+    const-string v2, "Setting HDR+ high processing priority"
+
+    invoke-static {v1, v2}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v3}, Lbum;->a(F)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    sget-object v0, Legj;->d:Ljava/lang/String;
+
+    const-string v1, "exit Photo state"
+
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Legk;->a:Legj;
+
+    iget-object v0, v0, Legj;->j:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->c()V
+
+    iget-object v0, p0, Legk;->a:Legj;
+
+    iget-object v0, v0, Legj;->j:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->f()V
+
     return-void
 .end method

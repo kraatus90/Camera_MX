@@ -60,26 +60,22 @@
 
 
 # virtual methods
-.method public Run(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/ShotLogData;)V
-    .locals 9
+.method public Run(ILcom/google/googlex/gcam/ShotLogData;)V
+    .locals 7
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/BurstCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
     invoke-static {p2}, Lcom/google/googlex/gcam/ShotLogData;->getCPtr(Lcom/google/googlex/gcam/ShotLogData;)J
 
-    move-result-wide v6
+    move-result-wide v4
 
     move-object v2, p0
 
-    move-object v5, p1
+    move v3, p1
 
-    move-object v8, p2
+    move-object v6, p2
 
-    invoke-static/range {v0 .. v8}, Lcom/google/googlex/gcam/GcamModuleJNI;->BurstCallback_Run(JLcom/google/googlex/gcam/BurstCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/ShotLogData;)V
+    invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->BurstCallback_Run(JLcom/google/googlex/gcam/BurstCallback;IJLcom/google/googlex/gcam/ShotLogData;)V
 
     return-void
 .end method

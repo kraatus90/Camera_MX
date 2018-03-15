@@ -1,31 +1,40 @@
 .class final Lax;
-.super Lba;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
 
 
+# instance fields
+.field private final synthetic a:Law;
+
+
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Law;)V
     .locals 0
 
-    invoke-direct {p0}, Lba;-><init>()V
+    iput-object p1, p0, Lax;->a:Law;
 
-    return-void
-.end method
-
-.method public constructor <init>(Lax;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lba;-><init>(Lba;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lax;->a:Law;
 
-    return v0
+    iget-object v0, v0, Law;->c:Landroid/animation/ValueAnimator;
+
+    if-ne v0, p1, :cond_0
+
+    iget-object v0, p0, Lax;->a:Law;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Law;->c:Landroid/animation/ValueAnimator;
+
+    :cond_0
+    return-void
 .end method

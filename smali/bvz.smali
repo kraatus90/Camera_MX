@@ -2,58 +2,47 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Lbwu;
+.field private final a:Lkgv;
 
-.field public b:I
-
-.field public final c:Landroid/os/Handler;
-
-.field public d:Ljava/lang/Runnable;
-
-.field public e:Lbwb;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;)V
+    .locals 0
 
-    const-string v0, "BurstA11yBtnCtrl"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lbvz;->a:Lkgv;
+
+    iput-object p2, p0, Lbvz;->b:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>(Lbwu;)V
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lbvz;->b:Lkgv;
 
-    sget v0, Leh;->t:I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iput v0, p0, Lbvz;->b:I
+    sget-object v0, Ljqu;->a:Ljqu;
 
-    new-instance v0, Landroid/os/Handler;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    check-cast v0, Ljrf;
 
-    iput-object v0, p0, Lbvz;->c:Landroid/os/Handler;
-
-    new-instance v0, Lbwa;
-
-    invoke-direct {v0, p0}, Lbwa;-><init>(Lbvz;)V
-
-    iput-object v0, p0, Lbvz;->d:Ljava/lang/Runnable;
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lbvz;->a:Lbwu;
-
-    return-void
+    return-object v0
 .end method

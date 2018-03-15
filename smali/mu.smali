@@ -3,66 +3,155 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lns;
 
 
 # instance fields
-.field private synthetic a:Lmt;
+.field public final synthetic a:Lmn;
+
+.field private b:Lns;
 
 
 # direct methods
-.method constructor <init>(Lmt;)V
+.method public constructor <init>(Lmn;Lns;)V
     .locals 0
 
-    iput-object p1, p0, Lmu;->a:Lmt;
+    iput-object p1, p0, Lmu;->a:Lmn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lmu;->b:Lns;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a(Lnr;)V
     .locals 3
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lmu;->b:Lns;
 
-    iget-object v0, p0, Lmu;->a:Lmt;
+    invoke-interface {v0, p1}, Lns;->a(Lnr;)V
 
-    iget v0, v0, Lmt;->w:I
+    iget-object v0, p0, Lmu;->a:Lmn;
 
-    and-int/lit8 v0, v0, 0x1
+    iget-object v0, v0, Lmn;->r:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lmu;->a:Lmt;
+    iget-object v0, p0, Lmu;->a:Lmn;
 
-    invoke-virtual {v0, v2}, Lmt;->h(I)V
+    iget-object v0, v0, Lmn;->c:Landroid/view/Window;
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lmu;->a:Lmn;
+
+    iget-object v1, v1, Lmn;->s:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     :cond_0
-    iget-object v0, p0, Lmu;->a:Lmt;
+    iget-object v0, p0, Lmu;->a:Lmn;
 
-    iget v0, v0, Lmt;->w:I
-
-    and-int/lit16 v0, v0, 0x1000
+    iget-object v0, v0, Lmn;->q:Landroid/support/v7/widget/ActionBarContextView;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lmu;->a:Lmt;
+    iget-object v0, p0, Lmu;->a:Lmn;
 
-    const/16 v1, 0x6c
+    invoke-virtual {v0}, Lmn;->p()V
 
-    invoke-virtual {v0, v1}, Lmt;->h(I)V
+    iget-object v0, p0, Lmu;->a:Lmn;
+
+    iget-object v1, p0, Lmu;->a:Lmn;
+
+    iget-object v1, v1, Lmn;->q:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-static {v1}, Lhz;->b(Landroid/view/View;)Ljd;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Ljd;->a(F)Ljd;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lmn;->t:Ljd;
+
+    iget-object v0, p0, Lmu;->a:Lmn;
+
+    iget-object v0, v0, Lmn;->t:Ljd;
+
+    new-instance v1, Lmv;
+
+    invoke-direct {v1, p0}, Lmv;-><init>(Lmu;)V
+
+    invoke-virtual {v0, v1}, Ljd;->a(Ljg;)Ljd;
 
     :cond_1
-    iget-object v0, p0, Lmu;->a:Lmt;
+    iget-object v0, p0, Lmu;->a:Lmn;
 
-    iput-boolean v2, v0, Lmt;->v:Z
+    iget-object v0, v0, Lmn;->e:Lma;
 
-    iget-object v0, p0, Lmu;->a:Lmt;
+    if-eqz v0, :cond_2
 
-    iput v2, v0, Lmt;->w:I
+    iget-object v0, p0, Lmu;->a:Lmn;
+
+    iget-object v0, v0, Lmn;->e:Lma;
+
+    iget-object v1, p0, Lmu;->a:Lmn;
+
+    iget-object v1, v1, Lmn;->p:Lnr;
+
+    invoke-interface {v0}, Lma;->b()V
+
+    :cond_2
+    iget-object v0, p0, Lmu;->a:Lmn;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lmn;->p:Lnr;
 
     return-void
+.end method
+
+.method public final a(Lnr;Landroid/view/Menu;)Z
+    .locals 1
+
+    iget-object v0, p0, Lmu;->b:Lns;
+
+    invoke-interface {v0, p1, p2}, Lns;->a(Lnr;Landroid/view/Menu;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final a(Lnr;Landroid/view/MenuItem;)Z
+    .locals 1
+
+    iget-object v0, p0, Lmu;->b:Lns;
+
+    invoke-interface {v0, p1, p2}, Lns;->a(Lnr;Landroid/view/MenuItem;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b(Lnr;Landroid/view/Menu;)Z
+    .locals 1
+
+    iget-object v0, p0, Lmu;->b:Lns;
+
+    invoke-interface {v0, p1, p2}, Lns;->b(Lnr;Landroid/view/Menu;)Z
+
+    move-result v0
+
+    return v0
 .end method

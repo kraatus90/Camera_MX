@@ -60,62 +60,28 @@
 
 
 # virtual methods
-.method public ImageReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/ExifMetadata;Lcom/google/googlex/gcam/RawImage;)V
-    .locals 12
+.method public ImageReady(ILcom/google/googlex/gcam/ExifMetadata;Lcom/google/googlex/gcam/RawImage;)V
+    .locals 10
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/RawImageCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
     invoke-static {p2}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
 
-    move-result-wide v6
+    move-result-wide v4
 
     invoke-static {p3}, Lcom/google/googlex/gcam/RawImage;->getCPtr(Lcom/google/googlex/gcam/RawImage;)J
 
-    move-result-wide v9
+    move-result-wide v7
 
     move-object v2, p0
 
-    move-object v5, p1
+    move v3, p1
 
-    move-object v8, p2
+    move-object v6, p2
 
-    move-object v11, p3
+    move-object v9, p3
 
-    invoke-static/range {v0 .. v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawImageCallback_ImageReady(JLcom/google/googlex/gcam/RawImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/RawImage;)V
-
-    return-void
-.end method
-
-.method public PreallocatedReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/ExifMetadata;Lcom/google/googlex/gcam/RawReadView;)V
-    .locals 12
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/RawImageCallback;->swigCPtr:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
-    invoke-static {p2}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
-
-    move-result-wide v6
-
-    invoke-static {p3}, Lcom/google/googlex/gcam/RawReadView;->getCPtr(Lcom/google/googlex/gcam/RawReadView;)J
-
-    move-result-wide v9
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    move-object v8, p2
-
-    move-object v11, p3
-
-    invoke-static/range {v0 .. v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawImageCallback_PreallocatedReady(JLcom/google/googlex/gcam/RawImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/RawReadView;)V
+    invoke-static/range {v0 .. v9}, Lcom/google/googlex/gcam/GcamModuleJNI;->RawImageCallback_ImageReady(JLcom/google/googlex/gcam/RawImageCallback;IJLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/RawImage;)V
 
     return-void
 .end method

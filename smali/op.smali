@@ -1,30 +1,27 @@
-.class public Lop;
+.class final Lop;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final d:Ljava/lang/Object;
+.field public final a:Ltw;
+
+.field public final b:Lot;
+
+.field public final c:I
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Object;)V
-    .locals 2
+.method public constructor <init>(Ltw;Lot;I)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez p1, :cond_0
+    iput-object p1, p0, Lop;->a:Ltw;
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    iput-object p2, p0, Lop;->b:Lot;
 
-    const-string v1, "Wrapped Object can not be null."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
-    iput-object p1, p0, Lop;->d:Ljava/lang/Object;
+    iput p3, p0, Lop;->c:I
 
     return-void
 .end method

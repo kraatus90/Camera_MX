@@ -1,45 +1,60 @@
-.class final Lfgn;
-.super Lfgw;
+.class public final Lfgn;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfgl;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfgl;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfgn;->a:Lfgl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfgw;-><init>(Lfgu;)V
+    iput-object p1, p0, Lfgn;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfgn;
+    .locals 1
+
+    new-instance v0, Lfgn;
+
+    invoke-direct {v0, p0}, Lfgn;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final L()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfgn;->a:Lfgl;
+    iget-object v0, p0, Lfgn;->a:Lkgv;
 
-    iget-object v0, v0, Lfgl;->a:Lgvj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lfgw;->L()V
+    check-cast v0, Lffz;
 
-    iget-object v0, p0, Lfgn;->a:Lfgl;
+    new-instance v1, Lfgq;
 
-    iget-object v0, v0, Lfgl;->a:Lgvj;
+    invoke-direct {v1, v0}, Lfgq;-><init>(Lffz;)V
 
-    iget-object v1, p0, Lfgn;->a:Lfgl;
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v1, v1, Lfgl;->b:Lgvl;
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lffz;
+
+    return-object v0
 .end method

@@ -1,65 +1,41 @@
-.class public interface abstract Lfvf;
+.class public final synthetic Lfvf;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field private final a:Lfvc;
+
+.field private final b:Lfvh;
+
+
+# direct methods
+.method public constructor <init>(Lfvc;Lfvh;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfvf;->a:Lfvc;
+
+    iput-object p2, p0, Lfvf;->b:Lfvh;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-.method public abstract a(Ljht;Lfmd;ZLcfa;)Landroid/view/View;
-.end method
+    iget-object v0, p0, Lfvf;->a:Lfvc;
 
-.method public abstract a(II)Lgzi;
-.end method
+    iget-object v1, p0, Lfvf;->b:Lfvh;
 
-.method public abstract a(Landroid/view/View;)V
-.end method
+    iget-object v0, v0, Lfvc;->a:Lfvg;
 
-.method public abstract a(Landroid/view/View;Landroid/graphics/Bitmap;)V
-.end method
+    invoke-interface {v0, v1}, Lfvg;->a(Lfvh;)V
 
-.method public abstract a(Lfuv;)V
-.end method
-
-.method public abstract a(Lbtx;Lcgh;)Z
-.end method
-
-.method public abstract b(II)V
-.end method
-
-.method public abstract b(Landroid/view/View;)V
-.end method
-
-.method public abstract b()Z
-.end method
-
-.method public abstract c()Lfvf;
-.end method
-
-.method public abstract c(Landroid/view/View;)V
-.end method
-
-.method public abstract d(Landroid/view/View;)V
-.end method
-
-.method public abstract f()Lfvj;
-.end method
-
-.method public abstract g()Ljuw;
-.end method
-
-.method public abstract h()Ljht;
-.end method
-
-.method public abstract i()Lfvg;
-.end method
-
-.method public abstract j()Lfuv;
-.end method
-
-.method public abstract k()Lici;
-.end method
-
-.method public abstract l()I
+    return-void
 .end method

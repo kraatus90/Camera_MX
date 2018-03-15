@@ -2,28 +2,43 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public a:Z
 
-.field public b:Z
-
-.field public c:[F
+# static fields
+.field public static final a:Lfqk;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
+
+    new-instance v0, Lfqk;
+
+    invoke-direct {v0}, Lfqk;-><init>()V
+
+    sput-object v0, Lfqk;->a:Lfqk;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lfqk;->a:Z
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lfqk;->b:Z
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Lfqj;
+
+    invoke-direct {v0}, Lfqj;-><init>()V
+
+    return-object v0
 .end method

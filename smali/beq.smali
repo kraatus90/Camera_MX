@@ -1,256 +1,151 @@
-.class public final Lbeq;
+.class final Lbeq;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkdg;
+
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lbeg;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 1
+.method constructor <init>(Lbeg;)V
+    .locals 0
+
+    iput-object p1, p0, Lbeq;->a:Lbeg;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lbeq;->a:Ljxn;
-
-    const/4 v0, 0x2
-
-    invoke-static {p2, v0}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lbeq;->b:Ljxn;
 
     return-void
 .end method
 
-.method private static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
+.method private final a(Lifm;)Lkeh;
+    .locals 6
 
-    if-nez p0, :cond_0
+    iget-object v0, p0, Lbeq;->a:Lbeg;
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    iget-object v1, v0, Lbeg;->s:Ljava/lang/Object;
 
-    const/16 v1, 0x5d
+    monitor-enter v1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v2, p0, Lbeq;->a:Lbeg;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    new-instance v3, Lbhl;
 
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
+    invoke-virtual {p1}, Lifm;->d()Ljrf;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Landroid/view/Surface;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v4, p0, Lbeq;->a:Lbeg;
 
-    move-result-object v1
+    iget-object v4, v4, Lbeg;->n:Lihg;
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iget-object v5, p0, Lbeq;->a:Lbeg;
+
+    invoke-static {v5}, Lbeg;->a(Lbeg;)Lfhq;
+
+    move-result-object v5
+
+    invoke-direct {v3, v0, v4, v5}, Lbhl;-><init>(Landroid/view/Surface;Lihg;Lfhq;)V
+
+    iput-object v3, v2, Lbeg;->p:Lbhl;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    iget-object v1, p0, Lbeq;->a:Lbeg;
+
+    iget-object v1, v1, Lbeg;->j:Ljrf;
+
+    invoke-virtual {v1}, Ljrf;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, p0, Lbeq;->a:Lbeg;
+
+    iget-object v0, v0, Lbeg;->j:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbjj;
+
+    invoke-interface {v0}, Lbjj;->a()Landroid/view/Surface;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    :goto_0
+    iget-object v0, p0, Lbeq;->a:Lbeg;
+
+    iget-object v2, v0, Lbeg;->d:Lbhe;
+
+    iget-object v0, p0, Lbeq;->a:Lbeg;
+
+    iget-object v3, v0, Lbeg;->m:Landroid/view/Surface;
+
+    invoke-virtual {p1}, Lifm;->d()Ljrf;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/Surface;
+
+    invoke-interface {v2, v3, v0, v1}, Lbhe;->a(Landroid/view/Surface;Landroid/view/Surface;Ljrf;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
     :cond_0
-    return-object p0
+    move-object v1, v0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Lbez;Ljava/util/concurrent/Executor;Lbdw;Lbea;Lbew;Lbdq;Lgwb;Lgwo;Ljht;Liau;Liau;Ljht;ZIILjht;Licz;)Lbep;
-    .locals 18
+.method public final bridge synthetic a(Ljava/lang/Object;)Lkeh;
+    .locals 1
 
-    new-instance v1, Lber;
+    check-cast p1, Lifm;
 
-    move-object/from16 v0, p0
+    invoke-direct {p0, p1}, Lbeq;->a(Lifm;)Lkeh;
 
-    iget-object v2, v0, Lbeq;->a:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lbdu;
-
-    const/4 v3, 0x1
-
-    invoke-static {v2, v3}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lbeq;->b:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lbex;
-
-    const/4 v3, 0x2
-
-    invoke-static {v2, v3}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    const/4 v2, 0x3
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v2}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lbez;
-
-    const/4 v3, 0x4
-
-    move-object/from16 v0, p2
-
-    invoke-static {v0, v3}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/concurrent/Executor;
-
-    const/4 v4, 0x5
-
-    move-object/from16 v0, p3
-
-    invoke-static {v0, v4}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lbdw;
-
-    const/4 v5, 0x6
-
-    move-object/from16 v0, p4
-
-    invoke-static {v0, v5}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lbea;
-
-    const/4 v6, 0x7
-
-    move-object/from16 v0, p5
-
-    invoke-static {v0, v6}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lbew;
-
-    const/16 v7, 0x8
-
-    move-object/from16 v0, p6
-
-    invoke-static {v0, v7}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    const/16 v7, 0x9
-
-    move-object/from16 v0, p7
-
-    invoke-static {v0, v7}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lgwb;
-
-    const/16 v8, 0xa
-
-    move-object/from16 v0, p8
-
-    invoke-static {v0, v8}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lgwo;
-
-    const/16 v9, 0xb
-
-    move-object/from16 v0, p9
-
-    invoke-static {v0, v9}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Ljht;
-
-    const/16 v10, 0xc
-
-    move-object/from16 v0, p10
-
-    invoke-static {v0, v10}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Liau;
-
-    const/16 v11, 0xd
-
-    move-object/from16 v0, p11
-
-    invoke-static {v0, v11}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Liau;
-
-    const/16 v12, 0xe
-
-    move-object/from16 v0, p12
-
-    invoke-static {v0, v12}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Ljht;
-
-    const/16 v13, 0x12
-
-    move-object/from16 v0, p16
-
-    invoke-static {v0, v13}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v16
-
-    check-cast v16, Ljht;
-
-    const/16 v13, 0x13
-
-    move-object/from16 v0, p17
-
-    invoke-static {v0, v13}, Lbeq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v17
-
-    check-cast v17, Licz;
-
-    move/from16 v13, p13
-
-    move/from16 v14, p14
-
-    move/from16 v15, p15
-
-    invoke-direct/range {v1 .. v17}, Lber;-><init>(Lbez;Ljava/util/concurrent/Executor;Lbdw;Lbea;Lbew;Lgwb;Lgwo;Ljht;Liau;Liau;Ljht;ZIILjht;Licz;)V
-
-    return-object v1
+    return-object v0
 .end method

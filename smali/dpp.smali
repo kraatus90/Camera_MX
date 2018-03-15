@@ -1,54 +1,134 @@
 .class public final Ldpp;
-.super Ljava/lang/Object;
+.super Lidl;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final b:Lfsx;
+
+.field private final c:Lfsx;
+
+.field private final d:Lfsx;
+
+.field private final e:Lfsx;
+
+.field private final f:Lfsx;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "ZslHdrPSelect"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lick;Lfsx;Lfsx;Lfsx;Lfsx;Lfsx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lidl;-><init>(Lick;)V
 
-    iput-object p1, p0, Ldpp;->a:Ljxn;
+    iput-object p2, p0, Ldpp;->b:Lfsx;
+
+    iput-object p3, p0, Ldpp;->c:Lfsx;
+
+    iput-object p4, p0, Ldpp;->d:Lfsx;
+
+    iput-object p5, p0, Ldpp;->e:Lfsx;
+
+    iput-object p6, p0, Ldpp;->f:Lfsx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Ldpp;->a:Ljxn;
+    check-cast p1, Lftn;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Lftn;->ordinal()I
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lghg;
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v1, 0x0
+    new-instance v0, Ljava/lang/AssertionError;
 
-    new-array v1, v1, [Lghg;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-interface {v0, v1}, Lghg;->a([Lghg;)Lghe;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    move-result-object v2
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result-object v0
+    move-result v2
 
-    check-cast v0, Lghe;
+    add-int/lit8 v2, v2, 0x30
 
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Invalid AutoHdrPlusRecommendation enum instance:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+
+    :pswitch_0
+    iget-object v0, p0, Ldpp;->b:Lfsx;
+
+    :goto_0
     return-object v0
+
+    :pswitch_1
+    iget-object v0, p0, Ldpp;->c:Lfsx;
+
+    goto :goto_0
+
+    :pswitch_2
+    iget-object v0, p0, Ldpp;->d:Lfsx;
+
+    goto :goto_0
+
+    :pswitch_3
+    iget-object v0, p0, Ldpp;->e:Lfsx;
+
+    goto :goto_0
+
+    :pswitch_4
+    iget-object v0, p0, Ldpp;->f:Lfsx;
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
 .end method

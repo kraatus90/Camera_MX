@@ -1,60 +1,71 @@
 .class final Lza;
-.super Ljava/lang/Object;
+.super Labo;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lzi;
-
-.field private synthetic b:Lyq;
+.field private a:Landroid/hardware/Camera$CameraInfo;
 
 
 # direct methods
-.method constructor <init>(Lyq;Lzi;)V
+.method constructor <init>(Landroid/hardware/Camera$CameraInfo;)V
     .locals 0
 
-    iput-object p1, p0, Lza;->b:Lyq;
+    invoke-direct {p0}, Labo;-><init>()V
 
-    iput-object p2, p0, Lza;->a:Lzi;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lza;->a:Landroid/hardware/Camera$CameraInfo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a()Z
+    .locals 1
 
-    iget-object v0, p0, Lza;->b:Lyq;
+    iget-object v0, p0, Lza;->a:Landroid/hardware/Camera$CameraInfo;
 
-    iget-object v0, v0, Lyq;->c:Lyn;
+    iget v0, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
 
-    iget-object v0, v0, Lyn;->c:Lacn;
+    if-nez v0, :cond_0
 
-    const/16 v1, -0x10
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1}, Lacn;->b(I)Z
+    :goto_0
+    return v0
 
-    iget-object v0, p0, Lza;->b:Lyq;
+    :cond_0
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lyq;->c:Lyn;
+    goto :goto_0
+.end method
 
-    iget-object v0, v0, Lyn;->b:Lzb;
+.method public final b()Z
+    .locals 2
 
-    const/16 v1, 0x259
+    const/4 v0, 0x1
 
-    iget-object v2, p0, Lza;->a:Lzi;
+    iget-object v1, p0, Lza;->a:Landroid/hardware/Camera$CameraInfo;
 
-    invoke-virtual {v0, v1, v2}, Lzb;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    iget v1, v1, Landroid/hardware/Camera$CameraInfo;->facing:I
 
-    move-result-object v0
+    if-ne v1, v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    :goto_0
+    return v0
 
-    return-void
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    iget-object v0, p0, Lza;->a:Landroid/hardware/Camera$CameraInfo;
+
+    iget v0, v0, Landroid/hardware/Camera$CameraInfo;->orientation:I
+
+    return v0
 .end method

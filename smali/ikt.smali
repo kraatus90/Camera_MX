@@ -1,60 +1,54 @@
-.class final Likt;
+.class public final Likt;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Likv;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lilj;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lilj;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Likt;->a:Lilj;
+    iput-object p1, p0, Likt;->a:Lkgv;
+
+    iput-object p2, p0, Likt;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;Liml;Lilv;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Likt;->a:Lilj;
+    new-instance v2, Liks;
 
-    invoke-interface {v0, p1, p2}, Lilj;->a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lilf;
+    iget-object v0, p0, Likt;->a:Lkgv;
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lilf;->a()Ljuw;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Liku;
+    check-cast v0, Landroid/hardware/camera2/CameraManager;
 
-    invoke-direct {v1, p4, p3}, Liku;-><init>(Lilv;Liml;)V
+    iget-object v1, p0, Likt;->b:Lkgv;
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    move-result-object v1
 
-    return-void
-.end method
+    check-cast v1, Liku;
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    invoke-direct {v2, v0, v1}, Liks;-><init>(Landroid/hardware/camera2/CameraManager;Liku;)V
 
-    iget-object v0, p0, Likt;->a:Lilj;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v2
 .end method

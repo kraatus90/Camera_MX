@@ -1,51 +1,352 @@
-.class final synthetic Lfiz;
+.class final Lfiz;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lihg;
 
 
 # instance fields
-.field private a:Lfiw;
+.field private final a:Ljava/lang/Object;
+
+.field private final b:Ljava/util/Map;
+
+.field private final c:Ljava/util/Comparator;
 
 
 # direct methods
-.method constructor <init>(Lfiw;)V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfiz;->a:Lfiw;
+    sget-object v0, Lfja;->a:Ljava/util/Comparator;
+
+    iput-object v0, p0, Lfiz;->c:Ljava/util/Comparator;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lfiz;->b:Ljava/util/Map;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lfiz;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
+.method private final d(Lfgk;)Z
+    .locals 5
+
+    iget-wide v2, p1, Lfgk;->a:J
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/TreeSet;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, p1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final a(Ljava/lang/Long;)Lfgk;
+    .locals 2
 
-    iget-object v0, p0, Lfiz;->a:Lfiw;
+    iget-object v1, p0, Lfiz;->a:Ljava/lang/Object;
 
-    iget-object v0, v0, Lfiw;->c:Ljht;
+    monitor-enter v1
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    :try_start_0
+    iget-object v0, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljxn;
+    check-cast v0, Ljava/util/TreeSet;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lglx;
+    check-cast v0, Lfgk;
 
-    iget-object v0, v0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    monitor-exit v1
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->d:Lgkx;
+    :goto_0
+    return-object v0
 
-    invoke-virtual {v0}, Lgkx;->a()V
+    :cond_0
+    monitor-exit v1
+
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Lfgk;
+
+    invoke-virtual {p0, p1}, Lfiz;->b(Lfgk;)V
 
     return-void
+.end method
+
+.method public final a(Lfgk;)Z
+    .locals 2
+
+    iget-object v1, p0, Lfiz;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-direct {p0, p1}, Lfiz;->d(Lfgk;)Z
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final b(Lfgk;)V
+    .locals 4
+
+    iget-wide v0, p1, Lfgk;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lfiz;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v2, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-interface {v2, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-interface {v2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/TreeSet;
+
+    invoke-virtual {v0, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    :goto_0
+    monitor-exit v1
+
+    return-void
+
+    :cond_0
+    new-instance v2, Ljava/util/TreeSet;
+
+    iget-object v3, p0, Lfiz;->c:Ljava/util/Comparator;
+
+    invoke-direct {v2, v3}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
+
+    invoke-virtual {v2, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v3, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-interface {v3, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method final c(Lfgk;)Ljava/util/TreeSet;
+    .locals 10
+
+    new-instance v1, Ljava/util/TreeSet;
+
+    iget-object v0, p0, Lfiz;->c:Ljava/util/Comparator;
+
+    invoke-direct {v1, v0}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
+
+    iget-object v2, p0, Lfiz;->a:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v0, p0, Lfiz;->b:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :cond_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :cond_1
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfgk;
+
+    iget-wide v6, v0, Lfgk;->b:J
+
+    iget-wide v8, p1, Lfgk;->b:J
+
+    cmp-long v5, v6, v8
+
+    if-gez v5, :cond_1
+
+    invoke-virtual {v1, v0}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_2
+    :try_start_1
+    invoke-virtual {v1}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfgk;
+
+    invoke-direct {p0, v0}, Lfiz;->d(Lfgk;)Z
+
+    goto :goto_1
+
+    :cond_3
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-object v1
 .end method

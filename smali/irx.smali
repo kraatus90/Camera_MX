@@ -1,256 +1,118 @@
-.class public final Lirx;
+.class final Lirx;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+.implements Lire;
 
 
 # instance fields
-.field public final a:Ljava/io/Writer;
+.field private final synthetic a:Lirf;
 
-.field private b:Ljava/util/concurrent/Executor;
-
-.field private c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+.field private final synthetic b:Liru;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljava/io/Writer;Ljava/util/concurrent/Executor;)V
+.method constructor <init>(Liru;Lirf;)V
     .locals 0
 
+    iput-object p1, p0, Lirx;->b:Liru;
+
+    iput-object p2, p0, Lirx;->a:Lirf;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    iput-object p2, p0, Lirx;->a:Ljava/io/Writer;
-
-    iput-object p3, p0, Lirx;->b:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getAssignmentCount(Ljfs;)I
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0, p1}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getAssignmentCount(Ljfs;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getCapacity()I
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getCapacity()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getColumnCount()I
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getColumnCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getColumnValues(Ljfs;)[Lcom/google/android/libraries/smartburst/utils/Feature;
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0, p1}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getColumnValues(Ljfs;)[Lcom/google/android/libraries/smartburst/utils/Feature;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getEarliestTimestamp()J
-    .locals 2
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getEarliestTimestamp()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final getFeature(JLjfs;)Lcom/google/android/libraries/smartburst/utils/Feature;
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getFeature(JLjfs;)Lcom/google/android/libraries/smartburst/utils/Feature;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getFeatureCount()I
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getFeatureCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getFeatureTypes()Ljava/util/EnumSet;
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getFeatureTypes()Ljava/util/EnumSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getFrameRate()F
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getFrameRate()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getLatestValidTimestamp()J
-    .locals 2
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getLatestValidTimestamp()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final getNumRowsWithData()I
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getNumRowsWithData()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getRowCount()I
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getRowForTimestamp(J)Lirs;
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0, p1, p2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowForTimestamp(J)Lirs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getRowIterator(J)Lirt;
-    .locals 1
-
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
-
-    invoke-interface {v0, p1, p2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowIterator(J)Lirt;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final setFeatureValue(JLcom/google/android/libraries/smartburst/utils/Feature;)Z
+.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Liqz;
     .locals 3
 
-    iget-object v0, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    check-cast p1, Lirb;
 
-    invoke-interface {v0, p1, p2, p3}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->setFeatureValue(JLcom/google/android/libraries/smartburst/utils/Feature;)Z
+    iget-object v0, p0, Lirx;->a:Lirf;
 
-    move-result v0
+    invoke-virtual {v0}, Lirf;->a()Lirc;
 
-    iget-object v1, p0, Lirx;->b:Ljava/util/concurrent/Executor;
+    move-result-object v0
 
-    new-instance v2, Liry;
+    invoke-static {p1}, Lihr;->a(Ljava/lang/Throwable;)Lipn;
 
-    invoke-direct {v2, p0, p1, p2, p3}, Liry;-><init>(Lirx;JLcom/google/android/libraries/smartburst/utils/Feature;)V
+    move-result-object v1
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-static {p1}, Lihr;->b(Ljava/lang/Throwable;)Lipn;
 
-    return v0
+    move-result-object v2
+
+    invoke-virtual {v0, p2, v1, v2}, Lirc;->a(Ljava/util/concurrent/Executor;Lipn;Lipn;)Liqz;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public final toString()Ljava/lang/String;
     .locals 4
 
-    const-string v0, "[%s: %s]"
+    iget-object v0, p0, Lirx;->b:Liru;
 
-    const/4 v1, 0x2
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result-object v0
 
-    const/4 v2, 0x0
+    iget-object v1, p0, Lirx;->a:Lirf;
 
-    const-string v3, "LoggingFeatureTable"
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
-    const/4 v2, 0x1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v3, p0, Lirx;->c:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0xc
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v1, v2
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, "thenAlways["
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

@@ -1,117 +1,77 @@
-.class final synthetic Lbxr;
+.class public final Lbxr;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lchj;
+.field private final a:Lkgv;
 
-.field private b:Liiy;
-
-.field private c:Lchv;
-
-.field private d:Ljuw;
-
-.field private e:Ldol;
-
-.field private f:Lghe;
-
-.field private g:Liau;
-
-.field private h:Ldiv;
-
-.field private i:Ldlv;
-
-.field private j:Lbpn;
-
-.field private k:Lbpp;
-
-.field private l:Lijc;
-
-.field private m:Lijh;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lchj;Liiy;Lchv;Ljuw;Ldol;Lghe;Liau;Ldiv;Ldlv;Lbpn;Lbpp;Lijc;Lijh;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbxr;->a:Lchj;
+    iput-object p1, p0, Lbxr;->a:Lkgv;
 
-    iput-object p2, p0, Lbxr;->b:Liiy;
-
-    iput-object p3, p0, Lbxr;->c:Lchv;
-
-    iput-object p4, p0, Lbxr;->d:Ljuw;
-
-    iput-object p5, p0, Lbxr;->e:Ldol;
-
-    iput-object p6, p0, Lbxr;->f:Lghe;
-
-    iput-object p7, p0, Lbxr;->g:Liau;
-
-    iput-object p8, p0, Lbxr;->h:Ldiv;
-
-    iput-object p9, p0, Lbxr;->i:Ldlv;
-
-    iput-object p10, p0, Lbxr;->j:Lbpn;
-
-    iput-object p11, p0, Lbxr;->k:Lbpp;
-
-    iput-object p12, p0, Lbxr;->l:Lijc;
-
-    iput-object p13, p0, Lbxr;->m:Lijh;
+    iput-object p2, p0, Lbxr;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 14
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v13, p0, Lbxr;->a:Lchj;
+    iget-object v0, p0, Lbxr;->a:Lkgv;
 
-    iget-object v1, p0, Lbxr;->b:Liiy;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v2, p0, Lbxr;->c:Lchv;
+    move-result-object v0
 
-    iget-object v3, p0, Lbxr;->d:Ljuw;
+    check-cast v0, Laxf;
 
-    iget-object v4, p0, Lbxr;->e:Ldol;
+    iget-object v1, p0, Lbxr;->b:Lkgv;
 
-    iget-object v5, p0, Lbxr;->f:Lghe;
+    invoke-virtual {v0}, Laxf;->ordinal()I
 
-    iget-object v6, p0, Lbxr;->g:Liau;
+    move-result v0
 
-    iget-object v8, p0, Lbxr;->h:Ldiv;
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v7, p0, Lbxr;->i:Ldlv;
+    sget-object v0, Lbaw;->a:Lbaw;
 
-    iget-object v9, p0, Lbxr;->j:Lbpn;
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v10, p0, Lbxr;->k:Lbpp;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v11, p0, Lbxr;->l:Lijc;
+    move-result-object v0
 
-    iget-object v12, p0, Lbxr;->m:Lijh;
+    check-cast v0, Liac;
 
-    new-instance v0, Lchl;
+    return-object v0
 
-    invoke-static {v6, v8}, Lbxo;->a(Liau;Ldiv;)Liau;
+    :pswitch_0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-static {}, Lbwq;->b()Ljava/util/concurrent/Executor;
+    check-cast v0, Liac;
 
-    move-result-object v8
+    goto :goto_0
 
-    invoke-direct/range {v0 .. v12}, Lchl;-><init>(Liiy;Lchv;Ljuw;Ldol;Lghe;Liau;Ldlv;Ljava/util/concurrent/Executor;Lbpn;Lbpp;Lijc;Lijh;)V
+    nop
 
-    iput-object v0, v13, Lchj;->a:Lchi;
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

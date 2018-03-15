@@ -1,21 +1,14 @@
-.class public final Lbih;
-.super Ljava/lang/RuntimeException;
+.class public interface abstract Lbih;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lihb;
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a()Lkeh;
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    return-void
+.method public abstract b()Z
 .end method

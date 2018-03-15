@@ -1,20 +1,20 @@
-.class final Ldfu;
+.class public final Ldfu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:Ldft;
+.field private final synthetic a:Lhcu;
 
 
 # direct methods
-.method constructor <init>(Ldft;)V
+.method public constructor <init>(Lhcu;)V
     .locals 0
 
-    iput-object p1, p0, Ldfu;->a:Ldft;
+    iput-object p1, p0, Ldfu;->a:Lhcu;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,38 +23,24 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 2
 
-    iget-object v0, p0, Ldfu;->a:Ldft;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Ldft;->a:Ldfq;
+    iget-object v0, p0, Ldfu;->a:Lhcu;
 
-    iget-object v0, v0, Ldfq;->e:Lddd;
+    iget-object v0, v0, Lhcu;->g:Ldzh;
 
-    invoke-interface {v0}, Lddd;->c()V
+    invoke-virtual {v0, v1}, Ldzh;->c(Z)V
 
-    iget-object v0, p0, Ldfu;->a:Ldft;
+    iget-object v0, p0, Ldfu;->a:Lhcu;
 
-    iget-object v0, v0, Ldft;->a:Ldfq;
+    iget-object v0, v0, Lhcu;->g:Ldzh;
 
-    iget-object v0, v0, Ldfq;->f:Layp;
+    invoke-virtual {v0, v1}, Ldzh;->e(Z)V
 
-    new-instance v1, Ldfv;
-
-    invoke-direct {v1, p0}, Ldfv;-><init>(Ldfu;)V
-
-    invoke-interface {v0, v1}, Layp;->a(Lbaw;)Ljuw;
-
-    move-result-object v0
-
-    new-instance v1, Ldfw;
-
-    invoke-direct {v1, p0}, Ldfw;-><init>(Ldfu;)V
-
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method

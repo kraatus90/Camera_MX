@@ -8,7 +8,7 @@
 
 .field public b:Ljava/util/concurrent/locks/Lock;
 
-.field public c:Leua;
+.field public c:Ldzd;
 
 .field private d:Landroid/graphics/Paint;
 
@@ -125,7 +125,7 @@
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/tinyplanet/TinyPlanetPreview;->c:Leua;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/tinyplanet/TinyPlanetPreview;->c:Ldzd;
 
     if-eqz v0, :cond_0
 
@@ -139,13 +139,13 @@
 
     if-lez v0, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/tinyplanet/TinyPlanetPreview;->c:Leua;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/tinyplanet/TinyPlanetPreview;->c:Ldzd;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/tinyplanet/TinyPlanetPreview;->c:Leua;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/tinyplanet/TinyPlanetPreview;->c:Ldzd;
 
-    invoke-interface {v1, v0}, Leua;->a(I)V
+    invoke-interface {v1, v0}, Ldzd;->a(I)V
 
     :cond_0
     return-void

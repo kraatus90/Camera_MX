@@ -1,43 +1,39 @@
-.class final synthetic Liat;
+.class public final Liat;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private a:Lias;
-
-.field private b:Ljkv;
+.source "PG"
 
 
 # direct methods
-.method constructor <init>(Lias;Ljkv;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liat;->a:Lias;
-
-    iput-object p2, p0, Liat;->b:Ljkv;
-
     return-void
 .end method
 
-
-# virtual methods
-.method public final run()V
+.method public static a(Liaw;Ljava/lang/String;)Landroid/os/Handler;
     .locals 2
 
-    iget-object v0, p0, Liat;->a:Lias;
+    new-instance v0, Landroid/os/HandlerThread;
 
-    iget-object v1, p0, Liat;->b:Ljkv;
+    invoke-direct {v0, p1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, v0, Lias;->a:Liar;
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    iget-object v0, v0, Liar;->c:Licn;
+    new-instance v1, Liau;
 
-    invoke-interface {v0, v1}, Licn;->a(Ljava/lang/Object;)V
+    invoke-direct {v1, v0}, Liau;-><init>(Landroid/os/HandlerThread;)V
 
-    return-void
+    invoke-virtual {p0, v1}, Liaw;->a(Lihb;)Lihb;
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    return-object v1
 .end method

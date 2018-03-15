@@ -1,45 +1,68 @@
-.class final Lfbz;
-.super Lfdx;
+.class public final Lfbz;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfby;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfby;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfbz;->a:Lfby;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfdx;-><init>(Lfdw;)V
+    iput-object p1, p0, Lfbz;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfbz;
+    .locals 1
+
+    new-instance v0, Lfbz;
+
+    invoke-direct {v0, p0}, Lfbz;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final G()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfbz;->a:Lfby;
+    iget-object v0, p0, Lfbz;->a:Lkgv;
 
-    iget-object v0, v0, Lfby;->a:Lgvj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lfdx;->G()V
+    check-cast v0, Lfhq;
 
-    iget-object v0, p0, Lfbz;->a:Lfby;
+    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuh;
 
-    iget-object v0, v0, Lfby;->a:Lgvj;
+    move-result-object v0
 
-    iget-object v1, p0, Lfbz;->a:Lfby;
+    invoke-static {v0}, Lffm;->a(Ljava/util/Collection;)Lfhm;
 
-    iget-object v1, v1, Lfby;->c:Lgvl;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
 
-    return-void
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
 .end method

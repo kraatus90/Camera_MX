@@ -1,27 +1,76 @@
 .class final Ljgc;
-.super Ljfy;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljfy;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(FFF)F
-    .locals 1
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    sub-float v0, p2, p1
+    const v4, 0x3f19999a    # 0.6f
 
-    mul-float/2addr v0, p3
+    const-class v0, Ljjz;
 
-    add-float/2addr v0, p1
+    const-string v1, "auc_quality"
 
-    return v0
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljjz;
+
+    new-instance v2, Ljkb;
+
+    invoke-direct {v2}, Ljkb;-><init>()V
+
+    const-class v1, Ljjz;
+
+    const-string v3, "time_gap_score"
+
+    invoke-virtual {p1, v1, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljjz;
+
+    const/high16 v3, 0x41a00000    # 20.0f
+
+    invoke-virtual {v2, v1, v3}, Ljkb;->a(Ljjz;F)Ljkb;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljkb;->a()Ljka;
+
+    move-result-object v1
+
+    new-instance v2, Ljkb;
+
+    invoke-direct {v2}, Ljkb;-><init>()V
+
+    invoke-virtual {v2, v0, v4}, Ljkb;->a(Ljjz;F)Ljkb;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1, v4}, Ljkb;->a(Ljjz;F)Ljkb;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljkb;->a()Ljka;
+
+    move-result-object v0
+
+    return-object v0
 .end method

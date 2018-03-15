@@ -1,26 +1,54 @@
-.class public interface abstract Lbvl;
+.class public final Lbvl;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+
+# direct methods
+.method public constructor <init>(Lkgv;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbvl;->a:Lkgv;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract a(Lacf;)V
-.end method
+    iget-object v0, p0, Lbvl;->a:Lkgv;
 
-.method public abstract b(I)Lace;
-.end method
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-.method public abstract b(Lacf;)V
-.end method
+    move-result-object v0
 
-.method public abstract b()Z
-.end method
+    check-cast v0, Lbvg;
 
-.method public abstract c(I)V
-.end method
+    const-string v1, "audio"
 
-.method public abstract d(I)V
+    invoke-virtual {v0, v1}, Lbvg;->a(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManager;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManager;
+
+    return-object v0
 .end method

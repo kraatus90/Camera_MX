@@ -1,72 +1,44 @@
-.class public final Ldzn;
+.class final Ldzn;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Ldzh;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Ldzh;)V
     .locals 0
 
+    iput-object p1, p0, Ldzn;->a:Ldzh;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldzn;->a:Ljxn;
-
-    iput-object p2, p0, Ldzn;->b:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldzn;
-
-    invoke-direct {v0, p0, p1}, Ldzn;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Ldzn;->a:Ljxn;
+    iget-object v0, p0, Ldzn;->a:Ldzh;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldzh;->b:Lbyy;
 
-    move-result-object v0
+    iget-object v1, p0, Ldzn;->a:Ldzh;
 
-    check-cast v0, Ldyt;
+    iget-object v1, v1, Ldzh;->Q:Laxf;
 
-    iget-object v1, p0, Ldzn;->b:Ljxn;
+    invoke-interface {v0, v1}, Lbyy;->a(Laxf;)V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Ldzn;->a:Ldzh;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ldzh;->f()V
 
-    check-cast v1, Ldzd;
-
-    new-instance v2, Ldyy;
-
-    invoke-direct {v2, v0, v0, v1}, Ldyy;-><init>(Ldyo;Ldyo;Ldza;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldyy;
-
-    return-object v0
+    return-void
 .end method

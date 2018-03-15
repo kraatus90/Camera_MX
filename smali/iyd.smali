@@ -1,27 +1,47 @@
-.class final Liyd;
+.class public final Liyd;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:I
-
-.field public final b:Liye;
-
-.field public final c:Ljava/lang/String;
+# interfaces
+.implements Lire;
+.implements Liug;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Liye;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Liyd;->a:I
-
-    iput-object p2, p0, Liyd;->c:Ljava/lang/String;
-
-    iput-object p3, p0, Liyd;->b:Liye;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Liqz;
+    .locals 1
+
+    check-cast p1, Lits;
+
+    invoke-virtual {p1}, Lits;->b()Liuy;
+
+    move-result-object v0
+
+    check-cast v0, Liut;
+
+    invoke-interface {v0}, Liut;->a()Lirc;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Livb;)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
 .end method

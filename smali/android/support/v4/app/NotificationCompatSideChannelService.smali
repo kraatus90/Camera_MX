@@ -91,34 +91,20 @@
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 3
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "android.support.BIND_NOTIFICATION_SIDE_CHANNEL"
+    const-string v1, "android.support.BIND_NOTIFICATION_SIDE_CHANNEL"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x13
-
-    if-le v1, v2, :cond_1
+    if-eqz v0, :cond_0
 
     :cond_0
-    :goto_0
-    return-object v0
-
-    :cond_1
-    new-instance v0, Landroid/support/v4/app/NotificationCompatSideChannelService$NotificationSideChannelStub;
-
-    invoke-direct {v0, p0}, Landroid/support/v4/app/NotificationCompatSideChannelService$NotificationSideChannelStub;-><init>(Landroid/support/v4/app/NotificationCompatSideChannelService;)V
-
-    goto :goto_0
+    return-object v2
 .end method

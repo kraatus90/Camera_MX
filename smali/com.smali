@@ -1,126 +1,88 @@
-.class public final Lcom;
+.class final Lcom;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
+.field private final synthetic a:Lcol;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lcol;)V
     .locals 0
 
+    iput-object p1, p0, Lcom;->a:Lcol;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom;->a:Ljxn;
-
-    iput-object p2, p0, Lcom;->b:Ljxn;
-
-    iput-object p3, p0, Lcom;->c:Ljxn;
-
-    iput-object p4, p0, Lcom;->d:Ljxn;
-
-    iput-object p5, p0, Lcom;->e:Ljxn;
-
-    iput-object p6, p0, Lcom;->f:Ljxn;
-
-    iput-object p7, p0, Lcom;->g:Ljxn;
-
-    iput-object p8, p0, Lcom;->h:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lcom;->a:Ljxn;
+    iget-object v0, p0, Lcom;->a:Lcol;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lcol;->c:Landroid/widget/Scroller;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
-    check-cast v0, Lgds;
+    move-result v0
 
-    iget-object v1, p0, Lcom;->b:Ljxn;
+    if-nez v0, :cond_0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/filmstrip/widget/FilmstripView;->a:Ljava/lang/String;
 
-    move-result-object v1
+    const-string v1, "[fling] onScrollEnd from computeScrollOffset"
 
-    check-cast v1, Ldii;
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom;->c:Ljxn;
+    iget-object v0, p0, Lcom;->a:Lcol;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lcol;->b:Lcop;
 
-    iget-object v2, p0, Lcom;->d:Ljxn;
+    invoke-virtual {v0}, Lcop;->a()V
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    :goto_0
+    return-void
 
-    move-result-object v2
+    :cond_0
+    iget-object v0, p0, Lcom;->a:Lcol;
 
-    check-cast v2, Lcpb;
+    iget-object v0, v0, Lcol;->b:Lcop;
 
-    iget-object v3, p0, Lcom;->e:Ljxn;
+    iget-object v1, p0, Lcom;->a:Lcol;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, v1, Lcol;->c:Landroid/widget/Scroller;
 
-    move-result-object v3
+    invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrX()I
 
-    check-cast v3, Licz;
+    move-result v1
 
-    iget-object v4, p0, Lcom;->f:Ljxn;
+    iget-object v2, p0, Lcom;->a:Lcol;
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, v2, Lcol;->c:Landroid/widget/Scroller;
 
-    move-result-object v4
+    invoke-virtual {v2}, Landroid/widget/Scroller;->getCurrY()I
 
-    check-cast v4, Lbpv;
+    invoke-virtual {v0, v1}, Lcop;->a(I)V
 
-    iget-object v5, p0, Lcom;->g:Ljxn;
+    iget-object v0, p0, Lcom;->a:Lcol;
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lcol;->a:Landroid/os/Handler;
 
-    iget-object v5, p0, Lcom;->h:Ljxn;
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lcom;->a:Lcol;
 
-    move-result-object v5
+    iget-object v0, v0, Lcol;->a:Landroid/os/Handler;
 
-    check-cast v5, Ldig;
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-static/range {v0 .. v5}, Lccv;->a(Lgds;Ldii;Lcpb;Licz;Lbpv;Ldig;)Lcom/google/googlex/gcam/Gcam;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlex/gcam/Gcam;
-
-    return-object v0
+    goto :goto_0
 .end method

@@ -1,198 +1,186 @@
 .class final Ljnh;
-.super Ljle;
+.super Ljnm;
 .source "PG"
 
 
-# instance fields
-.field private transient a:Ljava/lang/Object;
-
-.field private transient b:I
-
-
 # direct methods
-.method constructor <init>(Ljava/lang/Object;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    invoke-direct {p0}, Ljle;-><init>()V
+    const/4 v0, 0x0
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljnh;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method constructor <init>(Ljava/lang/Object;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljle;-><init>()V
-
-    iput-object p1, p0, Ljnh;->a:Ljava/lang/Object;
-
-    iput p2, p0, Ljnh;->b:I
+    invoke-direct {p0, p1, v0}, Ljnm;-><init>(Ljava/lang/String;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a([Ljava/lang/Object;I)I
-    .locals 1
+.method public final synthetic a(Ljava/io/DataInputStream;)Ljava/lang/Object;
+    .locals 8
 
-    iget-object v0, p0, Ljnh;->a:Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    aput-object v0, p1, p2
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
-    add-int/lit8 v0, p2, 0x1
+    move-result v4
 
-    return v0
-.end method
+    new-instance v5, Ljava/util/ArrayList;
 
-.method public final a()Ljoe;
-    .locals 1
+    invoke-direct {v5, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    iget-object v0, p0, Ljnh;->a:Ljava/lang/Object;
+    move v3, v2
 
-    invoke-static {v0}, Liui;->e(Ljava/lang/Object;)Ljoe;
+    :goto_0
+    if-ge v3, v4, :cond_2
 
-    move-result-object v0
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
-    return-object v0
-.end method
+    move-result v6
 
-.method final c()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljnh;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readBoolean()Z
 
     move-result v0
-
-    return v0
-.end method
-
-.method final d()Z
-    .locals 1
-
-    iget v0, p0, Ljnh;->b:I
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method final e()Ljkv;
-    .locals 1
-
-    iget-object v0, p0, Ljnh;->a:Ljava/lang/Object;
-
-    invoke-static {v0}, Ljkv;->a(Ljava/lang/Object;)Ljkv;
+    invoke-static {v6}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    return-object v0
+    :goto_1
+    move v1, v2
+
+    :goto_2
+    if-ge v1, v6, :cond_1
+
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readByte()B
+
+    move-result v7
+
+    invoke-virtual {v0, v7}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_0
+    invoke-static {v6}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+
+    invoke-interface {v5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    goto :goto_0
+
+    :cond_2
+    return-object v5
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public final a(Ljava/lang/Object;Ljava/io/DataOutputStream;)V
+    .locals 3
 
-    iget v0, p0, Ljnh;->b:I
+    instance-of v0, p1, Ljava/util/List;
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Ljnh;->a:Ljava/lang/Object;
+    new-instance v0, Ljava/io/IOException;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    const-string v1, "Incorrect type for serialization"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    check-cast p1, Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    iput v0, p0, Ljnh;->b:I
+    if-lez v0, :cond_1
 
-    :cond_0
-    return v0
-.end method
+    const/4 v0, 0x0
 
-.method public final synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    iget-object v0, p0, Ljnh;->a:Ljava/lang/Object;
-
-    invoke-static {v0}, Liui;->e(Ljava/lang/Object;)Ljoe;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    instance-of v0, v0, Ljava/nio/ByteBuffer;
 
-.method public final size()I
-    .locals 1
+    if-nez v0, :cond_1
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/io/IOException;
 
-    return v0
-.end method
+    const-string v1, "Incorrect type for serialization"
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, p0, Ljnh;->a:Ljava/lang/Object;
+    throw v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    :cond_1
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p2, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    :cond_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, 0x2
+    if-eqz v0, :cond_3
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "["
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "]"
+    check-cast v0, Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v2
 
-    move-result-object v0
+    invoke-virtual {p2, v2}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->isDirect()Z
+
+    move-result v2
+
+    invoke-virtual {p2, v2}, Ljava/io/DataOutputStream;->writeBoolean(Z)V
+
+    :goto_0
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->hasRemaining()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v2
+
+    invoke-virtual {p2, v2}, Ljava/io/DataOutputStream;->writeByte(I)V
+
+    goto :goto_0
+
+    :cond_3
+    return-void
 .end method

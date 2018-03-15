@@ -2,136 +2,94 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public a:Lvm;
-
-.field public b:Lvm;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
+.field private final synthetic a:Lsq;
 
 
 # direct methods
-.method private constructor <init>(Lvm;Lvm;)V
+.method constructor <init>(Lsq;)V
     .locals 0
+
+    iput-object p1, p0, Lsr;->a:Lsq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lsr;->a:Lvm;
-
-    iput-object p2, p0, Lsr;->b:Lvm;
-
-    return-void
-.end method
-
-.method constructor <init>(Lvm;Lvm;IIII)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lsr;-><init>(Lvm;Lvm;)V
-
-    iput p3, p0, Lsr;->c:I
-
-    iput p4, p0, Lsr;->d:I
-
-    iput p5, p0, Lsr;->e:I
-
-    iput p6, p0, Lsr;->f:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final run()V
+    .locals 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lsr;->a:Lsq;
 
-    const-string v1, "ChangeInfo{oldHolder="
+    iget v0, v1, Lsq;->o:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Lsr;->a:Lvm;
+    :goto_0
+    return-void
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :pswitch_0
+    iget-object v0, v1, Lsq;->n:Landroid/animation/ValueAnimator;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    const-string v1, ", newHolder="
+    :pswitch_1
+    const/4 v0, 0x3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v0, v1, Lsq;->o:I
 
-    move-result-object v0
+    iget-object v2, v1, Lsq;->n:Landroid/animation/ValueAnimator;
 
-    iget-object v1, p0, Lsr;->b:Lvm;
+    const/4 v0, 0x2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-array v3, v0, [F
 
-    move-result-object v0
+    const/4 v4, 0x0
 
-    const-string v1, ", fromX="
+    iget-object v0, v1, Lsq;->n:Landroid/animation/ValueAnimator;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lsr;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, ", fromY="
+    check-cast v0, Ljava/lang/Float;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    move-result-object v0
+    move-result v0
 
-    iget v1, p0, Lsr;->d:I
+    aput v0, v3, v4
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    const/4 v4, 0x0
 
-    const-string v1, ", toX="
+    aput v4, v3, v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    move-result-object v0
+    iget-object v0, v1, Lsq;->n:Landroid/animation/ValueAnimator;
 
-    iget v1, p0, Lsr;->e:I
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    move-result-object v0
+    iget-object v0, v1, Lsq;->n:Landroid/animation/ValueAnimator;
 
-    const-string v1, ", toY="
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    move-result-object v0
-
-    iget v1, p0, Lsr;->f:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

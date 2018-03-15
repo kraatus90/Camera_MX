@@ -6,6 +6,3 @@
 # virtual methods
 .method public abstract a(Lckw;)V
 .end method
-
-.method public abstract a(Landroid/view/MotionEvent;)Z
-.end method

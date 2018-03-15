@@ -1,53 +1,58 @@
-.class public Lfdq;
-.super Lfdp;
+.class public final Lfdq;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final f:Ljava/lang/String;
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field public g:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public h:Lguc;
-
-.field public i:Ljht;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>(Lkgv;)V
+    .locals 0
 
-    const-string v0, "PanoStatechart"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lfdq;->f:Ljava/lang/String;
+    iput-object p1, p0, Lfdq;->a:Lkgv;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+.method public static a(Lkgv;)Lfdq;
+    .locals 1
 
-    invoke-direct {p0}, Lfdp;-><init>()V
+    new-instance v0, Lfdq;
 
-    return-void
+    invoke-direct {v0, p0}, Lfdq;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Ljht;)V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iput-object p1, p0, Lfdq;->g:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iget-object v0, p0, Lfdq;->a:Lkgv;
 
-    iput-object p2, p0, Lfdq;->h:Lguc;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iput-object p3, p0, Lfdq;->i:Ljht;
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lilz;
+
+    iget-object v0, v0, Lilz;->d:Lket;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkeh;
+
+    return-object v0
 .end method

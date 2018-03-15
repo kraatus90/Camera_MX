@@ -1,50 +1,24 @@
-.class public final Lhrj;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:[I
-
-.field public static final b:[J
-
-.field public static final c:[F
-
-.field public static final d:[Ljava/lang/String;
-
-.field public static final e:[[B
-
-.field public static final f:[B
+.class final Lhrj;
+.super Lhli;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>()V
+    .locals 0
 
-    const/4 v1, 0x0
-
-    new-array v0, v1, [I
-
-    sput-object v0, Lhrj;->a:[I
-
-    new-array v0, v1, [J
-
-    sput-object v0, Lhrj;->b:[J
-
-    new-array v0, v1, [F
-
-    sput-object v0, Lhrj;->c:[F
-
-    new-array v0, v1, [Ljava/lang/String;
-
-    sput-object v0, Lhrj;->d:[Ljava/lang/String;
-
-    new-array v0, v1, [[B
-
-    sput-object v0, Lhrj;->e:[[B
-
-    new-array v0, v1, [B
-
-    sput-object v0, Lhrj;->f:[B
+    invoke-direct {p0}, Lhli;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Landroid/content/Context;Landroid/os/Looper;Lhmq;Ljava/lang/Object;Lhln;Lhlo;)Lhlk;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
 .end method

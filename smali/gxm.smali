@@ -1,73 +1,126 @@
-.class final Lgxm;
+.class public final Lgxm;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:F
+.field private final a:Lkgv;
 
-.field public final b:F
+.field private final b:Lkgv;
 
-.field public final c:F
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(FF)V
-    .locals 2
-
-    const/high16 v1, 0x40400000    # 3.0f
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    mul-float v0, v1, p1
+    iput-object p1, p0, Lgxm;->a:Lkgv;
 
-    iput v0, p0, Lgxm;->a:F
+    iput-object p2, p0, Lgxm;->b:Lkgv;
 
-    sub-float v0, p2, p1
+    iput-object p3, p0, Lgxm;->c:Lkgv;
 
-    mul-float/2addr v0, v1
+    iput-object p4, p0, Lgxm;->d:Lkgv;
 
-    iget v1, p0, Lgxm;->a:F
+    iput-object p5, p0, Lgxm;->e:Lkgv;
 
-    sub-float/2addr v0, v1
+    iput-object p6, p0, Lgxm;->f:Lkgv;
 
-    iput v0, p0, Lgxm;->c:F
+    iput-object p7, p0, Lgxm;->g:Lkgv;
 
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    iget v1, p0, Lgxm;->a:F
-
-    sub-float/2addr v0, v1
-
-    iget v1, p0, Lgxm;->c:F
-
-    sub-float/2addr v0, v1
-
-    iput v0, p0, Lgxm;->b:F
+    iput-object p8, p0, Lgxm;->h:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)F
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 9
 
-    iget v0, p0, Lgxm;->b:F
+    new-instance v0, Lgxg;
 
-    mul-float/2addr v0, p1
+    iget-object v1, p0, Lgxm;->a:Lkgv;
 
-    iget v1, p0, Lgxm;->c:F
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    add-float/2addr v0, v1
+    move-result-object v1
 
-    mul-float/2addr v0, p1
+    check-cast v1, Liho;
 
-    iget v1, p0, Lgxm;->a:F
+    iget-object v2, p0, Lgxm;->b:Lkgv;
 
-    add-float/2addr v0, v1
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    mul-float/2addr v0, p1
+    move-result-object v2
 
-    return v0
+    check-cast v2, Lhev;
+
+    iget-object v3, p0, Lgxm;->c:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lgro;
+
+    iget-object v4, p0, Lgxm;->d:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lfxx;
+
+    iget-object v5, p0, Lgxm;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcom/google/android/apps/camera/stats/Instrumentation;
+
+    iget-object v6, p0, Lgxm;->f:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+
+    iget-object v7, p0, Lgxm;->g:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lgxo;
+
+    iget-object v8, p0, Lgxm;->h:Lkgv;
+
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lihs;
+
+    invoke-direct/range {v0 .. v8}, Lgxg;-><init>(Liho;Lhev;Lgro;Lfxx;Lcom/google/android/apps/camera/stats/Instrumentation;Lcom/google/android/apps/camera/ui/views/MainActivityLayout;Lgxo;Lihs;)V
+
+    return-object v0
 .end method

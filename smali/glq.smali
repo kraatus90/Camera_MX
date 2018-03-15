@@ -1,52 +1,41 @@
-.class final Lglq;
+.class public final Lglq;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
 
 # instance fields
-.field private synthetic a:Lgll;
+.field private final a:Ljava/lang/String;
+
+.field private final b:Liih;
 
 
 # direct methods
-.method constructor <init>(Lgll;)V
+.method public constructor <init>(Ljava/lang/String;Liih;)V
     .locals 0
 
-    iput-object p1, p0, Lglq;->a:Lgll;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lglq;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lglq;->b:Liih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public final a()V
+    .locals 4
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    iget-object v0, p0, Lglq;->b:Liih;
 
-    move-result-object v0
+    iget-object v1, p0, Lglq;->a:Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/Float;
+    const/4 v2, 0x7
 
-    iget-object v1, p0, Lglq;->a:Lgll;
+    const/4 v3, 0x0
 
-    iget-object v1, v1, Lgll;->b:Lgmu;
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Lgmu;->a(F)V
-
-    iget-object v0, p0, Lglq;->a:Lgll;
-
-    iget-object v0, v0, Lgll;->a:Landroid/graphics/drawable/ShapeDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->invalidateSelf()V
+    invoke-interface {v0, v1, v2, v3}, Liih;->a(Ljava/lang/String;IF)V
 
     return-void
 .end method

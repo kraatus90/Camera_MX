@@ -1,95 +1,116 @@
-.class final Ldpc;
+.class public final Ldpc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldom;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Lkgv;
 
-.field private b:Ldom;
-
-.field private synthetic c:Ldpb;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldpb;Ldom;)V
-    .locals 2
-
-    iput-object p1, p0, Ldpc;->c:Ldpb;
+.method public constructor <init>(Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Ldpc;->a:Lkgv;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Ldpc;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p2, p0, Ldpc;->b:Ldom;
+    iput-object p2, p0, Ldpc;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;Lggt;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 15
 
-    iget-object v0, p0, Ldpc;->b:Ldom;
+    iget-object v0, p0, Ldpc;->a:Lkgv;
 
-    invoke-interface {v0, p1, p2}, Ldom;->a(Ljava/util/List;Lggt;)V
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 3
-
-    const/4 v0, 0x1
-
-    iget-object v1, p0, Ldpc;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Ldpc;->c:Ldpb;
-
-    iget-object v1, v1, Ldpb;->a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result v1
-
-    iget-object v2, p0, Ldpc;->c:Ldpb;
-
-    iget-object v2, v2, Ldpb;->b:Liag;
-
-    if-nez v1, :cond_1
-
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Liag;->a(Ljava/lang/Object;)V
+    move-object v13, v0
 
-    iget-object v0, p0, Ldpc;->b:Ldom;
+    check-cast v13, Ldpl;
 
-    invoke-interface {v0}, Ldom;->close()V
+    iget-object v0, p0, Ldpc;->b:Lkgv;
 
-    :cond_0
-    return-void
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    :cond_1
-    const/4 v0, 0x0
+    move-result-object v0
 
-    goto :goto_0
+    move-object v11, v0
+
+    check-cast v11, Ldqw;
+
+    invoke-static {}, Lffm;->b()Lfhm;
+
+    move-result-object v0
+
+    iget-object v1, v11, Ldqw;->e:Lkeh;
+
+    new-instance v2, Ldqx;
+
+    invoke-direct {v2, v0}, Ldqx;-><init>(Lfhm;)V
+
+    sget-object v0, Lken;->a:Lken;
+
+    invoke-static {v1, v2, v0}, Lkcv;->a(Lkeh;Ljqv;Ljava/util/concurrent/Executor;)Lkeh;
+
+    move-result-object v7
+
+    new-instance v14, Ldrc;
+
+    new-instance v0, Ldpy;
+
+    iget-object v1, v11, Ldqw;->a:Lihs;
+
+    iget-object v2, v11, Ldqw;->b:Liho;
+
+    iget-object v3, v11, Ldqw;->i:Ldpa;
+
+    iget-object v4, v11, Ldqw;->c:Lfia;
+
+    iget-object v5, v11, Ldqw;->d:Lffz;
+
+    iget-object v6, v11, Ldqw;->e:Lkeh;
+
+    iget-object v8, v11, Ldqw;->f:Lfce;
+
+    iget-object v9, v11, Ldqw;->g:Lfcc;
+
+    iget-object v10, v11, Ldqw;->h:Lfri;
+
+    iget-object v11, v11, Ldqw;->j:Lfcp;
+
+    const/4 v12, 0x1
+
+    invoke-direct/range {v0 .. v12}, Ldpy;-><init>(Lihs;Liho;Ldpa;Lfia;Lffz;Lkeh;Lkeh;Lfce;Lfcc;Lfri;Lfdg;I)V
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x0
+
+    invoke-direct {v14, v0, v1, v2}, Ldrc;-><init>(Lfsx;IZ)V
+
+    invoke-virtual {v13, v14}, Ldpl;->a(Lfsx;)Lfsx;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfsx;
+
+    return-object v0
 .end method

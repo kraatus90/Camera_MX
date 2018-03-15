@@ -1,14 +1,20 @@
-.class public final Lgyu;
+.class final Lgyu;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lihg;
+
+
+# instance fields
+.field private final synthetic a:Lgyt;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lgyt;)V
     .locals 0
+
+    iput-object p1, p0, Lgyu;->a:Lgyt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,22 +23,31 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)V
     .locals 2
 
-    new-instance v0, Liag;
+    check-cast p1, Ljava/lang/Boolean;
 
-    sget-object v1, Lgys;->a:Lgys;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
+    move-result v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    if-eqz v0, :cond_0
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Lgyu;->a:Lgyt;
 
-    move-result-object v0
+    iget-object v0, v0, Lgyt;->b:Lfax;
 
-    check-cast v0, Liau;
+    iget-object v0, v0, Lfax;->a:Lick;
 
-    return-object v0
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lick;->a(Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
 .end method

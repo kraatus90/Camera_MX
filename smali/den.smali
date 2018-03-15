@@ -1,42 +1,36 @@
-.class public final Lden;
+.class final Lden;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lddv;
+.field private final synthetic a:Ldel;
 
 
 # direct methods
-.method public constructor <init>(Lddv;)V
+.method constructor <init>(Ldel;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lden;->a:Ldel;
 
-    iput-object p1, p0, Lden;->a:Lddv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lden;->a:Lddv;
+    iget-object v0, p0, Lden;->a:Ldel;
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, v0, Ldel;->q:Legm;
 
-    iget-object v0, v0, Lddv;->a:Lczt;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lczt;->a(Z)V
+    invoke-virtual {v0}, Lglb;->N()V
 
     return-void
 .end method

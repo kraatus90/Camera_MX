@@ -1,62 +1,173 @@
-.class final Labj;
-.super Ljava/lang/Object;
+.class public final enum Labj;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final enum a:Labj;
 
-# instance fields
-.field private synthetic a:Z
+.field public static final enum b:Labj;
 
-.field private synthetic b:Labe;
+.field public static final enum c:Labj;
+
+.field public static final enum d:Labj;
+
+.field public static final enum e:Labj;
+
+.field public static final enum f:Labj;
+
+.field public static final enum g:Labj;
+
+.field private static final synthetic h:[Labj;
 
 
 # direct methods
-.method constructor <init>(Labe;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
-    iput-object p1, p0, Labj;->b:Labe;
+    const/4 v7, 0x4
 
-    iput-boolean p2, p0, Labj;->a:Z
+    const/4 v6, 0x3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    new-instance v0, Labj;
+
+    const-string v1, "AUTO"
+
+    invoke-direct {v0, v1, v3}, Labj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labj;->a:Labj;
+
+    new-instance v0, Labj;
+
+    const-string v1, "CONTINUOUS_PICTURE"
+
+    invoke-direct {v0, v1, v4}, Labj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labj;->b:Labj;
+
+    new-instance v0, Labj;
+
+    const-string v1, "CONTINUOUS_VIDEO"
+
+    invoke-direct {v0, v1, v5}, Labj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labj;->c:Labj;
+
+    new-instance v0, Labj;
+
+    const-string v1, "EXTENDED_DOF"
+
+    invoke-direct {v0, v1, v6}, Labj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labj;->d:Labj;
+
+    new-instance v0, Labj;
+
+    const-string v1, "FIXED"
+
+    invoke-direct {v0, v1, v7}, Labj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labj;->e:Labj;
+
+    new-instance v0, Labj;
+
+    const-string v1, "INFINITY"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Labj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labj;->f:Labj;
+
+    new-instance v0, Labj;
+
+    const-string v1, "MACRO"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Labj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labj;->g:Labj;
+
+    const/4 v0, 0x7
+
+    new-array v0, v0, [Labj;
+
+    sget-object v1, Labj;->a:Labj;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Labj;->b:Labj;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Labj;->c:Labj;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Labj;->d:Labj;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Labj;->e:Labj;
+
+    aput-object v1, v0, v7
+
+    const/4 v1, 0x5
+
+    sget-object v2, Labj;->f:Labj;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    sget-object v2, Labj;->g:Labj;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Labj;->h:[Labj;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final run()V
-    .locals 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    iget-object v0, p0, Labj;->b:Labe;
+.method public static a(Ljava/lang/String;)Labj;
+    .locals 1
 
-    invoke-virtual {v0}, Labe;->h()Landroid/os/Handler;
+    const-class v0, Labj;
 
-    move-result-object v2
-
-    const/16 v3, 0x1f5
-
-    iget-boolean v0, p0, Labj;->a:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {v2, v3, v0, v1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    check-cast v0, Labj;
 
-    return-void
+    return-object v0
+.end method
 
-    :cond_0
-    move v0, v1
+.method public static values()[Labj;
+    .locals 1
 
-    goto :goto_0
+    sget-object v0, Labj;->h:[Labj;
+
+    invoke-virtual {v0}, [Labj;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Labj;
+
+    return-object v0
 .end method

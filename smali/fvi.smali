@@ -4,50 +4,63 @@
 
 
 # instance fields
-.field private a:Ljava/util/EnumSet;
+.field public final a:Lfvk;
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lfvk;III)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v0, Lfvh;
+    iput-object p1, p0, Lfvi;->a:Lfvk;
 
-    invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
+    iput p2, p0, Lfvi;->b:I
 
-    move-result-object v0
+    iput p3, p0, Lfvi;->c:I
 
-    iput-object v0, p0, Lfvi;->a:Ljava/util/EnumSet;
+    iput p4, p0, Lfvi;->d:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfvg;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    new-instance v0, Lfvg;
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Lfvi;->a:Ljava/util/EnumSet;
+    if-nez p1, :cond_1
 
-    invoke-static {v1}, Ljava/util/EnumSet;->copyOf(Ljava/util/EnumSet;)Ljava/util/EnumSet;
+    :cond_0
+    :goto_0
+    return v0
 
-    move-result-object v1
+    :cond_1
+    iget-object v1, p0, Lfvi;->a:Lfvk;
 
-    invoke-direct {v0, v1}, Lfvg;-><init>(Ljava/util/EnumSet;)V
+    check-cast p1, Lfvi;
 
-    return-object v0
+    iget-object v2, p1, Lfvi;->a:Lfvk;
+
+    if-ne v1, v2, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method
 
-.method public final a(Lfvh;)Lfvi;
+.method public final hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lfvi;->a:Ljava/util/EnumSet;
+    iget v0, p0, Lfvi;->b:I
 
-    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    return-object p0
+    return v0
 .end method

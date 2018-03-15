@@ -1,321 +1,263 @@
-.class public final Lhqy;
-.super Lhrd;
+.class public abstract Lhqy;
+.super Landroid/os/Binder;
 
-
-# static fields
-.field private static volatile c:[Lhqy;
-
-
-# instance fields
-.field public a:I
-
-.field public b:Lhqz;
+# interfaces
+.implements Lhqx;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
-    const/4 v1, 0x0
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    invoke-direct {p0}, Lhrd;-><init>()V
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
 
-    const/4 v0, 0x1
-
-    iput v0, p0, Lhqy;->a:I
-
-    iput-object v1, p0, Lhqy;->b:Lhqz;
-
-    iput-object v1, p0, Lhqy;->o:Lhrf;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lhqy;->p:I
+    invoke-virtual {p0, p0, v0}, Lhqy;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static b()[Lhqy;
+.method public static asInterface(Landroid/os/IBinder;)Lhqx;
     .locals 2
 
-    sget-object v0, Lhqy;->c:[Lhqy;
-
-    if-nez v0, :cond_1
-
-    sget-object v1, Lhrh;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    sget-object v0, Lhqy;->c:[Lhqy;
-
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
-    new-array v0, v0, [Lhqy;
-
-    sput-object v0, Lhqy;->c:[Lhqy;
-
-    :cond_0
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_1
-    sget-object v0, Lhqy;->c:[Lhqy;
-
+    :goto_0
     return-object v0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    throw v0
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    instance-of v1, v0, Lhqx;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Lhqx;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Lhqz;
+
+    invoke-direct {v0, p0}, Lhqz;-><init>(Landroid/os/IBinder;)V
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method protected final a()I
-    .locals 3
+.method public asBinder()Landroid/os/IBinder;
+    .locals 0
 
-    invoke-super {p0}, Lhrd;->a()I
+    return-object p0
+.end method
 
-    move-result v0
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 5
+
+    const/4 v2, 0x0
 
     const/4 v1, 0x1
 
-    iget v2, p0, Lhqy;->a:I
+    sparse-switch p1, :sswitch_data_0
 
-    invoke-static {v1, v2}, Lhrc;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iget-object v1, p0, Lhqy;->b:Lhqz;
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x2
-
-    iget-object v2, p0, Lhqy;->b:Lhqz;
-
-    invoke-static {v1, v2}, Lhrc;->b(ILhri;)I
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v1
 
-    add-int/2addr v0, v1
-
-    :cond_0
-    return v0
-.end method
-
-.method public final a(Lhrc;)V
-    .locals 2
-
-    const/4 v0, 0x1
-
-    iget v1, p0, Lhqy;->a:I
-
-    invoke-virtual {p1, v0, v1}, Lhrc;->a(II)V
-
-    iget-object v0, p0, Lhqy;->b:Lhqz;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x2
-
-    iget-object v1, p0, Lhqy;->b:Lhqz;
-
-    invoke-virtual {p1, v0, v1}, Lhrc;->a(ILhri;)V
-
-    :cond_0
-    invoke-super {p0, p1}, Lhrd;->a(Lhrc;)V
-
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    if-ne p1, p0, :cond_1
-
-    :cond_0
     :goto_0
-    return v0
+    return v1
 
-    :cond_1
-    instance-of v2, p1, Lhqy;
+    :sswitch_0
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
 
-    if-nez v2, :cond_2
-
-    move v0, v1
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     goto :goto_0
 
-    :cond_2
-    check-cast p1, Lhqy;
+    :sswitch_1
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
 
-    iget v2, p0, Lhqy;->a:I
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    iget v3, p1, Lhqy;->a:I
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    if-eq v2, v3, :cond_3
+    move-result-object v2
+
+    if-nez v2, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_1
+    invoke-virtual {p0, v0}, Lhqy;->init(Lhnz;)V
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
+
+    invoke-interface {v2, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    instance-of v3, v0, Lhnz;
+
+    if-eqz v3, :cond_1
+
+    check-cast v0, Lhnz;
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v0, Lhob;
+
+    invoke-direct {v0, v2}, Lhob;-><init>(Landroid/os/IBinder;)V
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-eqz v0, :cond_3
 
     move v0, v1
+
+    :goto_2
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    invoke-virtual {p0, v3, v0, v4}, Lhqy;->getBooleanFlagValue(Ljava/lang/String;ZI)Z
+
+    move-result v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    if-eqz v0, :cond_2
+
+    move v2, v1
+
+    :cond_2
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_0
 
     :cond_3
-    iget-object v2, p0, Lhqy;->b:Lhqz;
+    move v0, v2
 
-    if-nez v2, :cond_4
+    goto :goto_2
 
-    iget-object v2, p1, Lhqy;->b:Lhqz;
+    :sswitch_3
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
 
-    if-eqz v2, :cond_5
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_4
-    iget-object v2, p0, Lhqy;->b:Lhqz;
-
-    iget-object v3, p1, Lhqy;->b:Lhqz;
-
-    invoke-virtual {v2, v3}, Lhqz;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_5
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_5
-    iget-object v2, p0, Lhqy;->o:Lhrf;
-
-    if-eqz v2, :cond_6
-
-    iget-object v2, p0, Lhqy;->o:Lhrf;
-
-    invoke-virtual {v2}, Lhrf;->a()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7
-
-    :cond_6
-    iget-object v2, p1, Lhqy;->o:Lhrf;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p1, Lhqy;->o:Lhrf;
-
-    invoke-virtual {v2}, Lhrf;->a()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_7
-    iget-object v0, p0, Lhqy;->o:Lhrf;
-
-    iget-object v1, p1, Lhqy;->o:Lhrf;
-
-    invoke-virtual {v0, v1}, Lhrf;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    add-int/lit16 v0, v0, 0x20f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v2, p0, Lhqy;->a:I
-
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v0, p0, Lhqy;->b:Lhqz;
-
-    if-nez v0, :cond_1
-
-    move v0, v1
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Lhqy;->o:Lhrf;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lhqy;->o:Lhrf;
-
-    invoke-virtual {v2}, Lhrf;->a()Z
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    :cond_0
-    :goto_1
-    add-int/2addr v0, v1
+    move-result v3
 
-    return v0
-
-    :cond_1
-    iget-object v0, p0, Lhqy;->b:Lhqz;
-
-    invoke-virtual {v0}, Lhqz;->hashCode()I
+    invoke-virtual {p0, v0, v2, v3}, Lhqy;->getIntFlagValue(Ljava/lang/String;II)I
 
     move-result v0
 
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
+
     goto :goto_0
 
-    :cond_2
-    iget-object v1, p0, Lhqy;->o:Lhrf;
+    :sswitch_4
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
 
-    invoke-virtual {v1}, Lhrf;->hashCode()I
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    move-result v1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    goto :goto_1
+    move-result-object v0
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v2
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v4
+
+    invoke-virtual {p0, v0, v2, v3, v4}, Lhqy;->getLongFlagValue(Ljava/lang/String;JI)J
+
+    move-result-wide v2
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
+
+    goto/16 :goto_0
+
+    :sswitch_5
+    const-string v0, "com.google.android.gms.flags.IFlagProvider"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    invoke-virtual {p0, v0, v2, v3}, Lhqy;->getStringFlagValue(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x2 -> :sswitch_2
+        0x3 -> :sswitch_3
+        0x4 -> :sswitch_4
+        0x5 -> :sswitch_5
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

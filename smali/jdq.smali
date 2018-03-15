@@ -1,67 +1,52 @@
-.class public final Ljdq;
+.class final Ljdq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljeg;
-
-
-# instance fields
-.field public final a:Ljvi;
-
-.field private b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Ljdq;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance v0, Ljvi;
-
-    invoke-direct {v0}, Ljvi;-><init>()V
-
-    iput-object v0, p0, Ljdq;->a:Ljvi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljef;)Ljava/io/OutputStream;
-    .locals 2
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Ljdq;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v2, Ljmi;
 
-    const/4 v1, 0x1
+    new-instance v3, Ljmc;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    const-class v0, Ljme;
 
-    move-result v0
+    const-string v1, "FixedFrameRateSavingFrameDropper"
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result-object v0
 
-    const-string v1, "BufferedArtifactRasterSink supports rasterizing only up to one artifact."
+    check-cast v0, Ljme;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const-class v1, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    throw v0
+    const-string v4, "default"
 
-    :cond_0
-    new-instance v0, Ljdr;
+    invoke-virtual {p1, v1, v4}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-direct {v0, p0}, Ljdr;-><init>(Ljdq;)V
+    move-result-object v1
 
-    return-object v0
+    check-cast v1, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    invoke-direct {v3, v0, v1}, Ljmc;-><init>(Ljme;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+
+    invoke-direct {v2, v3}, Ljmi;-><init>(Ljme;)V
+
+    return-object v2
 .end method

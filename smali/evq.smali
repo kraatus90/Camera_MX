@@ -1,88 +1,74 @@
-.class final Levq;
+.class public final Levq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcli;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lckd;
+.field private final a:Lkgv;
 
-.field private synthetic b:Levo;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Levo;Lckd;)V
+.method private constructor <init>(Lkgv;Lkgv;)V
     .locals 0
-
-    iput-object p1, p0, Levq;->b:Levo;
-
-    iput-object p2, p0, Levq;->a:Lckd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Levq;->a:Lkgv;
+
+    iput-object p2, p0, Levq;->b:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;)Levq;
+    .locals 1
+
+    new-instance v0, Levq;
+
+    invoke-direct {v0, p0, p1}, Levq;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    sget-object v0, Levo;->a:Ljava/lang/String;
+    iget-object v0, p0, Levq;->a:Lkgv;
 
-    const-string v1, "onTransitionCancel"
-
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 5
-
-    sget-object v0, Levo;->a:Ljava/lang/String;
-
-    const-string v1, "onTransitionEnd"
-
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, p0, Levq;->b:Levo;
-
-    iget-object v2, p0, Levq;->a:Lckd;
-
-    iget-object v0, v1, Levo;->b:Ljxe;
-
-    invoke-interface {v0}, Ljxe;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfmd;
+    check-cast v0, Lbkx;
 
-    invoke-virtual {v1, v0}, Levo;->a(Lfmd;)Lfvf;
+    iget-object v1, p0, Levq;->b:Lkgv;
 
-    move-result-object v3
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    if-nez v3, :cond_0
+    move-result-object v1
 
-    sget-object v3, Levo;->a:Ljava/lang/String;
+    check-cast v1, Lhbh;
 
-    const-string v4, "no item found at index 0, requestLoad"
+    sget-object v2, Levu;->c:Lihc;
 
-    invoke-static {v3, v4}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0, v1}, Leqp;->a(Lihc;Lbkx;Lhbh;)Landroid/media/MediaFormat;
 
-    new-instance v3, Levp;
+    move-result-object v0
 
-    invoke-direct {v3, v1, v0, v2}, Levp;-><init>(Levo;Lfmd;Lckd;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-interface {v0, v3}, Lfmd;->a(Libu;)V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    :goto_0
-    return-void
+    move-result-object v0
 
-    :cond_0
-    invoke-virtual {v1, v2, v0, v3}, Levo;->a(Lckd;Lfmd;Lfvf;)V
+    check-cast v0, Landroid/media/MediaFormat;
 
-    goto :goto_0
+    return-object v0
 .end method

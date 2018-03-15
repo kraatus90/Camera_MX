@@ -1,186 +1,116 @@
-.class public final Lcun;
+.class final Lcun;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljqv;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
-
-.field private j:Ljxn;
-
-.field private k:Ljxn;
-
-.field private l:Ljxn;
-
-.field private m:Ljxn;
+.field private final synthetic a:Lctw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lctw;)V
     .locals 0
 
+    iput-object p1, p0, Lcun;->a:Lctw;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcun;->a:Ljxn;
-
-    iput-object p2, p0, Lcun;->b:Ljxn;
-
-    iput-object p3, p0, Lcun;->c:Ljxn;
-
-    iput-object p4, p0, Lcun;->d:Ljxn;
-
-    iput-object p5, p0, Lcun;->e:Ljxn;
-
-    iput-object p6, p0, Lcun;->f:Ljxn;
-
-    iput-object p7, p0, Lcun;->g:Ljxn;
-
-    iput-object p8, p0, Lcun;->h:Ljxn;
-
-    iput-object p9, p0, Lcun;->i:Ljxn;
-
-    iput-object p10, p0, Lcun;->j:Ljxn;
-
-    iput-object p11, p0, Lcun;->k:Ljxn;
-
-    iput-object p12, p0, Lcun;->l:Ljxn;
-
-    iput-object p13, p0, Lcun;->m:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 14
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    new-instance v0, Lcum;
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lcun;->a:Ljxn;
+    const/4 v2, 0x0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    check-cast p1, Ljava/util/List;
 
-    move-result-object v1
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v1, Lhar;
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iget-object v2, p0, Lcun;->b:Ljxn;
+    move-result v0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v3, 0x3
 
-    move-result-object v2
+    if-ne v0, v3, :cond_0
 
-    check-cast v2, Lgwb;
+    move v0, v1
 
-    iget-object v3, p0, Lcun;->c:Ljxn;
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lgrw;
+    check-cast v0, Ljava/lang/Boolean;
 
-    iget-object v4, p0, Lcun;->d:Ljxn;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    move-result v3
 
-    move-result-object v4
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    check-cast v4, Lgni;
+    move-result-object v0
 
-    iget-object v5, p0, Lcun;->e:Ljxn;
+    check-cast v0, Ljava/lang/Boolean;
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object v5
+    move-result v4
 
-    check-cast v5, Landroid/hardware/SensorManager;
+    const/4 v0, 0x2
 
-    iget-object v6, p0, Lcun;->f:Ljxn;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v6
+    check-cast v0, Ljava/lang/Boolean;
 
-    check-cast v6, Landroid/content/Context;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v7, p0, Lcun;->g:Ljxn;
+    move-result v0
 
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
+    if-nez v3, :cond_1
 
-    move-result-object v7
+    if-nez v4, :cond_1
 
-    check-cast v7, Liau;
+    if-nez v0, :cond_1
 
-    iget-object v8, p0, Lcun;->h:Ljxn;
+    iget-object v0, p0, Lcun;->a:Lctw;
 
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lctw;->d:Lftj;
 
-    move-result-object v8
+    invoke-virtual {v0}, Lftj;->c()Ljava/lang/Object;
 
-    check-cast v8, Liau;
+    move-result-object v0
 
-    iget-object v9, p0, Lcun;->i:Ljxn;
+    sget-object v3, Lftm;->a:Lftm;
 
-    invoke-interface {v9}, Ljxn;->a()Ljava/lang/Object;
+    if-ne v0, v3, :cond_1
 
-    move-result-object v9
+    :goto_1
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    check-cast v9, Liau;
-
-    iget-object v10, p0, Lcun;->j:Ljxn;
-
-    invoke-interface {v10}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Liau;
-
-    iget-object v11, p0, Lcun;->k:Ljxn;
-
-    invoke-interface {v11}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Liau;
-
-    iget-object v12, p0, Lcun;->l:Ljxn;
-
-    invoke-interface {v12}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Liau;
-
-    iget-object v13, p0, Lcun;->m:Ljxn;
-
-    invoke-interface {v13}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lgsm;
-
-    invoke-direct/range {v0 .. v13}, Lcum;-><init>(Lhar;Lgwb;Lgrw;Lgni;Landroid/hardware/SensorManager;Landroid/content/Context;Liau;Liau;Liau;Liau;Liau;Liau;Lgsm;)V
+    move-result-object v0
 
     return-object v0
+
+    :cond_0
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v1, v2
+
+    goto :goto_1
 .end method

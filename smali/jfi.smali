@@ -1,20 +1,14 @@
-.class public final Ljfi;
+.class final Ljfi;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
-
-
-# instance fields
-.field private synthetic a:Ljfl;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljfl;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljfi;->a:Ljfl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,56 +17,34 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 6
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    new-instance v2, Lizp;
+
+    const-string v3, "AllSmiles"
+
+    const-class v0, Ljnq;
 
     const-string v1, "default"
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    check-cast v0, Ljnq;
 
-    new-instance v1, Lisb;
+    const-class v1, Ljava/nio/ByteBuffer;
 
-    invoke-direct {v1, v0}, Lisb;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+    const-string v4, "landmark_extrapolator_models"
 
-    new-instance v2, Lipd;
+    invoke-virtual {p1, v1, v4}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-direct {v2, v0}, Lipd;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+    move-result-object v1
 
-    sget-object v3, Ljfs;->w:Ljfs;
+    check-cast v1, Ljava/nio/ByteBuffer;
 
-    sget-object v4, Ljfs;->x:Ljfs;
+    invoke-direct {v2, v3, v0, v1}, Lizp;-><init>(Ljava/lang/String;Ljnq;Ljava/nio/ByteBuffer;)V
 
-    sget-object v5, Ljfs;->y:Ljfs;
-
-    invoke-static {v3, v4, v5}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
-
-    move-result-object v3
-
-    invoke-static {v3}, Ljava/util/EnumSet;->complementOf(Ljava/util/EnumSet;)Ljava/util/EnumSet;
-
-    move-result-object v3
-
-    new-instance v4, Lipe;
-
-    invoke-direct {v4, v2, v3}, Lipe;-><init>(Lipd;Ljava/util/Set;)V
-
-    iget-object v2, p0, Ljfi;->a:Ljfl;
-
-    const-string v3, "features.csv"
-
-    invoke-virtual {v2, v3, v1}, Ljfl;->a(Ljava/lang/String;Ljfn;)V
-
-    iget-object v1, p0, Ljfi;->a:Ljfl;
-
-    const-string v2, "feature_stats.txt"
-
-    invoke-virtual {v1, v2, v4}, Ljfl;->a(Ljava/lang/String;Ljfn;)V
-
-    return-object v0
+    return-object v2
 .end method

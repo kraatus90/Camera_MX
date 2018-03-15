@@ -1,61 +1,34 @@
-.class public final Lccb;
-.super Ltk;
+.class final Lccb;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private b:I
-
-.field private synthetic c:Lcca;
+.field private final synthetic a:Lcdh;
 
 
 # direct methods
-.method public constructor <init>(Lcca;I)V
+.method constructor <init>(Lcdh;)V
     .locals 0
 
-    iput-object p1, p0, Lccb;->c:Lcca;
+    iput-object p1, p0, Lccb;->a:Lcdh;
 
-    invoke-direct {p0}, Ltk;-><init>()V
-
-    iput p2, p0, Lccb;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)I
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lccb;->c:Lcca;
+    iget-object v0, p0, Lccb;->a:Lcdh;
 
-    iget-boolean v0, v0, Lcca;->f:Z
+    invoke-virtual {v0}, Lcdh;->a()V
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lccb;->c:Lcca;
-
-    iget-object v0, v0, Lcca;->d:Lcci;
-
-    iget-object v0, v0, Lcci;->e:Lcbc;
-
-    invoke-virtual {v0, p1}, Lcbc;->a(I)Lcbd;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcbd;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lccb;->b:I
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
+    return-void
 .end method

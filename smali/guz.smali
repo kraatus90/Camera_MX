@@ -1,70 +1,53 @@
-.class public final Lguz;
-.super Ljava/lang/Object;
+.class final Lguz;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic a:Lguy;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lguy;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lguz;->a:Lguy;
 
-    iput-object p1, p0, Lguz;->a:Ljxn;
-
-    iput-object p2, p0, Lguz;->b:Ljxn;
-
-    iput-object p3, p0, Lguz;->c:Ljxn;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lguz;
-
-    invoke-direct {v0, p0, p1, p2}, Lguz;-><init>(Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    new-instance v2, Lguu;
+    iget-object v0, p0, Lguz;->a:Lguy;
 
-    iget-object v0, p0, Lguz;->a:Ljxn;
+    iget-object v0, v0, Lguy;->b:Lgug;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    check-cast v0, Landroid/content/Context;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setClickEnabled(Z)V
 
-    iget-object v1, p0, Lguz;->b:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-    move-result-object v1
+    iget-object v0, p0, Lguz;->a:Lguy;
 
-    check-cast v1, Liau;
+    iget-object v0, v0, Lguy;->b:Lgug;
 
-    iget-object v3, p0, Lguz;->c:Ljxn;
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-direct {v2, v0, v1, v3}, Lguu;-><init>(Landroid/content/Context;Liau;Ljxn;)V
+    const/4 v1, 0x0
 
-    return-object v2
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setClickEnabled(Z)V
+
+    return-void
 .end method

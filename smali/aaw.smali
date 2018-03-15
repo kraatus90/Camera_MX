@@ -3,125 +3,44 @@
 .source "PG"
 
 # interfaces
-.implements Laav;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Laav;
-
-.field private b:Landroid/os/Handler;
+.field private final synthetic a:Laao;
 
 
 # direct methods
-.method private constructor <init>(Laav;)V
-    .locals 2
+.method public constructor <init>(Laao;)V
+    .locals 0
+
+    iput-object p1, p0, Laaw;->a:Laao;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, Laaw;->b:Landroid/os/Handler;
-
-    iput-object p1, p0, Laaw;->a:Laav;
-
     return-void
-.end method
-
-.method public static a(Landroid/os/Handler;Laav;)Laaw;
-    .locals 1
-
-    if-eqz p0, :cond_0
-
-    if-nez p1, :cond_1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_1
-    new-instance v0, Laaw;
-
-    invoke-direct {v0, p1}, Laaw;-><init>(Laav;)V
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Laaw;->b:Landroid/os/Handler;
+    iget-object v0, p0, Laaw;->a:Laao;
 
-    new-instance v1, Laay;
+    invoke-virtual {v0}, Laao;->h()Landroid/os/Handler;
 
-    invoke-direct {v1, p0, p1}, Laay;-><init>(Laaw;I)V
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    const/16 v1, 0x66
 
-    return-void
-.end method
+    const/4 v2, 0x0
 
-.method public final a(ILjava/lang/String;)V
-    .locals 2
+    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    iget-object v0, p0, Laaw;->b:Landroid/os/Handler;
+    move-result-object v0
 
-    new-instance v1, Laaz;
-
-    invoke-direct {v1, p0, p1, p2}, Laaz;-><init>(Laaw;ILjava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public final a(Laap;Ljava/lang/String;)V
-    .locals 2
-
-    iget-object v0, p0, Laaw;->b:Landroid/os/Handler;
-
-    new-instance v1, Labb;
-
-    invoke-direct {v1, p0, p1, p2}, Labb;-><init>(Laaw;Laap;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public final a(Labe;)V
-    .locals 2
-
-    iget-object v0, p0, Laaw;->b:Landroid/os/Handler;
-
-    new-instance v1, Laax;
-
-    invoke-direct {v1, p0, p1}, Laax;-><init>(Laaw;Labe;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public final b(ILjava/lang/String;)V
-    .locals 2
-
-    iget-object v0, p0, Laaw;->b:Landroid/os/Handler;
-
-    new-instance v1, Laba;
-
-    invoke-direct {v1, p0, p1, p2}, Laba;-><init>(Laaw;ILjava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
 .end method

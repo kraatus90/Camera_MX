@@ -3,56 +3,52 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldvf;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ldvf;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldxa;->a:Ldvf;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldxa;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Leas;
+    iget-object v0, p0, Ldxa;->a:Lkgv;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Ldxa;->a:Ldvf;
+    move-result-object v0
 
-    iget-object v0, v0, Ldvf;->a:Lear;
+    check-cast v0, Lgjp;
 
-    iget-object v1, p1, Leas;->a:[B
+    const-string v1, "pref_has_checked_gouda_mode"
 
-    invoke-interface {v0, v1}, Lear;->a([B)V
+    const/4 v2, 0x0
 
-    return-void
-.end method
+    invoke-virtual {v0, v1, v2}, Lgjp;->a(Ljava/lang/String;Z)Lick;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    move-result-object v0
 
-    iget-object v0, p0, Ldxa;->a:Ldvf;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, v0, Ldvf;->e:Ldve;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Ldve;->b:Licu;
+    move-result-object v0
 
-    const-string v1, "Final result failed, not updating remote thumbnail."
+    check-cast v0, Lick;
 
-    invoke-interface {v0, v1}, Licu;->c(Ljava/lang/String;)V
-
-    return-void
+    return-object v0
 .end method

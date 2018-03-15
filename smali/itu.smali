@@ -3,12 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field private final synthetic a:Lixn;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lixn;)V
     .locals 0
+
+    iput-object p1, p0, Litu;->a:Lixn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,72 +23,106 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 5
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 11
 
-    const-class v0, Ljcp;
+    const v4, 0x8d40
 
-    const-string v1, "default"
+    const/4 v1, 0x1
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    iget-object v10, p0, Litu;->a:Lixn;
 
-    check-cast v0, Ljcp;
+    new-array v0, v1, [I
 
-    new-instance v1, Ljal;
+    invoke-static {v1, v0, v3}, Landroid/opengl/GLES30;->glGenFramebuffers(I[II)V
 
-    invoke-direct {v1, v0}, Ljal;-><init>(Ljcp;)V
+    aget v6, v0, v3
 
-    new-instance v2, Ljat;
-
-    new-instance v3, Ljam;
-
-    invoke-direct {v3, v0}, Ljam;-><init>(Ljcp;)V
-
-    const/4 v4, 0x0
-
-    invoke-direct {v2, v3, v4}, Ljat;-><init>(Ljan;B)V
-
-    new-instance v3, Ljak;
-
-    invoke-direct {v3, v0}, Ljak;-><init>(Ljcp;)V
-
-    new-instance v0, Ljap;
-
-    invoke-direct {v0}, Ljap;-><init>()V
-
-    const v4, 0x49742400    # 1000000.0f
-
-    invoke-virtual {v0, v1, v4}, Ljap;->a(Ljan;F)Ljap;
+    invoke-interface {v10}, Lixn;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    const v1, -0x368bdc00    # -1000000.0f
+    move-object v7, v0
 
-    invoke-virtual {v0, v2, v1}, Ljap;->a(Ljan;F)Ljap;
+    check-cast v7, Livg;
 
-    move-result-object v0
+    invoke-static {v4, v6}, Landroid/opengl/GLES30;->glBindFramebuffer(II)V
 
-    const v1, 0x3dcccccd    # 0.1f
+    const v1, 0x8ce0
 
-    invoke-virtual {v0, v3, v1}, Ljap;->a(Ljan;F)Ljap;
-
-    move-result-object v0
-
-    new-instance v1, Ljav;
-
-    invoke-direct {v1}, Ljav;-><init>()V
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1, v2}, Ljap;->a(Ljan;F)Ljap;
+    invoke-virtual {v7}, Livg;->b()Liuy;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljap;->a()Ljao;
+    check-cast v0, Liva;
+
+    invoke-interface {v0}, Liva;->c()I
+
+    move-result v2
+
+    invoke-virtual {v7}, Livg;->b()Liuy;
 
     move-result-object v0
+
+    check-cast v0, Liva;
+
+    invoke-interface {v0}, Liva;->l()I
+
+    move-result v0
+
+    invoke-static {v4, v1, v2, v0, v3}, Landroid/opengl/GLES30;->glFramebufferTexture2D(IIIII)V
+
+    iget-object v0, v7, Liua;->a:Litv;
+
+    invoke-interface {v0}, Litv;->e()Lits;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lits;->b()Liuy;
+
+    move-result-object v8
+
+    check-cast v8, Liut;
+
+    new-instance v0, Liux;
+
+    invoke-interface {v8}, Liut;->k()Livi;
+
+    move-result-object v1
+
+    invoke-interface {v8}, Liut;->e()Landroid/opengl/EGLDisplay;
+
+    move-result-object v2
+
+    invoke-interface {v8}, Liut;->f()Landroid/opengl/EGLSurface;
+
+    move-result-object v3
+
+    invoke-interface {v8}, Liut;->g()Landroid/opengl/EGLContext;
+
+    move-result-object v4
+
+    invoke-interface {v8}, Liut;->h()Landroid/opengl/EGLConfig;
+
+    move-result-object v5
+
+    invoke-virtual {v7}, Livg;->d()Litl;
+
+    move-result-object v7
+
+    move v9, v6
+
+    invoke-direct/range {v0 .. v10}, Liux;-><init>(Livi;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILitl;Liut;ILixn;)V
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "GLRawCanvases.createForTexture"
 
     return-object v0
 .end method

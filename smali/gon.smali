@@ -2,121 +2,154 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lgil;
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
-
 
 # instance fields
-.field private b:Ljava/util/concurrent/Executor;
+.field public final a:Lgov;
 
-.field private c:Lcom/google/googlex/gcam/InterleavedImageU8;
+.field public final b:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field private d:Lcom/google/googlex/gcam/GoudaRequest;
+.field public volatile c:J
+
+.field private final d:Ljava/lang/Object;
+
+.field private e:Ljava/util/concurrent/ScheduledFuture;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lgov;Ljava/util/concurrent/ScheduledExecutorService;)V
+    .locals 2
 
-    const-string v0, "PostProcImgSvr"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lgon;->a:Lgov;
 
-    move-result-object v0
+    iput-object p2, p0, Lgon;->b:Ljava/util/concurrent/ScheduledExecutorService;
 
-    sput-object v0, Lgon;->a:Ljava/lang/String;
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lgon;->d:Ljava/lang/Object;
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Lgon;->c:J
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/GoudaRequest;)V
+.method private final a(Lgoq;)Ljava/lang/Runnable;
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgoo;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0, p0, p1}, Lgoo;-><init>(Lgon;Lgoq;)V
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    iput-object v0, p0, Lgon;->b:Ljava/util/concurrent/Executor;
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlex/gcam/InterleavedImageU8;
-
-    iput-object v0, p0, Lgon;->c:Lcom/google/googlex/gcam/InterleavedImageU8;
-
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlex/gcam/GoudaRequest;
-
-    iput-object v0, p0, Lgon;->d:Lcom/google/googlex/gcam/GoudaRequest;
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljuw;
-    .locals 7
+.method public final a()V
+    .locals 3
 
-    new-instance v2, Ljvi;
+    iget-object v1, p0, Lgon;->d:Ljava/lang/Object;
 
-    invoke-direct {v2}, Ljvi;-><init>()V
+    monitor-enter v1
 
-    iget-object v6, p0, Lgon;->b:Ljava/util/concurrent/Executor;
+    :try_start_0
+    iget-object v0, p0, Lgon;->e:Ljava/util/concurrent/ScheduledFuture;
 
-    new-instance v0, Lgoo;
+    if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lgon;->c:Lcom/google/googlex/gcam/InterleavedImageU8;
+    iget-object v0, p0, Lgon;->e:Ljava/util/concurrent/ScheduledFuture;
 
-    iget-object v3, p0, Lgon;->d:Lcom/google/googlex/gcam/GoudaRequest;
+    const/4 v2, 0x1
 
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/GoudaRequest;->getOutput_width()I
+    invoke-interface {v0, v2}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
 
-    move-result v3
+    const/4 v0, 0x0
 
-    iget-object v4, p0, Lgon;->d:Lcom/google/googlex/gcam/GoudaRequest;
+    iput-object v0, p0, Lgon;->e:Ljava/util/concurrent/ScheduledFuture;
 
-    invoke-virtual {v4}, Lcom/google/googlex/gcam/GoudaRequest;->getOutput_height()I
+    :cond_0
+    monitor-exit v1
 
-    move-result v4
+    return-void
 
-    iget-object v5, p0, Lgon;->d:Lcom/google/googlex/gcam/GoudaRequest;
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v5}, Lcom/google/googlex/gcam/GoudaRequest;->getPost_resample_sharpening()F
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v5
-
-    invoke-direct/range {v0 .. v5}, Lgoo;-><init>(Lcom/google/googlex/gcam/InterleavedImageU8;Ljvi;IIF)V
-
-    invoke-interface {v6, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-object v2
+    throw v0
 .end method
 
-.method public final b()Ljuw;
-    .locals 2
+.method public final a(JLgoq;)V
+    .locals 9
 
-    new-instance v0, Lief;
+    iget-object v7, p0, Lgon;->d:Ljava/lang/Object;
 
-    const-string v1, "Image couldn\'t be upsampled."
+    monitor-enter v7
 
-    invoke-direct {v0, v1}, Lief;-><init>(Ljava/lang/String;)V
+    :try_start_0
+    iget-object v0, p0, Lgon;->e:Ljava/util/concurrent/ScheduledFuture;
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Throwable;)Ljuw;
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgon;->e:Ljava/util/concurrent/ScheduledFuture;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
+
+    :cond_0
+    iget-object v0, p0, Lgon;->b:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-direct {p0, p3}, Lgon;->a(Lgoq;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    const-wide/16 v2, 0x0
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    move-wide v4, p1
+
+    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
 
     move-result-object v0
 
-    return-object v0
+    iput-object v0, p0, Lgon;->e:Ljava/util/concurrent/ScheduledFuture;
+
+    monitor-exit v7
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lgon;->b:Ljava/util/concurrent/ScheduledExecutorService;
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v1}, Lgon;->a(Lgoq;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

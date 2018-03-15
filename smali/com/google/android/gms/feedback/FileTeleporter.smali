@@ -11,18 +11,18 @@
 
 .field private b:Landroid/os/ParcelFileDescriptor;
 
-.field private c:Ljava/lang/String;
+.field private final c:Ljava/lang/String;
 
-.field private d:Ljava/lang/String;
+.field private final d:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhnr;
+    new-instance v0, Lhop;
 
-    invoke-direct {v0}, Lhnr;-><init>()V
+    invoke-direct {v0}, Lhop;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/feedback/FileTeleporter;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -181,7 +181,7 @@
     :cond_0
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -189,21 +189,21 @@
 
     iget-object v2, p0, Lcom/google/android/gms/feedback/FileTeleporter;->b:Landroid/os/ParcelFileDescriptor;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/feedback/FileTeleporter;->c:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x4
 
     iget-object v2, p0, Lcom/google/android/gms/feedback/FileTeleporter;->d:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 

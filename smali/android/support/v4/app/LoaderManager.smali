@@ -28,7 +28,7 @@
 .method public abstract dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 .end method
 
-.method public abstract getLoader(I)Ldw;
+.method public abstract getLoader(I)Led;
 .end method
 
 .method public hasRunningLoaders()Z
@@ -39,8 +39,8 @@
     return v0
 .end method
 
-.method public abstract initLoader(ILandroid/os/Bundle;Landroid/support/v4/app/LoaderManager$LoaderCallbacks;)Ldw;
+.method public abstract initLoader(ILandroid/os/Bundle;Landroid/support/v4/app/LoaderManager$LoaderCallbacks;)Led;
 .end method
 
-.method public abstract restartLoader(ILandroid/os/Bundle;Landroid/support/v4/app/LoaderManager$LoaderCallbacks;)Ldw;
+.method public abstract restartLoader(ILandroid/os/Bundle;Landroid/support/v4/app/LoaderManager$LoaderCallbacks;)Led;
 .end method

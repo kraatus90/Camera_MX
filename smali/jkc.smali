@@ -1,81 +1,96 @@
-.class public abstract Ljkc;
+.class public final Ljkc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Iterable;
+.implements Ljjp;
 
 
 # instance fields
-.field private a:Ljht;
+.field private final a:Ljnq;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljnq;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v0, p0, Ljkc;->a:Ljht;
+    iput-object p1, p0, Ljkc;->a:Ljnq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
+.method public final a(Ljava/lang/String;)Ljjz;
     .locals 4
 
-    iget-object v0, p0, Ljkc;->a:Ljht;
-
-    invoke-virtual {v0, p0}, Ljht;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Iterable;
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-static {v0}, Ljne;->a(Ljava/lang/String;)Ljnm;
 
     move-result-object v1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_0
 
-    const-string v0, "["
+    new-instance v0, Ljkd;
 
-    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v2, p0, Ljkc;->a:Ljnq;
 
-    const/4 v0, 0x1
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v2, v1, v3}, Ljkd;-><init>(Ljnq;Ljnm;F)V
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    if-nez v0, :cond_0
-
-    const-string v0, ", "
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v0
 
     :cond_0
     const/4 v0, 0x0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     goto :goto_0
+.end method
 
-    :cond_1
-    const/16 v0, 0x5d
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Ljkc;->a:Ljnq;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x2f
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "MetadataFeatureScorerProvider[metadataStore = "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

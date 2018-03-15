@@ -1,143 +1,73 @@
 .class public final Ls;
-.super Lhg;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.field public static final a:[I
 
+.field public static final b:I = 0x0
 
-# instance fields
-.field public a:Landroid/util/SparseArray;
+.field public static final c:I = 0x1
+
+.field public static final d:I = 0x2
+
+.field public static final e:[I
+
+.field public static final f:I = 0x0
+
+.field public static final g:I = 0x2
+
+.field public static final h:[I
+
+.field public static final i:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
-    new-instance v0, Lt;
+    const/4 v1, 0x3
 
-    invoke-direct {v0}, Lt;-><init>()V
+    new-array v0, v1, [I
 
-    sput-object v0, Ls;->CREATOR:Landroid/os/Parcelable$Creator;
+    fill-array-data v0, :array_0
 
-    return-void
-.end method
+    sput-object v0, Ls;->a:[I
 
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 7
+    new-array v0, v1, [I
 
-    invoke-direct {p0, p1, p2}, Lhg;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    fill-array-data v0, :array_1
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    sput-object v0, Ls;->e:[I
 
-    move-result v1
+    const/4 v0, 0x1
 
-    new-array v2, v1, [I
+    new-array v0, v0, [I
 
-    invoke-virtual {p1, v2}, Landroid/os/Parcel;->readIntArray([I)V
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelableArray(Ljava/lang/ClassLoader;)[Landroid/os/Parcelable;
+    const v2, 0x7f0101ef
 
-    move-result-object v3
+    aput v2, v0, v1
 
-    new-instance v0, Landroid/util/SparseArray;
-
-    invoke-direct {v0, v1}, Landroid/util/SparseArray;-><init>(I)V
-
-    iput-object v0, p0, Ls;->a:Landroid/util/SparseArray;
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    iget-object v4, p0, Ls;->a:Landroid/util/SparseArray;
-
-    aget v5, v2, v0
-
-    aget-object v6, v3, v0
-
-    invoke-virtual {v4, v5, v6}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcelable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lhg;-><init>(Landroid/os/Parcelable;)V
+    sput-object v0, Ls;->h:[I
 
     return-void
-.end method
 
+    nop
 
-# virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 5
+    :array_0
+    .array-data 4
+        0x1010109
+        0x1010200
+        0x7f01016b
+    .end array-data
 
-    const/4 v2, 0x0
-
-    invoke-super {p0, p1, p2}, Lhg;->writeToParcel(Landroid/os/Parcel;I)V
-
-    iget-object v0, p0, Ls;->a:Landroid/util/SparseArray;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ls;->a:Landroid/util/SparseArray;
-
-    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
-
-    move-result v0
-
-    move v1, v0
-
-    :goto_0
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    new-array v3, v1, [I
-
-    new-array v4, v1, [Landroid/os/Parcelable;
-
-    :goto_1
-    if-ge v2, v1, :cond_1
-
-    iget-object v0, p0, Ls;->a:Landroid/util/SparseArray;
-
-    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->keyAt(I)I
-
-    move-result v0
-
-    aput v0, v3, v2
-
-    iget-object v0, p0, Ls;->a:Landroid/util/SparseArray;
-
-    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Parcelable;
-
-    aput-object v0, v4, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :cond_0
-    move v1, v2
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeIntArray([I)V
-
-    invoke-virtual {p1, v4, p2}, Landroid/os/Parcel;->writeParcelableArray([Landroid/os/Parcelable;I)V
-
-    return-void
+    :array_1
+    .array-data 4
+        0x101011f
+        0x7f010050
+        0x7f0101ac
+    .end array-data
 .end method

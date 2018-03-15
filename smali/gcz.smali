@@ -1,37 +1,42 @@
-.class final synthetic Lgcz;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class final Lgcz;
+.super Landroid/graphics/drawable/Animatable2$AnimationCallback;
+.source "PG"
 
 
 # instance fields
-.field private a:Lgcx;
+.field private final synthetic a:Lgcy;
 
 
 # direct methods
-.method constructor <init>(Lgcx;)V
+.method constructor <init>(Lgcy;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgcz;->a:Lgcy;
 
-    iput-object p1, p0, Lgcz;->a:Lgcx;
+    invoke-direct {p0}, Landroid/graphics/drawable/Animatable2$AnimationCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    iget-object v0, p0, Lgcz;->a:Lgcx;
+    invoke-super {p0, p1}, Landroid/graphics/drawable/Animatable2$AnimationCallback;->onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v0, v0, Lgcx;->d:Lgdg;
+    iget-object v0, p0, Lgcz;->a:Lgcy;
 
-    iget-object v0, v0, Lgdg;->a:Landroid/animation/AnimatorSet;
+    iget-boolean v0, v0, Lgcy;->e:Z
 
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+    if-eqz v0, :cond_0
 
+    iget-object v0, p0, Lgcz;->a:Lgcy;
+
+    iget-object v0, v0, Lgcy;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
+
+    :cond_0
     return-void
 .end method

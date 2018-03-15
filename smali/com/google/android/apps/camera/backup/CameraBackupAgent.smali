@@ -1,17 +1,17 @@
 .class public Lcom/google/android/apps/camera/backup/CameraBackupAgent;
-.super Lhza;
+.super Lhzz;
 .source "PG"
 
 
 # static fields
-.field public static a:Lidm;
+.field public static a:Liih;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lhza;-><init>()V
+    invoke-direct {p0}, Lhzz;-><init>()V
 
     return-void
 .end method
@@ -27,11 +27,11 @@
 
     move-result-object v0
 
-    new-instance v1, Lhyz;
+    new-instance v1, Lhzy;
 
-    invoke-direct {v1}, Lhyz;-><init>()V
+    invoke-direct {v1}, Lhzy;-><init>()V
 
-    invoke-static {v0, v1}, Liui;->b(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Ljhn;->b(Ljava/lang/Object;Ljava/lang/Object;)V
 
     const/4 v2, 0x2
 
@@ -43,7 +43,7 @@
 
     aput-object v1, v2, v4
 
-    invoke-static {v4, v2}, Ljms;->a(I[Ljava/lang/Object;)Ljms;
+    invoke-static {v4, v2}, Ljvw;->a(I[Ljava/lang/Object;)Ljvw;
 
     move-result-object v0
 
@@ -53,13 +53,13 @@
 .method public onBackup(Landroid/os/ParcelFileDescriptor;Landroid/app/backup/BackupDataOutput;Landroid/os/ParcelFileDescriptor;)V
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Lhza;->onBackup(Landroid/os/ParcelFileDescriptor;Landroid/app/backup/BackupDataOutput;Landroid/os/ParcelFileDescriptor;)V
+    invoke-super {p0, p1, p2, p3}, Lhzz;->onBackup(Landroid/os/ParcelFileDescriptor;Landroid/app/backup/BackupDataOutput;Landroid/os/ParcelFileDescriptor;)V
 
-    sget-object v0, Lcom/google/android/apps/camera/backup/CameraBackupAgent;->a:Lidm;
+    sget-object v0, Lcom/google/android/apps/camera/backup/CameraBackupAgent;->a:Liih;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Lidm;->j()V
+    invoke-interface {v0}, Liih;->j()V
 
     :cond_0
     return-void
@@ -68,13 +68,13 @@
 .method public onRestore(Landroid/app/backup/BackupDataInput;ILandroid/os/ParcelFileDescriptor;)V
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Lhza;->onRestore(Landroid/app/backup/BackupDataInput;ILandroid/os/ParcelFileDescriptor;)V
+    invoke-super {p0, p1, p2, p3}, Lhzz;->onRestore(Landroid/app/backup/BackupDataInput;ILandroid/os/ParcelFileDescriptor;)V
 
-    sget-object v0, Lcom/google/android/apps/camera/backup/CameraBackupAgent;->a:Lidm;
+    sget-object v0, Lcom/google/android/apps/camera/backup/CameraBackupAgent;->a:Liih;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Lidm;->k()V
+    invoke-interface {v0}, Liih;->k()V
 
     :cond_0
     return-void

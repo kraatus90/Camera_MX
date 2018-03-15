@@ -79,33 +79,23 @@
 .method private static checkExtendedSectionExists(Ljava/util/List;Ljava/lang/String;)Z
     .locals 3
 
-    const-string v0, "http://ns.adobe.com/xmp/extension/\u0000"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x1
-
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v0
 
-    add-int/2addr v1, v2
+    add-int/lit8 v0, v0, 0x24
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "http://ns.adobe.com/xmp/extension/\u0000"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -341,26 +331,26 @@
     return-object v0
 .end method
 
-.method public static createXMPMeta()Lxb;
+.method public static createXMPMeta()Lwk;
     .locals 1
 
-    invoke-static {}, Lxc;->a()Lxb;
+    invoke-static {}, Lwl;->a()Lwk;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static extractOrCreateXMPMeta(Ljava/lang/String;)Lxb;
+.method public static extractOrCreateXMPMeta(Ljava/lang/String;)Lwk;
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/lang/String;)Lxb;
+    invoke-static {p0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/lang/String;)Lwk;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->createXMPMeta()Lxb;
+    invoke-static {}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->createXMPMeta()Lwk;
 
     move-result-object v0
 
@@ -368,19 +358,19 @@
     return-object v0
 .end method
 
-.method public static extractXMPMeta(Ljava/io/InputStream;)Lxb;
+.method public static extractXMPMeta(Ljava/io/InputStream;)Lwk;
     .locals 1
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;Z)Lxb;
+    invoke-static {p0, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;Z)Lwk;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static extractXMPMeta(Ljava/io/InputStream;Z)Lxb;
+.method public static extractXMPMeta(Ljava/io/InputStream;Z)Lwk;
     .locals 6
 
     const/4 v1, 0x0
@@ -399,7 +389,7 @@
     return-object v0
 
     :cond_0
-    invoke-static {v3}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->parseFirstValidXMPSection(Ljava/util/List;)Lxb;
+    invoke-static {v3}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->parseFirstValidXMPSection(Ljava/util/List;)Lwk;
 
     move-result-object v2
 
@@ -409,7 +399,7 @@
 
     const-string v4, "HasExtendedXMP"
 
-    invoke-interface {v2, v0, v4}, Lxb;->d(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-interface {v2, v0, v4}, Lwk;->d(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -426,17 +416,17 @@
 
     const-string v4, "HasExtendedXMP"
 
-    invoke-interface {v2, v0, v4}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;)Lyi;
+    invoke-interface {v2, v0, v4}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;)Lxt;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lyi;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lxt;->a()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
     :try_end_0
-    .catch Lwz; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz p1, :cond_4
 
@@ -453,9 +443,9 @@
     :catch_0
     move-exception v0
 
-    sget-object v2, Ljvs;->a:Ljvt;
+    sget-object v2, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v2, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     move-object v0, v1
 
@@ -467,7 +457,7 @@
     goto :goto_0
 
     :cond_4
-    invoke-static {v3, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->parseExtendedXMPSections(Ljava/util/List;Ljava/lang/String;)Lxb;
+    invoke-static {v3, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->parseExtendedXMPSections(Ljava/util/List;Ljava/lang/String;)Lwk;
 
     move-result-object v0
 
@@ -479,39 +469,39 @@
 
     :cond_5
     :try_start_1
-    invoke-interface {v0}, Lxb;->a()Lxa;
+    invoke-interface {v0}, Lwk;->a()Lwj;
 
     move-result-object v1
 
     :cond_6
     :goto_1
-    invoke-virtual {v1}, Lxa;->next()Ljava/lang/Object;
+    invoke-virtual {v1}, Lwj;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lyj;
+    check-cast v0, Lxu;
 
-    iget-object v3, v0, Lyj;->b:Ljava/lang/String;
+    iget-object v3, v0, Lxu;->b:Ljava/lang/String;
 
     if-eqz v3, :cond_6
 
-    iget-object v3, v0, Lyj;->a:Ljava/lang/String;
+    iget-object v3, v0, Lxu;->a:Ljava/lang/String;
 
-    iget-object v4, v0, Lyj;->b:Ljava/lang/String;
+    iget-object v4, v0, Lxu;->b:Ljava/lang/String;
 
-    iget-object v5, v0, Lyj;->c:Ljava/lang/Object;
+    iget-object v5, v0, Lxu;->c:Ljava/lang/Object;
 
-    iget-object v0, v0, Lyj;->d:Lxt;
+    iget-object v0, v0, Lxu;->d:Lxd;
 
-    invoke-virtual {v0}, Lxt;->h()Lyf;
+    invoke-virtual {v0}, Lxd;->h()Lxq;
 
     move-result-object v0
 
-    invoke-interface {v2, v3, v4, v5, v0}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lyf;)V
+    invoke-interface {v2, v3, v4, v5, v0}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lxq;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -525,7 +515,7 @@
     goto :goto_0
 .end method
 
-.method public static extractXMPMeta(Ljava/lang/String;)Lxb;
+.method public static extractXMPMeta(Ljava/lang/String;)Lwk;
     .locals 9
 
     const/4 v6, 0x0
@@ -589,7 +579,7 @@
 
     invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;)Lxb;
+    invoke-static {v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->extractXMPMeta(Ljava/io/InputStream;)Lwk;
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1279,40 +1269,30 @@
     goto :goto_9
 .end method
 
-.method private static parseExtendedXMPSections(Ljava/util/List;Ljava/lang/String;)Lxb;
+.method private static parseExtendedXMPSections(Ljava/util/List;Ljava/lang/String;)Lwk;
     .locals 12
 
     const/4 v6, 0x0
 
     const/4 v2, 0x0
 
-    const-string v0, "http://ns.adobe.com/xmp/extension/\u0000"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x1
-
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v0
 
-    add-int/2addr v1, v3
+    add-int/lit8 v0, v0, 0x24
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, "http://ns.adobe.com/xmp/extension/\u0000"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1474,9 +1454,9 @@
 
     :cond_3
     :try_start_0
-    invoke-static {v8}, Lxc;->a([B)Lxb;
+    invoke-static {v8}, Lwl;->a([B)Lwk;
     :try_end_0
-    .catch Lwz; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
@@ -1502,7 +1482,7 @@
     goto :goto_1
 .end method
 
-.method private static parseFirstValidXMPSection(Ljava/util/List;)Lxb;
+.method private static parseFirstValidXMPSection(Ljava/util/List;)Lwk;
     .locals 7
 
     const/4 v6, 0x0
@@ -1555,9 +1535,9 @@
     invoke-static {v0, v2, v1, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     :try_start_0
-    invoke-static {v1}, Lxc;->a([B)Lxb;
+    invoke-static {v1}, Lwl;->a([B)Lwk;
     :try_end_0
-    .catch Lwz; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
@@ -1709,21 +1689,21 @@
     goto :goto_0
 .end method
 
-.method private static serializeMeta(Lxb;)[B
+.method private static serializeMeta(Lwk;)[B
     .locals 6
 
     :try_start_0
-    new-instance v0, Lyg;
+    new-instance v0, Lxr;
 
-    invoke-direct {v0}, Lyg;-><init>()V
+    invoke-direct {v0}, Lxr;-><init>()V
 
-    invoke-virtual {v0}, Lyg;->b()Lyg;
+    invoke-virtual {v0}, Lxr;->b()Lxr;
 
-    invoke-virtual {v0}, Lyg;->a()Lyg;
+    invoke-virtual {v0}, Lxr;->a()Lxr;
 
-    invoke-static {p0, v0}, Lxc;->a(Lxb;Lyg;)[B
+    invoke-static {p0, v0}, Lwl;->a(Lwk;Lxr;)[B
     :try_end_0
-    .catch Lwz; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
@@ -1849,7 +1829,7 @@
     return-void
 .end method
 
-.method public static writeXMPMeta(Ljava/io/InputStream;Ljava/io/OutputStream;Lxb;Lxb;)Z
+.method public static writeXMPMeta(Ljava/io/InputStream;Ljava/io/OutputStream;Lwk;Lwk;)Z
     .locals 7
 
     const/4 v6, 0x0
@@ -1865,23 +1845,23 @@
     return v0
 
     :cond_1
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/io/OutputStream;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lxb;
+    check-cast v1, Lwk;
 
     const/4 v2, 0x0
 
     if-eqz p3, :cond_3
 
-    invoke-static {p3}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->serializeMeta(Lxb;)[B
+    invoke-static {p3}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->serializeMeta(Lwk;)[B
 
     move-result-object v2
 
@@ -1901,12 +1881,12 @@
 
     const-string v5, "HasExtendedXMP"
 
-    invoke-interface {v1, v4, v5, v3}, Lxb;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v1, v4, v5, v3}, Lwk;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_0
-    .catch Lwz; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lwi; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_3
-    invoke-static {v1}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->serializeMeta(Lxb;)[B
+    invoke-static {v1}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->serializeMeta(Lwk;)[B
 
     move-result-object v3
 
@@ -1942,7 +1922,7 @@
 
     const-string v5, "HasExtendedXMP"
 
-    invoke-interface {v1, v4, v5}, Lxb;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v1, v4, v5}, Lwk;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_5
     invoke-static {p0, v6, v6}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->parse(Ljava/io/InputStream;ZZ)Ljava/util/List;
@@ -1996,7 +1976,7 @@
     goto :goto_0
 .end method
 
-.method public static writeXMPMeta(Ljava/lang/String;Lxb;)Z
+.method public static writeXMPMeta(Ljava/lang/String;Lwk;)Z
     .locals 10
 
     const/4 v6, 0x0
@@ -2129,7 +2109,7 @@
     const/4 v0, 0x0
 
     :try_start_4
-    invoke-static {v7, v1, p1, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->writeXMPMeta(Ljava/io/InputStream;Ljava/io/OutputStream;Lxb;Lxb;)Z
+    invoke-static {v7, v1, p1, v0}, Lcom/google/android/apps/camera/metadata/refocus/XmpUtil;->writeXMPMeta(Ljava/io/InputStream;Ljava/io/OutputStream;Lwk;Lwk;)Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 

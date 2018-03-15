@@ -1,68 +1,48 @@
-.class public final Ldjk;
+.class final Ldjk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ldjy;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldji;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Ldji;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldjk;->a:Ldji;
 
-    iput-object p1, p0, Ldjk;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldjk;
-
-    invoke-direct {v0, p0}, Ldjk;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 4
 
-    iget-object v0, p0, Ldjk;->a:Ljxn;
+    new-instance v1, Ldib;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Ldjk;->a:Ldji;
 
-    move-result-object v0
+    const/4 v3, 0x0
 
-    check-cast v0, Lggu;
+    iget-object v0, p0, Ldjk;->a:Ldji;
 
-    invoke-static {v0}, Ljkv;->a(Ljava/lang/Object;)Ljkv;
+    iget-object v0, v0, Ldji;->e:Ljrf;
 
-    move-result-object v0
-
-    invoke-static {v0}, Lfsp;->a(Ljava/util/Collection;)Lggq;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljle;->a(Ljava/lang/Object;)Ljle;
+    check-cast v0, Landroid/net/Uri;
 
-    move-result-object v0
+    invoke-direct {v1, v2, v3, v0}, Ldib;-><init>(Ldjz;ZLandroid/net/Uri;)V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Set;
-
-    return-object v0
+    return-object v1
 .end method

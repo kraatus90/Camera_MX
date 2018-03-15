@@ -3,141 +3,84 @@
 .source "PG"
 
 # interfaces
-.implements Lfft;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lczt;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lczt;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lddh;->a:Lczt;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lddh;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 3
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Lddh;->a:Lkgv;
 
-    if-nez p1, :cond_0
-
-    iget-object v2, p0, Lddh;->a:Lczt;
-
-    iget-object v0, v2, Lczt;->B:Lcqw;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, v2, Lczt;->B:Lcqw;
-
-    invoke-virtual {v0}, Lcqw;->a()Liau;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
+    check-cast v0, Lbqc;
+
+    sget-object v1, Lidx;->c:Lidx;
+
+    sget-object v2, Lbif;->c:Lbqi;
+
+    invoke-virtual {v0, v2}, Lbqc;->a(Lbqi;)Ljrf;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {v0}, Ljrf;->a()Z
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    const/16 v2, 0xf0
 
-    iget-object v0, v2, Lczt;->l:Lfhe;
+    if-ne v0, v2, :cond_0
 
-    iget-object v0, v0, Lfhe;->a:Lkj;
-
-    invoke-virtual {v0}, Lkj;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    move v0, v1
+    sget-object v0, Lidx;->d:Lidx;
 
     :goto_0
-    if-eqz v0, :cond_0
+    new-instance v1, Libw;
 
-    iget-object v0, p0, Lddh;->a:Lczt;
+    invoke-direct {v1, v0}, Libw;-><init>(Lidx;)V
 
-    iput-boolean v1, v0, Lczt;->A:Z
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Lddh;->a:Lczt;
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lczt;->f:Lgug;
+    move-result-object v0
 
-    invoke-interface {v0}, Lgug;->a()V
+    check-cast v0, Libw;
+
+    return-object v0
 
     :cond_0
-    return-void
-
-    :cond_1
-    const/4 v0, 0x0
+    move-object v0, v1
 
     goto :goto_0
-.end method
-
-.method public final b(Z)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Lddh;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->l:Lfhe;
-
-    iget-object v0, v0, Lfhe;->a:Lkj;
-
-    invoke-virtual {v0}, Lkj;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lddh;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->x:Lhem;
-
-    invoke-interface {v0}, Lhem;->k()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c(Z)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Lddh;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->l:Lfhe;
-
-    iget-object v0, v0, Lfhe;->a:Lkj;
-
-    invoke-virtual {v0}, Lkj;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lddh;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->x:Lhem;
-
-    invoke-interface {v0}, Lhem;->j()V
-
-    :cond_0
-    return-void
 .end method

@@ -1,112 +1,207 @@
-.class public final Ljcf;
-.super Ljbf;
+.class final Ljcf;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljdt;
 
 
 # instance fields
-.field private a:[Ljba;
+.field private final synthetic a:[Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
+
+.field private final synthetic b:Lcom/google/android/libraries/smartburst/filterfw/MffContext;
 
 
 # direct methods
-.method public varargs constructor <init>([Ljba;)V
+.method constructor <init>([Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;Lcom/google/android/libraries/smartburst/filterfw/MffContext;)V
     .locals 0
 
-    invoke-direct {p0}, Ljbf;-><init>()V
+    iput-object p1, p0, Ljcf;->a:[Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
 
-    iput-object p1, p0, Ljcf;->a:[Ljba;
+    iput-object p2, p0, Ljcf;->b:Lcom/google/android/libraries/smartburst/filterfw/MffContext;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Z
-    .locals 6
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 11
 
-    const/4 v0, 0x0
+    const-class v0, Liye;
 
-    iget-object v2, p1, Ljaz;->b:Ljava/util/Set;
+    const-string v1, "default"
 
-    iget-object v3, p0, Ljcf;->a:[Ljba;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    array-length v4, v3
+    move-result-object v0
 
-    move v1, v0
+    check-cast v0, Liye;
 
-    :goto_0
-    if-ge v1, v4, :cond_0
+    const-class v1, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    aget-object v5, v3, v1
+    const-string v2, "default"
 
-    invoke-interface {v2, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    const/4 v0, 0x1
-
-    :cond_0
-    return v0
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    const-string v0, "LabeledSegmentSelector[labels="
-
-    iget-object v1, p0, Ljcf;->a:[Ljba;
-
-    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, v1, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v1, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v5, p0, Ljcf;->a:[Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;
+
+    array-length v6, v5
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_0
+    if-ge v3, v6, :cond_2
+
+    aget-object v7, v5, v3
+
+    iget-object v8, p0, Ljcf;->b:Lcom/google/android/libraries/smartburst/filterfw/MffContext;
+
+    const-class v2, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+
+    const-string v9, "default"
+
+    invoke-virtual {p1, v2, v9}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    check-cast v2, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+
+    invoke-interface {v7, v8}, Lcom/google/android/libraries/smartburst/filterfw/GraphFactory;->create(Lcom/google/android/libraries/smartburst/filterfw/MffContext;)Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;
+
+    move-result-object v8
+
+    const-string v9, "videoProvider"
+
+    invoke-virtual {v8, v9}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;->getVariable(Ljava/lang/String;)Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v2}, Lcom/google/android/libraries/smartburst/filterfw/filterpacks/base/VariableSource;->setValue(Ljava/lang/Object;)V
+
+    invoke-virtual {v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;->getRunner()Lcom/google/android/libraries/smartburst/filterfw/GraphRunner;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/android/libraries/smartburst/filterfw/GraphRunner;->getFrameManager()Lcom/google/android/libraries/smartburst/filterfw/FrameManager;
+
+    move-result-object v2
+
+    const/high16 v9, 0x1800000
+
+    invoke-virtual {v2, v9}, Lcom/google/android/libraries/smartburst/filterfw/FrameManager;->setCacheSize(I)V
+
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v7, "GraphFactory"
+
+    const-string v9, ""
+
+    invoke-virtual {v2, v7, v9}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;->getRunner()Lcom/google/android/libraries/smartburst/filterfw/GraphRunner;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2}, Lcom/google/android/libraries/smartburst/filterfw/GraphRunner;->setThreadName(Ljava/lang/String;)V
+
+    new-instance v7, Ljava/util/ArrayList;
+
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {v8}, Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;->getAllFilters()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v9
+
+    :cond_0
+    :goto_1
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    add-int/lit8 v2, v2, 0x1
+    if-eqz v2, :cond_1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    check-cast v2, Lcom/google/android/libraries/smartburst/filterfw/Filter;
 
-    move-result v3
+    instance-of v10, v2, Liyi;
 
-    add-int/2addr v2, v3
+    if-eqz v10, :cond_0
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    check-cast v2, Liyi;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_1
+
+    :cond_1
+    new-instance v2, Liyc;
+
+    invoke-direct {v2, v8, v7}, Liyc;-><init>(Lcom/google/android/libraries/smartburst/filterfw/FilterGraph;Ljava/util/List;)V
+
+    new-instance v7, Liyj;
+
+    invoke-interface {v0, v2}, Liye;->a(Liyc;)Liyc;
+
+    move-result-object v2
+
+    invoke-direct {v7, v2, v1}, Liyj;-><init>(Liyc;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+
+    invoke-interface {v4, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v2, Liyn;
+
+    const-class v0, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
+
+    const-string v3, "default"
+
+    invoke-virtual {p1, v0, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;
 
-    move-result-object v0
+    invoke-direct {v2, v0, v1}, Liyn;-><init>(Lcom/google/android/libraries/smartburst/filterfw/VideoFrameProvider;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
 
-    const-string v1, "]"
+    invoke-interface {v4, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v0, Liym;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, v4}, Liym;-><init>(Ljava/util/List;)V
 
     return-object v0
 .end method

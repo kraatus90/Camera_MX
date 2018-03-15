@@ -1,48 +1,69 @@
-.class public final Lhgq;
-.super Ljava/lang/Object;
+.class final Lhgq;
+.super Lhho;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/refocus/ViewerActivity;
+.field private final synthetic a:Lhgl;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/refocus/ViewerActivity;)V
+.method constructor <init>(Lhgl;)V
     .locals 0
 
-    iput-object p1, p0, Lhgq;->a:Lcom/google/android/apps/refocus/ViewerActivity;
+    iput-object p1, p0, Lhgq;->a:Lhgl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lhho;-><init>(Lhhe;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final e()V
+    .locals 2
 
-    iget-object v0, p0, Lhgq;->a:Lcom/google/android/apps/refocus/ViewerActivity;
+    iget-object v0, p0, Lhgq;->a:Lhgl;
 
-    iget-object v0, v0, Lcom/google/android/apps/refocus/ViewerActivity;->e:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    iget-object v1, p0, Lhgq;->a:Lcom/google/android/apps/refocus/ViewerActivity;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-static {v1}, Lcom/google/android/apps/refocus/ViewerActivity;->a(Lcom/google/android/apps/refocus/ViewerActivity;)Lhij;
+    invoke-super {p0}, Lhho;->e()V
 
-    move-result-object v1
+    iget-object v0, p0, Lhgq;->a:Lhgl;
 
-    iput-object v1, v0, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->f:Lhij;
+    iget-object v0, v0, Lhgl;->a:Lgld;
 
-    new-instance v2, Lhif;
+    iget-object v1, p0, Lhgq;->a:Lhgl;
 
-    invoke-direct {v2, v0, v1}, Lhif;-><init>(Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;Lhij;)V
+    iget-object v1, v1, Lhgl;->d:Lglf;
 
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Lhgq;->a:Lhgl;
+
+    iget-object v0, v0, Lhgl;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lhho;->g()V
+
+    iget-object v0, p0, Lhgq;->a:Lhgl;
+
+    iget-object v0, v0, Lhgl;->a:Lgld;
+
+    iget-object v1, p0, Lhgq;->a:Lhgl;
+
+    iget-object v1, v1, Lhgl;->e:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lgyz;
+.implements Lhai;
 
 
 # instance fields

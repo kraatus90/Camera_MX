@@ -1,147 +1,136 @@
-.class public final Lirt;
-.super Ljava/lang/Object;
+.class final Lirt;
+.super Liqd;
 .source "PG"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field private a:[I
+.field private final synthetic a:I
 
-.field private b:I
-
-.field private synthetic c:Lirr;
+.field private final synthetic b:Lirr;
 
 
 # direct methods
-.method constructor <init>(Lirr;Ljava/util/concurrent/atomic/AtomicIntegerArray;I)V
-    .locals 3
+.method constructor <init>(Lirr;I)V
+    .locals 0
 
-    iput-object p1, p0, Lirt;->c:Lirr;
+    iput-object p1, p0, Lirt;->b:Lirr;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lirt;->a:I
 
-    invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicIntegerArray;->length()I
-
-    move-result v0
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Lirt;->a:[I
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicIntegerArray;->length()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v1, p0, Lirt;->a:[I
-
-    invoke-virtual {p2, v0}, Ljava/util/concurrent/atomic/AtomicIntegerArray;->get(I)I
-
-    move-result v2
-
-    aput v2, v1, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iput p3, p0, Lirt;->b:I
+    invoke-direct {p0}, Liqd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 4
+.method public final synthetic a_(Ljava/lang/Object;)V
+    .locals 6
 
-    iget-object v0, p0, Lirt;->c:Lirr;
+    check-cast p1, Lirb;
 
-    iget-object v0, v0, Lirr;->a:Ljava/util/EnumSet;
+    iget-object v0, p0, Lirt;->b:Lirr;
 
-    invoke-virtual {v0}, Ljava/util/EnumSet;->iterator()Ljava/util/Iterator;
+    iget-object v0, v0, Lirr;->c:[Lirb;
 
-    move-result-object v1
+    iget v1, p0, Lirt;->a:I
 
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    aput-object p1, v0, v1
+
+    iget-object v0, p0, Lirt;->b:Lirr;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lirr;->e:Z
+
+    iget-object v3, p0, Lirt;->b:Lirr;
+
+    iget-object v0, v3, Lirr;->d:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-boolean v0, v3, Lirr;->e:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_5
 
-    check-cast v0, Ljfs;
+    const/4 v1, 0x0
 
-    iget v2, p0, Lirt;->b:I
+    iget-object v4, v3, Lirr;->c:[Lirb;
 
-    iget-object v3, p0, Lirt;->a:[I
+    array-length v5, v4
 
-    iget v0, v0, Ljfs;->z:I
-
-    aget v0, v3, v0
-
-    if-gt v2, v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
     const/4 v0, 0x0
 
+    move v2, v0
+
+    :goto_0
+    if-ge v2, v5, :cond_2
+
+    aget-object v0, v4, v2
+
+    if-eqz v0, :cond_1
+
+    if-nez v1, :cond_0
+
+    :goto_1
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    move-object v1, v0
+
     goto :goto_0
-.end method
 
-.method public final hasNext()Z
-    .locals 1
+    :cond_0
+    invoke-static {v1, v0}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-    const/4 v0, 0x1
+    :cond_1
+    move-object v0, v1
 
-    return v0
-.end method
+    goto :goto_1
 
-.method public final synthetic next()Ljava/lang/Object;
-    .locals 4
+    :cond_2
+    if-eqz v1, :cond_4
 
-    new-instance v0, Lirs;
+    iget-object v0, v3, Lirr;->a:Liru;
 
-    iget-object v1, p0, Lirt;->c:Lirr;
+    invoke-virtual {v0, v1}, Liru;->a(Lirb;)Z
 
-    iget-object v2, p0, Lirt;->a:[I
+    :cond_3
+    :goto_2
+    return-void
 
-    iget v3, p0, Lirt;->b:I
+    :cond_4
+    iget-object v0, v3, Lirr;->a:Liru;
 
-    invoke-direct {v0, v1, v2, v3}, Lirs;-><init>(Lirr;[II)V
+    new-instance v1, Ljava/lang/AssertionError;
 
-    iget v1, p0, Lirt;->b:I
+    const-string v2, "Result list was marked as having an exception,but no exception was found"
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-direct {v1, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    iput v1, p0, Lirt;->b:I
+    invoke-static {v1}, Lirb;->a(Ljava/lang/Throwable;)Lirb;
 
-    return-object v0
-.end method
+    move-result-object v1
 
-.method public final remove()V
-    .locals 2
+    invoke-virtual {v0, v1}, Liru;->a(Lirb;)Z
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    goto :goto_2
 
-    const-string v1, "RowIterator does not allow removing rows!"
+    :cond_5
+    iget-object v0, v3, Lirr;->a:Liru;
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object v1, v3, Lirr;->b:[Ljava/lang/Object;
 
-    throw v0
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Liru;->a(Ljava/lang/Object;)Z
+
+    goto :goto_2
 .end method

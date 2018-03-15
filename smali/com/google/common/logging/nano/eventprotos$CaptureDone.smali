@@ -1,5 +1,5 @@
 .class public final Lcom/google/common/logging/nano/eventprotos$CaptureDone;
-.super Ljwj;
+.super Lkfr;
 .source "PG"
 
 
@@ -8,19 +8,19 @@
 
 
 # instance fields
-.field public adviceMeta:Ljpj;
+.field public adviceMeta:Ljyq;
 
-.field public authorStats:Ljpk;
+.field public authorStats:Ljys;
 
 .field public captureFailure:I
 
 .field public captureTiming:Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
-.field public exif:Ljqf;
+.field public exif:Ljzn;
 
-.field public face:[Ljqg;
+.field public face:[Ljzo;
 
-.field public faceretouchingMeta:Ljqh;
+.field public faceretouchingMeta:Ljzp;
 
 .field public fileNameHash:Ljava/lang/String;
 
@@ -28,43 +28,45 @@
 
 .field public frontCamera:Z
 
-.field public gcamMeta:Ljqk;
+.field public gcamMeta:Ljzs;
 
 .field public gridLines:Z
 
 .field public hdrPlusSetting:I
 
-.field public lensBlurMeta:Ljqn;
+.field public imaxMetadata:Ljzt;
 
-.field public luckyShotMeta:Ljqp;
+.field public lensBlurMeta:Ljzw;
 
-.field public meteringData:Ljqu;
+.field public luckyShotMeta:Ljzy;
 
-.field public microvideoMeta:Ljqv;
+.field public meteringData:Lkad;
+
+.field public microvideoMeta:Lkae;
 
 .field public mode:I
 
-.field public orientation:Ljrg;
+.field public orientation:Lkap;
 
-.field public panoMeta:Ljqy;
+.field public panoMeta:Lkah;
 
-.field public photoMeta:Ljqz;
+.field public photoMeta:Lkai;
 
 .field public photosInFlight:I
 
-.field public portraitMetadata:Ljrc;
+.field public portraitMetadata:Lkal;
 
 .field public processingTime:F
 
-.field public smartBurstMeta:Ljrl;
+.field public smartBurstMeta:Lkau;
 
-.field public smartburstCreationMeta:Ljrk;
+.field public smartburstCreationMeta:Lkat;
 
 .field public timerSeconds:F
 
-.field public touchCoord:Ljrs;
+.field public touchCoord:Lkbb;
 
-.field public videoMeta:Ljrt;
+.field public videoMeta:Lkbc;
 
 .field public volumeButtonShutter:Z
 
@@ -75,7 +77,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-direct {p0}, Lkfr;-><init>()V
 
     invoke-virtual {p0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->clear()Lcom/google/common/logging/nano/eventprotos$CaptureDone;
 
@@ -125,6 +127,28 @@
     .end packed-switch
 .end method
 
+.method public static checkCaptureFailureOrThrow([I)[I
+    .locals 3
+
+    array-length v1, p0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v1, :cond_0
+
+    aget v2, p0, v0
+
+    invoke-static {v2}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->checkCaptureFailureOrThrow(I)I
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object p0
+.end method
+
 .method public static checkTriStateSettingOrThrow(I)I
     .locals 3
 
@@ -170,6 +194,28 @@
     .end packed-switch
 .end method
 
+.method public static checkTriStateSettingOrThrow([I)[I
+    .locals 3
+
+    array-length v1, p0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v1, :cond_0
+
+    aget v2, p0, v0
+
+    invoke-static {v2}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->checkTriStateSettingOrThrow(I)I
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object p0
+.end method
+
 .method public static emptyArray()[Lcom/google/common/logging/nano/eventprotos$CaptureDone;
     .locals 2
 
@@ -177,7 +223,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v1, Ljwn;->b:Ljava/lang/Object;
+    sget-object v1, Lkfv;->b:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -213,14 +259,14 @@
     throw v0
 .end method
 
-.method public static parseFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
+.method public static parseFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
     .locals 1
 
     new-instance v0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;-><init>()V
 
-    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
+    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
 
     move-result-object v0
 
@@ -234,7 +280,7 @@
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;-><init>()V
 
-    invoke-static {v0, p0}, Ljwp;->mergeFrom(Ljwp;[B)Ljwp;
+    invoke-static {v0, p0}, Lkfx;->mergeFrom(Lkfx;[B)Lkfx;
 
     move-result-object v0
 
@@ -266,7 +312,7 @@
 
     iput v3, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->processingTime:F
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
     iput-boolean v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gridLines:Z
 
@@ -276,39 +322,39 @@
 
     iput-boolean v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->volumeButtonShutter:Z
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
-    invoke-static {}, Ljqg;->a()[Ljqg;
+    invoke-static {}, Ljzo;->a()[Ljzo;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
     iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureTiming:Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
     iput v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->hdrPlusSetting:I
 
@@ -316,13 +362,15 @@
 
     iput v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureFailure:I
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
-    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->unknownFieldData:Ljwl;
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    iput-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->unknownFieldData:Lkft;
 
     const/4 v0, -0x1
 
@@ -336,7 +384,7 @@
 
     const/4 v3, 0x0
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-super {p0}, Lkfr;->computeSerializedSize()I
 
     move-result v0
 
@@ -358,7 +406,7 @@
 
     iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->fileNameHash:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILjava/lang/String;)I
 
     move-result v1
 
@@ -373,7 +421,7 @@
 
     iget v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->mode:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
@@ -386,7 +434,7 @@
 
     const/16 v1, 0x30
 
-    invoke-static {v1}, Ljwi;->d(I)I
+    invoke-static {v1}, Lkfp;->d(I)I
 
     move-result v1
 
@@ -409,7 +457,7 @@
 
     const/16 v1, 0x38
 
-    invoke-static {v1}, Ljwi;->d(I)I
+    invoke-static {v1}, Lkfp;->d(I)I
 
     move-result v1
 
@@ -432,7 +480,7 @@
 
     const/16 v1, 0x40
 
-    invoke-static {v1}, Ljwi;->d(I)I
+    invoke-static {v1}, Lkfp;->d(I)I
 
     move-result v1
 
@@ -441,15 +489,15 @@
     add-int/2addr v0, v1
 
     :cond_4
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
     if-eqz v1, :cond_5
 
     const/16 v1, 0x9
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
@@ -462,7 +510,7 @@
 
     const/16 v1, 0x50
 
-    invoke-static {v1}, Ljwi;->d(I)I
+    invoke-static {v1}, Lkfp;->d(I)I
 
     move-result v1
 
@@ -485,7 +533,7 @@
 
     const/16 v1, 0x58
 
-    invoke-static {v1}, Ljwi;->d(I)I
+    invoke-static {v1}, Lkfp;->d(I)I
 
     move-result v1
 
@@ -502,7 +550,7 @@
 
     iget v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->flashSetting:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
@@ -515,7 +563,7 @@
 
     const/16 v1, 0x68
 
-    invoke-static {v1}, Ljwi;->d(I)I
+    invoke-static {v1}, Lkfp;->d(I)I
 
     move-result v1
 
@@ -524,26 +572,26 @@
     add-int/2addr v0, v1
 
     :cond_9
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
     if-eqz v1, :cond_a
 
     const/16 v1, 0xe
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_a
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     if-eqz v1, :cond_d
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     array-length v1, v1
 
@@ -558,13 +606,13 @@
     move v0, v4
 
     :goto_0
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     array-length v2, v2
 
     if-ge v0, v2, :cond_c
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     aget-object v2, v2, v0
 
@@ -572,7 +620,7 @@
 
     const/16 v3, 0xf
 
-    invoke-static {v3, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v3, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v2
 
@@ -587,120 +635,120 @@
     move v0, v1
 
     :cond_d
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
     if-eqz v1, :cond_e
 
     const/16 v1, 0x10
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_e
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
     if-eqz v1, :cond_f
 
     const/16 v1, 0x14
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_f
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
     if-eqz v1, :cond_10
 
     const/16 v1, 0x15
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_10
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
     if-eqz v1, :cond_11
 
     const/16 v1, 0x16
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_11
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
     if-eqz v1, :cond_12
 
     const/16 v1, 0x17
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_12
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
     if-eqz v1, :cond_13
 
     const/16 v1, 0x18
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_13
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
     if-eqz v1, :cond_14
 
     const/16 v1, 0x19
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_14
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
     if-eqz v1, :cond_15
 
     const/16 v1, 0x1b
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
@@ -715,67 +763,67 @@
 
     iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureTiming:Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_16
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
     if-eqz v1, :cond_17
 
     const/16 v1, 0x1e
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_17
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
     if-eqz v1, :cond_18
 
     const/16 v1, 0x1f
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_18
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
     if-eqz v1, :cond_19
 
     const/16 v1, 0x20
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_19
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
     if-eqz v1, :cond_1a
 
     const/16 v1, 0x21
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
@@ -790,7 +838,7 @@
 
     iget v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->hdrPlusSetting:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
@@ -805,7 +853,7 @@
 
     iget v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photosInFlight:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
@@ -820,75 +868,90 @@
 
     iget v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureFailure:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_1d
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
     if-eqz v1, :cond_1e
 
     const/16 v1, 0x25
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_1e
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
     if-eqz v1, :cond_1f
 
     const/16 v1, 0x26
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_1f
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
     if-eqz v1, :cond_20
 
     const/16 v1, 0x27
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_20
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    if-eqz v1, :cond_21
+
+    const/16 v1, 0x28
+
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_21
     return v0
 .end method
 
-.method public final mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
+.method public final mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
     .locals 4
 
     const/4 v1, 0x0
 
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    invoke-super {p0, p1, v0}, Lkfr;->storeUnknownField(Lkfo;I)Z
 
     move-result v0
 
@@ -898,7 +961,7 @@
     return-object p0
 
     :sswitch_1
-    invoke-virtual {p1}, Ljwh;->c()Ljava/lang/String;
+    invoke-virtual {p1}, Lkfo;->c()Ljava/lang/String;
 
     move-result-object v0
 
@@ -907,16 +970,16 @@
     goto :goto_0
 
     :sswitch_2
-    invoke-virtual {p1}, Ljwh;->i()I
+    invoke-virtual {p1}, Lkfo;->h()I
 
     move-result v2
 
     :try_start_0
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v3
 
-    invoke-static {v3}, Ljqw;->a(I)I
+    invoke-static {v3}, Lkaf;->a(I)I
 
     move-result v3
 
@@ -929,14 +992,14 @@
     :catch_0
     move-exception v3
 
-    invoke-virtual {p1, v2}, Ljwh;->e(I)V
+    invoke-virtual {p1, v2}, Lkfo;->e(I)V
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Ljwh;I)Z
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Lkfo;I)Z
 
     goto :goto_0
 
     :sswitch_3
-    invoke-virtual {p1}, Ljwh;->b()Z
+    invoke-virtual {p1}, Lkfo;->b()Z
 
     move-result v0
 
@@ -945,7 +1008,7 @@
     goto :goto_0
 
     :sswitch_4
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-virtual {p1}, Lkfo;->e()I
 
     move-result v0
 
@@ -958,7 +1021,7 @@
     goto :goto_0
 
     :sswitch_5
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-virtual {p1}, Lkfo;->e()I
 
     move-result v0
 
@@ -971,25 +1034,25 @@
     goto :goto_0
 
     :sswitch_6
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
     if-nez v0, :cond_1
 
-    new-instance v0, Ljqf;
+    new-instance v0, Ljzn;
 
-    invoke-direct {v0}, Ljqf;-><init>()V
+    invoke-direct {v0}, Ljzn;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
     :cond_1
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto :goto_0
 
     :sswitch_7
-    invoke-virtual {p1}, Ljwh;->b()Z
+    invoke-virtual {p1}, Lkfo;->b()Z
 
     move-result v0
 
@@ -998,7 +1061,7 @@
     goto :goto_0
 
     :sswitch_8
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-virtual {p1}, Lkfo;->e()I
 
     move-result v0
 
@@ -1011,12 +1074,12 @@
     goto :goto_0
 
     :sswitch_9
-    invoke-virtual {p1}, Ljwh;->i()I
+    invoke-virtual {p1}, Lkfo;->h()I
 
     move-result v2
 
     :try_start_1
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v3
 
@@ -1033,14 +1096,14 @@
     :catch_1
     move-exception v3
 
-    invoke-virtual {p1, v2}, Ljwh;->e(I)V
+    invoke-virtual {p1, v2}, Lkfo;->e(I)V
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Ljwh;I)Z
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Lkfo;I)Z
 
     goto/16 :goto_0
 
     :sswitch_a
-    invoke-virtual {p1}, Ljwh;->b()Z
+    invoke-virtual {p1}, Lkfo;->b()Z
 
     move-result v0
 
@@ -1049,31 +1112,31 @@
     goto/16 :goto_0
 
     :sswitch_b
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
     if-nez v0, :cond_2
 
-    new-instance v0, Ljrs;
+    new-instance v0, Lkbb;
 
-    invoke-direct {v0}, Ljrs;-><init>()V
+    invoke-direct {v0}, Lkbb;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
     :cond_2
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_c
     const/16 v0, 0x7a
 
-    invoke-static {p1, v0}, Ljwr;->a(Ljwh;I)I
+    invoke-static {p1, v0}, Lkfz;->a(Lkfo;I)I
 
     move-result v2
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     if-nez v0, :cond_4
 
@@ -1082,11 +1145,11 @@
     :goto_1
     add-int/2addr v2, v0
 
-    new-array v2, v2, [Ljqg;
+    new-array v2, v2, [Ljzo;
 
     if-eqz v0, :cond_3
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -1098,185 +1161,185 @@
 
     if-ge v0, v3, :cond_5
 
-    new-instance v3, Ljqg;
+    new-instance v3, Ljzo;
 
-    invoke-direct {v3}, Ljqg;-><init>()V
+    invoke-direct {v3}, Ljzo;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v3, v2, v0
 
-    invoke-virtual {p1, v3}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v3}, Lkfo;->a(Lkfx;)V
 
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
     :cond_4
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     array-length v0, v0
 
     goto :goto_1
 
     :cond_5
-    new-instance v3, Ljqg;
+    new-instance v3, Ljzo;
 
-    invoke-direct {v3}, Ljqg;-><init>()V
+    invoke-direct {v3}, Ljzo;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v0, v2, v0
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
-    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     goto/16 :goto_0
 
     :sswitch_d
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
     if-nez v0, :cond_6
 
-    new-instance v0, Ljrg;
+    new-instance v0, Lkap;
 
-    invoke-direct {v0}, Ljrg;-><init>()V
+    invoke-direct {v0}, Lkap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
     :cond_6
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_e
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
     if-nez v0, :cond_7
 
-    new-instance v0, Ljqz;
+    new-instance v0, Lkai;
 
-    invoke-direct {v0}, Ljqz;-><init>()V
+    invoke-direct {v0}, Lkai;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
     :cond_7
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_f
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
     if-nez v0, :cond_8
 
-    new-instance v0, Ljrt;
+    new-instance v0, Lkbc;
 
-    invoke-direct {v0}, Ljrt;-><init>()V
+    invoke-direct {v0}, Lkbc;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
     :cond_8
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_10
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
     if-nez v0, :cond_9
 
-    new-instance v0, Ljqk;
+    new-instance v0, Ljzs;
 
-    invoke-direct {v0}, Ljqk;-><init>()V
+    invoke-direct {v0}, Ljzs;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
     :cond_9
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_11
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
     if-nez v0, :cond_a
 
-    new-instance v0, Ljqn;
+    new-instance v0, Ljzw;
 
-    invoke-direct {v0}, Ljqn;-><init>()V
+    invoke-direct {v0}, Ljzw;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
     :cond_a
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_12
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
     if-nez v0, :cond_b
 
-    new-instance v0, Ljqy;
+    new-instance v0, Lkah;
 
-    invoke-direct {v0}, Ljqy;-><init>()V
+    invoke-direct {v0}, Lkah;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
     :cond_b
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_13
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
     if-nez v0, :cond_c
 
-    new-instance v0, Ljpk;
+    new-instance v0, Ljys;
 
-    invoke-direct {v0}, Ljpk;-><init>()V
+    invoke-direct {v0}, Ljys;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
     :cond_c
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_14
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
     if-nez v0, :cond_d
 
-    new-instance v0, Ljrl;
+    new-instance v0, Lkau;
 
-    invoke-direct {v0}, Ljrl;-><init>()V
+    invoke-direct {v0}, Lkau;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
     :cond_d
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
@@ -1294,89 +1357,89 @@
     :cond_e
     iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureTiming:Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_16
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
     if-nez v0, :cond_f
 
-    new-instance v0, Ljpj;
+    new-instance v0, Ljyq;
 
-    invoke-direct {v0}, Ljpj;-><init>()V
+    invoke-direct {v0}, Ljyq;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
     :cond_f
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_17
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
     if-nez v0, :cond_10
 
-    new-instance v0, Ljqp;
+    new-instance v0, Ljzy;
 
-    invoke-direct {v0}, Ljqp;-><init>()V
+    invoke-direct {v0}, Ljzy;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
     :cond_10
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_18
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
     if-nez v0, :cond_11
 
-    new-instance v0, Ljrk;
+    new-instance v0, Lkat;
 
-    invoke-direct {v0}, Ljrk;-><init>()V
+    invoke-direct {v0}, Lkat;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
     :cond_11
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_19
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
     if-nez v0, :cond_12
 
-    new-instance v0, Ljqu;
+    new-instance v0, Lkad;
 
-    invoke-direct {v0}, Ljqu;-><init>()V
+    invoke-direct {v0}, Lkad;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
     :cond_12
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_1a
-    invoke-virtual {p1}, Ljwh;->i()I
+    invoke-virtual {p1}, Lkfo;->h()I
 
     move-result v2
 
     :try_start_2
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v3
 
@@ -1393,14 +1456,14 @@
     :catch_2
     move-exception v3
 
-    invoke-virtual {p1, v2}, Ljwh;->e(I)V
+    invoke-virtual {p1, v2}, Lkfo;->e(I)V
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Ljwh;I)Z
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Lkfo;I)Z
 
     goto/16 :goto_0
 
     :sswitch_1b
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v0
 
@@ -1409,12 +1472,12 @@
     goto/16 :goto_0
 
     :sswitch_1c
-    invoke-virtual {p1}, Ljwh;->i()I
+    invoke-virtual {p1}, Lkfo;->h()I
 
     move-result v2
 
     :try_start_3
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v3
 
@@ -1431,63 +1494,81 @@
     :catch_3
     move-exception v3
 
-    invoke-virtual {p1, v2}, Ljwh;->e(I)V
+    invoke-virtual {p1, v2}, Lkfo;->e(I)V
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Ljwh;I)Z
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->storeUnknownField(Lkfo;I)Z
 
     goto/16 :goto_0
 
     :sswitch_1d
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
     if-nez v0, :cond_13
 
-    new-instance v0, Ljqv;
+    new-instance v0, Lkae;
 
-    invoke-direct {v0}, Ljqv;-><init>()V
+    invoke-direct {v0}, Lkae;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
     :cond_13
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_1e
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
     if-nez v0, :cond_14
 
-    new-instance v0, Ljqh;
+    new-instance v0, Ljzp;
 
-    invoke-direct {v0}, Ljqh;-><init>()V
+    invoke-direct {v0}, Ljzp;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
     :cond_14
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
     :sswitch_1f
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
     if-nez v0, :cond_15
 
-    new-instance v0, Ljrc;
+    new-instance v0, Lkal;
 
-    invoke-direct {v0}, Ljrc;-><init>()V
+    invoke-direct {v0}, Lkal;-><init>()V
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
     :cond_15
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
+
+    goto/16 :goto_0
+
+    :sswitch_20
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    if-nez v0, :cond_16
+
+    new-instance v0, Ljzt;
+
+    invoke-direct {v0}, Ljzt;-><init>()V
+
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    :cond_16
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
@@ -1527,20 +1608,21 @@
         0x12a -> :sswitch_1d
         0x132 -> :sswitch_1e
         0x13a -> :sswitch_1f
+        0x142 -> :sswitch_20
     .end sparse-switch
 .end method
 
-.method public final bridge synthetic mergeFrom(Ljwh;)Ljwp;
+.method public final bridge synthetic mergeFrom(Lkfo;)Lkfx;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
+    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureDone;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
+.method public final writeTo(Lkfp;)V
     .locals 3
 
     const/4 v2, 0x0
@@ -1563,7 +1645,7 @@
 
     iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->fileNameHash:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjava/lang/String;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILjava/lang/String;)V
 
     :cond_0
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->mode:I
@@ -1574,7 +1656,7 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->mode:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_1
     iget-boolean v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->frontCamera:Z
@@ -1585,7 +1667,7 @@
 
     iget-boolean v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->frontCamera:Z
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IZ)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(IZ)V
 
     :cond_2
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->zoomValue:F
@@ -1604,7 +1686,7 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->zoomValue:F
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(IF)V
 
     :cond_3
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->processingTime:F
@@ -1623,18 +1705,18 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->processingTime:F
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(IF)V
 
     :cond_4
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
     if-eqz v0, :cond_5
 
     const/16 v0, 0x9
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljqf;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->exif:Ljzn;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_5
     iget-boolean v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gridLines:Z
@@ -1645,7 +1727,7 @@
 
     iget-boolean v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gridLines:Z
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IZ)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(IZ)V
 
     :cond_6
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->timerSeconds:F
@@ -1664,7 +1746,7 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->timerSeconds:F
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(IF)V
 
     :cond_7
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->flashSetting:I
@@ -1675,7 +1757,7 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->flashSetting:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_8
     iget-boolean v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->volumeButtonShutter:Z
@@ -1686,25 +1768,25 @@
 
     iget-boolean v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->volumeButtonShutter:Z
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IZ)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(IZ)V
 
     :cond_9
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
     if-eqz v0, :cond_a
 
     const/16 v0, 0xe
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Ljrs;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->touchCoord:Lkbb;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_a
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     if-eqz v0, :cond_c
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     array-length v0, v0
 
@@ -1713,13 +1795,13 @@
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_c
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljqg;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->face:[Ljzo;
 
     aget-object v1, v1, v0
 
@@ -1727,7 +1809,7 @@
 
     const/16 v2, 0xf
 
-    invoke-virtual {p1, v2, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v2, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_b
     add-int/lit8 v0, v0, 0x1
@@ -1735,92 +1817,92 @@
     goto :goto_0
 
     :cond_c
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
     if-eqz v0, :cond_d
 
     const/16 v0, 0x10
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Ljrg;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->orientation:Lkap;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_d
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
     if-eqz v0, :cond_e
 
     const/16 v0, 0x14
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Ljqz;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photoMeta:Lkai;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_e
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
     if-eqz v0, :cond_f
 
     const/16 v0, 0x15
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Ljrt;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->videoMeta:Lkbc;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_f
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
     if-eqz v0, :cond_10
 
     const/16 v0, 0x16
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljqk;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->gcamMeta:Ljzs;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_10
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
     if-eqz v0, :cond_11
 
     const/16 v0, 0x17
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljqn;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->lensBlurMeta:Ljzw;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_11
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
     if-eqz v0, :cond_12
 
     const/16 v0, 0x18
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Ljqy;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->panoMeta:Lkah;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_12
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
     if-eqz v0, :cond_13
 
     const/16 v0, 0x19
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljpk;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->authorStats:Ljys;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_13
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
     if-eqz v0, :cond_14
 
     const/16 v0, 0x1b
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Ljrl;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartBurstMeta:Lkau;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_14
     iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureTiming:Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
@@ -1831,51 +1913,51 @@
 
     iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureTiming:Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_15
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
     if-eqz v0, :cond_16
 
     const/16 v0, 0x1e
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljpj;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->adviceMeta:Ljyq;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_16
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
     if-eqz v0, :cond_17
 
     const/16 v0, 0x1f
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljqp;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->luckyShotMeta:Ljzy;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_17
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
     if-eqz v0, :cond_18
 
     const/16 v0, 0x20
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Ljrk;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->smartburstCreationMeta:Lkat;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_18
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
     if-eqz v0, :cond_19
 
     const/16 v0, 0x21
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Ljqu;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->meteringData:Lkad;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_19
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->hdrPlusSetting:I
@@ -1886,7 +1968,7 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->hdrPlusSetting:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_1a
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photosInFlight:I
@@ -1897,7 +1979,7 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->photosInFlight:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_1b
     iget v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureFailure:I
@@ -1908,43 +1990,54 @@
 
     iget v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->captureFailure:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_1c
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
     if-eqz v0, :cond_1d
 
     const/16 v0, 0x25
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Ljqv;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->microvideoMeta:Lkae;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_1d
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
     if-eqz v0, :cond_1e
 
     const/16 v0, 0x26
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljqh;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->faceretouchingMeta:Ljzp;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_1e
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
     if-eqz v0, :cond_1f
 
     const/16 v0, 0x27
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Ljrc;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->portraitMetadata:Lkal;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_1f
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    if-eqz v0, :cond_20
+
+    const/16 v0, 0x28
+
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureDone;->imaxMetadata:Ljzt;
+
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
+
+    :cond_20
+    invoke-super {p0, p1}, Lkfr;->writeTo(Lkfp;)V
 
     return-void
 .end method

@@ -1,152 +1,52 @@
-.class public final Ltr;
-.super Ljava/lang/Object;
+.class final Ltr;
+.super Landroid/database/DataSetObserver;
 .source "PG"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:Z
+.field private final synthetic a:Ltn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lts;
-
-    invoke-direct {v0}, Lts;-><init>()V
-
-    sput-object v0, Ltr;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Ltn;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ltr;->a:Ltn;
 
-    return-void
-.end method
-
-.method constructor <init>(Landroid/os/Parcel;)V
-    .locals 2
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    iput v1, p0, Ltr;->a:I
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    iput v1, p0, Ltr;->b:I
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    if-ne v1, v0, :cond_0
-
-    :goto_0
-    iput-boolean v0, p0, Ltr;->c:Z
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public constructor <init>(Ltr;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget v0, p1, Ltr;->a:I
-
-    iput v0, p0, Ltr;->a:I
-
-    iget v0, p1, Ltr;->b:I
-
-    iput v0, p0, Ltr;->b:I
-
-    iget-boolean v0, p1, Ltr;->c:Z
-
-    iput-boolean v0, p0, Ltr;->c:Z
+    invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()Z
+.method public final onChanged()V
     .locals 1
 
-    iget v0, p0, Ltr;->a:I
+    iget-object v0, p0, Ltr;->a:Ltn;
 
-    if-ltz v0, :cond_0
+    iget-object v0, v0, Ltn;->r:Landroid/widget/PopupWindow;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
 
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final describeContents()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
-
-    iget v0, p0, Ltr;->a:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget v0, p0, Ltr;->b:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-boolean v0, p0, Ltr;->c:Z
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ltr;->a:Ltn;
 
-    :goto_0
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
+    invoke-virtual {v0}, Ltn;->b()V
 
     :cond_0
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    goto :goto_0
+.method public final onInvalidated()V
+    .locals 1
+
+    iget-object v0, p0, Ltr;->a:Ltn;
+
+    invoke-virtual {v0}, Ltn;->c()V
+
+    return-void
 .end method

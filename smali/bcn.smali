@@ -3,30 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Late;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Ljuw;
-
-.field private synthetic b:Ljvi;
-
-.field private synthetic c:Ljava/lang/Runnable;
-
-.field private synthetic d:Lbck;
+.field private final synthetic a:Lbcm;
 
 
 # direct methods
-.method constructor <init>(Lbck;Ljuw;Ljvi;Ljava/lang/Runnable;)V
+.method constructor <init>(Lbcm;)V
     .locals 0
 
-    iput-object p1, p0, Lbcn;->d:Lbck;
-
-    iput-object p2, p0, Lbcn;->a:Ljuw;
-
-    iput-object p3, p0, Lbcn;->b:Ljvi;
-
-    iput-object p4, p0, Lbcn;->c:Ljava/lang/Runnable;
+    iput-object p1, p0, Lbcn;->a:Lbcm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,58 +23,65 @@
 
 
 # virtual methods
-.method public final a()Ljuw;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lbcn;->a:Ljuw;
+    iget-object v0, p0, Lbcn;->a:Lbcm;
 
-    return-object v0
-.end method
+    iget-object v0, v0, Lbcm;->b:Laws;
 
-.method public final b()Ljuw;
-    .locals 1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lbcn;->b:Ljvi;
+    iget-object v0, p0, Lbcn;->a:Lbcm;
 
-    return-object v0
-.end method
+    iget-object v0, v0, Lbcm;->b:Laws;
 
-.method public final c()V
-    .locals 0
+    invoke-interface {v0}, Laws;->d()Z
 
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Lbcn;->a:Lbcm;
+
+    invoke-virtual {v0}, Lbcm;->b()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     return-void
-.end method
 
-.method public final d()V
-    .locals 4
+    :catch_0
+    move-exception v0
 
-    iget-object v0, p0, Lbcn;->d:Lbck;
+    iget-object v1, p0, Lbcn;->a:Lbcm;
 
-    iget-object v1, p0, Lbcn;->c:Ljava/lang/Runnable;
+    iget-object v1, v1, Lbcm;->c:Lket;
 
-    sget-object v2, Lbck;->a:Ljava/lang/String;
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    const-string v3, "Execute AF reset runnable"
+    goto :goto_0
 
-    invoke-static {v2, v3}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :cond_1
+    sget-object v0, Lbcm;->a:Ljava/lang/String;
 
-    iget-object v2, v0, Lbck;->c:Licn;
+    const-string v1, "Pre-initialization failed, the activity is not in the foreground."
 
-    invoke-static {}, Lgew;->a()Lgey;
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v3
+    iget-object v0, p0, Lbcn;->a:Lbcm;
 
-    invoke-interface {v2, v3}, Licn;->a(Ljava/lang/Object;)V
+    iget-object v0, v0, Lbcm;->c:Lket;
 
-    iget-object v0, v0, Lbck;->d:Licn;
+    const/4 v1, 0x0
 
-    invoke-static {}, Lgew;->a()Lgey;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v2}, Licn;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
-
-    return-void
+    goto :goto_0
 .end method

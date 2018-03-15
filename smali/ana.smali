@@ -1,67 +1,160 @@
-.class final Lana;
-.super Lamy;
+.class public final Lana;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Laeb;
+
+
+# instance fields
+.field private final b:Laeb;
+
+.field private final c:Z
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Laeb;Z)V
     .locals 0
 
-    invoke-direct {p0}, Lamy;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lana;->b:Laeb;
+
+    iput-boolean p2, p0, Lana;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(IIII)F
+.method public final a(Landroid/content/Context;Lagw;II)Lagw;
     .locals 4
 
-    const/4 v0, 0x1
+    invoke-static {p1}, Lacj;->a(Landroid/content/Context;)Lacj;
 
-    int-to-float v1, p2
+    move-result-object v0
 
-    int-to-float v2, p4
+    iget-object v1, v0, Lacj;->a:Lahf;
 
-    div-float/2addr v1, v2
+    invoke-interface {p2}, Lagw;->b()Ljava/lang/Object;
 
-    int-to-float v2, p1
+    move-result-object v0
 
-    int-to-float v3, p3
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    div-float/2addr v2, v3
+    invoke-static {v1, v0, p3, p4}, Lamy;->a(Lahf;Landroid/graphics/drawable/Drawable;II)Lagw;
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    iget-boolean v1, p0, Lana;->c:Z
+
+    if-eqz v1, :cond_1
+
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1e
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unable to convert "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v2, " to a Bitmap"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_0
+    iget-object v0, p0, Lana;->b:Laeb;
+
+    invoke-interface {v0, p1, v1, p3, p4}, Laeb;->a(Landroid/content/Context;Lagw;II)Lagw;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    float-to-double v2, v1
+    if-eqz v1, :cond_2
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+    invoke-interface {v0}, Lagw;->d()V
 
-    move-result-wide v2
+    :cond_1
+    :goto_0
+    return-object p2
 
-    double-to-int v1, v2
+    :cond_2
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-static {v1}, Ljava/lang/Integer;->highestOneBit(I)I
+    move-result-object v1
 
-    move-result v2
+    invoke-static {v1, v0}, Land;->a(Landroid/content/res/Resources;Lagw;)Lagw;
 
-    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+    move-result-object p2
 
-    move-result v2
+    goto :goto_0
+.end method
 
-    if-ge v2, v1, :cond_0
+.method public final a(Ljava/security/MessageDigest;)V
+    .locals 1
+
+    iget-object v0, p0, Lana;->b:Laeb;
+
+    invoke-interface {v0, p1}, Laeb;->a(Ljava/security/MessageDigest;)V
+
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    instance-of v0, p1, Lana;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lana;
+
+    iget-object v0, p0, Lana;->b:Laeb;
+
+    iget-object v1, p1, Lana;->b:Laeb;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
 
     :goto_0
-    shl-int v0, v2, v0
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    int-to-float v0, v0
-
-    div-float v0, v1, v0
-
     return v0
 
     :cond_0
@@ -70,10 +163,14 @@
     goto :goto_0
 .end method
 
-.method public final a()I
+.method public final hashCode()I
     .locals 1
 
-    sget v0, Leh;->g:I
+    iget-object v0, p0, Lana;->b:Laeb;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
 
     return v0
 .end method

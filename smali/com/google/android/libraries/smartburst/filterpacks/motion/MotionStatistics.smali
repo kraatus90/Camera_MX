@@ -69,31 +69,31 @@
 .method public static getCumulativeMotionStatistics(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;JJFFF)Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;
     .locals 7
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;
 
     invoke-direct {v1, p5, p6, p7}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStatistics;-><init>(FFF)V
 
-    invoke-interface {p0, p1, p2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowIterator(J)Lirt;
+    invoke-interface {p0, p1, p2}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowIterator(J)Ljaz;
 
     move-result-object v2
 
     :cond_0
     :goto_0
-    invoke-virtual {v2}, Lirt;->a()Z
+    invoke-virtual {v2}, Ljaz;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v2}, Lirt;->next()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljaz;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lirs;
+    check-cast v0, Ljay;
 
-    invoke-virtual {v0}, Lirs;->b()J
+    invoke-virtual {v0}, Ljay;->b()J
 
     move-result-wide v4
 
@@ -101,7 +101,7 @@
 
     if-lez v3, :cond_0
 
-    invoke-virtual {v0}, Lirs;->b()J
+    invoke-virtual {v0}, Ljay;->b()J
 
     move-result-wide v4
 
@@ -109,13 +109,13 @@
 
     if-gtz v3, :cond_1
 
-    invoke-virtual {v0}, Lirs;->b()J
+    invoke-virtual {v0}, Ljay;->b()J
 
     move-result-wide v4
 
-    sget-object v0, Ljfs;->m:Ljfs;
+    sget-object v0, Ljpe;->m:Ljpe;
 
-    invoke-interface {p0, v4, v5, v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getFeature(JLjfs;)Lcom/google/android/libraries/smartburst/utils/Feature;
+    invoke-interface {p0, v4, v5, v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getFeature(JLjpe;)Lcom/google/android/libraries/smartburst/utils/Feature;
 
     move-result-object v0
 

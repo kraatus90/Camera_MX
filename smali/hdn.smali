@@ -1,178 +1,70 @@
-.class public final Lhdn;
-.super Ljava/lang/Object;
+.class Lhdn;
+.super Lglb;
 .source "PG"
 
 
 # instance fields
-.field public final a:Landroid/view/GestureDetector;
-
-.field public final b:Landroid/view/ScaleGestureDetector;
-
-.field public final c:Lhdg;
-
-.field public final d:Lhdm;
-
-.field public final e:Lhdf;
-
-.field public final f:Lhdj;
-
-.field public final g:Lhdl;
-
-.field public final h:Lhdk;
-
-.field public final i:Lhde;
-
-.field public j:I
-
-.field public k:Z
-
-.field public l:Z
-
-.field public m:F
-
-.field public n:F
-
-.field public o:I
-
-.field private p:Landroid/view/GestureDetector$OnGestureListener;
-
-.field private q:Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
+.field private final synthetic a:Lhdm;
 
 
 # direct methods
-.method public constructor <init>(Lhdq;Lhdg;Lhdm;Lhdj;Lhdl;Lhdk;Lhde;Lhdf;)V
-    .locals 4
+.method constructor <init>(Lhdm;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhdn;->a:Lhdm;
 
-    new-instance v0, Lhdo;
+    const/4 v0, 0x0
 
-    invoke-direct {v0, p0}, Lhdo;-><init>(Lhdn;)V
-
-    iput-object v0, p0, Lhdn;->p:Landroid/view/GestureDetector$OnGestureListener;
-
-    new-instance v0, Lhdp;
-
-    invoke-direct {v0, p0}, Lhdp;-><init>(Lhdn;)V
-
-    iput-object v0, p0, Lhdn;->q:Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
-
-    iget-object v0, p0, Lhdn;->p:Landroid/view/GestureDetector$OnGestureListener;
-
-    new-instance v1, Landroid/view/GestureDetector;
-
-    iget-object v2, p1, Lhdq;->a:Landroid/content/Context;
-
-    iget-object v3, p1, Lhdq;->b:Landroid/os/Handler;
-
-    invoke-direct {v1, v2, v0, v3}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V
-
-    iput-object v1, p0, Lhdn;->a:Landroid/view/GestureDetector;
-
-    iget-object v0, p0, Lhdn;->q:Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
-
-    new-instance v1, Landroid/view/ScaleGestureDetector;
-
-    iget-object v2, p1, Lhdq;->a:Landroid/content/Context;
-
-    iget-object v3, p1, Lhdq;->b:Landroid/os/Handler;
-
-    invoke-direct {v1, v2, v0, v3}, Landroid/view/ScaleGestureDetector;-><init>(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;Landroid/os/Handler;)V
-
-    iput-object v1, p0, Lhdn;->b:Landroid/view/ScaleGestureDetector;
-
-    iget-object v0, p0, Lhdn;->b:Landroid/view/ScaleGestureDetector;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/ScaleGestureDetector;->setQuickScaleEnabled(Z)V
-
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhdg;
-
-    iput-object v0, p0, Lhdn;->c:Lhdg;
-
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhdm;
-
-    iput-object v0, p0, Lhdn;->d:Lhdm;
-
-    invoke-static {p4}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhdj;
-
-    iput-object v0, p0, Lhdn;->f:Lhdj;
-
-    invoke-static {p5}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhdl;
-
-    iput-object v0, p0, Lhdn;->g:Lhdl;
-
-    invoke-static {p6}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhdk;
-
-    iput-object v0, p0, Lhdn;->h:Lhdk;
-
-    invoke-static {p7}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhde;
-
-    iput-object v0, p0, Lhdn;->i:Lhde;
-
-    iput-object p8, p0, Lhdn;->e:Lhdf;
-
-    sget v0, Leh;->bt:I
-
-    iput v0, p0, Lhdn;->j:I
+    invoke-direct {p0, v0}, Lglb;-><init>([[[[B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhdh;
-    .locals 2
+.method public Y()V
+    .locals 0
 
-    iget v0, p0, Lhdn;->j:I
+    return-void
+.end method
 
-    sget v1, Leh;->bu:I
+.method public final a()V
+    .locals 4
 
-    if-ne v0, v1, :cond_0
+    iget-object v0, p0, Lhdn;->a:Lhdm;
 
-    iget-object v0, p0, Lhdn;->c:Lhdg;
+    iget-object v0, v0, Lhdm;->e:Lhdp;
 
-    :goto_0
-    return-object v0
+    iget-boolean v1, v0, Lhdp;->d:Z
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lhdp;->d:Z
+
+    iget-object v1, v0, Lhdp;->b:Landroid/widget/VideoView;
+
+    iget-object v0, v0, Lhdp;->c:Ljava/lang/Runnable;
+
+    const-wide/16 v2, 0xa
+
+    invoke-virtual {v1, v0, v2, v3}, Landroid/widget/VideoView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     :cond_0
-    iget v0, p0, Lhdn;->j:I
+    return-void
+.end method
 
-    sget v1, Leh;->bv:I
+.method public final b()V
+    .locals 2
 
-    if-ne v0, v1, :cond_1
+    iget-object v0, p0, Lhdn;->a:Lhdm;
 
-    iget-object v0, p0, Lhdn;->d:Lhdm;
+    iget-object v0, v0, Lhdm;->e:Lhdp;
 
-    goto :goto_0
+    const/4 v1, 0x0
 
-    :cond_1
-    sget-object v0, Lhdh;->a:Lhdh;
+    iput-boolean v1, v0, Lhdp;->d:Z
 
-    goto :goto_0
+    return-void
 .end method

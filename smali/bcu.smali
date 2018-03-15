@@ -3,108 +3,83 @@
 .source "PG"
 
 # interfaces
-.implements Lihv;
+.implements Lful;
 
 
 # instance fields
-.field private synthetic a:Ljvi;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private final synthetic b:Lbct;
 
 
 # direct methods
-.method constructor <init>(Ljvi;)V
-    .locals 0
+.method constructor <init>(Lbct;)V
+    .locals 2
 
-    iput-object p1, p0, Lbcu;->a:Ljvi;
+    iput-object p1, p0, Lbcu;->b:Lbct;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lbcu;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liht;)V
-    .locals 2
-
-    iget-object v0, p0, Lbcu;->a:Ljvi;
-
-    invoke-virtual {v0, p1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    sget-object v0, Lbcs;->a:Ljava/lang/String;
-
-    const-string v1, "onConfigured"
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final a(Liht;Landroid/view/Surface;)V
-    .locals 2
-
-    sget-object v0, Lbcs;->a:Ljava/lang/String;
-
-    const-string v1, "onSurfacePrepared"
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final b(Liht;)V
+.method public final close()V
     .locals 3
 
-    sget-object v0, Lbcs;->a:Ljava/lang/String;
+    iget-object v0, p0, Lbcu;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v1, "onConfigureFailed"
+    const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    iget-object v0, p0, Lbcu;->a:Ljvi;
+    move-result v0
 
-    new-instance v1, Lief;
+    if-nez v0, :cond_0
 
-    const-string v2, "CameraCaptureSession.onConfigureFailed"
+    iget-object v1, p0, Lbcu;->b:Lbct;
 
-    invoke-direct {v1, v2}, Lief;-><init>(Ljava/lang/String;)V
+    iget-object v2, v1, Lbct;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Throwable;)Z
+    monitor-enter v2
 
+    :try_start_0
+    iget-object v0, v1, Libw;->c:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lbct;->a(Ljava/lang/Object;)V
+
+    monitor-exit v2
+
+    :cond_0
     return-void
-.end method
 
-.method public final c(Liht;)V
-    .locals 2
+    :catchall_0
+    move-exception v0
 
-    sget-object v0, Lbcs;->a:Ljava/lang/String;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v1, "onReady"
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final d(Liht;)V
-    .locals 2
-
-    sget-object v0, Lbcs;->a:Ljava/lang/String;
-
-    const-string v1, "onActive"
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final e(Liht;)V
-    .locals 2
-
-    sget-object v0, Lbcs;->a:Ljava/lang/String;
-
-    const-string v1, "onClosed"
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+    throw v0
 .end method

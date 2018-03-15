@@ -1,54 +1,111 @@
-.class public final Legs;
-.super Ljava/lang/Object;
+.class public Legs;
+.super Legr;
 .source "PG"
 
-# interfaces
-.implements Ljhj;
+
+# instance fields
+.field private a:Lhgv;
+
+.field public e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field public f:Lgvc;
+
+.field public g:Lgqc;
+
+.field public h:Lfwg;
+
+.field public i:Landroid/content/Context;
+
+.field public j:Lick;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Legr;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public a()V
+    .locals 1
+
+    iget-object v0, p0, Legs;->a:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->e()V
+
+    iget-object v0, p0, Legs;->a:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->f()V
+
+    iget-object v0, p0, Legs;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->disablePhotoVideoSwitch()V
+
+    return-void
+.end method
+
+.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lhgv;Landroid/view/Window;Lgqc;Lbch;Lfwg;Landroid/content/Context;Lick;)V
     .locals 2
 
-    check-cast p1, Lcom/google/googlex/gcam/AeResults;
+    iput-object p1, p0, Legs;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    new-instance v0, Ljqu;
+    iput-object p2, p0, Legs;->f:Lgvc;
 
-    invoke-direct {v0}, Ljqu;-><init>()V
+    iput-object p3, p0, Legs;->a:Lhgv;
 
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/AeResults;->LogSceneBrightness()F
+    iput-object p5, p0, Legs;->g:Lgqc;
 
-    move-result v1
+    iput-object p7, p0, Legs;->h:Lfwg;
 
-    iput v1, v0, Ljqu;->b:F
+    iput-object p8, p0, Legs;->i:Landroid/content/Context;
 
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/AeResults;->getPredicted_image_brightness()F
+    iput-object p9, p0, Legs;->j:Lick;
 
-    move-result v1
+    invoke-virtual {p6}, Lbch;->a()V
 
-    iput v1, v0, Ljqu;->c:F
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToVideoIntent()V
 
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/AeResults;->MotionValid()Z
+    sget-object v0, Lgue;->f:Lgue;
 
-    move-result v1
+    invoke-virtual {p2, v0}, Lgvc;->a(Lgue;)V
 
-    iput-boolean v1, v0, Ljqu;->d:Z
+    iget-object v0, p2, Lgvc;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-virtual {p1}, Lcom/google/googlex/gcam/AeResults;->getMotion_score()F
+    const/4 v1, 0x0
 
-    move-result v1
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisibility(I)V
 
-    iput v1, v0, Ljqu;->e:F
+    invoke-virtual {p4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
-    return-object v0
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
+
+    invoke-virtual {p4, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    return-void
+.end method
+
+.method public b()V
+    .locals 1
+
+    iget-object v0, p0, Legs;->a:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->d()V
+
+    iget-object v0, p0, Legs;->a:Lhgv;
+
+    invoke-interface {v0}, Lhgv;->f()V
+
+    iget-object v0, p0, Legs;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->enablePhotoVideoSwitch()V
+
+    return-void
 .end method

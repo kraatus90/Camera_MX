@@ -1,231 +1,141 @@
 .class final Lzl;
-.super Laap;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final a:Lacv;
-
-.field private static j:Lacf;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public b:Lace;
+.field private final synthetic a:Landroid/os/Handler;
 
-.field public c:Laal;
+.field private final synthetic b:Laaz;
 
-.field public final d:Laac;
+.field private final synthetic c:Laam;
 
-.field public final e:Lacn;
+.field private final synthetic d:Laam;
 
-.field public final f:Lacp;
+.field private final synthetic e:Landroid/hardware/Camera$PictureCallback;
 
-.field public g:Lacf;
-
-.field private h:Landroid/os/HandlerThread;
+.field private final synthetic f:Lzb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Lzb;Landroid/os/Handler;Laaz;Laam;Landroid/hardware/Camera$PictureCallback;)V
+    .locals 1
 
-    new-instance v0, Lacv;
+    iput-object p1, p0, Lzl;->f:Lzb;
 
-    const-string v1, "AndCamAgntImp"
+    iput-object p2, p0, Lzl;->a:Landroid/os/Handler;
 
-    invoke-direct {v0, v1}, Lacv;-><init>(Ljava/lang/String;)V
+    iput-object p3, p0, Lzl;->b:Laaz;
 
-    sput-object v0, Lzl;->a:Lacv;
+    iput-object p4, p0, Lzl;->c:Laam;
 
-    new-instance v0, Lzm;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lzm;-><init>()V
+    iput-object v0, p0, Lzl;->d:Laam;
 
-    sput-object v0, Lzl;->j:Lacf;
+    iput-object p5, p0, Lzl;->e:Landroid/hardware/Camera$PictureCallback;
 
-    return-void
-.end method
-
-.method constructor <init>()V
-    .locals 3
-
-    invoke-direct {p0}, Laap;-><init>()V
-
-    sget-object v0, Lzl;->j:Lacf;
-
-    iput-object v0, p0, Lzl;->g:Lacf;
-
-    new-instance v0, Landroid/os/HandlerThread;
-
-    const-string v1, "Camera Handler Thread"
-
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lzl;->h:Landroid/os/HandlerThread;
-
-    iget-object v0, p0, Lzl;->h:Landroid/os/HandlerThread;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
-
-    new-instance v0, Laac;
-
-    iget-object v1, p0, Lzl;->h:Landroid/os/HandlerThread;
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, p0, v1}, Laac;-><init>(Lzl;Laap;Landroid/os/Looper;)V
-
-    iput-object v0, p0, Lzl;->d:Laac;
-
-    new-instance v0, Lacf;
-
-    iget-object v1, p0, Lzl;->d:Laac;
-
-    invoke-direct {v0, v1}, Lacf;-><init>(Landroid/os/Handler;)V
-
-    iput-object v0, p0, Lzl;->g:Lacf;
-
-    new-instance v0, Lacn;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lacn;-><init>(S)V
-
-    iput-object v0, p0, Lzl;->e:Lacn;
-
-    new-instance v0, Lacp;
-
-    iget-object v1, p0, Lzl;->d:Laac;
-
-    iget-object v2, p0, Lzl;->h:Landroid/os/HandlerThread;
-
-    invoke-direct {v0, v1, v2}, Lacp;-><init>(Landroid/os/Handler;Landroid/os/HandlerThread;)V
-
-    iput-object v0, p0, Lzl;->f:Lacp;
-
-    iget-object v0, p0, Lzl;->f:Lacp;
-
-    invoke-virtual {v0}, Lacp;->start()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final run()V
+    .locals 6
 
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v0}, Lzl;->a(Z)V
+    iget-object v0, p0, Lzl;->f:Lzb;
 
-    iget-object v0, p0, Lzl;->f:Lacp;
+    iget-object v0, v0, Lzb;->a:Lyv;
 
-    iget-object v1, v0, Lacp;->b:Ljava/lang/Boolean;
+    iget-object v0, v0, Lyv;->e:Labx;
 
-    monitor-enter v1
+    invoke-virtual {v0}, Labx;->c()Z
 
-    const/4 v2, 0x1
+    move-result v0
 
-    :try_start_0
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz v0, :cond_0
 
-    move-result-object v2
-
-    iput-object v2, v0, Lacp;->b:Ljava/lang/Boolean;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v1, v0, Lacp;->a:Ljava/util/Queue;
-
-    monitor-enter v1
-
-    :try_start_1
-    iget-object v0, v0, Lacp;->a:Ljava/util/Queue;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    iget-object v0, p0, Lzl;->e:Lacn;
-
-    invoke-virtual {v0}, Lacn;->b()V
-
+    :goto_0
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    iget-object v0, p0, Lzl;->f:Lzb;
 
-    :try_start_2
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    iget-object v0, v0, Lzb;->a:Lyv;
 
-    throw v0
+    iget-object v0, v0, Lyv;->e:Labx;
 
-    :catchall_1
-    move-exception v0
+    const/4 v2, 0x6
 
-    :try_start_3
-    monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    invoke-virtual {v0, v2}, Labx;->b(I)Z
 
-    throw v0
-.end method
+    iget-object v0, p0, Lzl;->f:Lzb;
 
-.method public final a(Lacf;)V
-    .locals 0
+    iget-object v0, v0, Lzb;->a:Lyv;
 
-    iput-object p1, p0, Lzl;->g:Lacf;
+    iget-object v2, v0, Lyv;->d:Lzm;
 
-    return-void
-.end method
+    iget-object v3, p0, Lzl;->a:Landroid/os/Handler;
 
-.method public final b()Lacd;
-    .locals 1
+    iget-object v0, p0, Lzl;->f:Lzb;
 
-    invoke-static {}, Lzp;->b()Lzp;
+    iget-object v4, p0, Lzl;->b:Laaz;
+
+    if-eqz v3, :cond_1
+
+    if-eqz v0, :cond_1
+
+    if-nez v4, :cond_2
+
+    :cond_1
+    move-object v0, v1
+
+    :goto_1
+    iget-object v3, p0, Lzl;->a:Landroid/os/Handler;
+
+    iget-object v4, p0, Lzl;->f:Lzb;
+
+    iget-object v5, p0, Lzl;->c:Laam;
+
+    invoke-static {v3, v4, v5}, Lzp;->a(Landroid/os/Handler;Laao;Laam;)Lzp;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lzl;->a:Landroid/os/Handler;
+
+    iget-object v5, p0, Lzl;->f:Lzb;
+
+    invoke-static {v4, v5, v1}, Lzp;->a(Landroid/os/Handler;Laao;Laam;)Lzp;
+
+    move-result-object v1
+
+    iget-object v4, p0, Lzl;->e:Landroid/hardware/Camera$PictureCallback;
+
+    new-instance v5, Lzn;
+
+    invoke-direct {v5, v0, v3, v1, v4}, Lzn;-><init>(Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V
+
+    const/16 v0, 0x259
+
+    invoke-virtual {v2, v0, v5}, Lzm;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-.method protected final c()Landroid/os/Handler;
-    .locals 1
+    goto :goto_0
 
-    iget-object v0, p0, Lzl;->d:Laac;
+    :cond_2
+    new-instance v0, Lzt;
 
-    return-object v0
-.end method
+    invoke-direct {v0, v3, v4}, Lzt;-><init>(Landroid/os/Handler;Laaz;)V
 
-.method protected final d()Lacp;
-    .locals 1
-
-    iget-object v0, p0, Lzl;->f:Lacp;
-
-    return-object v0
-.end method
-
-.method protected final e()Lacn;
-    .locals 1
-
-    iget-object v0, p0, Lzl;->e:Lacn;
-
-    return-object v0
-.end method
-
-.method protected final f()Lacf;
-    .locals 1
-
-    iget-object v0, p0, Lzl;->g:Lacf;
-
-    return-object v0
+    goto :goto_1
 .end method

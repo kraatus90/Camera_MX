@@ -12,7 +12,7 @@
 
 
 # instance fields
-.field public mFrameFilter:Ljct;
+.field public mFrameFilter:Ljmf;
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljct;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljmf;
 
     return-void
 .end method
@@ -102,7 +102,7 @@
 .method protected onOpen()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljct;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljmf;
 
     if-nez v0, :cond_0
 
@@ -141,13 +141,13 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljct;
+    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljmf;
 
     invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/filterfw/Frame;->getTimestamp()J
 
     move-result-wide v2
 
-    invoke-interface {v1, v2, v3}, Ljct;->a(J)Z
+    invoke-interface {v1, v2, v3}, Ljmf;->a(J)Z
 
     move-result v1
 
@@ -166,10 +166,10 @@
     return-void
 .end method
 
-.method public setFrameFilter(Ljct;)V
+.method public setFrameFilter(Ljmf;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljct;
+    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/analysis/SelectionFilter;->mFrameFilter:Ljmf;
 
     return-void
 .end method

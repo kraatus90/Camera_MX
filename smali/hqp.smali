@@ -1,10 +1,18 @@
-.class public interface abstract Lhqp;
+.class final Lhqp;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field public final synthetic a:Lhqo;
 
 
-# virtual methods
-.method public abstract a(Lcom/google/android/gms/internal/zzbgq;)V
+# direct methods
+.method constructor <init>(Lhqo;)V
+    .locals 0
+
+    iput-object p1, p0, Lhqp;->a:Lhqo;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

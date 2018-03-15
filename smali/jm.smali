@@ -1,14 +1,19 @@
-.class public interface abstract Ljm;
+.class public final Ljm;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a(Landroid/view/View;)V
-.end method
+# instance fields
+.field public final a:Ljava/lang/Object;
 
-.method public abstract b(Landroid/view/View;)V
-.end method
 
-.method public abstract c(Landroid/view/View;)V
+# direct methods
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljm;->a:Ljava/lang/Object;
+
+    return-void
 .end method

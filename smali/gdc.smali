@@ -1,49 +1,60 @@
-.class final synthetic Lgdc;
+.class public final Lgdc;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lgcx;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lgcx;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgdc;->a:Lgcx;
+    iput-object p1, p0, Lgdc;->a:Lkgv;
+
+    iput-object p2, p0, Lgdc;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lgdc;->a:Lgcx;
+    iget-object v0, p0, Lgdc;->a:Lkgv;
 
-    iget-object v1, v0, Lgcx;->d:Lgdg;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v1, Lgdg;->a:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lgdc;->b:Lkgv;
 
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->end()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v0, Lgcx;->c:Landroid/widget/TextView;
+    move-result-object v0
 
-    const/16 v2, 0x8
+    check-cast v0, Lbkx;
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    iget-object v0, v0, Lbkx;->a:Lbqc;
 
-    iget-object v0, v0, Lgcx;->c:Landroid/widget/TextView;
+    new-instance v0, Lgcu;
 
-    const-string v1, ""
+    invoke-direct {v0}, Lgcu;-><init>()V
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgct;
+
+    return-object v0
 .end method

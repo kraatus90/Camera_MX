@@ -1,32 +1,96 @@
-.class public interface abstract Laqb;
+.class public final Laqb;
 .super Ljava/lang/Object;
 .source "PG"
 
 
+# instance fields
+.field public final a:Lgh;
+
+.field private final b:Ljava/util/concurrent/atomic/AtomicReference;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, p0, Laqb;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    new-instance v0, Lgh;
+
+    invoke-direct {v0}, Lgh;-><init>()V
+
+    iput-object v0, p0, Laqb;->a:Lgh;
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
+    .locals 3
 
-.method public abstract a(Laqb;)Z
-.end method
+    const/4 v1, 0x0
 
-.method public abstract c()V
-.end method
+    iget-object v0, p0, Laqb;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-.method public abstract d()V
-.end method
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public abstract e()Z
-.end method
+    move-result-object v0
 
-.method public abstract f()Z
-.end method
+    check-cast v0, Larw;
 
-.method public abstract g()Z
-.end method
+    if-nez v0, :cond_0
 
-.method public abstract h()Z
-.end method
+    new-instance v0, Larw;
 
-.method public abstract i()V
+    invoke-direct {v0, p1, p2}, Larw;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
+
+    move-object v1, v0
+
+    :goto_0
+    iget-object v2, p0, Laqb;->a:Lgh;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v0, p0, Laqb;->a:Lgh;
+
+    invoke-virtual {v0, v1}, Lgh;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v2, p0, Laqb;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :cond_0
+    invoke-virtual {v0, p1, p2, v1}, Larw;->a(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+
+    move-object v1, v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

@@ -1,81 +1,47 @@
 .class public final Lbmo;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lbmp;
 
 
 # instance fields
-.field private synthetic a:Landroid/content/res/Resources;
+.field public volatile a:Z
 
-.field private synthetic b:Lbls;
-
-.field private synthetic c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+.field private final synthetic b:Lbmn;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Lbls;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
-    .locals 0
+.method public constructor <init>(Lbmn;)V
+    .locals 1
 
-    iput-object p1, p0, Lbmo;->a:Landroid/content/res/Resources;
+    iput-object p1, p0, Lbmo;->b:Lbmn;
 
-    iput-object p2, p0, Lbmo;->b:Lbls;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lbmo;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+    const/4 v0, 0x1
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-boolean v0, p0, Lbmo;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+.method public final a(I)V
+    .locals 1
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
+    iget-boolean v0, p0, Lbmo;->a:Z
 
-    iget-object v0, p0, Lbmo;->a:Landroid/content/res/Resources;
+    if-eqz v0, :cond_0
 
-    const v1, 0x7f0d00f6
+    iget-object v0, p0, Lbmo;->b:Lbmn;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+    iget-object v0, v0, Lbmn;->a:Lbcs;
 
-    move-result v0
+    invoke-interface {v0, p1}, Lbcs;->a(I)V
 
-    iget-object v1, p0, Lbmo;->b:Lbls;
-
-    invoke-virtual {v1, v0}, Lbls;->a(F)V
-
-    iget-object v0, p0, Lbmo;->a:Landroid/content/res/Resources;
-
-    const v1, 0x7f0d00f7
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    iget-object v1, p0, Lbmo;->b:Lbls;
-
-    invoke-virtual {v1, v0}, Lbls;->d(F)V
-
-    iget-object v0, p0, Lbmo;->a:Landroid/content/res/Resources;
-
-    const v1, 0x7f0d00f2
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v1
-
-    iget-object v1, p0, Lbmo;->b:Lbls;
-
-    invoke-virtual {v1, v0}, Lbls;->b(F)V
-
-    iget-object v0, p0, Lbmo;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->invalidate()V
-
+    :cond_0
     return-void
 .end method

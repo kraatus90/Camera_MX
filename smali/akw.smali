@@ -2,62 +2,43 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lakk;
+
 
 # instance fields
-.field public final a:Laek;
-
-.field public final b:Ljava/util/List;
-
-.field public final c:Laet;
+.field private final a:Landroid/content/res/Resources;
 
 
 # direct methods
-.method public constructor <init>(Laek;Laet;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/res/Resources;)V
+    .locals 0
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    invoke-direct {p0, p1, v0, p2}, Lakw;-><init>(Laek;Ljava/util/List;Laet;)V
+    iput-object p1, p0, Lakw;->a:Landroid/content/res/Resources;
 
     return-void
 .end method
 
-.method private constructor <init>(Laek;Ljava/util/List;Laet;)V
-    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final a(Lakq;)Laki;
+    .locals 4
 
-    const-string v0, "Argument must not be null"
+    new-instance v0, Laku;
 
-    invoke-static {p1, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v1, p0, Lakw;->a:Landroid/content/res/Resources;
 
-    move-result-object v0
+    const-class v2, Landroid/net/Uri;
 
-    check-cast v0, Laek;
+    const-class v3, Landroid/os/ParcelFileDescriptor;
 
-    iput-object v0, p0, Lakw;->a:Laek;
+    invoke-virtual {p1, v2, v3}, Lakq;->a(Ljava/lang/Class;Ljava/lang/Class;)Laki;
 
-    const-string v0, "Argument must not be null"
+    move-result-object v2
 
-    invoke-static {p2, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {v0, v1, v2}, Laku;-><init>(Landroid/content/res/Resources;Laki;)V
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/List;
-
-    iput-object v0, p0, Lakw;->b:Ljava/util/List;
-
-    const-string v0, "Argument must not be null"
-
-    invoke-static {p3, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laet;
-
-    iput-object v0, p0, Lakw;->c:Laet;
-
-    return-void
+    return-object v0
 .end method

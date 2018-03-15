@@ -1,10 +1,7 @@
 .class public interface abstract Lhvf;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
-
 
 # virtual methods
-.method public abstract a(Landroid/location/Location;)V
+.method public abstract a()V
 .end method

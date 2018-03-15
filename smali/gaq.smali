@@ -3,161 +3,372 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lgap;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Ljava/util/List;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
+.field public final b:Ljava/util/HashMap;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "IProxyListener"
 
-    iput-object p1, p0, Lgaq;->a:Ljxn;
-
-    iput-object p2, p0, Lgaq;->b:Ljxn;
-
-    iput-object p3, p0, Lgaq;->c:Ljxn;
-
-    iput-object p4, p0, Lgaq;->d:Ljxn;
-
-    iput-object p5, p0, Lgaq;->e:Ljxn;
-
-    iput-object p6, p0, Lgaq;->f:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
+.method constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lgaq;->a:Ljava/util/List;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lgaq;->b:Ljava/util/HashMap;
+
+    return-void
+.end method
+
+.method private final a(J)Ljava/util/List;
     .locals 7
 
-    new-instance v0, Lgaq;
+    new-instance v2, Ljava/util/ArrayList;
 
-    move-object v1, p0
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    move-object v2, p1
+    iget-object v0, p0, Lgaq;->a:Ljava/util/List;
 
-    move-object v3, p2
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-object v4, p3
+    move-result-object v3
 
-    move-object v5, p4
+    :cond_0
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-object v6, p5
+    move-result v0
 
-    invoke-direct/range {v0 .. v6}, Lgaq;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    if-eqz v0, :cond_2
 
-    return-object v0
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgap;
+
+    iget-object v1, p0, Lgaq;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lgaq;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    cmp-long v1, v4, p1
+
+    if-nez v1, :cond_0
+
+    :cond_1
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_2
+    return-object v2
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a()I
+    .locals 2
 
-    iget-object v0, p0, Lgaq;->a:Ljxn;
+    iget-object v1, p0, Lgaq;->a:Ljava/util/List;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lgaq;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final a(Lgbz;)V
+    .locals 4
+
+    iget-object v1, p0, Lgaq;->a:Ljava/util/List;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-wide v2, p1, Lgbz;->b:J
+
+    invoke-direct {p0, v2, v3}, Lgaq;->a(J)Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Lgzz;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v3, p0, Lgaq;->b:Ljxn;
-
-    iget-object v4, p0, Lgaq;->c:Ljxn;
-
-    iget-object v5, p0, Lgaq;->d:Ljxn;
-
-    iget-object v1, p0, Lgaq;->e:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
-
-    check-cast v1, Lbip;
-
-    iget-object v2, p0, Lgaq;->f:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lfxb;
-
-    invoke-static {v1, v2}, Lfsp;->a(Lbip;Lfxb;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lgzz;->c:Lihj;
-
-    iget-boolean v0, v0, Lihj;->d:Z
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    sget-object v0, Ljmx;->a:Ljmx;
 
     :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Ljava/util/Set;
-
-    return-object v0
-
-    :cond_1
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liin;
+    check-cast v0, Lgap;
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgad;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Lgag;
-
-    invoke-direct {v2, v1}, Lgag;-><init>(Lgad;)V
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/os/Handler;
-
-    invoke-interface {v0, v2, v1}, Liin;->a(Liip;Landroid/os/Handler;)V
-
-    invoke-interface {v0}, Liin;->e()Landroid/view/Surface;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljle;->a(Ljava/lang/Object;)Ljle;
-
-    move-result-object v0
+    invoke-interface {v0, p1}, Lgap;->a(Lgbz;)V
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Lgbz;Landroid/net/Uri;)V
+    .locals 4
+
+    iget-object v1, p0, Lgaq;->a:Ljava/util/List;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-wide v2, p1, Lgbz;->b:J
+
+    invoke-direct {p0, v2, v3}, Lgaq;->a(J)Ljava/util/List;
+
+    move-result-object v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgap;
+
+    invoke-interface {v0, p1, p2}, Lgap;->a(Lgbz;Landroid/net/Uri;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Lgbz;Lgbx;)V
+    .locals 4
+
+    iget-object v1, p0, Lgaq;->a:Ljava/util/List;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-wide v2, p1, Lgbz;->b:J
+
+    invoke-direct {p0, v2, v3}, Lgaq;->a(J)Ljava/util/List;
+
+    move-result-object v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgap;
+
+    invoke-interface {v0, p1, p2}, Lgap;->a(Lgbz;Lgbx;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Lgbz;Lgca;)V
+    .locals 4
+
+    iget-object v1, p0, Lgaq;->a:Ljava/util/List;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-wide v2, p1, Lgbz;->b:J
+
+    invoke-direct {p0, v2, v3}, Lgaq;->a(J)Ljava/util/List;
+
+    move-result-object v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgap;
+
+    invoke-interface {v0, p1, p2}, Lgap;->a(Lgbz;Lgca;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b()I
+    .locals 2
+
+    iget-object v1, p0, Lgaq;->a:Ljava/util/List;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lgaq;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    monitor-exit v1
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

@@ -1,52 +1,63 @@
-.class public final Lgau;
+.class final synthetic Lgau;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljrm;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lgaq;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Lgaq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgau;->a:Ljxn;
+    iput-object p1, p0, Lgau;->a:Lgaq;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lgau;
-
-    invoke-direct {v0, p0}, Lgau;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a()Ljava/lang/Object;
+    .locals 3
 
-    new-instance v1, Lgat;
+    iget-object v0, p0, Lgau;->a:Lgaq;
 
-    iget-object v0, p0, Lgau;->a:Ljxn;
+    iget-object v0, v0, Lgaq;->a:Ljava/util/List;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/16 v1, 0x46
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Couldn\'t find listener.  There are "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lgax;
+    const-string v1, " listeners after removal"
 
-    invoke-direct {v1, v0}, Lgat;-><init>(Lgax;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v1
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

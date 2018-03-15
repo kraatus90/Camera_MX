@@ -123,7 +123,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d006c
+    const v2, 0x7f0d0058
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -135,7 +135,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d006b
+    const v2, 0x7f0d0057
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0069
+    const v2, 0x7f0d0055
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0068
+    const v2, 0x7f0d0054
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -171,7 +171,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d006a
+    const v2, 0x7f0d0056
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -183,7 +183,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0078
+    const v2, 0x7f0d0064
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -195,7 +195,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0076
+    const v2, 0x7f0d0062
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -207,7 +207,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0075
+    const v2, 0x7f0d0061
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -219,7 +219,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0d0077
+    const v2, 0x7f0d0063
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -245,7 +245,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0200a6
+    const v2, 0x7f0200a5
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -313,9 +313,9 @@
 
     invoke-virtual {v0, v10, v11}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v1, Laxx;
+    new-instance v1, Lbda;
 
-    invoke-direct {v1, p0}, Laxx;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v1, p0}, Lbda;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -335,15 +335,15 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v2, Layg;
+    new-instance v2, Lbdj;
 
-    invoke-direct {v2, p0}, Layg;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v2, p0}, Lbdj;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    new-instance v2, Layh;
+    new-instance v2, Lbdk;
 
-    invoke-direct {v2, p0}, Layh;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v2, p0}, Lbdk;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -361,9 +361,9 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/AnimatorSet$Builder;->after(J)Landroid/animation/AnimatorSet$Builder;
 
-    new-instance v0, Layi;
+    new-instance v0, Lbdl;
 
-    invoke-direct {v0, p0}, Layi;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v0, p0}, Lbdl;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -383,9 +383,9 @@
 
     invoke-virtual {v0, v10, v11}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v1, Layj;
+    new-instance v1, Lbdm;
 
-    invoke-direct {v1, p0}, Layj;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v1, p0}, Lbdm;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -403,9 +403,9 @@
 
     invoke-virtual {v1, v8, v9}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v2, Layk;
+    new-instance v2, Lbdn;
 
-    invoke-direct {v2, p0}, Layk;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v2, p0}, Lbdn;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -417,9 +417,9 @@
 
     invoke-virtual {v2, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    new-instance v0, Layl;
+    new-instance v0, Lbdo;
 
-    invoke-direct {v0, p0}, Layl;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v0, p0}, Lbdo;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -441,15 +441,15 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v1, Laym;
+    new-instance v1, Lbdp;
 
-    invoke-direct {v1, p0}, Laym;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v1, p0}, Lbdp;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    new-instance v1, Layn;
+    new-instance v1, Lbdq;
 
-    invoke-direct {v1, p0}, Layn;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v1, p0}, Lbdq;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -471,9 +471,9 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v1, Layb;
+    new-instance v1, Lbde;
 
-    invoke-direct {v1, p0}, Layb;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v1, p0}, Lbde;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -485,9 +485,9 @@
 
     move-result-object v1
 
-    new-instance v2, Layc;
+    new-instance v2, Lbdf;
 
-    invoke-direct {v2, p0}, Layc;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v2, p0}, Lbdf;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -509,15 +509,15 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    new-instance v3, Layd;
+    new-instance v3, Lbdg;
 
-    invoke-direct {v3, p0}, Layd;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v3, p0}, Lbdg;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    new-instance v3, Laye;
+    new-instance v3, Lbdh;
 
-    invoke-direct {v3, p0}, Laye;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v3, p0}, Lbdh;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -535,9 +535,9 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/AnimatorSet$Builder;->after(J)Landroid/animation/AnimatorSet$Builder;
 
-    new-instance v0, Layf;
+    new-instance v0, Lbdi;
 
-    invoke-direct {v0, p0}, Layf;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v0, p0}, Lbdi;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v3, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -565,9 +565,9 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    new-instance v1, Laxy;
+    new-instance v1, Lbdb;
 
-    invoke-direct {v1, p0}, Laxy;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v1, p0}, Lbdb;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -585,9 +585,9 @@
 
     invoke-virtual {v1, v10, v11}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    new-instance v2, Laxz;
+    new-instance v2, Lbdc;
 
-    invoke-direct {v2, p0}, Laxz;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v2, p0}, Lbdc;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
@@ -603,9 +603,9 @@
 
     invoke-virtual {v0, v8, v9}, Landroid/animation/AnimatorSet$Builder;->after(J)Landroid/animation/AnimatorSet$Builder;
 
-    new-instance v0, Laya;
+    new-instance v0, Lbdd;
 
-    invoke-direct {v0, p0}, Laya;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+    invoke-direct {v0, p0}, Lbdd;-><init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
 
     invoke-virtual {v2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 

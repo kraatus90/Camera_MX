@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
-.super Ljwj;
+.super Lkfr;
 .source "PG"
 
 
@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public debugData:Lijo;
+.field public debugData:Liov;
 
 .field public deviceTimestampUs:J
 
@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-direct {p0}, Lkfr;-><init>()V
 
     invoke-virtual {p0}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->clear()Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
 
@@ -78,6 +78,28 @@
     .end packed-switch
 .end method
 
+.method public static checkKeyFrameTypeOrThrow([I)[I
+    .locals 3
+
+    array-length v1, p0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v1, :cond_0
+
+    aget v2, p0, v0
+
+    invoke-static {v2}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->checkKeyFrameTypeOrThrow(I)I
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object p0
+.end method
+
 .method public static emptyArray()[Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
     .locals 2
 
@@ -85,7 +107,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v1, Ljwn;->b:Ljava/lang/Object;
+    sget-object v1, Lkfv;->b:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -121,14 +143,14 @@
     throw v0
 .end method
 
-.method public static parseFrom(Ljwh;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
+.method public static parseFrom(Lkfo;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
     .locals 1
 
     new-instance v0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
 
     invoke-direct {v0}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;-><init>()V
 
-    invoke-virtual {v0, p0}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->mergeFrom(Ljwh;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
+    invoke-virtual {v0, p0}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->mergeFrom(Lkfo;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
 
     move-result-object v0
 
@@ -142,7 +164,7 @@
 
     invoke-direct {v0}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;-><init>()V
 
-    invoke-static {v0, p0}, Ljwp;->mergeFrom(Ljwp;[B)Ljwp;
+    invoke-static {v0, p0}, Lkfx;->mergeFrom(Lkfx;[B)Lkfx;
 
     move-result-object v0
 
@@ -160,11 +182,11 @@
 
     const/4 v2, 0x0
 
-    sget-object v0, Ljwr;->g:[F
+    sget-object v0, Lkfz;->g:[F
 
     iput-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->motionHomographyData:[F
 
-    sget-object v0, Ljwr;->e:[I
+    sget-object v0, Lkfz;->e:[I
 
     iput-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->histogramCountData:[I
 
@@ -178,9 +200,9 @@
 
     iput v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->isKeyFrame:I
 
-    iput-object v3, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iput-object v3, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
-    iput-object v3, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->unknownFieldData:Ljwl;
+    iput-object v3, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->unknownFieldData:Lkft;
 
     const/4 v0, -0x1
 
@@ -194,7 +216,7 @@
 
     const/4 v1, 0x0
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-super {p0}, Lkfr;->computeSerializedSize()I
 
     move-result v0
 
@@ -218,7 +240,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    invoke-static {v2}, Ljwi;->d(I)I
+    invoke-static {v2}, Lkfp;->d(I)I
 
     move-result v2
 
@@ -248,7 +270,7 @@
 
     aget v3, v3, v1
 
-    invoke-static {v3}, Ljwi;->d(I)I
+    invoke-static {v3}, Lkfp;->d(I)I
 
     move-result v3
 
@@ -263,7 +285,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    invoke-static {v2}, Ljwi;->d(I)I
+    invoke-static {v2}, Lkfp;->d(I)I
 
     move-result v1
 
@@ -278,7 +300,7 @@
 
     iget v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->frameWidth:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
@@ -293,7 +315,7 @@
 
     iget v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->frameHeight:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
@@ -312,7 +334,7 @@
 
     iget-wide v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->deviceTimestampUs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -327,22 +349,22 @@
 
     iget v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->isKeyFrame:I
 
-    invoke-static {v1, v2}, Ljwi;->b(II)I
+    invoke-static {v1, v2}, Lkfp;->b(II)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_6
-    iget-object v1, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iget-object v1, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
     if-eqz v1, :cond_7
 
     const/4 v1, 0x7
 
-    iget-object v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iget-object v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v1, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v1
 
@@ -352,20 +374,20 @@
     return v0
 .end method
 
-.method public final mergeFrom(Ljwh;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
+.method public final mergeFrom(Lkfo;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
     .locals 8
 
     const/4 v1, 0x0
 
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    invoke-super {p0, p1, v0}, Lkfr;->storeUnknownField(Lkfo;I)Z
 
     move-result v0
 
@@ -377,7 +399,7 @@
     :sswitch_1
     const/16 v0, 0xd
 
-    invoke-static {p1, v0}, Ljwr;->a(Ljwh;I)I
+    invoke-static {p1, v0}, Lkfz;->a(Lkfo;I)I
 
     move-result v2
 
@@ -406,7 +428,7 @@
 
     if-ge v0, v3, :cond_3
 
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-virtual {p1}, Lkfo;->e()I
 
     move-result v3
 
@@ -416,7 +438,7 @@
 
     aput v3, v2, v0
 
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     add-int/lit8 v0, v0, 0x1
 
@@ -430,7 +452,7 @@
     goto :goto_1
 
     :cond_3
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-virtual {p1}, Lkfo;->e()I
 
     move-result v3
 
@@ -445,11 +467,11 @@
     goto :goto_0
 
     :sswitch_2
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v0
 
-    invoke-virtual {p1, v0}, Ljwh;->c(I)I
+    invoke-virtual {p1, v0}, Lkfo;->c(I)I
 
     move-result v2
 
@@ -478,7 +500,7 @@
 
     if-ge v0, v4, :cond_6
 
-    invoke-virtual {p1}, Ljwh;->f()I
+    invoke-virtual {p1}, Lkfo;->e()I
 
     move-result v4
 
@@ -502,14 +524,14 @@
     :cond_6
     iput-object v3, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->motionHomographyData:[F
 
-    invoke-virtual {p1, v2}, Ljwh;->d(I)V
+    invoke-virtual {p1, v2}, Lkfo;->d(I)V
 
     goto :goto_0
 
     :sswitch_3
     const/16 v0, 0x10
 
-    invoke-static {p1, v0}, Ljwr;->a(Ljwh;I)I
+    invoke-static {p1, v0}, Lkfz;->a(Lkfo;I)I
 
     move-result v2
 
@@ -538,13 +560,13 @@
 
     if-ge v0, v3, :cond_9
 
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v3
 
     aput v3, v2, v0
 
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     add-int/lit8 v0, v0, 0x1
 
@@ -558,7 +580,7 @@
     goto :goto_5
 
     :cond_9
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v3
 
@@ -569,35 +591,35 @@
     goto/16 :goto_0
 
     :sswitch_4
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v0
 
-    invoke-virtual {p1, v0}, Ljwh;->c(I)I
+    invoke-virtual {p1, v0}, Lkfo;->c(I)I
 
     move-result v3
 
-    invoke-virtual {p1}, Ljwh;->i()I
+    invoke-virtual {p1}, Lkfo;->h()I
 
     move-result v2
 
     move v0, v1
 
     :goto_7
-    invoke-virtual {p1}, Ljwh;->h()I
+    invoke-virtual {p1}, Lkfo;->g()I
 
     move-result v4
 
     if-lez v4, :cond_a
 
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_7
 
     :cond_a
-    invoke-virtual {p1, v2}, Ljwh;->e(I)V
+    invoke-virtual {p1, v2}, Lkfo;->e(I)V
 
     iget-object v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->histogramCountData:[I
 
@@ -622,7 +644,7 @@
 
     if-ge v2, v4, :cond_d
 
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v4
 
@@ -642,12 +664,12 @@
     :cond_d
     iput-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->histogramCountData:[I
 
-    invoke-virtual {p1, v3}, Ljwh;->d(I)V
+    invoke-virtual {p1, v3}, Lkfo;->d(I)V
 
     goto/16 :goto_0
 
     :sswitch_5
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v0
 
@@ -656,7 +678,7 @@
     goto/16 :goto_0
 
     :sswitch_6
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v0
 
@@ -674,7 +696,7 @@
 
     if-ge v0, v4, :cond_f
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v4
 
@@ -700,19 +722,19 @@
     goto :goto_a
 
     :cond_f
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
     throw v0
 
     :sswitch_8
-    invoke-virtual {p1}, Ljwh;->i()I
+    invoke-virtual {p1}, Lkfo;->h()I
 
     move-result v2
 
     :try_start_0
-    invoke-virtual {p1}, Ljwh;->d()I
+    invoke-virtual {p1}, Lkfo;->d()I
 
     move-result v3
 
@@ -729,27 +751,27 @@
     :catch_0
     move-exception v3
 
-    invoke-virtual {p1, v2}, Ljwh;->e(I)V
+    invoke-virtual {p1, v2}, Lkfo;->e(I)V
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->storeUnknownField(Ljwh;I)Z
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->storeUnknownField(Lkfo;I)Z
 
     goto/16 :goto_0
 
     :sswitch_9
-    iget-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iget-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
     if-nez v0, :cond_10
 
-    new-instance v0, Lijo;
+    new-instance v0, Liov;
 
-    invoke-direct {v0}, Lijo;-><init>()V
+    invoke-direct {v0}, Liov;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iput-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
     :cond_10
-    iget-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iget-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
     goto/16 :goto_0
 
@@ -768,17 +790,17 @@
     .end sparse-switch
 .end method
 
-.method public final bridge synthetic mergeFrom(Ljwh;)Ljwp;
+.method public final bridge synthetic mergeFrom(Lkfo;)Lkfx;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->mergeFrom(Ljwh;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
+    invoke-virtual {p0, p1}, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->mergeFrom(Lkfo;)Lcom/google/android/libraries/micro/proto/nano/Micro$Data;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
+.method public final writeTo(Lkfp;)V
     .locals 4
 
     const/4 v1, 0x0
@@ -801,9 +823,9 @@
 
     const/16 v2, 0xa
 
-    invoke-virtual {p1, v2}, Ljwi;->c(I)V
+    invoke-virtual {p1, v2}, Lkfp;->c(I)V
 
-    invoke-virtual {p1, v0}, Ljwi;->c(I)V
+    invoke-virtual {p1, v0}, Lkfp;->c(I)V
 
     move v0, v1
 
@@ -818,7 +840,7 @@
 
     aget v2, v2, v0
 
-    invoke-virtual {p1, v2}, Ljwi;->a(F)V
+    invoke-virtual {p1, v2}, Lkfp;->a(F)V
 
     add-int/lit8 v0, v0, 0x1
 
@@ -850,7 +872,7 @@
 
     aget v3, v3, v0
 
-    invoke-static {v3}, Ljwi;->d(I)I
+    invoke-static {v3}, Lkfp;->d(I)I
 
     move-result v3
 
@@ -863,9 +885,9 @@
     :cond_1
     const/16 v0, 0x12
 
-    invoke-virtual {p1, v0}, Ljwi;->c(I)V
+    invoke-virtual {p1, v0}, Lkfp;->c(I)V
 
-    invoke-virtual {p1, v2}, Ljwi;->c(I)V
+    invoke-virtual {p1, v2}, Lkfp;->c(I)V
 
     :goto_2
     iget-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->histogramCountData:[I
@@ -878,7 +900,7 @@
 
     aget v0, v0, v1
 
-    invoke-virtual {p1, v0}, Ljwi;->c(I)V
+    invoke-virtual {p1, v0}, Lkfp;->c(I)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -893,7 +915,7 @@
 
     iget v1, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->frameWidth:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_3
     iget v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->frameHeight:I
@@ -904,7 +926,7 @@
 
     iget v1, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->frameHeight:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_4
     iget-wide v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->deviceTimestampUs:J
@@ -919,7 +941,7 @@
 
     iget-wide v2, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->deviceTimestampUs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_5
     iget v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->isKeyFrame:I
@@ -930,21 +952,21 @@
 
     iget v1, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->isKeyFrame:I
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(II)V
 
     :cond_6
-    iget-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iget-object v0, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
     if-eqz v0, :cond_7
 
     const/4 v0, 0x7
 
-    iget-object v1, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Lijo;
+    iget-object v1, p0, Lcom/google/android/libraries/micro/proto/nano/Micro$Data;->debugData:Liov;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v0, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_7
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    invoke-super {p0, p1}, Lkfr;->writeTo(Lkfp;)V
 
     return-void
 .end method

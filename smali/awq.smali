@@ -3,84 +3,70 @@
 .source "PG"
 
 # interfaces
-.implements Lich;
-.implements Ljava/util/concurrent/Executor;
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
+.field private final a:Lkgv;
 
-.field private b:I
+.field private final b:Lkgv;
 
-.field private c:Ljava/util/concurrent/ScheduledExecutorService;
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lawq;->b:I
+    iput-object p1, p0, Lawq;->a:Lkgv;
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Lawq;->b:Lkgv;
 
-    invoke-static {p1, v0}, Lapb;->d(Ljava/lang/String;I)Ljava/util/concurrent/ThreadFactory;
+    iput-object p3, p0, Lawq;->c:Lkgv;
 
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadScheduledExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lawq;->c:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v0, Lhzt;
-
-    invoke-direct {v0}, Lhzt;-><init>()V
-
-    iput-object v0, p0, Lawq;->a:Ljava/util/concurrent/Executor;
+    iput-object p4, p0, Lawq;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lawq;->c:Ljava/util/concurrent/ScheduledExecutorService;
-
-    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdown()V
-
-    return-void
-.end method
-
-.method public final execute(Ljava/lang/Runnable;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 5
 
-    :try_start_0
-    iget-object v0, p0, Lawq;->c:Ljava/util/concurrent/ScheduledExecutorService;
+    new-instance v3, Lawo;
 
-    new-instance v1, Lawr;
+    iget-object v0, p0, Lawq;->a:Lkgv;
 
-    invoke-direct {v1, p0, p1}, Lawr;-><init>(Lawq;Ljava/lang/Runnable;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget v2, p0, Lawq;->b:I
+    move-result-object v0
 
-    int-to-long v2, v2
+    check-cast v0, Lawr;
 
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    iget-object v1, p0, Lawq;->b:Lkgv;
 
-    invoke-interface {v0, v1, v2, v3, v4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    :try_end_0
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    :goto_0
-    return-void
+    move-result-object v1
 
-    :catch_0
-    move-exception v0
+    check-cast v1, Landroid/content/Context;
 
-    goto :goto_0
+    iget-object v4, p0, Lawq;->c:Lkgv;
+
+    iget-object v2, p0, Lawq;->d:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lawn;
+
+    invoke-direct {v3, v0, v1, v4, v2}, Lawo;-><init>(Lawr;Landroid/content/Context;Lkgv;Lawn;)V
+
+    return-object v3
 .end method

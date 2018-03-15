@@ -1,45 +1,52 @@
-.class final Lfdd;
-.super Lfes;
+.class public final Lfdd;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfdb;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfdb;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfdd;->a:Lfdb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfes;-><init>(Lfeq;)V
+    iput-object p1, p0, Lfdd;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfdd;
+    .locals 1
+
+    new-instance v0, Lfdd;
+
+    invoke-direct {v0, p0}, Lfdd;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final C()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfdd;->a:Lfdb;
+    new-instance v1, Lfda;
 
-    iget-object v0, v0, Lfdb;->a:Lgvj;
+    iget-object v0, p0, Lfdd;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lfes;->C()V
+    move-result-object v0
 
-    iget-object v0, p0, Lfdd;->a:Lfdb;
+    check-cast v0, Liho;
 
-    iget-object v0, v0, Lfdb;->a:Lgvj;
+    invoke-direct {v1, v0}, Lfda;-><init>(Liho;)V
 
-    iget-object v1, p0, Lfdd;->a:Lfdb;
-
-    iget-object v1, v1, Lfdb;->b:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v1
 .end method

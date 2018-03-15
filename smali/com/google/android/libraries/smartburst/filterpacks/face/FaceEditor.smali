@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field public mBestInputBitmap:Lixj;
+.field public mBestInputBitmap:Ljgv;
 
 .field public mBestInputBitmapTimestampNs:J
 
@@ -69,7 +69,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     const-wide/16 v0, -0x1
 
@@ -156,17 +156,17 @@
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
-    invoke-interface {v0}, Lixj;->close()V
+    invoke-interface {v0}, Ljgv;->close()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -228,7 +228,7 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     new-instance v4, Ljava/util/ArrayList;
 
@@ -326,15 +326,15 @@
 
 
 # virtual methods
-.method public declared-synchronized addPhoto(Lixj;Ljava/util/List;J)V
+.method public declared-synchronized addPhoto(Ljgv;Ljava/util/List;J)V
     .locals 11
 
     monitor-enter p0
 
     :try_start_0
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
@@ -347,20 +347,20 @@
 
     if-nez v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     if-nez v1, :cond_1
 
     :cond_0
-    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
-    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     iput-wide p3, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmapTimestampNs:J
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v1}, Lixj;->close()V
+    invoke-interface {v1}, Ljgv;->close()V
 
     :cond_1
     iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mIndexTimestampMap:Ljava/util/Map;
@@ -381,7 +381,7 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p1}, Lixj;->e()Ljava/lang/Object;
+    invoke-interface {p1}, Ljgv;->e()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -395,7 +395,7 @@
 
     move-result-object v8
 
-    invoke-interface {p1}, Lixj;->e()Ljava/lang/Object;
+    invoke-interface {p1}, Ljgv;->e()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -427,11 +427,11 @@
     move-exception v1
 
     :try_start_2
-    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     if-eq v2, p1, :cond_2
 
-    invoke-interface {p1}, Lixj;->close()V
+    invoke-interface {p1}, Ljgv;->close()V
 
     :cond_2
     throw v1
@@ -645,30 +645,30 @@
 
     if-lez v1, :cond_6
 
-    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     iput v7, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputJoyScore:F
 
-    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iput-object p1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     iput-wide p3, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmapTimestampNs:J
 
-    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     if-eq v1, v2, :cond_6
 
-    invoke-interface {v1}, Lixj;->close()V
+    invoke-interface {v1}, Ljgv;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :cond_6
     :goto_2
     :try_start_4
-    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     if-eq v1, p1, :cond_7
 
-    invoke-interface {p1}, Lixj;->close()V
+    invoke-interface {p1}, Ljgv;->close()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
@@ -705,7 +705,7 @@
     goto :goto_2
 .end method
 
-.method public declared-synchronized createAllSmiles(Lixg;Z)Lixj;
+.method public declared-synchronized createAllSmiles(Ljgs;Z)Ljgv;
     .locals 4
 
     const/4 v0, 0x1
@@ -724,7 +724,7 @@
     :goto_0
     const-string v3, "Editor is configured for animation. Cannot create all-smiles."
 
-    invoke-static {v2, v3}, Liya;->b(ZLjava/lang/Object;)V
+    invoke-static {v2, v3}, Ljii;->b(ZLjava/lang/Object;)V
 
     iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mIndexTimestampMap:Ljava/util/Map;
 
@@ -735,13 +735,13 @@
     if-lez v2, :cond_1
 
     :goto_1
-    invoke-static {v0}, Liya;->b(Z)V
+    invoke-static {v0}, Ljii;->b(Z)V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -754,11 +754,11 @@
 
     if-nez v1, :cond_2
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iput-object v1, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -823,7 +823,7 @@
 
     iget v3, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mHeight:I
 
-    invoke-static {p1, v1, v0, v2, v3}, Lixh;->a(Lixg;Ljava/lang/String;Ljava/nio/ByteBuffer;II)Lixj;
+    invoke-static {p1, v1, v0, v2, v3}, Ljgt;->a(Ljgs;Ljava/lang/String;Ljava/nio/ByteBuffer;II)Ljgv;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
@@ -854,7 +854,7 @@
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 .end method
 
-.method public declared-synchronized createAnimation(Lixg;ZI)Ljava/util/List;
+.method public declared-synchronized createAnimation(Ljgs;ZI)Ljava/util/List;
     .locals 9
 
     const/4 v0, 0x1
@@ -868,7 +868,7 @@
 
     const-string v3, "Editor is configured for all-smiles. Cannot create animation."
 
-    invoke-static {v2, v3}, Liya;->b(ZLjava/lang/Object;)V
+    invoke-static {v2, v3}, Ljii;->b(ZLjava/lang/Object;)V
 
     iget-object v2, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mIndexTimestampMap:Ljava/util/Map;
 
@@ -881,14 +881,14 @@
     move v2, v0
 
     :goto_0
-    invoke-static {v2}, Liya;->b(Z)V
+    invoke-static {v2}, Ljii;->b(Z)V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-lez p3, :cond_2
 
     :goto_1
-    invoke-static {v0}, Liya;->a(Z)V
+    invoke-static {v0}, Ljii;->a(Z)V
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -905,13 +905,13 @@
 
     if-nez v3, :cond_3
 
-    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iget-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
 
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Lixj;
+    iput-object v0, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mBestInputBitmap:Ljgv;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -931,7 +931,7 @@
 
     if-ge v0, p3, :cond_5
 
-    new-instance v1, Ljgy;
+    new-instance v1, Ljqk;
 
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -943,9 +943,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lixj;
+    check-cast v0, Ljgv;
 
-    invoke-direct {v1, v0}, Ljgy;-><init>(Lixj;)V
+    invoke-direct {v1, v0}, Ljqk;-><init>(Ljgv;)V
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -956,11 +956,11 @@
 
     if-ge v0, p3, :cond_5
 
-    new-instance v0, Ljgy;
+    new-instance v0, Ljqk;
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v3}, Ljgy;-><init>(Ljgy;B)V
+    invoke-direct {v0, v1, v3}, Ljqk;-><init>(Ljqk;B)V
 
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_2
@@ -1069,7 +1069,7 @@
 
     iget v8, p0, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceEditor;->mHeight:I
 
-    invoke-static {p1, v1, v6, v7, v8}, Lixh;->a(Lixg;Ljava/lang/String;Ljava/nio/ByteBuffer;II)Lixj;
+    invoke-static {p1, v1, v6, v7, v8}, Ljgt;->a(Ljgs;Ljava/lang/String;Ljava/nio/ByteBuffer;II)Ljgv;
 
     move-result-object v1
 

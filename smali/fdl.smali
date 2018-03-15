@@ -1,187 +1,190 @@
-.class Lfdl;
-.super Lgvh;
+.class public final Lfdl;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfdj;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfdj;)V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
-    iput-object p1, p0, Lfdl;->a:Lfdj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lfdl;->a:Lkgv;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[Z)V
+    iput-object p2, p0, Lfdl;->b:Lkgv;
+
+    iput-object p3, p0, Lfdl;->c:Lkgv;
+
+    iput-object p4, p0, Lfdl;->d:Lkgv;
+
+    iput-object p5, p0, Lfdl;->e:Lkgv;
+
+    iput-object p6, p0, Lfdl;->f:Lkgv;
+
+    iput-object p7, p0, Lfdl;->g:Lkgv;
+
+    iput-object p8, p0, Lfdl;->h:Lkgv;
+
+    iput-object p9, p0, Lfdl;->i:Lkgv;
+
+    iput-object p10, p0, Lfdl;->j:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Lfdl;
+    .locals 11
+
+    new-instance v0, Lfdl;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object/from16 v6, p5
+
+    move-object/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    move-object/from16 v9, p8
+
+    move-object/from16 v10, p9
+
+    invoke-direct/range {v0 .. v10}, Lfdl;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public E()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 11
 
-    return-void
-.end method
+    iget-object v0, p0, Lfdl;->a:Lkgv;
 
-.method public final a()V
-    .locals 4
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v3, 0x1
+    move-result-object v1
 
-    const/4 v2, 0x0
+    check-cast v1, Liaw;
 
-    iget-object v0, p0, Lfdl;->a:Lfdj;
+    iget-object v0, p0, Lfdl;->b:Lkgv;
 
-    iget-object v0, v0, Lfdj;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToPhotoIntentReview()V
+    move-result-object v2
 
-    iget-object v0, p0, Lfdl;->a:Lfdj;
+    check-cast v2, Lkeh;
 
-    iget-object v0, v0, Lfdj;->e:Lguc;
+    iget-object v0, p0, Lfdl;->c:Lkgv;
 
-    iget-object v1, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v1, v3}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setEnabled(Z)V
+    move-result-object v3
 
-    iget-object v0, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    check-cast v3, Ljava/util/Set;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->transitionToConfirm()Z
+    iget-object v0, p0, Lfdl;->d:Lkgv;
 
-    iget-object v0, p0, Lfdl;->a:Lfdj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lfdj;->g:Ljht;
+    move-result-object v4
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    check-cast v4, Limf;
 
-    move-result v0
+    iget-object v0, p0, Lfdl;->e:Lkgv;
 
-    if-eqz v0, :cond_0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lfdl;->a:Lfdj;
+    move-result-object v5
 
-    iget-object v0, v0, Lfdj;->g:Ljht;
+    check-cast v5, Liho;
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    iget-object v0, p0, Lfdl;->f:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    check-cast v0, Ljxn;
+    iget-object v0, p0, Lfdl;->g:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v6
 
-    check-cast v0, Lglx;
+    check-cast v6, Lijc;
 
-    iget-object v0, v0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    iget-object v0, p0, Lfdl;->h:Lkgv;
 
-    iput-boolean v3, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Z
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setEnabled(Z)V
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a(Z)V
-
-    iget-object v0, p0, Lfdl;->a:Lfdj;
-
-    iget-object v0, v0, Lfdj;->g:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljxn;
+    move-object v8, v0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v8, Lhbh;
 
-    move-result-object v0
+    iget-object v0, p0, Lfdl;->i:Lkgv;
 
-    check-cast v0, Lglx;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lglx;->b()V
+    move-result-object v9
 
-    :cond_0
-    return-void
-.end method
+    check-cast v9, Lihs;
 
-.method public final b()V
-    .locals 3
+    iget-object v0, p0, Lfdl;->j:Lkgv;
 
-    const/4 v2, 0x1
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lfdl;->a:Lfdj;
+    move-result-object v10
 
-    iget-object v0, v0, Lfdj;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    check-cast v10, Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->returnToPhotoIntent()V
+    new-instance v0, Lilz;
 
-    iget-object v0, p0, Lfdl;->a:Lfdj;
+    sget-object v7, Ljqu;->a:Ljqu;
 
-    iget-object v0, v0, Lfdj;->e:Lguc;
+    iget-object v8, v8, Lhbh;->c:Liml;
 
-    iget-object v0, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-direct/range {v0 .. v10}, Lilz;-><init>(Liaw;Lkeh;Ljava/util/Set;Limf;Liho;Lijc;Ljrf;Liml;Lihs;Ljava/util/concurrent/Executor;)V
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->transitionToCapture()Z
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Lfdl;->a:Lfdj;
-
-    iget-object v0, v0, Lfdj;->g:Ljht;
-
-    invoke-virtual {v0}, Ljht;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfdl;->a:Lfdj;
-
-    iget-object v0, v0, Lfdj;->g:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljxn;
+    check-cast v0, Lilz;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lglx;
-
-    invoke-virtual {v0}, Lglx;->a()V
-
-    iget-object v0, p0, Lfdl;->a:Lfdj;
-
-    iget-object v0, v0, Lfdj;->g:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lglx;
-
-    iget-object v0, v0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Z
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setEnabled(Z)V
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a(Z)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

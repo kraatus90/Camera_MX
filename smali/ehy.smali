@@ -2,63 +2,46 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:D
+
+.field public b:D
+
+.field public c:D
+
+.field public d:D
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lehy;->a:Ljxn;
-
     return-void
-.end method
-
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lehy;
-
-    invoke-direct {v0, p0}, Lehy;-><init>(Ljxn;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a(Lehy;)V
     .locals 2
 
-    iget-object v0, p0, Lehy;->a:Ljxn;
+    iget-wide v0, p1, Lehy;->a:D
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iput-wide v0, p0, Lehy;->a:D
 
-    move-result-object v0
+    iget-wide v0, p1, Lehy;->b:D
 
-    check-cast v0, Lehv;
+    iput-wide v0, p0, Lehy;->b:D
 
-    invoke-static {v0}, Ljkv;->a(Ljava/lang/Object;)Ljkv;
+    iget-wide v0, p1, Lehy;->c:D
 
-    move-result-object v0
+    iput-wide v0, p0, Lehy;->c:D
 
-    invoke-static {v0}, Lfsp;->a(Ljava/util/Collection;)Lggq;
+    iget-wide v0, p1, Lehy;->d:D
 
-    move-result-object v0
+    iput-wide v0, p0, Lehy;->d:D
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lggq;
-
-    return-object v0
+    return-void
 .end method

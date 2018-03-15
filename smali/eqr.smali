@@ -3,20 +3,30 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Ljxn;
+# static fields
+.field public static final a:Leqr;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Leqr;
+
+    invoke-direct {v0}, Leqr;-><init>()V
+
+    sput-object v0, Leqr;->a:Leqr;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leqr;->a:Ljxn;
 
     return-void
 .end method
@@ -24,31 +34,53 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    .locals 6
 
-    iget-object v0, p0, Leqr;->a:Ljxn;
+    new-instance v0, Lkeu;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v0}, Lkeu;-><init>()V
+
+    const-string v1, "mv-ctrl-exec-%d"
+
+    invoke-virtual {v0, v1}, Lkeu;->a(Ljava/lang/String;)Lkeu;
 
     move-result-object v0
 
-    check-cast v0, Lgsl;
+    iget-object v1, v0, Lkeu;->a:Ljava/lang/String;
 
-    const-string v1, "pref_smartburst_classicburst"
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
 
-    const/4 v2, 0x1
+    move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lgsl;->a(Ljava/lang/String;Z)Liau;
+    if-eqz v1, :cond_0
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+
+    const-wide/16 v4, 0x0
+
+    invoke-direct {v0, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+
+    :goto_0
+    new-instance v3, Lkev;
+
+    invoke-direct {v3, v2, v1, v0}, Lkev;-><init>(Ljava/util/concurrent/ThreadFactory;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
+
+    invoke-static {v3}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liau;
+    check-cast v0, Ljava/util/concurrent/Executor;
 
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

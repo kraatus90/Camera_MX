@@ -1,32 +1,31 @@
-.class public interface abstract Lgdm;
+.class public final Lgdm;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# instance fields
+.field public final a:Lket;
 
-.method public abstract a(Landroid/content/Context;Lcom/google/android/apps/camera/uiutils/ReplaceableView;)V
-.end method
+.field public final b:Lket;
 
-.method public abstract a(Lgdk;)V
-.end method
 
-.method public abstract b()V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 1
 
-.method public abstract b(Lgdk;)V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract c()V
-.end method
+    new-instance v0, Lket;
 
-.method public abstract d()V
-.end method
+    invoke-direct {v0}, Lket;-><init>()V
 
-.method public abstract e()V
-.end method
+    iput-object v0, p0, Lgdm;->a:Lket;
 
-.method public abstract f()Lgdl;
+    new-instance v0, Lket;
+
+    invoke-direct {v0}, Lket;-><init>()V
+
+    iput-object v0, p0, Lgdm;->b:Lket;
+
+    return-void
 .end method

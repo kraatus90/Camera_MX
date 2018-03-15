@@ -4,66 +4,86 @@
 
 
 # instance fields
-.field private a:Z
+.field public final a:Ljava/lang/Object;
 
-.field private b:Landroid/os/Handler;
+.field public b:Ljava/util/List;
+
+.field public c:Lahj;
+
+.field public d:Lahj;
 
 
 # direct methods
 .method constructor <init>()V
-    .locals 3
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lahj;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/lang/Object;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Landroid/os/Handler;
+    iput-object p0, p0, Lahj;->d:Lahj;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    iput-object p0, p0, Lahj;->c:Lahj;
 
-    move-result-object v1
-
-    new-instance v2, Lahk;
-
-    invoke-direct {v2}, Lahk;-><init>()V
-
-    invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
-    iput-object v0, p0, Lahj;->b:Landroid/os/Handler;
+    iput-object p1, p0, Lahj;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lahg;)V
+.method public final a()Ljava/lang/Object;
     .locals 2
 
-    const/4 v1, 0x1
+    invoke-virtual {p0}, Lahj;->b()I
 
-    invoke-static {}, Larq;->a()V
+    move-result v0
 
-    iget-boolean v0, p0, Lahj;->a:Z
+    if-lez v0, :cond_0
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lahj;->b:Ljava/util/List;
 
-    iget-object v0, p0, Lahj;->b:Landroid/os/Handler;
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-interface {v1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
     :goto_0
-    return-void
+    return-object v0
 
     :cond_0
-    iput-boolean v1, p0, Lahj;->a:Z
-
-    invoke-interface {p1}, Lahg;->d()V
-
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lahj;->a:Z
+    goto :goto_0
+.end method
+
+.method public final b()I
+    .locals 1
+
+    iget-object v0, p0, Lahj;->b:Ljava/util/List;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lahj;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

@@ -4,8 +4,11 @@
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)Ljava/io/File;
+.method public abstract a(Landroid/net/Uri;JLjava/lang/String;Lghj;Lkeh;)Leox;
 .end method
 
-.method public abstract a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+.method public abstract a(JLjava/lang/String;Lghj;Lkeh;Lioj;)Lkeh;
+.end method
+
+.method public abstract b(JLjava/lang/String;Lghj;Lkeh;Lioj;)Leov;
 .end method

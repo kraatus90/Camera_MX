@@ -1,80 +1,51 @@
-.class public final Lgwp;
+.class public final synthetic Lgwp;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lgwo;
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final b:J
+.field private final a:Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
 
-.field public final c:J
-
-.field public final d:Lgvz;
-
-.field public final e:Lgwk;
-
-.field private f:Ljava/util/concurrent/Executor;
+.field private final b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "StorageSpaceCheck"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lgwp;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgvz;Ljava/util/concurrent/Executor;Lgwk;)V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;Z)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/32 v0, 0xa00000
+    iput-object p1, p0, Lgwp;->a:Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
 
-    iput-wide v0, p0, Lgwp;->b:J
-
-    const-wide/32 v0, 0x3200000
-
-    iput-wide v0, p0, Lgwp;->c:J
-
-    iput-object p1, p0, Lgwp;->d:Lgvz;
-
-    iput-object p2, p0, Lgwp;->f:Ljava/util/concurrent/Executor;
-
-    iput-object p3, p0, Lgwp;->e:Lgwk;
+    iput-boolean p2, p0, Lgwp;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)Ljuw;
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    new-instance v0, Ljvi;
+    iget-object v0, p0, Lgwp;->a:Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+    iget-boolean v1, p0, Lgwp;->b:Z
 
-    iget-object v1, p0, Lgwp;->f:Ljava/util/concurrent/Executor;
+    if-eqz v1, :cond_0
 
-    new-instance v2, Lgwq;
+    const/4 v1, 0x1
 
-    invoke-direct {v2, p0, v0, p1}, Lgwq;-><init>(Lgwp;Ljvi;Z)V
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;->setClickable(Z)V
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :goto_0
+    return-void
 
-    return-object v0
+    :cond_0
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/toyboxmenu/ToyboxMenuButton;->setVisibility(I)V
+
+    goto :goto_0
 .end method

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Burst (%1$d fotografija)</item>
+        <item quantity="one">Burst (%1$d fotografija)</item>
+        <item quantity="few">Burst (%1$d fotografije)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Sačuvano je %1$d fotografija</item>
         <item quantity="one">Sačuvana je %1$d fotografija</item>

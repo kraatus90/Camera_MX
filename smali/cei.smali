@@ -1,67 +1,80 @@
 .class final Lcei;
-.super Ljava/lang/Object;
+.super Lfjg;
 .source "PG"
-
-# interfaces
-.implements Ljug;
 
 
 # instance fields
-.field private synthetic a:Lceh;
+.field public final a:Lfjg;
+
+.field private final c:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field private final d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method constructor <init>(Lceh;)V
-    .locals 0
+.method public constructor <init>(Lfjg;Ljava/util/concurrent/atomic/AtomicInteger;)V
+    .locals 2
 
-    iput-object p1, p0, Lcei;->a:Lceh;
+    invoke-virtual {p1}, Lfjg;->i()Lkeh;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lfjg;-><init>(Link;Lkeh;)V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lcei;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p1, p0, Lcei;->a:Lfjg;
+
+    iput-object p2, p0, Lcei;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    iget-object v0, p0, Lcei;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final close()V
     .locals 2
 
-    iget-object v0, p0, Lcei;->a:Lceh;
+    iget-object v0, p0, Lcei;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v0, v0, Lceh;->a:Libu;
+    const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    iget-object v0, p0, Lcei;->a:Lceh;
+    move-result v0
 
-    iget-object v0, v0, Lceh;->a:Libu;
+    if-nez v0, :cond_0
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lcei;->a:Lfjg;
 
-    invoke-interface {v0, v1}, Libu;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0}, Lfjg;->close()V
 
-    iget-object v0, p0, Lcei;->a:Lceh;
+    iget-object v0, p0, Lcei;->c:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iget-object v0, v0, Lceh;->b:Lceb;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
-    iget-object v0, v0, Lceb;->b:Lcez;
+    move-result v0
 
-    invoke-virtual {v0}, Lcez;->a()V
+    if-gez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Image count negative."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     :cond_0
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
-
-    sget-object v0, Lceb;->a:Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
-
     return-void
 .end method

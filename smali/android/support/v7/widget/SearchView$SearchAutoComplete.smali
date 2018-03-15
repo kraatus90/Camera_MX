@@ -1,5 +1,5 @@
 .class public Landroid/support/v7/widget/SearchView$SearchAutoComplete;
-.super Lqv;
+.super Lqp;
 .source "PG"
 
 
@@ -8,7 +8,7 @@
 
 .field private b:I
 
-.field private c:Ljava/lang/Runnable;
+.field private final c:Ljava/lang/Runnable;
 
 
 # direct methods
@@ -25,7 +25,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    const v0, 0x7f01009f
+    const v0, 0x7f0100d3
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v7/widget/SearchView$SearchAutoComplete;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -35,11 +35,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
 
-    invoke-direct {p0, p1, p2, p3}, Lqv;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lqp;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    new-instance v0, Lvs;
+    new-instance v0, Lvk;
 
-    invoke-direct {v0, p0}, Lvs;-><init>(Landroid/support/v7/widget/SearchView$SearchAutoComplete;)V
+    invoke-direct {v0, p0}, Lvk;-><init>(Landroid/support/v7/widget/SearchView$SearchAutoComplete;)V
 
     iput-object v0, p0, Landroid/support/v7/widget/SearchView$SearchAutoComplete;->c:Ljava/lang/Runnable;
 
@@ -61,7 +61,7 @@
 
     if-lez v0, :cond_0
 
-    invoke-super {p0}, Lqv;->enoughToFilter()Z
+    invoke-super {p0}, Lqp;->enoughToFilter()Z
 
     move-result v0
 
@@ -82,7 +82,7 @@
 .method public onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
     .locals 2
 
-    invoke-super {p0, p1}, Lqv;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
+    invoke-super {p0, p1}, Lqp;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 
@@ -105,7 +105,7 @@
 .method protected onFinishInflate()V
     .locals 6
 
-    invoke-super {p0}, Lqv;->onFinishInflate()V
+    invoke-super {p0}, Lqp;->onFinishInflate()V
 
     invoke-virtual {p0}, Landroid/support/v7/widget/SearchView$SearchAutoComplete;->getResources()Landroid/content/res/Resources;
 
@@ -185,7 +185,7 @@
 .method protected onFocusChanged(ZILandroid/graphics/Rect;)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3}, Lqv;->onFocusChanged(ZILandroid/graphics/Rect;)V
+    invoke-super {p0, p1, p2, p3}, Lqp;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
     invoke-static {}, Landroid/support/v7/widget/SearchView;->d()V
 
@@ -290,7 +290,7 @@
     goto :goto_0
 
     :cond_3
-    invoke-super {p0, p1, p2}, Lqv;->onKeyPreIme(ILandroid/view/KeyEvent;)Z
+    invoke-super {p0, p1, p2}, Lqp;->onKeyPreIme(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -302,7 +302,7 @@
 
     const/4 v1, 0x1
 
-    invoke-super {p0, p1}, Lqv;->onWindowFocusChanged(Z)V
+    invoke-super {p0, p1}, Lqp;->onWindowFocusChanged(Z)V
 
     if-eqz p1, :cond_0
 
@@ -332,14 +332,14 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Landroid/support/v7/widget/SearchView;->a:Lvr;
+    sget-object v0, Landroid/support/v7/widget/SearchView;->a:Lvj;
 
-    iget-object v1, v0, Lvr;->a:Ljava/lang/reflect/Method;
+    iget-object v1, v0, Lvj;->a:Ljava/lang/reflect/Method;
 
     if-eqz v1, :cond_0
 
     :try_start_0
-    iget-object v0, v0, Lvr;->a:Ljava/lang/reflect/Method;
+    iget-object v0, v0, Lvj;->a:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
 
@@ -384,7 +384,7 @@
 .method public setThreshold(I)V
     .locals 0
 
-    invoke-super {p0, p1}, Lqv;->setThreshold(I)V
+    invoke-super {p0, p1}, Lqp;->setThreshold(I)V
 
     iput p1, p0, Landroid/support/v7/widget/SearchView$SearchAutoComplete;->b:I
 

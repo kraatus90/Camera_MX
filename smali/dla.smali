@@ -1,40 +1,114 @@
-.class final Ldla;
+.class public final Ldla;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldkz;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldkz;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldla;->a:Ldkz;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldla;->a:Lkgv;
+
+    iput-object p2, p0, Ldla;->b:Lkgv;
+
+    iput-object p3, p0, Ldla;->c:Lkgv;
+
+    iput-object p4, p0, Ldla;->d:Lkgv;
+
+    iput-object p5, p0, Ldla;->e:Lkgv;
+
+    iput-object p6, p0, Ldla;->f:Lkgv;
+
+    iput-object p7, p0, Ldla;->g:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 8
 
-    iget-object v0, p0, Ldla;->a:Ldkz;
+    new-instance v0, Ldky;
 
-    iget-object v1, v0, Ldkz;->d:Laxq;
+    iget-object v1, p0, Ldla;->a:Lkgv;
 
-    new-instance v2, Ldle;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v2, v0}, Ldle;-><init>(Ldkz;)V
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Laxq;->execute(Ljava/lang/Runnable;)V
+    check-cast v1, Ldkw;
 
-    return-void
+    iget-object v2, p0, Ldla;->b:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ldkv;
+
+    iget-object v3, p0, Ldla;->c:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lbjy;
+
+    iget-object v4, p0, Ldla;->d:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lhbh;
+
+    iget-object v5, p0, Ldla;->e:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lbld;
+
+    iget-object v6, p0, Ldla;->f:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lihs;
+
+    iget-object v7, p0, Ldla;->g:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lbkx;
+
+    invoke-direct/range {v0 .. v7}, Ldky;-><init>(Ldkw;Ldkv;Lbjy;Lhbh;Lbld;Lihs;Lbkx;)V
+
+    return-object v0
 .end method

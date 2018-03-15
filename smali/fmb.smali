@@ -3,18 +3,28 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
+.implements Lkgv;
 
 
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/widget/Cling;
+# static fields
+.field public static final a:Lfmb;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/widget/Cling;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lfmb;->a:Lcom/google/android/apps/camera/legacy/app/widget/Cling;
+    new-instance v0, Lfmb;
+
+    invoke-direct {v0}, Lfmb;-><init>()V
+
+    sput-object v0, Lfmb;->a:Lfmb;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,18 +33,42 @@
 
 
 # virtual methods
-.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfmb;->a:Lcom/google/android/apps/camera/legacy/app/widget/Cling;
+    sget-object v0, Lhju;->b:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/legacy/app/widget/Cling;->a:Z
+    sget-object v0, Lhju;->b:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iget-object v0, p0, Lfmb;->a:Lcom/google/android/apps/camera/legacy/app/widget/Cling;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/widget/Cling;->a()V
+    invoke-static {v1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
-    return-void
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lffm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lfhm;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
+
+    move-result-object v0
+
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
+
+    :cond_0
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    goto :goto_0
 .end method

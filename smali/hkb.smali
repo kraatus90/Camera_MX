@@ -1,58 +1,90 @@
 .class public final Lhkb;
-.super Landroid/support/v4/app/DialogFragment;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field private static b:I
 
 
 # instance fields
-.field public a:Landroid/content/DialogInterface$OnCancelListener;
-
-.field public mDialog:Landroid/app/Dialog;
+.field public a:I
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/16 v0, 0x1f
+
+    sput v0, Lhkb;->b:I
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/support/v4/app/DialogFragment;-><init>()V
+    const/4 v0, 0x1
 
-    iput-object v0, p0, Lhkb;->mDialog:Landroid/app/Dialog;
-
-    iput-object v0, p0, Lhkb;->a:Landroid/content/DialogInterface$OnCancelListener;
+    iput v0, p0, Lhkb;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Lhkb;
+    .locals 2
 
-    iget-object v0, p0, Lhkb;->a:Landroid/content/DialogInterface$OnCancelListener;
+    sget v0, Lhkb;->b:I
 
-    if-eqz v0, :cond_0
+    iget v1, p0, Lhkb;->a:I
 
-    iget-object v0, p0, Lhkb;->a:Landroid/content/DialogInterface$OnCancelListener;
+    mul-int/2addr v1, v0
 
-    invoke-interface {v0, p1}, Landroid/content/DialogInterface$OnCancelListener;->onCancel(Landroid/content/DialogInterface;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
-    .locals 1
-
-    iget-object v0, p0, Lhkb;->mDialog:Landroid/app/Dialog;
-
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lhkb;->setShowsDialog(Z)V
+    :goto_0
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lhkb;->a:I
+
+    return-object p0
 
     :cond_0
-    iget-object v0, p0, Lhkb;->mDialog:Landroid/app/Dialog;
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
-    return-object v0
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public final a(Z)Lhkb;
+    .locals 2
+
+    sget v0, Lhkb;->b:I
+
+    iget v1, p0, Lhkb;->a:I
+
+    mul-int/2addr v1, v0
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lhkb;->a:I
+
+    return-object p0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

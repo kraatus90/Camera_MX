@@ -1,65 +1,69 @@
-.class Lmr;
-.super Lmn;
+.class final Lmr;
+.super Ljh;
 .source "PG"
 
 
 # instance fields
-.field private x:Landroid/app/UiModeManager;
+.field private final synthetic a:Lmq;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/view/Window;Lmf;)V
-    .locals 1
+.method constructor <init>(Lmq;)V
+    .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lmn;-><init>(Landroid/content/Context;Landroid/view/Window;Lmf;)V
+    iput-object p1, p0, Lmr;->a:Lmq;
 
-    const-string v0, "uimode"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/UiModeManager;
-
-    iput-object v0, p0, Lmr;->x:Landroid/app/UiModeManager;
+    invoke-direct {p0}, Ljh;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method a(Landroid/view/Window$Callback;)Landroid/view/Window$Callback;
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    new-instance v0, Lms;
+    iget-object v0, p0, Lmr;->a:Lmq;
 
-    invoke-direct {v0, p0, p1}, Lms;-><init>(Lmr;Landroid/view/Window$Callback;)V
+    iget-object v0, v0, Lmq;->a:Lmn;
 
-    return-object v0
+    iget-object v0, v0, Lmn;->q:Landroid/support/v7/widget/ActionBarContextView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lpt;->setVisibility(I)V
+
+    return-void
 .end method
 
-.method final f(I)I
-    .locals 1
+.method public final b()V
+    .locals 3
 
-    if-nez p1, :cond_0
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lmr;->x:Landroid/app/UiModeManager;
+    iget-object v0, p0, Lmr;->a:Lmq;
 
-    invoke-virtual {v0}, Landroid/app/UiModeManager;->getNightMode()I
+    iget-object v0, v0, Lmq;->a:Lmn;
 
-    move-result v0
+    iget-object v0, v0, Lmn;->q:Landroid/support/v7/widget/ActionBarContextView;
 
-    if-nez v0, :cond_0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const/4 v0, -0x1
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
 
-    :goto_0
-    return v0
+    iget-object v0, p0, Lmr;->a:Lmq;
 
-    :cond_0
-    invoke-super {p0, p1}, Lmn;->f(I)I
+    iget-object v0, v0, Lmq;->a:Lmn;
 
-    move-result v0
+    iget-object v0, v0, Lmn;->t:Ljd;
 
-    goto :goto_0
+    invoke-virtual {v0, v2}, Ljd;->a(Ljg;)Ljd;
+
+    iget-object v0, p0, Lmr;->a:Lmq;
+
+    iget-object v0, v0, Lmq;->a:Lmn;
+
+    iput-object v2, v0, Lmn;->t:Ljd;
+
+    return-void
 .end method

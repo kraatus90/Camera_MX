@@ -1,5 +1,5 @@
 .class public final Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
-.super Ljwj;
+.super Lkfr;
 .source "PG"
 
 
@@ -30,7 +30,7 @@
 
 .field public captureRequestSubmittedNs:J
 
-.field public captureScoreCalculations:[Ljqq;
+.field public captureScoreCalculations:[Ljzz;
 
 .field public captureStartNs:J
 
@@ -41,7 +41,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-direct {p0}, Lkfr;-><init>()V
 
     invoke-virtual {p0}, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->clear()Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
@@ -55,7 +55,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v1, Ljwn;->b:Ljava/lang/Object;
+    sget-object v1, Lkfv;->b:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -91,14 +91,14 @@
     throw v0
 .end method
 
-.method public static parseFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
+.method public static parseFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
     .locals 1
 
     new-instance v0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;-><init>()V
 
-    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
+    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
     move-result-object v0
 
@@ -112,7 +112,7 @@
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;-><init>()V
 
-    invoke-static {v0, p0}, Ljwp;->mergeFrom(Ljwp;[B)Ljwp;
+    invoke-static {v0, p0}, Lkfx;->mergeFrom(Lkfx;[B)Lkfx;
 
     move-result-object v0
 
@@ -154,15 +154,15 @@
 
     iput-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->capturePersistedEndNs:J
 
-    invoke-static {}, Ljqq;->a()[Ljqq;
+    invoke-static {}, Ljzz;->a()[Ljzz;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->unknownFieldData:Ljwl;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->unknownFieldData:Lkft;
 
     const/4 v0, -0x1
 
@@ -176,7 +176,7 @@
 
     const-wide/16 v4, 0x0
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-super {p0}, Lkfr;->computeSerializedSize()I
 
     move-result v0
 
@@ -190,7 +190,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureStartNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -207,7 +207,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureTinyThumbNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -224,7 +224,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMediumThumbNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -241,7 +241,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureProcessingStartNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -258,7 +258,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureProcessingEndNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -275,7 +275,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->capturePersistedEndNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -292,7 +292,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureRequestSubmittedNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -309,7 +309,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureRequestReceivedNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -326,7 +326,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureFrameSelectStartNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -343,7 +343,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureFrameSelectEndNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -360,7 +360,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMergeStartNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -377,7 +377,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMergeEndNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -394,18 +394,18 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->capturePersistedStartNs:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_c
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     if-eqz v1, :cond_f
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     array-length v1, v1
 
@@ -420,13 +420,13 @@
     move v0, v6
 
     :goto_0
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     array-length v2, v2
 
     if-ge v0, v2, :cond_e
 
-    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     aget-object v2, v2, v0
 
@@ -434,7 +434,7 @@
 
     const/16 v3, 0xe
 
-    invoke-static {v3, v2}, Ljwi;->b(ILjwp;)I
+    invoke-static {v3, v2}, Lkfp;->b(ILkfx;)I
 
     move-result v2
 
@@ -452,7 +452,7 @@
     return v0
 .end method
 
-.method public final mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
+.method public final mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
     .locals 11
 
     const-wide/16 v4, 0x0
@@ -463,13 +463,13 @@
 
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    invoke-super {p0, p1, v0}, Lkfr;->storeUnknownField(Lkfo;I)Z
 
     move-result v0
 
@@ -486,7 +486,7 @@
     :goto_1
     if-ge v0, v10, :cond_2
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -512,7 +512,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -526,7 +526,7 @@
     :goto_2
     if-ge v0, v10, :cond_4
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -552,7 +552,7 @@
     goto :goto_2
 
     :cond_4
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -566,7 +566,7 @@
     :goto_3
     if-ge v0, v10, :cond_6
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -592,7 +592,7 @@
     goto :goto_3
 
     :cond_6
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -606,7 +606,7 @@
     :goto_4
     if-ge v0, v10, :cond_8
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -632,7 +632,7 @@
     goto :goto_4
 
     :cond_8
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -646,7 +646,7 @@
     :goto_5
     if-ge v0, v10, :cond_a
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -672,7 +672,7 @@
     goto :goto_5
 
     :cond_a
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -686,7 +686,7 @@
     :goto_6
     if-ge v0, v10, :cond_c
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -712,7 +712,7 @@
     goto :goto_6
 
     :cond_c
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -726,7 +726,7 @@
     :goto_7
     if-ge v0, v10, :cond_e
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -752,7 +752,7 @@
     goto :goto_7
 
     :cond_e
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -766,7 +766,7 @@
     :goto_8
     if-ge v0, v10, :cond_10
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -792,7 +792,7 @@
     goto :goto_8
 
     :cond_10
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -806,7 +806,7 @@
     :goto_9
     if-ge v0, v10, :cond_12
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -832,7 +832,7 @@
     goto :goto_9
 
     :cond_12
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -846,7 +846,7 @@
     :goto_a
     if-ge v0, v10, :cond_14
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -872,7 +872,7 @@
     goto :goto_a
 
     :cond_14
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -886,7 +886,7 @@
     :goto_b
     if-ge v0, v10, :cond_16
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -912,7 +912,7 @@
     goto :goto_b
 
     :cond_16
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -926,7 +926,7 @@
     :goto_c
     if-ge v0, v10, :cond_18
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -952,7 +952,7 @@
     goto :goto_c
 
     :cond_18
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -966,7 +966,7 @@
     :goto_d
     if-ge v0, v10, :cond_1a
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -992,7 +992,7 @@
     goto :goto_d
 
     :cond_1a
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -1001,11 +1001,11 @@
     :sswitch_e
     const/16 v0, 0x72
 
-    invoke-static {p1, v0}, Ljwr;->a(Ljwh;I)I
+    invoke-static {p1, v0}, Lkfz;->a(Lkfo;I)I
 
     move-result v2
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     if-nez v0, :cond_1c
 
@@ -1014,11 +1014,11 @@
     :goto_e
     add-int/2addr v2, v0
 
-    new-array v2, v2, [Ljqq;
+    new-array v2, v2, [Ljzz;
 
     if-eqz v0, :cond_1b
 
-    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v3, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -1030,41 +1030,41 @@
 
     if-ge v0, v3, :cond_1d
 
-    new-instance v3, Ljqq;
+    new-instance v3, Ljzz;
 
-    invoke-direct {v3}, Ljqq;-><init>()V
+    invoke-direct {v3}, Ljzz;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v3, v2, v0
 
-    invoke-virtual {p1, v3}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v3}, Lkfo;->a(Lkfx;)V
 
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_f
 
     :cond_1c
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     array-length v0, v0
 
     goto :goto_e
 
     :cond_1d
-    new-instance v3, Ljqq;
+    new-instance v3, Ljzz;
 
-    invoke-direct {v3}, Ljqq;-><init>()V
+    invoke-direct {v3}, Ljzz;-><init>()V
 
     aput-object v3, v2, v0
 
     aget-object v0, v2, v0
 
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
+    invoke-virtual {p1, v0}, Lkfo;->a(Lkfx;)V
 
-    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iput-object v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     goto/16 :goto_0
 
@@ -1088,17 +1088,17 @@
     .end sparse-switch
 .end method
 
-.method public final bridge synthetic mergeFrom(Ljwh;)Ljwp;
+.method public final bridge synthetic mergeFrom(Lkfo;)Lkfx;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
+    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$CaptureTiming;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
+.method public final writeTo(Lkfp;)V
     .locals 6
 
     const-wide/16 v4, 0x0
@@ -1113,7 +1113,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureStartNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_0
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureTinyThumbNs:J
@@ -1126,7 +1126,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureTinyThumbNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_1
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMediumThumbNs:J
@@ -1139,7 +1139,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMediumThumbNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_2
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureProcessingStartNs:J
@@ -1152,7 +1152,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureProcessingStartNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_3
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureProcessingEndNs:J
@@ -1165,7 +1165,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureProcessingEndNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_4
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->capturePersistedEndNs:J
@@ -1178,7 +1178,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->capturePersistedEndNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_5
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureRequestSubmittedNs:J
@@ -1191,7 +1191,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureRequestSubmittedNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_6
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureRequestReceivedNs:J
@@ -1204,7 +1204,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureRequestReceivedNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_7
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureFrameSelectStartNs:J
@@ -1217,7 +1217,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureFrameSelectStartNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_8
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureFrameSelectEndNs:J
@@ -1230,7 +1230,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureFrameSelectEndNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_9
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMergeStartNs:J
@@ -1243,7 +1243,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMergeStartNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_a
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMergeEndNs:J
@@ -1256,7 +1256,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureMergeEndNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_b
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->capturePersistedStartNs:J
@@ -1269,14 +1269,14 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->capturePersistedStartNs:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_c
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     if-eqz v0, :cond_e
 
-    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v0, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     array-length v0, v0
 
@@ -1285,13 +1285,13 @@
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_e
 
-    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljqq;
+    iget-object v1, p0, Lcom/google/common/logging/nano/eventprotos$CaptureTiming;->captureScoreCalculations:[Ljzz;
 
     aget-object v1, v1, v0
 
@@ -1299,7 +1299,7 @@
 
     const/16 v2, 0xe
 
-    invoke-virtual {p1, v2, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p1, v2, v1}, Lkfp;->a(ILkfx;)V
 
     :cond_d
     add-int/lit8 v0, v0, 0x1
@@ -1307,7 +1307,7 @@
     goto :goto_0
 
     :cond_e
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    invoke-super {p0, p1}, Lkfr;->writeTo(Lkfp;)V
 
     return-void
 .end method

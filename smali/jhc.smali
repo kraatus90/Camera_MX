@@ -3,34 +3,80 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Ljgv;
+
+
+# instance fields
+.field private final a:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljhc;->a:Landroid/graphics/Bitmap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public final a()I
     .locals 1
 
-    new-instance v0, Ljhb;
+    iget-object v0, p0, Ljhc;->a:Landroid/graphics/Bitmap;
 
-    invoke-direct {v0, p1}, Ljhb;-><init>(Landroid/os/Parcel;)V
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b()I
+    .locals 1
+
+    iget-object v0, p0, Ljhc;->a:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    iget-object v0, p0, Ljhc;->a:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final close()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic d()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Ljhc;->a:Landroid/graphics/Bitmap;
 
     return-object v0
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method public final synthetic e()Ljava/lang/Object;
     .locals 1
 
-    new-array v0, p1, [Ljhb;
+    iget-object v0, p0, Ljhc;->a:Landroid/graphics/Bitmap;
 
     return-object v0
 .end method

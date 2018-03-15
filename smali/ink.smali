@@ -1,44 +1,30 @@
-.class final synthetic Link;
+.class public interface abstract Link;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljhj;
-
-
-# instance fields
-.field private a:Landroid/media/MediaFormat;
-
-
-# direct methods
-.method constructor <init>(Landroid/media/MediaFormat;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Link;->a:Landroid/media/MediaFormat;
-
-    return-void
-.end method
+.implements Lihb;
+.implements Lims;
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public abstract a()Landroid/graphics/Rect;
+.end method
 
-    iget-object v0, p0, Link;->a:Landroid/media/MediaFormat;
+.method public abstract a(Landroid/graphics/Rect;)V
+.end method
 
-    check-cast p1, Landroid/media/MediaFormat;
+.method public abstract b()I
+.end method
 
-    if-eqz p1, :cond_0
+.method public abstract c()I
+.end method
 
-    const-string v1, "oo.muxer.drop_initial_non_keyframes"
+.method public abstract d()I
+.end method
 
-    invoke-static {v1, v0, p1}, Licy;->a(Ljava/lang/String;Landroid/media/MediaFormat;Landroid/media/MediaFormat;)V
+.method public abstract e()Ljava/util/List;
+.end method
 
-    const-string v1, "oo.muxer.force_sequential"
-
-    invoke-static {v1, v0, p1}, Licy;->a(Ljava/lang/String;Landroid/media/MediaFormat;Landroid/media/MediaFormat;)V
-
-    :cond_0
-    return-object p1
+.method public abstract f()J
 .end method

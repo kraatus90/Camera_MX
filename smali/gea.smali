@@ -1,44 +1,69 @@
-.class public final Lgea;
-.super Ljava/lang/Object;
+.class final Lgea;
+.super Lgex;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Lgdu;
+.field private final synthetic b:Lgdz;
 
 
 # direct methods
-.method public constructor <init>(Lgdu;)V
+.method constructor <init>(Lgdz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgea;->b:Lgdz;
 
-    iput-object p1, p0, Lgea;->a:Lgdu;
+    invoke-direct {p0, p1}, Lgex;-><init>(Lgew;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final A_()V
     .locals 2
 
-    iget-object v0, p0, Lgea;->a:Lgdu;
+    iget-object v0, p0, Lgea;->b:Lgdz;
 
-    iget-object v0, v0, Lgdu;->a:Lgdp;
+    iget-object v0, v0, Lgdz;->a:Lgld;
 
-    iget-object v0, v0, Lgdp;->c:Liau;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-super {p0}, Lgex;->A_()V
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Lgea;->b:Lgdz;
 
-    move-result-object v0
+    iget-object v0, v0, Lgdz;->a:Lgld;
 
-    check-cast v0, Liau;
+    iget-object v1, p0, Lgea;->b:Lgdz;
 
-    return-object v0
+    iget-object v1, v1, Lgdz;->d:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final S()V
+    .locals 2
+
+    iget-object v0, p0, Lgea;->b:Lgdz;
+
+    iget-object v0, v0, Lgdz;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lgex;->S()V
+
+    iget-object v0, p0, Lgea;->b:Lgdz;
+
+    iget-object v0, v0, Lgdz;->a:Lgld;
+
+    iget-object v1, p0, Lgea;->b:Lgdz;
+
+    iget-object v1, v1, Lgdz;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

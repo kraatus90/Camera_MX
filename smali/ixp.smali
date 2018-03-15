@@ -3,184 +3,145 @@
 .source "PG"
 
 # interfaces
-.implements Lixk;
+.implements Lixn;
 
 
 # instance fields
-.field private a:Lixj;
+.field private a:Z
+
+.field private final synthetic b:Lixn;
+
+.field private final synthetic c:Ljava/lang/Iterable;
 
 
 # direct methods
-.method public constructor <init>(Lixj;)V
-    .locals 0
+.method public constructor <init>(Lixn;Ljava/lang/Iterable;)V
+    .locals 1
+
+    iput-object p1, p0, Lixp;->b:Lixn;
+
+    iput-object p2, p0, Lixp;->c:Ljava/lang/Iterable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lixp;->a:Lixj;
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lixp;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final declared-synchronized a()Lirc;
+    .locals 4
 
-    iget-object v0, p0, Lixp;->a:Lixj;
+    monitor-enter p0
 
-    invoke-interface {v0}, Lixj;->e()Ljava/lang/Object;
+    :try_start_0
+    iget-boolean v0, p0, Lixp;->a:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lixp;->b:Lixn;
+
+    invoke-interface {v0}, Lixn;->a()Lirc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
-    check-cast v0, Landroid/graphics/Bitmap;
+    :goto_0
+    monitor-exit p0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    return-object v0
 
-    move-result v0
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lixp;->b:Lixn;
 
-    return v0
+    invoke-interface {v0}, Lixn;->a()Lirc;
+
+    move-result-object v0
+
+    sget-object v1, Lken;->a:Lken;
+
+    new-instance v2, Lirf;
+
+    iget-object v3, p0, Lixp;->c:Ljava/lang/Iterable;
+
+    invoke-direct {v2, v3}, Lirf;-><init>(Ljava/lang/Iterable;)V
+
+    invoke-virtual {v0, v1, v2}, Lirc;->b(Ljava/util/concurrent/Executor;Lirf;)Lirc;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lirc;->a(Liqz;)Lirc;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public final a(IILixg;)Lixj;
-    .locals 2
+.method public final b()Ljava/lang/Object;
+    .locals 1
 
-    const-string v0, "inMemHandle:scaled"
+    iget-object v0, p0, Lixp;->b:Lixn;
 
-    iget-object v1, p0, Lixp;->a:Lixj;
-
-    invoke-static {p3, v0, v1, p1, p2}, Lixh;->a(Lixg;Ljava/lang/String;Lixj;II)Lixj;
+    invoke-interface {v0}, Lixn;->b()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Landroid/graphics/Rect;Lixg;)Lixj;
-    .locals 6
-
-    const/4 v5, 0x0
-
-    const-string v0, "inMemHandle"
-
-    iget-object v1, p0, Lixp;->a:Lixj;
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
-
-    move-result v2
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result v3
-
-    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-interface {p2, v0, v2, v3, v4}, Lixg;->a(Ljava/lang/String;IILandroid/graphics/Bitmap$Config;)Lixj;
-
-    move-result-object v2
-
-    new-instance v3, Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result v4
-
-    invoke-direct {v3, v5, v5, v0, v4}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v4, Landroid/graphics/Canvas;
-
-    invoke-interface {v2}, Lixj;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-direct {v4, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    new-instance v5, Landroid/graphics/Paint;
-
-    invoke-direct {v5}, Landroid/graphics/Paint;-><init>()V
-
-    invoke-interface {v1}, Lixj;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-virtual {v4, v0, p1, v3, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {v4, v0}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    return-object v2
-.end method
-
-.method public final a(Lixg;)Lixj;
+.method public final declared-synchronized c()Ljava/lang/Object;
     .locals 2
 
-    new-instance v1, Lixq;
+    monitor-enter p0
 
-    iget-object v0, p0, Lixp;->a:Lixj;
+    :try_start_0
+    iget-object v0, p0, Lixp;->b:Lixn;
 
-    invoke-interface {v0}, Lixj;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-direct {v1, v0}, Lixq;-><init>(Landroid/graphics/Bitmap;)V
-
-    return-object v1
-.end method
-
-.method public final b()I
-    .locals 1
-
-    iget-object v0, p0, Lixp;->a:Lixj;
-
-    invoke-interface {v0}, Lixj;->e()Ljava/lang/Object;
+    invoke-interface {v0}, Lixn;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/graphics/Bitmap;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+    iput-boolean v1, p0, Lixp;->a:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b(Lixg;)Lixj;
-    .locals 2
-
-    const-string v1, "inMemHandle:copy"
-
-    iget-object v0, p0, Lixp;->a:Lixj;
-
-    invoke-interface {v0}, Lixj;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-static {p1, v1, v0}, Lixh;->a(Lixg;Ljava/lang/String;Landroid/graphics/Bitmap;)Lixj;
-
-    move-result-object v0
+    monitor-exit p0
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
 .method public final close()V
     .locals 1
 
-    iget-object v0, p0, Lixp;->a:Lixj;
+    invoke-virtual {p0}, Lixp;->a()Lirc;
 
-    invoke-interface {v0}, Lixj;->close()V
+    move-result-object v0
+
+    invoke-static {v0}, Lihr;->a(Liqz;)Ljava/lang/Object;
 
     return-void
 .end method

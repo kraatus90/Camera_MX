@@ -3,44 +3,30 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Lbsk;
+.implements Lbtb;
 
 
 # direct methods
-.method public constructor <init>(Lbsk;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbss;->a:Lbsk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(J)Ljrf;
+    .locals 1
 
-    iget-object v0, p0, Lbss;->a:Lbsk;
-
-    new-instance v1, Lgnm;
-
-    iget-object v0, v0, Lbsk;->c:Lbsj;
-
-    invoke-direct {v1, v0}, Lgnm;-><init>(Landroid/app/Activity;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgnm;
+    sget-object v0, Ljqu;->a:Ljqu;
 
     return-object v0
+.end method
+
+.method public final a(JLbst;)V
+    .locals 0
+
+    return-void
 .end method

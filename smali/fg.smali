@@ -1,25 +1,77 @@
-.class final Lfg;
-.super Lfd;
+.class public interface abstract Lfg;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# direct methods
-.method constructor <init>(Lfd;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lfd;-><init>(Lfd;)V
-
-    return-void
-.end method
+# interfaces
+.implements Landroid/view/MenuItem;
 
 
 # virtual methods
-.method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 1
+.method public abstract a(Lhj;)Lfg;
+.end method
 
-    new-instance v0, Lff;
+.method public abstract a(Ljava/lang/CharSequence;)Lfg;
+.end method
 
-    invoke-direct {v0, p0, p1}, Lff;-><init>(Lfd;Landroid/content/res/Resources;)V
+.method public abstract a()Lhj;
+.end method
 
-    return-object v0
+.method public abstract b(Ljava/lang/CharSequence;)Lfg;
+.end method
+
+.method public abstract collapseActionView()Z
+.end method
+
+.method public abstract expandActionView()Z
+.end method
+
+.method public abstract getActionView()Landroid/view/View;
+.end method
+
+.method public abstract getAlphabeticModifiers()I
+.end method
+
+.method public abstract getContentDescription()Ljava/lang/CharSequence;
+.end method
+
+.method public abstract getIconTintList()Landroid/content/res/ColorStateList;
+.end method
+
+.method public abstract getIconTintMode()Landroid/graphics/PorterDuff$Mode;
+.end method
+
+.method public abstract getNumericModifiers()I
+.end method
+
+.method public abstract getTooltipText()Ljava/lang/CharSequence;
+.end method
+
+.method public abstract isActionViewExpanded()Z
+.end method
+
+.method public abstract setActionView(I)Landroid/view/MenuItem;
+.end method
+
+.method public abstract setActionView(Landroid/view/View;)Landroid/view/MenuItem;
+.end method
+
+.method public abstract setAlphabeticShortcut(CI)Landroid/view/MenuItem;
+.end method
+
+.method public abstract setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
+.end method
+
+.method public abstract setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
+.end method
+
+.method public abstract setNumericShortcut(CI)Landroid/view/MenuItem;
+.end method
+
+.method public abstract setShortcut(CCII)Landroid/view/MenuItem;
+.end method
+
+.method public abstract setShowAsAction(I)V
+.end method
+
+.method public abstract setShowAsActionFlags(I)Landroid/view/MenuItem;
 .end method

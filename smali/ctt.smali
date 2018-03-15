@@ -1,54 +1,45 @@
-.class public final Lctt;
+.class final synthetic Lctt;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lcts;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lcts;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lctt;->a:Ljxn;
-
-    iput-object p2, p0, Lctt;->b:Ljxn;
+    iput-object p1, p0, Lctt;->a:Lcts;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final run()V
     .locals 3
 
-    new-instance v2, Lcts;
+    iget-object v0, p0, Lctt;->a:Lcts;
 
-    iget-object v0, p0, Lctt;->a:Ljxn;
+    iget-object v1, v0, Lcts;->f:Lihs;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v2, "CameraActivityController#create"
 
-    move-result-object v0
+    invoke-interface {v1, v2}, Lihs;->a(Ljava/lang/String;)V
 
-    check-cast v0, Lcqk;
+    iget-object v1, v0, Lcts;->e:Lkgm;
 
-    iget-object v1, p0, Lctt;->b:Ljxn;
+    invoke-interface {v1}, Lkgm;->a()Ljava/lang/Object;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lcts;->f:Lihs;
 
-    move-result-object v1
+    invoke-interface {v0}, Lihs;->a()V
 
-    check-cast v1, Licv;
-
-    invoke-direct {v2, v0, v1}, Lcts;-><init>(Lcqk;Licv;)V
-
-    return-object v2
+    return-void
 .end method

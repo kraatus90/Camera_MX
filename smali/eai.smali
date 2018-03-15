@@ -1,14 +1,13 @@
-.class public interface abstract Leai;
+.class public final Leai;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a()Liau;
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract a(Leaj;Leaq;)V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract b()Liau;
+    return-void
 .end method

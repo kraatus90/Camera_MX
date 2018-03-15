@@ -1,56 +1,69 @@
-.class public final Leed;
-.super Ljava/lang/Object;
+.class final Leed;
+.super Legb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Leec;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Leec;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leed;->a:Leec;
 
-    iput-object p1, p0, Leed;->a:Ljxn;
+    invoke-direct {p0, p1}, Legb;-><init>(Lega;)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leed;
-
-    invoke-direct {v0, p0}, Leed;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final G()V
     .locals 2
 
-    iget-object v0, p0, Leed;->a:Ljxn;
+    iget-object v0, p0, Leed;->a:Leec;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Leec;->a:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v0, Liag;
+    invoke-super {p0}, Legb;->G()V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Leed;->a:Leec;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Leec;->a:Lgld;
 
-    move-result-object v0
+    iget-object v1, p0, Leed;->a:Leec;
 
-    check-cast v0, Liau;
+    iget-object v1, v1, Leec;->e:Lglf;
 
-    return-object v0
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final K()V
+    .locals 2
+
+    iget-object v0, p0, Leed;->a:Leec;
+
+    iget-object v0, v0, Leec;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Legb;->K()V
+
+    iget-object v0, p0, Leed;->a:Leec;
+
+    iget-object v0, v0, Leec;->a:Lgld;
+
+    iget-object v1, p0, Leed;->a:Leec;
+
+    iget-object v1, v1, Leec;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

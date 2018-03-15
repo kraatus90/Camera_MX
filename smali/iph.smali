@@ -1,75 +1,77 @@
-.class final enum Liph;
-.super Ljava/lang/Enum;
+.class public final Liph;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field public static final enum a:Liph;
+# instance fields
+.field public final a:[B
 
-.field public static final enum b:Liph;
+.field public final b:I
 
-.field private static synthetic c:[Liph;
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>([BIII)V
     .locals 4
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    new-instance v0, Liph;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "RUNNING"
+    if-ltz p3, :cond_0
 
-    invoke-direct {v0, v1, v2}, Liph;-><init>(Ljava/lang/String;I)V
+    move v0, v1
 
-    sput-object v0, Liph;->a:Liph;
+    :goto_0
+    const-string v3, "offset must be >= 0"
 
-    new-instance v0, Liph;
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
 
-    const-string v1, "STOPPED"
+    if-lez p4, :cond_1
 
-    invoke-direct {v0, v1, v3}, Liph;-><init>(Ljava/lang/String;I)V
+    move v0, v1
 
-    sput-object v0, Liph;->b:Liph;
+    :goto_1
+    const-string v3, "length must be > 0"
 
-    const/4 v0, 0x2
+    invoke-static {v0, v3}, Ljii;->a(ZLjava/lang/Object;)V
 
-    new-array v0, v0, [Liph;
+    array-length v0, p1
 
-    sget-object v1, Liph;->a:Liph;
+    if-gt p4, v0, :cond_2
 
-    aput-object v1, v0, v2
+    :goto_2
+    const-string v0, "length exceeds data length"
 
-    sget-object v1, Liph;->b:Liph;
+    invoke-static {v1, v0}, Ljii;->a(ZLjava/lang/Object;)V
 
-    aput-object v1, v0, v3
+    iput-object p1, p0, Liph;->a:[B
 
-    sput-object v0, Liph;->c:[Liph;
+    iput p2, p0, Liph;->d:I
+
+    iput p3, p0, Liph;->b:I
+
+    iput p4, p0, Liph;->c:I
 
     return-void
-.end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
+    :cond_0
+    move v0, v2
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    goto :goto_0
 
-    return-void
-.end method
+    :cond_1
+    move v0, v2
 
-.method public static values()[Liph;
-    .locals 1
+    goto :goto_1
 
-    sget-object v0, Liph;->c:[Liph;
+    :cond_2
+    move v1, v2
 
-    invoke-virtual {v0}, [Liph;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Liph;
-
-    return-object v0
+    goto :goto_2
 .end method

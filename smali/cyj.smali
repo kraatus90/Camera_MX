@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Lfft;
 
 
 # instance fields
-.field private synthetic a:Lcyf;
+.field private final synthetic a:Lcya;
 
 
 # direct methods
-.method constructor <init>(Lcyf;)V
+.method constructor <init>(Lcya;)V
     .locals 0
 
-    iput-object p1, p0, Lcyj;->a:Lcyf;
+    iput-object p1, p0, Lcyj;->a:Lcya;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,42 +23,32 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 3
-
-    iget-object v2, p0, Lcyj;->a:Lcyf;
-
-    iget-object v0, v2, Lcyf;->d:Ljht;
-
-    invoke-virtual {v0}, Ljht;->a()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, v2, Lcyf;->f:Z
+.method public final a()Z
+    .locals 1
 
     const/4 v0, 0x0
 
-    :goto_0
-    return-object v0
+    return v0
+.end method
 
-    :cond_0
-    new-instance v1, Lcys;
+.method public final b()Z
+    .locals 1
 
-    iget-object v0, v2, Lcyf;->d:Ljht;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object v0
+.method public final c()Z
+    .locals 1
 
-    check-cast v0, [B
+    iget-object v0, p0, Lcyj;->a:Lcya;
 
-    invoke-direct {v1, v2, v0}, Lcys;-><init>(Lcwi;[B)V
+    iget-object v0, v0, Lcya;->f:Lfdv;
 
-    move-object v0, v1
+    invoke-interface {v0}, Lfdv;->f()Z
 
-    goto :goto_0
+    move-result v0
+
+    return v0
 .end method

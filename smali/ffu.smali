@@ -3,74 +3,98 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfft;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Z
 
-.field private b:Ljxn;
+.field private final b:Z
 
-.field private c:Ljxn;
+.field private final c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Labg;Lffv;)V
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lffu;->a:Ljxn;
+    sget-object v0, Labk;->h:Labk;
 
-    iput-object p2, p0, Lffu;->b:Ljxn;
+    invoke-virtual {p1, v0}, Labg;->a(Labk;)Z
 
-    iput-object p3, p0, Lffu;->c:Ljxn;
+    move-result v0
+
+    iput-boolean v0, p0, Lffu;->a:Z
+
+    iget v0, p2, Lffv;->a:I
+
+    sget v3, Lep;->aw:I
+
+    if-eq v0, v3, :cond_2
+
+    move v0, v1
+
+    :goto_0
+    iput-boolean v0, p0, Lffu;->b:Z
+
+    sget-object v0, Labi;->b:Labi;
+
+    invoke-virtual {p1, v0}, Labg;->a(Labi;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Labi;->d:Labi;
+
+    invoke-virtual {p1, v0}, Labg;->a(Labi;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    move v2, v1
+
+    :cond_1
+    iput-boolean v2, p0, Lffu;->c:Z
 
     return-void
+
+    :cond_2
+    move v0, v2
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final a()Z
+    .locals 1
 
-    iget-object v0, p0, Lffu;->a:Ljxn;
+    iget-boolean v0, p0, Lffu;->a:Z
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object v0
+.method public final b()Z
+    .locals 1
 
-    check-cast v0, Lfrm;
+    iget-boolean v0, p0, Lffu;->b:Z
 
-    iget-object v1, p0, Lffu;->b:Ljxn;
+    return v0
+.end method
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+.method public final c()Z
+    .locals 1
 
-    move-result-object v1
+    iget-boolean v0, p0, Lffu;->c:Z
 
-    check-cast v1, Lgss;
-
-    iget-object v2, p0, Lffu;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lhzt;
-
-    new-instance v3, Lffs;
-
-    invoke-direct {v3, v1}, Lffs;-><init>(Lgss;)V
-
-    invoke-static {v2, v0, v3}, Lfsi;->a(Lhzt;Lfrm;Lfsf;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v3, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lffs;
-
-    return-object v0
+    return v0
 .end method

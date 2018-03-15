@@ -1,230 +1,140 @@
-.class public final Ljbb;
+.class public Ljbb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljbc;
+.implements Ljba;
+.implements Ljmg;
 
 
 # instance fields
-.field private a:Ljava/io/Writer;
+.field private final a:Ljava/util/Set;
 
-.field private b:Ljax;
+.field private b:J
 
-.field private c:Ljava/lang/String;
+.field private final c:Ljbc;
+
+.field private final d:Ljmb;
+
+.field private final e:Ljgx;
 
 
 # direct methods
-.method public constructor <init>(Ljax;Ljava/lang/String;Ljava/io/Writer;)V
-    .locals 0
+.method public constructor <init>(Ljmb;Ljgx;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljbb;->b:Ljax;
+    new-instance v0, Ljava/util/HashSet;
 
-    iput-object p2, p0, Ljbb;->c:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object p3, p0, Ljbb;->a:Ljava/io/Writer;
+    iput-object v0, p0, Ljbb;->a:Ljava/util/Set;
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Ljbb;->b:J
+
+    new-instance v0, Ljbc;
+
+    invoke-direct {v0}, Ljbc;-><init>()V
+
+    iput-object v0, p0, Ljbb;->c:Ljbc;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljbb;->d:Ljmb;
+
+    iput-object p2, p0, Ljbb;->e:Ljgx;
+
+    iget-object v0, p0, Ljbb;->d:Ljmb;
+
+    invoke-virtual {v0, p0}, Ljmb;->a(Ljmg;)V
 
     return-void
 .end method
 
-.method private static a(Ljbc;)Ljava/lang/String;
+.method private final declared-synchronized a(Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;)V
     .locals 4
 
-    instance-of v0, p0, Ljca;
+    monitor-enter p0
 
-    if-eqz v0, :cond_0
+    :try_start_0
+    invoke-direct {p0}, Ljbb;->b()V
 
-    check-cast p0, Ljca;
+    invoke-virtual {p1}, Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;->getTimestamp()J
 
-    iget-object v0, p0, Ljca;->a:Ljbc;
+    move-result-wide v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-wide v2, p0, Ljbb;->b:J
 
-    move-result-object v0
+    cmp-long v2, v0, v2
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    if-gtz v2, :cond_0
 
-    move-result-object v0
+    iget-object v2, p0, Ljbb;->a:Ljava/util/Set;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, " (cached)"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    :goto_0
-    return-object v0
-
-    :cond_0
-    instance-of v0, p0, Ljbb;
-
-    if-eqz v0, :cond_1
-
-    check-cast p0, Ljbb;
-
-    iget-object v0, p0, Ljbb;->b:Ljax;
-
-    invoke-static {v0}, Ljbb;->a(Ljbc;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ljbb;->c:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x3
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " ("
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ")"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method private static a(Ljava/util/List;Ljava/io/Writer;)V
-    .locals 6
-
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    const-string v0, "    > [EMPTY SEGMENT LIST]\n"
-
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    if-eqz v0, :cond_1
 
     :cond_0
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Ljbb;->c:Ljbc;
+
+    invoke-virtual {v0, p1}, Ljbc;->a(Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method private final declared-synchronized b()V
+    .locals 6
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Ljbb;->c:Ljbc;
+
+    invoke-virtual {v0}, Ljbc;->b()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
+    :cond_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljaz;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x7
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "    > "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
-
-    const-string v2, "      [\n"
-
-    invoke-virtual {p1, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljaz;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
     if-eqz v0, :cond_1
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -232,226 +142,251 @@
 
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    const/16 v0, 0x28
+    iget-wide v4, p0, Ljbb;->b:J
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    cmp-long v0, v2, v4
 
-    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+    if-gtz v0, :cond_1
 
-    const-string v0, "        timestamp: "
+    iget-object v0, p0, Ljbb;->d:Ljmb;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljmb;->c()Ljava/util/Set;
 
     move-result-object v0
 
-    const-string v3, "\n"
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v0
+    invoke-interface {v0, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    iget-object v0, p0, Ljbb;->c:Ljbc;
 
-    goto :goto_1
-
-    :cond_1
-    const-string v0, "      ]\n"
-
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Ljbc;->a(J)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
-
-    :cond_2
-    return-void
-.end method
-
-.method private final b(Ljava/util/List;)Ljava/util/List;
-    .locals 8
-
-    new-instance v1, Ljava/io/StringWriter;
-
-    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
-
-    iget-object v0, p0, Ljbb;->c:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0xc
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "NEW CHAIN: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, "\n"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    invoke-static {p1, v1}, Ljbb;->a(Ljava/util/List;Ljava/io/Writer;)V
-
-    iget-object v0, p0, Ljbb;->b:Ljax;
-
-    iget-object v2, v0, Ljax;->a:[Ljbc;
-
-    array-length v3, v2
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v3, :cond_0
-
-    aget-object v4, v2, v0
-
-    invoke-static {v4}, Ljbb;->a(Ljbc;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    add-int/lit8 v6, v6, 0x17
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v6, "  Applying Segmenter: "
-
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, "\n"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v1, v5}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    invoke-interface {v4, p1}, Ljbc;->a(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Ljbb;->a(Ljava/util/List;Ljava/io/Writer;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "CHAIN END. Final Result:\n"
-
-    invoke-virtual {v1, v0}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    invoke-static {p1, v1}, Ljbb;->a(Ljava/util/List;Ljava/io/Writer;)V
-
-    const-string v0, "\n\n"
-
-    invoke-virtual {v1, v0}, Ljava/io/StringWriter;->write(Ljava/lang/String;)V
-
-    iget-object v2, p0, Ljbb;->a:Ljava/io/Writer;
-
-    monitor-enter v2
-
-    :try_start_0
-    iget-object v0, p0, Ljbb;->a:Ljava/io/Writer;
-
-    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
-
-    monitor-exit v2
-
-    return-object p1
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    monitor-exit p0
 
     throw v0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)Ljava/util/List;
-    .locals 2
+.method public final declared-synchronized a()V
+    .locals 4
+
+    monitor-enter p0
 
     :try_start_0
-    invoke-direct {p0, p1}, Ljbb;->b(Ljava/util/List;)Ljava/util/List;
+    iget-object v0, p0, Ljbb;->d:Ljmb;
+
+    invoke-virtual {v0, p0}, Ljmb;->b(Ljmg;)V
+
+    invoke-direct {p0}, Ljbb;->b()V
+
+    iget-object v0, p0, Ljbb;->c:Ljbc;
+
+    iget-object v1, p0, Ljbb;->d:Ljmb;
+
+    invoke-virtual {v1}, Ljmb;->c()Ljava/util/Set;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ljbb;->a:Ljava/util/Set;
+
+    iget-object v3, p0, Ljbb;->e:Ljgx;
+
+    invoke-virtual {v0, v1, v2, v3}, Ljbc;->a(Ljava/util/Set;Ljava/util/Set;Ljgx;)V
+
+    iget-object v0, p0, Ljbb;->e:Ljgx;
+
+    invoke-interface {v0}, Ljgx;->a()V
+
+    iget-object v0, p0, Ljbb;->c:Ljbc;
+
+    invoke-virtual {v0}, Ljbc;->c()V
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    monitor-exit p0
 
-    :goto_0
-    return-object v0
+    return-void
 
-    :catch_0
+    :catchall_0
     move-exception v0
 
-    const-string v0, "LoggingChainedResegmenter"
+    monitor-exit p0
 
-    const-string v1, "Cannot log segmentation chain. Reverting back to standard implementation."
+    throw v0
+.end method
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+.method public final declared-synchronized a(J)V
+    .locals 3
 
-    iget-object v0, p0, Ljbb;->b:Ljax;
+    monitor-enter p0
 
-    invoke-virtual {v0, p1}, Ljax;->a(Ljava/util/List;)Ljava/util/List;
+    :try_start_0
+    iget-wide v0, p0, Ljbb;->b:J
 
-    move-result-object v0
+    cmp-long v0, p1, v0
+
+    if-lez v0, :cond_0
+
+    const-string v0, "FrameDropListeningFrameBuffer"
+
+    const/16 v1, 0x54
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "onFrameDropped: Timestamp: "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is newer than newest inserted frame."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Ljbb;->a:Ljava/util/Set;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;
+
+    invoke-direct {p0, p1}, Ljbb;->a(Lcom/google/android/libraries/smartburst/filterfw/FrameImage2D;)V
+
+    return-void
+.end method
+
+.method public final declared-synchronized b(J)V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Ljbb;->b:J
+
+    cmp-long v0, p1, v0
+
+    if-gtz v0, :cond_0
+
+    const-string v0, "FrameDropListeningFrameBuffer"
+
+    const/16 v1, 0x55
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "onFrameInserted: Timestamp: "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " is older than newest inserted frame."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Ljbb;->a:Ljava/util/Set;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    iput-wide p1, p0, Ljbb;->b:J
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

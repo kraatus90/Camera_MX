@@ -1,21 +1,19 @@
-.class final Lcgw;
+.class public final Lcgw;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field public static final a:Lida;
+# instance fields
+.field public final synthetic a:Lcfk;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcfk;)V
+    .locals 0
 
-    new-instance v0, Lcgv;
+    iput-object p1, p0, Lcgw;->a:Lcfk;
 
-    invoke-direct {v0}, Lcgv;-><init>()V
-
-    sput-object v0, Lcgw;->a:Lida;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

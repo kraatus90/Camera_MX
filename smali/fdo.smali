@@ -1,23 +1,52 @@
-.class Lfdo;
-.super Lgvh;
+.class public final Lfdo;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lfdo;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Lfdo;
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([[F)V
+    invoke-direct {v0}, Lfdo;-><init>()V
+
+    sput-object v0, Lfdo;->a:Lfdo;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public F()V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    return-void
+    new-instance v0, Limf;
+
+    invoke-direct {v0}, Limf;-><init>()V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Limf;
+
+    return-object v0
 .end method

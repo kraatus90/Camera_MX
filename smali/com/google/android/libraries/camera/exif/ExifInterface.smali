@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Liei;
+.implements Lijg;
 
 
 # annotations
@@ -40,182 +40,182 @@
 
 .field public static final O:Ljava/lang/Long;
 
-.field private static S:I
+.field private static final S:I
 
-.field private static T:I
+.field private static final T:I
 
 .field public static final TAG_SOFTWARE:I
     .annotation build Lcom/google/android/apps/common/proguard/UsedByReflection;
     .end annotation
 .end field
 
-.field private static U:I
+.field private static final U:I
 
-.field private static V:I
+.field private static final V:I
 
-.field private static W:I
+.field private static final W:I
 
-.field private static X:I
+.field private static final X:I
 
-.field private static Y:I
+.field private static final Y:I
 
-.field private static Z:I
+.field private static final Z:I
 
 .field public static final a:I
 
-.field private static aA:I
+.field private static final aA:I
 
-.field private static aB:I
+.field private static final aB:I
 
-.field private static aC:I
+.field private static final aC:I
 
-.field private static aD:I
+.field private static final aD:I
 
-.field private static aE:I
+.field private static final aE:I
 
-.field private static aF:I
+.field private static final aF:I
 
-.field private static aG:I
+.field private static final aG:I
 
-.field private static aH:I
+.field private static final aH:I
 
-.field private static aI:I
+.field private static final aI:I
 
-.field private static aJ:I
+.field private static final aJ:I
 
-.field private static aK:I
+.field private static final aK:I
 
-.field private static aL:I
+.field private static final aL:I
 
-.field private static aM:I
+.field private static final aM:I
 
-.field private static aN:I
+.field private static final aN:I
 
-.field private static aO:I
+.field private static final aO:I
 
-.field private static aP:I
+.field private static final aP:I
 
-.field private static aQ:I
+.field private static final aQ:I
 
-.field private static aR:I
+.field private static final aR:I
 
-.field private static aS:I
+.field private static final aS:I
 
-.field private static aT:I
+.field private static final aT:I
 
-.field private static aU:I
+.field private static final aU:I
 
-.field private static aV:I
+.field private static final aV:I
 
-.field private static aW:I
+.field private static final aW:I
 
-.field private static aX:I
+.field private static final aX:I
 
-.field private static aY:I
+.field private static final aY:I
 
-.field private static aZ:I
+.field private static final aZ:I
 
-.field private static aa:I
+.field private static final aa:I
 
-.field private static ab:I
+.field private static final ab:I
 
-.field private static ac:I
+.field private static final ac:I
 
-.field private static ad:I
+.field private static final ad:I
 
-.field private static ae:I
+.field private static final ae:I
 
-.field private static af:I
+.field private static final af:I
 
-.field private static ag:I
+.field private static final ag:I
 
-.field private static ah:I
+.field private static final ah:I
 
-.field private static ai:I
+.field private static final ai:I
 
-.field private static aj:I
+.field private static final aj:I
 
-.field private static ak:I
+.field private static final ak:I
 
-.field private static al:I
+.field private static final al:I
 
-.field private static am:I
+.field private static final am:I
 
-.field private static an:I
+.field private static final an:I
 
-.field private static ao:I
+.field private static final ao:I
 
-.field private static ap:I
+.field private static final ap:I
 
-.field private static aq:I
+.field private static final aq:I
 
-.field private static ar:I
+.field private static final ar:I
 
-.field private static as:I
+.field private static final as:I
 
-.field private static at:I
+.field private static final at:I
 
-.field private static au:I
+.field private static final au:I
 
-.field private static av:I
+.field private static final av:I
 
-.field private static aw:I
+.field private static final aw:I
 
-.field private static ax:I
+.field private static final ax:I
 
-.field private static ay:I
+.field private static final ay:I
 
-.field private static az:I
+.field private static final az:I
 
 .field public static final b:I
 
-.field private static ba:I
+.field private static final ba:I
 
-.field private static bb:I
+.field private static final bb:I
 
-.field private static bc:I
+.field private static final bc:I
 
-.field private static bd:I
+.field private static final bd:I
 
-.field private static be:I
+.field private static final be:I
 
-.field private static bf:I
+.field private static final bf:I
 
-.field private static bg:I
+.field private static final bg:I
 
-.field private static bh:I
+.field private static final bh:I
 
-.field private static bi:I
+.field private static final bi:I
 
-.field private static bj:I
+.field private static final bj:I
 
-.field private static bk:I
+.field private static final bk:I
 
-.field private static bl:I
+.field private static final bl:I
 
-.field private static bm:I
+.field private static final bm:I
 
-.field private static bn:I
+.field private static final bn:I
 
-.field private static bo:I
+.field private static final bo:I
 
-.field private static bp:I
+.field private static final bp:I
 
-.field private static bq:I
+.field private static final bq:I
 
-.field private static br:I
+.field private static final br:I
 
-.field private static bs:I
+.field private static final bs:I
 
-.field private static bt:I
+.field private static final bt:I
 
 .field private static bu:Ljava/util/HashSet;
 
 .field private static bv:Ljava/util/HashSet;
 
-.field private static bw:Ljava/lang/Long;
+.field private static final bw:Ljava/lang/Long;
 
-.field private static bx:Ljava/nio/ByteOrder;
+.field private static final bx:Ljava/nio/ByteOrder;
 
 .field public static final c:I
 
@@ -269,13 +269,13 @@
 # instance fields
 .field public N:I
 
-.field public P:Lieh;
+.field public P:Lijf;
 
 .field public final Q:Ljava/text/DateFormat;
 
 .field public final R:Ljava/util/Calendar;
 
-.field private by:Ljava/text/DateFormat;
+.field private final by:Ljava/text/DateFormat;
 
 .field private bz:Landroid/util/SparseIntArray;
 
@@ -1378,13 +1378,13 @@
 
     iput v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->N:I
 
-    new-instance v0, Lieh;
+    new-instance v0, Lijf;
 
     sget-object v1, Lcom/google/android/libraries/camera/exif/ExifInterface;->bx:Ljava/nio/ByteOrder;
 
-    invoke-direct {v0, v1}, Lieh;-><init>(Ljava/nio/ByteOrder;)V
+    invoke-direct {v0, v1}, Lijf;-><init>(Ljava/nio/ByteOrder;)V
 
-    iput-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lieh;
+    iput-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lijf;
 
     new-instance v0, Ljava/text/SimpleDateFormat;
 
@@ -1431,7 +1431,7 @@
     return-void
 .end method
 
-.method public static a([Licg;Ljava/lang/String;)D
+.method public static a([Liha;Ljava/lang/String;)D
     .locals 8
 
     const/4 v0, 0x0
@@ -1439,7 +1439,7 @@
     :try_start_0
     aget-object v0, p0, v0
 
-    invoke-virtual {v0}, Licg;->a()D
+    invoke-virtual {v0}, Liha;->a()D
 
     move-result-wide v0
 
@@ -1447,7 +1447,7 @@
 
     aget-object v2, p0, v2
 
-    invoke-virtual {v2}, Licg;->a()D
+    invoke-virtual {v2}, Liha;->a()D
 
     move-result-wide v2
 
@@ -1455,7 +1455,7 @@
 
     aget-object v4, p0, v4
 
-    invoke-virtual {v4}, Licg;->a()D
+    invoke-virtual {v4}, Liha;->a()D
 
     move-result-wide v4
 
@@ -1534,7 +1534,7 @@
     return v0
 
     :cond_1
-    sget-object v4, Liev;->c:[I
+    sget-object v4, Lijt;->c:[I
 
     move v3, v1
 
@@ -1584,7 +1584,7 @@
 
     const/4 v1, 0x0
 
-    sget-object v3, Liev;->c:[I
+    sget-object v3, Lijt;->c:[I
 
     ushr-int/lit8 v4, p0, 0x18
 
@@ -1632,7 +1632,7 @@
     return v0
 .end method
 
-.method public static a(D)[Licg;
+.method public static a(D)[Liha;
     .locals 10
 
     const-wide/16 v8, 0x1
@@ -1673,31 +1673,31 @@
 
     const/4 v1, 0x3
 
-    new-array v1, v1, [Licg;
+    new-array v1, v1, [Liha;
 
     const/4 v4, 0x0
 
-    new-instance v5, Licg;
+    new-instance v5, Liha;
 
     int-to-long v6, v2
 
-    invoke-direct {v5, v6, v7, v8, v9}, Licg;-><init>(JJ)V
+    invoke-direct {v5, v6, v7, v8, v9}, Liha;-><init>(JJ)V
 
     aput-object v5, v1, v4
 
     const/4 v2, 0x1
 
-    new-instance v4, Licg;
+    new-instance v4, Liha;
 
     int-to-long v6, v3
 
-    invoke-direct {v4, v6, v7, v8, v9}, Licg;-><init>(JJ)V
+    invoke-direct {v4, v6, v7, v8, v9}, Liha;-><init>(JJ)V
 
     aput-object v4, v1, v2
 
     const/4 v2, 0x2
 
-    new-instance v3, Licg;
+    new-instance v3, Liha;
 
     int-to-long v4, v0
 
@@ -1707,19 +1707,19 @@
 
     move-result-wide v6
 
-    invoke-direct {v3, v4, v5, v6, v7}, Licg;-><init>(JJ)V
+    invoke-direct {v3, v4, v5, v6, v7}, Liha;-><init>(JJ)V
 
     aput-object v3, v1, v2
 
     return-object v1
 .end method
 
-.method private final b(II)Lies;
+.method private final b(II)Lijq;
     .locals 3
 
     const/4 v0, 0x0
 
-    invoke-static {p2}, Lies;->a(I)Z
+    invoke-static {p2}, Lijq;->a(I)Z
 
     move-result v1
 
@@ -1730,17 +1730,17 @@
     return-object v0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lieh;
+    iget-object v1, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lijf;
 
     int-to-short v2, p1
 
-    iget-object v1, v1, Lieh;->a:[Liev;
+    iget-object v1, v1, Lijf;->a:[Lijt;
 
     aget-object v1, v1, p2
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1, v2}, Liev;->a(S)Lies;
+    invoke-virtual {v1, v2}, Lijt;->a(S)Lijq;
 
     move-result-object v0
 
@@ -1785,10 +1785,10 @@
     return v0
 .end method
 
-.method private final c(II)[Licg;
+.method private final c(II)[Liha;
     .locals 1
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lies;
+    invoke-direct {p0, p1, p2}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lijq;
 
     move-result-object v0
 
@@ -1800,7 +1800,7 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {v0}, Lies;->d()[Licg;
+    invoke-virtual {v0}, Lijq;->d()[Liha;
 
     move-result-object v0
 
@@ -1882,7 +1882,7 @@
 
     iget-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->bz:Landroid/util/SparseIntArray;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2879,7 +2879,7 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->bz:Landroid/util/SparseIntArray;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->bz:Landroid/util/SparseIntArray;
 
@@ -2892,14 +2892,14 @@
     .end array-data
 .end method
 
-.method public final a(I)Licg;
+.method public final a(I)Liha;
     .locals 3
 
     invoke-direct {p0, p1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->g(I)I
 
     move-result v0
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->c(II)[Licg;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->c(II)[Liha;
 
     move-result-object v1
 
@@ -2916,18 +2916,18 @@
     return-object v0
 
     :cond_1
-    new-instance v0, Licg;
+    new-instance v0, Liha;
 
     const/4 v2, 0x0
 
     aget-object v1, v1, v2
 
-    invoke-direct {v0, v1}, Licg;-><init>(Licg;)V
+    invoke-direct {v0, v1}, Liha;-><init>(Liha;)V
 
     goto :goto_0
 .end method
 
-.method public final a(ILjava/lang/Object;)Lies;
+.method public final a(ILjava/lang/Object;)Lijq;
     .locals 10
 
     const/4 v8, 0x0
@@ -2987,11 +2987,11 @@
     goto :goto_1
 
     :cond_4
-    new-instance v0, Lies;
+    new-instance v0, Lijq;
 
     int-to-short v1, p1
 
-    invoke-direct/range {v0 .. v5}, Lies;-><init>(SSIIZ)V
+    invoke-direct/range {v0 .. v5}, Lijq;-><init>(SSIIZ)V
 
     if-eqz p2, :cond_5
 
@@ -3007,7 +3007,7 @@
 
     and-int/2addr v1, v9
 
-    invoke-virtual {v0, v1}, Lies;->b(I)Z
+    invoke-virtual {v0, v1}, Lijq;->b(I)Z
 
     move-result v7
 
@@ -3026,7 +3026,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    invoke-virtual {v0, p2}, Lies;->a(Ljava/lang/String;)Z
+    invoke-virtual {v0, p2}, Lijq;->a(Ljava/lang/String;)Z
 
     move-result v7
 
@@ -3039,7 +3039,7 @@
 
     check-cast p2, [I
 
-    invoke-virtual {v0, p2}, Lies;->a([I)Z
+    invoke-virtual {v0, p2}, Lijq;->a([I)Z
 
     move-result v7
 
@@ -3052,37 +3052,37 @@
 
     check-cast p2, [J
 
-    invoke-virtual {v0, p2}, Lies;->a([J)Z
+    invoke-virtual {v0, p2}, Lijq;->a([J)Z
 
     move-result v7
 
     goto :goto_2
 
     :cond_9
-    instance-of v1, p2, Licg;
+    instance-of v1, p2, Liha;
 
     if-eqz v1, :cond_a
 
-    check-cast p2, Licg;
+    check-cast p2, Liha;
 
-    new-array v1, v6, [Licg;
+    new-array v1, v6, [Liha;
 
     aput-object p2, v1, v7
 
-    invoke-virtual {v0, v1}, Lies;->a([Licg;)Z
+    invoke-virtual {v0, v1}, Lijq;->a([Liha;)Z
 
     move-result v7
 
     goto :goto_2
 
     :cond_a
-    instance-of v1, p2, [Licg;
+    instance-of v1, p2, [Liha;
 
     if-eqz v1, :cond_b
 
-    check-cast p2, [Licg;
+    check-cast p2, [Liha;
 
-    invoke-virtual {v0, p2}, Lies;->a([Licg;)Z
+    invoke-virtual {v0, p2}, Lijq;->a([Liha;)Z
 
     move-result v7
 
@@ -3095,7 +3095,7 @@
 
     check-cast p2, [B
 
-    invoke-virtual {v0, p2}, Lies;->a([B)Z
+    invoke-virtual {v0, p2}, Lijq;->a([B)Z
 
     move-result v7
 
@@ -3112,7 +3112,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lies;->b(I)Z
+    invoke-virtual {v0, v1}, Lijq;->b(I)Z
 
     move-result v7
 
@@ -3133,7 +3133,7 @@
 
     aput-wide v2, v1, v7
 
-    invoke-virtual {v0, v1}, Lies;->a([J)Z
+    invoke-virtual {v0, v1}, Lijq;->a([J)Z
 
     move-result v7
 
@@ -3154,7 +3154,7 @@
 
     aput-byte v1, v2, v7
 
-    invoke-virtual {v0, v2}, Lies;->a([B)Z
+    invoke-virtual {v0, v2}, Lijq;->a([B)Z
 
     move-result v7
 
@@ -3203,7 +3203,7 @@
     goto :goto_4
 
     :cond_11
-    invoke-virtual {v0, v3}, Lies;->a([I)Z
+    invoke-virtual {v0, v3}, Lijq;->a([I)Z
 
     move-result v7
 
@@ -3250,7 +3250,7 @@
     goto :goto_6
 
     :cond_14
-    invoke-virtual {v0, v3}, Lies;->a([I)Z
+    invoke-virtual {v0, v3}, Lijq;->a([I)Z
 
     move-result v7
 
@@ -3295,7 +3295,7 @@
     goto :goto_8
 
     :cond_17
-    invoke-virtual {v0, v1}, Lies;->a([J)Z
+    invoke-virtual {v0, v1}, Lijq;->a([J)Z
 
     move-result v7
 
@@ -3342,19 +3342,19 @@
     goto :goto_a
 
     :cond_1a
-    invoke-virtual {v0, v3}, Lies;->a([B)Z
+    invoke-virtual {v0, v3}, Lijq;->a([B)Z
 
     move-result v7
 
     goto/16 :goto_2
 .end method
 
-.method public final a(Lies;)Lies;
+.method public final a(Lijq;)Lijq;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lieh;
+    iget-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lijf;
 
-    invoke-virtual {v0, p1}, Lieh;->a(Lies;)Lies;
+    invoke-virtual {v0, p1}, Lijf;->a(Lijq;)Lijq;
 
     move-result-object v0
 
@@ -3375,9 +3375,9 @@
     throw v0
 
     :cond_0
-    new-instance v0, Liaa;
+    new-instance v0, Libh;
 
-    new-instance v1, Liet;
+    new-instance v1, Lijr;
 
     new-instance v2, Ljava/io/BufferedOutputStream;
 
@@ -3385,11 +3385,11 @@
 
     invoke-direct {v2, p1, v3}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
 
-    iget-object v3, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lieh;
+    iget-object v3, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lijf;
 
-    invoke-direct {v1, v2, p0, v3}, Liet;-><init>(Ljava/io/OutputStream;Lcom/google/android/libraries/camera/exif/ExifInterface;Lieh;)V
+    invoke-direct {v1, v2, p0, v3}, Lijr;-><init>(Ljava/io/OutputStream;Lcom/google/android/libraries/camera/exif/ExifInterface;Lijf;)V
 
-    invoke-direct {v0, v1}, Liaa;-><init>(Liab;)V
+    invoke-direct {v0, v1}, Libh;-><init>(Libi;)V
 
     return-object v0
 .end method
@@ -3428,7 +3428,9 @@
 .end method
 
 .method public final a(Ljava/io/InputStream;)V
-    .locals 3
+    .locals 8
+
+    const/4 v1, 0x0
 
     if-nez p1, :cond_0
 
@@ -3442,19 +3444,59 @@
 
     :cond_0
     :try_start_0
-    new-instance v0, Lier;
+    new-instance v0, Lijp;
 
-    invoke-direct {v0, p0}, Lier;-><init>(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
+    invoke-direct {v0, p0}, Lijp;-><init>(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
 
-    invoke-virtual {v0, p1}, Lier;->a(Ljava/io/InputStream;)Lieh;
-    :try_end_0
-    .catch Liek; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object v0, v0, Lijp;->a:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    new-instance v2, Lijl;
+
+    invoke-direct {v2, p1, v0}, Lijl;-><init>(Ljava/io/InputStream;Lcom/google/android/libraries/camera/exif/ExifInterface;)V
+
+    new-instance v3, Lijf;
+
+    iget-object v0, v2, Lijl;->a:Lije;
+
+    iget-object v0, v0, Lije;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lieh;
+    invoke-direct {v3, v0}, Lijf;-><init>(Ljava/nio/ByteOrder;)V
 
-    return-void
+    invoke-virtual {v2}, Lijl;->a()I
+
+    move-result v0
+
+    :goto_0
+    const/4 v4, 0x5
+
+    if-eq v0, v4, :cond_a
+
+    packed-switch v0, :pswitch_data_0
+
+    :cond_1
+    :goto_1
+    invoke-virtual {v2}, Lijl;->a()I
+
+    move-result v0
+
+    goto :goto_0
+
+    :pswitch_0
+    new-instance v0, Lijt;
+
+    iget v4, v2, Lijl;->b:I
+
+    invoke-direct {v0, v4}, Lijt;-><init>(I)V
+
+    invoke-virtual {v3, v0}, Lijf;->a(Lijt;)V
+    :try_end_0
+    .catch Liji; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
 
     :catch_0
     move-exception v0
@@ -3466,6 +3508,228 @@
     invoke-direct {v1, v2, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v1
+
+    :pswitch_1
+    :try_start_1
+    iget-object v0, v2, Lijl;->c:Lijq;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lijq;->b()Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    iget v4, v0, Lijq;->g:I
+
+    iget-object v5, v2, Lijl;->a:Lije;
+
+    iget v5, v5, Lije;->a:I
+
+    if-lt v4, v5, :cond_1
+
+    iget-object v4, v2, Lijl;->g:Ljava/util/TreeMap;
+
+    iget v5, v0, Lijq;->g:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    new-instance v6, Lijm;
+
+    const/4 v7, 0x1
+
+    invoke-direct {v6, v0, v7}, Lijm;-><init>(Lijq;Z)V
+
+    invoke-virtual {v4, v5, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_2
+    iget v4, v0, Lijq;->e:I
+
+    invoke-virtual {v3, v4}, Lijf;->b(I)Lijt;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v4, v0}, Lijt;->a(Lijq;)Lijq;
+
+    goto :goto_1
+
+    :pswitch_2
+    iget-object v0, v2, Lijl;->c:Lijq;
+
+    if-eqz v0, :cond_1
+
+    iget-short v4, v0, Lijq;->b:S
+
+    const/4 v5, 0x7
+
+    if-ne v4, v5, :cond_3
+
+    invoke-virtual {v2, v0}, Lijl;->a(Lijq;)V
+
+    :cond_3
+    iget v4, v0, Lijq;->e:I
+
+    invoke-virtual {v3, v4}, Lijf;->b(I)Lijt;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v4, v0}, Lijt;->a(Lijq;)Lijq;
+
+    goto :goto_1
+
+    :pswitch_3
+    iget-object v0, v2, Lijl;->f:Lijq;
+
+    if-nez v0, :cond_4
+
+    move v0, v1
+
+    :goto_2
+    new-array v0, v0, [B
+
+    array-length v4, v0
+
+    invoke-virtual {v2, v0}, Lijl;->a([B)I
+
+    move-result v5
+
+    if-ne v4, v5, :cond_5
+
+    iput-object v0, v3, Lijf;->b:[B
+
+    goto :goto_1
+
+    :cond_4
+    iget-object v0, v2, Lijl;->f:Lijq;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v4}, Lijq;->c(I)J
+
+    move-result-wide v4
+
+    long-to-int v0, v4
+
+    goto :goto_2
+
+    :cond_5
+    const-string v0, "CAM_ExifReader"
+
+    const-string v4, "Failed to read the compressed thumbnail"
+
+    invoke-static {v0, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_1
+
+    :pswitch_4
+    iget-object v0, v2, Lijl;->e:Lijq;
+
+    if-nez v0, :cond_6
+
+    move v0, v1
+
+    :goto_3
+    new-array v4, v0, [B
+
+    array-length v0, v4
+
+    invoke-virtual {v2, v4}, Lijl;->a([B)I
+
+    move-result v5
+
+    if-ne v0, v5, :cond_9
+
+    iget-object v0, v2, Lijl;->d:Lijo;
+
+    iget v5, v0, Lijo;->a:I
+
+    iget-object v0, v3, Lijf;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-ge v5, v0, :cond_7
+
+    iget-object v0, v3, Lijf;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v5, v4}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_1
+
+    :cond_6
+    iget-object v0, v2, Lijl;->e:Lijq;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v4}, Lijq;->c(I)J
+
+    move-result-wide v4
+
+    long-to-int v0, v4
+
+    goto :goto_3
+
+    :cond_7
+    iget-object v0, v3, Lijf;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    :goto_4
+    if-ge v0, v5, :cond_8
+
+    iget-object v6, v3, Lijf;->c:Ljava/util/ArrayList;
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_4
+
+    :cond_8
+    iget-object v0, v3, Lijf;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    :cond_9
+    const-string v0, "CAM_ExifReader"
+
+    const-string v4, "Failed to read the strip bytes"
+
+    invoke-static {v0, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catch Liji; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto/16 :goto_1
+
+    :cond_a
+    iput-object v3, p0, Lcom/google/android/libraries/camera/exif/ExifInterface;->P:Lijf;
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
 .end method
 
 .method public final a(Ljava/io/InputStream;Ljava/io/OutputStream;)V
@@ -3539,7 +3803,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, p1, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(ILjava/lang/Object;)Lies;
+    invoke-virtual {p0, p1, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(ILjava/lang/Object;)Lijq;
 
     move-result-object v1
 
@@ -3550,7 +3814,7 @@
     return v0
 
     :cond_2
-    invoke-virtual {p0, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(Lies;)Lies;
+    invoke-virtual {p0, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a(Lijq;)Lijq;
 
     const/4 v0, 0x1
 
@@ -3558,117 +3822,81 @@
 .end method
 
 .method public final b(I)Ljava/lang/Integer;
-    .locals 8
+    .locals 3
 
-    const/4 v3, 0x0
-
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     invoke-direct {p0, p1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->g(I)I
 
-    move-result v0
+    move-result v1
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lies;
+    invoke-direct {p0, p1, v1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lijq;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_2
+    if-nez v1, :cond_1
 
-    iget-object v1, v0, Lies;->f:Ljava/lang/Object;
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, v0, Lies;->f:Ljava/lang/Object;
-
-    instance-of v1, v1, [J
-
-    if-eqz v1, :cond_2
-
-    iget-object v0, v0, Lies;->f:Ljava/lang/Object;
-
-    check-cast v0, [J
-
-    array-length v1, v0
-
-    new-array v4, v1, [I
-
-    move v1, v2
+    move-object v1, v0
 
     :goto_0
-    array-length v5, v0
+    if-eqz v1, :cond_0
 
-    if-ge v1, v5, :cond_0
+    array-length v2, v1
 
-    aget-wide v6, v0, v1
+    if-gtz v2, :cond_2
 
-    long-to-int v5, v6
+    :cond_0
+    :goto_1
+    return-object v0
 
-    aput v5, v4, v1
+    :cond_1
+    invoke-virtual {v1}, Lijq;->f()[I
 
-    add-int/lit8 v1, v1, 0x1
+    move-result-object v1
 
     goto :goto_0
 
-    :cond_0
-    move-object v0, v4
-
-    :goto_1
-    if-eqz v0, :cond_1
-
-    array-length v1, v0
-
-    if-gtz v1, :cond_3
-
-    :cond_1
-    move-object v0, v3
-
-    :goto_2
-    return-object v0
-
     :cond_2
-    move-object v0, v3
+    const/4 v0, 0x0
 
-    goto :goto_1
-
-    :cond_3
-    aget v0, v0, v2
+    aget v0, v1, v0
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
-.method public final d(I)Lies;
+.method public final d(I)Lijq;
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->g(I)I
 
     move-result v0
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lies;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lijq;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final e(I)[Licg;
+.method public final e(I)[Liha;
     .locals 1
 
     invoke-direct {p0, p1}, Lcom/google/android/libraries/camera/exif/ExifInterface;->g(I)I
 
     move-result v0
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->c(II)[Licg;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->c(II)[Liha;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final f(I)Lies;
+.method public final f(I)Lijq;
     .locals 6
 
     invoke-virtual {p0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->a()Landroid/util/SparseIntArray;
@@ -3702,11 +3930,11 @@
     :goto_1
     ushr-int/lit8 v4, p1, 0x10
 
-    new-instance v0, Lies;
+    new-instance v0, Lijq;
 
     int-to-short v1, p1
 
-    invoke-direct/range {v0 .. v5}, Lies;-><init>(SSIIZ)V
+    invoke-direct/range {v0 .. v5}, Lijq;-><init>(SSIIZ)V
 
     goto :goto_0
 
@@ -3725,7 +3953,7 @@
 
     move-result v0
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lies;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/libraries/camera/exif/ExifInterface;->b(II)Lijq;
 
     move-result-object v0
 
@@ -3737,7 +3965,7 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {v0}, Lies;->c()Ljava/lang/String;
+    invoke-virtual {v0}, Lijq;->c()Ljava/lang/String;
 
     move-result-object v0
 

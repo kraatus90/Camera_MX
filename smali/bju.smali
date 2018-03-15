@@ -1,69 +1,54 @@
-.class final Lbju;
-.super Lbjl;
-.source "PG"
+.class final synthetic Lbju;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field private synthetic a:Lbjs;
+.field private final a:Lifn;
 
 
 # direct methods
-.method constructor <init>(Lbjs;)V
+.method constructor <init>(Lifn;)V
     .locals 0
 
-    iput-object p1, p0, Lbju;->a:Lbjs;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lbjl;-><init>(Lbjj;)V
+    iput-object p1, p0, Lbju;->a:Lifn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
+.method public final call()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbju;->a:Lbjs;
+    iget-object v1, p0, Lbju;->a:Lifn;
 
-    iget-object v0, v0, Lbjs;->f:Lgvj;
+    iget-object v0, v1, Lifn;->k:Ljava/io/File;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    if-nez v0, :cond_0
 
-    invoke-super {p0}, Lbjl;->c()V
+    iget-object v0, v1, Lifn;->l:Ljava/io/FileDescriptor;
 
-    iget-object v0, p0, Lbju;->a:Lbjs;
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Lbjs;->f:Lgvj;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    iget-object v1, p0, Lbju;->a:Lbjs;
+    const-string v1, "Either Output video file path or descriptor is required"
 
-    iget-object v1, v1, Lbjs;->i:Lgvl;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    throw v0
 
-    return-void
-.end method
+    :cond_0
+    new-instance v0, Lifm;
 
-.method public final d()V
-    .locals 2
+    invoke-direct {v0, v1}, Lifm;-><init>(Lifn;)V
 
-    iget-object v0, p0, Lbju;->a:Lbjs;
+    check-cast v0, Lifm;
 
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lbjl;->d()V
-
-    iget-object v0, p0, Lbju;->a:Lbjs;
-
-    iget-object v0, v0, Lbjs;->f:Lgvj;
-
-    iget-object v1, p0, Lbju;->a:Lbjs;
-
-    iget-object v1, v1, Lbjs;->g:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

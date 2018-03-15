@@ -3,62 +3,106 @@
 .source "PG"
 
 # interfaces
-.implements Linf;
+.implements Limz;
 
 
 # instance fields
-.field private a:Liol;
-
-.field private volatile b:Z
+.field private final a:Limz;
 
 
 # direct methods
-.method public constructor <init>(Liol;)V
-    .locals 1
+.method public constructor <init>(Limz;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Line;->b:Z
-
-    iput-object p1, p0, Line;->a:Liol;
+    iput-object p1, p0, Line;->a:Limz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+.method public final a(I)Linb;
     .locals 1
 
-    iget-boolean v0, p0, Line;->b:Z
+    iget-object v0, p0, Line;->a:Limz;
 
-    iget-object v0, p0, Line;->a:Liol;
-
-    invoke-interface {v0, p1, p2}, Liol;->a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    return-void
-.end method
-
-.method public final b()Ljuw;
-    .locals 1
-
-    iget-object v0, p0, Line;->a:Liol;
-
-    invoke-interface {v0}, Liol;->close()V
-
-    const-class v0, Line;
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    invoke-interface {v0, p1}, Limz;->a(I)Linb;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final a(Lind;)Linb;
+    .locals 1
+
+    iget-object v0, p0, Line;->a:Limz;
+
+    invoke-interface {v0, p1}, Limz;->a(Lind;)Linb;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Limw;Landroid/os/Handler;)V
+    .locals 1
+
+    iget-object v0, p0, Line;->a:Limz;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Limz;->a(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Limw;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public final a(Ljava/util/List;Limw;Landroid/os/Handler;)V
+    .locals 1
+
+    iget-object v0, p0, Line;->a:Limz;
+
+    invoke-interface {v0, p1, p2, p3}, Limz;->a(Ljava/util/List;Limw;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public final a(Ljava/util/List;Limy;Landroid/os/Handler;)V
+    .locals 1
+
+    iget-object v0, p0, Line;->a:Limz;
+
+    invoke-interface {v0, p1, p2, p3}, Limz;->a(Ljava/util/List;Limy;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public final b(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Limw;Landroid/os/Handler;)V
+    .locals 1
+
+    iget-object v0, p0, Line;->a:Limz;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Limz;->b(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Limw;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public final b(Ljava/util/List;Limw;Landroid/os/Handler;)V
+    .locals 1
+
+    iget-object v0, p0, Line;->a:Limz;
+
+    invoke-interface {v0, p1, p2, p3}, Limz;->b(Ljava/util/List;Limw;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public close()V
+    .locals 1
+
+    iget-object v0, p0, Line;->a:Limz;
+
+    invoke-interface {v0}, Limz;->close()V
+
+    return-void
 .end method

@@ -1,66 +1,60 @@
-.class final Lfnb;
+.class public final Lfnb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:I
-
-.field private synthetic b:Lfmi;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmi;I)V
-    .locals 1
-
-    iput-object p1, p0, Lfnb;->b:Lfmi;
-
-    const v0, 0x7f1101d2
-
-    iput v0, p0, Lfnb;->a:I
+.method private constructor <init>(Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfnb;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfnb;
+    .locals 1
+
+    new-instance v0, Lfnb;
+
+    invoke-direct {v0, p0}, Lfnb;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lfnb;->b:Lfmi;
+    iget-object v0, p0, Lfnb;->a:Lkgv;
 
-    invoke-static {v0}, Lfmi;->a(Lfmi;)Lbtx;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget v1, p0, Lfnb;->a:I
+    check-cast v0, Lfla;
 
-    const/16 v2, 0x2b
+    invoke-virtual {v0}, Lfla;->b()Lfic;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    const-string v2, "Fatal error in Panorama module: "
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
+    check-cast v0, Lfic;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lbtx;->a(Ljava/lang/String;)V
-
-    return-void
+    return-object v0
 .end method

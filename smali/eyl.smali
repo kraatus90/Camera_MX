@@ -1,36 +1,45 @@
-.class public final Leyl;
+.class final synthetic Leyl;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Ljava/lang/Object;
+
+.field private final b:Lket;
+
+.field private final c:Lkeh;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljava/lang/Object;Lket;Lkeh;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leyl;->a:Ljava/lang/Object;
+
+    iput-object p2, p0, Leyl;->b:Lket;
+
+    iput-object p3, p0, Leyl;->c:Lkeh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    new-instance v0, Lfbm;
+    iget-object v0, p0, Leyl;->a:Ljava/lang/Object;
 
-    invoke-direct {v0}, Lfbm;-><init>()V
+    iget-object v1, p0, Leyl;->b:Lket;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v2, p0, Leyl;->c:Lkeh;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1, v2}, Leyk;->b(Ljava/lang/Object;Lket;Lkeh;)V
 
-    move-result-object v0
-
-    check-cast v0, Lfdm;
-
-    return-object v0
+    return-void
 .end method

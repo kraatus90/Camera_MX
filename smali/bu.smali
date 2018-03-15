@@ -1,41 +1,59 @@
 .class final Lbu;
-.super Lcn;
+.super Landroid/util/Property;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Landroid/view/View;
-
-
 # direct methods
-.method constructor <init>(Landroid/view/View;)V
+.method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lbu;->a:Landroid/view/View;
-
-    invoke-direct {p0}, Lcn;-><init>()V
+    invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lch;)V
-    .locals 2
+.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lbu;->a:Landroid/view/View;
+    const/4 v0, 0x0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    return-object v0
+.end method
 
-    invoke-static {v0, v1}, Lde;->a(Landroid/view/View;F)V
+.method public final synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Lbu;->a:Landroid/view/View;
+    check-cast p1, Landroid/view/View;
 
-    sget-object v1, Lde;->a:Ldl;
+    check-cast p2, Landroid/graphics/PointF;
 
-    invoke-virtual {v1, v0}, Ldl;->d(Landroid/view/View;)V
+    iget v0, p2, Landroid/graphics/PointF;->x:F
 
-    invoke-virtual {p1, p0}, Lch;->b(Lcm;)Lch;
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iget v1, p2, Landroid/graphics/PointF;->y:F
+
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result v3
+
+    add-int/2addr v3, v1
+
+    invoke-static {p1, v0, v1, v2, v3}, Ldk;->a(Landroid/view/View;IIII)V
 
     return-void
 .end method

@@ -1,39 +1,56 @@
-.class final Lhoa;
-.super Ljava/lang/Object;
+.class public Lhoa;
+.super Landroid/os/Binder;
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
-
-
-# instance fields
-.field private synthetic a:Landroid/content/Context;
+.implements Lhnz;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lhoa;->a:Landroid/content/Context;
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
+
+    invoke-virtual {p0, p0, v0}, Lhoa;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic call()Ljava/lang/Object;
-    .locals 3
+.method public asBinder()Landroid/os/IBinder;
+    .locals 0
 
-    iget-object v0, p0, Lhoa;->a:Landroid/content/Context;
+    return-object p0
+.end method
 
-    const-string v1, "google_sdk_flags"
+.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 1
 
-    const/4 v2, 0x1
+    packed-switch p1, :pswitch_data_0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    :goto_0
+    return v0
+
+    :pswitch_0
+    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
+
+    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x5f4e5446
+        :pswitch_0
+    .end packed-switch
 .end method

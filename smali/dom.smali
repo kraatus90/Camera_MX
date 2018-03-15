@@ -1,15 +1,35 @@
-.class public interface abstract Ldom;
+.class public final Ldom;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lggn;
-.implements Ljava/lang/AutoCloseable;
+
+# instance fields
+.field public final a:Libw;
 
 
-# virtual methods
-.method public abstract a(Ljava/util/List;Lggt;)V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 4
 
-.method public abstract close()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Libw;
+
+    new-instance v1, Lfrv;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Landroid/hardware/camera2/params/Face;
+
+    new-instance v3, Landroid/graphics/Rect;
+
+    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
+
+    invoke-direct {v1, v2, v3}, Lfrv;-><init>([Landroid/hardware/camera2/params/Face;Landroid/graphics/Rect;)V
+
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Ldom;->a:Libw;
+
+    return-void
 .end method

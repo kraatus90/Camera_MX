@@ -1,24 +1,29 @@
-.class final Labo;
+.class public abstract Labo;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field private synthetic a:Labt;
-
-.field private synthetic b:Labe;
+# static fields
+.field private static final a:Lacf;
 
 
 # direct methods
-.method constructor <init>(Labe;Labt;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lacf;
+
+    const-string v1, "CamDvcInfChar"
+
+    invoke-direct {v0, v1}, Lacf;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Labo;->a:Lacf;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Labo;->b:Labe;
-
-    iput-object p2, p0, Labo;->a:Labt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,24 +32,110 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final a(IZ)I
     .locals 3
 
-    iget-object v0, p0, Labo;->b:Labe;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Labe;->h()Landroid/os/Handler;
+    rem-int/lit8 v1, p1, 0x5a
 
-    move-result-object v0
+    if-eqz v1, :cond_1
 
-    const/16 v1, 0x67
+    sget-object v1, Labo;->a:Lacf;
 
-    iget-object v2, p0, Labo;->a:Labt;
+    const-string v2, "Provided display orientation is not divisible by 90"
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-static {v1, v2}, Lace;->b(Lacf;Ljava/lang/String;)V
 
-    move-result-object v0
+    move v1, v0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    :goto_0
+    if-nez v1, :cond_4
 
-    return-void
+    :cond_0
+    :goto_1
+    return v0
+
+    :cond_1
+    if-ltz p1, :cond_2
+
+    const/16 v1, 0x10e
+
+    if-le p1, v1, :cond_3
+
+    :cond_2
+    sget-object v1, Labo;->a:Lacf;
+
+    const-string v2, "Provided display orientation is outside expected range"
+
+    invoke-static {v1, v2}, Lace;->b(Lacf;Ljava/lang/String;)V
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p0}, Labo;->b()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    invoke-virtual {p0}, Labo;->c()I
+
+    move-result v0
+
+    add-int/2addr v0, p1
+
+    rem-int/lit16 v0, v0, 0x168
+
+    if-eqz p2, :cond_0
+
+    rsub-int v0, v0, 0x168
+
+    rem-int/lit16 v0, v0, 0x168
+
+    goto :goto_1
+
+    :cond_5
+    invoke-virtual {p0}, Labo;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    invoke-virtual {p0}, Labo;->c()I
+
+    move-result v0
+
+    sub-int/2addr v0, p1
+
+    add-int/lit16 v0, v0, 0x168
+
+    rem-int/lit16 v0, v0, 0x168
+
+    goto :goto_1
+
+    :cond_6
+    sget-object v1, Labo;->a:Lacf;
+
+    const-string v2, "Camera is facing unhandled direction"
+
+    invoke-static {v1, v2}, Lace;->b(Lacf;Ljava/lang/String;)V
+
+    goto :goto_1
+.end method
+
+.method public abstract a()Z
+.end method
+
+.method public abstract b()Z
+.end method
+
+.method public abstract c()I
 .end method

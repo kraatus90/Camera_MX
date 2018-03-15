@@ -1,56 +1,46 @@
-.class public final Ldyd;
+.class final Ldyd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/preference/Preference$OnPreferenceClickListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Landroid/app/Activity;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldyd;->a:Landroid/app/Activity;
 
-    iput-object p1, p0, Ldyd;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldyd;
-
-    invoke-direct {v0, p0}, Ldyd;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final onPreferenceClick(Landroid/preference/Preference;)Z
+    .locals 3
 
-    iget-object v0, p0, Ldyd;->a:Ljxn;
+    new-instance v0, Laxj;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Ldyd;->a:Landroid/app/Activity;
 
-    new-instance v0, Ldxy;
+    invoke-direct {v0, v1}, Laxj;-><init>(Landroid/app/Activity;)V
 
-    invoke-direct {v0}, Ldxy;-><init>()V
+    const v1, 0x7f1100a9
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    new-instance v2, Ldye;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {v2}, Ldye;-><init>()V
 
-    move-result-object v0
+    invoke-virtual {v0, v1, v2}, Laxj;->a(ILjava/lang/Exception;)V
 
-    check-cast v0, Ldxo;
+    const/4 v0, 0x1
 
-    return-object v0
+    return v0
 .end method

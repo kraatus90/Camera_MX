@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ldjy;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;
+.field private final synthetic a:Ldil;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;)V
+.method constructor <init>(Ldil;)V
     .locals 0
 
-    iput-object p1, p0, Ldim;->a:Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;
+    iput-object p1, p0, Ldim;->a:Ldil;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,18 +23,20 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
     .locals 2
 
-    check-cast p1, Lihy;
+    iget-object v0, p0, Ldim;->a:Ldil;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, v0, Ldil;->g:Lbey;
 
-    new-instance v0, Leig;
+    invoke-interface {v0}, Lbey;->close()V
 
-    iget-object v1, p0, Ldim;->a:Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;
+    new-instance v0, Ldhu;
 
-    invoke-direct {v0, p1, v1}, Leig;-><init>(Lihy;Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;)V
+    iget-object v1, p0, Ldim;->a:Ldil;
+
+    invoke-direct {v0, v1}, Ldhu;-><init>(Ldjz;)V
 
     return-object v0
 .end method

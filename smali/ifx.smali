@@ -1,67 +1,50 @@
-.class final Lifx;
-.super Ligf;
-.source "PG"
+.class public final synthetic Lifx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private e:Lihk;
+.field private final a:Landroid/media/MediaMuxer;
 
 
 # direct methods
-.method constructor <init>(Lify;Lihk;)V
+.method public constructor <init>(Landroid/media/MediaMuxer;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ligf;-><init>(Lify;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lifx;->e:Lihk;
+    iput-object p1, p0, Lifx;->a:Landroid/media/MediaMuxer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final k()Z
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lifx;->e:Lihk;
+    iget-object v0, p0, Lifx;->a:Landroid/media/MediaMuxer;
 
-    iget-boolean v0, v0, Lihk;->e:Z
+    :try_start_0
+    invoke-virtual {v0}, Landroid/media/MediaMuxer;->stop()V
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-super {p0}, Ligf;->k()Z
-
-    move-result v0
-
-    goto :goto_0
-.end method
-
-.method public final v()Z
-    .locals 1
-
-    iget-object v0, p0, Lifx;->e:Lihk;
-
-    invoke-virtual {v0}, Lihk;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Landroid/media/MediaMuxer;->release()V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
-    return v0
+    return-void
 
-    :cond_0
-    invoke-super {p0}, Ligf;->v()Z
+    :catch_0
+    move-exception v0
 
-    move-result v0
+    const-string v1, "MediaMuxerMul"
+
+    const-string v2, "Fail to stop previous media muxer"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method

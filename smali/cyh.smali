@@ -1,100 +1,66 @@
 .class final Lcyh;
-.super Ljava/lang/Object;
+.super Lidl;
 .source "PG"
-
-# interfaces
-.implements Lgrx;
 
 
 # instance fields
-.field private synthetic a:Lcyf;
+.field private final synthetic b:Lcya;
 
 
 # direct methods
-.method constructor <init>(Lcyf;)V
+.method constructor <init>(Lcya;Lick;)V
     .locals 0
 
-    iput-object p1, p0, Lcyh;->a:Lcyf;
+    iput-object p1, p0, Lcyh;->b:Lcya;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lidl;-><init>(Lick;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Bitmap;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/graphics/Bitmap;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;Lgry;Lftv;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;Lgyr;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;Lgyr;Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/net/Uri;Ljava/util/List;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a([BI)V
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lcyh;->a:Lcyf;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lcng;->a:Lcnh;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    new-instance v1, Lcvn;
+    move-result v0
 
-    invoke-direct {v1, p1, p2}, Lcvn;-><init>([BI)V
+    if-nez v0, :cond_0
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    iget-object v0, p0, Lcyh;->b:Lcya;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
-.method public final b(Landroid/net/Uri;)V
-    .locals 0
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Lcxo;
 
-.method public final c(Landroid/net/Uri;)V
-    .locals 0
+    iget-object v0, v0, Lcxo;->h:Lfat;
 
-    return-void
+    iget-object v1, p0, Lcyh;->b:Lcya;
+
+    iget-object v1, v1, Lcya;->e:Lilb;
+
+    invoke-virtual {v0, v1}, Lfat;->b(Lilb;)Likx;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Likx;->x()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcyh;->b:Lcya;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
+
+    :cond_0
+    sget-object v0, Lftm;->c:Lftm;
+
+    return-object v0
 .end method

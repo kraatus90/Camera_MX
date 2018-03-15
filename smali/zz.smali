@@ -1,28 +1,29 @@
-.class final Lzz;
+.class public abstract Lzz;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/hardware/Camera$PictureCallback;
 
-
-# instance fields
-.field public final synthetic a:Labc;
-
-.field private synthetic b:Landroid/os/Handler;
-
-.field private synthetic c:Lzr;
+# static fields
+.field public static final i:Lacf;
 
 
 # direct methods
-.method constructor <init>(Lzr;Landroid/os/Handler;Labc;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lacf;
+
+    const-string v1, "CamAgnt"
+
+    invoke-direct {v0, v1}, Lacf;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lzz;->i:Lacf;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lzz;->c:Lzr;
-
-    iput-object p2, p0, Lzz;->b:Landroid/os/Handler;
-
-    iput-object p3, p0, Lzz;->a:Labc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,50 +32,93 @@
 
 
 # virtual methods
-.method public final onPictureTaken([BLandroid/hardware/Camera;)V
-    .locals 2
+.method public abstract a()V
+.end method
 
-    iget-object v0, p0, Lzz;->c:Lzr;
+.method public abstract a(Labp;)V
+.end method
 
-    iget-object v0, v0, Lzr;->a:Lzl;
+.method public final a(Z)V
+    .locals 4
 
-    iget-object v0, v0, Lzl;->e:Lacn;
+    if-eqz p1, :cond_1
 
-    invoke-virtual {v0}, Lacn;->a()I
+    :try_start_0
+    invoke-virtual {p0}, Lzz;->e()Labx;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Labx;->c()Z
 
     move-result v0
 
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_0
-
-    sget-object v0, Lzl;->a:Lacv;
-
-    const-string v1, "picture callback returning when not capturing"
-
-    invoke-static {v0, v1}, Lacu;->e(Lacv;Ljava/lang/String;)V
+    if-eqz v0, :cond_0
 
     :goto_0
-    iget-object v0, p0, Lzz;->b:Landroid/os/Handler;
-
-    new-instance v1, Laaa;
-
-    invoke-direct {v1, p0, p1}, Laaa;-><init>(Lzz;[B)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
     return-void
 
     :cond_0
-    iget-object v0, p0, Lzz;->c:Lzr;
+    new-instance v0, Labd;
 
-    iget-object v0, v0, Lzr;->a:Lzl;
+    invoke-direct {v0}, Labd;-><init>()V
 
-    iget-object v0, v0, Lzl;->e:Lacn;
+    invoke-virtual {p0}, Lzz;->d()Labz;
 
-    const/4 v1, 0x2
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lacn;->a(I)V
+    new-instance v2, Laab;
+
+    invoke-direct {v2, p0, v0}, Laab;-><init>(Lzz;Labd;)V
+
+    iget-object v0, v0, Labd;->b:Ljava/lang/Object;
+
+    const-string v3, "camera release"
+
+    invoke-virtual {v1, v2, v0, v3}, Labz;->a(Ljava/lang/Runnable;Ljava/lang/Object;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {p0}, Lzz;->f()Labp;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Labp;->a(Ljava/lang/RuntimeException;)V
+
+    goto :goto_0
+
+    :cond_1
+    :try_start_1
+    invoke-virtual {p0}, Lzz;->d()Labz;
+
+    move-result-object v0
+
+    new-instance v1, Laac;
+
+    invoke-direct {v1, p0}, Laac;-><init>(Lzz;)V
+
+    invoke-virtual {v0, v1}, Labz;->a(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+.end method
+
+.method public abstract b()Labn;
+.end method
+
+.method protected abstract c()Landroid/os/Handler;
+.end method
+
+.method public abstract d()Labz;
+.end method
+
+.method protected abstract e()Labx;
+.end method
+
+.method public abstract f()Labp;
 .end method

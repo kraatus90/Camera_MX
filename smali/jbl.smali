@@ -1,366 +1,227 @@
 .class public final Ljbl;
-.super Ljbe;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljoz;
 
 
 # instance fields
-.field private a:Ljee;
-
-.field private b:F
-
-.field private c:F
+.field private final synthetic a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
 
 # direct methods
-.method private constructor <init>(Ljee;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljbe;-><init>()V
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Ljbl;->a:Ljee;
-
-    const/high16 v0, 0x42480000    # 50.0f
-
-    iput v0, p0, Ljbl;->b:F
-
-    const/high16 v0, 0x40e00000    # 7.0f
-
-    iput v0, p0, Ljbl;->c:F
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljee;B)V
+.method public constructor <init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljbl;-><init>(Ljee;)V
+    iput-object p1, p0, Ljbl;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljaz;)Ljaz;
-    .locals 20
-
-    invoke-static/range {p1 .. p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {}, Lcom/google/android/libraries/smartburst/filterfw/FrameManager;->attachToThread()V
-
-    :try_start_0
-    invoke-virtual/range {p1 .. p1}, Ljaz;->d()Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    :goto_0
-    invoke-static {}, Lcom/google/android/libraries/smartburst/filterfw/FrameManager;->detachFromThread()V
-
-    return-object p1
-
-    :cond_0
-    :try_start_1
-    new-instance v2, Ljar;
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Ljbl;->a:Ljee;
-
-    sget-object v4, Ljds;->e:Ljea;
-
-    invoke-direct {v2, v3, v4}, Ljar;-><init>(Ljee;Ljea;)V
-
-    invoke-static/range {p1 .. p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    move-object/from16 v0, p1
-
-    iget-object v4, v0, Ljaz;->a:Ljava/util/List;
-
-    invoke-static {v4}, Ljkv;->a(Ljava/util/Collection;)Ljkv;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    new-instance v4, Ljbq;
-
-    invoke-direct {v4, v2}, Ljbq;-><init>(Ljan;)V
-
-    invoke-static {v4}, Ljava/util/Collections;->reverseOrder(Ljava/util/Comparator;)Ljava/util/Comparator;
-
-    move-result-object v2
-
-    invoke-static {v3, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    new-instance v12, Ljava/util/ArrayList;
-
-    invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_6
+.method public final a(Ljava/io/Writer;)V
+    .locals 12
 
     const/4 v2, 0x0
 
-    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v0, p0, Ljbl;->a:Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+    invoke-interface {v0}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getEarliestTimestamp()J
 
     move-result-wide v4
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-interface {v12, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const/4 v2, 0x0
-
-    invoke-interface {v3, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Ljbl;->a:Ljee;
-
-    invoke-virtual {v2, v4, v5}, Ljee;->a(J)Ljds;
-
-    move-result-object v13
-
-    sget-object v2, Ljds;->b:Ljea;
-
-    invoke-virtual {v13, v2}, Ljds;->a(Ljea;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v0, v2
-
-    check-cast v0, Ljgh;
-
-    move-object v8, v0
-
-    new-instance v11, Ljava/util/ArrayList;
-
-    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
-
-    move-object v0, v3
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    move-object v9, v0
-
-    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
-
-    move-result v14
-
-    const/4 v2, 0x0
-
-    move v3, v2
-
-    :goto_2
-    if-ge v3, v14, :cond_5
-
-    invoke-virtual {v9, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    add-int/lit8 v10, v3, 0x1
-
-    check-cast v2, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v16
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Ljbl;->a:Ljee;
-
-    move-wide/from16 v0, v16
-
-    invoke-virtual {v2, v0, v1}, Ljee;->a(J)Ljds;
-
-    move-result-object v15
-
-    sget-object v2, Ljds;->c:Ljea;
-
-    invoke-virtual {v13, v2}, Ljds;->a(Ljea;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/List;
-
-    sget-object v3, Ljds;->c:Ljea;
-
-    invoke-virtual {v15, v3}, Ljds;->a(Ljea;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/List;
-
-    sget-object v4, Ljds;->v:Ljea;
-
-    invoke-virtual {v13, v4}, Ljds;->a(Ljea;)Ljava/lang/Object;
+    invoke-interface {v0, v4, v5}, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;->getRowIterator(J)Ljaz;
 
     move-result-object v4
 
-    check-cast v4, Ljava/util/List;
+    move v1, v2
 
-    sget-object v5, Ljds;->v:Ljea;
+    :goto_0
+    invoke-virtual {v4}, Ljaz;->a()Z
 
-    invoke-virtual {v15, v5}, Ljds;->a(Ljea;)Ljava/lang/Object;
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {v4}, Ljaz;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljay;
+
+    if-nez v1, :cond_2
+
+    const-string v1, "TIMESTAMP_NS"
+
+    invoke-virtual {p1, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljay;->a()[Lcom/google/android/libraries/smartburst/utils/Feature;
 
     move-result-object v5
 
-    check-cast v5, Ljava/util/List;
+    array-length v6, v5
 
-    iget v6, v8, Ljgh;->a:I
+    move v3, v2
 
-    iget v7, v8, Ljgh;->b:I
+    :goto_1
+    if-ge v3, v6, :cond_1
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    aget-object v1, v5, v3
 
-    move-result v18
+    invoke-virtual {v1}, Lcom/google/android/libraries/smartburst/utils/Feature;->getType()Ljpe;
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    move-result-object v7
 
-    move-result v19
+    move v1, v2
 
-    move/from16 v0, v18
+    :goto_2
+    iget v8, v7, Ljpe;->A:I
 
-    move/from16 v1, v19
+    if-ge v1, v8, :cond_0
 
-    if-ne v0, v1, :cond_3
+    invoke-virtual {v7}, Ljpe;->name()Ljava/lang/String;
 
-    invoke-static/range {v2 .. v7}, Lcom/google/android/libraries/smartburst/filterpacks/face/FaceUtils;->getAverageFaceImageDistance(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;II)F
+    move-result-object v8
 
-    move-result v2
+    invoke-static {v8}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-object/from16 v0, p0
+    move-result-object v9
 
-    iget v3, v0, Ljbl;->c:F
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
 
-    cmpl-float v2, v2, v3
+    move-result v9
 
-    if-gtz v2, :cond_3
+    add-int/lit8 v9, v9, 0xd
 
-    const/4 v2, 0x0
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10, v9}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v9, ","
+
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "_"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {p1, v8}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_0
+    add-int/lit8 v1, v3, 0x1
+
+    move v3, v1
+
+    goto :goto_1
+
+    :cond_1
+    const-string v1, "\n"
+
+    invoke-virtual {p1, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    :cond_2
+    invoke-virtual {v0}, Ljay;->b()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljay;->a()[Lcom/google/android/libraries/smartburst/utils/Feature;
+
+    move-result-object v5
+
+    array-length v6, v5
 
     move v3, v2
 
     :goto_3
-    sget-object v2, Ljds;->q:Ljea;
+    if-ge v3, v6, :cond_4
 
-    invoke-virtual {v15, v2}, Ljds;->a(Ljea;)Ljava/lang/Object;
+    aget-object v0, v5, v3
 
-    move-result-object v2
+    invoke-virtual {v0}, Lcom/google/android/libraries/smartburst/utils/Feature;->getValues()[F
 
-    check-cast v2, Ljava/lang/Float;
+    move-result-object v7
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    array-length v8, v7
 
-    move-result v4
-
-    sget-object v2, Ljds;->q:Ljea;
-
-    invoke-virtual {v13, v2}, Ljds;->a(Ljea;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Float;
-
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v2
-
-    sub-float v2, v4, v2
-
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
-
-    move-result v2
-
-    move-object/from16 v0, p0
-
-    iget v4, v0, Ljbl;->b:F
-
-    cmpl-float v2, v2, v4
-
-    if-lez v2, :cond_4
-
-    const/4 v2, 0x1
+    move v0, v2
 
     :goto_4
-    if-nez v3, :cond_1
+    if-ge v0, v8, :cond_3
 
-    if-eqz v2, :cond_2
+    aget v9, v7, v0
 
-    :cond_1
-    invoke-static/range {v16 .. v17}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const/16 v10, 0x10
 
-    move-result-object v2
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-interface {v11, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-direct {v11, v10}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :cond_2
-    move v3, v10
+    const-string v10, ","
 
-    goto/16 :goto_2
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {p1, v9}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_4
 
     :cond_3
-    const/4 v2, 0x1
+    add-int/lit8 v0, v3, 0x1
 
-    move v3, v2
+    move v3, v0
 
     goto :goto_3
 
     :cond_4
-    const/4 v2, 0x0
+    const-string v0, "\n"
 
-    goto :goto_4
-
-    :cond_5
-    move-object v3, v11
-
-    goto/16 :goto_1
-
-    :cond_6
-    new-instance p1, Ljaz;
-
-    move-object/from16 v0, p1
-
-    invoke-direct {v0, v12}, Ljaz;-><init>(Ljava/util/Collection;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    :catchall_0
-    move-exception v2
-
-    invoke-static {}, Lcom/google/android/libraries/smartburst/filterfw/FrameManager;->detachFromThread()V
-
-    throw v2
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "DiverseFaceFrameSegmentFilter"
-
-    return-object v0
+    :cond_5
+    return-void
 .end method

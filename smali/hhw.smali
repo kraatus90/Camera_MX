@@ -1,105 +1,139 @@
-.class public Lhhw;
-.super Ljava/lang/Object;
+.class public final enum Lhhw;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
 # static fields
-.field public static final a:I
+.field public static final enum a:Lhhw;
+
+.field public static final enum b:Lhhw;
+
+.field public static final enum c:Lhhw;
+
+.field private static final enum e:Lhhw;
+
+.field private static final enum f:Lhhw;
+
+.field private static final synthetic g:[Lhhw;
 
 
 # instance fields
-.field public b:I
-
-.field public c:Lhib;
+.field public final d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 8
 
-    invoke-static {}, Lhhv;->a()F
+    const/4 v7, 0x4
 
-    const/16 v0, 0x1a
+    const/4 v6, 0x3
 
-    sput v0, Lhhw;->a:I
+    const/4 v5, 0x2
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    new-instance v0, Lhhw;
+
+    const-string v1, "BADGE"
+
+    const v2, 0x7f0d0138
+
+    invoke-direct {v0, v1, v3, v2}, Lhhw;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lhhw;->a:Lhhw;
+
+    new-instance v0, Lhhw;
+
+    const-string v1, "INTERACT"
+
+    const v2, 0x7f0d013b
+
+    invoke-direct {v0, v1, v4, v2}, Lhhw;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lhhw;->b:Lhhw;
+
+    new-instance v0, Lhhw;
+
+    const-string v1, "DIALOG"
+
+    const v2, 0x7f0d0139
+
+    invoke-direct {v0, v1, v5, v2}, Lhhw;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lhhw;->c:Lhhw;
+
+    new-instance v0, Lhhw;
+
+    const-string v1, "SEARCH"
+
+    const v2, 0x7f0d013c
+
+    invoke-direct {v0, v1, v6, v2}, Lhhw;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lhhw;->e:Lhhw;
+
+    new-instance v0, Lhhw;
+
+    const-string v1, "EDITOR"
+
+    const v2, 0x7f0d013a
+
+    invoke-direct {v0, v1, v7, v2}, Lhhw;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lhhw;->f:Lhhw;
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Lhhw;
+
+    sget-object v1, Lhhw;->a:Lhhw;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lhhw;->b:Lhhw;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lhhw;->c:Lhhw;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lhhw;->e:Lhhw;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Lhhw;->f:Lhhw;
+
+    aput-object v1, v0, v7
+
+    sput-object v0, Lhhw;->g:[Lhhw;
 
     return-void
 .end method
 
-.method public constructor <init>(ILhhv;Landroid/support/v8/renderscript/RenderScript;)V
-    .locals 5
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p2, p1}, Lhhv;->b(I)I
-
-    move-result v2
-
-    new-instance v1, Lhib;
-
-    invoke-direct {v1, p3, v2}, Lhib;-><init>(Landroid/support/v8/renderscript/RenderScript;I)V
-
-    iput-object v1, p0, Lhhw;->c:Lhib;
-
-    move v1, v0
-
-    :goto_0
-    if-ge v0, v2, :cond_0
-
-    invoke-virtual {p2, p1, v0}, Lhhv;->a(II)I
-
-    move-result v3
-
-    invoke-virtual {p2, v3}, Lhhv;->a(I)F
-
-    move-result v3
-
-    float-to-int v3, v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    iget-object v4, p0, Lhhw;->c:Lhib;
-
-    invoke-virtual {v4, v0, v1}, Lhib;->a(II)V
-
-    iget-object v4, p0, Lhhw;->c:Lhib;
-
-    invoke-virtual {v4, v0, v3}, Lhib;->b(II)V
-
-    iget-object v4, p0, Lhhw;->c:Lhib;
-
-    invoke-virtual {v4, v0, v3}, Lhib;->c(II)V
-
-    mul-int/lit8 v4, v3, 0x2
-
-    add-int/lit8 v4, v4, 0x1
-
-    mul-int/lit8 v3, v3, 0x2
-
-    add-int/lit8 v3, v3, 0x1
-
-    mul-int/2addr v3, v4
-
-    add-int/2addr v1, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iput v1, p0, Lhhw;->b:I
+    iput p3, p0, Lhhw;->d:I
 
     return-void
 .end method
 
-.method public static a(F)I
+.method public static values()[Lhhw;
     .locals 1
 
-    float-to-int v0, p0
+    sget-object v0, Lhhw;->g:[Lhhw;
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-virtual {v0}, [Lhhw;->clone()Ljava/lang/Object;
 
-    return v0
+    move-result-object v0
+
+    check-cast v0, [Lhhw;
+
+    return-object v0
 .end method

@@ -1,20 +1,42 @@
-.class public interface abstract Lflj;
+.class public final Lflj;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+
+# direct methods
+.method public constructor <init>(Lkgv;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lflj;->a:Lkgv;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract b()Lhzb;
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract e()Lhzb;
-.end method
+    new-instance v1, Lfli;
 
-.method public abstract f()Z
-.end method
+    iget-object v0, p0, Lflj;->a:Lkgv;
 
-.method public abstract g()Z
-.end method
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-.method public abstract h()Z
+    move-result-object v0
+
+    check-cast v0, Linn;
+
+    invoke-direct {v1, v0}, Lfli;-><init>(Linn;)V
+
+    return-object v1
 .end method

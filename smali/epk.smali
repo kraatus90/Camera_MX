@@ -3,20 +3,28 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lepk;->a:Ljxn;
+    iput-object p1, p0, Lepk;->a:Lkgv;
+
+    iput-object p2, p0, Lepk;->b:Lkgv;
+
+    iput-object p3, p0, Lepk;->c:Lkgv;
 
     return-void
 .end method
@@ -24,31 +32,35 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
-    iget-object v0, p0, Lepk;->a:Ljxn;
+    new-instance v3, Lepj;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lepk;->a:Lkgv;
 
-    move-result-object v0
-
-    check-cast v0, Lgsl;
-
-    const-string v1, "pref_camera_hdrplus_option_available_key"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lgsl;->a(Ljava/lang/String;Z)Liau;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    check-cast v0, Lbjy;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v1, p0, Lepk;->b:Lkgv;
 
-    move-result-object v0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    check-cast v0, Liau;
+    move-result-object v1
 
-    return-object v0
+    check-cast v1, Lhbh;
+
+    iget-object v2, p0, Lepk;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbxe;
+
+    invoke-direct {v3, v0, v1, v2}, Lepj;-><init>(Lbjy;Lhbh;Lbxe;)V
+
+    return-object v3
 .end method

@@ -168,6 +168,18 @@
 
 
 # virtual methods
+.method public Empty()Z
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedReadViewU8;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedReadViewU8_Empty(JLcom/google/googlex/gcam/InterleavedReadViewU8;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public FastCrop(IIII)V
     .locals 7
 

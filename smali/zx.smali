@@ -3,22 +3,12 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Landroid/hardware/Camera$AutoFocusCallback;
-
-.field private synthetic b:Lzr;
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method constructor <init>(Lzr;Landroid/hardware/Camera$AutoFocusCallback;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lzx;->b:Lzr;
-
-    iput-object p2, p0, Lzx;->a:Landroid/hardware/Camera$AutoFocusCallback;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,50 +17,46 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
-    iget-object v0, p0, Lzx;->b:Lzr;
+    check-cast p1, Lacd;
 
-    iget-object v0, v0, Lzr;->a:Lzl;
+    check-cast p2, Lacd;
 
-    iget-object v0, v0, Lzl;->e:Lacn;
+    iget-object v0, p1, Lacd;->a:Landroid/graphics/Point;
 
-    invoke-virtual {v0}, Lacn;->c()Z
+    iget v0, v0, Landroid/graphics/Point;->x:I
 
-    move-result v0
+    iget-object v1, p2, Lacd;->a:Landroid/graphics/Point;
 
-    if-eqz v0, :cond_0
+    iget v1, v1, Landroid/graphics/Point;->x:I
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p1, Lacd;->a:Landroid/graphics/Point;
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    iget-object v1, p2, Lacd;->a:Landroid/graphics/Point;
+
+    iget v1, v1, Landroid/graphics/Point;->y:I
+
+    sub-int/2addr v0, v1
 
     :goto_0
-    return-void
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lzx;->b:Lzr;
+    iget-object v0, p1, Lacd;->a:Landroid/graphics/Point;
 
-    iget-object v0, v0, Lzr;->a:Lzl;
+    iget v0, v0, Landroid/graphics/Point;->x:I
 
-    iget-object v0, v0, Lzl;->e:Lacn;
+    iget-object v1, p2, Lacd;->a:Landroid/graphics/Point;
 
-    const/4 v1, 0x2
+    iget v1, v1, Landroid/graphics/Point;->x:I
 
-    invoke-virtual {v0, v1}, Lacn;->b(I)Z
-
-    iget-object v0, p0, Lzx;->b:Lzr;
-
-    iget-object v0, v0, Lzr;->a:Lzl;
-
-    iget-object v0, v0, Lzl;->d:Laac;
-
-    const/16 v1, 0x12d
-
-    iget-object v2, p0, Lzx;->a:Landroid/hardware/Camera$AutoFocusCallback;
-
-    invoke-virtual {v0, v1, v2}, Laac;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    sub-int/2addr v0, v1
 
     goto :goto_0
 .end method

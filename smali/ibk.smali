@@ -1,63 +1,168 @@
-.class public abstract Libk;
+.class public final Libk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liau;
+.implements Lihb;
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field public final a:Liau;
+.field private final a:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field private b:Liau;
+.field private final b:J
+
+.field private final c:Ljava/util/concurrent/TimeUnit;
+
+.field private final d:Ljava/lang/Object;
+
+.field private e:Ljava/util/concurrent/ScheduledFuture;
+
+.field private f:Z
 
 
 # direct methods
-.method public constructor <init>(Liau;)V
-    .locals 1
+.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;JLjava/util/concurrent/TimeUnit;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Libk;->a:Liau;
+    iput-object p1, p0, Libk;->a:Ljava/util/concurrent/ScheduledExecutorService;
 
-    new-instance v0, Libl;
+    iput-wide p2, p0, Libk;->b:J
 
-    invoke-direct {v0, p0, p1}, Libl;-><init>(Libk;Liau;)V
+    iput-object p4, p0, Libk;->c:Ljava/util/concurrent/TimeUnit;
 
-    invoke-static {v0}, Liav;->b(Liau;)Liau;
+    new-instance v0, Ljava/lang/Object;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Libk;->b:Liau;
+    iput-object v0, p0, Libk;->d:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Libk;->f:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Licn;Ljava/util/concurrent/Executor;)Lich;
-    .locals 1
+.method public final a()V
+    .locals 3
 
-    iget-object v0, p0, Libk;->b:Liau;
+    iget-object v1, p0, Libk;->d:Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2}, Liau;->a(Licn;Ljava/util/concurrent/Executor;)Lich;
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Libk;->e:Ljava/util/concurrent/ScheduledFuture;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Libk;->e:Ljava/util/concurrent/ScheduledFuture;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v2}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final close()V
+    .locals 2
+
+    iget-object v1, p0, Libk;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Libk;->f:Z
+
+    if-eqz v0, :cond_0
+
+    monitor-exit v1
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Libk;->f:Z
+
+    iget-object v0, p0, Libk;->a:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdownNow()Ljava/util/List;
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 5
+
+    iget-object v1, p0, Libk;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Libk;->f:Z
+
+    if-eqz v0, :cond_0
+
+    monitor-exit v1
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Libk;->a()V
+
+    iget-object v0, p0, Libk;->a:Ljava/util/concurrent/ScheduledExecutorService;
+
+    iget-wide v2, p0, Libk;->b:J
+
+    iget-object v4, p0, Libk;->c:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v0, p1, v2, v3, v4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iput-object v0, p0, Libk;->e:Ljava/util/concurrent/ScheduledFuture;
 
-.method public final b()Ljava/lang/Object;
-    .locals 1
+    monitor-exit v1
 
-    iget-object v0, p0, Libk;->b:Liau;
+    goto :goto_0
 
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
-.end method
-
-.method public abstract b(Ljava/lang/Object;)Ljava/lang/Object;
+    throw v0
 .end method

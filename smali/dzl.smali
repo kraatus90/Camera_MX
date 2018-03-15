@@ -1,74 +1,46 @@
-.class public final Ldzl;
+.class final Ldzl;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lgph;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ldzs;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic b:Lcmh;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Ldzs;Lcmh;)V
     .locals 0
 
+    iput-object p1, p0, Ldzl;->a:Ldzs;
+
+    iput-object p2, p0, Ldzl;->b:Lcmh;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldzl;->a:Ljxn;
-
-    iput-object p2, p0, Ldzl;->b:Ljxn;
-
-    iput-object p3, p0, Ldzl;->c:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final a()V
+    .locals 2
 
-    iget-object v0, p0, Ldzl;->a:Ljxn;
+    sget-object v0, Ldzh;->a:Ljava/lang/String;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "thumbnail clicked"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    check-cast v0, Ldyv;
+    iget-object v0, p0, Ldzl;->a:Ldzs;
 
-    iget-object v1, p0, Ldzl;->b:Ljxn;
+    iget-object v1, p0, Ldzl;->b:Lcmh;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ldzs;->a(Lcmh;)V
 
-    move-result-object v1
-
-    check-cast v1, Ldzq;
-
-    iget-object v2, p0, Ldzl;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldzh;
-
-    new-instance v3, Ldyy;
-
-    invoke-direct {v3, v0, v1, v2}, Ldyy;-><init>(Ldyo;Ldyo;Ldza;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v3, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldyy;
-
-    return-object v0
+    return-void
 .end method

@@ -1,54 +1,72 @@
-.class public final Ldmc;
+.class final Ldmc;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfrj;
 
 
-# static fields
-.field public static final a:Ldmc;
+# instance fields
+.field private final a:Lfrj;
+
+.field private final synthetic b:Ldmb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldmc;
-
-    invoke-direct {v0}, Ldmc;-><init>()V
-
-    sput-object v0, Ldmc;->a:Ldmc;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Ldmb;Lfrj;)V
     .locals 0
 
+    iput-object p1, p0, Ldmc;->b:Ldmb;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Ldmc;->a:Lfrj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a(Link;Lkeh;)V
     .locals 2
 
-    const-string v0, "CameraEx"
+    iget-object v0, p0, Ldmc;->b:Ldmb;
 
-    invoke-static {v0}, Lapb;->b(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    iget-object v0, v0, Ldmb;->a:Ljava/util/Set;
 
-    move-result-object v0
+    invoke-interface {p1}, Link;->b()I
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    move-result v1
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/util/concurrent/ExecutorService;
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    return-object v0
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-interface {p1}, Link;->close()V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ldmc;->a:Lfrj;
+
+    invoke-interface {v0, p1, p2}, Lfrj;->a(Link;Lkeh;)V
+
+    goto :goto_0
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Ldmc;->a:Lfrj;
+
+    invoke-interface {v0}, Lfrj;->close()V
+
+    return-void
 .end method

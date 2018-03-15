@@ -3,90 +3,64 @@
 .source "PG"
 
 # interfaces
-.implements Ldvc;
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
-
-.field private b:Ldvc;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ldvc;Ljava/util/Set;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldts;->b:Ldvc;
-
-    iput-object p2, p0, Ldts;->a:Ljava/util/Set;
+    iput-object p1, p0, Ldts;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Ldts;
+    .locals 1
+
+    new-instance v0, Ldts;
+
+    invoke-direct {v0, p0}, Ldts;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(Leaq;)Ldvd;
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Ldtt;
+    iget-object v0, p0, Ldts;->a:Lkgv;
 
-    iget-object v1, p0, Ldts;->b:Ldvc;
-
-    invoke-interface {v1, p1}, Ldvc;->a(Leaq;)Ldvd;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, v1}, Ldtt;-><init>(Ldts;Ldvd;)V
-
-    return-object v0
-.end method
-
-.method public final a()Liau;
-    .locals 1
-
-    iget-object v0, p0, Ldts;->b:Ldvc;
-
-    invoke-interface {v0}, Ldvc;->a()Liau;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Lcom/google/android/apps/camera/stats/Instrumentation;
 
-.method public final b(Leaq;)Ldvd;
-    .locals 2
-
-    iget-object v0, p0, Ldts;->b:Ldvc;
-
-    invoke-interface {v0, p1}, Ldvc;->b(Leaq;)Ldvd;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ldtt;
-
-    invoke-direct {v0, p0, v1}, Ldtt;-><init>(Ldts;Ldvd;)V
-
-    goto :goto_0
-.end method
-
-.method public final b()Ldzs;
-    .locals 1
-
-    iget-object v0, p0, Ldts;->b:Ldvc;
-
-    invoke-interface {v0}, Ldvc;->b()Ldzs;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/Instrumentation;->jankStats()Lcom/google/android/apps/camera/stats/InstrumentationSessionRecorder;
 
     move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/InstrumentationSessionRecorder;->create()Lcom/google/android/apps/camera/stats/InstrumentationSession;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
     return-object v0
 .end method

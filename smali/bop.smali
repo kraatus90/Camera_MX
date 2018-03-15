@@ -2,85 +2,150 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final b:Landroid/content/Context;
 
-.field private b:Ljxn;
+.field public final c:Landroid/view/View;
 
-.field private c:Ljxn;
+.field public final d:Liol;
 
-.field private d:Ljxn;
+.field public final e:[[I
 
-.field private e:Ljxn;
+.field public f:J
+
+.field public g:I
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "FaceAnnouncer"
 
-    iput-object p1, p0, Lbop;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lbop;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Lbop;->c:Ljxn;
-
-    iput-object p4, p0, Lbop;->d:Ljxn;
-
-    iput-object p5, p0, Lbop;->e:Ljxn;
+    sput-object v0, Lbop;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Landroid/view/View;Liol;)V
+    .locals 4
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+    const/4 v3, 0x3
 
-    new-instance v4, Lbon;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lbop;->a:Ljxn;
+    new-array v0, v3, [[I
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    new-array v2, v3, [I
+
+    fill-array-data v2, :array_0
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    new-array v2, v3, [I
+
+    fill-array-data v2, :array_1
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    new-array v2, v3, [I
+
+    fill-array-data v2, :array_2
+
+    aput-object v2, v0, v1
+
+    iput-object v0, p0, Lbop;->e:[[I
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Lbop;->f:J
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lbop;->g:I
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbnf;
+    check-cast v0, Landroid/content/Context;
 
-    iget-object v1, p0, Lbop;->b:Ljxn;
+    iput-object v0, p0, Lbop;->b:Landroid/content/Context;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p0, Lbop;->c:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v0, Landroid/view/View;
 
-    move-result-object v1
+    iput-object v0, p0, Lbop;->c:Landroid/view/View;
 
-    check-cast v1, Licz;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, p0, Lbop;->d:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v0, Liol;
 
-    move-result-object v2
+    iput-object v0, p0, Lbop;->d:Liol;
 
-    check-cast v2, Lboq;
+    return-void
 
-    iget-object v3, p0, Lbop;->e:Ljxn;
+    :array_0
+    .array-data 4
+        0x7f110201
+        0x7f110200
+        0x7f110202
+    .end array-data
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    :array_1
+    .array-data 4
+        0x7f1100ea
+        0x7f110059
+        0x7f1101c8
+    .end array-data
 
-    move-result-object v3
+    :array_2
+    .array-data 4
+        0x7f110036
+        0x7f110035
+        0x7f110037
+    .end array-data
+.end method
 
-    check-cast v3, Lbok;
+.method public static a(III)I
+    .locals 1
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lbon;-><init>(Lbnf;Licz;Lboq;Lbok;)V
+    if-nez p1, :cond_1
 
-    return-object v4
+    const/4 v0, 0x0
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    mul-int v0, p0, p2
+
+    div-int/2addr v0, p1
+
+    if-ne v0, p2, :cond_0
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
 .end method

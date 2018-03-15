@@ -1,30 +1,34 @@
-.class public final Lhlk;
+.class public interface abstract Lhlk;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field private synthetic a:Lhko;
-
-
-# direct methods
-.method constructor <init>(Lhko;)V
-    .locals 0
-
-    iput-object p1, p0, Lhlk;->a:Lhko;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Lhlj;
 
 
 # virtual methods
-.method public final a(Lcom/google/android/gms/common/ConnectionResult;)V
-    .locals 1
+.method public abstract a(Lhml;)V
+.end method
 
-    iget-object v0, p0, Lhlk;->a:Lhko;
+.method public abstract a(Lhnd;Ljava/util/Set;)V
+.end method
 
-    invoke-interface {v0, p1}, Lhko;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+.method public abstract a(Ljava/lang/String;Ljava/io/PrintWriter;)V
+.end method
 
-    return-void
+.method public abstract c()V
+.end method
+
+.method public abstract d()Z
+.end method
+
+.method public abstract e()Z
+.end method
+
+.method public abstract f()Z
+.end method
+
+.method public abstract g()Z
+.end method
+
+.method public abstract h()Z
 .end method

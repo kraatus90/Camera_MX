@@ -3,54 +3,66 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/util/Collection;
 
 
 # instance fields
-.field private a:I
-
-.field private b:I
-
-.field private c:I
-
-.field private d:Z
-
-.field private synthetic e:Lh;
+.field private final synthetic a:Lgp;
 
 
 # direct methods
-.method constructor <init>(Lh;I)V
-    .locals 1
+.method constructor <init>(Lgp;)V
+    .locals 0
 
-    iput-object p1, p0, Lgu;->e:Lh;
+    iput-object p1, p0, Lgu;->a:Lgp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lgu;->d:Z
-
-    iput p2, p0, Lgu;->a:I
-
-    invoke-virtual {p1}, Lh;->b()I
-
-    move-result v0
-
-    iput v0, p0, Lgu;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 2
+.method public final add(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget v0, p0, Lgu;->c:I
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    iget v1, p0, Lgu;->b:I
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    if-ge v0, v1, :cond_0
+    throw v0
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final clear()V
+    .locals 1
+
+    iget-object v0, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v0}, Lgp;->c()V
+
+    return-void
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget-object v0, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v0, p1}, Lgp;->b(Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -63,80 +75,241 @@
     goto :goto_0
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .locals 3
+.method public final containsAll(Ljava/util/Collection;)Z
+    .locals 2
 
-    invoke-virtual {p0}, Lgu;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lgu;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method public final isEmpty()Z
+    .locals 1
+
+    iget-object v0, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v0}, Lgp;->a()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    new-instance v0, Ljava/util/NoSuchElementException;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
+    :goto_0
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lgu;->e:Lh;
+    const/4 v0, 0x0
 
-    iget v1, p0, Lgu;->c:I
+    goto :goto_0
+.end method
 
-    iget v2, p0, Lgu;->a:I
+.method public final iterator()Ljava/util/Iterator;
+    .locals 3
 
-    invoke-virtual {v0, v1, v2}, Lh;->a(II)Ljava/lang/Object;
+    new-instance v0, Lgq;
 
-    move-result-object v0
+    iget-object v1, p0, Lgu;->a:Lgp;
 
-    iget v1, p0, Lgu;->c:I
+    const/4 v2, 0x1
 
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, p0, Lgu;->c:I
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lgu;->d:Z
+    invoke-direct {v0, v1, v2}, Lgq;-><init>(Lgp;I)V
 
     return-object v0
 .end method
 
-.method public final remove()V
+.method public final remove(Ljava/lang/Object;)Z
     .locals 2
 
-    iget-boolean v0, p0, Lgu;->d:Z
+    iget-object v0, p0, Lgu;->a:Lgp;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, p1}, Lgp;->b(Ljava/lang/Object;)I
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result v0
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    if-ltz v0, :cond_0
 
-    throw v0
+    iget-object v1, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v1, v0}, Lgp;->a(I)V
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
 
     :cond_0
-    iget v0, p0, Lgu;->c:I
+    const/4 v0, 0x0
 
-    add-int/lit8 v0, v0, -0x1
+    goto :goto_0
+.end method
 
-    iput v0, p0, Lgu;->c:I
+.method public final removeAll(Ljava/util/Collection;)Z
+    .locals 5
 
-    iget v0, p0, Lgu;->b:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lgu;->b:I
+    const/4 v2, 0x1
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lgu;->d:Z
+    iget-object v1, p0, Lgu;->a:Lgp;
 
-    iget-object v0, p0, Lgu;->e:Lh;
+    invoke-virtual {v1}, Lgp;->a()I
 
-    iget v1, p0, Lgu;->c:I
+    move-result v3
 
-    invoke-virtual {v0, v1}, Lh;->b(I)V
+    move v1, v0
 
-    return-void
+    :goto_0
+    if-ge v0, v3, :cond_1
+
+    iget-object v4, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v4, v0, v2}, Lgp;->a(II)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-interface {p1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    iget-object v1, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v1, v0}, Lgp;->a(I)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    add-int/lit8 v1, v3, -0x1
+
+    move v3, v1
+
+    move v1, v2
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 5
+
+    const/4 v2, 0x1
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v1}, Lgp;->a()I
+
+    move-result v3
+
+    move v1, v0
+
+    :goto_0
+    if-ge v0, v3, :cond_1
+
+    iget-object v4, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v4, v0, v2}, Lgp;->a(II)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-interface {p1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    iget-object v1, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v1, v0}, Lgp;->a(I)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    add-int/lit8 v1, v3, -0x1
+
+    move v3, v1
+
+    move v1, v2
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public final size()I
+    .locals 1
+
+    iget-object v0, p0, Lgu;->a:Lgp;
+
+    invoke-virtual {v0}, Lgp;->a()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lgu;->a:Lgp;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lgp;->b(I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lgu;->a:Lgp;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, v1}, Lgp;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method

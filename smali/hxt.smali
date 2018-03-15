@@ -1,178 +1,120 @@
 .class public final Lhxt;
-.super Lhyp;
+.super Ljava/lang/Object;
 
-
-# instance fields
-.field private a:Lhwe;
-
-.field private b:Lhty;
-
-.field private c:[Landroid/content/IntentFilter;
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Lhkl;Lhwe;Lhty;[Landroid/content/IntentFilter;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0, p1}, Lhyp;-><init>(Lhkl;)V
-
-    invoke-static {p2}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhwe;
-
-    iput-object v0, p0, Lhxt;->a:Lhwe;
-
-    invoke-static {p3}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhty;
-
-    iput-object v0, p0, Lhxt;->b:Lhty;
-
-    invoke-static {p4}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Landroid/content/IntentFilter;
-
-    iput-object v0, p0, Lhxt;->c:[Landroid/content/IntentFilter;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Lcom/google/android/gms/common/api/Status;)Lhks;
-    .locals 1
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 5
+
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
+
+    move-result v2
+
+    const/4 v1, 0x0
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lhxt;->a:Lhwe;
-
-    iput-object v0, p0, Lhxt;->b:Lhty;
-
-    iput-object v0, p0, Lhxt;->c:[Landroid/content/IntentFilter;
-
-    return-object p1
-.end method
-
-.method protected final synthetic a(Lhkg;)V
-    .locals 8
-
-    const/4 v7, 0x0
-
-    check-cast p1, Lhyg;
-
-    iget-object v1, p0, Lhxt;->a:Lhwe;
-
-    iget-object v0, p0, Lhxt;->b:Lhty;
-
-    iget-object v2, p0, Lhxt;->c:[Landroid/content/IntentFilter;
-
-    iget-object v3, p1, Lhyg;->h:Lhxp;
-
-    new-instance v4, Lhyi;
-
-    invoke-direct {v4, v2}, Lhyi;-><init>([Landroid/content/IntentFilter;)V
-
-    invoke-static {v0}, Lhjg;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhty;
-
-    iput-object v0, v4, Lhyi;->a:Lhty;
-
-    iget-object v2, v3, Lhxp;->a:Ljava/util/Map;
-
-    monitor-enter v2
-
-    :try_start_0
-    iget-object v0, v3, Lhxp;->a:Ljava/util/Map;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Lcom/google/android/gms/common/api/Status;
-
-    const/16 v1, 0xfa1
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Status;-><init>(I)V
-
-    invoke-interface {p0, v0}, Lhrz;->a(Ljava/lang/Object;)V
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
     :goto_0
-    iput-object v7, p0, Lhxt;->a:Lhwe;
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    iput-object v7, p0, Lhxt;->b:Lhty;
+    move-result v3
 
-    iput-object v7, p0, Lhxt;->c:[Landroid/content/IntentFilter;
+    if-ge v3, v2, :cond_0
 
-    return-void
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    :cond_0
-    :try_start_1
-    iget-object v0, v3, Lhxp;->a:Ljava/util/Map;
+    move-result v3
 
-    invoke-interface {v0, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const v4, 0xffff
 
-    :try_start_2
-    invoke-virtual {p1}, Lhyg;->n()Landroid/os/IInterface;
+    and-int/2addr v4, v3
 
-    move-result-object v0
+    packed-switch v4, :pswitch_data_0
 
-    check-cast v0, Lhxm;
-
-    new-instance v5, Lhxq;
-
-    iget-object v6, v3, Lhxp;->a:Ljava/util/Map;
-
-    invoke-direct {v5, v6, v1, p0}, Lhxq;-><init>(Ljava/util/Map;Ljava/lang/Object;Lhrz;)V
-
-    new-instance v6, Lcom/google/android/gms/wearable/internal/zzc;
-
-    invoke-direct {v6, v4}, Lcom/google/android/gms/wearable/internal/zzc;-><init>(Lhyi;)V
-
-    invoke-interface {v0, v5, v6}, Lhxm;->a(Lhxh;Lcom/google/android/gms/wearable/internal/zzc;)V
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :try_start_3
-    monitor-exit v2
+    invoke-static {p1, v3}, Lhmr;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :pswitch_0
+    invoke-static {p1, v3}, Lhmr;->e(Landroid/os/Parcel;I)I
 
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    move-result v1
+
+    goto :goto_0
+
+    :pswitch_1
+    sget-object v0, Lcom/google/android/gms/wearable/internal/zzo;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v3, v0}, Lhmr;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v3
+
+    if-eq v3, v2, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
 
     throw v0
 
-    :catch_0
-    move-exception v0
+    :cond_1
+    new-instance v2, Lcom/google/android/gms/wearable/internal/zzat;
 
-    :try_start_4
-    iget-object v3, v3, Lhxp;->a:Ljava/util/Map;
+    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzat;-><init>(ILjava/util/List;)V
 
-    invoke-interface {v3, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    return-object v2
 
-    throw v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzat;
+
+    return-object v0
 .end method

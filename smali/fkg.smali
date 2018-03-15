@@ -1,293 +1,140 @@
-.class public final Lfkg;
+.class final Lfkg;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lfic;
 
-# static fields
-.field private static a:Ljava/lang/String;
+
+# instance fields
+.field public final a:Lfim;
+
+.field public final b:Lfue;
+
+.field public final c:I
+
+.field public final d:Landroid/view/Surface;
+
+.field public final e:Liaw;
+
+.field private final f:Libq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Liaw;Libq;Linm;Lfim;)V
+    .locals 3
 
-    const-string v0, "CaptureDataSerilzr"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lfkg;->e:Liaw;
 
-    move-result-object v0
+    iput-object p2, p0, Lfkg;->f:Libq;
 
-    sput-object v0, Lfkg;->a:Ljava/lang/String;
+    iput-object p4, p0, Lfkg;->a:Lfim;
 
-    return-void
-.end method
+    new-instance v0, Lihc;
 
-.method static a(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 4
+    invoke-interface {p3}, Linm;->a()I
 
-    if-nez p0, :cond_0
+    move-result v1
 
-    const-string v0, "<null>"
+    invoke-interface {p3}, Linm;->b()I
 
-    :goto_0
-    return-object v0
+    move-result v2
 
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, v1, v2}, Lihc;-><init>(II)V
 
-    move-result-object v0
+    invoke-interface {p3}, Linm;->c()I
 
-    invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
+    invoke-interface {p3}, Linm;->d()I
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    iput v0, p0, Lfkg;->c:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-interface {p3}, Linm;->e()Landroid/view/Surface;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string v0, "["
+    iput-object v0, p0, Lfkg;->d:Landroid/view/Surface;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v0, Lfto;
 
-    invoke-static {p0}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+    iget v1, p0, Lfkg;->c:I
 
-    move-result v2
+    invoke-direct {v0, v1}, Lfto;-><init>(I)V
+
+    new-instance v1, Lfue;
+
+    invoke-virtual {p1, v0}, Liaw;->a(Lihb;)Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lfuo;
+
+    invoke-direct {v1, v0}, Lfue;-><init>(Lfuo;)V
+
+    iput-object v1, p0, Lfkg;->b:Lfue;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 1
+
+    iget v0, p0, Lfkg;->c:I
+
+    return v0
+.end method
+
+.method public final varargs a([Lfic;)Lfia;
+    .locals 6
+
+    new-instance v2, Ljava/util/HashSet;
+
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
+
+    invoke-interface {v2, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    array-length v3, p1
 
     const/4 v0, 0x0
 
-    :goto_1
-    if-ge v0, v2, :cond_2
-
-    invoke-static {p0, v0}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lfkg;->a(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v3, v2, -0x1
-
-    if-eq v0, v3, :cond_1
-
-    const-string v3, ", "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const/16 v0, 0x5d
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_3
-    instance-of v0, p0, Landroid/util/Pair;
-
-    if-eqz v0, :cond_4
-
-    check-cast p0, Landroid/util/Pair;
-
-    iget-object v0, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    invoke-static {v0}, Lfkg;->a(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    invoke-static {v1}, Lfkg;->a(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x9
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Pair: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v2, " / "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_0
-.end method
-
-.method public static a(Ljava/lang/String;Liic;Ljava/io/File;)V
-    .locals 5
-
-    :try_start_0
-    new-instance v0, Ljava/io/FileWriter;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p2, v1}, Ljava/io/FileWriter;-><init>(Ljava/io/File;Z)V
-
-    new-instance v1, Lfkh;
-
-    invoke-direct {v1, p1, p0}, Lfkh;-><init>(Liic;Ljava/lang/String;)V
-
-    new-instance v2, Ljava/io/BufferedWriter;
-
-    invoke-direct {v2, v0}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-
-    :try_start_1
-    invoke-virtual {v1, v2}, Lfkh;->a(Ljava/io/Writer;)V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    invoke-virtual {v2}, Ljava/io/Writer;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    move v1, v0
 
     :goto_0
-    :try_start_3
-    invoke-virtual {v0}, Ljava/io/FileWriter;->close()V
+    if-ge v1, v3, :cond_0
 
-    :goto_1
-    return-void
+    aget-object v0, p1, v1
 
-    :catch_0
-    move-exception v1
+    instance-of v4, v0, Lfkg;
 
-    sget-object v2, Lfkg;->a:Ljava/lang/String;
+    const-string v5, "ImageReader ImageSources can only be combined with other ImageReaderImageSources of the same type"
 
-    const-string v3, "dumpMetadata - Failed to close writer."
+    invoke-static {v4, v5}, Ljii;->a(ZLjava/lang/Object;)V
 
-    invoke-static {v2, v3, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    check-cast v0, Lfkg;
 
-    goto :goto_0
+    invoke-interface {v2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    :catch_1
-    move-exception v0
+    add-int/lit8 v0, v1, 0x1
 
-    sget-object v1, Lfkg;->a:Ljava/lang/String;
-
-    const-string v2, "Could not write capture data to file."
-
-    invoke-static {v1, v2, v0}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_1
-
-    :catch_2
-    move-exception v1
-
-    :try_start_4
-    sget-object v3, Lfkg;->a:Ljava/lang/String;
-
-    const-string v4, "dumpMetadata - Failed to dump metadata"
-
-    invoke-static {v3, v4, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    :try_start_5
-    invoke-virtual {v2}, Ljava/io/Writer;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
+    move v1, v0
 
     goto :goto_0
 
-    :catch_3
-    move-exception v1
+    :cond_0
+    new-instance v0, Lfkh;
 
-    :try_start_6
-    sget-object v2, Lfkg;->a:Ljava/lang/String;
+    new-instance v1, Ljava/util/ArrayList;
 
-    const-string v3, "dumpMetadata - Failed to close writer."
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-static {v2, v3, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
+    iget-object v2, p0, Lfkg;->f:Libq;
 
-    goto :goto_0
+    invoke-direct {v0, v1, v2}, Lfkh;-><init>(Ljava/util/List;Libq;)V
 
-    :catchall_0
-    move-exception v0
-
-    :try_start_7
-    invoke-virtual {v2}, Ljava/io/Writer;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
-
-    :goto_2
-    :try_start_8
-    throw v0
-
-    :catch_4
-    move-exception v1
-
-    sget-object v2, Lfkg;->a:Ljava/lang/String;
-
-    const-string v3, "dumpMetadata - Failed to close writer."
-
-    invoke-static {v2, v3, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1
-
-    goto :goto_2
+    return-object v0
 .end method

@@ -3,18 +3,26 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkds;
 
 
 # instance fields
-.field private synthetic a:Lfnm;
+.field private final synthetic a:Lket;
+
+.field private final synthetic b:Lful;
+
+.field private final synthetic c:Lfnl;
 
 
 # direct methods
-.method constructor <init>(Lfnm;)V
+.method constructor <init>(Lfnl;Lket;Lful;)V
     .locals 0
 
-    iput-object p1, p0, Lfnn;->a:Lfnm;
+    iput-object p1, p0, Lfnn;->c:Lfnl;
+
+    iput-object p2, p0, Lfnn;->a:Lket;
+
+    iput-object p3, p0, Lfnn;->b:Lful;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,14 +31,38 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final a(Ljava/lang/Throwable;)V
     .locals 1
 
-    iget-object v0, p0, Lfnn;->a:Lfnm;
+    iget-object v0, p0, Lfnn;->a:Lket;
 
-    iget-object v0, v0, Lfnm;->a:Lfmi;
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    invoke-virtual {v0}, Lfmi;->p()V
+    iget-object v0, p0, Lfnn;->b:Lful;
+
+    invoke-interface {v0}, Lful;->close()V
+
+    iget-object v0, p0, Lfnn;->c:Lfnl;
+
+    invoke-virtual {v0}, Lfnl;->a()V
+
+    return-void
+.end method
+
+.method public final b_(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lfnn;->a:Lket;
+
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfnn;->b:Lful;
+
+    invoke-interface {v0}, Lful;->close()V
+
+    iget-object v0, p0, Lfnn;->c:Lfnl;
+
+    invoke-virtual {v0}, Lfnl;->a()V
 
     return-void
 .end method

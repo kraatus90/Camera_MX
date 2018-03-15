@@ -3,30 +3,20 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# static fields
-.field public static final a:Lgzv;
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lgzv;
-
-    invoke-direct {v0}, Lgzv;-><init>()V
-
-    sput-object v0, Lgzv;->a:Lgzv;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgzv;->a:Lkgv;
 
     return-void
 .end method
@@ -34,11 +24,23 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
-    new-instance v0, Lgzs;
+    iget-object v0, p0, Lgzv;->a:Lkgv;
 
-    invoke-direct {v0}, Lgzs;-><init>()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgzm;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgzo;
 
     return-object v0
 .end method

@@ -3,136 +3,75 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lihg;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Libw;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
+.field private b:Lfbk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfbl;->a:Ljxn;
+    new-instance v0, Libw;
 
-    iput-object p2, p0, Lfbl;->b:Ljxn;
+    new-instance v1, Lfbn;
 
-    iput-object p3, p0, Lfbl;->c:Ljxn;
+    invoke-static {}, Lfbk;->a()Lfbk;
 
-    iput-object p4, p0, Lfbl;->d:Ljxn;
+    move-result-object v2
 
-    iput-object p5, p0, Lfbl;->e:Ljxn;
+    invoke-static {}, Lfbk;->a()Lfbk;
 
-    iput-object p6, p0, Lfbl;->f:Ljxn;
+    move-result-object v3
 
-    iput-object p7, p0, Lfbl;->g:Ljxn;
+    invoke-direct {v1, v2, v3}, Lfbn;-><init>(Lfbk;Lfbk;)V
 
-    iput-object p8, p0, Lfbl;->h:Ljxn;
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
 
-    iput-object p9, p0, Lfbl;->i:Ljxn;
+    iput-object v0, p0, Lfbl;->a:Libw;
+
+    invoke-static {}, Lfbk;->a()Lfbk;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfbl;->b:Lfbk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 10
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 3
 
-    new-instance v0, Lfbk;
+    check-cast p1, Lfbk;
 
-    iget-object v1, p0, Lfbl;->a:Ljxn;
+    iget-object v0, p0, Lfbl;->b:Lfbk;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lfbk;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result v0
 
-    check-cast v1, Lfdj;
+    if-nez v0, :cond_0
 
-    iget-object v2, p0, Lfbl;->b:Ljxn;
+    iget-object v0, p0, Lfbl;->a:Libw;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v1, Lfbn;
 
-    move-result-object v2
+    iget-object v2, p0, Lfbl;->b:Lfbk;
 
-    check-cast v2, Lfar;
+    invoke-direct {v1, v2, p1}, Lfbn;-><init>(Lfbk;Lfbk;)V
 
-    iget-object v3, p0, Lfbl;->c:Ljxn;
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iput-object p1, p0, Lfbl;->b:Lfbk;
 
-    move-result-object v3
-
-    check-cast v3, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v4, p0, Lfbl;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lguc;
-
-    iget-object v5, p0, Lfbl;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lhem;
-
-    iget-object v6, p0, Lfbl;->f:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/view/Window;
-
-    iget-object v7, p0, Lfbl;->g:Ljxn;
-
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Levh;
-
-    iget-object v8, p0, Lfbl;->h:Ljxn;
-
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Laxo;
-
-    iget-object v9, p0, Lfbl;->i:Ljxn;
-
-    invoke-interface {v9}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Ljht;
-
-    invoke-direct/range {v0 .. v9}, Lfbk;-><init>(Lfdj;Lfar;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Landroid/view/Window;Levh;Laxo;Ljht;)V
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

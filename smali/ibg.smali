@@ -1,39 +1,42 @@
-.class final synthetic Libg;
+.class public final Libg;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field private a:Licn;
+.field private final synthetic a:I
 
-.field private b:Ljava/lang/Object;
+.field private final synthetic b:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Licn;Ljava/lang/Object;)V
+.method public constructor <init>(ILjava/lang/String;)V
     .locals 0
 
+    iput p1, p0, Libg;->a:I
+
+    iput-object p2, p0, Libg;->b:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Libg;->a:Licn;
-
-    iput-object p2, p0, Libg;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 3
 
-    iget-object v0, p0, Libg;->a:Licn;
+    new-instance v0, Liab;
 
-    iget-object v1, p0, Libg;->b:Ljava/lang/Object;
+    iget v1, p0, Libg;->a:I
 
-    invoke-interface {v0, v1}, Licn;->a(Ljava/lang/Object;)V
+    iget-object v2, p0, Libg;->b:Ljava/lang/String;
 
-    return-void
+    invoke-direct {v0, v1, p1, v2}, Liab;-><init>(ILjava/lang/Runnable;Ljava/lang/String;)V
+
+    return-object v0
 .end method

@@ -1,270 +1,128 @@
-.class public Lhzr;
+.class public final Lhzr;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lhzb;
-.implements Lich;
-
-
-# instance fields
-.field private a:Lhzr;
-
-.field private b:Ljava/lang/Object;
-
-.field private c:Ljava/util/Set;
-
-.field private d:Z
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lhzr;->b:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lhzr;->c:Ljava/util/Set;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lhzr;->a:Lhzr;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lhzr;->d:Z
-
-    return-void
-.end method
-
-.method private constructor <init>(Lhzr;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lhzr;->b:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lhzr;->c:Ljava/util/Set;
-
-    iput-object p1, p0, Lhzr;->a:Lhzr;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lhzr;->d:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lich;)Lich;
-    .locals 3
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 6
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lhzr;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-boolean v2, p0, Lhzr;->d:Z
-
-    if-eqz v2, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Lich;->close()V
-
-    :cond_0
-    return-object p1
-
-    :cond_1
-    :try_start_1
-    iget-object v2, p0, Lhzr;->c:Ljava/util/Set;
-
-    invoke-interface {v2, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final a()Z
-    .locals 2
-
-    iget-object v1, p0, Lhzr;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-boolean v0, p0, Lhzr;->d:Z
-
-    monitor-exit v1
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public close()V
-    .locals 4
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iget-object v1, p0, Lhzr;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-boolean v2, p0, Lhzr;->d:Z
-
-    if-eqz v2, :cond_1
-
-    monitor-exit v1
-
-    :cond_0
-    return-void
-
-    :cond_1
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lhzr;->d:Z
-
-    iget-object v2, p0, Lhzr;->a:Lhzr;
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Lhzr;->a:Lhzr;
-
-    iget-object v3, v2, Lhzr;->b:Ljava/lang/Object;
-
-    monitor-enter v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    iget-object v2, v2, Lhzr;->c:Ljava/util/Set;
-
-    invoke-interface {v2, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :cond_2
-    :try_start_2
-    iget-object v2, p0, Lhzr;->c:Ljava/util/Set;
-
-    invoke-interface {v0, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    iget-object v2, p0, Lhzr;->c:Ljava/util/Set;
-
-    invoke-interface {v2}, Ljava/util/Set;->clear()V
-
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
     move-result v3
 
-    const/4 v1, 0x0
+    move-object v1, v0
 
-    move v2, v1
+    move-object v2, v0
 
     :goto_0
-    if-ge v2, v3, :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result v4
 
-    move-result-object v1
+    if-ge v4, v3, :cond_0
 
-    add-int/lit8 v2, v2, 0x1
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    check-cast v1, Lich;
+    move-result v4
 
-    invoke-interface {v1}, Lich;->close()V
+    const v5, 0xffff
+
+    and-int/2addr v5, v4
+
+    packed-switch v5, :pswitch_data_0
+
+    invoke-static {p1, v4}, Lhmr;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :pswitch_0
+    invoke-static {p1, v4}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    :try_start_3
-    monitor-exit v3
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    move-result-object v2
 
-    :try_start_4
-    throw v0
+    goto :goto_0
 
-    :catchall_1
-    move-exception v0
+    :pswitch_1
+    invoke-static {p1, v4}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    monitor-exit v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    move-result-object v1
 
-    throw v0
-.end method
+    goto :goto_0
 
-.method public final g()Lhzr;
-    .locals 1
-
-    new-instance v0, Lhzr;
-
-    invoke-direct {v0, p0}, Lhzr;-><init>(Lhzr;)V
-
-    invoke-virtual {p0, v0}, Lhzr;->a(Lich;)Lich;
+    :pswitch_2
+    invoke-static {p1, v4}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lhzr;
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v4
+
+    if-eq v4, v3, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v3, Lcom/google/android/gms/wearable/internal/zzu;
+
+    invoke-direct {v3, v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzu;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v3
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzu;
 
     return-object v0
 .end method

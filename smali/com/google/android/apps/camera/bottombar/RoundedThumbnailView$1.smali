@@ -62,11 +62,11 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$1;->this$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->access$200(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljht;
+    invoke-static {v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->access$200(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljrf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    invoke-virtual {v0}, Ljrf;->a()Z
 
     move-result v0
 
@@ -74,11 +74,11 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$1;->this$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->access$200(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljht;
+    invoke-static {v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->access$200(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)Ljrf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1,78 +1,39 @@
-.class public final Lerm;
+.class final synthetic Lerm;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Landroid/view/View;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final b:Landroid/view/View$OnLayoutChangeListener;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Landroid/view/View;Landroid/view/View$OnLayoutChangeListener;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lerm;->a:Ljxn;
+    iput-object p1, p0, Lerm;->a:Landroid/view/View;
 
-    iput-object p2, p0, Lerm;->b:Ljxn;
-
-    iput-object p3, p0, Lerm;->c:Ljxn;
+    iput-object p2, p0, Lerm;->b:Landroid/view/View$OnLayoutChangeListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lerm;->a:Ljxn;
+    iget-object v0, p0, Lerm;->a:Landroid/view/View;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lerm;->b:Landroid/view/View$OnLayoutChangeListener;
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    check-cast v0, Lhzt;
-
-    iget-object v1, p0, Lerm;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lfrm;
-
-    iget-object v2, p0, Lerm;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lerz;
-
-    new-instance v3, Lerk;
-
-    invoke-direct {v3, v0, v1, v2}, Lerk;-><init>(Lhzt;Lfrm;Lerz;)V
-
-    invoke-static {v3}, Lgkt;->a(Ljava/lang/Runnable;)Lgvb;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgvb;
-
-    return-object v0
+    return-void
 .end method

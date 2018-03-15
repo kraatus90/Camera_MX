@@ -1,122 +1,196 @@
-.class final Lecc;
-.super Libk;
+.class public final Lecc;
+.super Leaa;
 .source "PG"
+
+# interfaces
+.implements Lgle;
 
 
 # instance fields
-.field private b:Leai;
+.field public e:Lgld;
 
-.field private c:Leai;
+.field public f:Lglf;
 
-.field private d:Leai;
-
-.field private e:Leai;
+.field public g:Lglf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 4
 
-    const-string v0, "AutoFlashHdrPSelect"
+    const/4 v3, 0x0
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0}, Leaa;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Lecd;
 
-.method public constructor <init>(Liau;Leai;Leai;Leai;Leai;)V
-    .locals 0
+    invoke-direct {v0, p0}, Lecd;-><init>(Lecc;)V
 
-    invoke-direct {p0, p1}, Libk;-><init>(Liau;)V
+    new-instance v1, Lglf;
 
-    iput-object p2, p0, Lecc;->b:Leai;
+    new-array v2, v3, [Lgla;
 
-    iput-object p3, p0, Lecc;->c:Leai;
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    iput-object p4, p0, Lecc;->d:Leai;
+    iput-object v1, p0, Lecc;->f:Lglf;
 
-    iput-object p5, p0, Lecc;->e:Leai;
+    new-instance v0, Lece;
+
+    invoke-direct {v0, p0}, Lece;-><init>(Lecc;)V
+
+    new-instance v1, Lglf;
+
+    new-array v2, v3, [Lgla;
+
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
+
+    iput-object v1, p0, Lecc;->g:Lglf;
+
+    new-instance v0, Lgld;
+
+    iget-object v1, p0, Lecc;->f:Lglf;
+
+    invoke-direct {v0, v1, v3}, Lgld;-><init>(Lglf;Z)V
+
+    iput-object v0, p0, Lecc;->e:Lgld;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final a()V
+    .locals 1
 
-    check-cast p1, Lefy;
+    invoke-super {p0}, Leaa;->a()V
 
-    invoke-virtual {p1}, Lefy;->ordinal()I
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->c()V
+
+    return-void
+.end method
+
+.method public final a(Lfdv;Liaa;)V
+    .locals 1
+
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0, p1, p2}, Lglb;->a(Lfdv;Liaa;)V
+
+    goto :goto_0
+.end method
+
+.method public final a(Liay;Lfax;Lbns;)V
+    .locals 2
+
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->f()Z
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x30
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "Invalid AutoHdrPlusRecommendation enum instance:"
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
-
-    :pswitch_0
-    iget-object v0, p0, Lecc;->b:Leai;
+    if-eqz v0, :cond_0
 
     :goto_0
-    return-object v0
+    return-void
 
-    :pswitch_1
-    iget-object v0, p0, Lecc;->c:Leai;
+    :cond_0
+    invoke-super {p0, p1, p2, p3}, Leaa;->a(Liay;Lfax;Lbns;)V
 
-    goto :goto_0
+    iget-object v0, p0, Lecc;->e:Lgld;
 
-    :pswitch_2
-    iget-object v0, p0, Lecc;->d:Leai;
+    sget v1, Lep;->bi:I
 
-    goto :goto_0
-
-    :pswitch_3
-    iget-object v0, p0, Lecc;->e:Leai;
+    iput v1, v0, Lgld;->a:I
 
     goto :goto_0
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
+.method public final b()V
+    .locals 1
+
+    invoke-super {p0}, Leaa;->b()V
+
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-interface {p0}, Lgle;->i()V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->e()V
+
+    iget-object v0, p0, Lecc;->f:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lecc;->g:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    return-void
+.end method
+
+.method public final m()V
+    .locals 1
+
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lecc;->e:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->m()V
+
+    goto :goto_0
 .end method

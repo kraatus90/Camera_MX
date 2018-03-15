@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public a:Lgsm;
+.field public a:Lgjq;
 
 
 # direct methods
@@ -17,13 +17,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lbvf;
+    check-cast v0, Lcak;
 
-    invoke-interface {v0}, Lbvf;->a()Ldih;
+    invoke-interface {v0}, Lcak;->a()Lcad;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Ldih;->a(Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;)V
+    invoke-interface {v0, p0}, Lcad;->a(Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;)V
 
     return-void
 .end method
@@ -37,13 +37,13 @@
 
     move-result-object v0
 
-    check-cast v0, Lbvf;
+    check-cast v0, Lcak;
 
-    invoke-interface {v0}, Lbvf;->a()Ldih;
+    invoke-interface {v0}, Lcak;->a()Lcad;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Ldih;->a(Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;)V
+    invoke-interface {v0, p0}, Lcad;->a(Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;)V
 
     return-void
 .end method
@@ -57,15 +57,63 @@
 
     move-result-object v0
 
-    check-cast v0, Lbvf;
+    check-cast v0, Lcak;
 
-    invoke-interface {v0}, Lbvf;->a()Ldih;
+    invoke-interface {v0}, Lcak;->a()Lcad;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Ldih;->a(Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;)V
+    invoke-interface {v0, p0}, Lcad;->a(Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;)V
 
     return-void
+.end method
+
+.method public static a(Landroid/content/Context;Landroid/preference/SwitchPreference;)Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;
+    .locals 2
+
+    new-instance v0, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;
+
+    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;-><init>(Landroid/content/Context;)V
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->setDefaultValue(Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Landroid/preference/SwitchPreference;->getKey()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->setKey(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Landroid/preference/SwitchPreference;->getSummary()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->setSummary(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p1}, Landroid/preference/SwitchPreference;->getTitle()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->setTitle(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p1}, Landroid/preference/SwitchPreference;->getIcon()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {p1}, Landroid/preference/SwitchPreference;->getOnPreferenceChangeListener()Landroid/preference/Preference$OnPreferenceChangeListener;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+
+    return-object v0
 .end method
 
 
@@ -73,7 +121,7 @@
 .method public getPersistedBoolean(Z)Z
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->a:Lgsm;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->a:Lgjq;
 
     const-string v1, "default_scope"
 
@@ -81,7 +129,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lgsm;->c(Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-virtual {v0, v1, v2}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -91,7 +139,7 @@
 .method public persistBoolean(Z)Z
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->a:Lgsm;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;->a:Lgjq;
 
     const-string v1, "default_scope"
 
@@ -99,7 +147,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2, p1}, Lgsm;->b(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-virtual {v0, v1, v2, p1}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Z)V
 
     const/4 v0, 0x1
 

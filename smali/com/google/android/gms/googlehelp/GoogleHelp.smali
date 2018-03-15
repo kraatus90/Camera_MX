@@ -26,7 +26,7 @@
 
 .field public f:Z
 
-.field private g:I
+.field private final g:I
 
 .field private h:Ljava/lang/String;
 
@@ -86,9 +86,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhpb;
+    new-instance v0, Lhpz;
 
-    invoke-direct {v0}, Lhpb;-><init>()V
+    invoke-direct {v0}, Lhpz;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/googlehelp/GoogleHelp;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -342,7 +342,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -350,37 +350,37 @@
 
     iget v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->g:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->h:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->i:Landroid/accounts/Account;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v1, 0x4
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->a:Landroid/os/Bundle;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
 
     const/4 v1, 0x5
 
     iget-boolean v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->m:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     const/4 v1, 0x6
 
     iget-boolean v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->n:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     iget-object v1, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->o:Ljava/util/List;
 
@@ -388,148 +388,148 @@
 
     const/4 v2, 0x7
 
-    invoke-static {p1, v2}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v2}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v2
 
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    invoke-static {p1, v2}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v2}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     :cond_0
     const/16 v1, 0xa
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->p:Landroid/os/Bundle;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Bundle;)V
 
     const/16 v1, 0xb
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->q:Landroid/graphics/Bitmap;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/16 v1, 0xe
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->u:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/16 v1, 0xf
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->b:Landroid/net/Uri;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/16 v1, 0x10
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->v:Ljava/util/List;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/util/List;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/util/List;)V
 
     const/16 v1, 0x11
 
     const/4 v2, 0x0
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/16 v1, 0x12
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->x:Ljava/util/List;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/util/List;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/util/List;)V
 
     const/16 v1, 0x13
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->r:[B
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;I[B)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;I[B)V
 
     const/16 v1, 0x14
 
     iget v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->s:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/16 v1, 0x15
 
     iget v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->t:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/16 v1, 0x16
 
     iget-boolean v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->y:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     const/16 v1, 0x17
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->z:Lcom/google/android/gms/feedback/ErrorReport;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/16 v1, 0x19
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->w:Lcom/google/android/gms/feedback/ThemeSettings;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/16 v1, 0x1c
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->j:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/16 v1, 0x1f
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->c:Lcom/google/android/gms/googlehelp/internal/common/TogglingData;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/16 v1, 0x20
 
     iget v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->A:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/16 v1, 0x21
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->B:Landroid/app/PendingIntent;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/16 v1, 0x22
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->k:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/16 v1, 0x23
 
     iget-object v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->l:Landroid/graphics/Bitmap;
 
-    invoke-static {p1, v1, v2, p2}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/16 v1, 0x24
 
     iget v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->d:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/16 v1, 0x25
 
     iget-boolean v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->e:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
     const/16 v1, 0x26
 
     iget-boolean v2, p0, Lcom/google/android/gms/googlehelp/GoogleHelp;->f:Z
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;IZ)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

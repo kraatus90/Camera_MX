@@ -1,44 +1,69 @@
 .class final Lbok;
-.super Ljava/lang/Object;
+.super Lboc;
 .source "PG"
-
-# interfaces
-.implements Lboj;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lboj;
 
 
 # direct methods
-.method constructor <init>(Ljxn;)V
+.method constructor <init>(Lboj;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbok;->a:Lboj;
 
-    iput-object p1, p0, Lbok;->a:Ljxn;
+    invoke-direct {p0, p1}, Lboc;-><init>(Lboa;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Bitmap;)Ljava/io/ByteArrayOutputStream;
-    .locals 3
+.method public final a(F)V
+    .locals 2
 
-    iget-object v0, p0, Lbok;->a:Ljxn;
+    iget-object v0, p0, Lbok;->a:Lboj;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lboj;->k:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v0, Ljava/io/ByteArrayOutputStream;
+    invoke-super {p0, p1}, Lboc;->a(F)V
 
-    sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    iget-object v0, p0, Lbok;->a:Lboj;
 
-    const/16 v2, 0x5a
+    iget-object v0, v0, Lboj;->k:Lgld;
 
-    invoke-virtual {p1, v1, v2, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    iget-object v1, p0, Lbok;->a:Lboj;
 
-    return-object v0
+    iget-object v1, v1, Lboj;->m:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Lbok;->a:Lboj;
+
+    iget-object v0, v0, Lboj;->k:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lboc;->f()V
+
+    iget-object v0, p0, Lbok;->a:Lboj;
+
+    iget-object v0, v0, Lboj;->k:Lgld;
+
+    iget-object v1, p0, Lbok;->a:Lboj;
+
+    iget-object v1, v1, Lboj;->l:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

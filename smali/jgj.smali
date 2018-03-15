@@ -1,69 +1,58 @@
-.class public final Ljgj;
+.class final Ljgj;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:D
-
-.field public final b:D
-
-.field public final c:D
-
-.field public final d:D
-
-.field public final e:I
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(IDDDD)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljgj;->e:I
-
-    iput-wide p2, p0, Ljgj;->a:D
-
-    iput-wide p4, p0, Ljgj;->b:D
-
-    iput-wide p6, p0, Ljgj;->c:D
-
-    iput-wide p8, p0, Ljgj;->d:D
-
     return-void
 .end method
 
-.method public static a([F)Ljgj;
-    .locals 6
 
-    invoke-static {p0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+# virtual methods
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 4
 
-    new-instance v1, Ljgk;
+    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
 
-    invoke-direct {v1}, Ljgk;-><init>()V
+    const-string v1, "default"
 
-    array-length v2, p0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, v2, :cond_0
-
-    aget v3, p0, v0
-
-    float-to-double v4, v3
-
-    invoke-virtual {v1, v4, v5}, Ljgk;->a(D)Ljgk;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljgk;->a()Ljgj;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    new-instance v1, Ljkv;
+
+    invoke-direct {v1}, Ljkv;-><init>()V
+
+    new-instance v2, Ljlm;
+
+    new-instance v3, Ljkt;
+
+    invoke-direct {v3, v0}, Ljkt;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+
+    invoke-virtual {v1, v3}, Ljkv;->a(Ljkp;)Ljkv;
+
+    move-result-object v1
+
+    new-instance v3, Ljku;
+
+    invoke-direct {v3, v0}, Ljku;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+
+    invoke-virtual {v1, v3}, Ljkv;->a(Ljkp;)Ljkv;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljlm;-><init>(Ljko;)V
+
+    return-object v2
 .end method

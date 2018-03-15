@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private a:Landroid/content/BroadcastReceiver;
+.field private final a:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
@@ -13,29 +13,29 @@
 
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    new-instance v0, Lhbq;
+    new-instance v0, Lhcw;
 
-    invoke-direct {v0, p0}, Lhbq;-><init>(Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;)V
+    invoke-direct {v0, p0}, Lhcw;-><init>(Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;)V
 
     iput-object v0, p0, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->a:Landroid/content/BroadcastReceiver;
 
     return-void
 .end method
 
-.method private final a()Lhbr;
+.method private final a()Lhcx;
     .locals 2
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v0
 
-    const v1, 0x7f0e01c9
+    const v1, 0x7f0e0183
 
     invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
 
     move-result-object v0
 
-    check-cast v0, Lhbr;
+    check-cast v0, Lhcx;
 
     return-object v0
 .end method
@@ -51,11 +51,11 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    new-instance v1, Lhbr;
+    new-instance v1, Lhcx;
 
-    invoke-direct {v1}, Lhbr;-><init>()V
+    invoke-direct {v1}, Lhcx;-><init>()V
 
-    invoke-virtual {v1, v0}, Lhbr;->setArguments(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v0}, Lhcx;->setArguments(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0e01c9
+    const v2, 0x7f0e0183
 
     invoke-virtual {v0, v2, v1}, Landroid/app/FragmentTransaction;->add(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -79,37 +79,34 @@
 
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 4
+    .locals 2
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f04007f
+    const v0, 0x7f040071
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->setContentView(I)V
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1b
+
+    if-ge v0, v1, :cond_0
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    const/high16 v1, 0x80000
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
-    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    const/high16 v3, 0x80000
-
-    or-int/2addr v2, v3
-
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    invoke-virtual {v0, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->a()Lhbr;
+    :cond_0
+    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->a()Lhcx;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->getIntent()Landroid/content/Intent;
 
@@ -121,7 +118,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->a(Landroid/net/Uri;)V
 
-    :cond_0
+    :cond_1
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.SCREEN_OFF"
@@ -152,7 +149,7 @@
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->a()Lhbr;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->a()Lhcx;
 
     move-result-object v0
 

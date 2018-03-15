@@ -1,22 +1,24 @@
-.class final Liul;
+.class public final Liul;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field private synthetic a:I
+.field private final synthetic a:Litv;
+
+.field private final synthetic b:Litm;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method public constructor <init>(Litv;Litm;)V
+    .locals 0
 
-    const/16 v0, 0x8
+    iput-object p1, p0, Liul;->a:Litv;
 
-    iput v0, p0, Liul;->a:I
+    iput-object p2, p0, Liul;->b:Litm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -25,56 +27,28 @@
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 5
+.method public final synthetic call()Ljava/lang/Object;
+    .locals 6
 
-    new-instance v1, Ljbo;
+    iget-object v0, p0, Liul;->a:Litv;
 
-    const-class v0, Ljcs;
+    invoke-interface {v0}, Litv;->d()Livi;
 
-    const-string v2, "default"
+    move-result-object v1
 
-    invoke-virtual {p1, v0, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v4, p0, Liul;->b:Litm;
 
-    move-result-object v0
+    new-instance v0, Livd;
 
-    check-cast v0, Ljcs;
+    invoke-static {}, Livd;->f()I
 
-    iget v2, p0, Liul;->a:I
+    move-result v2
 
-    invoke-direct {v1, v0, v2}, Ljbo;-><init>(Ljcs;I)V
+    const v3, 0x8d65
 
-    const-class v0, Ljan;
+    const/4 v5, 0x0
 
-    const-string v2, "summary_content_value"
-
-    invoke-virtual {p1, v0, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljan;
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljbe;
-
-    const/4 v3, 0x0
-
-    aput-object v1, v2, v3
-
-    const/4 v1, 0x1
-
-    new-instance v3, Lizi;
-
-    const/4 v4, 0x3
-
-    invoke-direct {v3, v0, v4}, Lizi;-><init>(Ljan;I)V
-
-    aput-object v3, v2, v1
-
-    invoke-static {v2}, Ljbk;->a([Ljbe;)Ljbk;
-
-    move-result-object v0
+    invoke-direct/range {v0 .. v5}, Livd;-><init>(Livi;IILitl;B)V
 
     return-object v0
 .end method

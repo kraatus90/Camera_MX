@@ -36,7 +36,7 @@
 
 .field public isReversed:Z
 
-.field public orientation:Lgzl;
+.field public orientation:Lhaq;
 
 .field public pauseResumeButton:Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
 
@@ -46,7 +46,7 @@
 
 .field public reviewPlayButton:Landroid/widget/ImageButton;
 
-.field public shutterButton:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field public shutterButton:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
 .field public snapshotButton:Lcom/google/android/apps/camera/bottombar/SnapshotButton;
 
@@ -95,7 +95,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     if-eqz p3, :cond_1
 
@@ -125,9 +125,9 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    new-instance v4, Ljy;
+    new-instance v4, Ljs;
 
-    invoke-direct {v4}, Ljy;-><init>()V
+    invoke-direct {v4}, Ljs;-><init>()V
 
     invoke-virtual {v0, v4}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
@@ -235,23 +235,23 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lhaz;->a(Landroid/view/View;)Lhaz;
+    invoke-static {v0}, Lhcf;->a(Landroid/view/View;)Lhcf;
 
     move-result-object v1
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->shutter_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    check-cast v0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->shutterButton:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->shutterButton:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->photo_switch_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -279,7 +279,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->video_switch_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -297,7 +297,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->pause_resume_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -307,7 +307,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->camera_switch_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -317,7 +317,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->snapshot_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -327,7 +327,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->thumbnail_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -337,7 +337,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->hfr_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -347,7 +347,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->cancel_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -357,7 +357,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->retake_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -367,7 +367,7 @@
 
     sget v0, Lcom/google/android/apps/camera/bottombar/R$id;->review_play_button:I
 
-    invoke-virtual {v1, v0}, Lhaz;->a(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lhcf;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -397,7 +397,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->children:Ljava/util/List;
 
-    invoke-static {v0}, Liui;->a(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0}, Ljwo;->a(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
@@ -442,7 +442,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->inProgressAnimators:Ljava/util/List;
 
@@ -514,7 +514,7 @@
 
     const/4 v2, 0x2
 
-    invoke-static {}, Lhzt;->a()V
+    invoke-static {}, Liay;->a()V
 
     if-eqz p2, :cond_1
 
@@ -595,7 +595,7 @@
     .end array-data
 .end method
 
-.method public getBackgroundColorProperty()Lgyz;
+.method public getBackgroundColorProperty()Lhai;
     .locals 1
 
     new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBar$2;
@@ -693,10 +693,10 @@
     return-object v0
 .end method
 
-.method public getShutterButton()Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.method public getShutterButton()Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->shutterButton:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->shutterButton:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
     return-object v0
 .end method
@@ -814,12 +814,6 @@
 
     iget v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->verticalOffset:I
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x18
-
-    if-lt v0, v3, :cond_4
-
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -835,15 +829,15 @@
     move v0, v1
 
     :goto_0
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lgzl;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lhaq;
 
-    sget-object v3, Lgzl;->a:Lgzl;
+    sget-object v3, Lhaq;->a:Lhaq;
 
     if-eq v2, v3, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lgzl;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lhaq;
 
-    sget-object v3, Lgzl;->d:Lgzl;
+    sget-object v3, Lhaq;->d:Lhaq;
 
     if-ne v2, v3, :cond_2
 
@@ -865,9 +859,9 @@
     return-void
 
     :cond_2
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lgzl;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lhaq;
 
-    sget-object v3, Lgzl;->b:Lgzl;
+    sget-object v3, Lhaq;->b:Lhaq;
 
     if-ne v2, v3, :cond_3
 
@@ -884,9 +878,9 @@
     goto :goto_1
 
     :cond_3
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lgzl;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lhaq;
 
-    sget-object v3, Lgzl;->c:Lgzl;
+    sget-object v3, Lhaq;->c:Lhaq;
 
     if-ne v2, v3, :cond_1
 
@@ -911,11 +905,11 @@
 .method public setClickable(Z)V
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getShutterButton()Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getShutterButton()Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setClickEnabled(Z)V
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setClickEnabled(Z)V
 
     invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->setSideButtonsClickable(Z)V
 
@@ -946,10 +940,10 @@
     return-void
 .end method
 
-.method public setUiOrientation(Lgzl;)V
+.method public setUiOrientation(Lhaq;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lgzl;
+    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->orientation:Lhaq;
 
     return-void
 .end method

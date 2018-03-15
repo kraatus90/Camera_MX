@@ -1,118 +1,57 @@
-.class final Lfnj;
-.super Ljava/lang/Object;
+.class public final Lfnj;
+.super Lfjg;
 .source "PG"
-
-# interfaces
-.implements Lfqf;
 
 
 # instance fields
-.field private synthetic a:Lfmi;
+.field private final a:Lful;
+
+.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method constructor <init>(Lfmi;)V
-    .locals 0
+.method public constructor <init>(Lfjg;Lful;)V
+    .locals 2
 
-    iput-object p1, p0, Lfnj;->a:Lfmi;
+    invoke-direct {p0, p1}, Lfjg;-><init>(Lfjg;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lfnj;->a:Lful;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lfnj;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 5
+.method public final close()V
+    .locals 2
 
-    const/4 v4, 0x1
+    iget-object v0, p0, Lfnj;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    sget-object v0, Lfmi;->c:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    const-string v1, "captureListener"
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v0
 
-    iget-object v0, p0, Lfnj;->a:Lfmi;
+    if-eqz v0, :cond_0
 
-    iget v0, v0, Lfmi;->t:I
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lfmi;->Q:J
-
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    iget-object v1, v0, Lfmi;->E:Lfdq;
-
-    invoke-virtual {v1}, Lfdq;->o_()V
-
-    iget-boolean v1, v0, Lfmi;->e:Z
-
-    if-nez v1, :cond_0
-
-    iget-object v1, v0, Lfmi;->F:Lfdw;
-
-    invoke-virtual {v1}, Lfdw;->F()V
-
-    iput-boolean v4, v0, Lfmi;->n:Z
+    :goto_0
+    return-void
 
     :cond_0
-    iget-object v0, p0, Lfnj;->a:Lfmi;
+    invoke-super {p0}, Lfjg;->close()V
 
-    iget-object v0, v0, Lfmi;->y:Lflc;
+    iget-object v0, p0, Lfnj;->a:Lful;
 
-    invoke-interface {v0}, Lflc;->b()V
+    invoke-interface {v0}, Lful;->close()V
 
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    iget v1, v0, Lfmi;->t:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, v0, Lfmi;->t:I
-
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->G:Landroid/os/Handler;
-
-    const/16 v1, 0x65
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->g:Lgum;
-
-    const v1, 0x7f09000c
-
-    invoke-interface {v0, v1}, Lgum;->a(I)V
-
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    iget-boolean v0, v0, Lfmi;->s:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    iput-boolean v4, v0, Lfmi;->s:Z
-
-    iget-object v0, p0, Lfnj;->a:Lfmi;
-
-    invoke-static {v0}, Lfmi;->b(Lfmi;)Lgow;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lgow;->c()Z
-
-    :cond_1
-    return-void
+    goto :goto_0
 .end method

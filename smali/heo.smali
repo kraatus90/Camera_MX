@@ -1,41 +1,46 @@
-.class final synthetic Lheo;
+.class public final Lheo;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lhen;
-
-.field private b:Z
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lhen;Z)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lheo;->a:Lhen;
-
-    iput-boolean p2, p0, Lheo;->b:Z
+    iput-object p1, p0, Lheo;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lheo;->a:Lhen;
+    iget-object v0, p0, Lheo;->a:Lkgv;
 
-    iget-boolean v1, p0, Lheo;->b:Z
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, v0, Lhen;->b:Lhev;
+    new-instance v0, Lheh;
 
-    invoke-virtual {v0, v1}, Lhev;->a(Z)V
+    invoke-direct {v0}, Lheh;-><init>()V
 
-    return-void
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhev;
+
+    return-object v0
 .end method

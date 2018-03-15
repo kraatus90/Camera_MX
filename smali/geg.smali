@@ -1,19 +1,33 @@
-.class public final Lgeg;
+.class final synthetic Lgeg;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Lihg;
 
 
-# static fields
-.field public static final a:Lgqa;
+# instance fields
+.field private final a:Lgee;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lgee;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgeg;->a:Lgee;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
     .locals 1
 
-    sget-object v0, Lgqa;->a:Lgqa;
+    iget-object v0, p0, Lgeg;->a:Lgee;
 
-    sput-object v0, Lgeg;->a:Lgqa;
+    invoke-virtual {v0}, Lgee;->c()V
 
     return-void
 .end method

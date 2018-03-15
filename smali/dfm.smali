@@ -1,42 +1,42 @@
-.class final Ldfm;
+.class public final Ldfm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ldhd;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldfh;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldfh;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldfm;->a:Ldfh;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldfm;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    sget-object v0, Ldfh;->c:Ljava/lang/String;
+    new-instance v1, Ldfl;
 
-    const-string v1, "processOnCameraOpenFailure"
+    iget-object v0, p0, Ldfm;->a:Lkgv;
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v0, Ldfb;
+    move-result-object v0
 
-    iget-object v1, p0, Ldfm;->a:Ldfh;
+    check-cast v0, Landroid/content/ContentResolver;
 
-    invoke-direct {v0, v1}, Ldfb;-><init>(Ldhe;)V
+    invoke-direct {v1, v0}, Ldfl;-><init>(Landroid/content/ContentResolver;)V
 
-    return-object v0
+    return-object v1
 .end method

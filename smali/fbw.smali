@@ -2,30 +2,55 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public final a:Lfdq;
 
-.field public final b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public final c:Lguc;
-
-.field public final d:Ljht;
+# static fields
+.field public static final a:Lfbw;
 
 
 # direct methods
-.method public constructor <init>(Lfdq;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Ljht;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lfbw;
+
+    invoke-direct {v0}, Lfbw;-><init>()V
+
+    sput-object v0, Lfbw;->a:Lfbw;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfbw;->a:Lfdq;
-
-    iput-object p2, p0, Lfbw;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iput-object p3, p0, Lfbw;->c:Lguc;
-
-    iput-object p4, p0, Lfbw;->d:Ljht;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Libw;
+
+    invoke-static {}, Lfcm;->a()Lfco;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Libw;
+
+    return-object v0
 .end method

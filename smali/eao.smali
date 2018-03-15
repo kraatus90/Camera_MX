@@ -2,66 +2,139 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public a:Ldlv;
+.field private final a:Lkgv;
 
-.field public final b:Leai;
+.field private final b:Lkgv;
 
-.field public final c:Licu;
+.field private final c:Lkgv;
 
-.field public final d:Licb;
+.field private final d:Lkgv;
 
-.field public final e:Liag;
+.field private final e:Lkgv;
 
-.field public final f:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ldlv;Leai;Licv;)V
-    .locals 2
-
-    const/4 v1, 0x0
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leao;->a:Ldlv;
+    iput-object p1, p0, Leao;->a:Lkgv;
 
-    iput-object p2, p0, Leao;->b:Leai;
+    iput-object p2, p0, Leao;->b:Lkgv;
 
-    const-string v0, "PictureTakerImpl"
+    iput-object p3, p0, Leao;->c:Lkgv;
 
-    invoke-interface {p3, v0}, Licv;->a(Ljava/lang/String;)Licu;
+    iput-object p4, p0, Leao;->d:Lkgv;
 
-    move-result-object v0
+    iput-object p5, p0, Leao;->e:Lkgv;
 
-    iput-object v0, p0, Leao;->c:Licu;
+    iput-object p6, p0, Leao;->f:Lkgv;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p7, p0, Leao;->g:Lkgv;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    iput-object p8, p0, Leao;->h:Lkgv;
 
-    iput-object v0, p0, Leao;->f:Ljava/util/concurrent/atomic/AtomicInteger;
+    return-void
+.end method
 
-    new-instance v0, Liag;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 9
+
+    iget-object v0, p0, Leao;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
+    check-cast v1, Legw;
 
-    iput-object v0, p0, Leao;->e:Liag;
+    iget-object v0, p0, Leao;->b:Lkgv;
 
-    new-instance v0, Licb;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v1, Ledy;
+    move-result-object v2
 
-    invoke-direct {v1, p0, p1}, Ledy;-><init>(Leao;Ldlv;)V
+    check-cast v2, Lick;
 
-    invoke-direct {v0, v1}, Licb;-><init>(Ljig;)V
+    iget-object v0, p0, Leao;->c:Lkgv;
 
-    iput-object v0, p0, Leao;->d:Licb;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Ljrf;
+
+    iget-object v0, p0, Leao;->d:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lebs;
+
+    iget-object v0, p0, Leao;->e:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Leaf;
+
+    iget-object v0, p0, Leao;->f:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lefr;
+
+    iget-object v0, p0, Leao;->g:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lega;
+
+    iget-object v0, p0, Leao;->h:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Legg;
+
+    new-instance v0, Lecs;
+
+    invoke-virtual {v3}, Ljrf;->a()Z
+
+    move-result v3
+
+    invoke-direct/range {v0 .. v8}, Lecs;-><init>(Legw;Lick;ZLebs;Leaf;Lega;Legg;Lefr;)V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lebj;
+
+    return-object v0
 .end method

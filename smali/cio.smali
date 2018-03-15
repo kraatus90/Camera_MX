@@ -2,101 +2,106 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field public static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final b:Landroid/content/Context;
 
-.field private b:Ljxn;
+.field public final c:Lggn;
 
-.field private c:Ljxn;
+.field public final d:Lcjt;
 
-.field private d:Ljxn;
+.field public final e:Lfzx;
 
-.field private e:Ljxn;
+.field public final f:Lgnf;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "BurstItemFactory"
 
-    iput-object p1, p0, Lcio;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lcio;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Lcio;->c:Ljxn;
-
-    iput-object p4, p0, Lcio;->d:Ljxn;
-
-    iput-object p5, p0, Lcio;->e:Ljxn;
+    sput-object v0, Lcio;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Lggn;Lfzx;Lcjt;Lgnf;)V
+    .locals 1
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lcio;->a:Ljxn;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v2
+    check-cast v0, Landroid/content/Context;
 
-    check-cast v2, Lcix;
+    iput-object v0, p0, Lcio;->b:Landroid/content/Context;
 
-    iget-object v0, p0, Lcio;->b:Ljxn;
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
+
+    check-cast v0, Lggn;
+
+    iput-object v0, p0, Lcio;->c:Lggn;
+
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfzx;
+
+    iput-object v0, p0, Lcio;->e:Lfzx;
+
+    invoke-static {p4}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcjt;
+
+    iput-object v0, p0, Lcio;->d:Lcjt;
+
+    invoke-static {p5}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgnf;
+
+    iput-object v0, p0, Lcio;->f:Lgnf;
+
+    return-void
+.end method
+
+.method public static a(Leqd;)Z
+    .locals 2
+
+    new-instance v0, Ljava/io/File;
+
+    invoke-interface {p0}, Leqd;->f()Leqh;
 
     move-result-object v1
 
-    check-cast v1, Lflj;
+    iget-object v1, v1, Leqh;->g:Ljava/lang/String;
 
-    iget-object v0, p0, Lcio;->c:Ljxn;
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcis;
-
-    iget-object v0, p0, Lcio;->d:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lhzt;
-
-    iget-object v0, p0, Lcio;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lfrm;
-
-    new-instance v0, Lcin;
-
-    invoke-direct/range {v0 .. v5}, Lcin;-><init>(Lflj;Lcix;Lcis;Lhzt;Lfrm;)V
-
-    invoke-static {v0}, Lgkt;->a(Ljava/lang/Runnable;)Lgvb;
+    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    invoke-static {v0}, Lcin;->a(Ljava/lang/String;)Z
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
-
-    check-cast v0, Lgvb;
-
-    return-object v0
+    return v0
 .end method

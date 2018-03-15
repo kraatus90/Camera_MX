@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Disparo continuo (%1$d fotos)</item>
+        <item quantity="one">Disparo continuo (%1$d foto)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Gardáronse %1$d fotos</item>
         <item quantity="one">Gardouse %1$d foto</item>

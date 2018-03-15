@@ -1,77 +1,115 @@
-.class public final synthetic Lfza;
+.class public final Lfza;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lgiw;
+.source "PG"
 
 
-# instance fields
-.field private a:Licz;
+# static fields
+.field public static final a:Lbqf;
 
-.field private b:Ljxn;
+.field public static final b:Lbqf;
 
-.field private c:Ljxn;
+.field public static final c:Lbqf;
 
-.field private d:Ljxn;
+.field public static final d:Lbqf;
+
+.field public static final e:Lbqf;
 
 
 # direct methods
-.method public constructor <init>(Licz;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x0
 
-    iput-object p1, p0, Lfza;->a:Licz;
+    new-instance v0, Lbqf;
 
-    iput-object p2, p0, Lfza;->b:Ljxn;
+    const-string v1, "camera.gouda_sec_img"
 
-    iput-object p3, p0, Lfza;->c:Ljxn;
+    invoke-direct {v0, v1, v3}, Lbqf;-><init>(Ljava/lang/String;Z)V
 
-    iput-object p4, p0, Lfza;->d:Ljxn;
+    sput-object v0, Lfza;->a:Lbqf;
+
+    new-instance v0, Lbqf;
+
+    const-string v1, "camera.gouda_debug_img"
+
+    invoke-direct {v0, v1, v3}, Lbqf;-><init>(Ljava/lang/String;Z)V
+
+    sput-object v0, Lfza;->b:Lbqf;
+
+    new-instance v0, Lbqf;
+
+    const-string v1, "camera.gouda.raw"
+
+    invoke-direct {v0, v1, v3}, Lbqf;-><init>(Ljava/lang/String;Z)V
+
+    sput-object v0, Lfza;->c:Lbqf;
+
+    new-instance v0, Lbqf;
+
+    const-string v1, "camera.gouda.front"
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Lbqf;-><init>(Ljava/lang/String;Z)V
+
+    sput-object v0, Lfza;->d:Lbqf;
+
+    new-instance v0, Lbqf;
+
+    const-string v1, "camera.gouda.depthdata"
+
+    invoke-direct {v0, v1, v3}, Lbqf;-><init>(Ljava/lang/String;Z)V
+
+    sput-object v0, Lfza;->e:Lbqf;
 
     return-void
 .end method
 
+.method public static a(Lbjy;)Lfuo;
+    .locals 4
 
-# virtual methods
-.method public final run()V
-    .locals 5
+    new-instance v0, Lfto;
 
-    iget-object v2, p0, Lfza;->a:Licz;
+    iget-object v1, p0, Lbjy;->a:Landroid/content/ContentResolver;
 
-    iget-object v0, p0, Lfza;->b:Ljxn;
+    const-string v2, "camera:max_gouda_inflight_shots"
 
-    iget-object v1, p0, Lfza;->c:Ljxn;
+    const/4 v3, 0x5
 
-    iget-object v3, p0, Lfza;->d:Ljxn;
+    invoke-static {v1, v2, v3}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    const-string v4, "MICRO_EncoderModule#shutdown_controller"
+    move-result v1
 
-    invoke-interface {v2, v4}, Licz;->a(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lfto;-><init>(I)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return-object v0
+.end method
+
+.method public static a(Lkgv;Lhbh;)Ljrf;
+    .locals 1
+
+    invoke-virtual {p1}, Lhbh;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lhju;->b:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfxg;
+    check-cast v0, Ljrf;
 
-    invoke-interface {v0}, Lfxg;->close()V
+    :goto_0
+    return-object v0
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    :cond_0
+    sget-object v0, Ljqu;->a:Ljqu;
 
-    move-result-object v0
-
-    check-cast v0, Lfwy;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lfwr;
-
-    invoke-interface {v0, v1}, Lfwy;->b(Lfwr;)V
-
-    invoke-interface {v2}, Licz;->a()V
-
-    return-void
+    goto :goto_0
 .end method

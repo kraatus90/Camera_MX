@@ -1,52 +1,48 @@
 .class final Lvx;
-.super Lvp;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private a:Ljava/lang/ref/WeakReference;
+# interfaces
+.implements Landroid/os/Parcelable$ClassLoaderCreator;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/content/res/Resources;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0, p2}, Lvp;-><init>(Landroid/content/res/Resources;)V
-
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lvx;->a:Ljava/lang/ref/WeakReference;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getDrawable(I)Landroid/graphics/drawable/Drawable;
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 2
 
-    invoke-super {p0, p1}, Lvp;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    new-instance v0, Lvw;
 
-    move-result-object v1
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lvx;->a:Ljava/lang/ref/WeakReference;
+    invoke-direct {v0, p1, v1}, Lvw;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public final synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast v0, Landroid/content/Context;
+    new-instance v0, Lvw;
 
-    if-eqz v1, :cond_0
+    invoke-direct {v0, p1, p2}, Lvw;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    if-eqz v0, :cond_0
+    return-object v0
+.end method
 
-    invoke-static {}, Lrb;->a()Lrb;
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {v0, p1, v1}, Lrb;->a(Landroid/content/Context;ILandroid/graphics/drawable/Drawable;)Z
+    new-array v0, p1, [Lvw;
 
-    :cond_0
-    return-object v1
+    return-object v0
 .end method

@@ -1,61 +1,140 @@
-.class abstract Lhop;
-.super Lhry;
+.class public final Lhop;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method private constructor <init>(Lhkl;)V
-    .locals 1
-
-    sget-object v0, Lhpc;->a:Lhkc;
-
-    invoke-direct {p0, v0, p1}, Lhry;-><init>(Lhkc;Lhkl;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhkl;B)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1}, Lhop;-><init>(Lhkl;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a(Lcom/google/android/gms/common/api/Status;)Lhks;
-    .locals 0
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 6
 
-    return-object p1
-.end method
+    const/4 v0, 0x0
 
-.method protected final synthetic a(Lhkg;)V
-    .locals 1
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
-    check-cast p1, Lhoq;
+    move-result v4
 
-    iget-object v0, p1, Lhlh;->c:Landroid/content/Context;
+    move-object v1, v0
 
-    invoke-virtual {p1}, Lhoq;->n()Landroid/os/IInterface;
+    move-object v2, v0
+
+    move-object v3, v0
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    if-ge v0, v4, :cond_0
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    const v5, 0xffff
+
+    and-int/2addr v5, v0
+
+    packed-switch v5, :pswitch_data_0
+
+    invoke-static {p1, v0}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :pswitch_0
+    sget-object v3, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0, v3}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
-    check-cast v0, Lhor;
+    check-cast v0, Landroid/os/ParcelFileDescriptor;
 
-    invoke-virtual {p0, v0}, Lhop;->a(Lhor;)V
+    move-object v3, v0
 
-    return-void
+    goto :goto_0
+
+    :pswitch_1
+    invoke-static {p1, v0}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-static {p1, v0}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    if-eq v0, v4, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/feedback/FileTeleporter;
+
+    invoke-direct {v0, v3, v2, v1}, Lcom/google/android/gms/feedback/FileTeleporter;-><init>(Landroid/os/ParcelFileDescriptor;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method
 
-.method protected abstract a(Lhor;)V
-.end method
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
 
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 0
+    new-array v0, p1, [Lcom/google/android/gms/feedback/FileTeleporter;
 
-    check-cast p1, Lhks;
-
-    invoke-super {p0, p1}, Lhry;->a(Lhks;)V
-
-    return-void
+    return-object v0
 .end method

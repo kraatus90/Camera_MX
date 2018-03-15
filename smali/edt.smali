@@ -1,57 +1,45 @@
-.class public final Ledt;
-.super Ljava/lang/Object;
+.class final Ledt;
+.super Lefv;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Leap;
+.field private final synthetic a:Leds;
 
 
 # direct methods
-.method public constructor <init>(Leap;)V
+.method constructor <init>(Leds;)V
     .locals 0
 
-    iput-object p1, p0, Ledt;->a:Leap;
+    iput-object p1, p0, Ledt;->a:Leds;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lefv;-><init>(Lefu;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final C()V
     .locals 2
 
-    iget-object v0, p0, Ledt;->a:Leap;
+    iget-object v0, p0, Ledt;->a:Leds;
 
-    iget-object v0, v0, Leap;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, v0, Leds;->a:Lgld;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    invoke-virtual {v0}, Lgld;->a()V
 
-    move-result v0
+    invoke-super {p0}, Lefv;->C()V
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Ledt;->a:Leds;
 
-    iget-object v0, p0, Ledt;->a:Leap;
+    iget-object v0, v0, Leds;->a:Lgld;
 
-    iget-object v0, v0, Leap;->e:Leou;
+    iget-object v1, p0, Ledt;->a:Leds;
 
-    invoke-interface {v0}, Leou;->e()V
+    iget-object v1, v1, Leds;->c:Lglf;
 
-    iget-object v0, p0, Ledt;->a:Leap;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    iget-object v0, v0, Leap;->a:Ldhj;
-
-    iget-object v0, v0, Ldhj;->b:Ldhk;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ldhk;->a(F)V
-
-    :cond_0
     return-void
 .end method

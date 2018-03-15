@@ -1,75 +1,186 @@
-.class final Lsm;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lsm;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lvm;
-
-.field private synthetic b:Landroid/view/ViewPropertyAnimator;
-
-.field private synthetic c:Landroid/view/View;
-
-.field private synthetic d:Lsi;
-
-
 # direct methods
-.method constructor <init>(Lsi;Lvm;Landroid/view/ViewPropertyAnimator;Landroid/view/View;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    :try_start_0
+    const-string v0, "android.graphics.Insets"
+
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public static a(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
     .locals 0
 
-    iput-object p1, p0, Lsm;->d:Lsi;
+    packed-switch p0, :pswitch_data_0
 
-    iput-object p2, p0, Lsm;->a:Lvm;
+    :goto_0
+    :pswitch_0
+    return-object p1
 
-    iput-object p3, p0, Lsm;->b:Landroid/view/ViewPropertyAnimator;
+    :pswitch_1
+    sget-object p1, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
 
-    iput-object p4, p0, Lsm;->c:Landroid/view/View;
+    goto :goto_0
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    :pswitch_2
+    sget-object p1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    goto :goto_0
+
+    :pswitch_3
+    sget-object p1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+
+    goto :goto_0
+
+    :pswitch_4
+    sget-object p1, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    goto :goto_0
+
+    :pswitch_5
+    sget-object p1, Landroid/graphics/PorterDuff$Mode;->SCREEN:Landroid/graphics/PorterDuff$Mode;
+
+    goto :goto_0
+
+    :pswitch_6
+    sget-object p1, Landroid/graphics/PorterDuff$Mode;->ADD:Landroid/graphics/PorterDuff$Mode;
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x3
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_3
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+    .end packed-switch
+.end method
+
+.method static a()V
+    .locals 0
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    iget-object v0, p0, Lsm;->b:Landroid/view/ViewPropertyAnimator;
+.method public static a(Landroid/graphics/drawable/Drawable;)Z
+    .locals 5
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+    move-object v0, p0
 
-    iget-object v0, p0, Lsm;->c:Landroid/view/View;
+    :goto_0
+    instance-of v2, v0, Landroid/graphics/drawable/DrawableContainer;
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    if-eqz v2, :cond_1
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
-    iget-object v0, p0, Lsm;->d:Lsi;
+    move-result-object v0
 
-    iget-object v1, p0, Lsm;->a:Lvm;
+    instance-of v2, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    invoke-virtual {v0, v1}, Lvt;->e(Lvm;)V
+    if-eqz v2, :cond_4
 
-    iget-object v0, p0, Lsm;->d:Lsi;
+    check-cast v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    iget-object v0, v0, Lsi;->f:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->getChildren()[Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, p0, Lsm;->a:Lvm;
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    array-length v3, v2
 
-    iget-object v0, p0, Lsm;->d:Lsi;
+    move v0, v1
 
-    invoke-virtual {v0}, Lsi;->c()V
+    :goto_1
+    if-ge v0, v3, :cond_4
 
-    return-void
-.end method
+    aget-object v4, v2, v0
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
+    invoke-static {v4}, Lsm;->a(Landroid/graphics/drawable/Drawable;)Z
 
-    return-void
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    move v0, v1
+
+    :goto_2
+    return v0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    instance-of v2, v0, Lfe;
+
+    if-eqz v2, :cond_2
+
+    check-cast v0, Lfe;
+
+    invoke-interface {v0}, Lfe;->a()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_2
+    instance-of v2, v0, Lno;
+
+    if-eqz v2, :cond_3
+
+    check-cast v0, Lno;
+
+    iget-object v0, v0, Lno;->d:Landroid/graphics/drawable/Drawable;
+
+    goto :goto_0
+
+    :cond_3
+    instance-of v2, v0, Landroid/graphics/drawable/ScaleDrawable;
+
+    if-eqz v2, :cond_4
+
+    check-cast v0, Landroid/graphics/drawable/ScaleDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/ScaleDrawable;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v0, 0x1
+
+    goto :goto_2
 .end method

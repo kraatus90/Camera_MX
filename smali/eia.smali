@@ -2,65 +2,225 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public a:D
+
+.field public b:D
+
+.field public c:D
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leia;->a:Ljxn;
+    return-void
+.end method
+
+.method public static a(Leia;Leia;)D
+    .locals 6
+
+    iget-wide v0, p0, Leia;->a:D
+
+    iget-wide v2, p1, Leia;->a:D
+
+    mul-double/2addr v0, v2
+
+    iget-wide v2, p0, Leia;->b:D
+
+    iget-wide v4, p1, Leia;->b:D
+
+    mul-double/2addr v2, v4
+
+    add-double/2addr v0, v2
+
+    iget-wide v2, p0, Leia;->c:D
+
+    iget-wide v4, p1, Leia;->c:D
+
+    mul-double/2addr v2, v4
+
+    add-double/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public static a(Leia;Leia;Leia;)V
+    .locals 10
+
+    iget-wide v0, p0, Leia;->b:D
+
+    iget-wide v2, p1, Leia;->c:D
+
+    mul-double/2addr v0, v2
+
+    iget-wide v2, p0, Leia;->c:D
+
+    iget-wide v4, p1, Leia;->b:D
+
+    mul-double/2addr v2, v4
+
+    sub-double v2, v0, v2
+
+    iget-wide v0, p0, Leia;->c:D
+
+    iget-wide v4, p1, Leia;->a:D
+
+    mul-double/2addr v0, v4
+
+    iget-wide v4, p0, Leia;->a:D
+
+    iget-wide v6, p1, Leia;->c:D
+
+    mul-double/2addr v4, v6
+
+    sub-double v4, v0, v4
+
+    iget-wide v0, p0, Leia;->a:D
+
+    iget-wide v6, p1, Leia;->b:D
+
+    mul-double/2addr v0, v6
+
+    iget-wide v6, p0, Leia;->b:D
+
+    iget-wide v8, p1, Leia;->a:D
+
+    mul-double/2addr v6, v8
+
+    sub-double v6, v0, v6
+
+    move-object v1, p2
+
+    invoke-virtual/range {v1 .. v7}, Leia;->a(DDD)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leia;
-
-    invoke-direct {v0, p0}, Leia;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Leia;->a:Ljxn;
+    const-wide/16 v0, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iput-wide v0, p0, Leia;->c:D
 
-    move-result-object v0
+    iput-wide v0, p0, Leia;->b:D
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
+    iput-wide v0, p0, Leia;->a:D
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->jankStats()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final a(D)V
+    .locals 3
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->create()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
+    iget-wide v0, p0, Leia;->a:D
 
-    move-result-object v0
+    mul-double/2addr v0, p1
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;
+    iput-wide v0, p0, Leia;->a:D
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-wide v0, p0, Leia;->b:D
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    mul-double/2addr v0, p1
 
-    move-result-object v0
+    iput-wide v0, p0, Leia;->b:D
 
-    check-cast v0, Lcom/google/android/apps/camera/legacy/app/stats/ViewfinderJankSession;
+    iget-wide v0, p0, Leia;->c:D
 
-    return-object v0
+    mul-double/2addr v0, p1
+
+    iput-wide v0, p0, Leia;->c:D
+
+    return-void
+.end method
+
+.method public final a(DDD)V
+    .locals 1
+
+    iput-wide p1, p0, Leia;->a:D
+
+    iput-wide p3, p0, Leia;->b:D
+
+    iput-wide p5, p0, Leia;->c:D
+
+    return-void
+.end method
+
+.method public final a(Leia;)V
+    .locals 2
+
+    iget-wide v0, p1, Leia;->a:D
+
+    iput-wide v0, p0, Leia;->a:D
+
+    iget-wide v0, p1, Leia;->b:D
+
+    iput-wide v0, p0, Leia;->b:D
+
+    iget-wide v0, p1, Leia;->c:D
+
+    iput-wide v0, p0, Leia;->c:D
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 4
+
+    invoke-virtual {p0}, Leia;->c()D
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmpl-double v2, v0, v2
+
+    if-eqz v2, :cond_0
+
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    div-double v0, v2, v0
+
+    invoke-virtual {p0, v0, v1}, Leia;->a(D)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c()D
+    .locals 6
+
+    iget-wide v0, p0, Leia;->a:D
+
+    iget-wide v2, p0, Leia;->a:D
+
+    mul-double/2addr v0, v2
+
+    iget-wide v2, p0, Leia;->b:D
+
+    iget-wide v4, p0, Leia;->b:D
+
+    mul-double/2addr v2, v4
+
+    add-double/2addr v0, v2
+
+    iget-wide v2, p0, Leia;->c:D
+
+    iget-wide v4, p0, Leia;->c:D
+
+    mul-double/2addr v2, v4
+
+    add-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

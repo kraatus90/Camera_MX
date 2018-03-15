@@ -1,84 +1,38 @@
-.class public final Leit;
+.class final Leit;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Laaz;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lein;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Lein;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leit;->a:Lein;
 
-    iput-object p1, p0, Leit;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leit;
-
-    invoke-direct {v0, p0}, Leit;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 2
 
-    iget-object v0, p0, Leit;->a:Ljxn;
+    iget-object v0, p0, Leit;->a:Lein;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lein;->b:Leix;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    check-cast v0, Lihe;
+    iput-boolean v1, v0, Leix;->t:Z
 
-    invoke-virtual {v0}, Lihe;->a()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v0, v0, Lihe;->a:Ljuw;
-
-    new-instance v1, Leir;
-
-    invoke-direct {v1}, Leir;-><init>()V
-
-    sget-object v2, Ljvc;->a:Ljvc;
-
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljhj;Ljava/util/concurrent/Executor;)Ljuw;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljle;->a(Ljava/lang/Object;)Ljle;
-
-    move-result-object v0
-
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Set;
-
-    return-object v0
-
-    :cond_0
-    sget-object v0, Ljmx;->a:Ljmx;
-
-    goto :goto_0
+    return-void
 .end method

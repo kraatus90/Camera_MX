@@ -2,64 +2,57 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field private static a:Ljava/util/regex/Pattern;
+# interfaces
+.implements Ljdt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    const-string v0, "Burst_stack_([0-9]{5,20})(_([0-9]{1,4}))?\\.jpg"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Ljep;->a:Ljava/util/regex/Pattern;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()Ljeo;
-    .locals 3
 
-    new-instance v0, Ljel;
+# virtual methods
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 5
 
-    sget-object v1, Ljep;->a:Ljava/util/regex/Pattern;
+    new-instance v3, Ljaj;
 
-    const/4 v2, 0x3
+    const-class v0, Ljnq;
 
-    invoke-direct {v0, v1, v2}, Ljel;-><init>(Ljava/util/regex/Pattern;I)V
+    const-string v1, "default"
 
-    return-object v0
-.end method
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public static b()Ljeo;
-    .locals 1
+    move-result-object v0
 
-    new-instance v0, Ljek;
+    check-cast v0, Ljnq;
 
-    invoke-direct {v0}, Ljek;-><init>()V
+    const-class v1, Lizf;
 
-    return-object v0
-.end method
+    const-string v2, "default"
 
-.method public static c()Ljeo;
-    .locals 3
-
-    new-instance v0, Ljel;
-
-    const-string v1, "med-res-frame-([0-9]+)\\.jpg"
-
-    invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-virtual {p1, v1, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
-    const/4 v2, -0x1
+    check-cast v1, Lizf;
 
-    invoke-direct {v0, v1, v2}, Ljel;-><init>(Ljava/util/regex/Pattern;I)V
+    const-class v2, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;
 
-    return-object v0
+    const-string v4, "default"
+
+    invoke-virtual {p1, v2, v4}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;
+
+    invoke-direct {v3, v0, v1, v2}, Ljaj;-><init>(Ljnq;Lizf;Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;)V
+
+    return-object v3
 .end method

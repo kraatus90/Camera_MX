@@ -50,18 +50,18 @@
 .method public static createDefault(Lcom/google/android/apps/refocus/processing/FaceDetector;Lcom/google/android/apps/refocus/image/RGBZ;)Lcom/google/android/apps/refocus/processing/FocusSettings;
     .locals 1
 
-    new-instance v0, Lhie;
+    new-instance v0, Lhjf;
 
-    invoke-direct {v0, p1}, Lhie;-><init>(Lcom/google/android/apps/refocus/image/RGBZ;)V
+    invoke-direct {v0, p1}, Lhjf;-><init>(Lcom/google/android/apps/refocus/image/RGBZ;)V
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/apps/refocus/processing/FocusSettings;->createDefault(Lcom/google/android/apps/refocus/processing/FaceDetector;Lcom/google/android/apps/refocus/image/RGBZ;Lhie;)Lcom/google/android/apps/refocus/processing/FocusSettings;
+    invoke-static {p0, p1, v0}, Lcom/google/android/apps/refocus/processing/FocusSettings;->createDefault(Lcom/google/android/apps/refocus/processing/FaceDetector;Lcom/google/android/apps/refocus/image/RGBZ;Lhjf;)Lcom/google/android/apps/refocus/processing/FocusSettings;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static createDefault(Lcom/google/android/apps/refocus/processing/FaceDetector;Lcom/google/android/apps/refocus/image/RGBZ;Lhie;)Lcom/google/android/apps/refocus/processing/FocusSettings;
+.method public static createDefault(Lcom/google/android/apps/refocus/processing/FaceDetector;Lcom/google/android/apps/refocus/image/RGBZ;Lhjf;)Lcom/google/android/apps/refocus/processing/FocusSettings;
     .locals 4
 
     new-instance v0, Lcom/google/android/apps/refocus/processing/FocusSettings;
@@ -74,12 +74,12 @@
 
     if-nez v1, :cond_0
 
-    iget v1, p2, Lhie;->a:F
+    iget v1, p2, Lhjf;->a:F
 
     iput v1, v0, Lcom/google/android/apps/refocus/processing/FocusSettings;->focalDistance:F
 
     :cond_0
-    invoke-static {}, Lhie;->a()F
+    invoke-static {}, Lhjf;->a()F
 
     move-result v1
 
@@ -91,7 +91,7 @@
 
     const v3, 0x3b83126f    # 0.004f
 
-    invoke-virtual {p2, v1, v2, v3}, Lhie;->a(FFF)F
+    invoke-virtual {p2, v1, v2, v3}, Lhjf;->a(FFF)F
 
     move-result v1
 

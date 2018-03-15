@@ -1,24 +1,14 @@
-.class final Lccf;
+.class public final Lccf;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field private synthetic a:Lccc;
-
-.field private synthetic b:Lcce;
+.implements Lcbk;
 
 
 # direct methods
-.method constructor <init>(Lcce;Lccc;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lccf;->b:Lcce;
-
-    iput-object p2, p0, Lccf;->a:Lccc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,93 +17,73 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 4
+.method public final a(Lcbm;)Lkeh;
+    .locals 1
 
-    iget-object v0, p0, Lccf;->b:Lcce;
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lcce;->p:Lccm;
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
-    invoke-virtual {v0}, Lccm;->a()Z
+    move-result-object v0
 
-    move-result v0
+    return-object v0
+.end method
 
-    if-eqz v0, :cond_0
+.method public final a(Lcbm;Lgfs;Lggn;Ligz;Lild;ILbcs;Lcdh;Lihc;)Lkeh;
+    .locals 1
 
-    iget-object v0, p0, Lccf;->b:Lcce;
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lcce;->p:Lccm;
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Object;)Lkeh;
 
-    iget-object v1, p0, Lccf;->b:Lcce;
+    move-result-object v0
 
-    iget-object v1, v1, Lcce;->q:Landroid/net/Uri;
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Lccm;->b(Landroid/net/Uri;)V
+.method public final a()V
+    .locals 0
 
-    :goto_0
     return-void
+.end method
+
+.method public final a(Landroid/graphics/SurfaceTexture;Ljava/util/List;Lfut;)V
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->release()V
 
     :cond_0
-    iget-object v1, p0, Lccf;->a:Lccc;
+    return-void
+.end method
 
-    iget-object v2, p0, Lccf;->b:Lcce;
+.method public final a(Lcbl;)V
+    .locals 0
 
-    iget-object v3, v2, Lcce;->r:Lcbe;
+    return-void
+.end method
 
-    sget-object v0, Lcbe;->d:Lcbe;
+.method public final b()Landroid/view/Surface;
+    .locals 1
 
-    if-ne v3, v0, :cond_1
+    const/4 v0, 0x0
 
-    iget-object v0, v1, Lccc;->a:Lcaq;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Lcaq;->i()Lcdx;
+.method public final c()Lick;
+    .locals 1
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Lcdx;->e:Lfvj;
-
-    check-cast v0, Lcdy;
-
-    invoke-virtual {v0}, Lcdy;->b()Ljava/util/List;
-
-    move-result-object v0
-
-    :goto_1
-    iget-object v1, v1, Lccc;->a:Lcaq;
-
-    iget-object v1, v1, Lcaq;->k:Lcbn;
-
-    invoke-virtual {v1, v2, v3, v0}, Lcbn;->a(Lcce;Lcbe;Ljava/util/List;)V
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v0, Lcbe;->c:Lcbe;
-
-    if-ne v3, v0, :cond_2
-
-    iget-object v0, v1, Lccc;->a:Lcaq;
-
-    invoke-virtual {v0}, Lcaq;->i()Lcdx;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    iget-object v0, v0, Lcdx;->e:Lfvj;
-
-    check-cast v0, Lcdy;
-
-    invoke-virtual {v0}, Lcdy;->d()Ljava/util/List;
+    invoke-static {v0}, Licl;->a(Ljava/lang/Object;)Lick;
 
     move-result-object v0
 
-    goto :goto_1
-
-    :cond_2
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Can\'t zoom in on non-thumbnail section elements."
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-object v0
 .end method

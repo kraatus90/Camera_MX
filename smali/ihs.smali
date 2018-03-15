@@ -1,29 +1,17 @@
-.class public final Lihs;
-.super Lief;
+.class public interface abstract Lihs;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lief;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a()V
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lief;-><init>(Ljava/lang/String;)V
-
-    return-void
+.method public abstract a(Ljava/lang/String;)V
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
+.method public varargs abstract b()V
+.end method
 
-    invoke-direct {p0, p1}, Lief;-><init>(Ljava/lang/Throwable;)V
-
-    return-void
+.method public abstract b(Ljava/lang/String;)V
 .end method

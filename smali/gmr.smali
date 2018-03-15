@@ -1,113 +1,50 @@
-.class public final enum Lgmr;
-.super Ljava/lang/Enum;
+.class final Lgmr;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final enum a:Lgmr;
-
-.field public static final enum b:Lgmr;
-
-.field public static final enum c:Lgmr;
-
-.field public static final enum d:Lgmr;
-
-.field private static synthetic f:[Lgmr;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final e:I
+.field private final synthetic a:Leod;
+
+.field private final synthetic b:Lgmn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lgmr;
-
-    const-string v1, "GRID_NONE"
-
-    invoke-direct {v0, v1, v2, v2}, Lgmr;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lgmr;->a:Lgmr;
-
-    new-instance v0, Lgmr;
-
-    const-string v1, "GRID_3x3"
-
-    invoke-direct {v0, v1, v3, v3}, Lgmr;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lgmr;->b:Lgmr;
-
-    new-instance v0, Lgmr;
-
-    const-string v1, "GRID_4X4"
-
-    invoke-direct {v0, v1, v4, v4}, Lgmr;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lgmr;->c:Lgmr;
-
-    new-instance v0, Lgmr;
-
-    const-string v1, "GRID_GOLDEN_RATIO"
-
-    invoke-direct {v0, v1, v5, v5}, Lgmr;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lgmr;->d:Lgmr;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lgmr;
-
-    sget-object v1, Lgmr;->a:Lgmr;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lgmr;->b:Lgmr;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lgmr;->c:Lgmr;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lgmr;->d:Lgmr;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lgmr;->f:[Lgmr;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method constructor <init>(Lgmn;Leod;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lgmr;->b:Lgmn;
 
-    iput p3, p0, Lgmr;->e:I
+    iput-object p2, p0, Lgmr;->a:Leod;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lgmr;
-    .locals 1
 
-    sget-object v0, Lgmr;->f:[Lgmr;
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {v0}, [Lgmr;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lgmr;->b:Lgmn;
 
-    move-result-object v0
+    iget-object v1, p0, Lgmr;->a:Leod;
 
-    check-cast v0, [Lgmr;
+    iget-object v2, p0, Lgmr;->b:Lgmn;
 
-    return-object v0
+    invoke-static {v2}, Lgmn;->a(Lgmn;)Leqp;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Leqp;->e()Leob;
+
+    iget-object v1, v1, Leod;->b:Lcom/google/common/logging/nano/eventprotos$CameraEvent;
+
+    invoke-virtual {v0, v1}, Lgmn;->a(Lcom/google/common/logging/nano/eventprotos$CameraEvent;)V
+
+    return-void
 .end method

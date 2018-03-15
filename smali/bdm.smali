@@ -1,14 +1,20 @@
-.class final Lbdm;
+.class public final Lbdm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
     .locals 0
+
+    iput-object p1, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -17,62 +23,70 @@
 
 
 # virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 4
 
-    check-cast p1, Landroid/util/Range;
+    const/4 v3, 0x0
 
-    check-cast p2, Landroid/util/Range;
-
-    invoke-virtual {p1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Ljava/lang/Float;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-virtual {p2}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
-    sub-int v0, v1, v0
+    iget-object v1, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    if-eqz v0, :cond_0
+    iget v1, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->e:F
 
-    :goto_0
-    return v0
+    mul-float/2addr v1, v0
 
-    :cond_0
-    invoke-virtual {p1}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+    add-float/2addr v1, v3
 
-    move-result-object v0
+    iget-object v2, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v2, v2, Lcom/google/android/apps/camera/burstchip/BurstChip;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v2, v1}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    move-result v1
+    iget-object v1, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    invoke-virtual {p2}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+    iget-object v2, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    move-result-object v0
+    iget v2, v2, Lcom/google/android/apps/camera/burstchip/BurstChip;->c:F
 
-    check-cast v0, Ljava/lang/Integer;
+    mul-float/2addr v2, v0
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    add-float/2addr v2, v3
+
+    invoke-static {v2}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    iput v2, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->j:I
+
+    iget-object v1, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget-object v2, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    iget v2, v2, Lcom/google/android/apps/camera/burstchip/BurstChip;->d:F
+
+    mul-float/2addr v0, v2
+
+    add-float/2addr v0, v3
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
-    sub-int v0, v1, v0
+    iput v0, v1, Lcom/google/android/apps/camera/burstchip/BurstChip;->k:I
 
-    goto :goto_0
+    iget-object v0, p0, Lbdm;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/burstchip/BurstChip;->requestLayout()V
+
+    return-void
 .end method

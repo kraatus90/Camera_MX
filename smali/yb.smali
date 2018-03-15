@@ -1,61 +1,73 @@
-.class public final Lyb;
-.super Lyd;
+.class final Lyb;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Laad;
+
+.field public final synthetic b:Landroid/os/Handler;
+
+.field private final synthetic c:Lya;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lya;Laad;Landroid/os/Handler;)V
     .locals 0
 
-    invoke-direct {p0}, Lyd;-><init>()V
+    iput-object p1, p0, Lyb;->c:Lya;
 
-    return-void
-.end method
+    iput-object p2, p0, Lyb;->a:Laad;
 
-.method public constructor <init>(I)V
-    .locals 0
+    iput-object p3, p0, Lyb;->b:Landroid/os/Handler;
 
-    invoke-direct {p0, p1}, Lyd;-><init>(I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget v0, p0, Lyd;->a:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_0
-.end method
+    iget-object v1, p0, Lyb;->a:Laad;
 
-.method public final b()Lyf;
-    .locals 2
+    if-eqz v1, :cond_0
 
-    new-instance v0, Lyf;
+    new-instance v0, Lyc;
 
-    iget v1, p0, Lyd;->a:I
+    invoke-direct {v0, p0}, Lyc;-><init>(Lyb;)V
 
-    invoke-direct {v0, v1}, Lyf;-><init>(I)V
+    :cond_0
+    iget-object v1, p0, Lyb;->c:Lya;
 
-    return-object v0
-.end method
+    iget-object v1, v1, Lya;->c:Lxx;
 
-.method protected final c()I
-    .locals 1
+    iget-object v1, v1, Lxx;->c:Labx;
 
-    const/16 v0, 0x1e00
+    const/16 v2, 0x30
 
-    return v0
+    invoke-virtual {v1, v2}, Labx;->b(I)Z
+
+    iget-object v1, p0, Lyb;->c:Lya;
+
+    iget-object v1, v1, Lya;->c:Lxx;
+
+    iget-object v1, v1, Lxx;->b:Lyl;
+
+    const/16 v2, 0x12d
+
+    invoke-virtual {v1, v2, v0}, Lyl;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    return-void
 .end method

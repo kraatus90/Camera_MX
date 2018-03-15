@@ -1,72 +1,76 @@
-.class public final Lexi;
+.class final Lexi;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lexo;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final synthetic a:Lexh;
 
-.field private b:Ljxn;
+.field private final synthetic b:Lexo;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lexh;Lexo;)V
     .locals 0
 
+    iput-object p1, p0, Lexi;->a:Lexh;
+
+    iput-object p2, p0, Lexi;->b:Lexo;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lexi;->a:Ljxn;
-
-    iput-object p2, p0, Lexi;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()V
     .locals 3
 
-    iget-object v0, p0, Lexi;->a:Ljxn;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lexp;->b:Lexr;
 
-    move-result-object v0
+    new-instance v1, Liay;
 
-    check-cast v0, Leth;
+    invoke-direct {v1}, Liay;-><init>()V
 
-    iget-object v1, p0, Lexi;->b:Ljxn;
+    new-instance v2, Lexk;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v2, p0, v0}, Lexk;-><init>(Lexi;Lexr;)V
 
-    move-result-object v1
+    invoke-virtual {v1, v2}, Liay;->execute(Ljava/lang/Runnable;)V
 
-    check-cast v1, Licv;
+    iget-object v0, p0, Lexi;->b:Lexo;
 
-    const-string v2, "CptrIndDskCsh"
+    invoke-interface {v0}, Lexo;->a()V
 
-    invoke-interface {v1, v2}, Licv;->a(Ljava/lang/String;)Licu;
+    return-void
+.end method
 
-    move-result-object v1
+.method public final a(J)V
+    .locals 3
 
-    new-instance v2, Lexf;
+    const/4 v0, 0x0
 
-    invoke-direct {v2, v1, v0}, Lexf;-><init>(Licu;Leth;)V
+    iget-object v0, v0, Lexp;->b:Lexr;
 
-    invoke-static {v2}, Lgkt;->a(Ljava/lang/Runnable;)Lgvb;
+    new-instance v1, Liay;
 
-    move-result-object v0
+    invoke-direct {v1}, Liay;-><init>()V
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    new-instance v2, Lexj;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {v2, p0, v0}, Lexj;-><init>(Lexi;Lexr;)V
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Liay;->execute(Ljava/lang/Runnable;)V
 
-    check-cast v0, Lgvb;
+    iget-object v0, p0, Lexi;->b:Lexo;
 
-    return-object v0
+    invoke-interface {v0, p1, p2}, Lexo;->a(J)V
+
+    return-void
 .end method

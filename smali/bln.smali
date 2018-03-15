@@ -1,57 +1,33 @@
-.class public final Lbln;
-.super Ljava/lang/Object;
+.class final Lbln;
+.super Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 .source "PG"
 
 
-# static fields
-.field private static a:Ljava/util/regex/Pattern;
+# instance fields
+.field private final synthetic a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;)V
+    .locals 0
 
-    const/4 v1, 0x2
+    iput-object p1, p0, Lbln;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v0, "^(1|true|t|on|yes|y)$"
-
-    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lbln;->a:Ljava/util/regex/Pattern;
-
-    const-string v0, "^(0|false|f|off|no|n)$"
-
-    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Z
-    .locals 1
 
-    if-eqz p0, :cond_0
+# virtual methods
+.method public final onCameraAvailable(Ljava/lang/String;)V
+    .locals 2
 
-    sget-object v0, Lbln;->a:Ljava/util/regex/Pattern;
+    iget-object v0, p0, Lbln;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

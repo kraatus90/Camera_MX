@@ -1,54 +1,114 @@
-.class final Lfmg;
+.class public final Lfmg;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfmf;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmf;)V
+.method public constructor <init>(Lfme;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfmg;->a:Lfmf;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lfmg;->a:Lkgv;
+
+    iput-object p3, p0, Lfmg;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lfmg;->a:Lfmf;
+    iget-object v0, p0, Lfmg;->a:Lkgv;
 
-    iget v1, v0, Lfmf;->a:I
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    add-int/lit8 v1, v1, 0x1
+    move-result-object v0
 
-    iget-object v2, v0, Lfmf;->b:[Lfmh;
+    check-cast v0, Lbjy;
 
-    array-length v2, v2
+    iget-object v1, p0, Lfmg;->b:Lkgv;
 
-    if-lt v1, v2, :cond_0
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lfmf;->c()V
+    move-result-object v1
 
-    :goto_0
-    return-void
+    check-cast v1, Limk;
 
-    :cond_0
-    iget v1, v0, Lfmf;->a:I
+    invoke-virtual {v0}, Lbjy;->g()I
 
-    add-int/lit8 v1, v1, 0x1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Lfmf;->a(I)V
+    invoke-virtual {v0}, Lbjy;->e()I
 
-    goto :goto_0
+    move-result v3
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    const/16 v3, 0xa
+
+    invoke-virtual {v0}, Lbjy;->f()I
+
+    move-result v4
+
+    invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    iget-object v0, v0, Lbjy;->a:Landroid/content/ContentResolver;
+
+    const-string v3, "camera:global_imagereader_ticket_limit"
+
+    invoke-static {v0, v3, v2}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    new-instance v2, Lfto;
+
+    invoke-direct {v2, v0}, Lfto;-><init>(I)V
+
+    invoke-interface {v1}, Limk;->b()Liaa;
+
+    move-result-object v1
+
+    invoke-interface {v2}, Lfuo;->c()Lick;
+
+    move-result-object v3
+
+    new-instance v4, Lfmf;
+
+    invoke-direct {v4, v0}, Lfmf;-><init>(I)V
+
+    sget-object v0, Lken;->a:Lken;
+
+    invoke-interface {v3, v4, v0}, Lick;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Liaa;->a(Lihb;)Lihb;
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfuo;
+
+    return-object v0
 .end method

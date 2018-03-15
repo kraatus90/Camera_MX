@@ -2,167 +2,78 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Landroid/os/Handler;
 
-.field private b:Ljxn;
+.field public final b:Lcop;
 
-.field private c:Ljxn;
+.field public final c:Landroid/widget/Scroller;
 
-.field private d:Ljxn;
+.field public final d:Landroid/animation/ValueAnimator;
 
-.field private e:Ljxn;
+.field public final e:Ljava/lang/Runnable;
 
-.field private f:Ljxn;
+.field private final f:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
-
-.field private j:Ljxn;
+.field private final g:Landroid/animation/Animator$AnimatorListener;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;Lcop;Landroid/animation/TimeInterpolator;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcol;->a:Ljxn;
+    new-instance v0, Lcom;
 
-    iput-object p2, p0, Lcol;->b:Ljxn;
+    invoke-direct {v0, p0}, Lcom;-><init>(Lcol;)V
 
-    iput-object p3, p0, Lcol;->c:Ljxn;
+    iput-object v0, p0, Lcol;->e:Ljava/lang/Runnable;
 
-    iput-object p4, p0, Lcol;->d:Ljxn;
+    new-instance v0, Lcon;
 
-    iput-object p5, p0, Lcol;->e:Ljxn;
+    invoke-direct {v0, p0}, Lcon;-><init>(Lcol;)V
 
-    iput-object p6, p0, Lcol;->f:Ljxn;
+    iput-object v0, p0, Lcol;->f:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    iput-object p7, p0, Lcol;->g:Ljxn;
+    new-instance v0, Lcoo;
 
-    iput-object p8, p0, Lcol;->h:Ljxn;
+    invoke-direct {v0, p0}, Lcoo;-><init>(Lcol;)V
 
-    iput-object p9, p0, Lcol;->i:Ljxn;
+    iput-object v0, p0, Lcol;->g:Landroid/animation/Animator$AnimatorListener;
 
-    iput-object p10, p0, Lcol;->j:Ljxn;
+    iput-object p2, p0, Lcol;->a:Landroid/os/Handler;
+
+    iput-object p3, p0, Lcol;->b:Lcop;
+
+    new-instance v0, Landroid/widget/Scroller;
+
+    invoke-direct {v0, p1}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcol;->c:Landroid/widget/Scroller;
+
+    new-instance v0, Landroid/animation/ValueAnimator;
+
+    invoke-direct {v0}, Landroid/animation/ValueAnimator;-><init>()V
+
+    iput-object v0, p0, Lcol;->d:Landroid/animation/ValueAnimator;
+
+    iget-object v0, p0, Lcol;->d:Landroid/animation/ValueAnimator;
+
+    iget-object v1, p0, Lcol;->f:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    iget-object v0, p0, Lcol;->d:Landroid/animation/ValueAnimator;
+
+    iget-object v1, p0, Lcol;->g:Landroid/animation/Animator$AnimatorListener;
+
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    iget-object v0, p0, Lcol;->d:Landroid/animation/ValueAnimator;
+
+    invoke-virtual {v0, p4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 11
-
-    iget-object v0, p0, Lcol;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbhn;
-
-    iget-object v0, p0, Lcol;->b:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lfun;
-
-    iget-object v0, p0, Lcol;->c:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lbqn;
-
-    iget-object v0, p0, Lcol;->d:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lhab;
-
-    iget-object v0, p0, Lcol;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcnu;
-
-    iget-object v0, p0, Lcol;->f:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lavp;
-
-    iget-object v0, p0, Lcol;->g:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ldig;
-
-    iget-object v0, p0, Lcol;->h:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lbhl;
-
-    iget-object v0, p0, Lcol;->i:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lbiv;
-
-    iget-object v0, p0, Lcol;->j:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lfxe;
-
-    new-instance v0, Lcpb;
-
-    invoke-virtual {v3}, Lbqn;->c()Landroid/view/WindowManager;
-
-    move-result-object v3
-
-    invoke-static {v3}, Leqx;->a(Landroid/view/WindowManager;)Landroid/util/DisplayMetrics;
-
-    move-result-object v3
-
-    invoke-direct/range {v0 .. v10}, Lcpb;-><init>(Lbhn;Lfun;Landroid/util/DisplayMetrics;Lhab;Lcnu;Lavp;Ldig;Lbhl;Lbiv;Lfxe;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcpb;
-
-    return-object v0
 .end method

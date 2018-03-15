@@ -12,7 +12,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "gcam_swig_jni"
+    const-string v0, "gcam_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
@@ -57,6 +57,12 @@
 .end method
 
 .method public static final native AeDebugInfo_original_result_set(JLcom/google/googlex/gcam/AeDebugInfo;JLcom/google/googlex/gcam/AeModeResult;)V
+.end method
+
+.method public static final native AeMetadata_exposure_compensation_get(JLcom/google/googlex/gcam/AeMetadata;)F
+.end method
+
+.method public static final native AeMetadata_exposure_compensation_set(JLcom/google/googlex/gcam/AeMetadata;F)V
 .end method
 
 .method public static final native AeMetadata_lock_get(JLcom/google/googlex/gcam/AeMetadata;)Z
@@ -203,9 +209,6 @@
 .method public static final native AeResults_weighted_fraction_of_pixels_from_long_exposure_set(JLcom/google/googlex/gcam/AeResults;F)V
 .end method
 
-.method public static final native AeShotParams_Clear(JLcom/google/googlex/gcam/AeShotParams;)V
-.end method
-
 .method public static final native AeShotParams_Equals(JLcom/google/googlex/gcam/AeShotParams;JLcom/google/googlex/gcam/AeShotParams;)Z
 .end method
 
@@ -237,18 +240,6 @@
 .end method
 
 .method public static final native AeShotParams_payload_frame_orig_width_set(JLcom/google/googlex/gcam/AeShotParams;I)V
-.end method
-
-.method public static final native AeShotParams_process_bayer_for_metering_get(JLcom/google/googlex/gcam/AeShotParams;)Z
-.end method
-
-.method public static final native AeShotParams_process_bayer_for_metering_set(JLcom/google/googlex/gcam/AeShotParams;Z)V
-.end method
-
-.method public static final native AeShotParams_process_bayer_for_payload_get(JLcom/google/googlex/gcam/AeShotParams;)Z
-.end method
-
-.method public static final native AeShotParams_process_bayer_for_payload_set(JLcom/google/googlex/gcam/AeShotParams;Z)V
 .end method
 
 .method public static final native AeShotParams_target_height_get(JLcom/google/googlex/gcam/AeShotParams;)I
@@ -293,10 +284,7 @@
 .method public static final native AfMetadata_trigger_set(JLcom/google/googlex/gcam/AfMetadata;I)V
 .end method
 
-.method public static final native ApplyBlsAndSgm__SWIG_0(JLcom/google/googlex/gcam/SpatialGainMap;[FIJLcom/google/googlex/gcam/InterleavedWriteViewU16;)V
-.end method
-
-.method public static final native ApplyBlsAndSgm__SWIG_1(JLcom/google/googlex/gcam/SpatialGainMap;[FIJLcom/google/googlex/gcam/InterleavedWriteViewU16;JLcom/google/googlex/gcam/InterleavedWriteViewU16;)V
+.method public static final native ApplyBlsAndSgm(JLcom/google/googlex/gcam/SpatialGainMap;[FIJLcom/google/googlex/gcam/InterleavedWriteViewU16;)V
 .end method
 
 .method public static final native ApplyColorSaturation(JLcom/google/googlex/gcam/InterleavedWriteViewU8;JLcom/google/googlex/gcam/ColorSatParams;J)Z
@@ -317,13 +305,7 @@
 .method public static final native ArcFlareParam_radius_param_set(JLcom/google/googlex/gcam/ArcFlareParam;[D)V
 .end method
 
-.method public static final native AverageSnrFromFrame(JLcom/google/googlex/gcam/RawReadView;IFFJLcom/google/googlex/gcam/RawNoiseModel;J)F
-.end method
-
 .method public static final native AwbInfo_Check(JLcom/google/googlex/gcam/AwbInfo;)Z
-.end method
-
-.method public static final native AwbInfo_Clear(JLcom/google/googlex/gcam/AwbInfo;)V
 .end method
 
 .method public static final native AwbInfo_DeserializeFromString(JLcom/google/googlex/gcam/AwbInfo;J)Z
@@ -395,7 +377,7 @@
 .method public static final native BackgroundAeResultsCallback_director_connect(Lcom/google/googlex/gcam/BackgroundAeResultsCallback;JZZ)V
 .end method
 
-.method public static final native BaseFrameCallback_Run(JLcom/google/googlex/gcam/BaseFrameCallback;JLcom/google/googlex/gcam/IShot;IJ)V
+.method public static final native BaseFrameCallback_Run(JLcom/google/googlex/gcam/BaseFrameCallback;IIJ)V
 .end method
 
 .method public static final native BaseFrameCallback_change_ownership(Lcom/google/googlex/gcam/BaseFrameCallback;JZ)V
@@ -434,7 +416,7 @@
 .method public static final native BoolVector_size(JLcom/google/googlex/gcam/BoolVector;)J
 .end method
 
-.method public static final native BurstCallback_Run(JLcom/google/googlex/gcam/BurstCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/ShotLogData;)V
+.method public static final native BurstCallback_Run(JLcom/google/googlex/gcam/BurstCallback;IJLcom/google/googlex/gcam/ShotLogData;)V
 .end method
 
 .method public static final native BurstCallback_change_ownership(Lcom/google/googlex/gcam/BurstCallback;JZ)V
@@ -464,19 +446,13 @@
 .method public static final native CaptureParams_Check(JLcom/google/googlex/gcam/CaptureParams;)Z
 .end method
 
-.method public static final native CaptureParams_SetDefaults(JLcom/google/googlex/gcam/CaptureParams;Z)V
+.method public static final native CaptureParams_SetDefaults(JLcom/google/googlex/gcam/CaptureParams;)V
 .end method
 
 .method public static final native CaptureParams_allow_digital_gain_at_sensor_get(JLcom/google/googlex/gcam/CaptureParams;)F
 .end method
 
 .method public static final native CaptureParams_allow_digital_gain_at_sensor_set(JLcom/google/googlex/gcam/CaptureParams;F)V
-.end method
-
-.method public static final native CaptureParams_capture_true_long_exposure_get(JLcom/google/googlex/gcam/CaptureParams;)Z
-.end method
-
-.method public static final native CaptureParams_capture_true_long_exposure_set(JLcom/google/googlex/gcam/CaptureParams;Z)V
 .end method
 
 .method public static final native CaptureParams_max_hdr_ratio_get(JLcom/google/googlex/gcam/CaptureParams;)F
@@ -560,52 +536,52 @@
 .method public static final native ClientExifMetadata_yuv_thumbnail_set(JLcom/google/googlex/gcam/ClientExifMetadata;JLcom/google/googlex/gcam/YuvWriteView;)V
 .end method
 
-.method public static final native ColorCalibrationVector_add(JLcom/google/googlex/gcam/ColorCalibrationVector;JLcom/google/googlex/gcam/ColorCalibration;)V
+.method public static final native ClientInterleavedU16Allocator_Allocate(JLcom/google/googlex/gcam/ClientInterleavedU16Allocator;III)J
 .end method
 
-.method public static final native ColorCalibrationVector_capacity(JLcom/google/googlex/gcam/ColorCalibrationVector;)J
+.method public static final native ClientInterleavedU16Allocator_Release(JLcom/google/googlex/gcam/ClientInterleavedU16Allocator;J)V
 .end method
 
-.method public static final native ColorCalibrationVector_clear(JLcom/google/googlex/gcam/ColorCalibrationVector;)V
+.method public static final native ClientInterleavedU16Allocator_change_ownership(Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;JZ)V
 .end method
 
-.method public static final native ColorCalibrationVector_get(JLcom/google/googlex/gcam/ColorCalibrationVector;I)J
+.method public static final native ClientInterleavedU16Allocator_director_connect(Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;JZZ)V
 .end method
 
-.method public static final native ColorCalibrationVector_isEmpty(JLcom/google/googlex/gcam/ColorCalibrationVector;)Z
+.method public static final native ClientInterleavedU8Allocator_Allocate(JLcom/google/googlex/gcam/ClientInterleavedU8Allocator;III)J
 .end method
 
-.method public static final native ColorCalibrationVector_reserve(JLcom/google/googlex/gcam/ColorCalibrationVector;J)V
+.method public static final native ClientInterleavedU8Allocator_Release(JLcom/google/googlex/gcam/ClientInterleavedU8Allocator;J)V
 .end method
 
-.method public static final native ColorCalibrationVector_set(JLcom/google/googlex/gcam/ColorCalibrationVector;IJLcom/google/googlex/gcam/ColorCalibration;)V
+.method public static final native ClientInterleavedU8Allocator_change_ownership(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;JZ)V
 .end method
 
-.method public static final native ColorCalibrationVector_size(JLcom/google/googlex/gcam/ColorCalibrationVector;)J
+.method public static final native ClientInterleavedU8Allocator_director_connect(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;JZZ)V
 .end method
 
-.method public static final native ColorCalibration_Clear(JLcom/google/googlex/gcam/ColorCalibration;)V
+.method public static final native ClientRawAllocator_Allocate(JLcom/google/googlex/gcam/ClientRawAllocator;III)J
 .end method
 
-.method public static final native ColorCalibration_Equals(JLcom/google/googlex/gcam/ColorCalibration;JLcom/google/googlex/gcam/ColorCalibration;)Z
+.method public static final native ClientRawAllocator_Release(JLcom/google/googlex/gcam/ClientRawAllocator;J)V
 .end method
 
-.method public static final native ColorCalibration_illuminant_get(JLcom/google/googlex/gcam/ColorCalibration;)I
+.method public static final native ClientRawAllocator_change_ownership(Lcom/google/googlex/gcam/ClientRawAllocator;JZ)V
 .end method
 
-.method public static final native ColorCalibration_illuminant_set(JLcom/google/googlex/gcam/ColorCalibration;I)V
+.method public static final native ClientRawAllocator_director_connect(Lcom/google/googlex/gcam/ClientRawAllocator;JZZ)V
 .end method
 
-.method public static final native ColorCalibration_model_rgb_to_device_rgb_get(JLcom/google/googlex/gcam/ColorCalibration;)[F
+.method public static final native ClientYuvAllocator_Allocate(JLcom/google/googlex/gcam/ClientYuvAllocator;III)J
 .end method
 
-.method public static final native ColorCalibration_model_rgb_to_device_rgb_set(JLcom/google/googlex/gcam/ColorCalibration;[F)V
+.method public static final native ClientYuvAllocator_Release(JLcom/google/googlex/gcam/ClientYuvAllocator;J)V
 .end method
 
-.method public static final native ColorCalibration_xyz_to_model_rgb_get(JLcom/google/googlex/gcam/ColorCalibration;)[F
+.method public static final native ClientYuvAllocator_change_ownership(Lcom/google/googlex/gcam/ClientYuvAllocator;JZ)V
 .end method
 
-.method public static final native ColorCalibration_xyz_to_model_rgb_set(JLcom/google/googlex/gcam/ColorCalibration;[F)V
+.method public static final native ClientYuvAllocator_director_connect(Lcom/google/googlex/gcam/ClientYuvAllocator;JZZ)V
 .end method
 
 .method public static final native ColorSatParams_IsIdentity(JLcom/google/googlex/gcam/ColorSatParams;)Z
@@ -659,6 +635,18 @@
 .method public static final native ConstSampleIteratorPackedRaw12_y(JLcom/google/googlex/gcam/ConstSampleIteratorPackedRaw12;)I
 .end method
 
+.method public static final native ConvertBurstMetadataToString(J)Ljava/lang/String;
+.end method
+
+.method public static final native ConvertStaticMetadataToString(JLcom/google/googlex/gcam/StaticMetadata;)Ljava/lang/String;
+.end method
+
+.method public static final native CropFaceInfo(JLcom/google/googlex/gcam/FaceInfo;JLcom/google/googlex/gcam/PixelRect;II)J
+.end method
+
+.method public static final native CropInDngMetadata(I)Z
+.end method
+
 .method public static final native DebugParams_Print(JLcom/google/googlex/gcam/DebugParams;)V
 .end method
 
@@ -701,10 +689,10 @@
 .method public static final native DenoiseParams_revert_factor_set(JLcom/google/googlex/gcam/DenoiseParams;[F)V
 .end method
 
-.method public static final native DeserializeBurstMetadata(JJJ)Z
+.method public static final native DeserializeBurstMetadata(JJ)Z
 .end method
 
-.method public static final native DirtyLensHistory_OnPhoto(JLcom/google/googlex/gcam/DirtyLensHistory;Ljava/math/BigInteger;F)Z
+.method public static final native DirtyLensHistory_AddRawScore(JLcom/google/googlex/gcam/DirtyLensHistory;F)Z
 .end method
 
 .method public static final native DirtyLensHistory_Reset(JLcom/google/googlex/gcam/DirtyLensHistory;)V
@@ -728,28 +716,64 @@
 .method public static final native DirtyLensHistory_max_photo_count__set(JLcom/google/googlex/gcam/DirtyLensHistory;I)V
 .end method
 
-.method public static final native DirtyLensHistory_min_photo_count__get(JLcom/google/googlex/gcam/DirtyLensHistory;)I
+.method public static final native DirtyLensHistory_raw_score_history__get(JLcom/google/googlex/gcam/DirtyLensHistory;)J
 .end method
 
-.method public static final native DirtyLensHistory_min_photo_count__set(JLcom/google/googlex/gcam/DirtyLensHistory;I)V
-.end method
-
-.method public static final native DirtyLensHistory_min_seconds_between_photos__get(JLcom/google/googlex/gcam/DirtyLensHistory;)F
-.end method
-
-.method public static final native DirtyLensHistory_min_seconds_between_photos__set(JLcom/google/googlex/gcam/DirtyLensHistory;F)V
-.end method
-
-.method public static final native DirtyLensHistory_score_history__get(JLcom/google/googlex/gcam/DirtyLensHistory;)J
-.end method
-
-.method public static final native DirtyLensHistory_score_history__set(JLcom/google/googlex/gcam/DirtyLensHistory;JLcom/google/googlex/gcam/FloatDeque;)V
+.method public static final native DirtyLensHistory_raw_score_history__set(JLcom/google/googlex/gcam/DirtyLensHistory;JLcom/google/googlex/gcam/FloatDeque;)V
 .end method
 
 .method public static final native DirtyLensHistory_weighted_score_threshold__get(JLcom/google/googlex/gcam/DirtyLensHistory;)F
 .end method
 
 .method public static final native DirtyLensHistory_weighted_score_threshold__set(JLcom/google/googlex/gcam/DirtyLensHistory;F)V
+.end method
+
+.method public static final native DngColorCalibrationVector_add(JLcom/google/googlex/gcam/DngColorCalibrationVector;JLcom/google/googlex/gcam/DngColorCalibration;)V
+.end method
+
+.method public static final native DngColorCalibrationVector_capacity(JLcom/google/googlex/gcam/DngColorCalibrationVector;)J
+.end method
+
+.method public static final native DngColorCalibrationVector_clear(JLcom/google/googlex/gcam/DngColorCalibrationVector;)V
+.end method
+
+.method public static final native DngColorCalibrationVector_get(JLcom/google/googlex/gcam/DngColorCalibrationVector;I)J
+.end method
+
+.method public static final native DngColorCalibrationVector_isEmpty(JLcom/google/googlex/gcam/DngColorCalibrationVector;)Z
+.end method
+
+.method public static final native DngColorCalibrationVector_reserve(JLcom/google/googlex/gcam/DngColorCalibrationVector;J)V
+.end method
+
+.method public static final native DngColorCalibrationVector_set(JLcom/google/googlex/gcam/DngColorCalibrationVector;IJLcom/google/googlex/gcam/DngColorCalibration;)V
+.end method
+
+.method public static final native DngColorCalibrationVector_size(JLcom/google/googlex/gcam/DngColorCalibrationVector;)J
+.end method
+
+.method public static final native DngColorCalibration_Clear(JLcom/google/googlex/gcam/DngColorCalibration;)V
+.end method
+
+.method public static final native DngColorCalibration_Equals(JLcom/google/googlex/gcam/DngColorCalibration;JLcom/google/googlex/gcam/DngColorCalibration;)Z
+.end method
+
+.method public static final native DngColorCalibration_illuminant_get(JLcom/google/googlex/gcam/DngColorCalibration;)I
+.end method
+
+.method public static final native DngColorCalibration_illuminant_set(JLcom/google/googlex/gcam/DngColorCalibration;I)V
+.end method
+
+.method public static final native DngColorCalibration_model_rgb_to_device_rgb_get(JLcom/google/googlex/gcam/DngColorCalibration;)[F
+.end method
+
+.method public static final native DngColorCalibration_model_rgb_to_device_rgb_set(JLcom/google/googlex/gcam/DngColorCalibration;[F)V
+.end method
+
+.method public static final native DngColorCalibration_xyz_to_model_rgb_get(JLcom/google/googlex/gcam/DngColorCalibration;)[F
+.end method
+
+.method public static final native DngColorCalibration_xyz_to_model_rgb_set(JLcom/google/googlex/gcam/DngColorCalibration;[F)V
 .end method
 
 .method public static final native DngNoiseModel_Check(JLcom/google/googlex/gcam/DngNoiseModel;)Z
@@ -779,16 +803,13 @@
 .method public static final native EncodeMakerNote__SWIG_1(Ljava/lang/String;Ljava/lang/String;J)V
 .end method
 
-.method public static final native EncodedBlobCallback_Run(JLcom/google/googlex/gcam/EncodedBlobCallback;JLcom/google/googlex/gcam/IShot;JJII)V
+.method public static final native EncodedBlobCallback_Run(JLcom/google/googlex/gcam/EncodedBlobCallback;IJJII)V
 .end method
 
 .method public static final native EncodedBlobCallback_change_ownership(Lcom/google/googlex/gcam/EncodedBlobCallback;JZ)V
 .end method
 
 .method public static final native EncodedBlobCallback_director_connect(Lcom/google/googlex/gcam/EncodedBlobCallback;JZZ)V
-.end method
-
-.method public static final native EstimateSnrFromFrameMetadata(JLcom/google/googlex/gcam/FrameMetadata;)F
 .end method
 
 .method public static final native ExifMetadata_ApertureValue(JLcom/google/googlex/gcam/ExifMetadata;)D
@@ -846,6 +867,12 @@
 .end method
 
 .method public static final native ExifMetadata_exposure_compensation_set(JLcom/google/googlex/gcam/ExifMetadata;F)V
+.end method
+
+.method public static final native ExifMetadata_final_crop_get(JLcom/google/googlex/gcam/ExifMetadata;)J
+.end method
+
+.method public static final native ExifMetadata_final_crop_set(JLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/NormalizedRect;)V
 .end method
 
 .method public static final native ExifMetadata_flash_mode_get(JLcom/google/googlex/gcam/ExifMetadata;)I
@@ -914,6 +941,24 @@
 .method public static final native ExifMetadata_wb_mode_set(JLcom/google/googlex/gcam/ExifMetadata;I)V
 .end method
 
+.method public static final native ExifMetadata_xmp_metadata_extended_get(JLcom/google/googlex/gcam/ExifMetadata;)Ljava/lang/String;
+.end method
+
+.method public static final native ExifMetadata_xmp_metadata_extended_set(JLcom/google/googlex/gcam/ExifMetadata;Ljava/lang/String;)V
+.end method
+
+.method public static final native ExifMetadata_xmp_metadata_main_get(JLcom/google/googlex/gcam/ExifMetadata;)Ljava/lang/String;
+.end method
+
+.method public static final native ExifMetadata_xmp_metadata_main_set(JLcom/google/googlex/gcam/ExifMetadata;Ljava/lang/String;)V
+.end method
+
+.method public static final native FaceInfoToNormalizedRect__SWIG_0(JLcom/google/googlex/gcam/FaceInfo;IIZI)J
+.end method
+
+.method public static final native FaceInfoToNormalizedRect__SWIG_1(JLcom/google/googlex/gcam/FaceInfo;IIZ)J
+.end method
+
 .method public static final native FaceInfoToPixelRect__SWIG_0(JLcom/google/googlex/gcam/FaceInfo;IIZI)J
 .end method
 
@@ -974,16 +1019,10 @@
 .method public static final native FactorizeTet(JLcom/google/googlex/gcam/TetModel;FFFFFIZFJJJJ)V
 .end method
 
-.method public static final native FinalImageCallback_PreallocatedRgbReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/InterleavedReadViewU8;JLcom/google/googlex/gcam/ExifMetadata;I)V
+.method public static final native FinalImageCallback_RgbReady(JLcom/google/googlex/gcam/FinalImageCallback;IJLcom/google/googlex/gcam/InterleavedImageU8;JLcom/google/googlex/gcam/ExifMetadata;I)V
 .end method
 
-.method public static final native FinalImageCallback_PreallocatedYuvReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/YuvReadView;JLcom/google/googlex/gcam/ExifMetadata;I)V
-.end method
-
-.method public static final native FinalImageCallback_RgbReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/InterleavedImageU8;JLcom/google/googlex/gcam/ExifMetadata;I)V
-.end method
-
-.method public static final native FinalImageCallback_YuvReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/YuvImage;JLcom/google/googlex/gcam/ExifMetadata;I)V
+.method public static final native FinalImageCallback_YuvReady(JLcom/google/googlex/gcam/FinalImageCallback;IJLcom/google/googlex/gcam/YuvImage;JLcom/google/googlex/gcam/ExifMetadata;I)V
 .end method
 
 .method public static final native FinalImageCallback_change_ownership(Lcom/google/googlex/gcam/FinalImageCallback;JZ)V
@@ -1274,28 +1313,16 @@
 .method public static final native FrameMetadata_timestamp_ns_set(JLcom/google/googlex/gcam/FrameMetadata;J)V
 .end method
 
-.method public static final native FrameMetadata_tonemap_get(JLcom/google/googlex/gcam/FrameMetadata;)J
-.end method
-
-.method public static final native FrameMetadata_tonemap_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/Tonemap;)V
-.end method
-
 .method public static final native FrameMetadata_was_black_level_locked_get(JLcom/google/googlex/gcam/FrameMetadata;)Z
 .end method
 
 .method public static final native FrameMetadata_was_black_level_locked_set(JLcom/google/googlex/gcam/FrameMetadata;Z)V
 .end method
 
-.method public static final native FrameMetadata_wb_capture_get(JLcom/google/googlex/gcam/FrameMetadata;)J
+.method public static final native FrameMetadata_wb_get(JLcom/google/googlex/gcam/FrameMetadata;)J
 .end method
 
-.method public static final native FrameMetadata_wb_capture_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/AwbInfo;)V
-.end method
-
-.method public static final native FrameMetadata_wb_ideal_get(JLcom/google/googlex/gcam/FrameMetadata;)J
-.end method
-
-.method public static final native FrameMetadata_wb_ideal_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/AwbInfo;)V
+.method public static final native FrameMetadata_wb_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/AwbInfo;)V
 .end method
 
 .method public static final native FrameRequestVector_add(JLcom/google/googlex/gcam/FrameRequestVector;JLcom/google/googlex/gcam/FrameRequest;)V
@@ -1379,10 +1406,10 @@
 .method public static final native GCAM_SAVE_TEXT_get()J
 .end method
 
-.method public static final native Gcam_AbortShotCapture(JLcom/google/googlex/gcam/Gcam;JLcom/google/googlex/gcam/IShot;)Z
+.method public static final native Gcam_AbortShotCapture(JLcom/google/googlex/gcam/Gcam;I)Z
 .end method
 
-.method public static final native Gcam_AbortShotProcessing(JLcom/google/googlex/gcam/Gcam;JLcom/google/googlex/gcam/IShot;)Z
+.method public static final native Gcam_AbortShotProcessing(JLcom/google/googlex/gcam/Gcam;I)Z
 .end method
 
 .method public static final native Gcam_AddViewfinderFrame(JLcom/google/googlex/gcam/Gcam;IJLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/AeShotParams;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)V
@@ -1394,7 +1421,7 @@
 .method public static final native Gcam_Create__SWIG_1(JLcom/google/googlex/gcam/InitParams;JLcom/google/googlex/gcam/StaticMetadataVector;)J
 .end method
 
-.method public static final native Gcam_EndShotCapture(JLcom/google/googlex/gcam/Gcam;JLcom/google/googlex/gcam/IShot;)Z
+.method public static final native Gcam_EndShotCapture(JLcom/google/googlex/gcam/Gcam;I)Z
 .end method
 
 .method public static final native Gcam_FlushViewfinder(JLcom/google/googlex/gcam/Gcam;I)V
@@ -1424,7 +1451,7 @@
 .method public static final native Gcam_IsIdle(JLcom/google/googlex/gcam/Gcam;)Z
 .end method
 
-.method public static final native Gcam_LimitShotCpuUsage(JLcom/google/googlex/gcam/Gcam;JLcom/google/googlex/gcam/IShot;F)Z
+.method public static final native Gcam_LimitShotCpuUsage(JLcom/google/googlex/gcam/Gcam;IF)Z
 .end method
 
 .method public static final native Gcam_PeakMemoryBytes(JLcom/google/googlex/gcam/Gcam;)J
@@ -1436,7 +1463,7 @@
 .method public static final native Gcam_PrintStatus(JLcom/google/googlex/gcam/Gcam;)V
 .end method
 
-.method public static final native Gcam_StartShotCapture(JLcom/google/googlex/gcam/Gcam;IJLcom/google/googlex/gcam/ShotParams;JLcom/google/googlex/gcam/ShotCallbacks;IJJLcom/google/googlex/gcam/YuvWriteView;JJLcom/google/googlex/gcam/InterleavedWriteViewU8;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/PostviewParams;JLcom/google/googlex/gcam/ImageSaverParams;)J
+.method public static final native Gcam_StartShotCapture(JLcom/google/googlex/gcam/Gcam;IJLcom/google/googlex/gcam/ShotParams;JLcom/google/googlex/gcam/ShotCallbacks;IJLcom/google/googlex/gcam/PostviewParams;JLcom/google/googlex/gcam/ImageSaverParams;)J
 .end method
 
 .method public static final native Gcam_UpdateCameras(JLcom/google/googlex/gcam/Gcam;JLcom/google/googlex/gcam/StaticMetadataVector;JLcom/google/googlex/gcam/TuningVector;)V
@@ -1445,34 +1472,16 @@
 .method public static final native Gcam_UpdateDebugParams(JLcom/google/googlex/gcam/Gcam;JLcom/google/googlex/gcam/DebugParams;)V
 .end method
 
-.method public static final native GenGcamNexus5TonemapFloat()J
-.end method
-
-.method public static final native GenGcamTonemap()J
-.end method
-
-.method public static final native GenGlassIncorrectTonemap1()J
-.end method
-
 .method public static final native GenParameterizedSpatialGainMap(IIFFF)J
 .end method
 
 .method public static final native GenSpatialGainMap_Flat()J
 .end method
 
-.method public static final native GenSpatialGainMap_GalaxyNexus()J
-.end method
-
-.method public static final native GenSpatialGainMap_Glass()J
-.end method
-
-.method public static final native GenSpatialGainMap_Glass_ReducedLSC()J
+.method public static final native GenSpatialGainMap_N5_N6()J
 .end method
 
 .method public static final native GenSpatialGainMap_Typical()J
-.end method
-
-.method public static final native GenStockGalaxyNexusTonemap()J
 .end method
 
 .method public static final native GetAwbForTet(FJLcom/google/googlex/gcam/TetToAwb;Z)J
@@ -1484,13 +1493,13 @@
 .method public static final native GetCustomFileSaver()J
 .end method
 
-.method public static final native GetDirtyLensProbabilityFromJpegInMemory(JJ[F[F)Z
+.method public static final native GetDirtyLensRawScoreFromJpegInMemory(JJ[F)Z
 .end method
 
-.method public static final native GetDirtyLensProbability__SWIG_0(JLcom/google/googlex/gcam/InterleavedReadViewU8;[F[F)Z
+.method public static final native GetDirtyLensRawScore__SWIG_0(JLcom/google/googlex/gcam/InterleavedReadViewU8;[F)Z
 .end method
 
-.method public static final native GetDirtyLensProbability__SWIG_1(JLcom/google/googlex/gcam/YuvReadView;[F[F)Z
+.method public static final native GetDirtyLensRawScore__SWIG_1(JLcom/google/googlex/gcam/YuvReadView;[F)Z
 .end method
 
 .method public static final native GetFinalDngImageSize(JLcom/google/googlex/gcam/InterleavedReadViewU16;JLcom/google/googlex/gcam/ExifMetadata;JJ)V
@@ -1509,6 +1518,9 @@
 .end method
 
 .method public static final native GetRandomBayerPattern()I
+.end method
+
+.method public static final native GetRandomFaceInfo()J
 .end method
 
 .method public static final native GetRandomFrameMetadata()J
@@ -1532,6 +1544,9 @@
 .method public static final native GetRawBufferBounds(IJJJJJ)V
 .end method
 
+.method public static final native GetRawCropping(JLcom/google/googlex/gcam/ShotParams;JLcom/google/googlex/gcam/ShotCallbacks;)I
+.end method
+
 .method public static final native GetRotatedImageSize(IIIJJ)V
 .end method
 
@@ -1551,6 +1566,12 @@
 .end method
 
 .method public static final native GoudaCallbacks_debug_image_callback_set(JLcom/google/googlex/gcam/GoudaCallbacks;JLcom/google/googlex/gcam/GoudaImageCallback;)V
+.end method
+
+.method public static final native GoudaCallbacks_features_callback_get(JLcom/google/googlex/gcam/GoudaCallbacks;)J
+.end method
+
+.method public static final native GoudaCallbacks_features_callback_set(JLcom/google/googlex/gcam/GoudaCallbacks;JLcom/google/googlex/gcam/GoudaOutputFeaturesCallback;)V
 .end method
 
 .method public static final native GoudaCallbacks_image_callback_get(JLcom/google/googlex/gcam/GoudaCallbacks;)J
@@ -1586,16 +1607,19 @@
 .method public static final native GoudaCompleteCallback_director_connect(Lcom/google/googlex/gcam/GoudaCompleteCallback;JZZ)V
 .end method
 
-.method public static final native GoudaImageCallback_RgbReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;)V
+.method public static final native GoudaImageCallback_RgbReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
-.method public static final native GoudaImageCallback_YuvReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;)V
+.method public static final native GoudaImageCallback_YuvReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
 .method public static final native GoudaImageCallback_change_ownership(Lcom/google/googlex/gcam/GoudaImageCallback;JZ)V
 .end method
 
 .method public static final native GoudaImageCallback_director_connect(Lcom/google/googlex/gcam/GoudaImageCallback;JZZ)V
+.end method
+
+.method public static final native GoudaOutputFeaturesCallback_AddFeature(JLcom/google/googlex/gcam/GoudaOutputFeaturesCallback;JLjava/lang/String;D)V
 .end method
 
 .method public static final native GoudaProgressCallback_Run(JLcom/google/googlex/gcam/GoudaProgressCallback;JF)V
@@ -1605,6 +1629,18 @@
 .end method
 
 .method public static final native GoudaProgressCallback_director_connect(Lcom/google/googlex/gcam/GoudaProgressCallback;JZZ)V
+.end method
+
+.method public static final native GoudaRequest_debug_images_verbosity_get(JLcom/google/googlex/gcam/GoudaRequest;)I
+.end method
+
+.method public static final native GoudaRequest_debug_images_verbosity_set(JLcom/google/googlex/gcam/GoudaRequest;I)V
+.end method
+
+.method public static final native GoudaRequest_embed_gdepth_metadata_get(JLcom/google/googlex/gcam/GoudaRequest;)Z
+.end method
+
+.method public static final native GoudaRequest_embed_gdepth_metadata_set(JLcom/google/googlex/gcam/GoudaRequest;Z)V
 .end method
 
 .method public static final native GoudaRequest_faces_get(JLcom/google/googlex/gcam/GoudaRequest;)J
@@ -1742,10 +1778,7 @@
 .method public static final native IShot_AddFrameMetadataForLogging(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;)Z
 .end method
 
-.method public static final native IShot_AddMeteringFrame__SWIG_0(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JJLcom/google/googlex/gcam/YuvWriteView;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)Z
-.end method
-
-.method public static final native IShot_AddMeteringFrame__SWIG_1(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)Z
+.method public static final native IShot_AddMeteringFrame(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JJLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)Z
 .end method
 
 .method public static final native IShot_AddPayloadFrame(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JJLcom/google/googlex/gcam/RawWriteView;JJLcom/google/googlex/gcam/InterleavedWriteViewU16;JLcom/google/googlex/gcam/SpatialGainMap;)Z
@@ -1763,10 +1796,7 @@
 .method public static final native IShot_ComputeAeResults(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/RawWriteView;JLcom/google/googlex/gcam/SpatialGainMap;)J
 .end method
 
-.method public static final native IShot_EndMeteringFrames__SWIG_0(JLcom/google/googlex/gcam/IShot;F)J
-.end method
-
-.method public static final native IShot_EndMeteringFrames__SWIG_1(JLcom/google/googlex/gcam/IShot;)J
+.method public static final native IShot_EndMeteringFrames(JLcom/google/googlex/gcam/IShot;)J
 .end method
 
 .method public static final native IShot_EndPayloadFrames(JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/ClientExifMetadata;JLcom/google/googlex/gcam/StringVector;JLcom/google/googlex/gcam/StringVector;)Z
@@ -1841,6 +1871,18 @@
 .method public static final native ImageSaver_Save__SWIG_2(JLcom/google/googlex/gcam/ImageSaver;JLjava/lang/String;)Ljava/lang/String;
 .end method
 
+.method public static final native ImageSaver_dest_folder(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+.end method
+
+.method public static final native ImageSaver_filename_prefix(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+.end method
+
+.method public static final native ImageSaver_filename_suffix(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+.end method
+
+.method public static final native ImageSaver_gcam_version(JLcom/google/googlex/gcam/ImageSaver;)Ljava/lang/String;
+.end method
+
 .method public static final native InitCustomFileSaver(JLcom/google/googlex/gcam/FileSaver;)V
 .end method
 
@@ -1905,6 +1947,12 @@
 .end method
 
 .method public static final native InitParams_disable_smart_metering_set(JLcom/google/googlex/gcam/InitParams;Z)V
+.end method
+
+.method public static final native InitParams_execute_finish_on_get(JLcom/google/googlex/gcam/InitParams;)I
+.end method
+
+.method public static final native InitParams_execute_finish_on_set(JLcom/google/googlex/gcam/InitParams;I)V
 .end method
 
 .method public static final native InitParams_finish_priority_get(JLcom/google/googlex/gcam/InitParams;)J
@@ -1973,30 +2021,6 @@
 .method public static final native InitParams_min_payload_frames_set(JLcom/google/googlex/gcam/InitParams;I)V
 .end method
 
-.method public static final native InitParams_planning_to_process_bayer_for_metering_get(JLcom/google/googlex/gcam/InitParams;)Z
-.end method
-
-.method public static final native InitParams_planning_to_process_bayer_for_metering_set(JLcom/google/googlex/gcam/InitParams;Z)V
-.end method
-
-.method public static final native InitParams_planning_to_process_bayer_for_payload_get(JLcom/google/googlex/gcam/InitParams;)Z
-.end method
-
-.method public static final native InitParams_planning_to_process_bayer_for_payload_set(JLcom/google/googlex/gcam/InitParams;Z)V
-.end method
-
-.method public static final native InitParams_planning_to_provide_both_yuv_and_raw_for_metering_get(JLcom/google/googlex/gcam/InitParams;)Z
-.end method
-
-.method public static final native InitParams_planning_to_provide_both_yuv_and_raw_for_metering_set(JLcom/google/googlex/gcam/InitParams;Z)V
-.end method
-
-.method public static final native InitParams_planning_to_provide_both_yuv_and_raw_for_payload_get(JLcom/google/googlex/gcam/InitParams;)Z
-.end method
-
-.method public static final native InitParams_planning_to_provide_both_yuv_and_raw_for_payload_set(JLcom/google/googlex/gcam/InitParams;Z)V
-.end method
-
 .method public static final native InitParams_simultaneous_merge_and_finish_get(JLcom/google/googlex/gcam/InitParams;)Z
 .end method
 
@@ -2013,12 +2037,6 @@
 .end method
 
 .method public static final native InitParams_tuning_locked_set(JLcom/google/googlex/gcam/InitParams;Z)V
-.end method
-
-.method public static final native InitParams_use_hexagon_get(JLcom/google/googlex/gcam/InitParams;)Z
-.end method
-
-.method public static final native InitParams_use_hexagon_set(JLcom/google/googlex/gcam/InitParams;Z)V
 .end method
 
 .method public static final native InitParams_verbose_get(JLcom/google/googlex/gcam/InitParams;)Z
@@ -2135,6 +2153,9 @@
 .method public static final native InterleavedImageU8_y_stride(JLcom/google/googlex/gcam/InterleavedImageU8;)J
 .end method
 
+.method public static final native InterleavedReadViewU16_Empty(JLcom/google/googlex/gcam/InterleavedReadViewU16;)Z
+.end method
+
 .method public static final native InterleavedReadViewU16_FastCrop__SWIG_0(JLcom/google/googlex/gcam/InterleavedReadViewU16;IIIIII)V
 .end method
 
@@ -2186,6 +2207,9 @@
 .method public static final native InterleavedReadViewU16_y_stride(JLcom/google/googlex/gcam/InterleavedReadViewU16;)J
 .end method
 
+.method public static final native InterleavedReadViewU8_Empty(JLcom/google/googlex/gcam/InterleavedReadViewU8;)Z
+.end method
+
 .method public static final native InterleavedReadViewU8_FastCrop__SWIG_0(JLcom/google/googlex/gcam/InterleavedReadViewU8;IIIIII)V
 .end method
 
@@ -2235,6 +2259,30 @@
 .end method
 
 .method public static final native InterleavedReadViewU8_y_stride(JLcom/google/googlex/gcam/InterleavedReadViewU8;)J
+.end method
+
+.method public static final native InterleavedU16Allocation_image_id_get(JLcom/google/googlex/gcam/InterleavedU16Allocation;)J
+.end method
+
+.method public static final native InterleavedU16Allocation_image_id_set(JLcom/google/googlex/gcam/InterleavedU16Allocation;J)V
+.end method
+
+.method public static final native InterleavedU16Allocation_view_get(JLcom/google/googlex/gcam/InterleavedU16Allocation;)J
+.end method
+
+.method public static final native InterleavedU16Allocation_view_set(JLcom/google/googlex/gcam/InterleavedU16Allocation;JLcom/google/googlex/gcam/InterleavedWriteViewU16;)V
+.end method
+
+.method public static final native InterleavedU8Allocation_image_id_get(JLcom/google/googlex/gcam/InterleavedU8Allocation;)J
+.end method
+
+.method public static final native InterleavedU8Allocation_image_id_set(JLcom/google/googlex/gcam/InterleavedU8Allocation;J)V
+.end method
+
+.method public static final native InterleavedU8Allocation_view_get(JLcom/google/googlex/gcam/InterleavedU8Allocation;)J
+.end method
+
+.method public static final native InterleavedU8Allocation_view_set(JLcom/google/googlex/gcam/InterleavedU8Allocation;JLcom/google/googlex/gcam/InterleavedWriteViewU8;)V
 .end method
 
 .method public static final native InterleavedWriteViewU16_FastCrop_SWIG_0_0(JLcom/google/googlex/gcam/InterleavedWriteViewU16;IIIIII)V
@@ -2357,6 +2405,9 @@
 .method public static final native Intersect(JLcom/google/googlex/gcam/PixelRect;JLcom/google/googlex/gcam/PixelRect;)J
 .end method
 
+.method public static final native IsMergedRawFullSized(I)Z
+.end method
+
 .method public static final native IsPlanar(I)Z
 .end method
 
@@ -2411,6 +2462,15 @@
 .method public static final native LocationData_timestamp_unix_set(JLcom/google/googlex/gcam/LocationData;J)V
 .end method
 
+.method public static final native MakeRandomChromaticAberrationParams()J
+.end method
+
+.method public static final native MakeRandomDenoiseParams()J
+.end method
+
+.method public static final native MakeRandomSharpenParams()J
+.end method
+
 .method public static final native MakeSharpenCurve(FFF)J
 .end method
 
@@ -2424,6 +2484,42 @@
 .end method
 
 .method public static final native MemoryStateCallback_director_connect(Lcom/google/googlex/gcam/MemoryStateCallback;JZZ)V
+.end method
+
+.method public static final native NewDeleteInterleavedU16Allocator_Allocate(JLcom/google/googlex/gcam/NewDeleteInterleavedU16Allocator;III)J
+.end method
+
+.method public static final native NewDeleteInterleavedU16Allocator_Release(JLcom/google/googlex/gcam/NewDeleteInterleavedU16Allocator;J)V
+.end method
+
+.method public static final native NewDeleteInterleavedU16Allocator_SWIGUpcast(J)J
+.end method
+
+.method public static final native NewDeleteInterleavedU8Allocator_Allocate(JLcom/google/googlex/gcam/NewDeleteInterleavedU8Allocator;III)J
+.end method
+
+.method public static final native NewDeleteInterleavedU8Allocator_Release(JLcom/google/googlex/gcam/NewDeleteInterleavedU8Allocator;J)V
+.end method
+
+.method public static final native NewDeleteInterleavedU8Allocator_SWIGUpcast(J)J
+.end method
+
+.method public static final native NewDeleteRawAllocator_Allocate(JLcom/google/googlex/gcam/NewDeleteRawAllocator;III)J
+.end method
+
+.method public static final native NewDeleteRawAllocator_Release(JLcom/google/googlex/gcam/NewDeleteRawAllocator;J)V
+.end method
+
+.method public static final native NewDeleteRawAllocator_SWIGUpcast(J)J
+.end method
+
+.method public static final native NewDeleteYuvAllocator_Allocate(JLcom/google/googlex/gcam/NewDeleteYuvAllocator;III)J
+.end method
+
+.method public static final native NewDeleteYuvAllocator_Release(JLcom/google/googlex/gcam/NewDeleteYuvAllocator;J)V
+.end method
+
+.method public static final native NewDeleteYuvAllocator_SWIGUpcast(J)J
 .end method
 
 .method public static final native NormalizedRect_AspectRatio(JLcom/google/googlex/gcam/NormalizedRect;)F
@@ -2669,19 +2765,16 @@
 .method public static final native PackedReadWriteViewRaw12_set_row__SWIG_1(JLcom/google/googlex/gcam/PackedReadWriteViewRaw12;IJ)V
 .end method
 
-.method public static final native PdImageCallback_ImageReady(JLcom/google/googlex/gcam/PdImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/InterleavedImageU16;)V
+.method public static final native PdImageCallback_ImageReady(JLcom/google/googlex/gcam/PdImageCallback;IJLcom/google/googlex/gcam/InterleavedReadViewU16;)V
 .end method
 
-.method public static final native PdImageCallback_MergePdFailed(JLcom/google/googlex/gcam/PdImageCallback;JLcom/google/googlex/gcam/IShot;)V
+.method public static final native PdImageCallback_MergePdFailed(JLcom/google/googlex/gcam/PdImageCallback;I)V
 .end method
 
 .method public static final native PdImageCallback_change_ownership(Lcom/google/googlex/gcam/PdImageCallback;JZ)V
 .end method
 
 .method public static final native PdImageCallback_director_connect(Lcom/google/googlex/gcam/PdImageCallback;JZZ)V
-.end method
-
-.method public static final native PdNoiseModelFromRawNoiseModel(JLcom/google/googlex/gcam/RawNoiseModel;IJ)V
 .end method
 
 .method public static final native PixelRectToFaceInfo__SWIG_0(JLcom/google/googlex/gcam/PixelRect;FIII)J
@@ -2771,43 +2864,13 @@
 .method public static final native PixelRect_y1_set(JLcom/google/googlex/gcam/PixelRect;I)V
 .end method
 
-.method public static final native Point2iVector_add(JLcom/google/googlex/gcam/Point2iVector;JLcom/google/googlex/gcam/Point2i;)V
+.method public static final native PlanarRawImageCallback_ImageReady(JLcom/google/googlex/gcam/PlanarRawImageCallback;IJLcom/google/googlex/gcam/ExifMetadata;J)V
 .end method
 
-.method public static final native Point2iVector_capacity(JLcom/google/googlex/gcam/Point2iVector;)J
+.method public static final native PostviewCallback_RgbReady(JLcom/google/googlex/gcam/PostviewCallback;IJLcom/google/googlex/gcam/InterleavedReadViewU8;I)V
 .end method
 
-.method public static final native Point2iVector_clear(JLcom/google/googlex/gcam/Point2iVector;)V
-.end method
-
-.method public static final native Point2iVector_get(JLcom/google/googlex/gcam/Point2iVector;I)J
-.end method
-
-.method public static final native Point2iVector_isEmpty(JLcom/google/googlex/gcam/Point2iVector;)Z
-.end method
-
-.method public static final native Point2iVector_reserve(JLcom/google/googlex/gcam/Point2iVector;J)V
-.end method
-
-.method public static final native Point2iVector_set(JLcom/google/googlex/gcam/Point2iVector;IJLcom/google/googlex/gcam/Point2i;)V
-.end method
-
-.method public static final native Point2iVector_size(JLcom/google/googlex/gcam/Point2iVector;)J
-.end method
-
-.method public static final native Point2i_x_get(JLcom/google/googlex/gcam/Point2i;)I
-.end method
-
-.method public static final native Point2i_x_set(JLcom/google/googlex/gcam/Point2i;I)V
-.end method
-
-.method public static final native Point2i_y_get(JLcom/google/googlex/gcam/Point2i;)I
-.end method
-
-.method public static final native Point2i_y_set(JLcom/google/googlex/gcam/Point2i;I)V
-.end method
-
-.method public static final native PostviewCallback_Run(JLcom/google/googlex/gcam/PostviewCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/YuvImage;JLcom/google/googlex/gcam/InterleavedImageU8;I)V
+.method public static final native PostviewCallback_YuvReady(JLcom/google/googlex/gcam/PostviewCallback;IJLcom/google/googlex/gcam/YuvReadView;I)V
 .end method
 
 .method public static final native PostviewCallback_change_ownership(Lcom/google/googlex/gcam/PostviewCallback;JZ)V
@@ -2837,13 +2900,82 @@
 .method public static final native PrintColorTemps(J)V
 .end method
 
-.method public static final native ProgressCallback_Run(JLcom/google/googlex/gcam/ProgressCallback;JLcom/google/googlex/gcam/IShot;F)V
+.method public static final native ProgressCallback_Run(JLcom/google/googlex/gcam/ProgressCallback;IF)V
 .end method
 
 .method public static final native ProgressCallback_change_ownership(Lcom/google/googlex/gcam/ProgressCallback;JZ)V
 .end method
 
 .method public static final native ProgressCallback_director_connect(Lcom/google/googlex/gcam/ProgressCallback;JZZ)V
+.end method
+
+.method public static final native QcColorCalibration_DeserializeFromString(JLcom/google/googlex/gcam/QcColorCalibration;J)Z
+.end method
+
+.method public static final native QcColorCalibration_Equals(JLcom/google/googlex/gcam/QcColorCalibration;JLcom/google/googlex/gcam/QcColorCalibration;)Z
+.end method
+
+.method public static final native QcColorCalibration_IlluminantData_bg_ratio_get(JLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;)F
+.end method
+
+.method public static final native QcColorCalibration_IlluminantData_bg_ratio_set(JLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;F)V
+.end method
+
+.method public static final native QcColorCalibration_IlluminantData_rg_ratio_get(JLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;)F
+.end method
+
+.method public static final native QcColorCalibration_IlluminantData_rg_ratio_set(JLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;F)V
+.end method
+
+.method public static final native QcColorCalibration_SerializeToString(JLcom/google/googlex/gcam/QcColorCalibration;JI)V
+.end method
+
+.method public static final native QcColorCalibration_grgb_ratio_get(JLcom/google/googlex/gcam/QcColorCalibration;)F
+.end method
+
+.method public static final native QcColorCalibration_grgb_ratio_set(JLcom/google/googlex/gcam/QcColorCalibration;F)V
+.end method
+
+.method public static final native QcColorCalibration_illuminant_data_get(JLcom/google/googlex/gcam/QcColorCalibration;)J
+.end method
+
+.method public static final native QcColorCalibration_illuminant_data_set(JLcom/google/googlex/gcam/QcColorCalibration;JLcom/google/googlex/gcam/QcIlluminantVector;)V
+.end method
+
+.method public static final native QcIlluminantVector_add(JLcom/google/googlex/gcam/QcIlluminantVector;JLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;)V
+.end method
+
+.method public static final native QcIlluminantVector_capacity(JLcom/google/googlex/gcam/QcIlluminantVector;)J
+.end method
+
+.method public static final native QcIlluminantVector_clear(JLcom/google/googlex/gcam/QcIlluminantVector;)V
+.end method
+
+.method public static final native QcIlluminantVector_get(JLcom/google/googlex/gcam/QcIlluminantVector;I)J
+.end method
+
+.method public static final native QcIlluminantVector_isEmpty(JLcom/google/googlex/gcam/QcIlluminantVector;)Z
+.end method
+
+.method public static final native QcIlluminantVector_reserve(JLcom/google/googlex/gcam/QcIlluminantVector;J)V
+.end method
+
+.method public static final native QcIlluminantVector_set(JLcom/google/googlex/gcam/QcIlluminantVector;IJLcom/google/googlex/gcam/QcColorCalibration$IlluminantData;)V
+.end method
+
+.method public static final native QcIlluminantVector_size(JLcom/google/googlex/gcam/QcIlluminantVector;)J
+.end method
+
+.method public static final native RawAllocation_image_id_get(JLcom/google/googlex/gcam/RawAllocation;)J
+.end method
+
+.method public static final native RawAllocation_image_id_set(JLcom/google/googlex/gcam/RawAllocation;J)V
+.end method
+
+.method public static final native RawAllocation_view_get(JLcom/google/googlex/gcam/RawAllocation;)J
+.end method
+
+.method public static final native RawAllocation_view_set(JLcom/google/googlex/gcam/RawAllocation;JLcom/google/googlex/gcam/RawWriteView;)V
 .end method
 
 .method public static final native RawFinishParams_arc_flare_get(JLcom/google/googlex/gcam/RawFinishParams;)J
@@ -2876,10 +3008,16 @@
 .method public static final native RawFinishParams_extra_finish_vignetting_set(JLcom/google/googlex/gcam/RawFinishParams;J)V
 .end method
 
-.method public static final native RawFinishParams_icc_profile_get(JLcom/google/googlex/gcam/RawFinishParams;)I
+.method public static final native RawFinishParams_geometric_correction_get(JLcom/google/googlex/gcam/RawFinishParams;)I
 .end method
 
-.method public static final native RawFinishParams_icc_profile_set(JLcom/google/googlex/gcam/RawFinishParams;I)V
+.method public static final native RawFinishParams_geometric_correction_set(JLcom/google/googlex/gcam/RawFinishParams;I)V
+.end method
+
+.method public static final native RawFinishParams_icc_output_profile_get(JLcom/google/googlex/gcam/RawFinishParams;)I
+.end method
+
+.method public static final native RawFinishParams_icc_output_profile_set(JLcom/google/googlex/gcam/RawFinishParams;I)V
 .end method
 
 .method public static final native RawFinishParams_max_black_level_offset_get(JLcom/google/googlex/gcam/RawFinishParams;)F
@@ -2930,10 +3068,13 @@
 .method public static final native RawFinishParams_zoom_sharpen_attenuation_set(JLcom/google/googlex/gcam/RawFinishParams;JLcom/google/googlex/gcam/FloatSmoothKeyValueMap;)V
 .end method
 
-.method public static final native RawImageCallback_ImageReady(JLcom/google/googlex/gcam/RawImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/RawImage;)V
+.method public static final native RawFinishPreview__SWIG_0(Ljava/lang/String;JLcom/google/googlex/gcam/RawReadView;JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/SpatialGainMap;JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/NormalizedRect;IIIJLcom/google/googlex/gcam/Tuning;FFFJJ)J
 .end method
 
-.method public static final native RawImageCallback_PreallocatedReady(JLcom/google/googlex/gcam/RawImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/RawReadView;)V
+.method public static final native RawFinishPreview__SWIG_1(JLcom/google/googlex/gcam/RawReadView;JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/SpatialGainMap;JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/NormalizedRect;IIIJLcom/google/googlex/gcam/NormalizedRect;JLcom/google/googlex/gcam/WeightedNormalizedRectVector;F)J
+.end method
+
+.method public static final native RawImageCallback_ImageReady(JLcom/google/googlex/gcam/RawImageCallback;IJLcom/google/googlex/gcam/ExifMetadata;JLcom/google/googlex/gcam/RawImage;)V
 .end method
 
 .method public static final native RawImageCallback_change_ownership(Lcom/google/googlex/gcam/RawImageCallback;JZ)V
@@ -2985,24 +3126,6 @@
 .end method
 
 .method public static final native RawMergeParams_temporal_strength_set(JLcom/google/googlex/gcam/RawMergeParams;JLcom/google/googlex/gcam/FloatSmoothKeyValueMap;)V
-.end method
-
-.method public static final native RawNoiseModelFromDngNoiseModel([J[FFJLcom/google/googlex/gcam/RawNoiseModel;)V
-.end method
-
-.method public static final native RawNoiseModel_FromDngNoiseModel(JLcom/google/googlex/gcam/DngNoiseModel;FF)J
-.end method
-
-.method public static final native RawNoiseModel_offset_get(JLcom/google/googlex/gcam/RawNoiseModel;)F
-.end method
-
-.method public static final native RawNoiseModel_offset_set(JLcom/google/googlex/gcam/RawNoiseModel;F)V
-.end method
-
-.method public static final native RawNoiseModel_scale_get(JLcom/google/googlex/gcam/RawNoiseModel;)F
-.end method
-
-.method public static final native RawNoiseModel_scale_set(JLcom/google/googlex/gcam/RawNoiseModel;F)V
 .end method
 
 .method public static final native RawReadView_BitsPerPixel(JLcom/google/googlex/gcam/RawReadView;)I
@@ -3095,31 +3218,22 @@
 .method public static final native RawWriteView_unpacked_write_view(JLcom/google/googlex/gcam/RawWriteView;)J
 .end method
 
-.method public static final native RevTonemap_Check(JLcom/google/googlex/gcam/RevTonemap;)Z
+.method public static final native ReadDngMetadata(Ljava/lang/String;JLcom/google/googlex/gcam/ExifMetadata;)Z
 .end method
 
-.method public static final native RevTonemap_Clear(JLcom/google/googlex/gcam/RevTonemap;)V
-.end method
-
-.method public static final native RevTonemap_Invalidate(JLcom/google/googlex/gcam/RevTonemap;)V
-.end method
-
-.method public static final native RevTonemap_values_get(JLcom/google/googlex/gcam/RevTonemap;)[I
-.end method
-
-.method public static final native RevTonemap_values_set(JLcom/google/googlex/gcam/RevTonemap;[I)V
+.method public static final native ReadDngMetadataFromMemory(JJJLcom/google/googlex/gcam/ExifMetadata;)Z
 .end method
 
 .method public static final native ReverseRotation(I)I
-.end method
-
-.method public static final native ReverseTonemapCurve(JLcom/google/googlex/gcam/Tonemap;)J
 .end method
 
 .method public static final native RggbPositions(IJJJJJJJJ)V
 .end method
 
 .method public static final native RotateCoordinates(IIIIIJJ)V
+.end method
+
+.method public static final native RotateNormalizedCoordinates(FFIJJ)V
 .end method
 
 .method public static final native RowPattern_amplitude_get(JLcom/google/googlex/gcam/RowPattern;)F
@@ -3254,6 +3368,18 @@
 .method public static final native ShotCallbacks_final_image_callback_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/FinalImageCallback;)V
 .end method
 
+.method public static final native ShotCallbacks_final_image_rgb_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+.end method
+
+.method public static final native ShotCallbacks_final_image_rgb_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientInterleavedU8Allocator;)V
+.end method
+
+.method public static final native ShotCallbacks_final_image_yuv_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+.end method
+
+.method public static final native ShotCallbacks_final_image_yuv_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientYuvAllocator;)V
+.end method
+
 .method public static final native ShotCallbacks_finished_callback_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
 .end method
 
@@ -3272,6 +3398,12 @@
 .method public static final native ShotCallbacks_merged_dng_callback_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/EncodedBlobCallback;)V
 .end method
 
+.method public static final native ShotCallbacks_merged_pd_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+.end method
+
+.method public static final native ShotCallbacks_merged_pd_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientInterleavedU16Allocator;)V
+.end method
+
 .method public static final native ShotCallbacks_merged_pd_callback_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
 .end method
 
@@ -3284,10 +3416,28 @@
 .method public static final native ShotCallbacks_merged_raw_image_callback_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/RawImageCallback;)V
 .end method
 
+.method public static final native ShotCallbacks_mutable_merged_raw_callback_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+.end method
+
+.method public static final native ShotCallbacks_mutable_merged_raw_callback_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/PlanarRawImageCallback;)V
+.end method
+
 .method public static final native ShotCallbacks_postview_callback_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
 .end method
 
 .method public static final native ShotCallbacks_postview_callback_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/PostviewCallback;)V
+.end method
+
+.method public static final native ShotCallbacks_postview_rgb_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+.end method
+
+.method public static final native ShotCallbacks_postview_rgb_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientInterleavedU8Allocator;)V
+.end method
+
+.method public static final native ShotCallbacks_postview_yuv_allocator_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
+.end method
+
+.method public static final native ShotCallbacks_postview_yuv_allocator_set(JLcom/google/googlex/gcam/ShotCallbacks;JLcom/google/googlex/gcam/ClientYuvAllocator;)V
 .end method
 
 .method public static final native ShotCallbacks_progress_callback_get(JLcom/google/googlex/gcam/ShotCallbacks;)J
@@ -3363,6 +3513,12 @@
 .end method
 
 .method public static final native ShotLogData_cpu_usage_factor_set(JLcom/google/googlex/gcam/ShotLogData;F)V
+.end method
+
+.method public static final native ShotLogData_executed_finish_on_get(JLcom/google/googlex/gcam/ShotLogData;)I
+.end method
+
+.method public static final native ShotLogData_executed_finish_on_set(JLcom/google/googlex/gcam/ShotLogData;I)V
 .end method
 
 .method public static final native ShotLogData_final_image_callback_time_get(JLcom/google/googlex/gcam/ShotLogData;)F
@@ -3467,12 +3623,6 @@
 .method public static final native ShotLogData_short_exp_adjustment_factor_set(JLcom/google/googlex/gcam/ShotLogData;F)V
 .end method
 
-.method public static final native ShotLogData_synthetic_exposure_count_get(JLcom/google/googlex/gcam/ShotLogData;)I
-.end method
-
-.method public static final native ShotLogData_synthetic_exposure_count_set(JLcom/google/googlex/gcam/ShotLogData;I)V
-.end method
-
 .method public static final native ShotLogData_time_to_postview_get(JLcom/google/googlex/gcam/ShotLogData;)F
 .end method
 
@@ -3483,12 +3633,6 @@
 .end method
 
 .method public static final native ShotLogData_time_to_shot_set(JLcom/google/googlex/gcam/ShotLogData;F)V
-.end method
-
-.method public static final native ShotLogData_used_hexagon_get(JLcom/google/googlex/gcam/ShotLogData;)Z
-.end method
-
-.method public static final native ShotLogData_used_hexagon_set(JLcom/google/googlex/gcam/ShotLogData;Z)V
 .end method
 
 .method public static final native ShotLogData_was_payload_frame_merged_get(JLcom/google/googlex/gcam/ShotLogData;)J
@@ -3510,9 +3654,6 @@
 .end method
 
 .method public static final native ShotParams_Check(JLcom/google/googlex/gcam/ShotParams;JLcom/google/googlex/gcam/InitParams;JLcom/google/googlex/gcam/StaticMetadata;)Z
-.end method
-
-.method public static final native ShotParams_Clear(JLcom/google/googlex/gcam/ShotParams;)V
 .end method
 
 .method public static final native ShotParams_DeserializeFromString(JLcom/google/googlex/gcam/ShotParams;Ljava/lang/String;)Z
@@ -3587,22 +3728,22 @@
 .method public static final native ShotParams_full_metering_sweep_frame_count_set(JLcom/google/googlex/gcam/ShotParams;I)V
 .end method
 
-.method public static final native ShotParams_full_sized_merged_output_get(JLcom/google/googlex/gcam/ShotParams;)Z
-.end method
-
-.method public static final native ShotParams_full_sized_merged_output_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-.end method
-
 .method public static final native ShotParams_generate_jpg_thumbnail_get(JLcom/google/googlex/gcam/ShotParams;)Z
 .end method
 
 .method public static final native ShotParams_generate_jpg_thumbnail_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 .end method
 
-.method public static final native ShotParams_icc_profile_override_get(JLcom/google/googlex/gcam/ShotParams;)I
+.method public static final native ShotParams_geometric_correction_override_get(JLcom/google/googlex/gcam/ShotParams;)I
 .end method
 
-.method public static final native ShotParams_icc_profile_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+.method public static final native ShotParams_geometric_correction_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+.end method
+
+.method public static final native ShotParams_icc_output_profile_override_get(JLcom/google/googlex/gcam/ShotParams;)I
+.end method
+
+.method public static final native ShotParams_icc_output_profile_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
 .end method
 
 .method public static final native ShotParams_image_rotation_get(JLcom/google/googlex/gcam/ShotParams;)I
@@ -3633,6 +3774,12 @@
 .end method
 
 .method public static final native ShotParams_previous_viewfinder_wb_set(JLcom/google/googlex/gcam/ShotParams;JLcom/google/googlex/gcam/AwbInfo;)V
+.end method
+
+.method public static final native ShotParams_raw_cropping_override_get(JLcom/google/googlex/gcam/ShotParams;)I
+.end method
+
+.method public static final native ShotParams_raw_cropping_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
 .end method
 
 .method public static final native ShotParams_resampling_method_override_get(JLcom/google/googlex/gcam/ShotParams;)I
@@ -3671,6 +3818,9 @@
 .method public static final native ShotParams_zsl_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 .end method
 
+.method public static final native ShouldCropBeforeMerge(I)Z
+.end method
+
 .method public static final native SimpleCallback_Run(JLcom/google/googlex/gcam/SimpleCallback;)V
 .end method
 
@@ -3680,16 +3830,16 @@
 .method public static final native SimpleCallback_director_connect(Lcom/google/googlex/gcam/SimpleCallback;JZZ)V
 .end method
 
-.method public static final native SmoothValuesU16(JIIIFZ)V
-.end method
-
-.method public static final native SmoothValuesU8(JIIIFZ)V
-.end method
-
 .method public static final native SpatialGainMap_Check(JLcom/google/googlex/gcam/SpatialGainMap;J)Z
 .end method
 
 .method public static final native SpatialGainMap_CreateFromBuffer(J)J
+.end method
+
+.method public static final native SpatialGainMap_CreateFromFile(Ljava/lang/String;)J
+.end method
+
+.method public static final native SpatialGainMap_Empty(JLcom/google/googlex/gcam/SpatialGainMap;)Z
 .end method
 
 .method public static final native SpatialGainMap_ForceScaleBy(JLcom/google/googlex/gcam/SpatialGainMap;JLcom/google/googlex/gcam/SpatialGainMap;)V
@@ -3710,7 +3860,7 @@
 .method public static final native SpatialGainMap_ReadRggb(JLcom/google/googlex/gcam/SpatialGainMap;III)F
 .end method
 
-.method public static final native SpatialGainMap_ResizeAndCrop(JLcom/google/googlex/gcam/SpatialGainMap;IIJLcom/google/googlex/gcam/NormalizedRect;Z)J
+.method public static final native SpatialGainMap_ResizeAndCrop(JLcom/google/googlex/gcam/SpatialGainMap;IIJLcom/google/googlex/gcam/NormalizedRect;)J
 .end method
 
 .method public static final native SpatialGainMap_ScaleBy(JLcom/google/googlex/gcam/SpatialGainMap;JLcom/google/googlex/gcam/SpatialGainMap;)V
@@ -3812,12 +3962,6 @@
 .method public static final native StaticMetadata_black_levels_bayer_set(JLcom/google/googlex/gcam/StaticMetadata;[F)V
 .end method
 
-.method public static final native StaticMetadata_color_calibration_get(JLcom/google/googlex/gcam/StaticMetadata;)J
-.end method
-
-.method public static final native StaticMetadata_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/ColorCalibrationVector;)V
-.end method
-
 .method public static final native StaticMetadata_device_get(JLcom/google/googlex/gcam/StaticMetadata;)Ljava/lang/String;
 .end method
 
@@ -3828,6 +3972,12 @@
 .end method
 
 .method public static final native StaticMetadata_device_set(JLcom/google/googlex/gcam/StaticMetadata;Ljava/lang/String;)V
+.end method
+
+.method public static final native StaticMetadata_dng_color_calibration_get(JLcom/google/googlex/gcam/StaticMetadata;)J
+.end method
+
+.method public static final native StaticMetadata_dng_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/DngColorCalibrationVector;)V
 .end method
 
 .method public static final native StaticMetadata_frame_raw_max_height_get(JLcom/google/googlex/gcam/StaticMetadata;)I
@@ -3846,18 +3996,6 @@
 .end method
 
 .method public static final native StaticMetadata_frame_readout_time_ms_set(JLcom/google/googlex/gcam/StaticMetadata;F)V
-.end method
-
-.method public static final native StaticMetadata_frame_yuv_max_height_get(JLcom/google/googlex/gcam/StaticMetadata;)I
-.end method
-
-.method public static final native StaticMetadata_frame_yuv_max_height_set(JLcom/google/googlex/gcam/StaticMetadata;I)V
-.end method
-
-.method public static final native StaticMetadata_frame_yuv_max_width_get(JLcom/google/googlex/gcam/StaticMetadata;)I
-.end method
-
-.method public static final native StaticMetadata_frame_yuv_max_width_set(JLcom/google/googlex/gcam/StaticMetadata;I)V
 .end method
 
 .method public static final native StaticMetadata_has_flash_get(JLcom/google/googlex/gcam/StaticMetadata;)Z
@@ -3906,6 +4044,12 @@
 .end method
 
 .method public static final native StaticMetadata_pixel_array_width_set(JLcom/google/googlex/gcam/StaticMetadata;I)V
+.end method
+
+.method public static final native StaticMetadata_qc_color_calibration_get(JLcom/google/googlex/gcam/StaticMetadata;)J
+.end method
+
+.method public static final native StaticMetadata_qc_color_calibration_set(JLcom/google/googlex/gcam/StaticMetadata;JLcom/google/googlex/gcam/QcColorCalibration;)V
 .end method
 
 .method public static final native StaticMetadata_raw_bits_per_pixel_get(JLcom/google/googlex/gcam/StaticMetadata;)I
@@ -3991,268 +4135,210 @@
     return-void
 .end method
 
-.method public static SwigDirector_BaseFrameCallback_Run(Lcom/google/googlex/gcam/BaseFrameCallback;JIJ)V
-    .locals 3
+.method public static SwigDirector_BaseFrameCallback_Run(Lcom/google/googlex/gcam/BaseFrameCallback;IIJ)V
+    .locals 1
 
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, v0, p3, p4, p5}, Lcom/google/googlex/gcam/BaseFrameCallback;->Run(Lcom/google/googlex/gcam/IShot;IJ)V
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/googlex/gcam/BaseFrameCallback;->Run(IIJ)V
 
     return-void
+.end method
 
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
+.method public static SwigDirector_BurstCallback_Run(Lcom/google/googlex/gcam/BurstCallback;IJ)V
+    .locals 2
+
+    new-instance v0, Lcom/google/googlex/gcam/ShotLogData;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p1, p2, v1}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
+    invoke-direct {v0, p2, p3, v1}, Lcom/google/googlex/gcam/ShotLogData;-><init>(JZ)V
 
-    goto :goto_0
-.end method
-
-.method public static SwigDirector_BurstCallback_Run(Lcom/google/googlex/gcam/BurstCallback;JJ)V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    new-instance v1, Lcom/google/googlex/gcam/ShotLogData;
-
-    invoke-direct {v1, p3, p4, v2}, Lcom/google/googlex/gcam/ShotLogData;-><init>(JZ)V
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/googlex/gcam/BurstCallback;->Run(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/ShotLogData;)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/googlex/gcam/BurstCallback;->Run(ILcom/google/googlex/gcam/ShotLogData;)V
 
     return-void
-
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v0, p1, p2, v2}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
 .end method
 
-.method public static SwigDirector_EncodedBlobCallback_Run(Lcom/google/googlex/gcam/EncodedBlobCallback;JJJII)V
-    .locals 9
+.method public static SwigDirector_ClientInterleavedU16Allocator_Allocate(Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;III)J
+    .locals 2
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;->Allocate(III)Lcom/google/googlex/gcam/InterleavedU16Allocation;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/googlex/gcam/InterleavedU16Allocation;->getCPtr(Lcom/google/googlex/gcam/InterleavedU16Allocation;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static SwigDirector_ClientInterleavedU16Allocator_Release(Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;J)V
+    .locals 1
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/googlex/gcam/ClientInterleavedU16Allocator;->Release(J)V
+
+    return-void
+.end method
+
+.method public static SwigDirector_ClientInterleavedU8Allocator_Allocate(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;III)J
+    .locals 2
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;->Allocate(III)Lcom/google/googlex/gcam/InterleavedU8Allocation;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/googlex/gcam/InterleavedU8Allocation;->getCPtr(Lcom/google/googlex/gcam/InterleavedU8Allocation;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static SwigDirector_ClientInterleavedU8Allocator_Release(Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;J)V
+    .locals 1
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/googlex/gcam/ClientInterleavedU8Allocator;->Release(J)V
+
+    return-void
+.end method
+
+.method public static SwigDirector_ClientRawAllocator_Allocate(Lcom/google/googlex/gcam/ClientRawAllocator;III)J
+    .locals 2
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/googlex/gcam/ClientRawAllocator;->Allocate(III)Lcom/google/googlex/gcam/RawAllocation;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/googlex/gcam/RawAllocation;->getCPtr(Lcom/google/googlex/gcam/RawAllocation;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static SwigDirector_ClientRawAllocator_Release(Lcom/google/googlex/gcam/ClientRawAllocator;J)V
+    .locals 1
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/googlex/gcam/ClientRawAllocator;->Release(J)V
+
+    return-void
+.end method
+
+.method public static SwigDirector_ClientYuvAllocator_Allocate(Lcom/google/googlex/gcam/ClientYuvAllocator;III)J
+    .locals 2
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/googlex/gcam/ClientYuvAllocator;->Allocate(III)Lcom/google/googlex/gcam/YuvAllocation;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/googlex/gcam/YuvAllocation;->getCPtr(Lcom/google/googlex/gcam/YuvAllocation;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static SwigDirector_ClientYuvAllocator_Release(Lcom/google/googlex/gcam/ClientYuvAllocator;J)V
+    .locals 1
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/googlex/gcam/ClientYuvAllocator;->Release(J)V
+
+    return-void
+.end method
+
+.method public static SwigDirector_EncodedBlobCallback_Run(Lcom/google/googlex/gcam/EncodedBlobCallback;IJJII)V
+    .locals 8
 
     const-wide/16 v0, 0x0
 
-    cmp-long v0, p1, v0
+    cmp-long v0, p2, v0
 
     if-nez v0, :cond_0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p3, v0
-
-    if-nez v0, :cond_1
 
     const/4 v3, 0x0
 
-    :goto_1
+    :goto_0
     move-object v1, p0
 
-    move-wide v4, p5
+    move v2, p1
 
-    move/from16 v6, p7
+    move-wide v4, p4
 
-    move/from16 v7, p8
+    move v6, p6
 
-    invoke-virtual/range {v1 .. v7}, Lcom/google/googlex/gcam/EncodedBlobCallback;->Run(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;JII)V
+    move v7, p7
+
+    invoke-virtual/range {v1 .. v7}, Lcom/google/googlex/gcam/EncodedBlobCallback;->Run(ILcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;JII)V
 
     return-void
 
     :cond_0
-    new-instance v2, Lcom/google/googlex/gcam/IShot;
-
-    const/4 v0, 0x0
-
-    invoke-direct {v2, p1, p2, v0}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
-
-    :cond_1
     new-instance v3, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;
 
     const/4 v0, 0x0
 
-    invoke-direct {v3, p3, p4, v0}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;-><init>(JZ)V
+    invoke-direct {v3, p2, p3, v0}, Lcom/google/googlex/gcam/SWIGTYPE_p_unsigned_char;-><init>(JZ)V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
-.method public static SwigDirector_FinalImageCallback_PreallocatedRgbReady(Lcom/google/googlex/gcam/FinalImageCallback;JJJI)V
-    .locals 5
+.method public static SwigDirector_FinalImageCallback_RgbReady(Lcom/google/googlex/gcam/FinalImageCallback;IJJI)V
+    .locals 4
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const-wide/16 v0, 0x0
 
-    cmp-long v0, p1, v0
+    cmp-long v0, p2, v0
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     :goto_0
-    new-instance v1, Lcom/google/googlex/gcam/InterleavedReadViewU8;
+    new-instance v1, Lcom/google/googlex/gcam/ExifMetadata;
 
-    invoke-direct {v1, p3, p4, v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;-><init>(JZ)V
+    invoke-direct {v1, p4, p5, v2}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
 
-    new-instance v2, Lcom/google/googlex/gcam/ExifMetadata;
-
-    invoke-direct {v2, p5, p6, v3}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
-
-    invoke-virtual {p0, v0, v1, v2, p7}, Lcom/google/googlex/gcam/FinalImageCallback;->PreallocatedRgbReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/InterleavedReadViewU8;Lcom/google/googlex/gcam/ExifMetadata;I)V
+    invoke-virtual {p0, p1, v0, v1, p6}, Lcom/google/googlex/gcam/FinalImageCallback;->RgbReady(ILcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ExifMetadata;I)V
 
     return-void
 
     :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v0, p1, p2, v3}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
-.end method
-
-.method public static SwigDirector_FinalImageCallback_PreallocatedYuvReady(Lcom/google/googlex/gcam/FinalImageCallback;JJJI)V
-    .locals 5
-
-    const/4 v3, 0x0
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    new-instance v1, Lcom/google/googlex/gcam/YuvReadView;
-
-    invoke-direct {v1, p3, p4, v3}, Lcom/google/googlex/gcam/YuvReadView;-><init>(JZ)V
-
-    new-instance v2, Lcom/google/googlex/gcam/ExifMetadata;
-
-    invoke-direct {v2, p5, p6, v3}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
-
-    invoke-virtual {p0, v0, v1, v2, p7}, Lcom/google/googlex/gcam/FinalImageCallback;->PreallocatedYuvReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/YuvReadView;Lcom/google/googlex/gcam/ExifMetadata;I)V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v0, p1, p2, v3}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
-.end method
-
-.method public static SwigDirector_FinalImageCallback_RgbReady(Lcom/google/googlex/gcam/FinalImageCallback;JJJI)V
-    .locals 7
-
-    const-wide/16 v4, 0x0
-
-    const/4 v0, 0x0
-
-    const/4 v3, 0x0
-
-    cmp-long v1, p1, v4
-
-    if-nez v1, :cond_0
-
-    move-object v1, v0
-
-    :goto_0
-    cmp-long v2, p3, v4
-
-    if-nez v2, :cond_1
-
-    :goto_1
-    new-instance v2, Lcom/google/googlex/gcam/ExifMetadata;
-
-    invoke-direct {v2, p5, p6, v3}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
-
-    invoke-virtual {p0, v1, v0, v2, p7}, Lcom/google/googlex/gcam/FinalImageCallback;->RgbReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ExifMetadata;I)V
-
-    return-void
-
-    :cond_0
-    new-instance v1, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v1, p1, p2, v3}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
-
-    :cond_1
     new-instance v0, Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    invoke-direct {v0, p3, p4, v3}, Lcom/google/googlex/gcam/InterleavedImageU8;-><init>(JZ)V
+    invoke-direct {v0, p2, p3, v2}, Lcom/google/googlex/gcam/InterleavedImageU8;-><init>(JZ)V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
-.method public static SwigDirector_FinalImageCallback_YuvReady(Lcom/google/googlex/gcam/FinalImageCallback;JJJI)V
-    .locals 7
+.method public static SwigDirector_FinalImageCallback_YuvReady(Lcom/google/googlex/gcam/FinalImageCallback;IJJI)V
+    .locals 4
 
-    const-wide/16 v4, 0x0
+    const/4 v2, 0x0
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p2, v0
+
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
-    cmp-long v1, p1, v4
-
-    if-nez v1, :cond_0
-
-    move-object v1, v0
-
     :goto_0
-    cmp-long v2, p3, v4
+    new-instance v1, Lcom/google/googlex/gcam/ExifMetadata;
 
-    if-nez v2, :cond_1
+    invoke-direct {v1, p4, p5, v2}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
 
-    :goto_1
-    new-instance v2, Lcom/google/googlex/gcam/ExifMetadata;
-
-    invoke-direct {v2, p5, p6, v3}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
-
-    invoke-virtual {p0, v1, v0, v2, p7}, Lcom/google/googlex/gcam/FinalImageCallback;->YuvReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ExifMetadata;I)V
+    invoke-virtual {p0, p1, v0, v1, p6}, Lcom/google/googlex/gcam/FinalImageCallback;->YuvReady(ILcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ExifMetadata;I)V
 
     return-void
 
     :cond_0
-    new-instance v1, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v1, p1, p2, v3}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
-
-    :cond_1
     new-instance v0, Lcom/google/googlex/gcam/YuvImage;
 
-    invoke-direct {v0, p3, p4, v3}, Lcom/google/googlex/gcam/YuvImage;-><init>(JZ)V
+    invoke-direct {v0, p2, p3, v2}, Lcom/google/googlex/gcam/YuvImage;-><init>(JZ)V
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public static SwigDirector_GoudaCompleteCallback_Run(Lcom/google/googlex/gcam/GoudaCompleteCallback;J)V
@@ -4263,8 +4349,8 @@
     return-void
 .end method
 
-.method public static SwigDirector_GoudaImageCallback_RgbReady(Lcom/google/googlex/gcam/GoudaImageCallback;JJILjava/lang/String;)V
-    .locals 7
+.method public static SwigDirector_GoudaImageCallback_RgbReady(Lcom/google/googlex/gcam/GoudaImageCallback;JJILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 9
 
     const-wide/16 v0, 0x0
 
@@ -4283,7 +4369,11 @@
 
     move-object v6, p6
 
-    invoke-virtual/range {v1 .. v6}, Lcom/google/googlex/gcam/GoudaImageCallback;->RgbReady(JLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;)V
+    move-object/from16 v7, p7
+
+    move-object/from16 v8, p8
+
+    invoke-virtual/range {v1 .. v8}, Lcom/google/googlex/gcam/GoudaImageCallback;->RgbReady(JLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
@@ -4297,8 +4387,8 @@
     goto :goto_0
 .end method
 
-.method public static SwigDirector_GoudaImageCallback_YuvReady(Lcom/google/googlex/gcam/GoudaImageCallback;JJILjava/lang/String;)V
-    .locals 7
+.method public static SwigDirector_GoudaImageCallback_YuvReady(Lcom/google/googlex/gcam/GoudaImageCallback;JJILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 9
 
     const-wide/16 v0, 0x0
 
@@ -4317,7 +4407,11 @@
 
     move-object v6, p6
 
-    invoke-virtual/range {v1 .. v6}, Lcom/google/googlex/gcam/GoudaImageCallback;->YuvReady(JLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;)V
+    move-object/from16 v7, p7
+
+    move-object/from16 v8, p8
+
+    invoke-virtual/range {v1 .. v8}, Lcom/google/googlex/gcam/GoudaImageCallback;->YuvReady(JLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
@@ -4355,232 +4449,90 @@
     return-void
 .end method
 
-.method public static SwigDirector_PdImageCallback_ImageReady(Lcom/google/googlex/gcam/PdImageCallback;JJ)V
-    .locals 7
+.method public static SwigDirector_PdImageCallback_ImageReady(Lcom/google/googlex/gcam/PdImageCallback;IJ)V
+    .locals 2
 
-    const-wide/16 v4, 0x0
-
-    const/4 v0, 0x0
-
-    const/4 v3, 0x0
-
-    cmp-long v1, p1, v4
-
-    if-nez v1, :cond_0
-
-    move-object v1, v0
-
-    :goto_0
-    cmp-long v2, p3, v4
-
-    if-nez v2, :cond_1
-
-    :goto_1
-    invoke-virtual {p0, v1, v0}, Lcom/google/googlex/gcam/PdImageCallback;->ImageReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/InterleavedImageU16;)V
-
-    return-void
-
-    :cond_0
-    new-instance v1, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v1, p1, p2, v3}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Lcom/google/googlex/gcam/InterleavedImageU16;
-
-    invoke-direct {v0, p3, p4, v3}, Lcom/google/googlex/gcam/InterleavedImageU16;-><init>(JZ)V
-
-    goto :goto_1
-.end method
-
-.method public static SwigDirector_PdImageCallback_MergePdFailed(Lcom/google/googlex/gcam/PdImageCallback;J)V
-    .locals 3
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, v0}, Lcom/google/googlex/gcam/PdImageCallback;->MergePdFailed(Lcom/google/googlex/gcam/IShot;)V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
+    new-instance v0, Lcom/google/googlex/gcam/InterleavedReadViewU16;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p1, p2, v1}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
+    invoke-direct {v0, p2, p3, v1}, Lcom/google/googlex/gcam/InterleavedReadViewU16;-><init>(JZ)V
 
-    goto :goto_0
-.end method
-
-.method public static SwigDirector_PostviewCallback_Run(Lcom/google/googlex/gcam/PostviewCallback;JJJI)V
-    .locals 11
-
-    const-wide/16 v8, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v6, 0x0
-
-    cmp-long v3, p1, v8
-
-    if-nez v3, :cond_0
-
-    move-object v4, v2
-
-    :goto_0
-    cmp-long v3, p3, v8
-
-    if-nez v3, :cond_1
-
-    move-object v3, v2
-
-    :goto_1
-    cmp-long v5, p5, v8
-
-    if-nez v5, :cond_2
-
-    :goto_2
-    move/from16 v0, p7
-
-    invoke-virtual {p0, v4, v3, v2, v0}, Lcom/google/googlex/gcam/PostviewCallback;->Run(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/InterleavedImageU8;I)V
+    invoke-virtual {p0, p1, v0}, Lcom/google/googlex/gcam/PdImageCallback;->ImageReady(ILcom/google/googlex/gcam/InterleavedReadViewU16;)V
 
     return-void
-
-    :cond_0
-    new-instance v3, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v3, p1, p2, v6}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    move-object v4, v3
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v3, Lcom/google/googlex/gcam/YuvImage;
-
-    invoke-direct {v3, p3, p4, v6}, Lcom/google/googlex/gcam/YuvImage;-><init>(JZ)V
-
-    goto :goto_1
-
-    :cond_2
-    new-instance v2, Lcom/google/googlex/gcam/InterleavedImageU8;
-
-    move-wide/from16 v0, p5
-
-    invoke-direct {v2, v0, v1, v6}, Lcom/google/googlex/gcam/InterleavedImageU8;-><init>(JZ)V
-
-    goto :goto_2
 .end method
 
-.method public static SwigDirector_ProgressCallback_Run(Lcom/google/googlex/gcam/ProgressCallback;JF)V
-    .locals 3
+.method public static SwigDirector_PdImageCallback_MergePdFailed(Lcom/google/googlex/gcam/PdImageCallback;I)V
+    .locals 0
 
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, v0, p3}, Lcom/google/googlex/gcam/ProgressCallback;->Run(Lcom/google/googlex/gcam/IShot;F)V
+    invoke-virtual {p0, p1}, Lcom/google/googlex/gcam/PdImageCallback;->MergePdFailed(I)V
 
     return-void
+.end method
 
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
+.method public static SwigDirector_PostviewCallback_RgbReady(Lcom/google/googlex/gcam/PostviewCallback;IJI)V
+    .locals 2
+
+    new-instance v0, Lcom/google/googlex/gcam/InterleavedReadViewU8;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p1, p2, v1}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
+    invoke-direct {v0, p2, p3, v1}, Lcom/google/googlex/gcam/InterleavedReadViewU8;-><init>(JZ)V
 
-    goto :goto_0
+    invoke-virtual {p0, p1, v0, p4}, Lcom/google/googlex/gcam/PostviewCallback;->RgbReady(ILcom/google/googlex/gcam/InterleavedReadViewU8;I)V
+
+    return-void
 .end method
 
-.method public static SwigDirector_RawImageCallback_ImageReady(Lcom/google/googlex/gcam/RawImageCallback;JJJ)V
-    .locals 9
+.method public static SwigDirector_PostviewCallback_YuvReady(Lcom/google/googlex/gcam/PostviewCallback;IJI)V
+    .locals 2
 
-    const-wide/16 v6, 0x0
+    new-instance v0, Lcom/google/googlex/gcam/YuvReadView;
 
     const/4 v1, 0x0
+
+    invoke-direct {v0, p2, p3, v1}, Lcom/google/googlex/gcam/YuvReadView;-><init>(JZ)V
+
+    invoke-virtual {p0, p1, v0, p4}, Lcom/google/googlex/gcam/PostviewCallback;->YuvReady(ILcom/google/googlex/gcam/YuvReadView;I)V
+
+    return-void
+.end method
+
+.method public static SwigDirector_ProgressCallback_Run(Lcom/google/googlex/gcam/ProgressCallback;IF)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/googlex/gcam/ProgressCallback;->Run(IF)V
+
+    return-void
+.end method
+
+.method public static SwigDirector_RawImageCallback_ImageReady(Lcom/google/googlex/gcam/RawImageCallback;IJJ)V
+    .locals 6
 
     const/4 v4, 0x0
 
-    cmp-long v0, p1, v6
+    new-instance v1, Lcom/google/googlex/gcam/ExifMetadata;
 
-    if-nez v0, :cond_0
+    invoke-direct {v1, p2, p3, v4}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
 
-    move-object v0, v1
+    const-wide/16 v2, 0x0
 
-    :goto_0
-    new-instance v2, Lcom/google/googlex/gcam/ExifMetadata;
-
-    invoke-direct {v2, p3, p4, v4}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
-
-    cmp-long v3, p5, v6
-
-    if-nez v3, :cond_1
-
-    :goto_1
-    invoke-virtual {p0, v0, v2, v1}, Lcom/google/googlex/gcam/RawImageCallback;->ImageReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/ExifMetadata;Lcom/google/googlex/gcam/RawImage;)V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
-
-    invoke-direct {v0, p1, p2, v4}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v1, Lcom/google/googlex/gcam/RawImage;
-
-    invoke-direct {v1, p5, p6, v4}, Lcom/google/googlex/gcam/RawImage;-><init>(JZ)V
-
-    goto :goto_1
-.end method
-
-.method public static SwigDirector_RawImageCallback_PreallocatedReady(Lcom/google/googlex/gcam/RawImageCallback;JJJ)V
-    .locals 5
-
-    const/4 v3, 0x0
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
+    cmp-long v0, p4, v2
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     :goto_0
-    new-instance v1, Lcom/google/googlex/gcam/ExifMetadata;
-
-    invoke-direct {v1, p3, p4, v3}, Lcom/google/googlex/gcam/ExifMetadata;-><init>(JZ)V
-
-    new-instance v2, Lcom/google/googlex/gcam/RawReadView;
-
-    invoke-direct {v2, p5, p6, v3}, Lcom/google/googlex/gcam/RawReadView;-><init>(JZ)V
-
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/googlex/gcam/RawImageCallback;->PreallocatedReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/ExifMetadata;Lcom/google/googlex/gcam/RawReadView;)V
+    invoke-virtual {p0, p1, v1, v0}, Lcom/google/googlex/gcam/RawImageCallback;->ImageReady(ILcom/google/googlex/gcam/ExifMetadata;Lcom/google/googlex/gcam/RawImage;)V
 
     return-void
 
     :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/IShot;
+    new-instance v0, Lcom/google/googlex/gcam/RawImage;
 
-    invoke-direct {v0, p1, p2, v3}, Lcom/google/googlex/gcam/IShot;-><init>(JZ)V
+    invoke-direct {v0, p4, p5, v4}, Lcom/google/googlex/gcam/RawImage;-><init>(JZ)V
 
     goto :goto_0
 .end method
@@ -4599,12 +4551,6 @@
     invoke-virtual {p0}, Lcom/google/googlex/gcam/SimpleCallback;->Run()V
 
     return-void
-.end method
-
-.method public static final native TenBitRevTonemap(JLcom/google/googlex/gcam/RevTonemap;[I)V
-.end method
-
-.method public static final native TenBitTonemap(JLcom/google/googlex/gcam/Tonemap;[I)V
 .end method
 
 .method public static final native TetAwbPair_first_get(JLcom/google/googlex/gcam/TetAwbPair;)F
@@ -4697,6 +4643,9 @@
 .method public static final native TetWaypoint_overall_gain_set(JLcom/google/googlex/gcam/TetWaypoint;F)V
 .end method
 
+.method public static final native TextToAeState(Ljava/lang/String;)I
+.end method
+
 .method public static final native TextToAeType(Ljava/lang/String;)I
 .end method
 
@@ -4706,6 +4655,9 @@
 .method public static final native TextToBayerPattern(Ljava/lang/String;)I
 .end method
 
+.method public static final native TextToExecuteOn(Ljava/lang/String;)I
+.end method
+
 .method public static final native TextToFlashMetadata(Ljava/lang/String;)I
 .end method
 
@@ -4713,6 +4665,9 @@
 .end method
 
 .method public static final native TextToGcamPixelFormat(Ljava/lang/String;)I
+.end method
+
+.method public static final native TextToGeometricCorrection(Ljava/lang/String;)I
 .end method
 
 .method public static final native TextToHdrMode(Ljava/lang/String;)I
@@ -4725,6 +4680,9 @@
 .end method
 
 .method public static final native TextToLensState(Ljava/lang/String;)I
+.end method
+
+.method public static final native TextToRawCropping(Ljava/lang/String;)I
 .end method
 
 .method public static final native TextToResamplingMethod(Ljava/lang/String;)I
@@ -4760,78 +4718,6 @@
 .method public static final native ToYuvFormat(I)I
 .end method
 
-.method public static final native TonemapFloatControlPointVector_add(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;JLcom/google/googlex/gcam/TonemapFloatControlPoint;)V
-.end method
-
-.method public static final native TonemapFloatControlPointVector_capacity(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;)J
-.end method
-
-.method public static final native TonemapFloatControlPointVector_clear(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;)V
-.end method
-
-.method public static final native TonemapFloatControlPointVector_get(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;I)J
-.end method
-
-.method public static final native TonemapFloatControlPointVector_isEmpty(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;)Z
-.end method
-
-.method public static final native TonemapFloatControlPointVector_reserve(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;J)V
-.end method
-
-.method public static final native TonemapFloatControlPointVector_set(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;IJLcom/google/googlex/gcam/TonemapFloatControlPoint;)V
-.end method
-
-.method public static final native TonemapFloatControlPointVector_size(JLcom/google/googlex/gcam/TonemapFloatControlPointVector;)J
-.end method
-
-.method public static final native TonemapFloatControlPoint_key_get(JLcom/google/googlex/gcam/TonemapFloatControlPoint;)F
-.end method
-
-.method public static final native TonemapFloatControlPoint_key_set(JLcom/google/googlex/gcam/TonemapFloatControlPoint;F)V
-.end method
-
-.method public static final native TonemapFloatControlPoint_value_get(JLcom/google/googlex/gcam/TonemapFloatControlPoint;)F
-.end method
-
-.method public static final native TonemapFloatControlPoint_value_set(JLcom/google/googlex/gcam/TonemapFloatControlPoint;F)V
-.end method
-
-.method public static final native TonemapFloat_Check(JLcom/google/googlex/gcam/TonemapFloat;)Z
-.end method
-
-.method public static final native TonemapFloat_Clear(JLcom/google/googlex/gcam/TonemapFloat;)V
-.end method
-
-.method public static final native TonemapFloat_control_points_get(JLcom/google/googlex/gcam/TonemapFloat;)J
-.end method
-
-.method public static final native TonemapFloat_control_points_set(JLcom/google/googlex/gcam/TonemapFloat;JLcom/google/googlex/gcam/TonemapFloatControlPointVector;)V
-.end method
-
-.method public static final native Tonemap_Check(JLcom/google/googlex/gcam/Tonemap;)Z
-.end method
-
-.method public static final native Tonemap_Clear(JLcom/google/googlex/gcam/Tonemap;)V
-.end method
-
-.method public static final native Tonemap_DeserializeFromString(JLcom/google/googlex/gcam/Tonemap;J)Z
-.end method
-
-.method public static final native Tonemap_Equals(JLcom/google/googlex/gcam/Tonemap;JLcom/google/googlex/gcam/Tonemap;)Z
-.end method
-
-.method public static final native Tonemap_Invalidate(JLcom/google/googlex/gcam/Tonemap;)V
-.end method
-
-.method public static final native Tonemap_SerializeToString(JLcom/google/googlex/gcam/Tonemap;J)V
-.end method
-
-.method public static final native Tonemap_values_get(JLcom/google/googlex/gcam/Tonemap;)[S
-.end method
-
-.method public static final native Tonemap_values_set(JLcom/google/googlex/gcam/Tonemap;[S)V
-.end method
-
 .method public static final native TrackedMemoryAllocate(J)J
 .end method
 
@@ -4865,37 +4751,22 @@
 .method public static final native Tuning_Check(JLcom/google/googlex/gcam/Tuning;)Z
 .end method
 
-.method public static final native Tuning_GetCaptureParams__SWIG_0(JLcom/google/googlex/gcam/Tuning;Z)J
+.method public static final native Tuning_GetCaptureParams(JLcom/google/googlex/gcam/Tuning;)J
 .end method
 
-.method public static final native Tuning_GetCaptureParams__SWIG_1(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/ShotParams;)J
+.method public static final native Tuning_GetColorSatAdj(JLcom/google/googlex/gcam/Tuning;)J
 .end method
 
-.method public static final native Tuning_GetColorSatAdj(JLcom/google/googlex/gcam/Tuning;Z)J
+.method public static final native Tuning_GetMaxOverallGain(JLcom/google/googlex/gcam/Tuning;)F
 .end method
 
-.method public static final native Tuning_GetMaxOverallGain__SWIG_0(JLcom/google/googlex/gcam/Tuning;Z)F
-.end method
-
-.method public static final native Tuning_GetMaxOverallGain__SWIG_1(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/ShotParams;)F
-.end method
-
-.method public static final native Tuning_GetMaxTet__SWIG_0(JLcom/google/googlex/gcam/Tuning;Z)F
-.end method
-
-.method public static final native Tuning_GetMaxTet__SWIG_1(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/ShotParams;)F
+.method public static final native Tuning_GetMaxTet(JLcom/google/googlex/gcam/Tuning;)F
 .end method
 
 .method public static final native Tuning_GetMinExposureTimeMs(JLcom/google/googlex/gcam/Tuning;)F
 .end method
 
 .method public static final native Tuning_GetMinTet(JLcom/google/googlex/gcam/Tuning;)F
-.end method
-
-.method public static final native Tuning_SetInputTonemap__SWIG_0(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/TonemapFloat;I)Z
-.end method
-
-.method public static final native Tuning_SetInputTonemap__SWIG_1(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/Tonemap;)Z
 .end method
 
 .method public static final native Tuning_apply_antibanding_get(JLcom/google/googlex/gcam/Tuning;)Z
@@ -4946,24 +4817,6 @@
 .method public static final native Tuning_ignore_black_pixels_set(JLcom/google/googlex/gcam/Tuning;Z)V
 .end method
 
-.method public static final native Tuning_input_rev_tonemap_get(JLcom/google/googlex/gcam/Tuning;)J
-.end method
-
-.method public static final native Tuning_input_rev_tonemap_set(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/RevTonemap;)V
-.end method
-
-.method public static final native Tuning_input_tonemap_float_get(JLcom/google/googlex/gcam/Tuning;)J
-.end method
-
-.method public static final native Tuning_input_tonemap_float_set(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/TonemapFloat;)V
-.end method
-
-.method public static final native Tuning_input_tonemap_get(JLcom/google/googlex/gcam/Tuning;)J
-.end method
-
-.method public static final native Tuning_input_tonemap_set(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/Tonemap;)V
-.end method
-
 .method public static final native Tuning_max_analog_gain_get(JLcom/google/googlex/gcam/Tuning;)F
 .end method
 
@@ -4980,12 +4833,6 @@
 .end method
 
 .method public static final native Tuning_max_raw_sensor_gain_set(JLcom/google/googlex/gcam/Tuning;F)V
-.end method
-
-.method public static final native Tuning_output_color_sat_yuv_get(JLcom/google/googlex/gcam/Tuning;)J
-.end method
-
-.method public static final native Tuning_output_color_sat_yuv_set(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/ColorSatParams;)V
 .end method
 
 .method public static final native Tuning_raw_finish_params_get(JLcom/google/googlex/gcam/Tuning;)J
@@ -5040,18 +4887,6 @@
 .end method
 
 .method public static final native Tuning_suppress_hot_pixels_set(JLcom/google/googlex/gcam/Tuning;Z)V
-.end method
-
-.method public static final native Tuning_yuv_payload_capture_params_get(JLcom/google/googlex/gcam/Tuning;)J
-.end method
-
-.method public static final native Tuning_yuv_payload_capture_params_set(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/CaptureParams;)V
-.end method
-
-.method public static final native Tuning_yuv_payload_tet_model_get(JLcom/google/googlex/gcam/Tuning;)J
-.end method
-
-.method public static final native Tuning_yuv_payload_tet_model_set(JLcom/google/googlex/gcam/Tuning;JLcom/google/googlex/gcam/TetModel;)V
 .end method
 
 .method public static final native WeightedNormalizedRectVector_add(JLcom/google/googlex/gcam/WeightedNormalizedRectVector;JLcom/google/googlex/gcam/WeightedNormalizedRect;)V
@@ -5228,6 +5063,18 @@
 .method public static final native WriteStringToFile(Ljava/lang/String;Ljava/lang/String;)Z
 .end method
 
+.method public static final native YuvAllocation_image_id_get(JLcom/google/googlex/gcam/YuvAllocation;)J
+.end method
+
+.method public static final native YuvAllocation_image_id_set(JLcom/google/googlex/gcam/YuvAllocation;J)V
+.end method
+
+.method public static final native YuvAllocation_view_get(JLcom/google/googlex/gcam/YuvAllocation;)J
+.end method
+
+.method public static final native YuvAllocation_view_set(JLcom/google/googlex/gcam/YuvAllocation;JLcom/google/googlex/gcam/YuvWriteView;)V
+.end method
+
 .method public static final native YuvFormatsHaveUvSwapped(II)Z
 .end method
 
@@ -5241,9 +5088,6 @@
 .end method
 
 .method public static final native YuvImage_luma_rows(JLcom/google/googlex/gcam/YuvImage;)I
-.end method
-
-.method public static final native YuvPipelineOutputGammaPlusTonecurve()J
 .end method
 
 .method public static final native YuvReadView_FastCrop(JLcom/google/googlex/gcam/YuvReadView;IIII)V
@@ -5351,10 +5195,16 @@
 .method public static final native delete_ClientExifMetadata(J)V
 .end method
 
-.method public static final native delete_ColorCalibration(J)V
+.method public static final native delete_ClientInterleavedU16Allocator(J)V
 .end method
 
-.method public static final native delete_ColorCalibrationVector(J)V
+.method public static final native delete_ClientInterleavedU8Allocator(J)V
+.end method
+
+.method public static final native delete_ClientRawAllocator(J)V
+.end method
+
+.method public static final native delete_ClientYuvAllocator(J)V
 .end method
 
 .method public static final native delete_ColorSatParams(J)V
@@ -5373,6 +5223,12 @@
 .end method
 
 .method public static final native delete_DirtyLensHistory(J)V
+.end method
+
+.method public static final native delete_DngColorCalibration(J)V
+.end method
+
+.method public static final native delete_DngColorCalibrationVector(J)V
 .end method
 
 .method public static final native delete_DngNoiseModel(J)V
@@ -5426,6 +5282,9 @@
 .method public static final native delete_GoudaImageCallback(J)V
 .end method
 
+.method public static final native delete_GoudaOutputFeaturesCallback(J)V
+.end method
+
 .method public static final native delete_GoudaProgressCallback(J)V
 .end method
 
@@ -5471,6 +5330,12 @@
 .method public static final native delete_InterleavedReadViewU8(J)V
 .end method
 
+.method public static final native delete_InterleavedU16Allocation(J)V
+.end method
+
+.method public static final native delete_InterleavedU8Allocation(J)V
+.end method
+
 .method public static final native delete_InterleavedWriteViewU16(J)V
 .end method
 
@@ -5481,6 +5346,18 @@
 .end method
 
 .method public static final native delete_MemoryStateCallback(J)V
+.end method
+
+.method public static final native delete_NewDeleteInterleavedU16Allocator(J)V
+.end method
+
+.method public static final native delete_NewDeleteInterleavedU8Allocator(J)V
+.end method
+
+.method public static final native delete_NewDeleteRawAllocator(J)V
+.end method
+
+.method public static final native delete_NewDeleteYuvAllocator(J)V
 .end method
 
 .method public static final native delete_NormalizedRect(J)V
@@ -5522,10 +5399,7 @@
 .method public static final native delete_PixelRectVector(J)V
 .end method
 
-.method public static final native delete_Point2i(J)V
-.end method
-
-.method public static final native delete_Point2iVector(J)V
+.method public static final native delete_PlanarRawImageCallback(J)V
 .end method
 
 .method public static final native delete_PostviewCallback(J)V
@@ -5535,6 +5409,18 @@
 .end method
 
 .method public static final native delete_ProgressCallback(J)V
+.end method
+
+.method public static final native delete_QcColorCalibration(J)V
+.end method
+
+.method public static final native delete_QcColorCalibration_IlluminantData(J)V
+.end method
+
+.method public static final native delete_QcIlluminantVector(J)V
+.end method
+
+.method public static final native delete_RawAllocation(J)V
 .end method
 
 .method public static final native delete_RawFinishParams(J)V
@@ -5547,9 +5433,6 @@
 .end method
 
 .method public static final native delete_RawMergeParams(J)V
-.end method
-
-.method public static final native delete_RawNoiseModel(J)V
 .end method
 
 .method public static final native delete_RawReadView(J)V
@@ -5565,9 +5448,6 @@
 .end method
 
 .method public static final native delete_RawWriteView(J)V
-.end method
-
-.method public static final native delete_RevTonemap(J)V
 .end method
 
 .method public static final native delete_RowPattern(J)V
@@ -5624,18 +5504,6 @@
 .method public static final native delete_ThreadPriority(J)V
 .end method
 
-.method public static final native delete_Tonemap(J)V
-.end method
-
-.method public static final native delete_TonemapFloat(J)V
-.end method
-
-.method public static final native delete_TonemapFloatControlPoint(J)V
-.end method
-
-.method public static final native delete_TonemapFloatControlPointVector(J)V
-.end method
-
 .method public static final native delete_Tuning(J)V
 .end method
 
@@ -5652,6 +5520,9 @@
 .end method
 
 .method public static final native delete_WeightedPixelRectVector(J)V
+.end method
+
+.method public static final native delete_YuvAllocation(J)V
 .end method
 
 .method public static final native delete_YuvImage(J)V
@@ -5675,6 +5546,15 @@
 .method public static final native free_uint8_p(J)V
 .end method
 
+.method public static final native kBguDownsampleFactor_get()I
+.end method
+
+.method public static final native kChromaLutSizeUV_get()I
+.end method
+
+.method public static final native kChromaLutSizeY_get()I
+.end method
+
 .method public static final native kColorTempUnknown_get()I
 .end method
 
@@ -5682,6 +5562,9 @@
 .end method
 
 .method public static final native kDefaultFullMeteringSweepFrameCount_get()I
+.end method
+
+.method public static final native kDefaultIpuCaRadius_get()I
 .end method
 
 .method public static final native kDefaultJpgQualityThumbnail_get()I
@@ -5699,6 +5582,9 @@
 .method public static final native kDefaultPostviewLongestEdge_get()I
 .end method
 
+.method public static final native kDenoiseFreqCount_get()I
+.end method
+
 .method public static final native kInitParamsFilename_get()Ljava/lang/String;
 .end method
 
@@ -5709,6 +5595,30 @@
 .end method
 
 .method public static final native kInvalidShotId_get()I
+.end method
+
+.method public static final native kIpuRawFinishAlignmentX_get()I
+.end method
+
+.method public static final native kIpuRawFinishAlignmentY_get()I
+.end method
+
+.method public static final native kLegacySensorIdPrimary_get()I
+.end method
+
+.method public static final native kLegacySensorIdSecondary_get()I
+.end method
+
+.method public static final native kLinearYuvPrecision_get()I
+.end method
+
+.method public static final native kLinearYuvWhiteLevel_get()I
+.end method
+
+.method public static final native kLog2ChromaLutSizeUV_get()I
+.end method
+
+.method public static final native kLog2ChromaLutSizeY_get()I
 .end method
 
 .method public static final native kMaxFullMeteringSweepFrames_get()I
@@ -5732,6 +5642,21 @@
 .method public static final native kMaxValidColorTemp_get()I
 .end method
 
+.method public static final native kMeteringBurstFrameMetadataFilename_get()Ljava/lang/String;
+.end method
+
+.method public static final native kMeteringBurstFrameMetadataFilename_set(Ljava/lang/String;)V
+.end method
+
+.method public static final native kMeteringBurstSpecFilename_get()Ljava/lang/String;
+.end method
+
+.method public static final native kMeteringBurstSpecFilename_set(Ljava/lang/String;)V
+.end method
+
+.method public static final native kMinDigitalZoomRatio_get()F
+.end method
+
 .method public static final native kMinFullMeteringSweepFrames_get()I
 .end method
 
@@ -5747,22 +5672,49 @@
 .method public static final native kMinValidColorTemp_get()I
 .end method
 
+.method public static final native kPayloadBurstFrameMetadataFilename_get()Ljava/lang/String;
+.end method
+
+.method public static final native kPayloadBurstFrameMetadataFilename_set(Ljava/lang/String;)V
+.end method
+
+.method public static final native kPayloadBurstSpecFilename_get()Ljava/lang/String;
+.end method
+
+.method public static final native kPayloadBurstSpecFilename_set(Ljava/lang/String;)V
+.end method
+
 .method public static final native kPdCurrentVersion_get()I
+.end method
+
+.method public static final native kRawFinishAlignmentX_get()I
+.end method
+
+.method public static final native kRawFinishAlignmentY_get()I
+.end method
+
+.method public static final native kRawFinishMaxInputWhiteLevel_get()I
+.end method
+
+.method public static final native kRawFinishMinInputWhiteLevel_get()I
+.end method
+
+.method public static final native kRawFinishPrecision_get()I
+.end method
+
+.method public static final native kRawFinishUseBgu_get()Z
+.end method
+
+.method public static final native kRawFinishWhiteLevel_get()I
 .end method
 
 .method public static final native kRawPixelMaxValue_get()I
 .end method
 
-.method public static final native kRawSharpenMaxFreqCount_get()I
+.method public static final native kRawSharpenCurveSize_get()I
 .end method
 
-.method public static final native kRevTonemapMaxValue_get()I
-.end method
-
-.method public static final native kSensorIdPrimary_get()I
-.end method
-
-.method public static final native kSensorIdSecondary_get()I
+.method public static final native kRawSharpenFreqCount_get()I
 .end method
 
 .method public static final native kSensorTempUnknown_get()I
@@ -5777,7 +5729,16 @@
 .method public static final native kThrowOutOneInNBlurryImages_get()I
 .end method
 
-.method public static final native kTonemapMaxValue_get()I
+.method public static final native kTonemappedYuvPrecision_get()I
+.end method
+
+.method public static final native kTonemappedYuvWhiteLevel_get()I
+.end method
+
+.method public static final native kUnusedLoggingMetadataFilename_get()Ljava/lang/String;
+.end method
+
+.method public static final native kUnusedLoggingMetadataFilename_set(Ljava/lang/String;)V
 .end method
 
 .method public static final native new_AeDebugInfo()J
@@ -5837,13 +5798,16 @@
 .method public static final native new_ClientExifMetadata()J
 .end method
 
-.method public static final native new_ColorCalibration()J
+.method public static final native new_ClientInterleavedU16Allocator()J
 .end method
 
-.method public static final native new_ColorCalibrationVector__SWIG_0()J
+.method public static final native new_ClientInterleavedU8Allocator()J
 .end method
 
-.method public static final native new_ColorCalibrationVector__SWIG_1(J)J
+.method public static final native new_ClientRawAllocator()J
+.end method
+
+.method public static final native new_ClientYuvAllocator()J
 .end method
 
 .method public static final native new_ColorSatParams()J
@@ -5871,6 +5835,15 @@
 .end method
 
 .method public static final native new_DirtyLensHistory__SWIG_1(JLcom/google/googlex/gcam/FloatDeque;)J
+.end method
+
+.method public static final native new_DngColorCalibration()J
+.end method
+
+.method public static final native new_DngColorCalibrationVector__SWIG_0()J
+.end method
+
+.method public static final native new_DngColorCalibrationVector__SWIG_1(J)J
 .end method
 
 .method public static final native new_DngNoiseModel()J
@@ -5909,10 +5882,7 @@
 .method public static final native new_FloatDeque__SWIG_3(JLcom/google/googlex/gcam/FloatDeque;)J
 .end method
 
-.method public static final native new_FloatSmoothKeyValueMap__SWIG_0()J
-.end method
-
-.method public static final native new_FloatSmoothKeyValueMap__SWIG_1(J)J
+.method public static final native new_FloatSmoothKeyValueMap()J
 .end method
 
 .method public static final native new_FloatVector__SWIG_0()J
@@ -6053,6 +6023,12 @@
 .method public static final native new_InterleavedReadViewU8__SWIG_4(IIIJJ)J
 .end method
 
+.method public static final native new_InterleavedU16Allocation()J
+.end method
+
+.method public static final native new_InterleavedU8Allocation()J
+.end method
+
 .method public static final native new_InterleavedWriteViewU16__SWIG_0(JLcom/google/googlex/gcam/InterleavedWriteViewU16;)J
 .end method
 
@@ -6087,6 +6063,18 @@
 .end method
 
 .method public static final native new_MemoryStateCallback()J
+.end method
+
+.method public static final native new_NewDeleteInterleavedU16Allocator()J
+.end method
+
+.method public static final native new_NewDeleteInterleavedU8Allocator()J
+.end method
+
+.method public static final native new_NewDeleteRawAllocator()J
+.end method
+
+.method public static final native new_NewDeleteYuvAllocator()J
 .end method
 
 .method public static final native new_NormalizedRect()J
@@ -6164,40 +6152,40 @@
 .method public static final native new_PackedImageRaw12__SWIG_9(II)J
 .end method
 
-.method public static final native new_PackedReadViewRaw10__SWIG_0(JLcom/google/googlex/gcam/PackedReadViewRaw10;)J
+.method public static final native new_PackedReadViewRaw10__SWIG_0()J
 .end method
 
 .method public static final native new_PackedReadViewRaw10__SWIG_1(JLcom/google/googlex/gcam/InterleavedReadViewU8;)J
 .end method
 
-.method public static final native new_PackedReadViewRaw10__SWIG_2()J
+.method public static final native new_PackedReadViewRaw10__SWIG_2(JLcom/google/googlex/gcam/PackedReadViewRaw10;)J
 .end method
 
-.method public static final native new_PackedReadViewRaw12__SWIG_0(JLcom/google/googlex/gcam/PackedReadViewRaw12;)J
+.method public static final native new_PackedReadViewRaw12__SWIG_0()J
 .end method
 
 .method public static final native new_PackedReadViewRaw12__SWIG_1(JLcom/google/googlex/gcam/InterleavedReadViewU8;)J
 .end method
 
-.method public static final native new_PackedReadViewRaw12__SWIG_2()J
+.method public static final native new_PackedReadViewRaw12__SWIG_2(JLcom/google/googlex/gcam/PackedReadViewRaw12;)J
 .end method
 
-.method public static final native new_PackedReadWriteViewRaw10__SWIG_0(JLcom/google/googlex/gcam/PackedReadWriteViewRaw10;)J
+.method public static final native new_PackedReadWriteViewRaw10__SWIG_0()J
 .end method
 
 .method public static final native new_PackedReadWriteViewRaw10__SWIG_1(JLcom/google/googlex/gcam/InterleavedWriteViewU8;)J
 .end method
 
-.method public static final native new_PackedReadWriteViewRaw10__SWIG_2()J
+.method public static final native new_PackedReadWriteViewRaw10__SWIG_2(JLcom/google/googlex/gcam/PackedReadWriteViewRaw10;)J
 .end method
 
-.method public static final native new_PackedReadWriteViewRaw12__SWIG_0(JLcom/google/googlex/gcam/PackedReadWriteViewRaw12;)J
+.method public static final native new_PackedReadWriteViewRaw12__SWIG_0()J
 .end method
 
 .method public static final native new_PackedReadWriteViewRaw12__SWIG_1(JLcom/google/googlex/gcam/InterleavedWriteViewU8;)J
 .end method
 
-.method public static final native new_PackedReadWriteViewRaw12__SWIG_2()J
+.method public static final native new_PackedReadWriteViewRaw12__SWIG_2(JLcom/google/googlex/gcam/PackedReadWriteViewRaw12;)J
 .end method
 
 .method public static final native new_PdImageCallback()J
@@ -6212,15 +6200,6 @@
 .method public static final native new_PixelRectVector__SWIG_1(J)J
 .end method
 
-.method public static final native new_Point2i()J
-.end method
-
-.method public static final native new_Point2iVector__SWIG_0()J
-.end method
-
-.method public static final native new_Point2iVector__SWIG_1(J)J
-.end method
-
 .method public static final native new_PostviewCallback()J
 .end method
 
@@ -6228,6 +6207,21 @@
 .end method
 
 .method public static final native new_ProgressCallback()J
+.end method
+
+.method public static final native new_QcColorCalibration()J
+.end method
+
+.method public static final native new_QcColorCalibration_IlluminantData()J
+.end method
+
+.method public static final native new_QcIlluminantVector__SWIG_0()J
+.end method
+
+.method public static final native new_QcIlluminantVector__SWIG_1(J)J
+.end method
+
+.method public static final native new_RawAllocation()J
 .end method
 
 .method public static final native new_RawFinishParams()J
@@ -6239,22 +6233,31 @@
 .method public static final native new_RawImage__SWIG_0()J
 .end method
 
-.method public static final native new_RawImage__SWIG_1(JLcom/google/googlex/gcam/RawImage;)J
+.method public static final native new_RawImage__SWIG_1(IIIJ)J
 .end method
 
-.method public static final native new_RawImage__SWIG_2(JLcom/google/googlex/gcam/InterleavedImageU16;)J
+.method public static final native new_RawImage__SWIG_2(III)J
 .end method
 
-.method public static final native new_RawImage__SWIG_3(JLcom/google/googlex/gcam/PackedImageRaw10;)J
+.method public static final native new_RawImage__SWIG_3(IIJIJ)J
 .end method
 
-.method public static final native new_RawImage__SWIG_4(JLcom/google/googlex/gcam/PackedImageRaw12;)J
+.method public static final native new_RawImage__SWIG_4(IIJI)J
+.end method
+
+.method public static final native new_RawImage__SWIG_5(JLcom/google/googlex/gcam/RawImage;)J
+.end method
+
+.method public static final native new_RawImage__SWIG_6(JLcom/google/googlex/gcam/InterleavedImageU16;)J
+.end method
+
+.method public static final native new_RawImage__SWIG_7(JLcom/google/googlex/gcam/PackedImageRaw10;)J
+.end method
+
+.method public static final native new_RawImage__SWIG_8(JLcom/google/googlex/gcam/PackedImageRaw12;)J
 .end method
 
 .method public static final native new_RawMergeParams()J
-.end method
-
-.method public static final native new_RawNoiseModel()J
 .end method
 
 .method public static final native new_RawReadView__SWIG_0()J
@@ -6282,9 +6285,6 @@
 .end method
 
 .method public static final native new_RawWriteView__SWIG_2(IIJIJ)J
-.end method
-
-.method public static final native new_RevTonemap()J
 .end method
 
 .method public static final native new_RowPattern()J
@@ -6320,16 +6320,13 @@
 .method public static final native new_SpatialGainMap__SWIG_1(IIZZ)J
 .end method
 
-.method public static final native new_SpatialGainMap__SWIG_2(IIZ)J
+.method public static final native new_SpatialGainMap__SWIG_2(JZZ)J
 .end method
 
-.method public static final native new_SpatialGainMap__SWIG_3(II)J
+.method public static final native new_SpatialGainMap__SWIG_3(JZZ)J
 .end method
 
-.method public static final native new_SpatialGainMap__SWIG_4(J)J
-.end method
-
-.method public static final native new_SpatialGainMap__SWIG_5(JLcom/google/googlex/gcam/SpatialGainMap;)J
+.method public static final native new_SpatialGainMap__SWIG_4(JLcom/google/googlex/gcam/SpatialGainMap;)J
 .end method
 
 .method public static final native new_StaticMetadata()J
@@ -6371,21 +6368,6 @@
 .method public static final native new_ThreadPriority()J
 .end method
 
-.method public static final native new_Tonemap()J
-.end method
-
-.method public static final native new_TonemapFloat()J
-.end method
-
-.method public static final native new_TonemapFloatControlPoint()J
-.end method
-
-.method public static final native new_TonemapFloatControlPointVector__SWIG_0()J
-.end method
-
-.method public static final native new_TonemapFloatControlPointVector__SWIG_1(J)J
-.end method
-
 .method public static final native new_Tuning()J
 .end method
 
@@ -6411,6 +6393,9 @@
 .end method
 
 .method public static final native new_WeightedPixelRectVector__SWIG_1(J)J
+.end method
+
+.method public static final native new_YuvAllocation()J
 .end method
 
 .method public static final native new_YuvImage__SWIG_0()J

@@ -3,20 +3,20 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lazt;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lazt;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbvd;->a:Lazt;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbvd;->a:Lkgv;
 
     return-void
 .end method
@@ -24,11 +24,27 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
-    new-instance v0, Lazw;
+    iget-object v0, p0, Lbvd;->a:Lkgv;
 
-    invoke-direct {v0}, Lazw;-><init>()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/SharedPreferences;
 
     return-object v0
 .end method

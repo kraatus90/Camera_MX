@@ -1,90 +1,173 @@
 .class public final Lcjs;
-.super Ljava/lang/Object;
+.super Lcjh;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private c:Lckg;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Landroid/content/Context;Lgyq;Lckg;Lcjx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lcjh;-><init>(Landroid/content/Context;Lgyq;)V
 
-    iput-object p1, p0, Lcjs;->a:Ljxn;
+    invoke-static {p3}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p2, p0, Lcjs;->b:Ljxn;
-
-    iput-object p3, p0, Lcjs;->c:Ljxn;
-
-    iput-object p4, p0, Lcjs;->d:Ljxn;
-
-    iput-object p5, p0, Lcjs;->e:Ljxn;
+    iput-object p3, p0, Lcjs;->c:Lckg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final a(I)Landroid/os/AsyncTask;
+    .locals 2
 
-    new-instance v0, Lcjk;
+    iget-object v0, p0, Lcjs;->b:Lgyq;
 
-    iget-object v1, p0, Lcjs;->a:Ljxn;
+    invoke-interface {v0}, Lgyq;->c()I
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    if-ne p1, v0, :cond_0
+
+    iget-object v0, p0, Lcjs;->a:Landroid/content/Context;
+
+    iget-object v1, p0, Lcjs;->c:Lckg;
+
+    invoke-static {v0, v1}, Lcjx;->a(Landroid/content/Context;Leqd;)Z
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcjs;->b:Lgyq;
+
+    invoke-interface {v0, p1}, Lgyq;->a(I)Landroid/os/AsyncTask;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public final a(Landroid/view/View;Lckw;Lcjp;)Landroid/view/View;
+    .locals 4
+
+    invoke-interface {p2}, Lckw;->c()Leqd;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcjs;->c:Lckg;
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcjs;->c:Lckg;
+
+    invoke-static {p1}, Ljrf;->c(Ljava/lang/Object;)Ljrf;
 
     move-result-object v1
 
-    check-cast v1, Landroid/app/Activity;
+    iget-object v2, p0, Lcjs;->b:Lgyq;
 
-    iget-object v2, p0, Lcjs;->b:Ljxn;
+    const/4 v3, 0x0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2, v3, p3}, Lckg;->a(Ljrf;Lgyq;ZLcjp;)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/view/LayoutInflater;
-
-    iget-object v3, p0, Lcjs;->c:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/content/res/Resources;
-
-    iget-object v4, p0, Lcjs;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcll;
-
-    iget-object v5, p0, Lcjs;->e:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lgsm;
-
-    invoke-direct/range {v0 .. v5}, Lcjk;-><init>(Landroid/app/Activity;Landroid/view/LayoutInflater;Landroid/content/res/Resources;Lcll;Lgsm;)V
-
+    :goto_0
     return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcjs;->b:Lgyq;
+
+    invoke-interface {v0, p1, p2, p3}, Lgyq;->a(Landroid/view/View;Lckw;Lcjp;)Landroid/view/View;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public final a(Lckw;Leqd;)V
+    .locals 2
+
+    sget-object v0, Lckw;->c:Lckw;
+
+    if-eq p1, v0, :cond_0
+
+    invoke-interface {p1}, Lckw;->c()Leqd;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcjs;->c:Lckg;
+
+    if-ne v0, v1, :cond_1
+
+    :cond_0
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "cannot update fixed last item"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iget-object v0, p0, Lcjs;->b:Lgyq;
+
+    invoke-interface {v0, p1, p2}, Lgyq;->a(Lckw;Leqd;)V
+
+    return-void
+.end method
+
+.method public final b(Lckw;)V
+    .locals 2
+
+    sget-object v0, Lckw;->c:Lckw;
+
+    if-eq p1, v0, :cond_0
+
+    invoke-interface {p1}, Lckw;->c()Leqd;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcjs;->c:Lckg;
+
+    if-ne v0, v1, :cond_1
+
+    :cond_0
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "cannot remove fixed last item node"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iget-object v0, p0, Lcjs;->b:Lgyq;
+
+    invoke-interface {v0, p1}, Lgyq;->b(Lckw;)V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lcjs;->b:Lgyq;
+
+    invoke-interface {v0}, Lgyq;->f()V
+
+    iget-object v0, p0, Lcjs;->c:Lckg;
+
+    invoke-virtual {p0, v0}, Lcjs;->a(Lckg;)V
+
+    return-void
 .end method

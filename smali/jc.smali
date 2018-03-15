@@ -1,134 +1,161 @@
-.class public final Ljc;
-.super Lhg;
+.class Ljc;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-
-
-# instance fields
-.field public a:I
-
-.field public d:Landroid/os/Parcelable;
-
-.field public e:Ljava/lang/ClassLoader;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljd;
-
-    invoke-direct {v0}, Ljd;-><init>()V
-
-    sput-object v0, Ljc;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Lhg;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    if-nez p2, :cond_0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object p2
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Ljc;->a:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljc;->d:Landroid/os/Parcelable;
-
-    iput-object p2, p0, Ljc;->e:Ljava/lang/ClassLoader;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcelable;)V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1}, Lhg;-><init>(Landroid/os/Parcelable;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method constructor <init>(B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljc;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "FragmentPager.SavedState{"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " position="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Ljc;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public a(Landroid/view/ViewParent;Landroid/view/View;)V
     .locals 1
 
-    invoke-super {p0, p1, p2}, Lhg;->writeToParcel(Landroid/os/Parcel;I)V
+    instance-of v0, p1, Lht;
 
-    iget v0, p0, Ljc;->a:I
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    check-cast p1, Lht;
 
-    iget-object v0, p0, Ljc;->d:Landroid/os/Parcelable;
+    invoke-interface {p1, p2}, Lht;->onStopNestedScroll(Landroid/view/View;)V
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    :cond_0
+    return-void
+.end method
 
+.method public a(Landroid/view/ViewParent;Landroid/view/View;IIII)V
+    .locals 6
+
+    instance-of v0, p1, Lht;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p1
+
+    check-cast v0, Lht;
+
+    move-object v1, p2
+
+    move v2, p3
+
+    move v3, p4
+
+    move v4, p5
+
+    move v5, p6
+
+    invoke-interface/range {v0 .. v5}, Lht;->onNestedScroll(Landroid/view/View;IIII)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public a(Landroid/view/ViewParent;Landroid/view/View;II[I)V
+    .locals 1
+
+    instance-of v0, p1, Lht;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lht;
+
+    invoke-interface {p1, p2, p3, p4, p5}, Lht;->onNestedPreScroll(Landroid/view/View;II[I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public a(Landroid/view/ViewParent;Landroid/view/View;FF)Z
+    .locals 1
+
+    instance-of v0, p1, Lht;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lht;
+
+    invoke-interface {p1, p2, p3, p4}, Lht;->onNestedPreFling(Landroid/view/View;FF)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public a(Landroid/view/ViewParent;Landroid/view/View;FFZ)Z
+    .locals 1
+
+    instance-of v0, p1, Lht;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lht;
+
+    invoke-interface {p1, p2, p3, p4, p5}, Lht;->onNestedFling(Landroid/view/View;FFZ)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public a(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)Z
+    .locals 1
+
+    instance-of v0, p1, Lht;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lht;
+
+    invoke-interface {p1, p2, p3, p4}, Lht;->onStartNestedScroll(Landroid/view/View;Landroid/view/View;I)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public b(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)V
+    .locals 1
+
+    instance-of v0, p1, Lht;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lht;
+
+    invoke-interface {p1, p2, p3, p4}, Lht;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
+
+    :cond_0
     return-void
 .end method

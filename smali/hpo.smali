@@ -1,22 +1,79 @@
 .class public final Lhpo;
-.super Lhsb;
+.super Lhmv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/Looper;)V
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lhmq;Lhln;Lhlo;)V
+    .locals 7
 
-    invoke-direct {p0, p1}, Lhsb;-><init>(Landroid/os/Looper;)V
+    const/16 v3, 0x3f
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    invoke-direct/range {v0 .. v6}, Lhmv;-><init>(Landroid/content/Context;Landroid/os/Looper;ILhmq;Lhln;Lhlo;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a(Lcom/google/android/gms/common/api/Status;)Lhks;
-    .locals 0
+.method protected final synthetic a(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 2
 
-    return-object p1
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    const-string v0, "com.google.android.gms.googlehelp.internal.common.IGoogleHelpService"
+
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    instance-of v1, v0, Lhpp;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Lhpp;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Lhpp;
+
+    invoke-direct {v0, p1}, Lhpp;-><init>(Landroid/os/IBinder;)V
+
+    goto :goto_0
+.end method
+
+.method protected final a()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.googlehelp.service.GoogleHelpService.START"
+
+    return-object v0
+.end method
+
+.method protected final b()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "com.google.android.gms.googlehelp.internal.common.IGoogleHelpService"
+
+    return-object v0
 .end method

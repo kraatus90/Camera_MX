@@ -1,41 +1,45 @@
-.class public final synthetic Lgcr;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class final Lgcr;
+.super Lgdf;
+.source "PG"
 
 
 # instance fields
-.field private a:Lgdj;
+.field private final synthetic a:Lgcq;
 
 
 # direct methods
-.method public constructor <init>(Lgdj;)V
+.method constructor <init>(Lgcq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgcr;->a:Lgcq;
 
-    iput-object p1, p0, Lgcr;->a:Lgdj;
+    invoke-direct {p0, p1}, Lgdf;-><init>(Lgde;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final P()V
     .locals 2
 
-    iget-object v0, p0, Lgcr;->a:Lgdj;
+    iget-object v0, p0, Lgcr;->a:Lgcq;
 
-    iget-object v0, v0, Lgdj;->d:Liag;
+    iget-object v0, v0, Lgcq;->a:Lgld;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-super {p0}, Lgdf;->P()V
 
-    move-result-object v1
+    iget-object v0, p0, Lgcr;->a:Lgcq;
 
-    invoke-virtual {v0, v1}, Liag;->a(Ljava/lang/Object;)V
+    iget-object v0, v0, Lgcq;->a:Lgld;
+
+    iget-object v1, p0, Lgcr;->a:Lgcq;
+
+    iget-object v1, v1, Lgcq;->c:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

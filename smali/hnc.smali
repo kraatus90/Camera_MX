@@ -1,56 +1,125 @@
-.class public Lhnc;
-.super Landroid/os/Binder;
-
-# interfaces
-.implements Lhnb;
+.class public final Lhnc;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+    const-string v0, "https://plus.google.com/"
 
-    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    invoke-virtual {p0, p0, v0}, Lhnc;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "circles"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    const-string v1, "find"
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     return-void
 .end method
 
+.method public static a()Landroid/content/Intent;
+    .locals 2
 
-# virtual methods
-.method public asBinder()Landroid/os/IBinder;
-    .locals 0
+    new-instance v0, Landroid/content/Intent;
 
-    return-object p0
+    const-string v1, "com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "com.google.android.wearable.app"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    return-object v0
 .end method
 
-.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 1
+.method public static a(Ljava/lang/String;)Landroid/content/Intent;
+    .locals 3
 
-    packed-switch p1, :pswitch_data_0
+    const-string v0, "package"
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    const/4 v1, 0x0
 
-    move-result v0
+    invoke-static {v0, p0, v1}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :pswitch_0
-    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
+    new-instance v1, Landroid/content/Intent;
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    const-string v2, "android.settings.APPLICATION_DETAILS_SETTINGS"
 
-    const/4 v0, 0x1
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    goto :goto_0
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    nop
+    return-object v1
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x5f4e5446
-        :pswitch_0
-    .end packed-switch
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    .locals 3
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "android.intent.action.VIEW"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "market://details"
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    const-string v2, "id"
+
+    invoke-virtual {v1, v2, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v1
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "pcampaignid"
+
+    invoke-virtual {v1, v2, p1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    :cond_0
+    invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    const-string v1, "com.android.vending"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    const/high16 v1, 0x80000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    return-object v0
 .end method

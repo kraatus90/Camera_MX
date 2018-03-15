@@ -1,14 +1,19 @@
-.class public interface abstract Lcju;
+.class public final Lcju;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# instance fields
+.field public final synthetic a:Lbzb;
 
-.method public abstract a(Lckl;)V
-.end method
 
-.method public abstract b()Z
+# direct methods
+.method public constructor <init>(Lbzb;)V
+    .locals 0
+
+    iput-object p1, p0, Lcju;->a:Lbzb;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

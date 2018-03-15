@@ -1,136 +1,80 @@
-.class public final Lczj;
+.class final Lczj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lcxp;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
+.field public final synthetic a:Lcyk;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lcyk;)V
     .locals 0
 
+    iput-object p1, p0, Lczj;->a:Lcyk;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lczj;->a:Ljxn;
-
-    iput-object p2, p0, Lczj;->b:Ljxn;
-
-    iput-object p3, p0, Lczj;->c:Ljxn;
-
-    iput-object p4, p0, Lczj;->d:Ljxn;
-
-    iput-object p5, p0, Lczj;->e:Ljxn;
-
-    iput-object p6, p0, Lczj;->f:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 5
 
-    iget-object v0, p0, Lczj;->a:Ljxn;
+    check-cast p1, Lcwo;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lczj;->a:Lcyk;
 
-    move-result-object v0
+    iget-boolean v0, v0, Lcyk;->f:Z
 
-    move-object v3, v0
+    if-eqz v0, :cond_0
 
-    check-cast v3, Ljht;
+    iget-object v0, p0, Lczj;->a:Lcyk;
 
-    iget-object v0, p0, Lczj;->b:Ljxn;
+    iget-boolean v0, v0, Lcyk;->g:Z
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Lczj;->a:Lcyk;
 
-    check-cast v0, Lczd;
-
-    iget-object v1, p0, Lczj;->c:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbsa;
-
-    iget-object v2, p0, Lczj;->d:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lbvl;
-
-    iget-object v4, p0, Lczj;->e:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v5, p0, Lczj;->f:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lguc;
-
-    invoke-virtual {v3}, Ljht;->a()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    new-instance v0, Lcqi;
-
-    invoke-virtual {v3}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lgcp;
-
-    invoke-direct/range {v0 .. v5}, Lcqi;-><init>(Lbsa;Lbvl;Lgcp;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;)V
-
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->c:Liay;
+
+    new-instance v1, Lczk;
+
+    invoke-direct {v1, p0}, Lczk;-><init>(Lczj;)V
+
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    new-instance v0, Lczn;
+
+    iget-object v1, p0, Lczj;->a:Lcyk;
+
+    iget-object v2, p0, Lczj;->a:Lcyk;
+
+    iget-object v2, v2, Lcyk;->d:Lbci;
+
+    iget-object v3, p1, Lcwo;->a:Landroid/graphics/Bitmap;
+
+    sget-object v4, Ljqu;->a:Ljqu;
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lczn;-><init>(Lcxq;Lbci;Landroid/graphics/Bitmap;Ljrf;)V
 
     :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuw;
-
     return-object v0
 
     :cond_0
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
-
-    move-result-object v0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

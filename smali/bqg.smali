@@ -3,20 +3,20 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Lbpz;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lbpz;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbqg;->a:Lbpz;
+    iput-object p1, p0, Lbqg;->a:Lkgv;
 
     return-void
 .end method
@@ -26,21 +26,21 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbqg;->a:Lbpz;
+    iget-object v0, p0, Lbqg;->a:Lkgv;
 
-    iget-object v0, v0, Lbpz;->a:Landroid/app/Activity;
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lbqc;
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Intent;
+    check-cast v0, Lbqc;
 
     return-object v0
 .end method

@@ -1,117 +1,78 @@
-.class final Lbue;
+.class public final Lbue;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lcjx;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbua;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbua;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lbue;->a:Lbua;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbue;->a:Lkgv;
+
+    iput-object p2, p0, Lbue;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Lbue;->a:Lbua;
+    iget-object v0, p0, Lbue;->a:Lkgv;
 
-    iget-object v1, v0, Lbua;->t:Ljava/util/concurrent/Executor;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v2, Lbub;
+    move-result-object v0
 
-    invoke-direct {v2, v0}, Lbub;-><init>(Lbua;)V
+    check-cast v0, Ljrf;
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    iget-object v1, p0, Lbue;->b:Lkgv;
 
-    return-void
-.end method
-
-.method public final a(ILcgh;)V
-    .locals 3
-
-    if-nez p1, :cond_0
-
-    iget-object v0, p0, Lbue;->a:Lbua;
-
-    iget-object v1, v0, Lbua;->t:Ljava/util/concurrent/Executor;
-
-    new-instance v2, Lbub;
-
-    invoke-direct {v2, v0}, Lbub;-><init>(Lbua;)V
-
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :cond_0
-    iget-object v0, p0, Lbue;->a:Lbua;
-
-    invoke-virtual {v0}, Lbua;->G()V
-
-    return-void
-.end method
-
-.method public final a(Lcjy;)V
-    .locals 3
-
-    iget-object v0, p1, Lcjy;->a:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    check-cast v1, Landroid/hardware/SensorManager;
 
-    move-result v0
+    invoke-virtual {v0}, Ljrf;->a()Z
 
-    if-eqz v0, :cond_0
+    move-result v2
 
-    iget-object v0, p0, Lbue;->a:Lbua;
+    if-eqz v2, :cond_0
 
-    iget-object v1, v0, Lbua;->t:Ljava/util/concurrent/Executor;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
-    new-instance v2, Lbub;
+    move-result-object v0
 
-    invoke-direct {v2, v0}, Lbub;-><init>(Lbua;)V
+    check-cast v0, Lbuf;
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :goto_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    :cond_0
-    return-void
-.end method
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final b(ILcgh;)V
-    .locals 3
+    move-result-object v0
 
-    if-nez p1, :cond_0
+    check-cast v0, Lbuf;
 
-    iget-object v0, p0, Lbue;->a:Lbua;
-
-    iget-object v1, v0, Lbua;->t:Ljava/util/concurrent/Executor;
-
-    new-instance v2, Lbub;
-
-    invoke-direct {v2, v0}, Lbub;-><init>(Lbua;)V
-
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    return-object v0
 
     :cond_0
-    iget-object v0, p0, Lbue;->a:Lbua;
+    new-instance v0, Lbvx;
 
-    invoke-virtual {v0}, Lbua;->G()V
+    invoke-direct {v0, v1}, Lbvx;-><init>(Landroid/hardware/SensorManager;)V
 
-    return-void
+    goto :goto_0
 .end method

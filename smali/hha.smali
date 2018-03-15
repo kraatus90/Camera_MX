@@ -1,77 +1,105 @@
-.class public final Lhha;
+.class final Lhha;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lihg;
+
 
 # instance fields
-.field public a:D
-
-.field public b:D
-
-.field public c:D
-
-.field public d:D
-
-.field public e:D
+.field private final synthetic a:Lhgw;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Lhgw;)V
+    .locals 0
+
+    iput-object p1, p0, Lhha;->a:Lhgw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/high16 v0, 0x4028000000000000L    # 12.0
-
-    iput-wide v0, p0, Lhha;->a:D
-
-    const-wide/high16 v0, -0x4010000000000000L    # -1.0
-
-    iput-wide v0, p0, Lhha;->b:D
-
-    const-wide/high16 v0, 0x4010000000000000L    # 4.0
-
-    iput-wide v0, p0, Lhha;->c:D
-
-    const-wide/high16 v0, 0x4018000000000000L    # 6.0
-
-    iput-wide v0, p0, Lhha;->d:D
-
-    const-wide/high16 v0, 0x4094000000000000L    # 1280.0
-
-    iput-wide v0, p0, Lhha;->e:D
 
     return-void
 .end method
 
-.method public constructor <init>(I)V
-    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 4
 
-    const-wide/high16 v0, 0x4028000000000000L    # 12.0
+    check-cast p1, Ljava/lang/Float;
 
-    iput-wide v0, p0, Lhha;->a:D
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+    move-result v0
 
-    iput-wide v0, p0, Lhha;->b:D
+    iget-object v1, p0, Lhha;->a:Lhgw;
 
-    const-wide/high16 v0, 0x4010000000000000L    # 4.0
+    iget v1, v1, Lhgw;->a:F
 
-    iput-wide v0, p0, Lhha;->c:D
+    div-float/2addr v0, v1
 
-    const-wide/high16 v0, 0x4018000000000000L    # 6.0
+    float-to-double v0, v0
 
-    iput-wide v0, p0, Lhha;->d:D
+    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
 
-    const-wide/high16 v0, 0x4094000000000000L    # 1280.0
+    move-result-wide v2
 
-    iput-wide v0, p0, Lhha;->e:D
+    iget-object v0, p0, Lhha;->a:Lhgw;
 
-    int-to-double v0, p1
+    invoke-static {v0}, Lhgw;->a(Lhgw;)Lick;
 
-    iput-wide v0, p0, Lhha;->a:D
+    move-result-object v0
 
+    invoke-interface {v0}, Lick;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    iget-object v1, p0, Lhha;->a:Lhgw;
+
+    iget v1, v1, Lhgw;->a:F
+
+    div-float/2addr v0, v1
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+
+    move-result-wide v0
+
+    div-double v0, v2, v0
+
+    double-to-float v0, v0
+
+    const v1, 0x47c35000    # 100000.0f
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iget-object v1, p0, Lhha;->a:Lhgw;
+
+    iget-object v1, v1, Lhgw;->c:Landroid/widget/SeekBar;
+
+    invoke-virtual {v1}, Landroid/widget/SeekBar;->getProgress()I
+
+    move-result v1
+
+    if-eq v1, v0, :cond_0
+
+    iget-object v1, p0, Lhha;->a:Lhgw;
+
+    iget-object v1, v1, Lhgw;->c:Landroid/widget/SeekBar;
+
+    invoke-virtual {v1, v0}, Landroid/widget/SeekBar;->setProgress(I)V
+
+    :cond_0
     return-void
 .end method

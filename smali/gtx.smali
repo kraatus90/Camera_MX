@@ -1,53 +1,40 @@
-.class public final Lgtx;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class final Lgtx;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final synthetic a:Liay;
+
+.field private final synthetic b:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)V
+.method constructor <init>(Liay;Ljava/lang/Runnable;)V
     .locals 0
 
-    iput-object p1, p0, Lgtx;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iput-object p1, p0, Lgtx;->a:Liay;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p2, p0, Lgtx;->b:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lgtx;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v0, p0, Lgtx;->a:Liay;
 
-    sget-object v1, Lgua;->b:Lgua;
+    iget-object v1, p0, Lgtx;->b:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->resetShutterButton(Lgua;)V
-
-    iget-object v0, p0, Lgtx;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setClickEnabled(Z)V
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object v0, p0, Lgtx;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$1700(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Landroid/animation/ValueAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->end()V
+    invoke-virtual {v0, v1}, Liay;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

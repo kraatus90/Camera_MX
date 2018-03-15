@@ -1,100 +1,324 @@
-.class final Livj;
+.class public final Livj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Lipj;
+
+
+# instance fields
+.field public final a:Litq;
+
+.field public final b:[Lisq;
+
+.field public final c:[I
+
+.field public final d:I
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method private constructor <init>(Litq;[Lisq;[II)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    array-length v0, p2
+
+    array-length v1, p3
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iput-object p1, p0, Livj;->a:Litq;
+
+    iput-object p2, p0, Livj;->b:[Lisq;
+
+    iput-object p3, p0, Livj;->c:[I
+
+    iput p4, p0, Livj;->d:I
+
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static varargs a(Litv;[Livk;)Livj;
+    .locals 9
+
+    const/4 v1, 0x0
+
+    aget-object v0, p1, v1
+
+    iget v3, v0, Livk;->a:I
+
+    array-length v0, p1
+
+    new-array v4, v0, [Lisq;
+
+    array-length v0, p1
+
+    new-array v5, v0, [I
+
+    move v0, v1
+
+    move v2, v1
+
+    :goto_0
+    array-length v6, p1
+
+    if-ge v0, v6, :cond_0
+
+    aget-object v6, p1, v0
+
+    iget-object v7, v6, Livk;->b:Lisq;
+
+    invoke-interface {v7}, Lisq;->c()I
+
+    move-result v7
+
+    iget v8, v6, Livk;->c:I
+
+    mul-int/2addr v7, v8
+
+    mul-int/2addr v7, v3
+
+    add-int/2addr v2, v7
+
+    iget-object v7, v6, Livk;->b:Lisq;
+
+    aput-object v7, v4, v0
+
+    iget v6, v6, Livk;->c:I
+
+    aput v6, v5, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    div-int/lit8 v0, v2, 0x8
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object v6
+
+    array-length v7, p1
+
+    move v2, v1
+
+    :goto_1
+    if-ge v2, v7, :cond_2
+
+    aget-object v8, p1, v2
+
+    move v0, v1
+
+    :goto_2
+    if-ge v0, v3, :cond_1
+
+    invoke-virtual {v8, v0, v6}, Livk;->a(ILjava/nio/ByteBuffer;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+
+    new-instance v0, Livj;
+
+    new-instance v1, Litq;
+
+    new-instance v2, Litr;
+
+    invoke-direct {v2, p0, v6}, Litr;-><init>(Litv;Ljava/nio/ByteBuffer;)V
+
+    invoke-static {p0, v2}, Liua;->a(Litv;Ljava/util/concurrent/Callable;)Liqz;
+
+    move-result-object v2
+
+    invoke-direct {v1, p0, v2}, Litq;-><init>(Litv;Liqz;)V
+
+    invoke-direct {v0, v1, v4, v5, v3}, Livj;-><init>(Litq;[Lisq;[II)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 9
+.method public final a(I)I
+    .locals 2
 
-    const/4 v8, 0x3
+    iget-object v0, p0, Livj;->b:[Lisq;
 
-    const/4 v7, 0x2
+    aget-object v0, v0, p1
 
-    const/4 v6, 0x1
+    invoke-interface {v0}, Lisq;->c()I
 
-    const/4 v5, 0x0
+    move-result v0
 
-    const-class v0, Ljan;
+    iget-object v1, p0, Livj;->c:[I
 
-    const-string v1, "post_proc_quality_metric"
+    aget v1, v1, p1
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    mul-int/2addr v0, v1
+
+    div-int/lit8 v0, v0, 0x8
+
+    return v0
+.end method
+
+.method public final a()Lirc;
+    .locals 1
+
+    iget-object v0, p0, Livj;->a:Litq;
+
+    invoke-virtual {v0}, Litq;->a()Lirc;
 
     move-result-object v0
 
-    check-cast v0, Ljan;
+    return-object v0
+.end method
 
-    new-array v2, v7, [Ljbc;
+.method public final close()V
+    .locals 1
 
-    new-array v3, v8, [Ljbc;
+    iget-object v0, p0, Livj;->a:Litq;
 
-    const-class v1, Ljbc;
+    invoke-virtual {v0}, Litq;->close()V
 
-    const-string v4, "jump_cut"
+    return-void
+.end method
 
-    invoke-virtual {p1, v1, v4}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    iget-object v0, p0, Livj;->a:Litq;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Livj;->b:[Lisq;
+
+    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Ljbc;
+    iget-object v2, p0, Livj;->c:[I
 
-    aput-object v1, v3, v5
+    invoke-static {v2}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
-    new-instance v1, Ljcg;
+    move-result-object v2
 
-    invoke-direct {v1, v8}, Ljcg;-><init>(I)V
+    iget v3, p0, Livj;->d:I
 
-    aput-object v1, v3, v6
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-instance v1, Ljaw;
+    move-result-object v4
 
-    invoke-direct {v1, v0}, Ljaw;-><init>(Ljan;)V
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    aput-object v1, v3, v7
+    move-result v4
 
-    invoke-static {v3}, Ljax;->a([Ljbc;)Ljax;
+    add-int/lit8 v4, v4, 0x53
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "GLVertexArray{buffer="
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    aput-object v0, v2, v5
+    const-string v4, ", types="
 
-    new-array v0, v7, [Ljbc;
-
-    new-instance v1, Ljby;
-
-    invoke-direct {v1}, Ljby;-><init>()V
-
-    aput-object v1, v0, v5
-
-    new-instance v1, Ljcg;
-
-    invoke-direct {v1, v8}, Ljcg;-><init>(I)V
-
-    aput-object v1, v0, v6
-
-    invoke-static {v0}, Ljax;->a([Ljbc;)Ljax;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    aput-object v0, v2, v6
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljay;
+    move-result-object v0
 
-    invoke-direct {v0, v2}, Ljay;-><init>([Ljbc;)V
+    const-string v1, ", dimensions="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", count="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", isInterleaved=false}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

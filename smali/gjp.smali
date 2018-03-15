@@ -1,64 +1,366 @@
-.class final Lgjp;
+.class public final Lgjp;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lgki;
-
 
 # instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Lgjq;
 
-.field private synthetic b:Lgjn;
+.field private final b:Lihn;
 
 
 # direct methods
-.method constructor <init>(Lgjn;)V
-    .locals 2
-
-    iput-object p1, p0, Lgjp;->b:Lgjn;
+.method public constructor <init>(Lgjq;Liho;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Lgjn;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p1, p0, Lgjp;->a:Lgjq;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+    const-string v0, "Settings"
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-interface {p2, v0}, Liho;->a(Ljava/lang/String;)Lihn;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lgjp;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lgjp;->b:Lihn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final a(Ljava/lang/String;I)Lick;
+    .locals 1
 
-    iget-object v0, p0, Lgjp;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const-string v0, "default_scope"
 
-    const/4 v1, 0x1
+    invoke-virtual {p0, v0, p1, p2}, Lgjp;->a(Ljava/lang/String;Ljava/lang/String;I)Lick;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/String;Ljava/lang/String;)Lick;
+    .locals 1
+
+    const-string v0, "default_scope"
+
+    invoke-virtual {p0, v0, p1, p2}, Lgjp;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lick;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/String;Ljava/lang/String;I)Lick;
+    .locals 3
+
+    iget-object v0, p0, Lgjp;->a:Lgjq;
+
+    invoke-virtual {v0, p1, p2}, Lgjq;->d(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    :goto_0
-    return-void
+    iget-object v0, p0, Lgjp;->b:Lihn;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x36
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Initializing default value ("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ") for key: ("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgjp;->a:Lgjq;
+
+    invoke-virtual {v0, p1, p2, p3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_0
-    iget-object v0, p0, Lgjp;->b:Lgjn;
+    new-instance v0, Lgji;
 
-    iget-object v0, v0, Lgjn;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v1, p0, Lgjp;->a:Lgjq;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    invoke-direct {v0, v1, p1, p2}, Lgji;-><init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lick;
+    .locals 3
+
+    iget-object v0, p0, Lgjp;->a:Lgjq;
+
+    invoke-virtual {v0, p1, p2}, Lgjq;->d(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lgjp;->b:Lihn;
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x2b
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Initializing default value ("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ") for key: ("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgjp;->a:Lgjq;
+
+    invoke-virtual {v0, p1, p2, p3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lgjp;->b(Ljava/lang/String;Ljava/lang/String;)Lick;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/String;Ljava/lang/String;Z)Lick;
+    .locals 3
+
+    iget-object v0, p0, Lgjp;->a:Lgjq;
+
+    invoke-virtual {v0, p1, p2}, Lgjq;->d(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lgjp;->b:Lihn;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x30
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Initializing default value ("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ") for key: ("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ")"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgjp;->a:Lgjq;
+
+    invoke-virtual {v0, p1, p2, p3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    :cond_0
+    new-instance v0, Lgje;
+
+    iget-object v1, p0, Lgjp;->a:Lgjq;
+
+    invoke-direct {v0, v1, p1, p2}, Lgje;-><init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final a(Ljava/lang/String;Z)Lick;
+    .locals 1
+
+    const-string v0, "default_scope"
+
+    invoke-virtual {p0, v0, p1, p2}, Lgjp;->a(Ljava/lang/String;Ljava/lang/String;Z)Lick;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/String;Ljava/lang/String;)Lick;
+    .locals 2
+
+    new-instance v0, Lgjv;
+
+    iget-object v1, p0, Lgjp;->a:Lgjq;
+
+    invoke-direct {v0, v1, p1, p2}, Lgjv;-><init>(Lgjq;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
 .end method

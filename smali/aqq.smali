@@ -1,110 +1,551 @@
-.class public abstract Laqq;
-.super Laql;
+.class public final Laqq;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Laqh;
+.implements Laqi;
 
 
 # instance fields
-.field private a:I
+.field public a:Laqh;
 
-.field private b:I
+.field public b:Laqh;
+
+.field private final c:Laqi;
+
+.field private d:Z
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 1
 
-    const/high16 v0, -0x80000000
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v0, v0}, Laqq;-><init>(II)V
+    invoke-direct {p0, v0}, Laqq;-><init>(Laqi;)V
 
     return-void
 .end method
 
-.method public constructor <init>(II)V
+.method public constructor <init>(Laqi;)V
     .locals 0
 
-    invoke-direct {p0}, Laql;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Laqq;->a:I
-
-    iput p2, p0, Laqq;->b:I
+    iput-object p1, p0, Laqq;->c:Laqi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Laqr;)V
-    .locals 5
+.method public final a()V
+    .locals 1
 
-    iget v0, p0, Laqq;->a:I
+    const/4 v0, 0x1
 
-    iget v1, p0, Laqq;->b:I
+    iput-boolean v0, p0, Laqq;->d:Z
 
-    invoke-static {v0, v1}, Larq;->a(II)Z
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->f()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Laqq;->b:Laqh;
 
-    iget v1, p0, Laqq;->a:I
+    invoke-interface {v0}, Laqh;->e()Z
 
-    iget v2, p0, Laqq;->b:I
+    move-result v0
 
-    const/16 v3, 0xb0
+    if-nez v0, :cond_0
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Laqq;->b:Laqh;
 
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Width and height must both be > 0 or Target#SIZE_ORIGINAL, but given width: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v3, " and height: "
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", either provide dimensions in the constructor or call override()"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    invoke-interface {v0}, Laqh;->a()V
 
     :cond_0
-    iget v0, p0, Laqq;->a:I
+    iget-boolean v0, p0, Laqq;->d:Z
 
-    iget v1, p0, Laqq;->b:I
+    if-eqz v0, :cond_1
 
-    invoke-interface {p1, v0, v1}, Laqr;->a(II)V
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->e()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->a()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final a(Laqh;)Z
+    .locals 3
+
+    const/4 v0, 0x0
+
+    instance-of v1, p1, Laqq;
+
+    if-eqz v1, :cond_0
+
+    check-cast p1, Laqq;
+
+    iget-object v1, p0, Laqq;->a:Laqh;
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p1, Laqq;->a:Laqh;
+
+    if-nez v1, :cond_0
+
+    :goto_0
+    iget-object v1, p0, Laqq;->b:Laqh;
+
+    if-nez v1, :cond_2
+
+    iget-object v1, p1, Laqq;->b:Laqh;
+
+    if-nez v1, :cond_0
+
+    :goto_1
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+
+    :cond_1
+    iget-object v1, p0, Laqq;->a:Laqh;
+
+    iget-object v2, p1, Laqq;->a:Laqh;
+
+    invoke-interface {v1, v2}, Laqh;->a(Laqh;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v1, p0, Laqq;->b:Laqh;
+
+    iget-object v2, p1, Laqq;->b:Laqh;
+
+    invoke-interface {v1, v2}, Laqh;->a(Laqh;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+.end method
+
+.method public final b()Z
+    .locals 3
+
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    invoke-interface {v2}, Laqi;->b()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    move v2, v1
+
+    :goto_0
+    if-nez v2, :cond_0
+
+    invoke-virtual {p0}, Laqq;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    move v0, v1
+
+    :cond_1
+    return v0
+
+    :cond_2
+    move v2, v0
+
+    goto :goto_0
+.end method
+
+.method public final b(Laqh;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    invoke-interface {v2, p0}, Laqi;->b(Laqh;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_0
+    move v2, v0
+
+    :goto_0
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Laqq;->a:Laqh;
+
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    iget-object v2, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v2}, Laqh;->g()Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    :cond_1
+    :goto_1
+    return v0
+
+    :cond_2
+    move v2, v1
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
+.end method
+
+.method public final c()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Laqq;->d:Z
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->c()V
+
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-interface {v0}, Laqh;->c()V
 
     return-void
 .end method
 
-.method public final b(Laqr;)V
-    .locals 0
+.method public final c(Laqh;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    invoke-interface {v2, p0}, Laqi;->c(Laqh;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    move v2, v0
+
+    :goto_0
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Laqq;->a:Laqh;
+
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {p0}, Laqq;->b()Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    :goto_1
+    return v0
+
+    :cond_1
+    move v2, v1
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_1
+.end method
+
+.method public final d()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Laqq;->d:Z
+
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-interface {v0}, Laqh;->d()V
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->d()V
+
+    return-void
+.end method
+
+.method public final d(Laqh;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Laqq;->c:Laqi;
+
+    invoke-interface {v2, p0}, Laqi;->d(Laqh;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    move v2, v0
+
+    :goto_0
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Laqq;->a:Laqh;
+
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :goto_1
+    return v0
+
+    :cond_1
+    move v2, v1
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_1
+.end method
+
+.method public final e(Laqh;)V
+    .locals 1
+
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Laqq;->c:Laqi;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Laqq;->c:Laqi;
+
+    invoke-interface {v0, p0}, Laqi;->e(Laqh;)V
+
+    :cond_2
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-interface {v0}, Laqh;->f()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-interface {v0}, Laqh;->d()V
+
+    goto :goto_0
+.end method
+
+.method public final e()Z
+    .locals 1
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->e()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final f(Laqh;)V
+    .locals 1
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Laqq;->c:Laqi;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Laqq;->c:Laqi;
+
+    invoke-interface {v0, p0}, Laqi;->f(Laqh;)V
+
+    goto :goto_0
+.end method
+
+.method public final f()Z
+    .locals 1
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->f()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-interface {v0}, Laqh;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final g()Z
+    .locals 1
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->g()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-interface {v0}, Laqh;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->h()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Laqq;->a:Laqh;
+
+    invoke-interface {v0}, Laqh;->i()V
+
+    iget-object v0, p0, Laqq;->b:Laqh;
+
+    invoke-interface {v0}, Laqh;->i()V
 
     return-void
 .end method

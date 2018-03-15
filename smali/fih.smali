@@ -3,78 +3,54 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfii;
 
 
 # instance fields
-.field private a:Lfif;
+.field private final a:Landroid/hardware/camera2/CaptureResult$Key;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final b:Ljuo;
 
 
 # direct methods
-.method public constructor <init>(Lfif;Ljxn;Ljxn;)V
+.method public constructor <init>(Landroid/hardware/camera2/CaptureResult$Key;Ljuo;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfih;->a:Lfif;
+    iput-object p1, p0, Lfih;->a:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iput-object p2, p0, Lfih;->b:Ljxn;
-
-    iput-object p3, p0, Lfih;->c:Ljxn;
+    iput-object p2, p0, Lfih;->b:Ljuo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final a(Lind;)Z
+    .locals 2
 
-    iget-object v2, p0, Lfih;->a:Lfif;
+    iget-object v0, p0, Lfih;->b:Ljuo;
 
-    iget-object v0, p0, Lfih;->b:Ljxn;
+    iget-object v1, p0, Lfih;->a:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhzt;
-
-    iget-object v1, p0, Lfih;->c:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {p1, v1}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Licz;
+    invoke-virtual {v0, v1}, Ljuo;->contains(Ljava/lang/Object;)Z
 
-    new-instance v3, Ljvi;
+    move-result v0
 
-    invoke-direct {v3}, Ljvi;-><init>()V
+    if-nez v0, :cond_0
 
-    new-instance v4, Lfig;
+    const/4 v0, 0x1
 
-    invoke-direct {v4, v2, v1, v3}, Lfig;-><init>(Lfif;Licz;Ljvi;)V
+    :goto_0
+    return v0
 
-    invoke-virtual {v0, v4}, Lhzt;->a(Ljava/lang/Runnable;)V
+    :cond_0
+    const/4 v0, 0x0
 
-    invoke-static {v3}, Ljuh;->b(Ljava/util/concurrent/Future;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfic;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfic;
-
-    return-object v0
+    goto :goto_0
 .end method

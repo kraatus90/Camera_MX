@@ -1,160 +1,120 @@
-.class public Lakh;
+.class public final Lakh;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Laek;
+
+# static fields
+.field private static final a:Ljava/util/Queue;
 
 
 # instance fields
-.field public final b:Laki;
+.field private b:I
 
-.field public final c:Ljava/net/URL;
+.field private c:I
 
-.field public final d:Ljava/lang/String;
-
-.field public e:Ljava/lang/String;
-
-.field public f:Ljava/net/URL;
-
-.field private volatile g:[B
-
-.field private h:I
+.field private d:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method static constructor <clinit>()V
     .locals 1
-
-    sget-object v0, Laki;->a:Laki;
-
-    invoke-direct {p0, p1, v0}, Lakh;-><init>(Ljava/lang/String;Laki;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;Laki;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lakh;->c:Ljava/net/URL;
-
-    invoke-static {p1}, Lapb;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Larx;->a(I)Ljava/util/Queue;
 
     move-result-object v0
 
-    iput-object v0, p0, Lakh;->d:Ljava/lang/String;
-
-    const-string v0, "Argument must not be null"
-
-    invoke-static {p2, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laki;
-
-    iput-object v0, p0, Lakh;->b:Laki;
+    sput-object v0, Lakh;->a:Ljava/util/Queue;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/net/URL;)V
-    .locals 1
-
-    sget-object v0, Laki;->a:Laki;
-
-    invoke-direct {p0, p1, v0}, Lakh;-><init>(Ljava/net/URL;Laki;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/net/URL;Laki;)V
-    .locals 1
+.method private constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "Argument must not be null"
-
-    invoke-static {p1, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/net/URL;
-
-    iput-object v0, p0, Lakh;->c:Ljava/net/URL;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lakh;->d:Ljava/lang/String;
-
-    const-string v0, "Argument must not be null"
-
-    invoke-static {p2, v0}, Lapb;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laki;
-
-    iput-object v0, p0, Lakh;->b:Laki;
-
     return-void
 .end method
 
-.method private final a()Ljava/lang/String;
-    .locals 1
+.method public static a(Ljava/lang/Object;)Lakh;
+    .locals 3
 
-    iget-object v0, p0, Lakh;->d:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
+    sget-object v1, Lakh;->a:Ljava/util/Queue;
 
-    iget-object v0, p0, Lakh;->d:Ljava/lang/String;
+    monitor-enter v1
 
-    :goto_0
-    return-object v0
+    :try_start_0
+    sget-object v0, Lakh;->a:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lakh;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lakh;
+
+    invoke-direct {v0}, Lakh;-><init>()V
 
     :cond_0
-    iget-object v0, p0, Lakh;->c:Ljava/net/URL;
+    iput-object p0, v0, Lakh;->d:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/net/URL;->toString()Ljava/lang/String;
+    iput v2, v0, Lakh;->c:I
 
-    move-result-object v0
+    iput v2, v0, Lakh;->b:I
 
-    goto :goto_0
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/security/MessageDigest;)V
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Lakh;->g:[B
+    sget-object v1, Lakh;->a:Ljava/util/Queue;
 
-    if-nez v0, :cond_0
+    monitor-enter v1
 
-    invoke-direct {p0}, Lakh;->a()Ljava/lang/String;
+    :try_start_0
+    sget-object v0, Lakh;->a:Ljava/util/Queue;
 
-    move-result-object v0
+    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    sget-object v1, Lakh;->a:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v0
-
-    iput-object v0, p0, Lakh;->g:[B
-
-    :cond_0
-    iget-object v0, p0, Lakh;->g:[B
-
-    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
     const/4 v0, 0x0
@@ -165,23 +125,9 @@
 
     check-cast p1, Lakh;
 
-    invoke-direct {p0}, Lakh;->a()Ljava/lang/String;
+    iget-object v1, p0, Lakh;->d:Ljava/lang/Object;
 
-    move-result-object v1
-
-    invoke-direct {p1}, Lakh;->a()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lakh;->b:Laki;
-
-    iget-object v2, p1, Lakh;->b:Laki;
+    iget-object v2, p1, Lakh;->d:Ljava/lang/Object;
 
     invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -195,49 +141,16 @@
     return v0
 .end method
 
-.method public hashCode()I
-    .locals 2
+.method public final hashCode()I
+    .locals 1
 
-    iget v0, p0, Lakh;->h:I
+    iget-object v0, p0, Lakh;->d:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
-
-    invoke-direct {p0}, Lakh;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    iput v0, p0, Lakh;->h:I
-
-    iget v0, p0, Lakh;->h:I
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lakh;->b:Laki;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lakh;->h:I
-
-    :cond_0
-    iget v0, p0, Lakh;->h:I
+    add-int/lit8 v0, v0, 0x0
 
     return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-direct {p0}, Lakh;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

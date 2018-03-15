@@ -1,212 +1,226 @@
-.class final Leqj;
+.class public abstract Leqj;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/preference/Preference$OnPreferenceClickListener;
+
+# static fields
+.field private static final l:Ljava/util/Date;
+
+.field private static final m:Lihc;
 
 
 # instance fields
-.field private synthetic a:Landroid/app/Activity;
+.field public final a:Landroid/net/Uri;
+
+.field public b:J
+
+.field public c:Ljava/lang/String;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Ljava/util/Date;
+
+.field public f:Ljava/util/Date;
+
+.field public g:Ljava/lang/String;
+
+.field public h:Z
+
+.field public i:Lihc;
+
+.field public j:Leqk;
+
+.field public k:Z
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Activity;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p1, p0, Leqj;->a:Landroid/app/Activity;
+    const/4 v1, 0x0
+
+    new-instance v0, Ljava/util/Date;
+
+    const-wide/16 v2, 0x0
+
+    invoke-direct {v0, v2, v3}, Ljava/util/Date;-><init>(J)V
+
+    sput-object v0, Leqj;->l:Ljava/util/Date;
+
+    new-instance v0, Lihc;
+
+    invoke-direct {v0, v1, v1}, Lihc;-><init>(II)V
+
+    sput-object v0, Leqj;->m:Lihc;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/net/Uri;)V
+    .locals 3
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Leqj;->b:J
+
+    const-string v0, ""
+
+    iput-object v0, p0, Leqj;->c:Ljava/lang/String;
+
+    const-string v0, ""
+
+    iput-object v0, p0, Leqj;->d:Ljava/lang/String;
+
+    sget-object v0, Leqj;->l:Ljava/util/Date;
+
+    iput-object v0, p0, Leqj;->e:Ljava/util/Date;
+
+    sget-object v0, Leqj;->l:Ljava/util/Date;
+
+    iput-object v0, p0, Leqj;->f:Ljava/util/Date;
+
+    const-string v0, ""
+
+    iput-object v0, p0, Leqj;->g:Ljava/lang/String;
+
+    iput-boolean v2, p0, Leqj;->h:Z
+
+    sget-object v0, Leqj;->m:Lihc;
+
+    iput-object v0, p0, Leqj;->i:Lihc;
+
+    sget-object v0, Leqk;->a:Leqk;
+
+    iput-object v0, p0, Leqj;->j:Leqk;
+
+    iput-boolean v2, p0, Leqj;->k:Z
+
+    iput-object p1, p0, Leqj;->a:Landroid/net/Uri;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPreferenceClick(Landroid/preference/Preference;)Z
-    .locals 8
+.method public final a(J)Leqj;
+    .locals 1
 
-    const/4 v7, 0x1
+    iput-wide p1, p0, Leqj;->b:J
 
-    new-instance v0, Lfkj;
-
-    iget-object v1, p0, Leqj;->a:Landroid/app/Activity;
-
-    invoke-direct {v0, v1}, Lfkj;-><init>(Landroid/app/Activity;)V
-
-    new-instance v1, Lcom/google/android/gms/googlehelp/GoogleHelp;
-
-    const-string v2, "android_default"
-
-    invoke-direct {v1, v2}, Lcom/google/android/gms/googlehelp/GoogleHelp;-><init>(Ljava/lang/String;)V
-
-    sget-object v2, Lfkj;->b:Landroid/net/Uri;
-
-    iput-object v2, v1, Lcom/google/android/gms/googlehelp/GoogleHelp;->b:Landroid/net/Uri;
-
-    const/4 v2, 0x0
-
-    iget-object v3, v0, Lfkj;->f:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f1102b1
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Landroid/content/Intent;
-
-    const-string v5, "android.intent.action.VIEW"
-
-    sget-object v6, Lfkj;->c:Landroid/net/Uri;
-
-    invoke-direct {v4, v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    invoke-virtual {v1, v2, v3, v4}, Lcom/google/android/gms/googlehelp/GoogleHelp;->a(ILjava/lang/String;Landroid/content/Intent;)Lcom/google/android/gms/googlehelp/GoogleHelp;
-
-    iget-object v2, v0, Lfkj;->f:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0x7f11019f
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Landroid/content/Intent;
-
-    iget-object v4, v0, Lfkj;->f:Landroid/content/Context;
-
-    const-class v5, Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
-
-    invoke-direct {v3, v4, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {v1, v7, v2, v3}, Lcom/google/android/gms/googlehelp/GoogleHelp;->a(ILjava/lang/String;Landroid/content/Intent;)Lcom/google/android/gms/googlehelp/GoogleHelp;
-
-    const/4 v2, 0x2
-
-    iget-object v3, v0, Lfkj;->f:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f110310
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Landroid/content/Intent;
-
-    const-string v5, "android.intent.action.VIEW"
-
-    sget-object v6, Lfkj;->d:Landroid/net/Uri;
-
-    invoke-direct {v4, v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    invoke-virtual {v1, v2, v3, v4}, Lcom/google/android/gms/googlehelp/GoogleHelp;->a(ILjava/lang/String;Landroid/content/Intent;)Lcom/google/android/gms/googlehelp/GoogleHelp;
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "com.google.android.gms.googlehelp.HELP"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string v3, "com.google.android.gms"
-
-    invoke-virtual {v2, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v2
-
-    const-string v3, "EXTRA_GOOGLE_HELP"
-
-    invoke-virtual {v2, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    new-instance v2, Lhob;
-
-    iget-object v0, v0, Lfkj;->g:Landroid/app/Activity;
-
-    invoke-direct {v2, v0}, Lhob;-><init>(Landroid/app/Activity;)V
-
-    invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {p0}, Leqj;->b()Leqj;
 
     move-result-object v0
 
-    const-string v3, "com.google.android.gms.googlehelp.HELP"
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+.method public final a(Ljava/util/Date;)Leqj;
+    .locals 1
 
-    move-result v0
+    iput-object p1, p0, Leqj;->e:Ljava/util/Date;
 
-    if-eqz v0, :cond_0
-
-    const-string v0, "EXTRA_GOOGLE_HELP"
-
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "The intent you are trying to launch is not GoogleHelp intent! This class only supports GoogleHelp intents."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    iget-object v0, v2, Lhob;->a:Landroid/app/Activity;
-
-    invoke-static {v0}, Lhjy;->a(Landroid/content/Context;)I
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const-string v0, "EXTRA_GOOGLE_HELP"
-
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p0}, Leqj;->b()Leqj;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/gms/googlehelp/GoogleHelp;
+    return-object v0
+.end method
 
-    sget v3, Lhjv;->b:I
+.method public abstract b()Leqj;
+.end method
 
-    iput v3, v0, Lcom/google/android/gms/googlehelp/GoogleHelp;->d:I
+.method public final b(Ljava/util/Date;)Leqj;
+    .locals 1
 
-    const-string v3, "EXTRA_GOOGLE_HELP"
+    iput-object p1, p0, Leqj;->f:Ljava/util/Date;
 
-    invoke-virtual {v1, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    invoke-virtual {p0}, Leqj;->b()Leqj;
 
-    iget-object v0, v2, Lhob;->b:Lhkl;
+    move-result-object v0
 
-    new-instance v3, Lhoc;
+    return-object v0
+.end method
 
-    const/4 v4, 0x0
+.method public c()Leqh;
+    .locals 19
 
-    invoke-direct {v3, v2, v1, v4}, Lhoc;-><init>(Lhob;Landroid/content/Intent;Ljava/util/List;)V
+    new-instance v3, Leqh;
 
-    invoke-static {v0, v3}, Lhpc;->a(Lhkl;Lhpg;)V
+    move-object/from16 v0, p0
 
-    :goto_0
-    return v7
+    iget-wide v4, v0, Leqj;->b:J
 
-    :cond_2
-    invoke-virtual {v2, v0, v1}, Lhob;->a(ILandroid/content/Intent;)V
+    move-object/from16 v0, p0
 
-    goto :goto_0
+    iget-object v6, v0, Leqj;->c:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Leqj;->d:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Leqj;->e:Ljava/util/Date;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Leqj;->f:Ljava/util/Date;
+
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Leqj;->g:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Leqj;->a:Landroid/net/Uri;
+
+    move-object/from16 v0, p0
+
+    iget-boolean v12, v0, Leqj;->h:Z
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Leqj;->i:Lihc;
+
+    invoke-static {v2}, Ljrf;->b(Ljava/lang/Object;)Ljrf;
+
+    move-result-object v13
+
+    const-wide/16 v14, 0x0
+
+    const/16 v16, 0x0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Leqj;->j:Leqk;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Leqj;->k:Z
+
+    move/from16 v18, v0
+
+    invoke-direct/range {v3 .. v18}, Leqh;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;Ljava/lang/String;Landroid/net/Uri;ZLjrf;JILeqk;Z)V
+
+    return-object v3
+.end method
+
+.method public final d()Leqj;
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Leqj;->h:Z
+
+    invoke-virtual {p0}, Leqj;->b()Leqj;
+
+    move-result-object v0
+
+    return-object v0
 .end method

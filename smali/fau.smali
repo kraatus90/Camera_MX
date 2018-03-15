@@ -1,45 +1,54 @@
-.class final Lfau;
-.super Lezi;
+.class public final Lfau;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfat;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfat;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfau;->a:Lfat;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lezi;-><init>(Lezh;)V
+    iput-object p1, p0, Lfau;->a:Lkgv;
+
+    iput-object p2, p0, Lfau;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final u()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lfau;->a:Lfat;
+    new-instance v2, Lfat;
 
-    iget-object v0, v0, Lfat;->o:Lgvj;
+    iget-object v0, p0, Lfau;->a:Lkgv;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lezi;->u()V
+    move-result-object v0
 
-    iget-object v0, p0, Lfau;->a:Lfat;
+    check-cast v0, Liky;
 
-    iget-object v0, v0, Lfat;->o:Lgvj;
+    iget-object v1, p0, Lfau;->b:Lkgv;
 
-    iget-object v1, p0, Lfau;->a:Lfat;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v1, Lfat;->q:Lgvl;
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    check-cast v1, Lhbh;
 
-    return-void
+    invoke-direct {v2, v0, v1}, Lfat;-><init>(Liky;Lhbh;)V
+
+    return-object v2
 .end method

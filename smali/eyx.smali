@@ -1,45 +1,64 @@
-.class Leyx;
-.super Lgvh;
+.class public final Leyx;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method private constructor <init>(Lkgv;Lkgv;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lgvh;-><init>([I)V
+    iput-object p1, p0, Leyx;->a:Lkgv;
+
+    iput-object p2, p0, Leyx;->b:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;)Leyx;
+    .locals 1
+
+    new-instance v0, Leyx;
+
+    invoke-direct {v0, p0, p1}, Leyx;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    sget-object v0, Leyu;->a:Ljava/lang/String;
+    new-instance v2, Leyw;
 
-    const-string v1, "Photos state enter"
+    iget-object v0, p0, Leyx;->a:Lkgv;
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-super {p0}, Lgvh;->a()V
+    move-result-object v0
 
-    return-void
-.end method
+    check-cast v0, Leyp;
 
-.method public final b()V
-    .locals 2
+    iget-object v1, p0, Leyx;->b:Lkgv;
 
-    sget-object v0, Leyu;->a:Ljava/lang/String;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    const-string v1, "Photos state exit"
+    move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    check-cast v1, Leyy;
 
-    invoke-super {p0}, Lgvh;->b()V
+    invoke-direct {v2, v0, v1}, Leyw;-><init>(Leyp;Leyy;)V
 
-    return-void
+    return-object v2
 .end method

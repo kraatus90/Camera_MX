@@ -10,7 +10,7 @@
 
 .field public isPhotoButton:Z
 
-.field public smoothRotator:Lgzg;
+.field public smoothRotator$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NNAQBLEHKMOSPFADMMURRKD17N4QB5DPQ62T39DTN54RRKC5Q6IRRE7C______0:Lhas;
 
 
 # direct methods
@@ -204,15 +204,15 @@
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;->resetSwitchButton()V
 
-    new-instance v0, Lgzg;
+    new-instance v0, Lhas;
 
-    invoke-direct {v0, p0}, Lgzg;-><init>(Landroid/view/View;)V
+    invoke-direct {v0, p0}, Lhas;-><init>(Landroid/view/View;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;->smoothRotator:Lgzg;
+    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;->smoothRotator$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NNAQBLEHKMOSPFADMMURRKD17N4QB5DPQ62T39DTN54RRKC5Q6IRRE7C______0:Lhas;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;->smoothRotator:Lgzg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;->smoothRotator$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NNAQBLEHKMOSPFADMMURRKD17N4QB5DPQ62T39DTN54RRKC5Q6IRRE7C______0:Lhas;
 
-    invoke-virtual {v0}, Lgzg;->a()V
+    invoke-virtual {v0}, Lhas;->a()V
 
     return-void
 .end method
@@ -234,9 +234,9 @@
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;->smoothRotator:Lgzg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/SmoothRotateSwitchButton;->smoothRotator$9HHMUR9FCTNMUPRCCKNM2RJ4E9NMIP1FC5O70SPFCDGMQPBIC4NNAQBLEHKMOSPFADMMURRKD17N4QB5DPQ62T39DTN54RRKC5Q6IRRE7C______0:Lhas;
 
-    invoke-virtual {v0}, Lgzg;->b()V
+    invoke-virtual {v0}, Lhas;->b()V
 
     return-void
 .end method

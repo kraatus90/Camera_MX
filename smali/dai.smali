@@ -3,95 +3,54 @@
 .source "PG"
 
 # interfaces
-.implements Ldhk;
+.implements Lkgv;
 
 
 # instance fields
-.field public final synthetic a:Lczt;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lczt;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldai;->a:Lczt;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldai;->a:Lkgv;
+
+    iput-object p2, p0, Ldai;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ldai;->a:Lkgv;
 
-    cmpl-float v0, p1, v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Ldai;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->d:Lbtx;
-
-    invoke-interface {v0}, Lbtx;->t()Leug;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Leug;->n()V
+    check-cast v0, Lcsc;
 
-    :cond_0
-    :goto_0
-    return-void
+    iget-object v1, p0, Ldai;->b:Lkgv;
 
-    :cond_1
-    const/high16 v0, 0x3f800000    # 1.0f
+    new-instance v2, Lcsi;
 
-    cmpl-float v0, p1, v0
+    invoke-direct {v2, v0, v1}, Lcsi;-><init>(Lcsc;Lkgv;)V
 
-    if-nez v0, :cond_0
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Ldai;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->d:Lbtx;
-
-    invoke-interface {v0}, Lbtx;->t()Leug;
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Leug;->o()V
+    check-cast v0, Lcsb;
 
-    iget-object v0, p0, Ldai;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->h:Lgum;
-
-    const v1, 0x7f090006
-
-    invoke-interface {v0, v1}, Lgum;->a(I)V
-
-    goto :goto_0
-.end method
-
-.method public final t()V
-    .locals 2
-
-    iget-object v0, p0, Ldai;->a:Lczt;
-
-    iget-object v0, v0, Lczt;->e:Lhzt;
-
-    new-instance v1, Ldab;
-
-    invoke-direct {v1, p0}, Ldab;-><init>(Ldai;)V
-
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final x()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

@@ -168,6 +168,36 @@
     goto :goto_0
 .end method
 
+.method public getFeatures_callback()Lcom/google/googlex/gcam/GoudaOutputFeaturesCallback;
+    .locals 4
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/GoudaCallbacks;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaCallbacks_features_callback_get(JLcom/google/googlex/gcam/GoudaCallbacks;)J
+
+    move-result-wide v2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lcom/google/googlex/gcam/GoudaOutputFeaturesCallback;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/GoudaOutputFeaturesCallback;-><init>(JZ)V
+
+    goto :goto_0
+.end method
+
 .method public getImage_callback()Lcom/google/googlex/gcam/GoudaImageCallback;
     .locals 4
 
@@ -320,6 +350,24 @@
     move-object v5, p1
 
     invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaCallbacks_debug_image_callback_set(JLcom/google/googlex/gcam/GoudaCallbacks;JLcom/google/googlex/gcam/GoudaImageCallback;)V
+
+    return-void
+.end method
+
+.method public setFeatures_callback(Lcom/google/googlex/gcam/GoudaOutputFeaturesCallback;)V
+    .locals 6
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/GoudaCallbacks;->swigCPtr:J
+
+    invoke-static {p1}, Lcom/google/googlex/gcam/GoudaOutputFeaturesCallback;->getCPtr(Lcom/google/googlex/gcam/GoudaOutputFeaturesCallback;)J
+
+    move-result-wide v3
+
+    move-object v2, p0
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaCallbacks_features_callback_set(JLcom/google/googlex/gcam/GoudaCallbacks;JLcom/google/googlex/gcam/GoudaOutputFeaturesCallback;)V
 
     return-void
 .end method

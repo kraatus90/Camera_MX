@@ -1,197 +1,126 @@
-.class final Lewz;
+.class public final Lewz;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lews;
-.implements Lfse;
-.implements Lfsf;
-
 
 # instance fields
-.field public final a:Lfkx;
+.field public final a:I
 
-.field public final b:Ljava/util/List;
+.field public final b:Lexc;
 
-.field public c:Z
+.field public final c:[B
 
-.field private d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+.field public d:J
 
-.field private e:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$Callback;
+.field public e:Lbui;
 
-.field private f:Z
+.field private final f:I
 
 
 # direct methods
-.method constructor <init>(Lfid;Lfkx;)V
-    .locals 3
-
-    const/4 v2, 0x1
+.method public constructor <init>([BILexc;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lexa;
+    new-instance v0, Lbui;
 
-    invoke-direct {v0, p0}, Lexa;-><init>(Lewz;)V
+    invoke-direct {v0}, Lbui;-><init>()V
 
-    iput-object v0, p0, Lewz;->e:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$Callback;
+    iput-object v0, p0, Lewz;->e:Lbui;
 
-    new-instance v0, Ljava/util/LinkedList;
+    iput-object p1, p0, Lewz;->c:[B
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    iput p2, p0, Lewz;->f:I
 
-    iput-object v0, p0, Lewz;->b:Ljava/util/List;
+    const/16 v0, 0x68
 
-    const/4 v0, 0x0
+    iput v0, p0, Lewz;->a:I
 
-    iput-boolean v0, p0, Lewz;->f:Z
+    iput-object p3, p0, Lewz;->b:Lexc;
 
-    iput-boolean v2, p0, Lewz;->c:Z
+    const-wide/16 v0, 0x0
 
-    iput-object p2, p0, Lewz;->a:Lfkx;
+    iput-wide v0, p0, Lewz;->d:J
 
-    iget-object v0, p1, Lfid;->f:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+    return-void
+.end method
 
-    iput-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+.method static a([BIILbui;)V
+    .locals 4
 
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+    invoke-static {p0, p1, p2}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
 
-    iget-object v1, p0, Lewz;->e:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$Callback;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setCallback(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$Callback;)V
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setEnabled(Z)V
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    sget-object v0, Lgzj;->e:Lgzj;
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
 
-    invoke-virtual {p0, v0}, Lewz;->a(Lgzj;)V
+    move-result v1
+
+    iput v1, p3, Lbui;->a:I
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
+
+    move-result v1
+
+    iput v1, p3, Lbui;->c:I
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getLong()J
+
+    move-result-wide v2
+
+    iput-wide v2, p3, Lbui;->e:J
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getFloat()F
+
+    move-result v1
+
+    iput v1, p3, Lbui;->f:F
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getFloat()F
+
+    move-result v1
+
+    iput v1, p3, Lbui;->g:F
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getFloat()F
+
+    move-result v0
+
+    iput v0, p3, Lbui;->h:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lewt;)Lich;
-    .locals 1
+.method final a(I)I
+    .locals 3
 
-    iget-object v0, p0, Lewz;->b:Ljava/util/List;
+    iget v0, p0, Lewz;->a:I
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    add-int/2addr v0, p1
 
-    new-instance v0, Lexb;
+    iget v1, p0, Lewz;->a:I
 
-    invoke-direct {v0, p0, p1}, Lexb;-><init>(Lewz;Lewt;)V
+    add-int/2addr v1, v0
 
-    return-object v0
-.end method
+    iget v2, p0, Lewz;->f:I
 
-.method public final a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final a(Landroid/graphics/Bitmap;I)V
-    .locals 2
+    if-le v1, v2, :cond_0
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lewz;->c:Z
-
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setEnabled(Z)V
-
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setThumbnail(Landroid/graphics/Bitmap;I)V
-
-    return-void
-.end method
-
-.method public final a(Lgzj;)V
-    .locals 3
-
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getDefaultThumbnail(Lgzj;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setThumbnail(Landroid/graphics/Bitmap;I)V
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/String;)V
-    .locals 1
-
-    iget-boolean v0, p0, Lewz;->f:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getVisibility()I
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
     :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->startRevealThumbnailAnimation(Ljava/lang/String;)V
-
-    goto :goto_0
-.end method
-
-.method public final a(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lewz;->f:Z
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lewz;->c:Z
-
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setEnabled(Z)V
-
-    sget-object v0, Lgzj;->e:Lgzj;
-
-    invoke-virtual {p0, v0}, Lewz;->a(Lgzj;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lewz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setVisibility(I)V
-
-    return-void
+    return v0
 .end method

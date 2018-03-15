@@ -3,70 +3,86 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lffe;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lffe;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
-
-    iput-object p1, p0, Lffg;->a:Lffe;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lffg;->a:Lkgv;
+
+    iput-object p2, p0, Lffg;->b:Lkgv;
+
+    iput-object p3, p0, Lffg;->c:Lkgv;
+
+    iput-object p4, p0, Lffg;->d:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;)Lffg;
+    .locals 1
+
+    new-instance v0, Lffg;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lffg;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    check-cast p1, Ljava/lang/Boolean;
+    new-instance v4, Lfff;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v0, p0, Lffg;->a:Lkgv;
 
-    move-result v0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    sget-object v0, Lffe;->a:Ljava/lang/String;
+    check-cast v0, Lick;
 
-    const-string v1, "ActiveFocusScanAnimation: completed"
+    iget-object v1, p0, Lffg;->b:Lkgv;
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lffg;->a:Lffe;
+    move-result-object v1
 
-    iget-object v0, v0, Lffe;->q:Lass;
+    check-cast v1, Lick;
 
-    invoke-interface {v0}, Lass;->b()Lgzp;
+    iget-object v2, p0, Lffg;->c:Lkgv;
 
-    :goto_0
-    return-void
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    :cond_0
-    sget-object v0, Lffe;->a:Ljava/lang/String;
+    move-result-object v2
 
-    const-string v1, "ActiveFocusScanAnimation: cancelled"
+    check-cast v2, Libw;
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v3, p0, Lffg;->d:Lkgv;
 
-    goto :goto_0
-.end method
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    move-result-object v3
 
-    sget-object v0, Lffe;->a:Ljava/lang/String;
+    check-cast v3, Lfdv;
 
-    const-string v1, "ActiveFocusScanAnimation: not started"
+    invoke-direct {v4, v0, v1, v2, v3}, Lfff;-><init>(Lick;Lick;Libw;Lfdv;)V
 
-    invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
+    return-object v4
 .end method

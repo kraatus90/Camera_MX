@@ -1,53 +1,67 @@
 .class final Lcus;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcuq;
+.field private final synthetic a:Lcur;
 
 
 # direct methods
-.method constructor <init>(Lcuq;)V
+.method constructor <init>(Lcur;)V
     .locals 0
 
-    iput-object p1, p0, Lcus;->a:Lcuq;
+    iput-object p1, p0, Lcus;->a:Lcur;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraSwitch(I)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lcus;->a:Lcuq;
+    iget-object v0, p0, Lcus;->a:Lcur;
 
-    iget-object v0, v0, Lcuq;->c:Lcnh;
+    iget-object v0, v0, Lcur;->a:Lctw;
 
-    new-instance v1, Lcvw;
+    iget-object v0, v0, Lctw;->B:Lfap;
 
-    invoke-direct {v1}, Lcvw;-><init>()V
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    iget-object v0, p0, Lcus;->a:Lcur;
 
-    return-void
-.end method
+    iget-object v0, v0, Lcur;->a:Lctw;
 
-.method public final onRetakeButtonPressed()V
-    .locals 2
+    iget-object v0, v0, Lctw;->B:Lfap;
 
-    iget-object v0, p0, Lcus;->a:Lcuq;
+    invoke-interface {v0}, Lfap;->c()Lfav;
 
-    iget-object v0, v0, Lcuq;->c:Lcnh;
+    move-result-object v0
 
-    new-instance v1, Lcvu;
+    iget-object v0, v0, Lfav;->d:Lick;
 
-    invoke-direct {v1}, Lcvu;-><init>()V
+    iget-object v1, p0, Lcus;->a:Lcur;
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    iget-object v1, v1, Lcur;->a:Lctw;
 
+    invoke-interface {v0}, Lick;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lftn;
+
+    iget-boolean v2, v1, Lctw;->U:Z
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, v0}, Lctw;->a(Lftn;)V
+
+    :cond_0
     return-void
 .end method

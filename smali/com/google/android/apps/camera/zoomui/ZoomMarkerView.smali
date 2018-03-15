@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final a:Lhfh;
+.field public final a:Lhhq;
 
 .field public b:Z
 
@@ -27,15 +27,15 @@
 
     iput v0, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->f:F
 
-    new-instance v0, Lhfh;
+    new-instance v0, Lhhq;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lhfh;-><init>(Landroid/content/res/Resources;)V
+    invoke-direct {v0, v1}, Lhhq;-><init>(Landroid/content/res/Resources;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->a:Lhfh;
+    iput-object v0, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->a:Lhhq;
 
     iget v0, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->f:F
 
@@ -44,7 +44,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lhfh;)V
+.method public constructor <init>(Landroid/content/Context;Lhhq;)V
     .locals 1
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -53,7 +53,7 @@
 
     iput v0, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->f:F
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->a:Lhfh;
+    iput-object p2, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->a:Lhhq;
 
     return-void
 .end method
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->a:Lhfh;
+    iget-object v1, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->a:Lhhq;
 
     iget v2, p0, Lcom/google/android/apps/camera/zoomui/ZoomMarkerView;->c:F
 
@@ -79,7 +79,7 @@
 
     int-to-float v4, v0
 
-    iget v0, v1, Lhfh;->i:F
+    iget v0, v1, Lhhq;->i:F
 
     const/4 v5, 0x0
 
@@ -92,9 +92,9 @@
     :goto_0
     const-string v5, "max zoom value hasn\'t been initialized properly"
 
-    invoke-static {v0, v5}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v5}, Ljii;->a(ZLjava/lang/Object;)V
 
-    iget v0, v1, Lhfh;->j:F
+    iget v0, v1, Lhhq;->j:F
 
     const/high16 v5, 0x3f800000    # 1.0f
 
@@ -107,9 +107,9 @@
     :goto_1
     const-string v5, "min zoom value hasn\'t been initialized properly"
 
-    invoke-static {v0, v5}, Liya;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v5}, Ljii;->a(ZLjava/lang/Object;)V
 
-    iget v0, v1, Lhfh;->j:F
+    iget v0, v1, Lhhq;->j:F
 
     cmpl-float v0, v2, v0
 
@@ -120,13 +120,13 @@
     :goto_2
     const-string v5, "zoom must be in the range [%s, %s]: %s"
 
-    iget v6, v1, Lhfh;->j:F
+    iget v6, v1, Lhhq;->j:F
 
     invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v6
 
-    iget v7, v1, Lhfh;->i:F
+    iget v7, v1, Lhhq;->i:F
 
     invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -136,9 +136,9 @@
 
     move-result-object v8
 
-    invoke-static {v0, v5, v6, v7, v8}, Liya;->a(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, v5, v6, v7, v8}, Ljii;->a(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    iget v0, v1, Lhfh;->i:F
+    iget v0, v1, Lhhq;->i:F
 
     cmpg-float v0, v2, v0
 
@@ -149,13 +149,13 @@
     :goto_3
     const-string v5, "zoom must be in the range [%s, %s]: %s"
 
-    iget v6, v1, Lhfh;->j:F
+    iget v6, v1, Lhhq;->j:F
 
     invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v6
 
-    iget v7, v1, Lhfh;->i:F
+    iget v7, v1, Lhhq;->i:F
 
     invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -165,7 +165,7 @@
 
     move-result-object v8
 
-    invoke-static {v0, v5, v6, v7, v8}, Liya;->a(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, v5, v6, v7, v8}, Ljii;->a(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     const/4 v0, 0x0
 
@@ -182,7 +182,7 @@
 
     move-result-object v6
 
-    invoke-static {v0, v5, v6}, Liya;->a(ZLjava/lang/String;Ljava/lang/Object;)V
+    invoke-static {v0, v5, v6}, Ljii;->a(ZLjava/lang/String;Ljava/lang/Object;)V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -199,7 +199,7 @@
 
     move-result-object v6
 
-    invoke-static {v0, v5, v6}, Liya;->a(ZLjava/lang/String;Ljava/lang/Object;)V
+    invoke-static {v0, v5, v6}, Ljii;->a(ZLjava/lang/String;Ljava/lang/Object;)V
 
     const/4 v0, 0x0
 
@@ -207,25 +207,25 @@
 
     if-eqz v0, :cond_0
 
-    iget v0, v1, Lhfh;->b:F
+    iget v0, v1, Lhhq;->b:F
 
     mul-float/2addr v0, v3
 
-    iget v5, v1, Lhfh;->a:F
+    iget v5, v1, Lhhq;->a:F
 
     mul-float/2addr v5, v3
 
-    iget v6, v1, Lhfh;->c:F
+    iget v6, v1, Lhhq;->c:F
 
     mul-float/2addr v6, v3
 
-    iget v7, v1, Lhfh;->f:F
+    iget v7, v1, Lhhq;->f:F
 
-    iget v8, v1, Lhfh;->f:F
+    iget v8, v1, Lhhq;->f:F
 
     sub-float/2addr v4, v8
 
-    iget v8, v1, Lhfh;->j:F
+    iget v8, v1, Lhhq;->j:F
 
     div-float v8, v2, v8
 
@@ -235,9 +235,9 @@
 
     move-result-wide v8
 
-    iget v10, v1, Lhfh;->i:F
+    iget v10, v1, Lhhq;->i:F
 
-    iget v11, v1, Lhfh;->j:F
+    iget v11, v1, Lhhq;->j:F
 
     div-float/2addr v10, v11
 
@@ -269,7 +269,7 @@
 
     add-float/2addr v5, v4
 
-    iget v8, v1, Lhfh;->b:F
+    iget v8, v1, Lhhq;->b:F
 
     sub-float v0, v8, v0
 
@@ -291,25 +291,25 @@
 
     invoke-virtual {v10, v5, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    iget v11, v1, Lhfh;->d:F
+    iget v11, v1, Lhhq;->d:F
 
     add-float/2addr v11, v0
 
     invoke-virtual {v10, v5, v11}, Landroid/graphics/Path;->lineTo(FF)V
 
-    iget v11, v1, Lhfh;->d:F
+    iget v11, v1, Lhhq;->d:F
 
     sub-float v11, v5, v11
 
     invoke-virtual {v10, v5, v0, v11, v0}, Landroid/graphics/Path;->quadTo(FFFF)V
 
-    iget v5, v1, Lhfh;->d:F
+    iget v5, v1, Lhhq;->d:F
 
     add-float/2addr v5, v7
 
     invoke-virtual {v10, v5, v0}, Landroid/graphics/Path;->lineTo(FF)V
 
-    iget v5, v1, Lhfh;->d:F
+    iget v5, v1, Lhhq;->d:F
 
     add-float/2addr v5, v0
 
@@ -321,7 +321,7 @@
 
     invoke-virtual {v10}, Landroid/graphics/Path;->close()V
 
-    iget-object v0, v1, Lhfh;->g:Landroid/graphics/Paint;
+    iget-object v0, v1, Lhhq;->g:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v10, v0}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
@@ -353,9 +353,9 @@
 
     move-result-object v0
 
-    iget-object v2, v1, Lhfh;->h:Landroid/graphics/Paint;
+    iget-object v2, v1, Lhhq;->h:Landroid/graphics/Paint;
 
-    iget v5, v1, Lhfh;->e:F
+    iget v5, v1, Lhhq;->e:F
 
     mul-float/2addr v3, v5
 
@@ -365,7 +365,7 @@
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    iget-object v3, v1, Lhfh;->h:Landroid/graphics/Paint;
+    iget-object v3, v1, Lhhq;->h:Landroid/graphics/Paint;
 
     const/4 v5, 0x0
 
@@ -385,7 +385,7 @@
 
     add-float/2addr v2, v9
 
-    iget-object v1, v1, Lhfh;->h:Landroid/graphics/Paint;
+    iget-object v1, v1, Lhhq;->h:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v4, v2, v1}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 

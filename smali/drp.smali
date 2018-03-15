@@ -1,70 +1,55 @@
-.class public final Ldrp;
+.class final Ldrp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lihb;
 
 
 # instance fields
-.field private a:Ldro;
+.field private final synthetic a:Lfcd;
 
-.field private b:Ljxn;
+.field private final synthetic b:Lfga;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic c:Lihb;
 
 
 # direct methods
-.method public constructor <init>(Ldro;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lfcd;Lfga;Lihb;)V
     .locals 0
 
+    iput-object p1, p0, Ldrp;->a:Lfcd;
+
+    iput-object p2, p0, Ldrp;->b:Lfga;
+
+    iput-object p3, p0, Ldrp;->c:Lihb;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldrp;->a:Ldro;
-
-    iput-object p2, p0, Ldrp;->b:Ljxn;
-
-    iput-object p3, p0, Ldrp;->c:Ljxn;
-
-    iput-object p4, p0, Ldrp;->d:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final close()V
+    .locals 1
 
-    iget-object v1, p0, Ldrp;->c:Ljxn;
+    iget-object v0, p0, Ldrp;->a:Lfcd;
 
-    iget-object v0, p0, Ldrp;->d:Ljxn;
+    invoke-interface {v0}, Lfcd;->close()V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Ldrp;->b:Lfga;
 
-    move-result-object v0
+    invoke-interface {v0}, Lfga;->close()V
 
-    check-cast v0, Lgkl;
+    iget-object v0, p0, Ldrp;->c:Lihb;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v1
+    iget-object v0, p0, Ldrp;->c:Lihb;
 
-    check-cast v1, Lghg;
+    invoke-interface {v0}, Lihb;->close()V
 
-    new-instance v2, Ldqx;
-
-    invoke-direct {v2, v1, v0}, Ldqx;-><init>(Lghg;Lgkl;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lghg;
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

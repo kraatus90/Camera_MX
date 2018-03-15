@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Likg;
+.implements Ljava/util/Comparator;
 
 
 # direct methods
@@ -17,14 +17,37 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 4
 
-    check-cast p1, Liyb;
+    check-cast p1, Liza;
 
-    invoke-virtual {p1}, Liyb;->a()Lixy;
+    check-cast p2, Liza;
 
-    move-result-object v0
+    invoke-interface {p1}, Liza;->b()J
 
-    return-object v0
+    move-result-wide v0
+
+    invoke-interface {p2}, Liza;->b()J
+
+    move-result-wide v2
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    invoke-virtual {p2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
+
+    move-result v0
+
+    :cond_0
+    return v0
 .end method

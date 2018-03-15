@@ -1,11 +1,20 @@
-.class public final Lfsh;
+.class final Lfsh;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Lfsl;
+
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lfsl;)V
     .locals 0
+
+    iput-object p1, p0, Lfsh;->a:Lfsl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -14,122 +23,29 @@
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    monitor-enter p0
+    iget-object v0, p0, Lfsh;->a:Lfsl;
 
-    monitor-exit p0
+    iget-object v0, v0, Lfsl;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
-.end method
+    const/4 v1, 0x0
 
-.method public final declared-synchronized b()V
-    .locals 0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    monitor-enter p0
+    move-result v0
 
-    monitor-exit p0
+    if-eqz v0, :cond_0
 
-    return-void
-.end method
+    iget-object v0, p0, Lfsh;->a:Lfsl;
 
-.method public final declared-synchronized c()V
-    .locals 0
+    iget-object v0, v0, Lfsl;->a:Lfaq;
 
-    monitor-enter p0
+    iget-object v0, v0, Lfaq;->b:Lfar;
 
-    monitor-exit p0
+    invoke-interface {v0}, Lfar;->x()V
 
-    return-void
-.end method
-
-.method public final declared-synchronized d()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized e()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized f()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized g()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized h()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized i()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized j()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized k()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized l()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
+    :cond_0
     return-void
 .end method

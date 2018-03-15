@@ -1,65 +1,55 @@
-.class final Ljmw;
-.super Ljkv;
+.class public final Ljmw;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private transient a:[Ljava/lang/Object;
-
-.field private transient b:I
-
-.field private transient c:I
+.field private final a:Ljava/util/HashMap;
 
 
 # direct methods
-.method constructor <init>([Ljava/lang/Object;II)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljkv;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljmw;->a:[Ljava/lang/Object;
+    new-instance v0, Ljava/util/HashMap;
 
-    iput p2, p0, Ljmw;->b:I
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput p3, p0, Ljmw;->c:I
+    iput-object v0, p0, Ljmw;->a:Ljava/util/HashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final c()Z
-    .locals 1
+.method public final a()Ljmv;
+    .locals 2
 
-    const/4 v0, 0x1
+    new-instance v0, Ljmv;
 
-    return v0
-.end method
+    iget-object v1, p0, Ljmw;->a:Ljava/util/HashMap;
 
-.method public final get(I)Ljava/lang/Object;
-    .locals 3
-
-    iget v0, p0, Ljmw;->c:I
-
-    invoke-static {p1, v0}, Liya;->a(II)I
-
-    iget-object v0, p0, Ljmw;->a:[Ljava/lang/Object;
-
-    mul-int/lit8 v1, p1, 0x2
-
-    iget v2, p0, Ljmw;->b:I
-
-    add-int/2addr v1, v2
-
-    aget-object v0, v0, v1
+    invoke-direct {v0, v1}, Ljmv;-><init>(Ljava/util/Map;)V
 
     return-object v0
 .end method
 
-.method public final size()I
-    .locals 1
+.method public final a(Ljpe;Ljms;F)V
+    .locals 3
 
-    iget v0, p0, Ljmw;->c:I
+    iget-object v0, p0, Ljmw;->a:Ljava/util/HashMap;
 
-    return v0
+    new-instance v1, Ljna;
+
+    invoke-direct {v1, p1, p2}, Ljna;-><init>(Ljpe;Ljms;)V
+
+    invoke-static {p3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
 .end method

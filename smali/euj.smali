@@ -1,24 +1,14 @@
-.class final Leuj;
+.class public final Leuj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lewt;
-
-
-# instance fields
-.field private synthetic a:Levo;
-
-.field private synthetic b:Lckd;
+.implements Lesi;
 
 
 # direct methods
-.method constructor <init>(Levo;Lckd;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Leuj;->a:Levo;
-
-    iput-object p2, p0, Leuj;->b:Lckd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,13 +18,13 @@
 
 # virtual methods
 .method public final a()V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Leuj;->a:Levo;
+    return-void
+.end method
 
-    iget-object v1, p0, Leuj;->b:Lckd;
-
-    invoke-virtual {v0, v1}, Levo;->a(Lckd;)V
+.method public final close()V
+    .locals 0
 
     return-void
 .end method

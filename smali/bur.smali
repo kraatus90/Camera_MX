@@ -1,45 +1,66 @@
-.class final Lbur;
+.class public final Lbur;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Libu;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbua;
+.field private final a:Lbvr;
 
 
 # direct methods
-.method constructor <init>(Lbua;)V
+.method public constructor <init>(Lbvr;)V
     .locals 0
 
-    iput-object p1, p0, Lbur;->a:Lbua;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbur;->a:Lbvr;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public static a(Lbvr;)Landroid/view/Window;
     .locals 2
 
-    iget-object v0, p0, Lbur;->a:Lbua;
+    iget-object v0, p0, Lbvr;->a:Landroid/app/Activity;
 
-    iget-boolean v1, v0, Lbua;->w:Z
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
-    if-nez v1, :cond_0
+    move-result-object v0
 
-    iget-object v1, v0, Lbua;->c:Lbsa;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v1, v1, Lbsa;->a:Lgrw;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lbua;->ac:Lgrx;
+    move-result-object v0
 
-    invoke-interface {v1, v0}, Lgrw;->c(Lgrx;)V
+    check-cast v0, Landroid/view/Window;
 
-    :cond_0
-    return-void
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lbur;->a:Lbvr;
+
+    iget-object v0, v0, Lbvr;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/Window;
+
+    return-object v0
 .end method

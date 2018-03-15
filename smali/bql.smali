@@ -3,22 +3,48 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Ljxn;
+# static fields
+.field public static final a:Lbql;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lbql;
+
+    invoke-direct {v0}, Lbql;-><init>()V
+
+    sput-object v0, Lbql;->a:Lbql;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbql;->a:Ljxn;
-
     return-void
+.end method
+
+.method public static b()Lbjx;
+    .locals 2
+
+    sget-object v0, Lbjx;->a:Lbjx;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbjx;
+
+    return-object v0
 .end method
 
 
@@ -26,25 +52,15 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lbql;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbqj;
-
-    invoke-virtual {v0}, Lbqj;->a()Landroid/view/WindowManager;
-
-    move-result-object v0
+    sget-object v0, Lbjx;->a:Lbjx;
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/view/WindowManager;
+    check-cast v0, Lbjx;
 
     return-object v0
 .end method

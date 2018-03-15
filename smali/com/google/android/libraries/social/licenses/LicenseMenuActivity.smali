@@ -1,23 +1,23 @@
 .class public final Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
-.super Lme;
+.super Llz;
 .source "PG"
 
 # interfaces
-.implements Ljhh;
+.implements Ljqt;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lme;-><init>()V
+    invoke-direct {p0}, Llz;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljhb;)V
+.method public final a(Ljqn;)V
     .locals 2
 
     new-instance v0, Landroid/content/Intent;
@@ -38,35 +38,35 @@
 .method protected final onCreate(Landroid/os/Bundle;)V
     .locals 5
 
-    const v4, 0x7f0e015a
+    const v4, 0x7f0e0146
 
-    invoke-super {p0, p1}, Lme;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Llz;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f040048
+    const v0, 0x7f040043
 
     invoke-virtual {p0, v0}, Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;->setContentView(I)V
 
-    invoke-virtual {p0}, Lme;->a()Lmg;
+    invoke-virtual {p0}, Llz;->d()Lmb;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg;->a()Llt;
+    invoke-virtual {v0}, Lmb;->a()Llp;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lme;->a()Lmg;
+    invoke-virtual {p0}, Llz;->d()Lmb;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lmg;->a()Llt;
+    invoke-virtual {v0}, Lmb;->a()Llp;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Llt;->a(Z)V
+    invoke-virtual {v0, v1}, Llp;->a(Z)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -77,13 +77,13 @@
 
     move-result-object v1
 
-    instance-of v1, v1, Ljhf;
+    instance-of v1, v1, Ljqr;
 
     if-nez v1, :cond_2
 
-    new-instance v1, Ljhf;
+    new-instance v1, Ljqr;
 
-    invoke-direct {v1}, Ljhf;-><init>()V
+    invoke-direct {v1}, Ljqr;-><init>()V
 
     invoke-virtual {p0}, Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;->getIntent()Landroid/content/Intent;
 
@@ -143,7 +143,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Lme;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Llz;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 

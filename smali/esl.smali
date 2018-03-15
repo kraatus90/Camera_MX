@@ -1,50 +1,53 @@
-.class final Lesl;
+.class public final Lesl;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final a:Ljava/util/concurrent/ConcurrentHashMap;
 
-# instance fields
-.field private synthetic a:Lfsz;
-
-.field private synthetic b:Lesh;
+.field public static final b:Ljava/util/concurrent/ConcurrentHashMap;
 
 
 # direct methods
-.method constructor <init>(Lesh;Lfsz;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lesl;->b:Lesh;
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    iput-object p2, p0, Lesl;->a:Lfsz;
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lesl;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    sput-object v0, Lesl;->b:Ljava/util/concurrent/ConcurrentHashMap;
 
     return-void
 .end method
 
+.method public static a()V
+    .locals 0
 
-# virtual methods
-.method public final run()V
-    .locals 3
+    return-void
+.end method
 
-    iget-object v0, p0, Lesl;->b:Lesh;
+.method public static b()V
+    .locals 0
 
-    iget-object v1, p0, Lesl;->a:Lfsz;
+    return-void
+.end method
 
-    iget-object v2, p0, Lesl;->b:Lesh;
+.method public static c()V
+    .locals 0
 
-    invoke-static {v2}, Lesh;->a(Lesh;)Lfsp;
+    return-void
+.end method
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Lfsp;->c()Lfsy;
-
-    iget-object v1, v1, Lfsz;->b:Lcom/google/common/logging/nano/eventprotos$CameraEvent;
-
-    invoke-virtual {v0, v1}, Lesh;->a(Lcom/google/common/logging/nano/eventprotos$CameraEvent;)V
+.method public static d()V
+    .locals 0
 
     return-void
 .end method

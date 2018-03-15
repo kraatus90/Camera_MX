@@ -2,78 +2,295 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lghb;
+
 
 # static fields
-.field public static final a:Lgii;
+.field private static final c:Ljava/lang/String;
 
-.field public static final b:Lgii;
 
-.field public static final c:Lgii;
+# instance fields
+.field public final a:Ljava/util/Set;
 
-.field public static final d:Lgii;
-
-.field public static final e:Lgii;
-
-.field public static final f:Lgii;
+.field public final b:Ljava/util/Map;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lgii;
+    const-string v0, "Photos1UpLauncher"
 
-    const-string v1, "TOTAL_CAPTURE_RESULT"
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lgii;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    sput-object v0, Lgij;->a:Lgii;
+    sput-object v0, Lgij;->c:Ljava/lang/String;
 
-    new-instance v0, Lgii;
+    return-void
+.end method
 
-    const-string v1, "IMAGE_ID"
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {v0, v1}, Lgii;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lgij;->b:Lgii;
+    new-instance v0, Ljava/util/HashSet;
 
-    new-instance v0, Lgii;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    const-string v1, "REQUEST"
+    iput-object v0, p0, Lgij;->a:Ljava/util/Set;
 
-    invoke-direct {v0, v1}, Lgii;-><init>(Ljava/lang/String;)V
+    new-instance v0, Ljava/util/HashMap;
 
-    new-instance v0, Lgii;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    const-string v1, "ORIENTATION"
+    iput-object v0, p0, Lgij;->b:Ljava/util/Map;
 
-    invoke-direct {v0, v1}, Lgii;-><init>(Ljava/lang/String;)V
+    return-void
+.end method
 
-    sput-object v0, Lgij;->c:Lgii;
 
-    new-instance v0, Lgii;
+# virtual methods
+.method public final a(Landroid/graphics/Bitmap;)V
+    .locals 0
 
-    const-string v1, "BURST_ID"
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Lgii;-><init>(Ljava/lang/String;)V
+.method public final a(Landroid/graphics/Bitmap;I)V
+    .locals 0
 
-    sput-object v0, Lgij;->d:Lgii;
+    return-void
+.end method
 
-    new-instance v0, Lgii;
+.method public final a(Landroid/net/Uri;)V
+    .locals 4
 
-    const-string v1, "BURST_START_TIME"
+    sget-object v0, Lgij;->c:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lgii;-><init>(Ljava/lang/String;)V
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    sput-object v0, Lgij;->e:Lgii;
+    move-result-object v1
 
-    new-instance v0, Lgii;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v1, "BURST_INDEX"
+    move-result-object v2
 
-    invoke-direct {v0, v1}, Lgii;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    sput-object v0, Lgij;->f:Lgii;
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x38
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "removing uri from processing items as we have thumbnail "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgij;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lghj;Leov;)V
+    .locals 6
+
+    sget-object v0, Lgij;->c:Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1f
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "adding uri to processing items "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgij;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    if-eqz p3, :cond_0
+
+    iget-object v0, p0, Lgij;->b:Ljava/util/Map;
+
+    invoke-interface {v0, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lgij;->c:Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {p3}, Leov;->a()J
+
+    move-result-wide v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x2e
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v4, " maps to mediastorerecord "
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lgwx;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Lgwx;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/net/Uri;Ljava/util/List;)V
+    .locals 4
+
+    iget-object v0, p0, Lgij;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lgij;->c:Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x28
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "thumbnail not updated as of yet for uri "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final a([BI)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b(Landroid/net/Uri;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c(Landroid/net/Uri;)V
+    .locals 0
 
     return-void
 .end method

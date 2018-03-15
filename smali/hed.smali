@@ -1,69 +1,68 @@
-.class final Lhed;
-.super Lhfb;
+.class public final Lhed;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # instance fields
-.field private synthetic a:Lhec;
+.field private final synthetic a:Lhdy;
 
 
 # direct methods
-.method constructor <init>(Lhec;)V
+.method public constructor <init>(Lhdy;)V
     .locals 0
 
-    iput-object p1, p0, Lhed;->a:Lhec;
+    iput-object p1, p0, Lhed;->a:Lhdy;
 
-    invoke-direct {p0, p1}, Lhfb;-><init>(Lhev;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final aj()V
-    .locals 2
+.method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    .locals 1
 
-    iget-object v0, p0, Lhed;->a:Lhec;
+    if-nez p3, :cond_0
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    :goto_0
+    return-void
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    :cond_0
+    iget-object v0, p0, Lhed;->a:Lhdy;
 
-    invoke-super {p0}, Lhfb;->aj()V
+    iget-object v0, v0, Lhdy;->c:Lhdm;
 
-    iget-object v0, p0, Lhed;->a:Lhec;
+    iget-object v0, v0, Lhdm;->d:Landroid/widget/VideoView;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    invoke-virtual {v0, p2}, Landroid/widget/VideoView;->seekTo(I)V
 
-    iget-object v1, p0, Lhed;->a:Lhec;
+    goto :goto_0
+.end method
 
-    iget-object v1, v1, Lhec;->e:Lgvl;
+.method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 1
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    iget-object v0, p0, Lhed;->a:Lhdy;
+
+    iget-object v0, v0, Lhdy;->c:Lhdm;
+
+    invoke-virtual {v0}, Lglb;->Y()V
 
     return-void
 .end method
 
-.method public final e()V
-    .locals 2
+.method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 1
 
-    iget-object v0, p0, Lhed;->a:Lhec;
+    iget-object v0, p0, Lhed;->a:Lhdy;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    iget-object v0, v0, Lhdy;->c:Lhdm;
 
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhfb;->e()V
-
-    iget-object v0, p0, Lhed;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lhed;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->d:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    invoke-virtual {v0}, Lglb;->Z()V
 
     return-void
 .end method

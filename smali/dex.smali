@@ -1,49 +1,33 @@
-.class public final Ldex;
-.super Ldhe;
-.source "PG"
+.class final synthetic Ldex;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Ldev;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Ldev;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldex;->a:Ldev;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 1
 
-    const-string v0, "VidIntStBackground"
+    iget-object v0, p0, Ldex;->a:Ldev;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcnh;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ldhe;-><init>(Lcnh;)V
-
-    invoke-direct {p0}, Ldex;->f()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldhe;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ldhe;-><init>(Lcng;)V
-
-    invoke-direct {p0}, Ldex;->f()V
-
-    return-void
-.end method
-
-.method private final f()V
-    .locals 2
-
-    new-instance v0, Ldey;
-
-    invoke-direct {v0, p0}, Ldey;-><init>(Ldex;)V
-
-    const-class v1, Lcvp;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
+    invoke-virtual {v0}, Ldev;->f()V
 
     return-void
 .end method

@@ -1,79 +1,36 @@
-.class public Ltm;
-.super Landroid/view/ViewGroup$MarginLayoutParams;
+.class final Ltm;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public g:F
-
-.field public h:I
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    const/4 v0, -0x2
-
-    invoke-direct {p0, p1, v0}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ltm;->h:I
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ltm;->g:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 4
 
-    const/4 v3, -0x1
-
-    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    iput v3, p0, Ltm;->h:I
-
-    sget-object v0, Lnr;->aQ:[I
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v0
-
-    sget v1, Lnr;->aS:I
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v1
-
-    iput v1, p0, Ltm;->g:F
-
-    sget v1, Lnr;->aR:I
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v1
-
-    iput v1, p0, Ltm;->h:I
-
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
+# virtual methods
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+    new-instance v0, Ltl;
 
-    const/4 v0, -0x1
+    invoke-direct {v0, p1}, Ltl;-><init>(Landroid/os/Parcel;)V
 
-    iput v0, p0, Ltm;->h:I
+    return-object v0
+.end method
 
-    return-void
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Ltl;
+
+    return-object v0
 .end method

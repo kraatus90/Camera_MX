@@ -1,309 +1,66 @@
-.class public Liig;
+.class public final Liig;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liih;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Liih;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Liih;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liig;->a:Liih;
+    iput-object p1, p0, Liig;->a:Lkgv;
+
+    iput-object p2, p0, Liig;->b:Lkgv;
+
+    iput-object p3, p0, Liig;->c:Lkgv;
+
+    iput-object p4, p0, Liig;->d:Lkgv;
+
+    iput-object p5, p0, Liig;->e:Lkgv;
+
+    iput-object p6, p0, Liig;->f:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/graphics/Rect;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 7
 
-    iget-object v0, p0, Liig;->a:Liih;
+    new-instance v0, Liif;
 
-    invoke-interface {v0}, Liih;->a()Landroid/graphics/Rect;
+    iget-object v1, p0, Liig;->a:Lkgv;
 
-    move-result-object v0
+    iget-object v2, p0, Liig;->b:Lkgv;
 
-    return-object v0
-.end method
+    iget-object v3, p0, Liig;->c:Lkgv;
 
-.method public final a(Landroid/graphics/Rect;)V
-    .locals 1
+    iget-object v4, p0, Liig;->d:Lkgv;
 
-    iget-object v0, p0, Liig;->a:Liih;
+    iget-object v5, p0, Liig;->e:Lkgv;
 
-    invoke-interface {v0, p1}, Liih;->a(Landroid/graphics/Rect;)V
+    iget-object v6, p0, Liig;->f:Lkgv;
 
-    return-void
-.end method
-
-.method public final b()Lifo;
-    .locals 1
-
-    iget-object v0, p0, Liig;->a:Liih;
-
-    invoke-interface {v0}, Liih;->b()Lifo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()I
-    .locals 1
-
-    iget-object v0, p0, Liig;->a:Liih;
-
-    invoke-interface {v0}, Liih;->c()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public close()V
-    .locals 1
-
-    iget-object v0, p0, Liig;->a:Liih;
-
-    invoke-interface {v0}, Liih;->close()V
-
-    return-void
-.end method
-
-.method public final d()Ljava/util/List;
-    .locals 1
-
-    iget-object v0, p0, Liig;->a:Liih;
-
-    invoke-interface {v0}, Liih;->d()Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final e()J
-    .locals 2
-
-    iget-object v0, p0, Liig;->a:Liih;
-
-    invoke-interface {v0}, Liih;->e()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 6
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    instance-of v1, p1, Liil;
-
-    if-eqz v1, :cond_0
-
-    check-cast p1, Liil;
-
-    invoke-interface {p1}, Liil;->l_()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Liig;->l_()I
-
-    move-result v2
-
-    if-ne v1, v2, :cond_0
-
-    invoke-interface {p1}, Liil;->f()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Liig;->f()I
-
-    move-result v2
-
-    if-ne v1, v2, :cond_0
-
-    invoke-interface {p1}, Liil;->c()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Liig;->c()I
-
-    move-result v2
-
-    if-ne v1, v2, :cond_0
-
-    invoke-interface {p1}, Liil;->e()J
-
-    move-result-wide v2
-
-    invoke-virtual {p0}, Liig;->e()J
-
-    move-result-wide v4
-
-    cmp-long v1, v2, v4
-
-    if-nez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-.end method
-
-.method public final f()I
-    .locals 1
-
-    iget-object v0, p0, Liig;->a:Liih;
-
-    invoke-interface {v0}, Liih;->f()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public hashCode()I
-    .locals 4
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, Liig;->l_()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0}, Liig;->f()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    invoke-virtual {p0}, Liig;->c()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x3
-
-    invoke-virtual {p0}, Liig;->e()J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final l_()I
-    .locals 1
-
-    iget-object v0, p0, Liig;->a:Liih;
-
-    invoke-interface {v0}, Liih;->l_()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 4
-
-    invoke-static {p0}, Liui;->a(Ljava/lang/Object;)Ljhq;
-
-    move-result-object v0
-
-    const-string v1, "format"
-
-    invoke-virtual {p0}, Liig;->l_()I
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;I)Ljhq;
-
-    move-result-object v0
-
-    const-string v1, "timestamp"
-
-    invoke-virtual {p0}, Liig;->e()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v1, v2, v3}, Ljhq;->a(Ljava/lang/String;J)Ljhq;
-
-    move-result-object v0
-
-    const-string v1, "width"
-
-    invoke-virtual {p0}, Liig;->f()I
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;I)Ljhq;
-
-    move-result-object v0
-
-    const-string v1, "height"
-
-    invoke-virtual {p0}, Liig;->c()I
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Ljhq;->a(Ljava/lang/String;I)Ljhq;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljhq;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct/range {v0 .. v6}, Liif;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
 
     return-object v0
 .end method

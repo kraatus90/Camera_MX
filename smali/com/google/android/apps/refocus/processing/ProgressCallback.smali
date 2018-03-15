@@ -13,7 +13,7 @@
 .method public abstract setRange(FF)V
 .end method
 
-.method public abstract setStatus(Lgyr;)V
+.method public abstract setStatus(Lgwx;)V
 .end method
 
 .method public abstract wasCancelled()Z

@@ -1,91 +1,244 @@
-.class public final enum Lgsr;
-.super Ljava/lang/Enum;
+.class public final Lgsr;
+.super Lgta;
 .source "PG"
 
+# interfaces
+.implements Lgle;
 
-# static fields
-.field public static final enum a:Lgsr;
 
-.field public static final enum b:Lgsr;
+# instance fields
+.field public a:Lgld;
 
-.field public static final enum c:Lgsr;
+.field public b:Lglf;
 
-.field private static synthetic d:[Lgsr;
+.field public c:Lglf;
+
+.field public d:Lglf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lbbp;)V
+    .locals 4
 
-    const/4 v4, 0x2
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    invoke-direct {p0, p1}, Lgta;-><init>(Lbbp;)V
 
-    const/4 v2, 0x0
+    new-instance v0, Lgss;
 
-    new-instance v0, Lgsr;
+    invoke-direct {v0, p0}, Lgss;-><init>(Lgsr;)V
 
-    const-string v1, "SHUTTER"
+    new-instance v1, Lglf;
 
-    invoke-direct {v0, v1, v2}, Lgsr;-><init>(Ljava/lang/String;I)V
+    new-array v2, v3, [Lgla;
 
-    sput-object v0, Lgsr;->a:Lgsr;
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    new-instance v0, Lgsr;
+    iput-object v1, p0, Lgsr;->b:Lglf;
 
-    const-string v1, "ZOOM"
+    new-instance v0, Lgst;
 
-    invoke-direct {v0, v1, v3}, Lgsr;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, p0}, Lgst;-><init>(Lgsr;)V
 
-    sput-object v0, Lgsr;->b:Lgsr;
+    new-instance v1, Lglf;
 
-    new-instance v0, Lgsr;
+    new-array v2, v3, [Lgla;
 
-    const-string v1, "NOOP"
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    invoke-direct {v0, v1, v4}, Lgsr;-><init>(Ljava/lang/String;I)V
+    iput-object v1, p0, Lgsr;->c:Lglf;
 
-    sput-object v0, Lgsr;->c:Lgsr;
+    new-instance v0, Lgsu;
 
-    const/4 v0, 0x3
+    invoke-direct {v0, p0}, Lgsu;-><init>(Lgsr;)V
 
-    new-array v0, v0, [Lgsr;
+    new-instance v1, Lglf;
 
-    sget-object v1, Lgsr;->a:Lgsr;
+    new-array v2, v3, [Lgla;
 
-    aput-object v1, v0, v2
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    sget-object v1, Lgsr;->b:Lgsr;
+    iput-object v1, p0, Lgsr;->d:Lglf;
 
-    aput-object v1, v0, v3
+    new-instance v0, Lgld;
 
-    sget-object v1, Lgsr;->c:Lgsr;
+    iget-object v1, p0, Lgsr;->b:Lglf;
 
-    aput-object v1, v0, v4
+    invoke-direct {v0, v1, v3}, Lgld;-><init>(Lglf;Z)V
 
-    sput-object v0, Lgsr;->d:[Lgsr;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object v0, p0, Lgsr;->a:Lgld;
 
     return-void
 .end method
 
-.method public static values()[Lgsr;
+
+# virtual methods
+.method public final T()V
     .locals 1
 
-    sget-object v0, Lgsr;->d:[Lgsr;
+    iget-object v0, p0, Lgsr;->a:Lgld;
 
-    invoke-virtual {v0}, [Lgsr;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
     move-result-object v0
 
-    check-cast v0, [Lgsr;
+    if-nez v0, :cond_0
 
-    return-object v0
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->T()V
+
+    goto :goto_0
+.end method
+
+.method public final U()V
+    .locals 1
+
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->U()V
+
+    goto :goto_0
+.end method
+
+.method public final V()V
+    .locals 1
+
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->V()V
+
+    goto :goto_0
+.end method
+
+.method public final a()V
+    .locals 1
+
+    invoke-super {p0}, Lgta;->a()V
+
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->c()V
+
+    return-void
+.end method
+
+.method public final a(Lgtf;)V
+    .locals 2
+
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-super {p0, p1}, Lgta;->a(Lgtf;)V
+
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    sget v1, Lep;->bi:I
+
+    iput v1, v0, Lgld;->a:I
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 1
+
+    invoke-super {p0}, Lgta;->b()V
+
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-interface {p0}, Lgle;->i()V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lgsr;->a:Lgld;
+
+    invoke-virtual {v0}, Lgld;->e()V
+
+    iget-object v0, p0, Lgsr;->b:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lgsr;->c:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lgsr;->d:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    return-void
 .end method

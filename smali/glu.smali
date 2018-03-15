@@ -1,33 +1,32 @@
-.class final Lglu;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lglu;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Landroid/view/View;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lglu;->a:Landroid/view/View;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lglu;->a:Landroid/view/View;
+    new-instance v0, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;
 
-    const/4 v1, 0x0
+    new-instance v1, Liom;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-direct {v1}, Liom;-><init>()V
 
-    return-void
+    invoke-direct {v0, v1}, Lcom/google/android/apps/camera/stats/CameraCaptureSessionInstrumentationSession;-><init>(Liom;)V
+
+    return-object v0
 .end method

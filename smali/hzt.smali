@@ -1,103 +1,158 @@
 .class public final Lhzt;
-.super Lhzn;
-.source "PG"
+.super Ljava/lang/Object;
 
-
-# static fields
-.field private static a:Ljava/lang/ThreadLocal;
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lhzu;
-
-    invoke-direct {v0}, Lhzu;-><init>()V
-
-    sput-object v0, Lhzt;->a:Ljava/lang/ThreadLocal;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 2
+    .locals 0
 
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    invoke-direct {p0, v0}, Lhzn;-><init>(Landroid/os/Handler;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static a()V
-    .locals 2
-
-    invoke-static {}, Lhzt;->b()Z
-
-    move-result v0
-
-    const-string v1, "Not main thread."
-
-    invoke-static {v0, v1}, Liya;->b(ZLjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public static b()Z
-    .locals 1
-
-    sget-object v0, Lhzt;->a:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Runnable;)V
-    .locals 1
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 7
 
-    invoke-static {}, Lhzt;->b()Z
+    const/4 v0, 0x0
+
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
+
+    move-result v5
+
+    move-object v1, v0
+
+    move-object v2, v0
+
+    move-object v3, v0
+
+    move-object v4, v0
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-ge v0, v5, :cond_0
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    :goto_0
-    return-void
+    move-result v0
 
-    :cond_0
-    invoke-virtual {p0, p1}, Lhzt;->execute(Ljava/lang/Runnable;)V
+    const v6, 0xffff
+
+    and-int/2addr v6, v0
+
+    packed-switch v6, :pswitch_data_0
+
+    invoke-static {p1, v0}, Lhmr;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v0}, Lhmr;->j(Landroid/os/Parcel;I)[B
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    goto :goto_0
+
+    :pswitch_1
+    invoke-static {p1, v0}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    goto :goto_0
+
+    :pswitch_2
+    sget-object v2, Landroid/os/ParcelFileDescriptor;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0, v2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/ParcelFileDescriptor;
+
+    move-object v2, v0
+
+    goto :goto_0
+
+    :pswitch_3
+    sget-object v1, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/Uri;
+
+    move-object v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    if-eq v0, v5, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v0, Lcom/google/android/gms/wearable/Asset;
+
+    invoke-direct {v0, v4, v3, v2, v1}, Lcom/google/android/gms/wearable/Asset;-><init>([BLjava/lang/String;Landroid/os/ParcelFileDescriptor;Landroid/net/Uri;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/wearable/Asset;
+
+    return-object v0
 .end method

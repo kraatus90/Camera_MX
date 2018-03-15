@@ -2,54 +2,77 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
 
 # instance fields
-.field public final a:Licz;
+.field private final a:Lkgv;
 
-.field public final b:Licv;
+.field private final b:Lkgv;
 
-.field public final c:Lghe;
+.field private final c:Lkgv;
 
-.field public final d:Ldol;
-
-.field public final e:Ljuw;
-
-.field public final f:Ldjm;
-
-.field public final g:Ldvc;
-
-.field public final h:Leam;
-
-.field public final i:Lgez;
+.field private final d:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Licz;Licv;Lghe;Ldol;Ljuw;Ldjm;Ldvc;Leam;)V
-    .locals 1
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lecg;->a:Licz;
+    iput-object p1, p0, Lecg;->a:Lkgv;
 
-    iput-object p2, p0, Lecg;->b:Licv;
+    iput-object p2, p0, Lecg;->b:Lkgv;
 
-    iput-object p3, p0, Lecg;->c:Lghe;
+    iput-object p3, p0, Lecg;->c:Lkgv;
 
-    iput-object p4, p0, Lecg;->d:Ldol;
-
-    iput-object p5, p0, Lecg;->e:Ljuw;
-
-    iput-object p6, p0, Lecg;->f:Ldjm;
-
-    iput-object p7, p0, Lecg;->g:Ldvc;
-
-    iput-object p8, p0, Lecg;->h:Leam;
-
-    new-instance v0, Lgez;
-
-    invoke-direct {v0}, Lgez;-><init>()V
-
-    iput-object v0, p0, Lecg;->i:Lgez;
+    iput-object p4, p0, Lecg;->d:Lkgv;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
+
+    new-instance v4, Lecf;
+
+    iget-object v0, p0, Lecg;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Leaa;
+
+    iget-object v1, p0, Lecg;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liay;
+
+    iget-object v2, p0, Lecg;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lfax;
+
+    iget-object v3, p0, Lecg;->d:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lbns;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lecf;-><init>(Leaa;Liay;Lfax;Lbns;)V
+
+    return-object v4
 .end method

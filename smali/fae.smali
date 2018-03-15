@@ -1,45 +1,39 @@
-.class final Lfae;
-.super Leyx;
-.source "PG"
+.class final synthetic Lfae;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lfab;
+.field private final a:Lfad;
 
 
 # direct methods
-.method constructor <init>(Lfab;)V
+.method constructor <init>(Lfad;)V
     .locals 0
 
-    iput-object p1, p0, Lfae;->a:Lfab;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Leyx;-><init>()V
+    iput-object p1, p0, Lfae;->a:Lfad;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final z()V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lfae;->a:Lfab;
+    iget-object v0, p0, Lfae;->a:Lfad;
 
-    iget-object v0, v0, Lfab;->h:Lgvj;
+    iget-object v0, v0, Lfad;->a:Lezx;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    iget-object v0, v0, Lezx;->d:Lfag;
 
-    invoke-super {p0}, Lgvh;->z()V
+    iget-object v0, v0, Lfag;->b:Landroid/animation/AnimatorSet;
 
-    iget-object v0, p0, Lfae;->a:Lfab;
-
-    iget-object v0, v0, Lfab;->h:Lgvj;
-
-    iget-object v1, p0, Lfae;->a:Lfab;
-
-    iget-object v1, v1, Lfab;->i:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 .end method

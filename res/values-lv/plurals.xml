@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Sērija (%1$d fotoattēli)</item>
+        <item quantity="zero">Sērija (%1$d fotoattēlu)</item>
+        <item quantity="one">Sērija (%1$d fotoattēls)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Saglabāti %1$d fotoattēli</item>
         <item quantity="zero">Saglabāti %1$d fotoattēli</item>

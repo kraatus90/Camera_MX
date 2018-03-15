@@ -1,78 +1,101 @@
-.class final Lizb;
+.class public Lizb;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lcom/google/android/libraries/smartburst/filterfw/GraphRunner$Listener;
-
 
 # instance fields
-.field private synthetic a:Liza;
+.field public final a:Ljava/util/TreeSet;
 
 
 # direct methods
-.method constructor <init>(Liza;)V
-    .locals 0
-
-    iput-object p1, p0, Lizb;->a:Liza;
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/TreeSet;
+
+    invoke-virtual {p0}, Lizb;->a()Ljava/util/Comparator;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
+
+    iput-object v0, p0, Lizb;->a:Ljava/util/TreeSet;
+
+    return-void
+.end method
+
+.method public constructor <init>(B)V
+    .locals 0
+
+    invoke-direct {p0}, Lizb;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGraphRunnerError(Ljava/lang/Exception;Z)V
-    .locals 2
+.method protected a()Ljava/util/Comparator;
+    .locals 1
 
-    const-string v0, "BAP"
+    new-instance v0, Lizc;
 
-    const-string v1, "Error"
+    invoke-direct {v0}, Lizc;-><init>()V
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, p0, Lizb;->a:Liza;
-
-    iget-object v1, v0, Liza;->b:Lilv;
-
-    invoke-static {p1}, Lilh;->a(Ljava/lang/Throwable;)Lilh;
-
-    move-result-object v0
-
-    check-cast v0, Lilh;
-
-    invoke-virtual {v1, v0}, Lilv;->a(Lilh;)Z
-
-    iget-object v0, p0, Lizb;->a:Liza;
-
-    invoke-virtual {v0}, Liza;->a()V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final onGraphRunnerStopped(Lcom/google/android/libraries/smartburst/filterfw/GraphRunner;)V
+.method public final a(Liza;)V
     .locals 2
 
-    const-string v0, "BAP"
+    iget-object v1, p0, Lizb;->a:Ljava/util/TreeSet;
 
-    const-string v1, "Stopped"
+    monitor-enter v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_start_0
+    iget-object v0, p0, Lizb;->a:Ljava/util/TreeSet;
 
-    iget-object v0, p0, Lizb;->a:Liza;
+    invoke-virtual {v0, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
-    iget-object v0, v0, Liza;->b:Lilv;
-
-    iget-object v1, p0, Lizb;->a:Liza;
-
-    iget-object v1, v1, Liza;->a:Liyb;
-
-    invoke-virtual {v0, v1}, Lilv;->a(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lizb;->a:Liza;
-
-    invoke-virtual {v0}, Liza;->a()V
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final b()Ljava/util/List;
+    .locals 3
+
+    iget-object v1, p0, Lizb;->a:Ljava/util/TreeSet;
+
+    monitor-enter v1
+
+    :try_start_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v2, p0, Lizb;->a:Ljava/util/TreeSet;
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

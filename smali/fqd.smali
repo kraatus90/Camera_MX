@@ -3,18 +3,28 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+# static fields
+.field public static final a:Lfqd;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lfqd;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+    new-instance v0, Lfqd;
+
+    invoke-direct {v0}, Lfqd;-><init>()V
+
+    sput-object v0, Lfqd;->a:Lfqd;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,33 +33,12 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lfqd;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
+    new-instance v0, Lfqc;
 
-    iget-boolean v0, v0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->e:Z
+    invoke-direct {v0}, Lfqc;-><init>()V
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfqd;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->e:Z
-
-    iget-object v0, p0, Lfqd;->a:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
-
-    const v1, 0x7f0e019a
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

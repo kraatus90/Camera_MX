@@ -1,39 +1,41 @@
-.class final Lfwk;
+.class final synthetic Lfwk;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Lihg;
 
 
 # instance fields
-.field public final a:Lfxr;
-
-.field public final b:Ljava/io/File;
-
-.field public final c:Lfyn;
-
-.field public final d:J
-
-.field public final e:J
-
-.field public final f:Lgce;
+.field private final a:Lfwg;
 
 
 # direct methods
-.method constructor <init>(Lfxr;Ljava/io/File;Lfyn;JJLgce;)V
+.method constructor <init>(Lfwg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfwk;->a:Lfxr;
+    iput-object p1, p0, Lfwk;->a:Lfwg;
 
-    iput-object p2, p0, Lfwk;->b:Ljava/io/File;
+    return-void
+.end method
 
-    iput-object p3, p0, Lfwk;->c:Lfyn;
 
-    iput-wide p4, p0, Lfwk;->d:J
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 2
 
-    iput-wide p6, p0, Lfwk;->e:J
+    iget-object v1, p0, Lfwk;->a:Lfwg;
 
-    iput-object p8, p0, Lfwk;->f:Lgce;
+    iget-object v0, v1, Lfwg;->c:Lick;
+
+    invoke-interface {v0}, Lick;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhac;
+
+    invoke-virtual {v1, v0}, Lfwg;->a(Lhac;)V
 
     return-void
 .end method

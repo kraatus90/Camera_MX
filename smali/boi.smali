@@ -1,72 +1,93 @@
-.class public final Lboi;
-.super Ljava/lang/Object;
+.class final Lboi;
+.super Lbnz;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lbof;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lbof;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lboi;->a:Lbof;
 
-    iput-object p1, p0, Lboi;->a:Ljxn;
-
-    iput-object p2, p0, Lboi;->b:Ljxn;
+    invoke-direct {p0, p1}, Lbnz;-><init>(Lbnw;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final c()V
     .locals 2
 
-    iget-object v0, p0, Lboi;->a:Ljxn;
+    iget-object v0, p0, Lboi;->a:Lbof;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lbof;->f:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v0, Lbip;
+    invoke-super {p0}, Lbnz;->c()V
 
-    iget-object v1, p0, Lboi;->b:Ljxn;
+    iget-object v0, p0, Lboi;->a:Lbof;
 
-    invoke-virtual {v0}, Lbip;->a()Z
+    iget-object v0, v0, Lbof;->f:Lgld;
 
-    move-result v0
+    iget-object v1, p0, Lboi;->a:Lbof;
 
-    if-eqz v0, :cond_0
+    iget-object v1, v1, Lbof;->i:Lglf;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Lbod;
+.method public final d()V
+    .locals 2
 
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lboi;->a:Lbof;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Lbof;->f:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v0, Lbod;
+    invoke-super {p0}, Lbnz;->d()V
 
-    return-object v0
+    iget-object v0, p0, Lboi;->a:Lbof;
 
-    :cond_0
-    new-instance v0, Lbnu;
+    iget-object v0, v0, Lbof;->f:Lgld;
 
-    invoke-direct {v0}, Lbnu;-><init>()V
+    iget-object v1, p0, Lboi;->a:Lbof;
 
-    goto :goto_0
+    iget-object v1, v1, Lbof;->g:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 2
+
+    iget-object v0, p0, Lboi;->a:Lbof;
+
+    iget-object v0, v0, Lbof;->f:Lgld;
+
+    invoke-virtual {v0}, Lgld;->a()V
+
+    invoke-super {p0}, Lbnz;->e()V
+
+    iget-object v0, p0, Lboi;->a:Lbof;
+
+    iget-object v0, v0, Lbof;->f:Lgld;
+
+    iget-object v1, p0, Lboi;->a:Lbof;
+
+    iget-object v1, v1, Lbof;->h:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

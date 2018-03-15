@@ -1,201 +1,175 @@
-.class public final Ljqa;
-.super Ljwj;
+.class public abstract Ljqa;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljqb;
+.implements Ljqi;
 
 
 # instance fields
-.field public a:Ljpo;
-
-.field public b:J
+.field private final a:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 1
 
-    const/4 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v2, p0, Ljqa;->a:Ljpo;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    const-wide/16 v0, 0x0
+    invoke-direct {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-wide v0, p0, Ljqa;->b:J
+    iput-object v0, p0, Ljqa;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object v2, p0, Ljqa;->unknownFieldData:Ljwl;
+    sget-object v0, Ljpy;->a:Ljpy;
 
-    const/4 v0, -0x1
+    invoke-virtual {v0, p0}, Ljpy;->a(Ljava/lang/Object;)V
 
-    iput v0, p0, Ljqa;->cachedSize:I
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Ljqa;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
-    .locals 6
-
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
-
-    move-result v0
-
-    iget-object v1, p0, Ljqa;->a:Ljpo;
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Ljqa;->a:Ljpo;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjwp;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget-wide v2, p0, Ljqa;->b:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-wide v2, p0, Ljqa;->b:J
-
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    return v0
+.method public abstract a(Ljava/lang/Object;)V
 .end method
 
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 6
+.method public close()V
+    .locals 2
 
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    iget-object v0, p0, Ljqa;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    move-result v0
+    const/4 v1, 0x0
 
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    iget-object v0, p0, Ljqa;->a:Ljpo;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Ljpo;
-
-    invoke-direct {v0}, Ljpo;-><init>()V
-
-    iput-object v0, p0, Ljqa;->a:Ljpo;
-
-    :cond_1
-    iget-object v0, p0, Ljqa;->a:Ljpo;
-
-    invoke-virtual {p1, v0}, Ljwh;->a(Ljwp;)V
-
-    goto :goto_0
-
-    :sswitch_2
-    const/4 v2, 0x0
-
-    const-wide/16 v0, 0x0
-
-    :goto_1
-    const/16 v3, 0x40
-
-    if-ge v2, v3, :cond_3
-
-    invoke-virtual {p1}, Ljwh;->j()B
-
-    move-result v3
-
-    and-int/lit8 v4, v3, 0x7f
-
-    int-to-long v4, v4
-
-    shl-long/2addr v4, v2
-
-    or-long/2addr v0, v4
-
-    and-int/lit16 v3, v3, 0x80
-
-    if-nez v3, :cond_2
-
-    iput-wide v0, p0, Ljqa;->b:J
-
-    goto :goto_0
-
-    :cond_2
-    add-int/lit8 v2, v2, 0x7
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    throw v0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xa -> :sswitch_1
-        0x10 -> :sswitch_2
-    .end sparse-switch
-.end method
-
-.method public final writeTo(Ljwi;)V
-    .locals 4
-
-    iget-object v0, p0, Ljqa;->a:Ljpo;
-
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    sget-object v1, Ljpy;->a:Ljpy;
 
-    iget-object v1, p0, Ljqa;->a:Ljpo;
+    invoke-virtual {v1, p0}, Ljpy;->b(Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjwp;)V
+    invoke-virtual {p0, v0}, Ljqa;->a(Ljava/lang/Object;)V
 
     :cond_0
-    iget-wide v0, p0, Ljqa;->b:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x2
-
-    iget-wide v2, p0, Ljqa;->b:J
-
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
-
-    :cond_1
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
-
     return-void
+.end method
+
+.method public final d()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Ljqa;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Attempting to interact with disposed value!"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    check-cast v0, Ljava/lang/IllegalStateException;
+
+    throw v0
+
+    :cond_0
+    sget-object v1, Ljpy;->a:Ljpy;
+
+    invoke-virtual {v1, p0}, Ljpy;->b(Ljava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public final e()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Ljqa;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Attempting to interact with disposed value!"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    check-cast v0, Ljava/lang/IllegalStateException;
+
+    throw v0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Ljqa;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0xe
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "single-owner["
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

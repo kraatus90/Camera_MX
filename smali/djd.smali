@@ -1,30 +1,20 @@
-.class public final Ldjd;
+.class final Ldjd;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ldjy;
 
 
-# static fields
-.field public static final a:Ldjd;
+# instance fields
+.field private final synthetic a:Ldiv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldjd;
-
-    invoke-direct {v0}, Ldjd;-><init>()V
-
-    sput-object v0, Ldjd;->a:Ldjd;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Ldiv;)V
     .locals 0
+
+    iput-object p1, p0, Ldjd;->a:Ldiv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,22 +23,14 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
+    .locals 1
 
-    new-instance v0, Liag;
+    iget-object v0, p0, Ldjd;->a:Ldiv;
 
-    sget-object v1, Lgqb;->c:Lgqb;
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ldiv;->f()Ldjz;
 
     move-result-object v0
-
-    check-cast v0, Liag;
 
     return-object v0
 .end method

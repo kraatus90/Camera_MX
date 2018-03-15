@@ -3,36 +3,42 @@
 .source "PG"
 
 
+# static fields
+.field public static final c:Lckw;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lckx;
+
+    invoke-direct {v0}, Lckx;-><init>()V
+
+    sput-object v0, Lckw;->c:Lckw;
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a()V
+.method public abstract a()Lckw;
 .end method
 
-.method public abstract a(FF)Z
+.method public abstract a(I)Ljava/util/List;
 .end method
 
-.method public abstract a(FFF)Z
+.method public abstract a(Leqd;)V
 .end method
 
-.method public abstract a(FFFFFFIJ)Z
+.method public abstract b()Lckw;
 .end method
 
-.method public abstract a(FFIJ)Z
+.method public abstract c()Leqd;
 .end method
 
-.method public abstract b(FF)Z
+.method public abstract d()Z
 .end method
 
-.method public abstract c(FF)Z
-.end method
-
-.method public abstract d(FF)Z
-.end method
-
-.method public abstract e(FF)V
-.end method
-
-.method public abstract f(FF)Z
-.end method
-
-.method public abstract g(FF)Z
+.method public abstract e()V
 .end method

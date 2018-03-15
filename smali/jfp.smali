@@ -1,20 +1,14 @@
-.class public final Ljfp;
+.class final Ljfp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljfn;
-
-
-# instance fields
-.field private synthetic a:Liyb;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Liyb;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljfp;->a:Liyb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,76 +17,66 @@
 
 
 # virtual methods
-.method public final a(Ljava/io/Writer;)V
-    .locals 8
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 6
 
-    const/4 v2, 0x0
+    const-class v0, Ljjz;
 
-    iget-object v0, p0, Ljfp;->a:Liyb;
+    const-string v1, "post_proc_quality_metric"
 
-    invoke-virtual {v0}, Liyb;->a()Lixy;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lixy;->d()Ljava/util/List;
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast v0, Ljjz;
 
-    move-result-object v3
+    const-class v1, Ljjz;
 
-    move v1, v2
+    const-string v2, "video_presentation_time"
 
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p1, v1, v2}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    check-cast v1, Ljjz;
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v2, 0x3
+
+    new-array v3, v2, [Ljko;
+
+    const/4 v4, 0x0
+
+    const-class v2, Ljko;
+
+    const-string v5, "continuous_action"
+
+    invoke-virtual {p1, v2, v5}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljko;
+
+    aput-object v2, v3, v4
+
+    const/4 v2, 0x1
+
+    new-instance v4, Ljlt;
+
+    invoke-direct {v4, v1}, Ljlt;-><init>(Ljjz;)V
+
+    aput-object v4, v3, v2
+
+    const/4 v1, 0x2
+
+    new-instance v2, Ljki;
+
+    invoke-direct {v2, v0}, Ljki;-><init>(Ljjz;)V
+
+    aput-object v2, v3, v1
+
+    invoke-static {v3}, Ljkj;->a([Ljko;)Ljkj;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    const-string v0, "%d,%d%n"
-
-    const/4 v6, 0x2
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    aput-object v7, v6, v2
-
-    const/4 v7, 0x1
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    aput-object v4, v6, v7
-
-    invoke-static {v0, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
-
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

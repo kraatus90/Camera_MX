@@ -1,62 +1,211 @@
-.class final Ljtp;
-.super Ljava/lang/Object;
+.class public abstract Ljtp;
+.super Ljts;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:I
-
-.field private synthetic b:Ljuw;
-
-.field private synthetic c:Ljto;
+.implements Ljava/util/Collection;
 
 
 # direct methods
-.method constructor <init>(Ljto;ILjuw;)V
+.method protected constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Ljtp;->c:Ljto;
-
-    iput p2, p0, Ljtp;->a:I
-
-    iput-object p3, p0, Ljtp;->b:Ljuw;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljts;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public add(Ljava/lang/Object;)Z
+    .locals 1
 
-    :try_start_0
-    iget-object v0, p0, Ljtp;->c:Ljto;
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
 
-    iget v1, p0, Ljtp;->a:I
+    move-result-object v0
 
-    iget-object v2, p0, Ljtp;->b:Ljuw;
+    invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1, v2}, Ljto;->a(ILjava/util/concurrent/Future;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v0
 
-    iget-object v0, p0, Ljtp;->c:Ljto;
+    return v0
+.end method
 
-    invoke-virtual {v0}, Ljto;->a()V
+.method public addAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public abstract b()Ljava/util/Collection;
+.end method
+
+.method public synthetic c()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public clear()V
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public contains(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-object v1, p0, Ljtp;->c:Ljto;
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
 
-    invoke-virtual {v1}, Ljto;->a()V
+    move-result-object v0
 
-    throw v0
+    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public containsAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public isEmpty()Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public remove(Ljava/lang/Object;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public retainAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public size()I
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public toArray()[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtp;->b()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method

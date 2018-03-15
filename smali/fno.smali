@@ -1,54 +1,27 @@
 .class final Lfno;
-.super Lerb;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# instance fields
+.field public final a:Lfnm;
+
+.field public final b:Lful;
+
+.field public final c:Lket;
+
+
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>(Lfnm;Lful;Lket;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lerb;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lfno;->a:Lfnm;
 
-    return-void
-.end method
+    iput-object p2, p0, Lfno;->b:Lful;
 
+    iput-object p3, p0, Lfno;->c:Lket;
 
-# virtual methods
-.method public final a(Lgsm;Lgds;I)V
-    .locals 3
-
-    if-gtz p3, :cond_0
-
-    invoke-virtual {p1}, Lgsm;->a()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "photosphere_show_help_overlay"
-
-    invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Lgsm;->a()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "photosphere_show_help_overlay"
-
-    invoke-static {v0, v1}, Lfno;->a(Landroid/content/SharedPreferences;Ljava/lang/String;)Z
-
-    move-result v0
-
-    const-string v1, "default_scope"
-
-    const-string v2, "photosphere_show_help_overlay"
-
-    invoke-virtual {p1, v1, v2, v0}, Lgsm;->b(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    :cond_0
     return-void
 .end method

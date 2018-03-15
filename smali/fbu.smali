@@ -1,45 +1,64 @@
-.class final Lfbu;
-.super Lfdt;
+.class public final Lfbu;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfbr;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfbr;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfbu;->a:Lfbr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lfdt;-><init>(Lfdq;)V
+    iput-object p1, p0, Lfbu;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfbu;
+    .locals 1
+
+    new-instance v0, Lfbu;
+
+    invoke-direct {v0, p0}, Lfbu;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final I()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfbu;->a:Lfbr;
+    iget-object v0, p0, Lfbu;->a:Lkgv;
 
-    iget-object v0, v0, Lfbr;->a:Lgvj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lfdt;->I()V
+    check-cast v0, Lfax;
 
-    iget-object v0, p0, Lfbu;->a:Lfbr;
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iget-object v0, v0, Lfbr;->a:Lgvj;
+    iget-object v0, v0, Lfax;->a:Lick;
 
-    iget-object v1, p0, Lfbu;->a:Lfbr;
+    invoke-static {v1, v0}, Lffm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Lick;)Lick;
 
-    iget-object v1, v1, Lfbr;->b:Lgvl;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
+
+    return-object v0
 .end method

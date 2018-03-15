@@ -1,45 +1,93 @@
-.class Lgha;
-.super Lggu;
+.class final Lgha;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Licn;
+.field private final synthetic a:Landroid/graphics/Bitmap;
+
+.field private final synthetic b:I
+
+.field private final synthetic c:Lgit;
 
 
 # direct methods
-.method constructor <init>(Licn;)V
+.method constructor <init>(Lgit;Landroid/graphics/Bitmap;I)V
     .locals 0
 
-    invoke-direct {p0}, Lggu;-><init>()V
+    iput-object p1, p0, Lgha;->c:Lgit;
 
-    iput-object p1, p0, Lgha;->a:Licn;
+    iput-object p2, p0, Lgha;->a:Landroid/graphics/Bitmap;
+
+    iput p3, p0, Lgha;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Lgha;->a:Licn;
+    iget-object v0, p0, Lgha;->c:Lgit;
 
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object v0, v0, Lgit;->a:Lggo;
+
+    iget-object v1, v0, Lggo;->c:Ljava/util/LinkedList;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lgha;->c:Lgit;
+
+    iget-object v0, v0, Lgit;->a:Lggo;
+
+    iget-object v0, v0, Lggo;->c:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    return v0
-.end method
+    if-eqz v0, :cond_0
 
-.method public hashCode()I
-    .locals 1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-object v0, p0, Lgha;->a:Licn;
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    check-cast v0, Lghb;
 
-    move-result v0
+    iget-object v3, p0, Lgha;->a:Landroid/graphics/Bitmap;
 
-    return v0
+    iget v4, p0, Lgha;->b:I
+
+    invoke-interface {v0, v3, v4}, Lghb;->a(Landroid/graphics/Bitmap;I)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
 .end method

@@ -1,59 +1,70 @@
 .class public final Ll;
-.super Lhi;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic d:Landroid/support/design/widget/CheckableImageButton;
+# static fields
+.field public static final a:[I
+
+.field public static final b:[I
+
+.field public static final c:I = 0x0
+
+.field public static final d:I = 0x2
+
+.field public static final e:I = 0x4
+
+.field public static final f:I = 0x1
+
+.field public static final g:I = 0x6
+
+.field public static final h:I = 0x5
+
+.field public static final i:I = 0x3
+
+.field public static final j:I = 0x0
+
+.field public static final k:I = 0x1
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/design/widget/CheckableImageButton;)V
-    .locals 0
-
-    iput-object p1, p0, Ll;->d:Landroid/support/design/widget/CheckableImageButton;
-
-    invoke-direct {p0}, Lhi;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-super {p0, p1, p2}, Lhi;->a(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+    const/4 v0, 0x2
 
-    iget-object v0, p0, Ll;->d:Landroid/support/design/widget/CheckableImageButton;
+    new-array v0, v0, [I
 
-    invoke-virtual {v0}, Landroid/support/design/widget/CheckableImageButton;->isChecked()Z
+    fill-array-data v0, :array_0
 
-    move-result v0
+    sput-object v0, Ll;->a:[I
 
-    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setChecked(Z)V
+    const/4 v0, 0x7
 
-    return-void
-.end method
+    new-array v0, v0, [I
 
-.method public final a(Landroid/view/View;Ljq;)V
-    .locals 2
+    fill-array-data v0, :array_1
 
-    invoke-super {p0, p1, p2}, Lhi;->a(Landroid/view/View;Ljq;)V
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p2, v0}, Ljq;->a(Z)V
-
-    iget-object v0, p0, Ll;->d:Landroid/support/design/widget/CheckableImageButton;
-
-    invoke-virtual {v0}, Landroid/support/design/widget/CheckableImageButton;->isChecked()Z
-
-    move-result v0
-
-    iget-object v1, p2, Ljq;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    invoke-virtual {v1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
+    sput-object v0, Ll;->b:[I
 
     return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x7f01012e
+        0x7f01012f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x10100b3
+        0x7f010130
+        0x7f010131
+        0x7f010132
+        0x7f010133
+        0x7f010134
+        0x7f010135
+    .end array-data
 .end method

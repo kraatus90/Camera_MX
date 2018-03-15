@@ -1,41 +1,45 @@
-.class abstract Liyp;
+.class public abstract Liyp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Likg;
+.implements Liza;
+
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:J
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;IJ)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method synthetic constructor <init>(B)V
-    .locals 0
+    iput-object p1, p0, Liyp;->a:Ljava/lang/String;
 
-    invoke-direct {p0}, Liyp;-><init>()V
+    iput p2, p0, Liyp;->b:I
+
+    iput-wide p3, p0, Liyp;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lcom/google/android/vision/face/Face;)Ljava/lang/Float;
+.method public abstract a()Ljava/util/Collection;
 .end method
 
-.method public bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final b()J
+    .locals 2
 
-    check-cast p1, Lcom/google/android/vision/face/Face;
+    iget-wide v0, p0, Liyp;->c:J
 
-    invoke-virtual {p0, p1}, Liyp;->a(Lcom/google/android/vision/face/Face;)Ljava/lang/Float;
-
-    move-result-object v0
-
-    return-object v0
+    return-wide v0
 .end method

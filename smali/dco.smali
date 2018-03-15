@@ -1,27 +1,41 @@
-.class public final Ldco;
+.class final synthetic Ldco;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Lfas;
 
 
-# instance fields
-.field public final a:Landroid/content/ContentResolver;
-
-.field public final b:Lftj;
+# static fields
+.field public static final a:Lfas;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/ContentResolver;)V
+.method static constructor <clinit>()V
     .locals 1
+
+    new-instance v0, Ldco;
+
+    invoke-direct {v0}, Ldco;-><init>()V
+
+    sput-object v0, Ldco;->a:Lfas;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldco;->a:Landroid/content/ContentResolver;
+    return-void
+.end method
 
-    new-instance v0, Lftj;
 
-    invoke-direct {v0}, Lftj;-><init>()V
+# virtual methods
+.method public final a([B)V
+    .locals 0
 
-    iput-object v0, p0, Ldco;->b:Lftj;
+    invoke-static {}, Ldcm;->f()V
 
     return-void
 .end method

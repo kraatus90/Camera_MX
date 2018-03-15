@@ -1,156 +1,77 @@
-.class Lfek;
-.super Lfeh;
+.class public final Lfek;
+.super Ljava/lang/Object;
 .source "PG"
 
 
+# static fields
+.field public static final a:J
+
+
 # instance fields
-.field private synthetic a:Lfei;
+.field public final b:Lfid;
+
+.field public final c:Lfid;
 
 
 # direct methods
-.method constructor <init>(Lfei;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lfek;->a:Lfei;
+    const-wide/32 v0, 0x3b9aca00
 
-    invoke-direct {p0}, Lfeh;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public M()V
-    .locals 0
+    sput-wide v0, Lfek;->a:J
 
     return-void
 .end method
 
-.method public final a()V
-    .locals 3
+.method public constructor <init>(Liaw;ILfia;Ljrf;Lfil;)V
+    .locals 1
 
-    const/4 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x1
+    invoke-interface {p3, p2, p2, p5}, Lfia;->a(IILfil;)Lfid;
 
-    iget-object v0, p0, Lfek;->a:Lfei;
+    move-result-object v0
 
-    iget-object v0, v0, Lfei;->h:Ljht;
+    invoke-virtual {p1, v0}, Liaw;->a(Lihb;)Lihb;
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    move-result-object v0
+
+    check-cast v0, Lfid;
+
+    iput-object v0, p0, Lfek;->b:Lfid;
+
+    invoke-virtual {p4}, Ljrf;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lfek;->a:Lfei;
-
-    iget-object v0, v0, Lfei;->h:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual {p4}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljxn;
+    check-cast v0, Lfia;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lglx;
-
-    iget-object v0, v0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Z
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setEnabled(Z)V
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a(Z)V
-
-    iget-object v0, p0, Lfek;->a:Lfei;
-
-    iget-object v0, v0, Lfei;->h:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-interface {v0, p2, p2, p5}, Lfia;->a(IILfil;)Lfid;
 
     move-result-object v0
 
-    check-cast v0, Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Liaw;->a(Lihb;)Lihb;
 
     move-result-object v0
 
-    check-cast v0, Lglx;
+    check-cast v0, Lfid;
 
-    invoke-virtual {v0}, Lglx;->b()V
+    iput-object v0, p0, Lfek;->c:Lfid;
+
+    :goto_0
+    return-void
 
     :cond_0
-    iget-object v0, p0, Lfek;->a:Lfei;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lfei;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iput-object v0, p0, Lfek;->c:Lfid;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startVideoIntentRecording()V
-
-    iget-object v0, p0, Lfek;->a:Lfei;
-
-    iget-object v0, v0, Lfei;->f:Lguc;
-
-    iget-object v0, v0, Lguc;->a:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0, v1, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->toggleRecordingMode(ZZ)V
-
-    return-void
-.end method
-
-.method public s_()V
-    .locals 3
-
-    const/4 v2, 0x1
-
-    iget-object v0, p0, Lfek;->a:Lfei;
-
-    iget-object v0, v0, Lfei;->h:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lglx;
-
-    invoke-virtual {v0}, Lglx;->a()V
-
-    iget-object v0, p0, Lfek;->a:Lfei;
-
-    iget-object v0, v0, Lfei;->h:Ljht;
-
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lglx;
-
-    iget-object v0, v0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->m:Z
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setEnabled(Z)V
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a(Z)V
-
-    return-void
+    goto :goto_0
 .end method

@@ -1,42 +1,54 @@
-.class final Laiz;
+.class public final Laiz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lary;
+.implements Laki;
 
 
 # instance fields
-.field public final a:Ljava/security/MessageDigest;
-
-.field private b:Lasa;
+.field private final a:Lajc;
 
 
 # direct methods
-.method constructor <init>(Ljava/security/MessageDigest;)V
-    .locals 2
+.method public constructor <init>(Lajc;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lasa;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lasa;-><init>(B)V
-
-    iput-object v0, p0, Laiz;->b:Lasa;
-
-    iput-object p1, p0, Laiz;->a:Ljava/security/MessageDigest;
+    iput-object p1, p0, Laiz;->a:Lajc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d_()Lasa;
-    .locals 1
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lakj;
+    .locals 4
 
-    iget-object v0, p0, Laiz;->b:Lasa;
+    check-cast p1, [B
+
+    new-instance v0, Lakj;
+
+    new-instance v1, Larm;
+
+    invoke-direct {v1, p1}, Larm;-><init>(Ljava/lang/Object;)V
+
+    new-instance v2, Lajd;
+
+    iget-object v3, p0, Laiz;->a:Lajc;
+
+    invoke-direct {v2, p1, v3}, Lajd;-><init>([BLajc;)V
+
+    invoke-direct {v0, v1, v2}, Lakj;-><init>(Ladu;Laef;)V
 
     return-object v0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

@@ -2,41 +2,22 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-
 
 # instance fields
-.field private synthetic a:Lhcs;
+.field public final a:Ljava/util/List;
+
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lhcs;)V
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;)V
     .locals 0
-
-    iput-object p1, p0, Lhct;->a:Lhcs;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lhct;->a:Ljava/util/List;
 
-
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
-
-    iget-object v0, p0, Lhct;->a:Lhcs;
-
-    iget-object v0, v0, Lhcs;->a:Lhcl;
-
-    invoke-virtual {v0}, Lgvh;->Y()V
-
-    iget-object v0, p0, Lhct;->a:Lhcs;
-
-    iget-object v0, v0, Lhcs;->b:Lhbs;
-
-    invoke-virtual {v0}, Lgvh;->T()V
+    iput-object p2, p0, Lhct;->b:Ljava/util/List;
 
     return-void
 .end method

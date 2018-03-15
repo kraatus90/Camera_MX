@@ -1,42 +1,36 @@
-.class public final Ldht;
+.class final Ldht;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ldjy;
 
 
 # instance fields
-.field private a:Ldhm;
+.field private final synthetic a:Ldhs;
 
 
 # direct methods
-.method public constructor <init>(Ldhm;)V
+.method constructor <init>(Ldhs;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldht;->a:Ldhs;
 
-    iput-object p1, p0, Ldht;->a:Ldhm;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final synthetic a(Ljava/lang/Object;)Lbrv;
     .locals 2
 
-    iget-object v0, p0, Ldht;->a:Ldhm;
+    new-instance v0, Ldhy;
 
-    iget-object v0, v0, Ldhm;->g:Lfxb;
+    iget-object v1, p0, Ldht;->a:Ldhs;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfxb;
+    invoke-direct {v0, v1}, Ldhy;-><init>(Ldjz;)V
 
     return-object v0
 .end method

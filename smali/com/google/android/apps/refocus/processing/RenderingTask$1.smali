@@ -3,7 +3,7 @@
 .source "PG"
 
 # interfaces
-.implements Lgrv;
+.implements Lggm;
 
 
 # instance fields
@@ -93,13 +93,13 @@
     return-void
 .end method
 
-.method public onCaptureStarted(Lgry;)V
+.method public onCaptureStarted(Lghj;)V
     .locals 0
 
     return-void
 .end method
 
-.method public onLuckyShotSessionMetadataReceived(Lfsw;)V
+.method public onLuckyShotSessionMetadataReceived(Lenz;)V
     .locals 0
 
     return-void

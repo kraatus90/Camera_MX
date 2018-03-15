@@ -60,12 +60,12 @@
 
 
 # virtual methods
-.method public RgbReady(JLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;)V
-    .locals 11
+.method public RgbReady(JLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 13
 
     iget-wide v1, p0, Lcom/google/googlex/gcam/GoudaImageCallback;->swigCPtr:J
 
-    invoke-static {p3}, Lcom/google/googlex/gcam/InterleavedImageU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedImageU8;)J
+    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/InterleavedImageU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedImageU8;)J
 
     move-result-wide v6
 
@@ -73,23 +73,27 @@
 
     move-wide v4, p1
 
-    move-object v8, p3
+    move-object/from16 v8, p3
 
-    move v9, p4
+    move/from16 v9, p4
 
     move-object/from16 v10, p5
 
-    invoke-static/range {v1 .. v10}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaImageCallback_RgbReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;)V
+    move-object/from16 v11, p6
+
+    move-object/from16 v12, p7
+
+    invoke-static/range {v1 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaImageCallback_RgbReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/InterleavedImageU8;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public YuvReady(JLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;)V
-    .locals 11
+.method public YuvReady(JLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 13
 
     iget-wide v1, p0, Lcom/google/googlex/gcam/GoudaImageCallback;->swigCPtr:J
 
-    invoke-static {p3}, Lcom/google/googlex/gcam/YuvImage;->getCPtr(Lcom/google/googlex/gcam/YuvImage;)J
+    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/YuvImage;->getCPtr(Lcom/google/googlex/gcam/YuvImage;)J
 
     move-result-wide v6
 
@@ -97,13 +101,17 @@
 
     move-wide v4, p1
 
-    move-object v8, p3
+    move-object/from16 v8, p3
 
-    move v9, p4
+    move/from16 v9, p4
 
     move-object/from16 v10, p5
 
-    invoke-static/range {v1 .. v10}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaImageCallback_YuvReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;)V
+    move-object/from16 v11, p6
+
+    move-object/from16 v12, p7
+
+    invoke-static/range {v1 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->GoudaImageCallback_YuvReady(JLcom/google/googlex/gcam/GoudaImageCallback;JJLcom/google/googlex/gcam/YuvImage;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

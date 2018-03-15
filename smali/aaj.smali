@@ -3,40 +3,46 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/hardware/Camera$ShutterCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Labp;
+.field private final synthetic a:I
 
-.field private b:Landroid/os/Handler;
+.field private final synthetic b:Ljava/lang/String;
+
+.field private final synthetic c:Laag;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/Handler;Labp;)V
+.method constructor <init>(Laag;ILjava/lang/String;)V
     .locals 0
 
+    iput-object p1, p0, Laaj;->c:Laag;
+
+    iput p2, p0, Laaj;->a:I
+
+    iput-object p3, p0, Laaj;->b:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Laaj;->b:Landroid/os/Handler;
-
-    iput-object p2, p0, Laaj;->a:Labp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShutter()V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Laaj;->b:Landroid/os/Handler;
+    iget-object v0, p0, Laaj;->c:Laag;
 
-    new-instance v1, Laak;
+    iget-object v0, v0, Laag;->a:Laaf;
 
-    invoke-direct {v1, p0}, Laak;-><init>(Laaj;)V
+    iget v1, p0, Laaj;->a:I
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    iget-object v2, p0, Laaj;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Laaf;->a(ILjava/lang/String;)V
 
     return-void
 .end method

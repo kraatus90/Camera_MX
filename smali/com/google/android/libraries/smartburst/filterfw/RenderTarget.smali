@@ -61,21 +61,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/16 v3, 0x8
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0xb
-
-    if-lt v0, v2, :cond_0
+    const/16 v1, 0x8
 
     const/4 v0, 0x1
 
-    :goto_0
     sput-boolean v0, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->mSupportsMultipleDisplaySurfaces:Z
 
     new-instance v0, Ljava/util/HashMap;
@@ -124,24 +117,19 @@
 
     sput-object v0, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->mDisplaySurfaces:Ljava/util/HashMap;
 
-    sput v3, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sRedSize:I
+    sput v1, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sRedSize:I
 
-    sput v3, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sGreenSize:I
+    sput v1, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sGreenSize:I
 
-    sput v3, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sBlueSize:I
+    sput v1, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sBlueSize:I
 
-    sput v3, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sAlphaSize:I
+    sput v1, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sAlphaSize:I
 
-    sput v1, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sDepthSize:I
+    sput v2, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sDepthSize:I
 
-    sput v1, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sStencilSize:I
+    sput v2, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->sStencilSize:I
 
     return-void
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 .method private constructor <init>(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;Ljavax/microedition/khronos/egl/EGLSurface;IZZ)V
@@ -828,54 +816,17 @@
 .end method
 
 .method private static getEGLErrorString(Ljavax/microedition/khronos/egl/EGL10;)Ljava/lang/String;
-    .locals 3
+    .locals 1
 
     invoke-interface {p0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
 
     move-result v0
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0xe
-
-    if-lt v1, v2, :cond_0
-
     invoke-static {v0}, Lcom/google/android/libraries/smartburst/filterfw/RenderTarget;->getEGLErrorStringICS(I)Ljava/lang/String;
 
     move-result-object v0
 
-    :goto_0
     return-object v0
-
-    :cond_0
-    const-string v1, "EGL Error 0x"
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljava/lang/String;
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
 .end method
 
 .method private static getEGLErrorStringICS(I)Ljava/lang/String;

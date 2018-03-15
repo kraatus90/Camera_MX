@@ -1,86 +1,139 @@
 .class public final Ldib;
-.super Ljava/lang/Object;
+.super Ldjz;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
+
+# static fields
+.field private static final c:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private d:Z
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private e:Landroid/net/Uri;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "VidStateCompleted"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Ldib;->c:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ldjz;ZLandroid/net/Uri;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ldjz;-><init>(Lbrv;)V
 
-    iput-object p1, p0, Ldib;->a:Ljxn;
+    iput-boolean p2, p0, Ldib;->d:Z
 
-    iput-object p2, p0, Ldib;->b:Ljxn;
-
-    iput-object p3, p0, Ldib;->c:Ljxn;
-
-    iput-object p4, p0, Ldib;->d:Ljxn;
+    iput-object p3, p0, Ldib;->e:Landroid/net/Uri;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final synthetic b()Lbrv;
+    .locals 1
 
-    iget-object v0, p0, Ldib;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p0}, Ldib;->e()Ldjz;
 
     move-result-object v0
 
-    check-cast v0, Lbhn;
+    return-object v0
+.end method
 
-    iget-object v1, p0, Ldib;->b:Ljxn;
+.method public final e()Ldjz;
+    .locals 5
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-boolean v0, p0, Ldib;->d:Z
 
-    move-result-object v1
+    if-eqz v0, :cond_0
 
-    check-cast v1, Lchd;
+    new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Ldib;->c:Ljxn;
+    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Ldib;->c:Ljava/lang/String;
+
+    iget-object v2, p0, Ldib;->e:Landroid/net/Uri;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v2, Lgzz;
-
-    iget-object v3, p0, Ldib;->d:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    check-cast v3, Licz;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-static {v0, v1, v2, v3}, Ldhz;->a(Lbhn;Lchd;Lgzz;Licz;)Ldii;
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x13
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Current video URI: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Ldib;->e:Landroid/net/Uri;
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    check-cast v0, Ldjx;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, v0, Ldjx;->L:Lbyy;
 
-    move-result-object v0
+    invoke-interface {v0, v1}, Lbyy;->b(Landroid/content/Intent;)V
 
-    check-cast v0, Ldii;
+    :goto_0
+    const/4 v0, 0x0
 
     return-object v0
+
+    :cond_0
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Ldjx;
+
+    iget-object v0, v0, Ldjx;->L:Lbyy;
+
+    invoke-interface {v0}, Lbyy;->w()V
+
+    goto :goto_0
 .end method

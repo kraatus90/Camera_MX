@@ -1,19 +1,35 @@
-.class public final Ldpz;
-.super Ljava/lang/Object;
+.class final Ldpz;
+.super Lfhq;
 .source "PG"
 
 
 # instance fields
-.field public final a:I
+.field private final synthetic a:Ldpy;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method constructor <init>(Ldpy;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldpz;->a:Ldpy;
 
-    iput p1, p0, Ldpz;->a:I
+    invoke-direct {p0}, Lfhq;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lfgk;)V
+    .locals 4
+
+    iget-object v0, p0, Ldpz;->a:Ldpy;
+
+    iget-object v0, v0, Ldpy;->a:Ldpa;
+
+    iget-wide v2, p1, Lfgk;->a:J
+
+    invoke-virtual {v0, v2, v3}, Ldpa;->a(J)J
 
     return-void
 .end method

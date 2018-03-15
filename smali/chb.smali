@@ -1,30 +1,20 @@
-.class public final Lchb;
+.class final Lchb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
-# static fields
-.field public static final a:Lchb;
+# instance fields
+.field private final synthetic a:Lcgy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lchb;
-
-    invoke-direct {v0}, Lchb;-><init>()V
-
-    sput-object v0, Lchb;->a:Lchb;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lcgy;)V
     .locals 0
+
+    iput-object p1, p0, Lchb;->a:Lcgy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,20 +23,22 @@
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    invoke-static {}, Lcgx;->b()Landroid/os/Handler;
+    iget-object v1, p0, Lchb;->a:Lcgy;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    check-cast v0, Ljava/lang/Float;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Landroid/os/Handler;
+    invoke-virtual {v1, v0}, Lcgy;->a(F)V
 
-    return-object v0
+    return-void
 .end method

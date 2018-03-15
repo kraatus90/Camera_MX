@@ -2,146 +2,145 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
 
-
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+# static fields
+.field private static final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "VidRotDataLoader"
 
-    iput-object p1, p0, Lepv;->a:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p2, p0, Lepv;->b:Ljxn;
+    move-result-object v0
 
-    iput-object p3, p0, Lepv;->c:Ljxn;
-
-    iput-object p4, p0, Lepv;->d:Ljxn;
-
-    iput-object p5, p0, Lepv;->e:Ljxn;
+    sput-object v0, Lepv;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lepv;->a:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+.method public static a(Lepu;Ljava/lang/String;)Z
+    .locals 5
 
-    iget-object v0, p0, Lepv;->b:Ljxn;
+    new-instance v0, Landroid/media/MediaMetadataRetriever;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v0}, Landroid/media/MediaMetadataRetriever;-><init>()V
 
-    move-result-object v9
+    :try_start_0
+    invoke-virtual {v0, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
 
-    check-cast v9, Lfsn;
+    const/16 v1, 0x18
 
-    iget-object v0, p0, Lepv;->c:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lfsp;
-
-    iget-object v0, p0, Lepv;->d:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lbhl;
-
-    iget-object v0, p0, Lepv;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v11, v0
-
-    check-cast v11, Landroid/content/pm/PackageInfo;
-
-    const/4 v8, 0x0
-
-    invoke-static {}, Landroid/app/ActivityManager;->isRunningInTestHarness()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v8, 0x1
-
-    :cond_0
-    new-instance v0, Lesh;
-
-    invoke-static {}, Lftb;->a()Lftb;
+    invoke-virtual {v0, v1}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
     move-result-object v1
 
-    new-instance v2, Lijl;
+    const/16 v2, 0x12
 
-    invoke-direct {v2}, Lijl;-><init>()V
+    invoke-virtual {v0, v2}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
-    new-instance v3, Ljava/util/Random;
+    move-result-object v2
 
-    invoke-direct {v3}, Ljava/util/Random;-><init>()V
+    const/16 v3, 0x13
 
-    invoke-virtual {v3}, Ljava/util/Random;->nextInt()I
+    invoke-virtual {v0, v3}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
-    move-result v3
+    move-result-object v3
 
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
+    const/16 v4, 0x19
 
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
-
-    move-result-object v4
-
-    sget-object v5, Landroid/os/Build;->DISPLAY:Ljava/lang/String;
-
-    const-string v6, "UsageStatEx"
-
-    const/16 v12, 0xa
-
-    invoke-static {v6, v12}, Lapb;->d(Ljava/lang/String;I)Ljava/util/concurrent/ThreadFactory;
-
-    move-result-object v6
-
-    invoke-static {v6}, Ljava/util/concurrent/Executors;->newSingleThreadScheduledExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-result-object v6
-
-    iget-object v11, v11, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-
-    invoke-direct/range {v0 .. v11}, Lesh;-><init>(Lftb;Lijl;ILjava/lang/String;Ljava/lang/String;Ljava/util/concurrent/ScheduledExecutorService;Lbhl;ZLfsn;Lfsp;Ljava/lang/String;)V
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v4}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lidm;
+    if-eqz v2, :cond_0
 
-    return-object v0
+    if-eqz v3, :cond_0
+
+    if-eqz v1, :cond_0
+
+    iput-object v1, p0, Lepu;->b:Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    iput v1, p0, Lepu;->c:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    iput v1, p0, Lepu;->d:I
+
+    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v0
+
+    double-to-int v0, v0
+
+    iput v0, p0, Lepu;->e:I
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    sget-object v1, Lepv;->a:Ljava/lang/String;
+
+    const-string v2, "Metadata does not exist for the video at "
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_1
+    invoke-static {v1, v0}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_2
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lepv;->a:Ljava/lang/String;
+
+    const-string v2, "VideoRotationMetadataLoader.loadRotationMetadata() failed!"
+
+    invoke-static {v1, v2, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_2
 .end method

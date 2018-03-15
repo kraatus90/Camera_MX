@@ -1,54 +1,98 @@
-.class final Lhcr;
+.class public final Lhcr;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/media/MediaPlayer$OnPreparedListener;
-
 
 # instance fields
-.field private synthetic a:Lhcp;
+.field public final a:Lkgv;
+
+.field public final b:Lkgv;
+
+.field public final c:Lkgv;
+
+.field public final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lhcp;)V
-    .locals 0
-
-    iput-object p1, p0, Lhcr;->a:Lhcp;
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    invoke-static {p1, v0}, Lhcr;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lhcr;->a:Lkgv;
+
+    const/4 v0, 0x2
+
+    invoke-static {p2, v0}, Lhcr;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lhcr;->b:Lkgv;
+
+    const/4 v0, 0x3
+
+    invoke-static {p3, v0}, Lhcr;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lhcr;->c:Lkgv;
+
+    const/4 v0, 0x4
+
+    invoke-static {p4, v0}, Lhcr;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Lhcr;->d:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 3
 
-# virtual methods
-.method public final onPrepared(Landroid/media/MediaPlayer;)V
-    .locals 1
+    if-nez p0, :cond_0
 
-    iget-object v0, p0, Lhcr;->a:Lhcp;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    iget-object v0, v0, Lhcp;->a:Lhcl;
+    const/16 v1, 0x5d
 
-    iget-boolean v0, v0, Lhcl;->j:Z
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, p0, Lhcr;->a:Lhcp;
+    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
 
-    iget-object v0, v0, Lhcp;->a:Lhcl;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lgvh;->W()V
+    move-result-object v1
 
-    :goto_0
-    return-void
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     :cond_0
-    iget-object v0, p0, Lhcr;->a:Lhcp;
-
-    iget-object v0, v0, Lhcp;->a:Lhcl;
-
-    invoke-virtual {v0}, Lgvh;->X()V
-
-    goto :goto_0
+    return-object p0
 .end method

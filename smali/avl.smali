@@ -1,53 +1,43 @@
-.class public interface abstract Lavl;
+.class final Lavl;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lihg;
+
+
+# instance fields
+.field private final synthetic a:Libk;
+
+
+# direct methods
+.method constructor <init>(Libk;)V
+    .locals 0
+
+    iput-object p1, p0, Lavl;->a:Libk;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 1
 
-.method public abstract a(ILjava/lang/String;ZZFLjava/lang/String;ZFLgzh;Ljava/lang/Boolean;Landroid/graphics/Rect;Ljqu;Ljava/lang/Boolean;)V
-.end method
+    check-cast p1, Ljava/lang/Boolean;
 
-.method public abstract a(J)V
-.end method
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-.method public abstract a(Lavo;)V
-.end method
+    move-result v0
 
-.method public abstract a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-.end method
+    if-eqz v0, :cond_0
 
-.method public abstract a(Lfsw;)V
-.end method
+    iget-object v0, p0, Lavl;->a:Libk;
 
-.method public abstract a(Lftc;Ljava/lang/Long;Ljava/lang/Integer;)V
-.end method
+    invoke-virtual {v0}, Libk;->a()V
 
-.method public abstract a(Liic;)V
-.end method
-
-.method public abstract a(Ljqh;)V
-.end method
-
-.method public abstract a(Ljqv;)V
-.end method
-
-.method public abstract a(Ljrc;)V
-.end method
-
-.method public abstract a(Z)V
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract b(J)V
-.end method
-
-.method public abstract c()V
-.end method
-
-.method public abstract d()Lavo;
+    :cond_0
+    return-void
 .end method

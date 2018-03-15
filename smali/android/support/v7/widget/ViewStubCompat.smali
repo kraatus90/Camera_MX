@@ -35,13 +35,13 @@
 
     iput v2, p0, Landroid/support/v7/widget/ViewStubCompat;->b:I
 
-    sget-object v0, Lnr;->cQ:[I
+    sget-object v0, Lnm;->cP:[I
 
     invoke-virtual {p1, p2, v0, p3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    sget v1, Lnr;->cS:I
+    sget v1, Lnm;->cR:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -49,7 +49,7 @@
 
     iput v1, p0, Landroid/support/v7/widget/ViewStubCompat;->c:I
 
-    sget v1, Lnr;->cT:I
+    sget v1, Lnm;->cS:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -57,7 +57,7 @@
 
     iput v1, p0, Landroid/support/v7/widget/ViewStubCompat;->b:I
 
-    sget v1, Lnr;->cR:I
+    sget v1, Lnm;->cQ:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 

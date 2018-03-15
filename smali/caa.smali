@@ -1,91 +1,72 @@
-.class final Lcaa;
-.super Likn;
+.class public final Lcaa;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcdc;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lilv;
+.field private final b:Lkgv;
 
-.field private synthetic c:Lbzv;
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lbzv;Lcdc;Lilv;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcaa;->c:Lbzv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcaa;->a:Lcdc;
+    iput-object p1, p0, Lcaa;->a:Lkgv;
 
-    iput-object p3, p0, Lcaa;->b:Lilv;
+    iput-object p2, p0, Lcaa;->b:Lkgv;
 
-    invoke-direct {p0}, Likn;-><init>()V
+    iput-object p3, p0, Lcaa;->c:Lkgv;
+
+    iput-object p4, p0, Lcaa;->d:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a_(Ljava/lang/Object;)V
-    .locals 11
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 5
 
-    check-cast p1, Ljava/util/Map;
+    new-instance v3, Lbzy;
 
-    iget-object v0, p0, Lcaa;->c:Lbzv;
+    iget-object v4, p0, Lcaa;->a:Lkgv;
 
-    invoke-static {v0}, Lbzv;->c(Lbzv;)Lgow;
+    iget-object v0, p0, Lcaa;->b:Lkgv;
 
-    move-result-object v10
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v0, Lcdd;
+    move-result-object v0
 
-    iget-object v1, p0, Lcaa;->c:Lbzv;
+    check-cast v0, Liay;
 
-    invoke-static {v1}, Lbzv;->a(Lbzv;)Lgrw;
+    iget-object v1, p0, Lcaa;->c:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcaa;->c:Lbzv;
+    check-cast v1, Lemf;
 
-    iget-object v2, v2, Lbzv;->b:Ljava/io/File;
+    iget-object v2, p0, Lcaa;->d:Lkgv;
 
-    iget-object v3, p0, Lcaa;->a:Lcdc;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v3
+    check-cast v2, Lihs;
 
-    check-cast v3, Lipm;
+    invoke-direct {v3, v4, v0, v1, v2}, Lbzy;-><init>(Lkgv;Liay;Lemf;Lihs;)V
 
-    iget-object v4, p0, Lcaa;->c:Lbzv;
-
-    iget-object v4, v4, Lbzv;->e:Ljfl;
-
-    new-instance v5, Lixv;
-
-    invoke-direct {v5}, Lixv;-><init>()V
-
-    invoke-static {}, Lbwq;->c()Ljava/util/concurrent/Executor;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcaa;->c:Lbzv;
-
-    iget-object v7, v7, Lbzv;->d:Lgvx;
-
-    iget-object v8, p0, Lcaa;->b:Lilv;
-
-    iget-object v9, p0, Lcaa;->c:Lbzv;
-
-    invoke-static {v9}, Lbzv;->b(Lbzv;)Lidm;
-
-    move-result-object v9
-
-    invoke-direct/range {v0 .. v9}, Lcdd;-><init>(Lgrw;Ljava/io/File;Lipm;Ljfl;Lixg;Ljava/util/concurrent/Executor;Lgvx;Lilv;Lidm;)V
-
-    invoke-virtual {v10, v0}, Lgow;->a(Lgov;)V
-
-    return-void
+    return-object v3
 .end method

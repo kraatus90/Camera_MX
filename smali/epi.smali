@@ -3,52 +3,74 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Leph;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lepg;
+
+.field private final b:Lick;
+
+.field private final c:Lick;
+
+.field private final d:Lick;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lepg;Lick;Lick;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lepi;->a:Ljxn;
+    iput-object p1, p0, Lepi;->a:Lepg;
+
+    invoke-static {p2}, Licl;->b(Lick;)Lick;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lepi;->b:Lick;
+
+    invoke-static {p3}, Licl;->b(Lick;)Lick;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lepi;->c:Lick;
+
+    iget-object v0, p0, Lepi;->c:Lick;
+
+    iget-object v1, p0, Lepi;->b:Lick;
+
+    invoke-static {v0, v1}, Licl;->a(Lick;Lick;)Lick;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lepi;->d:Lick;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a()Lepg;
+    .locals 1
 
-    iget-object v0, p0, Lepi;->a:Ljxn;
+    iget-object v0, p0, Lepi;->a:Lepg;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public final b()Lick;
+    .locals 1
 
-    check-cast v0, Lgsl;
+    iget-object v0, p0, Lepi;->b:Lick;
 
-    const-string v1, "pref_has_checked_gouda_mode"
+    return-object v0
+.end method
 
-    const/4 v2, 0x0
+.method public final c()Lick;
+    .locals 1
 
-    invoke-virtual {v0, v1, v2}, Lgsl;->a(Ljava/lang/String;Z)Liau;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liau;
+    iget-object v0, p0, Lepi;->d:Lick;
 
     return-object v0
 .end method

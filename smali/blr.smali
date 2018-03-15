@@ -2,8 +2,27 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lblr;
+
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lblr;
+
+    invoke-direct {v0}, Lblr;-><init>()V
+
+    sput-object v0, Lblr;->a:Lblr;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 0
 
@@ -12,40 +31,22 @@
     return-void
 .end method
 
-.method public static a(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;F)V
-    .locals 4
 
-    const/high16 v3, 0x40000000    # 2.0f
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    invoke-virtual {p0}, Landroid/graphics/Canvas;->getWidth()I
+    invoke-static {}, Lblp;->b()Ljava/util/concurrent/Semaphore;
 
-    move-result v0
+    move-result-object v0
 
-    invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    int-to-float v1, v0
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    sub-float/2addr v1, p2
+    move-result-object v0
 
-    div-float/2addr v1, v3
+    check-cast v0, Ljava/util/concurrent/Semaphore;
 
-    int-to-float v2, v0
-
-    sub-float/2addr v2, p2
-
-    div-float/2addr v2, v3
-
-    invoke-virtual {p0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    int-to-float v0, v0
-
-    div-float v0, p2, v0
-
-    invoke-virtual {p0, v0, v0}, Landroid/graphics/Canvas;->scale(FF)V
-
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    invoke-virtual {p0}, Landroid/graphics/Canvas;->restore()V
-
-    return-void
+    return-object v0
 .end method

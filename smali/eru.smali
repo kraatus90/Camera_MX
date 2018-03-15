@@ -1,56 +1,59 @@
-.class public final Leru;
-.super Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
+.class final Leru;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field private static d:Leru;
-
-
-# instance fields
-.field public final a:Lgzz;
-
-.field public b:J
-
-.field public c:J
-
-
 # direct methods
-.method private constructor <init>(Lijl;Lgzz;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "CameraApp"
+    const-string v0, "SafeJpegSaving"
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;-><init>(Lijl;Ljava/lang/String;)V
-
-    iput-object p2, p0, Leru;->a:Lgzz;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a()Leru;
-    .locals 3
+.method static a(Lgmy;Lgnb;Ljava/io/InputStream;Ljava/io/File;Ljrf;)Ljava/io/InputStream;
+    .locals 4
 
-    sget-object v0, Leru;->d:Leru;
+    new-instance v0, Ljava/io/ByteArrayOutputStream;
 
-    if-nez v0, :cond_0
+    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    new-instance v0, Leru;
+    invoke-static {p2, v0}, Lcom/google/common/io/ByteStreams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
 
-    new-instance v1, Lijl;
+    invoke-interface {p1, p3}, Lgnb;->a(Ljava/io/File;)V
 
-    invoke-direct {v1}, Lijl;-><init>()V
+    invoke-virtual {p3}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
-    invoke-static {}, Lgzz;->a()Lgzz;
+    move-result-object v1
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, ".nomedia"
+
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-interface {p1, v2}, Lgnb;->d(Ljava/io/File;)V
+
+    new-instance v1, Ljava/io/ByteArrayInputStream;
+
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v2
 
-    invoke-direct {v0, v1, v2}, Leru;-><init>(Lijl;Lgzz;)V
+    invoke-direct {v1, v2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    sput-object v0, Leru;->d:Leru;
+    invoke-interface {p0, p3, v1, p4}, Lgmy;->a(Ljava/io/File;Ljava/io/InputStream;Ljrf;)J
 
-    :cond_0
-    sget-object v0, Leru;->d:Leru;
+    new-instance v1, Ljava/io/ByteArrayInputStream;
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    return-object v1
 .end method

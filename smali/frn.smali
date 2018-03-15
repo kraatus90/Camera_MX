@@ -1,20 +1,29 @@
-.class final Lfrn;
+.class public final synthetic Lfrn;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lfrr;
+.implements Ljqv;
 
 
-# instance fields
-.field private synthetic a:Landroid/os/Bundle;
+# static fields
+.field public static final a:Ljqv;
 
 
 # direct methods
-.method constructor <init>(Lfrm;Landroid/os/Bundle;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p2, p0, Lfrn;->a:Landroid/os/Bundle;
+    new-instance v0, Lfrn;
+
+    invoke-direct {v0}, Lfrn;-><init>()V
+
+    sput-object v0, Lfrn;->a:Ljqv;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,21 +32,58 @@
 
 
 # virtual methods
-.method public final a(Lfsf;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    instance-of v0, p1, Lfru;
+    const/4 v2, 0x1
+
+    check-cast p1, Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v2
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lfrn;->a:Landroid/os/Bundle;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {p1, v0}, Lfrm;->a(Lfsf;Landroid/os/Bundle;)Landroid/os/Bundle;
+    move-result v0
 
-    check-cast p1, Lfru;
+    if-eqz v0, :cond_0
 
-    invoke-interface {p1}, Lfru;->M()V
+    move v0, v2
+
+    :goto_1
+    and-int/2addr v0, v1
+
+    move v1, v0
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
 .end method

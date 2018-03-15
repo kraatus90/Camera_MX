@@ -3,18 +3,22 @@
 .source "PG"
 
 # interfaces
-.implements Lcwh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lcxc;
+.field private final synthetic a:Lbyy;
+
+.field private final synthetic b:Lcxy;
 
 
 # direct methods
-.method constructor <init>(Lcxc;)V
+.method constructor <init>(Lcxy;Lbyy;)V
     .locals 0
 
-    iput-object p1, p0, Lcxz;->a:Lcxc;
+    iput-object p1, p0, Lcxz;->b:Lcxy;
+
+    iput-object p2, p0, Lcxz;->a:Lbyy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,62 +27,40 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lcng;
-    .locals 5
+.method public final run()V
+    .locals 2
 
-    check-cast p1, Lcvo;
+    iget-object v0, p0, Lcxz;->b:Lcxy;
 
-    iget-object v0, p0, Lcxz;->a:Lcxc;
+    iget-object v0, v0, Lcxy;->c:Ljrf;
 
-    iget-boolean v0, v0, Lcxc;->g:Z
+    invoke-virtual {v0}, Ljrf;->a()Z
 
-    if-nez v0, :cond_0
+    move-result v0
 
-    const/4 v0, 0x0
+    if-eqz v0, :cond_0
 
-    :goto_0
-    return-object v0
+    iget-object v1, p0, Lcxz;->a:Lbyy;
 
-    :cond_0
-    iget-object v0, p0, Lcxz;->a:Lcxc;
+    iget-object v0, p0, Lcxz;->b:Lcxy;
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Lcxy;->c:Ljrf;
 
-    iput-boolean v1, v0, Lcxc;->g:Z
-
-    iget-object v0, p0, Lcxz;->a:Lcxc;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    check-cast v0, Landroid/content/Intent;
 
-    iget-object v0, v0, Lcwg;->c:Lhzt;
+    invoke-interface {v1, v0}, Lbyy;->b(Landroid/content/Intent;)V
 
-    new-instance v1, Lcya;
+    :goto_0
+    return-void
 
-    invoke-direct {v1, p0}, Lcya;-><init>(Lcxz;)V
+    :cond_0
+    iget-object v0, p0, Lcxz;->a:Lbyy;
 
-    invoke-virtual {v0, v1}, Lhzt;->execute(Ljava/lang/Runnable;)V
-
-    new-instance v0, Lcyf;
-
-    iget-object v1, p0, Lcxz;->a:Lcxc;
-
-    iget-object v2, p0, Lcxz;->a:Lcxc;
-
-    iget-object v2, v2, Lcxc;->d:Laxp;
-
-    iget-object v3, p1, Lcvo;->a:Landroid/graphics/Bitmap;
-
-    iget-object v4, p1, Lcvo;->b:[B
-
-    invoke-static {v4}, Ljht;->b(Ljava/lang/Object;)Ljht;
-
-    move-result-object v4
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lcyf;-><init>(Lcwi;Laxp;Landroid/graphics/Bitmap;Ljht;)V
+    invoke-interface {v0}, Lbyy;->w()V
 
     goto :goto_0
 .end method

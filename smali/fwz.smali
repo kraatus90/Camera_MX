@@ -1,70 +1,33 @@
-.class public final Lfwz;
-.super Ljava/lang/Object;
+.class final Lfwz;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfwz;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-    iput-object p1, p0, Lfwz;->a:Ljxn;
-
-    iput-object p2, p0, Lfwz;->b:Ljxn;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-object v1, p0, Lfwz;->a:Ljxn;
+    iget-object v0, p0, Lfwz;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-    iget-object v0, p0, Lfwz;->b:Ljxn;
+    const/4 v1, 0x4
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setVisibility(I)V
 
-    move-result-object v0
-
-    check-cast v0, Lbip;
-
-    invoke-virtual {v0}, Lbip;->f()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Ljhi;->a:Ljhi;
-
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljht;
-
-    return-object v0
-
-    :cond_0
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljht;
-
-    goto :goto_0
+    return-void
 .end method

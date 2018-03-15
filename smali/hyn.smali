@@ -1,128 +1,218 @@
-.class public final Lhyn;
+.class final Lhyn;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Lhyl;
+
+
+# instance fields
+.field private a:Landroid/os/IBinder;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Landroid/os/IBinder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhyn;->a:Landroid/os/IBinder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 6
+.method public final a(Lhyg;Lcom/google/android/gms/wearable/PutDataRequest;)V
+    .locals 5
 
-    const/4 v1, 0x0
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    move-result-object v1
 
-    move-result v3
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    const/4 v0, 0x0
+    move-result-object v2
 
-    move v2, v1
+    :try_start_0
+    const-string v0, "com.google.android.gms.wearable.internal.IWearableService"
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    move-result v4
-
-    if-ge v4, v3, :cond_0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    const v5, 0xffff
-
-    and-int/2addr v5, v4
-
-    packed-switch v5, :pswitch_data_0
-
-    invoke-static {p1, v4}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v4}, Lhjg;->d(Landroid/os/Parcel;I)B
-
-    move-result v2
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v4}, Lhjg;->d(Landroid/os/Parcel;I)B
-
-    move-result v1
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {p1, v4}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-interface {p1}, Lhyg;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    if-eqz p2, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v1, v0}, Lcom/google/android/gms/wearable/PutDataRequest;->writeToParcel(Landroid/os/Parcel;I)V
+
+    :goto_0
+    iget-object v0, p0, Lhyn;->a:Landroid/os/IBinder;
+
+    const/4 v3, 0x6
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    return-void
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    const/4 v0, 0x0
 
-    move-result v4
+    :try_start_1
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eq v4, v3, :cond_1
+    goto :goto_0
 
-    new-instance v0, Ladf;
+    :catchall_0
+    move-exception v0
 
-    const/16 v1, 0x25
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     throw v0
-
-    :cond_1
-    new-instance v3, Lcom/google/android/gms/wearable/internal/zzh;
-
-    invoke-direct {v3, v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzh;-><init>(BBLjava/lang/String;)V
-
-    return-object v3
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
+.method public final a(Lhyg;Lcom/google/android/gms/wearable/internal/zzc;)V
+    .locals 5
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    :try_start_0
+    const-string v0, "com.google.android.gms.wearable.internal.IWearableService"
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    invoke-interface {p1}, Lhyg;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzc;->writeToParcel(Landroid/os/Parcel;I)V
+
+    iget-object v0, p0, Lhyn;->a:Landroid/os/IBinder;
+
+    const/16 v3, 0x10
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
+.end method
+
+.method public final a(Lhyg;Lcom/google/android/gms/wearable/internal/zzcj;)V
+    .locals 5
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    :try_start_0
+    const-string v0, "com.google.android.gms.wearable.internal.IWearableService"
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    invoke-interface {p1}, Lhyg;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzcj;->writeToParcel(Landroid/os/Parcel;I)V
+
+    iget-object v0, p0, Lhyn;->a:Landroid/os/IBinder;
+
+    const/16 v3, 0x11
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
+.end method
+
+.method public final asBinder()Landroid/os/IBinder;
     .locals 1
 
-    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzh;
+    iget-object v0, p0, Lhyn;->a:Landroid/os/IBinder;
 
     return-object v0
 .end method

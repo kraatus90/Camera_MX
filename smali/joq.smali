@@ -1,50 +1,50 @@
-.class final Ljoq;
+.class public final Ljoq;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field public static final serialVersionUID:J
+.implements Ljdt;
 
 
 # instance fields
-.field private a:Ljava/lang/String;
-
-.field private b:I
-
-.field private c:Ljava/lang/String;
+.field private final synthetic a:Ljox;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method public constructor <init>(Ljox;)V
     .locals 0
 
+    iput-object p1, p0, Ljoq;->a:Ljox;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljoq;->a:Ljava/lang/String;
-
-    iput p2, p0, Ljoq;->b:I
-
-    iput-object p3, p0, Ljoq;->c:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private final readResolve()Ljava/lang/Object;
+
+# virtual methods
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
     .locals 4
 
-    new-instance v0, Ljoo;
+    const-class v0, Ljho;
 
-    iget-object v1, p0, Ljoq;->a:Ljava/lang/String;
+    const-string v1, "default"
 
-    iget v2, p0, Ljoq;->b:I
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v3, p0, Ljoq;->c:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2, v3}, Ljoo;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    check-cast v0, Ljho;
+
+    new-instance v1, Ljpb;
+
+    invoke-direct {v1, v0}, Ljpb;-><init>(Ljho;)V
+
+    iget-object v2, p0, Ljoq;->a:Ljox;
+
+    const-string v3, "selected_frames.csv"
+
+    invoke-virtual {v2, v3, v1}, Ljox;->a(Ljava/lang/String;Ljoz;)V
 
     return-object v0
 .end method

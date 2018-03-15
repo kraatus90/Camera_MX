@@ -1,47 +1,41 @@
-.class public final Lfnx;
+.class final synthetic Lfnx;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljrm;
 
 
 # instance fields
-.field public a:D
+.field private final a:Lfnw;
 
-.field public b:D
-
-.field public c:D
-
-.field public d:D
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lfnw;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfnx;->a:Lfnw;
+
+    iput p2, p0, Lfnx;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lfnx;)V
+.method public final a()Ljava/lang/Object;
     .locals 2
 
-    iget-wide v0, p1, Lfnx;->a:D
+    iget-object v0, p0, Lfnx;->a:Lfnw;
 
-    iput-wide v0, p0, Lfnx;->a:D
+    iget v1, p0, Lfnx;->b:I
 
-    iget-wide v0, p1, Lfnx;->b:D
+    invoke-virtual {v0, v1}, Lfnw;->a(I)Ljava/lang/Integer;
 
-    iput-wide v0, p0, Lfnx;->b:D
+    move-result-object v0
 
-    iget-wide v0, p1, Lfnx;->c:D
-
-    iput-wide v0, p0, Lfnx;->c:D
-
-    iget-wide v0, p1, Lfnx;->d:D
-
-    iput-wide v0, p0, Lfnx;->d:D
-
-    return-void
+    return-object v0
 .end method

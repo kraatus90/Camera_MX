@@ -1,52 +1,66 @@
-.class public final Leyt;
+.class public Leyt;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lezq;
 
 
-# static fields
-.field public static final a:Leyt;
+# instance fields
+.field private final a:Lihn;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lihn;)V
     .locals 1
 
-    new-instance v0, Leyt;
-
-    invoke-direct {v0}, Leyt;-><init>()V
-
-    sput-object v0, Leyt;->a:Leyt;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-class v0, Leyt;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Lihn;->a(Ljava/lang/String;)Lihn;
+
+    move-result-object v0
+
+    iput-object v0, p0, Leyt;->a:Lihn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a(Link;J)V
+    .locals 4
 
-    new-instance v0, Lfdb;
+    iget-object v0, p0, Leyt;->a:Lihn;
 
-    invoke-direct {v0}, Lfdb;-><init>()V
+    const/16 v1, 0x27
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-result-object v0
+    const-string v1, "YUV image arrived: "
 
-    check-cast v0, Lfeq;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
+    move-result-object v1
+
+    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lihn;->d(Ljava/lang/String;)V
+
+    invoke-interface {p1}, Link;->close()V
+
+    return-void
 .end method

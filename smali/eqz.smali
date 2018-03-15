@@ -1,85 +1,41 @@
-.class final Leqz;
+.class final synthetic Leqz;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public a:Ljava/lang/Float;
-
-.field public b:Ljava/util/List;
-
-.field public c:Ljava/lang/Integer;
+# static fields
+.field public static final a:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
+    new-instance v0, Leqz;
+
+    invoke-direct {v0}, Leqz;-><init>()V
+
+    sput-object v0, Leqz;->a:Ljava/lang/Runnable;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Leqz;->b:Ljava/util/List;
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Leqz;->c:Ljava/lang/Integer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lici;)V
-    .locals 3
+.method public final run()V
+    .locals 0
 
-    const/4 v2, 0x0
-
-    iget-object v0, p0, Leqz;->b:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Leqz;->b:Ljava/util/List;
-
-    new-instance v1, Lera;
-
-    invoke-direct {v1}, Lera;-><init>()V
-
-    invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    iget-object v0, p0, Leqz;->b:Ljava/util/List;
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iget v1, v0, Lici;->a:I
-
-    iget-object v0, p0, Leqz;->b:Ljava/util/List;
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lici;
-
-    iget v0, v0, Lici;->b:I
-
-    mul-int/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Leqz;->c:Ljava/lang/Integer;
+    invoke-static {}, Leqt;->c()V
 
     return-void
 .end method

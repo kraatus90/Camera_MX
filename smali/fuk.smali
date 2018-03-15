@@ -1,76 +1,109 @@
-.class public final Lfuk;
+.class final Lfuk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfuj;
+.implements Lihb;
 
 
 # instance fields
-.field private a:Lfui;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private b:Liau;
+.field private final b:Lfuf;
 
-.field private c:Liau;
-
-.field private d:Liau;
+.field private final synthetic c:Lfue;
 
 
 # direct methods
-.method public constructor <init>(Lfui;Liau;Liau;)V
+.method constructor <init>(Lfue;Lfuf;)V
     .locals 2
+
+    iput-object p1, p0, Lfuk;->c:Lfue;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfuk;->a:Lfui;
+    iput-object p2, p0, Lfuk;->b:Lfuf;
 
-    invoke-static {p2}, Liav;->b(Liau;)Liau;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    iput-object v0, p0, Lfuk;->b:Liau;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    invoke-static {p3}, Liav;->b(Liau;)Liau;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lfuk;->c:Liau;
-
-    iget-object v0, p0, Lfuk;->c:Liau;
-
-    iget-object v1, p0, Lfuk;->b:Liau;
-
-    invoke-static {v0, v1}, Liav;->a(Liau;Liau;)Liau;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lfuk;->d:Liau;
+    iput-object v0, p0, Lfuk;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfui;
-    .locals 1
+.method public final close()V
+    .locals 4
 
-    iget-object v0, p0, Lfuk;->a:Lfui;
+    iget-object v0, p0, Lfuk;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-object v0
-.end method
+    const/4 v1, 0x1
 
-.method public final b()Liau;
-    .locals 1
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    iget-object v0, p0, Lfuk;->b:Liau;
+    move-result v0
 
-    return-object v0
-.end method
+    if-eqz v0, :cond_0
 
-.method public final c()Liau;
-    .locals 1
+    :goto_0
+    return-void
 
-    iget-object v0, p0, Lfuk;->d:Liau;
+    :cond_0
+    iget-object v0, p0, Lfuk;->c:Lfue;
 
-    return-object v0
+    iget-object v1, v0, Lfue;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lfuk;->c:Lfue;
+
+    iget-object v0, v0, Lfue;->b:Ljava/util/LinkedHashSet;
+
+    iget-object v2, p0, Lfuk;->b:Lfuf;
+
+    invoke-virtual {v0, v2}, Ljava/util/LinkedHashSet;->remove(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lfuk;->c:Lfue;
+
+    iget-object v0, v0, Lfue;->c:Lidg;
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    iget-object v3, p0, Lfuk;->c:Lfue;
+
+    iget-object v3, v3, Lfue;->b:Ljava/util/LinkedHashSet;
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    iput-object v2, v0, Lidg;->b:Ljava/lang/Object;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lfuk;->c:Lfue;
+
+    iget-object v0, v0, Lfue;->c:Lidg;
+
+    iget-object v0, v0, Lidg;->a:Lidb;
+
+    invoke-virtual {v0}, Lidb;->a()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

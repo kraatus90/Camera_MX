@@ -1,9 +1,6 @@
-.class public abstract Likd;
+.class public final Likd;
 .super Ljava/lang/Object;
 .source "PG"
-
-# interfaces
-.implements Likg;
 
 
 # direct methods
@@ -15,25 +12,12 @@
     return-void
 .end method
 
+.method static a(Limw;)Likc;
+    .locals 1
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    new-instance v0, Likc;
 
-    check-cast p1, Landroid/util/Pair;
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    iget-object v1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    invoke-virtual {p0, v0, v1}, Likd;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Likc;-><init>(Limw;)V
 
     return-object v0
-.end method
-
-.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 .end method

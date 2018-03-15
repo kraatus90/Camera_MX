@@ -1,33 +1,42 @@
 .class public final Lave;
-.super Lavj;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Landroid/content/Context;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/Thread$UncaughtExceptionHandler;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Lavj;-><init>(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lave;->a:Landroid/content/Context;
+    iput-object p1, p0, Lave;->a:Lkgv;
+
+    iput-object p2, p0, Lave;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Ljava/lang/Throwable;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lave;->a:Landroid/content/Context;
+    new-instance v0, Latq;
 
-    const-string v1, "com.google.android.apps.camera.legacy.app.silentfeedback.SILENT_FEEDBACK"
+    iget-object v1, p0, Lave;->a:Lkgv;
 
-    invoke-static {v0, p1, v1}, Lavg;->a(Landroid/content/Context;Ljava/lang/Throwable;Ljava/lang/String;)V
+    iget-object v2, p0, Lave;->b:Lkgv;
 
-    return-void
+    invoke-direct {v0, v1, v2}, Latq;-><init>(Lkgv;Lkgv;)V
+
+    return-object v0
 .end method

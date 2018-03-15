@@ -1,69 +1,63 @@
-.class final Lfav;
-.super Lezj;
+.class public final Lfav;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lfat;
+.field public final a:Lick;
+
+.field public final b:Lick;
+
+.field public final c:Lick;
+
+.field public final d:Lick;
+
+.field public final e:Lick;
+
+.field public final f:Lick;
+
+.field public final g:Lick;
+
+.field public final h:Ldkb;
+
+.field public final i:Lick;
 
 
 # direct methods
-.method constructor <init>(Lfat;)V
-    .locals 0
+.method public constructor <init>(Lfsk;Lick;Lick;Lick;Lick;Lick;Lick;Lick;)V
+    .locals 1
 
-    iput-object p1, p0, Lfav;->a:Lfat;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lezj;-><init>(Lezh;)V
+    iget-object v0, p1, Lfsk;->d:Lidb;
 
-    return-void
-.end method
+    invoke-static {v0}, Licl;->a(Lick;)Lick;
 
+    move-result-object v0
 
-# virtual methods
-.method public final m_()V
-    .locals 2
+    iput-object v0, p0, Lfav;->a:Lick;
 
-    iget-object v0, p0, Lfav;->a:Lfat;
+    iget-object v0, p1, Lfsk;->e:Libw;
 
-    iget-object v0, v0, Lfat;->o:Lgvj;
+    iput-object v0, p0, Lfav;->i:Lick;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    iput-object p2, p0, Lfav;->b:Lick;
 
-    invoke-super {p0}, Lezj;->m_()V
+    iput-object p3, p0, Lfav;->c:Lick;
 
-    iget-object v0, p0, Lfav;->a:Lfat;
+    iput-object p4, p0, Lfav;->d:Lick;
 
-    iget-object v0, v0, Lfat;->o:Lgvj;
+    iput-object p5, p0, Lfav;->e:Lick;
 
-    iget-object v1, p0, Lfav;->a:Lfat;
+    iput-object p6, p0, Lfav;->f:Lick;
 
-    iget-object v1, v1, Lfat;->p:Lgvl;
+    iput-object p7, p0, Lfav;->g:Lick;
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    new-instance v0, Ldkb;
 
-    return-void
-.end method
+    invoke-direct {v0, p8}, Ldkb;-><init>(Lick;)V
 
-.method public final n_()V
-    .locals 2
-
-    iget-object v0, p0, Lfav;->a:Lfat;
-
-    iget-object v0, v0, Lfat;->o:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lezj;->n_()V
-
-    iget-object v0, p0, Lfav;->a:Lfat;
-
-    iget-object v0, v0, Lfat;->o:Lgvj;
-
-    iget-object v1, p0, Lfav;->a:Lfat;
-
-    iget-object v1, v1, Lfat;->r:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    iput-object v0, p0, Lfav;->h:Ldkb;
 
     return-void
 .end method

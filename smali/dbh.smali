@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lgwv;
 
 
 # instance fields
-.field private synthetic a:Ldba;
+.field private final synthetic a:Ldal;
 
 
 # direct methods
-.method constructor <init>(Ldba;)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
-    iput-object p1, p0, Ldbh;->a:Ldba;
+    iput-object p1, p0, Ldbh;->a:Ldal;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,49 +23,34 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 3
+.method public final a()V
+    .locals 4
 
-    check-cast p1, Ljava/lang/String;
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Ldbh;->a:Ldba;
+    iget-object v0, p0, Ldbh;->a:Ldal;
 
-    iget-object v1, v0, Ldba;->k:Ljava/lang/Object;
+    invoke-static {v0}, Ldal;->a(Ldal;)Lbyy;
 
-    monitor-enter v1
+    move-result-object v0
 
-    :try_start_0
-    iget-object v0, p0, Ldbh;->a:Ldba;
+    invoke-interface {v0}, Lbyy;->t()Lgjq;
 
-    iget-object v0, v0, Ldba;->o:Ldbl;
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "default_scope"
 
-    iget-object v0, p0, Ldbh;->a:Ldba;
+    const-string v2, "photosphere_show_help_overlay"
 
-    iget-object v0, v0, Ldba;->o:Ldbl;
+    invoke-virtual {v0, v1, v2, v3}, Lgjq;->a(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    iget-object v2, p0, Ldbh;->a:Ldba;
+    iget-object v0, p0, Ldbh;->a:Ldal;
 
-    iget-object v2, v2, Ldba;->h:Ljava/lang/String;
+    iput-boolean v3, v0, Ldal;->u:Z
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v0, p0, Ldbh;->a:Ldal;
 
-    move-result v2
-
-    invoke-interface {v0, v2}, Ldbl;->a(Z)V
-
-    :cond_0
-    monitor-exit v1
+    invoke-virtual {v0, v3}, Ldal;->a(I)V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

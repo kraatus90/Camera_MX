@@ -1,64 +1,37 @@
-.class public final Leki;
+.class final Leki;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leki;->a:Ljxn;
+    iput p1, p0, Leki;->a:I
+
+    const v0, 0x7f1100e7
+
+    iput v0, p0, Leki;->b:I
+
+    const v0, 0x7f0e0166
+
+    iput v0, p0, Leki;->c:I
+
+    const v0, 0x7f11013f
+
+    iput v0, p0, Leki;->d:I
 
     return-void
-.end method
-
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leki;
-
-    invoke-direct {v0, p0}, Leki;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
-
-    iget-object v0, p0, Leki;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Licz;
-
-    new-instance v1, Lekh;
-
-    new-instance v2, Lijl;
-
-    invoke-direct {v2}, Lijl;-><init>()V
-
-    invoke-direct {v1, v0, v2}, Lekh;-><init>(Licz;Lijl;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lekf;
-
-    return-object v0
 .end method

@@ -1,27 +1,33 @@
 .class final Ljua;
-.super Ljava/lang/Object;
+.super Ljun;
 .source "PG"
 
 
-# instance fields
-.field public final a:Ljava/lang/Runnable;
-
-.field public final b:Ljava/util/concurrent/Executor;
-
-.field public c:Ljua;
+# static fields
+.field public static final serialVersionUID:J
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;Ljua;)V
+.method constructor <init>(Ljty;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljua;->a:Ljava/lang/Runnable;
-
-    iput-object p2, p0, Ljua;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p3, p0, Ljua;->c:Ljua;
+    invoke-direct {p0, p1}, Ljun;-><init>(Ljum;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method final readResolve()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Ljtz;
+
+    invoke-direct {v0}, Ljtz;-><init>()V
+
+    invoke-virtual {p0, v0}, Ljua;->a(Ljwo;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method

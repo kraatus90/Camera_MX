@@ -1,65 +1,47 @@
-.class public final Lgui;
+.class public final synthetic Lgui;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
-
-.field public final b:Landroid/view/GestureDetector$SimpleOnGestureListener;
-
-.field public final c:J
-
-.field public final d:Landroid/os/Handler;
-
-.field public final e:Z
-
-.field public f:Landroid/view/MotionEvent;
-
-.field public final g:Ljava/lang/Runnable;
+.field private final a:Lgug;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/GestureDetector$SimpleOnGestureListener;)V
-    .locals 2
+.method public constructor <init>(Lgug;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/Object;
+    iput-object p1, p0, Lgui;->a:Lgug;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    iput-object v0, p0, Lgui;->a:Ljava/lang/Object;
 
-    const/4 v0, 0x0
+# virtual methods
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
 
-    iput-object v0, p0, Lgui;->f:Landroid/view/MotionEvent;
+    iget-object v0, p0, Lgui;->a:Lgug;
 
-    new-instance v0, Lguj;
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-direct {v0, p0}, Lguj;-><init>(Lgui;)V
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Lgvj;
 
-    iput-object v0, p0, Lgui;->g:Ljava/lang/Runnable;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    iput-object p1, p0, Lgui;->b:Landroid/view/GestureDetector$SimpleOnGestureListener;
+    move-result-object v0
 
-    const-wide/16 v0, 0x15e
+    check-cast v0, Ljava/lang/Integer;
 
-    iput-wide v0, p0, Lgui;->c:J
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    new-instance v0, Landroid/os/Handler;
+    move-result v0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, Lgui;->d:Landroid/os/Handler;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lgui;->e:Z
+    invoke-virtual {v1, v0}, Lgvj;->d(I)Lgvj;
 
     return-void
 .end method

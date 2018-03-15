@@ -2,59 +2,62 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lhw;
+
 
 # instance fields
-.field public a:Lnl;
-
-.field public b:Z
-
-.field public c:Landroid/content/BroadcastReceiver;
-
-.field public d:Landroid/content/IntentFilter;
-
-.field public final synthetic e:Lmn;
+.field private final synthetic a:Lmn;
 
 
 # direct methods
-.method constructor <init>(Lmn;Lnl;)V
-    .locals 1
+.method constructor <init>(Lmn;)V
+    .locals 0
 
-    iput-object p1, p0, Lmp;->e:Lmn;
+    iput-object p1, p0, Lmp;->a:Lmn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lmp;->a:Lnl;
-
-    invoke-virtual {p2}, Lnl;->a()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lmp;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()V
-    .locals 2
+.method public final a(Landroid/view/View;Ljj;)Ljj;
+    .locals 4
 
-    iget-object v0, p0, Lmp;->c:Landroid/content/BroadcastReceiver;
+    invoke-virtual {p2}, Ljj;->b()I
 
-    if-eqz v0, :cond_0
+    move-result v0
 
-    iget-object v0, p0, Lmp;->e:Lmn;
+    iget-object v1, p0, Lmp;->a:Lmn;
 
-    iget-object v0, v0, Lmn;->b:Landroid/content/Context;
+    invoke-virtual {v1, v0}, Lmn;->i(I)I
 
-    iget-object v1, p0, Lmp;->c:Landroid/content/BroadcastReceiver;
+    move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    if-eq v0, v1, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {p2}, Ljj;->a()I
 
-    iput-object v0, p0, Lmp;->c:Landroid/content/BroadcastReceiver;
+    move-result v0
+
+    invoke-virtual {p2}, Ljj;->c()I
+
+    move-result v2
+
+    invoke-virtual {p2}, Ljj;->d()I
+
+    move-result v3
+
+    invoke-virtual {p2, v0, v1, v2, v3}, Ljj;->a(IIII)Ljj;
+
+    move-result-object p2
 
     :cond_0
-    return-void
+    invoke-static {p1, p2}, Lhz;->a(Landroid/view/View;Ljj;)Ljj;
+
+    move-result-object v0
+
+    return-object v0
 .end method

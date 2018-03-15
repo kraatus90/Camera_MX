@@ -1,86 +1,48 @@
-.class public final Lfvs;
+.class final synthetic Lfvs;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/view/View$OnClickListener;
 
 
-# static fields
-.field public static final a:Lfvs;
+# instance fields
+.field private final a:Lfvr;
+
+.field private final b:Lfvi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lfvs;
-
-    invoke-direct {v0}, Lfvs;-><init>()V
-
-    sput-object v0, Lfvs;->a:Lfvs;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lfvr;Lfvi;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfvs;->a:Lfvr;
+
+    iput-object p2, p0, Lfvs;->b:Lfvi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+.method public final onClick(Landroid/view/View;)V
+    .locals 3
 
-    new-instance v0, Ljvj;
+    iget-object v0, p0, Lfvs;->a:Lfvr;
 
-    invoke-direct {v0}, Ljvj;-><init>()V
+    iget-object v1, p0, Lfvs;->b:Lfvi;
 
-    const-string v1, "mv-ctrl-exec-%d"
+    iget-object v2, v0, Lfvr;->a:Lfvl;
 
-    invoke-virtual {v0, v1}, Ljvj;->a(Ljava/lang/String;)Ljvj;
+    if-eqz v2, :cond_0
 
-    move-result-object v0
+    iget-object v0, v0, Lfvr;->a:Lfvl;
 
-    iget-object v1, v0, Ljvj;->a:Ljava/lang/String;
+    iget-object v1, v1, Lfvi;->a:Lfvk;
 
-    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
-
-    move-result-object v2
-
-    if-eqz v1, :cond_0
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    const-wide/16 v4, 0x0
-
-    invoke-direct {v0, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    :goto_0
-    new-instance v3, Ljvk;
-
-    invoke-direct {v3, v2, v1, v0}, Ljvk;-><init>(Ljava/util/concurrent/ThreadFactory;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
-
-    invoke-static {v3}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    return-object v0
+    invoke-interface {v0, v1}, Lfvl;->a(Lfvk;)V
 
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

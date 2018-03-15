@@ -1,52 +1,69 @@
-.class public final Lcrz;
+.class public interface abstract Lcrz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
-
-
-# static fields
-.field public static final a:Lcrz;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcrz;
-
-    invoke-direct {v0}, Lcrz;-><init>()V
-
-    sput-object v0, Lcrz;->a:Lcrz;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lihb;
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public abstract a(I)V
+.end method
 
-    new-instance v0, Ljvi;
+.method public abstract a(Laao;)V
+.end method
 
-    invoke-direct {v0}, Ljvi;-><init>()V
+.method public abstract a(Lbyy;Leyo;)V
+.end method
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+.method public abstract a(Lgjq;)V
+.end method
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+.method public abstract a()Z
+.end method
 
-    move-result-object v0
+.method public abstract a(ILandroid/view/KeyEvent;)Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
 
-    check-cast v0, Ljvi;
+.method public abstract a_(Z)V
+.end method
 
-    return-object v0
+.method public abstract b(Z)V
+.end method
+
+.method public abstract b(ILandroid/view/KeyEvent;)Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end method
+
+.method public abstract e()Z
+.end method
+
+.method public abstract f()V
+.end method
+
+.method public abstract g()V
+.end method
+
+.method public abstract h()V
+.end method
+
+.method public abstract i()V
+.end method
+
+.method public abstract j()Lfft;
+.end method
+
+.method public abstract k()Ljava/lang/String;
+.end method
+
+.method public abstract l()Z
+.end method
+
+.method public abstract m_()V
+.end method
+
+.method public abstract n_()V
 .end method

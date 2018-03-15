@@ -1,90 +1,158 @@
 .class public final Lafc;
-.super Lafh;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method public constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-    .locals 0
+# instance fields
+.field public final a:Landroid/os/Handler;
 
-    invoke-direct {p0, p1, p2}, Lafh;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
+.field public final b:Ljava/util/Map;
+
+.field public c:Lago;
+
+.field public d:Ljava/lang/ref/ReferenceQueue;
+
+.field public volatile e:Z
+
+.field public volatile f:Laff;
+
+.field private final g:Z
+
+.field private h:Ljava/lang/Thread;
+
+
+# direct methods
+.method constructor <init>(Z)V
+    .locals 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    new-instance v2, Lafd;
+
+    invoke-direct {v2, p0}, Lafd;-><init>(Lafc;)V
+
+    invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+
+    iput-object v0, p0, Lafc;->a:Landroid/os/Handler;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lafc;->b:Ljava/util/Map;
+
+    iput-boolean p1, p0, Lafc;->g:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a(Landroid/net/Uri;Landroid/content/ContentResolver;)Ljava/lang/Object;
+.method public final a(Ladu;Lagn;)V
     .locals 4
 
-    const-string v0, "r"
+    new-instance v0, Lafg;
 
-    invoke-virtual {p2, p1, v0}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
+    iget-object v1, p0, Lafc;->d:Ljava/lang/ref/ReferenceQueue;
 
-    move-result-object v0
+    if-nez v1, :cond_0
 
-    if-nez v0, :cond_0
+    new-instance v1, Ljava/lang/ref/ReferenceQueue;
 
-    new-instance v0, Ljava/io/FileNotFoundException;
+    invoke-direct {v1}, Ljava/lang/ref/ReferenceQueue;-><init>()V
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iput-object v1, p0, Lafc;->d:Ljava/lang/ref/ReferenceQueue;
 
-    move-result-object v1
+    new-instance v1, Ljava/lang/Thread;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v2, Lafe;
 
-    move-result-object v2
+    invoke-direct {v2, p0}, Lafe;-><init>(Lafc;)V
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    const-string v3, "glide-active-resources"
 
-    move-result v2
+    invoke-direct {v1, v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    add-int/lit8 v2, v2, 0x1c
+    iput-object v1, p0, Lafc;->h:Ljava/lang/Thread;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lafc;->h:Ljava/lang/Thread;
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "FileDescriptor is null for: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     :cond_0
-    invoke-virtual {v0}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
+    iget-object v1, p0, Lafc;->d:Ljava/lang/ref/ReferenceQueue;
+
+    iget-boolean v2, p0, Lafc;->g:Z
+
+    invoke-direct {v0, p1, p2, v1, v2}, Lafg;-><init>(Ladu;Lagn;Ljava/lang/ref/ReferenceQueue;Z)V
+
+    iget-object v1, p0, Lafc;->b:Ljava/util/Map;
+
+    invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Lafg;
 
-.method protected final synthetic a(Ljava/lang/Object;)V
-    .locals 0
+    if-eqz v0, :cond_1
 
-    check-cast p1, Landroid/os/ParcelFileDescriptor;
+    invoke-virtual {v0}, Lafg;->a()V
 
-    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->close()V
-
+    :cond_1
     return-void
 .end method
 
-.method public final d()Ljava/lang/Class;
-    .locals 1
+.method public final a(Lafg;)V
+    .locals 4
 
-    const-class v0, Landroid/os/ParcelFileDescriptor;
+    invoke-static {}, Larx;->a()V
 
-    return-object v0
+    iget-object v0, p0, Lafc;->b:Ljava/util/Map;
+
+    iget-object v1, p1, Lafg;->a:Ladu;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-boolean v0, p1, Lafg;->b:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lafg;->c:Lagw;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    new-instance v0, Lagn;
+
+    iget-object v1, p1, Lafg;->c:Lagw;
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lagn;-><init>(Lagw;ZZ)V
+
+    iget-object v1, p1, Lafg;->a:Ladu;
+
+    iget-object v2, p0, Lafc;->c:Lago;
+
+    invoke-virtual {v0, v1, v2}, Lagn;->a(Ladu;Lago;)V
+
+    iget-object v1, p0, Lafc;->c:Lago;
+
+    iget-object v2, p1, Lafg;->a:Ladu;
+
+    invoke-interface {v1, v2, v0}, Lago;->a(Ladu;Lagn;)V
+
+    goto :goto_0
 .end method

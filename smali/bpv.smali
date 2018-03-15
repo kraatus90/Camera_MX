@@ -2,60 +2,59 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field public final a:Licu;
-
-.field public final b:Landroid/content/Context;
-
-.field public final c:Licz;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Licu;Licz;Landroid/content/Context;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lbpv;
 
-    const-string v0, "HexagonEnv"
-
-    invoke-interface {p1, v0}, Licu;->a(Ljava/lang/String;)Licu;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbpv;->a:Licu;
-
-    iput-object p3, p0, Lbpv;->b:Landroid/content/Context;
-
-    iput-object p2, p0, Lbpv;->c:Licz;
+    invoke-direct {v0}, Lbpv;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/io/InputStream;Ljava/io/OutputStream;)V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
-    const/16 v0, 0x400
-
-    new-array v0, v0, [B
-
-    :goto_0
-    invoke-virtual {p0, v0}, Ljava/io/InputStream;->read([B)I
-
-    move-result v1
-
-    const/4 v2, -0x1
-
-    if-eq v1, v2, :cond_0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static b()Ljava/util/Set;
+    .locals 2
+
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    sget-object v0, Ljwb;->a:Ljwb;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
 .end method

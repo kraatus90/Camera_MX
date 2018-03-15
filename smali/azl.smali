@@ -1,46 +1,59 @@
-.class final Lazl;
+.class final synthetic Lazl;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lhzk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lazd;
+.field private final a:Lazk;
+
+.field private final b:Layq;
 
 
 # direct methods
-.method constructor <init>(Lazd;)V
+.method constructor <init>(Lazk;Layq;)V
     .locals 0
 
-    iput-object p1, p0, Lazl;->a:Lazd;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lazl;->a:Lazk;
+
+    iput-object p2, p0, Lazl;->b:Layq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljuw;
+.method public final run()V
     .locals 3
 
-    check-cast p2, Lbgq;
+    const/4 v2, 0x1
 
-    iget-object v0, p0, Lazl;->a:Lazd;
+    iget-object v0, p0, Lazl;->a:Lazk;
 
-    iput-object v0, p2, Lbgq;->j:Lbfb;
+    iget-object v1, p0, Lazl;->b:Layq;
 
-    iget-object v1, p2, Lbgq;->e:Ljuy;
+    iput-boolean v2, v0, Lazk;->b:Z
 
-    new-instance v2, Lbhf;
+    iget-object v0, v1, Layq;->b:Lick;
 
-    invoke-direct {v2, p2, v0}, Lbhf;-><init>(Lbgq;Lbfb;)V
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-interface {v1, v2}, Ljuy;->a(Ljava/util/concurrent/Callable;)Ljuw;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-interface {v0, v2}, Lick;->a(Ljava/lang/Object;)V
 
-    return-object v0
+    iget-object v0, v1, Layq;->a:Lick;
+
+    const/16 v1, 0xf
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lick;->a(Ljava/lang/Object;)V
+
+    return-void
 .end method

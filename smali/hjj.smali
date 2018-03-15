@@ -1,175 +1,345 @@
-.class final Lhjj;
-.super Lhry;
+.class public final Lhjj;
+.super Landroid/widget/TextView;
+.source "PG"
+
+# interfaces
+.implements Lgsm;
+.implements Lhjo;
 
 
 # instance fields
-.field private a:Lcom/google/android/gms/clearcut/LogEventParcelable;
+.field private final a:I
+
+.field private final b:I
+
+.field private final c:Landroid/graphics/drawable/Drawable;
+
+.field private final d:Landroid/graphics/Path;
+
+.field private final e:Landroid/graphics/Paint;
+
+.field private final f:I
+
+.field private g:I
+
+.field private h:Z
+
+.field private final synthetic i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/clearcut/LogEventParcelable;Lhkl;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;Landroid/content/Context;)V
+    .locals 6
 
-    sget-object v0, Lhjb;->a:Lhkc;
+    const/4 v5, 0x0
 
-    invoke-direct {p0, v0, p2}, Lhry;-><init>(Lhkc;Lhkl;)V
+    iput-object p1, p0, Lhjj;->i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
 
-    iput-object p1, p0, Lhjj;->a:Lcom/google/android/gms/clearcut/LogEventParcelable;
+    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    new-instance v0, Landroid/graphics/Path;
+
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+
+    iput-object v0, p0, Lhjj;->d:Landroid/graphics/Path;
+
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lhjj;->e:Landroid/graphics/Paint;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lhjj;->g:I
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lhjj;->h:Z
+
+    invoke-virtual {p0}, Lhjj;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f020153
+
+    invoke-virtual {v0, v1, v5}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhjj;->c:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {p0}, Lhjj;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0d0154
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lhjj;->a:I
+
+    invoke-virtual {p0}, Lhjj;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0d0155
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lhjj;->b:I
+
+    invoke-virtual {p0}, Lhjj;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0d0156
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lhjj;->f:I
+
+    const v0, 0x7f1101be
+
+    invoke-virtual {p0, v0}, Lhjj;->setText(I)V
+
+    iget v0, p0, Lhjj;->f:I
+
+    iget v1, p0, Lhjj;->f:I
+
+    iget v2, p0, Lhjj;->f:I
+
+    iget v3, p0, Lhjj;->f:I
+
+    iget v4, p0, Lhjj;->a:I
+
+    add-int/2addr v3, v4
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lhjj;->setPadding(IIII)V
+
+    const v0, 0x7f12020d
+
+    invoke-virtual {p0, v0}, Lhjj;->setTextAppearance(I)V
+
+    iget-object v0, p0, Lhjj;->e:Landroid/graphics/Paint;
+
+    invoke-virtual {p0}, Lhjj;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0c0200
+
+    invoke-virtual {v1, v2, v5}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v0, p0, Lhjj;->e:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a(Lcom/google/android/gms/common/api/Status;)Lhks;
-    .locals 0
-
-    return-object p1
-.end method
-
-.method protected final synthetic a(Lhkg;)V
+.method public final a(I)V
     .locals 5
 
-    check-cast p1, Lhjl;
+    iget-object v0, p0, Lhjj;->i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
 
-    new-instance v1, Lhjk;
+    iget-boolean v0, v0, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->h:Z
 
-    invoke-direct {v1, p0}, Lhjk;-><init>(Lhjj;)V
+    if-eqz v0, :cond_0
 
-    :try_start_0
-    iget-object v0, p0, Lhjj;->a:Lcom/google/android/gms/clearcut/LogEventParcelable;
+    const/16 v0, 0x8
 
-    iget-object v2, v0, Lcom/google/android/gms/clearcut/LogEventParcelable;->d:Lhjf;
+    invoke-virtual {p0, v0}, Lhjj;->setVisibility(I)V
 
-    if-eqz v2, :cond_0
-
-    iget-object v2, v0, Lcom/google/android/gms/clearcut/LogEventParcelable;->c:Lhrn;
-
-    iget-object v2, v2, Lhrn;->c:[B
-
-    array-length v2, v2
-
-    if-nez v2, :cond_0
-
-    iget-object v2, v0, Lcom/google/android/gms/clearcut/LogEventParcelable;->c:Lhrn;
-
-    iget-object v3, v0, Lcom/google/android/gms/clearcut/LogEventParcelable;->d:Lhjf;
-
-    invoke-interface {v3}, Lhjf;->a()[B
-
-    move-result-object v3
-
-    iput-object v3, v2, Lhrn;->c:[B
-
-    :cond_0
-    iget-object v2, v0, Lcom/google/android/gms/clearcut/LogEventParcelable;->e:Lhjf;
-
-    iget-object v2, v0, Lcom/google/android/gms/clearcut/LogEventParcelable;->c:Lhrn;
-
-    invoke-static {v2}, Lhri;->a(Lhri;)[B
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/google/android/gms/clearcut/LogEventParcelable;->b:[B
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    iget-object v2, p0, Lhjj;->a:Lcom/google/android/gms/clearcut/LogEventParcelable;
-
-    invoke-virtual {p1}, Lhjl;->n()Landroid/os/IInterface;
-
-    move-result-object v0
-
-    check-cast v0, Lhjo;
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v3
-
-    :try_start_1
-    const-string v4, "com.google.android.gms.clearcut.internal.IClearcutLoggerService"
-
-    invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    invoke-interface {v1}, Lhjm;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    if-eqz v2, :cond_1
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v2, v3, v1}, Lcom/google/android/gms/clearcut/LogEventParcelable;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {p0}, Lhjj;->invalidate()V
 
     :goto_0
-    iget-object v0, v0, Lhjo;->a:Landroid/os/IBinder;
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lhjj;->h:Z
+
+    iget-object v0, p0, Lhjj;->i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+
+    iget v0, v0, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->c:I
+
+    div-int/lit8 v0, v0, 0x2
+
+    iget-object v1, p0, Lhjj;->i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+
+    iget v1, v1, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->d:I
+
+    iget-object v2, p0, Lhjj;->i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+
+    iget v2, v2, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->c:I
+
+    div-int/lit8 v2, v2, 0x2
+
+    sub-int/2addr v1, v2
+
+    invoke-static {p1, v0, v1}, Lhbi;->a(III)I
+
+    move-result v0
+
+    iget-object v1, p0, Lhjj;->i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
+
+    iget v1, v1, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->c:I
+
+    div-int/lit8 v1, v1, 0x2
+
+    sub-int/2addr v0, v1
+
+    int-to-float v0, v0
+
+    invoke-virtual {p0, v0}, Lhjj;->setTranslationX(F)V
+
+    int-to-float v0, p1
+
+    invoke-virtual {p0}, Lhjj;->getTranslationX()F
+
+    move-result v1
+
+    sub-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    iget-object v1, p0, Lhjj;->d:Landroid/graphics/Path;
+
+    invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
+
+    iget-object v1, p0, Lhjj;->d:Landroid/graphics/Path;
+
+    int-to-float v2, v0
+
+    iget v3, p0, Lhjj;->g:I
+
+    int-to-float v3, v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Path;->moveTo(FF)V
+
+    iget-object v1, p0, Lhjj;->d:Landroid/graphics/Path;
+
+    iget v2, p0, Lhjj;->b:I
+
+    div-int/lit8 v2, v2, 0x2
+
+    sub-int v2, v0, v2
+
+    int-to-float v2, v2
+
+    iget v3, p0, Lhjj;->g:I
+
+    iget v4, p0, Lhjj;->a:I
+
+    sub-int/2addr v3, v4
+
+    int-to-float v3, v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Path;->lineTo(FF)V
+
+    iget-object v1, p0, Lhjj;->d:Landroid/graphics/Path;
+
+    iget v2, p0, Lhjj;->b:I
+
+    div-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v2, v0
+
+    int-to-float v2, v2
+
+    iget v3, p0, Lhjj;->g:I
+
+    iget v4, p0, Lhjj;->a:I
+
+    sub-int/2addr v3, v4
+
+    int-to-float v3, v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Path;->lineTo(FF)V
+
+    iget-object v1, p0, Lhjj;->d:Landroid/graphics/Path;
+
+    int-to-float v0, v0
+
+    iget v2, p0, Lhjj;->g:I
+
+    int-to-float v2, v2
+
+    invoke-virtual {v1, v0, v2}, Landroid/graphics/Path;->lineTo(FF)V
+
+    invoke-virtual {p0}, Lhjj;->invalidate()V
+
+    iget-object v0, p0, Lhjj;->i:Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-interface {v0, v1, v3, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    :goto_1
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "ClearcutLoggerApiImpl"
-
-    const-string v2, "derived ClearcutLogger.MessageProducer "
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    new-instance v0, Lcom/google/android/gms/common/api/Status;
-
-    const/16 v1, 0xa
-
-    const-string v2, "MessageProducer"
-
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
-
-    invoke-virtual {p0, v0}, Lhjj;->b(Lcom/google/android/gms/common/api/Status;)V
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v1, 0x0
-
-    :try_start_2
-    invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeInt(I)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    iput-boolean v1, v0, Lcom/google/android/apps/refocus/viewer/RGBZFocusControls;->h:Z
 
     goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 0
+.method public final onDraw(Landroid/graphics/Canvas;)V
+    .locals 2
 
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
+    iget-boolean v0, p0, Lhjj;->h:Z
 
-    invoke-super {p0, p1}, Lhry;->a(Lhks;)V
+    if-eqz v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lhjj;->c:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
+
+    iget-object v0, p0, Lhjj;->d:Landroid/graphics/Path;
+
+    iget-object v1, p0, Lhjj;->e:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    goto :goto_0
+.end method
+
+.method public final onLayout(ZIIII)V
+    .locals 5
+
+    const/4 v4, 0x0
+
+    invoke-super/range {p0 .. p5}, Landroid/widget/TextView;->onLayout(ZIIII)V
+
+    sub-int v0, p4, p2
+
+    sub-int v1, p5, p3
+
+    iget-object v2, p0, Lhjj;->c:Landroid/graphics/drawable/Drawable;
+
+    iget v3, p0, Lhjj;->a:I
+
+    sub-int v3, v1, v3
+
+    invoke-virtual {v2, v4, v4, v0, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    iput v1, p0, Lhjj;->g:I
 
     return-void
 .end method

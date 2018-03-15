@@ -1,45 +1,26 @@
-.class final Lgpg;
-.super Lgps;
+.class public interface abstract Lgpg;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lgpe;
-
-
-# direct methods
-.method constructor <init>(Lgpe;)V
-    .locals 0
-
-    iput-object p1, p0, Lgpg;->a:Lgpe;
-
-    invoke-direct {p0, p1}, Lgps;-><init>(Lgpp;)V
-
-    return-void
+# virtual methods
+.method public abstract a(Lgph;)Lihb;
 .end method
 
+.method public abstract a()V
+.end method
 
-# virtual methods
-.method public final e()V
-    .locals 2
+.method public abstract a(Landroid/graphics/Bitmap;I)V
+.end method
 
-    iget-object v0, p0, Lgpg;->a:Lgpe;
+.method public abstract a(Lhao;)V
+.end method
 
-    iget-object v0, v0, Lgpe;->a:Lgvj;
+.method public abstract a(Ljava/lang/String;)V
+.end method
 
-    invoke-virtual {v0}, Lgvj;->a()V
+.method public abstract a(Z)V
+.end method
 
-    invoke-super {p0}, Lgps;->e()V
-
-    iget-object v0, p0, Lgpg;->a:Lgpe;
-
-    iget-object v0, v0, Lgpe;->a:Lgvj;
-
-    iget-object v1, p0, Lgpg;->a:Lgpe;
-
-    iget-object v1, v1, Lgpe;->b:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+.method public abstract b()V
 .end method

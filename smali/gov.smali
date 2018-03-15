@@ -4,20 +4,5 @@
 
 
 # virtual methods
-.method public abstract addFinishedCallback(Libu;)V
-.end method
-
-.method public abstract getSession()Lgou;
-.end method
-
-.method public abstract process(Landroid/content/Context;)V
-.end method
-
-.method public abstract removeFinishedCallback(Libu;)V
-.end method
-
-.method public abstract resume()V
-.end method
-
-.method public abstract suspend()V
+.method public abstract a(Z)Lkeh;
 .end method

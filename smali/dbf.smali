@@ -3,18 +3,18 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Ldba;
+.field private final synthetic a:Ldal;
 
 
 # direct methods
-.method constructor <init>(Ldba;)V
+.method constructor <init>(Ldal;)V
     .locals 0
 
-    iput-object p1, p0, Ldbf;->a:Ldba;
+    iput-object p1, p0, Ldbf;->a:Ldal;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,40 +23,30 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Ldbl;
+    iget-object v0, p0, Ldbf;->a:Ldal;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-boolean v0, v0, Ldal;->e:Z
 
-    iget-object v0, p0, Ldbf;->a:Ldba;
+    if-eqz v0, :cond_0
 
-    iget-object v1, v0, Ldba;->k:Ljava/lang/Object;
+    iget-object v0, p0, Ldbf;->a:Ldal;
 
-    monitor-enter v1
+    iget-object v0, v0, Ldal;->D:Lega;
 
-    :try_start_0
-    iget-object v0, p0, Ldbf;->a:Ldba;
+    invoke-virtual {v0}, Lglb;->H()V
 
-    iput-object p1, v0, Ldba;->o:Ldbl;
-
-    monitor-exit v1
-
+    :goto_0
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    iget-object v0, p0, Ldbf;->a:Ldal;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, v0, Ldal;->E:Legg;
 
-    throw v0
-.end method
+    invoke-virtual {v0}, Legg;->H()V
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
-
-    return-void
+    goto :goto_0
 .end method

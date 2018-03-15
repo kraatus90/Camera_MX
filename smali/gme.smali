@@ -1,39 +1,42 @@
-.class final synthetic Lgme;
+.class public final Lgme;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Lgle;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljjq;
-
-.field private b:Liau;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ljjq;Liau;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgme;->a:Ljjq;
-
-    iput-object p2, p0, Lgme;->b:Liau;
+    iput-object p1, p0, Lgme;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgld;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lgme;->a:Ljjq;
+    new-instance v1, Lgmc;
 
-    iget-object v1, p0, Lgme;->b:Liau;
+    iget-object v0, p0, Lgme;->a:Lkgv;
 
-    invoke-static {v0, v1, p1}, Lglx;->b(Ljjq;Liau;Lgld;)V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Liih;
+
+    invoke-direct {v1, v0}, Lgmc;-><init>(Liih;)V
+
+    return-object v1
 .end method

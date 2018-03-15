@@ -7,14 +7,14 @@
 
 
 # instance fields
-.field private synthetic a:Lcyf;
+.field private final synthetic a:Lcyq;
 
 
 # direct methods
-.method constructor <init>(Lcyf;)V
+.method constructor <init>(Lcyq;)V
     .locals 0
 
-    iput-object p1, p0, Lcyr;->a:Lcyf;
+    iput-object p1, p0, Lcyr;->a:Lcyq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,43 +24,23 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 2
 
-    iget-object v0, p0, Lcyr;->a:Lcyf;
+    iget-object v0, p0, Lcyr;->a:Lcyq;
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    iget-object v0, v0, Lcyq;->a:Lcyk;
+
+    invoke-virtual {v0}, Lbrv;->d()Lihb;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    check-cast v0, Lcxo;
 
-    iget-object v0, v0, Lcwg;->b:Lcuv;
-
-    iget-object v1, p0, Lcyr;->a:Lcyf;
-
-    iget-object v1, v1, Lcyf;->c:Landroid/graphics/Bitmap;
-
-    invoke-static {}, Lhzt;->a()V
-
-    iget-object v2, v0, Lcuv;->g:Lewf;
-
-    iget-object v3, v0, Lcuv;->c:Leut;
-
-    invoke-virtual {v3}, Leut;->b()Landroid/graphics/RectF;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Lewf;->a(Landroid/graphics/RectF;)V
-
-    iget-object v2, v0, Lcuv;->f:Landroid/widget/ImageView;
-
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    iget-object v0, v0, Lcuv;->f:Landroid/widget/ImageView;
+    iget-object v0, v0, Lcxo;->b:Lcwf;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcwf;->a(Z)V
 
     return-void
 .end method

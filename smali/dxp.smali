@@ -3,34 +3,52 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Exception;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Exception;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldxp;->a:Ljava/lang/Exception;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldxp;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    new-instance v0, Ljava/lang/RuntimeException;
+    iget-object v0, p0, Ldxp;->a:Lkgv;
 
-    iget-object v1, p0, Ldxp;->a:Ljava/lang/Exception;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object v0
 
-    throw v0
+    check-cast v0, Lgjp;
+
+    const-string v1, "pref_mode_vesper_enabled"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lgjp;->a(Ljava/lang/String;Z)Lick;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
+
+    return-object v0
 .end method

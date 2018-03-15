@@ -1,156 +1,81 @@
 .class public final Lhlf;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field private final b:Lhli;
+
+.field private final c:Lhmr;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;Lhli;Lhmr;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, "Cannot construct an Api with a null ClientBuilder"
+
+    invoke-static {p2, v0}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v0, "Cannot construct an Api with a null ClientKey"
+
+    invoke-static {p3, v0}, Lhmr;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lhlf;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lhlf;->b:Lhli;
+
+    iput-object p3, p0, Lhlf;->c:Lhmr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 8
+.method public final a()Lhli;
+    .locals 2
 
-    const/4 v3, 0x0
+    iget-object v0, p0, Lhlf;->b:Lhli;
 
-    const/4 v5, 0x0
+    if-eqz v0, :cond_0
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
-
-    move-result v6
-
-    move v4, v5
-
-    move-object v2, v3
-
-    move v1, v5
+    const/4 v0, 0x1
 
     :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    const-string v1, "This API was constructed with a SimpleClientBuilder. Use getSimpleClientBuilder"
 
-    move-result v0
+    invoke-static {v0, v1}, Lhmr;->a(ZLjava/lang/Object;)V
 
-    if-ge v0, v6, :cond_0
+    iget-object v0, p0, Lhlf;->b:Lhli;
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    const v7, 0xffff
-
-    and-int/2addr v7, v0
-
-    packed-switch v7, :pswitch_data_0
-
-    invoke-static {p1, v0}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v0}, Lhjg;->e(Landroid/os/Parcel;I)I
-
-    move-result v1
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v0}, Lhjg;->h(Landroid/os/Parcel;I)Landroid/os/IBinder;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :pswitch_2
-    sget-object v3, Lcom/google/android/gms/common/ConnectionResult;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v0, v3}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/common/ConnectionResult;
-
-    move-object v3, v0
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-static {p1, v0}, Lhjg;->c(Landroid/os/Parcel;I)Z
-
-    move-result v4
-
-    goto :goto_0
-
-    :pswitch_4
-    invoke-static {p1, v0}, Lhjg;->c(Landroid/os/Parcel;I)Z
-
-    move-result v5
-
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    const/4 v0, 0x0
 
-    move-result v0
-
-    if-eq v0, v6, :cond_1
-
-    new-instance v0, Ladf;
-
-    const/16 v1, 0x25
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
-
-    throw v0
-
-    :cond_1
-    new-instance v0, Lcom/google/android/gms/common/internal/zzaf;
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/common/internal/zzaf;-><init>(ILandroid/os/IBinder;Lcom/google/android/gms/common/ConnectionResult;ZZ)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-    .end packed-switch
+    goto :goto_0
 .end method
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+.method public final b()Lhmr;
+    .locals 2
 
-    new-array v0, p1, [Lcom/google/android/gms/common/internal/zzaf;
+    iget-object v0, p0, Lhlf;->c:Lhmr;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lhlf;->c:Lhmr;
 
     return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "This API was constructed with null client keys. This should not be possible."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

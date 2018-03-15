@@ -1,64 +1,45 @@
-.class public final Lhdg;
-.super Ljava/lang/Object;
+.class final Lhdg;
+.super Lhdo;
 .source "PG"
-
-# interfaces
-.implements Lhdh;
 
 
 # instance fields
-.field private synthetic b:Lfgf;
+.field private final synthetic a:Lhde;
 
 
 # direct methods
-.method public constructor <init>(Lfgf;)V
+.method constructor <init>(Lhde;)V
     .locals 0
 
-    iput-object p1, p0, Lhdg;->b:Lfgf;
+    iput-object p1, p0, Lhdg;->a:Lhde;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lhdo;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)V
+.method public final Z()V
     .locals 2
 
-    iget-object v0, p0, Lhdg;->b:Lfgf;
+    iget-object v0, p0, Lhdg;->a:Lhde;
 
-    iget-object v0, v0, Lfgf;->c:Lfgg;
+    iget-object v0, v0, Lhde;->a:Lgld;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    invoke-virtual {v0, p1, v1}, Lfgg;->a(FZ)Z
+    invoke-super {p0}, Lhdo;->Z()V
 
-    return-void
-.end method
+    iget-object v0, p0, Lhdg;->a:Lhde;
 
-.method public final c()V
-    .locals 2
+    iget-object v0, v0, Lhde;->a:Lgld;
 
-    iget-object v0, p0, Lhdg;->b:Lfgf;
+    iget-object v1, p0, Lhdg;->a:Lhde;
 
-    iget-object v0, v0, Lfgf;->c:Lfgg;
+    iget-object v1, v1, Lhde;->b:Lglf;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lfgg;->a(Z)Z
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Lhdg;->b:Lfgf;
-
-    iget-object v0, v0, Lfgf;->c:Lfgg;
-
-    invoke-virtual {v0}, Lfgg;->b()V
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
 .end method

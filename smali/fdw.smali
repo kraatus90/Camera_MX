@@ -1,67 +1,179 @@
-.class public Lfdw;
-.super Lfdv;
+.class public final Lfdw;
+.super Lile;
 .source "PG"
 
+# interfaces
+.implements Lfdv;
 
-# static fields
-.field public static final d:Ljava/lang/String;
 
-
-# instance fields
-.field public e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public f:Lguc;
-
-.field public g:Liag;
-
-.field public h:Ljht;
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x15
+.end annotation
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "PSphereStatechart"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lfdw;->d:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Likx;)V
     .locals 0
 
-    invoke-direct {p0}, Lfdv;-><init>()V
+    invoke-direct {p0, p1}, Lile;-><init>(Likx;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Ljht;)V
+.method public final a(Lihc;)Ljava/util/List;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lfdw;->a_(Lihc;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    iput-object p1, p0, Lfdw;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    if-ne p0, p1, :cond_0
 
-    iput-object p2, p0, Lfdw;->f:Lguc;
+    const/4 v0, 0x1
 
-    new-instance v0, Liag;
+    :goto_0
+    return v0
 
-    const/4 v1, 0x0
+    :cond_0
+    if-eqz p1, :cond_1
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
+    if-eq v0, v1, :cond_2
 
-    iput-object v0, p0, Lfdw;->g:Liag;
+    :cond_1
+    const/4 v0, 0x0
 
-    iput-object p3, p0, Lfdw;->h:Ljht;
+    goto :goto_0
 
-    return-void
+    :cond_2
+    check-cast p1, Lfdw;
+
+    invoke-virtual {p0}, Lfdw;->a()Lilb;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lfdw;->a()Lilb;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Ljre;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0}, Lfdw;->a()Lilb;
+
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final v_()Ljava/util/List;
+    .locals 4
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p0}, Lfdw;->s()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lihc;
+
+    sget-object v3, Lidz;->i:Ljava/util/Map;
+
+    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lidz;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    return-object v1
+.end method
+
+.method public final w_()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final x_()Z
+    .locals 2
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_AVAILABLE_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    sget-object v1, Lfdw;->a:[I
+
+    invoke-virtual {p0, v0, v1}, Lfdw;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [I
+
+    const/4 v1, 0x5
+
+    invoke-static {v0, v1}, Ljxj;->a([II)Z
+
+    move-result v0
+
+    return v0
 .end method

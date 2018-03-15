@@ -1,120 +1,93 @@
-.class public final Lhyq;
-.super Ljava/lang/Object;
+.class final Lhyq;
+.super Lhzc;
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# instance fields
+.field private a:Ljava/lang/ref/WeakReference;
+
+.field private b:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method constructor <init>(Ljava/util/Map;Ljava/lang/Object;Lhsz;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p3}, Lhzc;-><init>(Lhsz;)V
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lhyq;->a:Ljava/lang/ref/WeakReference;
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lhyq;->b:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 5
+.method public final a(Lcom/google/android/gms/common/api/Status;)V
+    .locals 4
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lhyq;->a:Ljava/lang/ref/WeakReference;
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
-
-    move-result v2
-
-    move-object v1, v0
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v3
-
-    if-ge v3, v2, :cond_0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    const v4, 0xffff
-
-    and-int/2addr v4, v3
-
-    packed-switch v4, :pswitch_data_0
-
-    invoke-static {p1, v3}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v3}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_1
-    sget-object v0, Lcom/google/android/gms/wearable/internal/zzcc;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, v3, v0}, Lhjg;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Ljava/util/Map;
+
+    iget-object v1, p0, Lhyq;->b:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    iget v2, p1, Lcom/google/android/gms/common/api/Status;->e:I
+
+    const/16 v3, 0xfa2
+
+    if-ne v2, v3, :cond_1
+
+    if-eqz v0, :cond_1
+
+    if-eqz v1, :cond_1
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhzh;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Lhzh;->a()V
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
-
-    move-result v3
-
-    if-eq v3, v2, :cond_1
-
-    new-instance v0, Ladf;
-
-    const/16 v1, 0x25
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
-
-    throw v0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_1
-    new-instance v2, Lcom/google/android/gms/wearable/internal/zzo;
+    invoke-virtual {p0, p1}, Lhyq;->a(Ljava/lang/Object;)V
 
-    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/zzo;-><init>(Ljava/lang/String;Ljava/util/List;)V
+    return-void
 
-    return-object v2
+    :catchall_0
+    move-exception v1
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/zzo;
-
-    return-object v0
+    throw v1
 .end method

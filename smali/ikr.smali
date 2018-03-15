@@ -1,59 +1,57 @@
-.class final Likr;
-.super Ljava/lang/Object;
+.class public final Likr;
+.super Lini;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private a:Ljuw;
-
-.field private b:Likf;
 
 
 # direct methods
-.method public constructor <init>(Ljuw;Likf;)V
+.method public constructor <init>(Linm;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Likr;->a:Ljuw;
-
-    iput-object p2, p0, Likr;->b:Likf;
+    invoke-direct {p0, p1}, Lini;-><init>(Linm;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final f()Link;
+    .locals 1
 
     :try_start_0
-    iget-object v0, p0, Likr;->a:Ljuw;
-
-    invoke-static {v0}, Ljuh;->b(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    invoke-super {p0}, Lini;->f()Link;
     :try_end_0
-    .catch Ljvq; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
 
     :goto_0
-    return-void
+    return-object v0
 
     :catch_0
     move-exception v0
 
-    iget-object v1, p0, Likr;->b:Likf;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Ljvq;->getCause()Ljava/lang/Throwable;
+    goto :goto_0
+.end method
+
+.method public final g()Link;
+    .locals 1
+
+    :try_start_0
+    invoke-super {p0}, Lini;->g()Link;
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    invoke-static {v0}, Lilh;->a(Ljava/lang/Throwable;)Lilh;
+    :goto_0
+    return-object v0
 
-    move-result-object v0
+    :catch_0
+    move-exception v0
 
-    invoke-interface {v1, v0}, Likf;->a(Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

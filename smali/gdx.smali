@@ -3,20 +3,24 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgdx;->a:Ljxn;
+    iput-object p1, p0, Lgdx;->a:Lkgv;
+
+    iput-object p2, p0, Lgdx;->b:Lkgv;
 
     return-void
 .end method
@@ -26,29 +30,29 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lgdx;->a:Ljxn;
+    iget-object v0, p0, Lgdx;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgdq;
-
-    invoke-interface {v0}, Lgdq;->i()Ligd;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
+    check-cast v0, Landroid/app/Activity;
+
+    iget-object v1, p0, Lgdx;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/KeyguardManager;
+
+    invoke-static {v0, v1}, Lgdv;->a(Landroid/app/Activity;Landroid/app/KeyguardManager;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liau;
 
     return-object v0
 .end method

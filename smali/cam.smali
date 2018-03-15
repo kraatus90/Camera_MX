@@ -1,46 +1,173 @@
-.class final Lcam;
+.class final synthetic Lcam;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcdc;
+.field private final a:Lcal;
 
-.field private synthetic b:Lcag;
+.field private final b:I
 
 
 # direct methods
-.method constructor <init>(Lcag;Lcdc;)V
+.method constructor <init>(Lcal;I)V
     .locals 0
 
-    iput-object p1, p0, Lcam;->b:Lcag;
-
-    iput-object p2, p0, Lcam;->a:Lcdc;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcam;->a:Lcal;
+
+    iput p2, p0, Lcam;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 2
+.method public final run()V
+    .locals 7
 
-    iget-object v0, p0, Lcam;->b:Lcag;
+    iget-object v1, p0, Lcam;->a:Lcal;
 
-    iget-object v0, v0, Lcag;->j:Lcap;
+    iget v2, p0, Lcam;->b:I
 
-    iget-object v1, p0, Lcam;->a:Lcdc;
+    :try_start_0
+    iput v2, v1, Lcal;->i:I
 
-    invoke-interface {v0, v1}, Lcap;->a(Lcdc;)V
+    iget-object v0, v1, Lcal;->e:Liht;
 
-    iget-object v0, p0, Lcam;->b:Lcag;
+    invoke-static {v2}, Lilb;->a(I)Lilb;
 
-    invoke-virtual {v0}, Lcag;->b()V
+    move-result-object v3
 
+    invoke-interface {v0, v3}, Liht;->a(Lilb;)V
+
+    iget-object v0, v1, Lcal;->d:Lzz;
+
+    iget-object v3, v1, Lcal;->c:Lzz;
+
+    iget-object v0, v1, Lcal;->h:Laao;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, v1, Lcal;->b:Landroid/os/Handler;
+
+    invoke-virtual {v1, v3, v2, v0, v1}, Lcal;->a(Lzz;ILandroid/os/Handler;Laaf;)V
+
+    :goto_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, v1, Lcal;->j:Z
+
+    invoke-virtual {v3}, Lzz;->b()Labn;
+
+    move-result-object v0
+
+    iput-object v0, v1, Lcal;->g:Labn;
+
+    :goto_1
     return-void
+
+    :cond_0
+    iget-object v0, v1, Lcal;->h:Laao;
+
+    invoke-virtual {v0}, Laao;->a()I
+
+    move-result v0
+
+    if-ne v0, v2, :cond_1
+
+    iget-boolean v0, v1, Lcal;->j:Z
+
+    sget-object v0, Lcal;->a:Ljava/lang/String;
+
+    const-string v4, "reconnecting to use the existing camera"
+
+    invoke-static {v0, v4}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v4, v1, Lcal;->h:Laao;
+
+    iget-object v0, v1, Lcal;->b:Landroid/os/Handler;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    invoke-virtual {v4}, Laao;->i()Labz;
+
+    move-result-object v5
+
+    new-instance v6, Laap;
+
+    invoke-direct {v6, v4, v0, v1}, Laap;-><init>(Laao;Landroid/os/Handler;Laaf;)V
+
+    invoke-virtual {v5, v6}, Labz;->a(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_2
+    const/4 v0, 0x0
+
+    :try_start_2
+    iput-object v0, v1, Lcal;->h:Laao;
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    iget-object v0, v1, Lcal;->b:Landroid/os/Handler;
+
+    new-instance v3, Lcan;
+
+    invoke-direct {v3, v1, v2}, Lcan;-><init>(Lcal;I)V
+
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_1
+
+    :cond_1
+    :try_start_3
+    sget-object v0, Lcal;->a:Ljava/lang/String;
+
+    const-string v4, "different camera already opened, closing then reopening"
+
+    invoke-static {v0, v4}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-boolean v0, v1, Lcal;->j:Z
+
+    iget-object v0, v1, Lcal;->c:Lzz;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v4}, Lzz;->a(Z)V
+
+    invoke-virtual {v1}, Lcal;->c()V
+
+    iget-object v0, v1, Lcal;->b:Landroid/os/Handler;
+
+    invoke-virtual {v1, v3, v2, v0, v1}, Lcal;->a(Lzz;ILandroid/os/Handler;Laaf;)V
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    invoke-virtual {v4}, Laao;->d()Lzz;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lzz;->f()Labp;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Labp;->a(Ljava/lang/RuntimeException;)V
+    :try_end_3
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
+
+    goto :goto_2
 .end method

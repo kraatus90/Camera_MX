@@ -1,44 +1,48 @@
-.class final Lglt;
-.super Ljava/lang/Object;
+.class public final Lglt;
+.super Lcom/google/android/apps/camera/stats/InstrumentationSession;
 .source "PG"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+# static fields
+.field private static c:Lglt;
 
 
 # instance fields
-.field private synthetic a:Landroid/view/View;
+.field public a:J
+
+.field public b:J
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;)V
-    .locals 0
+.method private constructor <init>(Liom;)V
+    .locals 1
 
-    iput-object p1, p0, Lglt;->a:Landroid/view/View;
+    const-string v0, "CameraApp"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/stats/InstrumentationSession;-><init>(Liom;Ljava/lang/String;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public static a()Lglt;
     .locals 2
 
-    iget-object v1, p0, Lglt;->a:Landroid/view/View;
+    sget-object v0, Lglt;->c:Lglt;
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    new-instance v0, Lglt;
 
-    check-cast v0, Ljava/lang/Float;
+    new-instance v1, Liom;
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    invoke-direct {v1}, Liom;-><init>()V
 
-    move-result v0
+    invoke-direct {v0, v1}, Lglt;-><init>(Liom;)V
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setAlpha(F)V
+    sput-object v0, Lglt;->c:Lglt;
 
-    return-void
+    :cond_0
+    sget-object v0, Lglt;->c:Lglt;
+
+    return-object v0
 .end method

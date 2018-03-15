@@ -1,64 +1,106 @@
-.class final Lcsv;
+.class public final Lcsv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcsk;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lcsv;->a:Lcsk;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcsv;->a:Lkgv;
+
+    iput-object p2, p0, Lcsv;->b:Lkgv;
+
+    iput-object p3, p0, Lcsv;->c:Lkgv;
+
+    iput-object p4, p0, Lcsv;->d:Lkgv;
+
+    iput-object p5, p0, Lcsv;->e:Lkgv;
+
+    iput-object p6, p0, Lcsv;->f:Lkgv;
+
+    iput-object p7, p0, Lcsv;->g:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    check-cast p1, Ljava/lang/Boolean;
+    new-instance v0, Lcss;
 
-    if-eqz p1, :cond_0
+    iget-object v1, p0, Lcsv;->a:Lkgv;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v1
 
-    if-nez v0, :cond_1
+    check-cast v1, Liiq;
 
-    :cond_0
-    iget-object v0, p0, Lcsv;->a:Lcsk;
+    iget-object v2, p0, Lcsv;->b:Lkgv;
 
-    iget-object v0, v0, Lcsk;->ag:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    check-cast v2, Lcve;
 
-    :cond_1
-    return-void
-.end method
+    iget-object v3, p0, Lcsv;->c:Lkgv;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 2
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lcsv;->a:Lcsk;
+    move-result-object v3
 
-    iget-object v0, v0, Lcsk;->ag:Ljava/util/concurrent/atomic/AtomicBoolean;
+    check-cast v3, Lfat;
 
-    const/4 v1, 0x0
+    iget-object v4, p0, Lcsv;->d:Lkgv;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    iget-object v4, p0, Lcsv;->e:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    iget-object v4, p0, Lcsv;->f:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lgem;
+
+    iget-object v5, p0, Lcsv;->g:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lgxg;
+
+    invoke-direct/range {v0 .. v5}, Lcss;-><init>(Liiq;Lcve;Lfat;Lgem;Lgxg;)V
+
+    return-object v0
 .end method

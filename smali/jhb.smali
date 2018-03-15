@@ -3,137 +3,184 @@
 .source "PG"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-.implements Ljava/lang/Comparable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.implements Ljgw;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:J
-
-.field public final c:I
-
-.field public final d:Ljava/lang/String;
+.field private final a:Ljgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljhc;
-
-    invoke-direct {v0}, Ljhc;-><init>()V
-
-    sput-object v0, Ljhb;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method constructor <init>(Landroid/os/Parcel;)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljhb;->a:Ljava/lang/String;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Ljhb;->b:J
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Ljhb;->c:I
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljhb;->d:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;JILjava/lang/String;)V
+.method public constructor <init>(Ljgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljhb;->a:Ljava/lang/String;
-
-    iput-wide p2, p0, Ljhb;->b:J
-
-    iput p4, p0, Ljhb;->c:I
-
-    iput-object p5, p0, Ljhb;->d:Ljava/lang/String;
+    iput-object p1, p0, Ljhb;->a:Ljgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic compareTo(Ljava/lang/Object;)I
-    .locals 2
+.method public final a()I
+    .locals 1
 
-    check-cast p1, Ljhb;
+    iget-object v0, p0, Ljhb;->a:Ljgv;
 
-    iget-object v0, p0, Ljhb;->a:Ljava/lang/String;
+    invoke-interface {v0}, Ljgv;->e()Ljava/lang/Object;
 
-    iget-object v1, p1, Ljhb;->a:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final describeContents()I
-    .locals 1
+.method public final a(IILjgs;)Ljgv;
+    .locals 2
 
-    const/4 v0, 0x0
+    const-string v0, "inMemHandle:scaled"
 
-    return v0
-.end method
+    iget-object v1, p0, Ljhb;->a:Ljgv;
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    invoke-static {p3, v0, v1, p1, p2}, Ljgt;->a(Ljgs;Ljava/lang/String;Ljgv;II)Ljgv;
 
-    iget-object v0, p0, Ljhb;->a:Ljava/lang/String;
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final a(Landroid/graphics/Rect;Ljgs;)Ljgv;
+    .locals 6
+
+    const/4 v5, 0x0
+
+    const-string v0, "inMemHandle"
+
+    iget-object v1, p0, Ljhb;->a:Ljgv;
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v3
+
+    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-interface {p2, v0, v2, v3, v4}, Ljgs;->a(Ljava/lang/String;IILandroid/graphics/Bitmap$Config;)Ljgv;
+
+    move-result-object v2
+
+    new-instance v3, Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v4
+
+    invoke-direct {v3, v5, v5, v0, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v4, Landroid/graphics/Canvas;
+
+    invoke-interface {v2}, Ljgv;->e()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-direct {v4, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    new-instance v5, Landroid/graphics/Paint;
+
+    invoke-direct {v5}, Landroid/graphics/Paint;-><init>()V
+
+    invoke-interface {v1}, Ljgv;->e()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-virtual {v4, v0, p1, v3, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {v4, v0}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
+
+    return-object v2
+.end method
+
+.method public final a(Ljgs;)Ljgv;
     .locals 2
 
-    iget-object v0, p0, Ljhb;->a:Ljava/lang/String;
+    new-instance v1, Ljhc;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    iget-object v0, p0, Ljhb;->a:Ljgv;
 
-    iget-wide v0, p0, Ljhb;->b:J
+    invoke-interface {v0}, Ljgv;->e()Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    move-result-object v0
 
-    iget v0, p0, Ljhb;->c:I
+    check-cast v0, Landroid/graphics/Bitmap;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {v1, v0}, Ljhc;-><init>(Landroid/graphics/Bitmap;)V
 
-    iget-object v0, p0, Ljhb;->d:Ljava/lang/String;
+    return-object v1
+.end method
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+.method public final b()I
+    .locals 1
+
+    iget-object v0, p0, Ljhb;->a:Ljgv;
+
+    invoke-interface {v0}, Ljgv;->e()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b(Ljgs;)Ljgv;
+    .locals 2
+
+    const-string v1, "inMemHandle:copy"
+
+    iget-object v0, p0, Ljhb;->a:Ljgv;
+
+    invoke-interface {v0}, Ljgv;->e()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-static {p1, v1, v0}, Ljgt;->a(Ljgs;Ljava/lang/String;Landroid/graphics/Bitmap;)Ljgv;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Ljhb;->a:Ljgv;
+
+    invoke-interface {v0}, Ljgv;->close()V
 
     return-void
 .end method

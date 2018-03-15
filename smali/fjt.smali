@@ -1,162 +1,332 @@
-.class public final Lfjt;
+.class public Lfjt;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfjk;
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
+.implements Lfhz;
 
 
 # instance fields
-.field private b:Ljxn;
+.field public final a:Lkeh;
 
-.field private c:Landroid/content/Context;
+.field public final b:Ljava/lang/Object;
 
-.field private d:Lhdc;
+.field private final c:J
 
-.field private e:Lhda;
-
-.field private f:Lbjf;
-
-.field private g:Lhem;
-
-.field private h:Lfge;
+.field private final d:Ljava/util/LinkedList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "VgmUiWirer"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lfjt;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljxn;Landroid/content/Context;Lhdc;Lhda;Lbjf;Lhem;Lfge;)V
-    .locals 0
+.method public constructor <init>(JLkeh;Ljava/util/List;)V
+    .locals 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfjt;->b:Ljxn;
+    invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    iput-object p2, p0, Lfjt;->c:Landroid/content/Context;
+    move-result-object v1
 
-    iput-object p3, p0, Lfjt;->d:Lhdc;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iput-object p4, p0, Lfjt;->e:Lhda;
+    move-result v0
 
-    iput-object p5, p0, Lfjt;->f:Lbjf;
+    if-eqz v0, :cond_1
 
-    iput-object p6, p0, Lfjt;->g:Lhem;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iput-object p7, p0, Lfjt;->h:Lfge;
+    move-result-object v0
+
+    check-cast v0, Link;
+
+    invoke-interface {v0}, Link;->f()J
+
+    move-result-wide v2
+
+    cmp-long v0, v2, p1
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_1
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lfjt;->b:Ljava/lang/Object;
+
+    iput-wide p1, p0, Lfjt;->c:J
+
+    iput-object p3, p0, Lfjt;->a:Lkeh;
+
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0, p4}, Ljava/util/LinkedList;-><init>(Ljava/util/Collection;)V
+
+    iput-object v0, p0, Lfjt;->d:Ljava/util/LinkedList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 11
+.method public final declared-synchronized a()Link;
+    .locals 2
 
-    iget-object v0, p0, Lfjt;->b:Ljxn;
+    monitor-enter p0
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    :try_start_0
+    iget-object v1, p0, Lfjt;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v0, p0, Lfjt;->d:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->pollFirst()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfic;
+    check-cast v0, Link;
 
-    iget-object v0, v0, Lfic;->f:Lhaz;
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const v1, 0x7f0e00f0
+    monitor-exit p0
 
-    invoke-virtual {v0, v1}, Lhaz;->a(I)Ljava/lang/Object;
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()Ljava/util/LinkedList;
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v1, p0, Lfjt;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v0, p0, Lfjt;->d:Ljava/util/LinkedList;
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized c()J
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lfjt;->c:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized close()V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v1, p0, Lfjt;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v0, p0, Lfjt;->d:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v9, v0
+    check-cast v0, Link;
 
-    check-cast v9, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;
+    invoke-interface {v0}, Link;->close()V
 
-    iget-object v0, p0, Lfjt;->g:Lhem;
+    goto :goto_0
 
-    new-instance v6, Lhdk;
+    :catchall_0
+    move-exception v0
 
-    invoke-direct {v6, v0}, Lhdk;-><init>(Lhem;)V
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object v4, p0, Lfjt;->e:Lhda;
+    :try_start_2
+    throw v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    new-instance v0, Lhdn;
+    :catchall_1
+    move-exception v0
 
-    iget-object v2, p0, Lfjt;->c:Landroid/content/Context;
+    monitor-exit p0
 
-    new-instance v3, Landroid/os/Handler;
+    throw v0
 
-    invoke-virtual {v2}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
+    :cond_0
+    :try_start_3
+    iget-object v0, p0, Lfjt;->d:Ljava/util/LinkedList;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
-    invoke-direct {v3, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    new-instance v1, Lhdq;
-
-    invoke-direct {v1, v2, v3}, Lhdq;-><init>(Landroid/content/Context;Landroid/os/Handler;)V
-
-    iget-object v2, p0, Lfjt;->h:Lfge;
-
-    iget-object v3, v2, Lfge;->e:Lfgf;
-
-    new-instance v2, Lhdg;
-
-    invoke-direct {v2, v3}, Lhdg;-><init>(Lfgf;)V
-
-    iget-object v5, p0, Lfjt;->f:Lbjf;
-
-    iget-object v3, p0, Lfjt;->h:Lfge;
-
-    iget-object v7, v3, Lfge;->e:Lfgf;
-
-    new-instance v3, Lhdm;
-
-    invoke-direct {v3, v5, v7}, Lhdm;-><init>(Lbjf;Lfgf;)V
-
-    iget-object v7, p0, Lfjt;->d:Lhdc;
-
-    new-instance v5, Lfju;
-
-    invoke-direct {v5, v7}, Lfju;-><init>(Lhdl;)V
-
-    iget-object v8, p0, Lfjt;->g:Lhem;
-
-    new-instance v7, Lhde;
-
-    invoke-direct {v7, v8}, Lhde;-><init>(Lhem;)V
-
-    iget-object v8, p0, Lfjt;->h:Lfge;
-
-    iget-object v10, v8, Lfge;->e:Lfgf;
-
-    new-instance v8, Lhdf;
-
-    invoke-direct {v8, v10}, Lhdf;-><init>(Lfgf;)V
-
-    invoke-direct/range {v0 .. v8}, Lhdn;-><init>(Lhdq;Lhdg;Lhdm;Lhdj;Lhdl;Lhdk;Lhde;Lhdf;)V
-
-    new-instance v1, Lewc;
-
-    invoke-direct {v1, v0}, Lewc;-><init>(Lhdn;)V
-
-    iput-object v1, v9, Lcom/google/android/apps/camera/legacy/app/ui/PreviewOverlay;->d:Lewc;
+    monitor-exit p0
 
     return-void
+.end method
+
+.method public final d()Lkeh;
+    .locals 1
+
+    iget-object v0, p0, Lfjt;->a:Lkeh;
+
+    return-object v0
+.end method
+
+.method public final declared-synchronized e()I
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v1, p0, Lfjt;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v0, p0, Lfjt;->d:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+
+    move-result v0
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final f()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lfjt;->b:Ljava/lang/Object;
+
+    return-object v0
 .end method

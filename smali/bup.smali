@@ -1,47 +1,58 @@
-.class final Lbup;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final Lbup;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lbua;
+.field private final a:Lbvr;
 
 
 # direct methods
-.method constructor <init>(Lbua;)V
+.method public constructor <init>(Lbvr;)V
     .locals 0
 
-    iput-object p1, p0, Lbup;->a:Lbua;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p1, p0, Lbup;->a:Lbvr;
 
     return-void
 .end method
 
+.method public static a(Lbvr;)Landroid/app/Activity;
+    .locals 2
+
+    iget-object v0, p0, Lbvr;->a:Landroid/app/Activity;
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final onCameraSwitch(I)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lbup;->a:Lbua;
+    iget-object v0, p0, Lbup;->a:Lbvr;
 
-    iget-object v0, v0, Lbua;->M:Lexu;
+    iget-object v0, v0, Lbvr;->a:Landroid/app/Activity;
 
-    invoke-virtual {v0}, Lgvh;->o()V
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Lbup;->a:Lbua;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, v0, Lbua;->l:Lgsm;
+    move-result-object v0
 
-    iget-object v1, p0, Lbup;->a:Lbua;
+    check-cast v0, Landroid/app/Activity;
 
-    invoke-virtual {v1}, Lbua;->L()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "pref_camera_id_key"
-
-    invoke-virtual {v0, v1, v2, p1}, Lgsm;->b(Ljava/lang/String;Ljava/lang/String;I)V
-
-    return-void
+    return-object v0
 .end method

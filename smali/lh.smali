@@ -1,5 +1,5 @@
-.class final Llh;
-.super Llg;
+.class public Llh;
+.super Ljava/lang/Object;
 .source "PG"
 
 
@@ -7,25 +7,27 @@
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Llg;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method constructor <init>(B)V
+    .locals 0
+
+    invoke-direct {p0}, Llh;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/widget/PopupWindow;I)V
-    .locals 0
+.method public a(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;)V
+    .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
+    const/4 v0, 0x0
 
-    return-void
-.end method
-
-.method public final a(Landroid/widget/PopupWindow;Z)V
-    .locals 0
-
-    invoke-virtual {p1, p2}, Landroid/widget/PopupWindow;->setOverlapAnchor(Z)V
+    invoke-virtual {p1, p2, v0, v0, v0}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

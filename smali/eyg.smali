@@ -1,50 +1,42 @@
-.class public final Leyg;
+.class final Leyg;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
-
-
-# instance fields
-.field private a:Ljxn;
+.implements Linw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leyg;->a:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a()I
+    .locals 1
 
-    iget-object v0, p0, Leyg;->a:Ljxn;
+    const/4 v0, -0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object v0
+.method public final a(I)Z
+    .locals 1
 
-    check-cast v0, Lclq;
+    const/4 v0, 0x0
 
-    new-instance v1, Lclu;
+    return v0
+.end method
 
-    invoke-direct {v1, v0}, Lclu;-><init>(Lclq;)V
+.method public final a(Ljwk;)Z
+    .locals 1
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    const/4 v0, 0x0
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lclm;
-
-    return-object v0
+    return v0
 .end method

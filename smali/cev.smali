@@ -3,78 +3,1032 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lipn;
 
 
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x17
+.end annotation
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcev;->a:Ljxn;
+    return-void
+.end method
 
-    iput-object p2, p0, Lcev;->b:Ljxn;
+.method public static a(Ljcv;Ljhk;Ljhk;Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljhk;Landroid/content/Context;Ljgs;Lgmm;Ljava/util/UUID;Ldog;Lkeh;Lgfr;Lggn;Lcdg;IZLjox;Ljava/util/concurrent/ExecutorService;ZLgnf;Lihs;Liih;)Lcie;
+    .locals 38
 
-    iput-object p3, p0, Lcev;->c:Ljxn;
+    const-string v1, "PostProcessingTaskFactory#createPostProcessingTask"
+
+    move-object/from16 v0, p20
+
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    :try_start_0
+    invoke-static/range {p1 .. p1}, Ljhn;->a(Ljava/lang/AutoCloseable;)Ljqb;
+
+    move-result-object v1
+
+    new-instance v34, Ljqc;
+
+    move-object/from16 v0, v34
+
+    invoke-direct {v0, v1}, Ljqc;-><init>(Ljqb;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
+
+    const/16 v33, 0x0
+
+    :try_start_1
+    invoke-static/range {p2 .. p2}, Ljhn;->a(Ljava/lang/AutoCloseable;)Ljqb;
+
+    move-result-object v1
+
+    new-instance v35, Ljqc;
+
+    move-object/from16 v0, v35
+
+    invoke-direct {v0, v1}, Ljqc;-><init>(Ljqb;)V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_2
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
+
+    const/16 v32, 0x0
+
+    :try_start_2
+    invoke-static/range {p4 .. p4}, Ljhn;->a(Ljava/lang/AutoCloseable;)Ljqb;
+
+    move-result-object v1
+
+    new-instance v36, Ljqc;
+
+    move-object/from16 v0, v36
+
+    invoke-direct {v0, v1}, Ljqc;-><init>(Ljqb;)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
+    .catchall {:try_start_2 .. :try_end_2} :catchall_5
+
+    const/16 v31, 0x0
+
+    :try_start_3
+    new-instance v1, Ljcw;
+
+    invoke-direct {v1}, Ljcw;-><init>()V
+
+    invoke-virtual/range {p0 .. p0}, Ljcv;->a()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    sget-object v4, Liyu;->a:[Ljava/lang/String;
+
+    :goto_0
+    move-object/from16 v2, p5
+
+    move-object/from16 v3, p0
+
+    move-object/from16 v5, p17
+
+    move-object/from16 v6, p6
+
+    invoke-static/range {v1 .. v6}, Ljdu;->a(Ljcw;Landroid/content/Context;Ljcv;[Ljava/lang/String;Ljava/util/concurrent/Executor;Ljgs;)V
+
+    invoke-static/range {p10 .. p10}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/io/File;
+
+    const-class v2, Ljhk;
+
+    const-string v3, "default"
+
+    invoke-virtual {v1, v2, v3}, Ljcw;->b(Ljava/lang/Class;Ljava/lang/String;)Ljcz;
+
+    move-result-object v2
+
+    new-instance v3, Ljgp;
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v3, v0}, Ljgp;-><init>(Ljhk;)V
+
+    invoke-virtual {v2, v3}, Ljcz;->a(Ljdt;)V
+
+    const-class v2, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+
+    const-string v3, "default"
+
+    invoke-virtual {v1, v2, v3}, Ljcw;->b(Ljava/lang/Class;Ljava/lang/String;)Ljcz;
+
+    move-result-object v2
+
+    new-instance v3, Ljgq;
+
+    move-object/from16 v0, p3
+
+    invoke-direct {v3, v0}, Ljgq;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;)V
+
+    invoke-virtual {v2, v3}, Ljcz;->a(Ljdt;)V
+
+    if-eqz p15, :cond_0
+
+    move-object/from16 v0, p16
+
+    invoke-static {v1, v0}, Ljhn;->a(Ljcw;Ljox;)V
+
+    :cond_0
+    sget-object v2, Ljcv;->a:Ljcv;
+
+    move-object/from16 v0, p0
+
+    if-ne v0, v2, :cond_2
+
+    new-instance v1, Lchv;
+
+    invoke-interface/range {v36 .. v36}, Ljqi;->d()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljhk;
+
+    invoke-interface/range {v34 .. v34}, Ljqi;->d()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljhk;
+
+    invoke-interface/range {v35 .. v35}, Ljqi;->d()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljhk;
+
+    move/from16 v3, p14
+
+    move-object/from16 v4, p13
+
+    move-object/from16 v5, p11
+
+    move-object/from16 v6, p12
+
+    move-object/from16 v10, p6
+
+    move-object/from16 v11, p7
+
+    move-object/from16 v12, p17
+
+    move-object/from16 v13, p9
+
+    move-object/from16 v14, p8
+
+    move-object/from16 v15, p19
+
+    invoke-direct/range {v1 .. v15}, Lchv;-><init>(Ljhk;ILcdg;Lgfr;Lggn;Ljhk;Ljhk;Ljava/io/File;Ljgs;Lgmm;Ljava/util/concurrent/ExecutorService;Ldog;Ljava/util/UUID;Lgnf;)V
+    :try_end_3
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_6
+
+    const/4 v2, 0x0
+
+    :try_start_4
+    move-object/from16 v0, v36
+
+    invoke-static {v2, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+    :try_end_4
+    .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_5
+
+    const/4 v2, 0x0
+
+    :try_start_5
+    move-object/from16 v0, v35
+
+    invoke-static {v2, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+    :try_end_5
+    .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_2
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
+
+    const/4 v2, 0x0
+
+    :try_start_6
+    move-object/from16 v0, v34
+
+    invoke-static {v2, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
+
+    invoke-interface/range {p20 .. p20}, Lihs;->a()V
+
+    :goto_1
+    return-object v1
+
+    :cond_1
+    const/4 v2, 0x0
+
+    :try_start_7
+    new-array v4, v2, [Ljava/lang/String;
+
+    goto/16 :goto_0
+
+    :cond_2
+    const-class v2, Ljig;
+
+    const-string v3, "default"
+
+    invoke-virtual {v1, v2, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Ljig;
+
+    const-class v2, Lizd;
+
+    const-string v3, "default"
+
+    invoke-virtual {v1, v2, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lizd;
+
+    const-class v2, Ljja;
+
+    const-string v3, "default"
+
+    invoke-virtual {v1, v2, v3}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljja;
+
+    new-instance v10, Lchi;
+
+    invoke-interface/range {v36 .. v36}, Ljqi;->d()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Ljhk;
+
+    invoke-interface/range {v34 .. v34}, Ljqi;->d()Ljava/lang/Object;
+
+    move-result-object v19
+
+    check-cast v19, Ljhk;
+
+    invoke-interface/range {v35 .. v35}, Ljqi;->d()Ljava/lang/Object;
+
+    move-result-object v20
+
+    check-cast v20, Ljhk;
+
+    move/from16 v15, p14
+
+    move-object/from16 v16, p13
+
+    move-object/from16 v17, p11
+
+    move-object/from16 v18, p12
+
+    move-object/from16 v21, v9
+
+    move-object/from16 v22, p6
+
+    move-object/from16 v23, p7
+
+    move-object/from16 v24, p17
+
+    move-object/from16 v25, p9
+
+    move-object/from16 v26, p8
+
+    move/from16 v27, p18
+
+    move-object/from16 v28, p19
+
+    move-object/from16 v29, p20
+
+    move-object/from16 v30, p21
+
+    invoke-direct/range {v10 .. v30}, Lchi;-><init>(Ljig;Ljja;Lizd;Ljhk;ILcdg;Lgfr;Lggn;Ljhk;Ljhk;Ljava/io/File;Ljgs;Lgmm;Ljava/util/concurrent/ExecutorService;Ldog;Ljava/util/UUID;ZLgnf;Lihs;Liih;)V
+    :try_end_7
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_0
+    .catchall {:try_start_7 .. :try_end_7} :catchall_6
+
+    const/4 v1, 0x0
+
+    :try_start_8
+    move-object/from16 v0, v36
+
+    invoke-static {v1, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+    :try_end_8
+    .catch Ljava/lang/Throwable; {:try_start_8 .. :try_end_8} :catch_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_5
+
+    const/4 v1, 0x0
+
+    :try_start_9
+    move-object/from16 v0, v35
+
+    invoke-static {v1, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+    :try_end_9
+    .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_2
+    .catchall {:try_start_9 .. :try_end_9} :catchall_4
+
+    const/4 v1, 0x0
+
+    :try_start_a
+    move-object/from16 v0, v34
+
+    invoke-static {v1, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_3
+
+    invoke-interface/range {p20 .. p20}, Lihs;->a()V
+
+    move-object v1, v10
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v1
+
+    :try_start_b
+    throw v1
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_0
+
+    :catchall_0
+    move-exception v2
+
+    move-object/from16 v37, v2
+
+    move-object v2, v1
+
+    move-object/from16 v1, v37
+
+    :goto_2
+    :try_start_c
+    move-object/from16 v0, v36
+
+    invoke-static {v2, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+
+    throw v1
+    :try_end_c
+    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_1
+    .catchall {:try_start_c .. :try_end_c} :catchall_5
+
+    :catch_1
+    move-exception v1
+
+    :try_start_d
+    throw v1
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_1
+
+    :catchall_1
+    move-exception v2
+
+    move-object/from16 v37, v2
+
+    move-object v2, v1
+
+    move-object/from16 v1, v37
+
+    :goto_3
+    :try_start_e
+    move-object/from16 v0, v35
+
+    invoke-static {v2, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+
+    throw v1
+    :try_end_e
+    .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_2
+    .catchall {:try_start_e .. :try_end_e} :catchall_4
+
+    :catch_2
+    move-exception v1
+
+    :try_start_f
+    throw v1
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_2
+
+    :catchall_2
+    move-exception v2
+
+    move-object/from16 v37, v2
+
+    move-object v2, v1
+
+    move-object/from16 v1, v37
+
+    :goto_4
+    :try_start_10
+    move-object/from16 v0, v34
+
+    invoke-static {v2, v0}, Lcev;->a(Ljava/lang/Throwable;Ljqi;)V
+
+    throw v1
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_3
+
+    :catchall_3
+    move-exception v1
+
+    invoke-interface/range {p20 .. p20}, Lihs;->a()V
+
+    throw v1
+
+    :catchall_4
+    move-exception v1
+
+    move-object/from16 v2, v33
+
+    goto :goto_4
+
+    :catchall_5
+    move-exception v1
+
+    move-object/from16 v2, v32
+
+    goto :goto_3
+
+    :catchall_6
+    move-exception v1
+
+    move-object/from16 v2, v31
+
+    goto :goto_2
+.end method
+
+.method public static a(Lfat;Lffv;Lcqv;Lihs;Lbvo;Ldkv;)Lcom/google/googlex/gcam/Gcam;
+    .locals 9
+
+    const/4 v8, 0x2
+
+    const/4 v7, 0x1
+
+    const/4 v0, 0x0
+
+    const-string v1, "Gcam#provide"
+
+    invoke-interface {p3, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    invoke-virtual {p2}, Lcqv;->a()Lcom/google/googlex/gcam/InitParams;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/google/googlex/gcam/StaticMetadataVector;
+
+    invoke-direct {v3}, Lcom/google/googlex/gcam/StaticMetadataVector;-><init>()V
+
+    new-array v4, v8, [Lild;
+
+    sget-object v1, Lild;->b:Lild;
+
+    aput-object v1, v4, v0
+
+    sget-object v1, Lild;->a:Lild;
+
+    aput-object v1, v4, v7
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v8, :cond_2
+
+    aget-object v0, v4, v1
+
+    iget v5, p1, Lffv;->a:I
+
+    sget v6, Lep;->aw:I
+
+    if-eq v5, v6, :cond_1
+
+    invoke-virtual {p0, v0}, Lfat;->c(Lild;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    :cond_0
+    :goto_1
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lilb;
+
+    if-eqz v0, :cond_0
+
+    iget-object v6, v0, Lilb;->b:Ljava/lang/String;
+
+    if-eqz v6, :cond_0
+
+    invoke-virtual {p0, v0}, Lfat;->a(Lilb;)Lfdv;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcqa;->b(Lfdv;)Lcom/google/googlex/gcam/StaticMetadata;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/StaticMetadataVector;->add(Lcom/google/googlex/gcam/StaticMetadata;)V
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p5}, Lcpk;->a(Ldkv;)Lcom/google/googlex/gcam/DebugParams;
+
+    move-result-object v1
+
+    invoke-virtual {v2}, Lcom/google/googlex/gcam/InitParams;->getExecute_finish_on()I
+
+    move-result v0
+
+    if-ne v0, v7, :cond_3
+
+    :try_start_0
+    iget-object v0, p4, Lbvo;->a:Lihn;
+
+    const-string v4, "Will attempt to load libadsprpc.so from the system partition"
+
+    invoke-interface {v0, v4}, Lihn;->d(Ljava/lang/String;)V
+
+    iget-object v0, p4, Lbvo;->a:Lihn;
+
+    const-string v4, "Loading libhalide_hexagon_host.so from the app"
+
+    invoke-interface {v0, v4}, Lihn;->d(Ljava/lang/String;)V
+
+    const-string v0, "halide_hexagon_host_app"
+
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    iget-object v0, p4, Lbvo;->b:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+
+    iget-object v4, v0, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;
+
+    iget-object v0, p4, Lbvo;->c:Lihs;
+
+    const-string v5, "HexagonEnvironment#copyHexagonRemoteToDisk"
+
+    invoke-interface {v0, v5}, Lihs;->a(Ljava/lang/String;)V
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v5, "/libhalide_hexagon_remote_skel.so"
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    iget-object v6, p4, Lbvo;->a:Lihn;
+
+    const-string v7, "Writing libhalide_hexagon_remote_skel.so to "
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    if-eqz v8, :cond_4
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_2
+    invoke-interface {v6, v0}, Lihn;->d(Ljava/lang/String;)V
+
+    iget-object v0, p4, Lbvo;->b:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v6, 0x7f09000b
+
+    invoke-virtual {v0, v6}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+
+    move-result-object v0
+
+    new-instance v6, Ljava/io/FileOutputStream;
+
+    invoke-direct {v6, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
+
+    const/16 v5, 0x400
+
+    new-array v5, v5, [B
+
+    :goto_3
+    invoke-virtual {v0, v5}, Ljava/io/InputStream;->read([B)I
+
+    move-result v7
+
+    const/4 v8, -0x1
+
+    if-eq v7, v8, :cond_5
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v6, v5, v8, v7}, Ljava/io/OutputStream;->write([BII)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_3
+
+    :catch_0
+    move-exception v0
+
+    iget-object v4, p4, Lbvo;->a:Lihn;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x1c
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "Error initializing Hexagon: "
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v4, v0}, Lihn;->f(Ljava/lang/String;)V
+
+    :cond_3
+    :goto_4
+    invoke-static {v2, v3, v1}, Lcom/google/googlex/gcam/Gcam;->Create(Lcom/google/googlex/gcam/InitParams;Lcom/google/googlex/gcam/StaticMetadataVector;Lcom/google/googlex/gcam/DebugParams;)Lcom/google/googlex/gcam/Gcam;
+
+    move-result-object v0
+
+    invoke-interface {p3}, Lihs;->a()V
+
+    return-object v0
+
+    :catch_1
+    move-exception v0
+
+    :try_start_2
+    iget-object v4, p4, Lbvo;->a:Lihn;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x20
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "Failed to load Hexagon library: "
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v4, v0}, Lihn;->f(Ljava/lang/String;)V
+
+    goto :goto_4
+
+    :cond_4
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v7}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto/16 :goto_2
+
+    :cond_5
+    invoke-virtual {v6}, Ljava/io/OutputStream;->flush()V
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
+
+    iget-object v0, p4, Lbvo;->c:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v4, ";/dsp"
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    move-result-object v4
+
+    :try_start_3
+    iget-object v5, p4, Lbvo;->a:Lihn;
+
+    const-string v6, "ADSP_LIBRARY_PATH="
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    invoke-virtual {v6, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_5
+    invoke-interface {v5, v0}, Lihn;->d(Ljava/lang/String;)V
+
+    const-string v0, "ADSP_LIBRARY_PATH"
+
+    const/4 v5, 0x1
+
+    invoke-static {v0, v4, v5}, Landroid/system/Os;->setenv(Ljava/lang/String;Ljava/lang/String;Z)V
+    :try_end_3
+    .catch Landroid/system/ErrnoException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+
+    goto :goto_4
+
+    :catch_2
+    move-exception v0
+
+    :try_start_4
+    iget-object v4, p4, Lbvo;->a:Lihn;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x21
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "Failed to set ADSP_LIBRARY_PATH: "
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v4, v0}, Lihn;->f(Ljava/lang/String;)V
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+
+    goto/16 :goto_4
+
+    :cond_6
+    :try_start_5
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v6}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :try_end_5
+    .catch Landroid/system/ErrnoException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
+
+    goto :goto_5
+.end method
+
+.method public static a(Ljava/lang/String;IILind;)V
+    .locals 3
+
+    const/16 v0, 0x1a
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "  Result frame "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    const-string v0, "unknown_actual_hal3.txt"
+
+    :goto_0
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, p0, v0}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v1, p3, v2}, Laxg;->a(Ljava/lang/String;Lind;Ljava/io/File;)V
 
     return-void
+
+    :pswitch_1
+    const-string v0, "metering_burst_actual_hal3.txt"
+
+    goto :goto_0
+
+    :pswitch_2
+    const-string v0, "payload_burst_actual_hal3.txt"
+
+    goto :goto_0
+
+    :pswitch_3
+    const-string v0, "viewfinder_actual_hal3.txt"
+
+    goto :goto_0
+
+    :pswitch_4
+    const-string v0, "unknown_actual_hal3.txt"
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_1
+        :pswitch_2
+        :pswitch_0
+        :pswitch_3
+    .end packed-switch
+.end method
+
+.method private static synthetic a(Ljava/lang/Throwable;Ljqi;)V
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    :try_start_0
+    invoke-interface {p1}, Ljqi;->close()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {p0, v0}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Ljqi;->close()V
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lcev;->a:Ljxn;
+    check-cast p1, Liys;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    invoke-virtual {p1}, Liys;->b()Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    iget-object v1, p0, Lcev;->b:Ljxn;
+    if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lcev;->c:Ljxn;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfmd;
+    check-cast v0, Liyp;
 
-    :goto_0
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v3, v0, Liyp;->a:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v3}, Liyy;->a(Ljava/lang/String;)Liyy;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lfmd;
+    invoke-interface {v1, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    return-object v0
+    move-result v4
 
-    :cond_0
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    if-nez v4, :cond_0
 
-    move-result-object v0
-
-    check-cast v0, Lfmd;
+    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
+
+    :cond_1
+    return-object v1
 .end method

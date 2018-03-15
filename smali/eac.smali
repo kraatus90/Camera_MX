@@ -1,31 +1,39 @@
-.class public final synthetic Leac;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhzc;
+.class Leac;
+.super Lglb;
+.source "PG"
 
 
 # instance fields
-.field private a:Ljvi;
+.field public final synthetic a:Leaa;
 
 
 # direct methods
-.method public constructor <init>(Ljvi;)V
-    .locals 0
+.method constructor <init>(Leaa;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leac;->a:Leaa;
 
-    iput-object p1, p0, Leac;->a:Ljvi;
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>([C)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljuw;
+.method public a(Lfdv;Liaa;)V
     .locals 1
 
-    iget-object v0, p0, Leac;->a:Ljvi;
+    iget-object v0, p0, Leac;->a:Leaa;
 
-    return-object v0
+    iput-object p1, v0, Leaa;->b:Lfdv;
+
+    new-instance v0, Lead;
+
+    invoke-direct {v0, p0}, Lead;-><init>(Leac;)V
+
+    invoke-interface {p2, v0}, Liaa;->a(Lihb;)Lihb;
+
+    return-void
 .end method

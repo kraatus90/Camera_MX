@@ -1,29 +1,26 @@
-.class public interface abstract Liil;
+.class final Liil;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lich;
+.implements Liip;
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Landroid/graphics/Rect;
-.end method
+.method public final a(Lihx;)V
+    .locals 0
 
-.method public abstract a(Landroid/graphics/Rect;)V
-.end method
+    invoke-interface {p1}, Lihx;->b()V
 
-.method public abstract c()I
-.end method
-
-.method public abstract d()Ljava/util/List;
-.end method
-
-.method public abstract e()J
-.end method
-
-.method public abstract f()I
-.end method
-
-.method public abstract l_()I
+    return-void
 .end method

@@ -3,43 +3,43 @@
 .source "PG"
 
 # interfaces
-.implements Lass;
+.implements Late;
 
 
 # instance fields
 .field public a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
-.field public b:Lbls;
+.field public b:Lbqo;
 
-.field public c:Lblt;
+.field public c:Lbqp;
 
 .field public d:Landroid/widget/TextView;
 
-.field public e:Lgzr;
+.field public e:Lhay;
 
-.field public f:Lgzr;
+.field public f:Lhay;
 
-.field public g:Lgzr;
+.field public g:Lhay;
 
-.field public h:Lgzr;
+.field public h:Lhay;
 
-.field public i:Lgzr;
+.field public i:Lhay;
 
-.field public j:Lgzr;
+.field public j:Lhay;
 
-.field public k:Lgzr;
+.field public k:Lhay;
 
-.field public l:Lgzr;
+.field public l:Lhay;
 
 .field public m:Landroid/animation/Animator;
 
-.field private n:Lblv;
+.field private final n:Lbqr;
 
-.field private o:Landroid/graphics/PointF;
+.field private final o:Landroid/graphics/PointF;
 
-.field private p:[I
+.field private final p:[I
 
-.field private q:Landroid/animation/Animator$AnimatorListener;
+.field private final q:Landroid/animation/Animator$AnimatorListener;
 
 
 # direct methods
@@ -62,9 +62,9 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->p:[I
 
-    new-instance v0, Lblu;
+    new-instance v0, Lbqq;
 
-    invoke-direct {v0, p0}, Lblu;-><init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+    invoke-direct {v0, p0}, Lbqq;-><init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
 
     iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->q:Landroid/animation/Animator$AnimatorListener;
 
@@ -76,25 +76,25 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040040
+    const v1, 0x7f04003e
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Landroid/content/Context;)Lblv;
+    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Landroid/content/Context;)Lbqr;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->n:Lblv;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->n:Lbqr;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->n:Lblv;
+    iget-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->n:Lbqr;
 
-    iget-object v0, v1, Lblv;->a:Lblw;
+    iget-object v0, v1, Lbqr;->a:Lbqs;
 
-    iget-object v0, v0, Lblw;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+    iget-object v0, v0, Lbqs;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
     const-string v2, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -102,45 +102,45 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
-    iget-object v0, v1, Lblv;->a:Lblw;
+    iget-object v0, v1, Lbqr;->a:Lbqs;
 
-    iget-object v0, v0, Lblw;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+    iget-object v0, v0, Lbqs;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbls;
+    iget-object v0, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lbqo;
 
     const-string v2, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbls;
+    check-cast v0, Lbqo;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->b:Lbls;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->b:Lbqo;
 
-    iget-object v0, v1, Lblv;->a:Lblw;
+    iget-object v0, v1, Lbqr;->a:Lbqs;
 
-    iget-object v0, v0, Lblw;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+    iget-object v0, v0, Lbqs;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lblt;
+    iget-object v0, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Lbqp;
 
     const-string v2, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lblt;
+    check-cast v0, Lbqp;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->c:Lblt;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->c:Lbqp;
 
-    iget-object v0, v1, Lblv;->a:Lblw;
+    iget-object v0, v1, Lbqr;->a:Lbqs;
 
-    iget-object v0, v0, Lblw;->d:Landroid/widget/TextView;
+    iget-object v0, v0, Lbqs;->d:Landroid/widget/TextView;
 
     const-string v2, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -148,122 +148,122 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->d:Landroid/widget/TextView;
 
-    iget-object v0, v1, Lblv;->b:Ljxn;
+    iget-object v0, v1, Lbqr;->b:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgzr;
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lgzr;
-
-    iget-object v0, v1, Lblv;->c:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgzr;
+    check-cast v0, Lhay;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lhay;
 
-    iget-object v0, v1, Lblv;->d:Ljxn;
+    iget-object v0, v1, Lbqr;->c:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgzr;
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lgzr;
-
-    iget-object v0, v1, Lblv;->e:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgzr;
+    check-cast v0, Lhay;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lhay;
 
-    iget-object v0, v1, Lblv;->f:Ljxn;
+    iget-object v0, v1, Lbqr;->d:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgzr;
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->i:Lgzr;
-
-    iget-object v0, v1, Lblv;->g:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgzr;
+    check-cast v0, Lhay;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->j:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lhay;
 
-    iget-object v0, v1, Lblv;->h:Ljxn;
+    iget-object v0, v1, Lbqr;->e:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgzr;
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->k:Lgzr;
-
-    iget-object v0, v1, Lblv;->i:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgzr;
+    check-cast v0, Lhay;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->l:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lhay;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lgzr;
+    iget-object v0, v1, Lbqr;->f:Lkgv;
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lgzr;
+    move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    check-cast v0, Lhay;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->i:Lhay;
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    iget-object v0, v1, Lbqr;->g:Lkgv;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lgzr;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    move-result-object v0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->i:Lgzr;
+    check-cast v0, Lhay;
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->j:Lhay;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->j:Lgzr;
+    iget-object v0, v1, Lbqr;->h:Lkgv;
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->k:Lgzr;
+    move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    check-cast v0, Lhay;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->l:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->k:Lhay;
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    iget-object v0, v1, Lbqr;->i:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhay;
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->l:Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->i:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->j:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->k:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->l:Lhay;
+
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
 
     return-void
 .end method
 
-.method constructor <init>(Landroid/content/Context;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;Lbls;Lblt;Landroid/widget/TextView;Lgzr;Lgzr;Lgzr;Lgzr;Lgzr;Lgzr;)V
+.method constructor <init>(Landroid/content/Context;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;Lbqo;Lbqp;Landroid/widget/TextView;Lhay;Lhay;Lhay;Lhay;Lhay;Lhay;)V
     .locals 2
 
     const/4 v1, 0x0
@@ -282,91 +282,91 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->p:[I
 
-    new-instance v0, Lblu;
+    new-instance v0, Lbqq;
 
-    invoke-direct {v0, p0}, Lblu;-><init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+    invoke-direct {v0, p0}, Lbqq;-><init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
 
     iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->q:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Landroid/content/Context;)Lblv;
+    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Landroid/content/Context;)Lbqr;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->n:Lblv;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->n:Lbqr;
 
     iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
-    iput-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->b:Lbls;
+    iput-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->b:Lbqo;
 
-    iput-object p4, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->c:Lblt;
+    iput-object p4, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->c:Lbqp;
 
     iput-object p5, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->d:Landroid/widget/TextView;
 
-    invoke-direct {p0, p6}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    invoke-direct {p0, p6}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lhay;
 
-    invoke-direct {p0, p7}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lgzr;
-
-    invoke-direct {p0, p8}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    invoke-direct {p0, p7}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lhay;
 
-    invoke-direct {p0, p9}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lgzr;
-
-    invoke-direct {p0, p10}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    invoke-direct {p0, p8}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->i:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lhay;
 
-    invoke-direct {p0, p11}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lgzr;)Lgzr;
+    invoke-direct {p0, p9}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->j:Lgzr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lhay;
+
+    invoke-direct {p0, p10}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->i:Lhay;
+
+    invoke-direct {p0, p11}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a(Lhay;)Lhay;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->j:Lhay;
 
     return-void
 .end method
 
-.method private final a(Landroid/content/Context;)Lblv;
+.method private final a(Landroid/content/Context;)Lbqr;
     .locals 3
 
-    new-instance v0, Lblw;
+    new-instance v0, Lbqs;
 
-    invoke-direct {v0, p1, p0}, Lblw;-><init>(Landroid/content/Context;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+    invoke-direct {v0, p1, p0}, Lbqs;-><init>(Landroid/content/Context;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
 
-    new-instance v1, Lblq;
+    new-instance v1, Lbqm;
 
-    invoke-direct {v1}, Lblq;-><init>()V
+    invoke-direct {v1}, Lbqm;-><init>()V
 
-    invoke-static {v0}, Ljwd;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lkfn;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lblw;
+    check-cast v0, Lbqs;
 
-    iput-object v0, v1, Lblq;->a:Lblw;
+    iput-object v0, v1, Lbqm;->a:Lbqs;
 
-    iget-object v0, v1, Lblq;->a:Lblw;
+    iget-object v0, v1, Lbqm;->a:Lbqs;
 
     if-nez v0, :cond_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-class v1, Lblw;
+    const-class v1, Lbqs;
 
     invoke-virtual {v1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
@@ -387,21 +387,21 @@
     throw v0
 
     :cond_0
-    new-instance v0, Lblv;
+    new-instance v0, Lbqr;
 
-    invoke-direct {v0, v1}, Lblv;-><init>(Lblq;)V
+    invoke-direct {v0, v1}, Lbqr;-><init>(Lbqm;)V
 
     return-object v0
 .end method
 
-.method private final a(Lgzr;)Lgzr;
+.method private final a(Lhay;)Lhay;
     .locals 1
 
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->q:Landroid/animation/Animator$AnimatorListener;
 
-    invoke-interface {p1, v0}, Lgzr;->a(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-interface {p1, v0}, Lhay;->a(Landroid/animation/Animator$AnimatorListener;)V
 
     :cond_0
     return-object p1
@@ -467,13 +467,13 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->c:Lblt;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->c:Lbqp;
 
-    invoke-virtual {v0, v1}, Lblt;->a(F)V
+    invoke-virtual {v0, v1}, Lbqp;->a(F)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->b:Lbls;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->b:Lbqo;
 
-    invoke-virtual {v0, v1}, Lbls;->c(F)V
+    invoke-virtual {v0, v1}, Lbqo;->c(F)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
@@ -484,7 +484,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/graphics/PointF;)Lgzp;
+.method public final a(Landroid/graphics/PointF;)Lhaw;
     .locals 2
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->d()V
@@ -499,16 +499,16 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Landroid/graphics/PointF;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lgzr;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lhay;
 
-    invoke-interface {v0}, Lgzr;->a()Lgzp;
+    invoke-interface {v0}, Lhay;->a()Lhaw;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final a(Ljht;)Lgzp;
+.method public final a(Ljrf;)Lhaw;
     .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
@@ -523,7 +523,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lgzr;->a:Lgzp;
+    sget-object v0, Lhay;->a:Lhaw;
 
     :goto_0
     return-object v0
@@ -531,7 +531,7 @@
     :cond_0
     invoke-direct {p0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e()V
 
-    invoke-virtual {p1}, Ljht;->a()Z
+    invoke-virtual {p1}, Ljrf;->a()Z
 
     move-result v0
 
@@ -539,7 +539,7 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
 
-    invoke-virtual {p1}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual {p1}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -552,9 +552,9 @@
     invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Landroid/graphics/PointF;)V
 
     :goto_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lgzr;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lhay;
 
-    invoke-interface {v0}, Lgzr;->a()Lgzp;
+    invoke-interface {v0}, Lhay;->a()Lhaw;
 
     move-result-object v0
 
@@ -601,41 +601,41 @@
 .method public final synthetic a(Ljava/lang/Object;)V
     .locals 10
 
-    check-cast p1, Lgep;
+    check-cast p1, Lfbn;
 
     iget-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->d:Landroid/widget/TextView;
 
-    iget-object v2, p1, Lgep;->b:Lgel;
+    iget-object v2, p1, Lfbn;->b:Lfbk;
 
-    iget-object v0, v2, Lgel;->a:Lgqb;
+    iget-object v0, v2, Lfbk;->a:Lgdj;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    iget-object v0, v2, Lgel;->b:Lgqc;
+    iget-object v0, v2, Lfbk;->b:Lgdk;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
-    iget-object v0, v2, Lgel;->e:Ljht;
+    iget-object v0, v2, Lfbk;->e:Ljrf;
 
-    invoke-virtual {v0}, Ljht;->a()Z
+    invoke-virtual {v0}, Ljrf;->a()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, v2, Lgel;->e:Ljht;
+    iget-object v0, v2, Lfbk;->e:Ljrf;
 
-    invoke-virtual {v0}, Ljht;->b()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgej;
+    check-cast v0, Lfbi;
 
-    invoke-virtual {v0}, Lgej;->b()Landroid/graphics/PointF;
+    invoke-virtual {v0}, Lfbi;->b()Landroid/graphics/PointF;
 
     move-result-object v0
 
@@ -654,7 +654,7 @@
 
     const/4 v8, 0x0
 
-    iget v9, v2, Lgel;->c:F
+    iget v9, v2, Lfbk;->c:F
 
     invoke-static {v9}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -666,7 +666,7 @@
 
     move-result-object v5
 
-    iget-boolean v2, v2, Lgel;->d:Z
+    iget-boolean v2, v2, Lfbk;->d:Z
 
     invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -794,7 +794,7 @@
     goto :goto_0
 .end method
 
-.method public final b()Lgzp;
+.method public final b()Lhaw;
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
@@ -809,15 +809,15 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lgzr;->a:Lgzp;
+    sget-object v0, Lhay;->a:Lhaw;
 
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lgzr;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->f:Lhay;
 
-    invoke-interface {v0}, Lgzr;->a()Lgzp;
+    invoke-interface {v0}, Lhay;->a()Lhaw;
 
     move-result-object v0
 
@@ -827,24 +827,16 @@
 .method public final b(Z)V
     .locals 2
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->d:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->d:Landroid/widget/TextView;
 
-    if-eqz p1, :cond_0
+    const/16 v1, 0x8
 
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     return-void
-
-    :cond_0
-    const/16 v0, 0x8
-
-    goto :goto_0
 .end method
 
-.method public final c()Lgzp;
+.method public final c()Lhaw;
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
@@ -859,15 +851,15 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lgzr;->a:Lgzp;
+    sget-object v0, Lhay;->a:Lhaw;
 
     :goto_0
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lgzr;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->h:Lhay;
 
-    invoke-interface {v0}, Lgzr;->a()Lgzp;
+    invoke-interface {v0}, Lhay;->a()Lhaw;
 
     move-result-object v0
 

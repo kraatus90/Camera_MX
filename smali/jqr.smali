@@ -1,491 +1,253 @@
 .class public final Ljqr;
-.super Ljwj;
+.super Landroid/support/v4/app/Fragment;
 .source "PG"
+
+# interfaces
+.implements Landroid/support/v4/app/LoaderManager$LoaderCallbacks;
 
 
 # instance fields
-.field public a:I
+.field public a:Ljqt;
 
-.field public b:I
-
-.field public c:Ljava/lang/String;
-
-.field public d:F
-
-.field public e:F
-
-.field private f:Ljava/lang/String;
+.field private b:Landroid/widget/ArrayAdapter;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 0
 
-    const/4 v2, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0}, Ljwj;-><init>()V
-
-    iput v2, p0, Ljqr;->a:I
-
-    const-string v0, ""
-
-    iput-object v0, p0, Ljqr;->f:Ljava/lang/String;
-
-    iput v2, p0, Ljqr;->b:I
-
-    const-string v0, ""
-
-    iput-object v0, p0, Ljqr;->c:Ljava/lang/String;
-
-    iput v1, p0, Ljqr;->d:F
-
-    iput v1, p0, Ljqr;->e:F
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljqr;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljqr;->cachedSize:I
+    invoke-direct {p0}, Landroid/support/v4/app/Fragment;-><init>()V
 
     return-void
 .end method
 
-.method private final a(Ljwh;)Ljqr;
-    .locals 6
+
+# virtual methods
+.method public final onAttach(Landroid/content/Context;)V
+    .locals 2
+
+    invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onAttach(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Ljqr;->getParentFragment()Landroid/support/v4/app/Fragment;
+
+    move-result-object v0
+
+    instance-of v1, v0, Ljqt;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Ljqt;
+
+    iput-object v0, p0, Ljqr;->a:Ljqt;
 
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    return-void
 
-    move-result v0
+    :cond_1
+    invoke-virtual {p0}, Ljqr;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    sparse-switch v0, :sswitch_data_0
+    move-result-object v0
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    instance-of v1, v0, Ljqt;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Ljqt;
+
+    iput-object v0, p0, Ljqr;->a:Ljqt;
+
+    goto :goto_0
+.end method
+
+.method public final onCreateLoader(ILandroid/os/Bundle;)Led;
+    .locals 4
+
+    invoke-virtual {p0}, Ljqr;->getArguments()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    const-string v0, "pluginLicensePaths"
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "pluginLicensePaths"
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    :sswitch_0
-    return-object p0
+    new-instance v0, Ljqq;
 
-    :sswitch_1
-    invoke-virtual {p1}, Ljwh;->i()I
-
-    move-result v1
-
-    :try_start_0
-    invoke-virtual {p1}, Ljwh;->d()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_0
-
-    new-instance v3, Ljava/lang/IllegalArgumentException;
-
-    const/16 v4, 0x2f
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Ljqr;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    const-string v4, " is not a valid enum InteractionType"
+    const-string v3, "pluginLicensePaths"
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0, v2, v1}, Ljqq;-><init>(Landroid/content/Context;Ljava/util/List;)V
 
-    move-result-object v2
-
-    invoke-direct {v3, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    move-exception v2
-
-    invoke-virtual {p1, v1}, Ljwh;->e(I)V
-
-    invoke-virtual {p0, p1, v0}, Ljqr;->storeUnknownField(Ljwh;I)Z
-
-    goto :goto_0
-
-    :pswitch_0
-    :try_start_1
-    iput v2, p0, Ljqr;->a:I
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_0
-
-    :sswitch_2
-    invoke-virtual {p1}, Ljwh;->c()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljqr;->f:Ljava/lang/String;
-
-    goto :goto_0
-
-    :sswitch_3
-    invoke-virtual {p1}, Ljwh;->i()I
-
-    move-result v1
-
-    :try_start_2
-    invoke-virtual {p1}, Ljwh;->d()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljqw;->b(I)I
-
-    move-result v2
-
-    iput v2, p0, Ljqr;->b:I
-    :try_end_2
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v2
-
-    invoke-virtual {p1, v1}, Ljwh;->e(I)V
-
-    invoke-virtual {p0, p1, v0}, Ljqr;->storeUnknownField(Ljwh;I)Z
-
-    goto :goto_0
-
-    :sswitch_4
-    invoke-virtual {p1}, Ljwh;->c()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ljqr;->c:Ljava/lang/String;
-
-    goto :goto_0
-
-    :sswitch_5
-    invoke-virtual {p1}, Ljwh;->f()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v0
-
-    iput v0, p0, Ljqr;->d:F
-
-    goto :goto_0
-
-    :sswitch_6
-    invoke-virtual {p1}, Ljwh;->f()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v0
-
-    iput v0, p0, Ljqr;->e:F
-
-    goto :goto_0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x12 -> :sswitch_2
-        0x18 -> :sswitch_3
-        0x22 -> :sswitch_4
-        0x2d -> :sswitch_5
-        0x35 -> :sswitch_6
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-
-# virtual methods
-.method protected final computeSerializedSize()I
-    .locals 4
-
-    const/4 v3, 0x0
-
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
-
-    move-result v0
-
-    iget v1, p0, Ljqr;->a:I
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget v2, p0, Ljqr;->a:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
+    :goto_0
+    return-object v0
 
     :cond_0
-    iget-object v1, p0, Ljqr;->f:Ljava/lang/String;
+    new-instance v0, Ljqq;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {p0}, Ljqr;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    iget-object v1, p0, Ljqr;->f:Ljava/lang/String;
+    move-result-object v1
 
-    const-string v2, ""
+    invoke-direct {v0, v1}, Ljqq;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-object v2, p0, Ljqr;->f:Ljava/lang/String;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjava/lang/String;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    iget v1, p0, Ljqr;->b:I
-
-    if-eqz v1, :cond_2
-
-    const/4 v1, 0x3
-
-    iget v2, p0, Ljqr;->b:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    iget-object v1, p0, Ljqr;->c:Ljava/lang/String;
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Ljqr;->c:Ljava/lang/String;
-
-    const-string v2, ""
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Ljqr;->c:Ljava/lang/String;
-
-    invoke-static {v1, v2}, Ljwi;->b(ILjava/lang/String;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_3
-    iget v1, p0, Ljqr;->d:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_4
-
-    const/16 v1, 0x28
-
-    invoke-static {v1}, Ljwi;->d(I)I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x4
-
-    add-int/2addr v0, v1
-
-    :cond_4
-    iget v1, p0, Ljqr;->e:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_5
-
-    const/16 v1, 0x30
-
-    invoke-static {v1}, Ljwi;->d(I)I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, 0x4
-
-    add-int/2addr v0, v1
-
-    :cond_5
-    return v0
+    goto :goto_0
 .end method
 
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 1
+.method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .locals 2
 
-    invoke-direct {p0, p1}, Ljqr;->a(Ljwh;)Ljqr;
+    const v0, 0x7f040044
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
-    .locals 3
+.method public final onDestroy()V
+    .locals 2
+
+    invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroy()V
+
+    invoke-virtual {p0}, Ljqr;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getSupportLoaderManager()Landroid/support/v4/app/LoaderManager;
+
+    move-result-object v0
+
+    const v1, 0xd431
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/app/LoaderManager;->destroyLoader(I)V
+
+    return-void
+.end method
+
+.method public final onDetach()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDetach()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ljqr;->a:Ljqt;
+
+    return-void
+.end method
+
+.method public final synthetic onLoadFinished(Led;Ljava/lang/Object;)V
+    .locals 1
+
+    check-cast p2, Ljava/util/List;
+
+    iget-object v0, p0, Ljqr;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->clear()V
+
+    iget-object v0, p0, Ljqr;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0, p2}, Landroid/widget/ArrayAdapter;->addAll(Ljava/util/Collection;)V
+
+    iget-object v0, p0, Ljqr;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
+
+    return-void
+.end method
+
+.method public final onLoaderReset(Led;)V
+    .locals 1
+
+    iget-object v0, p0, Ljqr;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->clear()V
+
+    iget-object v0, p0, Ljqr;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
+
+    return-void
+.end method
+
+.method public final onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+    .locals 5
+
+    invoke-super {p0, p1, p2}, Landroid/support/v4/app/Fragment;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
+
+    invoke-virtual {p0}, Ljqr;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/widget/ArrayAdapter;
+
+    const v2, 0x7f040041
+
+    const v3, 0x7f0e0143
+
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-direct {v1, v0, v2, v3, v4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;IILjava/util/List;)V
+
+    iput-object v1, p0, Ljqr;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getSupportLoaderManager()Landroid/support/v4/app/LoaderManager;
+
+    move-result-object v0
+
+    const v1, 0xd431
 
     const/4 v2, 0x0
 
-    iget v0, p0, Ljqr;->a:I
+    invoke-virtual {v0, v1, v2, p0}, Landroid/support/v4/app/LoaderManager;->initLoader(ILandroid/os/Bundle;Landroid/support/v4/app/LoaderManager$LoaderCallbacks;)Led;
 
-    if-eqz v0, :cond_0
+    const v0, 0x7f0e0147
 
-    const/4 v0, 0x1
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iget v1, p0, Ljqr;->a:I
+    move-result-object v0
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    check-cast v0, Landroid/widget/ListView;
 
-    :cond_0
-    iget-object v0, p0, Ljqr;->f:Ljava/lang/String;
+    iget-object v1, p0, Ljqr;->b:Landroid/widget/ArrayAdapter;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    iget-object v0, p0, Ljqr;->f:Ljava/lang/String;
+    new-instance v1, Ljqs;
 
-    const-string v1, ""
+    invoke-direct {v1, p0}, Ljqs;-><init>(Ljqr;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x2
-
-    iget-object v1, p0, Ljqr;->f:Ljava/lang/String;
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjava/lang/String;)V
-
-    :cond_1
-    iget v0, p0, Ljqr;->b:I
-
-    if-eqz v0, :cond_2
-
-    const/4 v0, 0x3
-
-    iget v1, p0, Ljqr;->b:I
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
-
-    :cond_2
-    iget-object v0, p0, Ljqr;->c:Ljava/lang/String;
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Ljqr;->c:Ljava/lang/String;
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    const/4 v0, 0x4
-
-    iget-object v1, p0, Ljqr;->c:Ljava/lang/String;
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(ILjava/lang/String;)V
-
-    :cond_3
-    iget v0, p0, Ljqr;->d:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_4
-
-    const/4 v0, 0x5
-
-    iget v1, p0, Ljqr;->d:F
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
-
-    :cond_4
-    iget v0, p0, Ljqr;->e:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_5
-
-    const/4 v0, 0x6
-
-    iget v1, p0, Ljqr;->e:F
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(IF)V
-
-    :cond_5
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     return-void
 .end method

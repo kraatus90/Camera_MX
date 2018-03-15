@@ -1,23 +1,41 @@
-.class public interface abstract Lais;
+.class final Lais;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Laiq;
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(Laek;)Lahg;
-.end method
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-.method public abstract a(Laek;Lahg;)Lahg;
-.end method
+    const-string v0, "GlideExecutor"
 
-.method public abstract a()V
-.end method
+    const/4 v1, 0x6
 
-.method public abstract a(F)V
-.end method
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
-.method public abstract a(I)V
-.end method
+    move-result v0
 
-.method public abstract a(Lait;)V
+    if-eqz v0, :cond_0
+
+    const-string v0, "GlideExecutor"
+
+    const-string v1, "Request threw uncaught throwable"
+
+    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_0
+    return-void
 .end method

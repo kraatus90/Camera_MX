@@ -1,29 +1,39 @@
-.class public interface abstract Lass;
+.class final synthetic Lass;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Licn;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Lasr;
+
+
+# direct methods
+.method constructor <init>(Lasr;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lass;->a:Lasr;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Landroid/graphics/PointF;)Lgzp;
-.end method
+.method public final run()V
+    .locals 2
 
-.method public abstract a(Ljht;)Lgzp;
-.end method
+    iget-object v0, p0, Lass;->a:Lasr;
 
-.method public abstract a()V
-.end method
+    iget-object v1, v0, Lasr;->a:Late;
 
-.method public abstract a(Z)V
-.end method
+    invoke-interface {v1}, Late;->a()V
 
-.method public abstract b()Lgzp;
-.end method
+    iget-object v0, v0, Lasr;->b:Lfam;
 
-.method public abstract b(Z)V
-.end method
+    invoke-interface {v0}, Lfam;->b()V
 
-.method public abstract c()Lgzp;
+    return-void
 .end method

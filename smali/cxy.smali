@@ -1,60 +1,77 @@
-.class final Lcxy;
-.super Ljava/lang/Object;
+.class public final Lcxy;
+.super Lcxq;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:[B
-
-.field private synthetic b:I
-
-.field private synthetic c:Lcxx;
+.field public final c:Ljrf;
 
 
 # direct methods
-.method constructor <init>(Lcxx;[BI)V
+.method public constructor <init>(Lcxq;Ljrf;)V
     .locals 0
 
-    iput-object p1, p0, Lcxy;->c:Lcxx;
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrv;)V
 
-    iput-object p2, p0, Lcxy;->a:[B
-
-    iput p3, p0, Lcxy;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcxy;->c:Ljrf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final synthetic b()Lbrv;
+    .locals 1
 
-    iget-object v0, p0, Lcxy;->a:[B
-
-    iget v1, p0, Lcxy;->b:I
-
-    invoke-static {v0, v1}, Lccv;->a([BI)Landroid/graphics/Bitmap;
+    invoke-virtual {p0}, Lcxy;->e()Lcxq;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcxy;->c:Lcxx;
+    return-object v0
+.end method
 
-    iget-object v1, v1, Lcxx;->a:Lcxc;
+.method public final c()V
+    .locals 1
 
-    iget-object v1, v1, Lcng;->a:Lcnh;
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
 
-    new-instance v2, Lcvo;
+    move-result-object v0
 
-    iget-object v3, p0, Lcxy;->a:[B
+    check-cast v0, Lcxo;
 
-    invoke-direct {v2, v0, v3}, Lcvo;-><init>(Landroid/graphics/Bitmap;[B)V
+    iget-object v0, v0, Lcxo;->j:Lfxx;
 
-    invoke-interface {v1, v2}, Lcnh;->a(Ljava/lang/Object;)V
+    invoke-interface {v0}, Lfxx;->b()V
 
     return-void
+.end method
+
+.method public final e()Lcxq;
+    .locals 3
+
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v1, v0, Lcxo;->O:Lbyy;
+
+    invoke-virtual {p0}, Lbrv;->d()Lihb;
+
+    move-result-object v0
+
+    check-cast v0, Lcxo;
+
+    iget-object v0, v0, Lcxo;->c:Liay;
+
+    new-instance v2, Lcxz;
+
+    invoke-direct {v2, p0, v1}, Lcxz;-><init>(Lcxy;Lbyy;)V
+
+    invoke-virtual {v0, v2}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

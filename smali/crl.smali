@@ -3,54 +3,145 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lihg;
+
+
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x15
+.end annotation
+
+
+# static fields
+.field private static final b:Ljava/lang/String;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public volatile a:Lind;
 
-.field private b:Ljxn;
+.field private c:Libw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "HdrPVFMetaDataSaver"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcrl;->b:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ldsm;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcrl;->a:Ljxn;
+    new-instance v0, Libw;
 
-    iput-object p2, p0, Lcrl;->b:Ljxn;
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcrl;->c:Libw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lcrl;->a:Ljxn;
+    check-cast p1, Lind;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->COLOR_CORRECTION_GAINS:Landroid/hardware/camera2/CaptureResult$Key;
 
-    move-result-object v0
-
-    check-cast v0, Lcqp;
-
-    iget-object v1, p0, Lcrl;->b:Ljxn;
-
-    new-instance v2, Lcqv;
-
-    invoke-direct {v2, v0, v1}, Lcqv;-><init>(Lcqp;Ljxn;)V
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v2, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcqo;
+    if-nez v0, :cond_0
 
-    return-object v0
+    sget-object v0, Lcrl;->b:Ljava/lang/String;
+
+    const-string v1, "skipping frame since cc gains were missing"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->COLOR_CORRECTION_TRANSFORM:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Lcrl;->b:Ljava/lang/String;
+
+    const-string v1, "skipping frame since cc transforms were missing"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lcrl;->b:Ljava/lang/String;
+
+    const-string v1, "skipping frame since aeRegions were missing"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p1}, Ldsm;->a(Lind;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    sget-object v0, Lcrl;->b:Ljava/lang/String;
+
+    const-string v1, "skipping frame due to touch to expose / focus"
+
+    invoke-static {v0, v1}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_3
+    iput-object p1, p0, Lcrl;->a:Lind;
+
+    iget-object v0, p0, Lcrl;->c:Libw;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Libw;->a(Ljava/lang/Object;)V
+
+    goto :goto_0
 .end method

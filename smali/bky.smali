@@ -1,29 +1,77 @@
-.class public Lbky;
-.super Lbkz;
-.source "PG"
+.class public final synthetic Lbky;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/preference/Preference$OnPreferenceClickListener;
 
 
 # instance fields
-.field public a:Z
+.field private final a:Lbvi;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Lbvi;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lbky;-><init>(Ljava/lang/String;Z)V
+    iput-object p1, p0, Lbky;->a:Lbvi;
 
     return-void
 .end method
 
-.method protected constructor <init>(Ljava/lang/String;Z)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Lbkz;-><init>(Ljava/lang/String;)V
+# virtual methods
+.method public final onPreferenceClick(Landroid/preference/Preference;)Z
+    .locals 5
 
-    iput-boolean p2, p0, Lbky;->a:Z
+    iget-object v1, p0, Lbky;->a:Lbvi;
 
-    return-void
+    iget-object v0, v1, Lbvi;->m:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getPreferenceCount()I
+
+    move-result v2
+
+    iget-object v0, v1, Lbvi;->c:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, v2, :cond_0
+
+    iget-object v4, v1, Lbvi;->m:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v4, v0}, Landroid/preference/PreferenceScreen;->getPreference(I)Landroid/preference/Preference;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    iget-object v0, v1, Lbvi;->m:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->removeAll()V
+
+    iget-object v0, v1, Lbvi;->m:Landroid/preference/PreferenceScreen;
+
+    invoke-virtual {v1, v0}, Lbvi;->a(Landroid/preference/PreferenceScreen;)V
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

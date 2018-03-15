@@ -1,96 +1,95 @@
-.class public final Lfgr;
+.class final Lfgr;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Lfga;
 
 
 # instance fields
-.field private synthetic a:Ljht;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private synthetic b:Landroid/content/Context;
+.field private final b:Lfga;
+
+.field private final synthetic c:Lfgq;
 
 
 # direct methods
-.method public constructor <init>(Ljht;Landroid/content/Context;)V
-    .locals 0
+.method constructor <init>(Lfgq;Lfga;)V
+    .locals 2
 
-    iput-object p1, p0, Lfgr;->a:Ljht;
-
-    iput-object p2, p0, Lfgr;->b:Landroid/content/Context;
+    iput-object p1, p0, Lfgr;->c:Lfgq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lfgr;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p2, p0, Lfgr;->b:Lfga;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final a(Ljava/util/List;Lfhp;)V
+    .locals 1
 
-    const/4 v2, 0x1
+    iget-object v0, p0, Lfgr;->b:Lfga;
 
-    const/4 v1, 0x0
+    invoke-interface {v0, p1, p2}, Lfga;->a(Ljava/util/List;Lfhp;)V
 
-    check-cast p1, Ljava/util/List;
+    return-void
+.end method
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final close()V
+    .locals 3
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    iget-object v1, p0, Lfgr;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v1
 
-    move-result v3
+    if-nez v1, :cond_0
 
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v1, p0, Lfgr;->c:Lfgq;
 
-    move-result-object v0
+    iget-object v1, v1, Lfgq;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v1
 
-    move-result v0
+    iget-object v2, p0, Lfgr;->c:Lfgq;
 
-    iget-object v4, p0, Lfgr;->a:Ljht;
+    iget-object v2, v2, Lfgq;->b:Libw;
 
-    invoke-virtual {v4}, Ljht;->a()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    if-eqz v3, :cond_1
-
-    :cond_0
-    iget-object v3, p0, Lfgr;->b:Landroid/content/Context;
-
-    invoke-static {v3}, Levm;->a(Landroid/content/Context;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    if-nez v0, :cond_2
-
-    :cond_1
-    move v0, v2
+    if-nez v1, :cond_1
 
     :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v2, v0}, Libw;->a(Ljava/lang/Object;)V
 
-    :cond_2
-    move v0, v1
+    iget-object v0, p0, Lfgr;->b:Lfga;
+
+    invoke-interface {v0}, Lfga;->close()V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

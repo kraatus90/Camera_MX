@@ -909,9 +909,9 @@
 
     iput-boolean v3, p0, Lcom/google/android/libraries/smartburst/filterfw/GraphRunner$GraphRunLoop;->mClosedSuccessfully:Z
 
-    sget-object v4, Ljvs;->a:Ljvt;
+    sget-object v4, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v4, v0}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v4, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     invoke-static {}, Lcom/google/android/libraries/smartburst/filterfw/GraphRunner;->access$200()Lcom/google/android/libraries/smartburst/filterfw/GraphRunner$Event;
 

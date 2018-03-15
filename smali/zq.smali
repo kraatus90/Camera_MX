@@ -1,71 +1,42 @@
 .class final Lzq;
-.super Lace;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Landroid/hardware/Camera$CameraInfo;
+.field private final synthetic a:[B
+
+.field private final synthetic b:Lzp;
 
 
 # direct methods
-.method constructor <init>(Landroid/hardware/Camera$CameraInfo;)V
+.method constructor <init>(Lzp;[B)V
     .locals 0
 
-    invoke-direct {p0}, Lace;-><init>()V
+    iput-object p1, p0, Lzq;->b:Lzp;
 
-    iput-object p1, p0, Lzq;->a:Landroid/hardware/Camera$CameraInfo;
+    iput-object p2, p0, Lzq;->a:[B
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
-
-    iget-object v0, p0, Lzq;->a:Landroid/hardware/Camera$CameraInfo;
-
-    iget v0, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final b()Z
+.method public final run()V
     .locals 2
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lzq;->b:Lzp;
 
-    iget-object v1, p0, Lzq;->a:Landroid/hardware/Camera$CameraInfo;
+    iget-object v0, v0, Lzp;->a:Laam;
 
-    iget v1, v1, Landroid/hardware/Camera$CameraInfo;->facing:I
+    iget-object v1, p0, Lzq;->a:[B
 
-    if-ne v1, v0, :cond_0
+    invoke-interface {v0, v1}, Laam;->a([B)V
 
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public final c()I
-    .locals 1
-
-    iget-object v0, p0, Lzq;->a:Landroid/hardware/Camera$CameraInfo;
-
-    iget v0, v0, Landroid/hardware/Camera$CameraInfo;->orientation:I
-
-    return v0
+    return-void
 .end method

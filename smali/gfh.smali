@@ -1,51 +1,55 @@
-.class public Lgfh;
-.super Lgfn;
-.source "PG"
+.class final synthetic Lgfh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Lgfg;
 
 
 # direct methods
-.method public constructor <init>(Lgem;Lgfb;)V
+.method constructor <init>(Lgfg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lgfn;-><init>(Lgem;Lgfb;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgfh;->a:Lgfg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final b(Liic;)Z
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    const/4 v1, 0x1
+    const/4 v3, 0x3
 
-    sget-object v0, Lhis;->b:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, p0, Lgfh;->a:Lgfg;
 
-    invoke-interface {p1, v0}, Liic;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v1, v0, Lgfg;->c:Landroid/hardware/Sensor;
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v1, v0, Lgfg;->b:Landroid/hardware/SensorManager;
 
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v2, v0, Lgfg;->c:Landroid/hardware/Sensor;
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-ne v0, v1, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    return v0
+    invoke-virtual {v1, v0, v2, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
     :cond_0
-    const/4 v0, 0x0
+    iget-object v1, v0, Lgfg;->d:Landroid/hardware/Sensor;
 
-    goto :goto_0
+    if-eqz v1, :cond_1
+
+    iget-object v1, v0, Lgfg;->b:Landroid/hardware/SensorManager;
+
+    iget-object v2, v0, Lgfg;->d:Landroid/hardware/Sensor;
+
+    invoke-virtual {v1, v0, v2, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+
+    :cond_1
+    return-void
 .end method

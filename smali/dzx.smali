@@ -1,52 +1,60 @@
-.class public final Ldzx;
+.class final Ldzx;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ldzu;
+.field private final synthetic a:Ljava/util/List;
+
+.field private final synthetic b:Landroid/graphics/RectF;
 
 
 # direct methods
-.method private constructor <init>(Ldzu;)V
+.method constructor <init>(Ljava/util/List;Landroid/graphics/RectF;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldzx;->a:Ljava/util/List;
 
-    iput-object p1, p0, Ldzx;->a:Ldzu;
+    iput-object p2, p0, Ldzx;->b:Landroid/graphics/RectF;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ldzu;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldzx;
-
-    invoke-direct {v0, p0}, Ldzx;-><init>(Ldzu;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Ldzx;->a:Ldzu;
+    iget-object v0, p0, Ldzx;->a:Ljava/util/List;
 
-    iget-object v0, v0, Ldzu;->a:Liag;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    move-result-object v1
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liau;
+    check-cast v0, Lgtn;
 
-    return-object v0
+    iget-object v2, p0, Ldzx;->b:Landroid/graphics/RectF;
+
+    invoke-interface {v0, v2}, Lgtn;->a(Landroid/graphics/RectF;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

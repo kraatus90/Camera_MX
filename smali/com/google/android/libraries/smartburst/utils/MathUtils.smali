@@ -89,177 +89,226 @@
 .end method
 
 .method private static a([FZ)[I
-    .locals 7
+    .locals 8
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    array-length v2, p0
+    array-length v3, p0
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
-    new-array v0, v5, [I
+    new-array v0, v2, [I
 
     :goto_0
     return-object v0
 
     :cond_0
-    if-ne v2, v0, :cond_1
+    if-ne v3, v1, :cond_1
 
-    new-array v0, v0, [I
+    new-array v0, v1, [I
 
-    aput v5, v0, v5
+    aput v2, v0, v2
 
     goto :goto_0
 
     :cond_1
     if-eqz p1, :cond_2
 
-    aget v3, p0, v5
+    aget v4, p0, v2
 
-    aget v4, p0, v0
+    aget v5, p0, v1
 
-    cmpl-float v3, v3, v4
+    cmpl-float v4, v4, v5
 
-    if-gtz v3, :cond_3
+    if-gtz v4, :cond_3
 
     :cond_2
     if-nez p1, :cond_4
 
-    aget v3, p0, v5
+    aget v4, p0, v2
 
-    aget v4, p0, v0
+    aget v5, p0, v1
 
-    cmpg-float v3, v3, v4
+    cmpg-float v4, v4, v5
 
-    if-gez v3, :cond_4
+    if-gez v4, :cond_4
 
     :cond_3
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_4
     :goto_1
-    add-int/lit8 v3, v2, -0x1
+    add-int/lit8 v4, v3, -0x1
 
-    if-ge v0, v3, :cond_a
+    if-ge v1, v4, :cond_a
 
-    aget v3, p0, v0
+    aget v4, p0, v1
 
-    add-int/lit8 v4, v0, -0x1
-
-    aget v4, p0, v4
-
-    add-int/lit8 v5, v0, 0x1
+    add-int/lit8 v5, v1, -0x1
 
     aget v5, p0, v5
 
+    add-int/lit8 v6, v1, 0x1
+
+    aget v6, p0, v6
+
     if-eqz p1, :cond_5
 
-    cmpl-float v6, v3, v4
+    cmpl-float v7, v4, v5
 
-    if-ltz v6, :cond_5
+    if-ltz v7, :cond_5
 
-    cmpl-float v6, v3, v5
+    cmpl-float v7, v4, v6
 
-    if-gtz v6, :cond_8
+    if-gtz v7, :cond_8
 
     :cond_5
     if-eqz p1, :cond_6
 
-    cmpl-float v6, v3, v4
+    cmpl-float v7, v4, v5
 
-    if-lez v6, :cond_6
+    if-lez v7, :cond_6
 
-    cmpl-float v6, v3, v5
+    cmpl-float v7, v4, v6
 
-    if-gez v6, :cond_8
+    if-gez v7, :cond_8
 
     :cond_6
     if-nez p1, :cond_7
 
-    cmpg-float v6, v3, v4
+    cmpg-float v7, v4, v5
 
-    if-gez v6, :cond_7
+    if-gez v7, :cond_7
 
-    cmpg-float v6, v3, v5
+    cmpg-float v7, v4, v6
 
-    if-lez v6, :cond_8
+    if-lez v7, :cond_8
 
     :cond_7
     if-nez p1, :cond_9
 
-    cmpg-float v4, v3, v4
+    cmpg-float v5, v4, v5
 
-    if-gtz v4, :cond_9
+    if-gtz v5, :cond_9
 
-    cmpg-float v3, v3, v5
+    cmpg-float v4, v4, v6
 
-    if-gez v3, :cond_9
+    if-gez v4, :cond_9
 
     :cond_8
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_9
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
     :cond_a
     if-eqz p1, :cond_b
 
-    add-int/lit8 v0, v2, -0x1
+    add-int/lit8 v1, v3, -0x1
 
-    aget v0, p0, v0
+    aget v1, p0, v1
 
-    add-int/lit8 v3, v2, -0x2
+    add-int/lit8 v4, v3, -0x2
 
-    aget v3, p0, v3
+    aget v4, p0, v4
 
-    cmpl-float v0, v0, v3
+    cmpl-float v1, v1, v4
 
-    if-gtz v0, :cond_c
+    if-gtz v1, :cond_c
 
     :cond_b
     if-nez p1, :cond_d
 
-    add-int/lit8 v0, v2, -0x1
+    add-int/lit8 v1, v3, -0x1
 
-    aget v0, p0, v0
+    aget v1, p0, v1
 
-    add-int/lit8 v3, v2, -0x2
+    add-int/lit8 v4, v3, -0x2
 
-    aget v3, p0, v3
+    aget v4, p0, v4
 
-    cmpg-float v0, v0, v3
+    cmpg-float v1, v1, v4
 
-    if-gez v0, :cond_d
+    if-gez v1, :cond_d
 
     :cond_c
-    add-int/lit8 v0, v2, -0x1
+    add-int/lit8 v1, v3, -0x1
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_d
-    invoke-static {v1}, Ljwd;->a(Ljava/util/Collection;)[I
+    instance-of v1, v0, Lkbg;
+
+    if-eqz v1, :cond_e
+
+    check-cast v0, Lkbg;
+
+    iget-object v1, v0, Lkbg;->a:[I
+
+    iget v2, v0, Lkbg;->b:I
+
+    iget v0, v0, Lkbg;->c:I
+
+    invoke-static {v1, v2, v0}, Ljava/util/Arrays;->copyOfRange([III)[I
 
     move-result-object v0
+
+    goto/16 :goto_0
+
+    :cond_e
+    invoke-interface {v0}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    new-array v1, v4, [I
+
+    :goto_2
+    if-ge v2, v4, :cond_f
+
+    aget-object v0, v3, v2
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+
+    move-result v0
+
+    aput v0, v1, v2
+
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    goto :goto_2
+
+    :cond_f
+    move-object v0, v1
 
     goto/16 :goto_0
 .end method
@@ -494,7 +543,7 @@
     goto :goto_0
 .end method
 
-.method public static calcSigmoidParams(FFFF)Ljgf;
+.method public static calcSigmoidParams(FFFF)Ljpr;
     .locals 4
 
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
@@ -515,9 +564,9 @@
 
     invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
 
-    new-instance v0, Ljgf;
+    new-instance v0, Ljpr;
 
-    invoke-direct {v0}, Ljgf;-><init>()V
+    invoke-direct {v0}, Ljpr;-><init>()V
 
     return-object v0
 .end method
@@ -685,36 +734,36 @@
     return-object v0
 .end method
 
-.method public static fitSizeAround(Ljgh;Ljgh;)Ljgh;
+.method public static fitSizeAround(Ljpt;Ljpt;)Ljpt;
     .locals 3
 
-    iget v0, p0, Ljgh;->b:I
+    iget v0, p0, Ljpt;->b:I
 
-    iget v1, p1, Ljgh;->a:I
+    iget v1, p1, Ljpt;->a:I
 
     mul-int/2addr v0, v1
 
-    iget v1, p1, Ljgh;->b:I
+    iget v1, p1, Ljpt;->b:I
 
     div-int/2addr v0, v1
 
-    iget v1, p0, Ljgh;->a:I
+    iget v1, p0, Ljpt;->a:I
 
     if-lt v0, v1, :cond_0
 
-    iget v0, p1, Ljgh;->a:I
+    iget v0, p1, Ljpt;->a:I
 
-    iget v1, p1, Ljgh;->a:I
+    iget v1, p1, Ljpt;->a:I
 
-    iget v2, p0, Ljgh;->b:I
+    iget v2, p0, Ljpt;->b:I
 
     mul-int/2addr v1, v2
 
-    iget v2, p0, Ljgh;->a:I
+    iget v2, p0, Ljpt;->a:I
 
     div-int/2addr v1, v2
 
-    invoke-static {v0, v1}, Ljgh;->a(II)Ljgh;
+    invoke-static {v0, v1}, Ljpt;->a(II)Ljpt;
 
     move-result-object v0
 
@@ -722,55 +771,55 @@
     return-object v0
 
     :cond_0
-    iget v0, p1, Ljgh;->b:I
+    iget v0, p1, Ljpt;->b:I
 
-    iget v1, p0, Ljgh;->a:I
+    iget v1, p0, Ljpt;->a:I
 
     mul-int/2addr v0, v1
 
-    iget v1, p0, Ljgh;->b:I
+    iget v1, p0, Ljpt;->b:I
 
     div-int/2addr v0, v1
 
-    iget v1, p1, Ljgh;->b:I
+    iget v1, p1, Ljpt;->b:I
 
-    invoke-static {v0, v1}, Ljgh;->a(II)Ljgh;
+    invoke-static {v0, v1}, Ljpt;->a(II)Ljpt;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public static fitSizeInside(Ljgh;Ljgh;)Ljgh;
+.method public static fitSizeInside(Ljpt;Ljpt;)Ljpt;
     .locals 3
 
-    iget v0, p0, Ljgh;->b:I
+    iget v0, p0, Ljpt;->b:I
 
-    iget v1, p1, Ljgh;->a:I
+    iget v1, p1, Ljpt;->a:I
 
     mul-int/2addr v0, v1
 
-    iget v1, p1, Ljgh;->b:I
+    iget v1, p1, Ljpt;->b:I
 
     div-int/2addr v0, v1
 
-    iget v1, p0, Ljgh;->a:I
+    iget v1, p0, Ljpt;->a:I
 
     if-lt v0, v1, :cond_0
 
-    iget v0, p1, Ljgh;->b:I
+    iget v0, p1, Ljpt;->b:I
 
-    iget v1, p0, Ljgh;->a:I
+    iget v1, p0, Ljpt;->a:I
 
     mul-int/2addr v0, v1
 
-    iget v1, p0, Ljgh;->b:I
+    iget v1, p0, Ljpt;->b:I
 
     div-int/2addr v0, v1
 
-    iget v1, p1, Ljgh;->b:I
+    iget v1, p1, Ljpt;->b:I
 
-    invoke-static {v0, v1}, Ljgh;->a(II)Ljgh;
+    invoke-static {v0, v1}, Ljpt;->a(II)Ljpt;
 
     move-result-object v0
 
@@ -778,19 +827,19 @@
     return-object v0
 
     :cond_0
-    iget v0, p1, Ljgh;->a:I
+    iget v0, p1, Ljpt;->a:I
 
-    iget v1, p1, Ljgh;->a:I
+    iget v1, p1, Ljpt;->a:I
 
-    iget v2, p0, Ljgh;->b:I
+    iget v2, p0, Ljpt;->b:I
 
     mul-int/2addr v1, v2
 
-    iget v2, p0, Ljgh;->a:I
+    iget v2, p0, Ljpt;->a:I
 
     div-int/2addr v1, v2
 
-    invoke-static {v0, v1}, Ljgh;->a(II)Ljgh;
+    invoke-static {v0, v1}, Ljpt;->a(II)Ljpt;
 
     move-result-object v0
 

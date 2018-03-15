@@ -1,50 +1,56 @@
-.class public final Lcrr;
+.class final Lcrr;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Linl;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Ljava/nio/ByteBuffer;
+
+.field private final b:I
+
+.field private final c:I
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method public constructor <init>(Ljava/nio/ByteBuffer;II)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcrr;->a:Ljxn;
+    iput-object p1, p0, Lcrr;->a:Ljava/nio/ByteBuffer;
+
+    iput p2, p0, Lcrr;->b:I
+
+    iput p3, p0, Lcrr;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a()I
+    .locals 1
 
-    iget-object v0, p0, Lcrr;->a:Ljxn;
+    iget v0, p0, Lcrr;->b:I
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object v0
+.method public final b()I
+    .locals 1
 
-    check-cast v0, Lcsk;
+    iget v0, p0, Lcrr;->c:I
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    return v0
+.end method
 
-    move-result-object v0
+.method public final c()Ljava/nio/ByteBuffer;
+    .locals 1
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuw;
+    iget-object v0, p0, Lcrr;->a:Ljava/nio/ByteBuffer;
 
     return-object v0
 .end method

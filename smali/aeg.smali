@@ -4,5 +4,8 @@
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/Object;Ljava/io/File;Laeo;)Z
+.method public abstract a(Ljava/lang/Exception;)V
+.end method
+
+.method public abstract a(Ljava/lang/Object;)V
 .end method

@@ -1,60 +1,93 @@
-.class public final Lcuj;
+.class final Lcuj;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkds;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lcui;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Lcui;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcuj;->a:Lcui;
 
-    iput-object p1, p0, Lcuj;->a:Ljxn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    iget-object v0, p0, Lcuj;->a:Ljxn;
+    sget-object v0, Lctw;->c:Ljava/lang/String;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    const-string v1, "error when starting burst (after stop)"
 
-    move-result-object v0
+    invoke-static {v0, v1, p1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    check-cast v0, Lfic;
+    return-void
+.end method
 
-    new-instance v1, Lbkp;
+.method public final synthetic b_(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, v0, Lfic;->f:Lhaz;
+    check-cast p1, Ljava/lang/Boolean;
 
-    const v2, 0x7f0e00df
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v0, v2}, Lhaz;->a(I)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Lcom/google/android/apps/camera/faceboxes/FaceView;
+    iget-object v0, p0, Lcuj;->a:Lcui;
 
-    invoke-direct {v1, v0}, Lbkp;-><init>(Lcom/google/android/apps/camera/faceboxes/FaceView;)V
+    iget-object v0, v0, Lcui;->b:Lctw;
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, v0, Lctw;->y:Lgkf;
 
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lgkf;->b()V
 
-    move-result-object v0
+    iget-object v0, p0, Lcuj;->a:Lcui;
 
-    check-cast v0, Lbkp;
+    iget-object v0, v0, Lcui;->a:Lcom/google/android/apps/camera/stats/BurstSessionStatistics;
 
-    return-object v0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/BurstSessionStatistics;->e()V
+
+    iget-object v0, p0, Lcuj;->a:Lcui;
+
+    iget-object v0, v0, Lcui;->b:Lctw;
+
+    iget-object v0, v0, Lctw;->F:Lbmn;
+
+    iget-object v1, p0, Lcuj;->a:Lcui;
+
+    iget-object v1, v1, Lcui;->b:Lctw;
+
+    iget-object v1, v1, Lctw;->s:Lbkx;
+
+    invoke-virtual {v1}, Lbkx;->b()Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lbmn;->b(Z)V
+
+    iget-object v0, p0, Lcuj;->a:Lcui;
+
+    iget-object v0, v0, Lcui;->b:Lctw;
+
+    iget-object v0, v0, Lctw;->ai:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    :cond_0
+    return-void
 .end method

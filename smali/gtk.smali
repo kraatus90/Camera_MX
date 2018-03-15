@@ -3,107 +3,44 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Z
-
-.field private synthetic b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Z)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iput-boolean p2, p0, Lgtk;->a:Z
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgtk;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
+    iget-object v0, p0, Lgtk;->a:Lkgv;
 
-    iget-boolean v1, p0, Lgtk;->a:Z
-
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$3301(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Z)V
-
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iget-boolean v1, p0, Lgtk;->a:Z
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->setClickEnabled(Z)V
-
-    iget-boolean v0, p0, Lgtk;->a:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iget-object v1, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iget-object v1, v1, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->disableChangeAnimationRunnable:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$3400(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;Z)V
-
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$3500(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Lgua;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v1, Lgua;->a:Lgua;
+    check-cast v0, Lgtf;
 
-    if-ne v0, v1, :cond_0
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$600(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->access$200(Lcom/google/android/apps/camera/shutterbutton/ShutterButton;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    check-cast v0, Lgtf;
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iget-object v1, p0, Lgtk;->b:Lcom/google/android/apps/camera/shutterbutton/ShutterButton;
-
-    iget-object v1, v1, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->disableChangeAnimationRunnable:Ljava/lang/Runnable;
-
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/shutterbutton/ShutterButton;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_0
+    return-object v0
 .end method

@@ -1,73 +1,152 @@
 .class final Lche;
-.super Ljava/lang/Object;
+.super Lum;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lchd;
+.field private final a:I
+
+.field private final b:I
+
+.field private final c:I
+
+.field private final d:Lte;
 
 
 # direct methods
-.method constructor <init>(Lchd;)V
-    .locals 0
+.method public constructor <init>(IILte;)V
+    .locals 2
 
-    iput-object p1, p0, Lche;->a:Lchd;
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lum;-><init>()V
+
+    if-lez p2, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iput p1, p0, Lche;->a:I
+
+    iput p2, p0, Lche;->c:I
+
+    iput-object p3, p0, Lche;->d:Lte;
+
+    int-to-float v0, p2
+
+    div-float v0, v1, v0
+
+    sub-float v0, v1, v0
+
+    int-to-float v1, p1
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iput v0, p0, Lche;->b:I
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final a(Landroid/graphics/Rect;Landroid/view/View;Landroid/support/v7/widget/RecyclerView;)V
+    .locals 4
 
-    iget-object v0, p0, Lche;->a:Lchd;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lchd;->b()Z
-
-    move-result v0
-
-    iget-object v1, p0, Lche;->a:Lchd;
-
-    iget-object v1, v1, Lchd;->a:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v2, p0, Lche;->a:Lchd;
-
-    iget-object v2, v2, Lchd;->b:Ljvi;
-
-    iget-object v3, p0, Lche;->a:Lchd;
-
-    const/4 v4, 0x0
-
-    iput-object v4, v3, Lchd;->b:Ljvi;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {p2}, Landroid/support/v7/widget/RecyclerView;->b(Landroid/view/View;)Lve;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljsw;->a(Ljava/lang/Object;)Z
+    if-eqz v0, :cond_1
 
+    invoke-virtual {v0}, Lve;->d()I
+
+    move-result v0
+
+    :goto_0
+    iget v1, p0, Lche;->a:I
+
+    invoke-virtual {p1, v2, v1, v2, v2}, Landroid/graphics/Rect;->set(IIII)V
+
+    iget-object v1, p0, Lche;->d:Lte;
+
+    invoke-virtual {v1, v0}, Lte;->a(I)I
+
+    move-result v1
+
+    iget v2, p0, Lche;->c:I
+
+    if-eq v1, v2, :cond_0
+
+    iget-object v1, p0, Lche;->d:Lte;
+
+    iget v2, p0, Lche;->c:I
+
+    invoke-virtual {v1, v0, v2}, Lte;->a(II)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    iget v1, p0, Lche;->c:I
+
+    int-to-float v1, v1
+
+    div-float/2addr v0, v1
+
+    iget v1, p0, Lche;->a:I
+
+    int-to-float v1, v1
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    iget v1, p0, Lche;->b:I
+
+    sub-int/2addr v1, v0
+
+    sget-object v2, Lhz;->a:Lii;
+
+    invoke-virtual {v2, p3}, Lii;->k(Landroid/view/View;)I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_2
+
+    iput v0, p1, Landroid/graphics/Rect;->right:I
+
+    iput v1, p1, Landroid/graphics/Rect;->left:I
+
+    :cond_0
+    :goto_1
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    const/4 v0, -0x1
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    goto :goto_0
 
-    throw v0
+    :cond_2
+    iput v0, p1, Landroid/graphics/Rect;->left:I
+
+    iput v1, p1, Landroid/graphics/Rect;->right:I
+
+    goto :goto_1
 .end method

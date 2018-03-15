@@ -1,45 +1,64 @@
-.class final Lfaw;
-.super Lezk;
+.class public final Lfaw;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfat;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfat;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfaw;->a:Lfat;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lezk;-><init>(Lezh;)V
+    iput-object p1, p0, Lfaw;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lfaw;
+    .locals 1
+
+    new-instance v0, Lfaw;
+
+    invoke-direct {v0, p0}, Lfaw;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final u()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfaw;->a:Lfat;
+    iget-object v0, p0, Lfaw;->a:Lkgv;
 
-    iget-object v0, v0, Lfat;->o:Lgvj;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    move-result-object v0
 
-    invoke-super {p0}, Lezk;->u()V
+    check-cast v0, Likx;
 
-    iget-object v0, p0, Lfaw;->a:Lfat;
+    new-instance v1, Lfct;
 
-    iget-object v0, v0, Lfat;->o:Lgvj;
+    invoke-interface {v0}, Likx;->d()I
 
-    iget-object v1, p0, Lfaw;->a:Lfat;
+    move-result v0
 
-    iget-object v1, v1, Lfat;->q:Lgvl;
+    invoke-direct {v1, v0}, Lfct;-><init>(I)V
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfct;
+
+    return-object v0
 .end method

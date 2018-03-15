@@ -2,26 +2,43 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public final a:Lgds;
 
-.field public final b:Lfkf;
-
-.field public final c:Landroid/content/Intent;
+# static fields
+.field public static final a:Lbsg;
 
 
 # direct methods
-.method constructor <init>(Lfkf;Lgds;Landroid/content/Intent;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lbsg;
+
+    invoke-direct {v0}, Lbsg;-><init>()V
+
+    sput-object v0, Lbsg;->a:Lbsg;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbsg;->b:Lfkf;
-
-    iput-object p2, p0, Lbsg;->a:Lgds;
-
-    iput-object p3, p0, Lbsg;->c:Landroid/content/Intent;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Lbse;
+
+    invoke-direct {v0}, Lbse;-><init>()V
+
+    return-object v0
 .end method

@@ -1,160 +1,110 @@
 .class public final Leey;
-.super Ljava/lang/Object;
+.super Legp;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lgle;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private c:Lgld;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private d:Lglf;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method public constructor <init>(Legw;Lick;Legm;Legs;Leaf;)V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v4, 0x0
 
-    iput-object p1, p0, Leey;->a:Ljxn;
+    invoke-direct {p0, p1, p2}, Legp;-><init>(Legw;Lick;)V
 
-    iput-object p2, p0, Leey;->b:Ljxn;
+    new-instance v0, Leez;
 
-    iput-object p3, p0, Leey;->c:Ljxn;
+    invoke-direct {v0, p0}, Leez;-><init>(Leey;)V
 
-    iput-object p4, p0, Leey;->d:Ljxn;
+    new-instance v1, Lglf;
+
+    const/4 v2, 0x3
+
+    new-array v2, v2, [Lgla;
+
+    aput-object p3, v2, v4
+
+    const/4 v3, 0x1
+
+    aput-object p4, v2, v3
+
+    const/4 v3, 0x2
+
+    aput-object p5, v2, v3
+
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
+
+    iput-object v1, p0, Leey;->d:Lglf;
+
+    new-instance v0, Lgld;
+
+    iget-object v1, p0, Leey;->d:Lglf;
+
+    invoke-direct {v0, v1, v4}, Lgld;-><init>(Lglf;Z)V
+
+    iput-object v0, p0, Leey;->c:Lgld;
+
+    iget-object v0, p0, Leey;->c:Lgld;
+
+    sget v1, Lep;->bi:I
+
+    iput v1, v0, Lgld;->a:I
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leey;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Leey;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final a()V
+    .locals 1
 
-    iget-object v0, p0, Leey;->a:Ljxn;
+    invoke-super {p0}, Legp;->a()V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Leey;->c:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->c()V
 
-    check-cast v0, Ldsg;
+    return-void
+.end method
 
-    iget-object v1, p0, Leey;->b:Ljxn;
+.method public final b()V
+    .locals 1
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-super {p0}, Legp;->b()V
 
-    move-result-object v1
+    iget-object v0, p0, Leey;->c:Lgld;
 
-    check-cast v1, Ldol;
+    invoke-virtual {v0}, Lgld;->d()V
 
-    iget-object v2, p0, Leey;->c:Ljxn;
+    return-void
+.end method
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+.method public final h()V
+    .locals 0
 
-    move-result-object v2
+    invoke-interface {p0}, Lgle;->i()V
 
-    check-cast v2, Lfun;
+    return-void
+.end method
 
-    iget-object v3, p0, Leey;->d:Ljxn;
+.method public final i()V
+    .locals 1
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Leey;->c:Lgld;
 
-    move-result-object v3
+    invoke-virtual {v0}, Lgld;->e()V
 
-    check-cast v3, Lcop;
+    iget-object v0, p0, Leey;->d:Lglf;
 
-    new-instance v4, Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lglf;->i()V
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v1}, Ldol;->b()Liau;
-
-    move-result-object v1
-
-    invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    sget-object v1, Lfui;->a:Lfui;
-
-    invoke-virtual {v2, v1}, Lfun;->a(Lfui;)Liau;
-
-    move-result-object v1
-
-    invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v3}, Lcop;->b()Lcom/google/googlex/gcam/InitParams;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlex/gcam/InitParams;->getMax_full_metering_sweep_frames()I
-
-    move-result v1
-
-    invoke-interface {v3}, Lcop;->b()Lcom/google/googlex/gcam/InitParams;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/googlex/gcam/InitParams;->getMax_payload_frames()I
-
-    move-result v2
-
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ldsg;->b()Liau;
-
-    move-result-object v3
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {v3, v1}, Liav;->a(Liau;Ljava/lang/Comparable;)Liau;
-
-    move-result-object v1
-
-    invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0}, Ldsg;->b()Liau;
-
-    move-result-object v0
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Liav;->a(Liau;Ljava/lang/Comparable;)Liau;
-
-    move-result-object v0
-
-    invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-static {v4}, Liav;->a(Ljava/util/Collection;)Liau;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liau;
-
-    return-object v0
+    return-void
 .end method

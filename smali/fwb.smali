@@ -1,41 +1,35 @@
-.class final synthetic Lfwb;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljig;
+.class final Lfwb;
+.super Landroid/animation/AnimatorListenerAdapter;
+.source "PG"
 
 
 # instance fields
-.field private a:Ljava/io/File;
-
-.field private b:J
+.field private final synthetic a:Lfvu;
 
 
 # direct methods
-.method constructor <init>(Ljava/io/File;J)V
+.method constructor <init>(Lfvu;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfwb;->a:Lfvu;
 
-    iput-object p1, p0, Lfwb;->a:Ljava/io/File;
-
-    iput-wide p2, p0, Lfwb;->b:J
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 4
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    iget-object v0, p0, Lfwb;->a:Ljava/io/File;
+    iget-object v0, p0, Lfwb;->a:Lfvu;
 
-    iget-wide v2, p0, Lfwb;->b:J
+    iget-object v0, v0, Lfvu;->b:Lfxg;
 
-    invoke-static {v0, v2, v3}, Lfvu;->a(Ljava/io/File;J)Ljava/lang/String;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    iput-boolean v1, v0, Lfxg;->b:Z
 
-    return-object v0
+    return-void
 .end method

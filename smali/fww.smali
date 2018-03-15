@@ -1,114 +1,52 @@
-.class public final Lfww;
+.class public final synthetic Lfww;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Liip;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x13
-.end annotation
+.implements Lfvl;
 
 
 # instance fields
-.field private a:Lgad;
+.field private final a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-.field private b:Lfwy;
+.field private final b:Lfvh;
 
 
 # direct methods
-.method public constructor <init>(Lgad;Lfwy;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;Lfvh;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfww;->a:Lgad;
+    iput-object p1, p0, Lfww;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-    iput-object p2, p0, Lfww;->b:Lfwy;
+    iput-object p2, p0, Lfww;->b:Lfvh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final a(Lfvk;)V
+    .locals 3
 
-    iget-object v0, p0, Lfww;->a:Lgad;
+    iget-object v1, p0, Lfww;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-    invoke-interface {v0}, Lgad;->b()Ljava/lang/Object;
+    iget-object v0, p0, Lfww;->b:Lfvh;
+
+    iget-object v2, v1, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a:Ljava/util/Map;
+
+    invoke-interface {v2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liil;
-
-    const/4 v2, 0x0
-
-    if-nez v0, :cond_1
+    check-cast v0, Lfvl;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Liil;->close()V
+    invoke-interface {v0, p1}, Lfvl;->a(Lfvk;)V
 
     :cond_0
-    :goto_0
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->a()V
+
     return-void
-
-    :cond_1
-    :try_start_0
-    invoke-interface {v0}, Liil;->e()J
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-wide v2
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0}, Liil;->close()V
-
-    :cond_2
-    iget-object v0, p0, Lfww;->b:Lfwy;
-
-    invoke-interface {v0, v2, v3}, Lfwy;->a(J)V
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v2
-
-    :try_start_1
-    throw v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    move-exception v1
-
-    if-eqz v0, :cond_3
-
-    if-eqz v2, :cond_4
-
-    :try_start_2
-    invoke-interface {v0}, Liil;->close()V
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
-
-    :cond_3
-    :goto_1
-    throw v1
-
-    :catch_1
-    move-exception v0
-
-    invoke-static {v2, v0}, Ljvs;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    goto :goto_1
-
-    :cond_4
-    invoke-interface {v0}, Liil;->close()V
-
-    goto :goto_1
 .end method

@@ -1,107 +1,85 @@
-.class final enum Lazp;
-.super Ljava/lang/Enum;
+.class public final Lazp;
+.super Lido;
 .source "PG"
-
-
-# static fields
-.field public static final enum a:Lazp;
-
-.field public static final enum b:Lazp;
-
-.field public static final enum c:Lazp;
-
-.field public static final enum d:Lazp;
-
-.field private static synthetic e:[Lazp;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Lazp;
-
-    const-string v1, "CLOSED"
-
-    invoke-direct {v0, v1, v2}, Lazp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lazp;->a:Lazp;
-
-    new-instance v0, Lazp;
-
-    const-string v1, "READY"
-
-    invoke-direct {v0, v1, v3}, Lazp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lazp;->b:Lazp;
-
-    new-instance v0, Lazp;
-
-    const-string v1, "STARTING_RECORD"
-
-    invoke-direct {v0, v1, v4}, Lazp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lazp;->c:Lazp;
-
-    new-instance v0, Lazp;
-
-    const-string v1, "RECORDING"
-
-    invoke-direct {v0, v1, v5}, Lazp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lazp;->d:Lazp;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lazp;
-
-    sget-object v1, Lazp;->a:Lazp;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lazp;->b:Lazp;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lazp;->c:Lazp;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lazp;->d:Lazp;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Lazp;->e:[Lazp;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lazp;
     .locals 1
 
-    sget-object v0, Lazp;->e:[Lazp;
+    const-string v0, "DirtyLensProp"
 
-    invoke-virtual {v0}, [Lazp;->clone()Ljava/lang/Object;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lick;Lbqc;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lido;-><init>(Lick;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    check-cast p1, Lazw;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/4 v0, 0x0
+
+    :goto_0
+    int-to-long v2, v0
+
+    invoke-interface {p1}, Lazw;->a()J
+
+    move-result-wide v4
+
+    cmp-long v2, v2, v4
+
+    if-gez v2, :cond_0
+
+    invoke-interface {p1, v0}, Lazw;->a(I)F
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v2, "|"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lazp;
+    return-object v0
+.end method
+
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Ljava/lang/String;
+
+    new-instance v0, Lazx;
+
+    invoke-direct {v0}, Lazx;-><init>()V
+
+    invoke-static {p1, v0}, Lazz;->a(Ljava/lang/String;Lazw;)Lazw;
+
+    move-result-object v0
 
     return-object v0
 .end method

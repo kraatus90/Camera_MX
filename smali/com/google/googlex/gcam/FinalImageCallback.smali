@@ -60,130 +60,58 @@
 
 
 # virtual methods
-.method public PreallocatedRgbReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/InterleavedReadViewU8;Lcom/google/googlex/gcam/ExifMetadata;I)V
-    .locals 13
+.method public RgbReady(ILcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ExifMetadata;I)V
+    .locals 11
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FinalImageCallback;->swigCPtr:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
-    invoke-static {p2}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedReadViewU8;)J
-
-    move-result-wide v6
-
-    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
-
-    move-result-wide v9
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    move-object v8, p2
-
-    move-object/from16 v11, p3
-
-    move/from16 v12, p4
-
-    invoke-static/range {v0 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->FinalImageCallback_PreallocatedRgbReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/InterleavedReadViewU8;JLcom/google/googlex/gcam/ExifMetadata;I)V
-
-    return-void
-.end method
-
-.method public PreallocatedYuvReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/YuvReadView;Lcom/google/googlex/gcam/ExifMetadata;I)V
-    .locals 13
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FinalImageCallback;->swigCPtr:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
-    invoke-static {p2}, Lcom/google/googlex/gcam/YuvReadView;->getCPtr(Lcom/google/googlex/gcam/YuvReadView;)J
-
-    move-result-wide v6
-
-    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
-
-    move-result-wide v9
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    move-object v8, p2
-
-    move-object/from16 v11, p3
-
-    move/from16 v12, p4
-
-    invoke-static/range {v0 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->FinalImageCallback_PreallocatedYuvReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/YuvReadView;JLcom/google/googlex/gcam/ExifMetadata;I)V
-
-    return-void
-.end method
-
-.method public RgbReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ExifMetadata;I)V
-    .locals 13
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FinalImageCallback;->swigCPtr:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
 
     invoke-static {p2}, Lcom/google/googlex/gcam/InterleavedImageU8;->getCPtr(Lcom/google/googlex/gcam/InterleavedImageU8;)J
 
-    move-result-wide v6
+    move-result-wide v4
 
-    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
+    invoke-static {p3}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
 
-    move-result-wide v9
+    move-result-wide v7
 
     move-object v2, p0
 
-    move-object v5, p1
+    move v3, p1
 
-    move-object v8, p2
+    move-object v6, p2
 
-    move-object/from16 v11, p3
+    move-object v9, p3
 
-    move/from16 v12, p4
+    move v10, p4
 
-    invoke-static/range {v0 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->FinalImageCallback_RgbReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/InterleavedImageU8;JLcom/google/googlex/gcam/ExifMetadata;I)V
+    invoke-static/range {v0 .. v10}, Lcom/google/googlex/gcam/GcamModuleJNI;->FinalImageCallback_RgbReady(JLcom/google/googlex/gcam/FinalImageCallback;IJLcom/google/googlex/gcam/InterleavedImageU8;JLcom/google/googlex/gcam/ExifMetadata;I)V
 
     return-void
 .end method
 
-.method public YuvReady(Lcom/google/googlex/gcam/IShot;Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ExifMetadata;I)V
-    .locals 13
+.method public YuvReady(ILcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ExifMetadata;I)V
+    .locals 11
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FinalImageCallback;->swigCPtr:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/IShot;->getCPtr(Lcom/google/googlex/gcam/IShot;)J
-
-    move-result-wide v3
-
     invoke-static {p2}, Lcom/google/googlex/gcam/YuvImage;->getCPtr(Lcom/google/googlex/gcam/YuvImage;)J
 
-    move-result-wide v6
+    move-result-wide v4
 
-    invoke-static/range {p3 .. p3}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
+    invoke-static {p3}, Lcom/google/googlex/gcam/ExifMetadata;->getCPtr(Lcom/google/googlex/gcam/ExifMetadata;)J
 
-    move-result-wide v9
+    move-result-wide v7
 
     move-object v2, p0
 
-    move-object v5, p1
+    move v3, p1
 
-    move-object v8, p2
+    move-object v6, p2
 
-    move-object/from16 v11, p3
+    move-object v9, p3
 
-    move/from16 v12, p4
+    move v10, p4
 
-    invoke-static/range {v0 .. v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->FinalImageCallback_YuvReady(JLcom/google/googlex/gcam/FinalImageCallback;JLcom/google/googlex/gcam/IShot;JLcom/google/googlex/gcam/YuvImage;JLcom/google/googlex/gcam/ExifMetadata;I)V
+    invoke-static/range {v0 .. v10}, Lcom/google/googlex/gcam/GcamModuleJNI;->FinalImageCallback_YuvReady(JLcom/google/googlex/gcam/FinalImageCallback;IJLcom/google/googlex/gcam/YuvImage;JLcom/google/googlex/gcam/ExifMetadata;I)V
 
     return-void
 .end method

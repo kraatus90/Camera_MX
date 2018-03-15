@@ -2,131 +2,96 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
-
-.field private i:Ljxn;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfjh;->a:Ljxn;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p2, p0, Lfjh;->b:Ljxn;
-
-    iput-object p3, p0, Lfjh;->c:Ljxn;
-
-    iput-object p4, p0, Lfjh;->d:Ljxn;
-
-    iput-object p5, p0, Lfjh;->e:Ljxn;
-
-    iput-object p6, p0, Lfjh;->f:Ljxn;
-
-    iput-object p7, p0, Lfjh;->g:Ljxn;
-
-    iput-object p8, p0, Lfjh;->h:Ljxn;
-
-    iput-object p9, p0, Lfjh;->i:Ljxn;
+    iput-object p1, p0, Lfjh;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 10
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    new-instance v0, Lfiw;
+    if-eqz p1, :cond_0
 
-    iget-object v1, p0, Lfjh;->a:Ljxn;
+    instance-of v0, p1, Lfjh;
 
-    iget-object v2, p0, Lfjh;->b:Ljxn;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lfjh;->a:Ljava/lang/String;
 
-    move-result-object v2
+    check-cast p1, Lfjh;
 
-    check-cast v2, Lflj;
+    iget-object v1, p1, Lfjh;->a:Ljava/lang/String;
 
-    iget-object v3, p0, Lfjh;->c:Ljxn;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v3
+    if-eqz v0, :cond_0
 
-    check-cast v3, Lhzt;
+    const/4 v0, 0x1
 
-    iget-object v4, p0, Lfjh;->d:Ljxn;
+    :goto_0
+    return v0
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    :cond_0
+    const/4 v0, 0x0
 
-    move-result-object v4
+    goto :goto_0
+.end method
 
-    check-cast v4, Landroid/content/res/Resources;
+.method public final hashCode()I
+    .locals 3
 
-    iget-object v5, p0, Lfjh;->e:Ljxn;
+    const/4 v0, 0x1
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    move-result-object v5
+    const/4 v1, 0x0
 
-    check-cast v5, Liau;
+    iget-object v2, p0, Lfjh;->a:Ljava/lang/String;
 
-    iget-object v6, p0, Lfjh;->f:Ljxn;
+    aput-object v2, v0, v1
 
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
-    move-result-object v6
+    move-result v0
 
-    check-cast v6, Ljht;
+    return v0
+.end method
 
-    iget-object v7, p0, Lfjh;->g:Ljxn;
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {p0}, Ljhn;->b(Ljava/lang/Object;)Ljrc;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Lgxq;
+    const-string v1, "name"
 
-    iget-object v8, p0, Lfjh;->h:Ljxn;
+    iget-object v2, p0, Lfjh;->a:Ljava/lang/String;
 
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
 
-    move-result-object v8
+    move-result-object v0
 
-    check-cast v8, Ljht;
+    invoke-virtual {v0}, Ljrc;->toString()Ljava/lang/String;
 
-    iget-object v9, p0, Lfjh;->i:Ljxn;
-
-    invoke-interface {v9}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lgsp;
-
-    invoke-direct/range {v0 .. v9}, Lfiw;-><init>(Ljxn;Lflj;Lhzt;Landroid/content/res/Resources;Liau;Ljht;Lgxq;Ljht;Lgsp;)V
+    move-result-object v0
 
     return-object v0
 .end method

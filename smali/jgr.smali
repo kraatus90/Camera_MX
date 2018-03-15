@@ -1,129 +1,81 @@
-.class public final Ljgr;
-.super Ljava/lang/Object;
+.class public abstract Ljgr;
+.super Ljqa;
 .source "PG"
 
 # interfaces
-.implements Ljgz;
-
-
-# instance fields
-.field private synthetic a:Ljha;
+.implements Ljgv;
 
 
 # direct methods
-.method public constructor <init>(Ljha;)V
-    .locals 0
+.method public constructor <init>(Landroid/graphics/Bitmap;)V
+    .locals 1
 
-    iput-object p1, p0, Ljgr;->a:Ljha;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, v0}, Ljqa;-><init>(Ljava/lang/Object;B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final G_()Ljgz;
+.method public final a()I
     .locals 1
 
-    iget-object v0, p0, Ljgr;->a:Ljha;
-
-    invoke-interface {v0}, Ljha;->H_()Ljha;
+    invoke-virtual {p0}, Ljgr;->e()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Liui;->a(Ljha;)Ljgz;
+    check-cast v0, Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    return-object v0
+    move-result v0
+
+    return v0
 .end method
 
-.method public final synthetic H_()Ljha;
-    .locals 1
-
-    invoke-virtual {p0}, Ljgr;->G_()Ljgz;
-
-    move-result-object v0
-
-    return-object v0
+.method protected abstract a(Landroid/graphics/Bitmap;)V
 .end method
 
-.method public final close()V
-    .locals 4
+.method protected bridge synthetic a(Ljava/lang/Object;)V
+    .locals 0
 
-    :try_start_0
-    iget-object v0, p0, Ljgr;->a:Ljha;
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    invoke-interface {v0}, Ljha;->close()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, p1}, Ljgr;->a(Landroid/graphics/Bitmap;)V
 
-    :goto_0
     return-void
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "SafeHandle"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x1e
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "SharedHandle threw exception: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
 .end method
 
-.method public final d()Ljava/lang/Object;
+.method public final b()I
     .locals 1
 
-    iget-object v0, p0, Ljgr;->a:Ljha;
-
-    invoke-interface {v0}, Ljha;->d()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljgr;->e()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public final e()Ljava/lang/Object;
+.method public final c()I
     .locals 1
 
-    iget-object v0, p0, Ljgr;->a:Ljha;
-
-    invoke-interface {v0}, Ljha;->e()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljgr;->e()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
+
+    move-result v0
+
+    return v0
 .end method

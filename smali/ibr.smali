@@ -2,41 +2,42 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Licn;
 
-
-# instance fields
-.field private a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field private b:Lhzr;
+# static fields
+.field public static final a:Libq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lhzr;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Libs;
 
-    iput-object p1, p0, Libr;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {v0}, Libs;-><init>()V
 
-    iput-object p2, p0, Libr;->b:Lhzr;
+    sput-object v0, Libr;->a:Libq;
 
     return-void
 .end method
 
+.method public static a(Lihb;Ljava/lang/String;)Lihb;
+    .locals 1
 
-# virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
+    new-instance v0, Libt;
 
-    iget-object v0, p0, Libr;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {v0, p0, p1}, Libt;-><init>(Lihb;Ljava/lang/String;)V
 
-    iget-object v1, p0, Libr;->b:Lhzr;
+    return-object v0
+.end method
 
-    check-cast p1, Ljava/lang/Boolean;
+.method public static a(Libq;Lihb;Ljava/lang/String;)V
+    .locals 1
 
-    invoke-static {v0, v1, p1}, Liav;->a(Ljava/util/concurrent/atomic/AtomicBoolean;Lhzr;Ljava/lang/Boolean;)V
+    invoke-static {p1, p2}, Libr;->a(Lihb;Ljava/lang/String;)Lihb;
+
+    move-result-object v0
+
+    invoke-interface {p0, v0}, Libq;->a(Lihb;)V
 
     return-void
 .end method

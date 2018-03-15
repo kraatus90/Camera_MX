@@ -1,46 +1,56 @@
-.class final Ldtb;
+.class public final Ldtb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liis;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Liis;
-
-.field private synthetic b:Ldta;
+# static fields
+.field public static final a:Ldtb;
 
 
 # direct methods
-.method constructor <init>(Ldta;Liis;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ldtb;
+
+    invoke-direct {v0}, Ldtb;-><init>()V
+
+    sput-object v0, Ldtb;->a:Ldtb;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Ldtb;->b:Ldta;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Ldtb;->a:Liis;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Ldtb;->b:Ldta;
+    new-instance v0, Lkad;
 
-    iget-object v0, v0, Ldta;->a:Licu;
+    invoke-direct {v0}, Lkad;-><init>()V
 
-    const-string v1, "onInputImageReleased"
+    invoke-static {v0}, Licl;->a(Ljava/lang/Object;)Lick;
 
-    invoke-interface {v0, v1}, Licu;->e(Ljava/lang/String;)V
+    move-result-object v0
 
-    iget-object v0, p0, Ldtb;->a:Liis;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-interface {v0}, Liis;->a()V
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Lick;
+
+    return-object v0
 .end method

@@ -1,13 +1,10 @@
 .class final Lapg;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "PG"
-
-# interfaces
-.implements Lapj;
 
 
 # instance fields
-.field private synthetic a:Lapf;
+.field private final synthetic a:Lapf;
 
 
 # direct methods
@@ -16,73 +13,138 @@
 
     iput-object p1, p0, Lapg;->a:Lapf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
 
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lapg;->a:Lapf;
 
-    move-result-object v0
+    iget-boolean v0, v0, Lapf;->b:Z
 
     iget-object v1, p0, Lapg;->a:Lapf;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-static {p1}, Lapf;->a(Landroid/content/Context;)Z
 
     move-result v2
 
-    add-int/lit8 v2, v2, 0xb
+    iput-boolean v2, v1, Lapf;->b:Z
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v1, p0, Lapg;->a:Lapf;
 
-    move-result-object v3
+    iget-boolean v1, v1, Lapf;->b:Z
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    if-eq v0, v1, :cond_3
 
-    move-result v3
+    const-string v0, "ConnectivityMonitor"
 
-    add-int/2addr v2, v3
+    const/4 v1, 0x3
+
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "ConnectivityMonitor"
+
+    iget-object v1, p0, Lapg;->a:Lapf;
+
+    iget-boolean v1, v1, Lapf;->b:Z
+
+    const/16 v2, 0x28
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "connectivity changed, isConnected: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-object v0, p0, Lapg;->a:Lapf;
+
+    iget-object v0, v0, Lapf;->a:Lapd;
+
+    iget-object v1, p0, Lapg;->a:Lapf;
+
+    iget-boolean v1, v1, Lapf;->b:Z
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, v0, Lapd;->a:Lapp;
+
+    iget-object v0, v1, Lapp;->a:Ljava/util/Set;
+
+    invoke-static {v0}, Larx;->a(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v0
 
-    const-string v2, "{fragment="
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v0
+    :cond_1
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_3
 
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Laqh;
+
+    invoke-interface {v0}, Laqh;->f()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    invoke-interface {v0}, Laqh;->h()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    invoke-interface {v0}, Laqh;->c()V
+
+    iget-boolean v3, v1, Lapp;->c:Z
+
+    if-nez v3, :cond_2
+
+    invoke-interface {v0}, Laqh;->a()V
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v3, v1, Lapp;->b:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_3
+    return-void
 .end method

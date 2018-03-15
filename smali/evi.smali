@@ -1,28 +1,30 @@
-.class final Levi;
+.class public final Levi;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/hardware/SensorEventListener;
+.implements Lkgv;
 
 
-# instance fields
-.field private synthetic a:Landroid/os/Vibrator;
-
-.field private synthetic b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field private synthetic c:Levh;
+# static fields
+.field public static final a:Levi;
 
 
 # direct methods
-.method constructor <init>(Levh;Landroid/os/Vibrator;Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Levi;
+
+    invoke-direct {v0}, Levi;-><init>()V
+
+    sput-object v0, Levi;->a:Levi;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Levi;->c:Levh;
-
-    iput-object p2, p0, Levi;->a:Landroid/os/Vibrator;
-
-    iput-object p3, p0, Levi;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,43 +33,54 @@
 
 
 # virtual methods
-.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 6
 
-    return-void
-.end method
+    new-instance v0, Lkeu;
 
-.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 3
+    invoke-direct {v0}, Lkeu;-><init>()V
 
-    iget-object v0, p0, Levi;->c:Levh;
+    const-string v1, "mv-gyro-exec-%d"
 
-    invoke-static {v0}, Levh;->a(Levh;)Lidm;
+    invoke-virtual {v0, v1}, Lkeu;->a(Ljava/lang/String;)Lkeu;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lidm;->c()V
+    iget-object v1, v0, Lkeu;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Levi;->a:Landroid/os/Vibrator;
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
 
-    invoke-virtual {v0}, Landroid/os/Vibrator;->hasVibrator()Z
+    move-result-object v2
 
-    move-result v0
+    if-eqz v1, :cond_0
 
-    if-eqz v0, :cond_0
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    iget-object v0, p0, Levi;->a:Landroid/os/Vibrator;
+    const-wide/16 v4, 0x0
 
-    sget-object v1, Levh;->a:[J
+    invoke-direct {v0, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
-    const/4 v2, -0x1
+    :goto_0
+    new-instance v3, Lkev;
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate([JI)V
+    invoke-direct {v3, v2, v1, v0}, Lkev;-><init>(Ljava/util/concurrent/ThreadFactory;Ljava/lang/String;Ljava/util/concurrent/atomic/AtomicLong;)V
+
+    invoke-static {v3}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    return-object v0
 
     :cond_0
-    iget-object v0, p0, Levi;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchCamera()V
-
-    return-void
+    goto :goto_0
 .end method

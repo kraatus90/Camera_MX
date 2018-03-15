@@ -1,75 +1,58 @@
-.class public final Lani;
-.super Lamp;
+.class final Lani;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lamx;
 
-# static fields
-.field private static b:[B
+
+# instance fields
+.field private final a:Lane;
+
+.field private final b:Lars;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-string v0, "com.bumptech.glide.load.resource.bitmap.FitCenter"
-
-    sget-object v1, Lani;->a:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v0
-
-    sput-object v0, Lani;->b:[B
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method constructor <init>(Lane;Lars;)V
     .locals 0
 
-    invoke-direct {p0}, Lamp;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lani;->a:Lane;
+
+    iput-object p2, p0, Lani;->b:Lars;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lahs;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+.method public final a()V
     .locals 1
 
-    invoke-static {p1, p2, p3, p4}, Lanp;->b(Lahs;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lani;->a:Lane;
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/security/MessageDigest;)V
-    .locals 1
-
-    sget-object v0, Lani;->b:[B
-
-    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+    invoke-virtual {v0}, Lane;->a()V
 
     return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a(Lahf;Landroid/graphics/Bitmap;)V
     .locals 1
 
-    instance-of v0, p1, Lani;
+    iget-object v0, p0, Lani;->b:Lars;
 
-    return v0
-.end method
+    iget-object v0, v0, Lars;->a:Ljava/io/IOException;
 
-.method public final hashCode()I
-    .locals 1
+    if-eqz v0, :cond_1
 
-    const-string v0, "com.bumptech.glide.load.resource.bitmap.FitCenter"
+    if-eqz p2, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-interface {p1, p2}, Lahf;->a(Landroid/graphics/Bitmap;)V
 
-    move-result v0
+    :cond_0
+    throw v0
 
-    return v0
+    :cond_1
+    return-void
 .end method

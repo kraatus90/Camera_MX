@@ -1,69 +1,84 @@
-.class final Lavi;
+.class public final Lavi;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lhkt;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lhae;
+.field private final a:Lkgv;
 
-.field private synthetic b:Lavh;
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lavh;Lhae;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lavi;->b:Lavh;
-
-    iput-object p2, p0, Lavi;->a:Lhae;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lavi;->a:Lkgv;
+
+    iput-object p2, p0, Lavi;->b:Lkgv;
+
+    iput-object p3, p0, Lavi;->c:Lkgv;
+
+    iput-object p4, p0, Lavi;->d:Lkgv;
+
+    iput-object p5, p0, Lavi;->e:Lkgv;
+
+    iput-object p6, p0, Lavi;->f:Lkgv;
+
+    iput-object p7, p0, Lavi;->g:Lkgv;
+
+    iput-object p8, p0, Lavi;->h:Lkgv;
+
+    iput-object p9, p0, Lavi;->i:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Lhks;)V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 10
 
-    iget-object v0, p0, Lavi;->a:Lhae;
+    new-instance v0, Lavh;
 
-    iget-object v0, v0, Lhae;->a:Lhac;
+    iget-object v1, p0, Lavi;->a:Lkgv;
 
-    iget-object v0, v0, Lhac;->a:Lhkl;
+    iget-object v2, p0, Lavi;->b:Lkgv;
 
-    invoke-virtual {v0}, Lhkl;->e()Z
+    iget-object v3, p0, Lavi;->c:Lkgv;
 
-    move-result v0
+    iget-object v4, p0, Lavi;->d:Lkgv;
 
-    if-eqz v0, :cond_0
+    iget-object v5, p0, Lavi;->e:Lkgv;
 
-    iget-object v0, p0, Lavi;->a:Lhae;
+    iget-object v6, p0, Lavi;->f:Lkgv;
 
-    iget-object v0, v0, Lhae;->a:Lhac;
+    iget-object v7, p0, Lavi;->g:Lkgv;
 
-    iget-object v1, v0, Lhac;->a:Lhkl;
+    iget-object v8, p0, Lavi;->h:Lkgv;
 
-    invoke-virtual {v1, v0}, Lhkl;->b(Lhkn;)V
+    iget-object v9, p0, Lavi;->i:Lkgv;
 
-    iget-object v1, v0, Lhac;->a:Lhkl;
+    invoke-direct/range {v0 .. v9}, Lavh;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
 
-    invoke-virtual {v1, v0}, Lhkl;->b(Lhko;)V
-
-    iget-object v0, v0, Lhac;->a:Lhkl;
-
-    invoke-virtual {v0}, Lhkl;->d()V
-
-    :cond_0
-    iget-object v0, p0, Lavi;->b:Lavh;
-
-    iget-object v0, v0, Lavh;->a:Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a()V
-
-    return-void
+    return-object v0
 .end method

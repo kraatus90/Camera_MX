@@ -1,31 +1,40 @@
-.class public final Ldez;
-.super Ldhe;
+.class final Ldez;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final synthetic a:Lhct;
+
+.field private final synthetic b:Ldev;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method constructor <init>(Ldev;Lhct;)V
+    .locals 0
 
-    const-string v0, "VidIntBackgroundST"
+    iput-object p1, p0, Ldez;->b:Ldev;
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p2, p0, Ldez;->a:Lhct;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ldhe;)V
+
+# virtual methods
+.method public final run()V
     .locals 2
 
-    invoke-direct {p0, p1}, Ldhe;-><init>(Lcng;)V
+    iget-object v0, p0, Ldez;->b:Ldev;
 
-    new-instance v0, Ldfa;
+    iget-object v1, p0, Ldez;->a:Lhct;
 
-    invoke-direct {v0, p0}, Ldfa;-><init>(Ldez;)V
-
-    const-class v1, Lcvp;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
+    invoke-virtual {v0, v1}, Ldev;->a(Lhct;)V
 
     return-void
 .end method

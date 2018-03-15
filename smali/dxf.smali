@@ -2,36 +2,57 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public final a:Ljava/util/Set;
 
-.field public final b:Lhzt;
-
-.field public final c:Licu;
-
-.field public final d:Lbhl;
+# static fields
+.field public static final a:Ldxf;
 
 
 # direct methods
-.method public constructor <init>(Licv;Ljava/util/Set;Lhzt;Lbhl;)V
+.method static constructor <clinit>()V
     .locals 1
+
+    new-instance v0, Ldxf;
+
+    invoke-direct {v0}, Ldxf;-><init>()V
+
+    sput-object v0, Ldxf;->a:Ldxf;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "ImageSaverValidator"
+    return-void
+.end method
 
-    invoke-interface {p1, v0}, Licv;->a(Ljava/lang/String;)Licu;
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Libw;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Libw;-><init>(Ljava/lang/Object;)V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Ldxf;->c:Licu;
+    check-cast v0, Lick;
 
-    iput-object p2, p0, Ldxf;->a:Ljava/util/Set;
-
-    iput-object p3, p0, Ldxf;->b:Lhzt;
-
-    iput-object p4, p0, Ldxf;->d:Lbhl;
-
-    return-void
+    return-object v0
 .end method

@@ -2,22 +2,43 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field public final synthetic a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-.field public final synthetic b:Lfiw;
+# static fields
+.field public static final a:Lgmg;
 
 
 # direct methods
-.method public constructor <init>(Lfiw;Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lgmg;
+
+    invoke-direct {v0}, Lgmg;-><init>()V
+
+    sput-object v0, Lgmg;->a:Lgmg;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lgmg;->b:Lfiw;
-
-    iput-object p2, p0, Lgmg;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Lgmf;
+
+    invoke-direct {v0}, Lgmf;-><init>()V
+
+    return-object v0
 .end method

@@ -1,74 +1,155 @@
-.class final Labi;
-.super Ljava/lang/Object;
+.class public final enum Labi;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final enum a:Labi;
 
-# instance fields
-.field private synthetic a:I
+.field public static final enum b:Labi;
 
-.field private synthetic b:Lacl;
+.field public static final enum c:Labi;
 
-.field private synthetic c:Labe;
+.field public static final enum d:Labi;
+
+.field public static final enum e:Labi;
+
+.field public static final enum f:Labi;
+
+.field private static final synthetic g:[Labi;
 
 
 # direct methods
-.method constructor <init>(Labe;ILacl;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
-    iput-object p1, p0, Labi;->c:Labe;
+    const/4 v7, 0x4
 
-    iput p2, p0, Labi;->a:I
+    const/4 v6, 0x3
 
-    iput-object p3, p0, Labi;->b:Lacl;
+    const/4 v5, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    new-instance v0, Labi;
+
+    const-string v1, "NO_FLASH"
+
+    invoke-direct {v0, v1, v3}, Labi;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labi;->a:Labi;
+
+    new-instance v0, Labi;
+
+    const-string v1, "AUTO"
+
+    invoke-direct {v0, v1, v4}, Labi;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labi;->b:Labi;
+
+    new-instance v0, Labi;
+
+    const-string v1, "OFF"
+
+    invoke-direct {v0, v1, v5}, Labi;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labi;->c:Labi;
+
+    new-instance v0, Labi;
+
+    const-string v1, "ON"
+
+    invoke-direct {v0, v1, v6}, Labi;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labi;->d:Labi;
+
+    new-instance v0, Labi;
+
+    const-string v1, "TORCH"
+
+    invoke-direct {v0, v1, v7}, Labi;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labi;->e:Labi;
+
+    new-instance v0, Labi;
+
+    const-string v1, "RED_EYE"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Labi;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Labi;->f:Labi;
+
+    const/4 v0, 0x6
+
+    new-array v0, v0, [Labi;
+
+    sget-object v1, Labi;->a:Labi;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Labi;->b:Labi;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Labi;->c:Labi;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Labi;->d:Labi;
+
+    aput-object v1, v0, v6
+
+    sget-object v1, Labi;->e:Labi;
+
+    aput-object v1, v0, v7
+
+    const/4 v1, 0x5
+
+    sget-object v2, Labi;->f:Labi;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Labi;->g:[Labi;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final run()V
-    .locals 3
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Labi;->c:Labe;
-
-    invoke-virtual {v0}, Labe;->j()Lacn;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lacn;->c()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    :goto_0
     return-void
+.end method
 
-    :cond_0
-    iget v1, p0, Labi;->a:I
+.method public static a(Ljava/lang/String;)Labi;
+    .locals 1
 
-    invoke-virtual {v0, v1}, Lacn;->b(I)Z
+    const-class v0, Labi;
 
-    iget-object v0, p0, Labi;->c:Labe;
-
-    invoke-virtual {v0}, Labe;->h()Landroid/os/Handler;
-
-    move-result-object v0
-
-    const/16 v1, 0xcc
-
-    iget-object v2, p0, Labi;->b:Lacl;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    check-cast v0, Labi;
 
-    goto :goto_0
+    return-object v0
+.end method
+
+.method public static values()[Labi;
+    .locals 1
+
+    sget-object v0, Labi;->g:[Labi;
+
+    invoke-virtual {v0}, [Labi;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Labi;
+
+    return-object v0
 .end method

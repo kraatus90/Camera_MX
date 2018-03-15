@@ -1,114 +1,124 @@
-.class final Lmi;
-.super Ljava/lang/Object;
+.class Lmi;
+.super Lmd;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Thread$UncaughtExceptionHandler;
 
 
 # instance fields
-.field private synthetic a:Ljava/lang/Thread$UncaughtExceptionHandler;
+.field private final synthetic a:Lmh;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+.method constructor <init>(Lmh;Landroid/view/Window$Callback;)V
     .locals 0
 
-    iput-object p1, p0, Lmi;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
+    iput-object p1, p0, Lmi;->a:Lmh;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lmd;-><init>(Lmc;Landroid/view/Window$Callback;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .locals 3
+.method final a(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+    .locals 4
 
-    const/4 v0, 0x0
+    new-instance v0, Lnx;
 
-    instance-of v1, p2, Landroid/content/res/Resources$NotFoundException;
+    iget-object v1, p0, Lmi;->a:Lmh;
 
-    if-eqz v1, :cond_1
+    iget-object v1, v1, Lmh;->b:Landroid/content/Context;
 
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-direct {v0, v1, p1}, Lnx;-><init>(Landroid/content/Context;Landroid/view/ActionMode$Callback;)V
 
-    move-result-object v1
+    iget-object v1, p0, Lmi;->a:Lmh;
 
-    if-eqz v1, :cond_1
+    iget-object v2, v1, Lmn;->p:Lnr;
 
-    const-string v2, "drawable"
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    iget-object v2, v1, Lmn;->p:Lnr;
 
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    const-string v2, "Drawable"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
+    invoke-virtual {v2}, Lnr;->c()V
 
     :cond_0
-    const/4 v0, 0x1
+    new-instance v2, Lmu;
+
+    invoke-direct {v2, v1, v0}, Lmu;-><init>(Lmn;Lns;)V
+
+    invoke-virtual {v1}, Lmn;->a()Llp;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v3, v2}, Llp;->a(Lns;)Lnr;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lmn;->p:Lnr;
+
+    iget-object v3, v1, Lmn;->p:Lnr;
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, v1, Lmn;->e:Lma;
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, v1, Lmn;->e:Lma;
+
+    invoke-interface {v3}, Lma;->a()V
 
     :cond_1
-    if-eqz v0, :cond_2
+    iget-object v3, v1, Lmn;->p:Lnr;
 
-    new-instance v0, Landroid/content/res/Resources$NotFoundException;
+    if-nez v3, :cond_2
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lmn;->a(Lns;)Lnr;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ". If the resource you are trying to use is a vector resource, you may be referencing it in an unsupported way. See AppCompatDelegate.setCompatVectorFromResourcesEnabled() for more info."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
-
-    iget-object v1, p0, Lmi;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
-
-    invoke-interface {v1, p1, v0}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
+    iput-object v2, v1, Lmn;->p:Lnr;
 
     :cond_2
-    iget-object v0, p0, Lmi;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
+    iget-object v1, v1, Lmn;->p:Lnr;
 
-    invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v0, v1}, Lnx;->b(Lnr;)Landroid/view/ActionMode;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+    .locals 1
+
+    iget-object v0, p0, Lmi;->a:Lmh;
+
+    iget-boolean v0, v0, Lmh;->n:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, p1}, Lmi;->a(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-super {p0, p1}, Lmd;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+    move-result-object v0
 
     goto :goto_0
 .end method

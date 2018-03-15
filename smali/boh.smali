@@ -1,74 +1,69 @@
-.class public final Lboh;
-.super Ljava/lang/Object;
+.class final Lboh;
+.super Lbny;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final synthetic a:Lbof;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lbof;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lboh;->a:Lbof;
 
-    iput-object p1, p0, Lboh;->a:Ljxn;
-
-    iput-object p2, p0, Lboh;->b:Ljxn;
-
-    iput-object p3, p0, Lboh;->c:Ljxn;
-
-    iput-object p4, p0, Lboh;->d:Ljxn;
+    invoke-direct {p0, p1}, Lbny;-><init>(Lbnw;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+.method public final c()V
+    .locals 2
 
-    new-instance v3, Lbog;
+    iget-object v0, p0, Lboh;->a:Lbof;
 
-    iget-object v0, p0, Lboh;->a:Ljxn;
+    iget-object v0, v0, Lbof;->f:Lgld;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    iget-object v0, p0, Lboh;->b:Ljxn;
+    invoke-super {p0}, Lbny;->c()V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Lboh;->a:Lbof;
 
-    move-result-object v0
+    iget-object v0, v0, Lbof;->f:Lgld;
 
-    check-cast v0, Landroid/content/ContentResolver;
+    iget-object v1, p0, Lboh;->a:Lbof;
 
-    iget-object v1, p0, Lboh;->c:Ljxn;
+    iget-object v1, v1, Lbof;->i:Lglf;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    move-result-object v1
+    return-void
+.end method
 
-    check-cast v1, Lgvz;
+.method public final d()V
+    .locals 2
 
-    iget-object v2, p0, Lboh;->d:Ljxn;
+    iget-object v0, p0, Lboh;->a:Lbof;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lbof;->f:Lgld;
 
-    move-result-object v2
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v2, Licz;
+    invoke-super {p0}, Lbny;->d()V
 
-    invoke-direct {v3, v0, v1, v2}, Lbog;-><init>(Landroid/content/ContentResolver;Lgvz;Licz;)V
+    iget-object v0, p0, Lboh;->a:Lbof;
 
-    return-object v3
+    iget-object v0, v0, Lbof;->f:Lgld;
+
+    iget-object v1, p0, Lboh;->a:Lbof;
+
+    iget-object v1, v1, Lbof;->g:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
+
+    return-void
 .end method

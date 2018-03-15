@@ -1,89 +1,45 @@
-.class public final Lcob;
-.super Ljava/lang/Object;
+.class final Lcob;
+.super Lcnt;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lcnz;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Lcnz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcob;->a:Lcnz;
 
-    iput-object p1, p0, Lcob;->a:Ljxn;
+    invoke-direct {p0}, Lcnt;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lcob;
-
-    invoke-direct {v0, p0}, Lcob;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final j()V
+    .locals 2
 
-    iget-object v0, p0, Lcob;->a:Ljxn;
+    iget-object v0, p0, Lcob;->a:Lcnz;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lcnz;->b:Lgld;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lgld;->a()V
 
-    check-cast v0, Liau;
+    invoke-super {p0}, Lcnt;->j()V
 
-    new-instance v1, Landroid/util/ArraySet;
+    iget-object v0, p0, Lcob;->a:Lcnz;
 
-    invoke-direct {v1}, Landroid/util/ArraySet;-><init>()V
+    iget-object v0, v0, Lcnz;->b:Lgld;
 
-    sget-object v2, Lcnv;->a:Lcnv;
+    iget-object v1, p0, Lcob;->a:Lcnz;
 
-    invoke-static {v2}, Liav;->a(Ljava/lang/Object;)Liau;
+    iget-object v1, v1, Lcnz;->d:Lglf;
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
-    invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v0}, Liau;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcnv;->e:Lcnv;
-
-    invoke-static {v0}, Liav;->a(Ljava/lang/Object;)Liau;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v1, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Set;
-
-    return-object v0
+    return-void
 .end method

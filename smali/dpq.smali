@@ -2,63 +2,54 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljxn;
-
 
 # instance fields
-.field private a:Ljxn;
+.field public final a:Lihs;
+
+.field public final b:Liho;
+
+.field public final c:Lfia;
+
+.field public final d:Lffz;
+
+.field public final e:Lkeh;
+
+.field public final f:Lfcc;
+
+.field public final g:Lfri;
+
+.field public final h:Ldpa;
+
+.field public final i:Lfcp;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
-    .locals 0
+.method public constructor <init>(Lihs;Liho;Lfia;Lffz;Lkeh;Lfcc;Lfri;Ldpa;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldpq;->a:Ljxn;
+    iput-object p1, p0, Ldpq;->a:Lihs;
+
+    iput-object p2, p0, Ldpq;->b:Liho;
+
+    iput-object p3, p0, Ldpq;->c:Lfia;
+
+    iput-object p4, p0, Ldpq;->d:Lffz;
+
+    iput-object p5, p0, Ldpq;->e:Lkeh;
+
+    iput-object p6, p0, Ldpq;->f:Lfcc;
+
+    iput-object p7, p0, Ldpq;->g:Lfri;
+
+    iput-object p8, p0, Ldpq;->h:Ldpa;
+
+    new-instance v0, Lfcp;
+
+    invoke-direct {v0}, Lfcp;-><init>()V
+
+    iput-object v0, p0, Ldpq;->i:Lfcp;
 
     return-void
-.end method
-
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldpq;
-
-    invoke-direct {v0, p0}, Ldpq;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Ldpq;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lghg;
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Lghg;
-
-    invoke-interface {v0, v1}, Lghg;->a([Lghg;)Lghe;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lghe;
-
-    return-object v0
 .end method

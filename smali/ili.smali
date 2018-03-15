@@ -3,184 +3,342 @@
 .source "PG"
 
 # interfaces
-.implements Lilf;
-
-
-# instance fields
-.field private a:Lilf;
+.implements Lilg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    sget-object v0, Like;->a:Like;
-
-    new-instance v1, Ljtv;
-
-    invoke-direct {v1, v0}, Ljtv;-><init>(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Lilf;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lili;->a:Lilf;
-
     return-void
-.end method
-
-.method public static a(Lilf;)Lili;
-    .locals 2
-
-    sget-object v0, Ljvc;->a:Ljvc;
-
-    new-instance v1, Likk;
-
-    invoke-direct {v1}, Likk;-><init>()V
-
-    invoke-interface {p0, v0, v1}, Lilf;->a(Ljava/util/concurrent/Executor;Likg;)Lilf;
-
-    move-result-object v0
-
-    new-instance v1, Lili;
-
-    invoke-direct {v1, v0}, Lili;-><init>(Lilf;)V
-
-    return-object v1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/concurrent/Executor;Likg;)Lilf;
-    .locals 1
+.method public final a(Link;Link;)V
+    .locals 15
 
-    iget-object v0, p0, Lili;->a:Lilf;
+    invoke-static/range {p1 .. p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2}, Lilf;->a(Ljava/util/concurrent/Executor;Likg;)Lilf;
+    invoke-static/range {p2 .. p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface/range {p1 .. p1}, Link;->b()I
+
+    move-result v0
+
+    invoke-interface/range {p2 .. p2}, Link;->b()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    invoke-interface/range {p1 .. p1}, Link;->b()I
+
+    move-result v0
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_1
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    invoke-interface/range {p2 .. p2}, Link;->b()I
+
+    move-result v0
+
+    const/16 v1, 0x22
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v0, 0x1
+
+    :goto_2
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    invoke-interface/range {p1 .. p1}, Link;->b()I
+
+    move-result v0
+
+    const/16 v1, 0x23
+
+    if-ne v0, v1, :cond_4
+
+    invoke-interface/range {p1 .. p1}, Link;->e()Ljava/util/List;
+
+    move-result-object v7
+
+    invoke-interface/range {p2 .. p2}, Link;->e()Ljava/util/List;
+
+    move-result-object v13
+
+    invoke-interface/range {p1 .. p1}, Link;->c()I
+
+    move-result v0
+
+    invoke-interface/range {p2 .. p2}, Link;->c()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    invoke-interface/range {p1 .. p1}, Link;->d()I
+
+    move-result v1
+
+    invoke-interface/range {p2 .. p2}, Link;->d()I
+
+    move-result v2
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v7, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Linl;
+
+    invoke-interface {v2}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    invoke-interface {v7, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Linl;
+
+    invoke-interface {v3}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v3
+
+    const/4 v4, 0x2
+
+    invoke-interface {v7, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Linl;
+
+    invoke-interface {v4}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Linl;
+
+    invoke-interface {v5}, Linl;->a()I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Linl;
+
+    invoke-interface {v6}, Linl;->a()I
+
+    move-result v6
+
+    const/4 v8, 0x1
+
+    invoke-interface {v7, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Linl;
+
+    invoke-interface {v7}, Linl;->b()I
+
+    move-result v7
+
+    const/4 v8, 0x0
+
+    invoke-interface {v13, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Linl;
+
+    invoke-interface {v8}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v8
+
+    const/4 v9, 0x1
+
+    invoke-interface {v13, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Linl;
+
+    invoke-interface {v9}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v9
+
+    const/4 v10, 0x2
+
+    invoke-interface {v13, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Linl;
+
+    invoke-interface {v10}, Linl;->c()Ljava/nio/ByteBuffer;
+
+    move-result-object v10
+
+    const/4 v11, 0x0
+
+    invoke-interface {v13, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Linl;
+
+    invoke-interface {v11}, Linl;->a()I
+
+    move-result v11
+
+    const/4 v12, 0x1
+
+    invoke-interface {v13, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Linl;
+
+    invoke-interface {v12}, Linl;->a()I
+
+    move-result v12
+
+    const/4 v14, 0x1
+
+    invoke-interface {v13, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Linl;
+
+    invoke-interface {v13}, Linl;->b()I
+
+    move-result v13
+
+    invoke-static/range {v0 .. v13}, Lcom/google/android/libraries/camera/jni/yuv/YuvUtilNative;->a(IILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;III)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Copy failed."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto/16 :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto/16 :goto_1
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto/16 :goto_2
+
+    :cond_3
+    invoke-interface/range {p2 .. p2}, Link;->e()Ljava/util/List;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public final a(Ljava/util/concurrent/Executor;Likg;Likg;)Lilf;
-    .locals 1
-
-    iget-object v0, p0, Lili;->a:Lilf;
-
-    invoke-interface {v0, p1, p2, p3}, Lilf;->a(Ljava/util/concurrent/Executor;Likg;Likg;)Lilf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/util/concurrent/Executor;Lilj;)Lilf;
-    .locals 1
-
-    iget-object v0, p0, Lili;->a:Lilf;
-
-    invoke-interface {v0, p1, p2}, Lilf;->a(Ljava/util/concurrent/Executor;Lilj;)Lilf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final a(Ljava/util/concurrent/Executor;Lilj;Lilj;)Lilf;
-    .locals 1
-
-    iget-object v0, p0, Lili;->a:Lilf;
-
-    invoke-interface {v0, p1, p2, p3}, Lilf;->a(Ljava/util/concurrent/Executor;Lilj;Lilj;)Lilf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final synthetic a(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Lilf;
-    .locals 2
-
-    new-instance v0, Lili;
-
-    iget-object v1, p0, Lili;->a:Lilf;
-
-    invoke-interface {v1, p1, p2}, Lilf;->a(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Lilf;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lili;-><init>(Lilf;)V
+    :goto_3
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    return-object v0
-.end method
+    move-result v0
 
-.method public final a()Ljuw;
-    .locals 1
+    if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lili;->a:Lilf;
-
-    invoke-interface {v0}, Lilf;->a()Ljuw;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Linl;
 
-.method public final a(Likf;)V
-    .locals 1
+    invoke-interface {v0}, Linl;->c()Ljava/nio/ByteBuffer;
 
-    iget-object v0, p0, Lili;->a:Lilf;
+    move-result-object v0
 
-    invoke-interface {v0, p1}, Lilf;->a(Likf;)V
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
+    goto :goto_3
+
+    :cond_4
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-interface/range {p1 .. p1}, Link;->b()I
+
+    move-result v1
+
+    const/16 v2, 0x25
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unsupported image format: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_5
     return-void
-.end method
-
-.method public final synthetic b(Ljava/util/concurrent/Executor;Likg;)Lilf;
-    .locals 2
-
-    new-instance v0, Lili;
-
-    iget-object v1, p0, Lili;->a:Lilf;
-
-    invoke-interface {v1, p1, p2}, Lilf;->b(Ljava/util/concurrent/Executor;Likg;)Lilf;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lili;-><init>(Lilf;)V
-
-    return-object v0
-.end method
-
-.method public final synthetic b()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lili;->a:Lilf;
-
-    invoke-interface {v0}, Lilf;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Like;
-
-    return-object v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

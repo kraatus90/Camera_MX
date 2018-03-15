@@ -3,86 +3,60 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leav;->a:Ljxn;
+    iput-object p1, p0, Leav;->a:Lkgv;
 
-    iput-object p2, p0, Leav;->b:Ljxn;
-
-    iput-object p3, p0, Leav;->c:Ljxn;
-
-    iput-object p4, p0, Leav;->d:Ljxn;
+    iput-object p2, p0, Leav;->b:Lkgv;
 
     return-void
-.end method
-
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Leav;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Leav;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+    .locals 3
 
-    new-instance v4, Ldvm;
+    iget-object v0, p0, Leav;->a:Lkgv;
 
-    iget-object v0, p0, Leav;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lfkn;
+    check-cast v0, Lebo;
 
-    iget-object v1, p0, Leav;->b:Ljxn;
+    iget-object v1, p0, Leav;->b:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lejh;
+    check-cast v1, Lick;
 
-    iget-object v2, p0, Leav;->c:Ljxn;
+    new-instance v2, Leds;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v2, v1, v0}, Leds;-><init>(Lick;Lebo;)V
 
-    move-result-object v2
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    check-cast v2, Lgkp;
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v3, p0, Leav;->d:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v0, Lefu;
 
-    move-result-object v3
-
-    check-cast v3, Ldxh;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Ldvm;-><init>(Lfkn;Lejh;Lgkp;Ldxh;)V
-
-    return-object v4
+    return-object v0
 .end method

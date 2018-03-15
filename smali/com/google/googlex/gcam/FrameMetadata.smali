@@ -732,36 +732,6 @@
     return-wide v0
 .end method
 
-.method public getTonemap()Lcom/google/googlex/gcam/Tonemap;
-    .locals 4
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_tonemap_get(JLcom/google/googlex/gcam/FrameMetadata;)J
-
-    move-result-wide v2
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, v2, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/Tonemap;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/Tonemap;-><init>(JZ)V
-
-    goto :goto_0
-.end method
-
 .method public getWas_black_level_locked()Z
     .locals 2
 
@@ -774,42 +744,12 @@
     return v0
 .end method
 
-.method public getWb_capture()Lcom/google/googlex/gcam/AwbInfo;
+.method public getWb()Lcom/google/googlex/gcam/AwbInfo;
     .locals 4
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->swigCPtr:J
 
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_wb_capture_get(JLcom/google/googlex/gcam/FrameMetadata;)J
-
-    move-result-wide v2
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, v2, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lcom/google/googlex/gcam/AwbInfo;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lcom/google/googlex/gcam/AwbInfo;-><init>(JZ)V
-
-    goto :goto_0
-.end method
-
-.method public getWb_ideal()Lcom/google/googlex/gcam/AwbInfo;
-    .locals 4
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_wb_ideal_get(JLcom/google/googlex/gcam/FrameMetadata;)J
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_wb_get(JLcom/google/googlex/gcam/FrameMetadata;)J
 
     move-result-wide v2
 
@@ -1172,24 +1112,6 @@
     return-void
 .end method
 
-.method public setTonemap(Lcom/google/googlex/gcam/Tonemap;)V
-    .locals 6
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->swigCPtr:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/Tonemap;->getCPtr(Lcom/google/googlex/gcam/Tonemap;)J
-
-    move-result-wide v3
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_tonemap_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/Tonemap;)V
-
-    return-void
-.end method
-
 .method public setWas_black_level_locked(Z)V
     .locals 2
 
@@ -1200,7 +1122,7 @@
     return-void
 .end method
 
-.method public setWb_capture(Lcom/google/googlex/gcam/AwbInfo;)V
+.method public setWb(Lcom/google/googlex/gcam/AwbInfo;)V
     .locals 6
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->swigCPtr:J
@@ -1213,25 +1135,7 @@
 
     move-object v5, p1
 
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_wb_capture_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/AwbInfo;)V
-
-    return-void
-.end method
-
-.method public setWb_ideal(Lcom/google/googlex/gcam/AwbInfo;)V
-    .locals 6
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->swigCPtr:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/AwbInfo;->getCPtr(Lcom/google/googlex/gcam/AwbInfo;)J
-
-    move-result-wide v3
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_wb_ideal_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/AwbInfo;)V
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_wb_set(JLcom/google/googlex/gcam/FrameMetadata;JLcom/google/googlex/gcam/AwbInfo;)V
 
     return-void
 .end method

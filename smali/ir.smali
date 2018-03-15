@@ -2,8 +2,17 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/util/Comparator;
+
+# instance fields
+.field public a:Ljava/lang/Object;
+
+.field public b:I
+
+.field public c:Z
+
+.field public d:F
+
+.field public e:F
 
 
 # direct methods
@@ -13,22 +22,4 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
-
-    check-cast p1, Liw;
-
-    check-cast p2, Liw;
-
-    iget v0, p1, Liw;->b:I
-
-    iget v1, p2, Liw;->b:I
-
-    sub-int/2addr v0, v1
-
-    return v0
 .end method

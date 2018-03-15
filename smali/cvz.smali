@@ -1,26 +1,21 @@
-.class public interface abstract Lcvz;
+.class public final Lcvz;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lich;
+
+# instance fields
+.field public a:Lfft;
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 1
 
-.method public abstract a(I)V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract a(Ldhk;Lcwa;)V
-.end method
+    const/4 v0, 0x0
 
-.method public abstract b()Lcwe;
-.end method
+    iput-object v0, p0, Lcvz;->a:Lfft;
 
-.method public abstract c()Lgrw;
-.end method
-
-.method public abstract d()Lgum;
+    return-void
 .end method

@@ -1,50 +1,35 @@
-.class final Lbdi;
-.super Ljava/lang/Object;
+.class public final Lbdi;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PG"
-
-# interfaces
-.implements Ljug;
 
 
 # instance fields
-.field private synthetic a:Lbdh;
+.field private final synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
 
 # direct methods
-.method constructor <init>(Lbdh;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
     .locals 0
 
-    iput-object p1, p0, Lbdi;->a:Lbdh;
+    iput-object p1, p0, Lbdi;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 3
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-    check-cast p1, Lgff;
+    iget-object v0, p0, Lbdi;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
 
-    iget-object v0, p0, Lbdi;->a:Lbdh;
+    const/4 v1, 0x0
 
-    iget-object v1, v0, Lbdh;->c:Laxq;
-
-    new-instance v2, Lbdk;
-
-    invoke-direct {v2, v0}, Lbdk;-><init>(Lbdh;)V
-
-    invoke-virtual {v1, v2}, Laxq;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
     return-void
 .end method

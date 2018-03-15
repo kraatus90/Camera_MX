@@ -1,14 +1,26 @@
-.class public interface abstract Liim;
+.class final Liim;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Liip;
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final a(Lihx;)V
+    .locals 0
 
-.method public abstract b()I
-.end method
+    invoke-interface {p1}, Lihx;->a()V
 
-.method public abstract c()Ljava/nio/ByteBuffer;
+    return-void
 .end method

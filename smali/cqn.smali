@@ -1,14 +1,52 @@
-.class public interface abstract Lcqn;
+.class public final Lcqn;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
+
+
+# static fields
+.field public static final a:Lcqn;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lcqn;
+
+    invoke-direct {v0}, Lcqn;-><init>()V
+
+    sput-object v0, Lcqn;->a:Lcqn;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()Ljava/util/List;
-.end method
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract a(I)Z
-.end method
+    new-instance v0, Ldsm;
 
-.method public abstract b(I)Lcqo;
+    invoke-direct {v0}, Ldsm;-><init>()V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldsm;
+
+    return-object v0
 .end method

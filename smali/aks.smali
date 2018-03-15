@@ -1,53 +1,41 @@
-.class public final Laks;
+.class final Laks;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public final a:Larn;
+.field public final a:Ljava/lang/Class;
+
+.field public final b:Lakk;
+
+.field private final c:Ljava/lang/Class;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const/16 v0, 0xfa
-
-    invoke-direct {p0, v0}, Laks;-><init>(I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Lakk;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lakt;
+    iput-object p1, p0, Laks;->c:Ljava/lang/Class;
 
-    invoke-direct {v0, p1}, Lakt;-><init>(I)V
+    iput-object p2, p0, Laks;->a:Ljava/lang/Class;
 
-    iput-object v0, p0, Laks;->a:Larn;
+    iput-object p3, p0, Laks;->b:Lakk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final a(Ljava/lang/Class;)Z
+    .locals 1
 
-    invoke-static {p1}, Laku;->a(Ljava/lang/Object;)Laku;
+    iget-object v0, p0, Laks;->c:Ljava/lang/Class;
 
-    move-result-object v0
+    invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    iget-object v1, p0, Laks;->a:Larn;
+    move-result v0
 
-    invoke-virtual {v1, v0}, Larn;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Laku;->a()V
-
-    return-object v1
+    return v0
 .end method

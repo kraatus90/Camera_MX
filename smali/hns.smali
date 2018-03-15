@@ -1,118 +1,66 @@
-.class public final Lhns;
+.class final Lhns;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# static fields
+.field private static a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method static declared-synchronized a(Landroid/content/Context;)V
+    .locals 3
 
-# virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 5
+    const-class v1, Lhns;
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    monitor-enter v1
 
-    move-result v2
+    :try_start_0
+    sget-object v0, Lhns;->a:Landroid/content/Context;
 
-    const/4 v1, 0x0
+    if-nez v0, :cond_1
 
-    const/4 v0, 0x0
+    if-eqz p0, :cond_0
 
-    :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result v3
+    move-result-object v0
 
-    if-ge v3, v2, :cond_0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    const v4, 0xffff
-
-    and-int/2addr v4, v3
-
-    packed-switch v4, :pswitch_data_0
-
-    invoke-static {p1, v3}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v3}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v3}, Lhjg;->c(Landroid/os/Parcel;I)Z
-
-    move-result v0
-
-    goto :goto_0
+    sput-object v0, Lhns;->a:Landroid/content/Context;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    :goto_0
+    monitor-exit v1
 
-    move-result v3
-
-    if-eq v3, v2, :cond_1
-
-    new-instance v0, Ladf;
-
-    const/16 v1, 0x25
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
-
-    throw v0
+    return-void
 
     :cond_1
-    new-instance v2, Lcom/google/android/gms/feedback/LogOptions;
+    :try_start_1
+    const-string v0, "GoogleCertificates"
 
-    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/feedback/LogOptions;-><init>(Ljava/lang/String;Z)V
+    const-string v2, "GoogleCertificates has been initialized already"
 
-    return-object v2
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
+    goto :goto_0
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    new-array v0, p1, [Lcom/google/android/gms/feedback/LogOptions;
+    monitor-exit v1
 
-    return-object v0
+    throw v0
 .end method

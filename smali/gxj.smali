@@ -2,109 +2,164 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lgxk;
-
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final a:Lihc;
 
-.field public final b:Lgxk;
+.field public final b:Ligq;
 
-.field public c:Z
-
-.field public d:Z
-
-.field public e:J
-
-.field public f:J
+.field private final c:Lild;
 
 
 # direct methods
-.method public constructor <init>(Lgxk;Lhav;)V
-    .locals 4
-
-    const-wide/16 v2, 0x0
-
-    const/4 v1, 0x0
+.method public constructor <init>(Lild;Lihc;Ligq;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput-object p1, p0, Lgxj;->c:Lild;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-object p2, p0, Lgxj;->a:Lihc;
 
-    iput-object v0, p0, Lgxj;->a:Ljava/util/List;
-
-    iput-boolean v1, p0, Lgxj;->c:Z
-
-    iput-boolean v1, p0, Lgxj;->d:Z
-
-    iput-wide v2, p0, Lgxj;->e:J
-
-    iput-wide v2, p0, Lgxj;->f:J
-
-    iput-object p1, p0, Lgxj;->b:Lgxk;
+    iput-object p3, p0, Lgxj;->b:Ligq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-boolean v0, p0, Lgxj;->d:Z
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    iget-wide v0, p0, Lgxj;->f:J
-
-    :goto_0
-    return-wide v0
+    if-ne p0, p1, :cond_1
 
     :cond_0
-    iget-boolean v0, p0, Lgxj;->c:Z
+    :goto_0
+    return v0
 
-    if-eqz v0, :cond_1
+    :cond_1
+    if-eqz p1, :cond_2
 
-    iget-wide v0, p0, Lgxj;->e:J
+    instance-of v2, p1, Lgxj;
+
+    if-nez v2, :cond_3
+
+    :cond_2
+    move v0, v1
 
     goto :goto_0
 
-    :cond_1
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    :cond_3
+    check-cast p1, Lgxj;
 
-    move-result-wide v0
+    iget-object v2, p0, Lgxj;->c:Lild;
+
+    iget-object v3, p1, Lgxj;->c:Lild;
+
+    invoke-static {v2, v3}, Ljre;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    iget-object v2, p0, Lgxj;->b:Ligq;
+
+    iget-object v3, p1, Lgxj;->b:Ligq;
+
+    invoke-static {v2, v3}, Ljre;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    iget-object v2, p0, Lgxj;->a:Lihc;
+
+    iget-object v3, p1, Lgxj;->a:Lihc;
+
+    invoke-static {v2, v3}, Ljre;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    :cond_4
+    move v0, v1
 
     goto :goto_0
 .end method
 
-.method public final invalidate()V
-    .locals 2
+.method public final hashCode()I
+    .locals 3
 
-    iget-boolean v0, p0, Lgxj;->d:Z
+    const/4 v0, 0x3
 
-    if-nez v0, :cond_0
+    new-array v0, v0, [Ljava/lang/Object;
 
-    iget-boolean v0, p0, Lgxj;->c:Z
+    const/4 v1, 0x0
 
-    if-nez v0, :cond_0
+    iget-object v2, p0, Lgxj;->c:Lild;
 
-    iget-object v0, p0, Lgxj;->b:Lgxk;
+    aput-object v2, v0, v1
 
-    invoke-interface {v0}, Lgxk;->invalidate()V
+    const/4 v1, 0x1
 
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    iget-object v2, p0, Lgxj;->b:Ligq;
 
-    move-result-wide v0
+    aput-object v2, v0, v1
 
-    iput-wide v0, p0, Lgxj;->e:J
+    const/4 v1, 0x2
 
-    :cond_0
-    const/4 v0, 0x1
+    iget-object v2, p0, Lgxj;->a:Lihc;
 
-    iput-boolean v0, p0, Lgxj;->c:Z
+    aput-object v2, v0, v1
 
-    return-void
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    const-string v0, "ViewfinderConfig"
+
+    invoke-static {v0}, Ljhn;->b(Ljava/lang/String;)Ljrc;
+
+    move-result-object v0
+
+    const-string v1, "cameraFacing"
+
+    iget-object v2, p0, Lgxj;->c:Lild;
+
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
+
+    move-result-object v0
+
+    const-string v1, "viewfinderAspectRatio"
+
+    iget-object v2, p0, Lgxj;->b:Ligq;
+
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
+
+    move-result-object v0
+
+    const-string v1, "viewfinderResolution"
+
+    iget-object v2, p0, Lgxj;->a:Lihc;
+
+    invoke-virtual {v0, v1, v2}, Ljrc;->a(Ljava/lang/String;Ljava/lang/Object;)Ljrc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljrc;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

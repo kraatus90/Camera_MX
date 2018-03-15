@@ -7,14 +7,22 @@
 
 
 # instance fields
-.field private synthetic a:Laaj;
+.field private final synthetic a:I
+
+.field private final synthetic b:Ljava/lang/String;
+
+.field private final synthetic c:Laag;
 
 
 # direct methods
-.method constructor <init>(Laaj;)V
+.method constructor <init>(Laag;ILjava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Laak;->a:Laaj;
+    iput-object p1, p0, Laak;->c:Laag;
+
+    iput p2, p0, Laak;->a:I
+
+    iput-object p3, p0, Laak;->b:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,13 +32,17 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Laak;->a:Laaj;
+    iget-object v0, p0, Laak;->c:Laag;
 
-    iget-object v0, v0, Laaj;->a:Labp;
+    iget-object v0, v0, Laag;->a:Laaf;
 
-    invoke-interface {v0}, Labp;->a()V
+    iget v1, p0, Laak;->a:I
+
+    iget-object v2, p0, Laak;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Laaf;->b(ILjava/lang/String;)V
 
     return-void
 .end method

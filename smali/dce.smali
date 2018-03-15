@@ -1,60 +1,60 @@
-.class final Ldce;
+.class public final Ldce;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldby;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldby;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldce;->a:Ldby;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldce;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
-    .locals 3
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Ldce;->a:Ldby;
+    iget-object v0, p0, Ldce;->a:Lkgv;
 
-    iget-object v0, v0, Ldby;->h:Lhbo;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    iget-object v1, v0, Lhbo;->g:Leug;
+    move-result-object v0
 
-    const/4 v2, 0x0
+    check-cast v0, Landroid/content/res/Resources;
 
-    invoke-virtual {v1, v2}, Leug;->c(Z)V
+    const v1, 0x7f0f000b
 
-    iget-object v1, v0, Lhbo;->c:Lest;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
-    invoke-virtual {v0}, Lhbo;->a()Landroid/content/DialogInterface$OnClickListener;
+    move-result v0
 
-    move-result-object v2
+    const-string v1, "PanoramaModule"
 
-    invoke-interface {v1, v2}, Lest;->d(Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog;
+    new-instance v2, Lcsc;
 
-    move-result-object v1
+    const/4 v3, 0x1
 
-    iput-object v1, v0, Lhbo;->h:Landroid/app/AlertDialog;
+    invoke-direct {v2, v0, v1, v3}, Lcsc;-><init>(ILjava/lang/String;Z)V
 
-    invoke-virtual {v0}, Lhbo;->d()V
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-void
-.end method
+    invoke-static {v2, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 0
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lcsc;
+
+    return-object v0
 .end method

@@ -1,69 +1,47 @@
-.class public final Lguk;
+.class public final synthetic Lguk;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lgvb;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Licz;
-
-.field private b:Lgum;
-
-.field private c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Lgug;
 
 
 # direct methods
-.method constructor <init>(Lgum;Licz;)V
-    .locals 2
+.method public constructor <init>(Lgug;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lguk;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p1, p0, Lguk;->b:Lgum;
-
-    iput-object p2, p0, Lguk;->a:Licz;
+    iput-object p1, p0, Lguk;->a:Lgug;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    iget-object v0, p0, Lguk;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lguk;->a:Lgug;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Lgvj;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    invoke-virtual {v1, v0}, Lgvj;->h(I)Lgvj;
 
-    iget-object v0, p0, Lguk;->a:Licz;
-
-    const-string v1, "AllAudioInit"
-
-    invoke-interface {v0, v1}, Licz;->a(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lguk;->b:Lgum;
-
-    invoke-interface {v0}, Lgum;->d()V
-
-    iget-object v0, p0, Lguk;->a:Licz;
-
-    invoke-interface {v0}, Licz;->a()V
-
-    :cond_0
     return-void
 .end method

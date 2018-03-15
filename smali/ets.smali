@@ -1,99 +1,91 @@
-.class final Lets;
-.super Ljava/lang/Object;
+.class public final enum Lets;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final enum a:Lets;
 
-# instance fields
-.field public final synthetic a:Letr;
+.field public static final enum b:Lets;
+
+.field public static final enum c:Lets;
+
+.field private static final synthetic d:[Lets;
 
 
 # direct methods
-.method constructor <init>(Letr;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lets;->a:Letr;
+    const/4 v4, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v0, Lets;
+
+    const-string v1, "ENCODE_AND_PAUSE"
+
+    invoke-direct {v0, v1, v2}, Lets;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lets;->a:Lets;
+
+    new-instance v0, Lets;
+
+    const-string v1, "DROP_BUT_CONTINUE"
+
+    invoke-direct {v0, v1, v3}, Lets;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lets;->b:Lets;
+
+    new-instance v0, Lets;
+
+    const-string v1, "ENCODE"
+
+    invoke-direct {v0, v1, v4}, Lets;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lets;->c:Lets;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Lets;
+
+    sget-object v1, Lets;->a:Lets;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lets;->b:Lets;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lets;->c:Lets;
+
+    aput-object v1, v0, v4
+
+    sput-object v0, Lets;->d:[Lets;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final run()V
-    .locals 3
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lets;->a:Letr;
-
-    iget-object v1, v0, Letr;->i:Ljava/lang/Boolean;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lets;->a:Letr;
-
-    iget-object v0, v0, Letr;->i:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lets;->a:Letr;
-
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    iput-object v2, v0, Letr;->j:Ljava/lang/Boolean;
-
-    monitor-exit v1
-
-    :goto_0
     return-void
+.end method
 
-    :cond_0
-    iget-object v0, p0, Lets;->a:Letr;
+.method public static values()[Lets;
+    .locals 1
 
-    const/4 v2, 0x1
+    sget-object v0, Lets;->d:[Lets;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0}, [Lets;->clone()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, v0, Letr;->i:Ljava/lang/Boolean;
+    check-cast v0, [Lets;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    new-instance v0, Lett;
-
-    invoke-direct {v0, p0}, Lett;-><init>(Lets;)V
-
-    sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Void;
-
-    invoke-virtual {v0, v1, v2}, Lett;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-object v0
 .end method

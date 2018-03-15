@@ -1,105 +1,119 @@
-.class public final Lifd;
-.super Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
+.class public final enum Lifd;
+.super Ljava/lang/Enum;
 .source "PG"
 
 
+# static fields
+.field public static final enum a:Lifd;
+
+.field private static final enum c:Lifd;
+
+.field private static final enum d:Lifd;
+
+.field private static final enum e:Lifd;
+
+.field private static final synthetic f:[Lifd;
+
+
 # instance fields
-.field private a:Lihv;
+.field public final b:I
 
 
 # direct methods
-.method constructor <init>(Lihv;)V
+.method static constructor <clinit>()V
+    .locals 7
+
+    const/4 v6, 0x3
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    const/4 v3, 0x2
+
+    new-instance v0, Lifd;
+
+    const-string v1, "LC"
+
+    invoke-direct {v0, v1, v4, v3}, Lifd;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lifd;->a:Lifd;
+
+    new-instance v0, Lifd;
+
+    const-string v1, "HE"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v5, v2}, Lifd;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lifd;->c:Lifd;
+
+    new-instance v0, Lifd;
+
+    const-string v1, "LD"
+
+    const/16 v2, 0x17
+
+    invoke-direct {v0, v1, v3, v2}, Lifd;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lifd;->d:Lifd;
+
+    new-instance v0, Lifd;
+
+    const-string v1, "ELD"
+
+    const/16 v2, 0x27
+
+    invoke-direct {v0, v1, v6, v2}, Lifd;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lifd;->e:Lifd;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lifd;
+
+    sget-object v1, Lifd;->a:Lifd;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lifd;->c:Lifd;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lifd;->d:Lifd;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lifd;->e:Lifd;
+
+    aput-object v1, v0, v6
+
+    sput-object v0, Lifd;->f:[Lifd;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p1, p0, Lifd;->a:Lihv;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .locals 2
-
-    iget-object v0, p0, Lifd;->a:Lihv;
-
-    new-instance v1, Liex;
-
-    invoke-direct {v1, p1}, Liex;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
-
-    invoke-interface {v0, v1}, Lihv;->d(Liht;)V
+    iput p3, p0, Lifd;->b:I
 
     return-void
 .end method
 
-.method public final onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .locals 2
+.method public static values()[Lifd;
+    .locals 1
 
-    iget-object v0, p0, Lifd;->a:Lihv;
+    sget-object v0, Lifd;->f:[Lifd;
 
-    new-instance v1, Liex;
+    invoke-virtual {v0}, [Lifd;->clone()Ljava/lang/Object;
 
-    invoke-direct {v1, p1}, Liex;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Lihv;->e(Liht;)V
+    check-cast v0, [Lifd;
 
-    return-void
-.end method
-
-.method public final onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .locals 2
-
-    iget-object v0, p0, Lifd;->a:Lihv;
-
-    new-instance v1, Liex;
-
-    invoke-direct {v1, p1}, Liex;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
-
-    invoke-interface {v0, v1}, Lihv;->b(Liht;)V
-
-    return-void
-.end method
-
-.method public final onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .locals 2
-
-    iget-object v0, p0, Lifd;->a:Lihv;
-
-    new-instance v1, Liex;
-
-    invoke-direct {v1, p1}, Liex;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
-
-    invoke-interface {v0, v1}, Lihv;->a(Liht;)V
-
-    return-void
-.end method
-
-.method public final onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
-    .locals 2
-
-    iget-object v0, p0, Lifd;->a:Lihv;
-
-    new-instance v1, Liex;
-
-    invoke-direct {v1, p1}, Liex;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
-
-    invoke-interface {v0, v1}, Lihv;->c(Liht;)V
-
-    return-void
-.end method
-
-.method public final onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
-    .locals 2
-
-    iget-object v0, p0, Lifd;->a:Lihv;
-
-    new-instance v1, Liex;
-
-    invoke-direct {v1, p1}, Liex;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
-
-    invoke-interface {v0, v1, p2}, Lihv;->a(Liht;Landroid/view/Surface;)V
-
-    return-void
+    return-object v0
 .end method

@@ -1,64 +1,59 @@
-.class final Lcas;
-.super Landroid/app/Dialog;
+.class public final Lcas;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private synthetic a:Lcaq;
+.field public final a:Lcbn;
+
+.field public b:I
+
+.field public final c:Landroid/os/Handler;
+
+.field public d:Ljava/lang/Runnable;
+
+.field public e:Lcau;
 
 
 # direct methods
-.method constructor <init>(Lcaq;Landroid/content/Context;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lcas;->a:Lcaq;
+    const-string v0, "BurstA11yBtnCtrl"
 
-    invoke-direct {p0, p2, p3}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Lcbn;)V
+    .locals 2
 
-# virtual methods
-.method public final onBackPressed()V
-    .locals 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lcas;->a:Lcaq;
+    sget v0, Lep;->z:I
 
-    iget-object v0, v0, Lcaq;->b:Lccm;
+    iput v0, p0, Lcas;->b:I
 
-    invoke-virtual {v0}, Lccm;->a()Z
+    new-instance v0, Landroid/os/Handler;
 
-    move-result v0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    iget-object v0, p0, Lcas;->a:Lcaq;
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-virtual {v0}, Lcaq;->g()V
+    iput-object v0, p0, Lcas;->c:Landroid/os/Handler;
 
-    :goto_0
+    new-instance v0, Lcat;
+
+    invoke-direct {v0, p0}, Lcat;-><init>(Lcas;)V
+
+    iput-object v0, p0, Lcas;->d:Ljava/lang/Runnable;
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lcas;->a:Lcbn;
+
     return-void
-
-    :cond_0
-    iget-object v0, p0, Lcas;->a:Lcaq;
-
-    iget-object v0, v0, Lcaq;->k:Lcbn;
-
-    iget-boolean v0, v0, Lcbn;->c:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcas;->a:Lcaq;
-
-    iget-object v0, v0, Lcaq;->k:Lcbn;
-
-    invoke-virtual {v0}, Lcbn;->a()V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
-
-    goto :goto_0
 .end method

@@ -1,86 +1,35 @@
-.class public final Lhdm;
-.super Ljava/lang/Object;
+.class public Lhdm;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Lhdh;
 
 
 # instance fields
-.field private synthetic b:Lbjf;
+.field public d:Landroid/widget/VideoView;
 
-.field private synthetic c:Lfgf;
+.field public e:Lhdp;
 
 
 # direct methods
-.method public constructor <init>(Lbjf;Lfgf;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lhdm;->b:Lbjf;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lhdm;->c:Lfgf;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lglb;-><init>([[[[B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)V
-    .locals 2
-
-    iget-object v0, p0, Lhdm;->b:Lbjf;
-
-    iget-object v0, v0, Lbjf;->b:Lbjn;
-
-    invoke-virtual {v0, p1}, Lgvh;->a(F)V
-
-    iget-object v0, p0, Lhdm;->c:Lfgf;
-
-    iget-object v0, v0, Lfgf;->c:Lfgg;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, p1, v1}, Lfgg;->a(FZ)Z
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Lhdm;->b:Lbjf;
-
-    iget-object v0, v0, Lbjf;->b:Lbjn;
-
-    invoke-virtual {v0}, Lgvh;->h()V
-
-    iget-object v0, p0, Lhdm;->c:Lfgf;
-
-    iget-object v0, v0, Lfgf;->c:Lfgg;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lfgg;->a(Z)Z
-
-    return-void
-.end method
-
-.method public final d()V
+.method public a(Lhdy;Lhdp;)V
     .locals 1
 
-    iget-object v0, p0, Lhdm;->b:Lbjf;
+    iget-object v0, p1, Lhdy;->g:Landroid/widget/VideoView;
 
-    iget-object v0, v0, Lbjf;->a:Lbjj;
+    iput-object v0, p0, Lhdm;->d:Landroid/widget/VideoView;
 
-    invoke-virtual {v0}, Lgvh;->e()V
-
-    iget-object v0, p0, Lhdm;->c:Lfgf;
-
-    iget-object v0, v0, Lfgf;->c:Lfgg;
-
-    invoke-virtual {v0}, Lfgg;->b()V
+    iput-object p2, p0, Lhdm;->e:Lhdp;
 
     return-void
 .end method

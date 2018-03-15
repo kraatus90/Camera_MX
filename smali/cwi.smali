@@ -1,103 +1,44 @@
-.class public Lcwi;
-.super Lcng;
+.class public final Lcwi;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lggf;
+
+
+# instance fields
+.field private final a:Lgly;
 
 
 # direct methods
-.method protected constructor <init>(Lcng;)V
+.method public constructor <init>(Lgly;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcng;-><init>(Lcng;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method private constructor <init>(Lcnh;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcng;-><init>(Lcnh;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcnh;B)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcwi;-><init>(Lcnh;)V
-
-    invoke-direct {p0}, Lcwi;->f()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcwi;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcwi;-><init>(Lcng;)V
-
-    invoke-direct {p0}, Lcwi;->f()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcwi;B)V
-    .locals 2
-
-    invoke-direct {p0, p1}, Lcwi;-><init>(Lcng;)V
-
-    new-instance v0, Lcwk;
-
-    invoke-direct {v0, p0}, Lcwk;-><init>(Lcwi;)V
-
-    const-class v1, Lcvp;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
-
-    return-void
-.end method
-
-.method private final f()V
-    .locals 2
-
-    new-instance v0, Lcwj;
-
-    invoke-direct {v0, p0}, Lcwj;-><init>(Lcwi;)V
-
-    const-class v1, Lcvp;
-
-    invoke-virtual {p0, v1, v0}, Lcng;->a(Ljava/lang/Class;Lcnf;)V
+    iput-object p1, p0, Lcwi;->a:Lgly;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Class;)Lcnf;
-    .locals 1
+.method public final a(Lgit;Ljava/lang/String;JLandroid/location/Location;)Lgfr;
+    .locals 7
 
-    invoke-super {p0, p1}, Lcng;->a(Ljava/lang/Class;)Lcnf;
+    new-instance v0, Lcwh;
 
-    move-result-object v0
+    iget-object v6, p0, Lcwi;->a:Lgly;
 
-    check-cast v0, Lcwh;
+    move-object v1, p2
 
-    return-object v0
-.end method
+    move-wide v2, p3
 
-.method public synthetic b()Lcng;
-    .locals 1
+    move-object v4, p5
 
-    invoke-virtual {p0}, Lcwi;->e()Lcwi;
+    move-object v5, p1
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public e()Lcwi;
-    .locals 1
-
-    const/4 v0, 0x0
+    invoke-direct/range {v0 .. v6}, Lcwh;-><init>(Ljava/lang/String;JLandroid/location/Location;Lgit;Lgly;)V
 
     return-object v0
 .end method

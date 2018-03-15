@@ -2,30 +2,15 @@
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lasl;
-
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
-
-.field private g:Ljxn;
-
-.field private h:Ljxn;
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,9 +21,9 @@
 
     move-result-object v0
 
-    check-cast v0, Ljxn;
+    check-cast v0, Lkgv;
 
-    iput-object v0, p0, Latq;->a:Ljxn;
+    iput-object v0, p0, Latq;->a:Lkgv;
 
     const/4 v0, 0x2
 
@@ -46,73 +31,9 @@
 
     move-result-object v0
 
-    check-cast v0, Ljxn;
+    check-cast v0, Lkgv;
 
-    iput-object v0, p0, Latq;->b:Ljxn;
-
-    const/4 v0, 0x3
-
-    invoke-static {p3, v0}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Latq;->c:Ljxn;
-
-    const/4 v0, 0x4
-
-    invoke-static {p4, v0}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Latq;->d:Ljxn;
-
-    const/4 v0, 0x5
-
-    invoke-static {p5, v0}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Latq;->e:Ljxn;
-
-    const/4 v0, 0x6
-
-    invoke-static {p6, v0}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Latq;->f:Ljxn;
-
-    const/4 v0, 0x7
-
-    invoke-static {p7, v0}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Latq;->g:Ljxn;
-
-    const/16 v0, 0x8
-
-    invoke-static {p8, v0}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Latq;->h:Ljxn;
-
-    const/16 v0, 0x9
-
-    invoke-static {p9, v0}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+    iput-object v0, p0, Latq;->b:Lkgv;
 
     return-void
 .end method
@@ -154,184 +75,52 @@
 
 
 # virtual methods
-.method public final synthetic a(Lase;Lgdq;Liau;Ljht;Liau;)Lask;
-    .locals 14
+.method public final synthetic a(Lick;)Latp;
+    .locals 4
 
-    new-instance v1, Lato;
+    new-instance v3, Lava;
 
-    iget-object v2, p0, Latq;->a:Ljxn;
+    iget-object v0, p0, Latq;->a:Lkgv;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liay;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liay;
+
+    iget-object v1, p0, Latq;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Late;
+
+    const/4 v2, 0x2
+
+    invoke-static {v1, v2}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Late;
+
+    const/4 v2, 0x3
+
+    invoke-static {p1, v2}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lasc;
+    check-cast v2, Lick;
 
-    const/4 v3, 0x1
+    invoke-direct {v3, v0, v1, v2}, Lava;-><init>(Liay;Late;Lick;)V
 
-    invoke-static {v2, v3}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lasc;
-
-    iget-object v3, p0, Latq;->b:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lasf;
-
-    const/4 v4, 0x2
-
-    invoke-static {v3, v4}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lasf;
-
-    iget-object v4, p0, Latq;->c:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lasp;
-
-    const/4 v5, 0x3
-
-    invoke-static {v4, v5}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lasp;
-
-    iget-object v5, p0, Latq;->d:Ljxn;
-
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lass;
-
-    const/4 v6, 0x4
-
-    invoke-static {v5, v6}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lass;
-
-    iget-object v6, p0, Latq;->e:Ljxn;
-
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Latd;
-
-    const/4 v7, 0x5
-
-    invoke-static {v6, v7}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Latd;
-
-    iget-object v7, p0, Latq;->f:Ljxn;
-
-    invoke-interface {v7}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lhdc;
-
-    const/4 v8, 0x6
-
-    invoke-static {v7, v8}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lhdc;
-
-    iget-object v8, p0, Latq;->g:Ljxn;
-
-    invoke-interface {v8}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lhda;
-
-    const/4 v9, 0x7
-
-    invoke-static {v8, v9}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lhda;
-
-    iget-object v9, p0, Latq;->h:Ljxn;
-
-    invoke-interface {v9}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lhzt;
-
-    const/16 v10, 0x8
-
-    invoke-static {v9, v10}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lhzt;
-
-    const/16 v10, 0xa
-
-    invoke-static {p1, v10}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lase;
-
-    const/16 v11, 0xb
-
-    move-object/from16 v0, p2
-
-    invoke-static {v0, v11}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Lgdq;
-
-    const/16 v12, 0xc
-
-    move-object/from16 v0, p3
-
-    invoke-static {v0, v12}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Liau;
-
-    const/16 v13, 0xd
-
-    move-object/from16 v0, p4
-
-    invoke-static {v0, v13}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    const/16 v13, 0xe
-
-    move-object/from16 v0, p5
-
-    invoke-static {v0, v13}, Latq;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Liau;
-
-    invoke-direct/range {v1 .. v13}, Lato;-><init>(Lasc;Lasf;Lasp;Lass;Latd;Lhdc;Lhda;Lhzt;Lase;Lgdq;Liau;Liau;)V
-
-    return-object v1
+    return-object v3
 .end method

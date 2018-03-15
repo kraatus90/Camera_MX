@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Շարք (%1$d լուսանկար)</item>
+        <item quantity="one">Շարք (%1$d լուսանկար)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Պահվել է %1$d լուսանկար</item>
         <item quantity="one">%1$d photos saved</item>

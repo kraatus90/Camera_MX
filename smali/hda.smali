@@ -1,42 +1,81 @@
-.class public final Lhda;
-.super Ljava/lang/Object;
+.class Lhda;
+.super Lglb;
 .source "PG"
 
-# interfaces
-.implements Lhdj;
+
+# instance fields
+.field private final synthetic a:Lhcy;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method constructor <init>(Lhcy;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhda;->a:Lhcy;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lglb;-><init>([[[F)V
 
     return-void
 .end method
 
 
 # virtual methods
+.method public W()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public X()V
+    .locals 0
+
+    return-void
+.end method
+
 .method public final a()V
-    .locals 0
+    .locals 4
 
-    return-void
-.end method
+    iget-object v0, p0, Lhda;->a:Lhcy;
 
-.method public final b()V
-    .locals 0
+    iget-object v0, v0, Lhcy;->a:Lhdy;
 
-    return-void
-.end method
+    iget-object v1, v0, Lhdy;->n:Landroid/view/View;
 
-.method public final c()V
-    .locals 0
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final d()V
-    .locals 0
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    iget v2, v0, Lhdy;->f:I
+
+    int-to-long v2, v2
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    new-instance v2, Lhef;
+
+    invoke-direct {v2, v0}, Lhef;-><init>(Lhdy;)V
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    iget-object v0, v0, Lhdy;->e:Landroid/view/View;
+
+    const/16 v1, 0x700
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     return-void
 .end method

@@ -3,256 +3,431 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljoc;
 
 
 # instance fields
-.field private a:Ljod;
+.field public final a:Ljoa;
 
-.field private b:Ljme;
-
-.field private synthetic c:Ljnw;
+.field private final b:Ljava/io/FilenameFilter;
 
 
 # direct methods
-.method constructor <init>(Ljnw;)V
-    .locals 6
-
-    const/4 v1, 0x0
-
-    iput-object p1, p0, Ljny;->c:Ljnw;
+.method public constructor <init>(Ljoa;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v2, p0, Ljny;->c:Ljnw;
+    new-instance v0, Ljnz;
 
-    iget-object v0, v2, Ljnw;->a:Ljwe;
+    invoke-direct {v0, p0}, Ljnz;-><init>(Ljny;)V
 
-    iget-object v0, v0, Ljwe;->a:Ljava/lang/Object;
+    iput-object v0, p0, Ljny;->b:Ljava/io/FilenameFilter;
 
-    check-cast v0, Ljod;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v0, :cond_1
-
-    move-object v0, v1
-
-    :cond_0
-    :goto_0
-    iput-object v0, p0, Ljny;->a:Ljod;
+    iput-object p1, p0, Ljny;->a:Ljoa;
 
     return-void
-
-    :cond_1
-    iget-object v0, v2, Ljnw;->b:Ljkj;
-
-    iget-boolean v0, v0, Ljkj;->b:Z
-
-    if-eqz v0, :cond_5
-
-    iget-object v0, v2, Ljnw;->b:Ljkj;
-
-    iget-object v3, v0, Ljkj;->c:Ljava/lang/Object;
-
-    iget-object v0, v2, Ljnw;->a:Ljwe;
-
-    iget-object v0, v0, Ljwe;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljod;
-
-    invoke-virtual {v2}, Ljnw;->comparator()Ljava/util/Comparator;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4, v3}, Ljod;->a(Ljava/util/Comparator;Ljava/lang/Object;)Ljod;
-
-    move-result-object v0
-
-    if-nez v0, :cond_2
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v4, v2, Ljnw;->b:Ljkj;
-
-    iget-object v4, v4, Ljkj;->d:Ljjr;
-
-    sget-object v5, Ljjr;->a:Ljjr;
-
-    if-ne v4, v5, :cond_3
-
-    invoke-virtual {v2}, Ljnw;->comparator()Ljava/util/Comparator;
-
-    move-result-object v4
-
-    iget-object v5, v0, Ljod;->a:Ljava/lang/Object;
-
-    invoke-interface {v4, v3, v5}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    iget-object v0, v0, Ljod;->h:Ljod;
-
-    :cond_3
-    :goto_1
-    iget-object v3, v2, Ljnw;->c:Ljod;
-
-    if-eq v0, v3, :cond_4
-
-    iget-object v2, v2, Ljnw;->b:Ljkj;
-
-    iget-object v3, v0, Ljod;->a:Ljava/lang/Object;
-
-    invoke-virtual {v2, v3}, Ljkj;->c(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :cond_4
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_5
-    iget-object v0, v2, Ljnw;->c:Ljod;
-
-    iget-object v0, v0, Ljod;->h:Ljod;
-
-    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 3
+.method public final a(Ljava/io/File;)J
+    .locals 4
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ljny;->a:Ljoa;
 
-    iget-object v1, p0, Ljny;->a:Ljod;
+    invoke-interface {v0}, Ljoa;->a()Ljava/util/regex/Pattern;
 
-    if-nez v1, :cond_0
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v1, v0}, Ljoa;->a(Ljava/util/regex/Matcher;)J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_0
+    new-instance v0, Ljod;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x22
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Could not parse media file name : "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljod;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final b(Ljava/io/File;)I
+    .locals 4
+
+    iget-object v0, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v0}, Ljoa;->a()Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v1, v0}, Ljoa;->b(Ljava/util/regex/Matcher;)I
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    new-instance v0, Ljod;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x22
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Could not parse media file name : "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljod;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final c(Ljava/io/File;)Z
+    .locals 2
+
+    iget-object v0, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v0}, Ljoa;->a()Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d(Ljava/io/File;)Z
+    .locals 2
+
+    iget-object v0, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v0}, Ljoa;->a()Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v1, v0}, Ljoa;->e(Ljava/util/regex/Matcher;)Z
+
+    move-result v0
 
     :goto_0
     return v0
 
     :cond_0
-    iget-object v1, p0, Ljny;->c:Ljnw;
-
-    iget-object v1, v1, Ljnw;->b:Ljkj;
-
-    iget-object v2, p0, Ljny;->a:Ljod;
-
-    iget-object v2, v2, Ljod;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1, v2}, Ljkj;->b(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Ljny;->a:Ljod;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method public final synthetic next()Ljava/lang/Object;
-    .locals 3
+.method public final e(Ljava/io/File;)[Ljava/io/File;
+    .locals 4
 
-    invoke-virtual {p0}, Ljny;->hasNext()Z
+    iget-object v0, p0, Ljny;->b:Ljava/io/FilenameFilter;
 
-    move-result v0
+    invoke-virtual {p1, v0}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
+
+    move-result-object v0
 
     if-nez v0, :cond_0
 
-    new-instance v0, Ljava/util/NoSuchElementException;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0xc
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Cannot list "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_0
-    iget-object v0, p0, Ljny;->c:Ljnw;
-
-    iget-object v1, p0, Ljny;->a:Ljod;
-
-    new-instance v2, Ljnx;
-
-    invoke-direct {v2, v0, v1}, Ljnx;-><init>(Ljnw;Ljod;)V
-
-    iput-object v2, p0, Ljny;->b:Ljme;
-
-    iget-object v0, p0, Ljny;->a:Ljod;
-
-    iget-object v0, v0, Ljod;->h:Ljod;
-
-    iget-object v1, p0, Ljny;->c:Ljnw;
-
-    iget-object v1, v1, Ljnw;->c:Ljod;
-
-    if-ne v0, v1, :cond_1
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljny;->a:Ljod;
-
-    :goto_0
-    return-object v2
-
-    :cond_1
-    iget-object v0, p0, Ljny;->a:Ljod;
-
-    iget-object v0, v0, Ljod;->h:Ljod;
-
-    iput-object v0, p0, Ljny;->a:Ljod;
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public final remove()V
-    .locals 3
+.method public final f(Ljava/io/File;)Z
+    .locals 4
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Ljny;->a:Ljoa;
 
-    iget-object v0, p0, Ljny;->b:Ljme;
+    invoke-interface {v0}, Ljoa;->a()Ljava/util/regex/Pattern;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    :goto_0
-    const-string v2, "no calls to next() since the last call to remove()"
+    move-result-object v1
 
-    invoke-static {v0, v2}, Liya;->b(ZLjava/lang/Object;)V
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    iget-object v0, p0, Ljny;->c:Ljnw;
+    move-result-object v0
 
-    iget-object v2, p0, Ljny;->b:Ljme;
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
-    invoke-interface {v2}, Ljme;->a()Ljava/lang/Object;
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v1, v0}, Ljoa;->c(Ljava/util/regex/Matcher;)Z
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    new-instance v0, Ljod;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, v1}, Ljnw;->c(Ljava/lang/Object;I)I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    const/4 v0, 0x0
+    move-result v2
 
-    iput-object v0, p0, Ljny;->b:Ljme;
+    add-int/lit8 v2, v2, 0x22
 
-    return-void
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Could not parse media file name : "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljod;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final g(Ljava/io/File;)Z
+    .locals 4
+
+    iget-object v0, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v0}, Ljoa;->a()Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ljny;->a:Ljoa;
+
+    invoke-interface {v1, v0}, Ljoa;->d(Ljava/util/regex/Matcher;)Z
+
+    move-result v0
+
+    return v0
 
     :cond_0
-    move v0, v1
+    new-instance v0, Ljod;
 
-    goto :goto_0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x22
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Could not parse media file name : "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljod;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

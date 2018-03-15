@@ -1,36 +1,28 @@
-.class final Lhse;
+.class public final Lhse;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private synthetic a:Lhsb;
-
-
-# direct methods
-.method constructor <init>(Lhsb;)V
-    .locals 0
-
-    iput-object p1, p0, Lhse;->a:Lhsb;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public final a:Ljava/lang/Class;
 
 
 # virtual methods
-.method protected final finalize()V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Lhse;->a:Lhsb;
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    invoke-static {v0}, Lhsb;->a(Lhsb;)Lhks;
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    move-result-object v0
+    throw v0
+.end method
 
-    invoke-static {v0}, Lhsb;->b(Lhks;)V
+.method public final hashCode()I
+    .locals 1
 
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    return-void
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
 .end method

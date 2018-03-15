@@ -1,274 +1,154 @@
 .class public final Lfcr;
-.super Lfei;
+.super Ljava/lang/Object;
 .source "PG"
-
-# interfaces
-.implements Lgvk;
 
 
 # instance fields
-.field public a:Lgvj;
-
-.field public b:Lgvl;
-
-.field public c:Lgvl;
-
-.field public d:Lgvl;
+.field private final a:Lfct;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method public constructor <init>(Lfct;)V
+    .locals 0
 
-    const/4 v3, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lfei;-><init>()V
-
-    new-instance v0, Lfcs;
-
-    invoke-direct {v0, p0}, Lfcs;-><init>(Lfcr;)V
-
-    new-instance v1, Lgvl;
-
-    new-array v2, v3, [Lgvg;
-
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
-
-    iput-object v1, p0, Lfcr;->b:Lgvl;
-
-    new-instance v0, Lfct;
-
-    invoke-direct {v0, p0}, Lfct;-><init>(Lfcr;)V
-
-    new-instance v1, Lgvl;
-
-    new-array v2, v3, [Lgvg;
-
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
-
-    iput-object v1, p0, Lfcr;->c:Lgvl;
-
-    new-instance v0, Lfcu;
-
-    invoke-direct {v0, p0}, Lfcu;-><init>(Lfcr;)V
-
-    new-instance v1, Lgvl;
-
-    new-array v2, v3, [Lgvg;
-
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
-
-    iput-object v1, p0, Lfcr;->d:Lgvl;
-
-    new-instance v0, Lgvj;
-
-    iget-object v1, p0, Lfcr;->b:Lgvl;
-
-    invoke-direct {v0, v1, v3}, Lgvj;-><init>(Lgvl;Z)V
-
-    iput-object v0, p0, Lfcr;->a:Lgvj;
+    iput-object p1, p0, Lfcr;->a:Lfct;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final E()V
-    .locals 1
+.method public final a(Landroid/hardware/camera2/params/MeteringRectangle;Landroid/graphics/Rect;)Landroid/graphics/PointF;
+    .locals 5
 
-    iget-object v0, p0, Lfcr;->a:Lgvj;
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    new-instance v1, Landroid/graphics/PointF;
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    invoke-virtual {p1}, Landroid/hardware/camera2/params/MeteringRectangle;->getRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lfeh;
-
-    invoke-virtual {v0}, Lfeh;->E()V
-
-    goto :goto_0
-.end method
-
-.method public final M()V
-    .locals 1
-
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lfeh;
-
-    invoke-virtual {v0}, Lfeh;->M()V
-
-    goto :goto_0
-.end method
-
-.method public final a()V
-    .locals 1
-
-    invoke-super {p0}, Lfei;->a()V
-
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->c()V
-
-    return-void
-.end method
-
-.method public final a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Landroid/view/Window;Levh;Laxo;Ljht;)V
-    .locals 2
-
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->f()Z
+    invoke-virtual {v0}, Landroid/graphics/Rect;->exactCenterX()F
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1}, Landroid/hardware/camera2/params/MeteringRectangle;->getRect()Landroid/graphics/Rect;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->exactCenterY()F
+
+    move-result v2
+
+    invoke-direct {v1, v0, v2}, Landroid/graphics/PointF;-><init>(FF)V
+
+    new-instance v0, Landroid/graphics/PointF;
+
+    iget v2, v1, Landroid/graphics/PointF;->x:F
+
+    iget v3, p2, Landroid/graphics/Rect;->left:I
+
+    int-to-float v3, v3
+
+    sub-float/2addr v2, v3
+
+    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v2, v3
+
+    iget v1, v1, Landroid/graphics/PointF;->y:F
+
+    iget v3, p2, Landroid/graphics/Rect;->top:I
+
+    int-to-float v3, v3
+
+    sub-float/2addr v1, v3
+
+    invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v1, v3
+
+    invoke-direct {v0, v2, v1}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iget-object v1, p0, Lfcr;->a:Lfct;
+
+    iget v1, v1, Lfct;->a:I
+
+    sparse-switch v1, :sswitch_data_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Unsupported Sensor Orientation"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :sswitch_0
+    new-instance v1, Landroid/graphics/PointF;
+
+    iget v2, v0, Landroid/graphics/PointF;->y:F
+
+    sub-float v2, v4, v2
+
+    iget v0, v0, Landroid/graphics/PointF;->x:F
+
+    invoke-direct {v1, v2, v0}, Landroid/graphics/PointF;-><init>(FF)V
+
+    move-object v0, v1
 
     :goto_0
-    return-void
+    :sswitch_1
+    return-object v0
 
-    :cond_0
-    invoke-super/range {p0 .. p7}, Lfei;->a(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Lhem;Landroid/view/Window;Levh;Laxo;Ljht;)V
+    :sswitch_2
+    new-instance v1, Landroid/graphics/PointF;
 
-    iget-object v0, p0, Lfcr;->a:Lgvj;
+    iget v2, v0, Landroid/graphics/PointF;->x:F
 
-    sget v1, Leh;->bo:I
+    sub-float v2, v4, v2
 
-    iput v1, v0, Lgvj;->a:I
+    iget v0, v0, Landroid/graphics/PointF;->y:F
 
-    goto :goto_0
-.end method
+    sub-float v0, v4, v0
 
-.method public final b()V
-    .locals 1
+    invoke-direct {v1, v2, v0}, Landroid/graphics/PointF;-><init>(FF)V
 
-    invoke-super {p0}, Lfei;->b()V
-
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->d()V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 0
-
-    invoke-interface {p0}, Lgvk;->j()V
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 1
-
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->e()V
-
-    iget-object v0, p0, Lfcr;->b:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    iget-object v0, p0, Lfcr;->c:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    iget-object v0, p0, Lfcr;->d:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    return-void
-.end method
-
-.method public final r_()V
-    .locals 1
-
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lfeh;
-
-    invoke-virtual {v0}, Lfeh;->r_()V
+    move-object v0, v1
 
     goto :goto_0
-.end method
 
-.method public final s_()V
-    .locals 1
+    :sswitch_3
+    new-instance v1, Landroid/graphics/PointF;
 
-    iget-object v0, p0, Lfcr;->a:Lgvj;
+    iget v2, v0, Landroid/graphics/PointF;->y:F
 
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
+    iget v0, v0, Landroid/graphics/PointF;->x:F
 
-    move-result-object v0
+    sub-float v0, v4, v0
 
-    if-nez v0, :cond_0
+    invoke-direct {v1, v2, v0}, Landroid/graphics/PointF;-><init>(FF)V
 
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfcr;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lfeh;
-
-    invoke-virtual {v0}, Lfeh;->s_()V
+    move-object v0, v1
 
     goto :goto_0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_1
+        0x5a -> :sswitch_0
+        0xb4 -> :sswitch_2
+        0x10e -> :sswitch_3
+    .end sparse-switch
 .end method

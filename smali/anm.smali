@@ -1,61 +1,58 @@
-.class public final Lanm;
-.super Ljava/io/IOException;
+.class final Lanm;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lagw;
 
-# static fields
-.field public static final serialVersionUID:J = -0x3c350493c899b79dL
+
+# instance fields
+.field private final a:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 2
+.method constructor <init>(Landroid/graphics/Bitmap;)V
+    .locals 0
 
-    const/16 v0, 0x6c
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v0, "CodedOutputStream was writing to a flat byte array and ran out of space (pos "
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, " limit "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ")."
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lanm;->a:Landroid/graphics/Bitmap;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+# virtual methods
+.method public final a()Ljava/lang/Class;
+    .locals 1
+
+    const-class v0, Landroid/graphics/Bitmap;
+
+    return-object v0
+.end method
+
+.method public final synthetic b()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lanm;->a:Landroid/graphics/Bitmap;
+
+    return-object v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    iget-object v0, p0, Lanm;->a:Landroid/graphics/Bitmap;
+
+    invoke-static {v0}, Larx;->a(Landroid/graphics/Bitmap;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d()V
+    .locals 0
 
     return-void
 .end method

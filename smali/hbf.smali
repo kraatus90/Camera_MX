@@ -1,99 +1,62 @@
-.class final Lhbf;
+.class public final Lhbf;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lhaw;
 
 
 # instance fields
-.field private synthetic a:Lhbd;
+.field private final b:Landroid/animation/Animator;
+
+.field private final c:Lkeh;
 
 
 # direct methods
-.method constructor <init>(Lhbd;)V
+.method public constructor <init>(Landroid/animation/Animator;Lkeh;)V
     .locals 0
 
-    iput-object p1, p0, Lhbf;->a:Lhbd;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhbf;->b:Landroid/animation/Animator;
+
+    iput-object p2, p0, Lhbf;->c:Lkeh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final a()Lkeh;
+    .locals 1
 
-    iget-object v0, p0, Lhbf;->a:Lhbd;
+    iget-object v0, p0, Lhbf;->c:Lkeh;
 
-    iget-object v1, v0, Lhbd;->h:Ljava/lang/Object;
+    return-object v0
+.end method
 
-    monitor-enter v1
+.method public final a(Lhax;)V
+    .locals 3
 
-    :try_start_0
-    iget-object v0, p0, Lhbf;->a:Lhbd;
+    iget-object v0, p0, Lhbf;->c:Lkeh;
 
-    iget-object v0, v0, Lhbd;->b:Lbav;
+    new-instance v1, Lhbg;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v1, p1}, Lhbg;-><init>(Lhax;)V
 
-    iget-object v0, p0, Lhbf;->a:Lhbd;
+    sget-object v2, Lken;->a:Lken;
 
-    invoke-static {v0}, Lhbd;->a(Lhbd;)I
-
-    move-result v0
-
-    sget v2, Leh;->bp:I
-
-    if-ne v0, v2, :cond_0
-
-    iget-object v0, p0, Lhbf;->a:Lhbd;
-
-    iget-object v0, v0, Lhbd;->d:Lhax;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    iget-object v0, p0, Lhbf;->a:Lhbd;
-
-    iget-object v0, v0, Lhbd;->b:Lbav;
-
-    invoke-interface {v0}, Lbav;->c()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    iget-object v0, p0, Lhbf;->a:Lhbd;
-
-    iget-object v0, v0, Lhbd;->b:Lbav;
-
-    invoke-interface {v0}, Lbav;->d()J
-
-    move-result-wide v4
-
-    sub-long/2addr v2, v4
-
-    iget-object v0, p0, Lhbf;->a:Lhbd;
-
-    iget-object v0, v0, Lhbd;->f:Lbjc;
-
-    invoke-virtual {v0, v2, v3}, Lbjc;->a(J)V
-
-    :cond_0
-    monitor-exit v1
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public final b()V
+    .locals 1
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lhbf;->b:Landroid/animation/Animator;
 
-    throw v0
+    invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
+
+    return-void
 .end method

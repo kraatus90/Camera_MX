@@ -1,103 +1,220 @@
-.class abstract Ljtq;
-.super Ljava/lang/Object;
+.class public abstract Ljtq;
+.super Ljtp;
 .source "PG"
 
-
-# static fields
-.field private static a:Ljava/util/logging/Logger;
-
-.field public static final e:Ljtr;
-
-
-# instance fields
-.field public volatile c:Ljava/util/Set;
-
-.field public volatile d:I
+# interfaces
+.implements Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>()V
+    .locals 0
 
-    const-class v0, Ljtq;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
-
-    move-result-object v0
-
-    sput-object v0, Ljtq;->a:Ljava/util/logging/Logger;
-
-    :try_start_0
-    new-instance v0, Ljts;
-
-    const-class v1, Ljtq;
-
-    const-class v2, Ljava/util/Set;
-
-    const-string v3, "c"
-
-    invoke-static {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    move-result-object v1
-
-    const-class v2, Ljtq;
-
-    const-string v3, "d"
-
-    invoke-static {v2, v3}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ljts;-><init>(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    sput-object v0, Ljtq;->e:Ljtr;
-
-    return-void
-
-    :catch_0
-    move-exception v5
-
-    sget-object v0, Ljtq;->a:Ljava/util/logging/Logger;
-
-    sget-object v1, Ljava/util/logging/Level;->SEVERE:Ljava/util/logging/Level;
-
-    const-string v2, "com.google.common.util.concurrent.AggregateFutureState"
-
-    const-string v3, "<clinit>"
-
-    const-string v4, "SafeAtomicHelper is broken!"
-
-    invoke-virtual/range {v0 .. v5}, Ljava/util/logging/Logger;->logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    new-instance v0, Ljtt;
-
-    invoke-direct {v0}, Ljtt;-><init>()V
-
-    goto :goto_0
-.end method
-
-.method constructor <init>(I)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ljtq;->c:Ljava/util/Set;
-
-    iput p1, p0, Ljtq;->d:I
+    invoke-direct {p0}, Ljtp;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract a(Ljava/util/Set;)V
+.method public abstract a()Ljava/util/List;
+.end method
+
+.method public add(ILjava/lang/Object;)V
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public addAll(ILjava/util/Collection;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public synthetic b()Ljava/util/Collection;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic c()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-eq p1, p0, :cond_0
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public get(I)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public indexOf(Ljava/lang/Object;)I
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public lastIndexOf(Ljava/lang/Object;)I
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/List;->lastIndexOf(Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public listIterator()Ljava/util/ListIterator;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public listIterator(I)Ljava/util/ListIterator;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public remove(I)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public set(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public subList(II)Ljava/util/List;
+    .locals 1
+
+    invoke-virtual {p0}, Ljtq;->a()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
 .end method

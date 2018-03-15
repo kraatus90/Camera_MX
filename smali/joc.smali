@@ -1,43 +1,26 @@
-.class final enum Ljoc;
-.super Ljoa;
+.class public interface abstract Ljoc;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Ljoa;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method final a(Ljod;)I
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
+.method public abstract a(Ljava/io/File;)J
 .end method
 
-.method final b(Ljod;)J
-    .locals 2
+.method public abstract b(Ljava/io/File;)I
+.end method
 
-    if-nez p1, :cond_0
+.method public abstract c(Ljava/io/File;)Z
+.end method
 
-    const-wide/16 v0, 0x0
+.method public abstract d(Ljava/io/File;)Z
+.end method
 
-    :goto_0
-    return-wide v0
+.method public abstract e(Ljava/io/File;)[Ljava/io/File;
+.end method
 
-    :cond_0
-    iget v0, p1, Ljod;->c:I
+.method public abstract f(Ljava/io/File;)Z
+.end method
 
-    int-to-long v0, v0
-
-    goto :goto_0
+.method public abstract g(Ljava/io/File;)Z
 .end method

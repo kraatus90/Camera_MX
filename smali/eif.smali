@@ -1,207 +1,433 @@
-.class final Leif;
+.class public Leif;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lihu;
-
 
 # instance fields
-.field private a:Lihu;
+.field public a:I
 
-.field private b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
+.field public b:I
+
+.field public c:I
+
+.field public d:I
 
 
 # direct methods
-.method constructor <init>(Lihu;Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, -0x1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leif;->a:Lihu;
+    iput v0, p0, Leif;->a:I
 
-    iput-object p2, p0, Leif;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
+    iput v0, p0, Leif;->b:I
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(I)V
-    .locals 1
-
-    iget-object v0, p0, Leif;->a:Lihu;
-
-    invoke-interface {v0, p1}, Lihu;->a(I)V
+    iput v0, p0, Leif;->c:I
 
     return-void
 .end method
 
-.method public final a(IJ)V
-    .locals 2
+.method public static a(ILjava/lang/String;)I
+    .locals 4
 
-    iget-object v0, p0, Leif;->a:Lihu;
+    invoke-static {p0, p1}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
 
-    invoke-interface {v0, p1, p2, p3}, Lihu;->a(IJ)V
+    move-result v1
 
-    return-void
-.end method
+    const/4 v0, -0x1
 
-.method public final a(Liib;JJ)V
-    .locals 6
+    if-ne v1, v0, :cond_0
 
-    iget-object v0, p0, Leif;->a:Lihu;
+    new-instance v0, Leie;
 
-    move-object v1, p1
-
-    move-wide v2, p2
-
-    move-wide v4, p4
-
-    invoke-interface/range {v0 .. v5}, Lihu;->a(Liib;JJ)V
-
-    return-void
-.end method
-
-.method public final a(Liib;Landroid/view/Surface;J)V
-    .locals 1
-
-    iget-object v0, p0, Leif;->a:Lihu;
-
-    invoke-interface {v0, p1, p2, p3, p4}, Lihu;->a(Liib;Landroid/view/Surface;J)V
-
-    return-void
-.end method
-
-.method public final a(Liib;Lihz;)V
-    .locals 1
-
-    iget-object v0, p0, Leif;->a:Lihu;
-
-    invoke-interface {v0, p1, p2}, Lihu;->a(Liib;Lihz;)V
-
-    return-void
-.end method
-
-.method public final a(Liib;Liic;)V
-    .locals 10
-
-    const-wide/16 v8, 0x0
-
-    const/4 v7, 0x1
-
-    iget-object v0, p0, Leif;->b:Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;
-
-    iget v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->a:I
-
-    if-nez v1, :cond_3
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->m:Lijl;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->d:J
-
-    invoke-static {}, Lfsq;->a()Lfsq;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    iget-wide v2, v1, Lfsq;->d:J
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    cmp-long v2, v2, v8
+    move-result v1
 
-    if-nez v2, :cond_0
+    add-int/lit8 v1, v1, 0x19
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    move-result-wide v2
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iput-wide v2, v1, Lfsq;->d:J
+    const-string v1, "Unable to find "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " in shader"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Leie;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     :cond_0
-    invoke-static {}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->instance()Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;
+    const-string v2, "glGetAttribLocation "
 
-    move-result-object v1
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/stats/Instrumentation;->cameraActivity()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSessionRecorder;->getCurrentSession()Lcom/google/android/apps/camera/legacy/app/stats/InstrumentationSession;
+    move-result v3
 
-    move-result-object v1
+    if-eqz v3, :cond_1
 
-    check-cast v1, Lcom/google/android/apps/camera/legacy/app/stats/CameraActivitySession;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->d:J
+    move-result-object v0
 
-    iget-wide v4, v1, Lcom/google/android/apps/camera/legacy/app/stats/CameraActivitySession;->g:J
+    :goto_0
+    invoke-static {v0}, Leie;->a(Ljava/lang/String;)V
 
-    cmp-long v4, v4, v8
-
-    if-nez v4, :cond_1
-
-    iput-wide v2, v1, Lcom/google/android/apps/camera/legacy/app/stats/CameraActivitySession;->g:J
+    return v1
 
     :cond_1
-    const-string v1, "First capture request sent"
+    new-instance v0, Ljava/lang/String;
 
-    iget-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->c:J
-
-    const-string v4, "first capture result received"
-
-    iget-wide v5, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->d:J
-
-    invoke-virtual/range {v0 .. v6}, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->a(Ljava/lang/String;JLjava/lang/String;J)V
-
-    iput v7, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->a:I
-
-    :cond_2
-    :goto_0
-    iget-object v0, p0, Leif;->a:Lihu;
-
-    invoke-interface {v0, p1, p2}, Lihu;->a(Liib;Liic;)V
-
-    return-void
-
-    :cond_3
-    iget v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->a:I
-
-    if-ne v1, v7, :cond_2
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->m:Lijl;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->e:J
-
-    const-string v1, "first capture result received"
-
-    iget-wide v2, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->d:J
-
-    const-string v4, "second capture result received"
-
-    iget-wide v5, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->e:J
-
-    invoke-virtual/range {v0 .. v6}, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->a(Ljava/lang/String;JLjava/lang/String;J)V
-
-    const/4 v1, 0x2
-
-    iput v1, v0, Lcom/google/android/apps/camera/legacy/app/stats/CameraCaptureSessionInstrumentationSession;->a:I
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
 
-.method public final b(Liib;Liic;)V
-    .locals 1
+.method public static a(Ljava/lang/String;Ljava/lang/String;)I
+    .locals 7
 
-    iget-object v0, p0, Leif;->a:Lihu;
+    const/4 v6, 0x1
 
-    invoke-interface {v0, p1, p2}, Lihu;->b(Liib;Liic;)V
+    const/4 v5, 0x0
 
+    const v0, 0x8b31
+
+    invoke-static {v0, p0}, Leif;->c(ILjava/lang/String;)I
+
+    move-result v0
+
+    const v1, 0x8b30
+
+    invoke-static {v1, p1}, Leif;->c(ILjava/lang/String;)I
+
+    move-result v1
+
+    invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    new-instance v0, Leie;
+
+    const-string v1, "Unable to create program"
+
+    invoke-direct {v0, v1}, Leie;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    invoke-static {v2, v0}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    const-string v3, "glAttachShader"
+
+    invoke-static {v3}, Leie;->a(Ljava/lang/String;)V
+
+    invoke-static {v2, v1}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    const-string v3, "glAttachShader"
+
+    invoke-static {v3}, Leie;->a(Ljava/lang/String;)V
+
+    invoke-static {v2}, Landroid/opengl/GLES20;->glLinkProgram(I)V
+
+    new-array v3, v6, [I
+
+    const v4, 0x8b82
+
+    invoke-static {v2, v4, v3, v5}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
+
+    aget v3, v3, v5
+
+    if-eq v3, v6, :cond_1
+
+    invoke-static {v2}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
+
+    new-instance v0, Leie;
+
+    const-string v1, "Could not link program"
+
+    invoke-static {v2}, Landroid/opengl/GLES20;->glGetProgramInfoLog(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Leie;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    invoke-static {v1}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    return v2
+.end method
+
+.method public static b(ILjava/lang/String;)I
+    .locals 4
+
+    invoke-static {p0, p1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
+
+    move-result v1
+
+    const/4 v0, -0x1
+
+    if-ne v1, v0, :cond_0
+
+    new-instance v0, Leie;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x19
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Unable to find "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " in shader"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Leie;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    const-string v2, "glGetUniformLocation "
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-static {v0}, Leie;->a(Ljava/lang/String;)V
+
+    return v1
+
+    :cond_1
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method private static c(ILjava/lang/String;)I
+    .locals 4
+
+    const/4 v3, 0x0
+
+    invoke-static {p0}, Landroid/opengl/GLES20;->glCreateShader(I)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Leie;
+
+    const-string v1, "Unable to create shader"
+
+    invoke-direct {v0, v1}, Leie;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_0
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glShaderSource(ILjava/lang/String;)V
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glCompileShader(I)V
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [I
+
+    const v2, 0x8b81
+
+    invoke-static {v0, v2, v1, v3}, Landroid/opengl/GLES20;->glGetShaderiv(II[II)V
+
+    aget v1, v1, v3
+
+    if-nez v1, :cond_1
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glGetShaderInfoLog(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    new-instance v0, Leie;
+
+    const/16 v2, 0x24
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unable to compile shader "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2, v1}, Leie;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    return v0
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/nio/FloatBuffer;)V
+    .locals 6
+
+    iget v0, p0, Leif;->a:I
+
+    if-gez v0, :cond_0
+
+    :goto_0
     return-void
+
+    :cond_0
+    iget v0, p0, Leif;->a:I
+
+    const/4 v1, 0x3
+
+    const/16 v2, 0x1406
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0xc
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
+
+    iget v0, p0, Leif;->a:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
+
+    goto :goto_0
+.end method
+
+.method public final a([F)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    iget v0, p0, Leif;->c:I
+
+    if-gez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget v0, p0, Leif;->c:I
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1, v2, p1, v2}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+
+    goto :goto_0
+.end method
+
+.method public final b(Ljava/nio/FloatBuffer;)V
+    .locals 6
+
+    const/4 v3, 0x0
+
+    iget v0, p0, Leif;->b:I
+
+    if-gez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget v0, p0, Leif;->b:I
+
+    const/4 v1, 0x2
+
+    const/16 v2, 0x1406
+
+    move v4, v3
+
+    move-object v5, p1
+
+    invoke-static/range {v0 .. v5}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
+
+    iget v0, p0, Leif;->b:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
+
+    goto :goto_0
 .end method

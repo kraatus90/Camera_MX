@@ -3,30 +3,30 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldtl;->a:Ljxn;
+    iput-object p1, p0, Ldtl;->a:Lkgv;
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
+.method public static a(Lkgv;)Ldtl;
     .locals 1
 
     new-instance v0, Ldtl;
 
-    invoke-direct {v0, p0}, Ldtl;-><init>(Ljxn;)V
+    invoke-direct {v0, p0}, Ldtl;-><init>(Lkgv;)V
 
     return-object v0
 .end method
@@ -36,21 +36,29 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Ldtl;->a:Ljxn;
+    iget-object v0, p0, Ldtl;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ligh;
+    check-cast v0, Ldsp;
+
+    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuh;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lffm;->a(Ljava/util/Collection;)Lfhm;
+
+    move-result-object v0
 
     const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ligh;
+    check-cast v0, Lfhm;
 
     return-object v0
 .end method

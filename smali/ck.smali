@@ -1,35 +1,31 @@
-.class final Lck;
+.class public final Lck;
 .super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public a:Landroid/view/View;
+.field public final a:[I
 
-.field public b:Ljava/lang/String;
-
-.field public c:Lcu;
-
-.field public d:Lds;
-
-.field public e:Lch;
+.field public final b:Landroid/animation/ValueAnimator;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;Ljava/lang/String;Lch;Lds;Lcu;)V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lck;->a:Landroid/view/View;
+    return-void
+.end method
 
-    iput-object p2, p0, Lck;->b:Ljava/lang/String;
+.method public constructor <init>([ILandroid/animation/ValueAnimator;)V
+    .locals 0
 
-    iput-object p5, p0, Lck;->c:Lcu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lck;->d:Lds;
+    iput-object p1, p0, Lck;->a:[I
 
-    iput-object p3, p0, Lck;->e:Lch;
+    iput-object p2, p0, Lck;->b:Landroid/animation/ValueAnimator;
 
     return-void
 .end method

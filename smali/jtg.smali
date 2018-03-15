@@ -1,242 +1,103 @@
 .class final Ljtg;
-.super Ljsx;
+.super Ljvr;
 .source "PG"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # static fields
-.field public static final a:Lsun/misc/Unsafe;
+.field public static final serialVersionUID:J
 
-.field public static final b:J
 
-.field public static final c:J
-
-.field public static final d:J
-
-.field public static final e:J
-
-.field public static final f:J
+# instance fields
+.field private final a:Ljava/util/Comparator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method constructor <init>(Ljava/util/Comparator;)V
+    .locals 1
 
-    :try_start_0
-    invoke-static {}, Lsun/misc/Unsafe;->getUnsafe()Lsun/misc/Unsafe;
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {p0}, Ljvr;-><init>()V
 
-    move-result-object v0
-
-    :goto_0
-    :try_start_1
-    const-class v1, Ljsw;
-
-    const-string v2, "waiters"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v2
-
-    sput-wide v2, Ljtg;->c:J
-
-    const-string v2, "listeners"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v2
-
-    sput-wide v2, Ljtg;->b:J
-
-    const-string v2, "value"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v2
-
-    sput-wide v2, Ljtg;->d:J
-
-    const-class v1, Ljti;
-
-    const-string v2, "thread"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v2
-
-    sput-wide v2, Ljtg;->e:J
-
-    const-class v1, Ljti;
-
-    const-string v2, "next"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v2
-
-    sput-wide v2, Ljtg;->f:J
-
-    sput-object v0, Ljtg;->a:Lsun/misc/Unsafe;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    :try_start_2
-    new-instance v0, Ljth;
-
-    invoke-direct {v0}, Ljth;-><init>()V
-
-    invoke-static {v0}, Ljava/security/AccessController;->doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lsun/misc/Unsafe;
-    :try_end_2
-    .catch Ljava/security/PrivilegedActionException; {:try_start_2 .. :try_end_2} :catch_1
+    check-cast v0, Ljava/util/Comparator;
 
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "Could not initialize intrinsics"
-
-    invoke-virtual {v0}, Ljava/security/PrivilegedActionException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :catch_2
-    move-exception v0
-
-    invoke-static {v0}, Ljik;->a(Ljava/lang/Throwable;)V
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljsx;-><init>()V
+    iput-object v0, p0, Ljtg;->a:Ljava/util/Comparator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljti;Ljava/lang/Thread;)V
-    .locals 4
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
 
-    sget-object v0, Ljtg;->a:Lsun/misc/Unsafe;
+    iget-object v0, p0, Ljtg;->a:Ljava/util/Comparator;
 
-    sget-wide v2, Ljtg;->e:J
-
-    invoke-virtual {v0, p1, v2, v3, p2}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method final a(Ljti;Ljti;)V
-    .locals 4
-
-    sget-object v0, Ljtg;->a:Lsun/misc/Unsafe;
-
-    sget-wide v2, Ljtg;->f:J
-
-    invoke-virtual {v0, p1, v2, v3, p2}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method final a(Ljsw;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 6
-
-    sget-object v0, Ljtg;->a:Lsun/misc/Unsafe;
-
-    sget-wide v2, Ljtg;->d:J
-
-    move-object v1, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapObject(Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method final a(Ljsw;Ljtb;Ljtb;)Z
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    sget-object v0, Ljtg;->a:Lsun/misc/Unsafe;
+    if-ne p1, p0, :cond_0
 
-    sget-wide v2, Ljtg;->b:J
+    const/4 v0, 0x1
 
-    move-object v1, p1
+    :goto_0
+    return v0
 
-    move-object v4, p2
+    :cond_0
+    instance-of v0, p1, Ljtg;
 
-    move-object v5, p3
+    if-eqz v0, :cond_1
 
-    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapObject(Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
+    check-cast p1, Ljtg;
+
+    iget-object v0, p0, Ljtg;->a:Ljava/util/Comparator;
+
+    iget-object v1, p1, Ljtg;->a:Ljava/util/Comparator;
+
+    invoke-interface {v0, v1}, Ljava/util/Comparator;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Ljtg;->a:Ljava/util/Comparator;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
     return v0
 .end method
 
-.method final a(Ljsw;Ljti;Ljti;)Z
-    .locals 6
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    sget-object v0, Ljtg;->a:Lsun/misc/Unsafe;
+    iget-object v0, p0, Ljtg;->a:Ljava/util/Comparator;
 
-    sget-wide v2, Ljtg;->c:J
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-object v1, p1
+    move-result-object v0
 
-    move-object v4, p2
-
-    move-object v5, p3
-
-    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapObject(Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

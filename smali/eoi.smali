@@ -1,122 +1,403 @@
-.class final Leoi;
+.class public final Leoi;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lfua;
-
 
 # instance fields
-.field private synthetic a:Ljava/io/File;
-
-.field private synthetic b:Lgvw;
-
-.field private synthetic c:Lgrz;
-
-.field private synthetic d:Leoc;
+.field public a:Ljzs;
 
 
 # direct methods
-.method constructor <init>(Leoc;Ljava/io/File;Lgvw;Lgrz;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/googlex/gcam/ShotLogData;Lcom/google/googlex/gcam/InitParams;)V
+    .locals 6
 
-    iput-object p1, p0, Leoi;->d:Leoc;
-
-    iput-object p2, p0, Leoi;->a:Ljava/io/File;
-
-    iput-object p3, p0, Leoi;->b:Lgvw;
-
-    iput-object p4, p0, Leoi;->c:Lgrz;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ljava/io/File;
-    .locals 1
-
-    iget-object v0, p0, Leoi;->a:Ljava/io/File;
-
-    return-object v0
-.end method
-
-.method public final b()Lgvw;
-    .locals 1
-
-    iget-object v0, p0, Leoi;->b:Lgvw;
-
-    return-object v0
-.end method
-
-.method public final c()Licf;
-    .locals 2
-
-    iget-object v0, p0, Leoi;->c:Lgrz;
-
-    iget-object v0, v0, Lgrz;->c:Ljht;
+    const/4 v2, 0x1
 
     const/4 v1, 0x0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v1
+    new-instance v0, Ljzs;
 
-    invoke-virtual {v0, v1}, Ljht;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0}, Ljzs;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Leoi;->a:Ljzs;
 
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v0, p0, Leoi;->a:Ljzs;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getAe_confidence_short_exposure()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->a:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getAe_confidence_long_exposure()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->b:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getAe_confidence_single_exposure()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->c:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getIdeal_range_compression()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->d:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getActual_range_compression()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->e:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getPure_fraction_of_pixels_from_long_exposure()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->C:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getWeighted_fraction_of_pixels_from_long_exposure()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->D:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getShort_exp_adjustment_factor()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->f:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getLong_exp_adjustment_factor()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->g:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getLog_scene_brightness()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->h:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getMetering_frame_count()I
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->i:I
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getOriginal_payload_frame_count()I
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->j:I
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getBase_frame_index()I
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->l:I
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getMerged_frame_count()I
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->m:I
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getZsl()Z
+
+    move-result v3
+
+    iput-boolean v3, v0, Ljzs;->q:Z
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getOriginal_payload_frame_sharpness()Lcom/google/googlex/gcam/FloatVector;
+
+    move-result-object v3
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {v3}, Lcom/google/googlex/gcam/FloatVector;->size()J
+
+    move-result-wide v4
+
+    long-to-int v4, v4
+
+    new-array v4, v4, [F
+
+    iput-object v4, v0, Ljzs;->k:[F
+
+    move v0, v1
+
+    :goto_0
+    iget-object v4, p0, Leoi;->a:Ljzs;
+
+    iget-object v4, v4, Ljzs;->k:[F
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_0
+
+    iget-object v4, p0, Leoi;->a:Ljzs;
+
+    iget-object v4, v4, Ljzs;->k:[F
+
+    invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FloatVector;->get(I)F
+
+    move-result v5
+
+    aput v5, v4, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getFinal_payload_frame_sharpness()Lcom/google/googlex/gcam/FloatVector;
+
+    move-result-object v3
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {v3}, Lcom/google/googlex/gcam/FloatVector;->size()J
+
+    move-result-wide v4
+
+    long-to-int v4, v4
+
+    new-array v4, v4, [F
+
+    iput-object v4, v0, Ljzs;->r:[F
+
+    move v0, v1
+
+    :goto_1
+    iget-object v4, p0, Leoi;->a:Ljzs;
+
+    iget-object v4, v4, Ljzs;->r:[F
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_1
+
+    iget-object v4, p0, Leoi;->a:Ljzs;
+
+    iget-object v4, v4, Ljzs;->r:[F
+
+    invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FloatVector;->get(I)F
+
+    move-result v5
+
+    aput v5, v4, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getWas_payload_frame_merged()Lcom/google/googlex/gcam/BoolVector;
+
+    move-result-object v3
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {v3}, Lcom/google/googlex/gcam/BoolVector;->size()J
+
+    move-result-wide v4
+
+    long-to-int v4, v4
+
+    new-array v4, v4, [Z
+
+    iput-object v4, v0, Ljzs;->s:[Z
+
+    move v0, v1
+
+    :goto_2
+    iget-object v4, p0, Leoi;->a:Ljzs;
+
+    iget-object v4, v4, Ljzs;->s:[Z
+
+    array-length v4, v4
+
+    if-ge v0, v4, :cond_2
+
+    iget-object v4, p0, Leoi;->a:Ljzs;
+
+    iget-object v4, v4, Ljzs;->s:[Z
+
+    invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/BoolVector;->get(I)Z
+
+    move-result v5
+
+    aput-boolean v5, v4, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getTime_to_shot()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->n:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getTime_to_postview()F
+
+    move-result v3
+
+    iput v3, v0, Ljzs;->o:F
+
+    iget-object v3, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p2}, Lcom/google/googlex/gcam/InitParams;->getExecute_finish_on()I
 
     move-result v0
 
-    invoke-static {v0}, Licf;->a(I)Licf;
+    if-ne v0, v2, :cond_3
 
-    move-result-object v0
+    move v0, v2
 
-    return-object v0
-.end method
+    :goto_3
+    iput-boolean v0, v3, Ljzs;->F:Z
 
-.method public final d()Lici;
-    .locals 3
+    iget-object v0, p0, Leoi;->a:Ljzs;
 
-    new-instance v0, Lici;
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getExecuted_finish_on()I
 
-    iget-object v1, p0, Leoi;->c:Lgrz;
+    move-result v3
 
-    iget-object v1, v1, Lgrz;->a:Lici;
+    if-ne v3, v2, :cond_4
 
-    iget v1, v1, Lici;->a:I
+    :goto_4
+    iput-boolean v2, v0, Ljzs;->p:Z
 
-    iget-object v2, p0, Leoi;->c:Lgrz;
+    iget-object v0, p0, Leoi;->a:Ljzs;
 
-    iget-object v2, v2, Lgrz;->a:Lici;
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getCapture_time()F
 
-    iget v2, v2, Lici;->b:I
+    move-result v1
 
-    invoke-direct {v0, v1, v2}, Lici;-><init>(II)V
+    iput v1, v0, Ljzs;->t:F
 
-    return-object v0
-.end method
+    iget-object v0, p0, Leoi;->a:Ljzs;
 
-.method public final e()Ljht;
-    .locals 1
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getPostview_callback_time()F
 
-    iget-object v0, p0, Leoi;->d:Leoc;
+    move-result v1
 
-    iget-object v0, v0, Leoc;->n:Ljht;
+    iput v1, v0, Ljzs;->u:F
 
-    return-object v0
-.end method
+    iget-object v0, p0, Leoi;->a:Ljzs;
 
-.method public final f()Ljht;
-    .locals 1
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getMerge_process_time()F
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    move-result v1
 
-    return-object v0
+    iput v1, v0, Ljzs;->v:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getMerged_raw_callback_time()F
+
+    move-result v1
+
+    iput v1, v0, Ljzs;->w:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getFinish_process_time()F
+
+    move-result v1
+
+    iput v1, v0, Ljzs;->x:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getFinal_image_callback_time()F
+
+    move-result v1
+
+    iput v1, v0, Ljzs;->y:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getJpeg_encode_time()F
+
+    move-result v1
+
+    iput v1, v0, Ljzs;->z:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getJpeg_callback_time()F
+
+    move-result v1
+
+    iput v1, v0, Ljzs;->A:F
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getAborted()Z
+
+    move-result v1
+
+    iput-boolean v1, v0, Ljzs;->B:Z
+
+    iget-object v0, p0, Leoi;->a:Ljzs;
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/ShotLogData;->getCpu_usage_factor()F
+
+    move-result v1
+
+    iput v1, v0, Ljzs;->E:F
+
+    return-void
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_3
+
+    :cond_4
+    move v2, v1
+
+    goto :goto_4
 .end method

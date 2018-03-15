@@ -23,9 +23,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhyu;
+    new-instance v0, Lhzt;
 
-    invoke-direct {v0}, Lhyu;-><init>()V
+    invoke-direct {v0}, Lhzt;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/wearable/Asset;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -135,7 +135,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/wearable/Asset;->b:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -145,7 +145,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/wearable/Asset;->c:Landroid/os/ParcelFileDescriptor;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -155,7 +155,7 @@
 
     iget-object v3, p1, Lcom/google/android/gms/wearable/Asset;->d:Landroid/net/Uri;
 
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lhmr;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -305,7 +305,7 @@
 
     const/16 v1, 0x4f45
 
-    invoke-static {p1, v1}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v1}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -313,27 +313,27 @@
 
     iget-object v3, p0, Lcom/google/android/gms/wearable/Asset;->a:[B
 
-    invoke-static {p1, v2, v3}, Lhjg;->a(Landroid/os/Parcel;I[B)V
+    invoke-static {p1, v2, v3}, Lhmr;->a(Landroid/os/Parcel;I[B)V
 
     const/4 v2, 0x3
 
     iget-object v3, p0, Lcom/google/android/gms/wearable/Asset;->b:Ljava/lang/String;
 
-    invoke-static {p1, v2, v3}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v2, v3}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v2, 0x4
 
     iget-object v3, p0, Lcom/google/android/gms/wearable/Asset;->c:Landroid/os/ParcelFileDescriptor;
 
-    invoke-static {p1, v2, v3, v0}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v2, v3, v0}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v2, 0x5
 
     iget-object v3, p0, Lcom/google/android/gms/wearable/Asset;->d:Landroid/net/Uri;
 
-    invoke-static {p1, v2, v3, v0}, Lhjg;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v2, v3, v0}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    invoke-static {p1, v1}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v1}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -22,7 +22,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {p1}, Lcom/google/googlex/gcam/AndroidJniUtils;->lockSurface(Landroid/view/Surface;)J
 

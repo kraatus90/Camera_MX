@@ -1,33 +1,32 @@
-.class final Lgml;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lgml;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+# interfaces
+.implements Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/apps/camera/optionsbar/OptionsBarView;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lgml;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lgml;->a:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+    new-instance v0, Lcom/google/android/apps/camera/stats/OneCameraSession;
 
-    const/4 v1, 0x4
+    new-instance v1, Liom;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->setVisibility(I)V
+    invoke-direct {v1}, Liom;-><init>()V
 
-    return-void
+    invoke-direct {v0, v1}, Lcom/google/android/apps/camera/stats/OneCameraSession;-><init>(Liom;)V
+
+    return-object v0
 .end method

@@ -1,60 +1,45 @@
-.class public final Lhdc;
-.super Ljava/lang/Object;
+.class final Lhdc;
+.super Lhcz;
 .source "PG"
-
-# interfaces
-.implements Lhdl;
 
 
 # instance fields
-.field public a:Lhdl;
+.field private final synthetic a:Lhdb;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Lhdb;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhdc;->a:Lhdb;
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lhdc;->a:Lhdl;
+    invoke-direct {p0, p1}, Lhcz;-><init>(Lhcy;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhdl;)V
-    .locals 1
+.method public final W()V
+    .locals 2
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lhdc;->a:Lhdb;
 
-    move-result-object v0
+    iget-object v0, v0, Lhdb;->b:Lgld;
 
-    check-cast v0, Lhdl;
+    invoke-virtual {v0}, Lgld;->a()V
 
-    iput-object v0, p0, Lhdc;->a:Lhdl;
+    invoke-super {p0}, Lhcz;->W()V
+
+    iget-object v0, p0, Lhdc;->a:Lhdb;
+
+    iget-object v0, v0, Lhdb;->b:Lgld;
+
+    iget-object v1, p0, Lhdc;->a:Lhdb;
+
+    iget-object v1, v1, Lhdb;->d:Lglf;
+
+    invoke-virtual {v0, v1}, Lgld;->a(Lglf;)V
 
     return-void
-.end method
-
-.method public final a(Landroid/graphics/PointF;)Z
-    .locals 1
-
-    iget-object v0, p0, Lhdc;->a:Lhdl;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-interface {v0, p1}, Lhdl;->a(Landroid/graphics/PointF;)Z
-
-    move-result v0
-
-    goto :goto_0
 .end method

@@ -1,64 +1,109 @@
-.class public final Left;
-.super Ljava/lang/Object;
+.class Left;
+.super Lglb;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lefr;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
-    .locals 0
+.method constructor <init>(Lefr;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Left;->a:Lefr;
 
-    iput-object p1, p0, Left;->a:Ljxn;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Left;->b:Ljxn;
+    invoke-direct {p0, v0}, Lglb;-><init>([[B)V
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Left;
-
-    invoke-direct {v0, p0, p1}, Left;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public B()V
+    .locals 0
 
-    new-instance v2, Lefs;
+    return-void
+.end method
 
-    iget-object v0, p0, Left;->a:Ljxn;
+.method public final a()V
+    .locals 2
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Left;->a:Lefr;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    check-cast v0, Ldol;
+    iput-boolean v1, v0, Lefr;->d:Z
 
-    iget-object v1, p0, Left;->b:Ljxn;
+    iget-object v0, p0, Left;->a:Lefr;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lefr;->g:Lfwg;
 
-    move-result-object v1
+    iget-object v0, v0, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
-    check-cast v1, Ljuw;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->b()V
 
-    invoke-direct {v2, v0, v1}, Lefs;-><init>(Ldol;Ljuw;)V
+    iget-object v0, p0, Left;->a:Lefr;
 
-    return-object v2
+    iget-object v0, v0, Lefr;->g:Lfwg;
+
+    invoke-virtual {v0}, Lfwg;->b()V
+
+    iget-object v0, p0, Left;->a:Lefr;
+
+    iget-object v0, v0, Lefr;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startHfrRecording()V
+
+    iget-object v0, p0, Left;->a:Lefr;
+
+    iget-object v0, v0, Lefr;->f:Lgvc;
+
+    sget-object v1, Lgue;->k:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Left;->a:Lefr;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lefr;->d:Z
+
+    iget-object v0, p0, Left;->a:Lefr;
+
+    iget-object v0, v0, Lefr;->g:Lfwg;
+
+    invoke-virtual {v0}, Lfwg;->a()V
+
+    iget-object v0, p0, Left;->a:Lefr;
+
+    iget-object v0, v0, Lefr;->g:Lfwg;
+
+    iget-object v0, v0, Lfwg;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/optionsbar/OptionsBarView;->c()V
+
+    iget-object v0, p0, Left;->a:Lefr;
+
+    iget-object v0, v0, Lefr;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopHfrRecording()V
+
+    iget-object v0, p0, Left;->a:Lefr;
+
+    iget-object v0, v0, Lefr;->f:Lgvc;
+
+    sget-object v1, Lgue;->f:Lgue;
+
+    invoke-virtual {v0, v1}, Lgvc;->a(Lgue;)V
+
+    return-void
 .end method

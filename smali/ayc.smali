@@ -1,50 +1,35 @@
-.class public final Layc;
+.class public interface abstract Layc;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
-    .locals 0
-
-    iput-object p1, p0, Layc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public abstract a(Layy;)V
+.end method
 
-    iget-object v0, p0, Layc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+.method public abstract a(Lgay;)V
+.end method
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
+.method public abstract a(Lilb;)V
+.end method
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+.method public abstract a()Z
+.end method
 
-    move-result-object v0
+.method public abstract b()I
+.end method
 
-    check-cast v0, Ljava/lang/Integer;
+.method public abstract b(Lgay;)V
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+.method public abstract c()V
+.end method
 
-    move-result v0
+.method public abstract d()V
+.end method
 
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+.method public abstract e()V
+.end method
 
-    iget-object v0, p0, Layc;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/burstchip/BurstChip;->invalidate()V
-
-    return-void
+.method public abstract f()V
 .end method

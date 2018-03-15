@@ -27,7 +27,7 @@
 
     const-string v2, "camera:refocus_enabled"
 
-    invoke-static {v1, v2, v0}, Lhyx;->a(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
+    invoke-static {v1, v2, v0}, Lhzw;->a(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
     move-result v1
 
@@ -142,7 +142,7 @@
 
     move-result-object v1
 
-    invoke-static {v2, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -200,7 +200,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_2
 
@@ -262,7 +262,7 @@
 
     move-result-object v1
 
-    invoke-static {v2, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_4
 

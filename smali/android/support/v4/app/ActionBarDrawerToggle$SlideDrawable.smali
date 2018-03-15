@@ -20,23 +20,16 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/app/ActionBarDrawerToggle;Landroid/graphics/drawable/Drawable;)V
-    .locals 3
-
-    const/4 v0, 0x0
+    .locals 1
 
     iput-object p1, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->this$0:Landroid/support/v4/app/ActionBarDrawerToggle;
 
+    const/4 v0, 0x0
+
     invoke-direct {p0, p2, v0}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;I)V
-
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x12
-
-    if-le v1, v2, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_0
     iput-boolean v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->mHasMirroring:Z
 
     new-instance v0, Landroid/graphics/Rect;
@@ -75,9 +68,9 @@
 
     move-result-object v1
 
-    sget-object v2, Lid;->a:Lim;
+    sget-object v2, Lhz;->a:Lii;
 
-    invoke-virtual {v2, v1}, Lim;->k(Landroid/view/View;)I
+    invoke-virtual {v2, v1}, Lii;->k(Landroid/view/View;)I
 
     move-result v1
 

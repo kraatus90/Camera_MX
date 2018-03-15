@@ -3,90 +3,56 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lbmr;
 
 
 # instance fields
-.field private a:Ljxn;
+.field public final synthetic a:Linu;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic b:Lbmr;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lbmr;Linu;)V
     .locals 0
 
+    iput-object p1, p0, Lbmt;->b:Lbmr;
+
+    iput-object p2, p0, Lbmt;->a:Linu;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbmt;->a:Ljxn;
-
-    iput-object p2, p0, Lbmt;->b:Ljxn;
-
-    iput-object p3, p0, Lbmt;->c:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final a()Lfjg;
     .locals 3
 
-    iget-object v0, p0, Lbmt;->a:Ljxn;
+    iget-object v0, p0, Lbmt;->b:Lbmr;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/Context;
-
-    iget-object v1, p0, Lbmt;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lbmr;->a()Lfjg;
 
     move-result-object v1
 
-    check-cast v1, Lbmd;
+    if-eqz v1, :cond_0
 
-    iget-object v2, p0, Lbmt;->c:Ljxn;
+    new-instance v2, Lbmu;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-direct {v2, p0, v1, v1}, Lbmu;-><init>(Lbmt;Link;Lfjg;)V
 
-    const v2, 0x7f060020
+    new-instance v0, Lfjg;
 
-    invoke-static {v0, v2}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
+    iget-object v1, v1, Lfjg;->b:Ljava/util/Map;
 
-    move-result-object v0
+    invoke-direct {v0, v2, v1}, Lfjg;-><init>(Link;Ljava/util/Map;)V
 
-    check-cast v0, Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Lbmd;->d()Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    new-instance v1, Lgzo;
-
-    const-string v2, "PassiveFocusConvergeAnimation"
-
-    invoke-direct {v1, v2}, Lgzo;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    invoke-static {v0}, Lgzs;->a(Landroid/animation/Animator;)Lgzr;
-
-    move-result-object v0
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgzr;
-
+    :goto_0
     return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

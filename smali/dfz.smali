@@ -1,44 +1,66 @@
-.class final Ldfz;
+.class public final Ldfz;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldfy;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
+
+.field private final c:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldfy;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldfz;->a:Ldfy;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldfz;->a:Lkgv;
+
+    iput-object p2, p0, Ldfz;->b:Lkgv;
+
+    iput-object p3, p0, Ldfz;->c:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Ldfz;->a:Ldfy;
+    new-instance v3, Ldfy;
 
-    iget-object v0, v0, Ldfy;->a:Ldfq;
+    iget-object v0, p0, Ldfz;->a:Lkgv;
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldhc;
+    check-cast v0, Lbqc;
 
-    iget-object v0, v0, Ldhc;->x:Lfec;
+    iget-object v1, p0, Ldfz;->b:Lkgv;
 
-    invoke-virtual {v0}, Lgvh;->J()V
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
-    return-void
+    move-result-object v1
+
+    check-cast v1, Lbjy;
+
+    iget-object v2, p0, Ldfz;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lgjq;
+
+    invoke-direct {v3, v0, v1, v2}, Ldfy;-><init>(Lbqc;Lbjy;Lgjq;)V
+
+    return-object v3
 .end method

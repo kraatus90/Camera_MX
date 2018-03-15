@@ -1,42 +1,54 @@
-.class final Ldxk;
+.class public final Ldxk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lhzl;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Ldxg;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Ldxg;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Ldxk;->a:Ldxg;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldxk;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Ldxk;->a:Lkgv;
 
-    check-cast p2, Ljava/util/List;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    new-instance v0, Ldxe;
+    move-result-object v0
 
-    iget-object v1, p0, Ldxk;->a:Ldxg;
+    check-cast v0, Lgjp;
 
-    iget-object v1, v1, Ldxg;->c:Ldxi;
+    const-string v1, "pref_camera_circus_key"
 
-    invoke-direct {v0, v1, p1, p2}, Ldxe;-><init>(Ldxi;Ljava/util/List;Ljava/util/List;)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lgjp;->a(Ljava/lang/String;Z)Lick;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lick;
 
     return-object v0
 .end method

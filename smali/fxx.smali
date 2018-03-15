@@ -1,57 +1,32 @@
-.class final synthetic Lfxx;
+.class public interface abstract Lfxx;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljig;
-
-
-# instance fields
-.field private a:J
-
-
-# direct methods
-.method constructor <init>(J)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lfxx;->a:J
-
-    return-void
-.end method
+.source "PG"
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 4
+.method public abstract a()V
+.end method
 
-    iget-wide v0, p0, Lfxx;->a:J
+.method public abstract a(Lfxj;)V
+.end method
 
-    const/16 v2, 0x36
+.method public abstract b()V
+.end method
 
-    new-instance v3, Ljava/lang/StringBuilder;
+.method public abstract b(Lfxj;)V
+.end method
 
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+.method public abstract c()Ligz;
+.end method
 
-    const-string v2, "copying video frame to encoder: <"
+.method public abstract d()I
+.end method
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public abstract e()Ligz;
+.end method
 
-    move-result-object v2
+.method public abstract g()I
+.end method
 
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ">"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract h()Z
 .end method

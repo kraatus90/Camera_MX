@@ -49,26 +49,13 @@
 
     invoke-virtual {p0}, Landroid/support/v8/renderscript/RenderScript;->isUseNative()Z
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x13
-
-    if-ge v0, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    const/4 v2, 0x3
+    const/4 v0, 0x3
 
     invoke-virtual {p1, p0}, Landroid/support/v8/renderscript/Element;->getID(Landroid/support/v8/renderscript/RenderScript;)J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    invoke-virtual {p0, v2, v4, v5, v0}, Landroid/support/v8/renderscript/RenderScript;->nScriptIntrinsicCreate(IJZ)J
+    invoke-virtual {p0, v0, v2, v3, v1}, Landroid/support/v8/renderscript/RenderScript;->nScriptIntrinsicCreate(IJZ)J
 
     move-result-wide v2
 
@@ -76,7 +63,7 @@
 
     invoke-direct {v4, v2, v3, p0}, Landroid/support/v8/renderscript/ScriptIntrinsicLUT;-><init>(JLandroid/support/v8/renderscript/RenderScript;)V
 
-    invoke-virtual {v4, v0}, Landroid/support/v8/renderscript/ScriptIntrinsicLUT;->setIncSupp(Z)V
+    invoke-virtual {v4, v1}, Landroid/support/v8/renderscript/ScriptIntrinsicLUT;->setIncSupp(Z)V
 
     invoke-static {p0}, Landroid/support/v8/renderscript/Element;->U8(Landroid/support/v8/renderscript/RenderScript;)Landroid/support/v8/renderscript/Element;
 
@@ -92,10 +79,10 @@
 
     move v0, v1
 
-    :goto_1
+    :goto_0
     const/16 v2, 0x100
 
-    if-ge v0, v2, :cond_1
+    if-ge v0, v2, :cond_0
 
     iget-object v2, v4, Landroid/support/v8/renderscript/ScriptIntrinsicLUT;->mCache:[B
 
@@ -129,14 +116,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
-
-    :cond_0
-    move v0, v1
-
     goto :goto_0
 
-    :cond_1
+    :cond_0
     iget-object v0, v4, Landroid/support/v8/renderscript/ScriptIntrinsicLUT;->mTables:Landroid/support/v8/renderscript/Allocation;
 
     invoke-virtual {v4, v1, v0}, Landroid/support/v8/renderscript/ScriptIntrinsicLUT;->setVar(ILandroid/support/v8/renderscript/BaseObj;)V

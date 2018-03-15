@@ -3,36 +3,34 @@
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Lipw;
+
+
+# instance fields
+.field private final a:I
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Liuf;->a:I
+
+    invoke-static {p1}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 3
+.method public final close()V
+    .locals 1
 
-    new-instance v1, Ljcr;
+    iget v0, p0, Liuf;->a:I
 
-    const-class v0, Ljcl;
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDisableVertexAttribArray(I)V
 
-    const-string v2, "default"
-
-    invoke-virtual {p1, v0, v2}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljcs;
-
-    invoke-direct {v1, v0}, Ljcr;-><init>(Ljcs;)V
-
-    return-object v1
+    return-void
 .end method

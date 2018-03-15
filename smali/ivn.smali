@@ -1,38 +1,25 @@
-.class final Livn;
-.super Ljava/lang/Object;
+.class public final Livn;
+.super Lixm;
 .source "PG"
-
-# interfaces
-.implements Liuh;
-
-
-# instance fields
-.field private synthetic a:Landroid/content/Context;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/view/Surface;)V
     .locals 0
 
-    iput-object p1, p0, Livn;->a:Landroid/content/Context;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lixm;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 2
+.method protected final synthetic a(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, p0, Livn;->a:Landroid/content/Context;
+    check-cast p1, Landroid/view/Surface;
 
-    const v1, 0x7f09000a
+    invoke-virtual {p1}, Landroid/view/Surface;->release()V
 
-    invoke-static {v0, v1}, Liui;->a(Landroid/content/Context;I)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

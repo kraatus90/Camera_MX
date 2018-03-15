@@ -1,39 +1,52 @@
-.class final Lnp;
-.super Ljn;
+.class public final Lnp;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lnn;
+# static fields
+.field public static final a:[I
+
+.field public static final b:I = 0x1
+
+.field public static final c:I = 0x6
+
+.field public static final d:I = 0x9
+
+.field public static final e:I = 0xa
+
+.field public static final f:I = 0x7
+
+.field public static final g:I = 0x8
+
+.field public static final h:I = 0x2
 
 
 # direct methods
-.method constructor <init>(Lnn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lnp;->a:Lnn;
+    const/16 v0, 0xb
 
-    invoke-direct {p0}, Ljn;-><init>()V
+    new-array v0, v0, [I
 
-    return-void
-.end method
+    fill-array-data v0, :array_0
 
-
-# virtual methods
-.method public final b(Landroid/view/View;)V
-    .locals 2
-
-    iget-object v0, p0, Lnp;->a:Lnn;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lnn;->m:Loh;
-
-    iget-object v0, p0, Lnp;->a:Lnn;
-
-    iget-object v0, v0, Lnn;->c:Landroid/support/v7/widget/ActionBarContainer;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->requestLayout()V
+    sput-object v0, Lnp;->a:[I
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x10100c4
+        0x10100f1
+        0x7f010192
+        0x7f010193
+        0x7f010194
+        0x7f010195
+        0x7f010196
+        0x7f010197
+        0x7f010198
+        0x7f010199
+        0x7f01019a
+    .end array-data
 .end method

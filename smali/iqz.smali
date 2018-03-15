@@ -1,27 +1,38 @@
-.class final Liqz;
+.class public interface abstract Liqz;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# instance fields
-.field public final a:J
+# virtual methods
+.method public abstract a(Ljava/util/concurrent/Executor;Lipn;)Liqz;
+.end method
 
-.field public final b:I
+.method public abstract a(Ljava/util/concurrent/Executor;Lipn;Lipn;)Liqz;
+.end method
 
-.field public final c:Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;
+.method public abstract a(Ljava/util/concurrent/Executor;Lire;)Liqz;
+.end method
 
+.method public abstract a(Ljava/util/concurrent/Executor;Lire;Lire;)Liqz;
+.end method
 
-# direct methods
-.method public constructor <init>(JILcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;)V
-    .locals 1
+.method public abstract a(Ljava/util/concurrent/Executor;Lirf;)Liqz;
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract a(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Liqz;
+.end method
 
-    iput-wide p1, p0, Liqz;->a:J
+.method public abstract a()Lkeh;
+.end method
 
-    iput p3, p0, Liqz;->b:I
+.method public abstract a(Lipm;)V
+.end method
 
-    iput-object p4, p0, Liqz;->c:Lcom/google/android/libraries/smartburst/filterpacks/motion/HomographyTransform;
+.method public abstract b(Ljava/util/concurrent/Executor;Lipn;)Liqz;
+.end method
 
-    return-void
+.method public abstract b()Z
+.end method
+
+.method public abstract c()Ljava/lang/Object;
 .end method

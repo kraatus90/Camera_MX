@@ -3,22 +3,22 @@
 .source "PG"
 
 # interfaces
-.implements Ljug;
+.implements Lhls;
 
 
 # instance fields
-.field private synthetic a:Lbep;
+.field private final synthetic a:Lhbn;
 
-.field private synthetic b:Lbaj;
+.field private final synthetic b:Lbak;
 
 
 # direct methods
-.method constructor <init>(Lbaj;Lbep;)V
+.method constructor <init>(Lbak;Lhbn;)V
     .locals 0
 
-    iput-object p1, p0, Lbal;->b:Lbaj;
+    iput-object p1, p0, Lbal;->b:Lbak;
 
-    iput-object p2, p0, Lbal;->a:Lbep;
+    iput-object p2, p0, Lbal;->a:Lhbn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,91 +27,43 @@
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)V
-    .locals 0
+.method public final synthetic a(Lhlr;)V
+    .locals 2
 
-    return-void
-.end method
+    iget-object v0, p0, Lbal;->a:Lhbn;
 
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 4
+    iget-object v0, v0, Lhbn;->a:Lhbl;
 
-    sget-object v0, Lbaj;->a:Ljava/lang/String;
+    iget-object v0, v0, Lhbl;->a:Lhlm;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0xb
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v2, "onFailure: "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lbal;->b:Lbaj;
-
-    iget-object v1, v0, Lbaj;->f:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v0, p0, Lbal;->a:Lbep;
-
-    invoke-interface {v0}, Lbep;->close()V
-
-    iget-object v0, p0, Lbal;->b:Lbaj;
-
-    iget-object v0, v0, Lbaj;->g:Lbas;
-
-    sget-object v2, Lbas;->c:Lbas;
-
-    invoke-virtual {v0, v2}, Lbas;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lhlm;->e()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lbal;->b:Lbaj;
+    iget-object v0, p0, Lbal;->a:Lhbn;
 
-    sget-object v2, Lbas;->b:Lbas;
+    iget-object v0, v0, Lhbn;->a:Lhbl;
 
-    iput-object v2, v0, Lbaj;->g:Lbas;
+    iget-object v1, v0, Lhbl;->a:Lhlm;
+
+    invoke-virtual {v1, v0}, Lhlm;->b(Lhln;)V
+
+    iget-object v1, v0, Lhbl;->a:Lhlm;
+
+    invoke-virtual {v1, v0}, Lhlm;->b(Lhlo;)V
+
+    iget-object v0, v0, Lhbl;->a:Lhlm;
+
+    invoke-virtual {v0}, Lhlm;->d()V
 
     :cond_0
-    monitor-exit v1
+    iget-object v0, p0, Lbal;->b:Lbak;
+
+    iget-object v0, v0, Lbak;->a:Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a()V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

@@ -1,42 +1,58 @@
-.class final Lhip;
+.class public final Lhip;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field private synthetic a:Landroid/graphics/Bitmap;
-
-.field private synthetic b:Lhio;
+# static fields
+.field public static final a:[F
 
 
 # direct methods
-.method constructor <init>(Lhio;Landroid/graphics/Bitmap;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lhip;->b:Lhio;
+    const/16 v0, 0x9
 
-    iput-object p2, p0, Lhip;->a:Landroid/graphics/Bitmap;
+    new-array v0, v0, [F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lhip;->a:[F
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
-
-# virtual methods
-.method public final run()V
+.method public static a([F[F)V
     .locals 2
 
-    iget-object v0, p0, Lhip;->b:Lhio;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lhio;->a:Lhiq;
+    :goto_0
+    const/16 v1, 0x9
 
-    iget-object v1, p0, Lhip;->a:Landroid/graphics/Bitmap;
+    if-ge v0, v1, :cond_0
 
-    invoke-interface {v0, v1}, Lhiq;->a(Landroid/graphics/Bitmap;)V
+    aget v1, p0, v0
 
+    aput v1, p1, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

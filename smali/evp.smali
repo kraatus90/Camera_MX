@@ -1,61 +1,80 @@
-.class final synthetic Levp;
+.class public final Levp;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Libu;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Levo;
-
-.field private b:Lfmd;
-
-.field private c:Lckd;
+# static fields
+.field public static final a:Levp;
 
 
 # direct methods
-.method constructor <init>(Levo;Lfmd;Lckd;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Levp;
+
+    invoke-direct {v0}, Levp;-><init>()V
+
+    sput-object v0, Levp;->a:Levp;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Levp;->a:Levo;
-
-    iput-object p2, p0, Levp;->b:Lfmd;
-
-    iput-object p3, p0, Levp;->c:Lckd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 4
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Levp;->a:Levo;
+    const/4 v2, 0x2
 
-    iget-object v1, p0, Levp;->b:Lfmd;
+    const-string v0, "audio/mp4a-latm"
 
-    iget-object v2, p0, Levp;->c:Lckd;
+    const v1, 0xac44
 
-    invoke-virtual {v0, v1}, Levo;->a(Lfmd;)Lfvf;
+    invoke-static {v0, v1, v2}, Landroid/media/MediaFormat;->createAudioFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
 
-    move-result-object v3
+    move-result-object v0
 
-    if-eqz v3, :cond_0
+    const-string v1, "aac-profile"
 
-    invoke-virtual {v0, v2, v1, v3}, Levo;->a(Lckd;Lfmd;Lfvf;)V
+    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    :goto_0
-    return-void
+    const-string v1, "bitrate"
 
-    :cond_0
-    sget-object v0, Levo;->a:Ljava/lang/String;
+    const v2, 0x1f400
 
-    const-string v1, "filmstrip item was null"
+    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v1, "max-input-size"
 
-    goto :goto_0
+    sget v2, Levt;->a:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+
+    const-string v1, "oo.muxer.force_sequential"
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/MediaFormat;
+
+    return-object v0
 .end method

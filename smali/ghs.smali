@@ -1,118 +1,122 @@
 .class final Lghs;
-.super Lggu;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Leoz;
 
 
 # instance fields
-.field private synthetic a:Lgia;
+.field private final synthetic a:Ljava/io/File;
 
-.field private synthetic b:Lghr;
+.field private final synthetic b:Lioj;
+
+.field private final synthetic c:Lghm;
+
+.field private final synthetic d:Lghn;
 
 
 # direct methods
-.method constructor <init>(Lghr;Lgia;)V
+.method constructor <init>(Lghn;Ljava/io/File;Lioj;Lghm;)V
     .locals 0
 
-    iput-object p1, p0, Lghs;->b:Lghr;
+    iput-object p1, p0, Lghs;->d:Lghn;
 
-    iput-object p2, p0, Lghs;->a:Lgia;
+    iput-object p2, p0, Lghs;->a:Ljava/io/File;
 
-    invoke-direct {p0}, Lggu;-><init>()V
+    iput-object p3, p0, Lghs;->b:Lioj;
+
+    iput-object p4, p0, Lghs;->c:Lghm;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/Surface;J)V
-    .locals 4
-
-    iget-object v0, p0, Lghs;->b:Lghr;
-
-    iget-object v0, v0, Lghr;->b:Licu;
-
-    const/16 v1, 0x22
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "onBufferLost: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Licu;->f(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final a(Lgfz;)V
+.method public final a()Ljava/io/File;
     .locals 1
 
-    invoke-super {p0, p1}, Lggu;->a(Lgfz;)V
+    iget-object v0, p0, Lghs;->a:Ljava/io/File;
 
-    iget-object v0, p0, Lghs;->a:Lgia;
-
-    invoke-virtual {v0, p1}, Lgia;->b(Lgfz;)V
-
-    iget-object v0, p0, Lghs;->b:Lghr;
-
-    iget-object v0, v0, Lghr;->e:Lgia;
-
-    invoke-virtual {v0, p1}, Lgia;->b(Lgfz;)V
-
-    iget-object v0, p0, Lghs;->b:Lghr;
-
-    invoke-virtual {v0}, Lghr;->a()V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final b(Lgfz;)V
+.method public final b()Lioj;
+    .locals 1
+
+    iget-object v0, p0, Lghs;->b:Lioj;
+
+    return-object v0
+.end method
+
+.method public final c()Ligz;
     .locals 2
 
-    invoke-super {p0, p1}, Lggu;->b(Lgfz;)V
+    iget-object v0, p0, Lghs;->c:Lghm;
 
-    iget-object v0, p0, Lghs;->b:Lghr;
+    iget-object v0, v0, Lghm;->c:Ljrf;
 
-    iget-object v1, v0, Lghr;->c:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    monitor-enter v1
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :try_start_0
-    iget-object v0, p0, Lghs;->b:Lghr;
+    move-result-object v1
 
-    iget-object v0, v0, Lghr;->d:Ljava/util/Queue;
+    invoke-virtual {v0, v1}, Ljrf;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast v0, Ljava/lang/Integer;
 
-    iget-object v0, p0, Lghs;->b:Lghr;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {v0}, Lghr;->a()V
+    move-result v0
 
-    return-void
+    invoke-static {v0}, Ligz;->a(I)Ligz;
 
-    :catchall_0
-    move-exception v0
+    move-result-object v0
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    return-object v0
+.end method
 
-    throw v0
+.method public final d()Lihc;
+    .locals 3
+
+    new-instance v0, Lihc;
+
+    iget-object v1, p0, Lghs;->c:Lghm;
+
+    iget-object v1, v1, Lghm;->a:Lihc;
+
+    iget v1, v1, Lihc;->a:I
+
+    iget-object v2, p0, Lghs;->c:Lghm;
+
+    iget-object v2, v2, Lghm;->a:Lihc;
+
+    iget v2, v2, Lihc;->b:I
+
+    invoke-direct {v0, v1, v2}, Lihc;-><init>(II)V
+
+    return-object v0
+.end method
+
+.method public final e()Ljrf;
+    .locals 1
+
+    iget-object v0, p0, Lghs;->d:Lghn;
+
+    iget-object v0, v0, Lghn;->v:Ljrf;
+
+    return-object v0
+.end method
+
+.method public final f()Ljrf;
+    .locals 1
+
+    sget-object v0, Ljqu;->a:Ljqu;
+
+    return-object v0
 .end method

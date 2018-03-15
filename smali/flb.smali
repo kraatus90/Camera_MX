@@ -4,18 +4,24 @@
 
 
 # instance fields
-.field public final a:Landroid/app/Activity;
+.field public final a:Liaw;
+
+.field public final b:Libq;
+
+.field public final c:Lfuo;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;)V
+.method constructor <init>(Liaw;Libq;Lfuo;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Lflb;->a:Liaw;
 
-    iput-object p1, p0, Lflb;->a:Landroid/app/Activity;
+    iput-object p2, p0, Lflb;->b:Libq;
+
+    iput-object p3, p0, Lflb;->c:Lfuo;
 
     return-void
 .end method

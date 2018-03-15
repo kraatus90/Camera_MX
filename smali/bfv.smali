@@ -1,85 +1,1227 @@
-.class public final Lbfv;
+.class final Lbfv;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lbfl;
+.implements Lifj;
+
+
+# static fields
+.field public static final a:Ljava/lang/String;
+
 
 # instance fields
-.field public final a:Liei;
+.field private final A:Lihl;
 
-.field public final b:Ljava/io/File;
+.field public final b:Lbgd;
 
-.field public final c:Ljht;
+.field public c:Ljava/io/File;
 
-.field public final d:Lgvw;
+.field public final d:Ljava/lang/Object;
 
-.field public final e:Lici;
+.field public final e:Liaw;
 
-.field public final f:Z
+.field public final f:Ljava/util/ArrayList;
 
-.field public final g:F
+.field public g:Lbgc;
 
-.field public final h:I
+.field private final h:Lbfm;
 
-.field public final i:J
+.field private final i:Liej;
 
-.field public final j:J
+.field private final j:Lbhc;
+
+.field private final k:Lick;
+
+.field private final l:Ljrf;
+
+.field private m:Ljava/io/File;
+
+.field private n:I
+
+.field private final o:Lgnv;
+
+.field private final p:Ljava/util/concurrent/Executor;
+
+.field private final q:Ljrf;
+
+.field private final r:Ljrf;
+
+.field private final s:Lbhl;
+
+.field private final t:Lbgv;
+
+.field private final u:Lifm;
+
+.field private final v:J
+
+.field private w:J
+
+.field private x:J
+
+.field private y:J
+
+.field private z:J
 
 
 # direct methods
-.method public constructor <init>(Liei;Ljava/io/File;Ljht;Lgvw;Lici;ZFIJJ)V
+.method static constructor <clinit>()V
     .locals 1
+
+    const-string v0, "CdrRecSesImpl2"
+
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lbfv;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lbfm;Lbgd;Liej;Lbhc;Lick;Lick;Lick;Ljrf;Ljava/io/File;Ljava/util/concurrent/Executor;Lgnv;Lifm;Lhcd;Ljrf;JLbgv;Lbhu;Ljrf;Lbhl;)V
+    .locals 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    iput-object v2, p0, Lbfv;->m:Ljava/io/File;
 
-    check-cast v0, Liei;
+    const/4 v2, 0x1
 
-    iput-object v0, p0, Lbfv;->a:Liei;
+    iput v2, p0, Lbfv;->n:I
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v2, Ljava/lang/Object;
 
-    move-result-object v0
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
-    check-cast v0, Ljava/io/File;
+    iput-object v2, p0, Lbfv;->d:Ljava/lang/Object;
 
-    iput-object v0, p0, Lbfv;->b:Ljava/io/File;
+    new-instance v2, Liaw;
 
-    invoke-static {p3}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v2}, Liaw;-><init>()V
 
-    move-result-object v0
+    iput-object v2, p0, Lbfv;->e:Liaw;
 
-    check-cast v0, Ljht;
+    new-instance v2, Ljava/util/ArrayList;
 
-    iput-object v0, p0, Lbfv;->c:Ljht;
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-static {p4}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object v2, p0, Lbfv;->f:Ljava/util/ArrayList;
 
-    move-result-object v0
+    const-wide/16 v2, 0x0
 
-    check-cast v0, Lgvw;
+    iput-wide v2, p0, Lbfv;->x:J
 
-    iput-object v0, p0, Lbfv;->d:Lgvw;
+    const-wide/16 v2, 0x0
 
-    invoke-static {p5}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-wide v2, p0, Lbfv;->y:J
 
-    move-result-object v0
+    sget-object v2, Lbgc;->b:Lbgc;
 
-    check-cast v0, Lici;
+    iput-object v2, p0, Lbfv;->g:Lbgc;
 
-    iput-object v0, p0, Lbfv;->e:Lici;
+    iput-object p1, p0, Lbfv;->h:Lbfm;
 
-    iput-boolean p6, p0, Lbfv;->f:Z
+    iput-object p2, p0, Lbfv;->b:Lbgd;
 
-    iput p7, p0, Lbfv;->g:F
+    iput-object p3, p0, Lbfv;->i:Liej;
 
-    iput p8, p0, Lbfv;->h:I
+    iput-object p4, p0, Lbfv;->j:Lbhc;
 
-    iput-wide p9, p0, Lbfv;->i:J
+    iput-object p6, p0, Lbfv;->k:Lick;
 
-    iput-wide p11, p0, Lbfv;->j:J
+    iput-object p8, p0, Lbfv;->l:Ljrf;
+
+    iput-object p9, p0, Lbfv;->c:Ljava/io/File;
+
+    iput-object p10, p0, Lbfv;->p:Ljava/util/concurrent/Executor;
+
+    move-object/from16 v0, p11
+
+    iput-object v0, p0, Lbfv;->o:Lgnv;
+
+    move-object/from16 v0, p14
+
+    iput-object v0, p0, Lbfv;->q:Ljrf;
+
+    move-wide/from16 v0, p15
+
+    iput-wide v0, p0, Lbfv;->v:J
+
+    move-wide/from16 v0, p15
+
+    iput-wide v0, p0, Lbfv;->w:J
+
+    const-wide/16 v2, 0x0
+
+    iput-wide v2, p0, Lbfv;->x:J
+
+    move-object/from16 v0, p19
+
+    iput-object v0, p0, Lbfv;->r:Ljrf;
+
+    move-object/from16 v0, p20
+
+    iput-object v0, p0, Lbfv;->s:Lbhl;
+
+    move-object/from16 v0, p12
+
+    iput-object v0, p0, Lbfv;->u:Lifm;
+
+    move-object/from16 v0, p17
+
+    iput-object v0, p0, Lbfv;->t:Lbgv;
+
+    new-instance v2, Lihl;
+
+    invoke-direct {v2}, Lihl;-><init>()V
+
+    iput-object v2, p0, Lbfv;->A:Lihl;
+
+    iget-object v2, p0, Lbfv;->e:Liaw;
+
+    new-instance v3, Lbfx;
+
+    move-object/from16 v0, p18
+
+    invoke-direct {v3, p0, v0}, Lbfx;-><init>(Lbfv;Lbhu;)V
+
+    iget-object v4, p0, Lbfv;->p:Ljava/util/concurrent/Executor;
+
+    invoke-interface {p5, v3, v4}, Lick;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Liaw;->a(Lihb;)Lihb;
+
+    iget-object v2, p0, Lbfv;->e:Liaw;
+
+    new-instance v3, Lbfy;
+
+    move-object/from16 v0, p18
+
+    invoke-direct {v3, p0, v0}, Lbfy;-><init>(Lbfv;Lbhu;)V
+
+    iget-object v4, p0, Lbfv;->p:Ljava/util/concurrent/Executor;
+
+    invoke-interface {p7, v3, v4}, Lick;->a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Liaw;->a(Lihb;)Lihb;
+
+    iget-object v2, p0, Lbfv;->e:Liaw;
+
+    move-object/from16 v0, p17
+
+    invoke-virtual {v2, v0}, Liaw;->a(Lihb;)Lihb;
+
+    iget-object v2, p0, Lbfv;->e:Liaw;
+
+    move-object/from16 v0, p18
+
+    invoke-virtual {v2, v0}, Liaw;->a(Lihb;)Lihb;
 
     return-void
+.end method
+
+.method private final a(J)Ljava/io/File;
+    .locals 3
+
+    iget-object v0, p0, Lbfv;->i:Liej;
+
+    iget-object v0, v0, Liej;->a:Lidy;
+
+    iget-object v0, v0, Lidy;->c:Lioj;
+
+    iget-object v1, p0, Lbfv;->o:Lgnv;
+
+    invoke-virtual {v1, p1, p2}, Lgnv;->b(J)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lbfv;->o:Lgnv;
+
+    invoke-virtual {v2, v1, v0}, Lgnv;->a(Ljava/lang/String;Lioj;)Ljava/io/File;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private final o()V
+    .locals 4
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lbfv;->z:J
+
+    sub-long/2addr v0, v2
+
+    iget-wide v2, p0, Lbfv;->x:J
+
+    add-long/2addr v2, v0
+
+    iput-wide v2, p0, Lbfv;->x:J
+
+    iget-wide v2, p0, Lbfv;->y:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lbfv;->y:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lasz;)Laue;
+    .locals 5
+
+    iget-object v1, p0, Lbfv;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lbfv;->g:Lbgc;
+
+    sget-object v2, Lbgc;->b:Lbgc;
+
+    if-eq v0, v2, :cond_0
+
+    iget-object v0, p0, Lbfv;->g:Lbgc;
+
+    sget-object v2, Lbgc;->c:Lbgc;
+
+    if-eq v0, v2, :cond_0
+
+    sget-object v0, Lbfv;->a:Ljava/lang/String;
+
+    iget-object v2, p0, Lbfv;->g:Lbgc;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x2a
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Ignore triggerFocusAndMeterAtPoint: state="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Lato;
+
+    invoke-direct {v0}, Lato;-><init>()V
+
+    monitor-exit v1
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lbfv;->t:Lbgv;
+
+    invoke-virtual {v0, p1}, Lbgv;->a(Lasz;)Laue;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final a()Lkeh;
+    .locals 3
+
+    invoke-virtual {p0}, Lbfv;->m()Lkeh;
+
+    move-result-object v0
+
+    new-instance v1, Lbfz;
+
+    invoke-direct {v1, p0}, Lbfz;-><init>(Lbfv;)V
+
+    sget-object v2, Lken;->a:Lken;
+
+    invoke-static {v0, v1, v2}, Lkcv;->a(Lkeh;Lkdg;Ljava/util/concurrent/Executor;)Lkeh;
+
+    move-result-object v1
+
+    new-instance v2, Lbga;
+
+    invoke-direct {v2}, Lbga;-><init>()V
+
+    invoke-static {v1, v0, v2}, Lhwt;->a(Lkeh;Lkeh;Liap;)Lkeh;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final a(JJ)V
+    .locals 5
+
+    iget-object v0, p0, Lbfv;->A:Lihl;
+
+    new-instance v1, Lihp;
+
+    long-to-float v2, p3
+
+    invoke-direct {v1, p1, p2, v2}, Lihp;-><init>(JF)V
+
+    invoke-virtual {v0, v1}, Lihl;->a(Lihp;)F
+
+    move-result v0
+
+    sget-object v1, Lbfv;->a:Ljava/lang/String;
+
+    const/16 v2, 0x31
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Bitrate at "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method final a(Ljava/io/File;J)V
+    .locals 12
+
+    const/4 v11, 0x0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    invoke-direct {p0, v0, v1}, Lbfv;->a(J)Ljava/io/File;
+
+    move-result-object v2
+
+    iget-wide v0, p0, Lbfv;->w:J
+
+    sub-long v0, p2, v0
+
+    iget-wide v4, p0, Lbfv;->y:J
+
+    sub-long v8, v0, v4
+
+    iget-object v0, p0, Lbfv;->c:Ljava/io/File;
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lbfv;->a:Ljava/lang/String;
+
+    iget-object v1, p0, Lbfv;->c:Ljava/io/File;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x2a
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Rename recording file to output file: "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v4, " => "
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p1, v2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
+
+    move-result v0
+
+    :goto_0
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lbfv;->r:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    new-instance v1, Lbge;
+
+    iget-object v3, p0, Lbfv;->i:Liej;
+
+    iget-object v4, p0, Lbfv;->q:Ljrf;
+
+    iget-object v0, p0, Lbfv;->k:Lick;
+
+    invoke-interface {v0}, Lick;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v5
+
+    iget-object v0, p0, Lbfv;->s:Lbhl;
+
+    iget v10, v0, Lbhl;->b:I
+
+    move-wide v6, p2
+
+    invoke-direct/range {v1 .. v10}, Lbge;-><init>(Ljava/io/File;Liej;Ljrf;ZJJI)V
+
+    iget-object v0, p0, Lbfv;->f:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v11, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
+    :goto_1
+    return-void
+
+    :cond_1
+    sget-object v0, Lbfv;->a:Ljava/lang/String;
+
+    iget-object v1, p0, Lbfv;->c:Ljava/io/File;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x34
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Failed to rename recording file to output file: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v3, " => "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_2
+    move v0, v11
+
+    goto :goto_0
+.end method
+
+.method public final b()Lkeh;
+    .locals 1
+
+    invoke-virtual {p0}, Lbfv;->m()Lkeh;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c()V
+    .locals 1
+
+    iget-object v0, p0, Lbfv;->h:Lbfm;
+
+    invoke-interface {v0}, Lbfm;->a()V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 7
+
+    iget-object v1, p0, Lbfv;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lbfv;->r:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    monitor-exit v1
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-direct {p0, v2, v3}, Lbfv;->a(J)Ljava/io/File;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbfv;->m:Ljava/io/File;
+
+    iget-object v0, p0, Lbfv;->u:Lifm;
+
+    iget-object v2, p0, Lbfv;->m:Ljava/io/File;
+
+    iget-object v3, v0, Lifm;->a:Ljava/lang/Object;
+
+    monitor-enter v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    iget-object v4, v0, Lifm;->b:Ligi;
+
+    sget-object v5, Ligi;->b:Ligi;
+
+    if-eq v4, v5, :cond_1
+
+    const-string v2, "VideoRecorderImpl"
+
+    sget-object v4, Ligi;->b:Ligi;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v0, v0, Lifm;->b:Ligi;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, 0x18
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/2addr v5, v6
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, " is expected but we get "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :goto_1
+    :try_start_2
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :try_start_3
+    iget-object v0, v0, Lifm;->e:Lifi;
+
+    invoke-virtual {v0, v2}, Lifi;->a(Ljava/io/File;)V
+
+    monitor-exit v3
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit v3
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :try_start_4
+    throw v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+.end method
+
+.method public final e()V
+    .locals 4
+
+    iget-object v1, p0, Lbfv;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget v0, p0, Lbfv;->n:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lbfv;->n:I
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    iget-object v0, p0, Lbfv;->c:Ljava/io/File;
+
+    invoke-virtual {p0, v0, v2, v3}, Lbfv;->a(Ljava/io/File;J)V
+
+    iget-object v0, p0, Lbfv;->m:Ljava/io/File;
+
+    iput-object v0, p0, Lbfv;->c:Ljava/io/File;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lbfv;->m:Ljava/io/File;
+
+    iput-wide v2, p0, Lbfv;->w:J
+
+    const-wide/16 v2, 0x0
+
+    iput-wide v2, p0, Lbfv;->y:J
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lbfv;->h:Lbfm;
+
+    invoke-interface {v0}, Lbfm;->b()V
+
+    return-void
+.end method
+
+.method public final g()J
+    .locals 2
+
+    iget-wide v0, p0, Lbfv;->v:J
+
+    return-wide v0
+.end method
+
+.method public final h()J
+    .locals 2
+
+    iget-wide v0, p0, Lbfv;->x:J
+
+    return-wide v0
+.end method
+
+.method public final i()Lbji;
+    .locals 3
+
+    iget-object v0, p0, Lbfv;->l:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbfv;->l:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbjj;
+
+    iget-object v1, p0, Lbfv;->j:Lbhc;
+
+    invoke-interface {v0, v1}, Lbjj;->a(Lbhc;)Lbji;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lbji;
+
+    new-instance v1, Lbdr;
+
+    const-string v2, "snapshot taker doesn\'t exist."
+
+    invoke-direct {v1, v2}, Lbdr;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v0, v1}, Lbji;-><init>(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+.end method
+
+.method public final j()V
+    .locals 4
+
+    iget-object v1, p0, Lbfv;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lbgc;->c:Lbgc;
+
+    iput-object v0, p0, Lbfv;->g:Lbgc;
+
+    iget-object v0, p0, Lbfv;->u:Lifm;
+
+    invoke-virtual {v0}, Lifm;->c()Lkeh;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Lbfv;->z:J
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final k()V
+    .locals 2
+
+    iget-object v1, p0, Lbfv;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-object v0, Lbgc;->b:Lbgc;
+
+    iput-object v0, p0, Lbfv;->g:Lbgc;
+
+    iget-object v0, p0, Lbfv;->u:Lifm;
+
+    invoke-virtual {v0}, Lifm;->b()Lkeh;
+
+    invoke-direct {p0}, Lbfv;->o()V
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final l()I
+    .locals 1
+
+    iget v0, p0, Lbfv;->n:I
+
+    return v0
+.end method
+
+.method final m()Lkeh;
+    .locals 5
+
+    iget-object v1, p0, Lbfv;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lbfv;->g:Lbgc;
+
+    sget-object v2, Lbgc;->b:Lbgc;
+
+    invoke-virtual {v0, v2}, Lbgc;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lbfv;->g:Lbgc;
+
+    sget-object v2, Lbgc;->c:Lbgc;
+
+    invoke-virtual {v0, v2}, Lbgc;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    iget-object v2, p0, Lbfv;->g:Lbgc;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x24
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "CamcorderRecordingSessionImpl state="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Throwable;)Lkeh;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lbfv;->g:Lbgc;
+
+    sget-object v2, Lbgc;->b:Lbgc;
+
+    invoke-virtual {v0, v2}, Lbgc;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lbfv;->g:Lbgc;
+
+    sget-object v2, Lbgc;->c:Lbgc;
+
+    invoke-virtual {v0, v2}, Lbgc;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    :cond_1
+    const/4 v0, 0x1
+
+    :goto_1
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iget-object v0, p0, Lbfv;->g:Lbgc;
+
+    sget-object v2, Lbgc;->c:Lbgc;
+
+    invoke-virtual {v0, v2}, Lbgc;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-direct {p0}, Lbfv;->o()V
+
+    :cond_2
+    sget-object v0, Lbgc;->d:Lbgc;
+
+    iput-object v0, p0, Lbfv;->g:Lbgc;
+
+    iget-object v0, p0, Lbfv;->u:Lifm;
+
+    invoke-virtual {v0}, Lifm;->a()Lkeh;
+
+    move-result-object v0
+
+    new-instance v2, Lbfw;
+
+    invoke-direct {v2, p0}, Lbfw;-><init>(Lbfv;)V
+
+    sget-object v3, Lken;->a:Lken;
+
+    invoke-static {v0, v2, v3}, Lkcv;->a(Lkeh;Ljqv;Ljava/util/concurrent/Executor;)Lkeh;
+
+    move-result-object v0
+
+    new-instance v2, Lbgb;
+
+    invoke-direct {v2, p0}, Lbgb;-><init>(Lbfv;)V
+
+    iget-object v3, p0, Lbfv;->p:Ljava/util/concurrent/Executor;
+
+    invoke-static {v0, v2, v3}, Lkcv;->a(Lkeh;Lkdg;Ljava/util/concurrent/Executor;)Lkeh;
+
+    move-result-object v0
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_1
+.end method
+
+.method final synthetic n()Ljava/lang/Boolean;
+    .locals 3
+
+    :try_start_0
+    iget-object v0, p0, Lbfv;->j:Lbhc;
+
+    invoke-virtual {v0}, Lbhc;->a()V
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :try_end_0
+    .catch Limt; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    :goto_1
+    sget-object v1, Lbfv;->a:Ljava/lang/String;
+
+    const-string v2, "fail to close capture session."
+
+    invoke-static {v1, v2, v0}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_1
 .end method

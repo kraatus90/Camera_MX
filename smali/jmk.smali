@@ -1,169 +1,95 @@
-.class public final Ljmk;
+.class final Ljmk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljmd;
+.field private final synthetic a:Ljava/lang/String;
 
-.field private b:Ljava/util/Iterator;
+.field private final synthetic b:J
 
-.field private c:Ljme;
-
-.field private d:I
-
-.field private e:I
-
-.field private f:Z
+.field private final synthetic c:Ljmj;
 
 
 # direct methods
-.method public constructor <init>(Ljmd;Ljava/util/Iterator;)V
-    .locals 0
+.method constructor <init>(Ljmj;Ljava/lang/String;J)V
+    .locals 1
+
+    iput-object p1, p0, Ljmk;->c:Ljmj;
+
+    iput-object p2, p0, Ljmk;->a:Ljava/lang/String;
+
+    iput-wide p3, p0, Ljmk;->b:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljmk;->a:Ljmd;
-
-    iput-object p2, p0, Ljmk;->b:Ljava/util/Iterator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 1
+.method public final run()V
+    .locals 6
 
-    iget v0, p0, Ljmk;->d:I
+    :try_start_0
+    iget-object v0, p0, Ljmk;->c:Ljmj;
 
-    if-gtz v0, :cond_0
+    iget-object v0, v0, Ljmj;->a:Ljava/io/Writer;
 
-    iget-object v0, p0, Ljmk;->b:Ljava/util/Iterator;
+    const-string v1, "%d,%s,%d%n"
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v2, 0x3
 
-    move-result v0
+    new-array v2, v2, [Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    const/4 v3, 0x0
 
-    :cond_0
-    const/4 v0, 0x1
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    :goto_0
-    return v0
+    move-result-wide v4
 
-    :cond_1
-    const/4 v0, 0x0
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    goto :goto_0
-.end method
+    move-result-object v4
 
-.method public final next()Ljava/lang/Object;
-    .locals 1
+    aput-object v4, v2, v3
 
-    invoke-virtual {p0}, Ljmk;->hasNext()Z
+    const/4 v3, 0x1
 
-    move-result v0
+    iget-object v4, p0, Ljmk;->a:Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    aput-object v4, v2, v3
 
-    new-instance v0, Ljava/util/NoSuchElementException;
+    const/4 v3, 0x2
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    iget-wide v4, p0, Ljmk;->b:J
 
-    throw v0
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    :cond_0
-    iget v0, p0, Ljmk;->d:I
+    move-result-object v4
 
-    if-nez v0, :cond_1
+    aput-object v4, v2, v3
 
-    iget-object v0, p0, Ljmk;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljme;
-
-    iput-object v0, p0, Ljmk;->c:Ljme;
-
-    iget-object v0, p0, Ljmk;->c:Ljme;
-
-    invoke-interface {v0}, Ljme;->b()I
-
-    move-result v0
-
-    iput v0, p0, Ljmk;->d:I
-
-    iput v0, p0, Ljmk;->e:I
-
-    :cond_1
-    iget v0, p0, Ljmk;->d:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Ljmk;->d:I
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ljmk;->f:Z
-
-    iget-object v0, p0, Ljmk;->c:Ljme;
-
-    invoke-interface {v0}, Ljme;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final remove()V
-    .locals 2
-
-    iget-boolean v0, p0, Ljmk;->f:Z
-
-    const-string v1, "no calls to next() since the last call to remove()"
-
-    invoke-static {v0, v1}, Liya;->b(ZLjava/lang/Object;)V
-
-    iget v0, p0, Ljmk;->e:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Ljmk;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    :goto_0
-    iget v0, p0, Ljmk;->e:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Ljmk;->e:I
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ljmk;->f:Z
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Ljmk;->a:Ljmd;
-
-    iget-object v1, p0, Ljmk;->c:Ljme;
-
-    invoke-interface {v1}, Ljme;->a()Ljava/lang/Object;
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljmd;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lkfd;->a:Lkfe;
+
+    invoke-virtual {v1, v0}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method

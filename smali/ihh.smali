@@ -1,49 +1,62 @@
-.class final Lihh;
-.super Liie;
+.class public abstract Lihh;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field private a:Landroid/view/Surface;
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
 
 
 # direct methods
-.method constructor <init>(ILandroid/view/Surface;)V
-    .locals 2
+.method protected constructor <init>()V
+    .locals 1
 
-    new-instance v0, Lifp;
+    const-string v0, ""
 
-    new-instance v1, Landroid/hardware/camera2/params/OutputConfiguration;
+    invoke-direct {p0, v0}, Lihh;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, p1, p2}, Landroid/hardware/camera2/params/OutputConfiguration;-><init>(ILandroid/view/Surface;)V
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Lifp;-><init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    invoke-direct {p0, v0}, Liie;-><init>(Liif;)V
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lihh;->a:Landroid/view/Surface;
+    invoke-direct {p0, p1, v0}, Lihh;-><init>(Ljava/lang/String;B)V
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;B)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lihh;->a:Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    rsub-int/lit8 v0, v0, 0x17
+
+    iput v0, p0, Lihh;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/view/Surface;
-    .locals 1
-
-    iget-object v0, p0, Lihh;->a:Landroid/view/Surface;
-
-    return-object v0
+.method public abstract a(Ljava/lang/String;)Lihi;
 .end method
 
-.method public final a(Landroid/view/Surface;)V
-    .locals 2
+.method public a(Ljava/lang/String;I)Z
+    .locals 1
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const/4 v0, 0x1
 
-    const-string v1, "addSurface is not supported."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return v0
 .end method

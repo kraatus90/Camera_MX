@@ -3,64 +3,86 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
+.field private final b:Lkgv;
 
-.field private c:Ljxn;
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lesy;->a:Ljxn;
+    iput-object p1, p0, Lesy;->a:Lkgv;
 
-    iput-object p2, p0, Lesy;->b:Ljxn;
+    iput-object p2, p0, Lesy;->b:Lkgv;
 
-    iput-object p3, p0, Lesy;->c:Ljxn;
+    iput-object p3, p0, Lesy;->c:Lkgv;
+
+    iput-object p4, p0, Lesy;->d:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;)Lesy;
+    .locals 1
+
+    new-instance v0, Lesy;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lesy;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+    .locals 5
 
-    new-instance v3, Lesu;
+    new-instance v4, Lesv;
 
-    iget-object v0, p0, Lesy;->a:Ljxn;
+    iget-object v0, p0, Lesy;->a:Lkgv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Context;
+    check-cast v0, Ljava/util/List;
 
-    iget-object v1, p0, Lesy;->b:Ljxn;
+    iget-object v1, p0, Lesy;->b:Lkgv;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lhzt;
+    check-cast v1, Lesz;
 
-    iget-object v2, p0, Lesy;->c:Ljxn;
+    iget-object v2, p0, Lesy;->c:Lkgv;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lgwo;
+    check-cast v2, Leti;
 
-    invoke-direct {v3, v0, v1, v2}, Lesu;-><init>(Landroid/content/Context;Lhzt;Lgwo;)V
+    iget-object v3, p0, Lesy;->d:Lkgv;
 
-    return-object v3
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/concurrent/Executor;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lesv;-><init>(Ljava/util/List;Lesz;Leti;Ljava/util/concurrent/Executor;)V
+
+    return-object v4
 .end method

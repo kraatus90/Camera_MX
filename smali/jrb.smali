@@ -1,272 +1,141 @@
 .class public final Ljrb;
-.super Ljwj;
+.super Ljava/lang/Object;
 .source "PG"
 
 
 # instance fields
-.field public a:I
+.field private final a:Ljqy;
 
-.field public b:I
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljqy;Ljava/lang/String;)V
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    iput-object p1, p0, Ljrb;->a:Ljqy;
 
-    iput v0, p0, Ljrb;->a:I
+    invoke-static {p2}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput v0, p0, Ljrb;->b:I
+    move-result-object v0
 
-    const/4 v0, 0x0
+    check-cast v0, Ljava/lang/String;
 
-    iput-object v0, p0, Ljrb;->unknownFieldData:Ljwl;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ljrb;->cachedSize:I
+    iput-object v0, p0, Ljrb;->b:Ljava/lang/String;
 
     return-void
-.end method
-
-.method private final a(Ljwh;)Ljrb;
-    .locals 6
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    invoke-virtual {p1}, Ljwh;->i()I
-
-    move-result v1
-
-    :try_start_0
-    invoke-virtual {p1}, Ljwh;->d()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_0
-
-    new-instance v3, Ljava/lang/IllegalArgumentException;
-
-    const/16 v4, 0x27
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v4, " is not a valid enum Gesture"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v3, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    move-exception v2
-
-    invoke-virtual {p1, v1}, Ljwh;->e(I)V
-
-    invoke-virtual {p0, p1, v0}, Ljrb;->storeUnknownField(Ljwh;I)Z
-
-    goto :goto_0
-
-    :pswitch_0
-    :try_start_1
-    iput v2, p0, Ljrb;->a:I
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_0
-
-    :sswitch_2
-    invoke-virtual {p1}, Ljwh;->i()I
-
-    move-result v1
-
-    :try_start_2
-    invoke-virtual {p1}, Ljwh;->d()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_1
-
-    new-instance v3, Ljava/lang/IllegalArgumentException;
-
-    const/16 v4, 0x24
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v4, " is not a valid enum Mode"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v3, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v3
-    :try_end_2
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
-
-    :catch_1
-    move-exception v2
-
-    invoke-virtual {p1, v1}, Ljwh;->e(I)V
-
-    invoke-virtual {p0, p1, v0}, Ljrb;->storeUnknownField(Ljwh;I)Z
-
-    goto :goto_0
-
-    :pswitch_1
-    :try_start_3
-    iput v2, p0, Ljrb;->b:I
-    :try_end_3
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method protected final computeSerializedSize()I
+.method public final a(Ljava/lang/StringBuilder;Ljava/util/Iterator;)Ljava/lang/StringBuilder;
     .locals 3
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    :try_start_0
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    iget v1, p0, Ljrb;->a:I
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget v2, p0, Ljrb;->a:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget v1, p0, Ljrb;->b:I
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget v2, p0, Ljrb;->b:I
-
-    invoke-static {v1, v2}, Ljwi;->b(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    return v0
-.end method
-
-.method public final synthetic mergeFrom(Ljwh;)Ljwp;
-    .locals 1
-
-    invoke-direct {p0, p1}, Ljrb;->a(Ljwh;)Ljrb;
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljava/util/Map$Entry;
 
-.method public final writeTo(Ljwi;)V
-    .locals 2
+    iget-object v1, p0, Ljrb;->a:Ljqy;
 
-    iget v0, p0, Ljrb;->a:I
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljqy;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    iget-object v1, p0, Ljrb;->b:Ljava/lang/String;
+
+    invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    iget-object v1, p0, Ljrb;->a:Ljqy;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljqy;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ljrb;->a:Ljqy;
 
-    iget v1, p0, Ljrb;->a:I
+    iget-object v0, v0, Ljqy;->a:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
+    invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    iget-object v1, p0, Ljrb;->a:Ljqy;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljqy;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    iget-object v1, p0, Ljrb;->b:Ljava/lang/String;
+
+    invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+
+    iget-object v1, p0, Ljrb;->a:Ljqy;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljqy;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/AssertionError;
+
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v1
 
     :cond_0
-    iget v0, p0, Ljrb;->b:I
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x2
-
-    iget v1, p0, Ljrb;->b:I
-
-    invoke-virtual {p1, v0, v1}, Ljwi;->a(II)V
-
-    :cond_1
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
-
-    return-void
+    return-object p1
 .end method

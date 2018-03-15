@@ -250,6 +250,18 @@
     return v0
 .end method
 
+.method public getExecuted_finish_on()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_executed_finish_on_get(JLcom/google/googlex/gcam/ShotLogData;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getFinal_image_callback_time()F
     .locals 2
 
@@ -490,18 +502,6 @@
     return v0
 .end method
 
-.method public getSynthetic_exposure_count()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_synthetic_exposure_count_get(JLcom/google/googlex/gcam/ShotLogData;)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public getTime_to_postview()F
     .locals 2
 
@@ -520,18 +520,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
 
     invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_time_to_shot_get(JLcom/google/googlex/gcam/ShotLogData;)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getUsed_hexagon()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_used_hexagon_get(JLcom/google/googlex/gcam/ShotLogData;)Z
 
     move-result v0
 
@@ -668,6 +656,16 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_cpu_usage_factor_set(JLcom/google/googlex/gcam/ShotLogData;F)V
+
+    return-void
+.end method
+
+.method public setExecuted_finish_on(I)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_executed_finish_on_set(JLcom/google/googlex/gcam/ShotLogData;I)V
 
     return-void
 .end method
@@ -858,16 +856,6 @@
     return-void
 .end method
 
-.method public setSynthetic_exposure_count(I)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_synthetic_exposure_count_set(JLcom/google/googlex/gcam/ShotLogData;I)V
-
-    return-void
-.end method
-
 .method public setTime_to_postview(F)V
     .locals 2
 
@@ -884,16 +872,6 @@
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_time_to_shot_set(JLcom/google/googlex/gcam/ShotLogData;F)V
-
-    return-void
-.end method
-
-.method public setUsed_hexagon(Z)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotLogData;->swigCPtr:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotLogData_used_hexagon_set(JLcom/google/googlex/gcam/ShotLogData;Z)V
 
     return-void
 .end method

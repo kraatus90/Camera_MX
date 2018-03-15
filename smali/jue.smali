@@ -1,53 +1,58 @@
-.class public abstract Ljue;
-.super Ljud;
+.class final Ljue;
+.super Ljsh;
 .source "PG"
 
 # interfaces
-.implements Ljuw;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final serialVersionUID:J
+
+
+# instance fields
+.field private final a:Ljava/lang/Object;
+
+.field private final b:Ljava/lang/Object;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Ljud;-><init>()V
+    invoke-direct {p0}, Ljsh;-><init>()V
+
+    iput-object p1, p0, Ljue;->a:Ljava/lang/Object;
+
+    iput-object p2, p0, Ljue;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected synthetic a()Ljava/util/concurrent/Future;
+.method public final getKey()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Ljue;->b()Ljuw;
-
-    move-result-object v0
+    iget-object v0, p0, Ljue;->a:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public final a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+.method public final getValue()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Ljue;->b()Ljuw;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    return-void
-.end method
-
-.method protected abstract b()Ljuw;
-.end method
-
-.method protected synthetic c()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljue;->b()Ljuw;
-
-    move-result-object v0
+    iget-object v0, p0, Ljue;->b:Ljava/lang/Object;
 
     return-object v0
+.end method
+
+.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
 .end method

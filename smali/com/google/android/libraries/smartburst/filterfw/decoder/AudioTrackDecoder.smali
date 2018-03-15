@@ -191,9 +191,9 @@
     move-object v1, v4
 
     :goto_1
-    sget-object v2, Ljvs;->a:Ljvt;
+    sget-object v2, Lkfd;->a:Lkfe;
 
-    invoke-virtual {v2, v1}, Ljvt;->b(Ljava/lang/Throwable;)V
+    invoke-virtual {v2, v1}, Lkfe;->b(Ljava/lang/Throwable;)V
 
     goto :goto_0
 

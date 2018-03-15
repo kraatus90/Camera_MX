@@ -1,127 +1,94 @@
-.class public final Laji;
+.class final Laji;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lakv;
-
-
-# static fields
-.field private static a:I
+.implements Laef;
 
 
 # instance fields
-.field private b:Landroid/content/res/AssetManager;
-
-.field private c:Lajj;
+.field private final a:Ljava/io/File;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/16 v0, 0x16
-
-    sput v0, Laji;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/res/AssetManager;Lajj;)V
+.method constructor <init>(Ljava/io/File;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Laji;->b:Landroid/content/res/AssetManager;
-
-    iput-object p2, p0, Laji;->c:Lajj;
+    iput-object p1, p0, Laji;->a:Ljava/io/File;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;IILaeo;)Lakw;
-    .locals 5
+.method public final a()Ljava/lang/Class;
+    .locals 1
 
-    check-cast p1, Landroid/net/Uri;
+    const-class v0, Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    sget v1, Laji;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Lakw;
-
-    new-instance v2, Larg;
-
-    invoke-direct {v2, p1}, Larg;-><init>(Ljava/lang/Object;)V
-
-    iget-object v3, p0, Laji;->c:Lajj;
-
-    iget-object v4, p0, Laji;->b:Landroid/content/res/AssetManager;
-
-    invoke-interface {v3, v4, v0}, Lajj;->a(Landroid/content/res/AssetManager;Ljava/lang/String;)Laet;
-
-    move-result-object v0
-
-    invoke-direct {v1, v2, v0}, Lakw;-><init>(Laek;Laet;)V
-
-    return-object v1
+    return-object v0
 .end method
 
-.method public final synthetic a(Ljava/lang/Object;)Z
+.method public final a(Lacn;Laeg;)V
     .locals 3
 
-    const/4 v0, 0x0
+    :try_start_0
+    iget-object v0, p0, Laji;->a:Ljava/io/File;
 
-    check-cast p1, Landroid/net/Uri;
+    invoke-static {v0}, Larn;->a(Ljava/io/File;)Ljava/nio/ByteBuffer;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v1, "file"
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    invoke-interface {p2, v0}, Laeg;->a(Ljava/lang/Object;)V
 
-    move-result-object v2
+    :goto_0
+    return-void
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :catch_0
+    move-exception v0
 
-    move-result v1
+    const-string v1, "ByteBufferFileLoader"
 
-    if-eqz v1, :cond_0
+    const/4 v2, 0x3
 
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const-string v1, "android_asset"
-
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    const/4 v0, 0x1
+    const-string v1, "ByteBufferFileLoader"
+
+    const-string v2, "Failed to obtain ByteBuffer for file"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
-    return v0
+    invoke-interface {p2, v0}, Laeg;->a(Ljava/lang/Exception;)V
+
+    goto :goto_0
+.end method
+
+.method public final b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()Ladm;
+    .locals 1
+
+    sget-object v0, Ladm;->a:Ladm;
+
+    return-object v0
 .end method

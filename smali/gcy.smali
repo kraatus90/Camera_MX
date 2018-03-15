@@ -1,43 +1,49 @@
-.class final synthetic Lgcy;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public Lgcy;
+.super Lgcx;
+.source "PG"
 
 
 # instance fields
-.field private a:Lgcx;
+.field public d:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
 
-.field private b:Lgdk;
+.field public e:Z
+
+.field public f:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
 
 # direct methods
-.method constructor <init>(Lgcx;Lgdk;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgcy;->a:Lgcx;
-
-    iput-object p2, p0, Lgcy;->b:Lgdk;
+    invoke-direct {p0}, Lgcx;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public a(Lgde;Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;)V
     .locals 2
 
-    iget-object v0, p0, Lgcy;->a:Lgcx;
+    iput-object p2, p0, Lgcy;->d:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
 
-    iget-object v1, p0, Lgcy;->b:Lgdk;
+    iget-object v0, p0, Lgcy;->d:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
 
-    iget-object v0, v0, Lgcx;->c:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->a:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    iget-object v1, v1, Lgdk;->e:Ljava/lang/String;
+    iput-object v0, p0, Lgcy;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object v0, p0, Lgcy;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+    new-instance v1, Lgcz;
+
+    invoke-direct {v1, p0}, Lgcz;-><init>(Lgcy;)V
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->registerAnimationCallback(Landroid/graphics/drawable/Animatable2$AnimationCallback;)V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lgcy;->e:Z
 
     return-void
 .end method

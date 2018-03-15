@@ -1,66 +1,103 @@
-.class final Lcxq;
-.super Ljava/lang/Object;
+.class public Lcxq;
+.super Lbrv;
 .source "PG"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private synthetic a:Lcxc;
 
 
 # direct methods
-.method constructor <init>(Lcxc;)V
+.method protected constructor <init>(Lbrv;)V
     .locals 0
 
-    iput-object p1, p0, Lcxq;->a:Lcxc;
+    invoke-direct {p0, p1}, Lbrv;-><init>(Lbrv;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
+
+.method private constructor <init>(Lbrw;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lbrv;-><init>(Lbrw;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lbrw;B)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrw;)V
+
+    invoke-direct {p0}, Lcxq;->f()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcxq;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrv;)V
+
+    invoke-direct {p0}, Lcxq;->f()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcxq;B)V
+    .locals 2
+
+    invoke-direct {p0, p1}, Lcxq;-><init>(Lbrv;)V
+
+    new-instance v0, Lcxs;
+
+    invoke-direct {v0, p0}, Lcxs;-><init>(Lcxq;)V
+
+    const-class v1, Lcwx;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
+
+    return-void
+.end method
+
+.method private final f()V
+    .locals 2
+
+    new-instance v0, Lcxr;
+
+    invoke-direct {v0, p0}, Lcxr;-><init>(Lcxq;)V
+
+    const-class v1, Lcwx;
+
+    invoke-virtual {p0, v1, v0}, Lbrv;->a(Ljava/lang/Class;Lbru;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final synthetic a(Ljava/lang/Class;)Lbru;
     .locals 1
 
-    iget-object v0, p0, Lcxq;->a:Lcxc;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-super {p0, p1}, Lbrv;->a(Ljava/lang/Class;)Lbru;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    check-cast v0, Lcxp;
 
-    iget-object v0, v0, Lcwg;->b:Lcuv;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Lcuv;->a()V
+.method public synthetic b()Lbrv;
+    .locals 1
 
-    iget-object v0, p0, Lcxq;->a:Lcxc;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
-
-    move-result-object v0
-
-    check-cast v0, Lcwg;
-
-    iget-object v0, v0, Lcwg;->b:Lcuv;
-
-    invoke-virtual {v0}, Lcuv;->b()V
-
-    iget-object v0, p0, Lcxq;->a:Lcxc;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {p0}, Lcxq;->e()Lcxq;
 
     move-result-object v0
 
-    check-cast v0, Lcwg;
+    return-object v0
+.end method
 
-    iget-object v0, v0, Lcwg;->C:Lezd;
+.method public e()Lcxq;
+    .locals 1
 
-    invoke-virtual {v0}, Lgvh;->v()V
+    const/4 v0, 0x0
 
-    return-void
+    return-object v0
 .end method

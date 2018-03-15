@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">Серійна зйомка (%1$d фото)</item>
+        <item quantity="one">Серійна зйомка (%1$d фото)</item>
+        <item quantity="few">Серійна зйомка (%1$d фото)</item>
+        <item quantity="many">Серійна зйомка (%1$d фото)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">Збережено %1$d фотографії</item>
         <item quantity="one">Збережено %1$d фотографію</item>

@@ -3,74 +3,62 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfnm;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ljrf;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
+.field private final synthetic b:Lgay;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Ljrf;Lgay;)V
     .locals 0
 
+    iput-object p1, p0, Ldna;->a:Ljrf;
+
+    iput-object p2, p0, Ldna;->b:Lgay;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldna;->a:Ljxn;
-
-    iput-object p2, p0, Ldna;->b:Ljxn;
-
-    iput-object p3, p0, Ldna;->c:Ljxn;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
 
-    new-instance v0, Ldna;
+# virtual methods
+.method public final a()Lkeh;
+    .locals 2
 
-    invoke-direct {v0, p0, p1, p2}, Ldna;-><init>(Ljxn;Ljxn;Ljxn;)V
+    iget-object v0, p0, Ldna;->a:Ljrf;
+
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldmd;
+
+    iget-object v1, p0, Ldna;->b:Lgay;
+
+    invoke-virtual {v0, v1}, Ldmd;->a(Lgay;)Lkeh;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
+.method public final b()Lkeh;
+    .locals 2
 
-# virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 4
+    new-instance v0, Lijd;
 
-    new-instance v3, Ldmz;
+    const-string v1, "YUV image could not be processed by FxImageSaver."
 
-    iget-object v0, p0, Ldna;->a:Ljxn;
+    invoke-direct {v0, v1}, Lijd;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Lkdt;->a(Ljava/lang/Throwable;)Lkeh;
 
     move-result-object v0
 
-    check-cast v0, Liau;
-
-    iget-object v1, p0, Ldna;->b:Ljxn;
-
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Liau;
-
-    iget-object v2, p0, Ldna;->c:Ljxn;
-
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgdq;
-
-    invoke-direct {v3, v0, v1, v2}, Ldmz;-><init>(Liau;Liau;Lgdq;)V
-
-    return-object v3
+    return-object v0
 .end method

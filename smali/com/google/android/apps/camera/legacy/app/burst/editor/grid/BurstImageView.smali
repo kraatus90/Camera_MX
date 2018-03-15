@@ -91,13 +91,13 @@
 
     if-nez v0, :cond_0
 
-    const v0, 0x7f020100
+    const v0, 0x7f020101
 
     invoke-static {p0, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
     move-result-object v7
 
-    const v0, 0x7f0d0071
+    const v0, 0x7f0d005d
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

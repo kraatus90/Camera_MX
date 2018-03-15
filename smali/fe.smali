@@ -1,25 +1,11 @@
-.class final Lfe;
-.super Lfd;
+.class public interface abstract Lfe;
+.super Ljava/lang/Object;
 .source "PG"
 
 
-# direct methods
-.method constructor <init>(Lfd;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lfd;-><init>(Lfd;)V
-
-    return-void
+# virtual methods
+.method public abstract a()Landroid/graphics/drawable/Drawable;
 .end method
 
-
-# virtual methods
-.method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    new-instance v0, Lfc;
-
-    invoke-direct {v0, p0, p1}, Lfc;-><init>(Lfd;Landroid/content/res/Resources;)V
-
-    return-object v0
+.method public abstract b()V
 .end method

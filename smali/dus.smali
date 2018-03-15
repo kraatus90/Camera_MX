@@ -1,107 +1,74 @@
-.class public final enum Ldus;
-.super Ljava/lang/Enum;
+.class public final Ldus;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# static fields
-.field public static final enum a:Ldus;
 
-.field public static final enum b:Ldus;
+# instance fields
+.field private final a:Lkgv;
 
-.field public static final enum c:Ldus;
+.field private final b:Lkgv;
 
-.field public static final enum d:Ldus;
-
-.field private static synthetic e:[Ldus;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    const/4 v5, 0x3
-
-    const/4 v4, 0x2
-
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    new-instance v0, Ldus;
-
-    const-string v1, "ORIGINAL"
-
-    invoke-direct {v0, v1, v2}, Ldus;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldus;->a:Ldus;
-
-    new-instance v0, Ldus;
-
-    const-string v1, "PRIMARY"
-
-    invoke-direct {v0, v1, v3}, Ldus;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldus;->b:Ldus;
-
-    new-instance v0, Ldus;
-
-    const-string v1, "SECONDARY"
-
-    invoke-direct {v0, v1, v4}, Ldus;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldus;->c:Ldus;
-
-    new-instance v0, Ldus;
-
-    const-string v1, "DEBUG"
-
-    invoke-direct {v0, v1, v5}, Ldus;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldus;->d:Ldus;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Ldus;
-
-    sget-object v1, Ldus;->a:Ldus;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Ldus;->b:Ldus;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Ldus;->c:Ldus;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Ldus;->d:Ldus;
-
-    aput-object v1, v0, v5
-
-    sput-object v0, Ldus;->e:[Ldus;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldus;->a:Lkgv;
+
+    iput-object p2, p0, Ldus;->b:Lkgv;
+
+    iput-object p3, p0, Ldus;->c:Lkgv;
 
     return-void
 .end method
 
-.method public static values()[Ldus;
-    .locals 1
 
-    sget-object v0, Ldus;->e:[Ldus;
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    invoke-virtual {v0}, [Ldus;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Ldus;->a:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Ldus;
+    check-cast v0, Lepl;
+
+    iget-object v1, p0, Ldus;->b:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lepj;
+
+    iget-object v2, p0, Ldus;->c:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lfzx;
+
+    new-instance v3, Lfzq;
+
+    invoke-direct {v3, v0, v1, v2}, Lfzq;-><init>(Lepl;Lepj;Lfzx;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v3, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgaa;
 
     return-object v0
 .end method

@@ -1,196 +1,91 @@
 .class public final Lfaz;
-.super Lfdg;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lgvk;
+.implements Lfcu;
 
 
 # instance fields
-.field public a:Lgvj;
-
-.field public b:Lgvl;
-
-.field public c:Lgvl;
+.field private final a:Lket;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 4
+    .locals 1
 
-    const/4 v3, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lfdg;-><init>()V
+    new-instance v0, Lket;
 
-    new-instance v0, Lfba;
+    invoke-direct {v0}, Lket;-><init>()V
 
-    invoke-direct {v0, p0}, Lfba;-><init>(Lfaz;)V
-
-    new-instance v1, Lgvl;
-
-    new-array v2, v3, [Lgvg;
-
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
-
-    iput-object v1, p0, Lfaz;->b:Lgvl;
-
-    new-instance v0, Lfbb;
-
-    invoke-direct {v0, p0}, Lfbb;-><init>(Lfaz;)V
-
-    new-instance v1, Lgvl;
-
-    new-array v2, v3, [Lgvg;
-
-    invoke-direct {v1, v0, v2}, Lgvl;-><init>(Lgvg;[Lgvg;)V
-
-    iput-object v1, p0, Lfaz;->c:Lgvl;
-
-    new-instance v0, Lgvj;
-
-    iget-object v1, p0, Lfaz;->b:Lgvl;
-
-    invoke-direct {v0, v1, v3}, Lgvj;-><init>(Lgvl;Z)V
-
-    iput-object v0, p0, Lfaz;->a:Lgvj;
+    iput-object v0, p0, Lfaz;->a:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final B()V
-    .locals 1
-
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->B()V
-
-    goto :goto_0
-.end method
-
-.method public final C()V
-    .locals 1
-
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->b()Lgvl;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgvl;->a:Lgvg;
-
-    check-cast v0, Lgvh;
-
-    invoke-virtual {v0}, Lgvh;->C()V
-
-    goto :goto_0
-.end method
-
-.method public final a()V
-    .locals 1
-
-    invoke-super {p0}, Lfdg;->a()V
-
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->c()V
-
-    return-void
-.end method
-
-.method public final a(Ljxn;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Ljht;)V
+.method public final a()Lind;
     .locals 2
 
-    iget-object v0, p0, Lfaz;->a:Lgvj;
+    :try_start_0
+    iget-object v0, p0, Lfaz;->a:Lket;
 
-    invoke-virtual {v0}, Lgvj;->f()Z
+    invoke-virtual {v0}, Lkch;->get()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v0
+
+    check-cast v0, Lind;
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;)V
+    .locals 2
+
+    check-cast p1, Lind;
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_LOCK:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Lind;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    iget-object v1, p0, Lfaz;->a:Lket;
+
+    invoke-virtual {v1}, Lkch;->isDone()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
 
     if-eqz v0, :cond_0
 
-    :goto_0
-    return-void
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lfaz;->a:Lket;
+
+    invoke-virtual {v0, p1}, Lkch;->a(Ljava/lang/Object;)Z
 
     :cond_0
-    invoke-super {p0, p1, p2, p3, p4}, Lfdg;->a(Ljxn;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Ljht;)V
-
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    sget v1, Leh;->bo:I
-
-    iput v1, v0, Lgvj;->a:I
-
-    goto :goto_0
-.end method
-
-.method public final b()V
-    .locals 1
-
-    invoke-super {p0}, Lfdg;->b()V
-
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->d()V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 0
-
-    invoke-interface {p0}, Lgvk;->j()V
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 1
-
-    iget-object v0, p0, Lfaz;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->e()V
-
-    iget-object v0, p0, Lfaz;->b:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
-    iget-object v0, p0, Lfaz;->c:Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->j()V
-
     return-void
 .end method

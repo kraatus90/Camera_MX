@@ -1,263 +1,553 @@
-.class public abstract Lhpz;
-.super Landroid/os/Binder;
+.class public final Lhpz;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhpy;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
-
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {p0, p0, v0}, Lhpz;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static asInterface(Landroid/os/IBinder;)Lhpy;
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-interface {p0, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    instance-of v1, v0, Lhpy;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lhpy;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Lhqa;
-
-    invoke-direct {v0, p0}, Lhqa;-><init>(Landroid/os/IBinder;)V
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
-    .locals 0
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 34
 
-    return-object p0
-.end method
+    invoke-static/range {p1 .. p1}, Lhmr;->a(Landroid/os/Parcel;)I
 
-.method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 5
+    move-result v32
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const/4 v1, 0x1
+    const/4 v4, 0x0
 
-    sparse-switch p1, :sswitch_data_0
+    const/4 v5, 0x0
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    const/4 v6, 0x0
 
-    move-result v1
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    const/16 v21, 0x0
+
+    const/16 v22, 0x0
+
+    const/16 v23, 0x0
+
+    const/16 v24, 0x0
+
+    const/16 v25, 0x0
+
+    const/16 v26, 0x0
+
+    const/16 v27, 0x0
+
+    const/16 v28, 0x0
+
+    const/16 v29, 0x0
+
+    const/16 v30, 0x0
+
+    const/16 v31, 0x0
 
     :goto_0
-    return v1
-
-    :sswitch_0
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :sswitch_1
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_1
-    invoke-virtual {p0, v0}, Lhpz;->init(Lhnb;)V
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
-
-    invoke-interface {v2, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    instance-of v3, v0, Lhnb;
-
-    if-eqz v3, :cond_1
-
-    check-cast v0, Lhnb;
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v0, Lhnd;
-
-    invoke-direct {v0, v2}, Lhnd;-><init>(Landroid/os/IBinder;)V
-
-    goto :goto_1
-
-    :sswitch_2
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    move v0, v1
-
-    :goto_2
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    invoke-virtual {p0, v3, v0, v4}, Lhpz;->getBooleanFlagValue(Ljava/lang/String;ZI)Z
-
-    move-result v0
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    if-eqz v0, :cond_2
-
-    move v2, v1
-
-    :cond_2
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v2
-
-    goto :goto_2
-
-    :sswitch_3
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
 
     move-result v2
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    move/from16 v0, v32
 
-    move-result v3
+    if-ge v2, v0, :cond_1
 
-    invoke-virtual {p0, v0, v2, v3}, Lhpz;->getIntFlagValue(Ljava/lang/String;II)I
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v2
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    const v33, 0xffff
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeInt(I)V
+    and-int v33, v33, v2
+
+    packed-switch v33, :pswitch_data_0
+
+    :pswitch_0
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->b(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
-    :sswitch_4
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
+    :pswitch_1
+    move-object/from16 v0, p1
 
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v2
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v4
-
-    invoke-virtual {p0, v0, v2, v3, v4}, Lhpz;->getLongFlagValue(Ljava/lang/String;JI)J
-
-    move-result-wide v2
-
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    invoke-virtual {p3, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
-
-    goto/16 :goto_0
-
-    :sswitch_5
-    const-string v0, "com.google.android.gms.flags.IFlagProvider"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-static {v0, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
 
     move-result v3
 
-    invoke-virtual {p0, v0, v2, v3}, Lhpz;->getStringFlagValue(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+    goto :goto_0
 
-    move-result-object v0
+    :pswitch_2
+    move-object/from16 v0, p1
 
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    invoke-static {v0, v2}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
 
-    invoke-virtual {p3, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    move-result-object v4
+
+    goto :goto_0
+
+    :pswitch_3
+    sget-object v5, Landroid/accounts/Account;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2, v5}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/accounts/Account;
+
+    move-object v5, v2
+
+    goto :goto_0
+
+    :pswitch_4
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->i(Landroid/os/Parcel;I)Landroid/os/Bundle;
+
+    move-result-object v6
+
+    goto :goto_0
+
+    :pswitch_5
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v10
+
+    goto :goto_0
+
+    :pswitch_6
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v11
+
+    goto :goto_0
+
+    :pswitch_7
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->a(Landroid/os/Parcel;I)I
+
+    move-result v2
+
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v33
+
+    if-nez v2, :cond_0
+
+    const/4 v12, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object v12
+
+    add-int v2, v2, v33
+
+    move-object/from16 v0, p1
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    goto :goto_0
+
+    :pswitch_8
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->i(Landroid/os/Parcel;I)Landroid/os/Bundle;
+
+    move-result-object v13
+
+    goto :goto_0
+
+    :pswitch_9
+    sget-object v14, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2, v14}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/graphics/Bitmap;
+
+    move-object v14, v2
+
+    goto :goto_0
+
+    :pswitch_a
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v18
+
+    goto :goto_0
+
+    :pswitch_b
+    sget-object v19, Landroid/net/Uri;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v19
+
+    invoke-static {v0, v2, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/net/Uri;
+
+    move-object/from16 v19, v2
 
     goto/16 :goto_0
 
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_1
-        0x2 -> :sswitch_2
-        0x3 -> :sswitch_3
-        0x4 -> :sswitch_4
-        0x5 -> :sswitch_5
-        0x5f4e5446 -> :sswitch_0
-    .end sparse-switch
+    :pswitch_c
+    sget-object v20, Lcom/google/android/gms/googlehelp/internal/common/OverflowMenuItem;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v20
+
+    invoke-static {v0, v2, v1}, Lhmr;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object v20
+
+    goto/16 :goto_0
+
+    :pswitch_d
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v21
+
+    goto/16 :goto_0
+
+    :pswitch_e
+    sget-object v23, Lcom/google/android/gms/googlehelp/OfflineSuggestion;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v23
+
+    invoke-static {v0, v2, v1}, Lhmr;->c(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object v23
+
+    goto/16 :goto_0
+
+    :pswitch_f
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->j(Landroid/os/Parcel;I)[B
+
+    move-result-object v15
+
+    goto/16 :goto_0
+
+    :pswitch_10
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v16
+
+    goto/16 :goto_0
+
+    :pswitch_11
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v17
+
+    goto/16 :goto_0
+
+    :pswitch_12
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v24
+
+    goto/16 :goto_0
+
+    :pswitch_13
+    sget-object v25, Lcom/google/android/gms/feedback/ErrorReport;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v25
+
+    invoke-static {v0, v2, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/gms/feedback/ErrorReport;
+
+    move-object/from16 v25, v2
+
+    goto/16 :goto_0
+
+    :pswitch_14
+    sget-object v22, Lcom/google/android/gms/feedback/ThemeSettings;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v22
+
+    invoke-static {v0, v2, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/gms/feedback/ThemeSettings;
+
+    move-object/from16 v22, v2
+
+    goto/16 :goto_0
+
+    :pswitch_15
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    goto/16 :goto_0
+
+    :pswitch_16
+    sget-object v26, Lcom/google/android/gms/googlehelp/internal/common/TogglingData;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v26
+
+    invoke-static {v0, v2, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/gms/googlehelp/internal/common/TogglingData;
+
+    move-object/from16 v26, v2
+
+    goto/16 :goto_0
+
+    :pswitch_17
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v27
+
+    goto/16 :goto_0
+
+    :pswitch_18
+    sget-object v28, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v28
+
+    invoke-static {v0, v2, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/app/PendingIntent;
+
+    move-object/from16 v28, v2
+
+    goto/16 :goto_0
+
+    :pswitch_19
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v8
+
+    goto/16 :goto_0
+
+    :pswitch_1a
+    sget-object v9, Landroid/graphics/Bitmap;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2, v9}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/graphics/Bitmap;
+
+    move-object v9, v2
+
+    goto/16 :goto_0
+
+    :pswitch_1b
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v29
+
+    goto/16 :goto_0
+
+    :pswitch_1c
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v30
+
+    goto/16 :goto_0
+
+    :pswitch_1d
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v2}, Lhmr;->c(Landroid/os/Parcel;I)Z
+
+    move-result v31
+
+    goto/16 :goto_0
+
+    :cond_1
+    invoke-virtual/range {p1 .. p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v2
+
+    move/from16 v0, v32
+
+    if-eq v2, v0, :cond_2
+
+    new-instance v2, Lacp;
+
+    const/16 v3, 0x25
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Overread allowed size end="
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move/from16 v0, v32
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v2, v3, v0}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v2
+
+    :cond_2
+    new-instance v2, Lcom/google/android/gms/googlehelp/GoogleHelp;
+
+    invoke-direct/range {v2 .. v31}, Lcom/google/android/gms/googlehelp/GoogleHelp;-><init>(ILjava/lang/String;Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Bitmap;ZZLjava/util/List;Landroid/os/Bundle;Landroid/graphics/Bitmap;[BIILjava/lang/String;Landroid/net/Uri;Ljava/util/List;ILcom/google/android/gms/feedback/ThemeSettings;Ljava/util/List;ZLcom/google/android/gms/feedback/ErrorReport;Lcom/google/android/gms/googlehelp/internal/common/TogglingData;ILandroid/app/PendingIntent;IZZ)V
+
+    return-object v2
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_0
+        :pswitch_0
+        :pswitch_8
+        :pswitch_9
+        :pswitch_0
+        :pswitch_0
+        :pswitch_a
+        :pswitch_b
+        :pswitch_c
+        :pswitch_d
+        :pswitch_e
+        :pswitch_f
+        :pswitch_10
+        :pswitch_11
+        :pswitch_12
+        :pswitch_13
+        :pswitch_0
+        :pswitch_14
+        :pswitch_0
+        :pswitch_0
+        :pswitch_15
+        :pswitch_0
+        :pswitch_0
+        :pswitch_16
+        :pswitch_17
+        :pswitch_18
+        :pswitch_19
+        :pswitch_1a
+        :pswitch_1b
+        :pswitch_1c
+        :pswitch_1d
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/googlehelp/GoogleHelp;
+
+    return-object v0
 .end method

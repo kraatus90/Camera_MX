@@ -1,57 +1,42 @@
-.class public final Lbbo;
+.class final Lbbo;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lbbm;
+
 
 # instance fields
-.field public final a:Ljava/io/File;
+.field private final a:Lbbm;
 
-.field public final b:Lbea;
-
-.field public final c:Ljht;
-
-.field public final d:Z
-
-.field public final e:J
-
-.field public final f:J
-
-.field public final g:I
+.field private final synthetic b:Lbbn;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;Lbea;Ljht;ZJJI)V
-    .locals 1
+.method constructor <init>(Lbbn;Lbbm;)V
+    .locals 0
+
+    iput-object p1, p0, Lbbo;->b:Lbbn;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbbo;->a:Ljava/io/File;
-
-    iput-object p2, p0, Lbbo;->b:Lbea;
-
-    iput-object p3, p0, Lbbo;->c:Ljht;
-
-    iput-boolean p4, p0, Lbbo;->d:Z
-
-    iput-wide p5, p0, Lbbo;->f:J
-
-    iput-wide p7, p0, Lbbo;->e:J
-
-    iput p9, p0, Lbbo;->g:I
+    iput-object p2, p0, Lbbo;->a:Lbbm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgvw;
+.method public final a(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lbbo;->b:Lbea;
+    iget-object v0, p0, Lbbo;->a:Lbbm;
 
-    iget-object v0, v0, Lbea;->a:Lbdp;
+    invoke-interface {v0, p1}, Lbbm;->a(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Lbdp;->c:Lgvw;
+    iget-object v0, p0, Lbbo;->b:Lbbn;
 
-    return-object v0
+    invoke-virtual {v0}, Lbbn;->d()V
+
+    return-void
 .end method

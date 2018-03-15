@@ -1,33 +1,62 @@
 .class public final Layn;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+.field private final a:Lkgv;
+
+.field private final b:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+.method public constructor <init>(Lkgv;Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Layn;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Layn;->a:Lkgv;
+
+    iput-object p2, p0, Layn;->b:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Layn;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    iget-object v0, p0, Layn;->a:Lkgv;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->b:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
+    iget-object v0, p0, Layn;->b:Lkgv;
 
-    return-void
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lazk;
+
+    iget-object v1, v0, Lazk;->a:Layq;
+
+    invoke-virtual {v0}, Lazk;->e()V
+
+    invoke-static {v0}, Ljuo;->a(Ljava/lang/Object;)Ljuo;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    return-object v0
 .end method

@@ -1,93 +1,143 @@
-.class final Lgsb;
+.class public Lgsb;
 .super Ljava/lang/Object;
 .source "PG"
 
 
-# static fields
-.field private static a:Ljava/util/HashMap;
+# instance fields
+.field private final synthetic a:Lgsa;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lgsb;->a:Ljava/util/HashMap;
-
-    return-void
-.end method
-
-.method constructor <init>()V
+.method public constructor <init>(Lgsa;)V
     .locals 0
+
+    iput-object p1, p0, Lgsb;->a:Lgsa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
 
-    sget-object v0, Lgsb;->a:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgsc;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, v0, Lgsc;->a:Ljava/lang/String;
-
-    goto :goto_0
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
-    .locals 2
-
-    new-instance v0, Lgsc;
-
-    invoke-direct {v0, p1, p2}, Lgsc;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
-
-    sget-object v1, Lgsb;->a:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+# virtual methods
+.method public a()V
+    .locals 0
 
     return-void
 .end method
 
-.method public static b(Ljava/lang/String;)[Ljava/lang/String;
+.method public a(FZ)Z
     .locals 1
 
-    sget-object v0, Lgsb;->a:Ljava/util/HashMap;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    return v0
+.end method
+
+.method public a(Z)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b(FZ)Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lgsb;->a:Lgsa;
+
+    if-eqz p2, :cond_1
+
+    iget-object v0, v3, Lgsa;->f:Lick;
+
+    invoke-interface {v0}, Lick;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgsc;
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x0
+    iget-object v0, v3, Lgsa;->e:Landroid/view/WindowManager;
 
-    new-array v0, v0, [Ljava/lang/String;
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    :goto_0
-    return-object v0
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v3, Lgsa;->e:Landroid/view/WindowManager;
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
+
+    move-result v0
+
+    const/4 v3, 0x2
+
+    if-ne v0, v3, :cond_1
 
     :cond_0
-    iget-object v0, v0, Lgsc;->b:[Ljava/lang/String;
+    move v0, v1
+
+    :goto_0
+    if-eqz v0, :cond_2
+
+    :goto_1
+    return v2
+
+    :cond_1
+    move v0, v2
 
     goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lgsb;->a:Lgsa;
+
+    iget-object v0, v0, Lgsa;->e:Landroid/view/WindowManager;
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_3
+
+    neg-float p1, p1
+
+    :cond_3
+    iget-object v0, p0, Lgsb;->a:Lgsa;
+
+    const/high16 v1, 0x447a0000    # 1000.0f
+
+    div-float v1, p1, v1
+
+    iput v1, v0, Lgsa;->b:F
+
+    goto :goto_1
 .end method

@@ -1,39 +1,112 @@
-.class public final Lfqg;
+.class final Lfqg;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lfrr;
+.implements Lggm;
 
 
 # instance fields
-.field private synthetic a:Landroid/os/Bundle;
+.field public final a:Lket;
 
 
 # direct methods
-.method public constructor <init>(Lfqy;Landroid/os/Bundle;)V
-    .locals 0
-
-    iput-object p2, p0, Lfqg;->a:Landroid/os/Bundle;
+.method constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lket;
+
+    invoke-direct {v0}, Lket;-><init>()V
+
+    iput-object v0, p0, Lfqg;->a:Lket;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lfsf;)V
-    .locals 1
+.method public final onCaptureCanceled(II)V
+    .locals 2
 
-    instance-of v0, p1, Lfqt;
+    iget-object v0, p0, Lfqg;->a:Lket;
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lfqg;->a:Landroid/os/Bundle;
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0}, Lfqy;->a(Lfsf;Landroid/os/Bundle;)Landroid/os/Bundle;
+    return-void
+.end method
 
-    :cond_0
+.method public final onCaptureDeleted()V
+    .locals 2
+
+    iget-object v0, p0, Lfqg;->a:Lket;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final onCaptureFailed(II)V
+    .locals 2
+
+    iget-object v0, p0, Lfqg;->a:Lket;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final onCaptureFinalized()V
+    .locals 2
+
+    iget-object v0, p0, Lfqg;->a:Lket;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final onCapturePersisted(II)V
+    .locals 2
+
+    iget-object v0, p0, Lfqg;->a:Lket;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final onCaptureStartCommitted(II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onCaptureStarted(Lghj;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onMediumThumb()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onTinyThumb()V
+    .locals 0
+
     return-void
 .end method

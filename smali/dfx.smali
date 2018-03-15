@@ -3,11 +3,11 @@
 .source "PG"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lfxj;
 
 
 # instance fields
-.field private synthetic a:Ldfw;
+.field private final synthetic a:Ldfw;
 
 
 # direct methods
@@ -23,46 +23,59 @@
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final a(Ligz;)V
+    .locals 3
 
     iget-object v0, p0, Ldfx;->a:Ldfw;
 
-    iget-object v0, v0, Ldfw;->a:Ldfu;
-
-    iget-object v0, v0, Ldfu;->a:Ldft;
-
-    iget-object v0, v0, Ldft;->a:Ldfq;
-
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    invoke-virtual {v0, p1}, Ldfw;->a(Ligz;)Ljava/lang/Integer;
 
     move-result-object v0
 
-    check-cast v0, Ldhc;
+    iget-object v1, p0, Ldfx;->a:Ldfw;
 
-    iget-object v0, v0, Ldhc;->y:Lfei;
+    iget-object v1, v1, Ldfw;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lfei;->r_()V
+    monitor-enter v1
 
-    iget-object v0, p0, Ldfx;->a:Ldfw;
+    :try_start_0
+    iget-object v2, p0, Ldfx;->a:Ldfw;
 
-    iget-object v0, v0, Ldfw;->a:Ldfu;
+    iget-boolean v2, v2, Ldfw;->d:Z
 
-    iget-object v0, v0, Ldfu;->a:Ldft;
+    if-nez v2, :cond_0
 
-    iget-object v0, v0, Ldft;->a:Ldfq;
+    iget-object v2, p0, Ldfx;->a:Ldfw;
 
-    invoke-virtual {v0}, Lcng;->d()Lich;
+    iget-object v2, v2, Ldfw;->a:Libw;
+
+    invoke-virtual {v2, v0}, Libw;->a(Ljava/lang/Object;)V
+
+    :cond_0
+    iget-object v2, p0, Ldfx;->a:Ldfw;
+
+    iget-object v2, v2, Ldfw;->b:Libw;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v0}, Ligz;->a(I)Ligz;
 
     move-result-object v0
 
-    check-cast v0, Ldhc;
+    invoke-virtual {v2, v0}, Libw;->a(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Ldhc;->b:Ldei;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ldei;->a(Z)V
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

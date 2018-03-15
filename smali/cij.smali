@@ -1,58 +1,51 @@
-.class public final Lcij;
-.super Ljava/lang/Object;
+.class final Lcij;
+.super Liqd;
 .source "PG"
-
-# interfaces
-.implements Lcih;
 
 
 # instance fields
-.field public final synthetic a:Liiu;
-
-.field private synthetic b:Lcih;
+.field private final a:Lgfr;
 
 
 # direct methods
-.method public constructor <init>(Lcih;Liiu;)V
+.method public constructor <init>(Lgfr;)V
     .locals 0
 
-    iput-object p1, p0, Lcij;->b:Lcih;
+    invoke-direct {p0}, Liqd;-><init>()V
 
-    iput-object p2, p0, Lcij;->a:Liiu;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcij;->a:Lgfr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgih;
+.method public final synthetic a_(Ljava/lang/Object;)V
     .locals 3
 
-    iget-object v0, p0, Lcij;->b:Lcih;
+    check-cast p1, Lany;
 
-    invoke-interface {v0}, Lcih;->a()Lgih;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcij;->a:Lgfr;
+
+    invoke-interface {v0, p1}, Lgfr;->a(Lany;)V
+
+    iget-object v0, p0, Lcij;->a:Lgfr;
+
+    invoke-virtual {p1}, Lany;->f()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    invoke-static {v1}, Lhag;->a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
 
-    new-instance v2, Lcik;
+    move-result-object v1
 
-    invoke-direct {v2, p0, v1, v1}, Lcik;-><init>(Lcij;Liil;Lgih;)V
+    const/4 v2, 0x0
 
-    new-instance v0, Lgih;
+    invoke-interface {v0, v1, v2}, Lgfr;->a(Landroid/graphics/Bitmap;I)V
 
-    iget-object v1, v1, Lgih;->b:Ljava/util/Map;
-
-    invoke-direct {v0, v2, v1}, Lgih;-><init>(Liil;Ljava/util/Map;)V
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method

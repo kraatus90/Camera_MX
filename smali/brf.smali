@@ -1,27 +1,52 @@
-.class public final Lbrf;
+.class final Lbrf;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
 
 # instance fields
-.field public final a:Landroid/content/pm/ProviderInfo;
-
-.field public final b:Landroid/content/Context;
+.field private final synthetic a:Lbra;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/ContentProvider;Landroid/content/pm/ProviderInfo;)V
-    .locals 1
+.method constructor <init>(Lbra;)V
+    .locals 0
+
+    iput-object p1, p0, Lbrf;->a:Lbra;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lbrf;->a:Landroid/content/pm/ProviderInfo;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
+
+# virtual methods
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lbrf;->b:Landroid/content/Context;
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    iget-object v1, p0, Lbrf;->a:Lbra;
+
+    iget-object v1, v1, Lbra;->d:Lbqo;
+
+    invoke-virtual {v1, v0}, Lbqo;->c(F)V
+
+    iget-object v0, p0, Lbrf;->a:Lbra;
+
+    iget-object v0, v0, Lbra;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->invalidate()V
 
     return-void
 .end method

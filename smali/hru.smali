@@ -1,111 +1,148 @@
 .class public final Lhru;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field public final a:Lhkc;
-
-.field private b:Z
-
-.field private c:I
-
-.field private d:Lhkd;
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Lhkc;Lhkd;)V
-    .locals 3
-
-    const/4 v2, 0x0
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean v2, p0, Lhru;->b:Z
-
-    iput-object p1, p0, Lhru;->a:Lhkc;
-
-    iput-object p2, p0, Lhru;->d:Lhkd;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-object v1, p0, Lhru;->a:Lhkc;
-
-    aput-object v1, v0, v2
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Lhru;->d:Lhkd;
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
-
-    iput v0, p0, Lhru;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 6
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
+
+    invoke-static {p1}, Lhmr;->a(Landroid/os/Parcel;)I
+
+    move-result v4
 
     const/4 v1, 0x0
 
-    if-ne p1, p0, :cond_1
+    move-object v2, v0
+
+    move v3, v1
+
+    move-object v1, v0
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    if-ge v0, v4, :cond_0
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    const v5, 0xffff
+
+    and-int/2addr v5, v0
+
+    packed-switch v5, :pswitch_data_0
+
+    invoke-static {p1, v0}, Lhmr;->b(Landroid/os/Parcel;I)V
+
+    goto :goto_0
+
+    :pswitch_0
+    invoke-static {p1, v0}, Lhmr;->e(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    move v3, v0
+
+    goto :goto_0
+
+    :pswitch_1
+    sget-object v2, Lcom/google/android/gms/common/ConnectionResult;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0, v2}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/common/ConnectionResult;
+
+    move-object v2, v0
+
+    goto :goto_0
+
+    :pswitch_2
+    sget-object v1, Lcom/google/android/gms/common/internal/zzaf;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p1, v0, v1}, Lhmr;->a(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/common/internal/zzaf;
+
+    move-object v1, v0
+
+    goto :goto_0
 
     :cond_0
-    :goto_0
-    return v0
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    if-eq v0, v4, :cond_1
+
+    new-instance v0, Lacp;
+
+    const/16 v1, 0x25
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Overread allowed size end="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lacp;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+
+    throw v0
 
     :cond_1
-    instance-of v2, p1, Lhru;
+    new-instance v0, Lcom/google/android/gms/internal/zzbgq;
 
-    if-nez v2, :cond_2
+    invoke-direct {v0, v3, v2, v1}, Lcom/google/android/gms/internal/zzbgq;-><init>(ILcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/common/internal/zzaf;)V
 
-    move v0, v1
+    return-object v0
 
-    goto :goto_0
+    nop
 
-    :cond_2
-    check-cast p1, Lhru;
-
-    iget-object v2, p0, Lhru;->a:Lhkc;
-
-    iget-object v3, p1, Lhru;->a:Lhkc;
-
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Lhru;->d:Lhkd;
-
-    iget-object v3, p1, Lhru;->d:Lhkd;
-
-    invoke-static {v2, v3}, Lhjg;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    :cond_3
-    move v0, v1
-
-    goto :goto_0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
+.method public final synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    iget v0, p0, Lhru;->c:I
+    new-array v0, p1, [Lcom/google/android/gms/internal/zzbgq;
 
-    return v0
+    return-object v0
 .end method

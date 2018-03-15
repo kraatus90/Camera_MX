@@ -1,207 +1,66 @@
-.class public final Lcix;
+.class final Lcix;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liee;
+.implements Lkds;
 
 
 # instance fields
-.field public a:Ljava/util/List;
+.field private final synthetic a:Lciw;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method constructor <init>(Lciw;)V
+    .locals 0
+
+    iput-object p1, p0, Lcix;->a:Lciw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
-
-    iput-object v0, p0, Lcix;->a:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
-
-    iget-object v0, p0, Lcix;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liee;
-
-    invoke-interface {v0}, Liee;->a()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
 .method public final a(Ljava/lang/Throwable;)V
     .locals 2
 
-    iget-object v0, p0, Lcix;->a:Ljava/util/List;
+    sget-object v0, Lciq;->a:Ljava/lang/String;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liee;
-
-    invoke-interface {v0, p1}, Liee;->a(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method
 
-.method public final b()V
+.method public final synthetic b_(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p0, Lcix;->a:Ljava/util/List;
+    iget-object v0, p0, Lcix;->a:Lciw;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
+    iget-object v0, v0, Lciw;->a:Ligs;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p0, Lcix;->a:Lciw;
 
-    move-result-object v0
+    iget-object v0, v0, Lciw;->a:Ligs;
 
-    check-cast v0, Liee;
+    const/4 v1, 0x0
 
-    invoke-interface {v0}, Liee;->b()V
+    invoke-interface {v0, v1}, Ligs;->a(Ljava/lang/Object;)V
 
-    goto :goto_0
+    iget-object v0, p0, Lcix;->a:Lciw;
 
-    :cond_0
-    return-void
-.end method
+    iget-object v0, v0, Lciw;->b:Lciq;
 
-.method public final e()V
-    .locals 2
+    iget-object v0, v0, Lciq;->b:Lcjo;
 
-    iget-object v0, p0, Lcix;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liee;
-
-    invoke-interface {v0}, Liee;->e()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f()V
-    .locals 2
-
-    iget-object v0, p0, Lcix;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liee;
-
-    invoke-interface {v0}, Liee;->f()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final g()V
-    .locals 2
-
-    iget-object v0, p0, Lcix;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Liee;
-
-    invoke-interface {v0}, Liee;->g()V
-
-    goto :goto_0
+    invoke-virtual {v0}, Lcjo;->a()V
 
     :cond_0
     return-void

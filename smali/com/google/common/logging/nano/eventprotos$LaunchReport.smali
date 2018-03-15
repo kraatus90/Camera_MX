@@ -1,5 +1,5 @@
 .class public final Lcom/google/common/logging/nano/eventprotos$LaunchReport;
-.super Ljwj;
+.super Lkfr;
 .source "PG"
 
 
@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljwj;-><init>()V
+    invoke-direct {p0}, Lkfr;-><init>()V
 
     invoke-virtual {p0}, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->clear()Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
@@ -37,7 +37,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v1, Ljwn;->b:Ljava/lang/Object;
+    sget-object v1, Lkfv;->b:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -73,14 +73,14 @@
     throw v0
 .end method
 
-.method public static parseFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
+.method public static parseFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
     .locals 1
 
     new-instance v0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$LaunchReport;-><init>()V
 
-    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
+    invoke-virtual {v0, p0}, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
     move-result-object v0
 
@@ -94,7 +94,7 @@
 
     invoke-direct {v0}, Lcom/google/common/logging/nano/eventprotos$LaunchReport;-><init>()V
 
-    invoke-static {v0, p0}, Ljwp;->mergeFrom(Ljwp;[B)Ljwp;
+    invoke-static {v0, p0}, Lkfx;->mergeFrom(Lkfx;[B)Lkfx;
 
     move-result-object v0
 
@@ -122,7 +122,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->unknownFieldData:Ljwl;
+    iput-object v0, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->unknownFieldData:Lkft;
 
     const/4 v0, -0x1
 
@@ -136,7 +136,7 @@
 
     const-wide/16 v4, 0x0
 
-    invoke-super {p0}, Ljwj;->computeSerializedSize()I
+    invoke-super {p0}, Lkfr;->computeSerializedSize()I
 
     move-result v0
 
@@ -150,7 +150,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->controlNanoTime:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -167,7 +167,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->previewFrameNanoTime:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -184,7 +184,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->cameraActivityInitializedNanoTime:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -201,7 +201,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->shutterButtonFirstDrawNanoTime:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -218,7 +218,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->shutterButtonFirstEnabledNanoTime:J
 
-    invoke-static {v1, v2, v3}, Ljwi;->b(IJ)I
+    invoke-static {v1, v2, v3}, Lkfp;->b(IJ)I
 
     move-result v1
 
@@ -228,7 +228,7 @@
     return v0
 .end method
 
-.method public final mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
+.method public final mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
     .locals 11
 
     const-wide/16 v2, 0x0
@@ -239,13 +239,13 @@
 
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Ljwh;->a()I
+    invoke-virtual {p1}, Lkfo;->a()I
 
     move-result v0
 
     sparse-switch v0, :sswitch_data_0
 
-    invoke-super {p0, p1, v0}, Ljwj;->storeUnknownField(Ljwh;I)Z
+    invoke-super {p0, p1, v0}, Lkfr;->storeUnknownField(Lkfo;I)Z
 
     move-result v0
 
@@ -262,7 +262,7 @@
     :goto_1
     if-ge v4, v10, :cond_2
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -288,7 +288,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -302,7 +302,7 @@
     :goto_2
     if-ge v4, v10, :cond_4
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -328,7 +328,7 @@
     goto :goto_2
 
     :cond_4
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -342,7 +342,7 @@
     :goto_3
     if-ge v4, v10, :cond_6
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -368,7 +368,7 @@
     goto :goto_3
 
     :cond_6
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -382,7 +382,7 @@
     :goto_4
     if-ge v4, v10, :cond_8
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -408,7 +408,7 @@
     goto :goto_4
 
     :cond_8
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -422,7 +422,7 @@
     :goto_5
     if-ge v4, v10, :cond_a
 
-    invoke-virtual {p1}, Ljwh;->j()B
+    invoke-virtual {p1}, Lkfo;->i()B
 
     move-result v6
 
@@ -448,7 +448,7 @@
     goto :goto_5
 
     :cond_a
-    invoke-static {}, Ljwo;->c()Ljwo;
+    invoke-static {}, Lkfw;->c()Lkfw;
 
     move-result-object v0
 
@@ -465,17 +465,17 @@
     .end sparse-switch
 .end method
 
-.method public final bridge synthetic mergeFrom(Ljwh;)Ljwp;
+.method public final bridge synthetic mergeFrom(Lkfo;)Lkfx;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->mergeFrom(Ljwh;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
+    invoke-virtual {p0, p1}, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->mergeFrom(Lkfo;)Lcom/google/common/logging/nano/eventprotos$LaunchReport;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final writeTo(Ljwi;)V
+.method public final writeTo(Lkfp;)V
     .locals 6
 
     const-wide/16 v4, 0x0
@@ -490,7 +490,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->controlNanoTime:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_0
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->previewFrameNanoTime:J
@@ -503,7 +503,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->previewFrameNanoTime:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_1
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->cameraActivityInitializedNanoTime:J
@@ -516,7 +516,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->cameraActivityInitializedNanoTime:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_2
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->shutterButtonFirstDrawNanoTime:J
@@ -529,7 +529,7 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->shutterButtonFirstDrawNanoTime:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_3
     iget-wide v0, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->shutterButtonFirstEnabledNanoTime:J
@@ -542,10 +542,10 @@
 
     iget-wide v2, p0, Lcom/google/common/logging/nano/eventprotos$LaunchReport;->shutterButtonFirstEnabledNanoTime:J
 
-    invoke-virtual {p1, v0, v2, v3}, Ljwi;->a(IJ)V
+    invoke-virtual {p1, v0, v2, v3}, Lkfp;->a(IJ)V
 
     :cond_4
-    invoke-super {p0, p1}, Ljwj;->writeTo(Ljwi;)V
+    invoke-super {p0, p1}, Lkfr;->writeTo(Lkfp;)V
 
     return-void
 .end method

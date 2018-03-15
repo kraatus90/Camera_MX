@@ -4,19 +4,21 @@
 
 
 # static fields
-.field private static e:Ljava/lang/String;
+.field private static final f:Ljava/lang/String;
 
 
 # instance fields
-.field public a:Lbip;
+.field public a:Lbkx;
 
-.field public b:Lgds;
+.field public b:Lfat;
 
-.field public c:Lbhn;
+.field public c:Lbjy;
 
-.field public d:Lbli;
+.field public d:Lbqc;
 
-.field private f:Leqh;
+.field public e:Lcpm;
+
+.field private g:Ldxz;
 
 
 # direct methods
@@ -25,23 +27,17 @@
 
     const-string v0, "SettingsActivity"
 
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->e:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->f:Ljava/lang/String;
 
-    new-instance v0, Lblf;
-
-    const-string v1, "camera.exp.enable"
-
-    invoke-direct {v0, v1}, Lblf;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lblf;
+    new-instance v0, Lbpz;
 
     const-string v1, "camera.developer.enable"
 
-    invoke-direct {v0, v1}, Lblf;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lbpz;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -67,31 +63,31 @@
 
     move-result-object v0
 
-    check-cast v0, Lbvf;
+    check-cast v0, Lcak;
 
-    invoke-interface {v0}, Lbvf;->a()Ldih;
+    invoke-interface {v0}, Lcak;->a()Lcad;
 
     move-result-object v0
 
-    invoke-interface {v0, p0}, Ldih;->a(Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;)V
+    invoke-interface {v0, p0}, Lcad;->a(Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;)V
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    const v0, 0x7f040073
+    const v0, 0x7f04006a
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->setContentView(I)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->c:Lbhn;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->c:Lbjy;
 
-    invoke-virtual {v0}, Lbhn;->b()Z
+    invoke-virtual {v0}, Lbjy;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->a:Lbip;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->a:Lbkx;
 
-    invoke-virtual {v0}, Lbip;->b()Z
+    invoke-virtual {v0}, Lbkx;->b()Z
 
     move-result v0
 
@@ -100,13 +96,13 @@
     move v0, v1
 
     :goto_0
-    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->c:Lbhn;
+    iget-object v3, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->c:Lbjy;
 
-    invoke-virtual {v3}, Lbhn;->c()Z
+    invoke-virtual {v3}, Lbjy;->c()Z
 
     move-result v5
 
-    invoke-static {}, Lige;->values()[Lige;
+    invoke-static {}, Lild;->values()[Lild;
 
     move-result-object v6
 
@@ -121,29 +117,29 @@
 
     aget-object v8, v6, v4
 
-    iget-object v9, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->b:Lgds;
+    iget-object v9, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->b:Lfat;
 
-    invoke-virtual {v9, v8}, Lgds;->a(Lige;)Z
+    invoke-virtual {v9, v8}, Lfat;->a(Lild;)Z
 
     move-result v9
 
     if-eqz v9, :cond_1
 
-    iget-object v9, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->b:Lgds;
+    iget-object v9, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->b:Lfat;
 
-    invoke-virtual {v9, v8}, Lgds;->b(Lige;)Ligc;
+    invoke-virtual {v9, v8}, Lfat;->b(Lild;)Lilb;
 
     move-result-object v8
 
-    iget-object v9, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->b:Lgds;
+    iget-object v9, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->b:Lfat;
 
-    invoke-virtual {v9, v8}, Lgds;->a(Ligc;)Lgdq;
+    invoke-virtual {v9, v8}, Lfat;->a(Lilb;)Lfdv;
 
     move-result-object v8
 
     if-nez v3, :cond_0
 
-    invoke-interface {v8}, Lgdq;->v()Z
+    invoke-interface {v8}, Lfdv;->v()Z
 
     move-result v3
 
@@ -169,7 +165,7 @@
     goto :goto_2
 
     :cond_4
-    sget-object v4, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->e:Ljava/lang/String;
+    sget-object v4, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->f:Ljava/lang/String;
 
     const/16 v6, 0x23
 
@@ -191,7 +187,7 @@
 
     move-result-object v6
 
-    invoke-static {v4, v6}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v6}, Lbki;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->getIntent()Landroid/content/Intent;
 
@@ -211,7 +207,7 @@
 
     if-nez v4, :cond_5
 
-    const v4, 0x7f110193
+    const v4, 0x7f110109
 
     invoke-virtual {v6, v4}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -226,23 +222,27 @@
 
     move-result-object v4
 
-    new-instance v6, Leqh;
+    new-instance v6, Ldxz;
 
-    invoke-direct {v6}, Leqh;-><init>()V
+    invoke-direct {v6}, Ldxz;-><init>()V
 
-    iput-object v6, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->f:Leqh;
+    iput-object v6, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->g:Ldxz;
 
     new-instance v6, Landroid/os/Bundle;
 
     invoke-direct {v6, v1}, Landroid/os/Bundle;-><init>(I)V
 
-    const-string v1, "pref_screen_extra"
+    const-string v7, "pref_screen_extra"
 
-    invoke-virtual {v6, v1, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v7, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v1, "is_video_stabilization_supported"
+    const-string v4, "is_video_stabilization_supported"
 
-    invoke-virtual {v6, v1, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {v6, v4, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string v3, "is_advice_module_supported"
+
+    invoke-virtual {v6, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v1, "is_smartburst_supported"
 
@@ -251,10 +251,6 @@
     const-string v0, "is_hybrid_burst_supported"
 
     invoke-virtual {v6, v0, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    const-string v0, "is_experiemental_supported"
-
-    invoke-virtual {v6, v0, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v0, "is_developer_settings_supported"
 
@@ -274,9 +270,9 @@
 
     invoke-virtual {v6, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->f:Leqh;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->g:Ldxz;
 
-    invoke-virtual {v0, v6}, Leqh;->setArguments(Landroid/os/Bundle;)V
+    invoke-virtual {v0, v6}, Ldxz;->setArguments(Landroid/os/Bundle;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->getFragmentManager()Landroid/app/FragmentManager;
 
@@ -286,9 +282,9 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e01af
+    const v1, 0x7f0e0177
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->f:Leqh;
+    iget-object v2, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->g:Ldxz;
 
     invoke-virtual {v0, v1, v2}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -336,9 +332,9 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->f:Leqh;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->g:Ldxz;
 
-    invoke-virtual {v0}, Leqh;->a()V
+    invoke-virtual {v0}, Ldxz;->a()V
 
     :cond_0
     return-void

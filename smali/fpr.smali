@@ -1,99 +1,152 @@
 .class public final Lfpr;
-.super Lfoe;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lfox;
 
 
 # instance fields
-.field private e:I
-
-.field private f:Ljava/lang/String;
+.field private final synthetic a:Lfpi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lfpi;)V
+    .locals 0
 
-    invoke-direct {p0}, Lfoe;-><init>()V
+    iput-object p1, p0, Lfpr;->a:Lfpi;
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lfpr;->e:I
-
-    const-string v0, "precision highp float;                            \nuniform float uAlphaFactor;                         \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  vec4 texcolor;                                    \n  texcolor = texture2D( sTexture, vTexCoord );      \n  texcolor.a = uAlphaFactor;                        \n  gl_FragColor = texcolor;                          \n}                                                   \n"
-
-    iput-object v0, p0, Lfpr;->f:Ljava/lang/String;
-
-    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
-
-    iget-object v1, p0, Lfpr;->f:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lfpr;->a(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpr;->d:I
-
-    iget v0, p0, Lfpr;->d:I
-
-    const-string v1, "aPosition"
-
-    invoke-static {v0, v1}, Lfpr;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpr;->a:I
-
-    iget v0, p0, Lfpr;->d:I
-
-    const-string v1, "aTextureCoord"
-
-    invoke-static {v0, v1}, Lfpr;->a(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpr;->b:I
-
-    iget v0, p0, Lfpr;->d:I
-
-    const-string v1, "uMvpMatrix"
-
-    invoke-static {v0, v1}, Lfpr;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpr;->c:I
-
-    iget v0, p0, Lfpr;->d:I
-
-    const-string v1, "uAlphaFactor"
-
-    invoke-static {v0, v1}, Lfpr;->b(ILjava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lfpr;->e:I
-
-    iget v0, p0, Lfoe;->d:I
-
-    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
-
-    iget v0, p0, Lfpr;->e:I
-
-    const v1, 0x3f666666    # 0.9f
-
-    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)V
-    .locals 1
+.method public final a(Lfoy;)Lfpz;
+    .locals 8
 
-    iget v0, p0, Lfpr;->e:I
+    const/4 v7, 0x2
 
-    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+    const/4 v6, 0x1
 
-    return-void
+    const/4 v5, 0x0
+
+    iget-object v0, p0, Lfpr;->a:Lfpi;
+
+    invoke-virtual {v0, p1}, Lfpi;->a(Lfoy;)Lfpj;
+
+    move-result-object v0
+
+    new-instance v1, Lfqa;
+
+    const-string v2, "regular"
+
+    invoke-direct {v1, v2}, Lfqa;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "single image"
+
+    invoke-virtual {v0}, Lfpj;->a()Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "limited or full"
+
+    new-array v3, v7, [Ljava/lang/Integer;
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v5
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v6
+
+    invoke-virtual {v0, v3}, Lfpj;->a([Ljava/lang/Integer;)Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "hw_jpeg, sw_jpeg, reprocessing"
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Lfpe;
+
+    sget-object v4, Lfpe;->a:Lfpe;
+
+    aput-object v4, v3, v5
+
+    sget-object v4, Lfpe;->b:Lfpe;
+
+    aput-object v4, v3, v6
+
+    sget-object v4, Lfpe;->d:Lfpe;
+
+    aput-object v4, v3, v7
+
+    invoke-virtual {v0, v3}, Lfpj;->a([Lfpe;)Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "flash off"
+
+    invoke-virtual {v0}, Lfpj;->b()Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "edge"
+
+    invoke-virtual {v0}, Lfpj;->d()Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "noise reduction"
+
+    invoke-virtual {v0}, Lfpj;->e()Z
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v1
+
+    const-string v2, "af converged"
+
+    invoke-virtual {v0}, Lfpj;->c()Z
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Lfqa;->a(Ljava/lang/String;Z)Lfqa;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lfqa;->a()Lfpz;
+
+    move-result-object v0
+
+    return-object v0
 .end method

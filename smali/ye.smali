@@ -1,29 +1,63 @@
-.class public final Lye;
-.super Lyd;
+.class final Lye;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Laae;
+
+.field public final synthetic b:Landroid/os/Handler;
+
+.field private final synthetic c:Lya;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method constructor <init>(Lya;Laae;Landroid/os/Handler;)V
+    .locals 0
 
-    invoke-direct {p0}, Lyd;-><init>()V
+    iput-object p1, p0, Lye;->c:Lya;
 
-    const/16 v0, 0x18
+    iput-object p2, p0, Lye;->a:Laae;
 
-    const/4 v1, 0x1
+    iput-object p3, p0, Lye;->b:Landroid/os/Handler;
 
-    invoke-virtual {p0, v0, v1}, Lye;->a(IZ)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final c()I
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    const/16 v0, 0x3d
+    const/4 v0, 0x0
 
-    return v0
+    iget-object v1, p0, Lye;->a:Laae;
+
+    if-eqz v1, :cond_0
+
+    new-instance v0, Lyf;
+
+    invoke-direct {v0, p0}, Lyf;-><init>(Lye;)V
+
+    :cond_0
+    iget-object v1, p0, Lye;->c:Lya;
+
+    iget-object v1, v1, Lya;->c:Lxx;
+
+    iget-object v1, v1, Lxx;->b:Lyl;
+
+    const/16 v2, 0x12f
+
+    invoke-virtual {v1, v2, v0}, Lyl;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    return-void
 .end method

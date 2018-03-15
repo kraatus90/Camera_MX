@@ -1,144 +1,77 @@
-.class final Leuk;
+.class public final Leuk;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/hardware/display/DisplayManager$DisplayListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Leug;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Leug;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
-
-    iput-object p1, p0, Leuk;->a:Leug;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Leuk;->a:Lkgv;
+
     return-void
+.end method
+
+.method public static a(Lkgv;)Leuk;
+    .locals 1
+
+    new-instance v0, Leuk;
+
+    invoke-direct {v0, p0}, Leuk;-><init>(Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final onDisplayAdded(I)V
-    .locals 0
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    iget-object v0, p0, Leuk;->a:Lkgv;
 
-.method public final onDisplayChanged(I)V
-    .locals 3
-
-    const/16 v2, 0xb4
-
-    iget-object v0, p0, Leuk;->a:Leug;
-
-    iget-object v0, v0, Leug;->U:Landroid/view/WindowManager;
-
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
+    check-cast v0, Ljrf;
 
-    move-result v0
+    invoke-virtual {v0}, Ljrf;->a()Z
 
-    packed-switch v0, :pswitch_data_0
+    move-result v1
 
-    sget-object v0, Licf;->a:Licf;
+    if-nez v1, :cond_0
 
-    :goto_0
-    invoke-virtual {v0}, Licf;->a()I
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    move-result v0
+    const-string v1, "Requested audio frame store not found"
 
-    iget-object v1, p0, Leuk;->a:Leug;
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    iget v1, v1, Leug;->u:I
-
-    sub-int v1, v0, v1
-
-    add-int/lit16 v1, v1, 0x168
-
-    rem-int/lit16 v1, v1, 0x168
-
-    if-ne v1, v2, :cond_0
-
-    iget-object v1, p0, Leuk;->a:Leug;
-
-    iget-object v1, v1, Leug;->C:Lewe;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Leuk;->a:Leug;
-
-    iget-object v1, v1, Leug;->C:Lewe;
-
-    invoke-interface {v1}, Lewe;->b()V
-
-    iget-object v1, p0, Leuk;->a:Leug;
-
-    iget-object v1, v1, Leug;->K:Levs;
-
-    invoke-interface {v1}, Levs;->c()V
+    throw v0
 
     :cond_0
-    iget-object v1, p0, Leuk;->a:Leug;
-
-    iput v0, v1, Leug;->u:I
-
-    return-void
-
-    :pswitch_0
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Licf;->b(I)Licf;
+    invoke-virtual {v0}, Ljrf;->b()Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Levv;
 
-    :pswitch_1
-    const/16 v0, 0x5a
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    invoke-static {v0}, Licf;->b(I)Licf;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {v2}, Licf;->b(I)Licf;
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Levv;
 
-    :pswitch_3
-    const/16 v0, 0x10e
-
-    invoke-static {v0}, Licf;->b(I)Licf;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
-.end method
-
-.method public final onDisplayRemoved(I)V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

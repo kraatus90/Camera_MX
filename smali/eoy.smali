@@ -4,139 +4,155 @@
 
 
 # instance fields
-.field private a:Leoo;
+.field private final a:Lkgv;
 
-.field private b:Ljava/lang/String;
+.field private final b:Lkgv;
 
-.field private c:Ljava/lang/String;
-
-.field private d:Ljava/io/File;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Leoo;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leoy;->a:Leoo;
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Leoy;->b:Ljava/lang/String;
+    invoke-static {p1, v0}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    iput-object p3, p0, Leoy;->c:Ljava/lang/String;
+    move-result-object v0
 
-    const/4 v0, 0x0
+    check-cast v0, Lkgv;
 
-    iput-object v0, p0, Leoy;->d:Ljava/io/File;
+    iput-object v0, p0, Leoy;->a:Lkgv;
+
+    const/4 v0, 0x2
+
+    invoke-static {p2, v0}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Leoy;->b:Lkgv;
+
+    const/4 v0, 0x3
+
+    invoke-static {p3, v0}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkgv;
+
+    iput-object v0, p0, Leoy;->c:Lkgv;
 
     return-void
 .end method
 
+.method private static a(Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 3
 
-# virtual methods
-.method public final declared-synchronized a()Z
-    .locals 4
+    if-nez p0, :cond_0
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    monitor-enter p0
+    const/16 v1, 0x5d
 
-    :try_start_0
-    iget-object v1, p0, Leoy;->d:Ljava/io/File;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    if-eqz v1, :cond_0
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :goto_0
-    monitor-exit p0
+    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
 
-    return v0
-
-    :cond_0
-    :try_start_1
-    iget-object v1, p0, Leoy;->a:Leoo;
-
-    iget-object v2, p0, Leoy;->b:Ljava/lang/String;
-
-    iget-object v3, p0, Leoy;->c:Ljava/lang/String;
-
-    invoke-interface {v1, v2, v3}, Leoo;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iput-object v1, p0, Leoy;->d:Ljava/io/File;
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    move-result-object v1
 
-    :catch_0
-    move-exception v0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v0, 0x0
+    move-result-object v1
 
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
-
-.method public final declared-synchronized b()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Leoy;->d:Ljava/io/File;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    monitor-exit p0
-
-    return v0
 
     :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return-object p0
 .end method
 
-.method public final declared-synchronized c()Ljava/io/File;
-    .locals 1
 
-    monitor-enter p0
+# virtual methods
+.method public final a(Landroid/net/Uri;JLjava/lang/String;Lghj;)Leox;
+    .locals 10
 
-    :try_start_0
-    iget-object v0, p0, Leoy;->d:Ljava/io/File;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v1, Leox;
 
-    monitor-exit p0
+    iget-object v0, p0, Leoy;->a:Lkgv;
 
-    return-object v0
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    :catchall_0
-    move-exception v0
+    move-result-object v0
 
-    monitor-exit p0
+    check-cast v0, Landroid/content/ContentResolver;
 
-    throw v0
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/content/ContentResolver;
+
+    iget-object v0, p0, Leoy;->b:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/Uri;
+
+    const/4 v3, 0x2
+
+    invoke-static {v0, v3}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/net/Uri;
+
+    iget-object v4, p0, Leoy;->c:Lkgv;
+
+    const/4 v0, 0x4
+
+    invoke-static {p1, v0}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/net/Uri;
+
+    const/4 v0, 0x6
+
+    invoke-static {p4, v0}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/String;
+
+    const/4 v0, 0x7
+
+    invoke-static {p5, v0}, Leoy;->a(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lghj;
+
+    move-wide v6, p2
+
+    invoke-direct/range {v1 .. v9}, Leox;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;Lkgv;Landroid/net/Uri;JLjava/lang/String;Lghj;)V
+
+    return-object v1
 .end method

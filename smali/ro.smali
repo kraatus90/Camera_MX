@@ -1,92 +1,65 @@
-.class public final Lro;
-.super Landroid/widget/RatingBar;
+.class final Lro;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field private a:Lrm;
+.field private final synthetic a:Lrn;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+.method constructor <init>(Lrn;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lro;->a:Lrn;
 
-    invoke-direct {p0, p1, p2, v0}, Lro;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;B)V
-
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;B)V
-    .locals 2
-
-    const v1, 0x7f0100a6
-
-    invoke-direct {p0, p1, p2, v1}, Landroid/widget/RatingBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    new-instance v0, Lrm;
-
-    invoke-direct {v0, p0}, Lrm;-><init>(Landroid/widget/ProgressBar;)V
-
-    iput-object v0, p0, Lro;->a:Lrm;
-
-    iget-object v0, p0, Lro;->a:Lrm;
-
-    invoke-virtual {v0, p2, v1}, Lrm;->a(Landroid/util/AttributeSet;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final declared-synchronized onMeasure(II)V
-    .locals 2
+.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 4
 
-    monitor-enter p0
+    iget-object v0, p0, Lro;->a:Lrn;
 
-    :try_start_0
-    invoke-super {p0, p1, p2}, Landroid/widget/RatingBar;->onMeasure(II)V
+    iget-object v0, v0, Lrn;->d:Lrk;
 
-    iget-object v0, p0, Lro;->a:Lrm;
+    invoke-virtual {v0, p3}, Lrk;->setSelection(I)V
 
-    iget-object v0, v0, Lrm;->a:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lro;->a:Lrn;
+
+    iget-object v0, v0, Lrn;->d:Lrk;
+
+    invoke-virtual {v0}, Lrk;->getOnItemClickListener()Landroid/widget/AdapterView$OnItemClickListener;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    iget-object v0, p0, Lro;->a:Lrn;
 
-    move-result v0
+    iget-object v0, v0, Lrn;->d:Lrk;
 
-    invoke-virtual {p0}, Lro;->getNumStars()I
+    iget-object v1, p0, Lro;->a:Lrn;
 
-    move-result v1
+    iget-object v1, v1, Lrn;->b:Landroid/widget/ListAdapter;
 
-    mul-int/2addr v0, v1
+    invoke-interface {v1, p3}, Landroid/widget/ListAdapter;->getItemId(I)J
 
-    const/4 v1, 0x0
+    move-result-wide v2
 
-    invoke-static {v0, p1, v1}, Landroid/view/View;->resolveSizeAndState(III)I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lro;->getMeasuredHeight()I
-
-    move-result v1
-
-    invoke-virtual {p0, v0, v1}, Lro;->setMeasuredDimension(II)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p2, p3, v2, v3}, Lrk;->performItemClick(Landroid/view/View;IJ)Z
 
     :cond_0
-    monitor-exit p0
+    iget-object v0, p0, Lro;->a:Lrn;
+
+    invoke-virtual {v0}, Lrn;->c()V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

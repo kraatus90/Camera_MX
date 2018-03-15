@@ -1,79 +1,69 @@
-.class Lgps;
-.super Lgpo;
+.class public final Lgps;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lgpp;
+.field private final synthetic a:Landroid/content/Context;
+
+.field private final synthetic b:Lket;
 
 
 # direct methods
-.method constructor <init>(Lgpp;)V
+.method public constructor <init>(Landroid/content/Context;Lket;)V
     .locals 0
 
-    iput-object p1, p0, Lgps;->a:Lgpp;
+    iput-object p1, p0, Lgps;->a:Landroid/content/Context;
 
-    invoke-direct {p0}, Lgpo;-><init>()V
+    iput-object p2, p0, Lgps;->b:Lket;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lgps;->a:Lgpp;
+    :try_start_0
+    iget-object v0, p0, Lgps;->a:Landroid/content/Context;
 
-    iget-object v0, v0, Lgpp;->d:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+    invoke-virtual {v0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
+    new-instance v1, Ljava/io/File;
 
-    iget-object v0, p0, Lgps;->a:Lgpp;
+    const-string v2, "indicatorDiskCache"
 
-    const/4 v1, 0x1
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    iput-boolean v1, v0, Lgpp;->e:Z
+    const-wide/32 v2, 0x4c4b40
 
-    iget-object v0, p0, Lgps;->a:Lgpp;
+    invoke-static {v1, v2, v3}, Lacy;->a(Ljava/io/File;J)Lacy;
 
-    iget-object v0, v0, Lgpp;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    move-result-object v0
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
+    iget-object v1, p0, Lgps;->b:Lket;
 
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     return-void
-.end method
 
-.method public final b()V
-    .locals 2
+    :catch_0
+    move-exception v0
 
-    iget-object v0, p0, Lgps;->a:Lgpp;
+    iget-object v1, p0, Lgps;->b:Lket;
 
-    const/4 v1, 0x0
+    invoke-virtual {v1, v0}, Lkch;->a(Ljava/lang/Throwable;)Z
 
-    iput-boolean v1, v0, Lgpp;->e:Z
-
-    iget-object v0, p0, Lgps;->a:Lgpp;
-
-    iget-object v0, v0, Lgpp;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
-
-    iget-object v0, p0, Lgps;->a:Lgpp;
-
-    iget-object v0, v0, Lgpp;->d:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public e()V
-    .locals 0
-
-    return-void
+    goto :goto_0
 .end method

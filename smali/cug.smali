@@ -1,84 +1,87 @@
-.class public final Lcug;
+.class final Lcug;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljqv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Z
 
-.field private b:Ljxn;
+.field private final synthetic b:Lcom/google/android/apps/camera/stats/BurstSessionStatistics;
 
-.field private c:Ljxn;
+.field private final synthetic c:Lctw;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;)V
+.method constructor <init>(Lctw;ZLcom/google/android/apps/camera/stats/BurstSessionStatistics;)V
     .locals 0
 
+    iput-object p1, p0, Lcug;->c:Lctw;
+
+    iput-boolean p2, p0, Lcug;->a:Z
+
+    iput-object p3, p0, Lcug;->b:Lcom/google/android/apps/camera/stats/BurstSessionStatistics;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcug;->a:Ljxn;
-
-    iput-object p2, p0, Lcug;->b:Ljxn;
-
-    iput-object p3, p0, Lcug;->c:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 5
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lcug;->a:Ljxn;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Landroid/content/Context;
+    if-eqz v0, :cond_1
 
-    iget-object v1, p0, Lcug;->b:Ljxn;
+    iget-object v0, p0, Lcug;->c:Lctw;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Lctw;->y:Lgkf;
 
-    move-result-object v1
+    invoke-interface {v0}, Lgkf;->a()V
 
-    check-cast v1, Lfid;
+    iget-object v0, p0, Lcug;->c:Lctw;
 
-    iget-object v2, p0, Lcug;->c:Ljxn;
+    iget-object v0, v0, Lctw;->F:Lbmn;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-boolean v1, p0, Lcug;->a:Z
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Lbmn;->a(Z)V
 
-    check-cast v2, Lhax;
+    iget-object v0, p0, Lcug;->b:Lcom/google/android/apps/camera/stats/BurstSessionStatistics;
 
-    new-instance v3, Lbkc;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/BurstSessionStatistics;->d()V
 
-    iget-object v1, v1, Lfid;->g:Lhaz;
+    :cond_0
+    :goto_0
+    return-object p1
 
-    const v4, 0x7f0e00f0
+    :cond_1
+    iget-boolean v0, p0, Lcug;->a:Z
 
-    invoke-virtual {v1, v4}, Lhaz;->a(I)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v1
+    iget-object v0, p0, Lcug;->c:Lctw;
 
-    check-cast v1, Landroid/view/View;
+    iget-object v0, v0, Lctw;->F:Lbmn;
 
-    invoke-direct {v3, v0, v1, v2}, Lbkc;-><init>(Landroid/content/Context;Landroid/view/View;Lijk;)V
+    invoke-virtual {v0}, Lbmn;->a()V
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    iget-object v0, p0, Lcug;->c:Lctw;
 
-    invoke-static {v3, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lctw;->n()V
 
-    move-result-object v0
+    iget-object v0, p0, Lcug;->c:Lctw;
 
-    check-cast v0, Lbkc;
+    invoke-virtual {v0}, Lctw;->o()V
 
-    return-object v0
+    goto :goto_0
 .end method

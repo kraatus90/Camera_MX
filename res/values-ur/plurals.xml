@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <plurals name="burst">
+        <item quantity="other">برسٹ (%1$d تصاویر)</item>
+        <item quantity="one">برسٹ (%1$d تصویر)</item>
+    </plurals>
     <plurals name="burst_chip">
         <item quantity="other">%1$d تصاویر محفوظ ہو گئیں</item>
         <item quantity="one">%1$d تصویر محفوظ ہو گ‏ئی</item>

@@ -3,42 +3,44 @@
 .source "PG"
 
 # interfaces
-.implements Lbnf;
+.implements Lkgv;
+
+
+# instance fields
+.field private final a:Lkgv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbna;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v0, p0, Lbna;->a:Lkgv;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    return-object v0
-.end method
+    move-result-object v0
 
-.method public final a(J)Ljht;
-    .locals 1
+    check-cast v0, Lbni;
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    return-object v0
-.end method
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-.method public final a(Landroid/net/Uri;)Ljht;
-    .locals 1
+    move-result-object v0
 
-    sget-object v0, Ljhi;->a:Ljhi;
+    check-cast v0, Lijc;
 
     return-object v0
 .end method

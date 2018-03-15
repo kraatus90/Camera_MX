@@ -1,2 +1,34 @@
-.class public interface abstract Lhkg;
-.super Ljava/lang/Object;
+.class final Lhkg;
+.super Lhli;
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lhli;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Landroid/content/Context;Landroid/os/Looper;Lhmq;Ljava/lang/Object;Lhln;Lhlo;)Lhlk;
+    .locals 6
+
+    new-instance v0, Lhko;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    invoke-direct/range {v0 .. v5}, Lhko;-><init>(Landroid/content/Context;Landroid/os/Looper;Lhmq;Lhln;Lhlo;)V
+
+    return-object v0
+.end method

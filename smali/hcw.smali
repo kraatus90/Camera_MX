@@ -1,48 +1,31 @@
 .class public final Lhcw;
-.super Ljava/lang/Object;
+.super Landroid/content/BroadcastReceiver;
 .source "PG"
-
-# interfaces
-.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field private synthetic a:Lhcs;
+.field private final synthetic a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
 
 
 # direct methods
-.method public constructor <init>(Lhcs;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;)V
     .locals 0
 
-    iput-object p1, p0, Lhcw;->a:Lhcs;
+    iput-object p1, p0, Lhcw;->a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 2
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 1
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Lhcw;->a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->finish()V
 
-    move-result v0
-
-    if-eq v0, v1, :cond_0
-
-    :goto_0
-    return v1
-
-    :cond_0
-    iget-object v0, p0, Lhcw;->a:Lhcs;
-
-    iget-object v0, v0, Lhcs;->b:Lhbs;
-
-    invoke-virtual {v0}, Lgvh;->S()V
-
-    goto :goto_0
+    return-void
 .end method

@@ -1,54 +1,68 @@
-.class public final Lifu;
+.class public final synthetic Lifu;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final a:Lifi;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method public constructor <init>(Lifi;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lifu;->a:Ljxn;
-
-    iput-object p2, p0, Lifu;->b:Ljxn;
+    iput-object p1, p0, Lifu;->a:Lifi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final run()V
     .locals 3
 
-    new-instance v2, Lift;
+    iget-object v1, p0, Lifu;->a:Lifi;
 
-    iget-object v0, p0, Lifu;->a:Ljxn;
+    iget-boolean v0, v1, Lifi;->j:Z
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    if-nez v0, :cond_1
+
+    iget-object v0, v1, Lifi;->d:Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
 
-    check-cast v0, Landroid/hardware/camera2/CameraManager;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    iget-object v1, p0, Lifu;->b:Ljxn;
+    move-result-object v2
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result-object v1
+    move-result v0
 
-    check-cast v1, Lifv;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v2, v0, v1}, Lift;-><init>(Landroid/hardware/camera2/CameraManager;Lifv;)V
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    return-object v2
+    move-result-object v0
+
+    check-cast v0, Lifj;
+
+    invoke-interface {v0}, Lifj;->f()V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, v1, Lifi;->j:Z
+
+    :cond_1
+    return-void
 .end method

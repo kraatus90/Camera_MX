@@ -1,93 +1,44 @@
-.class final Lhce;
-.super Lhco;
+.class public final Lhce;
+.super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lkgv;
 
-# instance fields
-.field private synthetic a:Lhcb;
+
+# static fields
+.field public static final a:Lhce;
 
 
 # direct methods
-.method constructor <init>(Lhcb;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lhce;
+
+    invoke-direct {v0}, Lhce;-><init>()V
+
+    sput-object v0, Lhce;->a:Lhce;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lhce;->a:Lhcb;
-
-    invoke-direct {p0, p1}, Lhco;-><init>(Lhcl;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Z()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lhce;->a:Lhcb;
+    new-instance v0, Lhcd;
 
-    iget-object v0, v0, Lhcb;->a:Lgvj;
+    invoke-direct {v0}, Lhcd;-><init>()V
 
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhco;->Z()V
-
-    iget-object v0, p0, Lhce;->a:Lhcb;
-
-    iget-object v0, v0, Lhcb;->a:Lgvj;
-
-    iget-object v1, p0, Lhce;->a:Lhcb;
-
-    iget-object v1, v1, Lhcb;->c:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final aa()V
-    .locals 2
-
-    iget-object v0, p0, Lhce;->a:Lhcb;
-
-    iget-object v0, v0, Lhcb;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhco;->aa()V
-
-    iget-object v0, p0, Lhce;->a:Lhcb;
-
-    iget-object v0, v0, Lhcb;->a:Lgvj;
-
-    iget-object v1, p0, Lhce;->a:Lhcb;
-
-    iget-object v1, v1, Lhcb;->c:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
-.end method
-
-.method public final ab()V
-    .locals 2
-
-    iget-object v0, p0, Lhce;->a:Lhcb;
-
-    iget-object v0, v0, Lhcb;->a:Lgvj;
-
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhco;->ab()V
-
-    iget-object v0, p0, Lhce;->a:Lhcb;
-
-    iget-object v0, v0, Lhcb;->a:Lgvj;
-
-    iget-object v1, p0, Lhce;->a:Lhcb;
-
-    iget-object v1, v1, Lhcb;->b:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

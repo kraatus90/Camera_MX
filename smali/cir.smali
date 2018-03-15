@@ -1,46 +1,35 @@
-.class public final Lcir;
+.class final synthetic Lcir;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Leqd;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Leqd;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcir;->a:Ljxn;
+    iput-object p1, p0, Lcir;->a:Leqd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final call()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lcir;->a:Ljxn;
+    iget-object v0, p0, Lcir;->a:Leqd;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcjc;
-
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Leqd;->c()Leqd;
 
     move-result-object v0
-
-    check-cast v0, Lcjb;
 
     return-object v0
 .end method

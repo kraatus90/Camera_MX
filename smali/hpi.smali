@@ -1,26 +1,34 @@
-.class public final Lhpi;
-.super Ljava/lang/Object;
+.class final Lhpi;
+.super Lhpd;
 
 
 # instance fields
-.field public final a:Lhrq;
-
-.field public final b:I
-
-.field public final c:Lhkv;
+.field private final synthetic a:Lhph;
 
 
 # direct methods
-.method public constructor <init>(Lhrq;ILhkv;)V
-    .locals 0
+.method constructor <init>(Lhph;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhpi;->a:Lhph;
 
-    iput-object p1, p0, Lhpi;->a:Lhrq;
+    const/4 v0, 0x0
 
-    iput p2, p0, Lhpi;->b:I
+    invoke-direct {p0, v0}, Lhpd;-><init>(B)V
 
-    iput-object p3, p0, Lhpi;->c:Lhkv;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Lhpi;->a:Lhph;
+
+    sget-object v1, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
+
+    invoke-virtual {v0, v1}, Lhph;->a(Lhlr;)V
 
     return-void
 .end method

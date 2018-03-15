@@ -1,78 +1,72 @@
-.class public final Licx;
+.class final Licx;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licz;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x12
-.end annotation
+.implements Lick;
 
 
 # instance fields
-.field private a:Ljava/lang/String;
+.field private final synthetic a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Licx;->a:Ljava/lang/Object;
 
-    iput-object p1, p0, Licx;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
+.method public final a(Lihg;Ljava/util/concurrent/Executor;)Lihb;
+    .locals 2
 
-    invoke-static {}, Landroid/os/Trace;->endSection()V
+    new-instance v0, Licy;
 
-    return-void
+    iget-object v1, p0, Licx;->a:Ljava/lang/Object;
+
+    invoke-direct {v0, p1, v1}, Licy;-><init>(Lihg;Ljava/lang/Object;)V
+
+    invoke-interface {p2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    sget-object v0, Licl;->a:Lihb;
+
+    return-object v0
 .end method
 
-.method public final a(Ljava/lang/String;)V
-    .locals 5
+.method public final c()Ljava/lang/Object;
+    .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Licx;->a:Ljava/lang/Object;
 
-    const-string v1, "%s_%s"
+    return-object v0
+.end method
 
-    const/4 v2, 0x2
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const-string v0, "Obs.of"
 
-    const/4 v3, 0x0
-
-    iget-object v4, p0, Licx;->a:Ljava/lang/String;
-
-    aput-object v4, v2, v3
-
-    const/4 v3, 0x1
-
-    aput-object p1, v2, v3
-
-    invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Ljhn;->b(Ljava/lang/String;)Ljrc;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    iget-object v1, p0, Licx;->a:Ljava/lang/Object;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Ljrc;->a()Ljrd;
 
-.method public final b(Ljava/lang/String;)V
-    .locals 0
+    move-result-object v2
 
-    invoke-static {}, Landroid/os/Trace;->endSection()V
+    iput-object v1, v2, Ljrd;->b:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Licx;->a(Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljrc;->toString()Ljava/lang/String;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -3,140 +3,168 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lfnq;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lfnq;
 
-.field private b:Ljxn;
+.field private final b:Ljava/util/Collection;
 
-.field private c:Ljxn;
+.field private final c:Lgaz;
 
-.field private d:Ljxn;
+.field private final d:Ljava/lang/Object;
 
-.field private e:Ljxn;
-
-.field private f:Ljxn;
+.field private e:I
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "FxImageSaver"
 
-    iput-object p1, p0, Ldmd;->a:Ljxn;
-
-    iput-object p2, p0, Ldmd;->b:Ljxn;
-
-    iput-object p3, p0, Ldmd;->c:Ljxn;
-
-    iput-object p4, p0, Ldmd;->d:Ljxn;
-
-    iput-object p5, p0, Ldmd;->e:Ljxn;
-
-    iput-object p6, p0, Ldmd;->f:Ljxn;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 7
+.method public constructor <init>(Lfnq;Ljava/util/Collection;Lgaz;)V
+    .locals 1
 
-    new-instance v0, Ldmd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p0
+    new-instance v0, Ljava/lang/Object;
 
-    move-object v2, p1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-object v3, p2
+    iput-object v0, p0, Ldmd;->d:Ljava/lang/Object;
 
-    move-object v4, p3
+    const/4 v0, 0x0
 
-    move-object v5, p4
+    iput v0, p0, Ldmd;->e:I
 
-    move-object v6, p5
+    iput-object p1, p0, Ldmd;->a:Lfnq;
 
-    invoke-direct/range {v0 .. v6}, Ldmd;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+    iput-object p2, p0, Ldmd;->b:Ljava/util/Collection;
 
-    return-object v0
+    iput-object p3, p0, Ldmd;->c:Lgaz;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+.method public final a()Lick;
+    .locals 1
 
-    iget-object v0, p0, Ldmd;->a:Ljxn;
+    iget-object v0, p0, Ldmd;->a:Lfnq;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lfnq;->a()Lick;
 
     move-result-object v0
 
-    check-cast v0, Lhzr;
+    return-object v0
+.end method
 
-    iget-object v1, p0, Ldmd;->b:Ljxn;
+.method public final a(Lgay;)Lkeh;
+    .locals 3
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v1, p0, Ldmd;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget v0, p0, Ldmd;->e:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ldmd;->e:I
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Ldmd;->c:Lgaz;
+
+    invoke-interface {v0, p1}, Lgaz;->a(Lgay;)Lgay;
+
+    move-result-object v0
+
+    iget-object v1, v0, Lgay;->b:Link;
+
+    iget-object v2, v0, Lgay;->d:Lkeh;
+
+    invoke-static {v1, v2}, Lfnu;->a(Link;Lkeh;)Lfnv;
 
     move-result-object v1
 
-    check-cast v1, Lhzr;
+    iget-object v0, v0, Lgay;->c:Ligz;
 
-    iget-object v5, p0, Ldmd;->c:Ljxn;
+    iput-object v0, v1, Lfnv;->a:Ligz;
 
-    iget-object v2, p0, Ldmd;->d:Ljxn;
+    iget-object v0, p0, Ldmd;->b:Ljava/util/Collection;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Licv;
-
-    iget-object v3, p0, Ldmd;->e:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Licz;
-
-    iget-object v4, p0, Ldmd;->f:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lhzt;
-
-    new-instance v6, Ldlv;
-
-    invoke-direct {v6, v2, v3, v4, v5}, Ldlv;-><init>(Licv;Licz;Lhzt;Ljxn;)V
-
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Ldly;
-
-    invoke-direct {v2, v6}, Ldly;-><init>(Ldlv;)V
-
-    invoke-virtual {v0, v2}, Lhzr;->a(Lich;)Lich;
-
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Ldlz;
-
-    invoke-direct {v0, v6}, Ldlz;-><init>(Ldlv;)V
-
-    invoke-virtual {v1, v0}, Lhzr;->a(Lich;)Lich;
-
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v6, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lfnv;->a(Ljava/util/Collection;)Lfnv;
 
     move-result-object v0
 
-    check-cast v0, Ldlv;
+    invoke-virtual {v0}, Lfnv;->a()Lfnu;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ldmd;->d:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_1
+    iget v2, p0, Ldmd;->e:I
+
+    add-int/lit8 v2, v2, -0x1
+
+    iput v2, p0, Ldmd;->e:I
+
+    iget-object v2, p0, Ldmd;->a:Lfnq;
+
+    invoke-interface {v2, v0}, Lfnq;->a(Ljava/lang/Object;)Lkeh;
+
+    move-result-object v0
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v0
+.end method
+
+.method public final bridge synthetic a(Ljava/lang/Object;)Lkeh;
+    .locals 1
+
+    check-cast p1, Lgay;
+
+    invoke-virtual {p0, p1}, Ldmd;->a(Lgay;)Lkeh;
+
+    move-result-object v0
 
     return-object v0
 .end method

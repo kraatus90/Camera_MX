@@ -2,7 +2,7 @@
 .super Lcom/google/android/gms/common/internal/safeparcel/zza;
 
 # interfaces
-.implements Lhwf;
+.implements Lhxe;
 
 
 # static fields
@@ -10,22 +10,22 @@
 
 
 # instance fields
-.field private a:I
+.field private final a:I
 
-.field private b:Ljava/lang/String;
+.field private final b:Ljava/lang/String;
 
-.field private c:[B
+.field private final c:[B
 
-.field private d:Ljava/lang/String;
+.field private final d:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhxu;
+    new-instance v0, Lhyt;
 
-    invoke-direct {v0}, Lhxu;-><init>()V
+    invoke-direct {v0}, Lhyt;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/wearable/internal/zzbz;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -159,7 +159,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lhjg;->m(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lhmr;->m(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -167,27 +167,27 @@
 
     iget v2, p0, Lcom/google/android/gms/wearable/internal/zzbz;->a:I
 
-    invoke-static {p1, v1, v2}, Lhjg;->c(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lhmr;->c(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x3
 
     iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzbz;->b:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
     const/4 v1, 0x4
 
     iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzbz;->c:[B
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;I[B)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;I[B)V
 
     const/4 v1, 0x5
 
     iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzbz;->d:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2}, Lhjg;->a(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v2}, Lhmr;->a(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, v0}, Lhjg;->n(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lhmr;->n(Landroid/os/Parcel;I)V
 
     return-void
 .end method

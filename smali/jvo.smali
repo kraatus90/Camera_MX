@@ -1,107 +1,169 @@
 .class final Ljvo;
-.super Ljuu;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field private c:Ljwd;
+.field private final a:Ljvh;
 
-.field private synthetic d:Ljvn;
+.field private final b:Ljava/util/Iterator;
+
+.field private c:Ljvi;
+
+.field private d:I
+
+.field private e:I
+
+.field private f:Z
 
 
 # direct methods
-.method constructor <init>(Ljvn;Ljwd;)V
-    .locals 1
+.method constructor <init>(Ljvh;Ljava/util/Iterator;)V
+    .locals 0
 
-    iput-object p1, p0, Ljvo;->d:Ljvn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljuu;-><init>()V
+    iput-object p1, p0, Ljvo;->a:Ljvh;
 
-    invoke-static {p2}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljwd;
-
-    iput-object v0, p0, Ljvo;->c:Ljwd;
+    iput-object p2, p0, Ljvo;->b:Ljava/util/Iterator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final synthetic a(Ljava/lang/Object;Ljava/lang/Throwable;)V
+.method public final hasNext()Z
     .locals 1
 
-    check-cast p1, Ljuw;
+    iget v0, p0, Ljvo;->d:I
 
-    if-nez p2, :cond_0
+    if-gtz v0, :cond_0
 
-    iget-object v0, p0, Ljvo;->d:Ljvn;
+    iget-object v0, p0, Ljvo;->b:Ljava/util/Iterator;
 
-    invoke-virtual {v0, p1}, Ljvn;->a(Ljuw;)Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    :goto_0
-    return-void
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     :cond_0
-    iget-object v0, p0, Ljvo;->d:Ljvn;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p2}, Ljvn;->a(Ljava/lang/Throwable;)Z
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
 
-.method final a()Z
+.method public final next()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Ljvo;->d:Ljvn;
-
-    invoke-virtual {v0}, Ljsw;->isDone()Z
+    invoke-virtual {p0}, Ljvo;->hasNext()Z
 
     move-result v0
 
-    return v0
-.end method
+    if-nez v0, :cond_0
 
-.method final synthetic b()Ljava/lang/Object;
-    .locals 5
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    iget-object v0, p0, Ljvo;->c:Ljwd;
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    iget-object v1, v0, Ljwd;->a:Lctz;
+    throw v0
 
-    iget-object v2, v0, Ljwd;->b:Lcqr;
+    :cond_0
+    iget v0, p0, Ljvo;->d:I
 
-    iget-object v3, v0, Ljwd;->c:Ljuw;
+    if-nez v0, :cond_1
 
-    iget-object v4, v0, Ljwd;->d:Lgra;
+    iget-object v0, p0, Ljvo;->b:Ljava/util/Iterator;
 
-    iget-object v0, v0, Ljwd;->e:Lfxb;
-
-    invoke-virtual {v1, v2, v3, v4, v0}, Lctz;->b(Lcqr;Ljuw;Lgra;Lfxb;)Ljuw;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "AsyncCallable.call returned null instead of a Future. Did you mean to return immediateFuture(null)?"
+    check-cast v0, Ljvi;
 
-    invoke-static {v0, v1}, Liya;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object v0, p0, Ljvo;->c:Ljvi;
+
+    iget-object v0, p0, Ljvo;->c:Ljvi;
+
+    invoke-interface {v0}, Ljvi;->b()I
+
+    move-result v0
+
+    iput v0, p0, Ljvo;->d:I
+
+    iput v0, p0, Ljvo;->e:I
+
+    :cond_1
+    iget v0, p0, Ljvo;->d:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Ljvo;->d:I
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ljvo;->f:Z
+
+    iget-object v0, p0, Ljvo;->c:Ljvi;
+
+    invoke-interface {v0}, Ljvi;->a()Ljava/lang/Object;
 
     move-result-object v0
-
-    check-cast v0, Ljuw;
 
     return-object v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final remove()V
+    .locals 2
 
-    iget-object v0, p0, Ljvo;->c:Ljwd;
+    iget-boolean v0, p0, Ljvo;->f:Z
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const-string v1, "no calls to next() since the last call to remove()"
 
-    move-result-object v0
+    invoke-static {v0, v1}, Ljii;->b(ZLjava/lang/Object;)V
 
-    return-object v0
+    iget v0, p0, Ljvo;->e:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Ljvo;->b:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    :goto_0
+    iget v0, p0, Ljvo;->e:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Ljvo;->e:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ljvo;->f:Z
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ljvo;->a:Ljvh;
+
+    iget-object v1, p0, Ljvo;->c:Ljvi;
+
+    invoke-interface {v1}, Ljvi;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljvh;->remove(Ljava/lang/Object;)Z
+
+    goto :goto_0
 .end method

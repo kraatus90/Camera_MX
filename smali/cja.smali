@@ -1,292 +1,403 @@
-.class public final enum Lcja;
-.super Ljava/lang/Enum;
+.class final Lcja;
+.super Landroid/os/AsyncTask;
 .source "PG"
 
 
-# static fields
-.field public static final enum a:Lcja;
-
-.field public static final enum b:Lcja;
-
-.field public static final enum c:Lcja;
-
-.field public static final enum d:Lcja;
-
-.field private static enum h:Lcja;
-
-.field private static enum i:Lcja;
-
-.field private static enum j:Lcja;
-
-.field private static enum k:Lcja;
-
-.field private static synthetic l:[Lcja;
-
-
 # instance fields
-.field public final e:I
+.field private final a:Z
 
-.field public final f:I
-
-.field public final g:Z
+.field private final synthetic b:Lciq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 14
-
-    const/4 v13, 0x3
-
-    const/4 v12, 0x2
-
-    const/4 v2, 0x0
-
-    const v4, 0x7f110119
-
-    const/4 v5, 0x1
-
-    new-instance v0, Lcja;
-
-    const-string v1, "GENERIC_CAMERA_ERROR"
-
-    const v3, 0x7f1100ea
-
-    invoke-direct/range {v0 .. v5}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v0, Lcja;->a:Lcja;
-
-    new-instance v6, Lcja;
-
-    const-string v7, "ERROR_CAMERA_DISABLED"
-
-    const v9, 0x7f1100e6
-
-    move v8, v5
-
-    move v10, v4
-
-    move v11, v5
-
-    invoke-direct/range {v6 .. v11}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcja;->b:Lcja;
-
-    new-instance v6, Lcja;
-
-    const-string v7, "ERROR_CAMERA_DEVICE"
-
-    const v9, 0x7f1100e5
-
-    move v8, v12
-
-    move v10, v4
-
-    move v11, v5
-
-    invoke-direct/range {v6 .. v11}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcja;->h:Lcja;
-
-    new-instance v6, Lcja;
-
-    const-string v7, "ERROR_CAMERA_IN_USE"
-
-    const v9, 0x7f1100e7
-
-    move v8, v13
-
-    move v10, v4
-
-    move v11, v5
-
-    invoke-direct/range {v6 .. v11}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcja;->i:Lcja;
-
-    new-instance v6, Lcja;
-
-    const-string v7, "ERROR_CAMERA_SERVICE"
-
-    const/4 v8, 0x4
-
-    const v9, 0x7f1100e8
-
-    move v10, v4
-
-    move v11, v5
-
-    invoke-direct/range {v6 .. v11}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcja;->j:Lcja;
-
-    new-instance v6, Lcja;
-
-    const-string v7, "ERROR_MAX_CAMERAS_IN_USE"
-
-    const/4 v8, 0x5
-
-    const v9, 0x7f1100ee
-
-    move v10, v4
-
-    move v11, v5
-
-    invoke-direct/range {v6 .. v11}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcja;->k:Lcja;
-
-    new-instance v6, Lcja;
-
-    const-string v7, "MEDIA_STORAGE_FAILURE"
-
-    const/4 v8, 0x6
-
-    const v9, 0x7f1100f0
-
-    const v10, 0x7f11011c
-
-    move v11, v2
-
-    invoke-direct/range {v6 .. v11}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcja;->c:Lcja;
-
-    new-instance v6, Lcja;
-
-    const-string v7, "MEDIA_RECORDER_FAILURE"
-
-    const/4 v8, 0x7
-
-    const v9, 0x7f1100ef
-
-    const v10, 0x7f11011b
-
-    move v11, v5
-
-    invoke-direct/range {v6 .. v11}, Lcja;-><init>(Ljava/lang/String;IIIZ)V
-
-    sput-object v6, Lcja;->d:Lcja;
-
-    const/16 v0, 0x8
-
-    new-array v0, v0, [Lcja;
-
-    sget-object v1, Lcja;->a:Lcja;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcja;->b:Lcja;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lcja;->h:Lcja;
-
-    aput-object v1, v0, v12
-
-    sget-object v1, Lcja;->i:Lcja;
-
-    aput-object v1, v0, v13
-
-    const/4 v1, 0x4
-
-    sget-object v2, Lcja;->j:Lcja;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x5
-
-    sget-object v2, Lcja;->k:Lcja;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    sget-object v2, Lcja;->c:Lcja;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    sget-object v2, Lcja;->d:Lcja;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcja;->l:[Lcja;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;IIIZ)V
+.method constructor <init>(Lciq;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lcja;->b:Lciq;
 
-    iput p3, p0, Lcja;->e:I
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    iput p4, p0, Lcja;->f:I
-
-    iput-boolean p5, p0, Lcja;->g:Z
+    iput-boolean p2, p0, Lcja;->a:Z
 
     return-void
 .end method
 
-.method public static a(I)Lcja;
-    .locals 1
 
-    packed-switch p0, :pswitch_data_0
+# virtual methods
+.method protected final synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    sget-object v0, Lcja;->a:Lcja;
+    check-cast p1, [Landroid/net/Uri;
+
+    iget-object v0, p0, Lcja;->b:Lciq;
+
+    iget-object v0, v0, Lciq;->l:Lihs;
+
+    const-string v1, "MetadataUpdateTask"
+
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    array-length v2, p1
+
+    const/4 v0, 0x0
 
     :goto_0
-    return-object v0
+    if-ge v0, v2, :cond_2
 
-    :pswitch_0
-    sget-object v0, Lcja;->i:Lcja;
+    aget-object v3, p1, v0
+
+    iget-object v4, p0, Lcja;->b:Lciq;
+
+    iget-object v4, v4, Lciq;->i:Lckt;
+
+    invoke-virtual {v4, v3}, Lckt;->a(Landroid/net/Uri;)Lckw;
+
+    move-result-object v3
+
+    sget-object v4, Lckw;->c:Lckw;
+
+    if-eq v3, v4, :cond_1
+
+    invoke-interface {v3}, Lckw;->c()Leqd;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcja;->b:Lciq;
+
+    iget-object v5, v5, Lciq;->h:Lcjx;
+
+    iget-object v5, p0, Lcja;->b:Lciq;
+
+    iget-object v5, v5, Lciq;->c:Landroid/content/Context;
+
+    invoke-static {v5, v4}, Lcjx;->a(Landroid/content/Context;Leqd;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    iget-boolean v4, p0, Lcja;->a:Z
+
+    if-eqz v4, :cond_1
+
+    :cond_0
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :pswitch_1
-    sget-object v0, Lcja;->k:Lcja;
+    :cond_2
+    iget-object v0, p0, Lcja;->b:Lciq;
 
-    goto :goto_0
+    iget-object v0, v0, Lciq;->l:Lihs;
 
-    :pswitch_2
-    sget-object v0, Lcja;->b:Lcja;
+    invoke-interface {v0}, Lihs;->a()V
 
-    goto :goto_0
-
-    :pswitch_3
-    sget-object v0, Lcja;->h:Lcja;
-
-    goto :goto_0
-
-    :pswitch_4
-    sget-object v0, Lcja;->j:Lcja;
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-    .end packed-switch
+    return-object v1
 .end method
 
-.method public static values()[Lcja;
-    .locals 1
+.method protected final synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 8
 
-    sget-object v0, Lcja;->l:[Lcja;
+    const/4 v7, 0x0
 
-    invoke-virtual {v0}, [Lcja;->clone()Ljava/lang/Object;
+    const/4 v6, 0x0
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object v0, p0, Lcja;->b:Lciq;
+
+    iget-object v0, v0, Lciq;->d:Laws;
+
+    invoke-interface {v0}, Laws;->e()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lciq;->a:Ljava/lang/String;
+
+    const-string v1, "Activity is destroyed. Canceling load."
+
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lcja;->b:Lciq;
+
+    iget-object v0, v0, Lciq;->l:Lihs;
+
+    const-string v1, "MetadataUpdateTask#onPostExecute"
+
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lcja;
+    check-cast v0, Lckw;
 
-    return-object v0
+    iget-object v3, p0, Lcja;->b:Lciq;
+
+    invoke-interface {v0}, Lckw;->c()Leqd;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Leqd;->f()Leqh;
+
+    move-result-object v0
+
+    iget-object v0, v0, Leqh;->h:Landroid/net/Uri;
+
+    invoke-virtual {v3, v0}, Lciq;->a(Landroid/net/Uri;)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v0, p0, Lcja;->b:Lciq;
+
+    iget-object v0, v0, Lciq;->b:Lcjo;
+
+    new-instance v2, Lcmc;
+
+    invoke-direct {v2, v1, p1}, Lcmc;-><init>(Ljava/util/List;Ljava/util/List;)V
+
+    invoke-virtual {v0, v2}, Lcjo;->a(Lcmc;)V
+
+    iget-object v0, p0, Lcja;->b:Lciq;
+
+    iget-object v0, v0, Lciq;->j:Lcju;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcja;->b:Lciq;
+
+    iget-object v0, v0, Lciq;->j:Lcju;
+
+    iget-object v1, v0, Lcju;->a:Lbzb;
+
+    iget-boolean v1, v1, Lbzb;->W:Z
+
+    if-nez v1, :cond_3
+
+    iget-object v1, v0, Lcju;->a:Lbzb;
+
+    iget-object v1, v1, Lbzb;->B:Lcmp;
+
+    invoke-interface {v1}, Lcmp;->a()Lckw;
+
+    move-result-object v1
+
+    invoke-interface {p1, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, v0, Lcju;->a:Lbzb;
+
+    sget-object v0, Lckw;->c:Lckw;
+
+    if-ne v1, v0, :cond_4
+
+    sget-object v0, Lbzb;->a:Ljava/lang/String;
+
+    const-string v1, "Current data ID not found."
+
+    invoke-static {v0, v1}, Lbki;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, v2, Lbzb;->L:Lcll;
+
+    invoke-virtual {v0, v7}, Lcll;->a(Leqd;)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v6}, Lclo;->b(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v6}, Lclo;->e(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v6}, Lclo;->c(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v6}, Lclo;->d(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0}, Lclo;->a()V
+
+    invoke-virtual {v2}, Lbzb;->P()V
+
+    :cond_3
+    :goto_2
+    iget-object v0, p0, Lcja;->b:Lciq;
+
+    iget-object v0, v0, Lciq;->l:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    goto/16 :goto_0
+
+    :cond_4
+    invoke-interface {v1}, Lckw;->c()Leqd;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lbzb;->a(Leqd;)V
+
+    invoke-virtual {v2}, Lbzb;->I()V
+
+    iget-object v0, v2, Lbzb;->L:Lcll;
+
+    invoke-virtual {v0, v3}, Lcll;->a(Leqd;)V
+
+    iget-boolean v0, v2, Lbzb;->w:Z
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v6}, Lclo;->b(Z)V
+
+    iget-object v0, v2, Lbzb;->y:Lclo;
+
+    invoke-virtual {v0, v6}, Lclo;->e(Z)V
+
+    :goto_3
+    iget-object v0, v2, Lbzb;->E:Lgyq;
+
+    invoke-interface {v0, v1}, Lgyq;->a(Lckw;)I
+
+    move-result v0
+
+    iget-object v1, v2, Lbzb;->E:Lgyq;
+
+    invoke-interface {v1, v0}, Lgyq;->b(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    iget-object v1, v2, Lbzb;->E:Lgyq;
+
+    invoke-interface {v1, v0}, Lgyq;->a(I)Landroid/os/AsyncTask;
+
+    goto :goto_2
+
+    :cond_5
+    iget-object v0, v2, Lbzb;->o:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v0, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    iget-object v0, v2, Lbzb;->n:Lihs;
+
+    const-string v4, "NFC#init"
+
+    invoke-interface {v0, v4}, Lihs;->a(Ljava/lang/String;)V
+
+    iget-object v0, v2, Lbzb;->e:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_6
+
+    iget-object v0, v2, Lbzb;->q:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v4, v7, v0}, Landroid/nfc/NfcAdapter;->setBeamPushUris([Landroid/net/Uri;Landroid/app/Activity;)V
+
+    new-instance v5, Lbzl;
+
+    invoke-direct {v5, v2}, Lbzl;-><init>(Lbzb;)V
+
+    iget-object v0, v2, Lbzb;->q:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v4, v5, v0}, Landroid/nfc/NfcAdapter;->setBeamPushUrisCallback(Landroid/nfc/NfcAdapter$CreateBeamUrisCallback;Landroid/app/Activity;)V
+
+    iget-object v0, v2, Lbzb;->n:Lihs;
+
+    invoke-interface {v0}, Lihs;->a()V
+
+    :cond_6
+    invoke-interface {v3}, Leqd;->f()Leqh;
+
+    move-result-object v0
+
+    iget-object v0, v0, Leqh;->h:Landroid/net/Uri;
+
+    sget-object v3, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    invoke-virtual {v0, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_7
+
+    iget-object v3, v2, Lbzb;->p:[Landroid/net/Uri;
+
+    aput-object v0, v3, v6
+
+    goto :goto_3
+
+    :cond_7
+    iget-object v0, v2, Lbzb;->p:[Landroid/net/Uri;
+
+    aput-object v7, v0, v6
+
+    goto :goto_3
 .end method

@@ -3,88 +3,115 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lkgv;
 
-.field private b:Ljxn;
+.field private final b:Lkgv;
 
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
+.field private final c:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfbq;->a:Ljxn;
+    iput-object p1, p0, Lfbq;->a:Lkgv;
 
-    iput-object p2, p0, Lfbq;->b:Ljxn;
+    iput-object p2, p0, Lfbq;->b:Lkgv;
 
-    iput-object p3, p0, Lfbq;->c:Ljxn;
-
-    iput-object p4, p0, Lfbq;->d:Ljxn;
-
-    iput-object p5, p0, Lfbq;->e:Ljxn;
+    iput-object p3, p0, Lfbq;->c:Lkgv;
 
     return-void
+.end method
+
+.method public static a(Lkgv;Lkgv;Lkgv;)Lfbq;
+    .locals 1
+
+    new-instance v0, Lfbq;
+
+    invoke-direct {v0, p0, p1, p2}, Lfbq;-><init>(Lkgv;Lkgv;Lkgv;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 6
+    .locals 4
 
-    new-instance v0, Lfbp;
+    iget-object v0, p0, Lfbq;->a:Lkgv;
 
-    iget-object v1, p0, Lfbq;->a:Ljxn;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Lhbh;
 
-    check-cast v1, Lfdm;
+    iget-object v1, p0, Lfbq;->b:Lkgv;
 
-    iget-object v2, p0, Lfbq;->b:Ljxn;
+    iget-object v2, p0, Lfbq;->c:Lkgv;
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v3, v0, Lhbh;->b:Limm;
 
-    move-result-object v2
+    iget-boolean v3, v3, Limm;->f:Z
 
-    check-cast v2, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    if-nez v3, :cond_0
 
-    iget-object v3, p0, Lfbq;->c:Ljxn;
+    iget-object v3, v0, Lhbh;->b:Limm;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
+    iget-boolean v3, v3, Limm;->g:Z
 
-    move-result-object v3
+    if-nez v3, :cond_0
 
-    check-cast v3, Lguc;
+    invoke-virtual {v0}, Lhbh;->c()Z
 
-    iget-object v4, p0, Lfbq;->d:Ljxn;
+    move-result v0
 
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    move-result-object v4
+    :cond_0
+    const/4 v0, 0x1
 
-    check-cast v4, Levh;
+    :goto_0
+    if-eqz v0, :cond_2
 
-    iget-object v5, p0, Lfbq;->e:Ljxn;
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v5}, Ljxn;->a()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v5
+    check-cast v0, Lfcc;
 
-    check-cast v5, Ljht;
+    :goto_1
+    new-instance v1, Lfcg;
 
-    invoke-direct/range {v0 .. v5}, Lfbp;-><init>(Lfdm;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lguc;Levh;Ljht;)V
+    invoke-direct {v1, v0}, Lfcg;-><init>(Lfcc;)V
+
+    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v1, v0}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfcc;
 
     return-object v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfcc;
+
+    goto :goto_1
 .end method

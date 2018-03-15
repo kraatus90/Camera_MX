@@ -1,78 +1,178 @@
-.class public abstract enum Ljlv;
-.super Ljava/lang/Enum;
+.class public final Ljlv;
+.super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljhj;
+.implements Ljlw;
 
 
-# static fields
-.field public static final enum a:Ljlv;
+# instance fields
+.field private final a:I
 
-.field public static final enum b:Ljlv;
+.field private final b:I
 
-.field private static synthetic c:[Ljlv;
+.field private final c:F
+
+.field private final d:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Ljlw;
-
-    const-string v1, "KEY"
-
-    invoke-direct {v0, v1}, Ljlw;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Ljlv;->a:Ljlv;
-
-    new-instance v0, Ljlx;
-
-    const-string v1, "VALUE"
-
-    invoke-direct {v0, v1}, Ljlx;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Ljlv;->b:Ljlv;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljlv;
-
-    const/4 v1, 0x0
-
-    sget-object v2, Ljlv;->a:Ljlv;
-
-    aput-object v2, v0, v1
+.method public constructor <init>(FF)V
+    .locals 2
 
     const/4 v1, 0x1
 
-    sget-object v2, Ljlv;->b:Ljlv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    aput-object v2, v0, v1
+    invoke-static {v1}, Ljii;->a(Z)V
 
-    sput-object v0, Ljlv;->c:[Ljlv;
+    invoke-static {v1}, Ljii;->a(Z)V
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Ljlv;->a:I
+
+    iput v1, p0, Ljlv;->b:I
+
+    iput p1, p0, Ljlv;->c:F
+
+    iput p2, p0, Ljlv;->d:F
 
     return-void
 .end method
 
-.method constructor <init>(Ljava/lang/String;I)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final a(Ljkl;J)F
+    .locals 4
 
-    return-void
-.end method
+    iget-wide v0, p1, Ljkl;->c:J
 
-.method public static values()[Ljlv;
-    .locals 1
+    cmp-long v0, p2, v0
 
-    sget-object v0, Ljlv;->c:[Ljlv;
+    if-ltz v0, :cond_0
 
-    invoke-virtual {v0}, [Ljlv;->clone()Ljava/lang/Object;
+    iget-wide v0, p1, Ljkl;->d:J
+
+    cmp-long v0, p2, v0
+
+    if-lez v0, :cond_1
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "No threshold for timestamp outside frame segment."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iget-object v0, p1, Ljkl;->a:Ljava/util/List;
+
+    invoke-static {v0}, Ljuh;->a(Ljava/util/Collection;)Ljuh;
 
     move-result-object v0
 
-    check-cast v0, [Ljlv;
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+
+    move-result v0
+
+    iget v1, p0, Ljlv;->a:I
+
+    if-lt v0, v1, :cond_2
+
+    invoke-virtual {p1}, Ljkl;->a()I
+
+    move-result v1
+
+    iget v2, p0, Ljlv;->b:I
+
+    sub-int/2addr v1, v2
+
+    if-ge v0, v1, :cond_2
+
+    iget v0, p0, Ljlv;->d:F
+
+    :goto_0
+    return v0
+
+    :cond_2
+    iget v0, p0, Ljlv;->c:F
+
+    goto :goto_0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    iget v0, p0, Ljlv;->c:F
+
+    iget v1, p0, Ljlv;->d:F
+
+    iget v2, p0, Ljlv;->a:I
+
+    iget v3, p0, Ljlv;->b:I
+
+    const/16 v4, 0xbe
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "DifferentStartEndThresholdGenerator[threshold for start/end frames="
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v4, ", threshold for middle frames="
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", start frames count="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", end frames count="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "]"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

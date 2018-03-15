@@ -1,49 +1,37 @@
-.class public final Lezu;
+.class public final synthetic Lezu;
 .super Ljava/lang/Object;
-.source "PG"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lexp;
-
-.field private b:Lhzt;
-
-.field private c:Ldiv;
-
-.field private d:Lbjf;
+.field private final a:Lfaj;
 
 
 # direct methods
-.method public constructor <init>(Lexp;Lhzt;Ldiv;Lbjf;)V
+.method public constructor <init>(Lfaj;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lezu;->a:Lexp;
-
-    iput-object p2, p0, Lezu;->b:Lhzt;
-
-    iput-object p3, p0, Lezu;->c:Ldiv;
-
-    iput-object p4, p0, Lezu;->d:Lbjf;
+    iput-object p1, p0, Lezu;->a:Lfaj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lezu;->a:Lexp;
+    iget-object v0, p0, Lezu;->a:Lfaj;
 
-    iget-object v1, p0, Lezu;->b:Lhzt;
+    iget-object v1, v0, Lfaj;->a:Lfam;
 
-    iget-object v2, p0, Lezu;->c:Ldiv;
+    iget-object v0, v0, Lfaj;->b:Lfak;
 
-    iget-object v3, p0, Lezu;->d:Lbjf;
-
-    invoke-virtual {v0, v1, v2, v3}, Lexp;->a(Lhzt;Ldiv;Lbjf;)V
+    invoke-interface {v1, v0}, Lfam;->b(Lfak;)V
 
     return-void
 .end method

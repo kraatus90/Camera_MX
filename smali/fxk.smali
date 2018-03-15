@@ -1,216 +1,202 @@
-.class public final Lfxk;
-.super Ljava/lang/Object;
+.class final Lfxk;
+.super Landroid/view/OrientationEventListener;
 .source "PG"
-
-# interfaces
-.implements Liod;
-
-
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x13
-.end annotation
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:Ljvi;
-
-.field private c:Liod;
-
-.field private d:Landroid/media/MediaFormat;
-
-.field private e:Ljava/util/List;
-
-.field private f:Ljava/util/concurrent/Executor;
+.field private final synthetic a:Lfxi;
 
 
 # direct methods
-.method public constructor <init>(Liod;JLjvi;Ljava/util/concurrent/Executor;)V
-    .locals 4
+.method public constructor <init>(Lfxi;Landroid/content/Context;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfxk;->a:Lfxi;
 
-    iput-object p1, p0, Lfxk;->c:Liod;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lfxk;->e:Ljava/util/List;
-
-    iput-object p5, p0, Lfxk;->f:Ljava/util/concurrent/Executor;
-
-    iput-wide p2, p0, Lfxk;->a:J
-
-    iput-object p4, p0, Lfxk;->b:Ljvi;
-
-    new-instance v0, Landroid/media/MediaFormat;
-
-    invoke-direct {v0}, Landroid/media/MediaFormat;-><init>()V
-
-    iput-object v0, p0, Lfxk;->d:Landroid/media/MediaFormat;
-
-    iget-object v0, p0, Lfxk;->d:Landroid/media/MediaFormat;
-
-    const-string v1, "mime"
-
-    const-string v2, "application/microvideo-image-meta"
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
 
     return-void
-.end method
-
-.method static a(JJ)[B
-    .locals 4
-
-    new-instance v0, Lijp;
-
-    invoke-direct {v0}, Lijp;-><init>()V
-
-    iput-wide p2, v0, Lijp;->a:J
-
-    sub-long v2, p2, p0
-
-    iput-wide v2, v0, Lijp;->b:J
-
-    invoke-virtual {v0}, Lijp;->getSerializedSize()I
-
-    move-result v1
-
-    new-array v1, v1, [B
-
-    const/4 v2, 0x0
-
-    array-length v3, v1
-
-    invoke-static {v1, v2, v3}, Ljwi;->a([BII)Ljwi;
-
-    move-result-object v2
-
-    :try_start_0
-    invoke-virtual {v0, v2}, Lijp;->writeTo(Ljwi;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    return-object v1
-
-    :catch_0
-    move-exception v0
-
-    const-string v2, "AddMetaTrackMuxer"
-
-    const-string v3, "Error trying to append meta data."
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lioj;)Liol;
-    .locals 3
+.method public final onOrientationChanged(I)V
+    .locals 6
 
-    monitor-enter p0
+    const/4 v0, -0x1
 
-    :try_start_0
-    iget-object v0, p0, Lfxk;->c:Liod;
+    if-ne p1, v0, :cond_1
 
-    invoke-interface {v0, p1}, Liod;->a(Lioj;)Liol;
-
-    move-result-object v0
-
-    new-instance v1, Ljvi;
-
-    invoke-direct {v1}, Ljvi;-><init>()V
-
-    iget-object v2, p0, Lfxk;->e:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    new-instance v2, Lfxm;
-
-    invoke-direct {v2, v0, v1}, Lfxm;-><init>(Liol;Ljvi;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v2
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final a()V
-    .locals 3
-
-    iget-object v0, p0, Lfxk;->c:Liod;
-
-    iget-object v1, p0, Lfxk;->d:Landroid/media/MediaFormat;
-
-    invoke-static {v1}, Lioj;->a(Landroid/media/MediaFormat;)Lioj;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Liod;->a(Lioj;)Liol;
-
-    move-result-object v0
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v1, p0, Lfxk;->e:Ljava/util/List;
-
-    invoke-static {v1}, Ljuh;->a(Ljava/lang/Iterable;)Ljuw;
-
-    move-result-object v1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    new-instance v2, Lfxl;
-
-    invoke-direct {v2, p0, v1, v0}, Lfxl;-><init>(Lfxk;Ljuw;Liol;)V
-
-    iget-object v0, p0, Lfxk;->f:Ljava/util/concurrent/Executor;
-
-    invoke-interface {v1, v2, v0}, Ljuw;->a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    iget-object v0, p0, Lfxk;->c:Liod;
-
-    invoke-interface {v0}, Liod;->a()V
-
+    :cond_0
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    iget-object v1, p0, Lfxk;->a:Lfxi;
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-ltz p1, :cond_2
 
-    throw v0
-.end method
+    const/16 v0, 0x168
 
-.method public final b()Ljuw;
-    .locals 1
+    if-ge p1, v0, :cond_2
 
-    iget-object v0, p0, Lfxk;->c:Liod;
+    const/4 v0, 0x1
 
-    invoke-interface {v0}, Liod;->b()Ljuw;
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iget-object v0, v1, Lfxi;->e:Ligz;
+
+    iget v0, v0, Ligz;->e:I
+
+    sub-int v0, p1, v0
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
+
+    move-result v0
+
+    rsub-int v2, v0, 0x168
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    const/16 v2, 0x32
+
+    if-lt v0, v2, :cond_3
+
+    add-int/lit8 v0, p1, 0x2d
+
+    div-int/lit8 v0, v0, 0x5a
+
+    mul-int/lit8 v0, v0, 0x5a
+
+    rem-int/lit16 v0, v0, 0x168
+
+    invoke-static {v0}, Ligz;->a(I)Ligz;
 
     move-result-object v0
 
-    return-object v0
+    move-object v1, v0
+
+    :goto_1
+    iget-object v0, p0, Lfxk;->a:Lfxi;
+
+    iget-object v0, v0, Lfxi;->e:Ligz;
+
+    if-eq v1, v0, :cond_0
+
+    iget-object v0, p0, Lfxk;->a:Lfxi;
+
+    iget-object v0, v0, Lfxi;->f:Lihn;
+
+    iget-object v2, p0, Lfxk;->a:Lfxi;
+
+    iget-object v2, v2, Lfxi;->e:Ligz;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x26
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "DeviceOrientation changing (from:to) "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v4, ":"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Lihn;->b(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lfxk;->a:Lfxi;
+
+    iput-object v1, v0, Lfxi;->e:Ligz;
+
+    iget-object v0, p0, Lfxk;->a:Lfxi;
+
+    iget-object v0, v0, Lfxi;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_2
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfxj;
+
+    iget-object v3, p0, Lfxk;->a:Lfxi;
+
+    iget-object v3, v3, Lfxi;->c:Liay;
+
+    new-instance v4, Lfxl;
+
+    invoke-direct {v4, v0, v1}, Lfxl;-><init>(Lfxj;Ligz;)V
+
+    invoke-virtual {v3, v4}, Liay;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v0, 0x0
+
+    goto/16 :goto_0
+
+    :cond_3
+    iget-object v0, v1, Lfxi;->e:Ligz;
+
+    move-object v1, v0
+
+    goto :goto_1
 .end method

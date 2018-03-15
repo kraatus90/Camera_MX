@@ -1,43 +1,26 @@
-.class final synthetic Lbab;
+.class public interface abstract Lbab;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljtu;
-
-
-# instance fields
-.field private a:Lbaa;
-
-.field private b:Landroid/view/Surface;
-
-
-# direct methods
-.method constructor <init>(Lbaa;Landroid/view/Surface;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbab;->a:Lbaa;
-
-    iput-object p2, p0, Lbab;->b:Landroid/view/Surface;
-
-    return-void
-.end method
+.source "PG"
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljuw;
-    .locals 2
+.method public abstract a(Labp;)V
+.end method
 
-    iget-object v0, p0, Lbab;->a:Lbaa;
+.method public abstract a()Z
+.end method
 
-    iget-object v1, p0, Lbab;->b:Landroid/view/Surface;
+.method public abstract b()I
+.end method
 
-    check-cast p1, Liht;
+.method public abstract b(I)V
+.end method
 
-    invoke-virtual {v0, v1, p1}, Lbaa;->a(Landroid/view/Surface;Liht;)Ljuw;
+.method public abstract b(Labp;)V
+.end method
 
-    move-result-object v0
+.method public abstract c(I)V
+.end method
 
-    return-object v0
+.method public abstract d(I)Labo;
 .end method

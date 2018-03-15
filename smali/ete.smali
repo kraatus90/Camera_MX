@@ -3,50 +3,105 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Letr;
 
 
-# static fields
-.field public static final a:Lete;
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0x13
+.end annotation
+
+
+# instance fields
+.field public final a:Leud;
+
+.field public volatile b:Livx;
+
+.field public final c:Ljava/util/concurrent/Executor;
+
+.field private final d:Landroid/media/MediaFormat;
+
+.field private final e:Lkeh;
+
+.field private f:Letu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lete;
-
-    invoke-direct {v0}, Lete;-><init>()V
-
-    sput-object v0, Lete;->a:Lete;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/media/MediaFormat;Leud;Lkeh;Ljava/util/concurrent/Executor;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lete;->d:Landroid/media/MediaFormat;
+
+    iput-object p2, p0, Lete;->a:Leud;
+
+    iput-object p3, p0, Lete;->e:Lkeh;
+
+    iput-object p4, p0, Lete;->c:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final a()V
+    .locals 1
 
-    invoke-static {}, Letc;->a()Lgvz;
+    iget-object v0, p0, Lete;->f:Letu;
+
+    invoke-virtual {v0}, Letu;->a()V
+
+    return-void
+.end method
+
+.method public final a(Liwa;Lett;Letu;)V
+    .locals 1
+
+    iput-object p3, p0, Lete;->f:Letu;
+
+    iget-object v0, p0, Lete;->e:Lkeh;
+
+    invoke-interface {v0}, Lkeh;->isDone()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lete;->e:Lkeh;
+
+    invoke-static {v0}, Lkdt;->c(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    check-cast v0, Ljava/lang/Boolean;
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lete;->d:Landroid/media/MediaFormat;
+
+    invoke-virtual {p1, v0}, Liwa;->b(Landroid/media/MediaFormat;)Livx;
 
     move-result-object v0
 
-    check-cast v0, Lgvz;
+    iput-object v0, p0, Lete;->b:Livx;
 
-    return-object v0
+    :cond_0
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final close()V
+    .locals 0
+
+    return-void
 .end method

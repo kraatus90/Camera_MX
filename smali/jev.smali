@@ -1,20 +1,14 @@
-.class public final Ljev;
+.class final Ljev;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Litm;
-
-
-# instance fields
-.field private synthetic a:Ljava/io/Writer;
+.implements Ljdt;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/Writer;)V
+.method constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ljev;->a:Ljava/io/Writer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,18 +17,84 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 3
+.method public final synthetic a(Ljcw;)Ljava/lang/Object;
+    .locals 9
 
-    check-cast p1, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    const/4 v8, 0x3
 
-    new-instance v0, Lirx;
+    const/4 v7, 0x2
 
-    iget-object v1, p0, Ljev;->a:Ljava/io/Writer;
+    const/4 v6, 0x1
 
-    sget-object v2, Lisc;->a:Lisc;
+    const/4 v5, 0x0
 
-    invoke-direct {v0, p1, v1, v2}, Lirx;-><init>(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;Ljava/io/Writer;Ljava/util/concurrent/Executor;)V
+    const-class v0, Ljjz;
+
+    const-string v1, "post_proc_quality_metric"
+
+    invoke-virtual {p1, v0, v1}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljjz;
+
+    new-array v2, v7, [Ljko;
+
+    new-array v3, v8, [Ljko;
+
+    const-class v1, Ljko;
+
+    const-string v4, "jump_cut"
+
+    invoke-virtual {p1, v1, v4}, Ljcw;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljko;
+
+    aput-object v1, v3, v5
+
+    new-instance v1, Ljls;
+
+    invoke-direct {v1, v8}, Ljls;-><init>(I)V
+
+    aput-object v1, v3, v6
+
+    new-instance v1, Ljki;
+
+    invoke-direct {v1, v0}, Ljki;-><init>(Ljjz;)V
+
+    aput-object v1, v3, v7
+
+    invoke-static {v3}, Ljkj;->a([Ljko;)Ljkj;
+
+    move-result-object v0
+
+    aput-object v0, v2, v5
+
+    new-array v0, v7, [Ljko;
+
+    new-instance v1, Ljlk;
+
+    invoke-direct {v1}, Ljlk;-><init>()V
+
+    aput-object v1, v0, v5
+
+    new-instance v1, Ljls;
+
+    invoke-direct {v1, v8}, Ljls;-><init>(I)V
+
+    aput-object v1, v0, v6
+
+    invoke-static {v0}, Ljkj;->a([Ljko;)Ljkj;
+
+    move-result-object v0
+
+    aput-object v0, v2, v6
+
+    new-instance v0, Ljkk;
+
+    invoke-direct {v0, v2}, Ljkk;-><init>([Ljko;)V
 
     return-object v0
 .end method

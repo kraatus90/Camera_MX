@@ -5,13 +5,4 @@
         <item name="gapBetweenBars">3.3299866dip</item>
         <item name="barLength">18.659973dip</item>
     </style>
-    <style name="LightCycleHelpScreenButton" parent="@android:style/Widget.Holo.Button.Borderless.Small">
-        <item name="android:textSize">14.0sp</item>
-    </style>
-    <style name="LightCycleHelpScreenHeading">
-        <item name="android:textSize">22.0sp</item>
-    </style>
-    <style name="LightCycleHelpScreenNormalText">
-        <item name="android:textSize">14.0sp</item>
-    </style>
 </resources>

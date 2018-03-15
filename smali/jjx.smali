@@ -1,139 +1,67 @@
-.class final Ljjx;
-.super Ljjv;
+.class public final Ljjx;
+.super Ljju;
 .source "PG"
 
 
-# static fields
-.field public static final serialVersionUID:J
-
-
 # direct methods
-.method constructor <init>(Ljava/lang/Comparable;)V
-    .locals 1
+.method public constructor <init>(Ljmb;)V
+    .locals 0
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Comparable;
-
-    invoke-direct {p0, v0}, Ljjv;-><init>(Ljava/lang/Comparable;)V
+    invoke-direct {p0, p1}, Ljju;-><init>(Ljmb;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Ljava/lang/StringBuilder;)V
-    .locals 2
-
-    const/16 v0, 0x28
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ljjx;->a:Ljava/lang/Comparable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    return-void
-.end method
-
-.method final a(Ljava/lang/Comparable;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljjx;->a:Ljava/lang/Comparable;
-
-    invoke-static {v0, p1}, Ljmo;->b(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
-
-    move-result v0
-
-    if-gez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method final b(Ljava/lang/StringBuilder;)V
-    .locals 2
-
-    iget-object v0, p0, Ljjx;->a:Ljava/lang/Comparable;
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const/16 v1, 0x5d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    return-void
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Ljjx;->a:Ljava/lang/Comparable;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, -0x1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(J)Ljpj;
     .locals 3
 
-    iget-object v0, p0, Ljjx;->a:Ljava/lang/Comparable;
+    iget-object v1, p0, Ljjx;->c:Ljava/lang/Object;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    monitor-enter v1
 
-    move-result-object v0
+    :try_start_0
+    iget-object v0, p0, Ljjx;->a:Ljava/util/TreeSet;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v0, v2}, Ljava/util/TreeSet;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, 0x2
+    if-eqz v0, :cond_0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v0, Ljpg;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const-string v1, "/"
+    invoke-direct {v0, v2}, Ljpg;-><init>(F)V
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    monitor-exit v1
 
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\\"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
+    :goto_0
     return-object v0
+
+    :cond_0
+    new-instance v0, Ljpg;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2}, Ljpg;-><init>(F)V
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

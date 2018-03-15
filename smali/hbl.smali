@@ -2,97 +2,182 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Lhln;
+.implements Lhlo;
+
 
 # instance fields
-.field public final a:Ljxn;
+.field public final a:Lhlm;
 
-.field public final b:Ljxn;
-
-.field public final c:Ljxn;
-
-.field public final d:Ljxn;
+.field public b:Lket;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 1
+.method public constructor <init>(Lhlm;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Lhbl;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lhbl;->a:Ljxn;
-
-    const/4 v0, 0x2
-
-    invoke-static {p2, v0}, Lhbl;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lhbl;->b:Ljxn;
-
-    const/4 v0, 0x3
-
-    invoke-static {p3, v0}, Lhbl;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lhbl;->c:Ljxn;
-
-    const/4 v0, 0x4
-
-    invoke-static {p4, v0}, Lhbl;->a(Ljava/lang/Object;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxn;
-
-    iput-object v0, p0, Lhbl;->d:Ljxn;
+    iput-object p1, p0, Lhbl;->a:Lhlm;
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/Object;I)Ljava/lang/Object;
-    .locals 3
 
-    if-nez p0, :cond_0
+# virtual methods
+.method public final a()Lkeh;
+    .locals 4
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    iget-object v0, p0, Lhbl;->a:Lhlm;
 
-    const/16 v1, 0x5d
+    invoke-virtual {v0, p0}, Lhlm;->a(Lhlo;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lhbl;->a:Lhlm;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-virtual {v0, p0}, Lhlm;->a(Lhln;)V
 
-    const-string v1, "@AutoFactory method argument is null but is not marked @Nullable. Argument index: "
+    new-instance v0, Lket;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Lket;-><init>()V
 
-    move-result-object v1
+    iput-object v0, p0, Lhbl;->b:Lket;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lhbl;->a:Lhlm;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lhlm;->b()V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v0, Lhbm;
 
-    move-result-object v1
+    invoke-direct {v0, p0}, Lhbm;-><init>(Lhbl;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    new-instance v1, Ljava/util/Timer;
 
-    throw v0
+    invoke-direct {v1}, Ljava/util/Timer;-><init>()V
 
-    :cond_0
-    return-object p0
+    const-wide/16 v2, 0x1f4
+
+    invoke-virtual {v1, v0, v2, v3}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;J)V
+
+    iget-object v0, p0, Lhbl;->b:Lket;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkeh;
+
+    return-object v0
+.end method
+
+.method public final a(I)V
+    .locals 4
+
+    iget-object v0, p0, Lhbl;->b:Lket;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lket;
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const/16 v2, 0x25
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Connection gets suspended "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Throwable;)Z
+
+    return-void
+.end method
+
+.method public final a(Landroid/os/Bundle;)V
+    .locals 2
+
+    iget-object v0, p0, Lhbl;->b:Lket;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lket;
+
+    new-instance v1, Lhbn;
+
+    invoke-direct {v1, p0}, Lhbn;-><init>(Lhbl;)V
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final a(Lcom/google/android/gms/common/ConnectionResult;)V
+    .locals 5
+
+    iget-object v0, p0, Lhbl;->b:Lket;
+
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lket;
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x10
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Fail to connect "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Throwable;)Z
+
+    return-void
 .end method

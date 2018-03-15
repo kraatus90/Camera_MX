@@ -1,118 +1,147 @@
 .class public final Lhwr;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public b:Ljava/util/Queue;
+
+.field private c:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lhwr;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 5
+.method public final a(Lhwn;)V
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v1, p0, Lhwr;->a:Ljava/lang/Object;
 
-    invoke-static {p1}, Lhjg;->a(Landroid/os/Parcel;)I
+    monitor-enter v1
 
-    move-result v2
+    :try_start_0
+    iget-object v0, p0, Lhwr;->b:Ljava/util/Queue;
 
-    move-object v1, v0
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lhwr;->c:Z
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    monitor-exit v1
 
     :goto_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    return-void
 
-    move-result v3
+    :cond_1
+    const/4 v0, 0x1
 
-    if-ge v3, v2, :cond_0
+    iput-boolean v0, p0, Lhwr;->c:Z
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-result v3
+    :goto_1
+    iget-object v1, p0, Lhwr;->a:Ljava/lang/Object;
 
-    const v4, 0xffff
+    monitor-enter v1
 
-    and-int/2addr v4, v3
+    :try_start_1
+    iget-object v0, p0, Lhwr;->b:Ljava/util/Queue;
 
-    packed-switch v4, :pswitch_data_0
-
-    invoke-static {p1, v3}, Lhjg;->b(Landroid/os/Parcel;I)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1, v3}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-static {p1, v3}, Lhjg;->g(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Lhwq;
+
+    if-nez v0, :cond_2
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lhwr;->c:Z
+
+    monitor-exit v1
+
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
+    :catchall_0
+    move-exception v0
 
-    move-result v3
-
-    if-eq v3, v2, :cond_1
-
-    new-instance v0, Ladf;
-
-    const/16 v1, 0x25
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "Overread allowed size end="
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p1}, Ladf;-><init>(Ljava/lang/String;Landroid/os/Parcel;)V
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw v0
 
-    :cond_1
-    new-instance v2, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;
+    :catchall_1
+    move-exception v0
 
-    invoke-direct {v2, v1, v0}, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    return-object v2
+    throw v0
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
+    :cond_2
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+    iget-object v1, v0, Lhwq;->b:Ljava/lang/Object;
 
-    new-array v0, p1, [Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;
+    monitor-enter v1
 
-    return-object v0
+    :try_start_4
+    iget-object v2, v0, Lhwq;->c:Lhwm;
+
+    if-nez v2, :cond_3
+
+    monitor-exit v1
+
+    goto :goto_1
+
+    :catchall_2
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    throw v0
+
+    :cond_3
+    :try_start_5
+    monitor-exit v1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
+    iget-object v1, v0, Lhwq;->a:Ljava/util/concurrent/Executor;
+
+    new-instance v2, Lhwp;
+
+    invoke-direct {v2, v0, p1}, Lhwp;-><init>(Lhwq;Lhwn;)V
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_1
 .end method

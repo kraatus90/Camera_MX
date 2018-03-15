@@ -1,63 +1,66 @@
-.class final Lfnp;
+.class public final Lfnp;
 .super Ljava/lang/Object;
 .source "PG"
 
-# interfaces
-.implements Lfft;
-
 
 # instance fields
-.field private synthetic a:Lfmi;
+.field public final a:J
+
+.field public final b:[B
+
+.field public final c:I
+
+.field public final d:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+.field public final e:Lihc;
+
+.field public final f:Z
 
 
 # direct methods
-.method constructor <init>(Lfmi;)V
-    .locals 0
-
-    iput-object p1, p0, Lfnp;->a:Lfmi;
+.method private constructor <init>(J[BLihc;ILcom/google/android/libraries/camera/exif/ExifInterface;Z)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-wide p1, p0, Lfnp;->a:J
+
+    iput-object p3, p0, Lfnp;->b:[B
+
+    iput p5, p0, Lfnp;->c:I
+
+    iput-object p4, p0, Lfnp;->e:Lihc;
+
+    iput-object p6, p0, Lfnp;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    iput-boolean p7, p0, Lfnp;->f:Z
+
     return-void
 .end method
 
+.method public static a(J[BLihc;ILcom/google/android/libraries/camera/exif/ExifInterface;Lhbk;Z)Lfnp;
+    .locals 10
 
-# virtual methods
-.method public final a(Z)V
-    .locals 1
+    if-eqz p6, :cond_0
 
-    if-nez p1, :cond_0
-
-    iget-object v0, p0, Lfnp;->a:Lfmi;
-
-    iget-boolean v0, v0, Lfmi;->e:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfnp;->a:Lfmi;
-
-    iget-boolean v0, v0, Lfmi;->n:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lfnp;->a:Lfmi;
-
-    iget-object v0, v0, Lfmi;->h:Lgug;
-
-    invoke-interface {v0}, Lgug;->a()V
+    invoke-static {}, Lhbh;->d()Z
 
     :cond_0
-    return-void
-.end method
+    new-instance v1, Lfnp;
 
-.method public final b(Z)V
-    .locals 0
+    move-wide v2, p0
 
-    return-void
-.end method
+    move-object v4, p2
 
-.method public final c(Z)V
-    .locals 0
+    move-object v5, p3
 
-    return-void
+    move v6, p4
+
+    move-object v7, p5
+
+    move/from16 v8, p7
+
+    invoke-direct/range {v1 .. v8}, Lfnp;-><init>(J[BLihc;ILcom/google/android/libraries/camera/exif/ExifInterface;Z)V
+
+    return-object v1
 .end method

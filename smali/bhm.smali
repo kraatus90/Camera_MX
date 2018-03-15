@@ -1,121 +1,42 @@
-.class public final enum Lbhm;
-.super Ljava/lang/Enum;
+.class final Lbhm;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final enum a:Lbhm;
-
-.field private static enum c:Lbhm;
-
-.field private static enum d:Lbhm;
-
-.field private static enum e:Lbhm;
-
-.field private static synthetic f:[Lbhm;
+# interfaces
+.implements Lihb;
 
 
 # instance fields
-.field public final b:Ljava/lang/String;
+.field private final synthetic a:Lfhq;
+
+.field private final synthetic b:Lbhl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    const/4 v6, 0x3
-
-    const/4 v5, 0x2
-
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    new-instance v0, Lbhm;
-
-    const-string v1, "ENG"
-
-    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProviderEng"
-
-    invoke-direct {v0, v1, v3, v2}, Lbhm;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lbhm;->c:Lbhm;
-
-    new-instance v0, Lbhm;
-
-    const-string v1, "FISHFOOD"
-
-    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProviderNext"
-
-    invoke-direct {v0, v1, v4, v2}, Lbhm;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lbhm;->d:Lbhm;
-
-    new-instance v0, Lbhm;
-
-    const-string v1, "DOGFOOD"
-
-    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProvider"
-
-    invoke-direct {v0, v1, v5, v2}, Lbhm;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lbhm;->e:Lbhm;
-
-    new-instance v0, Lbhm;
-
-    const-string v1, "RELEASE"
-
-    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProvider"
-
-    invoke-direct {v0, v1, v6, v2}, Lbhm;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lbhm;->a:Lbhm;
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lbhm;
-
-    sget-object v1, Lbhm;->c:Lbhm;
-
-    aput-object v1, v0, v3
-
-    sget-object v1, Lbhm;->d:Lbhm;
-
-    aput-object v1, v0, v4
-
-    sget-object v1, Lbhm;->e:Lbhm;
-
-    aput-object v1, v0, v5
-
-    sget-object v1, Lbhm;->a:Lbhm;
-
-    aput-object v1, v0, v6
-
-    sput-object v0, Lbhm;->f:[Lbhm;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method constructor <init>(Lbhl;Lfhq;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lbhm;->b:Lbhl;
 
-    iput-object p3, p0, Lbhm;->b:Ljava/lang/String;
+    iput-object p2, p0, Lbhm;->a:Lfhq;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lbhm;
-    .locals 1
 
-    sget-object v0, Lbhm;->f:[Lbhm;
+# virtual methods
+.method public final close()V
+    .locals 2
 
-    invoke-virtual {v0}, [Lbhm;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lbhm;->b:Lbhl;
 
-    move-result-object v0
+    iget-object v0, v0, Lbhl;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    check-cast v0, [Lbhm;
+    iget-object v1, p0, Lbhm;->a:Lfhq;
 
-    return-object v0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->remove(Ljava/lang/Object;)Z
+
+    return-void
 .end method

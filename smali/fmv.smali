@@ -1,36 +1,50 @@
-.class final Lfmv;
+.class public final Lfmv;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lfmu;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lfmu;)V
+.method public constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lfmv;->a:Lfmu;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfmv;->a:Lkgv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lfmv;->a:Lfmu;
+    iget-object v0, p0, Lfmv;->a:Lkgv;
 
-    iget-object v0, v0, Lfmu;->a:Lfmi;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lfmi;->r()V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lfla;
+
+    invoke-virtual {v0}, Lfla;->b()Lfic;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfic;
+
+    return-object v0
 .end method

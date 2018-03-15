@@ -3,128 +3,338 @@
 .source "PG"
 
 # interfaces
-.implements Ldol;
+.implements Lkgv;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final a:Lkgv;
 
-.field public final b:Liag;
+.field private final b:Lkgv;
 
-.field private c:Ldol;
+.field private final c:Lkgv;
+
+.field private final d:Lkgv;
+
+.field private final e:Lkgv;
+
+.field private final f:Lkgv;
+
+.field private final g:Lkgv;
+
+.field private final h:Lkgv;
+
+.field private final i:Lkgv;
+
+.field private final j:Lkgv;
+
+.field private final k:Lkgv;
+
+.field private final l:Lkgv;
+
+.field private final m:Lkgv;
+
+.field private final n:Lkgv;
+
+.field private final o:Lkgv;
+
+.field private final p:Lkgv;
+
+.field private final q:Lkgv;
+
+.field private final r:Lkgv;
 
 
 # direct methods
-.method public constructor <init>(Ldol;)V
-    .locals 2
+.method private constructor <init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldpb;->c:Ldol;
+    iput-object p1, p0, Ldpb;->a:Lkgv;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p2, p0, Ldpb;->b:Lkgv;
 
-    const/4 v1, 0x0
+    iput-object p3, p0, Ldpb;->c:Lkgv;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    iput-object p4, p0, Ldpb;->d:Lkgv;
 
-    iput-object v0, p0, Ldpb;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p5, p0, Ldpb;->e:Lkgv;
 
-    new-instance v0, Liag;
+    iput-object p6, p0, Ldpb;->f:Lkgv;
 
-    const/4 v1, 0x1
+    iput-object p7, p0, Ldpb;->g:Lkgv;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iput-object p8, p0, Ldpb;->h:Lkgv;
 
-    move-result-object v1
+    iput-object p9, p0, Ldpb;->i:Lkgv;
 
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
+    iput-object p10, p0, Ldpb;->j:Lkgv;
 
-    iput-object v0, p0, Ldpb;->b:Liag;
+    iput-object p11, p0, Ldpb;->k:Lkgv;
+
+    iput-object p12, p0, Ldpb;->l:Lkgv;
+
+    iput-object p13, p0, Ldpb;->m:Lkgv;
+
+    iput-object p14, p0, Ldpb;->n:Lkgv;
+
+    move-object/from16 v0, p15
+
+    iput-object v0, p0, Ldpb;->o:Lkgv;
+
+    move-object/from16 v0, p16
+
+    iput-object v0, p0, Ldpb;->p:Lkgv;
+
+    move-object/from16 v0, p17
+
+    iput-object v0, p0, Ldpb;->q:Lkgv;
+
+    move-object/from16 v0, p18
+
+    iput-object v0, p0, Ldpb;->r:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)Ldpb;
+    .locals 19
 
-# virtual methods
-.method public final a()Ldom;
-    .locals 5
+    new-instance v0, Ldpb;
 
-    const/4 v1, 0x1
+    move-object/from16 v1, p0
 
-    const/4 v2, 0x0
+    move-object/from16 v2, p1
 
-    iget-object v0, p0, Ldpb;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    move-object/from16 v3, p2
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+    move-object/from16 v4, p3
 
-    move-result v0
+    move-object/from16 v5, p4
 
-    iget-object v3, p0, Ldpb;->b:Liag;
+    move-object/from16 v6, p5
 
-    if-nez v0, :cond_0
+    move-object/from16 v7, p6
 
-    move v0, v1
+    move-object/from16 v8, p7
 
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-object/from16 v9, p8
 
-    move-result-object v0
+    move-object/from16 v10, p9
 
-    invoke-virtual {v3, v0}, Liag;->a(Ljava/lang/Object;)V
+    move-object/from16 v11, p10
 
-    :try_start_0
-    iget-object v0, p0, Ldpb;->c:Ldol;
+    move-object/from16 v12, p11
 
-    invoke-interface {v0}, Ldol;->a()Ldom;
+    move-object/from16 v13, p12
 
-    move-result-object v0
+    move-object/from16 v14, p13
 
-    new-instance v3, Ldpc;
+    move-object/from16 v15, p14
 
-    invoke-direct {v3, p0, v0}, Ldpc;-><init>(Ldpb;Ldom;)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    move-object/from16 v16, p15
 
-    return-object v3
+    move-object/from16 v17, p16
 
-    :cond_0
-    move v0, v2
+    move-object/from16 v18, p17
 
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    iget-object v3, p0, Ldpb;->a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result v3
-
-    iget-object v4, p0, Ldpb;->b:Liag;
-
-    if-nez v3, :cond_1
-
-    :goto_1
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {v4, v1}, Liag;->a(Ljava/lang/Object;)V
-
-    throw v0
-
-    :cond_1
-    move v1, v2
-
-    goto :goto_1
-.end method
-
-.method public final b()Liau;
-    .locals 1
-
-    iget-object v0, p0, Ldpb;->b:Liag;
+    invoke-direct/range {v0 .. v18}, Ldpb;-><init>(Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;Lkgv;)V
 
     return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 19
+
+    new-instance v1, Ldor;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Ldpb;->a:Lkgv;
+
+    invoke-interface {v2}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Liaw;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Ldpb;->b:Lkgv;
+
+    invoke-interface {v3}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Libq;
+
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Ldpb;->c:Lkgv;
+
+    invoke-interface {v4}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Liay;
+
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Ldpb;->d:Lkgv;
+
+    invoke-interface {v5}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lfsk;
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Ldpb;->e:Lkgv;
+
+    invoke-interface {v6}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lbnn;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Ldpb;->f:Lkgv;
+
+    invoke-interface {v7}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lasq;
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Ldpb;->g:Lkgv;
+
+    invoke-interface {v8}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lkeh;
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Ldpb;->h:Lkgv;
+
+    invoke-interface {v9}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Ldpb;->i:Lkgv;
+
+    invoke-interface {v10}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Ldpb;->j:Lkgv;
+
+    invoke-interface {v11}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lfrm;
+
+    move-object/from16 v0, p0
+
+    iget-object v12, v0, Ldpb;->k:Lkgv;
+
+    invoke-interface {v12}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Ldpb;->l:Lkgv;
+
+    invoke-interface {v13}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v14, v0, Ldpb;->m:Lkgv;
+
+    invoke-interface {v14}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lick;
+
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Ldpb;->n:Lkgv;
+
+    invoke-interface {v15}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Lfbl;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ldpb;->o:Lkgv;
+
+    move-object/from16 v16, v0
+
+    invoke-interface/range {v16 .. v16}, Lkgv;->a()Ljava/lang/Object;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ldpb;->p:Lkgv;
+
+    move-object/from16 v16, v0
+
+    invoke-interface/range {v16 .. v16}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v16
+
+    check-cast v16, Lihn;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ldpb;->q:Lkgv;
+
+    move-object/from16 v17, v0
+
+    invoke-interface/range {v17 .. v17}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v17
+
+    check-cast v17, Ljava/util/concurrent/Executor;
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ldpb;->r:Lkgv;
+
+    move-object/from16 v18, v0
+
+    invoke-interface/range {v18 .. v18}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v18
+
+    check-cast v18, Lick;
+
+    invoke-direct/range {v1 .. v18}, Ldor;-><init>(Liaw;Libq;Liay;Lfsk;Lbnn;Lasq;Lkeh;Lick;Lick;Lfrm;Lick;Lick;Lick;Lfbl;Lihn;Ljava/util/concurrent/Executor;Lick;)V
+
+    return-object v1
 .end method

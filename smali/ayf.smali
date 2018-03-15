@@ -1,35 +1,33 @@
-.class public final Layf;
-.super Landroid/animation/AnimatorListenerAdapter;
-.source "PG"
+.class public final synthetic Layf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private synthetic a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+.field private final a:Layd;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/burstchip/BurstChip;)V
+.method public constructor <init>(Layd;)V
     .locals 0
 
-    iput-object p1, p0, Layf;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Layf;->a:Layd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Layf;->a:Lcom/google/android/apps/camera/burstchip/BurstChip;
+    iget-object v0, p0, Layf;->a:Layd;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/burstchip/BurstChip;->i:Landroid/graphics/Paint;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v0}, Layd;->g()V
 
     return-void
 .end method

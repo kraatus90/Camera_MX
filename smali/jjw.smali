@@ -1,129 +1,122 @@
-.class final Ljjw;
-.super Ljjv;
+.class public final Ljjw;
+.super Ljju;
 .source "PG"
 
 
-# static fields
-.field public static final b:Ljjw;
-
-.field public static final serialVersionUID:J
+# instance fields
+.field private final d:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljmb;)V
+    .locals 4
 
-    new-instance v0, Ljjw;
+    invoke-direct {p0, p1}, Ljju;-><init>(Ljmb;)V
 
-    invoke-direct {v0}, Ljjw;-><init>()V
+    const/4 v0, 0x1
 
-    sput-object v0, Ljjw;->b:Ljjw;
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    const-wide v0, 0x41fa13b860000000L    # 7.0E9
+
+    const-wide/high16 v2, 0x4000000000000000L    # 2.0
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v2
+
+    mul-double/2addr v0, v2
+
+    double-to-float v0, v0
+
+    iput v0, p0, Ljjw;->d:F
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Ljjv;-><init>(Ljava/lang/Comparable;)V
-
-    return-void
-.end method
-
-.method private final readResolve()Ljava/lang/Object;
-    .locals 1
-
-    sget-object v0, Ljjw;->b:Ljjw;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljjv;)I
-    .locals 1
-
-    if-ne p1, p0, :cond_0
+.method public final a(J)Ljpj;
+    .locals 7
 
     const/4 v0, 0x0
+
+    iget-object v2, p0, Ljjw;->c:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v1, p0, Ljjw;->a:Ljava/util/TreeSet;
+
+    invoke-virtual {v1}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v0
 
     :goto_0
-    return v0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    :cond_0
-    const/4 v0, 0x1
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    sub-long/2addr v4, p1
+
+    long-to-float v0, v4
+
+    iget v4, p0, Ljjw;->d:F
+
+    div-float/2addr v0, v4
+
+    float-to-double v4, v1
+
+    neg-float v1, v0
+
+    mul-float/2addr v0, v1
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->exp(D)D
+
+    move-result-wide v0
+
+    add-double/2addr v0, v4
+
+    double-to-float v0, v0
+
+    move v1, v0
 
     goto :goto_0
-.end method
 
-.method final a()Ljava/lang/Comparable;
-    .locals 2
+    :cond_0
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljpg;
 
-    const-string v1, "range unbounded on this side"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method final a(Ljava/lang/StringBuilder;)V
-    .locals 1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
-
-    throw v0
-.end method
-
-.method final a(Ljava/lang/Comparable;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method final b(Ljava/lang/StringBuilder;)V
-    .locals 1
-
-    const-string v0, "+\u221e)"
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    return-void
-.end method
-
-.method public final synthetic compareTo(Ljava/lang/Object;)I
-    .locals 1
-
-    check-cast p1, Ljjv;
-
-    invoke-virtual {p0, p1}, Ljjw;->a(Ljjv;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "+\u221e"
+    invoke-direct {v0, v1}, Ljpg;-><init>(F)V
 
     return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

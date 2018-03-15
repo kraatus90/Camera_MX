@@ -1,90 +1,107 @@
-.class final Lbgc;
-.super Ljava/lang/Object;
+.class final enum Lbgc;
+.super Ljava/lang/Enum;
 .source "PG"
 
-# interfaces
-.implements Liip;
 
+# static fields
+.field public static final enum a:Lbgc;
 
-# instance fields
-.field private synthetic a:Ljava/util/TimerTask;
+.field public static final enum b:Lbgc;
 
-.field private synthetic b:Ljvi;
+.field public static final enum c:Lbgc;
 
-.field private synthetic c:Lbga;
+.field public static final enum d:Lbgc;
+
+.field private static final synthetic e:[Lbgc;
 
 
 # direct methods
-.method constructor <init>(Lbga;Ljava/util/TimerTask;Ljvi;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    iput-object p1, p0, Lbgc;->c:Lbga;
+    const/4 v5, 0x3
 
-    iput-object p2, p0, Lbgc;->a:Ljava/util/TimerTask;
+    const/4 v4, 0x2
 
-    iput-object p3, p0, Lbgc;->b:Ljvi;
+    const/4 v3, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
+
+    new-instance v0, Lbgc;
+
+    const-string v1, "CLOSED"
+
+    invoke-direct {v0, v1, v2}, Lbgc;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbgc;->a:Lbgc;
+
+    new-instance v0, Lbgc;
+
+    const-string v1, "RECORDING"
+
+    invoke-direct {v0, v1, v3}, Lbgc;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbgc;->b:Lbgc;
+
+    new-instance v0, Lbgc;
+
+    const-string v1, "PAUSED"
+
+    invoke-direct {v0, v1, v4}, Lbgc;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbgc;->c:Lbgc;
+
+    new-instance v0, Lbgc;
+
+    const-string v1, "STOPPING_RECORD"
+
+    invoke-direct {v0, v1, v5}, Lbgc;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbgc;->d:Lbgc;
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lbgc;
+
+    sget-object v1, Lbgc;->a:Lbgc;
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lbgc;->b:Lbgc;
+
+    aput-object v1, v0, v3
+
+    sget-object v1, Lbgc;->c:Lbgc;
+
+    aput-object v1, v0, v4
+
+    sget-object v1, Lbgc;->d:Lbgc;
+
+    aput-object v1, v0, v5
+
+    sput-object v0, Lbgc;->e:[Lbgc;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final a()V
-    .locals 3
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lbgc;->a:Ljava/util/TimerTask;
-
-    invoke-virtual {v0}, Ljava/util/TimerTask;->cancel()Z
-
-    iget-object v0, p0, Lbgc;->c:Lbga;
-
-    iget-object v0, v0, Lbga;->f:Liin;
-
-    invoke-interface {v0}, Liin;->g()Liil;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    iget-object v0, p0, Lbgc;->b:Ljvi;
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "Image is not available."
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Throwable;)Z
-
-    :goto_0
     return-void
+.end method
 
-    :cond_0
-    invoke-static {v1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static values()[Lbgc;
+    .locals 1
 
-    invoke-interface {v1}, Liil;->l_()I
+    sget-object v0, Lbgc;->e:[Lbgc;
 
-    move-result v0
+    invoke-virtual {v0}, [Lbgc;->clone()Ljava/lang/Object;
 
-    const/16 v2, 0x100
+    move-result-object v0
 
-    if-ne v0, v2, :cond_1
+    check-cast v0, [Lbgc;
 
-    const/4 v0, 0x1
-
-    :goto_1
-    invoke-static {v0}, Liya;->b(Z)V
-
-    iget-object v0, p0, Lbgc;->b:Ljvi;
-
-    invoke-virtual {v0, v1}, Ljsw;->a(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_1
+    return-object v0
 .end method

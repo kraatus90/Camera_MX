@@ -1,88 +1,77 @@
-.class public final Lguq;
+.class public final synthetic Lguq;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lgug;
 
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
+.field private final b:Lgvi;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
+.method public constructor <init>(Lgug;Lgvi;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lguq;->a:Ljxn;
+    iput-object p1, p0, Lguq;->a:Lgug;
 
-    iput-object p2, p0, Lguq;->b:Ljxn;
-
-    iput-object p3, p0, Lguq;->c:Ljxn;
-
-    iput-object p4, p0, Lguq;->d:Ljxn;
+    iput-object p2, p0, Lguq;->b:Lgvi;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lguq;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lguq;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 5
 
-    new-instance v4, Lgun;
+    iget-object v0, p0, Lguq;->a:Lgug;
 
-    iget-object v0, p0, Lguq;->a:Ljxn;
+    iget-object v1, p0, Lguq;->b:Lgvi;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, v0, Lgug;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    iget-object v2, v2, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->currentSpec:Lgvj;
+
+    iget-object v3, v0, Lgug;->t:Landroid/animation/ArgbEvaluator;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result v4
+
+    iget-object v0, v0, Lgug;->c:Lgvi;
+
+    invoke-virtual {v0}, Lgvi;->c()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    check-cast v0, Lgut;
+    invoke-virtual {v1}, Lgvi;->c()I
 
-    iget-object v1, p0, Lguq;->b:Ljxn;
+    move-result v1
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    check-cast v1, Licz;
+    invoke-virtual {v3, v4, v0, v1}, Landroid/animation/ArgbEvaluator;->evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, p0, Lguq;->c:Ljxn;
+    move-result-object v0
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
+    check-cast v0, Ljava/lang/Integer;
 
-    move-result-object v2
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    check-cast v2, Lhzt;
+    move-result v0
 
-    iget-object v3, p0, Lguq;->d:Ljxn;
+    invoke-virtual {v2, v0}, Lgvj;->c(I)Lgvj;
 
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lfqy;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lgun;-><init>(Lgut;Licz;Lhzt;Lfqy;)V
-
-    return-object v4
+    return-void
 .end method

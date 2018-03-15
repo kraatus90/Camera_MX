@@ -1,75 +1,445 @@
-.class public final Lvh;
-.super Lhg;
+.class Lvh;
+.super Landroid/content/res/Resources;
 .source "PG"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-
-
-# instance fields
-.field public a:Landroid/os/Parcelable;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lvi;
-
-    invoke-direct {v0}, Lvi;-><init>()V
-
-    sput-object v0, Lvh;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Lhg;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    if-eqz p2, :cond_0
-
-    :goto_0
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lvh;->a:Landroid/os/Parcelable;
-
-    return-void
-
-    :cond_0
-    const-class v0, Luv;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object p2
-
-    goto :goto_0
-.end method
-
-.method public constructor <init>(Landroid/os/Parcelable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lhg;-><init>(Landroid/os/Parcelable;)V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public getAnimation(I)Landroid/content/res/XmlResourceParser;
+    .locals 1
 
-    invoke-super {p0, p1, p2}, Lhg;->writeToParcel(Landroid/os/Parcel;I)V
+    new-instance v0, Ljava/lang/NoSuchMethodError;
 
-    iget-object v0, p0, Lvh;->a:Landroid/os/Parcelable;
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
 
-    const/4 v1, 0x0
+    throw v0
+.end method
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+.method public getBoolean(I)Z
+    .locals 1
 
-    return-void
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getColor(I)I
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getColorStateList(I)Landroid/content/res/ColorStateList;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getConfiguration()Landroid/content/res/Configuration;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDimension(I)F
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDimensionPixelOffset(I)I
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDimensionPixelSize(I)I
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDisplayMetrics()Landroid/util/DisplayMetrics;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDrawable(I)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDrawableForDensity(II)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getDrawableForDensity(IILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getFraction(III)F
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getIntArray(I)[I
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getInteger(I)I
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getLayout(I)Landroid/content/res/XmlResourceParser;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getMovie(I)Landroid/graphics/Movie;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getQuantityString(II)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public varargs getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getQuantityText(II)Ljava/lang/CharSequence;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getResourceEntryName(I)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getResourceName(I)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getResourcePackageName(I)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getResourceTypeName(I)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getString(I)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public varargs getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getStringArray(I)[Ljava/lang/String;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getText(I)Ljava/lang/CharSequence;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getText(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getTextArray(I)[Ljava/lang/CharSequence;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getValue(ILandroid/util/TypedValue;Z)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getValue(Ljava/lang/String;Landroid/util/TypedValue;Z)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getValueForDensity(IILandroid/util/TypedValue;Z)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public getXml(I)Landroid/content/res/XmlResourceParser;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public obtainTypedArray(I)Landroid/content/res/TypedArray;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public openRawResource(I)Ljava/io/InputStream;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public openRawResource(ILandroid/util/TypedValue;)Ljava/io/InputStream;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public parseBundleExtra(Ljava/lang/String;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public parseBundleExtras(Landroid/content/res/XmlResourceParser;Landroid/os/Bundle;)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
+.end method
+
+.method public updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/NoSuchMethodError;
+
+    invoke-direct {v0}, Ljava/lang/NoSuchMethodError;-><init>()V
+
+    throw v0
 .end method

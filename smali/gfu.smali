@@ -1,64 +1,53 @@
-.class public final Lgfu;
+.class final synthetic Lgfu;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final a:Lgft;
 
-.field private b:Ljxn;
+.field private final b:Landroid/net/Uri;
+
+.field private final c:Lghj;
+
+.field private final d:Leov;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;)V
+.method constructor <init>(Lgft;Landroid/net/Uri;Lghj;Leov;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgfu;->a:Ljxn;
+    iput-object p1, p0, Lgfu;->a:Lgft;
 
-    iput-object p2, p0, Lgfu;->b:Ljxn;
+    iput-object p2, p0, Lgfu;->b:Landroid/net/Uri;
+
+    iput-object p3, p0, Lgfu;->c:Lghj;
+
+    iput-object p4, p0, Lgfu;->d:Leov;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Lgfu;
-
-    invoke-direct {v0, p0, p1}, Lgfu;-><init>(Ljxn;Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 4
 
-    new-instance v2, Lgft;
+    iget-object v0, p0, Lgfu;->a:Lgft;
 
-    iget-object v0, p0, Lgfu;->a:Ljxn;
+    iget-object v1, p0, Lgfu;->b:Landroid/net/Uri;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v2, p0, Lgfu;->c:Lghj;
 
-    move-result-object v0
+    iget-object v3, p0, Lgfu;->d:Leov;
 
-    check-cast v0, Lgem;
+    iget-object v0, v0, Lgft;->s:Lgit;
 
-    iget-object v1, p0, Lgfu;->b:Ljxn;
+    invoke-virtual {v0, v1, v2, v3}, Lgit;->a(Landroid/net/Uri;Lghj;Leov;)V
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgfb;
-
-    invoke-direct {v2, v0, v1}, Lgft;-><init>(Lgem;Lgfb;)V
-
-    return-object v2
+    return-void
 .end method

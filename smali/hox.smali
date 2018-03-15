@@ -1,67 +1,59 @@
-.class final Lhox;
+.class public final Lhox;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhpg;
 
-
-# instance fields
-.field private synthetic a:Landroid/os/Bundle;
-
-.field private synthetic b:J
-
-.field private synthetic c:Lhow;
+# static fields
+.field private static a:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method constructor <init>(Lhow;Landroid/os/Bundle;J)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iput-object p1, p0, Lhox;->c:Lhow;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lhox;->a:Landroid/os/Bundle;
-
-    iput-wide p3, p0, Lhox;->b:J
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lhox;->a:Landroid/content/SharedPreferences;
 
     return-void
 .end method
 
+.method public static a(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    .locals 2
 
-# virtual methods
-.method public final a()Lhkp;
-    .locals 6
+    const-class v1, Landroid/content/SharedPreferences;
 
-    sget-object v0, Lhpc;->b:Lhpa;
+    monitor-enter v1
 
-    iget-object v1, p0, Lhox;->c:Lhow;
+    :try_start_0
+    sget-object v0, Lhox;->a:Landroid/content/SharedPreferences;
 
-    iget-object v1, v1, Lhow;->a:Lhkl;
+    if-nez v0, :cond_0
 
-    iget-object v2, p0, Lhox;->c:Lhow;
+    new-instance v0, Lhoy;
 
-    iget-object v2, v2, Lhow;->b:Lcom/google/android/gms/googlehelp/GoogleHelp;
+    invoke-direct {v0, p0}, Lhoy;-><init>(Landroid/content/Context;)V
 
-    iget-object v3, p0, Lhox;->a:Landroid/os/Bundle;
-
-    iget-wide v4, p0, Lhox;->b:J
-
-    invoke-interface/range {v0 .. v5}, Lhpa;->b(Lhkl;Lcom/google/android/gms/googlehelp/GoogleHelp;Landroid/os/Bundle;J)Lhkp;
+    invoke-static {v0}, Lhmr;->a(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Landroid/content/SharedPreferences;
+
+    sput-object v0, Lhox;->a:Landroid/content/SharedPreferences;
+
+    :cond_0
+    sget-object v0, Lhox;->a:Landroid/content/SharedPreferences;
+
+    monitor-exit v1
+
     return-object v0
-.end method
 
-.method public final b()V
-    .locals 2
+    :catchall_0
+    move-exception v0
 
-    const-string v0, "gH_GetAsyncFeedbackPsd"
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v1, "Failed to send async feedback psd to Help."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
+    throw v0
 .end method

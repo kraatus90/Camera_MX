@@ -1,17 +1,22 @@
-.class public abstract Lhkp;
+.class public interface abstract Lhkp;
 .super Ljava/lang/Object;
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public abstract a(Lhkt;)V
+.method public abstract a()V
+.end method
+
+.method public abstract a(Lcom/google/android/gms/common/api/Status;)V
+.end method
+
+.method public abstract b()V
+.end method
+
+.method public abstract c()V
+.end method
+
+.method public abstract d()V
 .end method

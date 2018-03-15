@@ -1,170 +1,132 @@
-.class public Ljlf;
+.class public final Ljlf;
 .super Ljkq;
 .source "PG"
 
 
+# instance fields
+.field private final a:Ljnq;
+
+.field private final b:I
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljnq;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, v0}, Ljlf;-><init>(Ljnq;I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljnq;I)V
     .locals 0
 
     invoke-direct {p0}, Ljkq;-><init>()V
+
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Ljlf;->a:Ljnq;
+
+    iput p2, p0, Ljlf;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic a(Ljava/lang/Object;)Ljkq;
-    .locals 1
+.method public final a(Ljkl;)Ljkl;
+    .locals 8
 
-    invoke-virtual {p0, p1}, Ljlf;->c(Ljava/lang/Object;)Ljlf;
+    invoke-static {p1}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    new-instance v3, Ljava/util/ArrayList;
 
-    return-object v0
-.end method
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-.method public synthetic a(Ljava/lang/Iterable;)Ljkr;
-    .locals 1
+    iget-object v0, p1, Ljkl;->a:Ljava/util/List;
 
-    invoke-virtual {p0, p1}, Ljlf;->b(Ljava/lang/Iterable;)Ljlf;
+    invoke-static {v0}, Ljuh;->a(Ljava/util/Collection;)Ljuh;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljuh;
 
-.method public synthetic a(Ljava/util/Iterator;)Ljkr;
-    .locals 1
+    invoke-virtual {v0}, Ljuh;->size()I
 
-    invoke-virtual {p0, p1}, Ljlf;->b(Ljava/util/Iterator;)Ljlf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic a([Ljava/lang/Object;)Ljkr;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Ljlf;->b([Ljava/lang/Object;)Ljlf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public a()Ljle;
-    .locals 2
-
-    iget v0, p0, Ljlf;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Ljlf;->b:I
-
-    iget-object v1, p0, Ljlf;->a:[Ljava/lang/Object;
-
-    invoke-static {v0, v1}, Ljle;->a(I[Ljava/lang/Object;)Ljle;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljle;->size()I
-
-    move-result v1
-
-    iput v1, p0, Ljlf;->b:I
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Ljlf;->c:Z
-
-    :goto_0
-    return-object v0
-
-    :pswitch_0
-    sget-object v0, Ljmx;->a:Ljmx;
-
-    goto :goto_0
-
-    :pswitch_1
-    iget-object v0, p0, Ljlf;->a:[Ljava/lang/Object;
+    move-result v4
 
     const/4 v1, 0x0
 
-    aget-object v0, v0, v1
+    move v2, v1
 
-    invoke-static {v0}, Ljle;->a(Ljava/lang/Object;)Ljle;
+    :cond_0
+    :goto_0
+    if-ge v2, v4, :cond_1
 
-    move-result-object v0
+    invoke-virtual {v0, v2}, Ljuh;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    add-int/lit8 v2, v2, 0x1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    iget-object v1, p0, Ljlf;->a:Ljnq;
+
+    invoke-virtual {v1, v6, v7}, Ljnq;->a(J)Ljne;
+
+    move-result-object v1
+
+    sget-object v5, Ljne;->c:Ljnm;
+
+    invoke-virtual {v1, v5}, Ljne;->b(Ljnm;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    sget-object v5, Ljne;->c:Ljnm;
+
+    invoke-virtual {v1, v5}, Ljne;->a(Ljnm;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    iget v5, p0, Ljlf;->b:I
+
+    if-lt v1, v5, :cond_0
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
+    :cond_1
+    new-instance v0, Ljkl;
 
-.method public synthetic b(Ljava/lang/Object;)Ljkr;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Ljlf;->c(Ljava/lang/Object;)Ljlf;
-
-    move-result-object v0
+    invoke-direct {v0, v3}, Ljkl;-><init>(Ljava/util/Collection;)V
 
     return-object v0
 .end method
 
-.method public b(Ljava/lang/Iterable;)Ljlf;
-    .locals 0
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-super {p0, p1}, Ljkq;->a(Ljava/lang/Iterable;)Ljkr;
-
-    return-object p0
-.end method
-
-.method public b(Ljava/util/Iterator;)Ljlf;
+.method public final toString()Ljava/lang/String;
     .locals 1
 
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "MinFaceCountSegmentFilter"
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljlf;->c(Ljava/lang/Object;)Ljlf;
-
-    goto :goto_0
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public varargs b([Ljava/lang/Object;)Ljlf;
-    .locals 0
-
-    invoke-super {p0, p1}, Ljkq;->a([Ljava/lang/Object;)Ljkr;
-
-    return-object p0
-.end method
-
-.method public c(Ljava/lang/Object;)Ljlf;
-    .locals 0
-
-    invoke-static {p1}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-super {p0, p1}, Ljkq;->a(Ljava/lang/Object;)Ljkq;
-
-    return-object p0
+    return-object v0
 .end method

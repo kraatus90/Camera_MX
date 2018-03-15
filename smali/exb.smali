@@ -1,42 +1,52 @@
-.class final Lexb;
+.class public final Lexb;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Lich;
+.implements Lkgv;
 
 
 # instance fields
-.field private synthetic a:Lewt;
-
-.field private synthetic b:Lewz;
+.field private final a:Lkgv;
 
 
 # direct methods
-.method constructor <init>(Lewz;Lewt;)V
+.method private constructor <init>(Lkgv;)V
     .locals 0
 
-    iput-object p1, p0, Lexb;->b:Lewz;
-
-    iput-object p2, p0, Lexb;->a:Lewt;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lexb;->a:Lkgv;
 
     return-void
 .end method
 
+.method public static a(Lkgv;)Lexb;
+    .locals 1
+
+    new-instance v0, Lexb;
+
+    invoke-direct {v0, p0}, Lexb;-><init>(Lkgv;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final close()V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lexb;->b:Lewz;
+    new-instance v1, Lexl;
 
-    iget-object v0, v0, Lewz;->b:Ljava/util/List;
+    iget-object v0, p0, Lexb;->a:Lkgv;
 
-    iget-object v1, p0, Lexb;->a:Lewt;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lews;
+
+    invoke-direct {v1, v0}, Lexl;-><init>(Lews;)V
+
+    return-object v1
 .end method

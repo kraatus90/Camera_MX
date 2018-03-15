@@ -1,89 +1,107 @@
-.class public Lkx;
-.super Ljava/lang/Object;
+.class public final Lkx;
+.super Landroid/view/View$BaseSavedState;
 .source "PG"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+
+
+# instance fields
+.field public a:I
+
+
 # direct methods
-.method constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lky;
+
+    invoke-direct {v0}, Lky;-><init>()V
+
+    sput-object v0, Lkx;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method constructor <init>(Landroid/os/Parcel;)V
+    .locals 1
+
+    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lkx;->a:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/widget/ImageView;)Landroid/content/res/ColorStateList;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    instance-of v0, p1, Llo;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_0
+    const-string v1, "HorizontalScrollView.SavedState{"
 
-    check-cast p1, Llo;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p1}, Llo;->c()Landroid/content/res/ColorStateList;
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    move-result-object v0
+    move-result v1
 
-    :goto_0
-    return-object v0
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    :cond_0
-    const/4 v0, 0x0
+    move-result-object v1
 
-    goto :goto_0
-.end method
-
-.method public a(Landroid/widget/ImageView;Landroid/content/res/ColorStateList;)V
-    .locals 1
-
-    instance-of v0, p1, Llo;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Llo;
-
-    invoke-interface {p1, p2}, Llo;->b(Landroid/content/res/ColorStateList;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public a(Landroid/widget/ImageView;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 1
-
-    instance-of v0, p1, Llo;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Llo;
-
-    invoke-interface {p1, p2}, Llo;->b(Landroid/graphics/PorterDuff$Mode;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public b(Landroid/widget/ImageView;)Landroid/graphics/PorterDuff$Mode;
-    .locals 1
-
-    instance-of v0, p1, Llo;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Llo;
-
-    invoke-interface {p1}, Llo;->d()Landroid/graphics/PorterDuff$Mode;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    :goto_0
+    const-string v1, " scrollPosition="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lkx;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     return-object v0
+.end method
 
-    :cond_0
-    const/4 v0, 0x0
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 1
 
-    goto :goto_0
+    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+
+    iget v0, p0, Lkx;->a:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

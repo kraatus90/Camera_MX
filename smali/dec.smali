@@ -1,69 +1,71 @@
 .class final Ldec;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.super Lgtt;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Ldea;
-
-
 # direct methods
-.method constructor <init>(Ldea;)V
+.method constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Ldec;->a:Ldea;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    invoke-direct {p0}, Lgtt;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraSwitch(I)V
-    .locals 2
-
-    iget-object v0, p0, Ldec;->a:Ldea;
-
-    iget-object v0, v0, Ldea;->c:Lcnh;
-
-    new-instance v1, Lcvw;
-
-    invoke-direct {v1}, Lcvw;-><init>()V
-
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+.method public final b()V
+    .locals 0
 
     return-void
 .end method
 
-.method public final onRetakeButtonPressed()V
-    .locals 2
+.method public final c()Landroid/view/GestureDetector$OnGestureListener;
+    .locals 1
 
-    iget-object v0, p0, Ldec;->a:Ldea;
+    new-instance v0, Landroid/view/GestureDetector$SimpleOnGestureListener;
 
-    iget-object v0, v0, Ldea;->c:Lcnh;
+    invoke-direct {v0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
-    new-instance v1, Ldet;
+    return-object v0
+.end method
 
-    invoke-direct {v1}, Ldet;-><init>()V
+.method public final d()Landroid/view/View$OnTouchListener;
+    .locals 1
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final k_()V
+    .locals 0
 
     return-void
 .end method
 
-.method public final onReviewPlayButtonPressed()V
-    .locals 2
+.method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
+    .locals 0
 
-    iget-object v0, p0, Ldec;->a:Ldea;
+    return-void
+.end method
 
-    iget-object v0, v0, Ldea;->c:Lcnh;
+.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
+    .locals 1
 
-    new-instance v1, Ldeu;
+    const/4 v0, 0x1
 
-    invoke-direct {v1}, Ldeu;-><init>()V
+    return v0
+.end method
 
-    invoke-interface {v0, v1}, Lcnh;->a(Ljava/lang/Object;)V
+.method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
+    .locals 0
 
     return-void
 .end method

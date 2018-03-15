@@ -1,50 +1,159 @@
-.class public final Ldao;
-.super Ljava/lang/Object;
+.class final Ldao;
+.super Lgvh;
 .source "PG"
-
-# interfaces
-.implements Ljxn;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Lega;
+
+.field private final synthetic b:Ldal;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;)V
+.method constructor <init>(Ldal;Lega;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldao;->b:Ldal;
 
-    iput-object p1, p0, Ldao;->a:Ljxn;
+    iput-object p2, p0, Ldao;->a:Lega;
+
+    invoke-direct {p0}, Lgvh;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final onShutterButtonClick()V
+    .locals 7
 
-    iget-object v0, p0, Ldao;->a:Ljxn;
+    const/4 v6, 0x1
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, p0, Ldao;->b:Ldal;
 
-    move-result-object v0
+    iget-boolean v0, v0, Ldal;->m:Z
 
-    check-cast v0, Lcqm;
+    if-eqz v0, :cond_0
 
-    invoke-static {v0}, Ljuh;->a(Ljava/lang/Object;)Ljuw;
+    iget-object v0, p0, Ldao;->b:Ldal;
 
-    move-result-object v0
+    iget-boolean v0, v0, Ldal;->l:Z
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+    if-nez v0, :cond_1
 
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :cond_0
+    :goto_0
+    return-void
 
-    move-result-object v0
+    :cond_1
+    iget-object v0, p0, Ldao;->b:Ldal;
 
-    check-cast v0, Ljuw;
+    iget-boolean v0, v0, Ldal;->n:Z
 
-    return-object v0
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Ldao;->b:Ldal;
+
+    iget-boolean v1, v0, Ldal;->l:Z
+
+    if-eqz v1, :cond_0
+
+    iget v1, v0, Ldal;->i:I
+
+    sget v2, Lep;->aj:I
+
+    if-ne v1, v2, :cond_2
+
+    invoke-static {}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->p()I
+
+    move-result v1
+
+    invoke-static {}, Lcom/google/android/apps/camera/legacy/lightcycle/panorama/LightCycle;->q()I
+
+    move-result v2
+
+    if-ge v2, v1, :cond_2
+
+    iget-object v1, v0, Ldal;->F:Landroid/os/Handler;
+
+    new-instance v2, Ldax;
+
+    invoke-direct {v2, v0}, Ldax;-><init>(Ldal;)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {v0}, Ldal;->r()V
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v0, p0, Ldao;->b:Ldal;
+
+    iget-boolean v0, v0, Ldal;->e:Z
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Ldao;->a:Lega;
+
+    invoke-virtual {v0}, Lglb;->J()V
+
+    :cond_4
+    iget-object v0, p0, Ldao;->b:Ldal;
+
+    iget-object v0, v0, Ldal;->v:Lein;
+
+    iget-object v1, v0, Lein;->b:Leix;
+
+    if-eqz v1, :cond_6
+
+    iget-boolean v1, v0, Lein;->e:Z
+
+    if-nez v1, :cond_6
+
+    iget v1, v0, Lein;->o:I
+
+    if-nez v1, :cond_6
+
+    iget-boolean v1, v0, Lein;->w:Z
+
+    if-nez v1, :cond_6
+
+    iget-object v1, v0, Lein;->b:Leix;
+
+    iget-object v2, v1, Leix;->G:Lejr;
+
+    const-wide/16 v4, 0x0
+
+    invoke-virtual {v2, v4, v5}, Lejr;->a(D)V
+
+    iget-object v2, v1, Leix;->d:Leji;
+
+    if-eqz v2, :cond_5
+
+    iget-object v2, v1, Leix;->d:Leji;
+
+    iget-object v3, v1, Leix;->G:Lejr;
+
+    invoke-virtual {v3}, Lejr;->d()[F
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Leji;->a([F)V
+
+    :cond_5
+    iput-boolean v6, v1, Leix;->w:Z
+
+    iput-boolean v6, v0, Lein;->w:Z
+
+    :cond_6
+    iget-boolean v0, v0, Lein;->w:Z
+
+    iget-object v0, p0, Ldao;->b:Ldal;
+
+    iput-boolean v6, v0, Ldal;->n:Z
+
+    goto :goto_0
 .end method

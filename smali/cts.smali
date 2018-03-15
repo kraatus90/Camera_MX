@@ -1,103 +1,136 @@
 .class public final Lcts;
-.super Ljava/lang/Object;
+.super Lbcm;
 .source "PG"
 
 
-# instance fields
-.field private a:Lcqk;
+# static fields
+.field public static final d:Ljava/lang/String;
 
-.field private b:Licu;
+
+# instance fields
+.field public final e:Lkgm;
+
+.field public final f:Lihs;
+
+.field private final g:Lkgm;
+
+.field private final h:Lket;
+
+.field private final i:Lkeh;
+
+.field private final j:Liay;
+
+.field private final k:Lgxg;
+
+.field private final l:Ljava/util/concurrent/Executor;
+
+.field private final m:Lhbh;
 
 
 # direct methods
-.method constructor <init>(Lcqk;Licv;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "CaptureUiStartup"
 
-    iput-object p1, p0, Lcts;->a:Lcqk;
-
-    const-string v0, "CptModuleCfgBldr"
-
-    invoke-interface {p2, v0}, Licv;->a(Ljava/lang/String;)Licu;
+    invoke-static {v0}, Lbki;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcts;->b:Licu;
+    sput-object v0, Lcts;->d:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Laws;Lkgm;Lkgm;Lket;Lkeh;Lgxg;Liay;Ljava/util/concurrent/Executor;Lihs;Lhbh;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lbcm;-><init>(Laws;)V
+
+    iput-object p2, p0, Lcts;->g:Lkgm;
+
+    iput-object p3, p0, Lcts;->e:Lkgm;
+
+    iput-object p4, p0, Lcts;->h:Lket;
+
+    iput-object p5, p0, Lcts;->i:Lkeh;
+
+    iput-object p7, p0, Lcts;->j:Liay;
+
+    iput-object p6, p0, Lcts;->k:Lgxg;
+
+    iput-object p8, p0, Lcts;->l:Ljava/util/concurrent/Executor;
+
+    iput-object p9, p0, Lcts;->f:Lihs;
+
+    iput-object p10, p0, Lcts;->m:Lhbh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ligc;)Lcqr;
-    .locals 6
+.method protected final b()V
+    .locals 3
 
-    iget-object v0, p0, Lcts;->a:Lcqk;
+    iget-object v0, p0, Lcts;->f:Lihs;
 
-    invoke-virtual {v0, p1}, Lcqk;->a(Ligc;)Lcqr;
+    const-string v1, "CaptureModuleInit#initialize"
 
-    move-result-object v0
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcts;->b:Licu;
+    iget-object v0, p0, Lcts;->f:Lihs;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const-string v1, "CameraActivityUi#inflate"
 
-    move-result-object v2
+    invoke-interface {v0, v1}, Lihs;->a(Ljava/lang/String;)V
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lcts;->g:Lkgm;
 
-    move-result-object v3
+    invoke-interface {v0}, Lkgm;->a()Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lcts;->f:Lihs;
 
-    move-result-object v4
+    invoke-interface {v0}, Lihs;->a()V
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    iget-object v0, p0, Lcts;->l:Ljava/util/concurrent/Executor;
 
-    move-result v4
+    new-instance v1, Lctt;
 
-    add-int/lit8 v4, v4, 0x26
+    invoke-direct {v1, p0}, Lctt;-><init>(Lcts;)V
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    move-result-object v5
+    iget-object v0, p0, Lcts;->i:Lkeh;
 
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
+    new-instance v1, Lctu;
 
-    move-result v5
+    invoke-direct {v1, p0}, Lctu;-><init>(Lcts;)V
 
-    add-int/2addr v4, v5
+    iget-object v2, p0, Lcts;->j:Liay;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-static {v0, v1, v2}, Lkdt;->a(Lkeh;Lkds;Ljava/util/concurrent/Executor;)V
 
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+    iget-object v0, p0, Lcts;->h:Lket;
 
-    const-string v4, "Selected configuration for camera ("
+    iget-object v1, p0, Lcts;->k:Lgxg;
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Lkch;->a(Ljava/lang/Object;)Z
 
-    move-result-object v4
+    iget-object v0, p0, Lcts;->f:Lihs;
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Lihs;->a()V
 
-    move-result-object v2
+    iget-object v0, p0, Lcts;->m:Lhbh;
 
-    const-string v4, "): "
+    invoke-virtual {v0}, Lhbh;->c()Z
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v2
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lcts;->c()V
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Licu;->d(Ljava/lang/String;)V
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

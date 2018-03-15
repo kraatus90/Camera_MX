@@ -3,112 +3,90 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Lkgv;
 
 
-# instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
-
-.field private c:Ljxn;
-
-.field private d:Ljxn;
-
-.field private e:Ljxn;
-
-.field private f:Ljxn;
+# static fields
+.field public static final a:Ldli;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldli;
 
-    iput-object p1, p0, Ldli;->a:Ljxn;
+    invoke-direct {v0}, Ldli;-><init>()V
 
-    iput-object p2, p0, Ldli;->b:Ljxn;
-
-    iput-object p3, p0, Ldli;->c:Ljxn;
-
-    iput-object p4, p0, Ldli;->d:Ljxn;
-
-    iput-object p5, p0, Ldli;->e:Ljxn;
-
-    iput-object p6, p0, Ldli;->f:Ljxn;
+    sput-object v0, Ldli;->a:Ldli;
 
     return-void
 .end method
 
-.method public static a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
-    .locals 7
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Ldli;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Ldli;-><init>(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+    .locals 5
 
-    new-instance v0, Ldlg;
+    const/4 v0, 0x2
 
-    iget-object v1, p0, Ldli;->a:Ljxn;
+    new-array v0, v0, [Lfhh;
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    new-instance v2, Lfhh;
 
-    check-cast v1, Lgdq;
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iget-object v2, p0, Ldli;->b:Ljxn;
+    const/4 v4, 0x3
 
-    invoke-interface {v2}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldlv;
-
-    iget-object v3, p0, Ldli;->c:Ljxn;
-
-    invoke-interface {v3}, Ljxn;->a()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Liag;
-
-    iget-object v4, p0, Ldli;->d:Ljxn;
-
-    invoke-interface {v4}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
-    check-cast v4, Lgfj;
+    invoke-direct {v2, v3, v4}, Lfhh;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    iget-object v5, p0, Ldli;->e:Ljxn;
+    aput-object v2, v0, v1
 
-    iget-object v6, p0, Ldli;->f:Ljxn;
+    const/4 v1, 0x1
 
-    invoke-interface {v6}, Ljxn;->a()Ljava/lang/Object;
+    new-instance v2, Lfhh;
 
-    invoke-direct/range {v0 .. v5}, Ldlg;-><init>(Lgdq;Ldlv;Liag;Lgfj;Ljxn;)V
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v4, 0x4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-direct {v2, v3, v4}, Lfhh;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    aput-object v2, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lffm;->a(Ljava/util/List;)Lfhm;
+
+    move-result-object v0
+
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
+
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfhm;
 
     return-object v0
 .end method

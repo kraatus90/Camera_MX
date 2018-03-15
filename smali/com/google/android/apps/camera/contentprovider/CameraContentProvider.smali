@@ -10,23 +10,23 @@
 
 
 # instance fields
-.field private a:Lbhr;
+.field private final a:Lbkc;
 
-.field private b:Lbhu;
+.field private b:Lbou;
 
 .field private c:Landroid/content/pm/ProviderInfo;
 
-.field private d:Lbhm;
+.field private d:Lbjx;
 
 .field private e:Ljava/lang/String;
 
 .field private f:Landroid/content/UriMatcher;
 
-.field private g:Lbnn;
+.field private g:Lbso;
 
-.field private h:Lbht;
+.field private h:Lbke;
 
-.field private i:Lbom;
+.field private i:Lbtk;
 
 
 # direct methods
@@ -35,16 +35,16 @@
 
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
 
-    new-instance v0, Lbhr;
+    new-instance v0, Lbkc;
 
-    invoke-direct {v0}, Lbhr;-><init>()V
+    invoke-direct {v0}, Lbkc;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Lbhr;
+    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Lbkc;
 
     return-void
 .end method
 
-.method private final a(Landroid/net/Uri;Lhfn;)Landroid/os/ParcelFileDescriptor;
+.method private final a(Landroid/net/Uri;Lhhw;)Landroid/os/ParcelFileDescriptor;
     .locals 9
 
     const/4 v1, 0x1
@@ -67,7 +67,7 @@
 
     move-result v3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->h:Lbht;
+    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->h:Lbke;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->getContext()Landroid/content/Context;
 
@@ -77,18 +77,18 @@
 
     move-result-object v4
 
-    iget v5, p2, Lhfn;->d:I
+    iget v5, p2, Lhhw;->d:I
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v4
 
-    sget-object v5, Lhfn;->c:Lhfn;
+    sget-object v5, Lhhw;->c:Lhhw;
 
     if-ne p2, v5, :cond_0
 
     :goto_0
-    iget-object v0, v0, Lbht;->a:Landroid/content/Context;
+    iget-object v0, v0, Lbke;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -145,7 +145,7 @@
     move-result-object v0
 
     :goto_1
-    invoke-static {v0}, Liya;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljii;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -198,7 +198,7 @@
     :goto_2
     sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
-    invoke-static {v0, v1}, Lbht;->a(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;)Landroid/os/ParcelFileDescriptor;
+    invoke-static {v0, v1}, Lbke;->a(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap$CompressFormat;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
@@ -399,7 +399,7 @@
     :catch_1
     move-exception v1
 
-    invoke-static {v3, v1}, Ljvs;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    invoke-static {v3, v1}, Lkfd;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     goto :goto_2
 
@@ -417,13 +417,13 @@
 .method private final a()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b:Lbhu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b:Lbou;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->getCallingPackage()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lbhu;->a(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lbou;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -492,7 +492,7 @@
 
     const-string v1, "request to delete photos"
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a()V
 
@@ -589,15 +589,15 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return v4
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Lbhr;
+    iget-object v1, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Lbkc;
 
-    invoke-virtual {v1, v0}, Lbhr;->a(Ljava/io/File;)Z
+    invoke-virtual {v1, v0}, Lbkc;->a(Ljava/io/File;)Z
 
     goto :goto_0
 .end method
@@ -619,7 +619,7 @@
 .end method
 
 .method public onCreate()Z
-    .locals 5
+    .locals 9
 
     new-instance v0, Ljava/util/HashSet;
 
@@ -631,7 +631,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a003b
+    const v2, 0x7f0a0023
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -643,21 +643,21 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    new-instance v1, Lbhu;
+    new-instance v1, Lbou;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-direct {v1, v2, v0}, Lbhu;-><init>(Landroid/content/Context;Ljava/util/Set;)V
+    invoke-direct {v1, v2, v0}, Lbou;-><init>(Landroid/content/Context;Ljava/util/Set;)V
 
-    iput-object v1, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b:Lbhu;
+    iput-object v1, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b:Lbou;
 
     iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->c:Landroid/content/pm/ProviderInfo;
 
-    new-instance v1, Lbrf;
+    new-instance v1, Lbvv;
 
-    invoke-direct {v1, p0, v0}, Lbrf;-><init>(Landroid/content/ContentProvider;Landroid/content/pm/ProviderInfo;)V
+    invoke-direct {v1, p0, v0}, Lbvv;-><init>(Landroid/content/ContentProvider;Landroid/content/pm/ProviderInfo;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->getContext()Landroid/content/Context;
 
@@ -665,115 +665,167 @@
 
     check-cast v0, Lcom/google/android/apps/camera/contentprovider/HasCameraContentProviderComponent;
 
-    invoke-interface {v0, v1}, Lcom/google/android/apps/camera/contentprovider/HasCameraContentProviderComponent;->cameraContentProviderComponent(Lbrf;)Lbhs;
+    invoke-interface {v0, v1}, Lcom/google/android/apps/camera/contentprovider/HasCameraContentProviderComponent;->cameraContentProviderComponent(Lbvv;)Lbkd;
 
-    move-result-object v1
+    move-result-object v2
 
-    sget-object v0, Lbhm;->a:Lbhm;
-
-    const-string v2, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {}, Lbql;->b()Lbjx;
 
     move-result-object v0
 
-    check-cast v0, Lbhm;
+    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->d:Lbjx;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->d:Lbhm;
+    iget-object v0, v2, Lbkd;->a:Lbvv;
 
-    iget-object v0, v1, Lbhs;->a:Lbrf;
-
-    iget-object v0, v0, Lbrf;->a:Landroid/content/pm/ProviderInfo;
-
-    iget-object v0, v0, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
-
-    const-string v2, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0}, Lbvw;->a(Lbvv;)Ljava/lang/String;
 
     move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
 
     iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->e:Ljava/lang/String;
 
-    iget-object v0, v1, Lbhs;->a:Lbrf;
-
-    iget-object v0, v0, Lbrf;->a:Landroid/content/pm/ProviderInfo;
-
-    iget-object v0, v0, Landroid/content/pm/ProviderInfo;->authority:Ljava/lang/String;
-
-    const-string v2, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2}, Lbkd;->a()Landroid/content/UriMatcher;
 
     move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0}, Lbjh;->a(Ljava/lang/String;)Landroid/content/UriMatcher;
-
-    move-result-object v0
-
-    const-string v2, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v2}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/UriMatcher;
 
     iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->f:Landroid/content/UriMatcher;
 
-    iget-object v0, v1, Lbhs;->b:Ljxn;
+    new-instance v3, Lbso;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {v2}, Lbkd;->a()Landroid/content/UriMatcher;
 
-    move-result-object v0
+    move-result-object v4
 
-    check-cast v0, Lbnn;
+    new-instance v5, Lbsq;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->g:Lbnn;
+    iget-object v0, v2, Lbkd;->b:Lcaf;
 
-    iget-object v0, v1, Lbhs;->d:Lbva;
+    iget-object v0, v0, Lcaf;->aF:Lkgv;
 
-    iget-object v0, v0, Lbva;->bh:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
-
-    new-instance v2, Lbht;
-
-    iget-object v0, v1, Lbhs;->a:Lbrf;
-
-    iget-object v0, v0, Lbrf;->b:Landroid/content/Context;
-
-    const-string v3, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v3}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/content/Context;
+    check-cast v0, Lbtb;
 
-    invoke-direct {v2, v0}, Lbht;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v0}, Lbsq;-><init>(Lbtb;)V
 
-    iput-object v2, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->h:Lbht;
+    new-instance v6, Lbsr;
 
-    iget-object v0, v1, Lbhs;->c:Ljxn;
+    iget-object v0, v2, Lbkd;->a:Lbvv;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-static {v0}, Lbvx;->a(Lbvv;)Landroid/content/Context;
 
     move-result-object v0
 
-    check-cast v0, Lbom;
+    iget-object v1, v2, Lbkd;->a:Lbvv;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->i:Lbom;
+    invoke-static {v1}, Lbvw;->a(Lbvv;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v6, v0, v1}, Lbsr;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    new-instance v7, Lbsm;
+
+    iget-object v0, v2, Lbkd;->b:Lcaf;
+
+    iget-object v0, v0, Lcaf;->bk:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbsh;
+
+    invoke-virtual {v2}, Lbkd;->a()Landroid/content/UriMatcher;
+
+    move-result-object v8
+
+    iget-object v1, v2, Lbkd;->b:Lcaf;
+
+    iget-object v1, v1, Lcaf;->aF:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lbtb;
+
+    invoke-direct {v7, v0, v8, v1}, Lbsm;-><init>(Lbsh;Landroid/content/UriMatcher;Lbtb;)V
+
+    invoke-direct {v3, v4, v5, v6, v7}, Lbso;-><init>(Landroid/content/UriMatcher;Lbsn;Lbsn;Lbsn;)V
+
+    iput-object v3, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->g:Lbso;
+
+    iget-object v0, v2, Lbkd;->b:Lcaf;
+
+    iget-object v0, v0, Lcaf;->bk:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    new-instance v0, Lbke;
+
+    iget-object v1, v2, Lbkd;->a:Lbvv;
+
+    invoke-static {v1}, Lbvx;->a(Lbvv;)Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lbke;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->h:Lbke;
+
+    iget-object v0, v2, Lbkd;->b:Lcaf;
+
+    iget-object v0, v0, Lcaf;->bk:Lkgv;
+
+    invoke-interface {v0}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbsh;
+
+    new-instance v1, Lhag;
+
+    invoke-direct {v1}, Lhag;-><init>()V
+
+    iget-object v1, v2, Lbkd;->b:Lcaf;
+
+    iget-object v1, v1, Lcaf;->r:Lkgv;
+
+    invoke-interface {v1}, Lkgv;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lihs;
+
+    sget-object v3, Lbtr;->a:Lbtr;
+
+    new-instance v2, Lbto;
+
+    invoke-direct {v2, v3}, Lbto;-><init>(Lkgv;)V
+
+    sget-object v4, Lbtr;->a:Lbtr;
+
+    new-instance v3, Lbti;
+
+    invoke-direct {v3, v4}, Lbti;-><init>(Lkgv;)V
+
+    new-instance v4, Lbtl;
+
+    check-cast v2, Lbto;
+
+    check-cast v3, Lbti;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lbtl;-><init>(Lbsh;Lihs;Lbto;Lbti;)V
+
+    iput-object v4, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->i:Lbtk;
 
     iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->e:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->d:Lbhm;
+    iget-object v1, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->d:Lbjx;
 
-    iget-object v1, v1, Lbhm;->b:Ljava/lang/String;
+    iget-object v1, v1, Lbjx;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -785,7 +837,7 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->e:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->d:Lbhm;
+    iget-object v2, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->d:Lbjx;
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -839,7 +891,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -978,11 +1030,11 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lhfn;->a:Lhfn;
+    sget-object v0, Lhhw;->a:Lhhw;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a(Landroid/net/Uri;Lhfn;)Landroid/os/ParcelFileDescriptor;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a(Landroid/net/Uri;Lhhw;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
@@ -1024,11 +1076,11 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lhfn;->b:Lhfn;
+    sget-object v0, Lhhw;->b:Lhhw;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a(Landroid/net/Uri;Lhfn;)Landroid/os/ParcelFileDescriptor;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a(Landroid/net/Uri;Lhhw;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
@@ -1069,11 +1121,11 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lbki;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lhfn;->c:Lhfn;
+    sget-object v0, Lhhw;->c:Lhhw;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a(Landroid/net/Uri;Lhfn;)Landroid/os/ParcelFileDescriptor;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a(Landroid/net/Uri;Lhhw;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
 
@@ -1081,9 +1133,9 @@
 
     :pswitch_4
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->i:Lbom;
+    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->i:Lbtk;
 
-    invoke-interface {v0, p1}, Lbom;->a(Landroid/net/Uri;)Landroid/content/ContentProvider$PipeDataWriter;
+    invoke-interface {v0, p1}, Lbtk;->a(Landroid/net/Uri;)Landroid/content/ContentProvider$PipeDataWriter;
 
     move-result-object v5
 
@@ -1099,7 +1151,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->openPipeHelper(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;Landroid/content/ContentProvider$PipeDataWriter;)Landroid/os/ParcelFileDescriptor;
     :try_end_0
-    .catch Lbos; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lbtq; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
@@ -1114,7 +1166,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Lbos;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lbtq;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1188,9 +1240,9 @@
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->g:Lbnn;
+    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->g:Lbso;
 
-    iget-object v1, v0, Lbnn;->d:Landroid/content/UriMatcher;
+    iget-object v1, v0, Lbso;->d:Landroid/content/UriMatcher;
 
     invoke-virtual {v1, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
@@ -1238,22 +1290,22 @@
     throw v0
 
     :pswitch_1
-    iget-object v0, v0, Lbnn;->a:Lbnm;
+    iget-object v0, v0, Lbso;->a:Lbsn;
 
     :goto_0
-    invoke-interface {v0, p1, p2}, Lbnm;->a(Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-interface {v0, p1, p2}, Lbsn;->a(Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
     return-object v0
 
     :pswitch_2
-    iget-object v0, v0, Lbnn;->b:Lbnm;
+    iget-object v0, v0, Lbso;->b:Lbsn;
 
     goto :goto_0
 
     :pswitch_3
-    iget-object v0, v0, Lbnn;->c:Lbnm;
+    iget-object v0, v0, Lbso;->c:Lbsn;
 
     goto :goto_0
 

@@ -1,11 +1,20 @@
-.class public abstract Ljol;
+.class public final Ljol;
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljcy;
+
+
+# instance fields
+.field private final synthetic a:Ljava/io/Writer;
+
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Ljava/io/Writer;)V
     .locals 0
+
+    iput-object p1, p0, Ljol;->a:Ljava/io/Writer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -14,50 +23,16 @@
 
 
 # virtual methods
-.method public abstract a()Ljoi;
-.end method
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    .locals 2
 
-.method public a(C)Ljol;
-    .locals 1
+    check-cast p1, Liyq;
 
-    int-to-byte v0, p1
+    new-instance v0, Ljak;
 
-    invoke-virtual {p0, v0}, Ljol;->b(B)Ljol;
+    iget-object v1, p0, Ljol;->a:Ljava/io/Writer;
 
-    ushr-int/lit8 v0, p1, 0x8
+    invoke-direct {v0, p1, p2, v1}, Ljak;-><init>(Liyq;Ljava/lang/String;Ljava/io/Writer;)V
 
-    int-to-byte v0, v0
-
-    invoke-virtual {p0, v0}, Ljol;->b(B)Ljol;
-
-    return-object p0
-.end method
-
-.method public final a(Ljava/lang/CharSequence;)Ljol;
-    .locals 3
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v1
-
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    invoke-interface {p1, v0}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v2
-
-    invoke-virtual {p0, v2}, Ljol;->a(C)Ljol;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public abstract b(B)Ljol;
+    return-object v0
 .end method

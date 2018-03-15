@@ -1,129 +1,166 @@
-.class public final Lfkj;
+.class final Lfkj;
 .super Ljava/lang/Object;
 .source "PG"
 
-
-# static fields
-.field public static final a:Ljava/lang/String;
-
-.field public static final b:Landroid/net/Uri;
-
-.field public static final c:Landroid/net/Uri;
-
-.field public static final d:Landroid/net/Uri;
+# interfaces
+.implements Lfic;
 
 
 # instance fields
-.field public final e:Ljava/lang/String;
+.field public final a:Lfim;
 
-.field public final f:Landroid/content/Context;
+.field public final b:Lfue;
 
-.field public final g:Landroid/app/Activity;
+.field public final c:I
+
+.field public final d:Landroid/view/Surface;
+
+.field public final e:Liaw;
+
+.field private final f:Lfto;
+
+.field private final g:Libq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "GoogleHelpHelper"
-
-    invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lfkj;->a:Ljava/lang/String;
-
-    const-string v0, "https://support.google.com/nexus/topic/6012822"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lfkj;->b:Landroid/net/Uri;
-
-    const-string v0, "http://www.google.com/policies/privacy/"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lfkj;->c:Landroid/net/Uri;
-
-    const-string v0, "http://www.google.com/policies/terms/"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lfkj;->d:Landroid/net/Uri;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/app/Activity;)V
-    .locals 1
+.method constructor <init>(Liaw;Libq;Linm;Lfim;)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfkj;->g:Landroid/app/Activity;
+    invoke-interface {p3}, Linm;->d()I
 
-    invoke-virtual {p1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-le v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljii;->a(Z)V
+
+    iput-object p1, p0, Lfkj;->e:Liaw;
+
+    iput-object p2, p0, Lfkj;->g:Libq;
+
+    new-instance v0, Lihc;
+
+    invoke-interface {p3}, Linm;->a()I
+
+    move-result v1
+
+    invoke-interface {p3}, Linm;->b()I
+
+    move-result v2
+
+    invoke-direct {v0, v1, v2}, Lihc;-><init>(II)V
+
+    invoke-interface {p3}, Linm;->c()I
+
+    iput-object p4, p0, Lfkj;->a:Lfim;
+
+    invoke-interface {p3}, Linm;->d()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x2
+
+    iput v0, p0, Lfkj;->c:I
+
+    new-instance v0, Lfto;
+
+    iget v1, p0, Lfkj;->c:I
+
+    invoke-direct {v0, v1}, Lfto;-><init>(I)V
+
+    iput-object v0, p0, Lfkj;->f:Lfto;
+
+    new-instance v0, Lfue;
+
+    iget-object v1, p0, Lfkj;->f:Lfto;
+
+    invoke-direct {v0, v1}, Lfue;-><init>(Lfuo;)V
+
+    iput-object v0, p0, Lfkj;->b:Lfue;
+
+    iget-object v0, p0, Lfkj;->e:Liaw;
+
+    iget-object v1, p0, Lfkj;->f:Lfto;
+
+    invoke-virtual {v0, v1}, Liaw;->a(Lihb;)Lihb;
+
+    invoke-interface {p3}, Linm;->e()Landroid/view/Surface;
 
     move-result-object v0
 
-    iput-object v0, p0, Lfkj;->f:Landroid/content/Context;
-
-    invoke-virtual {p1}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lfkj;->e:Ljava/lang/String;
+    iput-object v0, p0, Lfkj;->d:Landroid/view/Surface;
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(ILjava/lang/Exception;)V
-    .locals 3
+.method public final a()I
+    .locals 1
 
-    sget-object v0, Lfkj;->a:Ljava/lang/String;
+    iget v0, p0, Lfkj;->c:I
 
-    const-string v1, "Attempting to connect to Google API client to begin feedback flow"
+    return v0
+.end method
 
-    invoke-static {v0, v1}, Lbhz;->a(Ljava/lang/String;Ljava/lang/String;)V
+.method public final varargs a([Lfic;)Lfia;
+    .locals 6
 
-    new-instance v0, Lhac;
+    new-instance v2, Ljava/util/HashSet;
 
-    new-instance v1, Lhkm;
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    iget-object v2, p0, Lfkj;->f:Landroid/content/Context;
+    invoke-interface {v2, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {v1, v2}, Lhkm;-><init>(Landroid/content/Context;)V
+    array-length v3, p1
 
-    sget-object v2, Lhni;->a:Lhkc;
+    const/4 v0, 0x0
 
-    invoke-virtual {v1, v2}, Lhkm;->a(Lhkc;)Lhkm;
+    move v1, v0
 
-    move-result-object v1
+    :goto_0
+    if-ge v1, v3, :cond_0
 
-    invoke-virtual {v1}, Lhkm;->b()Lhkl;
+    aget-object v0, p1, v1
 
-    move-result-object v1
+    instance-of v4, v0, Lfkj;
 
-    invoke-direct {v0, v1}, Lhac;-><init>(Lhkl;)V
+    const-string v5, "ImageReader ImageSources can only be combined with other ImageReaderImageSources of the same type"
 
-    invoke-virtual {v0}, Lhac;->a()Ljuw;
+    invoke-static {v4, v5}, Ljii;->a(ZLjava/lang/Object;)V
 
-    move-result-object v0
+    check-cast v0, Lfkj;
 
-    new-instance v1, Lfkk;
+    invoke-interface {v2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {v1, p0, p1, p2}, Lfkk;-><init>(Lfkj;ILjava/lang/Exception;)V
+    add-int/lit8 v0, v1, 0x1
 
-    sget-object v2, Ljvc;->a:Ljvc;
+    move v1, v0
 
-    invoke-static {v0, v1, v2}, Ljuh;->a(Ljuw;Ljug;Ljava/util/concurrent/Executor;)V
+    goto :goto_0
 
-    return-void
+    :cond_0
+    new-instance v0, Lfkk;
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    iget-object v2, p0, Lfkj;->g:Libq;
+
+    invoke-direct {v0, v1, v2}, Lfkk;-><init>(Ljava/util/List;Libq;)V
+
+    return-object v0
 .end method

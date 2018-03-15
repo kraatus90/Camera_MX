@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract process()Lilf;
+.method public abstract process()Liqz;
 .end method
 
 .method public abstract resume()V

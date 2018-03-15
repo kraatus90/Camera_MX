@@ -2,36 +2,39 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Liau;
+.field private final synthetic a:Laum;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 3
+.method constructor <init>(Laum;)V
+    .locals 0
 
-    const/4 v2, 0x0
+    iput-object p1, p0, Lauq;->a:Laum;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Liag;
+    return-void
+.end method
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
+    iget-object v0, p0, Lauq;->a:Laum;
 
-    iput-object v0, p0, Lauq;->a:Liau;
+    iget-object v0, v0, Laum;->f:Lauj;
 
-    new-instance v0, Liag;
+    iget-object v1, p0, Lauq;->a:Laum;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v1, v1, Laum;->i:Ljava/lang/Runnable;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Liag;-><init>(Ljava/lang/Object;)V
+    iput-object v1, v0, Lauj;->b:Ljava/lang/Runnable;
 
     return-void
 .end method

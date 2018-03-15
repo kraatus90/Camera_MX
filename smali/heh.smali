@@ -1,69 +1,38 @@
-.class final Lheh;
-.super Lhff;
+.class public final Lheh;
+.super Ljava/lang/Object;
 .source "PG"
 
-
-# instance fields
-.field private synthetic a:Lhec;
+# interfaces
+.implements Lhev;
 
 
 # direct methods
-.method constructor <init>(Lhec;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lheh;->a:Lhec;
-
-    invoke-direct {p0, p1}, Lhff;-><init>(Lhev;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()V
-    .locals 2
+.method public final synthetic a(Landroid/view/Surface;Landroid/util/Size;)Lheu;
+    .locals 1
 
-    iget-object v0, p0, Lheh;->a:Lhec;
+    new-instance v0, Lhei;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    invoke-direct {v0, p1}, Lhei;-><init>(Landroid/view/Surface;)V
 
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhff;->e()V
-
-    iget-object v0, p0, Lheh;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lheh;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->d:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final h()V
-    .locals 2
+.method public final a(Landroid/content/Context;)Lhew;
+    .locals 1
 
-    iget-object v0, p0, Lheh;->a:Lhec;
+    new-instance v0, Lhej;
 
-    iget-object v0, v0, Lhec;->a:Lgvj;
+    invoke-direct {v0, p1}, Lhej;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0}, Lgvj;->a()V
-
-    invoke-super {p0}, Lhff;->h()V
-
-    iget-object v0, p0, Lheh;->a:Lhec;
-
-    iget-object v0, v0, Lhec;->a:Lgvj;
-
-    iget-object v1, p0, Lheh;->a:Lhec;
-
-    iget-object v1, v1, Lhec;->e:Lgvl;
-
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
-
-    return-void
+    return-object v0
 .end method

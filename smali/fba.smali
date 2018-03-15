@@ -1,45 +1,59 @@
-.class final Lfba;
-.super Lfdh;
+.class public final Lfba;
+.super Lidl;
 .source "PG"
 
 
-# instance fields
-.field private synthetic a:Lfaz;
-
-
 # direct methods
-.method constructor <init>(Lfaz;)V
-    .locals 0
+.method public constructor <init>(Libw;Lick;)V
+    .locals 2
 
-    iput-object p1, p0, Lfba;->a:Lfaz;
+    const/4 v0, 0x2
 
-    invoke-direct {p0}, Lfdh;-><init>()V
+    new-array v0, v0, [Lick;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object p2, v0, v1
+
+    invoke-static {v0}, Licl;->b([Lick;)Lick;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lidl;-><init>(Lick;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final B()V
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lfba;->a:Lfaz;
+    check-cast p1, Ljava/util/List;
 
-    iget-object v0, v0, Lfaz;->a:Lgvj;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lgvj;->a()V
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-super {p0}, Lfdh;->B()V
+    move-result-object v0
 
-    iget-object v0, p0, Lfba;->a:Lfaz;
+    check-cast v0, Lfco;
 
-    iget-object v0, v0, Lfaz;->a:Lgvj;
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lfba;->a:Lfaz;
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    iget-object v1, v1, Lfaz;->c:Lgvl;
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Lgvj;->a(Lgvl;)V
+    check-cast v1, Landroid/graphics/Rect;
 
-    return-void
+    invoke-interface {v0, v1}, Lfco;->a(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object v0
+
+    return-object v0
 .end method

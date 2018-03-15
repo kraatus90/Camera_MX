@@ -1,52 +1,41 @@
-.class public final Lahu;
-.super Ljava/lang/Object;
+.class final Lahu;
+.super Lahe;
 .source "PG"
-
-# interfaces
-.implements Lahm;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lahe;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)I
+.method public final a(ILandroid/graphics/Bitmap$Config;)Laht;
     .locals 1
 
-    check-cast p1, [B
+    invoke-virtual {p0}, Lahu;->a()Lahq;
 
-    array-length v0, p1
+    move-result-object v0
 
-    return v0
-.end method
+    check-cast v0, Laht;
 
-.method public final synthetic a(I)Ljava/lang/Object;
-    .locals 1
+    iput p1, v0, Laht;->a:I
 
-    new-array v0, p1, [B
+    iput-object p2, v0, Laht;->b:Landroid/graphics/Bitmap$Config;
 
     return-object v0
 .end method
 
-.method public final a()Ljava/lang/String;
+.method protected final synthetic b()Lahq;
     .locals 1
 
-    const-string v0, "ByteArrayPool"
+    new-instance v0, Laht;
+
+    invoke-direct {v0, p0}, Laht;-><init>(Lahu;)V
 
     return-object v0
-.end method
-
-.method public final b()I
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
 .end method

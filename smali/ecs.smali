@@ -1,210 +1,306 @@
 .class public final Lecs;
-.super Ljava/lang/Object;
+.super Lebj;
 .source "PG"
 
 # interfaces
-.implements Leai;
+.implements Lgle;
 
 
 # instance fields
-.field private a:Lgkl;
+.field public l:Lgld;
 
-.field private b:Leai;
+.field public m:Lglf;
 
-.field private c:Licu;
+.field public n:Lglf;
 
-.field private d:Liau;
+.field public o:Lglf;
+
+.field public p:Lglf;
 
 
 # direct methods
-.method public constructor <init>(Lgkl;Licv;Ledb;Lcnu;)V
-    .locals 10
+.method public constructor <init>(Legw;Lick;ZLebs;Leaf;Lega;Legg;Lefr;)V
+    .locals 5
 
-    const/4 v9, 0x1
+    const/4 v4, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v3, 0x1
 
-    iput-object p1, p0, Lecs;->a:Lgkl;
+    invoke-direct {p0, p1, p2, p3}, Lebj;-><init>(Legw;Lick;Z)V
 
-    const-string v0, "GoudaCptrCmd"
+    new-instance v0, Lect;
 
-    invoke-interface {p2, v0}, Licv;->a(Ljava/lang/String;)Licu;
+    invoke-direct {v0, p0}, Lect;-><init>(Lecs;)V
 
-    move-result-object v0
+    new-instance v1, Lglf;
 
-    iput-object v0, p0, Lecs;->c:Licu;
+    const/4 v2, 0x2
 
-    invoke-static {}, Lcnu;->a()I
+    new-array v2, v2, [Lgla;
 
-    invoke-virtual {p4}, Lcnu;->b()I
+    aput-object p4, v2, v4
 
-    move-result v0
+    aput-object p5, v2, v3
 
-    iget-object v1, p3, Ledb;->c:Lecw;
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    iget-object v2, p3, Ledb;->d:Leai;
+    iput-object v1, p0, Lecs;->m:Lglf;
 
-    invoke-virtual {v1, v0, v2}, Lecw;->a(ILeai;)Leai;
+    new-instance v0, Lecu;
 
-    move-result-object v2
+    invoke-direct {v0, p0}, Lecu;-><init>(Lecs;)V
 
-    new-instance v7, Lecl;
+    new-instance v1, Lglf;
 
-    iget-object v8, p3, Ledb;->a:Licv;
+    new-array v2, v3, [Lgla;
 
-    new-instance v0, Lecf;
+    aput-object p6, v2, v4
 
-    iget-object v1, p3, Ledb;->b:Liau;
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    iget-object v3, p3, Ledb;->e:Leai;
+    iput-object v1, p0, Lecs;->n:Lglf;
 
-    iget-object v5, p3, Ledb;->e:Leai;
+    new-instance v0, Lecv;
 
-    move-object v4, v2
+    invoke-direct {v0, p0}, Lecv;-><init>(Lecs;)V
 
-    move-object v6, v2
+    new-instance v1, Lglf;
 
-    invoke-direct/range {v0 .. v6}, Lecf;-><init>(Liau;Leai;Leai;Leai;Leai;Leai;)V
+    new-array v2, v3, [Lgla;
 
-    invoke-direct {v7, v8, v0}, Lecl;-><init>(Licv;Liau;)V
+    aput-object p7, v2, v4
 
-    iput-object v7, p0, Lecs;->b:Leai;
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    invoke-interface {p1}, Lgkl;->c()Liau;
+    iput-object v1, p0, Lecs;->o:Lglf;
 
-    move-result-object v0
+    new-instance v0, Lecw;
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-direct {v0, p0}, Lecw;-><init>(Lecs;)V
 
-    move-result-object v1
+    new-instance v1, Lglf;
 
-    invoke-static {v0, v1}, Liav;->a(Liau;Ljava/lang/Comparable;)Liau;
+    new-array v2, v3, [Lgla;
 
-    move-result-object v0
+    aput-object p8, v2, v4
 
-    const/4 v1, 0x2
+    invoke-direct {v1, v0, v2}, Lglf;-><init>(Lgla;[Lgla;)V
 
-    new-array v1, v1, [Liau;
+    iput-object v1, p0, Lecs;->p:Lglf;
 
-    const/4 v2, 0x0
+    new-instance v0, Lgld;
 
-    iget-object v3, p0, Lecs;->b:Leai;
+    iget-object v1, p0, Lecs;->m:Lglf;
 
-    invoke-interface {v3}, Leai;->a()Liau;
+    invoke-direct {v0, v1, v3}, Lgld;-><init>(Lglf;Z)V
 
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    aput-object v0, v1, v9
-
-    invoke-static {v1}, Liav;->a([Liau;)Liau;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lecs;->d:Liau;
+    iput-object v0, p0, Lecs;->l:Lgld;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Liau;
+.method public final a()V
     .locals 1
 
-    iget-object v0, p0, Lecs;->d:Liau;
+    invoke-super {p0}, Lebj;->a()V
 
-    return-object v0
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->c()V
+
+    return-void
 .end method
 
-.method public final a(Leaj;Leaq;)V
-    .locals 5
+.method public final a(Lkgv;Landroid/view/Window;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lhgv;Lgqc;Lfax;Lick;)V
+    .locals 2
 
-    iget-object v0, p0, Lecs;->a:Lgkl;
+    iget-object v0, p0, Lecs;->l:Lgld;
 
-    invoke-interface {v0}, Lgkl;->d()Lgki;
+    invoke-virtual {v0}, Lgld;->f()Z
 
-    move-result-object v0
-
-    iget-object v1, p0, Lecs;->c:Licu;
-
-    iget-object v2, p0, Lecs;->a:Lgkl;
-
-    invoke-interface {v2}, Lgkl;->c()Liau;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Liau;->b()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x13
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v3, "Remaining tickets: "
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Licu;->b(Ljava/lang/String;)V
+    move-result v0
 
     if-eqz v0, :cond_0
-
-    iget-object v1, p2, Leaq;->a:Ldhj;
-
-    iget-object v1, v1, Ldhj;->g:Lhzr;
-
-    invoke-virtual {v1, v0}, Lhzr;->a(Lich;)Lich;
-
-    iget-object v0, p0, Lecs;->b:Leai;
-
-    invoke-interface {v0, p1, p2}, Leai;->a(Leaj;Leaq;)V
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v0, p0, Lecs;->c:Licu;
+    invoke-super/range {p0 .. p8}, Lebj;->a(Lkgv;Landroid/view/Window;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgvc;Lhgv;Lgqc;Lfax;Lick;)V
 
-    const-string v1, "Ticket not available"
+    iget-object v0, p0, Lecs;->l:Lgld;
 
-    invoke-interface {v0, v1}, Licu;->f(Ljava/lang/String;)V
+    sget v1, Lep;->bi:I
+
+    iput v1, v0, Lgld;->a:I
 
     goto :goto_0
 .end method
 
-.method public final b()Liau;
+.method public final b()V
     .locals 1
 
-    iget-object v0, p0, Lecs;->b:Leai;
+    invoke-super {p0}, Lebj;->b()V
 
-    invoke-interface {v0}, Leai;->b()Liau;
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-interface {p0}, Lgle;->i()V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->e()V
+
+    iget-object v0, p0, Lecs;->m:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lecs;->n:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lecs;->o:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    iget-object v0, p0, Lecs;->p:Lglf;
+
+    invoke-virtual {v0}, Lglf;->i()V
+
+    return-void
+.end method
+
+.method public final q()V
+    .locals 1
+
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
 
     move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->q()V
+
+    goto :goto_0
+.end method
+
+.method public final r()V
+    .locals 1
+
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->r()V
+
+    goto :goto_0
+.end method
+
+.method public final s()V
+    .locals 1
+
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->s()V
+
+    goto :goto_0
+.end method
+
+.method public final t()V
+    .locals 1
+
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    :goto_0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lecs;->l:Lgld;
+
+    invoke-virtual {v0}, Lgld;->b()Lglf;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lglf;->a:Lgla;
+
+    check-cast v0, Lglb;
+
+    invoke-virtual {v0}, Lglb;->t()V
+
+    goto :goto_0
 .end method

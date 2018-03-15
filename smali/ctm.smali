@@ -1,20 +1,30 @@
-.class final Lctm;
+.class public final Lctm;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Licn;
+.implements Lkgv;
 
 
-# instance fields
-.field private synthetic a:Lcsk;
+# static fields
+.field public static final a:Lctm;
 
 
 # direct methods
-.method constructor <init>(Lcsk;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lctm;->a:Lcsk;
+    new-instance v0, Lctm;
+
+    invoke-direct {v0}, Lctm;-><init>()V
+
+    sput-object v0, Lctm;->a:Lctm;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -23,18 +33,20 @@
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)V
+.method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    check-cast p1, Ljava/lang/Boolean;
+    new-instance v0, Lket;
 
-    iget-object v0, p0, Lctm;->a:Lcsk;
+    invoke-direct {v0}, Lket;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
 
-    move-result v1
+    invoke-static {v0, v1}, Lkfn;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lcsk;->c(Z)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lket;
+
+    return-object v0
 .end method

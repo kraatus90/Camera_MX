@@ -3,52 +3,54 @@
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private a:Ljxn;
-
-.field private b:Ljxn;
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
 
 # direct methods
-.method public constructor <init>(Ljxn;Ljxn;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
     .locals 0
 
+    iput-object p1, p0, Lgxy;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgxy;->a:Ljxn;
-
-    iput-object p2, p0, Lgxy;->b:Ljxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
 
-    new-instance v2, Lgxq;
+    const/high16 v1, 0x437f0000    # 255.0f
 
-    iget-object v0, p0, Lgxy;->a:Ljxn;
-
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgsp;
+    check-cast v0, Ljava/lang/Float;
 
-    iget-object v1, p0, Lgxy;->b:Ljxn;
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    invoke-interface {v1}, Ljxn;->a()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    mul-float/2addr v0, v1
 
-    check-cast v1, Lgmv;
+    iget-object v1, p0, Lgxy;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-    invoke-direct {v2, v0, v1}, Lgxq;-><init>(Lgsp;Lgmv;)V
+    iget-object v1, v1, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->b:Landroid/graphics/Paint;
 
-    return-object v2
+    float-to-int v0, v0
+
+    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    iget-object v0, p0, Lgxy;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->invalidate()V
+
+    return-void
 .end method

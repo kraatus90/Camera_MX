@@ -1,48 +1,37 @@
-.class public final Ldcq;
+.class final synthetic Ldcq;
 .super Ljava/lang/Object;
-.source "PG"
 
 # interfaces
-.implements Lgfw;
+.implements Lihb;
 
 
 # instance fields
-.field public final a:Z
+.field private final a:Ldcm;
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method constructor <init>(Ldcm;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Ldcq;->a:Z
+    iput-object p1, p0, Ldcq;->a:Ldcm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ldcq;->a:Ldcm;
 
-    return v0
-.end method
+    iget-object v1, v0, Ldcm;->k:Lhfx;
 
-.method public final b()Z
-    .locals 1
+    iget-object v0, v0, Ldcm;->M:Lhfy;
 
-    const/4 v0, 0x0
+    invoke-virtual {v1, v0}, Lhfx;->b(Lhfy;)V
 
-    return v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    iget-boolean v0, p0, Ldcq;->a:Z
-
-    return v0
+    return-void
 .end method

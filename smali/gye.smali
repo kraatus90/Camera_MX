@@ -1,29 +1,20 @@
-.class final synthetic Lgye;
+.class public final Lgye;
 .super Ljava/lang/Object;
+.source "PG"
 
 # interfaces
-.implements Lich;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
-# static fields
-.field public static final a:Lich;
+# instance fields
+.field private final synthetic a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lgye;
-
-    invoke-direct {v0}, Lgye;-><init>()V
-
-    sput-object v0, Lgye;->a:Lich;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;)V
     .locals 0
+
+    iput-object p1, p0, Lgye;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,8 +23,26 @@
 
 
 # virtual methods
-.method public final close()V
-    .locals 0
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 2
+
+    iget-object v1, p0, Lgye;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, v1, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->g:I
+
+    iget-object v0, p0, Lgye;->a:Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/DeterministicProgressOverlay;->invalidate()V
 
     return-void
 .end method

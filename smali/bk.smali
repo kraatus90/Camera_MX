@@ -1,87 +1,156 @@
-.class final Lbk;
-.super Landroid/util/Property;
+.class public final Lbk;
+.super Ljava/lang/Object;
 .source "PG"
+
+# interfaces
+.implements Lbn;
 
 
 # instance fields
-.field private a:Landroid/graphics/Rect;
+.field public final synthetic a:Landroid/support/design/widget/FloatingActionButton;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
-    .locals 1
+.method constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Landroid/graphics/Rect;
+    return-void
+.end method
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+.method public constructor <init>(Landroid/support/design/widget/FloatingActionButton;)V
+    .locals 0
 
-    iput-object v0, p0, Lbk;->a:Landroid/graphics/Rect;
+    iput-object p1, p0, Lbk;->a:Landroid/support/design/widget/FloatingActionButton;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()F
+    .locals 2
 
-    check-cast p1, Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lbk;->a:Landroid/support/design/widget/FloatingActionButton;
 
-    iget-object v0, p0, Lbk;->a:Landroid/graphics/Rect;
+    invoke-virtual {v0}, Landroid/support/design/widget/FloatingActionButton;->c()I
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->copyBounds(Landroid/graphics/Rect;)V
+    move-result v0
 
-    new-instance v0, Landroid/graphics/PointF;
+    int-to-float v0, v0
 
-    iget-object v1, p0, Lbk;->a:Landroid/graphics/Rect;
+    const/high16 v1, 0x40000000    # 2.0f
 
-    iget v1, v1, Landroid/graphics/Rect;->left:I
+    div-float/2addr v0, v1
 
-    int-to-float v1, v1
-
-    iget-object v2, p0, Lbk;->a:Landroid/graphics/Rect;
-
-    iget v2, v2, Landroid/graphics/Rect;->top:I
-
-    int-to-float v2, v2
-
-    invoke-direct {v0, v1, v2}, Landroid/graphics/PointF;-><init>(FF)V
-
-    return-object v0
+    return v0
 .end method
 
-.method public final synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 3
+.method public final a(Landroid/animation/Animator;)V
+    .locals 5
 
-    check-cast p1, Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1}, Landroid/animation/Animator;->getListeners()Ljava/util/ArrayList;
 
-    check-cast p2, Landroid/graphics/PointF;
+    move-result-object v2
 
-    iget-object v0, p0, Lbk;->a:Landroid/graphics/Rect;
+    if-eqz v2, :cond_1
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->copyBounds(Landroid/graphics/Rect;)V
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lbk;->a:Landroid/graphics/Rect;
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    iget v1, p2, Landroid/graphics/PointF;->x:F
+    move-result v3
 
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    move v1, v0
 
-    move-result v1
+    :goto_0
+    if-ge v1, v3, :cond_1
 
-    iget v2, p2, Landroid/graphics/PointF;->y:F
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
+    move-result-object v0
 
-    move-result v2
+    check-cast v0, Landroid/animation/Animator$AnimatorListener;
 
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Rect;->offsetTo(II)V
+    instance-of v4, v0, Lbl;
 
-    iget-object v0, p0, Lbk;->a:Landroid/graphics/Rect;
+    if-eqz v4, :cond_0
 
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+    check-cast v0, Lbl;
 
+    invoke-interface {v0, p1}, Lbl;->onAnimationPause(Landroid/animation/Animator;)V
+
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final a(Landroid/animation/Animator;Landroid/animation/AnimatorListenerAdapter;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
+
+    iget-object v0, p0, Lbk;->a:Landroid/support/design/widget/FloatingActionButton;
+
+    invoke-static {v0, p1}, Landroid/support/design/widget/FloatingActionButton;->a(Landroid/support/design/widget/FloatingActionButton;Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method public final b(Landroid/animation/Animator;)V
+    .locals 5
+
+    invoke-virtual {p1}, Landroid/animation/Animator;->getListeners()Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v3, :cond_1
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/animation/Animator$AnimatorListener;
+
+    instance-of v4, v0, Lbl;
+
+    if-eqz v4, :cond_0
+
+    check-cast v0, Lbl;
+
+    invoke-interface {v0, p1}, Lbl;->onAnimationResume(Landroid/animation/Animator;)V
+
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method

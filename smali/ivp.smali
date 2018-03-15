@@ -1,96 +1,181 @@
-.class final Livp;
+.class public final Livp;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Liuh;
+.implements Ljava/lang/AutoCloseable;
+
+
+# instance fields
+.field private final a:Landroid/media/AudioRecord;
+
+.field private final b:Landroid/media/AudioFormat;
+
+.field private final c:Lixo;
+
+.field private final d:I
+
+.field private final e:Landroid/media/AudioTimestamp;
+
+.field private f:J
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/media/AudioRecord;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Livp;->a:Landroid/media/AudioRecord;
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Livp;->d:I
+
+    invoke-virtual {p1}, Landroid/media/AudioRecord;->getFormat()Landroid/media/AudioFormat;
+
+    move-result-object v0
+
+    iput-object v0, p0, Livp;->b:Landroid/media/AudioFormat;
+
+    new-instance v0, Lixo;
+
+    iget-object v1, p0, Livp;->b:Landroid/media/AudioFormat;
+
+    invoke-direct {v0, v1}, Lixo;-><init>(Landroid/media/AudioFormat;)V
+
+    iput-object v0, p0, Livp;->c:Lixo;
+
+    new-instance v0, Landroid/media/AudioTimestamp;
+
+    invoke-direct {v0}, Landroid/media/AudioTimestamp;-><init>()V
+
+    iput-object v0, p0, Livp;->e:Landroid/media/AudioTimestamp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Litk;)Ljava/lang/Object;
-    .locals 6
+.method public final declared-synchronized a()V
+    .locals 4
 
-    const/4 v2, 0x0
+    monitor-enter p0
 
-    const-class v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    const-wide/16 v0, 0x0
 
-    const-string v1, "default"
+    :try_start_0
+    iput-wide v0, p0, Livp;->f:J
 
-    invoke-virtual {p1, v0, v1}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v0, p0, Livp;->c:Lixo;
 
-    move-result-object v0
+    iget-object v1, v0, Lixo;->a:Ljava/lang/Object;
 
-    check-cast v0, Lcom/google/android/libraries/smartburst/buffers/FeatureTable;
+    monitor-enter v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    const-class v1, Lixy;
+    const-wide/16 v2, 0x0
 
-    const-string v3, "default"
+    :try_start_1
+    iput-wide v2, v0, Lixo;->b:J
 
-    invoke-virtual {p1, v1, v3}, Litk;->a(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    :try_start_2
+    iget-object v0, p0, Livp;->a:Landroid/media/AudioRecord;
 
-    check-cast v1, Lixy;
+    invoke-virtual {v0}, Landroid/media/AudioRecord;->startRecording()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    invoke-virtual {v1}, Lixy;->d()Ljava/util/List;
+    monitor-exit p0
 
-    move-result-object v3
+    return-void
 
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+    :catchall_0
+    move-exception v0
 
-    move-result v1
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    if-nez v1, :cond_0
+    :try_start_4
+    throw v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    const/4 v1, 0x1
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Livp;->a:Landroid/media/AudioRecord;
+
+    invoke-virtual {v0}, Landroid/media/AudioRecord;->stop()V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
-    invoke-static {v1}, Liya;->a(Z)V
+    monitor-exit p0
 
-    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    return-void
 
-    move-result-object v1
+    :catch_0
+    move-exception v0
 
-    check-cast v1, Ljava/lang/Long;
+    :try_start_1
+    const-string v1, "AudioStreamImpl"
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    const-string v2, "Error while closing AudioStream."
 
-    move-result-wide v4
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Long;
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-static {v0, v4, v5, v2, v3}, Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;->createFrom(Lcom/google/android/libraries/smartburst/buffers/FeatureTable;JJ)Lcom/google/android/libraries/smartburst/filterpacks/motion/MotionStabilizer;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    move v1, v2
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized close()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Livp;->a:Landroid/media/AudioRecord;
+
+    invoke-virtual {v0}, Landroid/media/AudioRecord;->release()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

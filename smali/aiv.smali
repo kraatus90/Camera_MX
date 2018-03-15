@@ -2,123 +2,126 @@
 .super Ljava/lang/Object;
 .source "PG"
 
+# interfaces
+.implements Laki;
+
 
 # static fields
-.field private static i:I
+.field private static final a:I
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field private final b:Landroid/content/res/AssetManager;
 
-.field public b:Landroid/app/ActivityManager;
-
-.field public c:Laiw;
-
-.field public d:F
-
-.field public e:F
-
-.field public f:F
-
-.field public g:F
-
-.field public h:I
+.field private final c:Laiw;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v0, 0x16
 
-    const/16 v1, 0x1a
-
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x4
-
-    :goto_0
-    sput v0, Laiv;->i:I
+    sput v0, Laiv;->a:I
 
     return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+.method public constructor <init>(Landroid/content/res/AssetManager;Laiw;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, 0x40000000    # 2.0f
+    iput-object p1, p0, Laiv;->b:Landroid/content/res/AssetManager;
 
-    iput v0, p0, Laiv;->d:F
+    iput-object p2, p0, Laiv;->c:Laiw;
 
-    sget v0, Laiv;->i:I
+    return-void
+.end method
 
-    int-to-float v0, v0
 
-    iput v0, p0, Laiv;->e:F
+# virtual methods
+.method public final synthetic a(Ljava/lang/Object;IILady;)Lakj;
+    .locals 5
 
-    const v0, 0x3ecccccd    # 0.4f
+    check-cast p1, Landroid/net/Uri;
 
-    iput v0, p0, Laiv;->f:F
-
-    const v0, 0x3ea8f5c3    # 0.33f
-
-    iput v0, p0, Laiv;->g:F
-
-    const/high16 v0, 0x400000
-
-    iput v0, p0, Laiv;->h:I
-
-    iput-object p1, p0, Laiv;->a:Landroid/content/Context;
-
-    const-string v0, "activity"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/ActivityManager;
+    sget v1, Laiv;->a:I
 
-    iput-object v0, p0, Laiv;->b:Landroid/app/ActivityManager;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    new-instance v0, Laiw;
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    new-instance v1, Lakj;
 
-    move-result-object v1
+    new-instance v2, Larm;
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-direct {v2, p1}, Larm;-><init>(Ljava/lang/Object;)V
 
-    move-result-object v1
+    iget-object v3, p0, Laiv;->c:Laiw;
 
-    invoke-direct {v0, v1}, Laiw;-><init>(Landroid/util/DisplayMetrics;)V
+    iget-object v4, p0, Laiv;->b:Landroid/content/res/AssetManager;
 
-    iput-object v0, p0, Laiv;->c:Laiw;
+    invoke-interface {v3, v4, v0}, Laiw;->a(Landroid/content/res/AssetManager;Ljava/lang/String;)Laef;
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    move-result-object v0
 
-    const/16 v1, 0x1a
+    invoke-direct {v1, v2, v0}, Lakj;-><init>(Ladu;Laef;)V
 
-    if-lt v0, v1, :cond_0
+    return-object v1
+.end method
 
-    iget-object v0, p0, Laiv;->b:Landroid/app/ActivityManager;
-
-    invoke-static {v0}, Laiu;->a(Landroid/app/ActivityManager;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+.method public final synthetic a(Ljava/lang/Object;)Z
+    .locals 3
 
     const/4 v0, 0x0
 
-    iput v0, p0, Laiv;->e:F
+    check-cast p1, Landroid/net/Uri;
+
+    const-string v1, "file"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "android_asset"
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
 
     :cond_0
-    return-void
+    return v0
 .end method

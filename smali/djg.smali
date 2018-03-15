@@ -1,70 +1,75 @@
-.class public final Ldjg;
+.class final Ldjg;
 .super Ljava/lang/Object;
 .source "PG"
 
 # interfaces
-.implements Ljxn;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Ljxn;
+.field private final synthetic a:Ljava/util/List;
+
+.field private final synthetic b:Ldjf;
 
 
 # direct methods
-.method private constructor <init>(Ljxn;)V
+.method constructor <init>(Ldjf;Ljava/util/List;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldjg;->b:Ldjf;
 
-    iput-object p1, p0, Ldjg;->a:Ljxn;
+    iput-object p2, p0, Ldjg;->a:Ljava/util/List;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljxn;)Ljxn;
-    .locals 1
-
-    new-instance v0, Ldjg;
-
-    invoke-direct {v0, p0}, Ldjg;-><init>(Ljxn;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Ldjg;->a:Ljxn;
+    iget-object v0, p0, Ldjg;->b:Ldjf;
 
-    invoke-interface {v0}, Ljxn;->a()Ljava/lang/Object;
+    iget-object v0, v0, Ldjf;->a:Ldiv;
 
-    move-result-object v0
+    iget-object v0, v0, Ldiv;->e:Lbey;
 
-    check-cast v0, Lges;
+    invoke-interface {v0}, Lbey;->close()V
 
-    iget-object v0, v0, Lges;->e:Lggu;
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Ljkv;->a(Ljava/lang/Object;)Ljkv;
+    iget-object v1, p0, Ldjg;->a:Ljava/util/List;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
-    invoke-static {v0}, Lfsp;->a(Ljava/util/Collection;)Lggq;
+    move-result v1
 
-    move-result-object v0
+    if-nez v1, :cond_0
 
-    invoke-static {v0}, Ljle;->a(Ljava/lang/Object;)Ljle;
+    iget-object v0, p0, Ldjg;->a:Ljava/util/List;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Set;
+    check-cast v0, Lbge;
 
-    return-object v0
+    :cond_0
+    iget-object v1, p0, Ldjg;->b:Ldjf;
+
+    iget-object v1, v1, Ldjf;->a:Ldiv;
+
+    iget-object v1, v1, Lbrv;->a:Lbrw;
+
+    new-instance v2, Ldhq;
+
+    invoke-direct {v2, v0}, Ldhq;-><init>(Lbge;)V
+
+    invoke-interface {v1, v2}, Lbrw;->a(Ljava/lang/Object;)V
+
+    return-void
 .end method
