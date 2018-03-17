@@ -364,6 +364,8 @@
 
     :cond_1
     :try_start_1
+    goto :goto_0
+
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v2, "Implementation isn\'t available"

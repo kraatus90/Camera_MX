@@ -61,6 +61,37 @@
 
 
 # virtual methods
+.method public BadTF()I
+    .locals 3
+
+    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v1, "sagit"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v1, "chiron"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v1, "jason"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    :cond_0
+    return v2
+.end method
+
 .method public final a()V
     .locals 13
 
@@ -71,10 +102,17 @@
 
     iget-object v0, v0, Ldsu;->a:Lfkv;
 
+    invoke-virtual {p0}, Ldsw;->BadTF()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
     iget-object v1, p0, Ldsw;->c:Ldsu;
 
     iget v1, v1, Ldsu;->h:I
 
+    :cond_0
     invoke-virtual {v0, v1}, Lfkv;->a(I)Lfjf;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
@@ -154,14 +192,14 @@
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_6
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     const/4 v0, 0x0
 
     :try_start_3
     invoke-static {v0, v4}, Ldsw;->a(Ljava/lang/Throwable;Lfga;)V
 
-    :cond_0
+    :cond_1
     invoke-interface {v3}, Lfjf;->a()Ljava/lang/Object;
 
     move-result-object v0
@@ -180,7 +218,7 @@
 
     check-cast v1, Lind;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Lfjg;->f()J
 
@@ -254,12 +292,12 @@
 
     invoke-static {v4, v5}, Ljii;->b(ZLjava/lang/Object;)V
 
-    :cond_1
+    :cond_2
     invoke-static {v1}, Ldsm;->a(Lind;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     iget-object v4, p0, Ldsw;->b:Ldtm;
 
@@ -271,12 +309,12 @@
     move-object v0, v2
 
     :goto_1
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     :try_start_5
     invoke-virtual {v0}, Lfjg;->close()V
 
-    :cond_2
+    :cond_3
     :goto_2
     iget-object v0, p0, Ldsw;->c:Ldsu;
 
@@ -303,7 +341,7 @@
 
     cmp-long v0, v6, v4
 
-    if-gez v0, :cond_6
+    if-gez v0, :cond_7
 
     iget-object v0, v1, Lffl;->b:Ljava/util/concurrent/locks/Condition;
 
@@ -344,7 +382,7 @@
     move-object v0, v12
 
     :goto_4
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
 
     :try_start_9
     invoke-interface {v3}, Lfjf;->close()V
@@ -385,12 +423,12 @@
     move-object v0, v12
 
     :goto_6
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
     :try_start_c
     invoke-static {v1, v4}, Ldsw;->a(Ljava/lang/Throwable;Lfga;)V
 
-    :cond_3
+    :cond_4
     throw v0
     :try_end_c
     .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_c} :catch_0
@@ -403,7 +441,7 @@
 
     goto :goto_4
 
-    :cond_4
+    :cond_5
     :try_start_d
     iget-object v1, p0, Ldsw;->c:Ldsu;
 
@@ -432,7 +470,7 @@
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_5
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     :try_start_f
     invoke-virtual {v0}, Lfjg;->close()V
@@ -442,14 +480,14 @@
     :catchall_5
     move-exception v1
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-virtual {v0}, Lfjg;->close()V
 
-    :cond_5
+    :cond_6
     throw v1
 
-    :cond_6
+    :cond_7
     iget-object v0, v1, Lffl;->a:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -467,7 +505,7 @@
 
     goto :goto_5
 
-    :cond_7
+    :cond_8
     invoke-interface {v3}, Lfjf;->close()V
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_2

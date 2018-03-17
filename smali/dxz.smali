@@ -1020,6 +1020,8 @@
 
     move-result v0
 
+    const/4 v0, 0x1
+
     move v4, v3
 
     move v3, v2

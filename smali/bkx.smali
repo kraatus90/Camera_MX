@@ -301,6 +301,8 @@
 
     move-result v2
 
+    const/4 v2, 0x0
+
     invoke-direct {v0, v1, v2}, Lbqf;-><init>(Ljava/lang/String;Z)V
 
     iput-object v0, p0, Lbkx;->A:Lbqf;

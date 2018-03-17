@@ -81,7 +81,7 @@
 
     if-eqz v0, :cond_e
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_SENSOR_EEPROM_INFORMATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    move-object v0, v1
 
     :goto_0
     sput-object v0, Lhju;->a:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -148,7 +148,7 @@
 
     if-eqz v0, :cond_12
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_FRAME_TIMESTAMP_BOOTTIME:Landroid/hardware/camera2/CaptureResult$Key;
+    move-object v0, v1
 
     :goto_4
     sput-object v0, Lhju;->h:Landroid/hardware/camera2/CaptureResult$Key;
@@ -220,7 +220,7 @@
 
     if-eqz v0, :cond_18
 
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_CONTROL_EXP_TIME_BOOST:Landroid/hardware/camera2/CaptureResult$Key;
+    move-object v0, v1
 
     :goto_a
     sput-object v0, Lhju;->n:Landroid/hardware/camera2/CaptureResult$Key;
