@@ -604,23 +604,7 @@
     :cond_0
     iget-object v0, p0, Ldil;->c:Ldig;
 
-    const-string v6, "persist.camera.cam_component"
-
-    const-string v7, "nexus2016_tuning"
-
-    invoke-virtual {v0, v6, v7}, Ldig;->a(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
     iget-object v0, p0, Ldil;->f:Lbiv;
-
-    const-string v3, "EXPERIMENTAL CONFIG: Pixel2016 Tuning"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v3, v6}, Lbiv;->a(Ljava/lang/String;I)V
 
     sget-object v0, Ldil;->a:Ljava/lang/String;
 
@@ -732,29 +716,13 @@
     goto :goto_0
 
     :cond_3
-    iget-object v0, p0, Ldil;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->c:Z
-
-    if-eqz v0, :cond_5
-
-    iget-object v0, p0, Ldil;->d:Lbhn;
-
-    invoke-virtual {v0}, Lbhn;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
     invoke-interface {p2}, Lgdq;->b()Lige;
 
     move-result-object v0
 
     sget-object v6, Lige;->b:Lige;
 
-    if-ne v0, v6, :cond_5
+    if-ne v0, v6, :cond_4
 
     invoke-static {p4}, Ldil;->a(Ldii;)I
 
@@ -784,8 +752,6 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
-
     sget-object v0, Ldil;->a:Ljava/lang/String;
 
     const-string v5, "Selected Nexus6HdrPlusAuto OneCamera configuration."
@@ -798,7 +764,6 @@
 
     goto/16 :goto_0
 
-    :cond_4
     sget-object v0, Ldil;->a:Ljava/lang/String;
 
     const-string v5, "Selected Nexus6HdrPlusAutoNoZsl OneCamera configuration."
@@ -811,6 +776,43 @@
 
     goto/16 :goto_0
 
+    :cond_4
+    iget-object v0, p0, Ldil;->e:Lgzz;
+
+    iget-object v0, v0, Lgzz;->b:Lihk;
+
+    iget-boolean v0, v0, Lihk;->c:Z
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p0, Ldil;->d:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->d()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    invoke-interface {p2}, Lgdq;->b()Lige;
+
+    move-result-object v0
+
+    sget-object v6, Lige;->b:Lige;
+
+    if-ne v0, v6, :cond_5
+
+    sget-object v0, Ldil;->a:Ljava/lang/String;
+
+    const-string v3, "Selected Nexus6ZslYuv OneCamera configuration."
+
+    invoke-static {v0, v3}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Ldoc;->a(Ldpz;)Ldnx;
+
+    move-result-object v0
+
+    goto/16 :goto_0
+
     :cond_5
     iget-object v0, p0, Ldil;->e:Lgzz;
 
@@ -820,19 +822,11 @@
 
     if-eqz v0, :cond_6
 
-    iget-object v0, p0, Ldil;->d:Lbhn;
-
-    invoke-virtual {v0}, Lbhn;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_6
-
     invoke-interface {p2}, Lgdq;->b()Lige;
 
     move-result-object v0
 
-    sget-object v6, Lige;->b:Lige;
+    sget-object v6, Lige;->a:Lige;
 
     if-ne v0, v6, :cond_6
 
@@ -853,38 +847,9 @@
 
     iget-object v0, v0, Lgzz;->b:Lihk;
 
-    iget-boolean v0, v0, Lihk;->c:Z
-
-    if-eqz v0, :cond_7
-
-    invoke-interface {p2}, Lgdq;->b()Lige;
-
-    move-result-object v0
-
-    sget-object v6, Lige;->a:Lige;
-
-    if-ne v0, v6, :cond_7
-
-    sget-object v0, Ldil;->a:Ljava/lang/String;
-
-    const-string v3, "Selected Nexus6ZslYuv OneCamera configuration."
-
-    invoke-static {v0, v3}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Ldoc;->a(Ldpz;)Ldnx;
-
-    move-result-object v0
-
-    goto/16 :goto_0
-
-    :cond_7
-    iget-object v0, p0, Ldil;->e:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
     iget-boolean v0, v0, Lihk;->b:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Ldil;->d:Lbhn;
 
@@ -892,7 +857,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     sget-object v0, Ldij;->e:Ldij;
 
@@ -900,7 +865,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     sget-object v0, Ldil;->a:Ljava/lang/String;
 
@@ -914,7 +879,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_7
 
     invoke-static {p4, p2}, Ldil;->a(Ldii;Lgdq;)Ldql;
 
@@ -932,7 +897,7 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_7
     invoke-static {p4, p2}, Ldil;->a(Ldii;Lgdq;)Ldql;
 
     move-result-object v3
@@ -949,14 +914,14 @@
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_8
     iget-object v0, p0, Ldil;->e:Lgzz;
 
     iget-object v0, v0, Lgzz;->b:Lihk;
 
     iget-boolean v0, v0, Lihk;->d:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Ldil;->d:Lbhn;
 
@@ -964,7 +929,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     sget-object v0, Ldij;->e:Ldij;
 
@@ -972,7 +937,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
     sget-object v0, Ldil;->a:Ljava/lang/String;
 
@@ -996,14 +961,14 @@
 
     goto/16 :goto_0
 
-    :cond_a
+    :cond_9
     iget-object v0, p0, Ldil;->e:Lgzz;
 
     iget-object v0, v0, Lgzz;->b:Lihk;
 
     iget-boolean v0, v0, Lihk;->g:Z
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_a
 
     iget-object v0, p0, Ldil;->e:Lgzz;
 
@@ -1011,16 +976,16 @@
 
     iget-boolean v0, v0, Lihk;->f:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_b
 
-    :cond_b
+    :cond_a
     iget-object v0, p0, Ldil;->d:Lbhn;
 
     invoke-virtual {v0}, Lbhn;->d()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_b
 
     sget-object v0, Ldij;->e:Ldij;
 
@@ -1028,7 +993,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_b
 
     sget-object v0, Ldil;->a:Ljava/lang/String;
 
@@ -1052,6 +1017,17 @@
 
     goto/16 :goto_0
 
+    :cond_b
+    iget-object v0, p0, Ldil;->e:Lgzz;
+
+    invoke-virtual {v0}, Lgzz;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    invoke-interface {p2}, Lgdq;->x()Z
+
     :cond_c
     iget-object v0, p0, Ldil;->e:Lgzz;
 
@@ -1063,24 +1039,13 @@
 
     invoke-interface {p2}, Lgdq;->x()Z
 
-    :cond_d
-    iget-object v0, p0, Ldil;->e:Lgzz;
-
-    invoke-virtual {v0}, Lgzz;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    invoke-interface {p2}, Lgdq;->x()Z
-
     iget-object v0, p0, Ldil;->d:Lbhn;
 
     invoke-virtual {v0}, Lbhn;->d()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
     sget-object v0, Ldij;->e:Ldij;
 
@@ -1088,7 +1053,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
+
+    const v0, 0x0
+
+    sput v0, Lbhn;->k:I
 
     sget-object v0, Ldil;->a:Ljava/lang/String;
 
@@ -1112,7 +1081,7 @@
 
     goto/16 :goto_0
 
-    :cond_e
+    :cond_d
     invoke-virtual {v3}, Ldij;->ordinal()I
 
     move-result v0
@@ -1214,6 +1183,8 @@
     invoke-direct {v0, v1, v2, v4, v5}, Ldoj;-><init>(Ldoc;Ldpz;Ldqr;Ldpu;)V
 
     goto/16 :goto_0
+
+    nop
 
     :array_0
     .array-data 4

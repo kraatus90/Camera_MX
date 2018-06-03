@@ -10,7 +10,7 @@
 # instance fields
 .field private A:Lfun;
 
-.field private B:Lbhn;
+.field public B:Lbhn;
 
 .field private C:Lhab;
 
@@ -296,7 +296,7 @@
 
     iget-object v2, p0, Lcpb;->c:Lcom/google/googlex/gcam/InitParams;
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     sget-object v0, Lcpb;->a:Ljava/lang/String;
 
@@ -376,6 +376,41 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setMin_payload_frames(I)V
 
+    const/4 v4, 0x3
+
+    iget-object v2, p0, Lcpb;->D:Lcnu;
+
+    iget-object v2, v2, Lcnu;->e:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->cpc()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-le v2, v3, :cond_4
+
+    const/4 v3, 0x1
+
+    if-eq v2, v3, :cond_5
+
+    const/4 v3, 0x2
+
+    if-eq v2, v3, :cond_6
+
+    const/4 v3, 0x3
+
+    if-eq v2, v3, :cond_7
+
+    const/4 v3, 0x4
+
+    if-ge v2, v3, :cond_8
+
+    const/4 v3, 0x5
+
+    if-ge v2, v3, :cond_9
+
+    :goto_1
     iget-object v2, p0, Lcpb;->D:Lcnu;
 
     iget-object v3, v2, Lcnu;->e:Lbhn;
@@ -383,8 +418,6 @@
     invoke-virtual {v3}, Lbhn;->f()I
 
     move-result v3
-
-    const/4 v4, 0x3
 
     iget-object v2, v2, Lcnu;->f:Lihp;
 
@@ -418,7 +451,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    sget v4, Lbhn;->sHexagon:I
+
+    if-eqz v4, :cond_1
+
+    const v3, 0x1
+
+    if-eq v3, v4, :cond_a
+
+    const v3, 0x2
+
+    if-eq v3, v4, :cond_b
+
+    :cond_1
+    :goto_2
+    if-eqz v2, :cond_2
 
     const/4 v2, 0x0
 
@@ -428,7 +475,7 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setSimultaneous_merge_and_finish(Z)V
 
-    :cond_1
+    :cond_2
     iget-object v2, p0, Lcpb;->x:Lcom/google/googlex/gcam/MemoryStateCallback;
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setMemory_callback(Lcom/google/googlex/gcam/MemoryStateCallback;)V
@@ -461,10 +508,40 @@
 
     invoke-virtual {v2, v3}, Lfun;->a(Lfuj;)Z
 
-    :cond_2
+    :cond_3
     monitor-exit v1
 
     goto/16 :goto_0
+
+    :cond_4
+    const/4 v4, 0x3
+
+    goto/16 :goto_1
+
+    :cond_5
+    const/4 v4, 0x7
+
+    goto/16 :goto_1
+
+    :cond_6
+    const/16 v4, 0xe
+
+    goto/16 :goto_1
+
+    :cond_7
+    const/16 v4, 0x18
+
+    goto/16 :goto_1
+
+    :cond_8
+    const/16 v4, 0x23
+
+    goto/16 :goto_1
+
+    :cond_9
+    const/16 v4, 0x2e
+
+    goto/16 :goto_1
 
     :catchall_0
     move-exception v0
@@ -474,4 +551,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+
+    :cond_a
+    const v2, 0x0
+
+    goto :goto_2
+
+    :cond_b
+    const v2, 0x1
+
+    goto :goto_2
 .end method

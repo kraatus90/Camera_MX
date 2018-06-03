@@ -39,4 +39,5 @@
     <integer name="settings">10</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <integer name="camera_mode_wideangle">12</integer>
 </resources>

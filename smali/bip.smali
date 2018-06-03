@@ -159,7 +159,7 @@
 
     const-string v1, "camera.enable_pd"
 
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 
     sput-object v0, Lbip;->m:Lbku;
 
@@ -167,7 +167,7 @@
 
     const-string v1, "camera.enable_pd_blur"
 
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 
     sput-object v0, Lbip;->n:Lbku;
 
@@ -215,7 +215,7 @@
 
     const-string v1, "camera.optbar.hdr"
 
-    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
 
     sput-object v0, Lbip;->t:Lbku;
 
@@ -240,6 +240,8 @@
     invoke-virtual {p2}, Lgzz;->c()Z
 
     move-result v2
+
+    const v2, 0x0
 
     invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 
@@ -274,6 +276,8 @@
     invoke-virtual {p2}, Lgzz;->g()Z
 
     move-result v2
+
+    const v2, 0x0
 
     invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 

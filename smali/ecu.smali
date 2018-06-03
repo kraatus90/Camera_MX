@@ -164,6 +164,13 @@
 
     move-result v4
 
+    const v3, 0x2
+
+    if-ne v4, v3, :cond_0
+
+    const v4, 0x0
+
+    :cond_0
     :try_start_1
     move-object/from16 v0, p0
 
@@ -193,7 +200,7 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_0
+    if-nez v3, :cond_1
 
     move-object/from16 v0, p0
 
@@ -226,7 +233,7 @@
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     :try_start_2
     move-object/from16 v0, p0
 
@@ -278,7 +285,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -312,7 +319,7 @@
 
     move-result-wide v12
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_4
 
     const/4 v2, 0x1
 
@@ -326,12 +333,12 @@
 
     move-result-object v9
 
-    :cond_1
+    :cond_2
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -345,18 +352,18 @@
 
     cmp-long v14, v14, v12
 
-    if-nez v14, :cond_1
+    if-nez v14, :cond_2
 
     move-object v8, v2
 
-    :cond_2
+    :cond_3
     move-object/from16 v0, p4
 
     invoke-interface {v0, v8}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     const/4 v2, 0x0
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_5
 
     move-object/from16 v0, p0
 
@@ -412,7 +419,7 @@
 
     invoke-interface/range {v2 .. v8}, Lcop;->a(Lcpa;ILiic;Liil;Liil;[Landroid/hardware/camera2/params/Face;)V
 
-    if-eqz v6, :cond_5
+    if-eqz v6, :cond_6
 
     move-object/from16 v0, p0
 
@@ -483,12 +490,12 @@
 
     goto/16 :goto_1
 
-    :cond_3
+    :cond_4
     const/4 v2, 0x0
 
     goto/16 :goto_2
 
-    :cond_4
+    :cond_5
     :try_start_7
     move-object/from16 v0, p0
 
@@ -524,7 +531,7 @@
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     :try_start_8
     move-object/from16 v0, p0
 
@@ -598,7 +605,7 @@
     move v2, v9
 
     :goto_5
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_e
 
     :try_start_9
     move-object/from16 v0, p0
@@ -609,13 +616,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d
+    if-eqz v5, :cond_e
 
     invoke-virtual {v3}, Lcpa;->c()Z
 
     move-result v5
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_7
 
     move-object/from16 v0, p2
 
@@ -675,8 +682,8 @@
 
     invoke-virtual {v5, v6}, Lavp;->a(Lavl;)V
 
-    :cond_6
-    if-nez v2, :cond_7
+    :cond_7
+    if-nez v2, :cond_8
 
     iget-object v2, v3, Lcpa;->a:Lcps;
 
@@ -688,7 +695,7 @@
 
     invoke-virtual {v2, v3}, Ljsw;->a(Ljava/lang/Object;)Z
 
-    :cond_7
+    :cond_8
     :goto_6
     invoke-interface/range {p4 .. p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -699,7 +706,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_f
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -719,8 +726,8 @@
 
     goto/16 :goto_0
 
-    :cond_8
-    if-eqz v8, :cond_b
+    :cond_9
+    if-eqz v8, :cond_c
 
     move-object/from16 v0, p0
 
@@ -730,13 +737,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_c
 
     invoke-virtual {v3}, Lcpa;->c()Z
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_a
 
     move-object/from16 v0, p2
 
@@ -796,8 +803,8 @@
 
     invoke-virtual {v2, v4}, Lavp;->a(Lavl;)V
 
-    :cond_9
-    if-nez v7, :cond_a
+    :cond_a
+    if-nez v7, :cond_b
 
     iget-object v2, v3, Lcpa;->a:Lcps;
 
@@ -809,7 +816,7 @@
 
     invoke-virtual {v2, v3}, Ljsw;->a(Ljava/lang/Object;)Z
 
-    :cond_a
+    :cond_b
     :goto_9
     invoke-interface/range {p4 .. p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -820,7 +827,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_d
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -837,7 +844,7 @@
 
     goto :goto_8
 
-    :cond_b
+    :cond_c
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lecu;->c:Licu;
@@ -874,12 +881,12 @@
 
     goto :goto_9
 
-    :cond_c
+    :cond_d
     const/4 v2, 0x1
 
     goto/16 :goto_0
 
-    :cond_d
+    :cond_e
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lecu;->c:Licu;
@@ -916,7 +923,7 @@
 
     goto/16 :goto_6
 
-    :cond_e
+    :cond_f
     throw v4
     :try_end_9
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_9 .. :try_end_9} :catch_1

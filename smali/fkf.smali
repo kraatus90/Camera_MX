@@ -26,6 +26,8 @@
 
 .field public static final enum k:Lfkf;
 
+.field public static final enum l:Lfkf;
+
 .field private static synthetic p:[Lfkf;
 
 
@@ -249,7 +251,25 @@
 
     sput-object v3, Lfkf;->k:Lfkf;
 
-    const/16 v0, 0xb
+    new-instance v3, Lfkf;
+
+    const-string v4, "WIDE_ANGLE"
+
+    const/16 v5, 0xb
+
+    const v6, 0x7f0f0028
+
+    const v7, 0x7f110199
+
+    const v8, 0x7f110199
+
+    const v9, 0x7f0200ea
+
+    invoke-direct/range {v3 .. v9}, Lfkf;-><init>(Ljava/lang/String;IIIII)V
+
+    sput-object v3, Lfkf;->l:Lfkf;
+
+    const/16 v0, 0xc
 
     new-array v0, v0, [Lfkf;
 
@@ -306,6 +326,12 @@
     const/16 v1, 0xa
 
     sget-object v2, Lfkf;->k:Lfkf;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    sget-object v2, Lfkf;->l:Lfkf;
 
     aput-object v2, v0, v1
 

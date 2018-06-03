@@ -15,7 +15,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lgds;ZLiau;Liau;Lhzt;Lflj;)V
-    .locals 3
+    .locals 5
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
@@ -35,15 +35,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
+    sget v2, Lcok;->DeviceSloMo:I
+
+    const v3, 0x1
+
+    if-eq v2, v3, :cond_0
+
+    sget v2, Lbhn;->sSloMo:I
+
+    const v3, 0x1
+
+    if-ne v2, v3, :cond_1
+
+    :cond_0
     iget-object v0, p0, Lfhl;->a:Ljava/util/List;
 
     sget-object v1, Lfkf;->f:Lfkf;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lfhl;->a:Ljava/util/List;
 
     sget-object v1, Lfkf;->e:Lfkf;
@@ -56,7 +69,24 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    if-eqz p3, :cond_2
+    sget v2, Lcok;->wa:I
+
+    const v3, -0x1
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v0, p0, Lfhl;->a:Ljava/util/List;
+
+    sget-object v1, Lfkf;->l:Lfkf;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    iget-object v0, p0, Lfhl;->a:Ljava/util/List;
+
+    sget-object v1, Lfkf;->c:Lfkf;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     iget-object v0, p0, Lfhl;->a:Ljava/util/List;
 
@@ -64,7 +94,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :goto_0
     iget-object v0, p0, Lfhl;->a:Ljava/util/List;
 
     sget-object v1, Lfkf;->j:Lfkf;
@@ -75,7 +104,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lfhl;->a:Ljava/util/List;
 
@@ -93,7 +122,7 @@
 
     invoke-virtual {p0}, Lfhl;->notifyDataSetChanged()V
 
-    :cond_1
+    :cond_3
     invoke-interface {p7}, Lflj;->e()Lhzb;
 
     move-result-object v0
@@ -127,15 +156,6 @@
     invoke-interface {v0, v1}, Lhzb;->a(Lich;)Lich;
 
     return-void
-
-    :cond_2
-    iget-object v0, p0, Lfhl;->a:Ljava/util/List;
-
-    sget-object v1, Lfkf;->c:Lfkf;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
 .end method
 
 

@@ -30,9 +30,7 @@
 
     iget-object v0, v0, Leqh;->h:Ldhh;
 
-    sget-object v1, Lgdw;->b:Lgdw;
-
-    invoke-virtual {v0, v1}, Ldhh;->a(Ljava/lang/Object;)V
+    sget-object v1, Lgdw;->a:Lgdw;
 
     return-void
 .end method

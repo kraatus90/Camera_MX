@@ -66,7 +66,7 @@
 
     if-eqz v1, :cond_0
 
-    sget-object v1, Lgdw;->b:Lgdw;
+    sget-object v1, Lgdw;->a:Lgdw;
 
     :goto_0
     new-instance v2, Ldhh;

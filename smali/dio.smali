@@ -115,6 +115,21 @@
 
     const/4 v7, 0x2
 
+    iget-object v0, p0, Ldio;->d:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->sPortraitHDREnh()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v7, 0x0
+
+    const v0, 0x1
+
+    sput v0, Lbhn;->k:I
+
+    :cond_0
     const/4 v6, 0x0
 
     iget-object v0, p0, Ldio;->c:Ldig;
@@ -357,6 +372,8 @@
 
     move-result v0
 
+    const/4 v0, 0x0
+
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Ldio;->g:Lbip;
@@ -444,6 +461,8 @@
     invoke-virtual {v0}, Lgzz;->c()Z
 
     move-result v0
+
+    const/4 v0, 0x1
 
     if-eqz v0, :cond_2
 
